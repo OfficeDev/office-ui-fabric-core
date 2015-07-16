@@ -14,51 +14,35 @@ Fabric contains many common components such as buttons, dropdowns, radio buttons
 
 ##Inputs
 
-|**Element**|**Example**|
+|**Component**|**Example**|
 |:-----|:-----|
 |Buttons|![Buttons](http://odux.azurewebsites.net/github/img/buttons.png)|
 |Choice fields|![Choice fields](http://odux.azurewebsites.net/github/img/Choice.png)|
 |Form field label|![Form field label](http://odux.azurewebsites.net/github/img/Label.png)|
 |Search box|![Search box](http://odux.azurewebsites.net/github/img/Search.png)|
 |Toggle|![Toggle](http://odux.azurewebsites.net/github/img/Toggle.png)|
-|Text field|![Text field](http://odux.azurewebsites.net/github/img/TextFields.png)|
+|Text fields|![Text field](http://odux.azurewebsites.net/github/img/TextFields.png)|
 
-######Buttons
 
-![Buttons](http://odux.azurewebsites.net/github/img/buttons.png)
-
-######Choice fields
-
-![Choice fields](http://odux.azurewebsites.net/github/img/Choice.png)
-
-######Form field label
-
-![Form field label](http://odux.azurewebsites.net/github/img/Label.png)
-
-######Search box
-
-![Search box](http://odux.azurewebsites.net/github/img/Search.png)
-
-######Toggle
-
-![Toggle](http://odux.azurewebsites.net/github/img/Toggle.png)
-
-######Text field
-![Text field](http://odux.azurewebsites.net/github/img/TextFields.png)
 
 ##Layout
 
+|**Component**|**Example**|
+|:-----|:-----|
+|List|![List](http://odux.azurewebsites.net/github/img/List.png)|
+|Dialog|![Dialog](http://odux.azurewebsites.net/github/img/Dialog.png)|
+|Callout|![Callout](http://odux.azurewebsites.net/github/img/Callout.png)|
+
 ######List
 
-![List](http://odux.azurewebsites.net/github/img/List.png)
+
 
 ######Dialog
 
-![Dialog](http://odux.azurewebsites.net/github/img/Dialog.png)
 
 ######Callout
 
-![Callout](http://odux.azurewebsites.net/github/img/Callout.png)
+
 
 ##Navigation
 

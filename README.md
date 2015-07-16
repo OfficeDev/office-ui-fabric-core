@@ -6,10 +6,10 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 
 ##Contents
 
-- [Why Office UI Fabric?](#why-office-ui-fabric)
-- [Changelog](#changelog)	
+- [Why Office UI Fabric?](#why-office-ui-fabric)	
 - [Frequently asked questions](#frequently-asked-questions)
 - [Documentation](#Documentation)
+- [Change log](#change-log)
 
 
 ##Why Office UI Fabric?
@@ -18,7 +18,7 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 - Fabric is all about styling instead of JavaScript so you can focus on your look and feel.
 - You can pick your icons to control the size of your UI.
 - Fabric is built with **LESS** for powerful customization. 
-- Components help you create common elements like buttons, dropdowns, and lists.
+- Components help you create common elements like buttons, form fields, and lists.
 - Fabric integrates with other frameworks like Bootstrap. Uniquely namespaced classes prevent conflicts.
 - Full language support (including right-to-left behavior) helps take the guesswork out of localization.
 
@@ -38,7 +38,7 @@ We add new features in minor versions (e.g. x.**Y**.z), which we typically relea
 
 ##Documentation
 
- [Getting started](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md)
+- [Getting started](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md)
 	- [Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#building-fabric)
 	- [Add to your project](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#add-to-your-project)
 	- [Starter template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#starter-template)
@@ -62,5 +62,5 @@ We add new features in minor versions (e.g. x.**Y**.z), which we typically relea
 	- [Content](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#content)
 - [Contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md)
 
-##Changelog
+##Change log
 - V1 release.

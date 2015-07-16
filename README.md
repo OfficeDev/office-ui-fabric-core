@@ -34,7 +34,7 @@ Yes, Fabric applies styles on an opt-in basis only. It does not style standard H
 Typically, we remove deprecated features in the third release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 0.6.0 will no longer be available in version 0.9.0.
 
 #####How often do you release Fabric?
-We add new features in minor versions (for example, x.**Y**.z), which we typically release every month. Bug fixes and minor tweaks might be included in patch versions (for example, x.y.**Z**) which we release as necessary. Whenever we put out a new release, be sure to visit the changelog for details about what’s new. This might include breaking changes that you should be aware of.
+We add new features in minor versions (for example, x.**Y**.z), which we typically release every month. Bug fixes and minor tweaks might be included in patch versions (for example, x.y.**Z**) which we release as necessary. Whenever we put out a new release, be sure to visit the change log for details about what’s new. This might include breaking changes that you should be aware of.
 
 ##Documentation
 

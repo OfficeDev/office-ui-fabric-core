@@ -2,7 +2,7 @@
 
 #Components
 
-Fabric contains many common components such as buttons, dropdowns, radio buttons, and toggle switches. It also contains more specialized components such as dialogs (with overlays), people pickers, persona, and navigation bars.
+Fabric contains many common components such as buttons, drop-down lists, radio buttons, and toggle switches. It also contains more specialized components such as dialogs (with overlays), people pickers, persona, and navigation bars.
 
 ##Contents
 
@@ -33,41 +33,20 @@ Fabric contains many common components such as buttons, dropdowns, radio buttons
 |Dialog|![Dialog](http://odux.azurewebsites.net/github/img/Dialog.png)|
 |Callout|![Callout](http://odux.azurewebsites.net/github/img/Callout.png)|
 
-######List
-
-
-
-######Dialog
-
-
-######Callout
-
-
-
 ##Navigation
 
-######Nav bar
-
-![Nav bar](http://odux.azurewebsites.net/github/img/NavBar.png)
-
-######Pivots
-
-![Pivots](http://odux.azurewebsites.net/github/img/Pivots.png)
+|**Component**|**Example**|
+|:-----|:-----|
+|Nav bar|![Nav bar](http://odux.azurewebsites.net/github/img/NavBar.png)|
+|Pivots|![Pivots](http://odux.azurewebsites.net/github/img/Pivots.png)|
 
 ##Content
 
-######Persona
+|**Component**|**Example**|
+|:-----|:-----|
+|Persona|![Persona](http://odux.azurewebsites.net/github/img/Persona.png)|
+|Persona card|![Persona card](http://odux.azurewebsites.net/github/img/PersonaCard.png)|
+|List item|![List item](http://odux.azurewebsites.net/github/img/ListItem.png)|
+|Table|![Table](http://odux.azurewebsites.net/github/img/Table.png)|
 
-![Persona](http://odux.azurewebsites.net/github/img/Persona.png)
 
-######Persona card
-
-![Persona card](http://odux.azurewebsites.net/github/img/PersonaCard.png)
-
-######List item
-
-![List item](http://odux.azurewebsites.net/github/img/ListItem.png)
-
-######Table
-
-![Table](http://odux.azurewebsites.net/github/img/Table.png)

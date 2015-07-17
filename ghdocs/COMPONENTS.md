@@ -2,7 +2,7 @@
 
 #Components
 
-Fabric contains many common components such as buttons, drop-down lists, radio buttons, and toggle switches. It also contains more specialized components such as dialogs (with overlays), people pickers, personas, and navigation bars.
+Fabric contains many common components such as buttons, drop-down lists, and toggle switches. It also contains more specialized components, like dialog boxess (with overlays), people pickers, personas, and navigation bars.
 
 ##Contents
 
@@ -30,14 +30,14 @@ Fabric contains many common components such as buttons, drop-down lists, radio b
 |**Component**|**Example**|
 |:-----|:-----|
 |List|![List](http://odux.azurewebsites.net/github/img/List.png)|
-|Dialog|![Dialog](http://odux.azurewebsites.net/github/img/Dialog.png)|
+|Dialog box|![Dialog](http://odux.azurewebsites.net/github/img/Dialog.png)|
 |Callout|![Callout](http://odux.azurewebsites.net/github/img/Callout.png)|
 
 ##Navigation components
 
 |**Component**|**Example**|
 |:-----|:-----|
-|Nav bar|![Nav bar](http://odux.azurewebsites.net/github/img/NavBar.png)|
+|Navigation bar|![Nav bar](http://odux.azurewebsites.net/github/img/NavBar.png)|
 |Pivots|![Pivots](http://odux.azurewebsites.net/github/img/Pivots.png)|
 
 ##Content components

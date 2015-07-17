@@ -2,7 +2,7 @@
 
 #Components
 
-Fabric contains many common components such as buttons, drop-down lists, radio buttons, and toggle switches. It also contains more specialized components such as dialogs (with overlays), people pickers, persona, and navigation bars.
+Fabric contains many common components such as buttons, drop-down lists, radio buttons, and toggle switches. It also contains more specialized components such as dialogs (with overlays), people pickers, personas, and navigation bars.
 
 ##Contents
 

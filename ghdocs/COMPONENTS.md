@@ -6,13 +6,13 @@ Fabric contains many common components such as buttons, drop-down lists, radio b
 
 ##Contents
 
-- [Inputs](#inputs)
-- [Layout](#layout)
-- [Navigation](#navigation)
-- [Content](#content)
+- [Input components](#inputs)
+- [Layout components](#layout)
+- [Navigation components](#navigation)
+- [Content components](#content)
 
 
-##Inputs
+##Input components
 
 |**Component**|**Example**|
 |:-----|:-----|
@@ -25,7 +25,7 @@ Fabric contains many common components such as buttons, drop-down lists, radio b
 
 
 
-##Layout
+##Layout components
 
 |**Component**|**Example**|
 |:-----|:-----|
@@ -33,14 +33,14 @@ Fabric contains many common components such as buttons, drop-down lists, radio b
 |Dialog|![Dialog](http://odux.azurewebsites.net/github/img/Dialog.png)|
 |Callout|![Callout](http://odux.azurewebsites.net/github/img/Callout.png)|
 
-##Navigation
+##Navigation components
 
 |**Component**|**Example**|
 |:-----|:-----|
 |Nav bar|![Nav bar](http://odux.azurewebsites.net/github/img/NavBar.png)|
 |Pivots|![Pivots](http://odux.azurewebsites.net/github/img/Pivots.png)|
 
-##Content
+##Content components
 
 |**Component**|**Example**|
 |:-----|:-----|

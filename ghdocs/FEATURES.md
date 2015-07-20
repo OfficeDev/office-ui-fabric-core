@@ -53,7 +53,12 @@ Note the `aria-hidden` attribute, which prevents screen readers from reading the
 
 #####Animations
 
-Motion adds delight to an experience, and it can help increase a user‘s understanding by tying experiences together, adding continuity and clarity. Motion should feel responsive to a user‘s input, but shouldn‘t be distracting. Fabric includes many different common animations:
+The animation library helps your web experiences feel even more like Office 365. Use the following CSS classes on navigation, panels, dialogs, etc. Animations are comprised of **directionality** (up, down, left, right relating to origin and completion of tasks), **enter/exit** (fade in, fade out, zoom in, zoom out), and **duration** (speed of enter/exit relating to urgency or content type).
+
+When choosing a motion for side panels, consider the origin of the triggering element. Use the motion to create a link between the action and the resulting UI. For example, if the triggering element is on the right side of the interface, consider having the panel move in from the right.
+
+When choosing a motion for dialogs, consider the origin and tone of the content. For a warning or error dialog, a quick fade in may be appropriate. If the dialog is the result of the user clicking an item to "dig up" more information, a scale-up may be appropriate.
+
 
 |CSS class    |description  |cubic bezier |timing       |
 |:-----------:|:-----------:|:-----------:|:-----------:|

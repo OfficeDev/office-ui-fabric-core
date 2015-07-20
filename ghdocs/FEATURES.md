@@ -45,7 +45,7 @@ Fabric also includes **accent** colors.
 
 Fabric uses a custom font for its iconography. This font contains glyphs that you can scale, color, and style in any way. You can even flip them for right-to-left localization.
 
-To use the icons, simply combine the base `ms-Icon` class with a modifier class for the specific icon.
+To use the icons, combine the base `ms-Icon` class with a modifier class for the specific icon.
 ```html
 <i class="ms-Icon ms-Icon--mail" aria-hidden="true"></i>
 ```
@@ -120,7 +120,7 @@ You might want your column source order to differ from the display order, or to 
 ###Right-to-left support
 Fabric comes with an alternate CSS file for pages written in right-to-left (RTL) languages, such as Arabic and Hebrew. This reverses the order of columns in the responsive grid, which makes it easy to create an RTL layout without writing additional templates. Future versions of Fabric will also reverse some icons and provide additional helper utilities.
 
-Apply the “dir” attribute to the HTML tag, and reference the RTL version of Fabric.
+Apply the **dir** attribute to the HTML tag, and reference the RTL version of Fabric.
 ```html
 <html dir="rtl">
   <head>
@@ -147,7 +147,7 @@ For pages with content in multiple languages, the **lang** attribute can be appl
 </html>
 ```
 
-Fabric supports 24 language codes. These codes use the following font stacks.
+Fabric supports 24 language codes. These codes use the font stacks listed in the following table.
 
 |Language|Code|Font stack|
 |:-----:|:-----:|:------:|

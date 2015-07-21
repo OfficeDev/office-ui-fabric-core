@@ -25,10 +25,17 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 
 ##Why open source?
 
+<<<<<<< HEAD
 The Office UI Fabric project was developed by the **OneDrive and SharePoint Design Studio** in order to…
 - Help the broader development community build add-ins and applications for Office 365.
 - Provide a point of reference for the evolving Office 365 Design Language.
 - Build a community around the Office 365 UI/UX that creates better experiences for everyone who builds for it.
+=======
+Office UI Fabric is a project started and maintained by the **OneDrive and SharePoint Design Studio** that was open sourced in order to…
+- Help the broader development community build Add-ins and applications for Office 365
+- Provide a Point of Reference for the evolving Office 365 Design Language
+- Create a community around the UI/UX of Office 365 to make better experiences for everyone who builds for it
+>>>>>>> origin/master
 
 We will do our best to release frequently and keep the community up-to-date with changes to the Design Language, components, and other assets. We also have to evolve quickly. This means that everyone gets the latest designs, but that features and assets can change often. Deprecated features will be marked in our change log, and will be removed from the third release following the deprecation announcement.
 

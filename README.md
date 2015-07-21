@@ -6,7 +6,8 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 
 ##Contents
 
-- [Why Office UI Fabric?](#why-office-ui-fabric)	
+- [Why Office UI Fabric?](#why-office-ui-fabric)
+- [Why Open Source?](#why-open-source)
 - [Frequently asked questions](#frequently-asked-questions)
 - [Documentation](#Documentation)
 - [Change log](#change-log)
@@ -21,6 +22,15 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 - Components help you create common elements like buttons, form fields, and lists.
 - Fabric integrates with other frameworks like Bootstrap. Uniquely namespaced classes prevent conflicts.
 - Full language support (including right-to-left behavior) helps take the guesswork out of localization.
+
+##Why Open Source?
+
+Office UI Fabric is a project started and maintained by the OneDrive and SharePoint Design Studio that was open sourced in order to…
+- Help the broader development community build Add-ins and applications for Office 365
+- Provide a Point of Reference for the evolving Office 365 Design Language
+- Create a community around the UI/UX of Office 365 to make better experiences for everyone who builds for it
+
+We will do our best to release frequently and keep the community up-to-date with changes to the Design Language, components, and other assets, but we may have to evolve quickly. This means that everyone gets the latest designs, but that features and assets may change often. Deprecated features will be marked in our change log, and will be removed at the next major version following the deprecation.
 
 ##Frequently asked questions
 
@@ -49,12 +59,7 @@ We add new features in minor versions (for example, x.**Y**.z), which we typical
 	- [Icons](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#icons)
 	- [Animations](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#animations)
 	- [Responsive Grid](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#responsive-grid)
-		- [How to use](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#how-to-use)
-		- [Inheritance](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#inheritance)
-		- [Push and pull](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#push-and-pull)
 	- [Localization](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#localization)
-		- [Right-to-left support](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#right-to-left-support)
-		- [Language-optimized fonts](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#language-optimized-fonts)
 - [Components](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md)
 	- [Inputs](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#inputs)
 	- [Layout](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#layout)

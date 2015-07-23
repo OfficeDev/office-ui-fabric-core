@@ -1,8 +1,8 @@
 ![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
 
-#####The front-end framework for building experiences for Office 365.
+#####The front-end framework for building web experiences that connect or extend Office 365.
 
-Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office Add-in from scratch or adding new features to an existing one.
+Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office Add-in from scratch or adding new features to an existing one. You can also use Fabric to create web sites that connect to Office services. 
 
 ##Contents
 
@@ -14,21 +14,19 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 
 
 ##Why Office UI Fabric?
-
-- Fabric is just like other popular frameworks, but built from the ground up for Office 365 so there's no excessive overriding.
-- Fabric is all about styling instead of JavaScript so you can focus on your look and feel.
-- You can pick your icons to control the size of your UI.
-- Fabric is built with **LESS** for powerful customization. 
-- Components help you create common elements like buttons, form fields, and lists.
+- Fabric embodies the Office Design Language. You get to use the same design language we use in our own products. Your web pages or Add-Ins will feel tightly integrated into Office.  
+- Fabric is just like other popular frameworks so its easy to use. CSS classes, HTML and JavaScript samples, everything you need to get going building great looking web pages. 
+- Fabric was built it from the ground up for Office so there's no excessive overriding of pre-existing frameworks.
 - Fabric integrates with other frameworks like Bootstrap. Uniquely namespaced classes prevent conflicts.
 - Full language support (including right-to-left behavior) helps take the guesswork out of localization.
+- Full access to the source code and samples; you can tailor Fabric for your own specific needs. 
 
 ##Why open source?
 
-The Office UI Fabric project was developed by the **OneDrive and SharePoint Design Studio** in order to…
+The Office UI Fabric project was originally developed by the **OneDrive and SharePoint Design Studio** in order to…
 - Help the broader development community build add-ins and applications for Office 365.
 - Provide a point of reference for the evolving Office 365 Design Language.
-- Create a community around the Office 365 UI/UX that contributes to better experiences for everyone who builds for Office 365.
+- Create a community around the Office 365 UI/UX that contributes to better experiences for everyone who builds for Office.
 
 We will do our best to release frequently and keep the community up-to-date with changes to the Design Language, components, and other assets. We also have to evolve quickly. This means that everyone gets the latest designs, but that features and assets can change often. Deprecated features will be marked in our change log, and will be removed from the third release following the deprecation announcement.
 

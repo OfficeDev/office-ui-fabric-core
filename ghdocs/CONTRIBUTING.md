@@ -4,7 +4,7 @@
 
 Office UI Fabric is an evolving snapshot of the Office 365 Design Language - from one of the Microsoft Design Studios that works with it. This means that it is updated frequently, and exists as a source of truth to help everyone build consistent Office 365 experiences.
 
-For this reason, some of the fundamental elements - iconography, typography, animations, and color - aren't intended to be modified unless the official Design Language changes. You should feel free to modify them for your own projects, but pull requests (PRs) that propose modifications or additions to these elements will likely not be accepted.
+For this reason, some of the fundamental elements - iconography, typography, animations, and color - aren't intended to be modified unless the official Design Language changes. You should feel free to modify them for your own projects, but pull requests (PRs) that propose modifications or additions to these elements will likely not be accepted. Otherwise, we will review all PRs, but not all may be accepted.
 
 Missing a glyph in the icon font? Though we don't officially support them, you can use alternative icon font solutions like [Fontello](http://fontello.com/), [Icomoon](https://icomoon.io/app/#/select), or [Fontastic](http://fontastic.me/) to fill in those gaps.
 
@@ -22,6 +22,7 @@ Please ask before starting a hefty PR so we can let you know if we're likely to 
 
 We track community issues via Github's issue tracker. To help us keep track of the different areas, please use the following labels:
 
+- `question` - Feel free to ask questions via the question tag.
 - `browser` - Issues that pertain to a specific browser. Screenshots and details are much appreciated!
 - `docs` - Issues pertaining to our documentation.
 - `feature` - Issues requesting a new feature to be added or extended from an existing feature.

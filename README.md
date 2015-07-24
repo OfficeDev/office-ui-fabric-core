@@ -7,7 +7,8 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 ##Contents
 
 - [Why Office UI Fabric?](#why-office-ui-fabric)
-- [Why open source?](#why-open-source)
+- [Why Open Source?](#why-open-source)
+- [Support](#support)
 - [Frequently asked questions](#frequently-asked-questions)
 - [Documentation](#Documentation)
 - [Change log](#change-log)
@@ -29,6 +30,12 @@ The Office UI Fabric project was originally developed by the **OneDrive and Shar
 - Create a community around the Office 365 UI/UX that contributes to better experiences for everyone who builds for Office.
 
 We will do our best to release frequently and keep the community up-to-date with changes to the Design Language, components, and other assets. We also have to evolve quickly. This means that everyone gets the latest designs, but that features and assets can change often. Deprecated features will be marked in our change log, and will be removed from the third release following the deprecation announcement.
+
+##Support
+
+If you have any issues, we will do our best to respond but we can't guarantee timely responses. Support is limited.
+
+If you have a specific bug, feature request, or question, post it via the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric/issues). For more info and labels, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md) section.
 
 ##Frequently asked questions
 

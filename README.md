@@ -7,7 +7,7 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 ##Contents
 
 - [Why Office UI Fabric?](#why-office-ui-fabric)
-- [Why Open Source?](#why-open-source)
+- [Why open source?](#why-open-source)
 - [Support](#support)
 - [Frequently asked questions](#frequently-asked-questions)
 - [Documentation](#Documentation)
@@ -46,10 +46,10 @@ Fabric solves many of the same problems that other front-end frameworks do, in a
 Yes, Fabric applies styles on an opt-in basis only. It does not style standard HTML elements, like headings and form elements. Namespaced classes prevent conflicts with other frameworks. You can safely add Fabric to an existing add-in or use it alongside another framework of your choice.
 
 #####A feature I'm using is deprecated. When will it be removed?
-Typically, we remove deprecated features in the third release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 0.6.0 will no longer be available in version 0.9.0.
+Typically, we remove deprecated features in the next major release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 1.2.2 will no longer be available in 1.3.0.
 
 #####How often do you release Fabric?
-We add new features in minor versions (for example, x.**Y**.z), which we typically release every month. Bug fixes and minor tweaks might be included in patch versions (for example, x.y.**Z**) which we release as necessary. Whenever we put out a new release, be sure to visit the change log for details about what’s new. This might include breaking changes that you should be aware of.
+We add new features in minor versions (for example, x.**Y**.z), which we typically release approximately every two weeks. Bug fixes and minor tweaks might be included in patch versions (for example, x.y.**Z**) which we release as necessary. Whenever we put out a new release, be sure to visit the change log for details about what’s new. This might include breaking changes that you should be aware of.
 
 ##Documentation
 

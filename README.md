@@ -2,7 +2,7 @@
 
 #####The front-end framework for building web experiences that connect or extend Office 365.
 
-Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office Add-in from scratch or adding new features to an existing one. You can also use Fabric to create web sites that connect to Office services. 
+Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office Add-in from scratch or adding new features to an existing one. You can also use Fabric to create websites that connect to Office services. 
 
 ##Contents
 
@@ -14,12 +14,12 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 
 
 ##Why Office UI Fabric?
-- Fabric embodies the Office Design Language. You get to use the same design language we use in our own products. Your web pages or Add-Ins will feel tightly integrated into Office.  
+- Fabric embodies the Office Design Language. You get to use the same design language we use in our own products. Your web pages or add-ins will feel tightly integrated with Office.  
 - Fabric is just like other popular frameworks so its easy to use. CSS classes, HTML and JavaScript samples, everything you need to get going building great looking web pages. 
-- Fabric was built it from the ground up for Office so there's no excessive overriding of pre-existing frameworks.
+- Fabric was built from the ground up for Office so there's no excessive overriding of pre-existing frameworks.
 - Fabric integrates with other frameworks like Bootstrap. Uniquely namespaced classes prevent conflicts.
 - Full language support (including right-to-left behavior) helps take the guesswork out of localization.
-- Full access to the source code and samples; you can tailor Fabric for your own specific needs. 
+- You have full access to the source code and samples. You can tailor Fabric for your own specific needs. 
 
 ##Why open source?
 

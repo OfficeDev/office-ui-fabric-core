@@ -1,0 +1,208 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Dialog styles
+
+
+.dialogPositioningIE9Fallback(){
+  vertical-align: middle;
+  display: inline-block;
+}
+
+// Dialog w/ Optional Overlay
+.ms-Dialog {
+  background-color: transparent;
+  position: fixed;
+  height: 100%;
+  width:  100%;
+  top:  0;
+  left: 0;
+  z-index: @ms-zIndex-Dialog;
+
+  // Fall Back for IE9
+  display: block;
+  font-size: 0;
+  line-height: 100vh;
+  text-align: center;
+
+  // Flexbox for Modern Browsers
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align:      center;
+	-webkit-align-items: center;
+	-webkit-box-align:   center;
+	align-items:         center;
+
+	&::before{
+  	.dialogPositioningIE9Fallback();
+    content: "";
+    height: 100%;
+    width: 0;
+  }
+
+  // Compound button variant
+  .ms-Button.ms-Button--compound {
+    display: block;
+    margin-left: 0;
+  }
+
+  // Overlay within panel
+  .ms-Overlay {
+    z-index: @ms-zIndex-back;
+  }
+}
+
+// Main View
+.ms-Dialog-main {
+  .dialogPositioningIE9Fallback();
+  .drop-shadow();
+  background-color: @ms-color-white;
+  box-sizing: border-box;
+  line-height: 1.35;
+  margin: auto;
+  max-width: 95%;
+  min-width: 225px;
+  position: relative;
+  text-align: left;
+  outline: 1px solid transparent;
+}
+
+// Close button, hidden by default
+.ms-Dialog-button.ms-Dialog-button--close {
+  display: none;
+}
+
+// Modifier: Close button is visible
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) {
+  
+  // Push the right side over so the icon doesn't overlap the text 
+  .ms-Dialog-header .ms-Dialog-title {
+    margin-right: 20px;
+  }
+  
+  .ms-Dialog-button.ms-Dialog-button--close {
+    display: block;
+    position: absolute;
+    margin:  0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    top: 16px;
+    right: 14px;
+    padding: 5px;
+    z-index: @ms-zIndex-front;
+
+    .ms-Icon.ms-Icon--x {
+      color: @ms-color-neutralSecondary;
+      font-size: @ms-font-size-m;
+    }
+  }
+}
+
+// Header
+.ms-Dialog-header {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+
+  // Title - set size and color
+  .ms-Dialog-title {
+    margin: 0;
+    font-family: @ms-font-family-light;
+    font-size: @ms-font-size-xl;
+    color: @ms-color-neutralPrimary;
+  }
+
+  // Large header w/ color
+  &.ms-Dialog-header--large {
+    padding: 30px 20px;
+    margin-bottom: 10px;
+    .ms-bg-color-themePrimary;
+
+    // Title - set size and color
+    .ms-Dialog-title {
+      font-family: @ms-font-family-light;
+      font-size: @ms-font-size-xxl;
+      color: @ms-color-white;
+    }
+  }
+}
+
+/** Dialog inner */
+// padding for content inside of dialog
+.ms-Dialog-inner {
+  height: 100%;
+  padding: 10px 20px 20px;
+}
+
+// Content box
+// container for dialog box content
+.ms-Dialog-content {
+  position: relative;
+  width: 100%;
+
+  // Add margin bottom between compound buttons
+  .ms-Button.ms-Button--compound:not(:last-child) { margin-bottom: 20px; }
+}
+
+/** Subtext */
+.ms-Dialog-subText {
+  margin: 0 0 20px 0;
+  font-family: @ms-font-family-semilight;
+  color: @ms-color-neutralPrimary;
+
+  &.ms-Dialog-subText--s { font-size: @ms-font-size-s; }
+  &.ms-Dialog-subText--m { font-size: @ms-font-size-m; }
+  &.ms-Dialog-subText--l { font-size: @ms-font-size-l; }
+}
+
+// Actions
+// bottom buttons
+.ms-Dialog-actions {
+  position: relative;
+  width: 100%;
+  min-height:  40px;
+  line-height: 40px;
+  margin: 20px 0 -10px 0;
+  font-size: 0;
+  
+  .ms-Button { 
+    line-height: normal; 
+  }
+}
+
+// Spacing between bottom buttons
+.ms-Dialog-action { margin: 0 10px 0 0; }
+
+.ms-Dialog-action:last-child { margin: 0; }
+
+// Bottom buttons right
+.ms-Dialog-actionsRight {
+  text-align: right;
+  font-size: 0;
+  
+  // Reset spacing for first button
+  .ms-Dialog-action:first-child{ margin: 0; }
+  
+  // Spacing between bottom buttons
+  .ms-Dialog-action + .ms-Dialog-action { margin: 0 0 0 10px; }
+}
+
+.ms-Dialog.ms-Dialog--lgHeader .ms-Dialog-actionsRight{
+  // Spacing between bottom buttons
+  .ms-Dialog-action + .ms-Dialog-action { margin: 0 0 0 15px; }
+}
+
+// Medium screens and up
+@media (min-width: @ms-screen-md-min) {
+  .ms-Dialog.ms-Dialog--multiline .ms-Dialog-main { min-width: 310px; }
+}
+
+// Large screens and up
+@media (min-width: @ms-screen-lg-min) {
+  .ms-Dialog-main { max-width: 600px; }
+}

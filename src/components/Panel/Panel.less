@@ -1,0 +1,231 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Panel styles
+
+
+// The panel covers the entire screen.
+.ms-Panel {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: @ms-zIndex-Panel;
+
+  // Overlay used within panel
+  .ms-Overlay {
+    z-index: @ms-zIndex-back;
+  }
+}
+
+// The panel itself, where the content goes.
+.ms-Panel-main {
+  background-color: @ms-color-white;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: @ms-zIndex-front;
+}
+
+// Command buttons.
+.ms-Panel-commands {
+  background-color: @ms-color-neutralLighterAlt;
+  height: 40px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+// An individual command button.
+.ms-Panel-command {
+  background-color: transparent;
+  border: none;
+  float: left;
+  font-size: 0; // Remove gap between icon and label.
+  height: 40px;
+  margin-left: 8px;
+  padding: 0 8px;
+
+  &:hover {
+    background-color: @ms-color-neutralLight;
+    cursor: pointer;
+    outline: 1px solid transparent;
+  }
+
+  &:active {
+    background-color: @ms-color-white;
+  }
+}
+
+// Icon within a command button.
+.ms-Panel-commandIcon {
+  color: @ms-color-themePrimary;
+  font-size: @ms-font-size-m-plus;
+  line-height: 40px;
+  margin-right: 8px;
+}
+
+// Label for a command button.
+.ms-Panel-commandLabel {
+  font-size: @ms-font-size-m;
+  font-family: @ms-font-family-regular;
+  color: @ms-color-neutralPrimary;
+}
+
+// Scrollable content area, below the command buttons.
+.ms-Panel-contentInner {
+  position: absolute;
+  top: 40px; // Push it below the commands.
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 32px 20px 32px;
+  overflow-y: auto;
+}
+
+// Header text at the top of the panel.
+.ms-Panel-headerText {
+  font-family: @ms-font-family-light;
+  font-size: @ms-font-size-xl;
+  color: @ms-color-neutralPrimary;
+  display: block;
+  line-height: 82px; // Magic number that places text baseline at 50px.
+  height: 70px;
+}
+
+
+// Small screens.
+@media (min-width: @ms-screen-sm-min) {
+
+  // Hide the panel from display.
+  .ms-Panel {
+    display: none;
+  }
+
+  // Show the panel when it's open.
+  .ms-Panel.is-open {
+    display: block;
+  }
+
+  // The overlay should always be hidden on small screens.
+  .ms-Panel .ms-Overlay {
+    display: none;
+  }
+
+}
+
+// Medium screens.
+@media (min-width: @ms-screen-md-min) {
+
+  // Always display the panel, just place off screen so it can slide it.
+  .ms-Panel {
+    display: block;
+    pointer-events: none;
+  }
+
+  // When closed, hide the panel content off screen.
+  // TODO: At some breakpoints, the panels have fluid widths. In these cases
+  // we can't explicitly set a width and negative right position. The panel
+  // disappears but it does not animate smoothly. Use JS to set these values?
+  .ms-Panel-main {
+    border-left: 1px solid @ms-color-neutralLight;
+    border-right: 1px solid @ms-color-neutralLight;
+    left: auto;
+    pointer-events: auto;
+    transition: all .367s @ms-ease1;
+    right: -341px;
+    width: 341px; // Add a pixel due to border-box.
+  }
+
+  // When opened, replace the full-width panel with one that is 340px wide
+  // and attached to the right of the screen.
+  .ms-Panel.is-open .ms-Panel-main {
+    box-shadow: -30px 0px 30px -30px rgba(0,0,0,.2); //TODO: Confirm shadow and turn into a LESS mixin.
+    left: auto;
+    right: 0;
+    width: 341px; // Add a pixel due to border-box.
+  }
+
+  // On medium screens and up, the small panel can be attached to the left.
+  .ms-Panel.ms-Panel--small.ms-Panel--left.is-open .ms-Panel-main {
+    box-shadow: 30px 0px 30px -30px rgba(0,0,0,.2); //TODO: Confirm shadow and turn into a LESS mixin.
+    left: 0;
+  }
+  .ms-Panel.ms-Panel--small.ms-Panel--left .ms-Panel-main {
+    left: -341px;
+    right: auto;
+  }
+
+  // Display the overlay, but with 0 opacity so that we can animate it.
+  .ms-Panel .ms-Overlay {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .367s @ms-ease1;
+  }
+
+  // When the panel is opened, animate to full opacity
+  // and activate pointer events so can be clicked.
+  .ms-Panel.is-open .ms-Overlay {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Large screens.
+@media (min-width: @ms-screen-lg-min) {
+
+  // All but the small panel (medium to extra large) become
+  // fluid with a fixed left margin of 48px when opened.
+  .ms-Panel.ms-Panel--medium.is-open,
+  .ms-Panel.ms-Panel--large.is-open,
+  .ms-Panel.ms-Panel--extraLarge.is-open {
+    .ms-Panel-main {
+      left: 47px; // Remove a pixel due to border-box.
+      width: auto;
+    }
+  }
+}
+
+
+// Extra large screens.
+@media (min-width: @ms-screen-xl-min) {
+
+  // Medium panel changes to 643px fixed width, while all other
+  // sizes remain the same as they were on large screens.
+  .ms-Panel.ms-Panel--medium.is-open .ms-Panel-main {
+    left: auto;
+    right: 0;
+    width: 644px; // Add a pixel due to border-box.
+  }
+
+  .ms-Panel.ms-Panel--medium .ms-Panel-main {
+    width: 644px;
+    right: -644px;
+  }
+}
+
+
+// Extra extra large screens.
+@media (min-width: @ms-screen-xxl-min) {
+
+  // Large panels have an increased left margin of 428px.
+  .ms-Panel.ms-Panel--large.is-open .ms-Panel-main {
+    left: 427px; // Remove a pixel due to border-box.
+  }
+
+  // Extra large panels have an increased left margin of 176px.
+  .ms-Panel.ms-Panel--extraLarge.is-open .ms-Panel-main {
+    left: 175px; // Remove a pixel due to border-box.
+  }
+
+  // For now, the small left panel is hidden on XXL screens and up.
+  .ms-Panel.ms-Panel--small.ms-Panel--left {
+    display: none;
+  }
+}

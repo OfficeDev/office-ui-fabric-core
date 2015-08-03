@@ -1,0 +1,22 @@
+{
+  "name": "FilePicker",
+  "notes": "",
+  "template": "FilePicker.html",
+  "class": "ms-FilePicker",
+  "dependencies": [
+    "AppBar",
+    "Button",
+    "Pivot",
+    "Table",
+    "Panel",
+    "List",
+    "ListItem",
+    "Overlay"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    }
+  ]
+}

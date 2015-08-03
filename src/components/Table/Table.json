@@ -1,0 +1,12 @@
+{
+  "name": "Table",
+  "notes": "",
+  "template": "Table.html",
+  "class": "ms-Table",
+  "branches": [
+    {
+      "name": "Default",
+      "default": true
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Single line (input) and multiline (textarea) form field styles
+
+
+@import (reference) '../Label/Label.less';
+
+
+// Single line (default), standard (default)
+.ms-TextField {
+  .ms-font-m;
+  .ms-u-normalize;
+  margin-bottom: 10px;
+
+  .ms-TextField-field {
+    .ms-u-normalize;
+    border: 1px solid @ms-color-neutralTertiaryAlt;
+    border-radius: 0;
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-m;
+    color: @ms-color-neutralPrimary;
+    height: 30px;
+    padding: 6px 3px 7px 8px;
+    width: 100%;
+
+    // States
+    &:hover { border-color: @ms-color-neutralSecondaryAlt; }
+    &:focus { border-color: @ms-color-themePrimary; }
+    
+    // For high contrast
+    &:hover,
+    &:focus {
+      outline: 1px solid transparent;
+    }
+
+    .input-placeholder({
+      color: @ms-color-neutralSecondary;
+    })
+  }
+
+  // Disabled input fields
+  &.is-disabled {
+    .ms-TextField-field {
+      background-color: @ms-color-neutralLighter;
+      border-color: @ms-color-neutralLighter;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .input-placeholder({
+      color: @ms-color-neutralTertiary;
+    })
+  }
+
+  // Required input fields
+  &.is-required {
+    .ms-Label {
+      .ms-Label.is-required;
+    }
+
+    .input-placeholder({
+      .ms-Label.is-required;
+    })
+  }
+
+
+  // Single line (default), placeholder label
+  &.ms-TextField--placeholder {
+    position: relative;
+
+    .ms-Label {
+      position: absolute;
+      top: -2px;
+      padding-left: 8px;
+      font-family: @ms-font-family-semilight;
+      font-size: @ms-font-size-m;
+      color: @ms-color-neutralSecondary;
+    }
+
+    // Disabled input fields
+    &.is-disabled {
+      color: @ms-color-neutralTertiary;
+
+      .ms-Label {
+        .ms-Label.is-disabled;
+      }
+    }
+
+  }
+
+
+  // Single line (default), underlined
+  &.ms-TextField--underlined {
+    border-bottom: 1px solid @ms-color-neutralTertiaryAlt;
+    display: table;
+    width: 100%;
+
+    // States
+    &:hover { border-color: @ms-color-neutralSecondaryAlt; }
+    &:active, &:focus { border-color: @ms-color-themePrimary; }
+
+    .ms-Label {
+      font-size: @ms-font-size-m;
+      margin-right: 8px;
+      display: table-cell;
+      vertical-align: top;
+      padding-left: 8px;
+      padding-bottom: 5px;
+      height: 29px;
+      width: 1%; // Make the label as narrow as possible
+    }
+
+    .ms-TextField-field {
+      border: none;
+      float: left;
+      display: table-cell;
+      text-align: left;
+      height: 29px;
+      padding-top: 8px;
+      padding-bottom: 5px;
+
+      // States
+      &:active, &:focus { outline: 0; }
+    }
+
+    // Disabled
+    &.is-disabled {
+      .ms-Label {
+        .ms-Label.is-disabled;
+      }
+
+      border-bottom-color: @ms-color-neutralLight;
+
+      .ms-TextField-field {
+        background-color: transparent;
+        color: @ms-color-neutralTertiary;
+      }
+    }
+  }
+
+  // Focus class for underlined variant
+  &.is-active {
+    border-color: @ms-color-themePrimary !important;
+  }
+
+  // Multiline, default
+  &.ms-TextField--multiline  {
+
+    // Multiline with placeholder
+    &.ms-TextField--placeholder {
+      .ms-Label {
+        top: -3px;
+      }
+    }
+
+    .ms-TextField-field {
+      .ms-font-m;
+      line-height: 20px;
+      min-height: 60px;
+      padding-top: 4px;
+      margin-top: -1px;
+      overflow: auto;
+    }
+  }
+
+}
+
+// All high contrast styling rules
+@media screen and (-ms-high-contrast: active) {
+  .ms-TextField {
+    .ms-TextField-field {
+      outline: 1px solid transparent;
+    }
+  }
+}

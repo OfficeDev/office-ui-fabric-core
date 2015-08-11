@@ -66,6 +66,7 @@
     "yargs": "^3.10.0"
   },
   "dependencies": {
-    "gulp-js-escape": "^1.0.1"
+    "gulp-js-escape": "^1.0.1",
+    "require-dir": "^0.3.0"
   }
 }

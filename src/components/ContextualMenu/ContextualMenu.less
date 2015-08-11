@@ -1,0 +1,158 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Contextual Menu styles
+
+
+// Menu wrapper.
+.ms-ContextualMenu {
+  .ms-font-m;
+  .ms-u-normalize;
+  display: none;
+
+  // Hidden by default, then trigger this state to show it.
+  &.is-open {
+    .drop-shadow;
+    background-color: @ms-color-white;
+    border: 1px solid @ms-color-neutralTertiaryAlt;
+    display: block;
+    list-style-type: none;
+    position: absolute;
+    width: 180px;
+    z-index: (@ms-zIndex-ContextualMenu + @ms-zIndex-middle);
+  }
+
+  // Multi-select with headers
+  &.ms-ContextualMenu--multiselect {
+    padding-top: 10px;
+  }
+}
+
+
+
+// Menu item.
+.ms-ContextualMenu-item {
+  .ms-u-borderBox;
+  position: relative;
+
+  // Dividers
+  &.ms-ContextualMenu-item--divider {
+      cursor: default;
+      display: block;
+      height: 1px;
+      margin: 4px 0;
+      background-color: @ms-color-neutralLight;
+      position: relative;
+  }
+
+  // Headers
+  &.ms-ContextualMenu-item--header {
+    color: @ms-color-themePrimary;
+    font-size: @ms-font-size-s;
+    text-transform: uppercase;
+    height: 20px;
+    padding-left: 30px;
+    display: block;
+    position: relative;
+    padding-top: 6px;
+  }
+
+  // List item links
+  .ms-ContextualMenu-link {
+    text-decoration: none;
+    color: @ms-color-neutralPrimary;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px 0 20px;
+    position: relative;
+
+    // Shorten the first and last items to maintain baseline alignment.
+    &:first-child, &:last-child {
+        height: 39px;
+    }
+
+    &:hover {
+        background-color: @ms-color-neutralLight;
+        color: @ms-color-black;
+        line-height: 40px;
+    }
+
+    &:active {
+        background-color: @ms-color-neutralLight;
+        border: 1px solid @ms-color-themePrimary;
+        color: @ms-color-black;
+    }
+
+    &.is-selected {
+        background-color: @ms-color-themeLight;
+        color: @ms-color-black;
+        line-height: 40px;
+
+        .ms-font-weight-semibold;
+
+        &:hover {
+            background-color: @ms-color-themeLight;
+        }
+    }
+
+    &.is-disabled {
+        background: @ms-color-white;
+        color: @ms-color-neutralTertiary;
+        cursor: default;
+        line-height: 40px;
+        pointer-events: none;
+
+        &:active { border-color: @ms-color-white; }
+    }
+  }
+}
+
+// Right caret.
+.ms-ContextualMenu-caretRight {
+  color: @ms-color-neutralSecondary;
+  font-size: 18px;
+  height: 39px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+// Multiselect links
+.ms-ContextualMenu--multiselect >
+.ms-ContextualMenu-item >
+.ms-ContextualMenu-link {
+    padding-left: 30px;
+
+    // Multi-select checkmark
+    &.is-selected {
+      background-color: @ms-color-white;
+
+      // Checkmark
+      &:after {
+        .ms-Icon;
+        color: @ms-color-neutralPrimary;
+        content: '\e041';
+        font-size: @ms-font-size-s;
+        height: 39px;
+        line-height: 40px;
+        position: absolute;
+        left: 10px;
+      }
+    }
+}
+
+
+
+// One contextual menu may appear as a submenu of another. In that case,
+// the submenu should appear to the left of the menu item that triggered it.
+.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  left: 178px;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Link",
+  "notes": "",
+  "template": "Link.html",
+  "class": "ms-Link",
+  "branches": [
+    {
+      "name": "Hero",
+      "class": "ms-Link--hero",
+      "default": true
+    }
+  ]
+}

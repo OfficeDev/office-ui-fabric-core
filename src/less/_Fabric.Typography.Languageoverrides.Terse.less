@@ -1,0 +1,96 @@
+@import (reference) '_Fabric.Typography.Languageoverrides.less';
+
+//== System fonts
+
+// A mixin that overrides all of the font classes for languages that
+// use system fonts. A single font-family is used for all weights.
+.language-override-system-fonts(@ms-lang-code, @ms-font-family) {
+  *[lang="@ms-{lang-code}"] {
+    .ms-fwt-l,
+    .ms-fwt-l-h:hover,
+    .ms-fwt-sl,
+    .ms-fwt-sl-h:hover,
+    .ms-fwt-r,
+    .ms-fwt-r-h:hover,
+    .ms-fwt-sb,
+    .ms-fwt-sb-h:hover {
+      font-family: @ms-font-family;
+    }
+  }
+}
+
+
+// Generate the override classes for non-distributed fonts.
+.language-override-system-fonts(ja-JP, @ms-font-stack-japanese);
+.language-override-system-fonts(ko-KR, @ms-font-stack-korean);
+.language-override-system-fonts(ch-ZHS, @ms-font-stack-chinese-simplified);
+.language-override-system-fonts(ch-ZHT, @ms-font-stack-chinese-traditional);
+.language-override-system-fonts(hi-IN, @ms-font-stack-hindi);
+
+
+//== Web fonts
+// 
+// A mixin that overrides all of the font classes for languages that use
+// distributed web fonts. These reference different fonts for each weight.
+.language-override-web-fonts(@ms-lang-code, @ms-font-family-light, @ms-font-family-semilight, @ms-font-family-regular, @ms-font-family-semibold) {
+  *[lang="@ms-{lang-code}"] {
+    .ms-fwt-l,
+    .ms-fwt-l-h:hover {
+      font-family: @ms-font-family-light;
+    }
+    .ms-fwt-sl,
+    .ms-fwt-sl-h:hover {
+      font-family: @ms-font-family-semilight;
+    }
+    .ms-fwt-r,
+    .ms-fwt-r-h:hover {
+      font-family: @ms-font-family-regular;
+    }
+    .ms-fwt-sb,
+    .ms-fwt-sb-h:hover {
+      font-family: @ms-font-family-semibold;
+    }
+  }
+}
+
+
+// Generate the override classes for web fonts.
+// Leelawadee
+// th-TH
+.language-override-web-fonts(th-TH, @ms-font-family-semilight-leelawadee, @ms-font-family-semilight-leelawadee, @ms-font-family-regular-leelawadee, @ms-font-family-semibold-leelawadee);
+
+// Arabic
+// ar
+.language-override-web-fonts(ar, @ms-font-family-light-arabic, @ms-font-family-semilight-arabic, @ms-font-family-regular-arabic, @ms-font-family-semibold-arabic);
+
+// Cyrillic
+// bg-BG, ru-RU, uk-UA
+.language-override-web-fonts(bg-BG, @ms-font-family-light-cyrillic, @ms-font-family-semilight-cyrillic, @ms-font-family-regular-cyrillic, @ms-font-family-semibold-cyrillic);
+.language-override-web-fonts(ru-RU, @ms-font-family-light-cyrillic, @ms-font-family-semilight-cyrillic, @ms-font-family-regular-cyrillic, @ms-font-family-semibold-cyrillic);
+.language-override-web-fonts(uk-UA, @ms-font-family-light-cyrillic, @ms-font-family-semilight-cyrillic, @ms-font-family-regular-cyrillic, @ms-font-family-semibold-cyrillic);
+
+// East European
+// cs-CZ, et-EE, hr-HR, hu-HU, lt-LT, pl-PL, lt-sr-SP, tr-TR, sk-SK, kk-KZ
+.language-override-web-fonts(cs-CZ, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(et-EE, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(hr-HR, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(hu-HU, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(lt-LT, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(lv-LV, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(pl-PL, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(lt-sr-SP, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(tr-TR, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(sk-SK, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+.language-override-web-fonts(kk-KZ, @ms-font-family-light-eastEuropean, @ms-font-family-semilight-eastEuropean, @ms-font-family-regular-eastEuropean, @ms-font-family-semibold-eastEuropean);
+
+// Greek
+// el-GR
+.language-override-web-fonts(el-GR, @ms-font-family-light-greek, @ms-font-family-semilight-greek, @ms-font-family-regular-greek, @ms-font-family-semibold-greek);
+
+// Hebrew
+// he-IL
+.language-override-web-fonts(he-IL, @ms-font-family-light-hebrew, @ms-font-family-semilight-hebrew, @ms-font-family-regular-hebrew, @ms-font-family-semibold-hebrew);
+
+// Vietnamese
+// vi-VN
+.language-override-web-fonts(vi-VN, @ms-font-family-light-vietnamese, @ms-font-family-semilight-vietnamese, @ms-font-family-regular-vietnamese, @ms-font-family-semibold-vietnamese);

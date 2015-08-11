@@ -1,0 +1,192 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Choice fields (radio buttons and checkboxes) styles
+
+
+// Unselected, radio button (default)
+.ms-ChoiceField {
+	.ms-font-m;
+	.ms-u-normalize;
+	height: 36px;
+	position: relative;
+
+	.ms-ChoiceField-input { 
+		position: absolute;
+		opacity: 0;
+		top: 8px;
+
+		&:focus:not(:disabled) {
+			+ .ms-ChoiceField-field {
+				border-color: @ms-color-neutralSecondaryAlt;
+			}
+		}
+	}
+
+	.ms-ChoiceField-field {
+		border: 1px @ms-color-neutralTertiaryAlt solid;
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		cursor: pointer;
+		margin-top: 8px;
+		position: relative;
+		border-radius: 50%;
+	}
+
+	.ms-Label {
+		padding-left: 26px;
+		position: absolute;
+		top: -8px;
+		font-size: @ms-font-size-m;
+	}
+
+	&:hover {
+		.ms-ChoiceField-field {
+			border-color: @ms-color-neutralSecondaryAlt;
+		}
+
+		.ms-Label {
+			color: @ms-color-black;
+		}
+	}
+
+
+	// Selected, radio button (default)
+	.ms-ChoiceField-input:checked {
+
+		+ .ms-ChoiceField-field {
+
+			// Checkmark
+			&:before {
+				background-color: @ms-color-neutralSecondary;
+				border-color: @ms-color-neutralSecondary;
+				color: @ms-color-neutralSecondary;
+				border-radius: 50%;
+				content: '\00a0';
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				margin: auto;
+				width: 11px;
+				height: 11px;
+				box-sizing: border-box;
+			}
+
+			.ms-Label {
+				color: @ms-color-neutralPrimary;
+			}
+
+			// Checkmark hover
+			&:hover {
+				.ms-Label {
+					color: @ms-color-black;
+				}
+				&:before {
+					background-color: @ms-color-neutralDark;
+					color: @ms-color-neutralDark;
+				}
+			}
+		}
+
+		&[type='radio'] {
+			+ .ms-ChoiceField-field {
+				&:before {
+					border: 1px solid transparent;
+				}
+			}
+		}
+	}
+
+
+	// Disabled, radio button (default)
+	&.is-disabled {
+
+		.ms-ChoiceField-input {
+			pointer-events: none;
+			
+			&:focus {
+				+ .ms-ChoiceField-field {
+					border-color: @ms-color-neutralLight;
+				}
+			}
+		}
+
+		.ms-ChoiceField-field {
+			pointer-events: none;
+			cursor: default;
+			border-color: @ms-color-neutralLight;
+
+			&:hover {
+				border-color: @ms-color-neutralLight;
+			}
+		}
+
+		.ms-Label {
+			color: @ms-color-neutralTertiary;
+		}
+
+		// Disabled and selected, radio button (default)
+		.ms-ChoiceField-input:checked {
+
+			+ .ms-ChoiceField-field {
+				&:before {
+					background-color: @ms-color-neutralTertiaryAlt;
+					color: @ms-color-neutralTertiaryAlt;
+				}
+
+				.ms-Label {
+					color: @ms-color-neutralTertiary;
+				}
+			}
+		}
+	}
+
+
+	// Override default radio button styles for checkboxes
+	.ms-ChoiceField-input[type="checkbox"] {
+
+		// Unchecked
+		+ .ms-ChoiceField-field {
+			border-radius: 0;
+		}
+
+		// Checked
+		&:checked + .ms-ChoiceField-field:before {
+			.ms-Icon;
+			content: '\e041';
+			background-color: transparent;
+			border-radius: 0;
+			font-size: 13px;
+			top: -1px;
+			left: -1px;
+		}
+
+		// Disabled
+		&:disabled + .ms-ChoiceField-field {
+			border-color: @ms-color-neutralTertiary;
+			cursor: default;
+
+			&:before {
+				color: @ms-color-neutralTertiary;
+			}
+		}
+
+	}
+
+}
+
+//== Components - Choice field groups
+//
+// Choice field groups contain multiple radio buttons or checkboxes
+
+.ms-ChoiceFieldGroup {
+	margin-bottom: 4px;
+
+  .ms-ChoiceFieldGroup-title .ms-Label {
+		position: static;
+  }
+}

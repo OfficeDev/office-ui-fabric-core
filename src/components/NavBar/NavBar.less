@@ -32,26 +32,6 @@
   display: none;
 }
 
-// State: The navigation panel is open.
-.ms-NavBar.is-open {
-
-  // Show the items.
-  .ms-NavBar-items {
-    .drop-shadow;
-    background-color: @ms-color-white;
-    bottom: 0;
-    display: block;
-    left: 50px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    outline: 1px solid transparent;
-  }
-
-}
-
 // Individual item/button, with optional subitems.
 .ms-NavBar-item {
   .ms-u-borderBox;
@@ -92,6 +72,16 @@
     }
   }
 }
+
+.ms-NavBar-link {
+  color: @ms-color-neutralPrimary;
+  text-decoration: none;
+
+  &:active {
+    color: @ms-color-themePrimary;
+  }
+}
+
 
 // Items can contain subitems.
 .ms-NavBar-item.ms-NavBar-item--hasMenu {
@@ -156,10 +146,30 @@
   }
 }
 
+// Show the nav items menu only on small screens
+@media (max-width: @ms-screen-sm-max) {
+  // State: The navigation panel is open.
+  .ms-NavBar.is-open {
+    // Show the items.
+    .ms-NavBar-items {
+      .drop-shadow;
+      background-color: @ms-color-white;
+      bottom: 0;
+      display: block;
+      left: 50px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      outline: 1px solid transparent;
+      z-index: @ms-zIndex-middle;
+    }
+  }
+}
 
 // On small screens, override the contextual menu styles.
 @media (min-width: @ms-screen-sm-min) and (max-width: @ms-screen-sm-max) {
-
   .ms-NavBar-item.ms-NavBar-item--hasMenu.is-selected {
     height: inherit;
     background-color: transparent;

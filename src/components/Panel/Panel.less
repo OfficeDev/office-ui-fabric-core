@@ -23,10 +23,10 @@
 .ms-Panel-main {
   background-color: @ms-color-white;
   bottom: 0;
-  left: 0;
   position: fixed;
   right: 0;
   top: 0;
+  display: none; //prevent the panel from briefly showing up when the page loads
   z-index: @ms-zIndex-front;
 }
 
@@ -92,7 +92,6 @@
   font-family: @ms-font-family-light;
   font-size: @ms-font-size-xl;
   color: @ms-color-neutralPrimary;
-  display: block;
   line-height: 82px; // Magic number that places text baseline at 50px.
   height: 70px;
 }
@@ -116,48 +115,52 @@
     display: none;
   }
 
+  .ms-Panel.is-open .ms-Panel-main {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+
 }
 
 // Medium screens.
 @media (min-width: @ms-screen-md-min) {
 
-  // Always display the panel, just place off screen so it can slide it.
+  // Always display the panel, just place off screen so it can slide.
   .ms-Panel {
     display: block;
     pointer-events: none;
   }
 
-  // When closed, hide the panel content off screen.
-  // TODO: At some breakpoints, the panels have fluid widths. In these cases
-  // we can't explicitly set a width and negative right position. The panel
-  // disappears but it does not animate smoothly. Use JS to set these values?
+  // When opened, the full-width panel is replaced with one that is 340px wide
+  // and attached to the right of the screen.
   .ms-Panel-main {
     border-left: 1px solid @ms-color-neutralLight;
     border-right: 1px solid @ms-color-neutralLight;
-    left: auto;
+    right: -40px;
     pointer-events: auto;
-    transition: all .367s @ms-ease1;
-    right: -341px;
     width: 341px; // Add a pixel due to border-box.
+    .ms-u-slideRightOut40;
   }
 
-  // When opened, replace the full-width panel with one that is 340px wide
-  // and attached to the right of the screen.
   .ms-Panel.is-open .ms-Panel-main {
-    box-shadow: -30px 0px 30px -30px rgba(0,0,0,.2); //TODO: Confirm shadow and turn into a LESS mixin.
+    .drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
-    right: 0;
-    width: 341px; // Add a pixel due to border-box.
+    .ms-u-slideLeftIn40;
   }
 
-  // On medium screens and up, the small panel can be attached to the left.
+  // On medium screens and up, the small panel attached to the left is a variant.
   .ms-Panel.ms-Panel--small.ms-Panel--left.is-open .ms-Panel-main {
-    box-shadow: 30px 0px 30px -30px rgba(0,0,0,.2); //TODO: Confirm shadow and turn into a LESS mixin.
-    left: 0;
+    .drop-shadow(30px, 0px, 30px, -30px, .2);
+    .ms-u-slideRightIn40;
   }
+
   .ms-Panel.ms-Panel--small.ms-Panel--left .ms-Panel-main {
-    left: -341px;
+    left: 0;
     right: auto;
+    .ms-u-slideLeftOut40;
   }
 
   // Display the overlay, but with 0 opacity so that we can animate it.
@@ -165,7 +168,7 @@
     display: block;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .367s @ms-ease1;
+    transition: opacity @ms-duration3 @ms-ease1;
   }
 
   // When the panel is opened, animate to full opacity
@@ -182,45 +185,53 @@
 
   // All but the small panel (medium to extra large) become
   // fluid with a fixed left margin of 48px when opened.
-  .ms-Panel.ms-Panel--medium.is-open,
-  .ms-Panel.ms-Panel--large.is-open,
-  .ms-Panel.ms-Panel--extraLarge.is-open {
+  .ms-Panel.ms-Panel--medium,
+  .ms-Panel.ms-Panel--large,
+  .ms-Panel.ms-Panel--extraLarge {
     .ms-Panel-main {
       left: 47px; // Remove a pixel due to border-box.
       width: auto;
     }
   }
-}
 
+  .ms-Panel.ms-Panel--medium.is-open,
+  .ms-Panel.ms-Panel--large.is-open,
+  .ms-Panel.ms-Panel--extraLarge.is-open {
+    .ms-Panel-main {
+      width: auto;
+    }
+  }
+
+}
 
 // Extra large screens.
 @media (min-width: @ms-screen-xl-min) {
 
   // Medium panel changes to 643px fixed width, while all other
   // sizes remain the same as they were on large screens.
+  .ms-Panel.ms-Panel--medium .ms-Panel-main {
+    left: auto;
+    width: 644px; // Add a pixel due to border-box.
+  }
+
   .ms-Panel.ms-Panel--medium.is-open .ms-Panel-main {
     left: auto;
     right: 0;
     width: 644px; // Add a pixel due to border-box.
   }
 
-  .ms-Panel.ms-Panel--medium .ms-Panel-main {
-    width: 644px;
-    right: -644px;
-  }
 }
-
 
 // Extra extra large screens.
 @media (min-width: @ms-screen-xxl-min) {
 
   // Large panels have an increased left margin of 428px.
-  .ms-Panel.ms-Panel--large.is-open .ms-Panel-main {
+  .ms-Panel.ms-Panel--large .ms-Panel-main {
     left: 427px; // Remove a pixel due to border-box.
   }
 
   // Extra large panels have an increased left margin of 176px.
-  .ms-Panel.ms-Panel--extraLarge.is-open .ms-Panel-main {
+  .ms-Panel.ms-Panel--extraLarge .ms-Panel-main {
     left: 175px; // Remove a pixel due to border-box.
   }
 

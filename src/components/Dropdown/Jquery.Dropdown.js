@@ -42,7 +42,7 @@
                 if (!$dropdownWrapper.hasClass('is-disabled')) {
 
                     /** First, let's close any open dropdowns on this page. */
-                    $dropdownWrapper.find('.ms-Dropdown--open').removeClass('ms-Dropdown--open');
+                    $dropdownWrapper.find('.is-open').removeClass('is-open');
 
                     /** Stop the click event from propagating, which would just close the dropdown immediately. */
                     evt.stopPropagation();
@@ -52,11 +52,11 @@
                     $(this).next(".ms-Dropdown-items").css('width', dropdownWidth + 'px');
                 
                     /** Go ahead and open that dropdown. */
-                    $dropdownWrapper.toggleClass('ms-Dropdown--open');
+                    $dropdownWrapper.toggleClass('is-open');
 
                     /** Temporarily bind an event to the document that will close this dropdown when clicking anywhere. */
                     $(document).bind("click.dropdown", function(event) {
-                        $dropdownWrapper.removeClass('ms-Dropdown--open');
+                        $dropdownWrapper.removeClass('is-open');
                         $(document).unbind('click.dropdown');
                     });
                 }
@@ -71,25 +71,25 @@
             $dropdownWrapper.on('keyup', function(event) {
                 var keyCode = event.keyCode || event.which;
                 // Open dropdown on enter or arrow up or arrow down and focus on first option
-                if (!$(this).hasClass('ms-Dropdown--open')) {
+                if (!$(this).hasClass('is-open')) {
                     if (keyCode === 13 || keyCode === 38 || keyCode === 40) {
                        _openDropdown(event);
-                       if (!$(this).find('.ms-Dropdown-item').hasClass('ms-Dropdown-item--selected')) {
-                        $(this).find('.ms-Dropdown-item:first').addClass('ms-Dropdown-item--selected');
+                       if (!$(this).find('.ms-Dropdown-item').hasClass('is-selected')) {
+                        $(this).find('.ms-Dropdown-item:first').addClass('is-selected');
                        }
                     }
                 }
-                else if ($(this).hasClass('ms-Dropdown--open')) {
+                else if ($(this).hasClass('is-open')) {
                     // Up arrow focuses previous option
                     if (keyCode === 38) {
-                        if ($(this).find('.ms-Dropdown-item.ms-Dropdown-item--selected').prev().siblings().size() > 0) {
-                            $(this).find('.ms-Dropdown-item.ms-Dropdown-item--selected').removeClass('ms-Dropdown-item--selected').prev().addClass('ms-Dropdown-item--selected');
+                        if ($(this).find('.ms-Dropdown-item.is-selected').prev().siblings().size() > 0) {
+                            $(this).find('.ms-Dropdown-item.is-selected').removeClass('is-selected').prev().addClass('is-selected');
                         }
                     }
                     // Down arrow focuses next option
                     if (keyCode === 40) {
-                        if ($(this).find('.ms-Dropdown-item.ms-Dropdown-item--selected').next().siblings().size() > 0) {
-                            $(this).find('.ms-Dropdown-item.ms-Dropdown-item--selected').removeClass('ms-Dropdown-item--selected').next().addClass('ms-Dropdown-item--selected');
+                        if ($(this).find('.ms-Dropdown-item.is-selected').next().siblings().size() > 0) {
+                            $(this).find('.ms-Dropdown-item.is-selected').removeClass('is-selected').next().addClass('is-selected');
                         }
                     }
                     // Enter to select item
@@ -97,7 +97,7 @@
                         if (!$dropdownWrapper.hasClass('is-disabled')) {
 
                             // Item text
-                            var selectedItemText = $(this).find('.ms-Dropdown-item.ms-Dropdown-item--selected').text()
+                            var selectedItemText = $(this).find('.ms-Dropdown-item.is-selected').text()
 
                             $(this).find('.ms-Dropdown-title').html(selectedItemText);
 
@@ -111,14 +111,14 @@
                             });
                             $originalDropdown.change();
 
-                            $(this).removeClass('ms-Dropdown--open');
+                            $(this).removeClass('is-open');
                         }
                     }                
                 }
 
                 // Close dropdown on esc
                 if (keyCode === 27) {
-                    $(this).removeClass('ms-Dropdown--open');
+                    $(this).removeClass('is-open');
                 }
             });
 
@@ -127,8 +127,8 @@
                 if (!$dropdownWrapper.hasClass('is-disabled')) {
 
                     /** Deselect all items and select this one. */
-                    $(this).siblings('.ms-Dropdown-item').removeClass('ms-Dropdown-item--selected')
-                    $(this).addClass('ms-Dropdown-item--selected');
+                    $(this).siblings('.ms-Dropdown-item').removeClass('is-selected')
+                    $(this).addClass('is-selected');
 
                     /** Update the replacement dropdown's title. */
                     $(this).parents().siblings('.ms-Dropdown-title').html($(this).text());

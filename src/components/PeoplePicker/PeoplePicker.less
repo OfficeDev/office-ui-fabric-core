@@ -233,25 +233,34 @@
     border-top: 1px solid @ms-color-neutralLight;
     height: 69px;
     position: relative;
+
+    .ms-Spinner {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 20px;
+      left: 20px;
+      display: none;
+
+      .ms-Spinner-circle {
+        background-color: @ms-color-themePrimary;
+      }
+    }
 }
 
 // Searching state
 .ms-PeoplePicker-searchMore.is-searching {
-  // TODO: Should this rotate animation be included in fabric.animations.less?
+
+  .ms-Spinner {
+    display: block;
+  }
+
   .ms-PeoplePicker-searchMoreIcon {
-    background: url("../../dist/components/peoplepicker/peoplepicker.searching.png") center no-repeat;
-    background-size: 32px;
-    -webkit-animation: spin 2s linear infinite;
-    -moz-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
 
     .ms-Icon {
       display: none;
     }
   }
-  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
   .ms-PeoplePicker-searchMorePrimary {
     color: @ms-color-themePrimary;
@@ -361,6 +370,14 @@
 
   .ms-PeoplePicker-searchMore {
     height: 49px;
+
+    .ms-Spinner {
+      width: 28px;
+      height: 28px;
+      top: 12px;
+      left: 12px;
+    }
+
   }
 
   .ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon {

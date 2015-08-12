@@ -20,8 +20,8 @@ docs/components/js/jquery.all-components.min.js
 docs/components/js/fabric.components-picker.min.js
 
 # Auto Generated Files
-docs/data/*
-docs/app/data/*
+docs/data
+docs/app/data
 
 # =========================
 # Operating System Files

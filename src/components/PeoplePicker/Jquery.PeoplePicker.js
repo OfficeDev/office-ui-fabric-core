@@ -20,6 +20,7 @@
       var $selectedPeople = $peoplePicker.find(".ms-PeoplePicker-selectedPeople")
       var $selectedCount = $peoplePicker.find(".ms-PeoplePicker-selectedCount")
       var isActive = false;
+      var spinner;
 
       // Run when focused or clicked
       function peoplePickerActive(event) {
@@ -137,11 +138,19 @@
         /** Change to searching state. */
         $searchMore.addClass("is-searching");
         primaryLabel.html("Searching for &ldquo;Sen&rdquo;");
+
+        /** Attach Spinner */
+        if (!spinner) {
+          spinner = new fabric.Spinner($searchMore.get(0));
+        } else {
+          spinner.start();
+        }
         
         /** Return the original state. */
         setTimeout(function() {
             $searchMore.removeClass("is-searching");
             primaryLabel.html(originalPrimaryLabelText);
+            spinner.stop();
         }, 3000);
       });
 

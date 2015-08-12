@@ -13,10 +13,20 @@
     return this.each(function () {
 
       var $panel = $(this);
+      var $panelMain = $panel.find(".ms-Panel-main");
 
       /** Hook to open the panel. */
-      $('.js-togglePanel').on('click', function() {
-        $panel.toggleClass('is-open');
+      $(".js-togglePanel").on("click", function() {
+        // Panel must be set to display "block" in order for animations to render
+        $panelMain.css({display: "block"});
+        $panel.toggleClass("is-open");
+      });
+
+      $panelMain.on("animationend webkitAnimationEnd MSAnimationEnd", function(event) {
+        if (event.originalEvent.animationName === "fadeOut") {
+          // Hide and Prevent ms-Panel-main from being interactive
+          $(this).css({display: "none"});
+        }
       });
 
     });

@@ -170,31 +170,6 @@ gulp.task('build-less', ['clean:fabric'], function() {
             .pipe(gulp.dest(paths.distPath + '/css/'))
                 .on('error', onGulpError);
 
-    var fabricTerse = gulp.src('src/less/fabric.terse.less')
-            .pipe(less())
-                .on('error', onGulpError)
-            .pipe(rename('fabric.terse.css'))
-                .on('error', onGulpError)
-            .pipe(header(bannerTemplate, bannerData))
-                .on('error', onGulpError)
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
-            }))
-                .on('error', onGulpError)
-            .pipe(cssbeautify())
-                .on('error', onGulpError)
-            .pipe(csscomb())
-                .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distPath + '/css/'))
-                .on('error', onGulpError)
-            .pipe(rename('fabric.terse.min.css'))
-                .on('error', onGulpError)
-            .pipe(cssMinify())
-                .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distPath + '/css/'))
-                .on('error', onGulpError);    // Baseline set of tasks for building Components CSS.
-
     var _componentsBase = function() {
         return gulp.src('src/less/fabric.components.less')
             .pipe(less())
@@ -281,7 +256,7 @@ gulp.task('build-less', ['clean:fabric'], function() {
     });
 
     // Merge all current streams into one.
-    return mergeStream(fabric, fabricRtl, fabricTerse, components, componentsRtl, indComponents);
+    return mergeStream(fabric, fabricRtl, components, componentsRtl, indComponents);
 });
 
 gulp.task('copy-components-html', folders(paths.componentsPath, function(folder) {

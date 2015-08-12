@@ -1,0 +1,16 @@
+{
+  "name": "AppBar",
+  "notes": "App bar for use on smaller screen sizes.",
+  "template": "AppBar.html",
+  "class": "ms-AppBar",
+  "branches": [
+    {
+      "name": "Bottom",
+      "default": true
+    },
+    {
+      "name": "Top",
+      "class": "ms-AppBar--top"
+    }
+  ]
+}

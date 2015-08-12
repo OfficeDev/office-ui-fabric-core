@@ -1,0 +1,189 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// AppBar styles
+
+
+// Default: Positioned at the bottom.
+.ms-AppBar {
+  .ms-u-normalize;
+  .ms-font-m;
+  background-color: @ms-color-themePrimary;
+  height: 50px;
+  padding: 0 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  outline: 1px solid transparent;
+}
+
+// Left, center, and right regions.
+.ms-AppBar-left, .ms-AppBar-center, .ms-AppBar-right {
+  float: left;
+  height: 50px;
+  width: 15%;
+}
+.ms-AppBar-center {
+  width: 70%;
+  text-align: center;
+}
+.ms-AppBar-right {
+  text-align: right;
+}
+
+// Action icons.
+.ms-AppBar-action {
+  color: @ms-color-white;
+  display: inline-block;
+  margin: 5px;
+  text-decoration: none;
+  cursor: pointer;
+
+  .ms-Icon {
+    font-size: 30px;
+    margin-top: 5px;
+    display: block;
+  }
+
+  &:hover, &:active {
+    .ms-AppBar-actionLabel {
+      color: @ms-color-white;
+    }
+  }
+}
+
+// Labels for actions, hidden when the overflow menu is closed.
+.ms-AppBar-actionLabel {
+  display: none;
+}
+
+// Overflow area, hidden by default.
+.ms-AppBar-overflowActions {
+  display: none;
+}
+
+// Modifier: Circle action icons need nudged up and have unique hover states.
+.ms-AppBar-action.ms-AppBar-action--circle {
+  .ms-Icon {
+    font-size: 19px;
+    margin-top: 10px;
+
+    // Position icon circle in appbar
+    &.ms-Icon--circle {
+      margin: 11px 5px 0;
+    }
+  }
+
+  &:hover, &:active {
+    color: @ms-color-themePrimary;
+
+    .ms-Icon {
+      color: @ms-color-themePrimary;
+      &:after {
+        color: @ms-color-white;
+        content: '\e001';
+      }
+    }
+  }
+}
+
+// State: The bar has been opened to reveal more options.
+.ms-AppBar.is-open {
+  height: 320px;
+
+  // Show labels under the icons.
+  .ms-AppBar-actionLabel {
+    display: block;
+    font-size: @ms-font-size-xs;
+    position: relative;
+    margin-top: 8px;
+    left: 3px;
+  }
+
+  .ms-AppBar-action.ms-AppBar-action--circle {
+    .ms-AppBar-actionLabel {
+      margin-top: 14px;
+      left: -5px;
+    }
+  }
+
+  // List of overflow actions.
+  .ms-AppBar-overflowActions {
+    display: block;
+    list-style: none;
+    margin-bottom: 20px;
+    margin-top: 100px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+
+  // One overflow action in the list.
+  .ms-AppBar-overflowAction {
+    color: @ms-color-white;
+    cursor: pointer;
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-xl;
+    height: 50px;
+    line-height: 50px;
+    padding-right: 30px;
+    text-align: right;
+
+    &:hover, &:active {
+      color: @ms-color-neutralLight;
+    }
+  }
+
+}
+
+// Modifier: The app bar can be positioned at the top of the screen.
+.ms-AppBar.ms-AppBar--top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  // For this modifier, the left menu (navigation) is hidden.
+  .ms-AppBar-left .ms-AppBar-action {
+    display: none;
+  }
+
+  // State: The bar has been opened to reveal more options.
+  &.is-open {
+
+    // Push the main actions down.
+    .ms-AppBar-left, .ms-AppBar-center, .ms-AppBar-right {
+      margin-top: 250px;
+    }
+
+    // Bring the overflow actions up.
+    .ms-AppBar-overflowActions {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      margin: 0;
+    }
+  }
+}
+
+
+// All high contrast styling rules
+@media screen and (-ms-high-contrast: active) {
+  .ms-AppBar-action.ms-AppBar-action--circle {
+
+    &:hover, &:active {
+      color: @color-white;
+      
+      .ms-Icon {
+        color: @color-white;
+        &:after {
+          // color: transparent;
+          content: '\e000';
+        }
+      }
+    }
+  }
+}

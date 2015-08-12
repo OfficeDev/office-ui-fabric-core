@@ -1,0 +1,365 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// File Picker styles
+
+
+@import (reference) '../List/List.less';
+
+
+.ms-FilePicker {
+  .ms-font-m;
+  .ms-u-normalize;
+
+  // List of sources, shown by default. Has classes 'ms-List' and 'ms-List--noBorders'.
+  .ms-FilePicker-sources {
+  }
+
+  // Individual sources within the list. Hass class 'ms-List-item'.
+  .ms-FilePicker-source {
+    height: auto;
+
+    &:hover {
+      background-color: @ms-color-neutralLighter;
+      cursor: pointer;
+      outline: 1px solid transparent;
+    }
+
+    // Highlight the active source on large and extra large screens.
+    @media (min-width: @ms-screen-lg-min) {
+      &.is-active {
+        background-color: @ms-color-themeLight;
+        outline: 1px solid transparent;
+      }
+    }
+
+    // Sources may contain sub-sources, which are hidden by default.
+    .ms-List {
+      display: none;
+    }
+  }
+
+  // Icon for a source.
+  .ms-FilePicker-sourceIcon {
+    color: @ms-color-neutralSecondary;
+    float: left;
+    height: 50px;
+    margin-left: 20px;
+    text-align: center;
+    width: 50px;
+
+    .ms-Icon {
+      font-size: 30px;
+      line-height: 50px;
+    }
+  }
+
+  // Name of a source.
+  .ms-FilePicker-sourceName {
+    .noWrap;
+    color: @ms-color-neutralPrimary;
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-m;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  // A source may be open, showing its container children.
+  .ms-FilePicker-source.is-open {
+
+    // Show that list of sub-sources.
+    .ms-List {
+      display: block;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .ms-FilePicker-source {
+      height: 50px;
+      background-color: @ms-color-white;
+
+      &:hover {
+        background-color: @ms-color-neutralLighter;
+        cursor: pointer;
+      }
+
+      &.is-active {
+        background-color: @ms-color-themeLight;
+      }
+
+      .ms-FilePicker-sourceName {
+        padding-left: 70px;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  // Files area, hidden by default on small screens.
+  .ms-FilePicker-files {
+    .ms-u-borderBox;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  // Move the breadcrumbs and pivots over.
+  .ms-Breadcrumb, .ms-Pivot {
+    margin-left: 20px;
+  }
+
+  // List of files and folders (items).
+  .ms-FilePicker-items {
+    margin: 10px 0 0 0;
+    padding: 0;
+  }
+
+  // A file or folder in the items list.
+  .ms-FilePicker-item {
+    height: 70px;
+    padding-right: 10px;
+    position: relative;
+
+    &:hover {
+      background-color: @ms-color-neutralLighter;
+      cursor: pointer;
+      outline: 1px solid transparent;
+    }
+  }
+
+  // The icon for a file or folder in the items list. This may
+  // be an .ms-Icon or a specific modifier that loads an image.
+  .ms-FilePicker-itemIcon {
+    width: 70px;
+    height: 70px;
+    float: left;
+    text-align: center;
+  }
+
+  // If the item icon is an .ms-Icon, position and color it appropriately.
+  .ms-FilePicker-itemIcon .ms-Icon {
+    font-size: 38px;
+    line-height: 70px;
+    color: @ms-color-neutralSecondary;
+  }
+
+  // If the item icon is one of these modifiers, show an image from the icon sprite.
+  .ms-FilePicker-itemIcon {
+    &[class*='ms-FilePicker-itemIcon--'] {
+      background-image: url(../components/filepicker/filepicker.icons.png);
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+    }
+
+    &.ms-FilePicker-itemIcon--audio {
+      background-position: 0px 0px;
+    }
+
+    &.ms-FilePicker-itemIcon--web {
+      background-position: 0px -40px;
+    }
+
+    &.ms-FilePicker-itemIcon--text {
+      background-position: 0px -80px;
+    }
+
+    &.ms-FilePicker-itemIcon--ppt {
+      background-position: 0px -120px;
+    }
+
+    &.ms-FilePicker-itemIcon--pub {
+      background-position: 0px -160px;
+    }
+
+    &.ms-FilePicker-itemIcon--access {
+      background-position: 0px -200px;
+    }
+
+    &.ms-FilePicker-itemIcon--bmp {
+      background-position: 0px -240px;
+    }
+
+    &.ms-FilePicker-itemIcon--word {
+      background-position: 0px -280px;
+    }
+
+    &.ms-FilePicker-itemIcon--blank {
+      background-position: 0px -320px;
+    }
+
+    &.ms-FilePicker-itemIcon--gif {
+      background-position: 0px -360px;
+    }
+
+    &.ms-FilePicker-itemIcon--jpg {
+      background-position: 0px -400px;
+    }
+
+    &.ms-FilePicker-itemIcon--note {
+      background-position: 0px -440px;
+    }
+
+    &.ms-FilePicker-itemIcon--pdf {
+      background-position: 0px -480px;
+    }
+
+    &.ms-FilePicker-itemIcon--png {
+      background-position: 0px -520px;
+    }
+
+    &.ms-FilePicker-itemIcon--visio {
+      background-position: 0px -560px;
+    }
+
+    &.ms-FilePicker-itemIcon--excel {
+      background-position: 0px -600px;
+    }
+
+    &.ms-FilePicker-itemIcon--pdf {
+      background-position: 0px -480px;
+    }
+  }
+
+  // Primary text, typically the name.
+  .ms-FilePicker-itemPrimaryText {
+    .noWrap;
+    color: @ms-color-neutralPrimary;
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-m;
+    padding-top: 15px;
+  }
+
+  // Secondary text, typically the modified date or some other metadata.
+  .ms-FilePicker-itemSecondaryText {
+    .noWrap;
+    color: @ms-color-neutralSecondary;
+    font-family: @ms-font-family-regular;
+    font-size: @ms-font-size-xs;
+    padding-top: 5px;
+  }
+
+  // Toggle buttons to change the items view between table and grid.
+  .ms-FilePicker-itemsToggle {
+    position: absolute;
+    top: 0;
+    right: 20px;
+  }
+
+  .ms-FilePicker-itemsToggleButton {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px solid transparent;
+    }
+
+    &.is-active {
+      background-color: @ms-color-themePrimary;
+      color: @ms-color-white;
+    }
+  }
+
+  // State: The files are being shown, with the sources list hidden.
+  &.is-showingFiles {
+    .ms-FilePicker-sources {
+      display: none;
+    }
+    .ms-FilePicker-files {
+      display: block;
+    }
+  }
+
+  //
+  // Large and extra large displays.
+  //
+  // On large and extra large screens, the sources and files panes are
+  // both visible at all times. They are positioned side-by-side.
+
+  @media (min-width: @ms-screen-lg-min) {
+
+    // On larger screens, the is-showingFiles state has no effect.
+    &.is-showingFiles {
+      .ms-FilePicker-sources {
+        display: block;
+      }
+      .ms-FilePicker-files {
+        display: block;
+      }
+    }
+
+    // Move the breadcrumbs and pivots over.
+    .ms-Breadcrumb {
+      margin-left: 40px;
+    }
+
+    // Make the sources and files full height.
+    .ms-FilePicker-sources, .ms-FilePicker-files {
+      bottom: 0;
+      top: 60px;
+      display: block;
+      position: absolute;
+    }
+
+    // Remove borders between items and add a right border.
+    .ms-FilePicker-sources {
+      .ms-List.ms-List--noBorders;
+      border-right: 1px solid @ms-color-neutralLight;
+      left: 0;
+      width: 230px;
+    }
+
+    // Sizing and spacing for files area.
+    .ms-FilePicker-files {
+      margin-left: 230px;
+    }
+
+    // Add some space above the file grid.
+    .ms-FilePicker-files .ms-FilePicker-items {
+      margin: 10px 20px 0 20px;
+    }
+
+    // Files can be presented in a table view on large screens.
+    .ms-FilePicker-items.ms-FilePicker-items--hasTable {
+      padding-left: 20px;
+    }
+
+  }
+}
+
+.ms-FilePicker-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+// FilePicker specific Panel styles TODO: Maybe move this to panel?
+
+.ms-Panel--filePicker.is-open {
+
+  .ms-Panel-main {
+    width: 100%;
+  }
+
+  @media (min-width: @ms-screen-xl-min) {
+    .ms-Panel-main {
+      width: 97%;
+    }
+  }
+
+  @media (min-width: @ms-screen-xxl-min) {
+    .ms-Panel-main {
+      width: 92%;
+    }
+  }
+
+}

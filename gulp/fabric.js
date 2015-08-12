@@ -42,6 +42,20 @@ var spaceDashes = colors.rainbow("----------------------------------------------
 var linkTitle = colors.green("Fabric") + colors.cyan(' Distrobution complete') + colors.green('');
 // var completURL = spaceDashes + spacing + spacing + linkTitle + spacing +  colors.magenta(url +':' + portNum) + spacing + spacing + spaceDashes;
 
+//
+// Build fabric banner
+// ----------------------------------------------------------------------------
+
+var date = new Date();
+var monthNames = ["January", "February", "March",
+                    "April", "May", "June", "July",
+                    "August", "September", "October",
+                    "November", "December"];
+var bannerTemplate = ['/**',
+      ' * <%= pkg.name %> <%= pkg.version %>',
+      ' * <%= pkg.description %>',
+      ' **/',
+      ''].join('\n');
 
 // Emit the end of the event so further pipes don't continue working
 // on pipes that have bad data/files in it. Essentially, errors shouldn't cause
@@ -63,7 +77,6 @@ var componentsFolders = getFolders(paths.componentsPath);
 var catalogContents = ""; // Starts off the file contents building
 var catalogFile = "";
 
-
 // Fabric Build Tools
 
 // Clean out the distribution folder.
@@ -75,37 +88,21 @@ gulp.task('clean:fabric', function() {
 // Tasks for building Fabric for distribution.
 // ----------------------------------------------------------------------------
 
-// Copy all uncompiled LESS files and fonts to distribution folder.
+// Copy all uncompiled LESS files to distribution folder.
 gulp.task('copy', ['clean:fabric'], function () {
     // Copy LESS files.
     var less = gulp.src('src/less/*')
         .pipe(gulp.dest(paths.distPath + '/less'));
 
-    // Copy font files.
-    var fonts = gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest(paths.distPath + '/fonts'));
-
     // Copy all Components files.
     var components = gulp.src('src/components/**')
         .pipe(gulp.dest(paths.distPath + '/components'));
 
-    return mergeStream(less, fonts, components);
+    return mergeStream(less, components);
 });
 
 // Build LESS files for core Fabric and Components into LTR and RTL CSS files.
 gulp.task('build-less', ['clean:fabric'], function() {
-    
-    // Assemble banner for distributed CSS.
-    var date = new Date();
-    var monthNames = ["January", "February", "March",
-                    "April", "May", "June", "July",
-                    "August", "September", "October",
-                    "November", "December"];
-    var bannerTemplate = ['/**',
-      ' * <%= pkg.name %> <%= pkg.version %>',
-      ' * <%= pkg.description %>',
-      ' **/',
-      ''].join('\n');
 
     // Confgure data objects to pass into banner plugin.
     var bannerData = {
@@ -348,3 +345,4 @@ gulp.task('watch:fabric', ['build-fabric'], function() {
         runSequence('build-fabric', done);
     }));
 });
+

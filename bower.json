@@ -1,0 +1,15 @@
+{
+  "name": "Fabric",
+  "author": "Office Fabric Team",
+  "version": "0.10.3",
+  "description": "A front-end framework for building experiences for Office 365.",
+  "license": "n/a",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+  }
+}

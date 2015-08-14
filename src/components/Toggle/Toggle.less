@@ -1,0 +1,173 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Toggle styles
+
+
+@import (reference) '../Label/Label.less';
+
+
+// Toggle
+.ms-Toggle {
+  .ms-font-m;
+  .ms-u-normalize;
+  position: relative;
+  margin-bottom: 10px;
+  display: block;
+
+  // Action label (on/off) on the right of the toggle
+  .ms-Label {
+    position: relative;
+    padding-left: 56px;
+    top: -8px;
+    font-size: @ms-font-size-s;
+  }
+
+  // States
+  &:hover {
+    .ms-Label { color: @ms-color-black; }
+  }
+  &:active {
+    .ms-Label { color: @ms-color-neutralPrimary; }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    .ms-Label {
+      .ms-Label.is-disabled !important;
+    }
+    .ms-Toggle-field {
+      background-color: @ms-color-white !important;
+      border-color: @ms-color-neutralTertiaryAlt !important;
+      pointer-events: none !important;
+      cursor: default !important;
+
+      &:before {
+        background-color: @ms-color-neutralTertiaryAlt !important;
+      }
+    }
+  }
+
+  // Description text above
+  &.ms-Toggle--textAbove {
+    .ms-Toggle-description {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
+  // Description text left
+  &.ms-Toggle--textLeft {
+    width: 225px;
+    margin-bottom: 30px;
+
+    .ms-Toggle-description {
+      display: inline-block;
+      max-width: 150px;
+      top: -3px;
+    }
+
+    .ms-Toggle-field {
+      float: right;
+    }
+  }
+
+  &.is-active {}
+}
+
+.ms-Toggle-input {
+  display: none; // Hide the original, unstyled element
+}
+
+// Description text
+.ms-Toggle-description {
+  position: relative;
+  font-size: @ms-font-size-s;
+  vertical-align: top;
+}
+
+
+
+// Toggle input field
+.ms-Toggle-field {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 3px @ms-color-neutralTertiaryAlt solid;
+  cursor: pointer;
+}
+
+// On/Off slide states
+.ms-Toggle-input {
+
+  // Unchecked
+  &:not(:checked) + .ms-Toggle-field {
+    background-color: @ms-color-neutralLighter;
+    position: relative;
+
+    // Slider
+    &:before {
+      position: absolute;
+      display: block;
+      box-sizing: content-box;
+      content: '';
+      top: -3px;
+      left: -3px;
+      width: 10px;
+      height: 20px;
+      border-right: 3px solid @ms-color-white;
+      background-color: @ms-color-neutralSecondaryAlt;
+      outline: 2px solid transparent;
+    }
+
+    // States
+    &:hover { background-color: @ms-color-neutralLight; }
+    &:active { background-color: @ms-color-themePrimary; }
+
+    // Show the off label / hide the on label
+    .ms-Label--off {
+      display: block;
+    }
+    .ms-Label--on {
+      display: none;
+    }
+  }
+
+  // Checked
+  &:checked {
+    & + .ms-Toggle-field {
+      background-color: @ms-color-themePrimary;
+      position: relative;
+
+      // Slider
+      &:before {
+        position: absolute;
+        display: block;
+        box-sizing: content-box;
+        content: '';
+        top: -3px;
+        right: -3px;
+        width: 10px;
+        height: 20px;
+        border-left: 3px solid @ms-color-white;
+        background-color: @ms-color-neutralSecondaryAlt;
+        outline: 2px solid transparent;
+      }
+
+      // States
+      &:hover { background-color: @ms-color-themeDark; }
+      &:active { background-color: @ms-color-themePrimary; }
+
+      // Show the on label / hide the off label
+      .ms-Label--off {
+        display: none;
+      }
+      .ms-Label--on {
+        display: block;
+      }
+    }
+  }
+
+}

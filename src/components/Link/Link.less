@@ -1,0 +1,28 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Link (anchor) styles
+
+
+.ms-Link {
+  .ms-font-m;
+  color: @ms-color-themePrimary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus { 
+    color: @ms-color-themeDarker; 
+  }
+
+  &:active { 
+    color: @ms-color-themePrimary; 
+  }
+}
+
+
+//== Modifier: Hero Links
+//
+.ms-Link.ms-Link--hero {
+  font-family: @ms-font-family-semilight;
+  padding: 2px 8px 4px;
+}

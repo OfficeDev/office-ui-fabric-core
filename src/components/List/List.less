@@ -1,0 +1,46 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// List and Grid styles
+
+
+// Default vertical list with separating borders.
+.ms-List {
+	.ms-font-m;
+	.ms-u-normalize;
+	list-style-type: none;
+
+	.ms-List-item {
+		.ms-u-borderBox;
+		border: 1px solid @ms-color-neutralLight;
+		border-width: 0 0 1px 0;
+		list-style-type: none;
+	}
+
+	// The borders are optional.
+	&.ms-List--noBorders {
+		.ms-List-item {
+			border: none;
+		}
+	}
+
+	// On medium and large screens, list items can be rendered as a grid.
+	&.ms-List--grid {
+
+		// Three columns on medium and large screens.
+		@media (min-width: @ms-screen-md-min) {
+
+			// Create a three-column grid.
+			.ms-List-item {
+				.ms-u-sm4;
+				float: left;
+				border-width: 0 1px 1px 0;
+			}
+
+			// Remove the border from the last column.
+			.ms-List-item:nth-child(3n) {
+				border-width: 0 0 1px 0;
+			}
+		}
+	}
+}

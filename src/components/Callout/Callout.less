@@ -1,0 +1,444 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Callout styles
+
+
+/** Callout */
+.ms-Callout {
+  z-index: @ms-zIndex-Callout;
+  margin: 10px auto;
+
+  /** Arrows */
+  &.ms-Callout--arrowRight,
+  &.ms-Callout--arrowLeft,
+  &.ms-Callout--arrowBottom,
+  &.ms-Callout--arrowTop {
+    &:before {
+      content: '';
+      background-color: @ms-color-white;
+      position: absolute;
+      transform: rotate(45deg);
+      z-index: @ms-zIndex-back;
+      outline: 1px solid transparent;
+      .drop-shadow;
+    }
+    &:after {
+      content: '';
+      background-color: @ms-color-white;
+      position: absolute;
+      transform: rotate(45deg);
+      z-index: @ms-zIndex-front;
+    }
+  }
+
+  // Arrow height and width
+  &.ms-Callout--arrowRight,
+  &.ms-Callout--arrowLeft,
+  &.ms-Callout--arrowBottom,
+  &.ms-Callout--arrowTop {
+    &:before,
+    &:after {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  /** Arrow positions */
+  // Arrows left and right
+  &.ms-Callout--arrowLeft,
+  &.ms-Callout--arrowRight {
+    &:before,
+    &:after {
+      top: calc(~'50% - 10px');
+    }
+  }
+  // Arrow left position
+  &.ms-Callout--arrowLeft {
+    &:before,
+    &:after {
+      left: -4px;
+    }
+  }
+  // Arrow right position
+  &.ms-Callout--arrowRight {
+    &:before,
+    &:after {
+      right: -4px;
+    }
+  }
+  // Arrows bottom and top
+  &.ms-Callout--arrowTop,
+  &.ms-Callout--arrowBottom {
+    &:before,
+    &:after {
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+    }
+  }
+  // Arrow bottom position
+  &.ms-Callout--arrowBottom {
+    &:before,
+    &:after {
+      bottom: -4px;
+    }
+  }
+  // Arrow top position
+  &.ms-Callout--arrowTop {
+    &:before,
+    &:after {
+      top: -4px;
+    }
+  }
+
+  /**
+  * OOBE arrows and positions
+  */
+  &.ms-Callout--OOBE {
+    &.ms-Callout--arrowRight,
+    &.ms-Callout--arrowLeft,
+    &.ms-Callout--arrowTop {
+      &:after {
+        background-color: @ms-color-themePrimary;
+      }
+    }
+    // Arrow left position
+    &.ms-Callout--arrowLeft {
+      &:before,
+      &:after {
+        top: 55px;
+        left: -4px;
+      }
+    }
+    // Arrow right position
+    &.ms-Callout--arrowRight {
+      &:before,
+      &:after {
+        top: 55px;
+        right: -4px;
+      }
+    }
+  }
+
+  /**
+  * Birthday arrow color
+  */
+  &.ms-Callout--birthday {
+    &.ms-Callout--arrowTop {
+      &:after {
+        background-color: @ms-color-officeAccent6;
+      }
+    }
+  }
+
+  /**
+  * ActionText arrow color
+  */
+  &.ms-Callout--actionText {
+    &.ms-Callout--arrowTop {
+      &:after {
+        background-color: @ms-color-officeAccent5;
+      }
+    }
+  }
+
+  /** Hide arrow right and left on mobile */
+  &.ms-Callout--arrowRight,
+  &.ms-Callout--arrowLeft {
+    &:before,
+    &:after {
+      height: 0;
+      width: 0;
+    }
+  }
+}
+
+// Main callout view
+.ms-Callout-main {
+  position: relative;
+  background-color: @ms-color-white;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: @ms-zIndex-middle;
+  .drop-shadow;
+}
+
+/** Close button */
+.ms-Callout-close {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+  font-size: @ms-font-size-m;
+  color: @ms-color-neutralSecondary;
+  z-index: (@ms-zIndex-Callout + @ms-zIndex-front);
+}
+
+/** Callout inner */
+// padding for content inside of callout
+.ms-Callout-inner {
+  height: 100%;
+  padding: 20px;
+}
+
+/** Header */
+.ms-Callout-header {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: (@ms-zIndex-Callout + @ms-zIndex-middle);
+  padding: 10px 20px 0;
+
+  // Title - set size and color
+  .ms-Callout-title {
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-l;
+    color: @ms-color-neutralPrimary;
+  }
+
+  // Large header w/ color -- OOBE
+  &.ms-Callout-header--l {
+    padding: 30px 20px;
+
+    // Title - set size and color
+    .ms-Callout-title {
+      font-family: @ms-font-family-light;
+      font-size: @ms-font-size-xxl;
+      color: @ms-color-white;
+    }
+  }
+
+  // Small header w/ color
+  &.ms-Callout-header--s {
+    padding: 10px 20px;
+
+    // Title - set size and color
+    .ms-Callout-title {
+      font-family: @ms-font-family-semilight;
+      font-size: @ms-font-size-l;
+      color: @ms-color-white;
+    }
+  }
+}
+
+// Title
+.ms-Callout-title {
+  margin: 0;
+}
+// Add 10px of margin left for birthday callout
+.ms-Callout--birthday {
+  .ms-Callout-title {
+    margin-left: 10px;
+  }
+}
+
+/** Content box */
+// all callout content goes in this box
+.ms-Callout-content {
+  position: relative;
+  width: 100%;
+}
+
+// Group of text - used on birthday callout
+.ms-callout-textGroup {
+  display: inline-block;
+}
+
+// Subtext - text inside of content box
+.ms-Callout-subText {
+  margin: 0;
+  font-family: @ms-font-family-semilight;
+  color: @ms-color-neutralPrimary;
+
+  &.ms-Callout-subText--s {
+    font-size: @ms-font-size-s;
+  }
+
+  &.ms-Callout-subText--m {
+    font-size: @ms-font-size-m;
+  }
+}
+
+
+
+// SubTitle - a title within the content box - used in birthday text group
+.ms-Callout-subTitle {
+  margin: 0;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-l;
+  color: @ms-color-neutralPrimary;
+}
+
+// Subtext tag - used for bottom text for spacing in a text group
+.ms-Callout-subText--tag {
+  position: relative;
+  top: 3px;
+}
+
+/** Bottom actions */
+// Callout actions - wrapper for buttons
+.ms-Callout-actions {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+// Actions border top
+.ms-Callout-actions--border {
+  border-top: 1px solid @ms-color-neutralLight;
+}
+
+// Action buttons
+.ms-Callout-action {
+  position: relative;
+  bottom: -10px;
+  left: -10px;
+  padding: 10px;
+  margin-left: 0 !important;
+
+  // States for icons
+  &:hover .ms-Callout-actionIcon,
+  &:focus .ms-Callout-actionIcon {
+    color: @ms-color-themePrimary;
+  }
+}
+
+// Action text
+.ms-Callout-actionText {
+  font-size: 14px !important;
+  .ms-font-weight-regular !important;
+}
+
+// Callout buttons - spacing between buttons
+.ms-Callout-button {
+  margin-right: 15px;
+}
+
+/** Birthday callout */
+// img
+.ms-Callout-birthdayImg {
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: @ms-color-neutralLight;
+  margin: 0 10px;
+  text-align: center;
+  line-height: 50px;
+
+  &:before {
+    content: '\e16d';
+    font-family: 'Office365Icons';
+    font-size: 32px;
+    color: @ms-color-white;
+  }
+}
+
+
+/**
+ * Tablet and Desktop displays.
+ *
+ * On medium and large screens, callouts are relative positioned
+ * with a fixed width. Left and right arrows are visible.
+ */
+@media (min-width: @ms-screen-md-min) {
+  /** Move to relative positioning if not on phone - set width. */
+  .ms-Callout {
+    position: relative;
+    width: 290px;
+    margin: 10px;
+
+    /** Width for OOBE */
+    &.ms-Callout--OOBE {
+      width: 220px;
+    }
+
+    /** Show arrows right and left */
+    &.ms-Callout--arrowRight,
+    &.ms-Callout--arrowLeft {
+      &:before,
+      &:after {
+        height: 16px !important;
+        width: 16px !important;
+      }
+    }
+  }
+}
+
+
+  // All high contrast styling rules
+  @media screen and (-ms-high-contrast: active) {
+    .ms-Callout {
+      // Arrows bottom and top
+      &.ms-Callout--arrowTop,
+      &.ms-Callout--arrowBottom {
+        &:after {
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+      // Arrow bottom position
+      &.ms-Callout--arrowBottom {
+        &:before { bottom: -9px; }
+        &:after { bottom: -8px; }
+      }
+      // Arrow top position
+      &.ms-Callout--arrowTop {
+        &:before { top: -9px; }
+        &:after { top: -8px; }
+      }
+      // Arrows left and right - hide on mobile
+      &.ms-Callout--arrowLeft,
+      &.ms-Callout--arrowRight {
+        &:before, &:after {
+          display: none;
+        }
+      }
+    }
+    // OOBE variant
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::before,
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::after,
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::before,
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::after {
+      top: calc(~'50% - 12px');
+    }
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::before { left: -9px; }
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::before { right: -9px; }
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::after { left: -6px; }
+    .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::after { right: -6px; }
+  }
+
+  @media screen and (min-width: @screen-md-min) and (-ms-high-contrast: active) {
+    .ms-Callout {
+      // Arrows left and right
+      &.ms-Callout--arrowLeft,
+      &.ms-Callout--arrowRight {
+        &:before, &:after {
+          display: block;
+        }
+        &:after {
+          width: 20px !important;
+          height: 20px !important;
+          top: calc(~'50% - 12px');
+        }
+      }
+      // Arrow left position
+      &.ms-Callout--arrowLeft {
+        &:before { left: -9px; }
+        &:after { left: -8px; }
+      }
+      // Arrow right position
+      &.ms-Callout--arrowRight {
+        &:before { right: -9px; }
+        &:after { right: -8px; }
+      }
+    }
+  }

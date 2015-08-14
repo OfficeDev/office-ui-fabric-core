@@ -1,0 +1,19 @@
+{
+  "name": "SearchBox",
+  "notes": "",
+  "template": "SearchBox.html",
+  "class": "ms-SearchBox",
+  "dependencies": [
+    "Label"
+  ],
+  "branches": [
+      {
+        "name": "Enabled",
+        "default": true
+      },
+      {
+        "name": "Disabled",
+        "class": "is-disabled"
+      }
+  ]
+}

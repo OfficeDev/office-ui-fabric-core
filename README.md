@@ -1,8 +1,8 @@
 ![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
 
-#####The front-end framework for building experiences for Office 365.
+#####The front-end framework for building experiences for Office and Office 365.
 
-Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office Add-in from scratch or adding new features to an existing one.
+Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office experience from scratch or adding new features to an existing one.
 
 ##Contents
 

@@ -1,50 +1,53 @@
 ![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
 
-##Getting started
+#Getting started
 
-###Contents
+##Contents
 
-- [Building Fabric](#building-fabric)
-- [Add to your project](#add-to-your-project)
-- [Starter template](#starter-template)
+- [Build Fabric](#building-fabric)
+- [Add Fabric to your project](#add-to-your-project)
+- [Fabric starter template](#starter-template)
 - [Supported browsers](#supported-browsers)
 
-#####Building Fabric
+##Build Fabric
 
-After you've cloned Fabric, you can take the following steps to build Fabric:
+Use one of the following procedures to build Fabric.
 
-On a Windows Machine:
+On a Windows computer:
 
-1. Install Node.js via http://nodejs.org
-2. Install git via https://git-scm.com/
-3. Clone the repo
-4. Navigate to the folder containing Fabric's gulpfile.js (Fabric's root)
-5. npm install -g gulp
-6. npm install -g typescript
-7. npm install
+1. Install Node.js via [http://nodejs.org](http://nodejs.org).
+2. Install git via [https://git-scm.com/](https://git-scm.com/).
+3. Clone the Fabric repo.
+4. Go to the folder that contains the gulpfile.js file (the Fabric root file).
+5. Run the following:
+	- npm install -g gulp
+	- npm install -g typescript
+	- npm install
 
 On a Mac:
 
-1. Install Node.js via http://nodejs.org
-2. Install git via https://git-scm.com/
-3. Clone the repo
-4. Navigate to the folder containing Fabric's gulpfile.js (Fabric's root)
-5. sudo npm install -g gulp
-6. sudo npm install -g typescript
-7. npm install
+1. Install Node.js via [http://nodejs.org](http://nodejs.org).
+2. Install git via [https://git-scm.com/](https://git-scm.com/).
+3. Clone the repo.
+4. Go to the folder containing the gulpfile.js file (the Fabric root file).
+5. Run the following:
+	- sudo npm install -g gulp
+	- sudo npm install -g typescript
+	- npm install
 
-#####Add to your project
+##Add Fabric to your project
 
-You don't have to rethink your front-end architecture to start using Fabric in your existing app, but some simple setup is required. Follow these steps to get started:
+You don't have to rethink your front-end architecture to start using Fabric in your existing app or add-in, but some simple setup is required. Follow these steps to get started:
 
-1. If using a downloaded copy: After downloading and unpacking, move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a "lib" type of folder.
+1. If you downloaded Fabric, unpack it and move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a lib folder.
 2. Add a reference to fabric.css in the `<head>` tag of your HTML file before any application-specific CSS. This ensures that you can specify overrides and additional styles with application-specific stylesheets.
-3. If you‘re using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
-4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally reccommend against doing this, since the code is not extensively tested and is used only for demonstration on the Component Picker. If you'd still like to include it, add a `<script>` tag with a reference to fabric.components-.min.js at the end of your page‘s `<body>` tag.
+3. If you're using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
 
-#####Starter template
+Optionally, you might choose to include the JavaScript code for Fabric components. We do not recommend that you do this because the code is not production-ready; it is demonstration-only for the Component Picker has not been extensively tested. If you do want to include it, add a `<script>` tag with a reference to fabric.components-.min.js at the end of the `<body>` tag on your page.
 
-The starter template below represents the minimal recommended HTML structure for an app using Fabric. Copy the code into your project to start working with a basic Fabric document.
+##Fabric starter template
+
+The following starter template represents the minimum recommended HTML structure for an app or add-in that uses Fabric. Copy the code into your project to start working with a basic Fabric document.
 
 ```html
 <!doctype html>
@@ -67,11 +70,11 @@ The starter template below represents the minimal recommended HTML structure for
 </html>
 ```
 
-#####Supported browsers
+##Supported browsers
 
-Fabric meets the Office 365 browser support requirements for desktop and mobile devices. This includes support for the latest versions of Chrome, Firefox, Safari, and IE 9 and greater.
+Fabric meets the Office 365 browser support requirements for desktop and mobile devices. This includes support for the latest versions of Chrome, Firefox, Safari, and Internet Explorer.
 
-|          | **Chrome (latest stable)** | **Firefox (last 2 versions)** | **Safari (latest)** | **IE8** | **IE9** | **IE10+** |
+|          | **Chrome (latest stable)** | **Firefox (last two versions)** | **Safari (latest)** | **Internet Explorer 8** | **Internet Explorer 9** | **Internet Explorer 10** |
 |:--------:|:------------------------:|:---------------------------:|:-----------------:|:-----:|:-----:|:-------:|
 |  Windows | ![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![x](http://odux.azurewebsites.net/github/img/x.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|
 | Mac OS   | ![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)| -     | -     | -       |

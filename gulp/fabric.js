@@ -28,12 +28,18 @@ var colors = require('colors/safe');
 var path = require('path');
 
 // Define paths.
+var distPath = 'dist';
+var srcPath = 'src';
 var paths = {
-    distPath: 'dist',
+    distPath: distPath,
+    distComponents: distPath + '/components',
+    distLess: distPath + '/less',
+    distCSS: distPath + '/css',
+    srcPath: srcPath,
     componentsPath : 'src/components',
-    lessPath: 'src/less',
-    distCompsPath : 'dist/components',
-    templatePath : 'src/templates'
+    lessPath: srcPath + '/less',
+    distCompsPath : distPath + '/components',
+    templatePath : srcPath + '/templates'
 };
 
 var storedFiles = {};
@@ -102,22 +108,27 @@ var componentsFolders = getFolders(paths.componentsPath);
 var catalogContents = "";
 
 // Clean out the distribution folder.
-gulp.task('clean', function() {
-    return del.sync([paths.distPath]);
+gulp.task('clean-fabric', function() {
+    return del.sync([paths.distLess, paths.distCSS]);
 });
+
+gulp.task('clean-components', function() {
+    return del.sync([paths.distComponents]);
+});
+
 
 //
 // Tasks for building Fabric for distribution.
 // ----------------------------------------------------------------------------
 
 // Copy all uncompiled LESS files to distribution folder.
-gulp.task('copy-fabric', ['clean'], function () {
+gulp.task('copy-fabric', ['clean-fabric'], function () {
     // Copy LESS files.
     return gulp.src('src/less/*')
         .pipe(gulp.dest(paths.distPath + '/less'));
 });
 
-gulp.task('copy-components', ['clean'], function() {
+gulp.task('copy-components', ['clean-components'], function() {
     // Copy all Components files.
     return gulp.src('src/components/**')
         .pipe(gulp.dest(paths.distPath + '/components'));
@@ -128,7 +139,7 @@ gulp.task('copy', ['copy-fabric', 'copy-components']);
 
 
 // Build LESS files for core Fabric and Components into LTR and RTL CSS files.
-gulp.task('fabric-less', ['clean'], function() {
+gulp.task('fabric-less', ['clean-fabric'], function() {
 
     // Confgure data objects to pass into banner plugin.
     var bannerData = {
@@ -202,7 +213,7 @@ gulp.task('fabric-less', ['clean'], function() {
 });
 
 // Components construction
-gulp.task('components-less', ['clean'], function() {
+gulp.task('components-less', ['clean-components'], function() {
 
     var _componentsBase = function() {
         return gulp.src('src/less/fabric.components.less')
@@ -327,15 +338,15 @@ gulp.task('build-component-examples', ['build-component-data'], folders(paths.co
 
 
 // Roll up static resource building
-gulp.task('build-fabric', ['clean', 'copy-fabric', 'fabric-less']);
+gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'fabric-less']);
 
 // Build for fabric component demos
-gulp.task('build-components', ['clean', 'copy-components', 'components-less', 'build-component-data', 'build-component-examples']);
+gulp.task('build-components', ['clean-components', 'copy-components', 'components-less', 'build-component-data', 'build-component-examples']);
 
 
 // Fabric success messages
 gulp.task('fabric-finished', ['build-fabric'], function() {
-    console.log(generateSuccess(' Build complete, you may now celebrate and dance!', true));
+    console.log(generateSuccess('Fabric core-build complete, you may now celebrate and dance!', true));
 });
 
 gulp.task('fabric-updated', ['build-fabric'], function() {
@@ -348,6 +359,14 @@ gulp.task('components-finished', ['build-components'], function() {
 
 gulp.task('components-updated', ['build-components'], function() {
     console.log(generateSuccess(' Components updated succesfully! Yay!'));
+});
+
+gulp.task('fabric-all-finished', ['build-fabric'], function() {
+    console.log(generateSuccess('All Fabric parts built succesfully, you may now celebrate and dance!', true));
+});
+
+gulp.task('fabric-all-updated', ['build-fabric'], function() {
+    console.log(generateSuccess('All Fabric parts updated succesfully! Yay!', true));
 });
 
 
@@ -365,18 +384,25 @@ gulp.task('watch:fabric', ['build-fabric', 'fabric-finished'], function() {
     }));
 });
 
-// Watch and build Fabric when sources change.
-gulp.task('watch', ['build-fabric', 'build-components', 'fabric-finished'], function() {
+// Watch components and fabric at the same time but build seperately.
+gulp.task('watch:separately', ['build-fabric', 'build-components', 'fabric-finished'], function() {
 
-    var fabric = gulp.watch(paths.lessPath + '/**/*', batch(function(events, done) {
+    gulp.watch(paths.lessPath + '/**/*', batch(function(events, done) {
         runSequence('build-fabric', 'fabric-updated', done);
+    }));
 
-    var components = gulp.watch(paths.componentsPath + '/**/*', batch(function(events, done) {
+    gulp.watch(paths.componentsPath + '/**/*', batch(function(events, done) {
         runSequence('build-components', 'components-updated', done);
     }));
 
-    return mergeStream(fabric, components);
-}));
+});
+
+// Watch and build Fabric when sources change.
+gulp.task('watch', ['build-fabric', 'build-components', 'fabric-all-finished'], function() {
+
+    gulp.watch(paths.srcPath + '/**/*', batch(function(events, done) {
+        runSequence('build-fabric', 'build-components', 'fabric-all-updated', done);
+    }));
 
 });
 

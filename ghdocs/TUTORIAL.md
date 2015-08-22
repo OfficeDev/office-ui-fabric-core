@@ -1,6 +1,15 @@
 # Fabric Tutorial Part 1
 
-#### TODO: ADD TOC
+###Contents
+
+- [Overview](#overview)
+- [Components Overview](#components-overview)
+- [Step 1 – Setting up your project](#setting-up-your-project)
+- [Step 2 – Adding Fabric to a project](#adding-to-a-project)
+- [Step 3 – Prepping your app](#prepping-your-app)
+- [Step 4 – Using Fabric components](#using-fabric-components)
+- [Step 5 – Using Fabric typography](#using-fabric-typography)
+- [Step 6 – Adding more complex components](#adding-complex-components)
 
 ## Overview
 

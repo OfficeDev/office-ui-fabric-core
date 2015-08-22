@@ -47,7 +47,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 The starter template below represents the minimal recommended HTML structure for an app using Fabric. Copy the code into your project to start working with a basic Fabric document.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">

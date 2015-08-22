@@ -19,9 +19,9 @@ Fabric is an HTML and CSS framework that works like a skin to help your experien
 
 Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric’s components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.
 
-## Getting Started
+Now, let's get started building our application!
 
-### Step 1 – Setting up your project
+## Step 1 – Setting up your project
 
 Let's set up our project folder to look like the following:
 
@@ -43,7 +43,7 @@ Now open up your favorite text editor or IDE and create a new file called index.
 </html>
 ```
 
-### Step 2 - Adding Fabric to a project
+## Step 2 – Adding Fabric to a project
 
 Download Fabric, unzip it, and copy **fabric.css** and **fabric.components.css** into your **css/** folder. Then add the following lines to the `<head>` section of your index.html document:
 
@@ -94,13 +94,13 @@ And index.html should look like this:
 </html>
 ```
 
-### Step 3 – Prepping your app
+## Step 3 – Prepping your app
 
 Let’s start adding Fabric Components to our ToDo app! Below is a wireframe of what we want our application to look like, where each box has the name of the corresponding Fabric component inside it:
 
 <!-- Image for application state 1 -->
 
-At the top we have a TextField and Button component that we will eventually use to add new tasks. Underneath, we have our List component that contains ListItems that will hold each of the pending tasks.
+At the top we have a TextField and Button component that we will eventually use to add new tasks. Underneath, we have our List component that contains ListItems, which will hold each of the user's pending tasks.
 
 Let's start by creating containers that will hold the Fabric components for our two main sections. Add the following elements to `<body>`:
 
@@ -109,11 +109,11 @@ Let's start by creating containers that will hold the Fabric components for our 
 <div class="TodoList"></div>
 ```
 
-Now let’s add styles for these elements. Open up app.css and add two CSS rules: one for our TodoBar container and one for our TodoList container:
+Now let’s add styles for these elements. Open up app.css and add two CSS rules: one for our TodoBar container and one for our TodoList container.
 
 ```css
 .TodoBar {
-  position: fixed; /* We want this at the top always */
+  position: fixed; /* This bar should always be fixed to the top */
   top: 0;
   left: 0;
   right: 0;
@@ -132,13 +132,13 @@ Now let’s add styles for these elements. Open up app.css and add two CSS rules
 }
 ```
 
-Save and open up index.html in your browser. You should see something like this:
+Save and then open up index.html in your browser. You should see something like this:
 
 #### TODO: Add screenshot
 
 If you don’t see this, double-check your CSS paths and make sure you followed the first part of this tutorial correctly.
 
-Next, we have some strange spacing around our `<div class="TodoList"></div>`. This spacing is because of margins that browsers add to `<body>` and `<html>` elements. Let's remove the margin on these elements by adding the following styling to the top of app.css:
+Next, you'll notice extra spacing around `<div class="TodoList"></div>`. This is because of margins that browsers add to `<body>` and `<html>` elements by default. Let's remove the margin on these elements by adding the following to the top of app.css:
 
 ```css
 html, 
@@ -147,11 +147,11 @@ body {
 }
 ```
 
-Go ahead and refresh—the extra white space along the top and sides should go away, and .TodoList should now expand 100% across the screen.
+Go ahead and refresh—the extra white space along the top and sides should go away, and `.TodoList` should now expand 100% across the screen.
 
-### Step 4 – Using Fabric components
+## Step 4 – Using Fabric components
 
-Fabric has a built in responsive grid system that we are going to use for our TodoBar section. Let’s add the following HTML inside our  `<div class="TodoBar"></div>`:
+Fabric includes a responsive grid system, similar to those seen in other UI toolkits, that we will use for our TodoBar section. Let’s add the following HTML inside  `<div class="TodoBar"></div>`:
 
 ```html
 <div class="ms-Grid">
@@ -162,7 +162,7 @@ Fabric has a built in responsive grid system that we are going to use for our To
 </div>
 ```
 
-Now for the fun part: let’s add some component HTML into our ToDo app! Navigate to where you extracted your .zip of Fabric, go into the `dist/components/` folder, then open the following component files in your code editor:
+Now for the fun part: let’s add some component HTML into our ToDo app! Navigate to where you extracted your .zip of Fabric, then open the following component files in your code editor:
 
 ```
 dist/components/Button/Button.html
@@ -193,7 +193,7 @@ Copy all the contents from Button.html and paste it into our second column. Let'
 </div>
 ```
 
-### Step 5 – Using Fabric typography
+## Step 5 – Using Fabric typography
 
 Let's create a title for our application using Fabric font classes. First, add the following HTML right after `<div class="TodoBar"></div>`:
 
@@ -221,9 +221,9 @@ After that we should have plain-looking title inside a white strip. Let's change
 <div class="ListHeader ms-font-xxl ms-fontWeight-light">Todo List</div>
 ```
 
-NOTE: `ms-font-xxl` is a "base" typography class, each of which sets a size, color, font-family, and weight. `ms-fontWeight-light` is one of several helper classes that override a single property and should usually be combined with a base typography class.
+NOTE: `.ms-font-xxl` is a "base" typography class, each of which sets a size, color, font-family, and weight. `.ms-fontWeight-light` is one of several helper classes that override a single property and should usually be combined with a base typography class.
 
-### Step 6 – Adding more complex components
+## Step 6 – Adding more complex components
 
 Now, let’s get our list up and running using some hard-coded content. In Part 2, we will use JavaScript to add real data and interactions.
 
@@ -305,7 +305,7 @@ To accomplish this, let's add the following new styles to app.css:
   right: 0;
   height: 60px;
   z-index: 2;
-  background-color: #0078D7;
+  background-color: #0078D7; /* Use a better background-color */
 }
 
 .ms-TextField .ms-TextField-field {
@@ -343,4 +343,4 @@ Your app should look exactly like this:
 
 <!-- Add image of finished app -->
 
-Check out our next part in the series where we integrate functionality, animations, and more awesomeness!
+Check out the next part in the series, where we will integrate functionality, animations, and more awesomeness!

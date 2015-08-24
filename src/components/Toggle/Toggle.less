@@ -76,7 +76,7 @@
 }
 
 // Slider mixin
-.ms-Toggle-slider(@direction; @border-direction; @hoverColor) {
+.ms-Toggle-slider(@direction; @hoverColor) {
   // Slider pseudo element
   &:before {
     position: absolute;
@@ -87,9 +87,20 @@
     @{direction}: -2.5px;
     width: 12px;
     height: 20px;
-    border-@{border-direction}: 2.5px solid @ms-color-white;
     background-color: @ms-color-neutralSecondaryAlt;
     outline: 2px solid transparent;
+  }
+
+  & when (@direction = left) {
+    &:before {
+      border-right: 2.5px solid @ms-color-white;
+    }
+  }
+
+  & when (@direction = right) {
+    &:before {
+      border-left: 2.5px solid @ms-color-white;
+    }
   }
 
   &:hover { 
@@ -105,11 +116,11 @@
 .ms-Toggle-input {
   position: relative;
 
-  // 'Off' state
+  // 'Off' state - slider on the left
   &:not(:checked) + .ms-Toggle-field {
     background-color: @ms-color-neutralLighter;
 
-    .ms-Toggle-slider(left, right, @ms-color-neutralLight);
+    .ms-Toggle-slider(left, @ms-color-neutralLight);
 
     // Show the off label / hide the on label
     .ms-Label--off {
@@ -121,12 +132,12 @@
     }
   }
 
-  // 'On' state
+  // 'On' state - slider on the right
   &:checked {
     & + .ms-Toggle-field {
       background-color: @ms-color-themePrimary;
 
-      .ms-Toggle-slider(right, left, @ms-color-themeDark);
+      .ms-Toggle-slider(right, @ms-color-themeDark);
 
       // Show the on label / hide the off label
       .ms-Label--off {

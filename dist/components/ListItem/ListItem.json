@@ -1,0 +1,33 @@
+{
+  "name": "ListItem",
+  "notes": "",
+  "template": "ListItem.html",
+  "class": "ms-ListItem",
+  "branches": [
+    {
+      "name": "Standard",
+      "default": true
+    },
+    {
+      "name": "With image",
+      "template": "ListItem.Image.html"
+    },
+    {
+      "name": "Unread",
+      "class": "is-unread"
+    },
+    {
+      "name": "Unseen",
+      "class": "is-unseen"
+    },
+    {
+      "name": "Selectable",
+      "class": "is-selectable"
+    },
+    {
+      "name": "Document",
+      "template": "ListItem.Document.html",
+      "class": "ms-ListItem--document"
+    }
+  ]
+}

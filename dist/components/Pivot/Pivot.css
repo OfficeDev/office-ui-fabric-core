@@ -1,0 +1,130 @@
+/**
+ * Fabric 0.10.3
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-Pivot {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  height: 30px;
+  list-style-type: none;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.ms-Pivot-link {
+  color: #333333;
+  display: inline-block;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 27px;
+  margin-right: 15px;
+}
+
+.ms-Pivot-link:hover,
+.ms-Pivot-link:focus {
+  color: #000000;
+  cursor: pointer;
+}
+
+.ms-Pivot-link:active {
+  color: #0078d7;
+}
+
+.ms-Pivot-link.is-selected {
+  color: #0078d7;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-Pivot--large .ms-Pivot-link {
+  font-size: 17px;
+}
+
+.ms-Pivot--large .ms-Pivot-link.is-selected {
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-Pivot-link.ms-Pivot-link--overflow {
+  color: #666666;
+}
+
+.ms-Pivot-link.ms-Pivot-link--overflow.is-selected {
+  color: #0078d7;
+}
+
+.ms-Pivot-link.ms-Pivot-link--overflow:hover:not(.is-selected),
+.ms-Pivot-link.ms-Pivot-link--overflow:focus:not(.is-selected) {
+  color: #212121;
+}
+
+.ms-Pivot-link.ms-Pivot-link--overflow:active {
+  color: #0078d7 !important;
+}
+
+.ms-Pivot-ellipsis {
+  font-size: 15px;
+  position: relative;
+  top: 0;
+}
+
+.ms-Pivot--large .ms-Pivot-link.ms-Pivot-link--overflow:after {
+  font-size: 17px;
+}
+
+.ms-Pivot.ms-Pivot--tabs {
+  height: 40px;
+}
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link {
+  height: 40px;
+  background-color: #f4f4f4;
+  line-height: 40px;
+  margin-right: -2px;
+  padding: 0 10px;
+}
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
+  color: #000000;
+}
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link:active {
+  color: #ffffff !important;
+  background-color: #0078d7;
+}
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected {
+  background-color: #0078d7;
+  color: #ffffff;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow:hover:not(.is-selected),
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow:focus:not(.is-selected) {
+  background-color: #ffffff;
+}
+
+.ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.ms-Pivot-link--overflow:active {
+  background-color: #0078d7 !important;
+}
+
+@media (min-width: 640px) {
+  .ms-Pivot-link {
+    font-size: 14px;
+  }
+
+  .ms-Pivot-link.ms-Pivot-link--overflow:after {
+    font-size: 14px;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-Pivot.ms-Pivot--tabs .ms-Pivot-link.is-selected {
+    font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  }
+}

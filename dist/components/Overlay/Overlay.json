@@ -1,0 +1,21 @@
+{
+  "name": "Overlay",
+  "notes": "",
+  "template": "Overlay.html",
+  "class": "ms-Overlay",
+  "branches": [
+    {
+      "name": "Light (default)",
+      "default": true
+    },
+    {
+      "name": "Dark",
+      "class": "ms-Overlay--dark"
+    },
+    {
+      "name": "None",
+      "notes": "A hidden overlay, used primarly as part of other components like the dialog.",
+      "class": "ms-Overlay--none"
+    }
+  ]
+}

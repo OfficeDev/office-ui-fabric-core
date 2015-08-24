@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Pivot</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="Pivot.css">
+  <link rel="stylesheet" href="../../css/fabric.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="Jquery.Pivot.js"></script>
+  <script type="text/javascript" src="Pivot.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      //File Picker demo fixes
+      if($('.ms-FilePicker').length > 0) {
+
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+
+      } else {
+
+        if ($.fn.Pivot) {
+          $('.ms-Pivot').Pivot();
+        }
+
+      }
+
+      if(fabric && fabric['Pivot']) {
+
+        var component, componentHolder;
+        componentHolder = document.querySelector('.component-holder');
+
+        if(componentHolder) {
+          component = new fabric.Spinner(componentHolder);
+        }
+
+      }
+
+    });
+
+    console.log($.fn.Pivot);
+
+  </script>
+  <!-- Component Demo Styles -->
+
+  <style type="text/css">
+
+  	h1 {
+  		width: 100%;
+  		margin-bottom: 10px;
+  		padding: 5px;
+  		height: auto;
+  		background-color: #0072BB;
+  		color: #ffffff;
+  		font-family: 'Segoe UI', Arial, Tahoma;
+  		font-weight: 100;
+  	}
+
+    /* Demo contextual menu CSS */
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    #componentWrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+        position: absolute;
+    }
+
+  </style>
+
+</head>
+
+<body>
+	<h1>Pivot</h1>
+	<div id="componentWrapper">
+    <ul class="ms-Pivot">
+  <li class="ms-Pivot-link is-selected">My files</li>
+  <li class="ms-Pivot-link">Recent</li>
+  <li class="ms-Pivot-link">Shared with me</li>
+  <li class="ms-Pivot-link ms-Pivot-link--overflow">
+    <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--ellipsis"></i>
+  </li>
+</ul>
+
+  </div>
+</body>
+</html>

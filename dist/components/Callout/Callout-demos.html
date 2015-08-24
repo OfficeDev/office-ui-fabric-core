@@ -1,0 +1,216 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Callout</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="Callout.css">
+  <link rel="stylesheet" href="../../css/fabric.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="Jquery.Callout.js"></script>
+  <script type="text/javascript" src="Callout.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      //File Picker demo fixes
+      if($('.ms-FilePicker').length > 0) {
+
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+
+      } else {
+
+        if ($.fn.Callout) {
+          $('.ms-Callout').Callout();
+        }
+
+      }
+
+      if(fabric && fabric['Callout']) {
+
+        var component, componentHolder;
+        componentHolder = document.querySelector('.component-holder');
+
+        if(componentHolder) {
+          component = new fabric.Spinner(componentHolder);
+        }
+
+      }
+
+    });
+
+    console.log($.fn.Callout);
+
+  </script>
+  <!-- Component Demo Styles -->
+
+  <style type="text/css">
+
+  	h1 {
+  		width: 100%;
+  		margin-bottom: 10px;
+  		padding: 5px;
+  		height: auto;
+  		background-color: #0072BB;
+  		color: #ffffff;
+  		font-family: 'Segoe UI', Arial, Tahoma;
+  		font-weight: 100;
+  	}
+
+    /* Demo contextual menu CSS */
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    #componentWrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+        position: absolute;
+    }
+
+  </style>
+
+</head>
+
+<body>
+	<h1>Callout</h1>
+	<div id="componentWrapper">
+    <div class="ms-Callout">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header ms-Callout-header--sm ms-bg-color-officeAccent4">
+      <p class="ms-Callout-title ms-Callout-title--sm ms-font-l ms-font-color-white">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-font-s ms-font-color-neutralPrimary">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-bottom">
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Button-icon"><i class="ms-Callout-actionIcon ms-Icon ms-Icon--check ms-font-color-neutralSecondary ms-font-m"></i></span>
+        </button>
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Button-icon"><i class="ms-Callout-actionIcon ms-Icon ms-Icon--x ms-font-color-neutralSecondary ms-font-m"></i></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ms-Callout">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header ms-Callout-header--s ms-bg-color-officeAccent5">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-Callout-subText--s">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-actions ms-Callout-actions--border">
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Callout-actionText ms-Button-icon"><i class="ms-Icon ms-Icon--check"></i></span>
+          <span class="ms-Callout-actionText ms-Button-label">Save</span>
+        </button>
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Callout-actionText ms-Button-icon"><i class="ms-Icon ms-Icon--x"></i></span>
+          <span class="ms-Callout-actionText ms-Button-label">Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ms-Callout">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header ms-Callout-header--s ms-bg-color-officeAccent6">
+      <p class="ms-Callout-title">Birthday</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <div class="ms-Callout-birthdayImg">
+          <!-- img goes here -->
+        </div>
+        <div class="ms-callout-textGroup">
+          <p class="ms-Callout-subTitle">Alton Lafferty</p>
+          <p class="ms-Callout-subText ms-Callout-subText--s ms-Callout-subText--tag">September 4, 1985</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ms-Callout">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <button class="ms-Callout-close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-Callout-subText--s">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <a href="#" class="ms-Callout-link ms-Link">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ms-Callout">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-Callout-subText--s">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <a href="#" class="ms-Callout-link ms-Link">Learn more</a>
+      </div>
+    </div>    
+  </div>
+</div>
+
+<div class="ms-Callout">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header ms-Callout-header--l ms-bg-color-themePrimary">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-Callout-subText--m">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-button ms-Button ms-Button--primary">
+          <span class="ms-Button-label">More</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+        <button class="ms-Callout-button ms-Button">
+          <span class="ms-Button-label">Got it</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>

@@ -217,3 +217,51 @@
         @ms-rules();
     }
 }
+
+// Animations
+.animationName(@ms-name) {
+    -webkit-animation-name: @ms-name;
+    -moz-animation-name: @ms-name;
+    -ms-animation-name: @ms-name;
+    -o-animation-name: @ms-name;
+    animation-name: @ms-name;
+}
+
+.animationDuration(@ms-duration) {
+    -webkit-animation-duration: @ms-duration;
+    -moz-animation-duration: @ms-duration;
+    -ms-animation-duration: @ms-duration;
+    -o-animation-duration: @ms-duration;
+}
+
+.animationTiming(@ms-function) {
+    -webkit-animation-timing-function: @ms-function;
+    -moz-animation-timing-function: @ms-function;
+    -ms-animation-timing-function: @ms-function;
+    -o-animation-timing-function: @ms-function;
+    animation-timing-function: @ms-function;
+}
+
+.animationFillMode(@ms-mode) {
+    -webkit-animation-fill-mode: @ms-mode;
+    -moz-animation-fill-mode: @ms-mode;
+    -ms-animation-fill-mode: @ms-mode;
+    -o-animation-fill-mode: @ms-mode;
+    animation-fill-mode: @ms-mode;
+}
+
+// Flexbox
+.flexBox() {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.alignItems(@ms-mode) {
+    -webkit-box-align: @ms-mode;
+    -moz-box-align: @ms-mode;
+    -ms-flex-align: @ms-mode;
+    -webkit-align-items: @ms-mode;
+    align-items: @ms-mode;
+}
+

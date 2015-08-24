@@ -78,7 +78,7 @@ var generateSuccess = function (message, showTip) {
     var spacing = "\r\n";
     var spaceDashes = colors.rainbow("---------------------------------------------------");
     if(showTip == true) {
-        var tipsMessage = colors.gray("TIP: In order to test changes to fabric source, you can view demos for each component inside our /samples directory.") + spacing;
+        var tipsMessage = colors.gray("TIP: To test changes to Fabric source, check under /samples for demo HTML files of each Component.") + spacing;
     } else {
         var tipsMessage = "";
     }
@@ -128,7 +128,7 @@ gulp.task('copy-components', ['clean-components'], function () {
 // All Copy tasks
 gulp.task('copy', ['copy-fabric', 'copy-components']);
 
-// Build LESS files for core Fabric and Components into LTR and RTL CSS files.
+// Build LESS files for core Fabric into LTR and RTL CSS files.
 gulp.task('fabric-less', ['clean-fabric'], function () {
     // Confgure data objects to pass into banner plugin.
     var bannerData = {
@@ -196,7 +196,7 @@ gulp.task('fabric-less', ['clean-fabric'], function () {
     return mergeStream(fabric, fabricRtl);
 });
 
-// Components construction
+// Build Components LESS files
 gulp.task('components-less', ['clean-components'], function () {
     var _componentsBase = function() {
         return gulp.src('src/less/fabric.components.less')
@@ -210,7 +210,7 @@ gulp.task('components-less', ['clean-components'], function () {
             }))
             .on('error', onGulpError);
     }
-    // Build full and minified Fabric Components CSS.
+    // Build components css.
     var components = _componentsBase()
         .pipe(rename('fabric.components.css'))
             .on('error', onGulpError)
@@ -226,7 +226,7 @@ gulp.task('components-less', ['clean-components'], function () {
             .on('error', onGulpError)
         .pipe(gulp.dest(paths.distPath + '/css/'))
             .on('error', onGulpError);
-      // Build full and minified Fabric Components CSS for each Component.
+    // Build minified Fabric Components CSS for each Component.
     var indComponents = componentsFolders.map(function(folder) {
         var manifest = JSON.parse(fs.readFileSync(paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
         var deps = manifest.dependencies || [];
@@ -261,7 +261,7 @@ gulp.task('components-less', ['clean-components'], function () {
             .pipe(gulp.dest(paths.distComponents  + '/' + folder))
                 .on('error', onGulpError);
     });
-    // Build full and minified Fabric Components RTL CSS.
+    // Build Fabric Components RTL CSS.
     var componentsRtl = _componentsBase()
             .pipe(flipper())
                 .on('error', onGulpError)
@@ -317,7 +317,7 @@ gulp.task('build-component-examples', ['build-component-data'], folders(paths.co
 // Roll up static resource building
 gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'fabric-less']);
 
-// Build for fabric component demos
+// Build for Fbric component demos
 gulp.task('build-components', ['clean-components', 'copy-components', 'components-less', 'build-component-data', 'build-component-examples']);
 
 // Fabric success messages
@@ -359,7 +359,7 @@ gulp.task('watch:fabric', ['build-fabric', 'fabric-finished'], function () {
     }));
 });
 
-// Watch components and fabric at the same time but build seperately.
+// Watch components and Fabric at the same time but build seperately.
 gulp.task('watch:separately', ['build-fabric', 'build-components', 'fabric-finished'], function () {
     gulp.watch(paths.lessPath + '/**/*', batch(function (events, done) {
         runSequence('build-fabric', 'fabric-updated', done);

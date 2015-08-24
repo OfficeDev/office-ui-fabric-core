@@ -7,5 +7,5 @@ var requireDir = require('require-dir');
 
 requireDir('./gulp');
 
-gulp.task('default', ['watch:fabric']);
+gulp.task('default', ['build']);
 

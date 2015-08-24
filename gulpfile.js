@@ -7,5 +7,5 @@ var requireDir = require('require-dir');
 
 requireDir('./gulp');
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['build']);
 

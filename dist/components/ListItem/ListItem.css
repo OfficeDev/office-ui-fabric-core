@@ -1,0 +1,298 @@
+/**
+ * Fabric 0.10.3
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-ListItem {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  *zoom: 1;
+  padding: 11px 30px 10px 30px;
+  position: relative;
+}
+
+.ms-ListItem:before,
+.ms-ListItem:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-ListItem:after {
+  clear: both;
+}
+
+.ms-ListItem-image {
+  float: left;
+  height: 70px;
+  margin-left: -10px;
+  margin-right: 10px;
+  width: 70px;
+}
+
+.ms-ListItem-primaryText,
+.ms-ListItem-secondaryText,
+.ms-ListItem-tertiaryText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.ms-ListItem-primaryText {
+  color: #212121;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  padding-right: 80px;
+  position: relative;
+  top: -4px;
+}
+
+.ms-ListItem-secondaryText {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  position: relative;
+  top: -7px;
+}
+
+.ms-ListItem-tertiaryText {
+  color: #767676;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 15px;
+  position: relative;
+  top: -7px;
+}
+
+.ms-ListItem-metaText {
+  color: #333333;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  position: absolute;
+  right: 30px;
+  top: 39px;
+}
+
+.ms-ListItem-selectionTarget {
+  display: none;
+}
+
+.ms-ListItem-actions {
+  max-width: 80px;
+  position: absolute;
+  right: 30px;
+  text-align: right;
+  top: 10px;
+}
+
+.ms-ListItem-action {
+  color: #666666;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 8px;
+  position: relative;
+  text-align: center;
+  top: 3px;
+  cursor: pointer;
+}
+
+.ms-ListItem-action:hover {
+  outline: 1px solid transparent;
+}
+
+.ms-ListItem.is-unread {
+  border-left: 3px solid #0078d7;
+  padding-left: 27px;
+}
+
+.ms-ListItem.is-unread .ms-ListItem-secondaryText,
+.ms-ListItem.is-unread .ms-ListItem-metaText {
+  color: #0078d7;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-ListItem.is-unseen:before {
+  border-right: 10px solid transparent;
+  border-top: 10px solid #0078d7;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.ms-ListItem.is-selectable .ms-ListItem-selectionTarget {
+  display: block;
+  height: 20px;
+  left: 6px;
+  position: absolute;
+  top: 13px;
+  width: 20px;
+}
+
+.ms-ListItem.is-selectable:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+  outline: 1px solid transparent;
+}
+
+.ms-ListItem.is-selectable:hover:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Office365Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  content: '\e03f';
+  font-size: 18px;
+  color: #767676;
+  position: absolute;
+  top: 22px;
+  left: 8px;
+}
+
+.ms-ListItem.is-selected:before,
+.ms-ListItem.is-selected:hover:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Office365Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  content: '\e041';
+  font-size: 17px;
+  color: #767676;
+  position: absolute;
+  top: 23px;
+  left: 8px;
+}
+
+.ms-ListItem.is-selected:hover {
+  background-color: #c7e0f4;
+  outline: 1px solid transparent;
+}
+
+.ms-ListItem.ms-ListItem--document {
+  padding: 0;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon {
+  width: 70px;
+  height: 70px;
+  float: left;
+  text-align: center;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon {
+  font-size: 38px;
+  line-height: 70px;
+  color: #666666;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[class*='ms-ListItem-itemIcon--'] {
+  background-image: url(../components/filepicker/filepicker.icons.png);
+  width: 40px;
+  height: 40px;
+  margin: 15px 15px 14px 15px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--audio {
+  background-position: 0px 0px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--web {
+  background-position: 0px -40px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--text {
+  background-position: 0px -80px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--ppt {
+  background-position: 0px -120px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--pub {
+  background-position: 0px -160px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--access {
+  background-position: 0px -200px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--bmp {
+  background-position: 0px -240px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--word {
+  background-position: 0px -280px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--blank {
+  background-position: 0px -320px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--gif {
+  background-position: 0px -360px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--jpg {
+  background-position: 0px -400px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--note {
+  background-position: 0px -440px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--pdf {
+  background-position: 0px -480px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--png {
+  background-position: 0px -520px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--visio {
+  background-position: 0px -560px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--excel {
+  background-position: 0px -600px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--pdf {
+  background-position: 0px -480px;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333333;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  padding-top: 15px;
+  padding-right: 0;
+  position: static;
+}
+
+.ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666666;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  padding-top: 6px;
+}

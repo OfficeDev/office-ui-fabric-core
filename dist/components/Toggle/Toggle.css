@@ -1,0 +1,157 @@
+/**
+ * Fabric 0.10.3
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-Toggle {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.ms-Toggle .ms-Label {
+  position: relative;
+  padding-left: 56px;
+  top: -8px;
+  font-size: 12px;
+}
+
+.ms-Toggle:hover .ms-Label {
+  color: #000000;
+}
+
+.ms-Toggle:active .ms-Label {
+  color: #333333;
+}
+
+.ms-Toggle.is-disabled .ms-Label {
+  color: #a6a6a6 !important;
+}
+
+.ms-Toggle.is-disabled .ms-Toggle-field {
+  background-color: #ffffff !important;
+  border-color: #c8c8c8 !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.ms-Toggle.is-disabled .ms-Toggle-field:before {
+  background-color: #c8c8c8 !important;
+}
+
+.ms-Toggle.ms-Toggle--textAbove .ms-Toggle-description {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ms-Toggle.ms-Toggle--textLeft {
+  width: 225px;
+  margin-bottom: 30px;
+}
+
+.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-description {
+  display: inline-block;
+  max-width: 150px;
+  top: -3px;
+}
+
+.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field {
+  float: right;
+}
+
+.ms-Toggle-input {
+  display: none;
+}
+
+.ms-Toggle-description {
+  position: relative;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.ms-Toggle-field {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 3px #c8c8c8 solid;
+  cursor: pointer;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field {
+  background-color: #f4f4f4;
+  position: relative;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field:before {
+  position: absolute;
+  display: block;
+  box-sizing: content-box;
+  content: '';
+  top: -3px;
+  left: -3px;
+  width: 10px;
+  height: 20px;
+  border-right: 3px solid #ffffff;
+  background-color: #767676;
+  outline: 2px solid transparent;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field:hover {
+  background-color: #eaeaea;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field:active {
+  background-color: #0078d7;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field .ms-Label--off {
+  display: block;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field .ms-Label--on {
+  display: none;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field {
+  background-color: #0078d7;
+  position: relative;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field:before {
+  position: absolute;
+  display: block;
+  box-sizing: content-box;
+  content: '';
+  top: -3px;
+  right: -3px;
+  width: 10px;
+  height: 20px;
+  border-left: 3px solid #ffffff;
+  background-color: #767676;
+  outline: 2px solid transparent;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field:hover {
+  background-color: #005a9e;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field:active {
+  background-color: #0078d7;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field .ms-Label--off {
+  display: none;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field .ms-Label--on {
+  display: block;
+}

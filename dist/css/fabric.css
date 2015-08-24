@@ -1,0 +1,6235 @@
+/**
+ * Fabric 0.10.3
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-u-borderBox,
+.ms-u-borderBox:before,
+.ms-u-borderBox:after {
+  box-sizing: border-box;
+}
+
+.ms-u-clearfix,
+.clearfix {
+  *zoom: 1;
+}
+
+.ms-u-clearfix:before,
+.clearfix:before,
+.ms-u-clearfix:after,
+.clearfix:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-u-clearfix:after,
+.clearfix:after {
+  clear: both;
+}
+
+.ms-u-normalize {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.ms-bg-color-themeDark,
+.ms-bg-color-themeDark-hover:hover,
+.ms-bgColor-themeDark,
+.ms-bgColor-themeDark--hover:hover {
+  background-color: #005a9e;
+}
+
+.ms-bg-color-themeDarkAlt,
+.ms-bg-color-themeDarkAlt-hover:hover,
+.ms-bgColor-themeDarkAlt,
+.ms-bgColor-themeDarkAlt--hover:hover {
+  background-color: #106ebe;
+}
+
+.ms-bg-color-themeDarker,
+.ms-bg-color-themeDarker-hover:hover,
+.ms-bgColor-themeDarker,
+.ms-bgColor-themeDarker--hover:hover {
+  background-color: #004578;
+}
+
+.ms-bg-color-themePrimary,
+.ms-bg-color-themePrimary-hover:hover,
+.ms-bgColor-themePrimary,
+.ms-bgColor-themePrimary--hover:hover {
+  background-color: #0078d7;
+}
+
+.ms-bg-color-themeSecondary,
+.ms-bg-color-themeSecondary-hover:hover,
+.ms-bgColor-themeSecondary,
+.ms-bgColor-themeSecondary--hover:hover {
+  background-color: #2b88d8;
+}
+
+.ms-bg-color-themeTertiary,
+.ms-bg-color-themeTertiary-hover:hover,
+.ms-bgColor-themeTertiary,
+.ms-bgColor-themeTertiary--hover:hover {
+  background-color: #71afe5;
+}
+
+.ms-bg-color-themeLight,
+.ms-bg-color-themeLight-hover:hover,
+.ms-bgColor-themeLight,
+.ms-bgColor-themeLight--hover:hover {
+  background-color: #c7e0f4;
+}
+
+.ms-bg-color-themeLighter,
+.ms-bg-color-themeLighter-hover:hover,
+.ms-bgColor-themeLighter,
+.ms-bgColor-themeLighter--hover:hover {
+  background-color: #deecf9;
+}
+
+.ms-bg-color-themeLighterAlt,
+.ms-bg-color-themeLighterAlt-hover:hover,
+.ms-bgColor-themeLighterAlt,
+.ms-bgColor-themeLighterAlt--hover:hover {
+  background-color: #eff6fc;
+}
+
+.ms-bg-color-black,
+.ms-bg-color-black-hover:hover,
+.ms-bgColor-black,
+.ms-bgColor-black--hover:hover {
+  background-color: #000000;
+}
+
+.ms-bg-color-neutralDark,
+.ms-bg-color-neutralDark-hover:hover,
+.ms-bgColor-neutralDark,
+.ms-bgColor-neutralDark--hover:hover {
+  background-color: #212121;
+}
+
+.ms-bg-color-neutralPrimary,
+.ms-bg-color-neutralPrimary-hover:hover,
+.ms-bgColor-neutralPrimary,
+.ms-bgColor-neutralPrimary--hover:hover {
+  background-color: #333333;
+}
+
+.ms-bg-color-neutralSecondary,
+.ms-bg-color-neutralSecondary-hover:hover,
+.ms-bgColor-neutralSecondary,
+.ms-bgColor-neutralSecondary--hover:hover {
+  background-color: #666666;
+}
+
+.ms-bg-color-neutralSecondaryAlt,
+.ms-bg-color-neutralSecondaryAlt-hover:hover,
+.ms-bgColor-neutralSecondaryAlt,
+.ms-bgColor-neutralSecondaryAlt--hover:hover {
+  background-color: #767676;
+}
+
+.ms-bg-color-neutralTertiary,
+.ms-bg-color-neutralTertiary-hover:hover,
+.ms-bgColor-neutralTertiary,
+.ms-bgColor-neutralTertiary--hover:hover {
+  background-color: #a6a6a6;
+}
+
+.ms-bg-color-neutralTertiaryAlt,
+.ms-bg-color-neutralTertiaryAlt-hover:hover,
+.ms-bgColor-neutralTertiaryAlt,
+.ms-bgColor-neutralTertiaryAlt--hover:hover {
+  background-color: #c8c8c8;
+}
+
+.ms-bg-color-neutralLight,
+.ms-bg-color-neutralLight-hover:hover,
+.ms-bgColor-neutralLight,
+.ms-bgColor-neutralLight--hover:hover {
+  background-color: #eaeaea;
+}
+
+.ms-bg-color-neutralLighter,
+.ms-bg-color-neutralLighter-hover:hover,
+.ms-bgColor-neutralLighter,
+.ms-bgColor-neutralLighter--hover:hover {
+  background-color: #f4f4f4;
+}
+
+.ms-bg-color-neutralLighterAlt,
+.ms-bg-color-neutralLighterAlt-hover:hover,
+.ms-bgColor-neutralLighterAlt,
+.ms-bgColor-neutralLighterAlt--hover:hover {
+  background-color: #f8f8f8;
+}
+
+.ms-bg-color-white,
+.ms-bg-color-white-hover:hover,
+.ms-bgColor-white,
+.ms-bgColor-white--hover:hover {
+  background-color: #ffffff;
+}
+
+.ms-bg-color-yellow,
+.ms-bgColor-yellow {
+  background-color: #ffb900;
+}
+
+.ms-bg-color-yellowLight,
+.ms-bgColor-yellowLight {
+  background-color: #fff100;
+}
+
+.ms-bg-color-orange,
+.ms-bgColor-orange {
+  background-color: #d83b01;
+}
+
+.ms-bg-color-orangeLight,
+.ms-bgColor-orangeLight {
+  background-color: #ff8c00;
+}
+
+.ms-bg-color-redDark,
+.ms-bgColor-redDark {
+  background-color: #a80000;
+}
+
+.ms-bg-color-red,
+.ms-bgColor-red {
+  background-color: #e81123;
+}
+
+.ms-bg-color-magentaDark,
+.ms-bgColor-magentaDark {
+  background-color: #5c005c;
+}
+
+.ms-bg-color-magenta,
+.ms-bgColor-magenta {
+  background-color: #b4009e;
+}
+
+.ms-bg-color-magentaLight,
+.ms-bgColor-magentaLight {
+  background-color: #e3008c;
+}
+
+.ms-bg-color-purpleDark,
+.ms-bgColor-purpleDark {
+  background-color: #32145a;
+}
+
+.ms-bg-color-purple,
+.ms-bgColor-purple {
+  background-color: #5c2d91;
+}
+
+.ms-bg-color-purpleLight,
+.ms-bgColor-purpleLight {
+  background-color: #b4a0ff;
+}
+
+.ms-bg-color-blueDark,
+.ms-bgColor-blueDark {
+  background-color: #002050;
+}
+
+.ms-bg-color-blueMid,
+.ms-bgColor-blueMid {
+  background-color: #00188f;
+}
+
+.ms-bg-color-blue,
+.ms-bgColor-blue {
+  background-color: #0078d7;
+}
+
+.ms-bg-color-blueLight,
+.ms-bgColor-blueLight {
+  background-color: #00bcf2;
+}
+
+.ms-bg-color-tealDark,
+.ms-bgColor-tealDark {
+  background-color: #004b50;
+}
+
+.ms-bg-color-teal,
+.ms-bgColor-teal {
+  background-color: #008272;
+}
+
+.ms-bg-color-tealLight,
+.ms-bgColor-tealLight {
+  background-color: #00b294;
+}
+
+.ms-bg-color-greenDark,
+.ms-bgColor-greenDark {
+  background-color: #004b1c;
+}
+
+.ms-bg-color-green,
+.ms-bgColor-green {
+  background-color: #107c10;
+}
+
+.ms-bg-color-greenLight,
+.ms-bgColor-greenLight {
+  background-color: #bad80a;
+}
+
+.ms-bg-color-error,
+.ms-bgColor-error {
+  background-color: #fde7e9;
+}
+
+.ms-bg-color-alert,
+.ms-bgColor-alert {
+  background-color: #f4f4f4;
+}
+
+.ms-bg-color-info,
+.ms-bgColor-info {
+  background-color: #f4f4f4;
+}
+
+.ms-bg-color-success,
+.ms-bgColor-success {
+  background-color: #dff6dd;
+}
+
+.ms-bg-color-orangeLighter,
+.ms-bg-color-orangeLighter-hover:hover,
+.ms-bgColor-orangeLighter,
+.ms-bgColor-orangeLighter--hover:hover {
+  background-color: #ea4300;
+}
+
+.ms-border-color-themeDark,
+.ms-border-color-themeDark-hover:hover,
+.ms-borderColor-themeDark,
+.ms-borderColor-themeDark--hover:hover {
+  border-color: #005a9e;
+}
+
+.ms-border-color-themeDarkAlt,
+.ms-border-color-themeDarkAlt-hover:hover,
+.ms-borderColor-themeDarkAlt,
+.ms-borderColor-themeDarkAlt--hover:hover {
+  border-color: #106ebe;
+}
+
+.ms-border-color-themeDarker,
+.ms-border-color-themeDarker-hover:hover,
+.ms-borderColor-themeDarker,
+.ms-borderColor-themeDarker--hover:hover {
+  border-color: #004578;
+}
+
+.ms-border-color-themePrimary,
+.ms-border-color-themePrimary-hover:hover,
+.ms-borderColor-themePrimary,
+.ms-borderColor-themePrimary--hover:hover {
+  border-color: #0078d7;
+}
+
+.ms-border-color-themeSecondary,
+.ms-border-color-themeSecondary-hover:hover,
+.ms-borderColor-themeSecondary,
+.ms-borderColor-themeSecondary--hover:hover {
+  border-color: #2b88d8;
+}
+
+.ms-border-color-themeTertiary,
+.ms-border-color-themeTertiary-hover:hover,
+.ms-borderColor-themeTertiary,
+.ms-borderColor-themeTertiary--hover:hover {
+  border-color: #71afe5;
+}
+
+.ms-border-color-themeLight,
+.ms-border-color-themeLight-hover:hover,
+.ms-borderColor-themeLight,
+.ms-borderColor-themeLight--hover:hover {
+  border-color: #c7e0f4;
+}
+
+.ms-border-color-themeLighter,
+.ms-border-color-themeLighter-hover:hover,
+.ms-borderColor-themeLighter,
+.ms-borderColor-themeLighter--hover:hover {
+  border-color: #deecf9;
+}
+
+.ms-border-color-themeLighterAlt,
+.ms-border-color-themeLighterAlt-hover:hover,
+.ms-borderColor-themeLighterAlt,
+.ms-borderColor-themeLighterAlt--hover:hover {
+  border-color: #eff6fc;
+}
+
+.ms-border-color-black,
+.ms-border-color-black-hover:hover,
+.ms-borderColor-black,
+.ms-borderColor-black--hover:hover {
+  border-color: #000000;
+}
+
+.ms-border-color-neutralDark,
+.ms-border-color-neutralDark-hover:hover,
+.ms-borderColor-neutralDark,
+.ms-borderColor-neutralDark--hover:hover {
+  border-color: #212121;
+}
+
+.ms-border-color-neutralPrimary,
+.ms-border-color-neutralPrimary-hover:hover,
+.ms-borderColor-neutralPrimary,
+.ms-borderColor-neutralPrimary--hover:hover {
+  border-color: #333333;
+}
+
+.ms-border-color-neutralSecondary,
+.ms-border-color-neutralSecondary-hover:hover,
+.ms-borderColor-neutralSecondary,
+.ms-borderColor-neutralSecondary--hover:hover {
+  border-color: #666666;
+}
+
+.ms-border-color-neutralSecondaryAlt,
+.ms-border-color-neutralSecondaryAlt-hover:hover,
+.ms-borderColor-neutralSecondaryAlt,
+.ms-borderColor-neutralSecondaryAlt--hover:hover {
+  border-color: #767676;
+}
+
+.ms-border-color-neutralTertiary,
+.ms-border-color-neutralTertiary-hover:hover,
+.ms-borderColor-neutralTertiary,
+.ms-borderColor-neutralTertiary--hover:hover {
+  border-color: #a6a6a6;
+}
+
+.ms-border-color-neutralTertiaryAlt,
+.ms-border-color-neutralTertiaryAlt-hover:hover,
+.ms-borderColor-neutralTertiaryAlt,
+.ms-borderColor-neutralTertiaryAlt--hover:hover {
+  border-color: #c8c8c8;
+}
+
+.ms-border-color-neutralLight,
+.ms-border-color-neutralLight-hover:hover,
+.ms-borderColor-neutralLight,
+.ms-borderColor-neutralLight--hover:hover {
+  border-color: #eaeaea;
+}
+
+.ms-border-color-neutralLighter,
+.ms-border-color-neutralLighter-hover:hover,
+.ms-borderColor-neutralLighter,
+.ms-borderColor-neutralLighter--hover:hover {
+  border-color: #f4f4f4;
+}
+
+.ms-border-color-neutralLighterAlt,
+.ms-border-color-neutralLighterAlt-hover:hover,
+.ms-borderColor-neutralLighterAlt,
+.ms-borderColor-neutralLighterAlt--hover:hover {
+  border-color: #f8f8f8;
+}
+
+.ms-border-color-white,
+.ms-border-color-white-hover:hover,
+.ms-borderColor-white,
+.ms-borderColor-white--hover:hover {
+  border-color: #ffffff;
+}
+
+.ms-border-color-yellow,
+.ms-borderColor-yellow {
+  border-color: #ffb900;
+}
+
+.ms-border-color-yellowLight,
+.ms-borderColor-yellowLight {
+  border-color: #fff100;
+}
+
+.ms-border-color-orange,
+.ms-borderColor-orange {
+  border-color: #d83b01;
+}
+
+.ms-border-color-orangeLight,
+.ms-borderColor-orangeLight {
+  border-color: #ff8c00;
+}
+
+.ms-border-color-redDark,
+.ms-borderColor-redDark {
+  border-color: #a80000;
+}
+
+.ms-border-color-red,
+.ms-borderColor-red {
+  border-color: #e81123;
+}
+
+.ms-border-color-magentaDark,
+.ms-borderColor-magentaDark {
+  border-color: #5c005c;
+}
+
+.ms-border-color-magenta,
+.ms-borderColor-magenta {
+  border-color: #b4009e;
+}
+
+.ms-border-color-magentaLight,
+.ms-borderColor-magentaLight {
+  border-color: #e3008c;
+}
+
+.ms-border-color-purpleDark,
+.ms-borderColor-purpleDark {
+  border-color: #32145a;
+}
+
+.ms-border-color-purple,
+.ms-borderColor-purple {
+  border-color: #5c2d91;
+}
+
+.ms-border-color-purpleLight,
+.ms-borderColor-purpleLight {
+  border-color: #b4a0ff;
+}
+
+.ms-border-color-blueDark,
+.ms-borderColor-blueDark {
+  border-color: #002050;
+}
+
+.ms-border-color-blueMid,
+.ms-borderColor-blueMid {
+  border-color: #00188f;
+}
+
+.ms-border-color-blue,
+.ms-borderColor-blue {
+  border-color: #0078d7;
+}
+
+.ms-border-color-blueLight,
+.ms-borderColor-blueLight {
+  border-color: #00bcf2;
+}
+
+.ms-border-color-tealDark,
+.ms-borderColor-tealDark {
+  border-color: #004b50;
+}
+
+.ms-border-color-teal,
+.ms-borderColor-teal {
+  border-color: #008272;
+}
+
+.ms-border-color-tealLight,
+.ms-borderColor-tealLight {
+  border-color: #00b294;
+}
+
+.ms-border-color-greenDark,
+.ms-borderColor-greenDark {
+  border-color: #004b1c;
+}
+
+.ms-border-color-green,
+.ms-borderColor-green {
+  border-color: #107c10;
+}
+
+.ms-border-color-greenLight,
+.ms-borderColor-greenLight {
+  border-color: #bad80a;
+}
+
+.ms-border-color-error,
+.ms-borderColor-error {
+  border-color: #a80000;
+}
+
+.ms-border-color-success,
+.ms-borderColor-success {
+  border-color: #107c10;
+}
+
+.ms-border-color-info,
+.ms-borderColor-info {
+  border-color: #107c10;
+}
+
+.ms-border-color-alert,
+.ms-borderColor-alert {
+  border-color: #d83b01;
+}
+
+.ms-border-color-orangeLighter,
+.ms-border-color-orangeLighter-hover:hover,
+.ms-borderColor-orangeLighter,
+.ms-borderColor-orangeLighter--hover:hover {
+  border-color: #ea4300;
+}
+
+.ms-border-color-top-themePrimary,
+.ms-border-color-top-themePrimary-hover:hover,
+.ms-borderColorTop-themePrimary,
+.ms-borderColorTop-themePrimary--hover:hover {
+  border-top-color: #0078d7;
+}
+
+.ms-font-su {
+  color: #333333;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 42px;
+  font-weight: normal;
+}
+
+.ms-font-xxl {
+  color: #333333;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.ms-font-xl {
+  color: #333333;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.ms-font-l {
+  color: #333333;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: normal;
+}
+
+.ms-font-m-plus {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.ms-font-m {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.ms-font-s-plus {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.ms-font-s {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.ms-font-xs {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.ms-font-mi {
+  color: #333333;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.ms-font-weight-light,
+.ms-font-weight-light-hover:hover,
+.ms-fontWeight-light,
+.ms-fontWeight-light--hover:hover {
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-font-weight-semilight,
+.ms-font-weight-semilight-hover:hover,
+.ms-fontWeight-semilight,
+.ms-fontWeight-semilight--hover:hover {
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-font-weight-regular,
+.ms-font-weight-regular-hover:hover,
+.ms-fontWeight-regular,
+.ms-fontWeight-regular--hover:hover {
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-font-weight-semibold,
+.ms-font-weight-semibold-hover:hover,
+.ms-fontWeight-semibold,
+.ms-fontWeight-semibold--hover:hover {
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-font-size-su,
+.ms-fontSize-su {
+  font-size: 42px;
+}
+
+.ms-font-size-xxl,
+.ms-fontSize-xxl {
+  font-size: 28px;
+}
+
+.ms-font-size-xl,
+.ms-fontSize-xl {
+  font-size: 21px;
+}
+
+.ms-font-size-l,
+.ms-fontSize-l {
+  font-size: 17px;
+}
+
+.ms-font-size-m-plus,
+.ms-fontSize-mPlus {
+  font-size: 15px;
+}
+
+.ms-font-size-m,
+.ms-fontSize-m {
+  font-size: 14px;
+}
+
+.ms-font-size-s-plus .ms-fontSize-sPlus {
+  font-size: 13px;
+}
+
+.ms-font-size-s,
+.ms-fontSize-s {
+  font-size: 12px;
+}
+
+.ms-font-size-xs,
+.ms-fontSize-xs {
+  font-size: 11px;
+}
+
+.ms-font-size-mi,
+.ms-fontSize-mi {
+  font-size: 10px;
+}
+
+.ms-font-color-themeDarker,
+.ms-font-color-themeDarker-hover:hover,
+.ms-fontColor-themeDarker,
+.ms-fontColor-themeDarker--hover:hover {
+  color: #004578;
+}
+
+.ms-font-color-themeDark,
+.ms-font-color-themeDark-hover:hover,
+.ms-fontColor-themeDark,
+.ms-fontColor-themeDark--hover:hover {
+  color: #005a9e;
+}
+
+.ms-font-color-themeDarkAlt,
+.ms-font-color-themeDarkAlt-hover:hover,
+.ms-fontColor-themeDarkAlt,
+.ms-fontColor-themeDarkAlt--hover:hover {
+  color: #106ebe;
+}
+
+.ms-font-color-themePrimary,
+.ms-font-color-themePrimary-hover:hover,
+.ms-fontColor-themePrimary,
+.ms-fontColor-themePrimary--hover:hover {
+  color: #0078d7;
+}
+
+.ms-font-color-themeSecondary,
+.ms-font-color-themeSecondary-hover:hover,
+.ms-fontColor-themeSecondary,
+.ms-fontColor-themeSecondary--hover:hover {
+  color: #2b88d8;
+}
+
+.ms-font-color-themeTertiary,
+.ms-font-color-themeTertiary-hover:hover,
+.ms-fontColor-themeTertiary,
+.ms-fontColor-themeTertiary--hover:hover {
+  color: #71afe5;
+}
+
+.ms-font-color-themeLight,
+.ms-font-color-themeLight-hover:hover,
+.ms-fontColor-themeLight,
+.ms-fontColor-themeLight--hover:hover {
+  color: #c7e0f4;
+}
+
+.ms-font-color-themeLighter,
+.ms-font-color-themeLighter-hover:hover,
+.ms-fontColor-themeLighter,
+.ms-fontColor-themeLighter--hover:hover {
+  color: #deecf9;
+}
+
+.ms-font-color-themeLighterAlt,
+.ms-font-color-themeLighterAlt-hover:hover,
+.ms-fontColor-themeLighterAlt,
+.ms-fontColor-themeLighterAlt--hover:hover {
+  color: #eff6fc;
+}
+
+.ms-font-color-black,
+.ms-font-color-black-hover:hover,
+.ms-fontColor-black,
+.ms-fontColor-black--hover:hover {
+  color: #000000;
+}
+
+.ms-font-color-neutralDark,
+.ms-font-color-neutralDark-hover:hover,
+.ms-fontColor-neutralDark,
+.ms-fontColor-neutralDark--hover:hover {
+  color: #212121;
+}
+
+.ms-font-color-neutralPrimary,
+.ms-font-color-neutralPrimary-hover:hover,
+.ms-fontColor-neutralPrimary,
+.ms-fontColor-neutralPrimary--hover:hover {
+  color: #333333;
+}
+
+.ms-font-color-neutralSecondary,
+.ms-font-color-neutralSecondary-hover:hover,
+.ms-fontColor-neutralSecondary,
+.ms-fontColor-neutralSecondary--hover:hover {
+  color: #666666;
+}
+
+.ms-font-color-neutralSecondaryAlt,
+.ms-font-color-neutralSecondaryAlt-hover:hover,
+.ms-fontColor-neutralSecondaryAlt,
+.ms-fontColor-neutralSecondaryAlt--hover:hover {
+  color: #767676;
+}
+
+.ms-font-color-neutralTertiary,
+.ms-font-color-neutralTertiary-hover:hover,
+.ms-fontColor-neutralTertiary,
+.ms-fontColor-neutralTertiary--hover:hover {
+  color: #a6a6a6;
+}
+
+.ms-font-color-neutralTertiaryAlt,
+.ms-font-color-neutralTertiaryAlt-hover:hover,
+.ms-fontColor-neutralTertiaryAlt,
+.ms-fontColor-neutralTertiaryAlt--hover:hover {
+  color: #c8c8c8;
+}
+
+.ms-font-color-neutralLight,
+.ms-font-color-neutralLight-hover:hover,
+.ms-fontColor-neutralLight,
+.ms-fontColor-neutralLight--hover:hover {
+  color: #eaeaea;
+}
+
+.ms-font-color-neutralLighter,
+.ms-font-color-neutralLighter-hover:hover,
+.ms-fontColor-neutralLighter,
+.ms-fontColor-neutralLighter--hover:hover {
+  color: #f4f4f4;
+}
+
+.ms-font-color-neutralLighterAlt,
+.ms-font-color-neutralLighterAlt-hover:hover,
+.ms-fontColor-neutralLighterAlt,
+.ms-fontColor-neutralLighterAlt--hover:hover {
+  color: #f8f8f8;
+}
+
+.ms-font-color-white,
+.ms-font-color-white-hover:hover,
+.ms-fontColor-white,
+.ms-fontColor-white--hover:hover {
+  color: #ffffff;
+}
+
+.ms-font-color-yellow,
+.ms-font-color-yellow-hover:hover,
+.ms-fontColor-yellow,
+.ms-fontColor-yellow--hover:hover {
+  color: #ffb900;
+}
+
+.ms-font-color-yellowLight,
+.ms-font-color-yellowLight-hover:hover,
+.ms-fontColor-yellowLight,
+.ms-fontColor-yellowLight--hover:hover {
+  color: #fff100;
+}
+
+.ms-font-color-orange,
+.ms-font-color-orange-hover:hover,
+.ms-fontColor-orange,
+.ms-fontColor-orange--hover:hover {
+  color: #d83b01;
+}
+
+.ms-font-color-orangeLight,
+.ms-font-color-orangeLight-hover:hover,
+.ms-fontColor-orangeLight,
+.ms-fontColor-orangeLight--hover:hover {
+  color: #ff8c00;
+}
+
+.ms-font-color-redDark,
+.ms-font-color-redDark-hover:hover,
+.ms-fontColor-redDark,
+.ms-fontColor-redDark--hover:hover {
+  color: #a80000;
+}
+
+.ms-font-color-red,
+.ms-font-color-red-hover:hover,
+.ms-fontColor-red,
+.ms-fontColor-red--hover:hover {
+  color: #e81123;
+}
+
+.ms-font-color-magentaDark,
+.ms-font-color-magentaDark-hover:hover,
+.ms-fontColor-magentaDark,
+.ms-fontColor-magentaDark--hover:hover {
+  color: #5c005c;
+}
+
+.ms-font-color-magenta,
+.ms-font-color-magenta-hover:hover,
+.ms-fontColor-magenta,
+.ms-fontColor-magenta--hover:hover {
+  color: #b4009e;
+}
+
+.ms-font-color-magentaLight,
+.ms-font-color-magentaLight-hover:hover,
+.ms-fontColor-magentaLight,
+.ms-fontColor-magentaLight--hover:hover {
+  color: #e3008c;
+}
+
+.ms-font-color-purpleDark,
+.ms-font-color-purpleDark-hover:hover,
+.ms-fontColor-purpleDark,
+.ms-fontColor-purpleDark--hover:hover {
+  color: #32145a;
+}
+
+.ms-font-color-purple,
+.ms-font-color-purple-hover:hover,
+.ms-fontColor-purple,
+.ms-fontColor-purple--hover:hover {
+  color: #5c2d91;
+}
+
+.ms-font-color-purpleLight,
+.ms-font-color-purpleLight-hover:hover,
+.ms-fontColor-purpleLight,
+.ms-fontColor-purpleLight--hover:hover {
+  color: #b4a0ff;
+}
+
+.ms-font-color-blueDark,
+.ms-font-color-blueDark-hover:hover,
+.ms-fontColor-blueDark,
+.ms-fontColor-blueDark--hover:hover {
+  color: #002050;
+}
+
+.ms-font-color-blueMid,
+.ms-font-color-blueMid-hover:hover,
+.ms-fontColor-blueMid,
+.ms-fontColor-blueMid--hover:hover {
+  color: #00188f;
+}
+
+.ms-font-color-blue,
+.ms-font-color-blue-hover:hover,
+.ms-fontColor-blue,
+.ms-fontColor-blue--hover:hover {
+  color: #0078d7;
+}
+
+.ms-font-color-blueLight,
+.ms-font-color-blueLight-hover:hover,
+.ms-fontColor-blueLight,
+.ms-fontColor-blueLight--hover:hover {
+  color: #00bcf2;
+}
+
+.ms-font-color-tealDark,
+.ms-font-color-tealDark-hover:hover,
+.ms-fontColor-tealDark,
+.ms-fontColor-tealDark--hover:hover {
+  color: #004b50;
+}
+
+.ms-font-color-teal,
+.ms-font-color-teal-hover:hover,
+.ms-fontColor-teal,
+.ms-fontColor-teal--hover:hover {
+  color: #008272;
+}
+
+.ms-font-color-tealLight,
+.ms-font-color-tealLight-hover:hover,
+.ms-fontColor-tealLight,
+.ms-fontColor-tealLight--hover:hover {
+  color: #00b294;
+}
+
+.ms-font-color-greenDark,
+.ms-font-color-greenDark-hover:hover,
+.ms-fontColor-greenDark,
+.ms-fontColor-greenDark--hover:hover {
+  color: #004b1c;
+}
+
+.ms-font-color-green,
+.ms-font-color-green-hover:hover,
+.ms-fontColor-green,
+.ms-fontColor-green--hover:hover {
+  color: #107c10;
+}
+
+.ms-font-color-greenLight,
+.ms-font-color-greenLight-hover:hover,
+.ms-fontColor-greenLight,
+.ms-fontColor-greenLight--hover:hover {
+  color: #bad80a;
+}
+
+.ms-font-color-error,
+.ms-font-color-error-hover:hover,
+.ms-fontColor-error,
+.ms-fontColor-error--hover:hover {
+  color: #a80000;
+}
+
+.ms-font-color-alert,
+.ms-font-color-alert-hover:hover,
+.ms-fontColor-alert,
+.ms-fontColor-alert--hover:hover {
+  color: #d83b01;
+}
+
+.ms-font-color-info,
+.ms-font-color-info-hover:hover,
+.ms-fontColor-info,
+.ms-fontColor-info--hover:hover {
+  color: #107c10;
+}
+
+.ms-font-color-success,
+.ms-font-color-success-hover:hover,
+.ms-fontColor-success,
+.ms-fontColor-success--hover:hover {
+  color: #107c10;
+}
+
+.ms-font-color-orangeLighter,
+.ms-font-color-orangeLighter-hover:hover,
+.ms-fontColor-orangeLighter,
+.ms-fontColor-orangeLighter--hover:hover {
+  color: #ea4300;
+}
+
+@font-face {
+  font-family: 'Leelawadee UI Bold';
+  src: url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold.woff') format('woff'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold.ttf') format('truetype'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold#LeelawadeeUI-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Leelawadee UI';
+  src: url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular.woff') format('woff'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular.ttf') format('truetype'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular#LeelawadeeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Leelawadee UI Semilight';
+  src: url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.ttf') format('truetype'), url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight#LeelawadeeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light Arabic';
+  src: url('../fonts/SegoeUI-Arabic/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Arabic/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular Arabic';
+  src: url('../fonts/SegoeUI-Arabic/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-Arabic/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold Arabic';
+  src: url('../fonts/SegoeUI-Arabic/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-Arabic/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight Arabic';
+  src: url('../fonts/SegoeUI-Arabic/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-Arabic/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-Arabic/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light Cyrillic';
+  src: url('../fonts/SegoeUI-Cyrillic/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular Cyrillic';
+  src: url('../fonts/SegoeUI-Cyrillic/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold Cyrillic';
+  src: url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight Cyrillic';
+  src: url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-Cyrillic/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light EastEuropean';
+  src: url('../fonts/SegoeUI-EastEuropean/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular EastEuropean';
+  src: url('../fonts/SegoeUI-EastEuropean/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold EastEuropean';
+  src: url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight EastEuropean';
+  src: url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-EastEuropean/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light Greek';
+  src: url('../fonts/SegoeUI-Greek/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Greek/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Greek/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-Greek/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular Greek';
+  src: url('../fonts/SegoeUI-Greek/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Greek/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-Greek/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-Greek/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold Greek';
+  src: url('../fonts/SegoeUI-Greek/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Greek/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-Greek/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-Greek/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight Greek';
+  src: url('../fonts/SegoeUI-Greek/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Greek/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-Greek/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-Greek/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light Hebrew';
+  src: url('../fonts/SegoeUI-Hebrew/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular Hebrew';
+  src: url('../fonts/SegoeUI-Hebrew/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold Hebrew';
+  src: url('../fonts/SegoeUI-Hebrew/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight Hebrew';
+  src: url('../fonts/SegoeUI-Hebrew/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-Hebrew/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light Vietnamese';
+  src: url('../fonts/SegoeUI-Vietnamese/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular Vietnamese';
+  src: url('../fonts/SegoeUI-Vietnamese/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold Vietnamese';
+  src: url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight Vietnamese';
+  src: url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-Vietnamese/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Light WestEuropean';
+  src: url('../fonts/SegoeUI-WestEuropean/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Light.ttf') format('truetype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Regular WestEuropean';
+  src: url('../fonts/SegoeUI-WestEuropean/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Regular.woff') format('woff'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Regular.ttf') format('truetype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semibold WestEuropean';
+  src: url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.woff') format('woff'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.ttf') format('truetype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Semilight WestEuropean';
+  src: url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.woff') format('woff'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.ttf') format('truetype'), url('../fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*[lang='ja-JP'] .ms-font-mi,
+*[lang='ja-JP'] .ms-font-xs,
+*[lang='ja-JP'] .ms-font-s,
+*[lang='ja-JP'] .ms-font-s-plus,
+*[lang='ja-JP'] .ms-font-m,
+*[lang='ja-JP'] .ms-font-m-plus,
+*[lang='ja-JP'] .ms-font-l,
+*[lang='ja-JP'] .ms-font-xl,
+*[lang='ja-JP'] .ms-font-xxl,
+*[lang='ja-JP'] .ms-font-su,
+*[lang='ja-JP'] .ms-font-weight-light,
+*[lang='ja-JP'] .ms-font-weight-light-hover:hover,
+*[lang='ja-JP'] .ms-font-weight-semilight,
+*[lang='ja-JP'] .ms-font-weight-semilight-hover:hover,
+*[lang='ja-JP'] .ms-font-weight-regular,
+*[lang='ja-JP'] .ms-font-weight-regular-hover:hover,
+*[lang='ja-JP'] .ms-font-weight-semibold,
+*[lang='ja-JP'] .ms-font-weight-semibold-hover:hover {
+  font-family: YuGothic, 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ko-KR'] .ms-font-mi,
+*[lang='ko-KR'] .ms-font-xs,
+*[lang='ko-KR'] .ms-font-s,
+*[lang='ko-KR'] .ms-font-s-plus,
+*[lang='ko-KR'] .ms-font-m,
+*[lang='ko-KR'] .ms-font-m-plus,
+*[lang='ko-KR'] .ms-font-l,
+*[lang='ko-KR'] .ms-font-xl,
+*[lang='ko-KR'] .ms-font-xxl,
+*[lang='ko-KR'] .ms-font-su,
+*[lang='ko-KR'] .ms-font-weight-light,
+*[lang='ko-KR'] .ms-font-weight-light-hover:hover,
+*[lang='ko-KR'] .ms-font-weight-semilight,
+*[lang='ko-KR'] .ms-font-weight-semilight-hover:hover,
+*[lang='ko-KR'] .ms-font-weight-regular,
+*[lang='ko-KR'] .ms-font-weight-regular-hover:hover,
+*[lang='ko-KR'] .ms-font-weight-semibold,
+*[lang='ko-KR'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Malgun Gothic', Gulim, 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ch-ZHS'] .ms-font-mi,
+*[lang='ch-ZHS'] .ms-font-xs,
+*[lang='ch-ZHS'] .ms-font-s,
+*[lang='ch-ZHS'] .ms-font-s-plus,
+*[lang='ch-ZHS'] .ms-font-m,
+*[lang='ch-ZHS'] .ms-font-m-plus,
+*[lang='ch-ZHS'] .ms-font-l,
+*[lang='ch-ZHS'] .ms-font-xl,
+*[lang='ch-ZHS'] .ms-font-xxl,
+*[lang='ch-ZHS'] .ms-font-su,
+*[lang='ch-ZHS'] .ms-font-weight-light,
+*[lang='ch-ZHS'] .ms-font-weight-light-hover:hover,
+*[lang='ch-ZHS'] .ms-font-weight-semilight,
+*[lang='ch-ZHS'] .ms-font-weight-semilight-hover:hover,
+*[lang='ch-ZHS'] .ms-font-weight-regular,
+*[lang='ch-ZHS'] .ms-font-weight-regular-hover:hover,
+*[lang='ch-ZHS'] .ms-font-weight-semibold,
+*[lang='ch-ZHS'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Microsoft Yahei', Verdana, Simsun, 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ch-ZHT'] .ms-font-mi,
+*[lang='ch-ZHT'] .ms-font-xs,
+*[lang='ch-ZHT'] .ms-font-s,
+*[lang='ch-ZHT'] .ms-font-s-plus,
+*[lang='ch-ZHT'] .ms-font-m,
+*[lang='ch-ZHT'] .ms-font-m-plus,
+*[lang='ch-ZHT'] .ms-font-l,
+*[lang='ch-ZHT'] .ms-font-xl,
+*[lang='ch-ZHT'] .ms-font-xxl,
+*[lang='ch-ZHT'] .ms-font-su,
+*[lang='ch-ZHT'] .ms-font-weight-light,
+*[lang='ch-ZHT'] .ms-font-weight-light-hover:hover,
+*[lang='ch-ZHT'] .ms-font-weight-semilight,
+*[lang='ch-ZHT'] .ms-font-weight-semilight-hover:hover,
+*[lang='ch-ZHT'] .ms-font-weight-regular,
+*[lang='ch-ZHT'] .ms-font-weight-regular-hover:hover,
+*[lang='ch-ZHT'] .ms-font-weight-semibold,
+*[lang='ch-ZHT'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Microsoft Jhenghei', Pmingliu, 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hi-IN'] .ms-font-mi,
+*[lang='hi-IN'] .ms-font-xs,
+*[lang='hi-IN'] .ms-font-s,
+*[lang='hi-IN'] .ms-font-s-plus,
+*[lang='hi-IN'] .ms-font-m,
+*[lang='hi-IN'] .ms-font-m-plus,
+*[lang='hi-IN'] .ms-font-l,
+*[lang='hi-IN'] .ms-font-xl,
+*[lang='hi-IN'] .ms-font-xxl,
+*[lang='hi-IN'] .ms-font-su,
+*[lang='hi-IN'] .ms-font-weight-light,
+*[lang='hi-IN'] .ms-font-weight-light-hover:hover,
+*[lang='hi-IN'] .ms-font-weight-semilight,
+*[lang='hi-IN'] .ms-font-weight-semilight-hover:hover,
+*[lang='hi-IN'] .ms-font-weight-regular,
+*[lang='hi-IN'] .ms-font-weight-regular-hover:hover,
+*[lang='hi-IN'] .ms-font-weight-semibold,
+*[lang='hi-IN'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Nirmala UI', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='th-TH'] .ms-font-xl,
+*[lang='th-TH'] .ms-font-xxl,
+*[lang='th-TH'] .ms-font-weight-light,
+*[lang='th-TH'] .ms-font-weight-light-hover:hover {
+  font-family: 'Leelawadee UI Semilight', 'Kmer UI', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='th-TH'] .ms-font-l,
+*[lang='th-TH'] .ms-font-su,
+*[lang='th-TH'] .ms-font-weight-semilight,
+*[lang='th-TH'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Leelawadee UI Semilight', 'Kmer UI', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='th-TH'] .ms-font-weight-regular,
+*[lang='th-TH'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Leelawadee UI Regular', 'Kmer UI', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='th-TH'] .ms-font-mi,
+*[lang='th-TH'] .ms-font-weight-semibold,
+*[lang='th-TH'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Leelawadee UI Bold', 'Kmer UI', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ar'] .ms-font-xl,
+*[lang='ar'] .ms-font-xxl,
+*[lang='ar'] .ms-font-weight-light,
+*[lang='ar'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Arabic', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ar'] .ms-font-l,
+*[lang='ar'] .ms-font-su,
+*[lang='ar'] .ms-font-weight-semilight,
+*[lang='ar'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Arabic', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ar'] .ms-font-weight-regular,
+*[lang='ar'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Arabic', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ar'] .ms-font-mi,
+*[lang='ar'] .ms-font-weight-semibold,
+*[lang='ar'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Arabic', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='bg-BG'] .ms-font-xl,
+*[lang='bg-BG'] .ms-font-xxl,
+*[lang='bg-BG'] .ms-font-weight-light,
+*[lang='bg-BG'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Cyrillic', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='bg-BG'] .ms-font-l,
+*[lang='bg-BG'] .ms-font-su,
+*[lang='bg-BG'] .ms-font-weight-semilight,
+*[lang='bg-BG'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Cyrillic', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='bg-BG'] .ms-font-weight-regular,
+*[lang='bg-BG'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Cyrillic', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='bg-BG'] .ms-font-mi,
+*[lang='bg-BG'] .ms-font-weight-semibold,
+*[lang='bg-BG'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Cyrillic', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ru-RU'] .ms-font-xl,
+*[lang='ru-RU'] .ms-font-xxl,
+*[lang='ru-RU'] .ms-font-weight-light,
+*[lang='ru-RU'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Cyrillic', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ru-RU'] .ms-font-l,
+*[lang='ru-RU'] .ms-font-su,
+*[lang='ru-RU'] .ms-font-weight-semilight,
+*[lang='ru-RU'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Cyrillic', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ru-RU'] .ms-font-weight-regular,
+*[lang='ru-RU'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Cyrillic', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='ru-RU'] .ms-font-mi,
+*[lang='ru-RU'] .ms-font-weight-semibold,
+*[lang='ru-RU'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Cyrillic', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='uk-UA'] .ms-font-xl,
+*[lang='uk-UA'] .ms-font-xxl,
+*[lang='uk-UA'] .ms-font-weight-light,
+*[lang='uk-UA'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Cyrillic', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='uk-UA'] .ms-font-l,
+*[lang='uk-UA'] .ms-font-su,
+*[lang='uk-UA'] .ms-font-weight-semilight,
+*[lang='uk-UA'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Cyrillic', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='uk-UA'] .ms-font-weight-regular,
+*[lang='uk-UA'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Cyrillic', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='uk-UA'] .ms-font-mi,
+*[lang='uk-UA'] .ms-font-weight-semibold,
+*[lang='uk-UA'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Cyrillic', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='cs-CZ'] .ms-font-xl,
+*[lang='cs-CZ'] .ms-font-xxl,
+*[lang='cs-CZ'] .ms-font-weight-light,
+*[lang='cs-CZ'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='cs-CZ'] .ms-font-l,
+*[lang='cs-CZ'] .ms-font-su,
+*[lang='cs-CZ'] .ms-font-weight-semilight,
+*[lang='cs-CZ'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='cs-CZ'] .ms-font-weight-regular,
+*[lang='cs-CZ'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='cs-CZ'] .ms-font-mi,
+*[lang='cs-CZ'] .ms-font-weight-semibold,
+*[lang='cs-CZ'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='et-EE'] .ms-font-xl,
+*[lang='et-EE'] .ms-font-xxl,
+*[lang='et-EE'] .ms-font-weight-light,
+*[lang='et-EE'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='et-EE'] .ms-font-l,
+*[lang='et-EE'] .ms-font-su,
+*[lang='et-EE'] .ms-font-weight-semilight,
+*[lang='et-EE'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='et-EE'] .ms-font-weight-regular,
+*[lang='et-EE'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='et-EE'] .ms-font-mi,
+*[lang='et-EE'] .ms-font-weight-semibold,
+*[lang='et-EE'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hr-HR'] .ms-font-xl,
+*[lang='hr-HR'] .ms-font-xxl,
+*[lang='hr-HR'] .ms-font-weight-light,
+*[lang='hr-HR'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hr-HR'] .ms-font-l,
+*[lang='hr-HR'] .ms-font-su,
+*[lang='hr-HR'] .ms-font-weight-semilight,
+*[lang='hr-HR'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hr-HR'] .ms-font-weight-regular,
+*[lang='hr-HR'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hr-HR'] .ms-font-mi,
+*[lang='hr-HR'] .ms-font-weight-semibold,
+*[lang='hr-HR'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hu-HU'] .ms-font-xl,
+*[lang='hu-HU'] .ms-font-xxl,
+*[lang='hu-HU'] .ms-font-weight-light,
+*[lang='hu-HU'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hu-HU'] .ms-font-l,
+*[lang='hu-HU'] .ms-font-su,
+*[lang='hu-HU'] .ms-font-weight-semilight,
+*[lang='hu-HU'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hu-HU'] .ms-font-weight-regular,
+*[lang='hu-HU'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='hu-HU'] .ms-font-mi,
+*[lang='hu-HU'] .ms-font-weight-semibold,
+*[lang='hu-HU'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-LT'] .ms-font-xl,
+*[lang='lt-LT'] .ms-font-xxl,
+*[lang='lt-LT'] .ms-font-weight-light,
+*[lang='lt-LT'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-LT'] .ms-font-l,
+*[lang='lt-LT'] .ms-font-su,
+*[lang='lt-LT'] .ms-font-weight-semilight,
+*[lang='lt-LT'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-LT'] .ms-font-weight-regular,
+*[lang='lt-LT'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-LT'] .ms-font-mi,
+*[lang='lt-LT'] .ms-font-weight-semibold,
+*[lang='lt-LT'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lv-LV'] .ms-font-xl,
+*[lang='lv-LV'] .ms-font-xxl,
+*[lang='lv-LV'] .ms-font-weight-light,
+*[lang='lv-LV'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lv-LV'] .ms-font-l,
+*[lang='lv-LV'] .ms-font-su,
+*[lang='lv-LV'] .ms-font-weight-semilight,
+*[lang='lv-LV'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lv-LV'] .ms-font-weight-regular,
+*[lang='lv-LV'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lv-LV'] .ms-font-mi,
+*[lang='lv-LV'] .ms-font-weight-semibold,
+*[lang='lv-LV'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='pl-PL'] .ms-font-xl,
+*[lang='pl-PL'] .ms-font-xxl,
+*[lang='pl-PL'] .ms-font-weight-light,
+*[lang='pl-PL'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='pl-PL'] .ms-font-l,
+*[lang='pl-PL'] .ms-font-su,
+*[lang='pl-PL'] .ms-font-weight-semilight,
+*[lang='pl-PL'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='pl-PL'] .ms-font-weight-regular,
+*[lang='pl-PL'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='pl-PL'] .ms-font-mi,
+*[lang='pl-PL'] .ms-font-weight-semibold,
+*[lang='pl-PL'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-sr-SP'] .ms-font-xl,
+*[lang='lt-sr-SP'] .ms-font-xxl,
+*[lang='lt-sr-SP'] .ms-font-weight-light,
+*[lang='lt-sr-SP'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-sr-SP'] .ms-font-l,
+*[lang='lt-sr-SP'] .ms-font-su,
+*[lang='lt-sr-SP'] .ms-font-weight-semilight,
+*[lang='lt-sr-SP'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-sr-SP'] .ms-font-weight-regular,
+*[lang='lt-sr-SP'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='lt-sr-SP'] .ms-font-mi,
+*[lang='lt-sr-SP'] .ms-font-weight-semibold,
+*[lang='lt-sr-SP'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='tr-TR'] .ms-font-xl,
+*[lang='tr-TR'] .ms-font-xxl,
+*[lang='tr-TR'] .ms-font-weight-light,
+*[lang='tr-TR'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='tr-TR'] .ms-font-l,
+*[lang='tr-TR'] .ms-font-su,
+*[lang='tr-TR'] .ms-font-weight-semilight,
+*[lang='tr-TR'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='tr-TR'] .ms-font-weight-regular,
+*[lang='tr-TR'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='tr-TR'] .ms-font-mi,
+*[lang='tr-TR'] .ms-font-weight-semibold,
+*[lang='tr-TR'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='sk-SK'] .ms-font-xl,
+*[lang='sk-SK'] .ms-font-xxl,
+*[lang='sk-SK'] .ms-font-weight-light,
+*[lang='sk-SK'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='sk-SK'] .ms-font-l,
+*[lang='sk-SK'] .ms-font-su,
+*[lang='sk-SK'] .ms-font-weight-semilight,
+*[lang='sk-SK'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='sk-SK'] .ms-font-weight-regular,
+*[lang='sk-SK'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='sk-SK'] .ms-font-mi,
+*[lang='sk-SK'] .ms-font-weight-semibold,
+*[lang='sk-SK'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='kk-KZ'] .ms-font-xl,
+*[lang='kk-KZ'] .ms-font-xxl,
+*[lang='kk-KZ'] .ms-font-weight-light,
+*[lang='kk-KZ'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light EastEuropean', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='kk-KZ'] .ms-font-l,
+*[lang='kk-KZ'] .ms-font-su,
+*[lang='kk-KZ'] .ms-font-weight-semilight,
+*[lang='kk-KZ'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight EastEuropean', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='kk-KZ'] .ms-font-weight-regular,
+*[lang='kk-KZ'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular EastEuropean', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='kk-KZ'] .ms-font-mi,
+*[lang='kk-KZ'] .ms-font-weight-semibold,
+*[lang='kk-KZ'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold EastEuropean', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='el-GR'] .ms-font-xl,
+*[lang='el-GR'] .ms-font-xxl,
+*[lang='el-GR'] .ms-font-weight-light,
+*[lang='el-GR'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Greek', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='el-GR'] .ms-font-l,
+*[lang='el-GR'] .ms-font-su,
+*[lang='el-GR'] .ms-font-weight-semilight,
+*[lang='el-GR'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Greek', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='el-GR'] .ms-font-weight-regular,
+*[lang='el-GR'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Greek', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='el-GR'] .ms-font-mi,
+*[lang='el-GR'] .ms-font-weight-semibold,
+*[lang='el-GR'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Greek', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='he-IL'] .ms-font-xl,
+*[lang='he-IL'] .ms-font-xxl,
+*[lang='he-IL'] .ms-font-weight-light,
+*[lang='he-IL'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Hebrew', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='he-IL'] .ms-font-l,
+*[lang='he-IL'] .ms-font-su,
+*[lang='he-IL'] .ms-font-weight-semilight,
+*[lang='he-IL'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Hebrew', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='he-IL'] .ms-font-weight-regular,
+*[lang='he-IL'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Hebrew', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='he-IL'] .ms-font-mi,
+*[lang='he-IL'] .ms-font-weight-semibold,
+*[lang='he-IL'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Hebrew', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='vi-VN'] .ms-font-xl,
+*[lang='vi-VN'] .ms-font-xxl,
+*[lang='vi-VN'] .ms-font-weight-light,
+*[lang='vi-VN'] .ms-font-weight-light-hover:hover {
+  font-family: 'Segoe UI Light Vietnamese', 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='vi-VN'] .ms-font-l,
+*[lang='vi-VN'] .ms-font-su,
+*[lang='vi-VN'] .ms-font-weight-semilight,
+*[lang='vi-VN'] .ms-font-weight-semilight-hover:hover {
+  font-family: 'Segoe UI Semilight Vietnamese', 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='vi-VN'] .ms-font-weight-regular,
+*[lang='vi-VN'] .ms-font-weight-regular-hover:hover {
+  font-family: 'Segoe UI Regular Vietnamese', 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+*[lang='vi-VN'] .ms-font-mi,
+*[lang='vi-VN'] .ms-font-weight-semibold,
+*[lang='vi-VN'] .ms-font-weight-semibold-hover:hover {
+  font-family: 'Segoe UI Semibold Vietnamese', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Office365Icons';
+  src: url('../fonts/office365icons.eot?');
+  src: url('../fonts/office365icons.eot?#iefix') format('embedded-opentype'), url('../fonts/office365icons.woff?') format('woff'), url('../fonts/office365icons.ttf?') format('truetype'), url('../fonts/office365icons.svg?#office365icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ms-Icon {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Office365Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+}
+
+.ms-Icon--circleEmpty:before {
+  content: '\e000';
+}
+/* '' */
+.ms-Icon--circleFill:before {
+  content: '\e001';
+}
+/* '' */
+.ms-Icon--placeholder:before {
+  content: '\e002';
+}
+/* '' */
+.ms-Icon--star:before {
+  content: '\e003';
+}
+/* '' */
+.ms-Icon--plus:before {
+  content: '\e004';
+}
+/* '' */
+.ms-Icon--minus:before {
+  content: '\e005';
+}
+/* '' */
+.ms-Icon--question:before {
+  content: '\e006';
+}
+/* '' */
+.ms-Icon--exclamation:before {
+  content: '\e007';
+}
+/* '' */
+.ms-Icon--person:before {
+  content: '\e008';
+}
+/* '' */
+.ms-Icon--mail:before {
+  content: '\e009';
+}
+/* '' */
+.ms-Icon--infoCircle:before {
+  content: '\e00a';
+}
+/* '' */
+.ms-Icon--alert:before {
+  content: '\e00b';
+}
+/* '' */
+.ms-Icon--xCircle:before {
+  content: '\e00c';
+}
+/* '' */
+.ms-Icon--mailOpen:before {
+  content: '\e00d';
+}
+/* '' */
+.ms-Icon--people:before {
+  content: '\e00e';
+}
+/* '' */
+.ms-Icon--bell:before {
+  content: '\e010';
+}
+/* '' */
+.ms-Icon--calendar:before {
+  content: '\e011';
+}
+/* '' */
+.ms-Icon--scheduling:before {
+  content: '\e012';
+}
+/* '' */
+.ms-Icon--event:before {
+  content: '\e013';
+}
+/* '' */
+.ms-Icon--folder:before {
+  content: '\e014';
+}
+/* '' */
+.ms-Icon--documents:before {
+  content: '\e015';
+}
+/* '' */
+.ms-Icon--onedrive:before {
+  content: '\e016';
+}
+/* '' */
+.ms-Icon--chat:before {
+  content: '\e017';
+}
+/* '' */
+.ms-Icon--sites:before {
+  content: '\e018';
+}
+/* '' */
+.ms-Icon--listBullets:before {
+  content: '\e019';
+}
+/* '' */
+.ms-Icon--calendarWeek:before {
+  content: '\e01a';
+}
+/* '' */
+.ms-Icon--calendarWorkWeek:before {
+  content: '\e01b';
+}
+/* '' */
+.ms-Icon--calendarDay:before {
+  content: '\e01c';
+}
+/* '' */
+.ms-Icon--folderMove:before {
+  content: '\e01d';
+}
+/* '' */
+.ms-Icon--panel:before {
+  content: '\e01e';
+}
+/* '' */
+.ms-Icon--popout:before {
+  content: '\e01f';
+}
+/* '' */
+.ms-Icon--menu:before {
+  content: '\e020';
+}
+/* '' */
+.ms-Icon--home:before {
+  content: '\e021';
+}
+/* '' */
+.ms-Icon--favorites:before {
+  content: '\e022';
+}
+/* '' */
+.ms-Icon--phone:before {
+  content: '\e023';
+}
+/* '' */
+.ms-Icon--mailSend:before {
+  content: '\e024';
+}
+/* '' */
+.ms-Icon--save:before {
+  content: '\e025';
+}
+/* '' */
+.ms-Icon--trash:before {
+  content: '\e026';
+}
+/* '' */
+.ms-Icon--pencil:before {
+  content: '\e027';
+}
+/* '' */
+.ms-Icon--flag:before {
+  content: '\e028';
+}
+/* '' */
+.ms-Icon--reply:before {
+  content: '\e029';
+}
+/* '' */
+.ms-Icon--miniatures:before {
+  content: '\e02a';
+}
+/* '' */
+.ms-Icon--voicemail:before {
+  content: '\e02b';
+}
+/* '' */
+.ms-Icon--play:before {
+  content: '\e02c';
+}
+/* '' */
+.ms-Icon--pause:before {
+  content: '\e02d';
+}
+/* '' */
+.ms-Icon--onlineAdd:before {
+  content: '\e02e';
+}
+/* '' */
+.ms-Icon--onlineJoin:before {
+  content: '\e02f';
+}
+/* '' */
+.ms-Icon--replyAll:before {
+  content: '\e030';
+}
+/* '' */
+.ms-Icon--attachment:before {
+  content: '\e031';
+}
+/* '' */
+.ms-Icon--drm:before {
+  content: '\e032';
+}
+/* '' */
+.ms-Icon--pinDown:before {
+  content: '\e033';
+}
+/* '' */
+.ms-Icon--refresh:before {
+  content: '\e034';
+}
+/* '' */
+.ms-Icon--gear:before {
+  content: '\e035';
+}
+/* '' */
+.ms-Icon--smiley:before {
+  content: '\e036';
+}
+/* '' */
+.ms-Icon--info:before {
+  content: '\e037';
+}
+/* '' */
+.ms-Icon--lock:before {
+  content: '\e038';
+}
+/* '' */
+.ms-Icon--search:before {
+  content: '\e039';
+}
+/* '' */
+.ms-Icon--questionReverse:before {
+  content: '\e03a';
+}
+/* '' */
+.ms-Icon--notRecurring:before {
+  content: '\e03b';
+}
+/* '' */
+.ms-Icon--tasks:before {
+  content: '\e040';
+}
+/* '' */
+.ms-Icon--check:before {
+  content: '\e041';
+}
+/* '' */
+.ms-Icon--x:before {
+  content: '\e042';
+}
+/* '' */
+.ms-Icon--thumbDown:before {
+  content: '\e043';
+}
+/* '' */
+.ms-Icon--thumbUp:before {
+  content: '\e044';
+}
+/* '' */
+.ms-Icon--ellipsis:before {
+  content: '\e045';
+}
+/* '' */
+.ms-Icon--dot:before {
+  content: '\e046';
+}
+/* '' */
+.ms-Icon--arrowUp:before {
+  content: '\e047';
+}
+/* '' */
+.ms-Icon--arrowDown:before {
+  content: '\e048';
+}
+/* '' */
+.ms-Icon--arrowLeft:before {
+  content: '\e049';
+}
+/* '' */
+.ms-Icon--arrowRight:before {
+  content: '\e04a';
+}
+/* '' */
+.ms-Icon--download:before {
+  content: '\e04b';
+}
+/* '' */
+.ms-Icon--directions:before {
+  content: '\e04c';
+}
+/* '' */
+.ms-Icon--microphone:before {
+  content: '\e04f';
+}
+/* '' */
+.ms-Icon--caretUp:before {
+  content: '\e051';
+}
+/* '' */
+.ms-Icon--caretDown:before {
+  content: '\e052';
+}
+/* '' */
+.ms-Icon--caretLeft:before {
+  content: '\e053';
+}
+/* '' */
+.ms-Icon--caretRight:before {
+  content: '\e054';
+}
+/* '' */
+.ms-Icon--office:before {
+  content: '\e055';
+}
+/* '' */
+.ms-Icon--office365:before {
+  content: '\e056';
+}
+/* '' */
+.ms-Icon--office365Preview:before {
+  content: '\e057';
+}
+/* '' */
+.ms-Icon--caretUpLeft:before {
+  content: '\e05a';
+}
+/* '' */
+.ms-Icon--caretUpRight:before {
+  content: '\e05b';
+}
+/* '' */
+.ms-Icon--caretDownRight:before {
+  content: '\e05c';
+}
+/* '' */
+.ms-Icon--caretDownLeft:before {
+  content: '\e05d';
+}
+/* '' */
+.ms-Icon--apps:before {
+  content: '\e060';
+}
+/* '' */
+.ms-Icon--officeStore:before {
+  content: '\e061';
+}
+/* '' */
+.ms-Icon--outlook:before {
+  content: '\e062';
+}
+/* '' */
+.ms-Icon--project:before {
+  content: '\e063';
+}
+/* '' */
+.ms-Icon--yammer:before {
+  content: '\e064';
+}
+/* '' */
+.ms-Icon--dynamicsCrm:before {
+  content: '\e065';
+}
+/* '' */
+.ms-Icon--lync:before {
+  content: '\e066';
+}
+/* '' */
+.ms-Icon--note:before {
+  content: '\e06a';
+}
+/* '' */
+.ms-Icon--noteReply:before {
+  content: '\e06b';
+}
+/* '' */
+.ms-Icon--noteForward:before {
+  content: '\e06c';
+}
+/* '' */
+.ms-Icon--key:before {
+  content: '\e06f';
+}
+/* '' */
+.ms-Icon--tile:before {
+  content: '\e070';
+}
+/* '' */
+.ms-Icon--taskRecurring:before {
+  content: '\e071';
+}
+/* '' */
+.ms-Icon--sharepoint:before {
+  content: '\e072';
+}
+/* '' */
+.ms-Icon--starEmpty:before {
+  content: '\e073';
+}
+/* '' */
+.ms-Icon--upload:before {
+  content: '\e076';
+}
+/* '' */
+.ms-Icon--wrench:before {
+  content: '\e077';
+}
+/* '' */
+.ms-Icon--share:before {
+  content: '\e078';
+}
+/* '' */
+.ms-Icon--documentReply:before {
+  content: '\e079';
+}
+/* '' */
+.ms-Icon--documentForward:before {
+  content: '\e07a';
+}
+/* '' */
+.ms-Icon--partner:before {
+  content: '\e080';
+}
+/* '' */
+.ms-Icon--admin:before {
+  content: '\e081';
+}
+/* '' */
+.ms-Icon--microsoft:before {
+  content: '\e083';
+}
+/* '' */
+.ms-Icon--reactivate:before {
+  content: '\e084';
+}
+/* '' */
+.ms-Icon--sort:before {
+  content: '\e085';
+}
+/* '' */
+.ms-Icon--personAdd:before {
+  content: '\e086';
+}
+/* '' */
+.ms-Icon--chevronUp:before {
+  content: '\e087';
+}
+/* '' */
+.ms-Icon--chevronDown:before {
+  content: '\e088';
+}
+/* '' */
+.ms-Icon--chevronLeft:before {
+  content: '\e089';
+}
+/* '' */
+.ms-Icon--chevronRight:before {
+  content: '\e08a';
+}
+/* '' */
+.ms-Icon--powerBi:before {
+  content: '\e08b';
+}
+/* '' */
+.ms-Icon--peopleAdd:before {
+  content: '\e08c';
+}
+/* '' */
+.ms-Icon--newsfeed:before {
+  content: '\e08d';
+}
+/* '' */
+.ms-Icon--notebook:before {
+  content: '\e08e';
+}
+/* '' */
+.ms-Icon--link:before {
+  content: '\e08f';
+}
+/* '' */
+.ms-Icon--chevronsUp:before {
+  content: '\e090';
+}
+/* '' */
+.ms-Icon--chevronsDown:before {
+  content: '\e091';
+}
+/* '' */
+.ms-Icon--chevronsLeft:before {
+  content: '\e092';
+}
+/* '' */
+.ms-Icon--chevronsRight:before {
+  content: '\e093';
+}
+/* '' */
+.ms-Icon--clutter:before {
+  content: '\e09a';
+}
+/* '' */
+.ms-Icon--subscribe:before {
+  content: '\e09c';
+}
+/* '' */
+.ms-Icon--unsubscribe:before {
+  content: '\e09d';
+}
+/* '' */
+.ms-Icon--personRemove:before {
+  content: '\e09e';
+}
+/* '' */
+.ms-Icon--receiptForward:before {
+  content: '\e0a0';
+}
+/* '' */
+.ms-Icon--receiptReply:before {
+  content: '\e0a1';
+}
+/* '' */
+.ms-Icon--receiptCheck:before {
+  content: '\e0a2';
+}
+/* '' */
+.ms-Icon--peopleRemove:before {
+  content: '\e0a3';
+}
+/* '' */
+.ms-Icon--merge:before {
+  content: '\e0a4';
+}
+/* '' */
+.ms-Icon--split:before {
+  content: '\e0a5';
+}
+/* '' */
+.ms-Icon--eventCancel:before {
+  content: '\e0a6';
+}
+/* '' */
+.ms-Icon--eventShare:before {
+  content: '\e0a7';
+}
+/* '' */
+.ms-Icon--today:before {
+  content: '\e0a9';
+}
+/* '' */
+.ms-Icon--oofReply:before {
+  content: '\e0aa';
+}
+/* '' */
+.ms-Icon--voicemailReply:before {
+  content: '\e0ac';
+}
+/* '' */
+.ms-Icon--voicemailForward:before {
+  content: '\e0ad';
+}
+/* '' */
+.ms-Icon--ribbon:before {
+  content: '\e0af';
+}
+/* '' */
+.ms-Icon--contact:before {
+  content: '\e0b0';
+}
+/* '' */
+.ms-Icon--eye:before {
+  content: '\e0b1';
+}
+/* '' */
+.ms-Icon--glasses:before {
+  content: '\e0b2';
+}
+/* '' */
+.ms-Icon--gallatin:before {
+  content: '\e0b3';
+}
+/* '' */
+.ms-Icon--access:before {
+  content: '\e0b4';
+}
+/* '' */
+.ms-Icon--excel:before {
+  content: '\e0b5';
+}
+/* '' */
+.ms-Icon--onenote:before {
+  content: '\e0b7';
+}
+/* '' */
+.ms-Icon--powerpoint:before {
+  content: '\e0b8';
+}
+/* '' */
+.ms-Icon--word:before {
+  content: '\e0b9';
+}
+/* '' */
+.ms-Icon--print:before {
+  content: '\e100';
+}
+/* '' */
+.ms-Icon--room:before {
+  content: '\e101';
+}
+/* '' */
+.ms-Icon--post:before {
+  content: '\e102';
+}
+/* '' */
+.ms-Icon--toggle:before {
+  content: '\e103';
+}
+/* '' */
+.ms-Icon--touch:before {
+  content: '\e104';
+}
+/* '' */
+.ms-Icon--clock:before {
+  content: '\e105';
+}
+/* '' */
+.ms-Icon--fax:before {
+  content: '\e106';
+}
+/* '' */
+.ms-Icon--lightning:before {
+  content: '\e110';
+}
+/* '' */
+.ms-Icon--dialpad:before {
+  content: '\e111';
+}
+/* '' */
+.ms-Icon--phoneTransfer:before {
+  content: '\e112';
+}
+/* '' */
+.ms-Icon--phoneAdd:before {
+  content: '\e113';
+}
+/* '' */
+.ms-Icon--late:before {
+  content: '\e114';
+}
+/* '' */
+.ms-Icon--chatAdd:before {
+  content: '\e115';
+}
+/* '' */
+.ms-Icon--conflict:before {
+  content: '\e116';
+}
+/* '' */
+.ms-Icon--navigate:before {
+  content: '\e117';
+}
+/* '' */
+.ms-Icon--delve:before {
+  content: '\e118';
+}
+/* '' */
+.ms-Icon--camera:before {
+  content: '\e119';
+}
+/* '' */
+.ms-Icon--filter:before {
+  content: '\e11a';
+}
+/* '' */
+.ms-Icon--fullscreen:before {
+  content: '\e11b';
+}
+/* '' */
+.ms-Icon--new:before {
+  content: '\e11c';
+}
+/* '' */
+.ms-Icon--mailEmpty:before {
+  content: '\e11d';
+}
+/* '' */
+.ms-Icon--editBox:before {
+  content: '\e11e';
+}
+/* '' */
+.ms-Icon--waffle:before {
+  content: '\e11f';
+}
+/* '' */
+.ms-Icon--work:before {
+  content: '\e120';
+}
+/* '' */
+.ms-Icon--eventRecurring:before {
+  content: '\e121';
+}
+/* '' */
+.ms-Icon--cart:before {
+  content: '\e122';
+}
+/* '' */
+.ms-Icon--socialListening:before {
+  content: '\e123';
+}
+/* '' */
+.ms-Icon--mapMarker:before {
+  content: '\e124';
+}
+/* '' */
+.ms-Icon--org:before {
+  content: '\e125';
+}
+/* '' */
+.ms-Icon--adminA:before {
+  content: '\e130';
+}
+/* '' */
+.ms-Icon--adminC:before {
+  content: '\e131';
+}
+/* '' */
+.ms-Icon--adminD:before {
+  content: '\e132';
+}
+/* '' */
+.ms-Icon--adminE:before {
+  content: '\e133';
+}
+/* '' */
+.ms-Icon--adminL:before {
+  content: '\e134';
+}
+/* '' */
+.ms-Icon--adminM:before {
+  content: '\e135';
+}
+/* '' */
+.ms-Icon--adminO:before {
+  content: '\e136';
+}
+/* '' */
+.ms-Icon--adminP:before {
+  content: '\e137';
+}
+/* '' */
+.ms-Icon--adminS:before {
+  content: '\e138';
+}
+/* '' */
+.ms-Icon--adminY:before {
+  content: '\e139';
+}
+/* '' */
+.ms-Icon--replyAlt:before {
+  content: '\e150';
+}
+/* '' */
+.ms-Icon--replyAllAlt:before {
+  content: '\e152';
+}
+/* '' */
+.ms-Icon--eventInfo:before {
+  content: '\e154';
+}
+/* '' */
+.ms-Icon--group:before {
+  content: '\e155';
+}
+/* '' */
+.ms-Icon--officeThreshold:before {
+  content: '\e160';
+}
+/* '' */
+.ms-Icon--money:before {
+  content: '\e161';
+}
+/* '' */
+.ms-Icon--graph:before {
+  content: '\e162';
+}
+/* '' */
+.ms-Icon--noteEdit:before {
+  content: '\e163';
+}
+/* '' */
+.ms-Icon--dashboard:before {
+  content: '\e164';
+}
+/* '' */
+.ms-Icon--mailEdit:before {
+  content: '\e165';
+}
+/* '' */
+.ms-Icon--pinLeft:before {
+  content: '\e167';
+}
+/* '' */
+.ms-Icon--onedriveAdd:before {
+  content: '\e168';
+}
+/* '' */
+.ms-Icon--heart:before {
+  content: '\e16a';
+}
+/* '' */
+.ms-Icon--heartEmpty:before {
+  content: '\e16b';
+}
+/* '' */
+.ms-Icon--picture:before {
+  content: '\e16c';
+}
+/* '' */
+.ms-Icon--cake:before {
+  content: '\e16d';
+}
+/* '' */
+.ms-Icon--books:before {
+  content: '\e16e';
+}
+/* '' */
+.ms-Icon--chart:before {
+  content: '\e16f';
+}
+/* '' */
+.ms-Icon--video:before {
+  content: '\e170';
+}
+/* '' */
+.ms-Icon--soccer:before {
+  content: '\e171';
+}
+/* '' */
+.ms-Icon--meal:before {
+  content: '\e172';
+}
+/* '' */
+.ms-Icon--balloon:before {
+  content: '\e173';
+}
+/* '' */
+.ms-Icon--cat:before {
+  content: '\e174';
+}
+/* '' */
+.ms-Icon--dog:before {
+  content: '\e175';
+}
+/* '' */
+.ms-Icon--bag:before {
+  content: '\e176';
+}
+/* '' */
+.ms-Icon--music:before {
+  content: '\e177';
+}
+/* '' */
+.ms-Icon--stopwatch:before {
+  content: '\e178';
+}
+/* '' */
+.ms-Icon--coffee:before {
+  content: '\e179';
+}
+/* '' */
+.ms-Icon--briefcase:before {
+  content: '\e17a';
+}
+/* '' */
+.ms-Icon--pill:before {
+  content: '\e17b';
+}
+/* '' */
+.ms-Icon--trophy:before {
+  content: '\e17c';
+}
+/* '' */
+.ms-Icon--firstAid:before {
+  content: '\e17d';
+}
+/* '' */
+.ms-Icon--plane:before {
+  content: '\e17e';
+}
+/* '' */
+.ms-Icon--page:before {
+  content: '\e17f';
+}
+/* '' */
+.ms-Icon--car:before {
+  content: '\e180';
+}
+/* '' */
+.ms-Icon--dogAlt:before {
+  content: '\e181';
+}
+/* '' */
+.ms-Icon--document:before {
+  content: '\e182';
+}
+/* '' */
+.ms-Icon--metadata:before {
+  content: '\e183';
+}
+/* '' */
+.ms-Icon--pointItem:before {
+  content: '\e184';
+}
+/* '' */
+.ms-Icon--text:before {
+  content: '\e185';
+}
+/* '' */
+.ms-Icon--fieldText:before {
+  content: '\e186';
+}
+/* '' */
+.ms-Icon--fieldNumber:before {
+  content: '\e187';
+}
+/* '' */
+.ms-Icon--dropdown:before {
+  content: '\e188';
+}
+/* '' */
+.ms-Icon--radioButton:before {
+  content: '\e189';
+}
+/* '' */
+.ms-Icon--checkbox:before {
+  content: '\e18a';
+}
+/* '' */
+.ms-Icon--story:before {
+  content: '\e18b';
+}
+/* '' */
+.ms-Icon--bold:before {
+  content: '\e18c';
+}
+/* '' */
+.ms-Icon--italic:before {
+  content: '\e18d';
+}
+/* '' */
+.ms-Icon--underline:before {
+  content: '\e18e';
+}
+/* '' */
+.ms-Icon--quote:before {
+  content: '\e18f';
+}
+/* '' */
+.ms-Icon--styleRemove:before {
+  content: '\e190';
+}
+/* '' */
+.ms-Icon--pictureAdd:before {
+  content: '\e191';
+}
+/* '' */
+.ms-Icon--pictureRemove:before {
+  content: '\e192';
+}
+/* '' */
+.ms-Icon--desktop:before {
+  content: '\e193';
+}
+/* '' */
+.ms-Icon--tablet:before {
+  content: '\e194';
+}
+/* '' */
+.ms-Icon--mobile:before {
+  content: '\e195';
+}
+/* '' */
+.ms-Icon--table:before {
+  content: '\e196';
+}
+/* '' */
+.ms-Icon--hide:before {
+  content: '\e197';
+}
+/* '' */
+.ms-Icon--shield:before {
+  content: '\e198';
+}
+/* '' */
+.ms-Icon--skype:before {
+  content: '\e199';
+}
+/* '' */
+.ms-Icon--header:before {
+  content: '\e19a';
+}
+/* '' */
+.ms-Icon--paint:before {
+  content: '\e19b';
+}
+/* '' */
+.ms-Icon--support:before {
+  content: '\e19c';
+}
+/* '' */
+.ms-Icon--settings:before {
+  content: '\e19d';
+}
+/* '' */
+.ms-Icon--creditCard:before {
+  content: '\e19e';
+}
+/* '' */
+.ms-Icon--reload:before {
+  content: '\e19f';
+}
+/* '' */
+.ms-Icon--peopleSecurity:before {
+  content: '\e200';
+}
+/* '' */
+.ms-Icon--visio:before {
+  content: '\e201';
+}
+/* '' */
+.ms-Icon--officeVideo:before {
+  content: '\e202';
+}
+/* '' */
+.ms-Icon--fieldTextBox:before {
+  content: '\e203';
+}
+/* '' */
+.ms-Icon--multiChoice:before {
+  content: '\e204';
+}
+/* '' */
+.ms-Icon--fieldMail:before {
+  content: '\e205';
+}
+/* '' */
+.ms-Icon--contactForm:before {
+  content: '\e206';
+}
+/* '' */
+.ms-Icon--circleHalfFilled:before {
+  content: '\e207';
+}
+/* '' */
+.ms-Icon--documentPDF:before {
+  content: '\e208';
+}
+/* '' */
+.ms-Icon--bookmark:before {
+  content: '\e209';
+}
+/* '' */
+.ms-Icon--parature:before {
+  content: '\e20a';
+}
+/* '' */
+.ms-Icon--circleUnfilled:before {
+  content: '\e20b';
+}
+/* '' */
+.ms-Icon--circleFilled:before {
+  content: '\e20c';
+}
+/* '' */
+.ms-Icon--aad:before {
+  content: '\e20d';
+}
+/* '' */
+.ms-Icon--textBox:before {
+  content: '\e20e';
+}
+/* '' */
+.ms-Icon--drop:before {
+  content: '\e20f';
+}
+/* '' */
+.ms-Icon--sun:before {
+  content: '\e210';
+}
+/* '' */
+.ms-Icon--lifesaver:before {
+  content: '\e211';
+}
+/* '' */
+.ms-Icon--lifesaverLock:before {
+  content: '\e212';
+}
+/* '' */
+.ms-Icon--mailUnread:before {
+  content: '\e213';
+}
+/* '' */
+.ms-Icon--mailRead:before {
+  content: '\e214';
+}
+/* '' */
+.ms-Icon--inboxCheck:before {
+  content: '\e215';
+}
+/* '' */
+.ms-Icon--folderSearch:before {
+  content: '\e216';
+}
+/* '' */
+.ms-Icon--collapse:before {
+  content: '\e217';
+}
+/* '' */
+.ms-Icon--expand:before {
+  content: '\e218';
+}
+/* '' */
+.ms-Icon--ascending:before {
+  content: '\e219';
+}
+/* '' */
+.ms-Icon--descending:before {
+  content: '\e21a';
+}
+/* '' */
+.ms-Icon--filterClear:before {
+  content: '\e21b';
+}
+/* '' */
+.ms-Icon--checkboxEmpty:before {
+  content: '\e21c';
+}
+/* '' */
+.ms-Icon--checkboxMixed:before {
+  content: '\e21d';
+}
+/* '' */
+.ms-Icon--boards:before {
+  content: '\e21e';
+}
+/* '' */
+.ms-Icon--checkboxCheck:before {
+  content: '\e21f';
+}
+/* '' */
+.ms-Icon--frowny:before {
+  content: '\e220';
+}
+/* '' */
+.ms-Icon--lightBulb:before {
+  content: '\e221';
+}
+/* '' */
+.ms-Icon--globe:before {
+  content: '\e222';
+}
+/* '' */
+.ms-Icon--deviceWipe:before {
+  content: '\e223';
+}
+/* '' */
+.ms-Icon--exchange:before {
+  content: '\e224';
+}
+/* '' */
+.ms-Icon--bing:before {
+  content: '\e225';
+}
+/* '' */
+.ms-Icon--listCheck:before {
+  content: '\e226';
+}
+/* '' */
+.ms-Icon--listGroup:before {
+  content: '\e227';
+}
+/* '' */
+.ms-Icon--timeline:before {
+  content: '\e228';
+}
+/* '' */
+.ms-Icon--fontIncrease:before {
+  content: '\e229';
+}
+/* '' */
+.ms-Icon--fontDecrease:before {
+  content: '\e22a';
+}
+/* '' */
+.ms-Icon--fontColor:before {
+  content: '\e22b';
+}
+/* '' */
+.ms-Icon--mailCheck:before {
+  content: '\e22c';
+}
+/* '' */
+.ms-Icon--mailDown:before {
+  content: '\e22d';
+}
+/* '' */
+.ms-Icon--listCheckbox:before {
+  content: '\e22e';
+}
+/* '' */
+.ms-Icon--sunAdd:before {
+  content: '\e22f';
+}
+/* '' */
+.ms-Icon--sunQuestion:before {
+  content: '\e230';
+}
+/* '' */
+.ms-Icon--chevronThinUp:before {
+  content: '\e231';
+}
+/* '' */
+.ms-Icon--chevronThinDown:before {
+  content: '\e232';
+}
+/* '' */
+.ms-Icon--chevronThinLeft:before {
+  content: '\e233';
+}
+/* '' */
+.ms-Icon--chevronThinRight:before {
+  content: '\e234';
+}
+/* '' */
+.ms-Icon--chevronThickUp:before {
+  content: '\e235';
+}
+/* '' */
+.ms-Icon--chevronThickDown:before {
+  content: '\e236';
+}
+/* '' */
+.ms-Icon--chevronThickLeft:before {
+  content: '\e237';
+}
+/* '' */
+.ms-Icon--chevronThickRight:before {
+  content: '\e238';
+}
+/* '' */
+.ms-Icon--linkRemove:before {
+  content: '\e239';
+}
+/* '' */
+.ms-Icon--alchemy:before {
+  content: '\e23a';
+}
+/* '' */
+.ms-Icon--alertOutline:before {
+  content: '\e23b';
+}
+/* '' */
+.ms-Icon--documentLandscape:before {
+  content: '\e23c';
+}
+/* '' */
+.ms-Icon--documentAdd:before {
+  content: '\e23d';
+}
+/* '' */
+.ms-Icon--toggleMiddle:before {
+  content: '\e23e';
+}
+/* '' */
+.ms-Icon--embed:before {
+  content: '\e23f';
+}
+/* '' */
+.ms-Icon--listNumbered:before {
+  content: '\e240';
+}
+/* '' */
+.ms-Icon--msn:before {
+  content: '\e241';
+}
+/* '' */
+.ms-Icon--peopleCheck:before {
+  content: '\e242';
+}
+/* '' */
+.ms-Icon--caretUpOutline:before {
+  content: '\e243';
+}
+/* '' */
+.ms-Icon--caretDownOutline:before {
+  content: '\e244';
+}
+/* '' */
+.ms-Icon--caretLeftOutline:before {
+  content: '\e245';
+}
+/* '' */
+.ms-Icon--caretRightOutline:before {
+  content: '\e246';
+}
+/* '' */
+.ms-Icon--sway:before {
+  content: '\e247';
+}
+/* '' */
+.ms-Icon--mailSync:before {
+  content: '\e248';
+}
+/* '' */
+.ms-Icon--mailError:before {
+  content: '\e249';
+}
+/* '' */
+.ms-Icon--mailPause:before {
+  content: '\e24a';
+}
+/* '' */
+.ms-Icon--peopleSync:before {
+  content: '\e24b';
+}
+/* '' */
+.ms-Icon--peopleError:before {
+  content: '\e24c';
+}
+/* '' */
+.ms-Icon--peoplePause:before {
+  content: '\e24d';
+}
+/* '' */
+.ms-Icon--circleBall:before {
+  content: '\e24e';
+}
+/* '' */
+.ms-Icon--circleBalloons:before {
+  content: '\e24f';
+}
+/* '' */
+.ms-Icon--circleCar:before {
+  content: '\e250';
+}
+/* '' */
+.ms-Icon--circleCat:before {
+  content: '\e251';
+}
+/* '' */
+.ms-Icon--circleCoffee:before {
+  content: '\e252';
+}
+/* '' */
+.ms-Icon--circleDog:before {
+  content: '\e253';
+}
+/* '' */
+.ms-Icon--circleLightning:before {
+  content: '\e254';
+}
+/* '' */
+.ms-Icon--circlePill:before {
+  content: '\e255';
+}
+/* '' */
+.ms-Icon--circlePlane:before {
+  content: '\e256';
+}
+/* '' */
+.ms-Icon--circlePoodle:before {
+  content: '\e257';
+}
+/* '' */
+.ms-Icon--skypeForBusiness:before {
+  content: '\e258';
+}
+/* '' */
+.ms-Icon--checkPeople:before {
+  content: '\e259';
+}
+/* '' */
+.ms-Icon--documentSearch:before {
+  content: '\e25a';
+}
+/* '' */
+.ms-Icon--dynamicsMarketing:before {
+  content: '\e25b';
+}
+/* '' */
+.ms-Icon--sortLines:before {
+  content: '\e25c';
+}
+/* '' */
+.ms-Icon--calendarPublic:before {
+  content: '\e25d';
+}
+/* '' */
+.ms-Icon--contactPublic:before {
+  content: '\e25e';
+}
+/* '' */
+.ms-Icon--classNotebook:before {
+  content: '\e25f';
+}
+/* '' */
+.ms-Icon--triangleUp:before {
+  content: '\e260';
+}
+/* '' */
+.ms-Icon--triangleRight:before {
+  content: '\e261';
+}
+/* '' */
+.ms-Icon--triangleDown:before {
+  content: '\e262';
+}
+/* '' */
+.ms-Icon--triangleLeft:before {
+  content: '\e263';
+}
+/* '' */
+.ms-Icon--triangleEmptyUp:before {
+  content: '\e264';
+}
+/* '' */
+.ms-Icon--triangleEmptyRight:before {
+  content: '\e265';
+}
+/* '' */
+.ms-Icon--triangleEmptyDown:before {
+  content: '\e266';
+}
+/* '' */
+.ms-Icon--triangleEmptyLeft:before {
+  content: '\e267';
+}
+/* '' */
+.ms-Icon--filePDF:before {
+  content: '\e268';
+}
+/* '' */
+.ms-Icon--fileWord:before {
+  content: '\e269';
+}
+/* '' */
+.ms-Icon--filePowerPoint:before {
+  content: '\e26a';
+}
+/* '' */
+.ms-Icon--fileExcel:before {
+  content: '\e26b';
+}
+/* '' */
+.ms-Icon--fileImage:before {
+  content: '\e26c';
+}
+/* '' */
+.ms-Icon--fileDocument:before {
+  content: '\e26d';
+}
+/* '' */
+.ms-Icon--listGroup2:before {
+  content: '\e26e';
+}
+/* '' */
+.ms-Icon--copy:before {
+  content: '\e26f';
+}
+/* '' */
+.ms-Icon--creditCardOutline:before {
+  content: '\e270';
+}
+/* '' */
+.ms-Icon--officeAssistant:before {
+  content: '\e271';
+}
+/* '' */
+.ms-Icon--mailPublic:before {
+  content: '\e272';
+}
+/* '' */
+.ms-Icon--folderPublic:before {
+  content: '\e273';
+}
+/* '' */
+.ms-Icon--teamwork:before {
+  content: '\e274';
+}
+/* '' */
+.ms-Icon--move:before {
+  content: '\e275';
+}
+/* '' */
+.ms-Icon--classroom:before {
+  content: '\e276';
+}
+/* '' */
+.ms-Icon--menu2:before {
+  content: '\e277';
+}
+/* '' */
+.ms-Icon--plus2:before {
+  content: '\e278';
+}
+/* '' */
+.ms-Icon--tag:before {
+  content: '\e279';
+}
+/* '' */
+.ms-Icon--arrowUp2:before {
+  content: '\e27a';
+}
+/* '' */
+.ms-Icon--arrowDown2:before {
+  content: '\e27b';
+}
+/* '' */
+.ms-Icon--circlePlus:before {
+  content: '\e27c';
+}
+/* '' */
+.ms-Icon--circleInfo:before {
+  content: '\e27d';
+}
+/* '' */
+.ms-Icon--section:before {
+  content: '\e27e';
+}
+/* '' */
+.ms-Icon--sections:before {
+  content: '\e27f';
+}
+/* '' */
+.ms-Icon--oneNoteEdu:before {
+  content: '\e280';
+}
+/* '' */
+.ms-Icon--powerBi2:before {
+  content: '\e281';
+}
+/* '' */
+.ms-Icon--at:before {
+  content: '\e282';
+}
+/* '' */
+.ms-Icon--arrowUpRight:before {
+  content: '\e283';
+}
+/* '' */
+.ms-Icon--arrowDownRight:before {
+  content: '\e284';
+}
+/* '' */
+.ms-Icon--arrowDownLeft:before {
+  content: '\e285';
+}
+/* '' */
+.ms-Icon--arrowUpLeft:before {
+  content: '\e286';
+}
+/* '' */
+.ms-Icon--bundle:before {
+  content: '\e287';
+}
+/* '' */
+.ms-Icon--pictureEdit:before {
+  content: '\e288';
+}
+/* '' */
+.ms-Icon--protectionCenter:before {
+  content: '\e289';
+}
+/* '' */
+.ms-Icon--alert2:before {
+  content: '\e28a';
+}
+/* '' */
+.ms-Icon--circle {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ms-Icon--circle:before,
+.ms-Icon--circle:after {
+  line-height: 1;
+  font-size: inherit;
+}
+
+.ms-Icon--circle:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: absolute;
+}
+
+.ms-Icon--circle:after {
+  content: '\e000';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  z-index: 0;
+}
+
+.ms-Icon--circle.ms-Icon--star:before {
+  top: -2%;
+  left: 1%;
+}
+
+.ms-Icon--circle.ms-Icon--person:before {
+  top: -2%;
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--alert:before {
+  top: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--mailOpen:before {
+  top: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--people:before {
+  top: -4%;
+  left: -7%;
+}
+
+.ms-Icon--circle.ms-Icon--bell:before {
+  top: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--scheduling:before {
+  top: -3%;
+  left: 6%;
+}
+
+.ms-Icon--circle.ms-Icon--documents:before {
+  top: -1%;
+  left: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--listBullets:before {
+  top: -1%;
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--panel:before {
+  left: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--popout:before {
+  top: -2%;
+  left: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--home:before {
+  top: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--favorites:before {
+  top: -2%;
+  left: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--phone:before {
+  top: -2%;
+  left: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--mailSend:before {
+  left: -10%;
+}
+
+.ms-Icon--circle.ms-Icon--pencil:before {
+  top: -2%;
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--flag:before {
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--miniatures:before {
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--voicemail:before {
+  top: 2%;
+  left: -7%;
+}
+
+.ms-Icon--circle.ms-Icon--onlineAdd:before {
+  top: -1%;
+  left: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--pinDown:before {
+  top: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--gear:before {
+  left: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--check:before {
+  top: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--thumbsDown:before {
+  top: 2%;
+  left: -1%;
+}
+
+.ms-Icon--circle.ms-Icon--thumbsUp:before {
+  top: 4%;
+  left: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--ellipsis:before {
+  top: 2%;
+  left: -12%;
+}
+
+.ms-Icon--circle.ms-Icon--directions:before {
+  left: 10%;
+}
+
+.ms-Icon--circle.ms-Icon--microphone:before {
+  top: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--caretDown:before {
+  top: 5%;
+  left: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--caretLeft:before {
+  left: -6%;
+}
+
+.ms-Icon--circle.ms-Icon--caretRight:before {
+  left: 6%;
+}
+
+.ms-Icon--circle.ms-Icon--office:before {
+  left: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--caretUpLeft:before {
+  top: 5%;
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--caretUpRight:before {
+  top: 5%;
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--caretDownRight:before {
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--caretDownLeft:before {
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--apps:before {
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--officeStore:before {
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--dynamicsCrm:before {
+  top: -7%;
+  left: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--note:before {
+  top: 2%;
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--noteReply:before {
+  top: 6%;
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--noteForward:before {
+  top: 6%;
+}
+
+.ms-Icon--circle.ms-Icon--key:before {
+  top: 5%;
+  left: 1%;
+}
+
+.ms-Icon--circle.ms-Icon--tile:before {
+  top: -1%;
+  left: -18%;
+}
+
+.ms-Icon--circle.ms-Icon--taskRecurring:before {
+  top: 2%;
+  left: -1%;
+}
+
+.ms-Icon--circle.ms-Icon--starEmpty:before {
+  top: -4%;
+  left: 1%;
+}
+
+.ms-Icon--circle.ms-Icon--documentReply:before {
+  top: -2%;
+  left: 7%;
+}
+
+.ms-Icon--circle.ms-Icon--documentForward:before {
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--partner:before {
+  top: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--reactivate:before {
+  top: -2%;
+  left: 6%;
+}
+
+.ms-Icon--circle.ms-Icon--sort:before {
+  left: -19%;
+}
+
+.ms-Icon--circle.ms-Icon--personAdd:before {
+  top: -2%;
+  left: 6%;
+}
+
+.ms-Icon--circle.ms-Icon--chevronDown:before {
+  top: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--chevronLeft:before {
+  left: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--chevronRight:before {
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--peopleAdd:before {
+  top: -5%;
+  left: -12%;
+}
+
+.ms-Icon--circle.ms-Icon--newsfeed:before {
+  left: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--notebook:before {
+  left: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--link:before {
+  top: 2%;
+  left: -18%;
+}
+
+.ms-Icon--circle.ms-Icon--chevronsDown:before {
+  top: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--chevronsLeft:before {
+  left: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--chevronsRight:before {
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--personRemove:before {
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--receiptForward:before {
+  left: -20%;
+}
+
+.ms-Icon--circle.ms-Icon--receiptReply:before {
+  left: -20%;
+}
+
+.ms-Icon--circle.ms-Icon--receiptCheck:before {
+  left: -20%;
+}
+
+.ms-Icon--circle.ms-Icon--peopleRemove:before {
+  top: -3%;
+  left: -12%;
+}
+
+.ms-Icon--circle.ms-Icon--merge:before {
+  top: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--split:before {
+  top: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--eventCancel:before {
+  left: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--today:before {
+  top: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--oofReply:before {
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--voicemailReply:before {
+  top: 4%;
+  left: -25%;
+}
+
+.ms-Icon--circle.ms-Icon--voicemailForward:before {
+  top: 4%;
+  left: -20%;
+}
+
+.ms-Icon--circle.ms-Icon--eye:before {
+  top: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--post:before {
+  top: -4%;
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--fax:before {
+  top: -3%;
+  left: -2%;
+}
+
+.ms-Icon--circle.ms-Icon--lightning:before {
+  top: 2%;
+  left: 1%;
+}
+
+.ms-Icon--circle.ms-Icon--filter:before {
+  top: 7%;
+}
+
+.ms-Icon--circle.ms-Icon--cart:before {
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--socialListening:before {
+  top: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--mapMarker:before {
+  top: 2%;
+}
+
+.ms-Icon--circle.ms-Icon--replyAllAlt:before {
+  left: -16%;
+}
+
+.ms-Icon--circle.ms-Icon--group:before {
+  left: -33%;
+}
+
+.ms-Icon--circle.ms-Icon--money:before {
+  left: -8%;
+}
+
+.ms-Icon--circle.ms-Icon--noteEdit:before {
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--mailEdit:before {
+  top: 3%;
+  left: 7%;
+}
+
+.ms-Icon--circle.ms-Icon--pinLeft:before {
+  left: -6%;
+}
+
+.ms-Icon--circle.ms-Icon--heart:before {
+  top: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--heartEmpty:before {
+  top: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--cake:before {
+  top: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--books:before {
+  left: -8%;
+}
+
+.ms-Icon--circle.ms-Icon--video:before {
+  top: -3%;
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--balloon:before {
+  top: 4%;
+  left: -1%;
+}
+
+.ms-Icon--circle.ms-Icon--music:before {
+  top: -2%;
+  left: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--stopwatch:before {
+  top: -3%;
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--coffee:before {
+  top: -3%;
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--plane:before {
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--dogAlt:before {
+  left: -15%;
+}
+
+.ms-Icon--circle.ms-Icon--metadata:before {
+  top: -4%;
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--text:before {
+  top: -4%;
+  left: 10%;
+}
+
+.ms-Icon--circle.ms-Icon--fieldText:before {
+  left: -14%;
+}
+
+.ms-Icon--circle.ms-Icon--fieldNumber:before {
+  left: -14%;
+}
+
+.ms-Icon--circle.ms-Icon--dropdown:before {
+  left: -14%;
+}
+
+.ms-Icon--circle.ms-Icon--story:before {
+  left: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--bold:before {
+  left: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--underline:before {
+  top: 4%;
+}
+
+.ms-Icon--circle.ms-Icon--quote:before {
+  left: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--styleRemove:before {
+  top: 4%;
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--pictureAdd:before {
+  left: -6%;
+}
+
+.ms-Icon--circle.ms-Icon--pictureRemove:before {
+  left: -6%;
+}
+
+.ms-Icon--circle.ms-Icon--mobile:before {
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--hide:before {
+  top: -4%;
+}
+
+.ms-Icon--circle.ms-Icon--header:before {
+  left: -9%;
+}
+
+.ms-Icon--circle.ms-Icon--msn:before {
+  left: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--peopleCheck:before {
+  left: -7%;
+  top: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--caretDownOutline:before {
+  top: 6%;
+}
+
+.ms-Icon--circle.ms-Icon--caretLeftOutline:before {
+  left: -5%;
+}
+
+.ms-Icon--circle.ms-Icon--caretRightOutline:before {
+  left: 5%;
+}
+
+.ms-Icon--circle.ms-Icon--sway:before {
+  left: -3%;
+}
+
+.ms-Icon--circle.ms-Icon--mailSync:before {
+  left: 8%;
+  top: 3%;
+}
+
+.ms-Icon--circle.ms-Icon--peopleSync:before {
+  left: -8%;
+}
+
+.ms-Icon--circle.ms-Icon--peopleError:before {
+  left: -8%;
+}
+
+.ms-Icon--circle.ms-Icon--peoplePause:before {
+  left: -8%;
+}
+
+.ms-Icon--circle.ms-Icon--documentSearch:before {
+  left: 8%;
+}
+
+.ms-Icon--circle.ms-Icon--dynamicsMarketing:before {
+  left: -8%;
+}
+
+.ms-u-slideRightIn40,
+.slideRightIn40 {
+  -webkit-animation-name: fadeIn, slideRight40;
+          animation-name: fadeIn, slideRight40;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideRight40 {
+  from {
+    -webkit-transform: translate3d(-40px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideRight40 {
+  from {
+    -webkit-transform: translate3d(-40px, 0px, 0px);
+            transform: translate3d(-40px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftIn40,
+.slideLeftIn40 {
+  -webkit-animation-name: fadeIn, slideLeft40;
+          animation-name: fadeIn, slideLeft40;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideLeft40 {
+  from {
+    -webkit-transform: translate3d(40px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideLeft40 {
+  from {
+    -webkit-transform: translate3d(40px, 0px, 0px);
+            transform: translate3d(40px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightIn400,
+.slideRightIn400 {
+  -webkit-animation-name: fadeIn, slideRight400;
+          animation-name: fadeIn, slideRight400;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideRight400 {
+  from {
+    -webkit-transform: translate3d(-400px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideRight400 {
+  from {
+    -webkit-transform: translate3d(-400px, 0px, 0px);
+            transform: translate3d(-400px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftIn400,
+.slideLeftIn400 {
+  -webkit-animation-name: fadeIn, slideLeft400;
+          animation-name: fadeIn, slideLeft400;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideLeft400 {
+  from {
+    -webkit-transform: translate3d(400px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideLeft400 {
+  from {
+    -webkit-transform: translate3d(400px, 0px, 0px);
+            transform: translate3d(400px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideUpIn20,
+.slideUpIn20 {
+  -webkit-animation-name: fadeIn, slideUp20;
+          animation-name: fadeIn, slideUp20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideUp20 {
+  from {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideUp20 {
+  from {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+            transform: translate3d(0px, 20px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideUpIn10,
+.slideUpIn10 {
+  -webkit-animation-name: fadeIn, slideUp10;
+          animation-name: fadeIn, slideUp10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideUp10 {
+  from {
+    -webkit-transform: translate3d(0px, 10px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideUp10 {
+  from {
+    -webkit-transform: translate3d(0px, 10px, 0px);
+            transform: translate3d(0px, 10px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideDownIn20,
+.slideDownIn20 {
+  -webkit-animation-name: fadeIn, slideDown20;
+          animation-name: fadeIn, slideDown20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideDown20 {
+  from {
+    -webkit-transform: translate3d(0px, -20px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideDown20 {
+  from {
+    -webkit-transform: translate3d(0px, -20px, 0px);
+            transform: translate3d(0px, -20px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideDownIn10,
+.slideDownIn10 {
+  -webkit-animation-name: fadeIn, slideDown10;
+          animation-name: fadeIn, slideDown10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideDown10 {
+  from {
+    -webkit-transform: translate3d(0px, -10px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes slideDown10 {
+  from {
+    -webkit-transform: translate3d(0px, -10px, 0px);
+            transform: translate3d(0px, -10px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightOut40,
+.slideRightOut40 {
+  -webkit-animation-name: fadeOut, slideRightOut40;
+          animation-name: fadeOut, slideRightOut40;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideRightOut40 {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(40px, 0px, 0px);
+  }
+}
+
+@keyframes slideRightOut40 {
+  from {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(40px, 0px, 0px);
+            transform: translate3d(40px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftOut40,
+.slideLeftOut40 {
+  -webkit-animation-name: fadeOut, slideLeftOut40;
+          animation-name: fadeOut, slideLeftOut40;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideLeftOut40 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(-40px, 0px, 0px);
+  }
+}
+
+@keyframes slideLeftOut40 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(-40px, 0px, 0px);
+            transform: translate3d(-40px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightOut400,
+.slideRightOut400 {
+  -webkit-animation-name: fadeOut, slideRightOut400;
+          animation-name: fadeOut, slideRightOut400;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideRightOut400 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(400px, 0px, 0px);
+  }
+}
+
+@keyframes slideRightOut400 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(400px, 0px, 0px);
+            transform: translate3d(400px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftOut400,
+.slideLeftOut400 {
+  -webkit-animation-name: fadeOut, slideLeftOut400;
+          animation-name: fadeOut, slideLeftOut400;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideLeftOut400 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(-400px, 0px, 0px);
+  }
+}
+
+@keyframes slideLeftOut400 {
+  from {
+    -webkit-transform: translate3d(0, 0px, 0px);
+            transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(-400px, 0px, 0px);
+            transform: translate3d(-400px, 0px, 0px);
+  }
+}
+
+.ms-u-slideUpOut20,
+.slideUpOut20 {
+  -webkit-animation-name: fadeOut, slideUpOut20;
+          animation-name: fadeOut, slideUpOut20;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideUpOut20 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, -20px, 0px);
+  }
+}
+
+@keyframes slideUpOut20 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+            transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, -20px, 0px);
+            transform: translate3d(0px, -20px, 0px);
+  }
+}
+
+.ms-u-slideUpOut10,
+.slideUpOut10 {
+  -webkit-animation-name: fadeOut, slideUpOut10;
+          animation-name: fadeOut, slideUpOut10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideUpOut10 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, -10px, 0px);
+  }
+}
+
+@keyframes slideUpOut10 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+            transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, -10px, 0px);
+            transform: translate3d(0px, -10px, 0px);
+  }
+}
+
+.ms-u-slideDownOut20,
+.slideDownOut20 {
+  -webkit-animation-name: fadeOut, slideDownOut20;
+          animation-name: fadeOut, slideDownOut20;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideDownOut20 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+  }
+}
+
+@keyframes slideDownOut20 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+            transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 20px, 0px);
+            transform: translate3d(0px, 20px, 0px);
+  }
+}
+
+.ms-u-slideDownOut10,
+.slideDownOut10 {
+  -webkit-animation-name: fadeOut, slideDownOut10;
+          animation-name: fadeOut, slideDownOut10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideDownOut10 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 10px, 0px);
+  }
+}
+
+@keyframes slideDownOut10 {
+  from {
+    -webkit-transform: translate3d(0px, 0, 0px);
+            transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    -webkit-transform: translate3d(0px, 10px, 0px);
+            transform: translate3d(0px, 10px, 0px);
+  }
+}
+
+.ms-u-scaleUpIn100,
+.scaleUpIn100 {
+  -webkit-animation-name: fadeIn, scaleUp100;
+          animation-name: fadeIn, scaleUp100;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes scaleUp100 {
+  from {
+    -webkit-transform: scale3d(0.98, 0.98, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes scaleUp100 {
+  from {
+    -webkit-transform: scale3d(0.98, 0.98, 1);
+            transform: scale3d(0.98, 0.98, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.ms-u-scaleDownIn100,
+.scaleDownIn100 {
+  -webkit-animation-name: fadeIn, scaleDown100;
+          animation-name: fadeIn, scaleDown100;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes scaleDown100 {
+  from {
+    -webkit-transform: scale3d(1.03, 1.03, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes scaleDown100 {
+  from {
+    -webkit-transform: scale3d(1.03, 1.03, 1);
+            transform: scale3d(1.03, 1.03, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.ms-u-scaleUpOut103,
+.scaleUpOut103 {
+  -webkit-animation-name: fadeOut, scaleUp103;
+          animation-name: fadeOut, scaleUp103;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes scaleUp103 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1.03, 1.03, 1);
+  }
+}
+
+@keyframes scaleUp103 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1.03, 1.03, 1);
+            transform: scale3d(1.03, 1.03, 1);
+  }
+}
+
+.ms-u-scaleDownOut98,
+.scaleDownOut98 {
+  -webkit-animation-name: fadeOut, scaleDown98;
+          animation-name: fadeOut, scaleDown98;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes scaleDown98 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(0.98, 0.98, 1);
+  }
+}
+
+@keyframes scaleDown98 {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(0.98, 0.98, 1);
+            transform: scale3d(0.98, 0.98, 1);
+  }
+}
+
+.ms-u-fadeIn100,
+.ms-u-fadeIn200,
+.ms-u-fadeIn400,
+.ms-u-fadeIn500,
+.fadeIn100,
+.fadeIn200,
+.fadeIn400,
+.fadeIn500 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 0.367s;
+          animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.ms-u-fadeIn100,
+.fadeIn100 {
+  -webkit-animation-duration: 0.167s;
+          animation-duration: 0.167s;
+}
+
+.ms-u-fadeIn200,
+.fadeIn200 {
+  -webkit-animation-duration: 0.267s;
+          animation-duration: 0.267s;
+}
+
+.ms-u-fadeIn500,
+.fadeIn500 {
+  -webkit-animation-duration: 0.467s;
+          animation-duration: 0.467s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ms-u-fadeOut100,
+.ms-u-fadeOut200,
+.ms-u-fadeOut400,
+.ms-u-fadeOut500,
+.fadeOut100,
+.fadeOut200,
+.fadeOut400,
+.fadeOut500 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 0.367s;
+          animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.ms-u-fadeOut100,
+.fadeOut100 {
+  -webkit-animation-duration: 0.1s;
+          animation-duration: 0.1s;
+}
+
+.ms-u-fadeOut200,
+.fadeOut200 {
+  -webkit-animation-duration: 0.167s;
+          animation-duration: 0.167s;
+}
+
+.ms-u-fadeOut500,
+.fadeOut500 {
+  -webkit-animation-duration: 0.467s;
+          animation-duration: 0.467s;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.ms-u-rotate90deg,
+.rotate90deg {
+  -webkit-animation-name: rotate90;
+          animation-name: rotate90;
+  -webkit-animation-duration: 0.1s;
+     -moz-animation-duration: 0.1s;
+      -ms-animation-duration: 0.1s;
+       -o-animation-duration: 0.1s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes rotate90 {
+  from {
+    -webkit-transform: rotateZ(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(90deg);
+  }
+}
+
+@keyframes rotate90 {
+  from {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+}
+
+.ms-u-rotateN90deg,
+.rotateN90deg {
+  -webkit-animation-name: rotateN90;
+          animation-name: rotateN90;
+  -webkit-animation-duration: 0.1s;
+     -moz-animation-duration: 0.1s;
+      -ms-animation-duration: 0.1s;
+       -o-animation-duration: 0.1s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes rotateN90 {
+  from {
+    -webkit-transform: rotateZ(90deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+
+@keyframes rotateN90 {
+  from {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+.ms-u-expandCollapse400,
+.expandCollapse400 {
+  transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.ms-u-expandCollapse200,
+.expandCollapse200 {
+  transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.ms-u-expandCollapse100,
+.expandCollapse100 {
+  transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.ms-u-delay100,
+.delay100 {
+  -webkit-animation-delay: 0.167s;
+          animation-delay: 0.167s;
+}
+
+.ms-u-delay200,
+.delay200 {
+  -webkit-animation-delay: 0.267s;
+          animation-delay: 0.267s;
+}
+
+@media (max-width: 479px) {
+  .ms-u-hiddenSm,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .ms-u-hiddenMd,
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLg,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXl,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxl,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxxl {
+    display: none !important;
+  }
+}
+
+.ms-u-sm12 {
+  width: 100%;
+}
+
+.ms-u-sm11 {
+  width: 91.66666666666666%;
+}
+
+.ms-u-sm10 {
+  width: 83.33333333333334%;
+}
+
+.ms-u-sm9 {
+  width: 75%;
+}
+
+.ms-u-sm8 {
+  width: 66.66666666666666%;
+}
+
+.ms-u-sm7 {
+  width: 58.333333333333336%;
+}
+
+.ms-u-sm6 {
+  width: 50%;
+}
+
+.ms-u-sm5 {
+  width: 41.66666666666667%;
+}
+
+.ms-u-sm4 {
+  width: 33.33333333333333%;
+}
+
+.ms-u-sm3 {
+  width: 25%;
+}
+
+.ms-u-sm2 {
+  width: 16.666666666666664%;
+}
+
+.ms-u-sm1 {
+  width: 8.333333333333332%;
+}
+
+.ms-u-smPull12 {
+  right: 100%;
+}
+
+.ms-u-smPull11 {
+  right: 91.66666666666666%;
+}
+
+.ms-u-smPull10 {
+  right: 83.33333333333334%;
+}
+
+.ms-u-smPull9 {
+  right: 75%;
+}
+
+.ms-u-smPull8 {
+  right: 66.66666666666666%;
+}
+
+.ms-u-smPull7 {
+  right: 58.333333333333336%;
+}
+
+.ms-u-smPull6 {
+  right: 50%;
+}
+
+.ms-u-smPull5 {
+  right: 41.66666666666667%;
+}
+
+.ms-u-smPull4 {
+  right: 33.33333333333333%;
+}
+
+.ms-u-smPull3 {
+  right: 25%;
+}
+
+.ms-u-smPull2 {
+  right: 16.666666666666664%;
+}
+
+.ms-u-smPull1 {
+  right: 8.333333333333332%;
+}
+
+.ms-u-smPull0 {
+  right: 0%;
+}
+
+.ms-u-smPush12 {
+  left: 100%;
+}
+
+.ms-u-smPush11 {
+  left: 91.66666666666666%;
+}
+
+.ms-u-smPush10 {
+  left: 83.33333333333334%;
+}
+
+.ms-u-smPush9 {
+  left: 75%;
+}
+
+.ms-u-smPush8 {
+  left: 66.66666666666666%;
+}
+
+.ms-u-smPush7 {
+  left: 58.333333333333336%;
+}
+
+.ms-u-smPush6 {
+  left: 50%;
+}
+
+.ms-u-smPush5 {
+  left: 41.66666666666667%;
+}
+
+.ms-u-smPush4 {
+  left: 33.33333333333333%;
+}
+
+.ms-u-smPush3 {
+  left: 25%;
+}
+
+.ms-u-smPush2 {
+  left: 16.666666666666664%;
+}
+
+.ms-u-smPush1 {
+  left: 8.333333333333332%;
+}
+
+.ms-u-smPush0 {
+  left: 0%;
+}
+
+@media (min-width: 480px) {
+  .ms-u-md12 {
+    width: 100%;
+  }
+
+  .ms-u-md11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-md10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-md9 {
+    width: 75%;
+  }
+
+  .ms-u-md8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-md7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-md6 {
+    width: 50%;
+  }
+
+  .ms-u-md5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-md4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-md3 {
+    width: 25%;
+  }
+
+  .ms-u-md2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-md1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-mdPull12 {
+    right: 100%;
+  }
+
+  .ms-u-mdPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-mdPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-mdPull9 {
+    right: 75%;
+  }
+
+  .ms-u-mdPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-mdPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-mdPull6 {
+    right: 50%;
+  }
+
+  .ms-u-mdPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-mdPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-mdPull3 {
+    right: 25%;
+  }
+
+  .ms-u-mdPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-mdPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-mdPull0 {
+    right: 0%;
+  }
+
+  .ms-u-mdPush12 {
+    left: 100%;
+  }
+
+  .ms-u-mdPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-mdPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-mdPush9 {
+    left: 75%;
+  }
+
+  .ms-u-mdPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-mdPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-mdPush6 {
+    left: 50%;
+  }
+
+  .ms-u-mdPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-mdPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-mdPush3 {
+    left: 25%;
+  }
+
+  .ms-u-mdPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-mdPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-mdPush0 {
+    left: 0%;
+  }
+}
+
+@media (min-width: 640px) {
+  .ms-u-lg12 {
+    width: 100%;
+  }
+
+  .ms-u-lg11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-lg10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-lg9 {
+    width: 75%;
+  }
+
+  .ms-u-lg8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-lg7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-lg6 {
+    width: 50%;
+  }
+
+  .ms-u-lg5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-lg4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-lg3 {
+    width: 25%;
+  }
+
+  .ms-u-lg2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-lg1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-lgPull12 {
+    right: 100%;
+  }
+
+  .ms-u-lgPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-lgPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-lgPull9 {
+    right: 75%;
+  }
+
+  .ms-u-lgPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-lgPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-lgPull6 {
+    right: 50%;
+  }
+
+  .ms-u-lgPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-lgPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-lgPull3 {
+    right: 25%;
+  }
+
+  .ms-u-lgPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-lgPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-lgPull0 {
+    right: 0%;
+  }
+
+  .ms-u-lgPush12 {
+    left: 100%;
+  }
+
+  .ms-u-lgPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-lgPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-lgPush9 {
+    left: 75%;
+  }
+
+  .ms-u-lgPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-lgPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-lgPush6 {
+    left: 50%;
+  }
+
+  .ms-u-lgPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-lgPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-lgPush3 {
+    left: 25%;
+  }
+
+  .ms-u-lgPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-lgPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-lgPush0 {
+    left: 0%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ms-u-xl12 {
+    width: 100%;
+  }
+
+  .ms-u-xl11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-xl10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-xl9 {
+    width: 75%;
+  }
+
+  .ms-u-xl8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-xl7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-xl6 {
+    width: 50%;
+  }
+
+  .ms-u-xl5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-xl4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-xl3 {
+    width: 25%;
+  }
+
+  .ms-u-xl2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-xl1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-xlPull12 {
+    right: 100%;
+  }
+
+  .ms-u-xlPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-xlPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-xlPull9 {
+    right: 75%;
+  }
+
+  .ms-u-xlPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-xlPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-xlPull6 {
+    right: 50%;
+  }
+
+  .ms-u-xlPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-xlPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-xlPull3 {
+    right: 25%;
+  }
+
+  .ms-u-xlPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-xlPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-xlPull0 {
+    right: 0%;
+  }
+
+  .ms-u-xlPush12 {
+    left: 100%;
+  }
+
+  .ms-u-xlPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-xlPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-xlPush9 {
+    left: 75%;
+  }
+
+  .ms-u-xlPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-xlPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-xlPush6 {
+    left: 50%;
+  }
+
+  .ms-u-xlPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-xlPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-xlPush3 {
+    left: 25%;
+  }
+
+  .ms-u-xlPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-xlPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-xlPush0 {
+    left: 0%;
+  }
+}
+
+@media (min-width: 1366px) {
+  .ms-u-xxl12 {
+    width: 100%;
+  }
+
+  .ms-u-xxl11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-xxl10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-xxl9 {
+    width: 75%;
+  }
+
+  .ms-u-xxl8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-xxl7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-xxl6 {
+    width: 50%;
+  }
+
+  .ms-u-xxl5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-xxl4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-xxl3 {
+    width: 25%;
+  }
+
+  .ms-u-xxl2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-xxl1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-xxlPull12 {
+    right: 100%;
+  }
+
+  .ms-u-xxlPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-xxlPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-xxlPull9 {
+    right: 75%;
+  }
+
+  .ms-u-xxlPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-xxlPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-xxlPull6 {
+    right: 50%;
+  }
+
+  .ms-u-xxlPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-xxlPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-xxlPull3 {
+    right: 25%;
+  }
+
+  .ms-u-xxlPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-xxlPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-xxlPull0 {
+    right: 0%;
+  }
+
+  .ms-u-xxlPush12 {
+    left: 100%;
+  }
+
+  .ms-u-xxlPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-xxlPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-xxlPush9 {
+    left: 75%;
+  }
+
+  .ms-u-xxlPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-xxlPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-xxlPush6 {
+    left: 50%;
+  }
+
+  .ms-u-xxlPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-xxlPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-xxlPush3 {
+    left: 25%;
+  }
+
+  .ms-u-xxlPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-xxlPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-xxlPush0 {
+    left: 0%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ms-u-xxxl12 {
+    width: 100%;
+  }
+
+  .ms-u-xxxl11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-xxxl10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-xxxl9 {
+    width: 75%;
+  }
+
+  .ms-u-xxxl8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-xxxl7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-xxxl6 {
+    width: 50%;
+  }
+
+  .ms-u-xxxl5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-xxxl4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-xxxl3 {
+    width: 25%;
+  }
+
+  .ms-u-xxxl2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-xxxl1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlPull12 {
+    right: 100%;
+  }
+
+  .ms-u-xxxlPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-xxxlPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-xxxlPull9 {
+    right: 75%;
+  }
+
+  .ms-u-xxxlPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-xxxlPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-xxxlPull6 {
+    right: 50%;
+  }
+
+  .ms-u-xxxlPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-xxxlPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-xxxlPull3 {
+    right: 25%;
+  }
+
+  .ms-u-xxxlPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-xxxlPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlPull0 {
+    right: 0%;
+  }
+
+  .ms-u-xxxlPush12 {
+    left: 100%;
+  }
+
+  .ms-u-xxxlPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-xxxlPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-xxxlPush9 {
+    left: 75%;
+  }
+
+  .ms-u-xxxlPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-xxxlPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-xxxlPush6 {
+    left: 50%;
+  }
+
+  .ms-u-xxxlPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-xxxlPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-xxxlPush3 {
+    left: 25%;
+  }
+
+  .ms-u-xxxlPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-xxxlPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlPush0 {
+    left: 0%;
+  }
+}
+
+.ms-Grid {
+  box-sizing: border-box;
+  *zoom: 1;
+  padding: 0 8px;
+}
+
+.ms-Grid:before,
+.ms-Grid:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-Grid:after {
+  clear: both;
+}
+
+.ms-Grid-row {
+  margin: 0 -8px;
+  box-sizing: border-box;
+  *zoom: 1;
+}
+
+.ms-Grid-row:before,
+.ms-Grid-row:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-Grid-row:after {
+  clear: both;
+}
+
+.ms-Grid-col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.ms-Grid-col .ms-Grid {
+  padding: 0;
+}
+
+.ms-font-color-officeAccent1,
+.ms-font-color-officeAccent1-hover:hover,
+.ms-fontColor-officeAccent1,
+.ms-fontColor-officeAccent1--hover:hover {
+  color: #ffffff;
+}
+
+.ms-font-color-officeAccent2,
+.ms-font-color-officeAccent2-hover:hover,
+.ms-fontColor-officeAccent2,
+.ms-fontColor-officeAccent2--hover:hover {
+  color: #000000;
+}
+
+.ms-font-color-officeAccent3,
+.ms-font-color-officeAccent3-hover:hover,
+.ms-fontColor-officeAccent3,
+.ms-fontColor-officeAccent3--hover:hover {
+  color: #e7e6e5;
+}
+
+.ms-font-color-officeAccent4,
+.ms-font-color-officeAccent4-hover:hover,
+.ms-fontColor-officeAccent4,
+.ms-fontColor-officeAccent4--hover:hover {
+  color: #44546a;
+}
+
+.ms-font-color-officeAccent5,
+.ms-font-color-officeAccent5-hover:hover,
+.ms-fontColor-officeAccent5,
+.ms-fontColor-officeAccent5--hover:hover {
+  color: #5b9bd5;
+}
+
+.ms-font-color-officeAccent6,
+.ms-font-color-officeAccent6-hover:hover,
+.ms-fontColor-officeAccent6,
+.ms-fontColor-officeAccent6--hover:hover {
+  color: #ed7d31;
+}
+
+.ms-font-color-officeAccent7,
+.ms-font-color-officeAccent7-hover:hover,
+.ms-fontColor-officeAccent7,
+.ms-fontColor-officeAccent7--hover:hover {
+  color: #a5a5a5;
+}
+
+.ms-font-color-officeAccent8,
+.ms-font-color-officeAccent8-hover:hover,
+.ms-fontColor-officeAccent8,
+.ms-fontColor-officeAccent8--hover:hover {
+  color: #ffc001;
+}
+
+.ms-font-color-officeAccent9,
+.ms-font-color-officeAccent9-hover:hover,
+.ms-fontColor-officeAccent9,
+.ms-fontColor-officeAccent9--hover:hover {
+  color: #4472c4;
+}
+
+.ms-font-color-officeAccent10,
+.ms-font-color-officeAccent10-hover:hover,
+.ms-fontColor-officeAccent10,
+.ms-fontColor-officeAccent10--hover:hover {
+  color: #70ad47;
+}
+
+.ms-bg-color-officeAccent1,
+.ms-bg-color-officeAccent1-hover:hover,
+.ms-bgColor-officeAccent1,
+.ms-bgColor-officeAccent1--hover:hover {
+  background-color: #ffffff;
+}
+
+.ms-bg-color-officeAccent2,
+.ms-bg-color-officeAccent2-hover:hover,
+.ms-bgColor-officeAccent2,
+.ms-bgColor-officeAccent2--hover:hover {
+  background-color: #000000;
+}
+
+.ms-bg-color-officeAccent3,
+.ms-bg-color-officeAccent3-hover:hover,
+.ms-bgColor-officeAccent3,
+.ms-bgColor-officeAccent3--hover:hover {
+  background-color: #e7e6e5;
+}
+
+.ms-bg-color-officeAccent4,
+.ms-bg-color-officeAccent4-hover:hover,
+.ms-bgColor-officeAccent4,
+.ms-bgColor-officeAccent4--hover:hover {
+  background-color: #44546a;
+}
+
+.ms-bg-color-officeAccent5,
+.ms-bg-color-officeAccent5-hover:hover,
+.ms-bgColor-officeAccent5,
+.ms-bgColor-officeAccent5--hover:hover {
+  background-color: #5b9bd5;
+}
+
+.ms-bg-color-officeAccent6,
+.ms-bg-color-officeAccent6-hover:hover,
+.ms-bgColor-officeAccent6,
+.ms-bgColor-officeAccent6--hover:hover {
+  background-color: #ed7d31;
+}
+
+.ms-bg-color-officeAccent7,
+.ms-bg-color-officeAccent7-hover:hover,
+.ms-bgColor-officeAccent7,
+.ms-bgColor-officeAccent7--hover:hover {
+  background-color: #a5a5a5;
+}
+
+.ms-bg-color-officeAccent8,
+.ms-bg-color-officeAccent8-hover:hover,
+.ms-bgColor-officeAccent8,
+.ms-bgColor-officeAccent8--hover:hover {
+  background-color: #ffc001;
+}
+
+.ms-bg-color-officeAccent9,
+.ms-bg-color-officeAccent9-hover:hover,
+.ms-bgColor-officeAccent9,
+.ms-bgColor-officeAccent9--hover:hover {
+  background-color: #4472c4;
+}
+
+.ms-bg-color-officeAccent10,
+.ms-bg-color-officeAccent10-hover:hover,
+.ms-bgColor-officeAccent10,
+.ms-bgColor-officeAccent10--hover:hover {
+  background-color: #70ad47;
+}
+
+.ms-border-color-officeAccent1,
+.ms-border-color-officeAccent1-hover:hover,
+.ms-borderColor-officeAccent1,
+.ms-borderColor-officeAccent1--hover:hover {
+  border-color: #ffffff;
+}
+
+.ms-border-color-officeAccent2,
+.ms-border-color-officeAccent2-hover:hover,
+.ms-borderColor-officeAccent2,
+.ms-borderColor-officeAccent2--hover:hover {
+  border-color: #000000;
+}
+
+.ms-border-color-officeAccent3,
+.ms-border-color-officeAccent3-hover:hover,
+.ms-borderColor-officeAccent3,
+.ms-borderColor-officeAccent3--hover:hover {
+  border-color: #e7e6e5;
+}
+
+.ms-border-color-officeAccent4,
+.ms-border-color-officeAccent4-hover:hover,
+.ms-borderColor-officeAccent4,
+.ms-borderColor-officeAccent4--hover:hover {
+  border-color: #44546a;
+}
+
+.ms-border-color-officeAccent5,
+.ms-border-color-officeAccent5-hover:hover,
+.ms-borderColor-officeAccent5,
+.ms-borderColor-officeAccent5--hover:hover {
+  border-color: #5b9bd5;
+}
+
+.ms-border-color-officeAccent6,
+.ms-border-color-officeAccent6-hover:hover,
+.ms-borderColor-officeAccent6,
+.ms-borderColor-officeAccent6--hover:hover {
+  border-color: #ed7d31;
+}
+
+.ms-border-color-officeAccent7,
+.ms-border-color-officeAccent7-hover:hover,
+.ms-borderColor-officeAccent7,
+.ms-borderColor-officeAccent7--hover:hover {
+  border-color: #a5a5a5;
+}
+
+.ms-border-color-officeAccent8,
+.ms-border-color-officeAccent8-hover:hover,
+.ms-borderColor-officeAccent8,
+.ms-borderColor-officeAccent8--hover:hover {
+  border-color: #ffc001;
+}
+
+.ms-border-color-officeAccent9,
+.ms-border-color-officeAccent9-hover:hover,
+.ms-borderColor-officeAccent9,
+.ms-borderColor-officeAccent9--hover:hover {
+  border-color: #4472c4;
+}
+
+.ms-border-color-officeAccent10,
+.ms-border-color-officeAccent10-hover:hover,
+.ms-borderColor-officeAccent10,
+.ms-borderColor-officeAccent10--hover:hover {
+  border-color: #70ad47;
+}

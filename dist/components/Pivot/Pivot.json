@@ -1,0 +1,37 @@
+{
+  "name": "Pivot",
+  "notes": "",
+  "template": "Pivot.html",
+  "class": "ms-Pivot",
+  "branches": [
+    {
+      "name": "Pivots",
+      "default": true,
+      "branches": [
+        {
+          "name": "Standard",
+          "default": true
+        },
+        {
+          "name": "Large",
+          "class": "ms-Pivot--large"
+        }
+      ]
+    },
+
+    {
+      "name": "Tabs",
+      "class": "ms-Pivot--tabs",
+      "branches": [
+        {
+          "name": "Standard",
+          "default": true
+        },
+        {
+          "name": "Large",
+          "class": "ms-Pivot--large"
+        }
+      ]
+    }
+  ]
+}

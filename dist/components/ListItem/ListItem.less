@@ -1,0 +1,278 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// List item styles
+
+
+.ms-ListItem {
+  .ms-font-m;
+  .ms-u-normalize;
+  .ms-u-clearfix;
+  padding: 11px 30px 10px 30px;
+  position: relative;
+}
+
+.ms-ListItem-image {
+  float: left;
+  height: 70px;
+  margin-left: -10px; // Images sit closer to the edge than text.
+  margin-right: 10px;
+  width: 70px;
+}
+
+.ms-ListItem-primaryText, .ms-ListItem-secondaryText, .ms-ListItem-tertiaryText {
+  .noWrap;
+  display: block;
+}
+
+.ms-ListItem-primaryText {
+  color: @ms-color-neutralDark;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-xl;
+  padding-right: 80px; // Prevent overlap with up to three actions.
+  position: relative;
+  top: -4px;
+}
+
+.ms-ListItem-secondaryText {
+  color: @ms-color-neutralPrimary;
+  font-family: @ms-font-family-regular;
+  font-size: @ms-font-size-m;
+  line-height: 25px;
+  position: relative;
+  top: -7px;
+}
+
+.ms-ListItem-tertiaryText {
+  color: @ms-color-neutralSecondaryAlt;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-m;
+  line-height: 15px;
+  position: relative;
+  top: -7px;
+}
+
+.ms-ListItem-metaText {
+  color: @ms-color-neutralPrimary;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-xs;
+  position: absolute;
+  right: 30px;
+  top: 39px;
+}
+
+.ms-ListItem-selectionTarget {
+  display: none;
+}
+
+.ms-ListItem-actions {
+  max-width: 80px; // Up to three actions.
+  position: absolute;
+  right: 30px;
+  text-align: right;
+  top: 10px;
+}
+
+.ms-ListItem-action {
+  color: @ms-color-neutralSecondary;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 8px;
+  position: relative;
+  text-align: center;
+  top: 3px;
+  cursor: pointer;
+
+  &:hover {
+    outline: 1px solid transparent;
+  }
+}
+
+
+//== States
+
+.ms-ListItem.is-unread {
+  border-left: 3px solid @ms-color-themePrimary;
+  padding-left: 27px; // Reduce padding to allow room for border.
+
+  .ms-ListItem-secondaryText, .ms-ListItem-metaText {
+    color: @ms-color-themePrimary;
+    font-family: @ms-font-family-semibold;
+  }
+}
+
+.ms-ListItem.is-unseen:before {
+  border-right: 10px solid transparent;
+  border-top: 10px solid @ms-color-themePrimary;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.ms-ListItem.is-selectable {
+
+  .ms-ListItem-selectionTarget {
+    display: block;
+    height: 20px;
+    left: 6px;
+    position: absolute;
+    top: 13px;
+    width: 20px;
+  }
+
+  &:hover {
+    background-color: @ms-color-neutralLight;
+    cursor: pointer;
+    outline: 1px solid transparent;
+
+    // Insert the empty box.
+    &:before {
+      .ms-Icon;
+      content: '\e03f';
+      font-size: 18px;
+      color: @ms-color-neutralSecondaryAlt;
+      position: absolute;
+      top: 22px;
+      left: 8px;
+    }
+  }
+}
+
+.ms-ListItem.is-selected {
+
+  // Insert the checkmark.
+  &:before, &:hover:before {
+    .ms-Icon;
+    content: '\e041';
+    font-size: 17px;
+    color: @ms-color-neutralSecondaryAlt;
+    position: absolute;
+    top: 23px;
+    left: 8px;
+  }
+
+  &:hover {
+    background-color: @ms-color-themeLight;
+    outline: 1px solid transparent;
+  }
+}
+
+// Modifier: Document list item
+.ms-ListItem.ms-ListItem--document {
+  padding: 0;
+
+  // The icon for a file or folder in the items list. This may
+  // be an .ms-Icon or a specific modifier that loads an image.
+  .ms-ListItem-itemIcon {
+    width: 70px;
+    height: 70px;
+    float: left;
+    text-align: center;
+  }
+
+  // If the item icon is an .ms-Icon, position and color it appropriately.
+  .ms-ListItem-itemIcon .ms-Icon {
+    font-size: 38px;
+    line-height: 70px;
+    color: @ms-color-neutralSecondary;
+  }
+
+  // If the item icon is one of these modifiers, show an image from the icon sprite.
+  .ms-ListItem-itemIcon {
+    &[class*='ms-ListItem-itemIcon--'] {
+      background-image: url(../components/filepicker/filepicker.icons.png);
+      width: 40px;
+      height: 40px;
+      margin: 15px 15px 14px 15px;
+    }
+
+    &.ms-ListItem-itemIcon--audio {
+      background-position: 0px 0px;
+    }
+
+    &.ms-ListItem-itemIcon--web {
+      background-position: 0px -40px;
+    }
+
+    &.ms-ListItem-itemIcon--text {
+      background-position: 0px -80px;
+    }
+
+    &.ms-ListItem-itemIcon--ppt {
+      background-position: 0px -120px;
+    }
+
+    &.ms-ListItem-itemIcon--pub {
+      background-position: 0px -160px;
+    }
+
+    &.ms-ListItem-itemIcon--access {
+      background-position: 0px -200px;
+    }
+
+    &.ms-ListItem-itemIcon--bmp {
+      background-position: 0px -240px;
+    }
+
+    &.ms-ListItem-itemIcon--word {
+      background-position: 0px -280px;
+    }
+
+    &.ms-ListItem-itemIcon--blank {
+      background-position: 0px -320px;
+    }
+
+    &.ms-ListItem-itemIcon--gif {
+      background-position: 0px -360px;
+    }
+
+    &.ms-ListItem-itemIcon--jpg {
+      background-position: 0px -400px;
+    }
+
+    &.ms-ListItem-itemIcon--note {
+      background-position: 0px -440px;
+    }
+
+    &.ms-ListItem-itemIcon--pdf {
+      background-position: 0px -480px;
+    }
+
+    &.ms-ListItem-itemIcon--png {
+      background-position: 0px -520px;
+    }
+
+    &.ms-ListItem-itemIcon--visio {
+      background-position: 0px -560px;
+    }
+
+    &.ms-ListItem-itemIcon--excel {
+      background-position: 0px -600px;
+    }
+
+    &.ms-ListItem-itemIcon--pdf {
+      background-position: 0px -480px;
+    }
+  }
+
+  // Primary text, typically the name.
+  .ms-ListItem-primaryText {
+    .noWrap;
+    color: @ms-color-neutralPrimary;
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-m;
+    padding-top: 15px;
+    padding-right: 0;
+    position: static;
+  }
+
+  // Secondary text, typically the modified date or some other metadata.
+  .ms-ListItem-secondaryText {
+    .noWrap;
+    color: @ms-color-neutralSecondary;
+    font-family: @ms-font-family-regular;
+    font-size: @ms-font-size-xs;
+    padding-top: 6px;
+
+  }
+}

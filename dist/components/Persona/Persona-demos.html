@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Persona</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="Persona.css">
+  <link rel="stylesheet" href="../../css/fabric.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="Jquery.Persona.js"></script>
+  <script type="text/javascript" src="Persona.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      //File Picker demo fixes
+      if($('.ms-FilePicker').length > 0) {
+
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+
+      } else {
+
+        if ($.fn.Persona) {
+          $('.ms-Persona').Persona();
+        }
+
+      }
+
+      if(fabric && fabric['Persona']) {
+
+        var component, componentHolder;
+        componentHolder = document.querySelector('.component-holder');
+
+        if(componentHolder) {
+          component = new fabric.Spinner(componentHolder);
+        }
+
+      }
+
+    });
+
+    console.log($.fn.Persona);
+
+  </script>
+  <!-- Component Demo Styles -->
+
+  <style type="text/css">
+
+  	h1 {
+  		width: 100%;
+  		margin-bottom: 10px;
+  		padding: 5px;
+  		height: auto;
+  		background-color: #0072BB;
+  		color: #ffffff;
+  		font-family: 'Segoe UI', Arial, Tahoma;
+  		font-weight: 100;
+  	}
+
+    /* Demo contextual menu CSS */
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    #componentWrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+        position: absolute;
+    }
+
+  </style>
+
+</head>
+
+<body>
+	<h1>Persona</h1>
+	<div id="componentWrapper">
+    <div class="ms-Persona">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+    <div class="ms-Persona-presence"></div>
+  </div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+    <div class="ms-Persona-tertiaryText">In a meeting</div>
+    <div class="ms-Persona-optionalText">Available at 4:00pm</div>
+  </div>
+</div>
+
+<div class="ms-Persona">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+    <div class="ms-Persona-tertiaryText">In a meeting</div>
+    <div class="ms-Persona-optionalText">Available at 4:00pm</div>
+  </div>
+</div>
+
+<div class="ms-Persona">
+    <div class="ms-Persona-image ms-Persona-image--placeholder"><i class="ms-Icon ms-Icon--cart"></i></div>
+    <div class="ms-Persona-details">
+      <div class="ms-Persona-primaryText">Space Needle</div>
+      <div class="ms-Persona-secondaryText">Seattle Center</div>
+      <div class="ms-Persona-tertiaryText">400 Broad Street</div>
+      <div class="ms-Persona-optionalText">Seattle, WA 98109</div>
+    </div>
+</div>
+
+  </div>
+</body>
+</html>

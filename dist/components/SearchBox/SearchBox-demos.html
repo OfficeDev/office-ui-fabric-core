@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component SearchBox</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="SearchBox.css">
+  <link rel="stylesheet" href="../../css/fabric.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="Jquery.SearchBox.js"></script>
+  <script type="text/javascript" src="SearchBox.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function() {
+      //File Picker demo fixes
+      if($('.ms-FilePicker').length > 0) {
+
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+
+      } else {
+
+        if ($.fn.SearchBox) {
+          $('.ms-SearchBox').SearchBox();
+        }
+
+      }
+
+      if(fabric && fabric['SearchBox']) {
+
+        var component, componentHolder;
+        componentHolder = document.querySelector('.component-holder');
+
+        if(componentHolder) {
+          component = new fabric.Spinner(componentHolder);
+        }
+
+      }
+
+    });
+
+    console.log($.fn.SearchBox);
+
+  </script>
+  <!-- Component Demo Styles -->
+
+  <style type="text/css">
+
+  	h1 {
+  		width: 100%;
+  		margin-bottom: 10px;
+  		padding: 5px;
+  		height: auto;
+  		background-color: #0072BB;
+  		color: #ffffff;
+  		font-family: 'Segoe UI', Arial, Tahoma;
+  		font-weight: 100;
+  	}
+
+    /* Demo contextual menu CSS */
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    #componentWrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+        position: absolute;
+    }
+
+  </style>
+
+</head>
+
+<body>
+	<h1>SearchBox</h1>
+	<div id="componentWrapper">
+    <div class="ms-SearchBox">
+  <label class="ms-SearchBox-label"><i class="ms-SearchBox-icon ms-Icon ms-Icon--search"></i>Search</label>
+  <input class="ms-SearchBox-field">
+  <button class="ms-SearchBox-closeButton"><i class="ms-Icon ms-Icon--x"></i></button>
+</div>
+
+  </div>
+</body>
+</html>

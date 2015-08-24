@@ -58,7 +58,7 @@ var bannerTemplate = ['/**',
       ' **/',
       ''].join('\n');
 
-// Confgure data objects to pass into banner plugin.
+// Configure data objects to pass into banner plugin.
 var bannerData = {
     pkg : pkg,
     date: date,
@@ -112,7 +112,7 @@ gulp.task('clean-components', function () {
 // Tasks for building Fabric for distribution.
 // ----------------------------------------------------------------------------
 
-// Copy all uncompiled LESS files to distribution folder.
+// Copy all LESS files to distribution folder.
 gulp.task('copy-fabric', ['clean-fabric'], function () {
     // Copy LESS files.
     return gulp.src('src/less/*')
@@ -130,7 +130,7 @@ gulp.task('copy', ['copy-fabric', 'copy-components']);
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 gulp.task('fabric-less', ['clean-fabric'], function () {
-    // Confgure data objects to pass into banner plugin.
+    // Configure data objects to pass into banner plugin.
     var bannerData = {
         pkg : pkg,
         date: date,
@@ -210,7 +210,7 @@ gulp.task('components-less', ['clean-components'], function () {
             }))
             .on('error', onGulpError);
     }
-    // Build components css.
+    // Build components CSS.
     var components = _componentsBase()
         .pipe(rename('fabric.components.css'))
             .on('error', onGulpError)
@@ -317,7 +317,7 @@ gulp.task('build-component-examples', ['build-component-data'], folders(paths.co
 // Roll up static resource building
 gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'fabric-less']);
 
-// Build for Fbric component demos
+// Build for Fabric component demos
 gulp.task('build-components', ['clean-components', 'copy-components', 'components-less', 'build-component-data', 'build-component-examples']);
 
 // Fabric success messages
@@ -359,7 +359,7 @@ gulp.task('watch:fabric', ['build-fabric', 'fabric-finished'], function () {
     }));
 });
 
-// Watch components and Fabric at the same time but build seperately.
+// Watch components and Fabric at the same time but build separately.
 gulp.task('watch:separately', ['build-fabric', 'build-components', 'fabric-finished'], function () {
     gulp.watch(paths.lessPath + '/**/*', batch(function (events, done) {
         runSequence('build-fabric', 'fabric-updated', done);

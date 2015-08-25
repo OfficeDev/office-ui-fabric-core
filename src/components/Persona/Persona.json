@@ -5,7 +5,6 @@
   "class": "ms-Persona",
   "wrapBranches": true,
   "fileOrder": [
-    "Persona.html",
     "Persona.Tiny.html",
     "Persona.ExtraSmall.html",
     "Persona.Small.html",

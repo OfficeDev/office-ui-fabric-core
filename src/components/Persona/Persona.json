@@ -8,8 +8,15 @@
     "Persona.Tiny.html",
     "Persona.ExtraSmall.html",
     "Persona.Small.html",
+    "Persona.html",
     "Persona.Large.html",
-    "Persona.ExtraLarge.html"
+    "Persona.ExtraLarge.html",
+    "Persona.Square.Tiny.html",
+    "Persona.Square.ExtraSmall.html",
+    "Persona.Square.Small.html",
+    "Persona.Square.html",
+    "Persona.Square.Large.html",
+    "Persona.Square.ExtraLarge.html"
   ],
   "branches": [
     {

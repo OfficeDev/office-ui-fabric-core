@@ -12,8 +12,8 @@
   .ms-font-m;
   .ms-u-normalize;
   position: relative;
-  margin-bottom: 10px;
   display: block;
+  margin-bottom: 26px;
 
   // Action label (on/off) on the right of the toggle
   .ms-Label {
@@ -62,6 +62,8 @@
   position: relative;
   font-size: @ms-font-size-s;
   vertical-align: top;
+  display: block;
+  margin-bottom: 8px;
 }
 
 // Toggle input field
@@ -76,7 +78,7 @@
 }
 
 // Slider mixin
-.ms-Toggle-slider(@direction; @hoverColor) {
+.ms-Toggle-slider(@direction) {
   // Slider pseudo element
   &:before {
     position: absolute;
@@ -95,16 +97,20 @@
     &:before {
       border-right: 2.5px solid @ms-color-white;
     }
+
+    &:hover { 
+      background-color: @ms-color-neutralLight; 
+    }
   }
 
   & when (@direction = right) {
     &:before {
       border-left: 2.5px solid @ms-color-white;
     }
-  }
 
-  &:hover { 
-    background-color: @hoverColor; 
+    &:hover { 
+      background-color: @ms-color-themeDark; 
+    }
   }
 
   &:active { 
@@ -120,7 +126,7 @@
   &:not(:checked) + .ms-Toggle-field {
     background-color: @ms-color-neutralLighter;
 
-    .ms-Toggle-slider(left, @ms-color-neutralLight);
+    .ms-Toggle-slider(left);
 
     // Show the off label / hide the on label
     .ms-Label--off {
@@ -137,7 +143,7 @@
     & + .ms-Toggle-field {
       background-color: @ms-color-themePrimary;
 
-      .ms-Toggle-slider(right, @ms-color-themeDark);
+      .ms-Toggle-slider(right);
 
       // Show the on label / hide the off label
       .ms-Label--off {
@@ -152,18 +158,6 @@
 }
 
 
-//== Modifier: Toggle with description text above
-//
-.ms-Toggle.ms-Toggle--textAbove {
-  margin-bottom: 26px;
-
-  .ms-Toggle-description {
-    display: block;
-    margin-bottom: 8px;
-  }
-}
-
-
 //== Modifier: Toggle with description text left
 //
 .ms-Toggle.ms-Toggle--textLeft {
@@ -174,6 +168,7 @@
     display: inline-block;
     max-width: 150px;
     top: -3px;
+    margin-bottom: 0;
   }
 
   .ms-Toggle-field {

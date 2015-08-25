@@ -234,6 +234,7 @@ gulp.task('components-less', ['clean-components'], function () {
             .on('error', onGulpError);
     // Build minified Fabric Components CSS for each Component.
     var indComponents = componentsFolders.map(function(folder) {
+
         var manifest = parseManifest(folder);
         var deps = manifest.dependencies || [];
 
@@ -300,7 +301,6 @@ gulp.task('build-component-data', folders(paths.componentsPath, function (folder
         // build gulp src array
         newArray = filesArray.map(function(file, i) {
             return paths.componentsPath + '/' +  folder + '/' + file;
-            console.log("here");
         });
         cfiles = gulp.src(newArray).on('error', onGulpError);
     } else {

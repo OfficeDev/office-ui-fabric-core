@@ -6,11 +6,11 @@
   "wrapBranches": true,
   "fileOrder": [
     "Persona.html",
-    "Persona.ExtraExtraSmall.html",
-    "Persona.ExtraLarge.html",
+    "Persona.Tiny.html",
     "Persona.ExtraSmall.html",
-    "Persona.Large.html",
     "Persona.Small.html"
+    "Persona.Large.html",
+    "Persona.ExtraLarge.html",
   ],
   "branches": [
     {

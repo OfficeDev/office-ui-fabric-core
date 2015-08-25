@@ -26,7 +26,6 @@ var folders = require('gulp-folders');
 var browserSync = require('browser-sync').create();
 var colors = require('colors/safe');
 var path = require('path');
-var order = require('gulp-order');
 var wrap = require('gulp-wrap');
 
 // Define paths.

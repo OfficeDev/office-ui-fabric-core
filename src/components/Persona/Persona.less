@@ -94,6 +94,11 @@
 	white-space: nowrap;
 }
 
+.ms-Persona-tertiaryText, 
+.ms-Persona-optionalText {
+	display: none; // Hidden on default persona
+}
+
 
 //== Modifier: Persona with square images
 //
@@ -129,6 +134,10 @@
 		width: 0;
 	}
 
+	.ms-Persona-imageCircle {
+		display: none;
+	}
+
 	.ms-Persona-presence {
 		right: auto;
 		height: 10px;
@@ -146,15 +155,22 @@
 		padding-top: 11px;
 	}
 
-	// This variant includes a semicolon, and is 
-	// most often presented within a People Picker.
-	&.ms-Persona--readonly {
-		padding: 0;
-		background-color: transparent;
+	.ms-Persona-secondaryText {
+		display: none;
+	}
+}
 
-		.ms-Persona-primaryText:after {
-			content: ';';
-		}
+
+//== Modifier: Tiny Persona with read only state
+//
+// This variant includes a semicolon, and is 
+// most often presented within a People Picker.
+.ms-Persona.ms-Persona--tiny.ms-Persona--readonly {
+	padding: 0;
+	background-color: transparent;
+
+	.ms-Persona-primaryText:after {
+		content: ';';
 	}
 }
 
@@ -203,6 +219,10 @@
 	.ms-Persona-primaryText {
 		font-size: @ms-font-size-m;
 		padding-top: 3px;
+	}
+
+	.ms-Persona-secondaryText {
+		display: none;
 	}
 }
 
@@ -287,6 +307,10 @@
 	.ms-Persona-primaryText {
 		font-family: @ms-font-family-regular;
 	}
+
+	.ms-Persona-tertiaryText {
+		display: block; // Show tertiary text
+	}
 }
 
 
@@ -337,6 +361,7 @@
 	.ms-Persona-tertiaryText, 
 	.ms-Persona-optionalText {
 		padding-top: 8px;
+		display: block; // Show tertiary and optional text
 	}
 }
 
@@ -352,12 +377,13 @@
 
 
 //== Modifier: Persona with darker text
+//
 // Note: Typically applied when the component has a colored background.
 .ms-Persona.ms-Persona--darkText {
 	.ms-Persona-primaryText {
 		color: @ms-color-neutralDark;
 	}
-	
+
 	.ms-Persona-secondaryText, 
 	.ms-Persona-tertiaryText, 
 	.ms-Persona-optionalText {
@@ -486,7 +512,7 @@
 			@ms-color-presence-dnd-line 48%,
 			@ms-color-presence-dnd-line 52%,
 			@ms-color-presence-dnd-background 52%,
-			@ms-color-presence-dnd-background 100
+			@ms-color-presence-dnd-background 100%
 		);
 	}
 }

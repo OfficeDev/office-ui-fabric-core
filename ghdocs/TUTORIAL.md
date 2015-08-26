@@ -13,7 +13,7 @@
 
 ## Overview
 
-Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and O365. To demonstrate how to use Fabric, let’s build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.
+Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and Office 365. To demonstrate how to use Fabric, let’s build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.
 
 ## Components Overview
 

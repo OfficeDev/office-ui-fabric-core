@@ -13,11 +13,11 @@
 
 ## Overview
 
-Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and Office 365. To demonstrate how to use Fabric, let’s build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.
+Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and Office 365. To demonstrate how to use Fabric, let's build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.
 
 ## Components Overview
 
-Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric’s components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.
+Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.
 
 Now, let's get started building our application!
 
@@ -53,11 +53,11 @@ Download Fabric, unzip it, and copy **fabric.css** and **fabric.components.css**
 <link href="css/fabric.components.css" type="text/css" rel="stylesheet" />
 ```
 
-The first file includes the core Fabric styles (typography, colors, animations, etc.), while the second includes styles for all of Fabric’s components. Note that Fabric comes with several other CSS files that can be used to improve or optimize your application. These include .rtl.css versions for right-to-left languages, as well as individual CSS files for each component, so you can use only the components your application needs. There are also .min.css versions of each of these, which should be used in production to save bandwidth. For now, we will use the full versions of the core Fabric styles and components for simpler debugging and quicker development.
+The first file includes the core Fabric styles (typography, colors, animations, etc.), while the second includes styles for all of Fabric's components. Note that Fabric comes with several other CSS files that can be used to improve or optimize your application. These include .rtl.css versions for right-to-left languages, as well as individual CSS files for each component, so you can use only the components your application needs. There are also .min.css versions of each of these, which should be used in production to save bandwidth. For now, we will use the full versions of the core Fabric styles and components for simpler debugging and quicker development.
 
 After linking to the Fabric CSS files, your page will now have access to all of the colors, fonts, animations, and component styles that Fabric offers.
 
-We will now create a CSS file for your application, which we’ll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your css/ directory and add a link to it _after_ fabric.components.css in index.html:
+We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your css/ directory and add a link to it _after_ fabric.components.css in index.html:
 
 ```html
 <link href="css/fabric.css" type="text/css" rel="stylesheet" />
@@ -65,7 +65,7 @@ We will now create a CSS file for your application, which we’ll use to add cus
 <link href="css/app.css" type="text/css" rel="stylesheet" />
 ```
 
-NOTE: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application’s specific requirements. 
+NOTE: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
 
 At this point, your directory should look like this:
 
@@ -96,7 +96,7 @@ And index.html should look like this:
 
 ## Step 3 – Prepping your app
 
-Let’s start adding Fabric Components to our ToDo app! Below is a preview of what our app will look like when we’re finished:
+Let's start adding Fabric Components to our ToDo app. Below is a preview of what our app will look like when we're finished:
 
 ![Third screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/ThirdAppLook.png)
 
@@ -109,7 +109,7 @@ Let's start by creating containers that will hold the Fabric components for our 
 <div class="TodoList"></div>
 ```
 
-Now let’s add styles for these elements. Open up app.css and add two CSS rules: one for our TodoBar container and one for our TodoList container.
+Now let's add styles for these elements. Open up app.css and add two CSS rules: one for our TodoBar container and one for our TodoList container.
 
 ```css
 .TodoBar {
@@ -136,7 +136,7 @@ Save and then open up index.html in your browser. You should see something like 
 
 ![First screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/FirstAppLook.png)
 
-If you don’t see this, double-check your CSS paths and make sure you followed the first part of this tutorial correctly.
+If you don't see this, double-check your CSS paths and make sure you followed the first part of this tutorial correctly.
 
 Next, you'll notice extra spacing around `<div class="TodoList"></div>`. This is because of margins that browsers add to `<body>` and `<html>` elements by default. Let's remove the margin on these elements by adding the following to the top of app.css:
 
@@ -151,7 +151,7 @@ Go ahead and refresh—the extra white space along the top and sides should go a
 
 ## Step 4 – Using Fabric components
 
-Fabric includes a responsive grid system, similar to those seen in other UI toolkits, that we will use for our TodoBar section. Let’s add the following HTML inside  `<div class="TodoBar"></div>`:
+Fabric includes a responsive grid system, similar to those seen in other UI toolkits, that we will use for our TodoBar section. Let's add the following HTML inside  `<div class="TodoBar"></div>`:
 
 ```html
 <div class="ms-Grid">
@@ -162,7 +162,7 @@ Fabric includes a responsive grid system, similar to those seen in other UI tool
 </div>
 ```
 
-Now for the fun part: let’s add some component HTML into our ToDo app! Navigate to where you extracted your .zip of Fabric, then open the following component files in your code editor:
+Now for the fun part: let's add some component HTML into our ToDo app! Navigate to where you extracted your .zip of Fabric, then open the following component files in your code editor:
 
 ```
 dist/components/Button/Button.html
@@ -225,7 +225,7 @@ NOTE: `.ms-font-xxl` is a "base" typography class, each of which sets a size, co
 
 ## Step 6 – Adding more complex components
 
-Now, let’s get our list up and running using some hard-coded content. In Part 2, we will use JavaScript to add real data and interactions.
+Now, let's get our list up and running using some hard-coded content. In Part 2, we will use JavaScript to add real data and interactions.
 
 Go ahead and open up `dist/components/List/List.html` from your extracted Fabric .zip into your text editor, then copy all of the contents and paste it inside of `<div class="TodoList"></div>`. Your code should now look like this:
 
@@ -265,7 +265,7 @@ Go ahead and open up `dist/components/List/List.html` from your extracted Fabric
 </div>
 ```
 
-Now, let’s remove the background colors we used to test our two container `<divs> (.TodoList, .TodoBar)`. Their styles should now look like the following:
+Now, let's remove the background colors we used to test our two container `<divs> (.TodoList, .TodoBar)`. Their styles should now look like the following:
 
 ```css
 .TodoBar {
@@ -337,7 +337,7 @@ Now let's tweak our list a bit. For our purposes, we really want to just have a 
 </li>
 ```
 
-Now let’s copy this new list item code and paste it at least 10 times inside of `<ul class=”ms-List”></ul>`, making sure to remove the old list item code.
+Now let's copy this new list item code and paste it at least 10 times inside of `<ul class=”ms-List”></ul>`, making sure to remove the old list item code.
 
 Your app should look exactly like this:
 

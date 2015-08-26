@@ -50,7 +50,7 @@ Optionally, you might choose to include the JavaScript code for Fabric component
 The following starter template represents the minimum recommended HTML structure for an app or add-in that uses Fabric. Copy the code into your project to start working with a basic Fabric document.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">

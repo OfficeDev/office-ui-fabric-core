@@ -71,6 +71,7 @@ We add new features in minor versions (for example, x.**Y**.z), which we typical
 	- [Layout](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#layout)
 	- [Navigation](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#navigation)
 	- [Content](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#content)
+- [Introductory tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md)
 - [Contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md)
 
 ##Change log

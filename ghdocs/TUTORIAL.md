@@ -98,7 +98,7 @@ And index.html should look like this:
 
 Let’s start adding Fabric Components to our ToDo app! Below is a preview of what our app will look like when we’re finished:
 
-#### TODO: Add screenshot of "ThirdAppLook"
+![Third screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/ThirdAppLook.png)
 
 At the top we have a TextField and Button component that we will eventually use to add new tasks. Underneath, we have our List component that contains ListItems, which will hold each of the user's pending tasks.
 
@@ -134,7 +134,7 @@ Now let’s add styles for these elements. Open up app.css and add two CSS rules
 
 Save and then open up index.html in your browser. You should see something like this:
 
-#### TODO: Add screenshot of "FirstAppLook"
+![First screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/FirstAppLook.png)
 
 If you don’t see this, double-check your CSS paths and make sure you followed the first part of this tutorial correctly.
 
@@ -291,7 +291,7 @@ Now, let’s remove the background colors we used to test our two container `<di
 
 Here is what your app should look like at this moment:
 
-#### TODO: Add screenshot of "SecondAppLook"
+![Second screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/SecondAppLook.png)
 
 It's starting to look pretty good! It still needs something more, so let's add a background color and adjust the padding and margins of our TextField and Button components.
 
@@ -341,6 +341,6 @@ Now let’s copy this new list item code and paste it at least 10 times inside o
 
 Your app should look exactly like this:
 
-#### TODO: Add screenshot of "ThirdAppLook"
+![Third screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/ThirdAppLook.png)
 
 Check out the next part in the series, where we will integrate functionality, animations, and more awesomeness!

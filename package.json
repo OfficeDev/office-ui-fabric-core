@@ -1,12 +1,14 @@
 {
   "name": "Fabric",
-  "author": "Office Fabric Team",
+  "author": "Office UI Fabric Team",
   "version": "0.10.3",
   "description": "The front-end framework for building experiences for Office 365.",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://msblox.visualstudio.com/DefaultCollection/_git/Fabric"
+    "url": "https://github.com/OfficeDev/Office-UI-Fabric"
   },
+  "private": true,
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install"
   },

@@ -44,7 +44,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 1. If using a downloaded copy: After downloading and unpacking, move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a "lib" type of folder.
 2. Add a reference to fabric.css in the `<head>` tag of your HTML file before any application-specific CSS. This ensures that you can specify overrides and additional styles with application-specific stylesheets.
 3. If you're using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
-4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this, since the code is not extensively tested and is used only for demonstration on the Component Picker. If you'd still like to include it, add a `<script>` tag with a reference to fabric.components.min.js at the end of your page's `<body>` tag.
+4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this, since the code is not extensively tested and is used only for demonstration purposes in our documentation. If you'd still like to include it, add a `<script>` tag with a reference to fabric.components.min.js at the end of your page's `<body>` tag.
 
 #####Starter template
 

@@ -145,12 +145,12 @@
     // Insert the empty box.
     &:before {
       .ms-Icon;
-      content: '\e21c';
-      font-size: 18px;
-      color: @ms-color-neutralSecondaryAlt;
       position: absolute;
-      top: 22px;
-      left: 8px;
+      top: 12px;
+      left: 6px;
+      height: 15px;
+      width: 15px;
+      border: 1px solid @ms-color-neutralSecondaryAlt;
     }
   }
 }
@@ -160,14 +160,18 @@
 //
 .ms-ListItem.is-selected {
   // Insert the checkmark.
+  &:before {
+    border: 1px solid transparent;
+  }
+
   &:before, 
   &:hover:before {
     .ms-Icon;
     content: '\e041';
-    font-size: @ms-font-size-l;
+    font-size: @ms-font-size-m-plus;
     color: @ms-color-neutralSecondaryAlt;
     position: absolute;
-    top: 14px;
+    top: 12px;
     left: 6px;
   }
 

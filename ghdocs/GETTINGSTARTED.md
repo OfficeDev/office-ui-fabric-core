@@ -7,6 +7,7 @@
 - [Building Fabric](#building-fabric)
 - [Add to your project](#add-to-your-project)
 - [Starter template](#starter-template)
+- [Introductory tutorial](#introductory-tutorial)
 - [Supported browsers](#supported-browsers)
 
 #####Building Fabric
@@ -51,7 +52,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 The starter template below represents the minimal recommended HTML structure for an app using Fabric. Copy the code into your project to start working with a basic Fabric document.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -72,6 +73,10 @@ The starter template below represents the minimal recommended HTML structure for
 	</body>
 </html>
 ```
+
+#####Introductory tutorial
+
+Read a tutorial that explains the essentials of how to set up and use Fabric and Fabric Components by building a simple ToDo application. [Get started with Fabric.](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md)
 
 #####Supported browsers
 

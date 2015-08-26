@@ -19,7 +19,7 @@ Fabric is an HTML and CSS toolkit that works like a skin to help your experience
 
 Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.
 
-Now, let's get started building our application!
+Now, let's get started building our application.
 
 ## Step 1 – Setting up your project
 
@@ -162,7 +162,7 @@ Fabric includes a responsive grid system, similar to those seen in other UI tool
 </div>
 ```
 
-Now for the fun part: let's add some component HTML into our ToDo app! Navigate to where you extracted your .zip of Fabric, then open the following component files in your code editor:
+Now for the fun part: let's add some component HTML into our ToDo app. Navigate to where you extracted your .zip of Fabric, then open the following component files in your code editor:
 
 ```
 dist/components/Button/Button.html
@@ -343,4 +343,4 @@ Your app should look exactly like this:
 
 ![Third screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/ThirdAppLook.png)
 
-Check out the next part in the series, where we will integrate functionality, animations, and more awesomeness!
+Check out the next part in the series, where we will integrate functionality, animations, and more awesomeness.

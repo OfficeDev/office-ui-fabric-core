@@ -16,7 +16,19 @@
     "Persona.Square.Small.html",
     "Persona.Square.html",
     "Persona.Square.Large.html",
-    "Persona.Square.ExtraLarge.html"
+    "Persona.Square.ExtraLarge.html",
+    "Persona.Presence.Available.html",
+    "Persona.Presence.Away.html",
+    "Persona.Presence.Blocked.html",
+    "Persona.Presence.Busy.html",
+    "Persona.Presence.Dnd.html",
+    "Persona.Presence.Offline.html",
+    "Persona.Presence.Square.Available.html",
+    "Persona.Presence.Square.Away.html",
+    "Persona.Presence.Square.Blocked.html",
+    "Persona.Presence.Square.Busy.html",
+    "Persona.Presence.Square.Dnd.html",
+    "Persona.Presence.Square.Offline.html"
   ],
   "branches": [
     {

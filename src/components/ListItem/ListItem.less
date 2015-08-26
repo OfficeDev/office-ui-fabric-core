@@ -109,6 +109,7 @@
   left: 0;
   position: absolute;
   top: 0;
+  display: inline;
 }
 
 .ms-ListItem.is-selectable {
@@ -130,12 +131,11 @@
     // Insert the empty box.
     &:before {
       .ms-Icon;
-      content: '\e03f';
       font-size: 18px;
       color: @ms-color-neutralSecondaryAlt;
       position: absolute;
-      top: 22px;
-      left: 8px;
+      top: 0px;
+      left: 0px;
     }
   }
 }

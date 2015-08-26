@@ -22,6 +22,8 @@ On a Windows Machine:
 5. npm install -g gulp
 6. npm install -g typescript
 7. npm install
+8. gulp
+9. The built files will be in dist/
 
 On a Mac:
 
@@ -32,6 +34,8 @@ On a Mac:
 5. sudo npm install -g gulp
 6. sudo npm install -g typescript
 7. npm install
+8. gulp
+9. The built files will be in dist/
 
 #####Add to your project
 

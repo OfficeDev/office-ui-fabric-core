@@ -3,6 +3,15 @@
   "notes": "The persona component is used to represent a person. A placeholder icon is included in every persona as a fallback for when there is no img src or the img hasn't been received yet from the server.",
   "template": "Persona.html",
   "class": "ms-Persona",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Persona.html",
+    "Persona.Tiny.html",
+    "Persona.ExtraSmall.html",
+    "Persona.Small.html",
+    "Persona.Large.html",
+    "Persona.ExtraLarge.html"
+  ],
   "branches": [
     {
       "name": "Sizes",

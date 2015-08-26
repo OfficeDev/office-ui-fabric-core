@@ -18,14 +18,14 @@
     .ms-font-xl,
     .ms-font-xxl,
     .ms-font-su,
-    .ms-font-weight-light,
-    .ms-font-weight-light-hover:hover,
-    .ms-font-weight-semilight,
-    .ms-font-weight-semilight-hover:hover,
-    .ms-font-weight-regular,
-    .ms-font-weight-regular-hover:hover,
-    .ms-font-weight-semibold,
-    .ms-font-weight-semibold-hover:hover {
+    .ms-fontWeight-light,
+    .ms-fontWeight-light-hover:hover,
+    .ms-fontWeight-semilight,
+    .ms-fontWeight-semilight-hover:hover,
+    .ms-fontWeight-regular,
+    .ms-fontWeight-regular-hover:hover,
+    .ms-fontWeight-semibold,
+    .ms-fontWeight-semibold-hover:hover {
       font-family: @ms-font-family;
     }
   }
@@ -57,23 +57,23 @@
   *[lang="@{ms-lang-code}"] {
     .ms-font-xl,
     .ms-font-xxl,
-    .ms-font-weight-light,
-    .ms-font-weight-light-hover:hover {
+    .ms-fontWeight-light,
+    .ms-fontWeight-light-hover:hover {
       font-family: @ms-font-family-light;
     }
     .ms-font-l,
     .ms-font-su,
-    .ms-font-weight-semilight,
-    .ms-font-weight-semilight-hover:hover {
+    .ms-fontWeight-semilight,
+    .ms-fontWeight-semilight-hover:hover {
       font-family: @ms-font-family-semilight;
     }
-    .ms-font-weight-regular,
-    .ms-font-weight-regular-hover:hover {
+    .ms-fontWeight-regular,
+    .ms-fontweight-regular-hover:hover {
       font-family: @ms-font-family-regular;
     }
     .ms-font-mi,
-    .ms-font-weight-semibold,
-    .ms-font-weight-semibold-hover:hover {
+    .ms-fontWeight-semibold,
+    .ms-fontWeight-semibold-hover:hover {
       font-family: @ms-font-family-semibold;
     }
   }
@@ -165,62 +165,3 @@
 // Vietnamese
 // vi-VN
 .language-override-web-fonts(vi-VN, @ms-font-family-light-vietnamese, @ms-font-family-semilight-vietnamese, @ms-font-family-regular-vietnamese, @ms-font-family-semibold-vietnamese);
-
-
-
-// PLEASE NOTE:
-// ALL VARIABLES BELOW WILL BE DEPRECATED IN A FUTURE FABRIC RELEASE
-
-// LEGACY FONT VARIABLES:
-
-// Base font stack.
-@font-system-base: @ms-font-system-base;
-
-// Variables for each of the non-distributed (native) font stacks.
-@font-stack-japanese: @ms-font-stack-japanese;
-@font-stack-korean: @ms-font-stack-korean;
-@font-stack-chinese-simplified: @ms-font-stack-chinese-simplified;
-@font-stack-chinese-traditional: @ms-font-stack-chinese-traditional;
-@font-stack-hindi: @ms-font-stack-hindi;
-
-// Variables for each of the web font stacks.
-// East European
-@font-family-light-eastEuropean:       @ms-font-family-light-eastEuropean;
-@font-family-semilight-eastEuropean:   @ms-font-family-semilight-eastEuropean;
-@font-family-regular-eastEuropean:     @ms-font-family-regular-eastEuropean;
-@font-family-semibold-eastEuropean:    @ms-font-family-semibold-eastEuropean;
-
-// Cyrillic
-@font-family-light-cyrillic:           @ms-font-family-light-cyrillic;
-@font-family-semilight-cyrillic:       @ms-font-family-semilight-cyrillic;
-@font-family-regular-cyrillic:         @ms-font-family-regular-cyrillic;
-@font-family-semibold-cyrillic:        @ms-font-family-semibold-cyrillic;
-
-// Leelawadee
-@font-family-semilight-leelawadee:     @ms-font-family-semilight-leelawadee;
-@font-family-regular-leelawadee:       @ms-font-family-regular-leelawadee;
-@font-family-semibold-leelawadee:      @ms-font-family-semibold-leelawadee;
-
-// Arabic
-@font-family-light-arabic:             @ms-font-family-light-arabic;
-@font-family-semilight-arabic:         @ms-font-family-semilight-arabic;
-@font-family-regular-arabic:           @ms-font-family-regular-arabic;
-@font-family-semibold-arabic:          @ms-font-family-semibold-arabic;
-
-// Greek
-@font-family-light-greek:              @ms-font-family-light-greek;
-@font-family-semilight-greek:          @ms-font-family-semilight-greek;
-@font-family-regular-greek:            @ms-font-family-regular-greek;
-@font-family-semibold-greek:           @ms-font-family-semibold-greek;
-
-// Hebrew
-@font-family-light-hebrew:             @ms-font-family-light-hebrew;
-@font-family-semilight-hebrew:         @ms-font-family-semilight-hebrew;
-@font-family-regular-hebrew:           @ms-font-family-regular-hebrew;
-@font-family-semibold-hebrew:          @ms-font-family-semibold-hebrew;
-
-// Vietnamese
-@font-family-light-vietnamese:         @ms-font-family-light-vietnamese;
-@font-family-semilight-vietnamese:     @ms-font-family-semilight-vietnamese;
-@font-family-regular-vietnamese:       @ms-font-family-regular-vietnamese;
-@font-family-semibold-vietnamese:      @ms-font-family-semibold-vietnamese;

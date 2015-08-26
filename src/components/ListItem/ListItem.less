@@ -103,13 +103,12 @@
   }
 }
 
-.ms-ListItem.is-unseen:before {
+.ms-ListItem.is-unseen:after {
   border-right: 10px solid transparent;
   border-top: 10px solid @ms-color-themePrimary;
   left: 0;
   position: absolute;
   top: 0;
-  display: inline;
 }
 
 .ms-ListItem.is-selectable {
@@ -131,11 +130,12 @@
     // Insert the empty box.
     &:before {
       .ms-Icon;
+      content: '\e03f';
       font-size: 18px;
       color: @ms-color-neutralSecondaryAlt;
       position: absolute;
-      top: 0px;
-      left: 0px;
+      top: 22px;
+      left: 8px;
     }
   }
 }
@@ -145,11 +145,12 @@
   // Insert the checkmark.
   &:before, &:hover:before {
     .ms-Icon;
+    content: '\e041';
     font-size: 17px;
     color: @ms-color-neutralSecondaryAlt;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 23px;
+    left: 8px;
   }
 
   &:hover {

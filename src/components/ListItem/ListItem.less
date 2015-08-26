@@ -8,7 +8,7 @@
   .ms-font-m;
   .ms-u-normalize;
   .ms-u-clearfix;
-  padding: 11px 30px 10px 30px;
+  padding: 9px 28px 3px;
   position: relative;
 }
 
@@ -20,7 +20,9 @@
   width: 70px;
 }
 
-.ms-ListItem-primaryText, .ms-ListItem-secondaryText, .ms-ListItem-tertiaryText {
+.ms-ListItem-primaryText, 
+.ms-ListItem-secondaryText, 
+.ms-ListItem-tertiaryText {
   .noWrap;
   display: block;
 }
@@ -76,23 +78,29 @@
 }
 
 .ms-ListItem-action {
-  color: @ms-color-neutralSecondary;
+  color: @ms-color-neutralTertiary;
   display: inline-block;
   font-size: 15px;
-  margin-left: 8px;
   position: relative;
   text-align: center;
   top: 3px;
   cursor: pointer;
+  height: 16px;
+  width: 16px;
+
+  .ms-Icon {
+    vertical-align: top;
+  }
 
   &:hover {
+    color: @ms-color-neutralSecondary;
     outline: 1px solid transparent;
   }
 }
 
 
-//== States
-
+//== State: Unread list item
+//
 .ms-ListItem.is-unread {
   border-left: 3px solid @ms-color-themePrimary;
   padding-left: 27px; // Reduce padding to allow room for border.
@@ -103,16 +111,23 @@
   }
 }
 
-.ms-ListItem.is-unseen:before {
-  border-right: 10px solid transparent;
-  border-top: 10px solid @ms-color-themePrimary;
-  left: 0;
-  position: absolute;
-  top: 0;
+
+//== State: Unseen list item
+//
+.ms-ListItem.is-unseen {
+  &:after {
+    border-right: 10px solid transparent;
+    border-top: 10px solid @ms-color-themePrimary;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
 }
 
-.ms-ListItem.is-selectable {
 
+//== State: Selectable list item
+//
+.ms-ListItem.is-selectable {
   .ms-ListItem-selectionTarget {
     display: block;
     height: 20px;
@@ -130,7 +145,7 @@
     // Insert the empty box.
     &:before {
       .ms-Icon;
-      content: '\e03f';
+      content: '\e21c';
       font-size: 18px;
       color: @ms-color-neutralSecondaryAlt;
       position: absolute;
@@ -140,10 +155,13 @@
   }
 }
 
-.ms-ListItem.is-selected {
 
+//== State: Selected list item
+//
+.ms-ListItem.is-selected {
   // Insert the checkmark.
-  &:before, &:hover:before {
+  &:before, 
+  &:hover:before {
     .ms-Icon;
     content: '\e041';
     font-size: 17px;
@@ -159,7 +177,16 @@
   }
 }
 
-// Modifier: Document list item
+
+//== Modifier: List item with image
+//
+.ms-ListItem.ms-ListItem--image {
+
+}
+
+
+//== Modifier: Document list item
+//
 .ms-ListItem.ms-ListItem--document {
   padding: 0;
 

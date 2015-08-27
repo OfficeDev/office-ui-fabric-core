@@ -105,23 +105,20 @@
 	    });
 
 	     $SearchBox.keypress(function() {
-	     	
 	     	//Get Search Field
 	     	var $input = $(this).find('.ms-CommandSearch-input');
-
 	    	if($input.val()) {
 	    		$(this).addClass('ms-CommandSearch--hasText');
 	    	} else {
 	    		$(this).removeClass('ms-CommandSearch--hasText');
 	    	}
-
 	    });
 
-	     $SearchBox.find('.ms-CommandSearch-iconClearWrapper').click(function() {
+	    $SearchBox.find('.ms-CommandSearch-iconClearWrapper').click(function() {
 	     	var $input = $(this).parent().find('.ms-CommandSearch-input');
 	     	$input.val('');
 	     	$input.parent().removeClass('ms-CommandSearch--hasText ms-CommandSearch--active');
-	     });
+	    });
 		
     });
   };

@@ -26,6 +26,7 @@ var folders = require('gulp-folders');
 var browserSync = require('browser-sync').create();
 var colors = require('colors/safe');
 var path = require('path');
+var wrap = require('gulp-wrap');
 
 // Define paths.
 var distPath = 'dist';
@@ -85,6 +86,10 @@ var generateSuccess = function (message, showTip) {
     var consoleText = colors.green("Fabric Message: ") + colors.cyan(message);
     var completeMessage = spaceDashes + spacing + spacing + consoleText + spacing + tipsMessage + spacing + spaceDashes;
     return completeMessage;
+}
+
+var parseManifest = function (folder) {
+    return JSON.parse(fs.readFileSync(paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
 }
 
 // Helper for retrieving folders
@@ -228,7 +233,8 @@ gulp.task('components-less', ['clean-components'], function () {
             .on('error', onGulpError);
     // Build minified Fabric Components CSS for each Component.
     var indComponents = componentsFolders.map(function(folder) {
-        var manifest = JSON.parse(fs.readFileSync(paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
+
+        var manifest = parseManifest(folder);
         var deps = manifest.dependencies || [];
 
         return gulp.src(paths.templatePath + '/'+ 'component-manifest-template.less')
@@ -283,9 +289,41 @@ gulp.task('components-less', ['clean-components'], function () {
 });
 
 gulp.task('build-component-data', folders(paths.componentsPath, function (folder) {
-    return gulp.src(paths.componentsPath + '/' +  folder + '/*.html')
+
+    var manifest = parseManifest(folder);
+    var filesArray = manifest.fileOrder;
+    var wrapBranches = manifest.wrapBranches;
+    var cfiles;
+    var newArray;
+
+    if(typeof manifest.fileOrder != "undefined" || manifest.fileOrder != undefined) {
+        // build gulp src array
+        newArray = filesArray.map(function(file, i) {
+            return paths.componentsPath + '/' +  folder + '/' + file;
+        });
+        cfiles = gulp.src(newArray).on('error', onGulpError);
+    } else {
+        cfiles = gulp.src(paths.componentsPath + '/' +  folder + '/*.html').on('error', onGulpError);
+    }
+ 
+    if(manifest.wrapBranches === true) {
+        cfiles.pipe(wrap('<div class="sample-wrapper"><%= contents %></div>'))
             .on('error', onGulpError)
         .pipe(concat(folder + '.html'))
+            .on('error', onGulpError)
+        .pipe(tap(function (file) {
+            storedFiles[folder] = file.contents.toString();
+            var curString = storedFiles[folder];
+            curString = JSON.stringify(curString);
+
+            //Check if module was already included in string
+            if(catalogContents.indexOf(folder + ':') < 0) {
+                catalogContents += ', "' + folder + '" : ' + curString + ' ';
+            }
+        }))
+        .on('error', onGulpError);
+    } else {
+        cfiles.pipe(concat(folder + '.html'))
             .on('error', onGulpError)
         .pipe(tap(function (file) {
             storedFiles[folder] = file.contents.toString();
@@ -297,6 +335,8 @@ gulp.task('build-component-data', folders(paths.componentsPath, function (folder
             }
         }))
             .on('error', onGulpError);
+    }
+    return cfiles;
 }));
 
 gulp.task('build-component-examples', ['build-component-data'], folders(paths.componentsPath, function (folder){

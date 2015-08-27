@@ -3,6 +3,10 @@
   "notes": "",
   "template": "PersonaCard.html",
   "class": "ms-PersonaCard",
+  "fileOrder": [
+    "PersonaCard.html",
+    "PersonaCard.Square.html"
+  ],
   "dependencies": [
     "Persona"
   ],

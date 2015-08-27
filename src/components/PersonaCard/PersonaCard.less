@@ -14,54 +14,50 @@
   right: 0;
   .ms-u-slideUpIn10;
   outline: 1px solid transparent;
-
-  // Circle persona variant
-  &.ms-PersonaCard--circles {
-    .ms-Persona.ms-Persona--xl .ms-Persona-placeholder {
-      font-size: 75px;
-    }
-    .ms-Persona-placeholder {
-      left: 1px;
-    }
-    .ms-Persona-imageArea {
-      width: 100px;
-      height: 100px;
-      background-color: @ms-color-neutralLighter;
-    }
-    .ms-Persona-imageCircle {
-      width: 80px;
-      height: 80px;
-      margin: 10px auto;
-      border-radius: 50%;
-      overflow: hidden;
-      position: absolute;
-      left: 0;
-      right: 0;
-      background-color: @ms-color-neutralTertiary;
-    }
-    .ms-Persona.ms-Persona--xl .ms-Persona-image {
-      width: 80px;
-      height: 80px;
-    }
-    .ms-Persona.ms-Persona--xl .ms-Persona-presence {
-      height: 12px;
-      width: 12px;
-      border-radius: 50%;
-      border: 2px solid @ms-color-neutralLighter;
-      left: auto;
-      top: auto;
-      right: 15px;
-      bottom: 12px;
-    }
-  }
 }
 
 .ms-PersonaCard-persona {
   background-color: @ms-color-neutralLighter;
 
-  // Move the text down to the next baseline
-  .ms-Persona .ms-Persona-primaryText {
-    margin-top: 3px;
+  // Overrides for persona
+  .ms-Persona-imageArea {
+    width: 96px;
+    height: 96px;
+    background-color: @ms-color-neutralLighter;
+  }
+
+  .ms-Persona-imageCircle {
+    margin: 7px auto;
+  }
+
+  .ms-Persona-imageCircle,
+  .ms-Persona-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ms-Persona-placeholder {
+    font-size: 75px;
+    left: 1px;
+    top: 11px;
+  }
+
+  .ms-Persona-presence {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 2px solid @ms-color-neutralLighter;
+    right: 15px;
+    bottom: 12px;
+  }
+
+  .ms-Persona-primaryText {
+    margin-top: 3px; // Move the text down to the next baseline
+  }
+
+  .ms-Persona-tertiaryText,
+  .ms-Persona-optionalText {
+    display: block; // Show tertiary and optional text
   }
 }
 

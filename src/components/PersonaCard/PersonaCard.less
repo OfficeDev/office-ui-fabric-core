@@ -62,6 +62,10 @@
   // Move the text down to the next baseline
   .ms-Persona .ms-Persona-primaryText {
     margin-top: 3px;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -176,7 +180,7 @@
   }
 }
 
-// Active Items 
+// Active Items
 .ms-PersonaCard-detailChat,
 .ms-PersonaCard-detailPhone,
 .ms-PersonaCard-detailVideo,
@@ -200,16 +204,16 @@
 .ms-PersonaCard-detailChat .detail-1,
 .ms-PersonaCard-detailPhone .detail-2,
 .ms-PersonaCard-detailVideo .detail-3,
-.ms-PersonaCard-detailMail .detail-4{ 
+.ms-PersonaCard-detailMail .detail-4{
   max-height: 78px;
-  transition: max-height .25s ease; 
+  transition: max-height .25s ease;
 }
 .ms-PersonaCard-detailOrg .detail-5 {
   max-height: 300px;
-  transition: max-height .25s ease; 
+  transition: max-height .25s ease;
 }
 
-// Inactive Items 
+// Inactive Items
 .ms-PersonaCard-detailChat .detail-2,
 .ms-PersonaCard-detailChat .detail-3,
 .ms-PersonaCard-detailChat .detail-4,
@@ -229,8 +233,8 @@
 .ms-PersonaCard-detailOrg .detail-1,
 .ms-PersonaCard-detailOrg .detail-2,
 .ms-PersonaCard-detailOrg .detail-3,
-.ms-PersonaCard-detailOrg .detail-4 { 
-  max-height: 48px; 
+.ms-PersonaCard-detailOrg .detail-4 {
+  max-height: 48px;
 }
 
 // Icon to expand a collapsed actionDetails section.
@@ -299,7 +303,7 @@
 }
 
 // Circle presence in orgchart list
-.ms-PersonaCard.ms-PersonaCard--circles 
+.ms-PersonaCard.ms-PersonaCard--circles
 .ms-OrgChart-list .ms-Persona-presence {
   position: absolute;
   height: 10px;

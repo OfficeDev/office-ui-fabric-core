@@ -126,11 +126,11 @@ gulp.task('clean-fabric-components', function () {
 });
 
 gulp.task('clean-component-samples', function () {
-    return del.sync([paths.distSamples + '/Controls']);
+    return del.sync([paths.distSamples + '/Components']);
 });
 
 gulp.task('clean-samples', function () {
-    return del.sync([paths.distSamples + '/*', '!' + paths.distSamples + '/{Controls, Controls/**}']);
+    return del.sync([paths.distSamples + '/*', '!' + paths.distSamples + '/{Components, Components/**}']);
 });
 
 //
@@ -159,7 +159,7 @@ gulp.task('copy-component-samples', ['clean-component-samples'], function() {
             paths.componentsPath + '/**/*.js',
             paths.componentsPath + '/**/*.gif'
         ])
-        .pipe(gulp.dest(paths.distSamples + '/Controls'));
+        .pipe(gulp.dest(paths.distSamples + '/Components'));
 });
 
 gulp.task('copy-samples', ['clean-samples'], function () {
@@ -323,13 +323,13 @@ gulp.task('component-samples-less', ['clean-component-samples'], function() {
                 .on('error', onGulpError)
             .pipe(csscomb())
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distSamples + '/Controls/' + folder))
+            .pipe(gulp.dest(paths.distSamples + '/Components/' + folder))
                 .on('error', onGulpError)
             .pipe(rename(folder + '.min.css'))
                 .on('error', onGulpError)
             .pipe(cssMinify())
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distSamples + '/Controls/' + folder))
+            .pipe(gulp.dest(paths.distSamples + '/Components/' + folder))
                 .on('error', onGulpError);
     });
 });
@@ -430,7 +430,7 @@ gulp.task('component-samples-template', ['build-component-data'], folders(paths.
         .on('error', onGulpError)
     .pipe(rename('index.html'))
         .on('error', onGulpError)
-    .pipe(gulp.dest(paths.distSamples + '/controls/' +  folder))
+    .pipe(gulp.dest(paths.distSamples + '/Components/' +  folder))
         .on('error', onGulpError);
 }));
 

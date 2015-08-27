@@ -58,7 +58,6 @@
   			$menu.html(overflowStrings);
   		} else {
   			$oCommand.removeClass("showOverflow");
-  			console.log("getting removed");
   		}
   	}
 
@@ -70,6 +69,7 @@
 	    var $OverflowCommand = $CommandBar.find('.ms-CommandBarItem-overflow');
 	    var $OverflowCommandWidth = $CommandBar.find('.ms-CommandBarItem-overflow').outerWidth();
 	    var $OverflowMenu = $CommandBar.find('.ms-CommandBar-overflowMenu');
+	    var $SearchBox = $CommandBar.find('.ms-CommandSearch');
 	    var mobileSwitch = false;
 	    var overFlowCommands;
 	    var allCommands;
@@ -94,10 +94,34 @@
 	    		mobileSwitch = false;
 	    	}
 	    });
+
 	    // Hook up contextual menu
 	    $OverflowCommand.click(function() {
 	    	$OverflowMenu.toggleClass('is-open');
-	    })
+	    });
+
+	    $SearchBox.find('.ms-CommandSearch-input').click(function() {
+	    	$(this).closest('.ms-CommandSearch').addClass('ms-CommandSearch--active');
+	    });
+
+	     $SearchBox.keypress(function() {
+	     	
+	     	//Get Search Field
+	     	var $input = $(this).find('.ms-CommandSearch-input');
+
+	    	if($input.val()) {
+	    		$(this).addClass('ms-CommandSearch--hasText');
+	    	} else {
+	    		$(this).removeClass('ms-CommandSearch--hasText');
+	    	}
+
+	    });
+
+	     $SearchBox.find('.ms-CommandSearch-iconClearWrapper').click(function() {
+	     	var $input = $(this).parent().find('.ms-CommandSearch-input');
+	     	$input.val('');
+	     	$input.parent().removeClass('ms-CommandSearch--hasText ms-CommandSearch--active');
+	     });
 		
     });
   };

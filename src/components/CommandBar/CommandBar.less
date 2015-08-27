@@ -10,7 +10,7 @@
 @CommandBar-sideAreaWidthxlg: 345px;
 
 @CommandBarItem-height: @CommandBar-height;
-@CommandBarItem-marginTop: 14px;
+@CommandBarItem-marginTop: 13px;
 @CommandBarItem-textHeight: 16px;
 @CommandBarItem-iconWidth: 16px;
 @CommandBarItem-iconLabelMargin: 8px;
@@ -21,9 +21,9 @@
     background-color: @ms-color-themeLighterAlt;
     height: @CommandBar-height;
     white-space: nowrap;
-    padding: 0 15px;
+    padding-left: 0;
+    padding-right: 15px;
     border: 0;
-   
     &:focus {
         outline: none;
     }
@@ -69,23 +69,9 @@
         height: 38px;
         outline: none;
     }
-
-    &.is-hidden {
-        display: none;
-    }
-
-    &.is-disabled {
-        &:hover {
-            background-color: transparent;
-        }
-
-        .CommandBarItem-link {
-            cursor: default;
-        }
-    }
     
     &:hover {
-        background-color: @ms-color-themeLighter;
+        background-color: @ms-color-themeLight;
         color: @ms-color-themePrimary;
 
         @media screen and (-ms-high-contrast: active) {
@@ -170,19 +156,6 @@
     text-align: center;
     position: relative;
 
-    .ms-Icon--chevronDown {
-        vertical-align: top;
-        padding-bottom: 3px;
-        margin-top: @CommandBarItem-marginTop;
-        font-size: 1.1em;
-        line-height: 1em;
-        color: @ms-color-themePrimary;
-        &:before {
-            height: 10px;
-            line-height: @CommandBarItem-textHeight;
-        }
-    }
-
     @media only screen and (max-width: @ms-screen-lg-max) {
        padding: 0 6px;
     }
@@ -190,6 +163,19 @@
     @media only screen and (min-width: @ms-screen-lg-min) {
         padding-right: 8px;
         padding-left: 6px;
+    }
+}
+
+.ms-CommandBarItem-chevronDown  {
+    vertical-align: top;
+    padding-bottom: 3px;
+    margin-top: @CommandBarItem-marginTop;
+    font-size: 1.1em;
+    line-height: 1em;
+    color: @ms-color-neutralSecondary;
+    &:before {
+        height: 10px;
+        line-height: @CommandBarItem-textHeight;
     }
 }
 

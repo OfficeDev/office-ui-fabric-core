@@ -2,6 +2,9 @@
   "name": "ChoiceField",
   "notes": "Radio buttons and checkboxes.",
   "class": "ms-ChoiceField",
+  "dependencies": [
+    "Label"
+  ],
   "branches": [
     {
       "name": "Radio button",

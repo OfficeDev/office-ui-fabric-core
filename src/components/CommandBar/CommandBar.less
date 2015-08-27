@@ -153,7 +153,7 @@
 
 .ms-CommandBarItem-overflow {
   display: none;
-  
+
   &.is-visible {
     display: inline-block;
   }
@@ -185,13 +185,14 @@
   font-size: 1.1em;
   line-height: 1em;
   color: @ms-color-neutralSecondary;
+
   &:before {
     height: 10px;
     line-height: @CommandBarItem-textHeight;
   }
 }
 
-.ms-CommandSearch {
+.ms-CommandBarSearch {
   float: left;
   width: 208px;
   max-width: 208px;
@@ -202,7 +203,7 @@
   box-sizing: border-box;
   border-color: transparent; // give a base state for animation
 
-   @media only screen and (max-width: @ms-screen-md-max) {
+  @media only screen and (max-width: @ms-screen-md-max) {
     overflow: hidden;
     background-color: transparent;
     width: @SearchBox-widthLgCollapsed;
@@ -227,13 +228,7 @@
   }
 }
 
-.ms-CommandSearch--active,
-.ms-CommandSearch:hover {
-  background-color: @ms-color-themeLight;
-  color: @ms-color-black;
-}
-
-.ms-CommandSearch-input {
+.ms-CommandBarSearch-input {
   height: @SearchBox-height;
   // Due to a bug in IE9, we have to use a transparent left border instead of left padding
   padding: @SearchBox-sidePadding @SearchBox-sidePadding @SearchBox-sidePadding 0;
@@ -279,61 +274,72 @@
 }
 
 // default styles for icons, show the search icon and hide X (and arrow) until focused
-.ms-CommandSearch-iconSearchWrapper {
+.ms-CommandBarSearch-iconSearchWrapper {
   display: block;
   padding-left: 15px;
 }
 
-.ms-CommandSearch-iconArrowWrapper {
+.ms-CommandBarSearch-iconArrowWrapper {
   display: none;
 }
 
-.ms-CommandSearch-iconSearchWrapper,
-.ms-CommandSearch-iconArrowWrapper {
+.ms-CommandBarSearch-iconSearchWrapper,
+.ms-CommandBarSearch-iconArrowWrapper {
   top: 0;
   padding-left: 8px;
   padding-right: 8px;  
 }
 
-.ms-CommandSearch-iconClearWrapper {
+.ms-CommandBarSearch-iconClearWrapper {
   display: none;
   top: 1px;
   right: 0px;
 }
 
-.ms-CommandSearch--active {
-  & .ms-CommandSearch-input {
+//== Modifier: Puts search in an active state
+//
+.ms-CommandBarSearch--active {
+  background-color: @ms-color-themeLight;
+  color: @ms-color-black;
+
+  &:hover {
+    background-color: @ms-color-themeLight;
+    color: @ms-color-black;
+  }
+
+  & .ms-CommandBarSearch-input {
     cursor: text;
     padding-right: @SearchBox-height; // leave room for the X
     border-left-width: @SearchBox-sidePadding;
   }
 
-  &.ms-CommandSearch--hasBack .ms-CommandSearch-input {
+  &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
     border-left-width: @SearchBox-height; // leave room for arrow
   }
 
   // when focused, remove the search icon and possibly show arrow icon
-  & .ms-CommandSearch-iconSearchWrapper {
+  & .ms-CommandBarSearch-iconSearchWrapper {
     display: none;
   }
 
-  &.ms-CommandSearch--hasBack .ms-CommandSearch-iconArrowWrapper {
+  &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
     display: block;
   }
 }
 
-// show the clear (X) icon only when active and there is text
-.ms-CommandSearch--active.ms-CommandSearch--hasText {
-    & .ms-CommandSearch-input {
-      padding-right: @SearchBox-height; // leave room for the X
+//== Modifier: After search is active and has text, add X for clearing the box
+//
+.ms-CommandBarSearch--active.ms-CommandBarSearch--hasText {
+    & .ms-CommandBarSearch-input {
+      padding-right: @SearchBox-height;
     }
 
-    & .ms-CommandSearch-iconClearWrapper {
+    & .ms-CommandBarSearch-iconClearWrapper {
       display: block;
     }
 }
 
-.ms-CommandSearch-iconWrapper {
+.ms-CommandBarSearch-iconWrapper {
   height: @SearchBox-height;
   line-height: @SearchBox-height;
   cursor: pointer;
@@ -341,7 +347,7 @@
   position: absolute;
 }
 
-.ms-CommandSearch .ms-Icon::before {
+.ms-CommandBarSearch .ms-Icon:before {
   font-size: @SearchBox-iconSize;
   color: @ms-color-themePrimary;
 }

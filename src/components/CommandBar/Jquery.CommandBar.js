@@ -25,9 +25,11 @@
 
   	var processCommands = function(commands, width) {
   		var overFlowCommands = [];
+
   		for(var i=0; i < commands.length; i++) {
   			var $Item = commands[i].jquery;
 	  		var rightOffset = commands[i].rightOffset;
+	  		
   			// If the command is outside the right boundaries add to overflow items
 	  		if(!$Item.hasClass('ms-CommandBarItem-overflow')) {
 		  		if(rightOffset > width) {
@@ -43,12 +45,15 @@
 
   	var processOverflow = function(overFlowCommands, $oCommand, $menu) {
   		var overflowStrings = '';
+
   		if(overFlowCommands.length > 0) {
   			$oCommand.addClass("is-visible");
   			// Empty menu
   			$menu.html('');
+
   			// Add overflowed commands to ContextualMenu
-  			for(i=0; i < overFlowCommands.length; i++) {
+
+  			for(i = 0; i < overFlowCommands.length; i++) {
   				var $Item = $(overFlowCommands[i]);
   				// Hide Element in CommandBar
   				$Item.addClass('is-hidden');
@@ -69,7 +74,7 @@
 	    var $OverflowCommand = $CommandBar.find('.ms-CommandBarItem-overflow');
 	    var $OverflowCommandWidth = $CommandBar.find('.ms-CommandBarItem-overflow').outerWidth();
 	    var $OverflowMenu = $CommandBar.find('.ms-CommandBar-overflowMenu');
-	    var $SearchBox = $CommandBar.find('.ms-CommandSearch');
+	    var $SearchBox = $CommandBar.find('.ms-CommandBarSearch');
 	    var mobileSwitch = false;
 	    var overFlowCommands;
 	    var allCommands;
@@ -86,6 +91,7 @@
 	    	var overFlowCommands;
 	    	overFlowCommands = processCommands(allCommands, $CommandMainArea.innerWidth());
 	    	processOverflow(overFlowCommands, $OverflowCommand, $OverflowMenu);
+
 	    	if($(window).width() < 640 && mobileSwitch == false) {
 	    		allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
 	    		mobileSwitch = true;
@@ -100,24 +106,25 @@
 	    	$OverflowMenu.toggleClass('is-open');
 	    });
 
-	    $SearchBox.find('.ms-CommandSearch-input').click(function() {
-	    	$(this).closest('.ms-CommandSearch').addClass('ms-CommandSearch--active');
+	    $SearchBox.find('.ms-CommandBarSearch-input').click(function() {
+	    	$(this).closest('.ms-CommandBarSearch').addClass('ms-CommandBarSearch--active');
 	    });
 
 	     $SearchBox.keypress(function() {
 	     	//Get Search Field
-	     	var $input = $(this).find('.ms-CommandSearch-input');
+	     	var $input = $(this).find('.ms-CommandBarSearch-input');
+
 	    	if($input.val()) {
-	    		$(this).addClass('ms-CommandSearch--hasText');
+	    		$(this).addClass('ms-CommandBarSearch--hasText');
 	    	} else {
-	    		$(this).removeClass('ms-CommandSearch--hasText');
+	    		$(this).removeClass('ms-CommandBarSearch--hasText');
 	    	}
 	    });
 
-	    $SearchBox.find('.ms-CommandSearch-iconClearWrapper').click(function() {
-	     	var $input = $(this).parent().find('.ms-CommandSearch-input');
+	    $SearchBox.find('.ms-CommandBarSearch-iconClearWrapper').click(function() {
+	     	var $input = $(this).parent().find('.ms-CommandBarSearch-input');
 	     	$input.val('');
-	     	$input.parent().removeClass('ms-CommandSearch--hasText ms-CommandSearch--active');
+	     	$input.parent().removeClass('ms-CommandBarSearch--hasText ms-CommandBarSearch--active');
 	    });
 		
     });

@@ -44,20 +44,20 @@
   	var processOverflow = function(overFlowCommands, $oCommand, $menu) {
   		var overflowStrings = '';
   		if(overFlowCommands.length > 0) {
-  			$oCommand.addClass("showOverflow");
+  			$oCommand.addClass("is-visible");
   			// Empty menu
   			$menu.html('');
   			// Add overflowed commands to ContextualMenu
   			for(i=0; i < overFlowCommands.length; i++) {
   				var $Item = $(overFlowCommands[i]);
   				// Hide Element in CommandBar
-  				$Item.addClass('hideCommand');
+  				$Item.addClass('is-hidden');
   				var commandBarItemText = $Item.find('.ms-CommandBarItem-commandText').text();
   				overflowStrings += createMenuItem(commandBarItemText);
   			}
   			$menu.html(overflowStrings);
   		} else {
-  			$oCommand.removeClass("showOverflow");
+  			$oCommand.removeClass("is-visible");
   		}
   	}
 

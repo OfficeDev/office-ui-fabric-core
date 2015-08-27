@@ -17,6 +17,15 @@
 @CommandBarItem-flippedLineHeight: 32px;
 
 
+@SearchBox-height: 40px;
+@SearchBox-widthLgCollapsed: 40px;
+@SearchBox-widthMdDownCollapsed: 36px;
+@SearchBox-widthXLarge: 208px;
+@SearchBox-iconSize: 17px;
+@SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
+@SearchBox-smallWidth: 36px;  
+
+
 .ms-CommandBar {
     background-color: @ms-color-themeLighterAlt;
     height: @CommandBar-height;
@@ -179,19 +188,6 @@
     }
 }
 
-
-// CommandBar Search
-// Icons: magnifying glass, X [close], left and right arrow (ODN only)
-
-@SearchBox-height: 40px;
-@SearchBox-widthLgCollapsed: 40px;
-@SearchBox-widthMdDownCollapsed: 36px;
-@SearchBox-widthXLarge: 208px;
-@SearchBox-iconSize: 17px;
-@SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
-@SearchBox-smallWidth: 36px;  
-
-
 .ms-CommandSearch {
     float: left;
     width: 208px;
@@ -208,7 +204,6 @@
         background-color: transparent;
         width: @SearchBox-widthLgCollapsed;
     }
-
 
     transition: @ms-duration3 @ms-ease1;
     transition-property: width, background-color;
@@ -285,15 +280,18 @@
     display: block;
     padding-left: 15px;
 }
+
 .ms-CommandSearch-iconArrowWrapper {
     display: none;
 }
+
 .ms-CommandSearch-iconSearchWrapper,
 .ms-CommandSearch-iconArrowWrapper {
     top: 0;
     padding-left: 8px;
     padding-right: 8px;  
 }
+
 .ms-CommandSearch-iconClearWrapper {
     display: none;
     top: 1px;
@@ -301,7 +299,6 @@
 }
 
 .ms-CommandSearch--active {
-
     & .ms-CommandSearch-input {
         cursor: text;
         padding-right: @SearchBox-height; // leave room for the X
@@ -332,6 +329,7 @@
         display: block;
     }
 }
+
 .ms-CommandSearch-iconWrapper {
     height: @SearchBox-height;
     line-height: @SearchBox-height;

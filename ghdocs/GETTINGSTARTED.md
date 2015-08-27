@@ -4,10 +4,25 @@
 
 ###Contents
 
+- [Getting Fabric](#getting-fabric)
 - [Building Fabric](#building-fabric)
 - [Add to your project](#add-to-your-project)
 - [Starter template](#starter-template)
 - [Supported browsers](#supported-browsers)
+
+#####Getting Fabric
+
+######Download
+[Download the latest release of Fabric.](https://github.com/OfficeDev/Office-UI-Fabric/archive/master.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
+
+#####Reference from a CDN
+To reference Fabric from a CDN, just include a link in the `<head>` element on the page using Fabric:
+
+```html
+<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
+```
+
+The uncompressed, minified, and right-to-left CSS files are also available on the CDN.
 
 #####Building Fabric
 
@@ -41,7 +56,7 @@ On a Mac:
 
 You don't have to rethink your front-end architecture to start using Fabric in your existing app, but some simple setup is required. Follow these steps to get started:
 
-1. If using a downloaded copy: After downloading and unpacking, move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a "lib" type of folder.
+1. If using a downloaded copy: After downloading and unpacking, move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a "css" type of folder.
 2. Add a reference to fabric.css in the `<head>` tag of your HTML file before any application-specific CSS. This ensures that you can specify overrides and additional styles with application-specific stylesheets.
 3. If you‘re using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
 4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally reccommend against doing this, since the code is not extensively tested and is used only for demonstration on the Component Picker. If you'd still like to include it, add a `<script>` tag with a reference to fabric.components-.min.js at the end of your page‘s `<body>` tag.

@@ -532,7 +532,7 @@ gulp.task('watch:separately', ['build-fabric', 'build-fabric-components', 'fabri
     }));
 
     gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-fabric-components', 'components-updated', done);
+        runSequence('build-fabric-components', 'fabric-components-updated', done);
     }));
 
     gulp.watch(paths.srcSamples + '/**/*', batch(function (events, done) {

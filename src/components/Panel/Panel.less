@@ -30,52 +30,6 @@
   z-index: @ms-zIndex-front;
 }
 
-// Command buttons.
-.ms-Panel-commands {
-  background-color: @ms-color-neutralLighterAlt;
-  height: 40px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-// An individual command button.
-.ms-Panel-command {
-  background-color: transparent;
-  border: none;
-  float: left;
-  font-size: 0; // Remove gap between icon and label.
-  height: 40px;
-  margin-left: 8px;
-  padding: 0 8px;
-
-  &:hover {
-    background-color: @ms-color-neutralLight;
-    cursor: pointer;
-    outline: 1px solid transparent;
-  }
-
-  &:active {
-    background-color: @ms-color-white;
-  }
-}
-
-// Icon within a command button.
-.ms-Panel-commandIcon {
-  color: @ms-color-themePrimary;
-  font-size: @ms-font-size-m-plus;
-  line-height: 40px;
-  margin-right: 8px;
-}
-
-// Label for a command button.
-.ms-Panel-commandLabel {
-  font-size: @ms-font-size-m;
-  font-family: @ms-font-family-regular;
-  color: @ms-color-neutralPrimary;
-}
-
 // Scrollable content area, below the command buttons.
 .ms-Panel-contentInner {
   position: absolute;
@@ -100,17 +54,15 @@
 // Small screens.
 @media (min-width: @ms-screen-sm-min) {
 
-  // Hide the panel from display.
   .ms-Panel {
     display: none;
   }
 
-  // Show the panel when it's open.
   .ms-Panel.is-open {
     display: block;
   }
 
-  // The overlay should always be hidden on small screens.
+  // Always hide overlay on small screens.
   .ms-Panel .ms-Overlay {
     display: none;
   }
@@ -128,7 +80,6 @@
 // Medium screens.
 @media (min-width: @ms-screen-md-min) {
 
-  // Always display the panel, just place off screen so it can slide.
   .ms-Panel {
     display: block;
     pointer-events: none;

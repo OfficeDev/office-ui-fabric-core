@@ -1,0 +1,28 @@
+//
+// Video Portal Example App
+// --------------------------------------------------
+// Utility classes
+
+
+.u-contentCenter { // Utility for centering page areas regardless of parent container
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: @ms-duration1 all @ms-ease1;
+}
+
+@media (min-width: @ms-screen-lg-min) {
+  .u-contentCenter { 
+    max-width: 960px; 
+  }
+}
+
+@media (min-width: @ms-screen-xxl-min) { // 1366
+  // Use a larger container size for non-player pages
+  .HomePage,
+  .ChannelPage {
+    .u-contentCenter { 
+      max-width: 1200px; 
+    }
+  }
+}

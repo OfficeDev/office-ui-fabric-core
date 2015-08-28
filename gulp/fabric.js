@@ -36,7 +36,9 @@ var paths = {
     distComponents: distPath + '/components',
     distLess: distPath + '/less',
     distCSS: distPath + '/css',
+    distSamples: distPath + '/samples',
     srcPath: srcPath,
+    srcSamples: srcPath + '/samples',
     componentsPath : 'src/components',
     lessPath: srcPath + '/less',
     templatePath : srcPath + '/templates'
@@ -65,6 +67,11 @@ var bannerData = {
     date: date,
     monthNames: monthNames
 }
+
+
+//
+// Build Helpers
+// ----------------------------------------------------------------------------
 
 // Emit the end of the event so further pipes don't continue working
 // on pipes that have bad data/files in it. Essentially, errors shouldn't cause
@@ -103,18 +110,31 @@ var getFolders = function (dir) {
 // Component parts
 var componentsFolders = getFolders(paths.componentsPath);
 var catalogContents = "";
+var samplesFolders = getFolders(paths.srcSamples);
+
+//
+// Clean/Delete Tasks
+// ----------------------------------------------------------------------------
 
 // Clean out the distribution folder.
 gulp.task('clean-fabric', function () {
     return del.sync([paths.distLess, paths.distCSS]);
 });
 
-gulp.task('clean-components', function () {
+gulp.task('clean-fabric-components', function () {
     return del.sync([paths.distComponents]);
 });
 
+gulp.task('clean-component-samples', function () {
+    return del.sync([paths.distSamples + '/Components']);
+});
+
+gulp.task('clean-samples', function () {
+    return del.sync([paths.distSamples + '/*', '!' + paths.distSamples + '/{Components, Components/**}']);
+});
+
 //
-// Tasks for building Fabric for distribution.
+// Copying Files Tasks
 // ----------------------------------------------------------------------------
 
 // Copy all LESS files to distribution folder.
@@ -124,14 +144,36 @@ gulp.task('copy-fabric', ['clean-fabric'], function () {
         .pipe(gulp.dest(paths.distPath + '/less'));
 });
 
-gulp.task('copy-components', ['clean-components'], function () {
+gulp.task('copy-fabric-components', ['clean-fabric-components'], function () {
     // Copy all Components files.
     return gulp.src('src/components/**')
-        .pipe(gulp.dest(paths.distPath + '/components'));
+        .pipe(gulp.dest(paths.distComponents));
+});
+
+gulp.task('copy-component-samples', ['clean-component-samples'], function() {
+
+    return gulp.src([
+            paths.componentsPath + '/**/*.js', 
+            paths.componentsPath + '/**/*.jpg', 
+            paths.componentsPath + '/**/*.png', 
+            paths.componentsPath + '/**/*.js',
+            paths.componentsPath + '/**/*.gif'
+        ])
+        .pipe(gulp.dest(paths.distSamples + '/Components'));
+});
+
+gulp.task('copy-samples', ['clean-samples'], function () {
+    // Copy all samples files.
+    return gulp.src('src/samples/**')
+        .pipe(gulp.dest(paths.distSamples));
 });
 
 // All Copy tasks
-gulp.task('copy', ['copy-fabric', 'copy-components']);
+gulp.task('copy', ['copy-fabric', 'copy-fabric-components', 'copy-component-samples', 'copy-samples']);
+
+//
+// LESS tasks
+// ----------------------------------------------------------------------------
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 gulp.task('fabric-less', ['clean-fabric'], function () {
@@ -202,7 +244,8 @@ gulp.task('fabric-less', ['clean-fabric'], function () {
 });
 
 // Build Components LESS files
-gulp.task('components-less', ['clean-components'], function () {
+gulp.task('fabric-components-less', ['clean-fabric-components'], function () {
+
     var _componentsBase = function() {
         return gulp.src('src/less/fabric.components.less')
             .pipe(less())
@@ -231,8 +274,30 @@ gulp.task('components-less', ['clean-components'], function () {
             .on('error', onGulpError)
         .pipe(gulp.dest(paths.distPath + '/css/'))
             .on('error', onGulpError);
-    // Build minified Fabric Components CSS for each Component.
-    var indComponents = componentsFolders.map(function(folder) {
+
+    // Build Fabric Components RTL CSS.
+    var componentsRtl = _componentsBase()
+            .pipe(flipper())
+                .on('error', onGulpError)
+            .pipe(cssbeautify())
+                .on('error', onGulpError)
+            .pipe(csscomb())
+                .on('error', onGulpError)
+            .pipe(rename('fabric.components.rtl.css'))
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.distPath + '/css/'))
+                .on('error', onGulpError)
+            .pipe(cssMinify())
+                .on('error', onGulpError)
+            .pipe(rename('fabric.components.rtl.min.css'))
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.distPath + '/css/'))
+                .on('error', onGulpError);
+    return mergeStream(components, componentsRtl);
+});
+
+gulp.task('component-samples-less', ['clean-component-samples'], function() {
+    return componentsFolders.map(function(folder) {
 
         var manifest = parseManifest(folder);
         var deps = manifest.dependencies || [];
@@ -258,37 +323,52 @@ gulp.task('components-less', ['clean-components'], function () {
                 .on('error', onGulpError)
             .pipe(csscomb())
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distComponents + '/' + folder))
+            .pipe(gulp.dest(paths.distSamples + '/Components/' + folder))
                 .on('error', onGulpError)
             .pipe(rename(folder + '.min.css'))
                 .on('error', onGulpError)
             .pipe(cssMinify())
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distComponents  + '/' + folder))
+            .pipe(gulp.dest(paths.distSamples + '/Components/' + folder))
                 .on('error', onGulpError);
     });
-    // Build Fabric Components RTL CSS.
-    var componentsRtl = _componentsBase()
-            .pipe(flipper())
+});
+
+gulp.task('samples-less', ['clean-samples'], function () {
+
+    // Build minified Fabric Components CSS for each Component.
+    return samplesFolders.map(function(folder) {
+
+        return gulp.src(paths.srcSamples + '/' + folder + '/less/' + folder + '.less')
+            .pipe(less())
+                .on('error', onGulpError)
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+            .pipe(rename(folder + '.css'))
                 .on('error', onGulpError)
             .pipe(cssbeautify())
                 .on('error', onGulpError)
             .pipe(csscomb())
                 .on('error', onGulpError)
-            .pipe(rename('fabric.components.rtl.css'))
+            .pipe(gulp.dest(paths.distSamples + '/' + folder + '/css'))
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distPath + '/css/'))
+            .pipe(rename(folder + '.min.css'))
                 .on('error', onGulpError)
             .pipe(cssMinify())
                 .on('error', onGulpError)
-            .pipe(rename('fabric.components.rtl.min.css'))
-                .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distPath + '/css/'))
+            .pipe(gulp.dest(paths.distSamples + '/' + folder + '/css'))
                 .on('error', onGulpError);
-    return mergeStream(components, componentsRtl, indComponents);
+    });
+
 });
 
-gulp.task('build-component-data', folders(paths.componentsPath, function (folder) {
+//
+// Sample Component Building
+// ----------------------------------------------------------------------------
+
+gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPath, function (folder) {
 
     var manifest = parseManifest(folder);
     var filesArray = manifest.fileOrder;
@@ -339,7 +419,7 @@ gulp.task('build-component-data', folders(paths.componentsPath, function (folder
     return cfiles;
 }));
 
-gulp.task('build-component-examples', ['build-component-data'], folders(paths.componentsPath, function (folder){
+gulp.task('component-samples-template', ['build-component-data'], folders(paths.componentsPath, function (folder) {
     return gulp.src(paths.templatePath + '/'+ 'individual-component-example.html')
         .on('error', onGulpError)
     .pipe(data(function () {
@@ -348,49 +428,74 @@ gulp.task('build-component-examples', ['build-component-data'], folders(paths.co
         .on('error', onGulpError)
     .pipe(template())
         .on('error', onGulpError)
-    .pipe(rename(folder + '-demos.html'))
+    .pipe(rename('index.html'))
         .on('error', onGulpError)
-    .pipe(gulp.dest(paths.distComponents + '/' +  folder))
+    .pipe(gulp.dest(paths.distSamples + '/Components/' +  folder))
         .on('error', onGulpError);
 }));
 
-// Roll up static resource building
+//
+// Rolled up Build tasks
+// ----------------------------------------------------------------------------
+
 gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'fabric-less']);
 
 // Build for Fabric component demos
-gulp.task('build-components', ['clean-components', 'copy-components', 'components-less', 'build-component-data', 'build-component-examples']);
+gulp.task('build-fabric-components', ['clean-fabric-components', 'copy-fabric-components', 'fabric-components-less']);
 
-// Fabric success messages
+//Build Fabric Component Samples
+gulp.task('build-component-samples', ['clean-component-samples', 'copy-component-samples', 'component-samples-less', 'build-component-data', 'component-samples-template']);
+
+// Roll up for samples
+gulp.task('build-samples', ['clean-samples', 'copy-samples', 'samples-less']);
+
+//
+// Fabric Messages
+// ----------------------------------------------------------------------------
+
 gulp.task('fabric-finished', ['build-fabric'], function () {
     console.log(generateSuccess('Fabric core-build complete, you may now celebrate and dance!', true));
 });
 
 gulp.task('fabric-updated', ['build-fabric'], function () {
-    console.log(generateSuccess(' Fabric updated succesfully', false));
+    console.log(generateSuccess(' Fabric updated successfully', false));
 });
 
-gulp.task('components-finished', ['build-components'], function () {
-    console.log(generateSuccess(' Components build was succesfull! Yay!', true));
+gulp.task('fabric-components-finished', ['build-fabric-components'], function () {
+    console.log(generateSuccess(' Components build was successful! Yay!', true));
 });
 
-gulp.task('components-updated', ['build-components'], function () {
-    console.log(generateSuccess(' Components updated succesfully! Yay!'));
+gulp.task('fabric-components-updated', ['build-fabric-components'], function () {
+    console.log(generateSuccess(' Components updated successfully! Yay!'));
 });
 
-gulp.task('fabric-all-finished', ['build-fabric', 'build-components'], function () {
-    console.log(generateSuccess('All Fabric parts built succesfully, you may now celebrate and dance!', true));
+gulp.task('component-samples-finished', ['build-component-samples'], function () {
+    console.log(generateSuccess(' Component Samples build was successful! Yay!', true));
 });
 
-gulp.task('fabric-all-updated', ['build-fabric', 'build-components'], function () {
-    console.log(generateSuccess('All Fabric parts updated succesfully! Yay!', true));
+gulp.task('component-samples-updated', ['build-component-samples'], function () {
+    console.log(generateSuccess(' Components Samples updated successfully! Yay!'));
 });
 
-// Fabric watch tasks
-gulp.task('watch:components', ['build-components', 'components-finished'], function () {
-    return gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-components', 'components-updated', done);
-    }));
+gulp.task('fabric-all-finished', ['build-fabric', 'build-fabric-components', 'build-samples'], function () {
+    console.log(generateSuccess('All Fabric parts built successfully, you may now celebrate and dance!', true));
 });
+
+gulp.task('fabric-all-updated', ['build-fabric', 'build-fabric-components', 'build-samples'], function () {
+    console.log(generateSuccess('All Fabric parts updated successfully! Yay!', true));
+});
+
+gulp.task('samples-finished', ['build-samples'], function () {
+    console.log(generateSuccess('Samples done, experience fabric by sample!', true));
+});
+
+gulp.task('samples-updated', ['build-samples'], function () {
+    console.log(generateSuccess(' Samples done updating', false));
+});
+
+//
+// Watch Tasks
+// ----------------------------------------------------------------------------
 
 // Watch and build Fabric when sources change.
 gulp.task('watch:fabric', ['build-fabric', 'fabric-finished'], function () {
@@ -399,23 +504,52 @@ gulp.task('watch:fabric', ['build-fabric', 'fabric-finished'], function () {
     }));
 });
 
-// Watch components and Fabric at the same time but build separately.
-gulp.task('watch:separately', ['build-fabric', 'build-components', 'fabric-finished'], function () {
-    gulp.watch(paths.lessPath + '/**/*', batch(function (events, done) {
-        runSequence('build-fabric', 'fabric-updated', done);
+// Watches all src fabric components and builds fabric.components.
+gulp.task('watch:fabric-components', ['build-fabric-components', 'fabric-components-finished'], function () {
+    return gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
+        runSequence('build-fabric-components', 'fabric-components-updated', done);
     }));
-    gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-components', 'components-updated', done);
+});
+
+// Watches all src fabric components but, builds the samples only
+gulp.task('watch:component-samples', ['build-component-samples', 'component-samples-finished'], function () {
+    return gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
+        runSequence('build-component-samples', 'component-samples-updated', done);
     }));
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch', ['build-fabric', 'build-components', 'fabric-all-finished'], function () {
-    gulp.watch(paths.srcPath + '/**/*', batch(function (events, done) {
-        runSequence('build-fabric', 'build-components', 'fabric-all-updated', done);
+gulp.task('watch:samples', ['build-samples', 'samples-finished'], function () {
+    return gulp.watch(paths.srcSamples + '/**/*', batch(function (events, done) {
+        runSequence('build-samples', 'samples-updated', done);
     }));
 });
 
-// Default Build Task
-gulp.task('build', ['build-fabric', 'build-components', 'fabric-all-finished']);
+// Watch components and Fabric at the same time but build separately.
+gulp.task('watch:separately', ['build-fabric', 'build-fabric-components', 'fabric-finished'], function () {
+    gulp.watch(paths.lessPath + '/**/*', batch(function (events, done) {
+        runSequence('build-fabric', 'fabric-updated', done);
+    }));
+
+    gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
+        runSequence('build-fabric-components', 'components-updated', done);
+    }));
+
+    gulp.watch(paths.srcSamples + '/**/*', batch(function (events, done) {
+        runSequence('build-samples', 'samples-updated', done);
+    }));
+});
+
+// Watch and build Fabric when sources change.
+gulp.task('watch', ['build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'fabric-all-finished'], function () {
+    gulp.watch(paths.srcPath + '/**/*', batch(function (events, done) {
+        runSequence('build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'fabric-all-updated', done);
+    }));
+});
+
+//
+// Default Build
+// ----------------------------------------------------------------------------
+
+gulp.task('build', ['build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'fabric-all-finished']);
 

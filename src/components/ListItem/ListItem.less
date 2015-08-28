@@ -180,3 +180,53 @@
     outline: 1px solid transparent;
   }
 }
+
+
+//== Modifier: Document list item
+//
+.ms-ListItem.ms-ListItem--document {
+  padding: 0;
+
+  // The icon for a file or folder in the items list. This may
+  // be an .ms-Icon or a specific modifier that loads an image.
+  .ms-ListItem-itemIcon {
+    width: 70px;
+    height: 70px;
+    float: left;
+    text-align: center;
+  }
+
+  // If the item icon is an .ms-Icon, position and color it appropriately.
+  .ms-ListItem-itemIcon .ms-Icon {
+    font-size: 38px;
+    line-height: 70px;
+    color: @ms-color-neutralSecondary;
+  }
+
+  .ms-ListItem-itemIcon {
+    &[class*='ms-ListItem-itemIcon--ppt'] {
+      background-image: url(ppt-icon.png);
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+    }
+  }
+
+  // Primary text, typically the name.
+  .ms-ListItem-primaryText {
+    .noWrap;
+    font-size: @ms-font-size-m;
+    padding-top: 15px;
+    padding-right: 0;
+    position: static;
+  }
+
+  // Secondary text, typically the modified date or some other metadata.
+  .ms-ListItem-secondaryText {
+    .noWrap;
+    color: @ms-color-neutralSecondary;
+    font-family: @ms-font-family-regular;
+    font-size: @ms-font-size-xs;
+    padding-top: 6px;
+  }
+}

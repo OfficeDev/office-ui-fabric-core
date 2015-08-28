@@ -9,7 +9,8 @@
     "ListItem.Selected.html",
     "ListItem.Unseen.html",
     "ListItem.Unread.html",
-    "ListItem.Image.html"
+    "ListItem.Image.html",
+    "ListItem.Document.html"
   ],
   "branches": [
     {

@@ -7,6 +7,7 @@
   "class": "ms-Panel",
   "dependencies": [
     "Button",
+    "CommandBar",
     "Label",
     "Overlay"
   ],

@@ -3,6 +3,15 @@
   "notes": "",
   "template": "ListItem.html",
   "class": "ms-ListItem",
+  "fileOrder": [
+    "ListItem.html",
+    "ListItem.Selectable.html",
+    "ListItem.Selected.html",
+    "ListItem.Unseen.html",
+    "ListItem.Unread.html",
+    "ListItem.Image.html",
+    "ListItem.Document.html"
+  ],
   "branches": [
     {
       "name": "Standard",

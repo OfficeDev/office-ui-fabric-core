@@ -4,9 +4,19 @@
 // Org chart styles
 
 
+.ms-OrgChart {
+  .ms-font-m;
+  .ms-u-normalize;
+}
+
+.ms-OrgChart-groupTitle {
+  color: @ms-color-neutralSecondary;
+  line-height: 1;
+}
+
 .ms-OrgChart-list {
   padding: 0;
-  margin: 10px 0 20px 0;
+  margin: 12px 0 16px 0;
 }
 
 .ms-OrgChart-listItem {
@@ -14,39 +24,7 @@
   width: 100%;
   position: relative;
   list-style: none;
-  margin-bottom: 3px;
-
-  // ms-Persona overrides
-  .ms-Persona .ms-Persona-imageArea {
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-  }
-
-  .ms-Persona-imageCircle {
-    width: 50px;
-    height: 50px;
-    margin: 0;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    background-color: @ms-color-neutralTertiary;
-  }
-}
-
-.ms-OrgChart.ms-OrgChart--circles .ms-Persona-imageCircle { border-radius: 50%; }
-
-.ms-OrgChart.ms-OrgChart--circles .ms-Persona-presence {
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  top: auto;
-  left: auto;
-  right: 2px;
-  bottom: -1px;
-  border: 2px solid @ms-color-white;
+  margin-bottom: 8px;
 }
 
 .ms-OrgChart-listItemBtn {
@@ -60,10 +38,4 @@
   margin: 0;
   padding: 0;
   outline: transparent;
-}
-
-.ms-OrgChart-groupTitle {
-  font-family: @ms-font-family-semilight;
-  color: @ms-color-neutralSecondary;
-  font-size: @ms-font-size-m;
 }

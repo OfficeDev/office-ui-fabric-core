@@ -14,7 +14,6 @@
 
 
 // Font paths.
-@ms-font-directory:         "https://appsforoffice.microsoft.com/fabric/fonts";
 @ms-font-path-arabic:       "SegoeUI-Arabic";
 @ms-font-path-cyrillic:     "SegoeUI-Cyrillic";
 @ms-font-path-easteuropean: "SegoeUI-EastEuropean";
@@ -24,18 +23,14 @@
 @ms-font-path-westeuropean: "SegoeUI-WestEuropean";
 
 
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at https://appsforoffice.microsoft.com/fabric/fonts/License.txt
-*/
-
 // Mixins to generate @font-face rules for unique languages.
 .SegoeUILight(@ms-font-language, @ms-font-path) {
   @font-face {
     font-family: "@{ms-light} @{ms-font-language}";
-    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.woff') format('woff'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.ttf') format('truetype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+    src: url('../fonts/@{ms-font-path}/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Light.woff') format('woff'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Light.ttf') format('truetype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -44,10 +39,10 @@
 .SegoeUIRegular(@ms-font-language, @ms-font-path) {
   @font-face {
     font-family: "@{ms-regular} @{ms-font-language}";
-    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.woff') format('woff'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.ttf') format('truetype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+    src: url('../fonts/@{ms-font-path}/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Regular.woff') format('woff'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Regular.ttf') format('truetype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -56,10 +51,10 @@
 .SegoeUISemilight(@ms-font-language, @ms-font-path) {
   @font-face {
     font-family: "@{ms-semilight} @{ms-font-language}";
-    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.ttf') format('truetype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+    src: url('../fonts/@{ms-font-path}/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Semilight.ttf') format('truetype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -68,10 +63,10 @@
 .SegoeUISemibold(@ms-font-language, @ms-font-path) {
   @font-face {
     font-family: "@{ms-semibold} @{ms-font-language}";
-    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.woff') format('woff'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.ttf') format('truetype'),
-         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+    src: url('../fonts/@{ms-font-path}/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Semibold.woff') format('woff'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Semibold.ttf') format('truetype'),
+         url('../fonts/@{ms-font-path}/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -81,30 +76,30 @@
 // Additional @font-face rules for the Leelawadee font.
 @font-face {
   font-family: "Leelawadee UI Bold";
-  src: url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.eot?#iefix') format('embedded-opentype'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.woff') format('woff'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.ttf') format('truetype'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold#LeelawadeeUI-Bold') format('svg');
+  src: url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold.woff') format('woff'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold.ttf') format('truetype'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Bold#LeelawadeeUI-Bold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Leelawadee UI";
-  src: url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.eot?#iefix') format('embedded-opentype'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.woff') format('woff'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.ttf') format('truetype'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular#LeelawadeeUI-Regular') format('svg');
+  src: url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular.woff') format('woff'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular.ttf') format('truetype'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Regular#LeelawadeeUI-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Leelawadee UI Semilight";
-  src: url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.eot?#iefix') format('embedded-opentype'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.ttf') format('truetype'),
-       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight#LeelawadeeUI-Semilight') format('svg');
+  src: url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.ttf') format('truetype'),
+       url('../fonts/LeelawadeeUI-Thai/LeelawadeeUI-Semilight#LeelawadeeUI-Semilight') format('svg');
   font-weight: normal;
   font-style: normal;
 }

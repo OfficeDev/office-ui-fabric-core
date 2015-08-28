@@ -3,6 +3,15 @@
   "notes": "",
   "template": "TextField.html",
   "class": "ms-TextField",
+  "fileOrder": [
+    "TextField.html",
+    "TextField.Multiline.html",
+    "TextField.Placeholder.html",
+    "TextField.Underlined.html"
+  ],
+  "dependencies": [
+    "Label"
+  ],
   "branches": [
     {
       "name": "Standard",

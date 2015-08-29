@@ -8,6 +8,7 @@
 - [Add Fabric to your project](#add-to-your-project)
 - [Fabric starter template](#starter-template)
 - [Supported browsers](#supported-browsers)
+- [Using Fabric with Office Add-ins](#using-fabric-with-office-add-ins)
 
 ##Build Fabric
 
@@ -81,3 +82,7 @@ Fabric meets the Office 365 browser support requirements for desktop and mobile 
 | iOS (6+) | -                         | -                        |![check](http://odux.azurewebsites.net/github/img/check.png)| -     | -     | -       |
 | Android (4.4+)| ![check](http://odux.azurewebsites.net/github/img/check.png)| -                   | -                        | -     | -     | -       |
 | Windows Phone | -                    | -                        | -                        | -     | -     |![check](http://odux.azurewebsites.net/github/img/check.png)|
+
+##Using Fabric with Office Add-ins
+
+If you're building an Office Add-in, you can find simple instructions for using the compiled version right away in the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx). 

@@ -7,6 +7,13 @@
     "Label",
     "Link"
   ],
+  "fileOrder": [
+    "Callout.html",
+    "Callout.Close.html",
+    "Callout.ActionText.html",
+    "Callout.Oobe.html",
+    "Callout.Peek.html"
+  ],
   "branches": [
     {
       "name": "Default",

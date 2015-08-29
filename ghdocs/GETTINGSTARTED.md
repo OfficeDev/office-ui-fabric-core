@@ -8,14 +8,15 @@
 - [Building Fabric](#building-fabric)
 - [Add to your project](#add-to-your-project)
 - [Starter template](#starter-template)
+- [Samples](#samples)
 - [Supported browsers](#supported-browsers)
 
-#####Getting Fabric
+###Getting Fabric
 
-######Download
+####Download
 [Download the latest release of Fabric.](https://github.com/OfficeDev/Office-UI-Fabric/archive/master.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
 
-#####Reference from a CDN
+####Reference from a CDN
 To reference Fabric from a CDN, just include a link in the `<head>` element on the page using Fabric:
 
 ```html
@@ -24,7 +25,7 @@ To reference Fabric from a CDN, just include a link in the `<head>` element on t
 
 The uncompressed, minified, and right-to-left CSS files are also available on the CDN.
 
-#####Building Fabric
+###Building Fabric
 
 After you've cloned Fabric, you can take the following steps to build Fabric:
 
@@ -52,7 +53,7 @@ On a Mac:
 8. gulp
 9. The built files will be in dist/
 
-#####Add to your project
+###Add to your project
 
 You don't have to rethink your front-end architecture to start using Fabric in your existing app, but some simple setup is required. Follow these steps to get started:
 
@@ -61,7 +62,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 3. If you‘re using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
 4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally reccommend against doing this, since the code is not extensively tested and is used only for demonstration on the Component Picker. If you'd still like to include it, add a `<script>` tag with a reference to fabric.components-.min.js at the end of your page‘s `<body>` tag.
 
-#####Starter template
+###Starter template
 
 The starter template below represents the minimal recommended HTML structure for an app using Fabric. Copy the code into your project to start working with a basic Fabric document.
 
@@ -86,7 +87,16 @@ The starter template below represents the minimal recommended HTML structure for
 </html>
 ```
 
-#####Supported browsers
+###Samples
+To see several examples of Fabric's  in use, check out the sample HTML projects under `dist/samples`. The following samples are included:
+
+- **Form**: A simple sign-up form which uses Fabric's typography and color classes as well as various form elements.
+- **VideoPortal**: A mock "video portal" application, which makes use of Fabric's responsive grid, components, typography & color classes, and LESS variables & mixins.
+- **Icons**: A page demonstrating each icon font glyph available in Fabric.
+- **Components**: Each component includes an HTML file demonstrating its usage and visual variants, as well as standalone uncompressed and minified CSS files that include only the styles necessary to render that component. This is useful for reducing page weight, since you can include only the CSS for components you actually intend to use.
+	- **Note**: Some components depend on other components' styles to render properly. For example, TextField depends on Label for its text labels. Those style dependencies are included in the standalone CSS files, so be aware that using several standalone files together can result in duplicate CSS being served when the page is loaded.
+
+###Supported browsers
 
 Fabric meets the Office 365 browser support requirements for desktop and mobile devices. This includes support for the latest versions of Chrome, Firefox, Safari, and IE 9 and greater.
 

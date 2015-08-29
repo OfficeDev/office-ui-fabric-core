@@ -1,0 +1,112 @@
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Search box styles
+
+
+// Single line (default), standard (default)
+.ms-SearchBox {
+  .ms-font-m;
+  .ms-u-normalize;
+  position: relative;
+  margin-bottom: 10px;
+  display: inline-block;
+
+  // Hover - label
+  &:hover .ms-Searchbox-label {
+    color: @ms-color-black;
+    cursor: text;
+  }
+
+  // Hover - icon
+  &:hover .ms-Searchbox-icon {
+    color: @ms-color-neutralPrimary;
+  }
+
+  // States - input field
+  &:hover .ms-Searchbox-field, &:focus .ms-Searchbox-field {
+    border-color: @ms-color-themePrimary;
+    background-color: @ms-color-themeTertiary;
+  }
+
+  // Input field
+  .ms-SearchBox-field {
+    .ms-u-normalize;
+    border: 1px solid @ms-color-themeTertiary;
+    border-radius: 0;
+    font-family: @ms-font-family-semilight;
+    font-size: @ms-font-size-m;
+    color: @ms-color-black;
+    height: 30px;
+    padding: 6px 3px 7px 8px;
+    width: 180px;
+
+    // Focus
+    &:focus {
+      border-color: @ms-color-themePrimary;
+      background-color: @ms-color-themeTertiary;
+    }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    .ms-SearchBox-label {
+      .ms-Label.is-disabled;
+    }
+    .ms-SearchBox-icon {
+      color: @ms-color-neutralTertiaryAlt;
+    }
+    .ms-SearchBox-field {
+      background-color: @ms-color-neutralLighter;
+      border-color: @ms-color-neutralLighter;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &.is-active {
+    .ms-SearchBox-closeButton {
+      display: block;
+      outline: 1px solid transparent;
+    }
+  }
+}
+
+// Close button - shows on input field focus
+.ms-SearchBox-closeButton {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 30px;
+  width: 30px;
+  background-color: @ms-color-themePrimary;
+  text-align: center;
+  display: none;
+
+  // Close icon
+  .ms-Icon {
+    line-height: 31px;
+    font-size: @ms-font-size-l;
+    color: @ms-color-white;
+  }
+}
+
+
+// Label - text and icon
+.ms-SearchBox-label {
+  position: absolute;
+  top: 5px;
+  padding-left: 10px;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-m;
+  color: @ms-color-neutralSecondary;
+}
+
+// Icon
+.ms-SearchBox-icon {
+  margin-right: 5px;
+  font-size: @ms-font-size-l;
+  color: @ms-color-neutralSecondaryAlt;
+}

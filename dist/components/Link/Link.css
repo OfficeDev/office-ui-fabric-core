@@ -1,0 +1,26 @@
+/**
+ * Fabric 0.10.3
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-Link {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #0078d7;
+  text-decoration: none;
+}
+
+.ms-Link:hover,
+.ms-Link:focus {
+  color: #004578;
+}
+
+.ms-Link:active {
+  color: #0078d7;
+}
+
+.ms-Link.ms-Link--hero {
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  padding: 2px 8px 4px;
+}

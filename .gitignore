@@ -1,0 +1,55 @@
+# =========================
+# Project Files
+# =========================
+
+# Dependencies
+bower_components
+node_modules
+npm-debug.log
+
+# Fabric files
+*.sublime-workspace
+docs.css
+
+# Docs files
+docs/app
+docs/app-min
+docs/temp
+docs/components/js/jquery.all-components.min.js
+docs/components/js/fabric.components-picker.min.js
+
+# Auto Generated Files
+docs/data
+docs/app/data
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must ends with two \r.
+Icon
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# Windows
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp

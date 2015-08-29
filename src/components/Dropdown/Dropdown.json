@@ -1,0 +1,16 @@
+{
+  "name": "Dropdown",
+  "notes": "",
+  "template": "Dropdown.html",
+  "class": "ms-Dropdown",
+  "branches": [
+    {
+      "name": "Enabled",
+      "default": true
+    },
+    {
+      "name": "Disabled",
+      "class": "is-disabled"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "OrgChart",
+  "notes": "",
+  "template": "OrgChart.html",
+  "class": "ms-OrgChart",
+  "dependencies": [
+    "Persona"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    },
+    {
+      "name": "Circles",
+      "notes": "Circle personas.",
+      "class": "ms-OrgChart--circles"
+    }
+  ]
+}

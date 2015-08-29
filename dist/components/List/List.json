@@ -1,0 +1,19 @@
+{
+  "name": "List",
+  "notes": "",
+  "template": "List.html",
+  "class": "ms-List",
+  "dependencies": [
+    "ListItem"
+  ],
+  "branches": [
+    {
+      "name": "Basic",
+      "default": true
+    },
+    {
+      "name": "Grid",
+      "class": "ms-List--grid"
+    }
+  ]
+}

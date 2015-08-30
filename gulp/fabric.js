@@ -71,9 +71,17 @@ var bannerData = {
 }
 
 var banners = {
-    jsCopyRight: '// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.' + "\r\n"
+    msMessage: 'Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.',
+    jsCopyRight:  function () {
+        return '//' + banners.msMessage +  "\r\n";
+    },
+    htmlCopyRight: function () {
+        return '<!-- ' +  banners.msMessage  + ' -->' + "\r\n";
+    },
+    cssCopyRight: function () {
+        return '/* ' +  banners.msMessage  + ' */' + "\r\n";
+    } 
 }
-
 
 //
 // Build Helpers
@@ -140,11 +148,15 @@ var buildEachComponentCss = function (destination) {
                 .on('error', onGulpError)
             .pipe(csscomb())
                 .on('error', onGulpError)
+            .pipe(header(banners.cssCopyRight()))
+                .on('error', onGulpError)
             .pipe(gulp.dest(destination + folder))
                 .on('error', onGulpError)
             .pipe(rename(folder + '.min.css'))
                 .on('error', onGulpError)
             .pipe(cssMinify())
+                .on('error', onGulpError)
+            .pipe(header(banners.cssCopyRight()))
                 .on('error', onGulpError)
             .pipe(gulp.dest(destination + folder))
                 .on('error', onGulpError);
@@ -390,7 +402,7 @@ gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
             .on('error', onGulpError)
         .pipe(uglify())
             .on('error', onGulpError)
-        .pipe(header(banners.jsCopyRight))
+        .pipe(header(banners.jsCopyRight()))
             .on('error', onGulpError)
         .pipe(gulp.dest(paths.distJS));
 });

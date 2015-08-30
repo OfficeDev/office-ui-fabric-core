@@ -1,0 +1,27 @@
+{
+  "name": "PersonaCard",
+  "notes": "",
+  "template": "PersonaCard.html",
+  "class": "ms-PersonaCard",
+  "wrapBranches": true,
+  "fileOrder": [
+    "PersonaCard.html",
+    "PersonaCard.Square.html"
+  ],
+  "dependencies": [
+    "Persona",
+    "OrgChart",
+    "Link"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    },
+    {
+      "name": "Circles",
+      "notes": "This persona card uses circle personas and has the org chart built in.",
+      "class": "ms-PersonaCard--circles"
+    }
+  ]
+}

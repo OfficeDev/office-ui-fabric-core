@@ -1,0 +1,793 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Responsive utilities based on defined variables, component visibility,
+// and size for different displays.
+
+
+//== Responsive visiblity classes
+//
+
+// Hidden on small
+@media (max-width: @ms-screen-sm-max) {
+  .ms-u-hiddenSm,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on medium
+@media (min-width: @ms-screen-md-min) and (max-width: @ms-screen-md-max) {
+  .ms-u-hiddenMd,
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on large
+@media (min-width: @ms-screen-lg-min) and (max-width: @ms-screen-lg-max) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLg,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra large
+@media (min-width: @ms-screen-xl-min) and (max-width: @ms-screen-xl-max) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXl,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra extra large
+@media (min-width: @ms-screen-xxl-min) and (max-width: @ms-screen-xxl-max) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxl,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra extra extra large
+@media (min-width: @ms-screen-xxxl-min) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxxl {
+    display: none !important;
+  }
+}
+
+
+//== Responsive sizes
+//
+// These are all based on a 12 column grid. For example,
+// ms-u-sm6 sets the width to 50% (6/12) on small screens.
+
+// Small screens (default)
+.ms-u-sm12 {
+  width: 100%;
+}
+.ms-u-sm11 {
+  width: 91.66666666666666%;
+}
+.ms-u-sm10 {
+  width: 83.33333333333334%;
+}
+.ms-u-sm9 {
+  width: 75%;
+}
+.ms-u-sm8 {
+  width: 66.66666666666666%;
+}
+.ms-u-sm7 {
+  width: 58.333333333333336%;
+}
+.ms-u-sm6 {
+  width: 50%;
+}
+.ms-u-sm5 {
+  width: 41.66666666666667%;
+}
+.ms-u-sm4 {
+  width: 33.33333333333333%;
+}
+.ms-u-sm3 {
+  width: 25%;
+}
+.ms-u-sm2 {
+  width: 16.666666666666664%;
+}
+.ms-u-sm1 {
+  width: 8.333333333333332%;
+}
+.ms-u-smPull12 {
+  right: 100%;
+}
+.ms-u-smPull11 {
+  right: 91.66666666666666%;
+}
+.ms-u-smPull10 {
+  right: 83.33333333333334%;
+}
+.ms-u-smPull9 {
+  right: 75%;
+}
+.ms-u-smPull8 {
+  right: 66.66666666666666%;
+}
+.ms-u-smPull7 {
+  right: 58.333333333333336%;
+}
+.ms-u-smPull6 {
+  right: 50%;
+}
+.ms-u-smPull5 {
+  right: 41.66666666666667%;
+}
+.ms-u-smPull4 {
+  right: 33.33333333333333%;
+}
+.ms-u-smPull3 {
+  right: 25%;
+}
+.ms-u-smPull2 {
+  right: 16.666666666666664%;
+}
+.ms-u-smPull1 {
+  right: 8.333333333333332%;
+}
+.ms-u-smPull0 {
+  right: 0%;
+}
+.ms-u-smPush12 {
+  left: 100%;
+}
+.ms-u-smPush11 {
+  left: 91.66666666666666%;
+}
+.ms-u-smPush10 {
+  left: 83.33333333333334%;
+}
+.ms-u-smPush9 {
+  left: 75%;
+}
+.ms-u-smPush8 {
+  left: 66.66666666666666%;
+}
+.ms-u-smPush7 {
+  left: 58.333333333333336%;
+}
+.ms-u-smPush6 {
+  left: 50%;
+}
+.ms-u-smPush5 {
+  left: 41.66666666666667%;
+}
+.ms-u-smPush4 {
+  left: 33.33333333333333%;
+}
+.ms-u-smPush3 {
+  left: 25%;
+}
+.ms-u-smPush2 {
+  left: 16.666666666666664%;
+}
+.ms-u-smPush1 {
+  left: 8.333333333333332%;
+}
+.ms-u-smPush0 {
+  left: 0%;
+}
+
+// Medium screens
+@media (min-width: @ms-screen-md-min) {
+  .ms-u-md12 {
+    width: 100%;
+  }
+  .ms-u-md11 {
+    width: 91.66666666666666%;
+  }
+  .ms-u-md10 {
+    width: 83.33333333333334%;
+  }
+  .ms-u-md9 {
+    width: 75%;
+  }
+  .ms-u-md8 {
+    width: 66.66666666666666%;
+  }
+  .ms-u-md7 {
+    width: 58.333333333333336%;
+  }
+  .ms-u-md6 {
+    width: 50%;
+  }
+  .ms-u-md5 {
+    width: 41.66666666666667%;
+  }
+  .ms-u-md4 {
+    width: 33.33333333333333%;
+  }
+  .ms-u-md3 {
+    width: 25%;
+  }
+  .ms-u-md2 {
+    width: 16.666666666666664%;
+  }
+  .ms-u-md1 {
+    width: 8.333333333333332%;
+  }
+  .ms-u-mdPull12 {
+    right: 100%;
+  }
+  .ms-u-mdPull11 {
+    right: 91.66666666666666%;
+  }
+  .ms-u-mdPull10 {
+    right: 83.33333333333334%;
+  }
+  .ms-u-mdPull9 {
+    right: 75%;
+  }
+  .ms-u-mdPull8 {
+    right: 66.66666666666666%;
+  }
+  .ms-u-mdPull7 {
+    right: 58.333333333333336%;
+  }
+  .ms-u-mdPull6 {
+    right: 50%;
+  }
+  .ms-u-mdPull5 {
+    right: 41.66666666666667%;
+  }
+  .ms-u-mdPull4 {
+    right: 33.33333333333333%;
+  }
+  .ms-u-mdPull3 {
+    right: 25%;
+  }
+  .ms-u-mdPull2 {
+    right: 16.666666666666664%;
+  }
+  .ms-u-mdPull1 {
+    right: 8.333333333333332%;
+  }
+  .ms-u-mdPull0 {
+    right: 0%;
+  }
+  .ms-u-mdPush12 {
+    left: 100%;
+  }
+  .ms-u-mdPush11 {
+    left: 91.66666666666666%;
+  }
+  .ms-u-mdPush10 {
+    left: 83.33333333333334%;
+  }
+  .ms-u-mdPush9 {
+    left: 75%;
+  }
+  .ms-u-mdPush8 {
+    left: 66.66666666666666%;
+  }
+  .ms-u-mdPush7 {
+    left: 58.333333333333336%;
+  }
+  .ms-u-mdPush6 {
+    left: 50%;
+  }
+  .ms-u-mdPush5 {
+    left: 41.66666666666667%;
+  }
+  .ms-u-mdPush4 {
+    left: 33.33333333333333%;
+  }
+  .ms-u-mdPush3 {
+    left: 25%;
+  }
+  .ms-u-mdPush2 {
+    left: 16.666666666666664%;
+  }
+  .ms-u-mdPush1 {
+    left: 8.333333333333332%;
+  }
+  .ms-u-mdPush0 {
+    left: 0%;
+  }
+}
+
+// Large screens
+@media (min-width: @ms-screen-lg-min) {
+  .ms-u-lg12 {
+    width: 100%;
+  }
+  .ms-u-lg11 {
+    width: 91.66666666666666%;
+  }
+  .ms-u-lg10 {
+    width: 83.33333333333334%;
+  }
+  .ms-u-lg9 {
+    width: 75%;
+  }
+  .ms-u-lg8 {
+    width: 66.66666666666666%;
+  }
+  .ms-u-lg7 {
+    width: 58.333333333333336%;
+  }
+  .ms-u-lg6 {
+    width: 50%;
+  }
+  .ms-u-lg5 {
+    width: 41.66666666666667%;
+  }
+  .ms-u-lg4 {
+    width: 33.33333333333333%;
+  }
+  .ms-u-lg3 {
+    width: 25%;
+  }
+  .ms-u-lg2 {
+    width: 16.666666666666664%;
+  }
+  .ms-u-lg1 {
+    width: 8.333333333333332%;
+  }
+  .ms-u-lgPull12 {
+    right: 100%;
+  }
+  .ms-u-lgPull11 {
+    right: 91.66666666666666%;
+  }
+  .ms-u-lgPull10 {
+    right: 83.33333333333334%;
+  }
+  .ms-u-lgPull9 {
+    right: 75%;
+  }
+  .ms-u-lgPull8 {
+    right: 66.66666666666666%;
+  }
+  .ms-u-lgPull7 {
+    right: 58.333333333333336%;
+  }
+  .ms-u-lgPull6 {
+    right: 50%;
+  }
+  .ms-u-lgPull5 {
+    right: 41.66666666666667%;
+  }
+  .ms-u-lgPull4 {
+    right: 33.33333333333333%;
+  }
+  .ms-u-lgPull3 {
+    right: 25%;
+  }
+  .ms-u-lgPull2 {
+    right: 16.666666666666664%;
+  }
+  .ms-u-lgPull1 {
+    right: 8.333333333333332%;
+  }
+  .ms-u-lgPull0 {
+    right: 0%;
+  }
+  .ms-u-lgPush12 {
+    left: 100%;
+  }
+  .ms-u-lgPush11 {
+    left: 91.66666666666666%;
+  }
+  .ms-u-lgPush10 {
+    left: 83.33333333333334%;
+  }
+  .ms-u-lgPush9 {
+    left: 75%;
+  }
+  .ms-u-lgPush8 {
+    left: 66.66666666666666%;
+  }
+  .ms-u-lgPush7 {
+    left: 58.333333333333336%;
+  }
+  .ms-u-lgPush6 {
+    left: 50%;
+  }
+  .ms-u-lgPush5 {
+    left: 41.66666666666667%;
+  }
+  .ms-u-lgPush4 {
+    left: 33.33333333333333%;
+  }
+  .ms-u-lgPush3 {
+    left: 25%;
+  }
+  .ms-u-lgPush2 {
+    left: 16.666666666666664%;
+  }
+  .ms-u-lgPush1 {
+    left: 8.333333333333332%;
+  }
+  .ms-u-lgPush0 {
+    left: 0%;
+  }
+}
+
+// Extra large screens
+@media (min-width: @ms-screen-xl-min) {
+  .ms-u-xl12 {
+    width: 100%;
+  }
+  .ms-u-xl11 {
+    width: 91.66666666666666%;
+  }
+  .ms-u-xl10 {
+    width: 83.33333333333334%;
+  }
+  .ms-u-xl9 {
+    width: 75%;
+  }
+  .ms-u-xl8 {
+    width: 66.66666666666666%;
+  }
+  .ms-u-xl7 {
+    width: 58.333333333333336%;
+  }
+  .ms-u-xl6 {
+    width: 50%;
+  }
+  .ms-u-xl5 {
+    width: 41.66666666666667%;
+  }
+  .ms-u-xl4 {
+    width: 33.33333333333333%;
+  }
+  .ms-u-xl3 {
+    width: 25%;
+  }
+  .ms-u-xl2 {
+    width: 16.666666666666664%;
+  }
+  .ms-u-xl1 {
+    width: 8.333333333333332%;
+  }
+  .ms-u-xlPull12 {
+    right: 100%;
+  }
+  .ms-u-xlPull11 {
+    right: 91.66666666666666%;
+  }
+  .ms-u-xlPull10 {
+    right: 83.33333333333334%;
+  }
+  .ms-u-xlPull9 {
+    right: 75%;
+  }
+  .ms-u-xlPull8 {
+    right: 66.66666666666666%;
+  }
+  .ms-u-xlPull7 {
+    right: 58.333333333333336%;
+  }
+  .ms-u-xlPull6 {
+    right: 50%;
+  }
+  .ms-u-xlPull5 {
+    right: 41.66666666666667%;
+  }
+  .ms-u-xlPull4 {
+    right: 33.33333333333333%;
+  }
+  .ms-u-xlPull3 {
+    right: 25%;
+  }
+  .ms-u-xlPull2 {
+    right: 16.666666666666664%;
+  }
+  .ms-u-xlPull1 {
+    right: 8.333333333333332%;
+  }
+  .ms-u-xlPull0 {
+    right: 0%;
+  }
+  .ms-u-xlPush12 {
+    left: 100%;
+  }
+  .ms-u-xlPush11 {
+    left: 91.66666666666666%;
+  }
+  .ms-u-xlPush10 {
+    left: 83.33333333333334%;
+  }
+  .ms-u-xlPush9 {
+    left: 75%;
+  }
+  .ms-u-xlPush8 {
+    left: 66.66666666666666%;
+  }
+  .ms-u-xlPush7 {
+    left: 58.333333333333336%;
+  }
+  .ms-u-xlPush6 {
+    left: 50%;
+  }
+  .ms-u-xlPush5 {
+    left: 41.66666666666667%;
+  }
+  .ms-u-xlPush4 {
+    left: 33.33333333333333%;
+  }
+  .ms-u-xlPush3 {
+    left: 25%;
+  }
+  .ms-u-xlPush2 {
+    left: 16.666666666666664%;
+  }
+  .ms-u-xlPush1 {
+    left: 8.333333333333332%;
+  }
+  .ms-u-xlPush0 {
+    left: 0%;
+  }
+}
+
+// Extra extra large screens
+@media (min-width: @ms-screen-xxl-min) {
+  .ms-u-xxl12 {
+    width: 100%;
+  }
+  .ms-u-xxl11 {
+    width: 91.66666666666666%;
+  }
+  .ms-u-xxl10 {
+    width: 83.33333333333334%;
+  }
+  .ms-u-xxl9 {
+    width: 75%;
+  }
+  .ms-u-xxl8 {
+    width: 66.66666666666666%;
+  }
+  .ms-u-xxl7 {
+    width: 58.333333333333336%;
+  }
+  .ms-u-xxl6 {
+    width: 50%;
+  }
+  .ms-u-xxl5 {
+    width: 41.66666666666667%;
+  }
+  .ms-u-xxl4 {
+    width: 33.33333333333333%;
+  }
+  .ms-u-xxl3 {
+    width: 25%;
+  }
+  .ms-u-xxl2 {
+    width: 16.666666666666664%;
+  }
+  .ms-u-xxl1 {
+    width: 8.333333333333332%;
+  }
+  .ms-u-xxlPull12 {
+    right: 100%;
+  }
+  .ms-u-xxlPull11 {
+    right: 91.66666666666666%;
+  }
+  .ms-u-xxlPull10 {
+    right: 83.33333333333334%;
+  }
+  .ms-u-xxlPull9 {
+    right: 75%;
+  }
+  .ms-u-xxlPull8 {
+    right: 66.66666666666666%;
+  }
+  .ms-u-xxlPull7 {
+    right: 58.333333333333336%;
+  }
+  .ms-u-xxlPull6 {
+    right: 50%;
+  }
+  .ms-u-xxlPull5 {
+    right: 41.66666666666667%;
+  }
+  .ms-u-xxlPull4 {
+    right: 33.33333333333333%;
+  }
+  .ms-u-xxlPull3 {
+    right: 25%;
+  }
+  .ms-u-xxlPull2 {
+    right: 16.666666666666664%;
+  }
+  .ms-u-xxlPull1 {
+    right: 8.333333333333332%;
+  }
+  .ms-u-xxlPull0 {
+    right: 0%;
+  }
+  .ms-u-xxlPush12 {
+    left: 100%;
+  }
+  .ms-u-xxlPush11 {
+    left: 91.66666666666666%;
+  }
+  .ms-u-xxlPush10 {
+    left: 83.33333333333334%;
+  }
+  .ms-u-xxlPush9 {
+    left: 75%;
+  }
+  .ms-u-xxlPush8 {
+    left: 66.66666666666666%;
+  }
+  .ms-u-xxlPush7 {
+    left: 58.333333333333336%;
+  }
+  .ms-u-xxlPush6 {
+    left: 50%;
+  }
+  .ms-u-xxlPush5 {
+    left: 41.66666666666667%;
+  }
+  .ms-u-xxlPush4 {
+    left: 33.33333333333333%;
+  }
+  .ms-u-xxlPush3 {
+    left: 25%;
+  }
+  .ms-u-xxlPush2 {
+    left: 16.666666666666664%;
+  }
+  .ms-u-xxlPush1 {
+    left: 8.333333333333332%;
+  }
+  .ms-u-xxlPush0 {
+    left: 0%;
+  }
+}
+
+// Extra extra extra large screens
+@media (min-width: @ms-screen-xxxl-min) {
+  .ms-u-xxxl12 {
+    width: 100%;
+  }
+  .ms-u-xxxl11 {
+    width: 91.66666666666666%;
+  }
+  .ms-u-xxxl10 {
+    width: 83.33333333333334%;
+  }
+  .ms-u-xxxl9 {
+    width: 75%;
+  }
+  .ms-u-xxxl8 {
+    width: 66.66666666666666%;
+  }
+  .ms-u-xxxl7 {
+    width: 58.333333333333336%;
+  }
+  .ms-u-xxxl6 {
+    width: 50%;
+  }
+  .ms-u-xxxl5 {
+    width: 41.66666666666667%;
+  }
+  .ms-u-xxxl4 {
+    width: 33.33333333333333%;
+  }
+  .ms-u-xxxl3 {
+    width: 25%;
+  }
+  .ms-u-xxxl2 {
+    width: 16.666666666666664%;
+  }
+  .ms-u-xxxl1 {
+    width: 8.333333333333332%;
+  }
+  .ms-u-xxxlPull12 {
+    right: 100%;
+  }
+  .ms-u-xxxlPull11 {
+    right: 91.66666666666666%;
+  }
+  .ms-u-xxxlPull10 {
+    right: 83.33333333333334%;
+  }
+  .ms-u-xxxlPull9 {
+    right: 75%;
+  }
+  .ms-u-xxxlPull8 {
+    right: 66.66666666666666%;
+  }
+  .ms-u-xxxlPull7 {
+    right: 58.333333333333336%;
+  }
+  .ms-u-xxxlPull6 {
+    right: 50%;
+  }
+  .ms-u-xxxlPull5 {
+    right: 41.66666666666667%;
+  }
+  .ms-u-xxxlPull4 {
+    right: 33.33333333333333%;
+  }
+  .ms-u-xxxlPull3 {
+    right: 25%;
+  }
+  .ms-u-xxxlPull2 {
+    right: 16.666666666666664%;
+  }
+  .ms-u-xxxlPull1 {
+    right: 8.333333333333332%;
+  }
+  .ms-u-xxxlPull0 {
+    right: 0%;
+  }
+  .ms-u-xxxlPush12 {
+    left: 100%;
+  }
+  .ms-u-xxxlPush11 {
+    left: 91.66666666666666%;
+  }
+  .ms-u-xxxlPush10 {
+    left: 83.33333333333334%;
+  }
+  .ms-u-xxxlPush9 {
+    left: 75%;
+  }
+  .ms-u-xxxlPush8 {
+    left: 66.66666666666666%;
+  }
+  .ms-u-xxxlPush7 {
+    left: 58.333333333333336%;
+  }
+  .ms-u-xxxlPush6 {
+    left: 50%;
+  }
+  .ms-u-xxxlPush5 {
+    left: 41.66666666666667%;
+  }
+  .ms-u-xxxlPush4 {
+    left: 33.33333333333333%;
+  }
+  .ms-u-xxxlPush3 {
+    left: 25%;
+  }
+  .ms-u-xxxlPush2 {
+    left: 16.666666666666664%;
+  }
+  .ms-u-xxxlPush1 {
+    left: 8.333333333333332%;
+  }
+  .ms-u-xxxlPush0 {
+    left: 0%;
+  }
+}

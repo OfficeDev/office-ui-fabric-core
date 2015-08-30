@@ -1,0 +1,202 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Fabric 1.0.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-Label {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0;
+}
+
+.ms-Label.is-required:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-Label.is-disabled {
+  color: #a6a6a6;
+}
+
+.ms-TextField {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: 8px;
+}
+
+.ms-TextField.is-disabled .ms-TextField-field {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.ms-TextField.is-disabled::-webkit-input-placeholder,
+.ms-TextField.is-disabled::-moz-placeholder,
+.ms-TextField.is-disabled:-moz-placeholder,
+.ms-TextField.is-disabled:-ms-input-placeholder {
+  color: #a6a6a6;
+}
+
+.ms-TextField.is-required .ms-Label:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-TextField.is-required::-webkit-input-placeholder:after,
+.ms-TextField.is-required::-moz-placeholder:after,
+.ms-TextField.is-required:-moz-placeholder:after,
+.ms-TextField.is-required:-ms-input-placeholder:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-TextField.is-active {
+  border-color: #0078d7 !important;
+}
+
+.ms-TextField-field {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: 1px solid #c8c8c8;
+  border-radius: 0;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  height: 32px;
+  padding: 6px 10px 8px;
+  width: 100%;
+  min-width: 180px;
+}
+
+.ms-TextField-field:hover {
+  border-color: #767676;
+}
+
+.ms-TextField-field:focus {
+  border-color: #0078d7;
+}
+
+.ms-TextField-field:hover,
+.ms-TextField-field:focus {
+  outline: 1px solid transparent;
+}
+
+.ms-TextField-field::-webkit-input-placeholder,
+.ms-TextField-field::-moz-placeholder,
+.ms-TextField-field:-moz-placeholder,
+.ms-TextField-field:-ms-input-placeholder {
+  color: #666666;
+}
+
+.ms-TextField-description {
+  color: #767676;
+  font-size: 11px;
+}
+
+.ms-TextField.ms-TextField--placeholder {
+  position: relative;
+}
+
+.ms-TextField.ms-TextField--placeholder .ms-Label {
+  position: absolute;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #666666;
+  padding: 7px 0 7px 10px;
+}
+
+.ms-TextField.ms-TextField--placeholder.is-disabled {
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label {
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--underlined {
+  border-bottom: 1px solid #c8c8c8;
+  display: table;
+  width: 100%;
+  min-width: 180px;
+}
+
+.ms-TextField.ms-TextField--underlined:hover {
+  border-color: #767676;
+}
+
+.ms-TextField.ms-TextField--underlined:active,
+.ms-TextField.ms-TextField--underlined:focus {
+  border-color: #0078d7;
+}
+
+.ms-TextField.ms-TextField--underlined .ms-Label {
+  font-size: 12px;
+  margin-right: 8px;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-left: 12px;
+  padding-bottom: 5px;
+  height: 32px;
+  width: 1%;
+}
+
+.ms-TextField.ms-TextField--underlined .ms-TextField-field {
+  border: none;
+  float: left;
+  display: table-cell;
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 2px;
+}
+
+.ms-TextField.ms-TextField--underlined .ms-TextField-field:active,
+.ms-TextField.ms-TextField--underlined .ms-TextField-field:focus {
+  outline: 0;
+}
+
+.ms-TextField.ms-TextField--underlined.is-disabled {
+  border-bottom-color: #eaeaea;
+}
+
+.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label {
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field {
+  background-color: transparent;
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--multiline .ms-TextField-field {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 17px;
+  min-height: 60px;
+  min-width: 260px;
+  padding-top: 6px;
+  overflow: auto;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-TextField .ms-TextField-field {
+    outline: 1px solid transparent;
+  }
+}

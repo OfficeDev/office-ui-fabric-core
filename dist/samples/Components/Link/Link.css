@@ -1,0 +1,24 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Fabric 1.0.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-Link {
+  color: #0078d7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ms-Link:hover,
+.ms-Link:focus {
+  color: #004578;
+}
+
+.ms-Link:active {
+  color: #0078d7;
+}
+
+.ms-Link.ms-Link--hero {
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  padding: 2px 8px 4px;
+}

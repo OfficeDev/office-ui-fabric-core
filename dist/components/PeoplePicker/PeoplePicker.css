@@ -1,0 +1,1720 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Fabric 1.0.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-Button {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  cursor: pointer;
+  display: inline-block;
+  height: 32px;
+  min-width: 80px;
+  padding: 4px 20px 6px;
+}
+
+.ms-Button:hover {
+  background-color: #eaeaea;
+  border-color: #eaeaea;
+  outline: 1px solid transparent;
+}
+
+.ms-Button:hover .ms-Button-label {
+  color: #000000;
+}
+
+.ms-Button:focus {
+  background-color: #eaeaea;
+  border-color: #0078d7;
+  outline: 1px solid transparent;
+}
+
+.ms-Button:focus .ms-Button-label {
+  color: #000000;
+}
+
+.ms-Button:active {
+  background-color: #0078d7;
+  border-color: #0078d7;
+}
+
+.ms-Button:active .ms-Button-label {
+  color: #ffffff;
+}
+
+.ms-Button:disabled,
+.ms-Button.is-disabled {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  cursor: default;
+}
+
+.ms-Button:disabled .ms-Button-label,
+.ms-Button.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button:disabled:hover,
+.ms-Button.is-disabled:hover,
+.ms-Button:disabled:focus,
+.ms-Button.is-disabled:focus {
+  outline: 0;
+}
+
+.ms-Button + .ms-Button {
+  margin-left: 6px;
+}
+
+.ms-Button-label {
+  color: #333333;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.ms-Button-icon,
+.ms-Button-description {
+  display: none;
+}
+
+.ms-Button.ms-Button--primary {
+  background-color: #0078d7;
+  border-color: #0078d7;
+}
+
+.ms-Button.ms-Button--primary .ms-Button-label {
+  color: #ffffff;
+}
+
+.ms-Button.ms-Button--primary:hover {
+  background-color: #005a9e;
+  border-color: #005a9e;
+}
+
+.ms-Button.ms-Button--primary:focus {
+  background-color: #005a9e;
+  border-color: #004578;
+}
+
+.ms-Button.ms-Button--primary:active {
+  background-color: #0078d7;
+  border-color: #0078d7;
+}
+
+.ms-Button.ms-Button--primary:disabled,
+.ms-Button.ms-Button--primary.is-disabled {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+}
+
+.ms-Button.ms-Button--primary:disabled .ms-Button-label,
+.ms-Button.ms-Button--primary.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--hero {
+  background-color: transparent;
+  border: none;
+  vertical-align: top;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon {
+  color: #0078d7;
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  top: 1px;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  border-width: 2px;
+  height: 18px;
+  line-height: 18px;
+  width: 18px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon:before,
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon:after {
+  line-height: 1;
+  font-size: inherit;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: absolute;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon:after {
+  content: '\e000';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(2);
+      -ms-transform: scale(2);
+          transform: scale(2);
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  z-index: 0;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--star:before {
+  top: -2%;
+  left: 1%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--person:before {
+  top: -2%;
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--alert:before {
+  top: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--mailOpen:before {
+  top: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--people:before {
+  top: -4%;
+  left: -7%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--bell:before {
+  top: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--scheduling:before {
+  top: -3%;
+  left: 6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--documents:before {
+  top: -1%;
+  left: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--listBullets:before {
+  top: -1%;
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--panel:before {
+  left: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--popout:before {
+  top: -2%;
+  left: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--home:before {
+  top: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--favorites:before {
+  top: -2%;
+  left: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--phone:before {
+  top: -2%;
+  left: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--mailSend:before {
+  left: -10%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--pencil:before {
+  top: -2%;
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--flag:before {
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--miniatures:before {
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--voicemail:before {
+  top: 2%;
+  left: -7%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--onlineAdd:before {
+  top: -1%;
+  left: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--pinDown:before {
+  top: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--gear:before {
+  left: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--check:before {
+  top: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--ellipsis:before {
+  top: 2%;
+  left: -12%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--directions:before {
+  left: 10%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--microphone:before {
+  top: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretDown:before {
+  top: 5%;
+  left: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretLeft:before {
+  left: -6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretRight:before {
+  left: 6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretUpLeft:before {
+  top: 5%;
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretUpRight:before {
+  top: 5%;
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretDownRight:before {
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretDownLeft:before {
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--note:before {
+  top: 2%;
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--noteReply:before {
+  top: 6%;
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--noteForward:before {
+  top: 6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--key:before {
+  top: 5%;
+  left: 1%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--tile:before {
+  top: -1%;
+  left: -18%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--taskRecurring:before {
+  top: 2%;
+  left: -1%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--starEmpty:before {
+  top: -4%;
+  left: 1%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--documentReply:before {
+  top: -2%;
+  left: 7%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--documentForward:before {
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--partner:before {
+  top: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--reactivate:before {
+  top: -2%;
+  left: 6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--sort:before {
+  left: -19%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--personAdd:before {
+  top: -2%;
+  left: 6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--chevronDown:before {
+  top: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--chevronLeft:before {
+  left: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--chevronRight:before {
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--peopleAdd:before {
+  top: -5%;
+  left: -12%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--newsfeed:before {
+  left: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--notebook:before {
+  left: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--link:before {
+  top: 2%;
+  left: -18%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--chevronsDown:before {
+  top: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--chevronsLeft:before {
+  left: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--chevronsRight:before {
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--personRemove:before {
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--receiptForward:before {
+  left: -20%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--receiptReply:before {
+  left: -20%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--receiptCheck:before {
+  left: -20%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--peopleRemove:before {
+  top: -3%;
+  left: -12%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--merge:before {
+  top: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--split:before {
+  top: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--eventCancel:before {
+  left: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--today:before {
+  top: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--oofReply:before {
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--voicemailReply:before {
+  top: 4%;
+  left: -25%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--voicemailForward:before {
+  top: 4%;
+  left: -20%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--eye:before {
+  top: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--post:before {
+  top: -4%;
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--fax:before {
+  top: -3%;
+  left: -2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--lightning:before {
+  top: 2%;
+  left: 1%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--filter:before {
+  top: 7%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--cart:before {
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--socialListening:before {
+  top: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--mapMarker:before {
+  top: 2%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--replyAllAlt:before {
+  left: -16%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--group:before {
+  left: -33%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--money:before {
+  left: -8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--noteEdit:before {
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--mailEdit:before {
+  top: 3%;
+  left: 7%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--pinLeft:before {
+  left: -6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--heart:before {
+  top: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--heartEmpty:before {
+  top: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--cake:before {
+  top: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--books:before {
+  left: -8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--video:before {
+  top: -3%;
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--balloon:before {
+  top: 4%;
+  left: -1%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--music:before {
+  top: -2%;
+  left: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--stopwatch:before {
+  top: -3%;
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--coffee:before {
+  top: -3%;
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--plane:before {
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--dogAlt:before {
+  left: -15%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--metadata:before {
+  top: -4%;
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--text:before {
+  top: -4%;
+  left: 10%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--fieldText:before {
+  left: -14%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--fieldNumber:before {
+  left: -14%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--dropdown:before {
+  left: -14%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--story:before {
+  left: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--bold:before {
+  left: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--underline:before {
+  top: 4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--quote:before {
+  left: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--styleRemove:before {
+  top: 4%;
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--pictureAdd:before {
+  left: -6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--pictureRemove:before {
+  left: -6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--mobile:before {
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--hide:before {
+  top: -4%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--header:before {
+  left: -9%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--msn:before {
+  left: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--peopleCheck:before {
+  left: -7%;
+  top: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretDownOutline:before {
+  top: 6%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretLeftOutline:before {
+  left: -5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretRightOutline:before {
+  left: 5%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--sway:before {
+  left: -3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--mailSync:before {
+  left: 8%;
+  top: 3%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--peopleSync:before {
+  left: -8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--peopleError:before {
+  left: -8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--peoplePause:before {
+  left: -8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--documentSearch:before {
+  left: 8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--dynamicsMarketing:before {
+  left: -8%;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-label {
+  color: #0078d7;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  position: relative;
+  top: -5px;
+}
+
+.ms-Button.ms-Button--hero:hover .ms-Button-icon .ms-Icon,
+.ms-Button.ms-Button--hero:focus .ms-Button-icon .ms-Icon {
+  color: #005a9e;
+}
+
+.ms-Button.ms-Button--hero:hover .ms-Button-label,
+.ms-Button.ms-Button--hero:focus .ms-Button-label {
+  color: #004578;
+}
+
+.ms-Button.ms-Button--hero:active .ms-Button-icon .ms-Icon {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--hero:active .ms-Button-label {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--hero:disabled .ms-Button-icon .ms-Icon,
+.ms-Button.ms-Button--hero.is-disabled .ms-Button-icon .ms-Icon {
+  color: #c8c8c8;
+}
+
+.ms-Button.ms-Button--hero:disabled .ms-Button-label,
+.ms-Button.ms-Button--hero.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--compound {
+  height: auto;
+  min-height: 72px;
+  max-width: 280px;
+  padding: 20px;
+}
+
+.ms-Button.ms-Button--compound .ms-Button-label {
+  display: block;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  position: relative;
+  text-align: left;
+  margin-top: -5px;
+}
+
+.ms-Button.ms-Button--compound .ms-Button-description {
+  color: #666666;
+  display: block;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  position: relative;
+  text-align: left;
+  top: 3px;
+}
+
+.ms-Button.ms-Button--compound:hover .ms-Button-description {
+  color: #212121;
+}
+
+.ms-Button.ms-Button--compound:focus {
+  border-color: #0078d7;
+  background-color: #f4f4f4;
+}
+
+.ms-Button.ms-Button--compound:focus .ms-Button-label {
+  color: #333333;
+}
+
+.ms-Button.ms-Button--compound:focus .ms-Button-description {
+  color: #666666;
+}
+
+.ms-Button.ms-Button--compound:active {
+  background-color: #0078d7;
+}
+
+.ms-Button.ms-Button--compound:active .ms-Button-description,
+.ms-Button.ms-Button--compound:active .ms-Button-label {
+  color: #ffffff;
+}
+
+.ms-Button.ms-Button--compound:disabled .ms-Button-label,
+.ms-Button.ms-Button--compound.is-disabled .ms-Button-label,
+.ms-Button.ms-Button--compound:disabled .ms-Button-description,
+.ms-Button.ms-Button--compound.is-disabled .ms-Button-description {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--compound:disabled:focus,
+.ms-Button.ms-Button--compound.is-disabled:focus,
+.ms-Button.ms-Button--compound:disabled:active,
+.ms-Button.ms-Button--compound.is-disabled:active {
+  border-color: #f4f4f4;
+  background-color: #f4f4f4;
+}
+
+.ms-Button.ms-Button--compound:disabled:focus .ms-Button-label,
+.ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-label,
+.ms-Button.ms-Button--compound:disabled:active .ms-Button-label,
+.ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label,
+.ms-Button.ms-Button--compound:disabled:focus .ms-Button-description,
+.ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description,
+.ms-Button.ms-Button--compound:disabled:active .ms-Button-description,
+.ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--command {
+  background-color: transparent;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  min-width: 0;
+  padding: 0 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.ms-Button.ms-Button--command .ms-Button-icon {
+  color: #666666;
+  display: inline-block;
+  margin-right: 4px;
+  position: relative;
+}
+
+.ms-Button.ms-Button--command .ms-Button-label {
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-Button.ms-Button--command:hover .ms-Button-icon,
+.ms-Button.ms-Button--command:focus .ms-Button-icon {
+  color: #212121;
+}
+
+.ms-Button.ms-Button--command:hover .ms-Button-label,
+.ms-Button.ms-Button--command:focus .ms-Button-label {
+  color: #000000;
+}
+
+.ms-Button.ms-Button--command:active .ms-Button-icon,
+.ms-Button.ms-Button--command:active .ms-Button-label {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--command:disabled .ms-Button-icon,
+.ms-Button.ms-Button--command.is-disabled .ms-Button-icon {
+  color: #c8c8c8;
+}
+
+.ms-Button.ms-Button--command:disabled .ms-Button-label,
+.ms-Button.ms-Button--command.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--command + .ms-Button.ms-Button--command {
+  margin-left: 14px;
+}
+
+.ms-Label {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0;
+}
+
+.ms-Label.is-required:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-Label.is-disabled {
+  color: #a6a6a6;
+}
+
+.ms-Overlay {
+  background-color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.ms-Overlay.ms-Overlay--dark {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ms-Overlay.ms-Overlay--none {
+  visibility: hidden;
+}
+
+.ms-Persona {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  display: table;
+  line-height: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.ms-Persona-imageArea {
+  position: relative;
+  display: block;
+  background-color: transparent;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+}
+
+.ms-Persona-imageCircle {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: #a6a6a6;
+}
+
+.ms-Persona-placeholder {
+  color: #ffffff;
+  position: absolute;
+  right: 0;
+  left: 0;
+  font-size: 47px;
+  top: 7px;
+}
+
+.ms-Persona-image {
+  display: table-cell;
+  margin-right: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.ms-Persona-image[src=''] {
+  display: none;
+}
+
+.ms-Persona-presence {
+  background-color: #5dd255;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: auto;
+  left: auto;
+  right: 2px;
+  bottom: -1px;
+  border: 2px solid #ffffff;
+}
+
+.ms-Persona-details {
+  display: table-cell;
+  padding: 0 16px;
+  vertical-align: middle;
+}
+
+.ms-Persona-primaryText {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 17px;
+  margin-top: -3px;
+  white-space: nowrap;
+}
+
+.ms-Persona-secondaryText,
+.ms-Persona-tertiaryText,
+.ms-Persona-optionalText {
+  color: #666666;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  padding-top: 8px;
+  white-space: nowrap;
+}
+
+.ms-Persona-tertiaryText,
+.ms-Persona-optionalText {
+  display: none;
+}
+
+.ms-Persona.ms-Persona--square .ms-Persona-imageArea {
+  background-color: #a6a6a6;
+}
+
+.ms-Persona.ms-Persona--square .ms-Persona-imageCircle {
+  border-radius: 0;
+}
+
+.ms-Persona.ms-Persona--square .ms-Persona-presence {
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  height: 50px;
+  width: 5px;
+  border-radius: 0;
+  border: 0;
+}
+
+.ms-Persona.ms-Persona--tiny {
+  height: 30px;
+  background-color: #ffffff;
+  display: inline-block;
+}
+
+.ms-Persona.ms-Persona--tiny .ms-Persona-imageArea {
+  overflow: visible;
+  background: transparent;
+  height: 0;
+  width: 0;
+}
+
+.ms-Persona.ms-Persona--tiny .ms-Persona-imageCircle {
+  display: none;
+}
+
+.ms-Persona.ms-Persona--tiny .ms-Persona-presence {
+  right: auto;
+  height: 10px;
+  width: 10px;
+  top: 10px;
+  border: 0;
+}
+
+.ms-Persona.ms-Persona--tiny .ms-Persona-details {
+  padding-left: 18px;
+}
+
+.ms-Persona.ms-Persona--tiny .ms-Persona-primaryText {
+  font-size: 14px;
+  padding-top: 11px;
+}
+
+.ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText {
+  display: none;
+}
+
+.ms-Persona.ms-Persona--tiny.ms-Persona--readonly {
+  padding: 0;
+  background-color: transparent;
+}
+
+.ms-Persona.ms-Persona--tiny.ms-Persona--readonly .ms-Persona-primaryText:after {
+  content: ';';
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--tiny .ms-Persona-presence {
+  height: 10px;
+  width: 10px;
+  top: 10px;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--tiny .ms-Persona-details {
+  padding-left: 18px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--xs .ms-Persona-imageCircle,
+.ms-Persona.ms-Persona--xs .ms-Persona-image {
+  width: 30px;
+  height: 30px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-placeholder {
+  font-size: 28px;
+  top: 4px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-presence {
+  height: 8px;
+  width: 8px;
+  right: -1px;
+  bottom: -1px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-details {
+  padding-left: 8px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-primaryText {
+  font-size: 14px;
+  padding-top: 3px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-secondaryText {
+  display: none;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--xs .ms-Persona-presence {
+  height: 30px;
+  width: 4px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--sm .ms-Persona-imageCircle,
+.ms-Persona.ms-Persona--sm .ms-Persona-image {
+  width: 40px;
+  height: 40px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-placeholder {
+  font-size: 38px;
+  top: 5px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-presence {
+  height: 10px;
+  width: 10px;
+  right: -1px;
+  bottom: -1px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-details {
+  padding-left: 8px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-primaryText {
+  font-size: 14px;
+  padding-top: 1px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-secondaryText {
+  padding-top: 5px;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--sm .ms-Persona-presence {
+  height: 40px;
+  width: 4px;
+}
+
+.ms-Persona.ms-Persona--lg .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--lg .ms-Persona-imageCircle,
+.ms-Persona.ms-Persona--lg .ms-Persona-image {
+  width: 70px;
+  height: 70px;
+}
+
+.ms-Persona.ms-Persona--lg .ms-Persona-placeholder {
+  font-size: 67px;
+  top: 9px;
+}
+
+.ms-Persona.ms-Persona--lg .ms-Persona-presence {
+  height: 16px;
+  width: 16px;
+}
+
+.ms-Persona.ms-Persona--lg .ms-Persona-primaryText {
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-Persona.ms-Persona--lg .ms-Persona-tertiaryText {
+  display: block;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--lg .ms-Persona-presence {
+  height: 70px;
+  width: 7px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--xl .ms-Persona-imageCircle,
+.ms-Persona.ms-Persona--xl .ms-Persona-image {
+  width: 100px;
+  height: 100px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-placeholder {
+  font-size: 95px;
+  top: 12px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-presence {
+  height: 24px;
+  width: 24px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-details {
+  padding-left: 20px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-primaryText {
+  font-size: 21px;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  margin-top: 2px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-secondaryText {
+  padding-top: 7px;
+}
+
+.ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText,
+.ms-Persona.ms-Persona--xl .ms-Persona-optionalText {
+  padding-top: 8px;
+  display: block;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--xl .ms-Persona-presence {
+  height: 100px;
+  width: 9px;
+}
+
+.ms-Persona.ms-Persona--darkText .ms-Persona-primaryText {
+  color: #212121;
+}
+
+.ms-Persona.ms-Persona--darkText .ms-Persona-secondaryText,
+.ms-Persona.ms-Persona--darkText .ms-Persona-tertiaryText,
+.ms-Persona.ms-Persona--darkText .ms-Persona-optionalText {
+  color: #333333;
+}
+
+.ms-Persona.ms-Persona--selectable {
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.ms-Persona.ms-Persona--selectable:not(.ms-Persona--xl):hover,
+.ms-Persona.ms-Persona--selectable:not(.ms-Persona--xl):focus {
+  background-color: #deecf9;
+  outline: 1px solid transparent;
+}
+
+.ms-Persona.ms-Persona--available .ms-Persona-presence {
+  background-color: #5dd255;
+}
+
+.ms-Persona.ms-Persona--away .ms-Persona-presence {
+  background-color: #ffd200;
+}
+
+.ms-Persona.ms-Persona--blocked .ms-Persona-presence {
+  background-color: #dedede;
+  background-image: linear-gradient(to bottom, #dedede 0%, #dedede 48%, #c72d25 40%, #c72d25 58%, #dedede 52%, #dedede 100%);
+}
+
+.ms-Persona.ms-Persona--busy .ms-Persona-presence {
+  background-color: #d93b3b;
+  background: repeating-linear-gradient(-45deg, #e57a79, #e57a79 1px, #d00e0d 0px, #d00e0d 2px);
+}
+
+.ms-Persona.ms-Persona--busy.ms-Persona--square .ms-Persona-presence {
+  background-color: #d93b3b;
+  background: repeating-linear-gradient(-45deg, #e57a79, #e57a79 3px, #d00e0d 3px, #d00e0d 6px);
+}
+
+.ms-Persona.ms-Persona--dnd .ms-Persona-presence {
+  background-color: #c72d25;
+  background-image: linear-gradient(to bottom, #c72d25 0%, #c72d25 48%, #ffffff 48%, #ffffff 52%, #c72d25 52%, #c72d25 100%);
+}
+
+.ms-Persona.ms-Persona--offline .ms-Persona-presence {
+  background-color: #b6cfd8;
+}
+
+.ms-PeoplePicker {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.ms-PeoplePicker-searchBox {
+  *zoom: 1;
+  border: 1px solid #c8c8c8;
+  box-sizing: border-box;
+  min-height: 40px;
+  width: 100%;
+}
+
+.ms-PeoplePicker-searchBox:before,
+.ms-PeoplePicker-searchBox:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-PeoplePicker-searchBox:after {
+  clear: both;
+}
+
+.ms-PeoplePicker-searchBox:hover {
+  border-color: #767676;
+}
+
+.ms-PeoplePicker.is-active .ms-PeoplePicker-searchBox {
+  border-color: #0078d7;
+}
+
+.ms-PeoplePicker-searchField {
+  border: none;
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  height: 38px;
+  outline: none;
+  padding-left: 8px;
+  width: 100%;
+}
+
+.ms-PeoplePicker-persona {
+  display: inline-block;
+  float: left;
+  margin: 4px;
+}
+
+.ms-PeoplePicker-persona .ms-Persona {
+  background-color: #f4f4f4;
+  float: left;
+  min-height: 30px;
+}
+
+.ms-PeoplePicker-persona.has-error .ms-Persona-primaryText {
+  color: #a80000;
+}
+
+.ms-PeoplePicker-personaRemove {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  color: #666666;
+  display: inline-block;
+  float: left;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+}
+
+.ms-PeoplePicker-personaRemove:hover {
+  background-color: #eaeaea;
+  color: #333333;
+  cursor: pointer;
+}
+
+.ms-PeoplePicker-personaRemove:focus {
+  background-color: #eaeaea;
+  color: #333333;
+  border: 1px solid #0078d7;
+  outline: none;
+}
+
+.ms-PeoplePicker-results {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: #ffffff;
+  border: 1px solid #c8c8c8;
+  display: none;
+  margin-bottom: -1px;
+  max-width: 340px;
+  padding-top: 9px;
+  position: absolute;
+  z-index: 305;
+}
+
+.ms-PeoplePicker.is-active .ms-PeoplePicker-results {
+  display: block;
+}
+
+.ms-PeoplePicker-resultGroups {
+  max-height: 309px;
+  overflow-y: scroll;
+}
+
+.ms-PeoplePicker-resultGroup {
+  border-top: 1px solid #eaeaea;
+}
+
+.ms-PeoplePicker-resultGroup:first-child {
+  border-top: none;
+}
+
+.ms-PeoplePicker-resultGroupTitle {
+  color: #0078d7;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  padding: 17px 0 0 12px;
+  text-transform: uppercase;
+  height: 40px;
+}
+
+.ms-PeoplePicker-resultList {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: -1px;
+  list-style-type: none;
+}
+
+.ms-PeoplePicker-result {
+  position: relative;
+}
+
+.ms-PeoplePicker-result .ms-Persona:hover {
+  cursor: pointer;
+}
+
+.ms-PeoplePicker-result .ms-Persona:hover .ms-Persona-primaryText {
+  color: #212121;
+}
+
+.ms-PeoplePicker-result .ms-Persona:hover .ms-Persona-secondaryText,
+.ms-PeoplePicker-result .ms-Persona:hover .ms-Persona-tertiaryText,
+.ms-PeoplePicker-result .ms-Persona:hover .ms-Persona-optionalText {
+  color: #333333;
+}
+
+.ms-PeoplePicker-result .ms-Persona:active {
+  background-color: #c7e0f4;
+}
+
+.ms-PeoplePicker-result .ms-Persona-details {
+  width: 100%;
+}
+
+.ms-PeoplePicker-resultBtn {
+  cursor: pointer;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  background: none;
+  border: 0;
+  text-align: left;
+  margin: 0 0 10px 0;
+  padding: 0 0 0 9px;
+}
+
+.ms-PeoplePicker-resultBtn:hover {
+  background-color: #eaeaea;
+  outline: 1px solid transparent;
+}
+
+.ms-PeoplePicker-resultBtn:focus {
+  outline: 1;
+}
+
+.ms-PeoplePicker-resultBtn.ms-PeoplePicker-resultBtn--compact {
+  height: 30px;
+}
+
+.ms-PeoplePicker-resultAction {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  transition: background-color 0.367s cubic-bezier(0.1, 0.9, 0.2, 1);
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  z-index: 300;
+}
+
+.ms-PeoplePicker-resultAction .ms-Icon {
+  color: #666666;
+  font-size: 15px;
+  margin-top: -8px;
+  position: absolute;
+  text-align: center;
+  left: 8px;
+}
+
+.ms-PeoplePicker-resultAction:hover {
+  background-color: #c8c8c8;
+  outline: 1px solid transparent;
+}
+
+.ms-PeoplePicker-resultAction:active {
+  background-color: #71afe5;
+}
+
+.ms-PeoplePicker-resultAdditionalContent {
+  display: none;
+}
+
+.ms-PeoplePicker-result.is-expanded {
+  background-color: #f4f4f4;
+  margin-bottom: 11px;
+}
+
+.ms-PeoplePicker-result.is-expanded .ms-PeoplePicker-resultAction .ms-Icon {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.ms-PeoplePicker-result.is-expanded .ms-PeoplePicker-resultAdditionalContent {
+  display: block;
+}
+
+.ms-PeoplePicker-searchMore {
+  border-top: 1px solid #eaeaea;
+  height: 69px;
+  position: relative;
+}
+
+.ms-PeoplePicker-searchMore .ms-Spinner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 20px;
+  left: 20px;
+  display: none;
+}
+
+.ms-PeoplePicker-searchMore .ms-Spinner .ms-Spinner-circle {
+  background-color: #0078d7;
+}
+
+.ms-PeoplePicker-searchMore.is-searching .ms-Spinner {
+  display: block;
+}
+
+.ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+  display: none;
+}
+
+.ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMorePrimary {
+  color: #0078d7;
+}
+
+.ms-PeoplePicker-searchMore.is-searching:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+.ms-PeoplePicker-searchMoreBtn {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  height: 69px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-left: 70px;
+  text-align: left;
+}
+
+.ms-PeoplePicker-searchMoreBtn:hover {
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+
+.ms-PeoplePicker-searchMoreBtn:active {
+  background-color: #c7e0f4;
+}
+
+.ms-PeoplePicker-searchMoreBtn.ms-PeoplePicker-searchMoreBtn--compact {
+  height: 49px;
+  padding-left: 50px;
+}
+
+.ms-PeoplePicker-searchMoreIcon {
+  height: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+}
+
+.ms-PeoplePicker-searchMoreIcon .ms-Icon {
+  color: #333333;
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  top: 27px;
+  width: 100%;
+}
+
+.ms-PeoplePicker-searchMorePrimary {
+  padding-top: 2px;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-PeoplePicker-searchMoreSecondary {
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  color: #666666;
+}
+
+.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected:hover {
+  background-color: inherit;
+  cursor: default;
+}
+
+.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+  color: #666666;
+}
+
+.ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected .ms-PeoplePicker-searchMorePrimary {
+  color: #666666;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-resultGroups {
+  max-height: 209px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-resultAction {
+  height: 30px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-resultAction .ms-Icon {
+  margin-top: -8px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMore {
+  height: 49px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMore .ms-Spinner {
+  width: 28px;
+  height: 28px;
+  top: 12px;
+  left: 12px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon {
+  background-size: 16px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMoreIcon {
+  height: 50px;
+  width: 50px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+  font-size: 17px;
+  margin-top: -12px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMorePrimary {
+  font-size: 12px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--compact .ms-PeoplePicker-searchMoreSecondary {
+  display: none;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--facePile .ms-PeoplePicker-searchBox {
+  height: 30px;
+  min-height: 30px;
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--facePile .ms-PeoplePicker-searchField {
+  height: 28px;
+}
+
+.ms-PeoplePicker-selected {
+  margin-bottom: 20px;
+  display: none;
+}
+
+.ms-PeoplePicker-selected.is-active {
+  display: block;
+}
+
+.ms-PeoplePicker-selectedHeader {
+  color: #0078d7;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  height: 50px;
+  line-height: 50px;
+}
+
+.ms-PeoplePicker-selectedPeople {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  list-style: none;
+}
+
+.ms-PeoplePicker-selectedPerson {
+  margin-bottom: 10px;
+  position: relative;
+}

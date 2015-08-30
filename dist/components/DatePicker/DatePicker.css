@@ -1,0 +1,674 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Fabric 1.0.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-TextField {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: 8px;
+}
+
+.ms-TextField.is-disabled .ms-TextField-field {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.ms-TextField.is-disabled::-webkit-input-placeholder,
+.ms-TextField.is-disabled::-moz-placeholder,
+.ms-TextField.is-disabled:-moz-placeholder,
+.ms-TextField.is-disabled:-ms-input-placeholder {
+  color: #a6a6a6;
+}
+
+.ms-TextField.is-required .ms-Label:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-TextField.is-required::-webkit-input-placeholder:after,
+.ms-TextField.is-required::-moz-placeholder:after,
+.ms-TextField.is-required:-moz-placeholder:after,
+.ms-TextField.is-required:-ms-input-placeholder:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-TextField.is-active {
+  border-color: #0078d7 !important;
+}
+
+.ms-TextField-field {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: 1px solid #c8c8c8;
+  border-radius: 0;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #333333;
+  height: 32px;
+  padding: 6px 10px 8px;
+  width: 100%;
+  min-width: 180px;
+}
+
+.ms-TextField-field:hover {
+  border-color: #767676;
+}
+
+.ms-TextField-field:focus {
+  border-color: #0078d7;
+}
+
+.ms-TextField-field:hover,
+.ms-TextField-field:focus {
+  outline: 1px solid transparent;
+}
+
+.ms-TextField-field::-webkit-input-placeholder,
+.ms-TextField-field::-moz-placeholder,
+.ms-TextField-field:-moz-placeholder,
+.ms-TextField-field:-ms-input-placeholder {
+  color: #666666;
+}
+
+.ms-TextField-description {
+  color: #767676;
+  font-size: 11px;
+}
+
+.ms-TextField.ms-TextField--placeholder {
+  position: relative;
+}
+
+.ms-TextField.ms-TextField--placeholder .ms-Label {
+  position: absolute;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  color: #666666;
+  padding: 7px 0 7px 10px;
+}
+
+.ms-TextField.ms-TextField--placeholder.is-disabled {
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label {
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--underlined {
+  border-bottom: 1px solid #c8c8c8;
+  display: table;
+  width: 100%;
+  min-width: 180px;
+}
+
+.ms-TextField.ms-TextField--underlined:hover {
+  border-color: #767676;
+}
+
+.ms-TextField.ms-TextField--underlined:active,
+.ms-TextField.ms-TextField--underlined:focus {
+  border-color: #0078d7;
+}
+
+.ms-TextField.ms-TextField--underlined .ms-Label {
+  font-size: 12px;
+  margin-right: 8px;
+  display: table-cell;
+  vertical-align: bottom;
+  padding-left: 12px;
+  padding-bottom: 5px;
+  height: 32px;
+  width: 1%;
+}
+
+.ms-TextField.ms-TextField--underlined .ms-TextField-field {
+  border: none;
+  float: left;
+  display: table-cell;
+  text-align: left;
+  padding-top: 8px;
+  padding-bottom: 2px;
+}
+
+.ms-TextField.ms-TextField--underlined .ms-TextField-field:active,
+.ms-TextField.ms-TextField--underlined .ms-TextField-field:focus {
+  outline: 0;
+}
+
+.ms-TextField.ms-TextField--underlined.is-disabled {
+  border-bottom-color: #eaeaea;
+}
+
+.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label {
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field {
+  background-color: transparent;
+  color: #a6a6a6;
+}
+
+.ms-TextField.ms-TextField--multiline .ms-TextField-field {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 17px;
+  min-height: 60px;
+  min-width: 260px;
+  padding-top: 6px;
+  overflow: auto;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-TextField .ms-TextField-field {
+    outline: 1px solid transparent;
+  }
+}
+
+.ms-Label {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0;
+}
+
+.ms-Label.is-required:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-Label.is-disabled {
+  color: #a6a6a6;
+}
+
+.ms-Link {
+  color: #0078d7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ms-Link:hover,
+.ms-Link:focus {
+  color: #004578;
+}
+
+.ms-Link:active {
+  color: #0078d7;
+}
+
+.ms-Link.ms-Link--hero {
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  padding: 2px 8px 4px;
+}
+
+.ms-DatePicker {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: 17px;
+  z-index: 300;
+}
+
+.ms-DatePicker .ms-TextField {
+  position: relative;
+}
+
+.ms-DatePicker-picker {
+  color: #000000;
+  font-size: 14px;
+  position: relative;
+  text-align: left;
+  z-index: 0;
+}
+
+.ms-DatePicker-event {
+  color: #666666;
+  font-size: 21px;
+  line-height: 20px;
+  pointer-events: none;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  z-index: 10;
+}
+
+.ms-DatePicker-holder {
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  background: #ffffff;
+  position: absolute;
+  min-width: 300px;
+  display: none;
+}
+
+.ms-DatePicker-picker.ms-DatePicker-picker--opened .ms-DatePicker-holder {
+  -webkit-animation-name: fadeIn, slideDown10;
+          animation-name: fadeIn, slideDown10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid #eaeaea;
+  display: block;
+}
+
+.ms-DatePicker-frame {
+  padding: 1px;
+}
+
+.ms-DatePicker-wrap {
+  margin: -1px;
+  padding: 9px;
+}
+
+.ms-DatePicker-dayPicker {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.ms-DatePicker-header {
+  height: 40px;
+  line-height: 44px;
+}
+
+.ms-DatePicker-month,
+.ms-DatePicker-year {
+  display: inline-block;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  color: #0078d7;
+  margin-top: -1px;
+}
+
+.ms-DatePicker-month:hover,
+.ms-DatePicker-year:hover {
+  color: #005a9e;
+  cursor: pointer;
+}
+
+.ms-DatePicker-month {
+  margin-left: 15px;
+}
+
+.ms-DatePicker-year {
+  margin-left: 5px;
+}
+
+.ms-DatePicker-table {
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: inherit;
+}
+
+.ms-DatePicker-table td {
+  margin: 0;
+  padding: 0;
+}
+
+.ms-DatePicker-table td:hover {
+  outline: 1px solid transparent;
+}
+
+.ms-DatePicker-day,
+.ms-DatePicker-weekday {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  line-height: 40px;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #333333;
+}
+
+.ms-DatePicker-day--today {
+  position: relative;
+  background-color: #c7e0f4;
+}
+
+.ms-DatePicker-day--disabled:before {
+  border-top-color: #a6a6a6;
+}
+
+.ms-DatePicker-day--outfocus {
+  color: #a6a6a6;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+}
+
+.ms-DatePicker-day--infocus:hover,
+.ms-DatePicker-day--outfocus:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #eaeaea;
+}
+
+.ms-DatePicker-day--highlighted:hover,
+.ms-DatePicker-picker--focused .ms-DatePicker-day--highlighted {
+  cursor: pointer;
+  color: #ffffff;
+  background: #0078d7;
+}
+
+.ms-DatePicker-day--highlighted.ms-DatePicker-day--disabled,
+.ms-DatePicker-day--highlighted.ms-DatePicker-day--disabled:hover {
+  background: #a6a6a6;
+}
+
+.ms-DatePicker-monthPicker,
+.ms-DatePicker-yearPicker {
+  display: none;
+}
+
+.ms-DatePicker-monthComponents {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  left: 9px;
+}
+
+.ms-DatePicker-yearComponents,
+.ms-DatePicker-decadeComponents {
+  position: absolute;
+  right: 10px;
+}
+
+.ms-DatePicker-prevMonth,
+.ms-DatePicker-nextMonth,
+.ms-DatePicker-prevYear,
+.ms-DatePicker-nextYear,
+.ms-DatePicker-prevDecade,
+.ms-DatePicker-nextDecade {
+  width: 40px;
+  height: 40px;
+  display: block;
+  float: right;
+  margin-left: 10px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 21px;
+  color: #666666;
+  position: relative;
+  top: 3px;
+}
+
+.ms-DatePicker-prevMonth:hover,
+.ms-DatePicker-nextMonth:hover,
+.ms-DatePicker-prevYear:hover,
+.ms-DatePicker-nextYear:hover,
+.ms-DatePicker-prevDecade:hover,
+.ms-DatePicker-nextDecade:hover {
+  color: #212121;
+  cursor: pointer;
+  outline: 1px solid transparent;
+}
+
+.ms-DatePicker-headerToggleView {
+  height: 40px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 180px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.ms-DatePicker-currentYear,
+.ms-DatePicker-currentDecade {
+  display: block;
+  font-weight: normal;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  height: 40px;
+  line-height: 42px;
+  margin-left: 15px;
+}
+
+.ms-DatePicker-currentYear {
+  color: #0078d7;
+}
+
+.ms-DatePicker-currentYear:hover {
+  color: #005a9e;
+  cursor: pointer;
+}
+
+.ms-DatePicker-optionGrid {
+  position: relative;
+  height: 210px;
+  width: 280px;
+  margin: 10px 0 30px 5px;
+}
+
+.ms-DatePicker-monthOption,
+.ms-DatePicker-yearOption {
+  background-color: #f4f4f4;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+  float: left;
+  margin: 0 10px 10px 0;
+  font-weight: normal;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  color: #333333;
+  text-align: center;
+}
+
+.ms-DatePicker-monthOption:hover,
+.ms-DatePicker-yearOption:hover {
+  background-color: #c8c8c8;
+  outline: 1px solid transparent;
+}
+
+.ms-DatePicker-monthOption.is-highlighted,
+.ms-DatePicker-yearOption.is-highlighted {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.ms-DatePicker-goToday {
+  bottom: 9px;
+  color: #0078d7;
+  cursor: pointer;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  position: absolute;
+  right: 9px;
+}
+
+.ms-DatePicker-goToday:hover {
+  outline: 1px solid transparent;
+}
+
+.ms-DatePicker.is-pickingMonths .ms-DatePicker-dayPicker,
+.ms-DatePicker.is-pickingMonths .ms-DatePicker-monthComponents {
+  display: none;
+}
+
+.ms-DatePicker.is-pickingMonths .ms-DatePicker-monthPicker {
+  display: block;
+}
+
+.ms-DatePicker.is-pickingYears .ms-DatePicker-dayPicker,
+.ms-DatePicker.is-pickingYears .ms-DatePicker-monthComponents {
+  display: none;
+}
+
+.ms-DatePicker.is-pickingYears .ms-DatePicker-monthPicker {
+  display: none;
+}
+
+.ms-DatePicker.is-pickingYears .ms-DatePicker-yearPicker {
+  display: block;
+}
+
+@media (min-width: 460px) {
+  .ms-DatePicker-holder {
+    width: 440px;
+  }
+
+  .ms-DatePicker-month,
+  .ms-DatePicker-year {
+    font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  }
+
+  .ms-DatePicker-header {
+    height: 30px;
+    line-height: 28px;
+  }
+
+  .ms-DatePicker-dayPicker {
+    box-sizing: border-box;
+    border-right: 1px solid #eaeaea;
+    width: 220px;
+  }
+
+  .ms-DatePicker-monthPicker {
+    display: block;
+  }
+
+  .ms-DatePicker-dayPicker {
+    margin: -10px 0;
+    padding: 10px 0;
+  }
+
+  .ms-DatePicker-monthPicker,
+  .ms-DatePicker-yearPicker {
+    top: 9px;
+    left: 238px;
+    position: absolute;
+  }
+
+  .ms-DatePicker-optionGrid {
+    width: 200px;
+    height: auto;
+    margin: 10px 0 0 0;
+  }
+
+  .ms-DatePicker-monthComponents {
+    width: 210px;
+  }
+
+  .ms-DatePicker-month {
+    margin-left: 12px;
+  }
+
+  .ms-DatePicker-month,
+  .ms-DatePicker-year {
+    font-size: 17px;
+    color: #333333;
+  }
+
+  .ms-DatePicker-month:hover,
+  .ms-DatePicker-year:hover {
+    color: #333333;
+    cursor: default;
+  }
+
+  .ms-DatePicker-day,
+  .ms-DatePicker-weekday {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+    font-size: 12px;
+  }
+
+  .ms-DatePicker-prevMonth,
+  .ms-DatePicker-nextMonth,
+  .ms-DatePicker-prevYear,
+  .ms-DatePicker-nextYear,
+  .ms-DatePicker-prevDecade,
+  .ms-DatePicker-nextDecade {
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+  }
+
+  .ms-DatePicker-toggleMonthView {
+    display: none;
+  }
+
+  .ms-DatePicker-currentYear,
+  .ms-DatePicker-currentDecade {
+    font-size: 17px;
+    margin: 0;
+    height: 30px;
+    line-height: 26px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+
+  .ms-DatePicker-monthOption,
+  .ms-DatePicker-yearOption {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    margin: 0 10px 10px 0;
+  }
+
+  .ms-DatePicker-monthOption:hover,
+  .ms-DatePicker-yearOption:hover {
+    outline: 1px solid transparent;
+  }
+
+  .ms-DatePicker-goToday {
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    right: 10px;
+    text-align: right;
+    top: 199px;
+    width: 210px;
+  }
+
+  .ms-DatePicker.is-pickingYears .ms-DatePicker-dayPicker,
+  .ms-DatePicker.is-pickingYears .ms-DatePicker-monthComponents {
+    display: block;
+  }
+
+  .ms-DatePicker.is-pickingYears .ms-DatePicker-monthPicker {
+    display: none;
+  }
+
+  .ms-DatePicker.is-pickingYears .ms-DatePicker-yearPicker {
+    display: block;
+  }
+}

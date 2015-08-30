@@ -1,0 +1,533 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Persona styles
+
+
+.ms-Persona {
+	.ms-font-m;
+	.ms-u-normalize;
+	display: table;
+	line-height: 1;
+	overflow: hidden;
+	position: relative;
+}
+
+.ms-Persona-imageArea {
+	position: relative;
+	display: block;
+	background-color: transparent;
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+}
+
+.ms-Persona-imageCircle {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: @ms-color-neutralTertiary;
+}
+
+.ms-Persona-placeholder {
+  color: @ms-color-white;
+  position: absolute;
+  right: 0;
+  left: 0;
+  font-size: 47px;
+  top: 7px;
+}
+
+.ms-Persona-image {
+	display: table-cell;
+	margin-right: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+
+	&[src=""] {
+		display: none;
+	}
+}
+
+.ms-Persona-presence {
+	background-color: @ms-color-presence-available;
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: auto;
+  left: auto;
+  right: 2px;
+  bottom: -1px;
+  border: 2px solid @ms-color-white;
+}
+
+.ms-Persona-details {
+	display: table-cell;
+	padding: 0 16px;
+	vertical-align: middle;
+}
+
+.ms-Persona-primaryText {
+	color: @ms-color-neutralPrimary;
+	font-family: @ms-font-family-regular;
+	font-size: @ms-font-size-l;
+	margin-top: -3px;
+	white-space: nowrap;
+}
+
+.ms-Persona-secondaryText, 
+.ms-Persona-tertiaryText, 
+.ms-Persona-optionalText {
+	color: @ms-color-neutralSecondary;
+	font-family: @ms-font-family-regular;
+	font-size: @ms-font-size-s;
+	padding-top: 8px;
+	white-space: nowrap;
+}
+
+.ms-Persona-tertiaryText, 
+.ms-Persona-optionalText {
+	display: none; // Hidden on default persona
+}
+
+
+//== Modifier: Persona with square images
+//
+.ms-Persona.ms-Persona--square {
+	.ms-Persona-imageArea {
+		background-color: @ms-color-neutralTertiary;
+	}
+
+	.ms-Persona-imageCircle {
+		border-radius: 0;
+	}
+
+	.ms-Persona-presence {
+		top: 0;
+		left: 0;
+		bottom: auto;
+		right: auto;
+		height: 50px;
+		width: 5px;
+		border-radius: 0;
+		border: 0;
+	}
+}
+
+
+//== Modifier: Tiny Persona
+//
+.ms-Persona.ms-Persona--tiny {
+	height: 30px;
+	background-color: @ms-color-white;
+	display: inline-block;
+
+	.ms-Persona-imageArea {
+		overflow: visible;
+		background: transparent;
+		height: 0;
+		width: 0;
+	}
+
+	.ms-Persona-imageCircle {
+		display: none;
+	}
+
+	.ms-Persona-presence {
+		right: auto;
+		height: 10px;
+		width: 10px;
+		top: 10px;
+		border: 0;
+	}
+
+	.ms-Persona-details {
+		padding-left: 18px;
+	}
+
+	.ms-Persona-primaryText {
+		font-size: @ms-font-size-m;
+		padding-top: 11px;
+	}
+
+	.ms-Persona-secondaryText {
+		display: none;
+	}
+}
+
+
+//== Modifier: Tiny Persona with read only state
+//
+// This variant includes a semicolon, and is 
+// most often presented within a People Picker.
+.ms-Persona.ms-Persona--tiny.ms-Persona--readonly {
+	padding: 0;
+	background-color: transparent;
+
+	.ms-Persona-primaryText:after {
+		content: ';';
+	}
+}
+
+
+//== Modifier: Tiny Square Persona
+//
+.ms-Persona.ms-Persona--square.ms-Persona--tiny {
+	.ms-Persona-presence {
+		height: 10px;
+		width: 10px;
+		top: 10px;
+	}
+
+	.ms-Persona-details {
+		padding-left: 18px;
+	}
+}
+
+
+//== Modifier: Extra Small Persona
+//
+.ms-Persona.ms-Persona--xs {
+	.ms-Persona-imageArea,
+	.ms-Persona-imageCircle,
+	.ms-Persona-image {
+	  width: 30px;
+	  height: 30px;
+	}
+
+	.ms-Persona-placeholder {
+	  font-size: 28px;
+	  top: 4px;
+	}
+
+	.ms-Persona-presence {
+		height: 8px;
+		width: 8px;
+		right: -1px;
+		bottom: -1px;
+	}
+
+	.ms-Persona-details {
+		padding-left: 8px;
+	}
+
+	.ms-Persona-primaryText {
+		font-size: @ms-font-size-m;
+		padding-top: 3px;
+	}
+
+	.ms-Persona-secondaryText {
+		display: none;
+	}
+}
+
+
+//== Modifier: Extra Small Square Persona
+//
+.ms-Persona.ms-Persona--square.ms-Persona--xs {
+	.ms-Persona-presence {
+		height: 30px;
+		width: 4px;
+	}
+}
+
+
+//== Modifier: Small Persona
+//
+.ms-Persona.ms-Persona--sm {
+	.ms-Persona-imageArea,
+	.ms-Persona-imageCircle,
+	.ms-Persona-image {
+	  width: 40px;
+	  height: 40px;
+	}
+
+	.ms-Persona-placeholder {
+	  font-size: 38px;
+	  top: 5px;
+	}
+
+	.ms-Persona-presence {
+		height: 10px;
+		width: 10px;
+		right: -1px;
+		bottom: -1px;
+	}
+
+	.ms-Persona-details {
+		padding-left: 8px;
+	}
+
+	.ms-Persona-primaryText {
+		font-size: @ms-font-size-m;
+		padding-top: 1px;
+	}
+
+	.ms-Persona-secondaryText {
+		padding-top: 5px;
+	}
+}
+
+
+//== Modifier: Small Square Persona
+//
+.ms-Persona.ms-Persona--square.ms-Persona--sm {
+	.ms-Persona-presence {
+		height: 40px;
+		width: 4px;
+	}
+}
+
+
+//== Modifier: Large Persona
+//
+.ms-Persona.ms-Persona--lg {
+	.ms-Persona-imageArea,
+	.ms-Persona-imageCircle,
+	.ms-Persona-image {
+	  width: 70px;
+	  height: 70px;
+	}
+
+	.ms-Persona-placeholder {
+	  font-size: 67px;
+	  top: 9px;
+	}
+
+	.ms-Persona-presence {
+		height: 16px;
+		width: 16px;
+	}
+
+	.ms-Persona-primaryText {
+		font-family: @ms-font-family-regular;
+	}
+
+	.ms-Persona-tertiaryText {
+		display: block; // Show tertiary text
+	}
+}
+
+
+//== Modifier: Large Square Persona
+//
+.ms-Persona.ms-Persona--square.ms-Persona--lg {
+	.ms-Persona-presence {
+		height: 70px;
+		width: 7px;
+	}
+}
+
+
+//== Modifier: Extra Large Persona
+//
+.ms-Persona.ms-Persona--xl {
+	.ms-Persona-imageArea,
+	.ms-Persona-imageCircle,
+	.ms-Persona-image {
+	  width: 100px;
+	  height: 100px;
+	}
+
+	.ms-Persona-placeholder {
+	  font-size: 95px;
+	  top: 12px;
+	}
+
+	.ms-Persona-presence {
+		height: 24px;
+		width: 24px;
+	}
+
+	.ms-Persona-details {
+		padding-left: 20px;
+	}
+
+	.ms-Persona-primaryText {
+		font-size: @ms-font-size-xl;
+		font-family: @ms-font-family-semilight;
+		margin-top: 2px;
+	}
+
+	.ms-Persona-secondaryText {
+		padding-top: 7px;
+	}
+
+	.ms-Persona-tertiaryText, 
+	.ms-Persona-optionalText {
+		padding-top: 8px;
+		display: block; // Show tertiary and optional text
+	}
+}
+
+
+//== Modifier: Extra Large Square Persona
+//
+.ms-Persona.ms-Persona--square.ms-Persona--xl {
+	.ms-Persona-presence {
+		height: 100px;
+		width: 9px;
+	}
+}
+
+
+//== Modifier: Persona with darker text
+//
+// Note: Typically applied when the component has a colored background.
+.ms-Persona.ms-Persona--darkText {
+	.ms-Persona-primaryText {
+		color: @ms-color-neutralDark;
+	}
+
+	.ms-Persona-secondaryText, 
+	.ms-Persona-tertiaryText, 
+	.ms-Persona-optionalText {
+		color: @ms-color-neutralPrimary;
+	}
+}
+
+
+//== Modifier: Selectable Persona
+//
+.ms-Persona.ms-Persona--selectable {
+	cursor: pointer;
+	padding: 0 10px;
+
+	&:not(.ms-Persona--xl) {
+		&:hover,
+		&:focus {
+			background-color: @ms-color-themeLighter;
+			outline: 1px solid transparent;
+		}
+	}
+}
+
+
+//== Presence indicator variants.
+
+//== Modifier: Persona with available presence
+//
+.ms-Persona.ms-Persona--available {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-available;
+	}
+}
+
+
+//== Modifier: Persona with away presence
+//
+.ms-Persona.ms-Persona--away {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-away;
+	}
+}
+
+
+//== Modifier: Persona with blocked presence
+//
+.ms-Persona.ms-Persona--blocked {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-blocked-background;
+		// Use a gradient to include the stripe on modern browsers.
+		background-image: -webkit-linear-gradient(
+			bottom,
+			@ms-color-presence-blocked-background 0%,
+			@ms-color-presence-blocked-background 48%,
+			@ms-color-presence-blocked-line 40%,
+			@ms-color-presence-blocked-line 58%,
+			@ms-color-presence-blocked-background 52%,
+			@ms-color-presence-blocked-background 100%
+		);
+		background-image: linear-gradient(
+			to bottom,
+			@ms-color-presence-blocked-background 0%,
+			@ms-color-presence-blocked-background 48%,
+			@ms-color-presence-blocked-line 40%,
+			@ms-color-presence-blocked-line 58%,
+			@ms-color-presence-blocked-background 52%,
+			@ms-color-presence-blocked-background 100%
+		);
+	}
+}
+
+
+//== Modifier: Persona with busy presence
+//
+.ms-Persona.ms-Persona--busy {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-busy-average;
+		// Replace solid background with stripes on modern browsers.
+		background: repeating-linear-gradient(
+			-45deg,
+			@ms-color-presence-busy-stripe-light,
+			@ms-color-presence-busy-stripe-light 1px,
+			@ms-color-presence-busy-stripe-dark 0px,
+			@ms-color-presence-busy-stripe-dark 2px
+		);
+	}
+}
+
+
+//== Modifier: Square Persona with busy presence
+//
+.ms-Persona.ms-Persona--busy.ms-Persona--square {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-busy-average;
+		// Replace solid background with stripes on modern browsers.
+		background: repeating-linear-gradient(
+			-45deg,
+			@ms-color-presence-busy-stripe-light,
+			@ms-color-presence-busy-stripe-light 3px,
+			@ms-color-presence-busy-stripe-dark 3px,
+			@ms-color-presence-busy-stripe-dark 6px
+		);
+	}
+}
+
+
+//== Modifier: Persona with do not disturb presence
+//
+.ms-Persona.ms-Persona--dnd {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-dnd-background;
+		// Use a gradient to include the stripe on modern browsers.
+		background-image: -webkit-linear-gradient(
+			bottom,
+			@ms-color-presence-dnd-background 0%,
+			@ms-color-presence-dnd-background 48%,
+			@ms-color-presence-dnd-line 48%,
+			@ms-color-presence-dnd-line 52%,
+			@ms-color-presence-dnd-background 52%,
+			@ms-color-presence-dnd-background 100%
+		);
+		background-image: linear-gradient(
+			to bottom,
+			@ms-color-presence-dnd-background 0%,
+			@ms-color-presence-dnd-background 48%,
+			@ms-color-presence-dnd-line 48%,
+			@ms-color-presence-dnd-line 52%,
+			@ms-color-presence-dnd-background 52%,
+			@ms-color-presence-dnd-background 100%
+		);
+	}
+}
+
+
+//== Modifier: Persona with offline presence
+//
+.ms-Persona.ms-Persona--offline {
+	.ms-Persona-presence {
+		background-color: @ms-color-presence-offline;
+	}
+}

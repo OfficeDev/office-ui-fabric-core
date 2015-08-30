@@ -70,6 +70,10 @@ var bannerData = {
     monthNames: monthNames
 }
 
+var banners = {
+    jsCopyRight: '// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.' + "\r\n"
+}
+
 
 //
 // Build Helpers
@@ -162,7 +166,7 @@ gulp.task('clean-fabric', function () {
 });
 
 gulp.task('clean-fabric-components', function () {
-    return del.sync([paths.distComponents]);
+    return del.sync([paths.distComponents, paths.distJS]);
 });
 
 gulp.task('clean-component-samples', function () {
@@ -380,13 +384,13 @@ gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
     return gulp.src(paths.componentsPath + '/**/*.js')
         .pipe(concat('jquery.fabric.js'))
             .on('error', onGulpError)
-        .pipe(header(bannerTemplate, bannerData))
-            .on('error', onGulpError)
         .pipe(gulp.dest(paths.distJS))
             .on('error', onGulpError)
         .pipe(rename('jquery.fabric.min.js'))
             .on('error', onGulpError)
         .pipe(uglify())
+            .on('error', onGulpError)
+        .pipe(header(banners.jsCopyRight))
             .on('error', onGulpError)
         .pipe(gulp.dest(paths.distJS));
 });

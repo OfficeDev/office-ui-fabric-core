@@ -25,7 +25,11 @@ There have been a number of changes from the previous 0.10.3 release. These incl
   - Added CommandBar, a new component for executing commands within a page or Panel.
     - Updated Panel to use CommandBar rather than a custom Panel-commands element.
   - Added Spinner, a new JavaScript component for representing indeterminate progress.
-  - Added several sample HTML projects to demonstrate various aspects of using Fabric.
+  - Added several sample HTML projects to demonstrate various aspects of using Fabric. These incude:
+    - **Form**: A simple sign-up form which uses Fabric's typography and color classes as well as various form elements.
+    - **VideoPortal**: A mock "video portal" application, which makes use of Fabric's responsive grid, components, typography & color classes, and LESS variables & mixins.
+    - **Icons**: A page demonstrating each icon font glyph available in Fabric.
+    - **Components**: Each component includes an HTML file demonstrating its usage and visual variants, as well as standalone uncompressed and minified CSS files that include only the styles necessary to render that component. This is useful for reducing page weight, since you can include only the CSS for components you actually intend to use.
   - Added & updated several "status" color classes (warning, error, success, informational).
   - Added an optional ms-TextField-description element to TextField, for adding a description to a text input.
 

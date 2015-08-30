@@ -107,6 +107,44 @@ var getFolders = function (dir) {
     });
 }
 
+var buildEachComponentCss = function (destination) {
+     return componentsFolders.map(function(folder) {
+
+        var manifest = parseManifest(folder);
+        var deps = manifest.dependencies || [];
+
+        return gulp.src(paths.templatePath + '/'+ 'component-manifest-template.less')
+            .pipe(data(function () {
+                return { "componentName": folder, "dependencies": deps };
+            }))
+                .on('error', onGulpError)
+            .pipe(template())
+                .on('error', onGulpError)
+            .pipe(less())
+                .on('error', onGulpError)
+            .pipe(header(bannerTemplate, bannerData))
+                .on('error', onGulpError)
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+            .pipe(rename(folder + '.css'))
+                .on('error', onGulpError)
+            .pipe(cssbeautify())
+                .on('error', onGulpError)
+            .pipe(csscomb())
+                .on('error', onGulpError)
+            .pipe(gulp.dest(destination + folder))
+                .on('error', onGulpError)
+            .pipe(rename(folder + '.min.css'))
+                .on('error', onGulpError)
+            .pipe(cssMinify())
+                .on('error', onGulpError)
+            .pipe(gulp.dest(destination + folder))
+                .on('error', onGulpError);
+    });
+}
+
 // Component parts
 var componentsFolders = getFolders(paths.componentsPath);
 var catalogContents = "";
@@ -293,45 +331,14 @@ gulp.task('fabric-components-less', ['clean-fabric-components'], function () {
                 .on('error', onGulpError)
             .pipe(gulp.dest(paths.distPath + '/css/'))
                 .on('error', onGulpError);
-    return mergeStream(components, componentsRtl);
+
+    var componentsCSS = buildEachComponentCss(paths.distComponents + '/');
+    return mergeStream(components, componentsRtl, componentsCSS);
+
 });
 
 gulp.task('component-samples-less', ['clean-component-samples'], function() {
-    return componentsFolders.map(function(folder) {
-
-        var manifest = parseManifest(folder);
-        var deps = manifest.dependencies || [];
-
-        return gulp.src(paths.templatePath + '/'+ 'component-manifest-template.less')
-            .pipe(data(function () {
-                return { "componentName": folder, "dependencies": deps };
-            }))
-                .on('error', onGulpError)
-            .pipe(template())
-                .on('error', onGulpError)
-            .pipe(less())
-                .on('error', onGulpError)
-            .pipe(header(bannerTemplate, bannerData))
-                .on('error', onGulpError)
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
-            }))
-            .pipe(rename(folder + '.css'))
-                .on('error', onGulpError)
-            .pipe(cssbeautify())
-                .on('error', onGulpError)
-            .pipe(csscomb())
-                .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distSamples + '/Components/' + folder))
-                .on('error', onGulpError)
-            .pipe(rename(folder + '.min.css'))
-                .on('error', onGulpError)
-            .pipe(cssMinify())
-                .on('error', onGulpError)
-            .pipe(gulp.dest(paths.distSamples + '/Components/' + folder))
-                .on('error', onGulpError);
-    });
+   return buildEachComponentCss(paths.distSamples + '/Components/');
 });
 
 gulp.task('samples-less', ['clean-samples'], function () {
@@ -532,7 +539,7 @@ gulp.task('watch:separately', ['build-fabric', 'build-fabric-components', 'fabri
     }));
 
     gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-fabric-components', 'fabric-components-updated', done);
+        runSequence('build-component-samples', 'component-samples-updated', done);
     }));
 
     gulp.watch(paths.srcSamples + '/**/*', batch(function (events, done) {

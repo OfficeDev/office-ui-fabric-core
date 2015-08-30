@@ -1,5 +1,5 @@
 /**
- * Fabric 0.10.3
+ * Fabric 1.0.0
  * The front-end framework for building experiences for Office 365.
  **/
 
@@ -329,16 +329,6 @@
   top: 3%;
 }
 
-.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--thumbsDown:before {
-  top: 2%;
-  right: -1%;
-}
-
-.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--thumbsUp:before {
-  top: 4%;
-  right: 2%;
-}
-
 .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--ellipsis:before {
   top: 2%;
   right: -12%;
@@ -365,10 +355,6 @@
   right: 6%;
 }
 
-.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--office:before {
-  right: -4%;
-}
-
 .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretUpLeft:before {
   top: 5%;
   right: 5%;
@@ -385,19 +371,6 @@
 
 .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--caretDownLeft:before {
   right: 4%;
-}
-
-.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--apps:before {
-  right: -3%;
-}
-
-.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--officeStore:before {
-  right: 3%;
-}
-
-.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--dynamicsCrm:before {
-  top: -7%;
-  right: -5%;
 }
 
 .ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon.ms-Icon--note:before {
@@ -892,25 +865,23 @@
 .ms-Button.ms-Button--command {
   background-color: transparent;
   border: none;
-  height: 30px;
-  line-height: 30px;
+  height: 32px;
+  line-height: 32px;
   min-width: 0;
-  padding: 0 10px;
+  padding: 0 8px;
   text-align: right;
+  font-size: 14px;
 }
 
 .ms-Button.ms-Button--command .ms-Button-icon {
   color: #666666;
   display: inline-block;
-  font-size: 12px;
-  margin-left: 5px;
+  margin-left: 4px;
   position: relative;
-  top: -1px;
 }
 
 .ms-Button.ms-Button--command .ms-Button-label {
   font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 12px;
 }
 
 .ms-Button.ms-Button--command:hover .ms-Button-icon,
@@ -942,35 +913,34 @@
   margin-right: 14px;
 }
 
-/** Callout */
-
 .ms-Callout {
   z-index: 100;
-  margin: 10px auto;
-  /** Arrows */
-  /** Arrow positions */
-  /**
-  * OOBE arrows and positions
-  */
-  /**
-  * Birthday arrow color
-  */
-  /**
-  * ActionText arrow color
-  */
-  /** Hide arrow right and left on mobile */
+  margin: 16px auto;
+  position: relative;
+  width: 288px;
+}
+
+.ms-Callout.ms-Callout--arrowRight:before,
+.ms-Callout.ms-Callout--arrowLeft:before,
+.ms-Callout.ms-Callout--arrowBottom:before,
+.ms-Callout.ms-Callout--arrowTop:before,
+.ms-Callout.ms-Callout--arrowRight:after,
+.ms-Callout.ms-Callout--arrowLeft:after,
+.ms-Callout.ms-Callout--arrowBottom:after,
+.ms-Callout.ms-Callout--arrowTop:after {
+  content: '';
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  height: 0;
+  width: 0;
 }
 
 .ms-Callout.ms-Callout--arrowRight:before,
 .ms-Callout.ms-Callout--arrowLeft:before,
 .ms-Callout.ms-Callout--arrowBottom:before,
 .ms-Callout.ms-Callout--arrowTop:before {
-  content: '';
-  background-color: #ffffff;
-  position: absolute;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
   z-index: 0;
   outline: 1px solid transparent;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
@@ -980,213 +950,110 @@
 .ms-Callout.ms-Callout--arrowLeft:after,
 .ms-Callout.ms-Callout--arrowBottom:after,
 .ms-Callout.ms-Callout--arrowTop:after {
-  content: '';
-  background-color: #ffffff;
-  position: absolute;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
   z-index: 10;
-}
-
-.ms-Callout.ms-Callout--arrowRight:before,
-.ms-Callout.ms-Callout--arrowLeft:before,
-.ms-Callout.ms-Callout--arrowBottom:before,
-.ms-Callout.ms-Callout--arrowTop:before,
-.ms-Callout.ms-Callout--arrowRight:after,
-.ms-Callout.ms-Callout--arrowLeft:after,
-.ms-Callout.ms-Callout--arrowBottom:after,
-.ms-Callout.ms-Callout--arrowTop:after {
-  height: 16px;
-  width: 16px;
 }
 
 .ms-Callout.ms-Callout--arrowLeft:before,
 .ms-Callout.ms-Callout--arrowRight:before,
 .ms-Callout.ms-Callout--arrowLeft:after,
 .ms-Callout.ms-Callout--arrowRight:after {
-  top: calc(50% - 10px);
+  top: 40px;
+  display: none;
 }
 
 .ms-Callout.ms-Callout--arrowLeft:before,
 .ms-Callout.ms-Callout--arrowLeft:after {
-  right: -4px;
+  border-top: 10px solid #ffffff;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #ffffff;
+  right: -10px;
 }
 
 .ms-Callout.ms-Callout--arrowRight:before,
 .ms-Callout.ms-Callout--arrowRight:after {
-  left: -4px;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #ffffff;
+  border-bottom: 10px solid #ffffff;
+  border-right: 10px solid transparent;
+  left: -10px;
 }
 
 .ms-Callout.ms-Callout--arrowTop:before,
 .ms-Callout.ms-Callout--arrowBottom:before,
 .ms-Callout.ms-Callout--arrowTop:after,
 .ms-Callout.ms-Callout--arrowBottom:after {
-  left: 0;
   right: 0;
+  left: 0;
   margin: 0 auto;
-}
-
-.ms-Callout.ms-Callout--arrowBottom:before,
-.ms-Callout.ms-Callout--arrowBottom:after {
-  bottom: -4px;
+  width: 0;
 }
 
 .ms-Callout.ms-Callout--arrowTop:before,
 .ms-Callout.ms-Callout--arrowTop:after {
-  top: -4px;
+  border-top: 10px solid #ffffff;
+  border-left: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -10px;
 }
 
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight:after,
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft:after,
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowTop:after {
-  background-color: #0078d7;
-}
-
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft:before,
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft:after {
-  top: 55px;
-  right: -4px;
-}
-
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight:before,
-.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight:after {
-  top: 55px;
-  left: -4px;
-}
-
-.ms-Callout.ms-Callout--birthday.ms-Callout--arrowTop:after {
-  background-color: #ed7d31;
-}
-
-.ms-Callout.ms-Callout--actionText.ms-Callout--arrowTop:after {
-  background-color: #5b9bd5;
-}
-
-.ms-Callout.ms-Callout--arrowRight:before,
-.ms-Callout.ms-Callout--arrowLeft:before,
-.ms-Callout.ms-Callout--arrowRight:after,
-.ms-Callout.ms-Callout--arrowLeft:after {
-  height: 0;
-  width: 0;
+.ms-Callout.ms-Callout--arrowBottom:before,
+.ms-Callout.ms-Callout--arrowBottom:after {
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  border-right: 10px solid #ffffff;
+  bottom: -10px;
 }
 
 .ms-Callout-main {
   position: relative;
   background-color: #ffffff;
-  width: 100%;
   box-sizing: border-box;
   outline: 1px solid transparent;
   z-index: 5;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
 }
 
-/** Close button */
-
 .ms-Callout-close {
   margin: 0;
-  padding: 0;
   border: 0;
   background: none;
   cursor: pointer;
   position: absolute;
-  top: 5px;
-  left: 5px;
-  padding: 5px;
+  top: 12px;
+  left: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
   font-size: 14px;
   color: #666666;
   z-index: 110;
 }
 
-/** Callout inner */
-
 .ms-Callout-inner {
   height: 100%;
-  padding: 20px;
+  padding: 0 24px 20px;
 }
-
-/** Header */
 
 .ms-Callout-header {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
   z-index: 105;
-  padding: 10px 20px 0;
-}
-
-.ms-Callout-header .ms-Callout-title {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 17px;
-  color: #333333;
-}
-
-.ms-Callout-header.ms-Callout-header--l {
-  padding: 30px 20px;
-}
-
-.ms-Callout-header.ms-Callout-header--l .ms-Callout-title {
-  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 28px;
-  color: #ffffff;
-}
-
-.ms-Callout-header.ms-Callout-header--s {
-  padding: 10px 20px;
-}
-
-.ms-Callout-header.ms-Callout-header--s .ms-Callout-title {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 17px;
-  color: #ffffff;
+  padding: 18px 24px 12px;
 }
 
 .ms-Callout-title {
   margin: 0;
-}
-
-.ms-Callout--birthday .ms-Callout-title {
-  margin-right: 10px;
-}
-
-/** Content box */
-
-.ms-Callout-content {
-  position: relative;
-  width: 100%;
-}
-
-.ms-callout-textGroup {
-  display: inline-block;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 21px;
 }
 
 .ms-Callout-subText {
   margin: 0;
   font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
   color: #333333;
-}
-
-.ms-Callout-subText.ms-Callout-subText--s {
   font-size: 12px;
 }
-
-.ms-Callout-subText.ms-Callout-subText--m {
-  font-size: 14px;
-}
-
-.ms-Callout-subTitle {
-  margin: 0;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 17px;
-  color: #333333;
-}
-
-.ms-Callout-subText--tag {
-  position: relative;
-  top: 3px;
-}
-
-/** Bottom actions */
 
 .ms-Callout-actions {
   position: relative;
@@ -1195,15 +1062,15 @@
   white-space: nowrap;
 }
 
-.ms-Callout-actions--border {
-  border-top: 1px solid #eaeaea;
+.ms-Callout-actions .ms-Link.ms-Link--hero {
+  position: relative;
+  right: -8px;
 }
 
 .ms-Callout-action {
   position: relative;
-  bottom: -10px;
-  right: -10px;
-  padding: 10px;
+  top: 4px;
+  right: -8px;
   margin-right: 0 !important;
 }
 
@@ -1212,149 +1079,87 @@
   color: #0078d7;
 }
 
-.ms-Callout-actionText {
-  font-size: 14px !important;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif !important;
-}
-
 .ms-Callout-button {
-  margin-left: 15px;
+  margin-left: 12px;
 }
 
-/** Birthday callout */
-
-.ms-Callout-birthdayImg {
-  position: relative;
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  background-color: #eaeaea;
-  margin: 0 10px;
-  text-align: center;
-  line-height: 50px;
+.ms-Callout.ms-Callout--close .ms-Callout-title {
+  margin-left: 20px;
 }
 
-.ms-Callout-birthdayImg:before {
-  content: '\e16d';
-  font-family: 'Office365Icons';
-  font-size: 32px;
+.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight:before,
+.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft:before,
+.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowTop:before,
+.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight:after,
+.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft:after,
+.ms-Callout.ms-Callout--OOBE.ms-Callout--arrowTop:after {
+  border-color: #0078d7;
+  background-color: transparent;
+}
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-header {
+  padding: 28px 24px;
+  background-color: #0078d7;
+}
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-title {
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 28px;
   color: #ffffff;
 }
 
-/**
- * Tablet and Desktop displays.
- *
- * On medium and large screens, callouts are relative positioned
- * with a fixed width. Left and right arrows are visible.
- */
+.ms-Callout.ms-Callout--OOBE .ms-Callout-inner {
+  padding-top: 20px;
+}
+
+.ms-Callout.ms-Callout--OOBE .ms-Callout-subText {
+  font-size: 14px;
+}
+
+.ms-Callout.ms-Callout--actionText .ms-Callout-actions {
+  border-top: 1px solid #eaeaea;
+  margin-bottom: -8px;
+}
+
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowTop:before,
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowBottom:before,
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowTop:after,
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowBottom:after {
+  right: 40px;
+  left: auto;
+}
+
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowRight:before,
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowLeft:before,
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowRight:after,
+.ms-Callout.ms-Callout--peek.ms-Callout--arrowLeft:after {
+  top: calc(50% - 10px);
+}
+
+.ms-Callout.ms-Callout--peek .ms-Callout-header {
+  padding-bottom: 0;
+}
+
+.ms-Callout.ms-Callout--peek .ms-Callout-title {
+  font-size: 14px;
+}
+
+.ms-Callout.ms-Callout--peek .ms-Callout-actions {
+  margin-top: 12px;
+  margin-bottom: -4px;
+}
 
 @media (min-width: 480px) {
-  /** Move to relative positioning if not on phone - set width. */
-
   .ms-Callout {
-    position: relative;
-    width: 290px;
-    margin: 10px;
-    /** Width for OOBE */
-    /** Show arrows right and left */
-  }
-
-  .ms-Callout.ms-Callout--OOBE {
-    width: 220px;
+    width: 300px;
+    margin: 16px;
   }
 
   .ms-Callout.ms-Callout--arrowRight:before,
   .ms-Callout.ms-Callout--arrowLeft:before,
   .ms-Callout.ms-Callout--arrowRight:after,
   .ms-Callout.ms-Callout--arrowLeft:after {
-    height: 16px !important;
-    width: 16px !important;
-  }
-}
-
-@media screen and (-ms-high-contrast: active) {
-  .ms-Callout.ms-Callout--arrowTop:after,
-  .ms-Callout.ms-Callout--arrowBottom:after {
-    width: 20px !important;
-    height: 20px !important;
-  }
-
-  .ms-Callout.ms-Callout--arrowBottom:before {
-    bottom: -9px;
-  }
-
-  .ms-Callout.ms-Callout--arrowBottom:after {
-    bottom: -8px;
-  }
-
-  .ms-Callout.ms-Callout--arrowTop:before {
-    top: -9px;
-  }
-
-  .ms-Callout.ms-Callout--arrowTop:after {
-    top: -8px;
-  }
-
-  .ms-Callout.ms-Callout--arrowLeft:before,
-  .ms-Callout.ms-Callout--arrowRight:before,
-  .ms-Callout.ms-Callout--arrowLeft:after,
-  .ms-Callout.ms-Callout--arrowRight:after {
-    display: none;
-  }
-
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::before,
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::after,
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::before,
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::after {
-    top: calc(50% - 12px);
-  }
-
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::before {
-    right: -9px;
-  }
-
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::before {
-    left: -9px;
-  }
-
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowLeft::after {
-    right: -6px;
-  }
-
-  .ms-Callout.ms-Callout--OOBE.ms-Callout--arrowRight::after {
-    left: -6px;
-  }
-}
-
-@media screen and (min-width: 480px) and (-ms-high-contrast: active) {
-  .ms-Callout.ms-Callout--arrowLeft:before,
-  .ms-Callout.ms-Callout--arrowRight:before,
-  .ms-Callout.ms-Callout--arrowLeft:after,
-  .ms-Callout.ms-Callout--arrowRight:after {
     display: block;
-  }
-
-  .ms-Callout.ms-Callout--arrowLeft:after,
-  .ms-Callout.ms-Callout--arrowRight:after {
-    width: 20px !important;
-    height: 20px !important;
-    top: calc(50% - 12px);
-  }
-
-  .ms-Callout.ms-Callout--arrowLeft:before {
-    right: -9px;
-  }
-
-  .ms-Callout.ms-Callout--arrowLeft:after {
-    right: -8px;
-  }
-
-  .ms-Callout.ms-Callout--arrowRight:before {
-    left: -9px;
-  }
-
-  .ms-Callout.ms-Callout--arrowRight:after {
-    left: -8px;
   }
 }
 
@@ -1367,7 +1172,7 @@
   margin: 0;
   padding: 0;
   box-shadow: none;
-  height: 36px;
+  min-height: 36px;
   position: relative;
 }
 
@@ -1377,29 +1182,38 @@
   top: 8px;
 }
 
-.ms-ChoiceField .ms-ChoiceField-input:focus:not(:disabled) + .ms-ChoiceField-field {
+.ms-ChoiceField .ms-ChoiceField-input:focus:not(:disabled) + .ms-ChoiceField-field:after {
   border-color: #767676;
 }
 
 .ms-ChoiceField .ms-ChoiceField-field {
-  border: 1px #c8c8c8 solid;
   display: inline-block;
-  width: 19px;
-  height: 19px;
   cursor: pointer;
   margin-top: 8px;
   position: relative;
+}
+
+.ms-ChoiceField .ms-ChoiceField-field:after {
+  content: '';
+  display: inline-block;
+  border: 1px #c8c8c8 solid;
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  position: relative;
+  font-weight: normal;
+  right: -1px;
+  top: -1px;
   border-radius: 50%;
+  position: absolute;
 }
 
 .ms-ChoiceField .ms-Label {
-  padding-right: 26px;
-  position: absolute;
-  top: -8px;
   font-size: 14px;
+  padding: 0 26px 0 0;
 }
 
-.ms-ChoiceField:hover .ms-ChoiceField-field {
+.ms-ChoiceField:hover .ms-ChoiceField-field:after {
   border-color: #767676;
 }
 
@@ -1415,14 +1229,17 @@
   content: '\00a0';
   display: inline-block;
   position: absolute;
-  top: 0;
+  top: 4px;
   left: 0;
-  right: 0;
   bottom: 0;
-  margin: auto;
+  right: 4px;
   width: 11px;
   height: 11px;
   box-sizing: border-box;
+}
+
+.ms-ChoiceField .ms-ChoiceField-input:checked + .ms-ChoiceField-field:after {
+  border-radius: 50%;
 }
 
 .ms-ChoiceField .ms-ChoiceField-input:checked + .ms-ChoiceField-field .ms-Label {
@@ -1446,17 +1263,20 @@
   pointer-events: none;
 }
 
-.ms-ChoiceField.is-disabled .ms-ChoiceField-input:focus + .ms-ChoiceField-field {
+.ms-ChoiceField.is-disabled .ms-ChoiceField-input:focus + .ms-ChoiceField-field:after {
   border-color: #eaeaea;
 }
 
 .ms-ChoiceField.is-disabled .ms-ChoiceField-field {
   pointer-events: none;
   cursor: default;
+}
+
+.ms-ChoiceField.is-disabled .ms-ChoiceField-field:after {
   border-color: #eaeaea;
 }
 
-.ms-ChoiceField.is-disabled .ms-ChoiceField-field:hover {
+.ms-ChoiceField.is-disabled .ms-ChoiceField-field:hover:after {
   border-color: #eaeaea;
 }
 
@@ -1473,7 +1293,7 @@
   color: #a6a6a6;
 }
 
-.ms-ChoiceField .ms-ChoiceField-input[type='checkbox'] + .ms-ChoiceField-field {
+.ms-ChoiceField .ms-ChoiceField-input[type='checkbox'] + .ms-ChoiceField-field:after {
   border-radius: 0;
 }
 
@@ -1490,17 +1310,20 @@
   background-color: transparent;
   border-radius: 0;
   font-size: 13px;
-  top: -1px;
-  right: -1px;
+  top: 3px;
+  right: 3px;
 }
 
 .ms-ChoiceField .ms-ChoiceField-input[type='checkbox']:disabled + .ms-ChoiceField-field {
-  border-color: #a6a6a6;
   cursor: default;
 }
 
 .ms-ChoiceField .ms-ChoiceField-input[type='checkbox']:disabled + .ms-ChoiceField-field:before {
   color: #a6a6a6;
+}
+
+.ms-ChoiceField .ms-ChoiceField-input[type='checkbox']:disabled + .ms-ChoiceField-field:after {
+  border-color: #a6a6a6;
 }
 
 .ms-ChoiceFieldGroup {
@@ -1509,6 +1332,367 @@
 
 .ms-ChoiceFieldGroup .ms-ChoiceFieldGroup-title .ms-Label {
   position: static;
+}
+
+.ms-CommandBar {
+  background-color: #eff6fc;
+  height: 40px;
+  white-space: nowrap;
+  padding-right: 0;
+  padding-left: 15px;
+  border: 0;
+}
+
+.ms-CommandBar:focus {
+  outline: none;
+}
+
+.ms-CommandBar-mainArea {
+  overflow-x: hidden;
+  display: block;
+}
+
+.ms-CommandBar-sideCommands {
+  float: left;
+  text-align: left;
+}
+
+@media only screen and (max-width: 479px) {
+  .ms-CommandBar-sideCommands {
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .ms-CommandBar-sideCommands {
+    min-width: 128px;
+  }
+}
+
+.ms-CommandBarItem {
+  display: inline-block;
+  margin-left: 8px;
+  color: #0078d7;
+  height: 40px;
+  outline: none;
+  vertical-align: top;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+    height: 38px;
+    outline: none;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem {
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    height: 38px;
+    outline: none;
+  }
+}
+
+.ms-CommandBarItem:hover {
+  background-color: #c7e0f4;
+  color: #0078d7;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem:hover {
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem:hover {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarItem.is-toggled {
+  background: #c7e0f4;
+  color: #005a9e;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem.is-toggled {
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem.is-toggled {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarItem.is-toggled:hover {
+  background: #c8c8c8;
+  color: #005a9e;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem.is-toggled:hover {
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem.is-toggled:hover {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ms-CommandBarItem .ms-CommandBarItem-chevronDown,
+  .ms-CommandBarItem .ms-CommandBarItem-commandText {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .ms-CommandBarItem {
+    margin-left: 0;
+  }
+}
+
+.ms-CommandBarItem.is-hidden {
+  display: none;
+}
+
+.ms-CommandBarItem.icon-only .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem.icon-only .ms-CommandBarItem-commandText,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly .ms-CommandBarItem-commandText {
+  display: none;
+}
+
+.ms-CommandBarItem-overflow {
+  display: none;
+}
+
+.ms-CommandBarItem-overflow.is-visible {
+  display: inline-block;
+}
+
+.ms-CommandBarItem-link {
+  line-height: 39px;
+  padding: 0 6px;
+  cursor: pointer;
+  height: 40px;
+  min-width: 22px;
+  text-align: center;
+  position: relative;
+}
+
+@media only screen and (max-width: 1023px) {
+  .ms-CommandBarItem-link {
+    padding: 0 6px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBarItem-link {
+    padding-left: 8px;
+    padding-right: 6px;
+  }
+}
+
+.ms-CommandBarItem-chevronDown {
+  vertical-align: top;
+  padding-bottom: 3px;
+  margin-top: 13px;
+  font-size: 1.1em;
+  line-height: 1em;
+  color: #666666;
+}
+
+.ms-CommandBarItem-chevronDown:before {
+  height: 10px;
+  line-height: 16px;
+}
+
+.ms-CommandBarSearch {
+  float: right;
+  width: 208px;
+  max-width: 208px;
+  background-color: #deecf9;
+  color: #333333;
+  height: 40px;
+  position: relative;
+  box-sizing: border-box;
+  border-color: transparent;
+  transition: 0.367s cubic-bezier(0.1, 0.9, 0.2, 1);
+  transition-property: width, background-color;
+}
+
+@media only screen and (max-width: 639px) {
+  .ms-CommandBarSearch {
+    overflow: hidden;
+    background-color: transparent;
+    width: 40px;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch {
+    border-left: 1px solid #ffffff;
+    z-index: 10;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch {
+    border-left: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarSearch .ms-Icon--search {
+  margin-right: 2px;
+  margin-top: 12px;
+  vertical-align: top;
+}
+
+.ms-CommandBarSearch-input {
+  height: 40px;
+  padding: 8px 0 8px 8px;
+  border: none;
+  border-right: 42px solid transparent;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch-input {
+    border-right: 40px solid #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch-input {
+    border-right: 40px solid #ffffff;
+  }
+}
+
+.ms-CommandBarSearch-input::-ms-clear {
+  display: none;
+}
+
+.ms-CommandBarSearch-input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input::-moz-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input::placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input:placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper {
+  display: block;
+  padding-right: 15px;
+}
+
+.ms-CommandBarSearch-iconArrowWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper,
+.ms-CommandBarSearch-iconArrowWrapper {
+  top: 0;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.ms-CommandBarSearch-iconClearWrapper {
+  display: none;
+  top: 1px;
+  left: 0px;
+}
+
+.ms-CommandBarSearch--active {
+  background-color: #c7e0f4;
+  color: #000000;
+}
+
+.ms-CommandBarSearch--active:hover {
+  background-color: #c7e0f4;
+  color: #000000;
+}
+
+.ms-CommandBarSearch--active .ms-CommandBarSearch-input {
+  cursor: text;
+  padding-left: 40px;
+  border-right-width: 8px;
+}
+
+.ms-CommandBarSearch--active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
+  border-right-width: 40px;
+}
+
+.ms-CommandBarSearch--active .ms-CommandBarSearch-iconSearchWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch--active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
+  display: block;
+}
+
+.ms-CommandBarSearch--active.ms-CommandBarSearch--hasText .ms-CommandBarSearch-input {
+  padding-left: 40px;
+}
+
+.ms-CommandBarSearch--active.ms-CommandBarSearch--hasText .ms-CommandBarSearch-iconClearWrapper {
+  display: block;
+}
+
+.ms-CommandBarSearch-iconWrapper {
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  padding: 0px 8px;
+  position: absolute;
+}
+
+.ms-CommandBarSearch .ms-Icon:before {
+  font-size: 17px;
+  color: #0078d7;
 }
 
 .ms-ContextualMenu {
@@ -1534,10 +1718,6 @@
   z-index: 105;
 }
 
-.ms-ContextualMenu.ms-ContextualMenu--multiselect {
-  padding-top: 10px;
-}
-
 .ms-ContextualMenu-item {
   box-sizing: border-box;
   position: relative;
@@ -1556,14 +1736,12 @@
   color: #0078d7;
   font-size: 12px;
   text-transform: uppercase;
-  height: 20px;
-  padding-right: 30px;
-  display: block;
-  position: relative;
-  padding-top: 6px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link {
+.ms-ContextualMenu-link {
   text-decoration: none;
   color: #333333;
   border: 1px solid transparent;
@@ -1571,71 +1749,74 @@
   display: block;
   height: 40px;
   line-height: 40px;
-  padding: 0 20px 0 20px;
+  padding: 0 18px;
   position: relative;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link:first-child,
-.ms-ContextualMenu-item .ms-ContextualMenu-link:last-child {
+.ms-ContextualMenu-link:first-child,
+.ms-ContextualMenu-link:last-child {
   height: 39px;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link:hover {
+.ms-ContextualMenu-link:hover,
+.ms-ContextualMenu-link:active {
   background-color: #eaeaea;
   color: #000000;
-  line-height: 40px;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link:active {
-  background-color: #eaeaea;
+.ms-ContextualMenu-link:active {
   border: 1px solid #0078d7;
-  color: #000000;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link.is-selected {
+.ms-ContextualMenu-link.is-selected {
   background-color: #c7e0f4;
   color: #000000;
-  line-height: 40px;
   font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link.is-selected:hover {
+.ms-ContextualMenu-link.is-selected:hover {
   background-color: #c7e0f4;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link.is-disabled {
-  background: #ffffff;
+.ms-ContextualMenu-link.is-disabled {
+  background-color: #ffffff;
   color: #a6a6a6;
   cursor: default;
-  line-height: 40px;
   pointer-events: none;
 }
 
-.ms-ContextualMenu-item .ms-ContextualMenu-link.is-disabled:active {
+.ms-ContextualMenu-link.is-disabled:active {
   border-color: #ffffff;
 }
 
+.ms-ContextualMenu-link.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  right: 178px;
+}
+
+.ms-ContextualMenu-subMenuIcon,
 .ms-ContextualMenu-caretRight {
   color: #666666;
-  font-size: 18px;
+  font-size: 16px;
   height: 39px;
   line-height: 40px;
   position: absolute;
   top: 0;
-  left: 5px;
+  left: 7px;
   z-index: 1;
   pointer-events: none;
 }
 
-.ms-ContextualMenu--multiselect > .ms-ContextualMenu-item > .ms-ContextualMenu-link {
-  padding-right: 30px;
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link {
+  padding: 0 30px;
 }
 
-.ms-ContextualMenu--multiselect > .ms-ContextualMenu-item > .ms-ContextualMenu-link.is-selected {
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected {
   background-color: #ffffff;
 }
 
-.ms-ContextualMenu--multiselect > .ms-ContextualMenu-item > .ms-ContextualMenu-link.is-selected:after {
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:after {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -1651,12 +1832,6 @@
   line-height: 40px;
   position: absolute;
   right: 10px;
-}
-
-.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
-  position: absolute;
-  top: -1px;
-  right: 178px;
 }
 
 .ms-DatePicker {
@@ -2466,12 +2641,9 @@
 }
 
 .ms-Link {
-  color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: normal;
   color: #0078d7;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .ms-Link:hover,
@@ -2497,28 +2669,16 @@
   margin: 0;
   padding: 0;
   box-shadow: none;
-  list-style-type: none;
-}
-
-.ms-List .ms-List-item {
-  box-sizing: border-box;
-  border: 1px solid #eaeaea;
-  border-width: 0 0 1px 0;
-  list-style-type: none;
-}
-
-.ms-List.ms-List--noBorders .ms-List-item {
-  border: none;
 }
 
 @media (min-width: 480px) {
-  .ms-List.ms-List--grid .ms-List-item {
+  .ms-List.ms-List--grid .ms-ListItem {
     width: 33.33333333333333%;
     float: right;
     border-width: 0 0 1px 1px;
   }
 
-  .ms-List.ms-List--grid .ms-List-item:nth-child(3n) {
+  .ms-List.ms-List--grid .ms-ListItem:nth-child(3n) {
     border-width: 0 0 1px 0;
   }
 }
@@ -2533,7 +2693,7 @@
   padding: 0;
   box-shadow: none;
   *zoom: 1;
-  padding: 11px 30px 10px 30px;
+  padding: 9px 28px 3px;
   position: relative;
 }
 
@@ -2546,14 +2706,6 @@
 
 .ms-ListItem:after {
   clear: both;
-}
-
-.ms-ListItem-image {
-  float: right;
-  height: 70px;
-  margin-right: -10px;
-  margin-left: 10px;
-  width: 70px;
 }
 
 .ms-ListItem-primaryText,
@@ -2581,6 +2733,7 @@
   line-height: 25px;
   position: relative;
   top: -7px;
+  padding-left: 30px;
 }
 
 .ms-ListItem-tertiaryText {
@@ -2590,6 +2743,7 @@
   line-height: 15px;
   position: relative;
   top: -7px;
+  padding-left: 30px;
 }
 
 .ms-ListItem-metaText {
@@ -2599,6 +2753,14 @@
   position: absolute;
   left: 30px;
   top: 39px;
+}
+
+.ms-ListItem-image {
+  float: right;
+  height: 70px;
+  margin-right: -8px;
+  margin-left: 10px;
+  width: 70px;
 }
 
 .ms-ListItem-selectionTarget {
@@ -2614,17 +2776,23 @@
 }
 
 .ms-ListItem-action {
-  color: #666666;
+  color: #a6a6a6;
   display: inline-block;
   font-size: 15px;
-  margin-right: 8px;
   position: relative;
   text-align: center;
   top: 3px;
   cursor: pointer;
+  height: 16px;
+  width: 16px;
+}
+
+.ms-ListItem-action .ms-Icon {
+  vertical-align: top;
 }
 
 .ms-ListItem-action:hover {
+  color: #666666;
   outline: 1px solid transparent;
 }
 
@@ -2639,7 +2807,7 @@
   font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
 }
 
-.ms-ListItem.is-unseen:before {
+.ms-ListItem.is-unseen:after {
   border-left: 10px solid transparent;
   border-top: 10px solid #0078d7;
   right: 0;
@@ -2671,12 +2839,16 @@
   font-weight: normal;
   line-height: 1;
   speak: none;
-  content: '\e03f';
-  font-size: 18px;
-  color: #767676;
   position: absolute;
-  top: 22px;
-  right: 8px;
+  top: 12px;
+  right: 6px;
+  height: 15px;
+  width: 15px;
+  border: 1px solid #767676;
+}
+
+.ms-ListItem.is-selected:before {
+  border: 1px solid transparent;
 }
 
 .ms-ListItem.is-selected:before,
@@ -2690,11 +2862,11 @@
   line-height: 1;
   speak: none;
   content: '\e041';
-  font-size: 17px;
+  font-size: 15px;
   color: #767676;
   position: absolute;
-  top: 23px;
-  right: 8px;
+  top: 12px;
+  right: 6px;
 }
 
 .ms-ListItem.is-selected:hover {
@@ -2719,79 +2891,11 @@
   color: #666666;
 }
 
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[class*='ms-ListItem-itemIcon--'] {
-  background-image: url(../components/filepicker/filepicker.icons.png);
+.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon[class*='ms-ListItem-itemIcon--ppt'] {
+  background-image: url(ppt-icon.png);
   width: 40px;
   height: 40px;
-  margin: 15px 15px 14px 15px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--audio {
-  background-position: 0px 0px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--web {
-  background-position: 0px -40px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--text {
-  background-position: 0px -80px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--ppt {
-  background-position: 0px -120px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--pub {
-  background-position: 0px -160px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--access {
-  background-position: 0px -200px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--bmp {
-  background-position: 0px -240px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--word {
-  background-position: 0px -280px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--blank {
-  background-position: 0px -320px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--gif {
-  background-position: 0px -360px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--jpg {
-  background-position: 0px -400px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--note {
-  background-position: 0px -440px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--pdf {
-  background-position: 0px -480px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--png {
-  background-position: 0px -520px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--visio {
-  background-position: 0px -560px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--excel {
-  background-position: 0px -600px;
-}
-
-.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon.ms-ListItem-itemIcon--pdf {
-  background-position: 0px -480px;
+  margin: 15px;
 }
 
 .ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText {
@@ -2799,8 +2903,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #333333;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
   font-size: 14px;
   padding-top: 15px;
   padding-left: 0;
@@ -3057,9 +3159,25 @@
   }
 }
 
+.ms-OrgChart {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.ms-OrgChart-groupTitle {
+  color: #666666;
+  line-height: 1;
+}
+
 .ms-OrgChart-list {
   padding: 0;
-  margin: 10px 0 20px 0;
+  margin: 12px 0 16px 0;
 }
 
 .ms-OrgChart-listItem {
@@ -3067,40 +3185,7 @@
   width: 100%;
   position: relative;
   list-style: none;
-  margin-bottom: 3px;
-}
-
-.ms-OrgChart-listItem .ms-Persona .ms-Persona-imageArea {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-}
-
-.ms-OrgChart-listItem .ms-Persona-imageCircle {
-  width: 50px;
-  height: 50px;
-  margin: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  left: 0;
-  background-color: #a6a6a6;
-}
-
-.ms-OrgChart.ms-OrgChart--circles .ms-Persona-imageCircle {
-  border-radius: 50%;
-}
-
-.ms-OrgChart.ms-OrgChart--circles .ms-Persona-presence {
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  top: auto;
-  right: auto;
-  left: 2px;
-  bottom: -1px;
-  border: 2px solid #ffffff;
+  margin-bottom: 8px;
 }
 
 .ms-OrgChart-listItemBtn {
@@ -3114,12 +3199,6 @@
   margin: 0;
   padding: 0;
   outline: transparent;
-}
-
-.ms-OrgChart-groupTitle {
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  color: #666666;
-  font-size: 14px;
 }
 
 .ms-Overlay {
@@ -3161,48 +3240,6 @@
   top: 0;
   display: none;
   z-index: 10;
-}
-
-.ms-Panel-commands {
-  background-color: #f8f8f8;
-  height: 40px;
-  right: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.ms-Panel-command {
-  background-color: transparent;
-  border: none;
-  float: right;
-  font-size: 0;
-  height: 40px;
-  margin-right: 8px;
-  padding: 0 8px;
-}
-
-.ms-Panel-command:hover {
-  background-color: #eaeaea;
-  cursor: pointer;
-  outline: 1px solid transparent;
-}
-
-.ms-Panel-command:active {
-  background-color: #ffffff;
-}
-
-.ms-Panel-commandIcon {
-  color: #0078d7;
-  font-size: 15px;
-  line-height: 40px;
-  margin-left: 8px;
-}
-
-.ms-Panel-commandLabel {
-  font-size: 14px;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  color: #333333;
 }
 
 .ms-Panel-contentInner {
@@ -3818,16 +3855,28 @@
   position: relative;
 }
 
-.ms-Persona .ms-Persona-imageArea {
+.ms-Persona-imageArea {
   position: relative;
   display: block;
-  background-color: #a6a6a6;
+  background-color: transparent;
   overflow: hidden;
   width: 50px;
   height: 50px;
 }
 
-.ms-Persona .ms-Persona-placeholder {
+.ms-Persona-imageCircle {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #a6a6a6;
+}
+
+.ms-Persona-placeholder {
   color: #ffffff;
   position: absolute;
   left: 0;
@@ -3836,7 +3885,7 @@
   top: 7px;
 }
 
-.ms-Persona .ms-Persona-image {
+.ms-Persona-image {
   display: table-cell;
   margin-left: 10px;
   position: absolute;
@@ -3846,26 +3895,30 @@
   height: 50px;
 }
 
-.ms-Persona .ms-Persona-image[src=''] {
+.ms-Persona-image[src=''] {
   display: none;
 }
 
-.ms-Persona .ms-Persona-presence {
+.ms-Persona-presence {
   background-color: #5dd255;
   position: absolute;
-  top: 0;
-  right: 0;
-  height: 50px;
-  width: 5px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  top: auto;
+  right: auto;
+  left: 2px;
+  bottom: -1px;
+  border: 2px solid #ffffff;
 }
 
-.ms-Persona .ms-Persona-details {
+.ms-Persona-details {
   display: table-cell;
-  padding: 0 10px;
+  padding: 0 16px;
   vertical-align: middle;
 }
 
-.ms-Persona .ms-Persona-primaryText {
+.ms-Persona-primaryText {
   color: #333333;
   font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
   font-size: 17px;
@@ -3873,25 +3926,43 @@
   white-space: nowrap;
 }
 
-.ms-Persona .ms-Persona-secondaryText,
-.ms-Persona .ms-Persona-tertiaryText,
-.ms-Persona .ms-Persona-optionalText {
+.ms-Persona-secondaryText,
+.ms-Persona-tertiaryText,
+.ms-Persona-optionalText {
   color: #666666;
   font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
   font-size: 12px;
-  padding-top: 7px;
+  padding-top: 8px;
   white-space: nowrap;
 }
 
-.ms-Persona .ms-Persona-tertiaryText,
-.ms-Persona .ms-Persona-optionalText {
+.ms-Persona-tertiaryText,
+.ms-Persona-optionalText {
   display: none;
+}
+
+.ms-Persona.ms-Persona--square .ms-Persona-imageArea {
+  background-color: #a6a6a6;
+}
+
+.ms-Persona.ms-Persona--square .ms-Persona-imageCircle {
+  border-radius: 0;
+}
+
+.ms-Persona.ms-Persona--square .ms-Persona-presence {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  height: 50px;
+  width: 5px;
+  border-radius: 0;
+  border: 0;
 }
 
 .ms-Persona.ms-Persona--tiny {
   height: 30px;
-  padding: 0 10px;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   display: inline-block;
 }
 
@@ -3902,34 +3973,28 @@
   width: 0;
 }
 
-.ms-Persona.ms-Persona--tiny .ms-Persona-placeholder {
-  display: none;
-}
-
-.ms-Persona.ms-Persona--tiny .ms-Persona-image {
+.ms-Persona.ms-Persona--tiny .ms-Persona-imageCircle {
   display: none;
 }
 
 .ms-Persona.ms-Persona--tiny .ms-Persona-presence {
+  left: auto;
   height: 10px;
   width: 10px;
   top: 10px;
+  border: 0;
 }
 
 .ms-Persona.ms-Persona--tiny .ms-Persona-details {
-  padding-right: 15px;
+  padding-right: 18px;
 }
 
 .ms-Persona.ms-Persona--tiny .ms-Persona-primaryText {
-  color: #333333;
-  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
   font-size: 14px;
   padding-top: 11px;
 }
 
-.ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText,
-.ms-Persona.ms-Persona--tiny .ms-Persona-tertiaryText,
-.ms-Persona.ms-Persona--tiny .ms-Persona-optionalText {
+.ms-Persona.ms-Persona--tiny .ms-Persona-secondaryText {
   display: none;
 }
 
@@ -3942,7 +4007,18 @@
   content: ';';
 }
 
+.ms-Persona.ms-Persona--square.ms-Persona--tiny .ms-Persona-presence {
+  height: 10px;
+  width: 10px;
+  top: 10px;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--tiny .ms-Persona-details {
+  padding-right: 18px;
+}
+
 .ms-Persona.ms-Persona--xs .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--xs .ms-Persona-imageCircle,
 .ms-Persona.ms-Persona--xs .ms-Persona-image {
   width: 30px;
   height: 30px;
@@ -3954,8 +4030,14 @@
 }
 
 .ms-Persona.ms-Persona--xs .ms-Persona-presence {
-  height: 30px;
-  width: 4px;
+  height: 8px;
+  width: 8px;
+  left: -1px;
+  bottom: -1px;
+}
+
+.ms-Persona.ms-Persona--xs .ms-Persona-details {
+  padding-right: 8px;
 }
 
 .ms-Persona.ms-Persona--xs .ms-Persona-primaryText {
@@ -3967,7 +4049,13 @@
   display: none;
 }
 
+.ms-Persona.ms-Persona--square.ms-Persona--xs .ms-Persona-presence {
+  height: 30px;
+  width: 4px;
+}
+
 .ms-Persona.ms-Persona--sm .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--sm .ms-Persona-imageCircle,
 .ms-Persona.ms-Persona--sm .ms-Persona-image {
   width: 40px;
   height: 40px;
@@ -3979,8 +4067,14 @@
 }
 
 .ms-Persona.ms-Persona--sm .ms-Persona-presence {
-  height: 40px;
-  width: 4px;
+  height: 10px;
+  width: 10px;
+  left: -1px;
+  bottom: -1px;
+}
+
+.ms-Persona.ms-Persona--sm .ms-Persona-details {
+  padding-right: 8px;
 }
 
 .ms-Persona.ms-Persona--sm .ms-Persona-primaryText {
@@ -3992,7 +4086,13 @@
   padding-top: 5px;
 }
 
+.ms-Persona.ms-Persona--square.ms-Persona--sm .ms-Persona-presence {
+  height: 40px;
+  width: 4px;
+}
+
 .ms-Persona.ms-Persona--lg .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--lg .ms-Persona-imageCircle,
 .ms-Persona.ms-Persona--lg .ms-Persona-image {
   width: 70px;
   height: 70px;
@@ -4004,8 +4104,8 @@
 }
 
 .ms-Persona.ms-Persona--lg .ms-Persona-presence {
-  height: 70px;
-  width: 7px;
+  height: 16px;
+  width: 16px;
 }
 
 .ms-Persona.ms-Persona--lg .ms-Persona-primaryText {
@@ -4016,7 +4116,13 @@
   display: block;
 }
 
+.ms-Persona.ms-Persona--square.ms-Persona--lg .ms-Persona-presence {
+  height: 70px;
+  width: 7px;
+}
+
 .ms-Persona.ms-Persona--xl .ms-Persona-imageArea,
+.ms-Persona.ms-Persona--xl .ms-Persona-imageCircle,
 .ms-Persona.ms-Persona--xl .ms-Persona-image {
   width: 100px;
   height: 100px;
@@ -4028,8 +4134,8 @@
 }
 
 .ms-Persona.ms-Persona--xl .ms-Persona-presence {
-  height: 100px;
-  width: 9px;
+  height: 24px;
+  width: 24px;
 }
 
 .ms-Persona.ms-Persona--xl .ms-Persona-details {
@@ -4048,8 +4154,13 @@
 
 .ms-Persona.ms-Persona--xl .ms-Persona-tertiaryText,
 .ms-Persona.ms-Persona--xl .ms-Persona-optionalText {
-  display: block;
   padding-top: 8px;
+  display: block;
+}
+
+.ms-Persona.ms-Persona--square.ms-Persona--xl .ms-Persona-presence {
+  height: 100px;
+  width: 9px;
 }
 
 .ms-Persona.ms-Persona--darkText .ms-Persona-primaryText {
@@ -4083,17 +4194,22 @@
 
 .ms-Persona.ms-Persona--blocked .ms-Persona-presence {
   background-color: #dedede;
-  background-image: linear-gradient(to bottom, #dedede 0%, #dedede 48%, #c72d25 48%, #c72d25 52%, #dedede 52%, #dedede 100%);
+  background-image: linear-gradient(to bottom, #dedede 0%, #dedede 48%, #c72d25 40%, #c72d25 58%, #dedede 52%, #dedede 100%);
 }
 
 .ms-Persona.ms-Persona--busy .ms-Persona-presence {
+  background-color: #d93b3b;
+  background: repeating-linear-gradient(-45deg, #e57a79, #e57a79 1px, #d00e0d 0px, #d00e0d 2px);
+}
+
+.ms-Persona.ms-Persona--busy.ms-Persona--square .ms-Persona-presence {
   background-color: #d93b3b;
   background: repeating-linear-gradient(-45deg, #e57a79, #e57a79 3px, #d00e0d 3px, #d00e0d 6px);
 }
 
 .ms-Persona.ms-Persona--dnd .ms-Persona-presence {
   background-color: #c72d25;
-  background-image: linear-gradient(to bottom, #c72d25 0%, #c72d25 48%, #ffffff 48%, #ffffff 52%, #c72d25 52%, #c72d25 100);
+  background-image: linear-gradient(to bottom, #c72d25 0%, #c72d25 48%, #ffffff 48%, #ffffff 52%, #c72d25 52%, #c72d25 100%);
 }
 
 .ms-Persona.ms-Persona--offline .ms-Persona-presence {
@@ -4101,10 +4217,10 @@
 }
 
 .ms-PersonaCard {
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  left: 0;
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
   -webkit-animation-name: fadeIn, slideUp10;
           animation-name: fadeIn, slideUp10;
   -webkit-animation-duration: 0.167s;
@@ -4115,76 +4231,72 @@
           animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  outline: 1px solid transparent;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-Persona.ms-Persona--xl .ms-Persona-placeholder {
-  font-size: 75px;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-Persona-placeholder {
-  right: 1px;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-Persona-imageArea {
-  width: 100px;
-  height: 100px;
-  background-color: #f4f4f4;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-Persona-imageCircle {
-  width: 80px;
-  height: 80px;
-  margin: 10px auto;
-  border-radius: 50%;
-  overflow: hidden;
-  position: absolute;
+  bottom: 0;
   right: 0;
+  position: fixed;
   left: 0;
-  background-color: #a6a6a6;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-Persona.ms-Persona--xl .ms-Persona-image {
-  width: 80px;
-  height: 80px;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-Persona.ms-Persona--xl .ms-Persona-presence {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  border: 2px solid #f4f4f4;
-  right: auto;
-  top: auto;
-  left: 15px;
-  bottom: 12px;
+  outline: 1px solid transparent;
 }
 
 .ms-PersonaCard-persona {
   background-color: #f4f4f4;
 }
 
-.ms-PersonaCard-persona .ms-Persona .ms-Persona-primaryText {
+.ms-PersonaCard-persona .ms-Persona-imageArea {
+  width: 104px;
+  height: 104px;
+}
+
+.ms-PersonaCard-persona .ms-Persona-imageCircle {
+  margin: 12px 20px 12px 0;
+}
+
+.ms-PersonaCard-persona .ms-Persona-imageCircle,
+.ms-PersonaCard-persona .ms-Persona-image {
+  width: 80px;
+  height: 80px;
+}
+
+.ms-PersonaCard-persona .ms-Persona-placeholder {
+  font-size: 75px;
+  right: 1px;
+  top: 11px;
+}
+
+.ms-PersonaCard-persona .ms-Persona-presence {
+  height: 12px;
+  width: 12px;
+  border-color: #f4f4f4;
+  left: 8px;
+  bottom: 12px;
+}
+
+.ms-PersonaCard-persona .ms-Persona-primaryText {
   margin-top: 3px;
 }
 
+.ms-PersonaCard-persona .ms-Persona-tertiaryText,
+.ms-PersonaCard-persona .ms-Persona-optionalText {
+  display: block;
+}
+
 .ms-PersonaCard-actions {
+  box-sizing: border-box;
   list-style: none;
   margin: 0;
   padding: 0 10px;
   border-bottom: 1px solid #c8c8c8;
   background-color: #ffffff;
-  box-sizing: border-box;
-  height: 50px;
+  height: 48px;
 }
 
 .ms-PersonaCard-action {
   display: inline-block;
   cursor: pointer;
   font-size: 17px;
-  height: 50px;
-  line-height: 32px;
-  padding: 10px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 10px;
   color: #666666;
   position: relative;
   box-sizing: border-box;
@@ -4203,19 +4315,19 @@
 }
 
 .ms-PersonaCard-action.is-active:after {
+  box-sizing: border-box;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
   content: '';
   width: 10px;
   height: 10px;
   border: 1px solid #c8c8c8;
   background-color: #ffffff;
-  box-sizing: border-box;
   position: absolute;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
   border-left: none;
   border-bottom: none;
-  bottom: -5px;
+  bottom: -4px;
   right: 15px;
 }
 
@@ -4223,14 +4335,13 @@
   display: inline-block;
   cursor: pointer;
   font-size: 17px;
-  height: 50px;
-  line-height: 32px;
-  padding: 10px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 10px;
   color: #666666;
   position: relative;
   box-sizing: border-box;
   font-size: 14px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
   color: #333333;
   float: left;
   margin-top: -1px;
@@ -4249,19 +4360,19 @@
 }
 
 .ms-PersonaCard-overflow.is-active:after {
+  box-sizing: border-box;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
   content: '';
   width: 10px;
   height: 10px;
   border: 1px solid #c8c8c8;
   background-color: #ffffff;
-  box-sizing: border-box;
   position: absolute;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
   border-left: none;
   border-bottom: none;
-  bottom: -5px;
+  bottom: -4px;
   right: 15px;
 }
 
@@ -4270,18 +4381,9 @@
 }
 
 .ms-PersonaCard-orgChart {
-  color: #666666;
-  font-size: 17px;
-  line-height: 30px;
   position: absolute;
   left: 12px;
-  text-align: center;
   top: 0;
-}
-
-.ms-PersonaCard-orgChart:hover {
-  color: #212121;
-  cursor: pointer;
 }
 
 .ms-PersonaCard-actionDetailBox {
@@ -4296,8 +4398,6 @@
   width: 20%;
   float: right;
   min-height: 48px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 14px;
   color: #666666;
   padding: 9px 20px;
   transition: max-height 0.267s cubic-bezier(0.1, 0.9, 0.2, 1) 0.2s;
@@ -4414,11 +4514,6 @@
   line-height: 30px;
 }
 
-.ms-PersonaCard-detailLine a {
-  color: #0078d7;
-  text-decoration: none;
-}
-
 .ms-PersonaCard-detailLabel {
   color: #666666;
 }
@@ -4427,37 +4522,12 @@
   display: none;
 }
 
-.ms-PersonaCard.ms-PersonaCard--circles .ms-OrgChart-listItem {
-  height: 50px;
-  width: 100%;
-  position: relative;
-  list-style: none;
-  margin-bottom: 3px;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-OrgChart-listItem .ms-Persona-imageArea {
-  width: 50px;
-  height: 50px;
-  background-color: #ffffff;
-}
-
-.ms-PersonaCard.ms-PersonaCard--circles .ms-OrgChart-listItem .ms-Persona-imageCircle {
-  width: 50px;
-  height: 50px;
+.ms-PersonaCard.ms-PersonaCard--square .ms-PersonaCard-persona .ms-Persona-imageCircle {
   margin: 0;
-  overflow: hidden;
 }
 
-.ms-PersonaCard.ms-PersonaCard--circles .ms-OrgChart-list .ms-Persona-presence {
-  position: absolute;
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  top: auto;
-  right: auto;
-  left: 2px;
-  bottom: -1px;
-  border: 2px solid #ffffff;
+.ms-PersonaCard.ms-PersonaCard--square .ms-PersonaCard-persona .ms-Persona-primaryText {
+  font-size: 17px;
 }
 
 @media (min-width: 480px) {
@@ -4609,41 +4679,6 @@
   display: inline-block;
 }
 
-.ms-SearchBox:hover .ms-Searchbox-label {
-  color: #000000;
-  cursor: text;
-}
-
-.ms-SearchBox:hover .ms-Searchbox-icon {
-  color: #333333;
-}
-
-.ms-SearchBox:hover .ms-Searchbox-field,
-.ms-SearchBox:focus .ms-Searchbox-field {
-  border-color: #0078d7;
-  background-color: #71afe5;
-}
-
-.ms-SearchBox .ms-SearchBox-field {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  border: 1px solid #71afe5;
-  border-radius: 0;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 14px;
-  color: #000000;
-  height: 30px;
-  padding: 6px 8px 7px 3px;
-  width: 180px;
-}
-
-.ms-SearchBox .ms-SearchBox-field:focus {
-  border-color: #0078d7;
-  background-color: #71afe5;
-}
-
 .ms-SearchBox.is-disabled .ms-SearchBox-label {
   color: #a6a6a6;
 }
@@ -4664,36 +4699,66 @@
   outline: 1px solid transparent;
 }
 
+.ms-SearchBox-field {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: 1px solid #71afe5;
+  border-radius: 0;
+  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  height: 32px;
+  padding: 6px 10px 7px 3px;
+  width: 180px;
+}
+
+.ms-SearchBox-field:hover {
+  border-color: #0078d7;
+  background-color: #c7e0f4;
+}
+
+.ms-SearchBox-field:hover + .ms-SearchBox-label {
+  color: #000000;
+}
+
+.ms-SearchBox-field:hover + .ms-SearchBox-label .ms-Icon {
+  color: #333333;
+}
+
+.ms-SearchBox-field:focus {
+  padding: 6px 10px 7px 32px;
+  border-color: #0078d7;
+  background-color: #c7e0f4;
+}
+
 .ms-SearchBox-closeButton {
   border: none;
   cursor: pointer;
   position: absolute;
   left: 0;
   top: 0;
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
   background-color: #0078d7;
   text-align: center;
   display: none;
-}
-
-.ms-SearchBox-closeButton .ms-Icon {
-  line-height: 31px;
   font-size: 17px;
   color: #ffffff;
 }
 
 .ms-SearchBox-label {
   position: absolute;
-  top: 5px;
-  padding-right: 10px;
-  font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe WP Semilight', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
-  font-size: 14px;
+  top: 0;
+  right: 0;
+  padding-right: 8px;
+  line-height: 32px;
   color: #666666;
 }
 
 .ms-SearchBox-icon {
-  margin-left: 5px;
+  margin-left: 7px;
   font-size: 17px;
   color: #767676;
 }
@@ -4899,6 +4964,11 @@
   color: #666666;
 }
 
+.ms-TextField-description {
+  color: #767676;
+  font-size: 11px;
+}
+
 .ms-TextField.ms-TextField--placeholder {
   position: relative;
 }
@@ -5001,14 +5071,14 @@
   padding: 0;
   box-shadow: none;
   position: relative;
-  margin-bottom: 10px;
   display: block;
+  margin-bottom: 26px;
 }
 
 .ms-Toggle .ms-Label {
   position: relative;
-  padding-right: 56px;
-  top: -8px;
+  padding-right: 62px;
+  top: -2px;
   font-size: 12px;
 }
 
@@ -5035,26 +5105,6 @@
   background-color: #c8c8c8 !important;
 }
 
-.ms-Toggle.ms-Toggle--textAbove .ms-Toggle-description {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.ms-Toggle.ms-Toggle--textLeft {
-  width: 225px;
-  margin-bottom: 30px;
-}
-
-.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-description {
-  display: inline-block;
-  max-width: 150px;
-  top: -3px;
-}
-
-.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field {
-  float: left;
-}
-
 .ms-Toggle-input {
   display: none;
 }
@@ -5063,21 +5113,26 @@
   position: relative;
   font-size: 12px;
   vertical-align: top;
+  display: block;
+  margin-bottom: 8px;
 }
 
 .ms-Toggle-field {
   position: relative;
   display: inline-block;
-  width: 50px;
+  width: 57px;
   height: 20px;
   box-sizing: border-box;
-  border: 3px #c8c8c8 solid;
+  border: 2.5px #c8c8c8 solid;
   cursor: pointer;
+}
+
+.ms-Toggle-input {
+  position: relative;
 }
 
 .ms-Toggle-input:not(:checked) + .ms-Toggle-field {
   background-color: #f4f4f4;
-  position: relative;
 }
 
 .ms-Toggle-input:not(:checked) + .ms-Toggle-field:before {
@@ -5085,13 +5140,16 @@
   display: block;
   box-sizing: content-box;
   content: '';
-  top: -3px;
-  right: -3px;
-  width: 10px;
+  top: -2.5px;
+  right: -2.5px;
+  width: 12px;
   height: 20px;
-  border-left: 3px solid #ffffff;
   background-color: #767676;
   outline: 2px solid transparent;
+}
+
+.ms-Toggle-input:not(:checked) + .ms-Toggle-field:before {
+  border-left: 2.5px solid #ffffff;
 }
 
 .ms-Toggle-input:not(:checked) + .ms-Toggle-field:hover {
@@ -5112,7 +5170,6 @@
 
 .ms-Toggle-input:checked + .ms-Toggle-field {
   background-color: #0078d7;
-  position: relative;
 }
 
 .ms-Toggle-input:checked + .ms-Toggle-field:before {
@@ -5120,13 +5177,16 @@
   display: block;
   box-sizing: content-box;
   content: '';
-  top: -3px;
-  left: -3px;
-  width: 10px;
+  top: -2.5px;
+  left: -2.5px;
+  width: 12px;
   height: 20px;
-  border-right: 3px solid #ffffff;
   background-color: #767676;
   outline: 2px solid transparent;
+}
+
+.ms-Toggle-input:checked + .ms-Toggle-field:before {
+  border-right: 2.5px solid #ffffff;
 }
 
 .ms-Toggle-input:checked + .ms-Toggle-field:hover {
@@ -5143,4 +5203,20 @@
 
 .ms-Toggle-input:checked + .ms-Toggle-field .ms-Label--on {
   display: block;
+}
+
+.ms-Toggle.ms-Toggle--textLeft {
+  width: 225px;
+  margin-bottom: 40px;
+}
+
+.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-description {
+  display: inline-block;
+  max-width: 150px;
+  top: -3px;
+  margin-bottom: 0;
+}
+
+.ms-Toggle.ms-Toggle--textLeft .ms-Toggle-field {
+  float: left;
 }

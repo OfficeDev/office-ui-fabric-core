@@ -1,0 +1,85 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Spinner</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Spinner.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="Jquery.Spinner.js"></script>
+  <script type="text/javascript" src="Spinner.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Spinner) {
+          $('.ms-Spinner').Spinner();
+        }
+      }
+
+      if(fabric && fabric['Spinner']) {
+        var component, componentHolder;
+        componentHolder = document.querySelector('.component-holder');
+
+        if (componentHolder) {
+          component = new fabric.Spinner(componentHolder);
+        }
+      }
+    });
+  </script>
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    body {
+      margin: auto 20px;
+    }
+    h1 {
+      padding: 8px;
+    }
+    #componentWrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .sample-wrapper {
+      margin: 20px;
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Spinner</h1>
+  <div id="componentWrapper">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="component-holder"></div>
+
+  </div>
+</body>
+</html>

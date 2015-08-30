@@ -1,11 +1,18 @@
 {
   "name": "Callout",
-  "notes": "Callouts & Peeks. A fixed width is set, however the width can be adjusted to a min/max ~130px/490px in most cases.",
+  "notes": "Callouts & Peeks.",
   "class": "ms-Callout",
   "dependencies": [
     "Button",
     "Label",
     "Link"
+  ],
+  "fileOrder": [
+    "Callout.html",
+    "Callout.Close.html",
+    "Callout.ActionText.html",
+    "Callout.Oobe.html",
+    "Callout.Peek.html"
   ],
   "branches": [
     {
@@ -34,6 +41,7 @@
     },
     {
       "name": "Close Button",
+      "class": "ms-Callout--close",
       "template": "Callout.Close.html",
       "branches": [
         {
@@ -80,9 +88,9 @@
       ]
     },
     {
-      "name": "Birthday",
-      "class": "ms-Callout--birthday",
-      "template": "Callout.Birthday.html",
+      "name": "OOBE",
+      "class": "ms-Callout--OOBE",
+      "template": "Callout.Oobe.html",
       "branches": [
         {
           "name": "Left Arrow",
@@ -104,9 +112,9 @@
       ]
     },
     {
-      "name": "OOBE",
-      "class": "ms-Callout--OOBE",
-      "template": "Callout.Oobe.html",
+      "name": "Peek",
+      "class": "ms-Callout--peek",
+      "template": "Callout.peek.html",
       "branches": [
         {
           "name": "Left Arrow",

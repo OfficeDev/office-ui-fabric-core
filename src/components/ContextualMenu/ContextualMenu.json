@@ -3,6 +3,12 @@
   "notes": "",
   "template": "ContextualMenu.html",
   "class": "ms-ContextualMenu",
+  "fileOrder": [
+    "ContextualMenu.html",
+    "ContextualMenu.SubMenu.html",
+    "ContextualMenu.Dividers.html",
+    "ContextualMenu.Multiselect.html"
+  ],
   "branches": [
       {
         "name": "Standard",

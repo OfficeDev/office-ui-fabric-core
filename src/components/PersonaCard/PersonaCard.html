@@ -1,15 +1,18 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
 <div class="ms-PersonaCard">
   <div class="ms-PersonaCard-persona">
-    <div class="ms-Persona ms-Persona--xl">
+    <div class="ms-Persona">
       <div class="ms-Persona-imageArea">
         <div class="ms-Persona-imageCircle">
           <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-          <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
         </div>
-        <div class="ms-Persona-presence"></div>          
+        <div class="ms-Persona-presence"></div>
       </div>
       <div class="ms-Persona-details">
-        <div class="ms-Persona-primaryText">Alton Lafferty</div>
+        <!-- Use title attribute to display full text in the event of primaryText truncation -->
+        <div class="ms-Persona-primaryText" title="Alton Lafferty">Alton Lafferty</div>
         <div class="ms-Persona-secondaryText">Interior Designer, Contoso</div>
         <div class="ms-Persona-tertiaryText">Office: 7/1234</div>
         <div class="ms-Persona-optionalText">Available - Video capable</div>
@@ -27,18 +30,18 @@
   <div class="ms-PersonaCard-actionDetailBox">
     <ul id="detailList" class="ms-PersonaCard-detailChat">
       <li id="chat" class="ms-PersonaCard-actionDetails detail-1">
-        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Lync:</span> <a href="#">Start Lync call</a></div>
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Lync:</span> <a class="ms-Link" href="#">Start Lync call</a></div>
       </li>
       <li id="phone" class="ms-PersonaCard-actionDetails detail-2">
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> 555.206.2443</div>
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> 555.929.8240</div>
       </li>
       <li id="video" class="ms-PersonaCard-actionDetails detail-3">
-        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Skype:</span> <a href="#">Start Skype call</a></div>
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Skype:</span> <a class="ms-Link" href="#">Start Skype call</a></div>
       </li>
       <li id="mail" class="ms-PersonaCard-actionDetails detail-4">
-        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> <a href="mailto:alton.lafferty@outlook.com">alton.lafferty@outlook.com</a></div>
-        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> <a href="mailto:alton.lafferty@outlook.com">altonlafferty@contoso.com</a>
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">alton.lafferty@outlook.com</a></div>
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">altonlafferty@contoso.com</a>
       </li>
       <!-- org chart -->
       <li id="org" class="ms-PersonaCard-actionDetails detail-5">
@@ -51,7 +54,7 @@
                         <div class="ms-Persona-imageArea">
                           <div class="ms-Persona-imageCircle">
                             <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                            <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                            <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                           </div>
                           <div class="ms-Persona-presence"></div>
                         </div>
@@ -68,10 +71,10 @@
                         <div class="ms-Persona-imageArea">
                           <div class="ms-Persona-imageCircle">
                             <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                            <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                            <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                           </div>
                           <div class="ms-Persona-presence"></div>
-                        </div>                            
+                        </div>
                         <div class="ms-Persona-details">
                           <div class="ms-Persona-primaryText">Douglas Fielder</div>
                           <div class="ms-Persona-secondaryText">Public Relations</div>
@@ -90,10 +93,10 @@
                       <div class="ms-Persona-imageArea">
                         <div class="ms-Persona-imageCircle">
                           <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                          <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                         </div>
                         <div class="ms-Persona-presence"></div>
-                      </div>                            
+                      </div>
                       <div class="ms-Persona-details">
                         <div class="ms-Persona-primaryText">Grant Steel</div>
                         <div class="ms-Persona-secondaryText">Sales</div>
@@ -112,10 +115,10 @@
                     <div class="ms-Persona-imageArea">
                       <div class="ms-Persona-imageCircle">
                         <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                        <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                       </div>
                       <div class="ms-Persona-presence"></div>
-                    </div>                            
+                    </div>
                     <div class="ms-Persona-details">
                       <div class="ms-Persona-primaryText">Harvey Wallin</div>
                       <div class="ms-Persona-secondaryText">Public Relations</div>
@@ -129,10 +132,10 @@
                     <div class="ms-Persona-imageArea">
                       <div class="ms-Persona-imageCircle">
                         <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                        <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                       </div>
                       <div class="ms-Persona-presence"></div>
-                    </div>                            
+                    </div>
                     <div class="ms-Persona-details">
                       <div class="ms-Persona-primaryText">Marcus Lauer</div>
                       <div class="ms-Persona-secondaryText">Technical Support</div>
@@ -146,10 +149,10 @@
                     <div class="ms-Persona-imageArea">
                       <div class="ms-Persona-imageCircle">
                         <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                        <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                       </div>
                       <div class="ms-Persona-presence"></div>
-                    </div>                            
+                    </div>
                     <div class="ms-Persona-details">
                       <div class="ms-Persona-primaryText">Marcel Groce</div>
                       <div class="ms-Persona-secondaryText">Delivery</div>
@@ -163,10 +166,10 @@
                     <div class="ms-Persona-imageArea">
                       <div class="ms-Persona-imageCircle">
                         <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
-                        <img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png">
+                        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
                       </div>
                       <div class="ms-Persona-presence"></div>
-                    </div>                            
+                    </div>
                     <div class="ms-Persona-details">
                       <div class="ms-Persona-primaryText">Jessica Fischer</div>
                       <div class="ms-Persona-secondaryText">Marketing</div>

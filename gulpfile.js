@@ -1,3 +1,4 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 var gulp = require('gulp');
 var requireDir = require('require-dir');
 
@@ -7,5 +8,5 @@ var requireDir = require('require-dir');
 
 requireDir('./gulp');
 
-gulp.task('default', ['watch:fabric']);
+gulp.task('default', ['build']);
 

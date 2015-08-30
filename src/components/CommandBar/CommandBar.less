@@ -148,8 +148,11 @@
   display: none;
 }
 
-// For commands with only an icon
-.ms-CommandBarItem.icon-only {
+
+//== Modifier: For commands with only an icon
+//
+.ms-CommandBarItem.icon-only,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly {
   .ms-CommandBarItem-chevronDown,
   .ms-CommandBarItem-commandText {
     display: none;
@@ -301,6 +304,7 @@
   right: 0px;
 }
 
+
 //== Modifier: Puts search in an active state
 //
 .ms-CommandBarSearch--active {
@@ -331,6 +335,7 @@
     display: block;
   }
 }
+
 
 //== Modifier: After search is active and has text, add X for clearing the box
 //

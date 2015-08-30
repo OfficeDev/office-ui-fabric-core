@@ -40,7 +40,7 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it s
 - Fabric is just like other popular frameworks, but built from the ground up for O365 so there's no excessive overriding.
 - Fabric is all about styling instead of JavaScript so you can focus on your look and feel.
 - Pick your icons to reduce the size of Fabric.
-- Built with **LESS** for powerful customization. 
+- Built with [**LESS**](http://lesscss.org/) for powerful customization. 
 - Components help you nail down common elements like buttons, dropdowns, and lists.
 - Fabric plays well with other frameworks like Bootstrap with uniquely namespaced classes to prevent conflicts.
 - Full breadth of language support (including Right-to-Left behavior) help take the guesswork out of localization.
@@ -59,7 +59,7 @@ Fabric solves many of the same problems as other front-end frameworks, in a way 
 Yes, Fabric applies styles on an opt-in basis only. It does not style standard HTML elements, like headings and form elements. Namespaced classes prevent conflicts with other frameworks. So you can safely add Fabric to an existing app or use it alongside another framework of your choice.
 
 #####A feature I'm using is deprecated. When will it be removed?
-Typically, we remove deprecated features in the third release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 0.6.0 will no longer be available in version 0.9.0.
+Typically, we remove deprecated features from the subsequent major release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 1.6.0 will no longer be available in version 2.0.
 
 #####How often do you release Fabric?
 We add new features in minor versions (e.g. x.**Y**.z), typically released every month. Bug fixes and minor tweaks may be included in patch versions (e.g. x.y.**z**) which are released as necessary. Whenever we put out a new release, be sure to visit the [changelog](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/CHANGELOG.md) to see the details of what’s new. This may include breaking changes that you should be aware of.

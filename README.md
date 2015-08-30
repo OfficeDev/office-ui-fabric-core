@@ -46,7 +46,7 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it s
 
 
 ##Changelog
-- V1 Release!
+- View a complete list of additions, fixes, and changes in the [changelog](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/CHANGELOG.md).
 
 
 ##Frequently asked questions
@@ -61,4 +61,4 @@ Yes, Fabric applies styles on an opt-in basis only. It does not style standard H
 Typically, we remove deprecated features in the third release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 0.6.0 will no longer be available in version 0.9.0.
 
 #####How often do you release Fabric?
-We add new features in minor versions (e.g. x.**Y**.z), typically released every month. Bug fixes and minor tweaks may be included in patch versions (e.g. x.y.**z**) which are released as necessary. Whenever we put out a new release, be sure to visit the changelog to see the details of what’s new. This may include breaking changes that you should be aware of.
+We add new features in minor versions (e.g. x.**Y**.z), typically released every month. Bug fixes and minor tweaks may be included in patch versions (e.g. x.y.**z**) which are released as necessary. Whenever we put out a new release, be sure to visit the [changelog](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/CHANGELOG.md) to see the details of what’s new. This may include breaking changes that you should be aware of.

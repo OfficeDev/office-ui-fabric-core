@@ -10,8 +10,8 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 - [Why open source?](#why-open-source)
 - [Support](#support)
 - [Frequently asked questions](#frequently-asked-questions)
-- [Documentation](#Documentation)
-- [Change log](#change-log)
+- [Documentation](#documentation)
+- [Changelog](#changelog)
 
 
 ##Why Office UI Fabric?
@@ -30,7 +30,7 @@ The Office UI Fabric project is developed and maintained by the **OneDrive and S
 - Provide a point of reference for the evolving Office 365 Design Language.
 - Create a community around the Office 365 UI/UX that contributes to better experiences for everyone who builds for Office.
 
-We will do our best to release frequently and keep the community up-to-date with changes to the Design Language, components, and other assets. We also have to evolve quickly. This means that everyone gets the latest designs, but that features and assets can change often. Deprecated features will be marked in our change log, and will be removed from the third release following the deprecation announcement.
+We will do our best to release frequently and keep the community up-to-date with changes to the Design Language, components, and other assets. We also have to evolve quickly. This means that everyone gets the latest designs, but that features and assets can change often. Deprecated features will be marked in our changelog, and will be removed from the next major release following the deprecation announcement.
 
 ##Support
 
@@ -47,7 +47,7 @@ Fabric solves many of the same problems that other front-end frameworks do, in a
 Yes, Fabric applies styles on an opt-in basis only. It does not style standard HTML elements, like headings and form elements. Namespaced classes prevent conflicts with other frameworks. You can safely add Fabric to an existing add-in or use it alongside another framework of your choice.
 
 #####A feature I'm using is deprecated. When will it be removed?
-Typically, we remove deprecated features in the next major release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 1.2.2 will no longer be available in 1.3.0.
+Typically, we remove deprecated features from the subsequent major release after we announce the deprecation. For example, you can expect that a feature that is deprecated in version 1.6.0 will no longer be available in version 2.0.
 
 #####How often do you release Fabric?
 We add new features in minor versions (for example, x.**Y**.z), which we typically release approximately every two weeks. Bug fixes and minor tweaks might be included in patch versions (for example, x.y.**Z**) which we release as necessary. Whenever we put out a new release, be sure to visit the change log for details about what’s new. This might include breaking changes that you should be aware of.
@@ -58,6 +58,7 @@ We add new features in minor versions (for example, x.**Y**.z), which we typical
 	- [Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#building-fabric)
 	- [Add to your project](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#add-to-your-project)
 	- [Starter template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#starter-template)
+	- [Introductory tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#starter-template#introductory-tutorial)
 	- [Supported browsers](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#supported-browsers)
 - [Features](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md)
 	- [Typography](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#typography)
@@ -73,5 +74,5 @@ We add new features in minor versions (for example, x.**Y**.z), which we typical
 	- [Content](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/COMPONENTS.md#content)
 - [Contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md)
 
-##Change log
-- V1 release.
+##Changelog
+- View a complete list of additions, fixes, and changes in the [changelog](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/CHANGELOG.md).

@@ -4,7 +4,7 @@
   "template": "Toggle.html",
   "class": "ms-Toggle",
   "branches": [
-{
+      {
         "name": "Text above",
         "class": "ms-Toggle--textAbove",
         "default": true,

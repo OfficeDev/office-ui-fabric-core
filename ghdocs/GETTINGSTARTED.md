@@ -61,7 +61,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 1. If using a downloaded copy: After downloading and unpacking, move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a "css" type of folder.
 2. Add a reference to fabric.css in the `<head>` tag of your HTML file before any application-specific CSS. This ensures that you can specify overrides and additional styles with application-specific stylesheets.
 3. If you're using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
-4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this, since the code is not extensively tested and is used only for demonstration purposes in our documentation. If you'd still like to include it, add a `<script>` tag with a reference to `jquery.fabric.js` or `jquery.fabric.min.js` at the end of your page's `<body>` tag.
+4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this, since the code is not extensively tested and is used only for demonstration purposes in our documentation. If you'd still like to include it, add a `<script>` tag with a reference to `jquery.fabric.js` or `jquery.fabric.min.js` at the end of your page's `<body>` tag. Note that each plugin will need to be invoked in order to run.
 
 ###Starter template
 
@@ -76,6 +76,9 @@ The starter template below represents the minimal recommended HTML structure for
 		<title>Application Name</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<!-- Optionally include jQuery to use Fabric's Component jQuery plugins -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+
 		<!-- Fabric core -->
 		<link rel="stylesheet" href="css/fabric.min.css">
 		<link rel="stylesheet" href="css/fabric.components.min.css">
@@ -87,8 +90,8 @@ The starter template below represents the minimal recommended HTML structure for
 		<!-- Application content goes here -->
 		<h1 class="ms-font-su">Why, hello, world.</h1>
 
-		<!-- Optionally include jQuery to use Fabric Component's jQuery plugins -->
-		<script type="text/javascript" src="js/jquery.js"></script>
+		<!-- Optionally include Fabric's Component jQuery plugins -->
+		<script type="text/javascript" src="js/jquery.fabric.min.js"></script>
 	</body>
 </html>
 ```

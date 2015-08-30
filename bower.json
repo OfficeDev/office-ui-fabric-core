@@ -1,7 +1,7 @@
 {
   "name": "Fabric",
   "author": "Office UI Fabric Team",
-  "version": "0.10.3",
+  "version": "1.0.0",
   "description": "The front-end framework for building experiences for Office 365.",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,6 @@
   },
   "private": true,
   "ignore": [
-    "**/.*",
     "node_modules",
     "bower_components"
   ]

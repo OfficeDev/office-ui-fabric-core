@@ -27,6 +27,7 @@ var browserSync = require('browser-sync').create();
 var colors = require('colors/safe');
 var path = require('path');
 var wrap = require('gulp-wrap');
+var uglify = require('gulp-uglify');
 
 // Define paths.
 var distPath = 'dist';
@@ -37,6 +38,7 @@ var paths = {
     distLess: distPath + '/less',
     distCSS: distPath + '/css',
     distSamples: distPath + '/samples',
+    distJS: distPath + '/js',
     srcPath: srcPath,
     srcSamples: srcPath + '/samples',
     componentsPath : 'src/components',
@@ -68,6 +70,18 @@ var bannerData = {
     monthNames: monthNames
 }
 
+var banners = {
+    msMessage: 'Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.',
+    jsCopyRight:  function () {
+        return '//' + banners.msMessage +  "\r\n";
+    },
+    htmlCopyRight: function () {
+        return '<!-- ' +  banners.msMessage  + ' -->' + "\r\n";
+    },
+    cssCopyRight: function () {
+        return '/* ' +  banners.msMessage  + ' */' + "\r\n";
+    } 
+}
 
 //
 // Build Helpers
@@ -134,11 +148,15 @@ var buildEachComponentCss = function (destination) {
                 .on('error', onGulpError)
             .pipe(csscomb())
                 .on('error', onGulpError)
+            .pipe(header(banners.cssCopyRight()))
+                .on('error', onGulpError)
             .pipe(gulp.dest(destination + folder))
                 .on('error', onGulpError)
             .pipe(rename(folder + '.min.css'))
                 .on('error', onGulpError)
             .pipe(cssMinify())
+                .on('error', onGulpError)
+            .pipe(header(banners.cssCopyRight()))
                 .on('error', onGulpError)
             .pipe(gulp.dest(destination + folder))
                 .on('error', onGulpError);
@@ -160,7 +178,7 @@ gulp.task('clean-fabric', function () {
 });
 
 gulp.task('clean-fabric-components', function () {
-    return del.sync([paths.distComponents]);
+    return del.sync([paths.distComponents, paths.distJS]);
 });
 
 gulp.task('clean-component-samples', function () {
@@ -334,7 +352,6 @@ gulp.task('fabric-components-less', ['clean-fabric-components'], function () {
 
     var componentsCSS = buildEachComponentCss(paths.distComponents + '/');
     return mergeStream(components, componentsRtl, componentsCSS);
-
 });
 
 gulp.task('component-samples-less', ['clean-component-samples'], function() {
@@ -368,7 +385,26 @@ gulp.task('samples-less', ['clean-samples'], function () {
             .pipe(gulp.dest(paths.distSamples + '/' + folder + '/css'))
                 .on('error', onGulpError);
     });
+});
 
+//
+// JS Only tasks
+// ----------------------------------------------------------------------------
+
+gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
+
+    return gulp.src(paths.componentsPath + '/**/*.js')
+        .pipe(concat('jquery.fabric.js'))
+            .on('error', onGulpError)
+        .pipe(gulp.dest(paths.distJS))
+            .on('error', onGulpError)
+        .pipe(rename('jquery.fabric.min.js'))
+            .on('error', onGulpError)
+        .pipe(uglify())
+            .on('error', onGulpError)
+        .pipe(header(banners.jsCopyRight()))
+            .on('error', onGulpError)
+        .pipe(gulp.dest(paths.distJS));
 });
 
 //
@@ -448,7 +484,7 @@ gulp.task('component-samples-template', ['build-component-data'], folders(paths.
 gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'fabric-less']);
 
 // Build for Fabric component demos
-gulp.task('build-fabric-components', ['clean-fabric-components', 'copy-fabric-components', 'fabric-components-less']);
+gulp.task('build-fabric-components', ['clean-fabric-components', 'copy-fabric-components', 'fabric-components-less', 'fabric-components-js']);
 
 //Build Fabric Component Samples
 gulp.task('build-component-samples', ['clean-component-samples', 'copy-component-samples', 'component-samples-less', 'build-component-data', 'component-samples-template']);

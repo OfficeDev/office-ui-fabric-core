@@ -3,6 +3,10 @@
   "notes": "",
   "template": "Dropdown.html",
   "class": "ms-Dropdown",
+  "fileOrder": [
+    "Dropdown.html",
+    "Dropdown.Disabled.html"
+  ],
   "branches": [
     {
       "name": "Enabled",

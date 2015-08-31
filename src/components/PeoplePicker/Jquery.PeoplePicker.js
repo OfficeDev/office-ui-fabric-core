@@ -75,10 +75,10 @@
           var selectedName = $(this).find(".ms-Persona-primaryText").html();
           var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
-                '<div class="ms-Persona ms-Persona--xs">' +
+                '<div class="ms-Persona ms-Persona--xs ms-Persona--square">' +
                                    '<div class="ms-Persona-imageArea">' +
                                      '<i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>' +
-                                     '<img class="ms-Persona-image" src="../src/components/persona/Persona.Person.jpg">' +
+                                     '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
                                      '<div class="ms-Persona-presence"></div>' +
                                    '</div>' +
                                    '<div class="ms-Persona-details">' +
@@ -90,10 +90,10 @@
                                 ' </button>' +
                                '</div>';
           var personaListItem = '<li class="ms-PeoplePicker-selectedPerson">' +
-                  '<div class="ms-Persona">' +
+                  '<div class="ms-Persona ms-Persona--square">' +
                          '<div class="ms-Persona-imageArea">' +
                            '<i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>' +
-                            '<img class="ms-Persona-image" src="../src/components/persona/Persona.Person2.png"><div class="ms-Persona-presence"></div>' +
+                            '<img class="ms-Persona-image" src="../persona/Persona.Person2.png"><div class="ms-Persona-presence"></div>' +
                          '</div>' +
                          '<div class="ms-Persona-details">' +
                             '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +

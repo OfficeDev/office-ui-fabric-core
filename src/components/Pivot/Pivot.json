@@ -3,6 +3,13 @@
   "notes": "",
   "template": "Pivot.html",
   "class": "ms-Pivot",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Pivot.html",
+    "Pivot.Large.html",
+    "Pivot.Tabs.html",
+    "Pivot.Tabs.Large.html"
+  ],
   "branches": [
     {
       "name": "Pivots",

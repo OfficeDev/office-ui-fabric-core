@@ -100,7 +100,7 @@ The following starter template represents the minimum recommended HTML structure
 ##Samples
 
 To see several examples of Fabric in use, check out the sample HTML projects under `dist/samples`. The following samples are included:
-
+- **Office Add-in**. A simple Office add-in that showcases the use of Fabric and some of its components. This sample has a [project on its own.](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). 
 - **Form**: A simple sign-up form which uses Fabric's typography and color classes as well as various form elements.
 - **VideoPortal**: A mock "video portal" application, which makes use of Fabric's responsive grid, components, typography & color classes, and LESS variables & mixins.
 - **Icons**: A page demonstrating each icon font glyph available in Fabric.
@@ -111,6 +111,7 @@ To see several examples of Fabric in use, check out the sample HTML projects und
 
 Read a tutorial that explains the essentials of how to set up and use Fabric and Fabric Components by building a simple ToDo application. [Get started with Fabric.](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md)
 
+If you are building an Office Add-in we also have a simple get started page explaining the basics.  [Office Get started with Fabric in Add-ins.](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx)
 ##Supported browsers
 
 Fabric meets the Office 365 browser support requirements for desktop and mobile devices. This includes support for the latest versions of Chrome, Firefox, Safari, and Internet Explorer.

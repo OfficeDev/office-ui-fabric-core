@@ -100,7 +100,7 @@ var generateSuccess = function (message, showTip) {
     var spacing = "\r\n";
     var spaceDashes = colors.rainbow("---------------------------------------------------");
     if(showTip == true) {
-        var tipsMessage = colors.gray("TIP: To test changes to Fabric source, check under /samples for demo HTML files of each Component.") + spacing;
+        var tipsMessage = colors.gray("TIP: To test changes to Fabric source, check under /dist/samples folder for demo HTML files of each Component.") + spacing;
     } else {
         var tipsMessage = "";
     }

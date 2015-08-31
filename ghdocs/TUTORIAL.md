@@ -15,6 +15,9 @@
 
 Fabric is an HTML and CSS toolkit that works like a skin to help your experiences look and feel like Office and Office 365. To demonstrate how to use Fabric, let's build a simple ToDo application. For this tutorial, we will focus mainly on using Fabric components to get our app looking solid as quickly as possible.
 
+###Using Fabric with Office Add-ins
+If you're building an Office Add-in, you can find simple instructions for using the compiled version right away in the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx).  
+
 ## Components Overview
 
 Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.

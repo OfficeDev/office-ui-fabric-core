@@ -20,7 +20,7 @@ Please ask before starting a hefty PR so we can let you know if we're likely to 
 
 ##Labels for Issue Tracker
 
-We track community issues via Github's issue tracker. To help us keep track of the different areas, please use the following labels:
+We track community issues via Github's issue tracker. Github doesn't allow non-contributers to add labels to issues, but feel free to prefix the title one or more of theese labels so we can quickly categorize the issue/PR:
 
 - `question` - Feel free to ask questions via the question tag.
 - `browser` - Issues that pertain to a specific browser. Screenshots and details are much appreciated!

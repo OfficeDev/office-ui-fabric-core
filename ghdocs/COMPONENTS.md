@@ -6,10 +6,10 @@ Fabric contains many common components such as buttons, drop-down lists, and tog
 
 ##Contents
 
-- [Input components](#inputs)
-- [Layout components](#layout)
-- [Navigation components](#navigation)
-- [Content components](#content)
+- [Input components](#input-components)
+- [Layout components](#layout-components)
+- [Navigation components](#navigation-components)
+- [Content components](#content-components)
 
 
 ##Input components

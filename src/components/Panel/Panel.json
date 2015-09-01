@@ -9,6 +9,10 @@
     "Label",
     "Overlay"
   ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "Panel.html"
+  ],
   "branches": [
     {
       "name": "Small",

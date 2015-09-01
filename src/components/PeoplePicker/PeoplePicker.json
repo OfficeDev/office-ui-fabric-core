@@ -9,6 +9,13 @@
     "Overlay",
     "Persona"
   ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "PeoplePicker.html",
+    "PeoplePicker.Compact.html",
+    "PeoplePicker.Disconnected.html",
+    "PeoplePicker.FacePile.html"
+  ],
   "branches": [
     {
       "name": "Regular",

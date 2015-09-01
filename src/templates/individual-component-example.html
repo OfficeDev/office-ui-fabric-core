@@ -44,9 +44,11 @@
     body {
       margin: auto 20px;
     }
+
     h1 {
       padding: 8px;
     }
+
     #componentWrapper {
       width: 100%;
       height: 100%;
@@ -56,17 +58,32 @@
       margin: 20px;
     }
 
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
     .ms-ContextualMenu.is-open  {
       position: relative;
       margin-bottom: 10px;
     }
+
     .ms-Dialog {
       position: relative;
       margin-bottom: 10px;
     }
+
     .ms-NavBar-item .ms-ContextualMenu {
       position: absolute;
     }
+
     .ms-CommandBar .ms-ContextualMenu {
       position: absolute;
     }

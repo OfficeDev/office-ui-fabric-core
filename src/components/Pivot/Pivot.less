@@ -6,7 +6,6 @@
 // Pivot and tab styles
 
 
-// Pivot
 .ms-Pivot {
   .ms-font-m;
   .ms-u-normalize;
@@ -16,7 +15,6 @@
   white-space: nowrap;
 }
 
-// Pivot/tab
 .ms-Pivot-link {
   color: @ms-color-neutralPrimary;
   display: inline-block;
@@ -25,33 +23,20 @@
   line-height: 27px;
   margin-right: 15px;
 
-  // Hover/focus
-  &:hover, &:focus {
+  &:hover, 
+  &:focus {
     color: @ms-color-black;
     cursor: pointer;
   }
 
-  // Active (pressed)
   &:active {
     color: @ms-color-themePrimary;
   }
 
-  // Selected state
+  //== State: Selected
   &.is-selected {
     color: @ms-color-themePrimary;
     font-family: @ms-font-family-semibold;
-  }
-}
-
-// Large variant - link font size l
-.ms-Pivot--large {
-  // Links
-  .ms-Pivot-link {
-    font-size: @ms-font-size-l;
-
-    &.is-selected {
-      font-family: @ms-font-family-semilight;
-    }
   }
 }
 
@@ -63,10 +48,13 @@
     color: @ms-color-themePrimary;
   }
 
-  // States
-  &:hover:not(.is-selected), &:focus:not(.is-selected) { color: @ms-color-neutralDark; }
+  &:hover:not(.is-selected), 
+  &:focus:not(.is-selected) { 
+    color: @ms-color-neutralDark; 
+  }
+
   &:active {
-    color: @ms-color-themePrimary !important; // Hover overriding active state without important
+    color: @ms-color-themePrimary !important;
   }
 }
 
@@ -77,9 +65,18 @@
   top: 0;
 }
 
-// Large variant - ellipsis font size l
-.ms-Pivot--large {
-  // Overflow ellipsis
+
+//== Modifier: Large Pivots
+//
+.ms-Pivot.ms-Pivot--large {
+  .ms-Pivot-link {
+    font-size: @ms-font-size-l;
+
+    &.is-selected {
+      font-family: @ms-font-family-semilight;
+    }
+  }
+
   .ms-Pivot-link.ms-Pivot-link--overflow {
     &:after {
       font-size: @ms-font-size-l;
@@ -88,7 +85,8 @@
 }
 
 
-// Tabs
+//== Modifier: Tabs
+//
 .ms-Pivot.ms-Pivot--tabs {
   height: 40px;
 
@@ -99,17 +97,17 @@
     margin-right: -2px; // Remove space next to inline-block element
     padding: 0 10px;
 
-    // States
     &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
-    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { color: @ms-color-black; }
+    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { 
+      color: @ms-color-black; 
+    }
 
-    // Active (pressed)
     &:active {
-      color: @ms-color-white !important; // Hover overriding active state without important
+      color: @ms-color-white !important;
       background-color: @ms-color-themePrimary;
     }
 
-    // Selected state
+    //== State: Selected
     &.is-selected {
       background-color: @ms-color-themePrimary;
       color: @ms-color-white;
@@ -118,38 +116,37 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-    &:hover:not(.is-selected), &:focus:not(.is-selected) {
+    &:hover:not(.is-selected), 
+    &:focus:not(.is-selected) {
       background-color: @ms-color-white;
     }
 
     &:active {
-      background-color: @ms-color-themePrimary !important; // Hover overriding active state without important
+      background-color: @ms-color-themePrimary !important;
     }
   }
 }
 
 
-// Change font size to regular m size at 640px
-@media (min-width: 640px) {
-  // Links
+
+@media (min-width: @ms-screen-lg-min) {
   .ms-Pivot-link {
     font-size: @ms-font-size-m;
   }
 
-  // Overflow ellipsis
   .ms-Pivot-link.ms-Pivot-link--overflow {
     &:after {
       font-size: @ms-font-size-m;
     }
   }
-
 }
+
+
 
 // All high contrast styling rules
 @media screen and (-ms-high-contrast: active) {
   .ms-Pivot.ms-Pivot--tabs {
     .ms-Pivot-link {
-      // Selected state
       &.is-selected {
         font-family: @ms-font-family-semibold;
       }

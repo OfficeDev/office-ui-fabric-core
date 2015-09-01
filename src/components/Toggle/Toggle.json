@@ -3,6 +3,10 @@
   "notes": "",
   "template": "Toggle.html",
   "class": "ms-Toggle",
+  "fileOrder": [
+    "Toggle.html",
+    "Toggle.TextLeft.html"
+  ],
   "branches": [
       {
         "name": "Text above",

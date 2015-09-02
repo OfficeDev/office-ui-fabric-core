@@ -34,18 +34,19 @@
       border-color: @ms-color-themePrimary;
     }
   }
+}
 
-  &.is-disabled {
-    .ms-Dropdown-title {
-      background-color: @ms-color-neutralLighter;
-      border-color: @ms-color-neutralLighter;
-      color: @ms-color-neutralTertiary;
-      cursor: default;
-    }
-    
-    .ms-Dropdown-caretDown {
-      color: @ms-color-neutralTertiary;
-    }
+//== State: A disabled dropdown
+.ms-Dropdown.is-disabled {
+  .ms-Dropdown-title {
+    background-color: @ms-color-neutralLighter;
+    border-color: @ms-color-neutralLighter;
+    color: @ms-color-neutralTertiary;
+    cursor: default;
+  }
+  
+  .ms-Dropdown-caretDown {
+    color: @ms-color-neutralTertiary;
   }
 }
 
@@ -91,8 +92,6 @@
   .ms-u-normalize;
   .drop-shadow;
   background-color: @ms-color-white;
-  // border: 1px solid @ms-color-neutralLight;
-  // outline: 1px solid transparent;
   display: none;
   list-style-type: none;
   position: absolute;

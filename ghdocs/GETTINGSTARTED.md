@@ -100,7 +100,7 @@ The following starter template represents the minimum recommended HTML structure
 ##Samples
 
 To see several examples of Fabric in use, check out the sample HTML projects under `dist/samples`. The following samples are included:
-- **Office Add-in**. A simple Office add-in that showcases the use of Fabric and some of its components. This sample has a [project on its own.](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). 
+- **Office Add-in**. A simple Office add-in that showcases the use of Fabric and some of its components. This sample has a [project on its own](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). 
 - **Form**: A simple sign-up form which uses Fabric's typography and color classes as well as various form elements.
 - **VideoPortal**: A mock "video portal" application, which makes use of Fabric's responsive grid, components, typography & color classes, and LESS variables & mixins.
 - **Icons**: A page demonstrating each icon font glyph available in Fabric.

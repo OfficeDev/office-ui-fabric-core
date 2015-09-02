@@ -52,6 +52,11 @@ Typically, we remove deprecated features from the subsequent major release after
 #####How often do you release Fabric?
 We add new features in minor versions (for example, x.**Y**.z), which we typically release approximately every two weeks. Bug fixes and minor tweaks might be included in patch versions (for example, x.y.**Z**) which we release as necessary. Whenever we put out a new release, be sure to visit the change log for details about what’s new. This might include breaking changes that you should be aware of.
 
+#####How is Fabric Licensed?
+
+- All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project. 
+- Usage of the fonts referenced on Office UI Fabric files is subject to the terms listed [here](http://aka.ms/fabric-font-license) 
+
 ##Documentation
 
 - [Getting started](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md)

@@ -20,22 +20,8 @@
 }
 
 //== State: Disabled choicefield
-.ms-ChoiceField.is-disabled {
-	.ms-ChoiceField-input {
-		pointer-events: none;
-		
-		&:focus {
-			+ .ms-ChoiceField-field:after {
-				border-color: @ms-color-neutralLight;
-			}
-		}
-	}
-
-	.ms-Label {
-		color: @ms-color-neutralTertiary;
-	}
-
-	.ms-ChoiceField-field {
+.ms-ChoiceField-input:disabled {
+	+ .ms-ChoiceField-field {
 		pointer-events: none;
 		cursor: default;
 
@@ -46,6 +32,10 @@
 
 		&:after {
 			border-color: @ms-color-neutralLight;
+		}
+
+		.ms-Label {
+			color: @ms-color-neutralTertiary;
 		}
 	}
 }
@@ -118,11 +108,9 @@
 			box-sizing: border-box;
 		}
 
-		&:hover {
-			&:before {
-				background-color: @ms-color-neutralDark;
-				color: @ms-color-neutralDark;
-			}
+		&:hover:before {
+			background-color: @ms-color-neutralDark;
+			color: @ms-color-neutralDark;
 		}
 	}
 }

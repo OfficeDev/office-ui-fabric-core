@@ -16,9 +16,7 @@ We gladly welcome PRs regarding…
 - Documentation updates
 - Things we haven't thought of yet :-)
 
-Note that if you plan to modify any of the source files (including bug fixes, adding variants to components, or updates to samples), please make sure to open your Pull Request against the `develop` branch. We use this branch for active, pre-release development, and we typically validate its contents before merging back into `master` for a release. Also, please ask before starting a hefty PR so we can let you know if we're likely to consider your request.
-
-However, if you'd like to open a documentation fix (the README, GETTINGSTARTED, or anything under `ghdocs`), feel free to simply open a Pull Request against the `master` branch.
+Please be sure to open an issue before starting a hefty PR so we can let you know if we're likely to consider your request--and to make sure we aren't already planning on doing the work.
 
 ##Labels for Issue Tracker
 

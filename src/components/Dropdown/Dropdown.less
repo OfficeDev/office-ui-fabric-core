@@ -34,18 +34,19 @@
       border-color: @ms-color-themePrimary;
     }
   }
+}
 
-  &.is-disabled {
-    .ms-Dropdown-title {
-      background-color: @ms-color-neutralLighter;
-      border-color: @ms-color-neutralLighter;
-      color: @ms-color-neutralTertiary;
-      cursor: default;
-    }
-    
-    .ms-Dropdown-caretDown {
-      color: @ms-color-neutralTertiary;
-    }
+//== State: A disabled dropdown
+.ms-Dropdown.is-disabled {
+  .ms-Dropdown-title {
+    background-color: @ms-color-neutralLighter;
+    border-color: @ms-color-neutralLighter;
+    color: @ms-color-neutralTertiary;
+    cursor: default;
+  }
+  
+  .ms-Dropdown-caretDown {
+    color: @ms-color-neutralTertiary;
   }
 }
 
@@ -91,7 +92,6 @@
   .ms-u-normalize;
   .drop-shadow;
   background-color: @ms-color-white;
-  border: 1px solid @ms-color-neutralLight;
   display: none;
   list-style-type: none;
   position: absolute;
@@ -101,6 +101,17 @@
   top: 0;
   right: 0;
   bottom: 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid @ms-color-neutralLight;
+  }
 }
 
 .ms-Dropdown-item {
@@ -123,7 +134,7 @@
   &:hover {
     background-color: @ms-color-neutralLight;
     color: @ms-color-black;
-    outline: 1px solid @ms-color-neutralLight;
+    outline: 1px solid transparent;
   }
 
   &:active {
@@ -140,11 +151,11 @@
   }
 }
 
-// A selected dropdown item
+//== State: A selected dropdown item
 // Note: .ms-Dropdown-item--selected is deprecated and will be removed in a future version.
 // Use .is-selected instead.
-.ms-Dropdown-item.ms-Dropdown-item--selected,
-.ms-Dropdown-item.is-selected {
+.ms-Dropdown-item.is-selected,
+.ms-Dropdown-item.ms-Dropdown-item--selected {
   background-color: @ms-color-themeLight;
   color: @ms-color-black;
   line-height: 40px;

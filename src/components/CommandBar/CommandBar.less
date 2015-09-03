@@ -39,6 +39,7 @@
   padding-left: 0;
   padding-right: 15px;
   border: 0;
+  position: relative;
 
   &:focus {
       outline: none;
@@ -302,6 +303,7 @@
   display: none;
   top: 1px;
   right: 0px;
+  z-index: 10;
 }
 
 
@@ -310,6 +312,13 @@
 .ms-CommandBarSearch--active {
   background-color: @ms-color-themeLight;
   color: @ms-color-black;
+
+  @media only screen and (max-width: @ms-screen-md-max) {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    max-width: 100%;
+  }
 
   &:hover {
     background-color: @ms-color-themeLight;
@@ -334,19 +343,14 @@
   &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
     display: block;
   }
-}
 
+  & .ms-CommandBarSearch-input {
+    padding-right: @SearchBox-height;
+  }
 
-//== Modifier: After search is active and has text, add X for clearing the box
-//
-.ms-CommandBarSearch--active.ms-CommandBarSearch--hasText {
-    & .ms-CommandBarSearch-input {
-      padding-right: @SearchBox-height;
-    }
-
-    & .ms-CommandBarSearch-iconClearWrapper {
-      display: block;
-    }
+  & .ms-CommandBarSearch-iconClearWrapper {
+    display: block;
+  }
 }
 
 .ms-CommandBarSearch-iconWrapper {

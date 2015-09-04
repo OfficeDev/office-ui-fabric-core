@@ -38,7 +38,7 @@ var paths = {
     distLess: distPath + '/less',
     distCSS: distPath + '/css',
     distSamples: distPath + '/samples',
-    distSampleComponents: paths.distSamples + '/Components',
+    distSampleComponents: distPath + '/samples/' +  '/Components',
     distJS: distPath + '/js',
     srcPath: srcPath,
     srcSamples: srcPath + '/samples',
@@ -101,10 +101,6 @@ gulp.task('fabric-browsersync', ['build-docs'], function() {
 
 gulp.task('fabric-refresh-browsersync', ['build-fabric', 'build-docs'], function() {
     return server.reload();
-});
-
-gulp.task('fabric-index', function() {
-
 });
 
 //
@@ -524,8 +520,7 @@ gulp.task('samples-index-move', ['build-component-data'], function() {
         .on('error', onGulpError);
 });
 
-gulp.task('samples-index-build-samples', ['build-component-data', 'samples-index-move'], function() {
-
+gulp.task('samples-index-build-samples', ['build-sample-data', 'samples-index-move'], function() {
     return gulp.src(paths.distSamples + '/'+ 'index.html')
         .on('error', onGulpError)
     .pipe(data(function () {
@@ -534,15 +529,11 @@ gulp.task('samples-index-build-samples', ['build-component-data', 'samples-index
         .on('error', onGulpError)
     .pipe(template())
         .on('error', onGulpError)
-    .pipe(rename('index.html'))
-        .on('error', onGulpError)
-    .pipe(gulp.dest(paths.distSamples '/' +  folder))
+    .pipe(gulp.dest(paths.distSamples + '/' +  folder))
         .on('error', onGulpError);
-
 });
 
 gulp.task('samples-index-build-components', ['build-component-data', 'samples-index-move'], function() {
-
     return gulp.src(paths.distSamples + '/'+ 'index.html')
         .on('error', onGulpError)
     .pipe(data(function () {
@@ -551,15 +542,21 @@ gulp.task('samples-index-build-components', ['build-component-data', 'samples-in
         .on('error', onGulpError)
     .pipe(template())
         .on('error', onGulpError)
-    .pipe(rename('index.html'))
-        .on('error', onGulpError)
     .pipe(gulp.dest(paths.distSamples + '/' +  folder))
         .on('error', onGulpError);
-
 });
 
 gulp.task('samples-index-build-all', ['samples-index-move'], function() {
-
+     return gulp.src(paths.distSamples + '/'+ 'index.html')
+        .on('error', onGulpError)
+    .pipe(data(function () {
+        return { "samples": samplesLinks, "components": componentLinks };
+    }))
+        .on('error', onGulpError)
+    .pipe(template())
+        .on('error', onGulpError)
+    .pipe(gulp.dest(paths.distSamples + '/' +  folder))
+        .on('error', onGulpError);
 });
 
 //

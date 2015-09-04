@@ -38,6 +38,7 @@ var paths = {
     distLess: distPath + '/less',
     distCSS: distPath + '/css',
     distSamples: distPath + '/samples',
+    distSampleComponents: paths.distSamples + '/Components',
     distJS: distPath + '/js',
     srcPath: srcPath,
     srcSamples: srcPath + '/samples',
@@ -84,6 +85,29 @@ var banners = {
 }
 
 //
+// Local Server Configuration and Testing Website
+// ----------------------------------------------------------------------------
+var portNum = process.env.PORT || 2020;
+var url = "http://localhost";
+var server = require('./server/server');
+
+gulp.task('fabric-server', function() {
+    return server.start(portNum);
+});
+
+gulp.task('fabric-browsersync', ['build-docs'], function() { 
+    return server.startBSync(portNum);
+});
+
+gulp.task('fabric-refresh-browsersync', ['build-fabric', 'build-docs'], function() {
+    return server.reload();
+});
+
+gulp.task('fabric-index', function() {
+
+});
+
+//
 // Build Helpers
 // ----------------------------------------------------------------------------
 
@@ -122,7 +146,7 @@ var getFolders = function (dir) {
 }
 
 var buildEachComponentCss = function (destination) {
-     return componentsFolders.map(function(folder) {
+    return componentsFolders.map(function(folder) {
 
         var manifest = parseManifest(folder);
         var deps = manifest.dependencies || [];
@@ -166,6 +190,8 @@ var buildEachComponentCss = function (destination) {
 // Component parts
 var componentsFolders = getFolders(paths.componentsPath);
 var catalogContents = "";
+var componentsLinks = "";
+var samplesLinks = "";
 var samplesFolders = getFolders(paths.srcSamples);
 
 //
@@ -441,7 +467,7 @@ gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPat
 
             //Check if module was already included in string
             if(catalogContents.indexOf(folder + ':') < 0) {
-                catalogContents += ', "' + folder + '" : ' + curString + ' ';
+                componentLinks += '<a href="Components/' + folder + '/">' + folder + '</a><br />';
             }
         }))
         .on('error', onGulpError);
@@ -454,7 +480,7 @@ gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPat
             curString = JSON.stringify(curString);
             //Check if module was already included in string
             if(catalogContents.indexOf(folder + ':') < 0) {
-                catalogContents += ', "' + folder + '" : ' + curString + ' ';
+                componentLinks += '<a href="Components/' + folder + '/">' + folder + '</a><br />';
             }
         }))
             .on('error', onGulpError);
@@ -476,6 +502,65 @@ gulp.task('component-samples-template', ['build-component-data'], folders(paths.
     .pipe(gulp.dest(paths.distSamples + '/Components/' +  folder))
         .on('error', onGulpError);
 }));
+
+gulp.task('build-sample-data', ['clean-samples'], function (folder) {
+    return samplesFolders.map(function(folder) {
+        samplesLinks += '<a href="' + folder + '/">' + folder + '</a><br />';
+    });
+});
+
+
+//
+// Sample Index Page Build
+// ----------------------------------------------------------------------------
+
+gulp.task('samples-index-move', ['build-component-data'], function() {
+
+    return gulp.src(paths.templatePath + '/'+ 'samples-index.html')
+        .on('error', onGulpError)
+    .pipe(rename('index.html'))
+        .on('error', onGulpError)
+    .pipe(gulp.dest(paths.distSamples))
+        .on('error', onGulpError);
+});
+
+gulp.task('samples-index-build-samples', ['build-component-data', 'samples-index-move'], function() {
+
+    return gulp.src(paths.distSamples + '/'+ 'index.html')
+        .on('error', onGulpError)
+    .pipe(data(function () {
+        return { "samples": samplesLinks};
+    }))
+        .on('error', onGulpError)
+    .pipe(template())
+        .on('error', onGulpError)
+    .pipe(rename('index.html'))
+        .on('error', onGulpError)
+    .pipe(gulp.dest(paths.distSamples '/' +  folder))
+        .on('error', onGulpError);
+
+});
+
+gulp.task('samples-index-build-components', ['build-component-data', 'samples-index-move'], function() {
+
+    return gulp.src(paths.distSamples + '/'+ 'index.html')
+        .on('error', onGulpError)
+    .pipe(data(function () {
+        return { "components": componentLinks};
+    }))
+        .on('error', onGulpError)
+    .pipe(template())
+        .on('error', onGulpError)
+    .pipe(rename('index.html'))
+        .on('error', onGulpError)
+    .pipe(gulp.dest(paths.distSamples + '/' +  folder))
+        .on('error', onGulpError);
+
+});
+
+gulp.task('samples-index-build-all', ['samples-index-move'], function() {
+
+});
 
 //
 // Rolled up Build tasks

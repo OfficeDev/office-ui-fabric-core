@@ -92,7 +92,7 @@
       if($(window).width() < 640) {
 
         $('.ms-CommandBarSearch').click(function() {
-          $(this).addClass('ms-CommandBarSearch--active');
+          $(this).addClass('is-active');
         });
 
       }
@@ -110,7 +110,7 @@
           // Search Behavior
           $('.ms-CommandBarSearch').unbind();
           $('.ms-CommandBarSearch').click(function() {
-            $(this).addClass('ms-CommandBarSearch--active');
+            $(this).addClass('is-active');
           });
 
         } else if($(window).width() > 639 && mobileSwitch == true) {
@@ -128,20 +128,20 @@
       });
 
       $SearchBox.find('.ms-CommandBarSearch-input').click(function() {
-        $(this).closest('.ms-CommandBarSearch').addClass('ms-CommandBarSearch--active');
+        $(this).closest('.ms-CommandBarSearch').addClass('is-active');
       });
 
        // When clicking the x clear the SearchBox and put state back to normal
       $SearchBox.find('.ms-CommandBarSearch-iconClearWrapper').click(function() {
         var $input = $(this).parent().find('.ms-CommandBarSearch-input');
         $input.val('');
-        $input.parent().removeClass('ms-CommandBarSearch--active');
+        $input.parent().removeClass('is-active');
       });
 
       $SearchBox.parent().find('.ms-CommandBarSearch-input').blur(function() {
         var $input = $(this);
         $input.val('');
-        $input.parent().removeClass('ms-CommandBarSearch--hasText ms-CommandBarSearch--active');
+        $input.parent().removeClass('is-active');
       });
 
     });

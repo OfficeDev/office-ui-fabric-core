@@ -21,18 +21,16 @@
 
 .ms-PersonaCard-persona {
   background-color: @ms-color-neutralLighter;
+}
 
-  // Overrides for persona
+// Overrides for persona
+.ms-PersonaCard-persona .ms-Persona {
   .ms-Persona-imageArea {
-    width: 104px;
-    height: 104px;
-  }
-
-  .ms-Persona-imageCircle {
+    width: 80px;
+    height: 80px;
     margin: 12px 0 12px 20px;
   }
 
-  .ms-Persona-imageCircle,
   .ms-Persona-image {
     width: 80px;
     height: 80px;
@@ -45,15 +43,9 @@
   }
 
   .ms-Persona-presence {
-    height: 12px;
-    width: 12px;
     border-color: @ms-color-neutralLighter;
-    right: 8px;
+    left: 77px;
     bottom: 12px;
-  }
-
-  .ms-Persona-primaryText {
-    margin-top: 3px; // Move the text down to the next baseline
   }
 
   .ms-Persona-tertiaryText,
@@ -257,14 +249,16 @@
 //== Modifier: Persona card with square personas
 //
 .ms-PersonaCard.ms-PersonaCard--square {
-
   .ms-PersonaCard-persona {
-    .ms-Persona-imageCircle {
+    .ms-Persona-imageArea,
+    .ms-Persona-image {
+      width: 100px;
+      height: 100px;
       margin: 0;
     }
 
-    .ms-Persona-primaryText {
-      font-size: @ms-font-size-l;
+    .ms-Persona-presence {
+      left: 0;
     }
   }
 }

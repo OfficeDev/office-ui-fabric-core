@@ -3,6 +3,14 @@
   "notes": "",
   "template": "Button.html",
   "class": "ms-Button",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Button.html",
+    "Button.Primary.html",
+    "Button.Hero.html",
+    "Button.Compound.html",
+    "Button.Command.html"
+  ],
   "branches": [
     {
       "name": "Action",

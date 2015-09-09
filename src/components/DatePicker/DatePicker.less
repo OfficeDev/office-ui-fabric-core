@@ -32,7 +32,7 @@
   position: absolute;
   right:  5px;
   bottom: 5px;
-  z-index: @ms-zIndex-front;
+  z-index: @ms-zIndex-middle;
 }
 
 // The holder is the only "scrollable" top-level container element.
@@ -53,6 +53,12 @@
     .drop-shadow;
     border: 1px solid @ms-color-neutralLight;
     display: block;
+}
+
+// When the picker opens, always open in front of possible other picker that is close
+.ms-DatePicker-picker--focused.ms-DatePicker-picker--opened { 
+  position:relative; 
+  z-index:@ms-zIndex-front; 
 }
 
 

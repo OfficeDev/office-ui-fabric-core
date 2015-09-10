@@ -11,12 +11,11 @@
 - [Samples](#samples)
 - [Introductory tutorial](#introductory-tutorial)
 - [Supported browsers](#supported-browsers)
-- [Using Fabric with Office Add-ins](#using-fabric-with-office-add-ins)
 
 ##Getting Fabric
 
 ####Download
-[Download the latest release of Fabric.](https://github.com/OfficeDev/Office-UI-Fabric/archive/master.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
+[Download the latest release of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/archive/master.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
 
 ####Reference from a CDN
 To reference Fabric CSS from a CDN, just include a link in the `<head>` element on the page using Fabric:
@@ -62,7 +61,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 1. If using a downloaded copy: After downloading and unpacking, move the Fabric folder to a location within your project. We recommend placing Fabric either at the project root or within a "css" type of folder.
 2. Add a reference to fabric.css in the `<head>` tag of your HTML file before any application-specific CSS. This ensures that you can specify overrides and additional styles with application-specific stylesheets.
 3. If you're using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
-4. Optionally, you may choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this, since the code is not extensively tested and is used only for demonstration purposes in our documentation. If you'd still like to include it, add a `<script>` tag with a reference to `jquery.fabric.js` or `jquery.fabric.min.js` at the end of your page's `<body>` tag. Note that each plugin will need to be invoked in order to run.
+4. Optionally, you can choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this because the code is not extensively tested and is used only for demonstration purposes in our documentation. If you'd still like to include it, add a `<script>` tag with a reference to `jquery.fabric.js` or `jquery.fabric.min.js` at the end of your page's `<body>` tag. Note that each plugin will need to be invoked in order to run.
 
 ##Starter template
 
@@ -100,7 +99,7 @@ The following starter template represents the minimum recommended HTML structure
 ##Samples
 
 To see several examples of Fabric in use, check out the sample HTML projects under `dist/samples`. The following samples are included:
-- **Office Add-in**. A simple Office add-in that showcases the use of Fabric and some of its components. This sample has a [project on its own](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). 
+- **Office Add-in**. A simple Office add-in that showcases the use of Fabric and some of its components. This sample has [its own project](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). 
 - **Form**: A simple sign-up form which uses Fabric's typography and color classes as well as various form elements.
 - **VideoPortal**: A mock "video portal" application, which makes use of Fabric's responsive grid, components, typography & color classes, and LESS variables & mixins.
 - **Icons**: A page demonstrating each icon font glyph available in Fabric.
@@ -109,9 +108,10 @@ To see several examples of Fabric in use, check out the sample HTML projects und
 
 ##Introductory tutorial
 
-Read a tutorial that explains the essentials of how to set up and use Fabric and Fabric Components by building a simple ToDo application. [Get started with Fabric.](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md)
+We provide a [Fabric tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md) that explains the essentials of how to set up and use Fabric and Fabric Components in a simple ToDo application. 
 
-If you are building an Office Add-in we also have a simple get started page explaining the basics.  [Office Get started with Fabric in Add-ins.](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx)
+If you're building an Office Add-in, you can find simple instructions for using the compiled version right away in the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx).
+
 ##Supported browsers
 
 Fabric meets the Office 365 browser support requirements for desktop and mobile devices. This includes support for the latest versions of Chrome, Firefox, Safari, and Internet Explorer.
@@ -124,6 +124,4 @@ Fabric meets the Office 365 browser support requirements for desktop and mobile 
 | Android (4.4+)| ![check](http://odux.azurewebsites.net/github/img/check.png)| - | - | - | - | - | - | - |
 | Windows Phone | - | - | - | - | - |![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|
 
-##Using Fabric with Office Add-ins
 
-If you're building an Office Add-in, you can find simple instructions for using the compiled version right away in the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx). 

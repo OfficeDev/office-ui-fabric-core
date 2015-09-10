@@ -4,6 +4,8 @@
 
 Fabric contains many common components such as buttons, drop-down lists, and toggle switches. It also contains more specialized components, like dialog boxes (with overlays), people pickers, personas, and navigation bars.
 
+For simple instructions for using Fabric components in Office Add-ins, see the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx).
+
 ##Contents
 
 - [Input components](#input-components)

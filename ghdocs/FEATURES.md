@@ -2,7 +2,7 @@
 
 ##Features
 
-##Contents
+###Contents
 
 - [Typography](#typography)
 - [Color](#color)
@@ -10,24 +10,24 @@
 - [Animations](#animations)
 - [Responsive grid](#responsive-grid)
 - [Localization support](#localization)
-  
 
-##Typography
+For simple instructions for using Fabric features in Office Add-ins, see the article [Using Fabric with Office Add-ins](https://msdn.microsoft.com/EN-US/library/office/6f46dd69-2ba3-4b0f-9735-7d7394ca2731.aspx).
+###Typography
 
-###Base font classes
+####Base font classes
 
 Fabric includes 10 **base** font classes that represent the type ramp for the Office Design Language. Each base class sets a default size, weight, and color.
 
 ![Type Ramp](http://odux.azurewebsites.net/github/img/TypeRamp.png)
 
 
-###Helper font classes
+####Helper font classes
 
 Use one of several **helper** font classes to easily change the text weight.
 
 ![Helper Type](http://odux.azurewebsites.net/github/img/HelperType.png)
 
-##Color
+###Color
 
 Fabric includes 9 theme colors and 11 neutral colors. Each has helper classes for text, border, background, and hover states. These color classes act as hooks into the suite-wide theming system. When the theming system is enabled and your app or add-in is consuming the suite navigation, these classes pick up the user's chosen theme.
 
@@ -41,7 +41,7 @@ Fabric also includes **accent** colors.
 
 ![Accent Colors](http://odux.azurewebsites.net/github/img/AccentColors.png)
 
-##Icons
+###Icons
 
 Fabric uses a custom font for its iconography. This font contains glyphs that you can scale, color, and style in any way. You can even flip them for right-to-left localization.
 
@@ -51,7 +51,7 @@ To use the icons, combine the base `ms-Icon` class with a modifier class for the
 ```
 Note the `aria-hidden` attribute, which prevents screen readers from reading the icon. In cases where meaning is conveyed *only* through the icon, such as an icon-only navigation bar, be sure to apply an `aria-label` to the button for accessibility.
 
-##Animations
+###Animations
 
 Use the animation library to create web experiences that integrate with Office 365. You can use the animation CSS classes for navigation, panels, dialogs, and more. Animations include **directionality** (up, down, left, right relating to origin and completion of tasks), **enter/exit** (fade in, fade out, zoom in, zoom out), and **duration** (speed of enter/exit relating to urgency or content type).
 
@@ -87,13 +87,13 @@ When choosing a motion for dialogs, consider the origin and tone of the content.
 |ms-u-fadeOut400| Fade out| 0.1, 0.25, 0.75, 0.9| 0.367s|
 |ms-u-fadeOut500| Fade out| 0.1, 0.25, 0.75, 0.9| 0.467s|
 
-##Responsive grid
+###Responsive grid
 
 Forget serving static, device-specific layouts. Fabric comes with a mobile-first, 12-column, responsive grid that you can use to create flexible layouts for a variety of screen sizes and device types.
 
 ![Responsive grid](http://odux.azurewebsites.net/github/img/ResponsiveGrid.png)
 
-###Using the responsive grid
+####Using the responsive grid
 A grid (`.ms-Grid`) can contain multiple rows (`.ms-Grid-row`), each of which has one or more columns (`.ms-Grid-col`). Utility classes (`.ms-u-sm6`) specify how large each column should be on small, medium, and large devices. The columns in a row should add up to 12 for each device size. The following:
 
 ```html
@@ -109,15 +109,15 @@ Results in:
 
 ![ResultGrid](http://odux.azurewebsites.net/github/img/ResultGrid.png)
 
-###Inheritance
+####Inheritance
 Because Fabric is mobile-first, any layout defined for small screens is automatically inherited by medium and large screens. The small size utilities (`.ms-u-sm6`) are required. If you want to change the layout on larger screens, you can apply the other utility classes.
 
-###Push and pull
+####Push and pull
 You might want your column source order to differ from the display order, or to change the column display order based on the screen size. The push and pull utilities make this possible. Push moves a column to the right; pull moves it to the left.
 
-##Localization support
+###Localization support
 
-###Right-to-left support
+####Right-to-left support
 Fabric comes with an alternate CSS file for pages written in right-to-left (RTL) languages, such as Arabic and Hebrew. This reverses the order of columns in the responsive grid, which makes it easy to create an RTL layout without writing additional templates. Future versions of Fabric will also reverse some icons and provide additional helper utilities.
 
 Apply the **dir** attribute to the HTML tag, and reference the RTL version of Fabric.
@@ -131,7 +131,7 @@ Apply the **dir** attribute to the HTML tag, and reference the RTL version of Fa
 </html>
 ```
 
-###Language-optimized fonts
+####Language-optimized fonts
 By default, Fabric presents all text using the Western European character set of Segoe UI. For languages with other characters, Fabric will either serve a version of Segoe UI with a different character set or use a system font.
 
 The HTML **lang** attribute specifies the language of the element's content. This is typically applied to the root HTML element, where it will be inherited by the entire page. In this example the entire page is in Thai.

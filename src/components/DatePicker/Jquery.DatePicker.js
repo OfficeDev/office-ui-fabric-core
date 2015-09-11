@@ -303,7 +303,6 @@
 
   }
 
-
   /** Whenever the picker renders, do our own rendering on the custom controls. */
   function updateCustomView($datePicker) {
     /** Get some variables ready. */
@@ -342,16 +341,13 @@
     $yearPicker.find('.ms-DatePicker-yearOption').removeClass('is-highlighted')
     $yearPicker.find('.ms-DatePicker-yearOption[data-year="' + $picker.get('highlight').year + '"]').addClass('is-highlighted');
 
-
   }
 
-
-  /** Croll the page up so that the field the date picker is attached to is at the top. */
+  /** Scroll the page up so that the field the date picker is attached to is at the top. */
   function scrollUp($datePicker) {
     $('html, body').animate({
       scrollTop: $datePicker.offset().top
     }, 367);
   }
-
 
 })(jQuery);

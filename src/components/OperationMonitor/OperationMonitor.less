@@ -1,0 +1,39 @@
+@OperationMonitorMarginBetweenText: 8px;
+@OperationMonitorButtonsWidth: 218px;
+@OperationMonitorTextHeight: 18px;
+
+.ms-OperationMonitor-itemName {
+  .ms-font-m();
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: @OperationMonitorMarginBetweenText / 2;
+  line-height: @OperationMonitorTextHeight + 2;
+}
+
+.ms-OperationMonitor-itemDescription {
+  .ms-font-m();
+  color: @ms-color-neutralSecondaryAlt;
+  font-size: 11px;
+  line-height: @OperationMonitorTextHeight;
+}
+
+.ms-OperationMonitor-itemProgress {
+  position: relative;
+  width: 180px;
+  height: 2px;
+  padding: @OperationMonitorMarginBetweenText 0;
+}
+
+.ms-OperationMonitor-progressTrack {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: @ms-color-neutralLight;
+}
+
+.ms-OperationMonitor-progressBar {
+  position: absolute;
+  height: 2px;
+  background-color: @ms-color-themePrimary;
+}

@@ -451,8 +451,7 @@ gulp.task('reset-sample-data', function() {
     samplesFolders = getFolders(paths.srcSamples);
 });
 
-
-gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPath, function (folder) {
+gulp.task('build-component-data', ['clean-component-samples'], folders(paths.componentsPath, function (folder) {
 
     var manifest = parseManifest(folder);
     var filesArray = manifest.fileOrder;

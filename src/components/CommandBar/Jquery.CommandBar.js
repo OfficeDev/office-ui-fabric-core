@@ -38,7 +38,7 @@
               overFlowCommands.push($Item);
             } else {
               // Make sure item is displayed
-              $Item.removeClass('hideCommand');
+              $Item.removeClass('is-hidden');
             }
           }
         }
@@ -88,6 +88,15 @@
       overFlowCommands = processCommands(allCommands, $CommandMainArea.innerWidth());
       processOverflow(overFlowCommands, $OverflowCommand, $OverflowMenu);
 
+      // Set Search Behavior
+      if($(window).width() < 640) {
+
+        $('.ms-CommandBarSearch').click(function() {
+          $(this).addClass('is-active');
+        });
+
+      }
+
       // Add resize event handler on commandBar
       $(window).resize(function() {
         var overFlowCommands;
@@ -97,10 +106,20 @@
         if($(window).width() < 640 && mobileSwitch == false) {
           allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
           mobileSwitch = true;
+
+          // Search Behavior
+          $('.ms-CommandBarSearch').unbind();
+          $('.ms-CommandBarSearch').click(function() {
+            $(this).addClass('is-active');
+          });
+
         } else if($(window).width() > 639 && mobileSwitch == true) {
           allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
           mobileSwitch = false;
+
+          $('.ms-CommandBarSearch').unbind();
         }
+
       });
 
       // Hook up contextual menu
@@ -109,26 +128,22 @@
       });
 
       $SearchBox.find('.ms-CommandBarSearch-input').click(function() {
-        $(this).closest('.ms-CommandBarSearch').addClass('ms-CommandBarSearch--active');
+        $(this).closest('.ms-CommandBarSearch').addClass('is-active');
       });
 
-       $SearchBox.keypress(function() {
-        //Get Search Field
-        var $input = $(this).find('.ms-CommandBarSearch-input');
-
-        if($input.val()) {
-          $(this).addClass('ms-CommandBarSearch--hasText');
-        } else {
-          $(this).removeClass('ms-CommandBarSearch--hasText');
-        }
-      });
-
+       // When clicking the x clear the SearchBox and put state back to normal
       $SearchBox.find('.ms-CommandBarSearch-iconClearWrapper').click(function() {
         var $input = $(this).parent().find('.ms-CommandBarSearch-input');
         $input.val('');
-        $input.parent().removeClass('ms-CommandBarSearch--hasText ms-CommandBarSearch--active');
+        $input.parent().removeClass('is-active');
       });
-        
+
+      $SearchBox.parent().find('.ms-CommandBarSearch-input').blur(function() {
+        var $input = $(this);
+        $input.val('');
+        $input.parent().removeClass('is-active');
+      });
+
     });
   };
 })(jQuery);

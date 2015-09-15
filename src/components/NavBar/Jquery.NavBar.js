@@ -26,6 +26,7 @@
 
       // Set selected states and open/close menus.
       $navBar.on('click', '.ms-NavBar-item:not(.is-disabled)', function(event) {
+        var $searchBox = $navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field');
         event.stopPropagation();
 
         // Prevent default actions from firing if links are not found.
@@ -37,7 +38,7 @@
         $(this).siblings('.ms-NavBar-item').removeClass('is-selected');
 
         // Close and blur the search box if it doesn't have text.
-        if ($navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field').val().length === 0) {
+        if ($searchBox.length > 0 && $searchBox.val().length === 0) {
           $('.ms-NavBar-item.ms-NavBar-item--search').removeClass('is-open').find('.ms-TextField-field').blur();
         }
 

@@ -3,8 +3,7 @@
 /**
  * OperationMonitor component
  *
- * A component that outputs feedback for a
- * determinate operation.
+ * A component for outputting determinate progress
  *
  */
 
@@ -35,7 +34,7 @@ fabric.OperationMonitor.prototype = (function() {
    * Sets the progress percentage for a determinate
    * operation. Either use this or setProgress
    * and setTotal as setProgressPercent assumes
-   * you've done percentage calculations before
+   * you've done a percentage calculation before
    * injecting it into the function
    * @param {number} percent - a floating point number from 0 to 1
    */
@@ -58,7 +57,7 @@ fabric.OperationMonitor.prototype = (function() {
    * Sets the total file size, etc. for a
    * determinate operation. Use this in
    * combination with setProgress
-   * @param total
+   * @param {number} total
    */
   var setTotal = function(total) {
     _total = total;
@@ -84,10 +83,11 @@ fabric.OperationMonitor.prototype = (function() {
 
   /**
    * caches elements and values of the component
+   *
    */
   var cacheDOM = function() {
-    _itemName = this.container.querySelector('.ms-OperationMonitor-itemName') || null;
-    _itemDescription = this.container.querySelector('.ms-OperationMonitor-itemDescription') || null;
+    _itemName = this.container.querySelector('.ms-OperationMonitor-itemName') || null; //an itemName element is optional
+    _itemDescription = this.container.querySelector('.ms-OperationMonitor-itemDescription') || null; //an itemDescription element is optional
     _progressBar = this.container.querySelector('.ms-OperationMonitor-progressBar');
     _width = this.container.querySelector('.ms-OperationMonitor-itemProgress').offsetWidth;
   };

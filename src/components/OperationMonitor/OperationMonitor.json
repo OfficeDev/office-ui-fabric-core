@@ -1,6 +1,6 @@
 {
   "name": "OperationMonitor",
-  "notes": "A component that outputs feedback for a determinate operation.",
+  "notes": "A component for outputting determinate progress",
   "template": "OperationMonitor.html",
   "class": "ms-OperationMonitor"
 }

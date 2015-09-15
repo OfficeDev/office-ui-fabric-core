@@ -12,10 +12,8 @@
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   
-  <%= jquerytag %>
   <%= jstag %>
-  
-  <script type="text/javascript" src="<%= componentName %>.js"></script>
+ 
   <script type="text/javascript">
     $(document).ready(function() {
       // File Picker demo fixes
@@ -31,14 +29,16 @@
         }
       }
 
-      if(fabric && fabric['<%= componentName %>']) {
-        var component, componentHolder;
-        componentHolder = document.querySelector('.component-holder');
+      if(typeof fabric != "undefined") {
+        if('<%= componentName %>' in fabric) {
+          var component, componentHolder;
+          componentHolder = document.querySelector('.component-holder');
 
-        if (componentHolder) {
-          component = new fabric.Spinner(componentHolder);
+          if (componentHolder) {
+            component = new fabric.Spinner(componentHolder);
+          }
         }
-      }
+      } 
     });
   </script>
 

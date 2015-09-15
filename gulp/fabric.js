@@ -440,6 +440,18 @@ gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
 // Sample Component Building
 // ----------------------------------------------------------------------------
 
+gulp.task('reset-component-data', function() {
+    componentLinks = '';
+    storedFiles = {};
+    componentsFolders = getFolders(paths.componentsPath);
+});
+
+gulp.task('reset-sample-data', function() {
+    samplesLinks = '';
+    samplesFolders = getFolders(paths.srcSamples);
+});
+
+
 gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPath, function (folder) {
 
     var manifest = parseManifest(folder);
@@ -464,8 +476,13 @@ gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPat
         .pipe(concat(folder + '.html'))
             .on('error', onGulpError)
         .pipe(tap(function (file) {
-            storedFiles[folder] = file.contents.toString();
-            var curString = storedFiles[folder];
+
+             storedFiles[folder] = {
+                "name": file.basename,
+                "contents": file.contents.toString()
+            }
+
+            var curString = file.contents.toString();
             curString = JSON.stringify(curString);
 
             //Check if module was already included in string
@@ -478,8 +495,13 @@ gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPat
         cfiles.pipe(concat(folder + '.html'))
             .on('error', onGulpError)
         .pipe(tap(function (file) {
-            storedFiles[folder] = file.contents.toString();
-            var curString = storedFiles[folder];
+
+            storedFiles[folder] = {
+                "name": file.basename,
+                "contents": file.contents.toString()
+            }
+
+            var curString = file.contents.toString();
             curString = JSON.stringify(curString);
             //Check if module was already included in string
             if(catalogContents.indexOf(folder + ':') < 0) {
@@ -491,40 +513,38 @@ gulp.task('build-component-data', ['clean-samples'], folders(paths.componentsPat
     return cfiles;
 }));
 
-gulp.task('component-samples-template', ['build-component-data'], folders(paths.componentsPath, function (folder) {
+gulp.task('component-samples-template', ['build-component-data', 'component-samples-add-js'], folders(paths.componentsPath, function (folder) {
+
     return gulp.src(paths.templatePath + '/'+ 'individual-component-example.html')
-        .on('error', onGulpError)
-    .pipe(data(function () {
+            .on('error', onGulpError)
+        .pipe(data(function () {
+            var jstag = '';
+            if(typeof storedFiles[folder].script != "undefined") { jstag = storedFiles[folder].script; }
+            return { "componentName": folder, "stored": storedFiles[folder].contents, "jstag": jstag };
+        }))
+            .on('error', onGulpError)
+        .pipe(template())
+            .on('error', onGulpError)
+        .pipe(rename('index.html'))
+            .on('error', onGulpError)
+        .pipe(gulp.dest(paths.distSamples + '/Components/' +  folder))
+            .on('error', onGulpError);
+}));
 
-        var jquerytag = '';
-        var jstag = '';
+gulp.task('component-samples-add-js', ['build-component-data'], folders(paths.componentsPath, function (folder) {
 
-        fs.stat(paths.componentsPath + '/' + folder + '/' + 'Jquery.' + folder + '.js', function(err, stat) {
-            if(err == null) {
-                jquerytag = '<script type="text/javascript" src="Jquery.' + folder + '.js"></script>';
-            } 
-        });
-
-        fs.stat(paths.componentsPath + '/' + folder + '/' + 'Jquery.' + folder + '.js', function(err, stat) {
-            if(err == null) {
-                jstag = '<script type="text/javascript" src="' + folder + '.js"></script>';
-            } 
-        });
-
-        return { "componentName": folder, "stored": storedFiles[folder], "jquerytag": jquerytag, "jstag": jstag };
-    }))
-        .on('error', onGulpError)
-    .pipe(template())
-        .on('error', onGulpError)
-    .pipe(rename('index.html'))
-        .on('error', onGulpError)
-    .pipe(gulp.dest(paths.distSamples + '/Components/' +  folder))
-        .on('error', onGulpError);
+    return gulp.src(paths.componentsPath + '/' + folder + '/*.js')
+            .on('error', onGulpError)
+        .pipe(tap(function(file) {
+            var filename = file.path.replace(/^.*[\\\/]/, '')
+            storedFiles[folder].script = '<script type="text/javascript" src="' + filename+ '"></script>';
+        }))
+            .on('error', onGulpError);
 }));
 
 gulp.task('build-sample-data', ['clean-samples'], folders(paths.srcSamples, function (folder) {
     return gulp.src(paths.srcSamples + '/' +  folder).pipe(tap(function() {
-             samplesLinks += buildLinkHtml(folder, folder);
+            samplesLinks += buildLinkHtml(folder, folder);
     }));
 }));
 
@@ -533,7 +553,7 @@ gulp.task('build-sample-data', ['clean-samples'], folders(paths.srcSamples, func
 // Sample Index Page Build
 // ----------------------------------------------------------------------------
 
-gulp.task('build-components-page', ['build-component-data', 'build-sample-data'], function() {
+gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'build-sample-data'], function() {
     return gulp.src(paths.templatePath + '/'+ 'samples-index.html')
         .on('error', onGulpError)
     .pipe(data(function () {
@@ -673,7 +693,7 @@ var watchTasks = [
 // Watch and build Fabric when sources change.
 gulp.task('watch', watchTasks, function () {
     gulp.watch(paths.srcPath + '/**/*', batch(function (events, done) {
-        runSequence('build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'build-components-page', 'fabric-all-server', done);
+        runSequence('re-build', done);
     }));
 });
 
@@ -681,5 +701,6 @@ gulp.task('watch', watchTasks, function () {
 // Default Build
 // ----------------------------------------------------------------------------
 
-gulp.task('build', ['build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'fabric-all-finished']); 
+gulp.task('build', ['build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'build-components-page', 'fabric-all-finished']); 
+gulp.task('re-build', ['reset-sample-data', 'reset-component-data', 'build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'build-components-page', 'fabric-all-finished']); 
 

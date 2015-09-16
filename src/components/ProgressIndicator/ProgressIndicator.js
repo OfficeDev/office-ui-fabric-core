@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
- * OperationMonitor component
+ * ProgressIndicator component
  *
  * A component for outputting determinate progress
  *
@@ -13,15 +13,15 @@
 var fabric = fabric || {};
 /**
  *
- * @param {HTMLDivElement} container - the target container for an instance of OperationMonitor
+ * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
  * @constructor
  */
-fabric.OperationMonitor = function(container) {
+fabric.ProgressIndicator = function(container) {
   this.container = container;
   this.cacheDOM();
 };
 
-fabric.OperationMonitor.prototype = (function() {
+fabric.ProgressIndicator.prototype = (function() {
 
   var _progress;
   var _width;
@@ -68,7 +68,7 @@ fabric.OperationMonitor.prototype = (function() {
    * of an instance
    * @param {string} name
    */
-  var setItemName = function(name) {
+  var setName = function(name) {
     _itemName.innerHTML = name;
   };
 
@@ -86,15 +86,15 @@ fabric.OperationMonitor.prototype = (function() {
    *
    */
   var cacheDOM = function() {
-    _itemName = this.container.querySelector('.ms-OperationMonitor-itemName') || null; //an itemName element is optional
-    _itemDescription = this.container.querySelector('.ms-OperationMonitor-itemDescription') || null; //an itemDescription element is optional
-    _progressBar = this.container.querySelector('.ms-OperationMonitor-progressBar');
-    _width = this.container.querySelector('.ms-OperationMonitor-itemProgress').offsetWidth;
+    _itemName = this.container.querySelector('.ms-ProgressIndicator-itemName') || null; //an itemName element is optional
+    _itemDescription = this.container.querySelector('.ms-ProgressIndicator-itemDescription') || null; //an itemDescription element is optional
+    _progressBar = this.container.querySelector('.ms-ProgressIndicator-progressBar');
+    _width = this.container.querySelector('.ms-ProgressIndicator-itemProgress').offsetWidth;
   };
 
   return {
     setProgressPercent: setProgressPercent,
-    setItemName: setItemName,
+    setName: setName,
     setDescription: setDescription,
     setProgress: setProgress,
     setTotal: setTotal,

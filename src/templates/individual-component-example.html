@@ -27,13 +27,21 @@
           $('.ms-<%= componentName %>').<%= componentName %>();
         }
       }
+      // Vanilla JS Components
+      var component;
 
       if(fabric && fabric['<%= componentName %>']) {
-        var component, componentHolder;
-        componentHolder = document.querySelector('.component-holder');
+        switch('<%= componentName %>') {
 
-        if (componentHolder) {
-          component = new fabric.Spinner(componentHolder);
+          case "Spinner":
+            var componentHolder = document.querySelector('.component-holder');
+            if (componentHolder) {
+              component = new fabric.Spinner(componentHolder);
+            }
+            break;
+          default:
+            var element = document.querySelector('.ms-<%= componentName %>');
+            var component = new fabric['<%= componentName %>'](element);
         }
       }
     });

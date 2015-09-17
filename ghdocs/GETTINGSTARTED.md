@@ -15,7 +15,7 @@
 ##Getting Fabric
 
 ####Download
-[Download the latest release of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/archive/master.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
+[Download the latest release of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/archive/1.0.0.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
 
 ####Reference from a CDN
 To reference Fabric CSS from a CDN, just include a link in the `<head>` element on the page using Fabric:

@@ -179,13 +179,11 @@ var buildEachComponentCss = function (destination) {
 }
 
 var buildLinkContainer = function(links) {
-    return '<ul class="ms-List">'+ links +'</ul>';
+    return '<div class="LinkContainer">'+ links +'</div>';
 }
 
 var buildLinkHtml = function (href, name) {
-    var link = '<div class="ms-ListItem is-selectable">';
-         link +='<span class="ms-ListItem-primaryText"><a href="' + href + '/index.html">' + name + '</a></span>';
-        link += '</div>'
+    var link = '<a href="' + href + '/" class="ms-Link ms-font-l ms-fontWeight-semilight ms-bgColor-neutralLighter--hover">' + name + '</a>';
     return link;
 }
 

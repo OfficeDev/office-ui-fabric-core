@@ -28,7 +28,6 @@ var colors = require('colors/safe');
 var path = require('path');
 var wrap = require('gulp-wrap');
 var uglify = require('gulp-uglify');
-var debug = require('gulp-debug');
 
 // Define paths.
 var distPath = 'dist';

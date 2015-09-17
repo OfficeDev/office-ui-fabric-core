@@ -67,12 +67,19 @@
 	overflow: hidden;
 }
 
+.ms-Persona-primaryText,
+.ms-Persona-secondaryText, 
+.ms-Persona-tertiaryText, 
+.ms-Persona-optionalText {
+	.noWrap();
+}
+
 .ms-Persona-primaryText {
 	color: @ms-color-neutralPrimary;
 	font-family: @ms-font-family-regular;
 	font-size: @ms-font-size-l;
 	margin-top: -3px;
-	white-space: nowrap;
+	line-height: 1.4;
 }
 
 .ms-Persona-secondaryText, 
@@ -83,6 +90,7 @@
 	font-size: @ms-font-size-s;
 	padding-top: 8px;
 	white-space: nowrap;
+	line-height: 1.3
 }
 
 .ms-Persona-tertiaryText, 
@@ -326,16 +334,16 @@
 	.ms-Persona-primaryText {
 		font-size: @ms-font-size-xl;
 		font-family: @ms-font-family-semilight;
-		margin-top: 2px;
+		margin-top: 0;
 	}
 
 	.ms-Persona-secondaryText {
-		padding-top: 7px;
+		padding-top: 2px;
 	}
 
 	.ms-Persona-tertiaryText, 
 	.ms-Persona-optionalText {
-		padding-top: 8px;
+		padding-top: 5px;
 		display: block; // Show tertiary and optional text
 	}
 }

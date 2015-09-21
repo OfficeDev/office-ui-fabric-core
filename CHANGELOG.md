@@ -39,7 +39,7 @@ There have been a number of changes from the previous 0.10.3 release. These incl
   - Fixed an ugly issue on ListItem when combining is-selected and is-unseen classes.
   - Fixed up ChoiceFields to handle long strings in Labels, as well as properly include Label dependency when used as standalone CSS file.
   - Fixed numerous behavioral and visual issues with NavBar.
-  - Fixed inconsistent/innacurate animations with Panels.
+  - Fixed inconsistent/inaccurate animations with Panels.
   
 ### Changed
   - Updated all components to snap to a 4px grid. Many component's LESS files were refactored for consistency in the process.

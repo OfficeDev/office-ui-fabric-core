@@ -79,8 +79,8 @@
                                    '<div class="ms-Persona-imageArea">' +
                                      '<i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>' +
                                      '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
-                                     '<div class="ms-Persona-presence"></div>' +
                                    '</div>' +
+                                   '<div class="ms-Persona-presence"></div>' +
                                    '<div class="ms-Persona-details">' +
                                      '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +
                                   ' </div>' +

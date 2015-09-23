@@ -13,47 +13,71 @@
 	min-height: 36px;
 	position: relative;
 
-	.ms-ChoiceField-input { 
-		position: absolute;
-		opacity: 0;
-		top: 8px;
-
-		&:focus:not(:disabled) {
-			+ .ms-ChoiceField-field:after {
-				border-color: @ms-color-neutralSecondaryAlt;
-			}
-		}
-	}
-
-	.ms-ChoiceField-field {
-		display: inline-block;
-		cursor: pointer;
-		margin-top: 8px;
-		position: relative;
-
-		&:after {
-			content: '';
-			display: inline-block;
-			border: 1px @ms-color-neutralTertiaryAlt solid;
-			width: 19px;
-			height: 19px;
-			cursor: pointer;
-			position: relative;
-			font-weight: normal;
-			left: -1px;
-			top: -1px;
-			border-radius: 50%;
-			position: absolute;			
-		}
-	}
-
 	.ms-Label {
 		font-size: @ms-font-size-m;
 		padding: 0 0 0 26px;
 	}
+}
+
+//== State: Disabled choicefield
+.ms-ChoiceField-input:disabled {
+	+ .ms-ChoiceField-field {
+		pointer-events: none;
+		cursor: default;
+
+		&:before {
+			background-color: @ms-color-neutralTertiaryAlt;
+			color: @ms-color-neutralTertiaryAlt;
+		}
+
+		&:after {
+			border-color: @ms-color-neutralLight;
+		}
+
+		.ms-Label {
+			color: @ms-color-neutralTertiary;
+		}
+	}
+}
+
+// The original unstyled input element
+.ms-ChoiceField-input { 
+	position: absolute;
+	opacity: 0;
+	top: 8px;
+
+	&:focus:not(:disabled) {
+		+ .ms-ChoiceField-field:after {
+			border-color: @ms-color-neutralSecondaryAlt;
+		}
+	}
+}
+
+// The choicefield radio button or checkbox
+.ms-ChoiceField-field {
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 8px;
+	position: relative;
+
+	// The actual styled choicefield element - radio button by default
+	&:after {
+		content: '';
+		display: inline-block;
+		border: 1px @ms-color-neutralTertiaryAlt solid;
+		width: 19px;
+		height: 19px;
+		cursor: pointer;
+		position: relative;
+		font-weight: normal;
+		left: -1px;
+		top: -1px;
+		border-radius: 50%;
+		position: absolute;			
+	}
 
 	&:hover {
-		.ms-ChoiceField-field:after {
+		&:after {
 			border-color: @ms-color-neutralSecondaryAlt;
 		}
 
@@ -61,152 +85,62 @@
 			color: @ms-color-black;
 		}
 	}
+}
 
-
-	// Selected, radio button (default)
-	.ms-ChoiceField-input:checked {
-
-		+ .ms-ChoiceField-field {
-
-			// Checkmark
-			&:before {
-				background-color: @ms-color-neutralSecondary;
-				border-color: @ms-color-neutralSecondary;
-				color: @ms-color-neutralSecondary;
-				border-radius: 50%;
-				content: '\00a0';
-				display: inline-block;
-				position: absolute;
-				top: 4px;
-				right: 0;
-				bottom: 0;
-				left: 4px;
-				width: 11px;
-				height: 11px;
-				box-sizing: border-box;
-			}
-
-			&:after {
-				border-radius: 50%;
-			}
-
-			.ms-Label {
-				color: @ms-color-neutralPrimary;
-			}
-
-			// Checkmark hover
-			&:hover {
-				.ms-Label {
-					color: @ms-color-black;
-				}
-				&:before {
-					background-color: @ms-color-neutralDark;
-					color: @ms-color-neutralDark;
-				}
-			}
+// A selected radio button
+.ms-ChoiceField-input:checked {
+	+ .ms-ChoiceField-field {
+		// Circle indicating a checked radio button
+		&:before {
+			background-color: @ms-color-neutralSecondary;
+			border-color: @ms-color-neutralSecondary;
+			color: @ms-color-neutralSecondary;
+			border-radius: 50%;
+			content: '\00a0';
+			display: inline-block;
+			position: absolute;
+			top: 4px;
+			right: 0;
+			bottom: 0;
+			left: 4px;
+			width: 11px;
+			height: 11px;
+			box-sizing: border-box;
 		}
 
-		&[type='radio'] {
-			+ .ms-ChoiceField-field {
-				&:before {
-					border: 1px solid transparent;
-				}
-			}
+		&:hover:before {
+			background-color: @ms-color-neutralDark;
+			color: @ms-color-neutralDark;
 		}
 	}
+}
 
-
-	// Disabled, radio button (default)
-	&.is-disabled {
-
-		.ms-ChoiceField-input {
-			pointer-events: none;
-			
-			&:focus {
-				+ .ms-ChoiceField-field:after {
-					border-color: @ms-color-neutralLight;
-				}
-			}
-		}
-
-		.ms-ChoiceField-field {
-			pointer-events: none;
-			cursor: default;
-
-			&:after {
-				border-color: @ms-color-neutralLight;
-			}
-
-			&:hover:after {
-				border-color: @ms-color-neutralLight;
-			}
-		}
-
-		.ms-Label {
-			color: @ms-color-neutralTertiary;
-		}
-
-		// Disabled and selected, radio button (default)
-		.ms-ChoiceField-input:checked {
-
-			+ .ms-ChoiceField-field {
-				&:before {
-					background-color: @ms-color-neutralTertiaryAlt;
-					color: @ms-color-neutralTertiaryAlt;
-				}
-
-				.ms-Label {
-					color: @ms-color-neutralTertiary;
-				}
-			}
-		}
+// Checkbox
+.ms-ChoiceField-input[type="checkbox"] {
+	+ .ms-ChoiceField-field:after {
+		border-radius: 0;
 	}
+}
 
-
-	// Override default radio button styles for checkboxes
-	.ms-ChoiceField-input[type="checkbox"] {
-
-		// Unchecked
-		+ .ms-ChoiceField-field:after {
-			border-radius: 0;
-		}
-
-		// Checked
-		&:checked + .ms-ChoiceField-field:before {
+// A selected checkbox 
+.ms-ChoiceField-input[type="checkbox"]:checked {
+	+ .ms-ChoiceField-field {
+		&:before {
 			.ms-Icon;
 			content: '\e041';
 			background-color: transparent;
 			border-radius: 0;
-			font-size: 13px;
+			font-size: @ms-font-size-s-plus;
 			top: 3px;
 			left: 3px;
 		}
-
-		// Disabled
-		&:disabled + .ms-ChoiceField-field {
-			cursor: default;
-
-			&:before {
-				color: @ms-color-neutralTertiary;
-			}
-
-			&:after {
-				border-color: @ms-color-neutralTertiary;
-			}
-		}
-
 	}
-
 }
 
-//== Components - Choice field groups
+
+//== Component: Choicefield group
 //
 // Choice field groups contain multiple radio buttons or checkboxes
-
 .ms-ChoiceFieldGroup {
 	margin-bottom: 4px;
-
-  .ms-ChoiceFieldGroup-title .ms-Label {
-		position: static;
-  }
 }

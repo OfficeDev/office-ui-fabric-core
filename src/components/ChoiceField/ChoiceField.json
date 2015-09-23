@@ -5,6 +5,15 @@
   "dependencies": [
     "Label"
   ],
+  "fileOrder": [
+    "ChoiceField.html",
+    "ChoiceField.Selected.html",
+    "ChoiceField.Disabled.html",
+    "ChoiceField.Checkbox.html",
+    "ChoiceField.Checkbox.Selected.html",
+    "ChoiceField.Checkbox.Disabled.html",
+    "ChoiceField.ChoiceFieldGroup.html"
+  ],
   "branches": [
     {
       "name": "Radio button",

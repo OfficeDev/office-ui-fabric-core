@@ -31,6 +31,10 @@
 @SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
 @SearchBox-smallWidth: 36px;  
 
+.highContrastBorder(@color) {
+    border-left: 1px solid @color;
+    border-right: 1px solid @color;
+}
 
 .ms-CommandBar {
   background-color: @ms-color-themeLighterAlt;
@@ -39,9 +43,10 @@
   padding-left: 0;
   padding-right: 15px;
   border: 0;
+  position: relative;
 
   &:focus {
-      outline: none;
+    outline: none;
   }
 }
 
@@ -53,13 +58,10 @@
 .ms-CommandBar-sideCommands {
   float: right;
   text-align: right;
-  
-  @media only screen and (max-width: @ms-screen-sm-max) {
-     width: auto;
-  }
+  width: auto;
 
   @media only screen and (min-width: @ms-screen-md-min) {
-      min-width: @CommandBar-sideAreaWidthsm;
+    min-width: @CommandBar-sideAreaWidthsm;
   }
 }
 
@@ -72,16 +74,19 @@
   outline: none;
   vertical-align: top;
 
+  .ms-CommandBarItem-chevronDown,
+  .ms-CommandBarItem-commandText {
+    display: none;
+  }
+
   @media screen and (-ms-high-contrast: active) {
-    border-left: 1px solid @ms-color-black;
-    border-right: 1px solid @ms-color-black;
+    .highContrastBorder(@ms-color-black);
     height: 38px;
     outline: none;
   }
 
   @media screen and (-ms-high-contrast: black-on-white) {
-    border-left: 1px solid @ms-color-white;
-    border-right: 1px solid @ms-color-white;
+    .highContrastBorder(@ms-color-white);
     height: 38px;
     outline: none;
   }
@@ -91,64 +96,28 @@
     color: @ms-color-themePrimary;
 
     @media screen and (-ms-high-contrast: active) {
-      border-left: 1px solid @ms-color-white;
-      border-right: 1px solid @ms-color-white;
+      .highContrastBorder(@ms-color-white);
     }
 
     @media screen and (-ms-high-contrast: black-on-white) {
-      border-left: 1px solid @ms-color-black;
-      border-right: 1px solid @ms-color-black;
-    }
-  }
-
-  &.is-toggled {
-    background: @ms-color-themeLight;
-    color: @ms-color-themeDark;
-
-    @media screen and (-ms-high-contrast: active) {
-      border-left: 1px solid @ms-color-white;
-      border-right: 1px solid @ms-color-white;
-    }
-
-    @media screen and (-ms-high-contrast: black-on-white) {
-      border-left: 1px solid @ms-color-black;
-      border-right: 1px solid @ms-color-black;
-    }
-  }
-
-  &.is-toggled:hover {
-    background: @ms-color-neutralTertiaryAlt;
-    color: @ms-color-themeDark;
-
-    @media screen and (-ms-high-contrast: active) {
-      border-left: 1px solid @ms-color-white;
-      border-right: 1px solid @ms-color-white;
-    }
-
-    @media screen and (-ms-high-contrast: black-on-white) {
-      border-left: 1px solid @ms-color-black;
-      border-right: 1px solid @ms-color-black;
+      .highContrastBorder(@ms-color-black);
     }
   }
 
   // Hide labels and Chevrons SM-MD
-  @media only screen and (max-width: @ms-screen-md-max) {
+  @media only screen and (min-width: @ms-screen-lg-min) {
     .ms-CommandBarItem-chevronDown,
     .ms-CommandBarItem-commandText {
-      display: none;
+      display: inline;
     }
   }
 
-  @media only screen and (max-width: @ms-screen-lg-max) {
-    margin-right: 0;
-  }
 }
 
 .ms-CommandBarItem.is-hidden {
   display: none;
 }
-
-
+  
 //== Modifier: For commands with only an icon
 //
 .ms-CommandBarItem.icon-only,
@@ -175,10 +144,7 @@
   min-width: 22px;
   text-align: center;
   position: relative;
-
-  @media only screen and (max-width: @ms-screen-lg-max) {
-    padding: 0 6px;
-  }
+  padding: 0 6px;
 
   @media only screen and (min-width: @ms-screen-lg-min) {
     padding-right: 8px;
@@ -302,21 +268,29 @@
   display: none;
   top: 1px;
   right: 0px;
+  z-index: @ms-zIndex-front;
 }
 
 
-//== Modifier: Puts search in an active state
+//== State: Puts search in an active state
 //
-.ms-CommandBarSearch--active {
+.ms-CommandBarSearch.is-active {
   background-color: @ms-color-themeLight;
   color: @ms-color-black;
+
+  @media only screen and (max-width: @ms-screen-md-max) {
+    width: 100%;
+    position: absolute;
+    z-index: @ms-zIndex-front;
+    max-width: 100%;
+  }
 
   &:hover {
     background-color: @ms-color-themeLight;
     color: @ms-color-black;
   }
-
-  & .ms-CommandBarSearch-input {
+  
+  .ms-CommandBarSearch-input {
     cursor: text;
     padding-right: @SearchBox-height; // leave room for the X
     border-left-width: @SearchBox-sidePadding;
@@ -334,19 +308,14 @@
   &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
     display: block;
   }
-}
 
+  .ms-CommandBarSearch-input {
+    padding-right: @SearchBox-height;
+  }
 
-//== Modifier: After search is active and has text, add X for clearing the box
-//
-.ms-CommandBarSearch--active.ms-CommandBarSearch--hasText {
-    & .ms-CommandBarSearch-input {
-      padding-right: @SearchBox-height;
-    }
-
-    & .ms-CommandBarSearch-iconClearWrapper {
-      display: block;
-    }
+  .ms-CommandBarSearch-iconClearWrapper {
+    display: block;
+  }
 }
 
 .ms-CommandBarSearch-iconWrapper {

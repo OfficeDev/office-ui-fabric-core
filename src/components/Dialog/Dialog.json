@@ -8,6 +8,13 @@
       "keyboard": "Use the TAB key to navigate between elements in the dialog. To exit, use ESC. Trap focus in the dialog until the user dismisses it. The user needs to return to the previous element on close."
     },
   "class": "ms-Dialog",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Dialog.html",
+    "Dialog.Close.html",
+    "Dialog.LgHeader.html",
+    "Dialog.Multiline.html"
+  ],
   "dependencies": [
     "Button",
     "ChoiceField"
@@ -16,7 +23,7 @@
     {
       "name": "Default",
       "default": true,
-      "template": "Dialog.Default.html",
+      "template": "Dialog.html",
       "branches": [
         {
           "name": "Standard",

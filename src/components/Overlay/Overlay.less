@@ -14,12 +14,19 @@
   right:  0;
   top:    0;
   z-index: @ms-zIndex-Overlay;
-
-  &.ms-Overlay--dark {
-    background-color: @ms-color-blackTranslucent40;
-  }
-
-  &.ms-Overlay--none {
-    visibility: hidden;
-  }
 }
+
+
+//== Modifier: Dark overlay
+//
+.ms-Overlay.ms-Overlay--dark {
+  background-color: @ms-color-blackTranslucent40;
+}
+
+
+//== Modifier: Hidden overlay
+//
+&.ms-Overlay--none {
+  visibility: hidden;
+}
+

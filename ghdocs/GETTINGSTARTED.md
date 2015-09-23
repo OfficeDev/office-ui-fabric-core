@@ -21,7 +21,7 @@
 To reference Fabric CSS from a CDN, just include a link in the `<head>` element on the page using Fabric:
 
 ```html
-<link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
+<link rel="stylesheet" href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
 ```
 
 The uncompressed, minified, and right-to-left CSS files are also available on the CDN.

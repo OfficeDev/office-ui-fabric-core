@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="<%= componentName %>.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="Jquery.<%= componentName %>.js"></script>
-  <script type="text/javascript" src="<%= componentName %>.js"></script>
+  
+  <%= jstag %>
+ 
   <script type="text/javascript">
     $(document).ready(function() {
       // File Picker demo fixes
@@ -29,41 +30,49 @@
       }
       // Vanilla JS Components
       var component;
-
-      if(fabric && fabric['<%= componentName %>']) {
-        switch('<%= componentName %>') {
-
-          case "Spinner":
-            var componentHolder = document.querySelector('.component-holder');
-            if (componentHolder) {
-              component = new fabric.Spinner(componentHolder);
-            }
-            break;
-          default:
-            var element = document.querySelector('.ms-<%= componentName %>');
-            var component = new fabric['<%= componentName %>'](element);
+      
+      if(typeof fabric != "undefined") {
+        if('<%= componentName %>' in fabric) {
+          switch('<%= componentName %>') {
+            case "Spinner":
+              var componentHolder = document.querySelector('.component-holder');
+              if (componentHolder) {
+                component = new fabric.Spinner(componentHolder);
+              }
+              break;
+            default:
+              var element = document.querySelector('.ms-<%= componentName %>');
+              var component = new fabric['<%= componentName %>'](element);
+          }
         }
       }
+
     });
   </script>
 
   <!-- Styles specifically for this page, not required for proper display on components  -->
   <style type="text/css">
+    html, 
     body {
-      margin: auto 20px;
-    }
+        margin: 0;
+        padding: 0;
+    }    
 
     h1 {
-      padding: 8px;
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
     }
 
     #componentWrapper {
-      width: 100%;
+      width: calc(100% - 56px);
       height: 100%;
+      padding: 0 28px;
     }
 
     .sample-wrapper {
-      margin: 20px;
+      margin: 28px 0;
     }
 
     .sample-wrapper .ms-OrgChart {

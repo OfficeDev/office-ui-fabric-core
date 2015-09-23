@@ -11,7 +11,6 @@
 	.ms-u-normalize;
 	display: table;
 	line-height: 1;
-	overflow: hidden;
 	position: relative;
 }
 
@@ -20,20 +19,10 @@
 	display: block;
 	background-color: transparent;
 	overflow: hidden;
-	width: 50px;
-	height: 50px;
-}
-
-.ms-Persona-imageCircle {
-  width: 50px;
-  height: 50px;
-  margin: 0;
-  border-radius: 50%;
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  right: 0;
-  background-color: @ms-color-neutralTertiary;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background-color: @ms-color-neutralTertiary;
 }
 
 .ms-Persona-placeholder {
@@ -51,8 +40,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 50px;
-	height: 50px;
+	width: 52px;
+	height: 52px;
 
 	&[src=""] {
 		display: none;
@@ -62,20 +51,27 @@
 .ms-Persona-presence {
 	background-color: @ms-color-presence-available;
   position: absolute;
-  height: 10px;
-  width: 10px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   top: auto;
-  left: auto;
-  right: 2px;
+  left: 34px;
   bottom: -1px;
   border: 2px solid @ms-color-white;
 }
 
 .ms-Persona-details {
 	display: table-cell;
-	padding: 0 16px;
+	padding: 0 12px;
 	vertical-align: middle;
+	overflow: hidden;
+}
+
+.ms-Persona-primaryText,
+.ms-Persona-secondaryText, 
+.ms-Persona-tertiaryText, 
+.ms-Persona-optionalText {
+	.noWrap();
 }
 
 .ms-Persona-primaryText {
@@ -83,7 +79,7 @@
 	font-family: @ms-font-family-regular;
 	font-size: @ms-font-size-l;
 	margin-top: -3px;
-	white-space: nowrap;
+	line-height: 1.4;
 }
 
 .ms-Persona-secondaryText, 
@@ -92,12 +88,17 @@
 	color: @ms-color-neutralSecondary;
 	font-family: @ms-font-family-regular;
 	font-size: @ms-font-size-s;
-	padding-top: 8px;
 	white-space: nowrap;
+	line-height: 1.3;
+}
+
+.ms-Persona-secondaryText {
+	padding-top: 3px;
 }
 
 .ms-Persona-tertiaryText, 
 .ms-Persona-optionalText {
+	padding-top: 5px;
 	display: none; // Hidden on default persona
 }
 
@@ -107,9 +108,6 @@
 .ms-Persona.ms-Persona--square {
 	.ms-Persona-imageArea {
 		background-color: @ms-color-neutralTertiary;
-	}
-
-	.ms-Persona-imageCircle {
 		border-radius: 0;
 	}
 
@@ -118,7 +116,7 @@
 		left: 0;
 		bottom: auto;
 		right: auto;
-		height: 50px;
+		height: 52px;
 		width: 5px;
 		border-radius: 0;
 		border: 0;
@@ -130,7 +128,6 @@
 //
 .ms-Persona.ms-Persona--tiny {
 	height: 30px;
-	background-color: @ms-color-white;
 	display: inline-block;
 
 	.ms-Persona-imageArea {
@@ -140,25 +137,20 @@
 		width: 0;
 	}
 
-	.ms-Persona-imageCircle {
-		display: none;
-	}
-
 	.ms-Persona-presence {
 		right: auto;
-		height: 10px;
-		width: 10px;
 		top: 10px;
+		left: 0;
 		border: 0;
 	}
 
 	.ms-Persona-details {
-		padding-left: 18px;
+		padding-left: 20px;
 	}
 
 	.ms-Persona-primaryText {
 		font-size: @ms-font-size-m;
-		padding-top: 11px;
+		padding-top: 9px;
 	}
 
 	.ms-Persona-secondaryText {
@@ -185,13 +177,9 @@
 //
 .ms-Persona.ms-Persona--square.ms-Persona--tiny {
 	.ms-Persona-presence {
-		height: 10px;
-		width: 10px;
+		height: 12px;
+		width: 12px;
 		top: 10px;
-	}
-
-	.ms-Persona-details {
-		padding-left: 18px;
 	}
 }
 
@@ -200,10 +188,9 @@
 //
 .ms-Persona.ms-Persona--xs {
 	.ms-Persona-imageArea,
-	.ms-Persona-imageCircle,
 	.ms-Persona-image {
-	  width: 30px;
-	  height: 30px;
+	  width: 32px;
+	  height: 32px;
 	}
 
 	.ms-Persona-placeholder {
@@ -212,10 +199,7 @@
 	}
 
 	.ms-Persona-presence {
-		height: 8px;
-		width: 8px;
-		right: -1px;
-		bottom: -1px;
+		left: 19px;
 	}
 
 	.ms-Persona-details {
@@ -237,8 +221,9 @@
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xs {
 	.ms-Persona-presence {
-		height: 30px;
+		height: 32px;
 		width: 4px;
+		left: 0;
 	}
 }
 
@@ -247,7 +232,6 @@
 //
 .ms-Persona.ms-Persona--sm {
 	.ms-Persona-imageArea,
-	.ms-Persona-imageCircle,
 	.ms-Persona-image {
 	  width: 40px;
 	  height: 40px;
@@ -259,10 +243,7 @@
 	}
 
 	.ms-Persona-presence {
-		height: 10px;
-		width: 10px;
-		right: -1px;
-		bottom: -1px;
+		left: 27px;
 	}
 
 	.ms-Persona-details {
@@ -271,11 +252,11 @@
 
 	.ms-Persona-primaryText {
 		font-size: @ms-font-size-m;
-		padding-top: 1px;
 	}
 
+	.ms-Persona-primaryText,
 	.ms-Persona-secondaryText {
-		padding-top: 5px;
+		padding-top: 1px;
 	}
 }
 
@@ -286,6 +267,7 @@
 	.ms-Persona-presence {
 		height: 40px;
 		width: 4px;
+		left: 0;
 	}
 }
 
@@ -294,10 +276,9 @@
 //
 .ms-Persona.ms-Persona--lg {
 	.ms-Persona-imageArea,
-	.ms-Persona-imageCircle,
 	.ms-Persona-image {
-	  width: 70px;
-	  height: 70px;
+	  width: 72px;
+	  height: 72px;
 	}
 
 	.ms-Persona-placeholder {
@@ -306,12 +287,15 @@
 	}
 
 	.ms-Persona-presence {
-		height: 16px;
-		width: 16px;
+		left: 49px;
 	}
 
-	.ms-Persona-primaryText {
-		font-family: @ms-font-family-regular;
+	.ms-Persona-secondaryText {
+		padding-top: 3px;
+	}
+
+	.ms-Persona-tertiaryText {
+		padding-top: 5px;
 	}
 
 	.ms-Persona-tertiaryText {
@@ -324,8 +308,9 @@
 //
 .ms-Persona.ms-Persona--square.ms-Persona--lg {
 	.ms-Persona-presence {
-		height: 70px;
+		height: 72px;
 		width: 7px;
+		left: 0;
 	}
 }
 
@@ -334,7 +319,6 @@
 //
 .ms-Persona.ms-Persona--xl {
 	.ms-Persona-imageArea,
-	.ms-Persona-imageCircle,
 	.ms-Persona-image {
 	  width: 100px;
 	  height: 100px;
@@ -346,8 +330,9 @@
 	}
 
 	.ms-Persona-presence {
-		height: 24px;
-		width: 24px;
+		height: 20px;
+		width: 20px;
+		left: 71px;
 	}
 
 	.ms-Persona-details {
@@ -357,16 +342,16 @@
 	.ms-Persona-primaryText {
 		font-size: @ms-font-size-xl;
 		font-family: @ms-font-family-semilight;
-		margin-top: 2px;
+		margin-top: 0;
 	}
 
 	.ms-Persona-secondaryText {
-		padding-top: 7px;
+		padding-top: 2px;
 	}
 
 	.ms-Persona-tertiaryText, 
 	.ms-Persona-optionalText {
-		padding-top: 8px;
+		padding-top: 5px;
 		display: block; // Show tertiary and optional text
 	}
 }
@@ -378,6 +363,7 @@
 	.ms-Persona-presence {
 		height: 100px;
 		width: 9px;
+		left: 0;
 	}
 }
 

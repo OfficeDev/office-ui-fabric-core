@@ -19,13 +19,14 @@ var fabric = fabric || {};
 
 fabric.Spinner = function(target, spinnerType) {
 
-    var spinner = target;
+    var _target = target;
     var _spinnerType = spinnerType || "eight";
     var eightSize = 0.18;
     var sixteenSize = 0.1;
     var circleObjects = [];
     var animationSpeed = 100;
     var interval;
+    var spinner;
     var numCircles;
     var offsetSize;
 
@@ -108,6 +109,14 @@ fabric.Spinner = function(target, spinnerType) {
     }
 
     function _createCirclesAndArrange() {
+        //for backwards compatibility
+        if(_target.className !== "ms-Spinner") {
+            spinner = document.createElement("div");
+            spinner.className = "ms-Spinner";
+            _target.appendChild(spinner);
+        } else {
+            spinner = _target;
+        }
         var width = spinner.clientWidth;
         var height = spinner.clientHeight;
         var angle = 0;

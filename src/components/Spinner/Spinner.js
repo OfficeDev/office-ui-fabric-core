@@ -13,20 +13,19 @@
 var fabric = fabric || {};
 
 /**
- * @param {DOMElement} holderElement - The element the Spinner will attach itself to.
+ * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
  * @param {string} type - The type of spinner. Set this property to "sixteen" for sixteen dot version. The default is eight.
  */
 
-fabric.Spinner = function(holderElement, spinnerType) {
+fabric.Spinner = function(target, spinnerType) {
 
-    var _holderElement = holderElement;
+    var spinner = target;
     var _spinnerType = spinnerType || "eight";
     var eightSize = 0.18;
     var sixteenSize = 0.1;
     var circleObjects = [];
-    var animationSpeed = 80;
+    var animationSpeed = 100;
     var interval;
-    var spinner;
     var numCircles;
     var offsetSize;
 
@@ -109,9 +108,6 @@ fabric.Spinner = function(holderElement, spinnerType) {
     }
 
     function _createCirclesAndArrange() {
-        spinner = document.createElement("div");
-        spinner.className = "ms-Spinner";
-        _holderElement.appendChild(spinner);
         var width = spinner.clientWidth;
         var height = spinner.clientHeight;
         var angle = 0;

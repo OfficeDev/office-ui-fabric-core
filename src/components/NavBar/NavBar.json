@@ -6,6 +6,7 @@
   "dependencies": [
     "List",
     "ListItem",
-    "ContextualMenu"
+    "ContextualMenu",
+    "Overlay"
   ]
 }

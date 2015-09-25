@@ -15,6 +15,14 @@
   padding: 0 10px;
   width: 100%;
   outline: 1px solid transparent;
+
+  .ms-Overlay {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity @ms-duration3 @ms-ease1;
+    z-index: @ms-zIndex-back;
+  }
 }
 
 // The button to open the menu on small screens.
@@ -23,7 +31,7 @@
   height: 40px;
   line-height: 40px;
   position: absolute;
-  right: 10px;
+  right: 27px;
   text-align: center;
   width: 40px;
   cursor: pointer;
@@ -172,6 +180,7 @@
 
 // On small screens, override the contextual menu styles.
 @media (min-width: @ms-screen-sm-min) and (max-width: @ms-screen-sm-max) {
+
   .ms-NavBar-item.ms-NavBar-item--hasMenu.is-selected {
     height: inherit;
     background-color: transparent;
@@ -195,17 +204,13 @@
     }
   }
 
-  // White overlay for small screens.
-  // TODO: Use the Overlay component in the future.
-  .ms-NavBar.is-open:before {
-    content: '';
+  // When the navbar is opened, animate to full opacity
+  // and activate pointer events so can be clicked.
+  .ms-NavBar.is-open .ms-Overlay {
     display: block;
-    position: absolute;
-    background-color: rgba(255,255,255,0.2);
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 

@@ -28,22 +28,12 @@
           $('.ms-<%= componentName %>').<%= componentName %>();
         }
       }
+
       // Vanilla JS Components
-      var component;
-      
-      if(typeof fabric != "undefined") {
-        if('<%= componentName %>' in fabric) {
-          switch('<%= componentName %>') {
-            case "Spinner":
-              var componentHolder = document.querySelector('.component-holder');
-              if (componentHolder) {
-                component = new fabric.Spinner(componentHolder);
-              }
-              break;
-            default:
-              var element = document.querySelector('.ms-<%= componentName %>');
-              var component = new fabric['<%= componentName %>'](element);
-          }
+      if (typeof fabric !== "undefined") {
+        if ('<%= componentName %>' in fabric) {
+          var element = document.querySelector('.ms-<%= componentName %>');
+          var component = new fabric['<%= componentName %>'](element);
         }
       }
 

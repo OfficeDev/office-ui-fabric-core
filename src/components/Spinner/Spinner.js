@@ -110,13 +110,14 @@ fabric.Spinner = function(target, spinnerType) {
 
     function _createCirclesAndArrange() {
         //for backwards compatibility
-        if(_target.className !== "ms-Spinner") {
+        if (_target.className !== "ms-Spinner") {
             spinner = document.createElement("div");
             spinner.className = "ms-Spinner";
             _target.appendChild(spinner);
         } else {
             spinner = _target;
         }
+        
         var width = spinner.clientWidth;
         var height = spinner.clientHeight;
         var angle = 0;

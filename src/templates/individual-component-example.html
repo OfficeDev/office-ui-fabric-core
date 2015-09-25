@@ -28,11 +28,10 @@
           $('.ms-<%= componentName %>').<%= componentName %>();
         }
       }
+
       // Vanilla JS Components
-      var component;
-      
-      if(typeof fabric !== "undefined") {
-        if('<%= componentName %>' in fabric) {
+      if (typeof fabric !== "undefined") {
+        if ('<%= componentName %>' in fabric) {
           var element = document.querySelector('.ms-<%= componentName %>');
           var component = new fabric['<%= componentName %>'](element);
         }

@@ -1,0 +1,115 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Data table styles
+
+
+.ms-Table {
+  display: table;
+  width: 100%;
+}
+
+.ms-Table-row {
+  display: table-row;
+  height: 30px;
+  line-height: 30px;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-s;
+  color: @ms-color-neutralPrimary;
+
+  &:hover {
+    background-color: @ms-color-neutralLighter;
+    cursor: pointer;
+    outline: 1px solid transparent;
+  }
+
+  // Rows can be selected.
+  &.is-selected {
+    background-color: @ms-color-themeLight;
+
+    // A checkmark in a selected row.
+    .ms-Table-rowCheck {
+      background-color: @ms-color-themePrimary;
+
+      // Hide the checkbox.
+      &:before {
+        display: none;
+      }
+
+      // But show the mark.
+      &:after {
+        .ms-Icon;
+        content: '\e041';
+        color: @ms-color-white;
+        font-size: 12px;
+        position: absolute;
+        left: 4px;
+        top: 9px;
+      }
+    }
+  }
+}
+
+.ms-Table-cell {
+  display: table-cell;
+  padding: 0 10px;
+}
+
+// Style the first row as a header.
+.ms-Table-row:first-child {
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-xs;
+  color: @ms-color-neutralSecondary;
+
+  .ms-Table-cell, .ms-Table-rowCheck {
+    border-bottom: 1px solid @ms-color-neutralLight;
+  }
+
+  .ms-Table-rowCheck:after {
+    .ms-Icon;
+    content: '\e041';
+    color: @ms-color-neutralTertiary;
+    font-size: 12px;
+    position: absolute;
+    left: 4px;
+    top: 9px;
+  }
+}
+
+// On selectable tables, each row has a checkbox.
+.ms-Table-rowCheck {
+  display: table-cell;
+  width: 20px;
+  position: relative;
+
+  // Empty checkbox.
+  &:before {
+    border: 1px solid @ms-color-neutralTertiary;
+    content: '';
+    display: block;
+    height: 14px;
+    left: 2px;
+    position: absolute;
+    top: 6px;
+    width: 14px;
+  }
+}
+
+// All high contrast styling rules
+@media screen and (-ms-high-contrast: active) {
+  .ms-Table-row {
+    // Rows can be selected.
+    &.is-selected {
+      // A checkmark in a selected row.
+      .ms-Table-rowCheck {
+        background: none;
+        // Show the checkbox.
+        &:before {
+          display: block;
+        }
+      }
+    }
+  }
+}

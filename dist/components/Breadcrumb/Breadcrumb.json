@@ -1,0 +1,6 @@
+{
+  "name": "Breadcrumb",
+  "notes": "Shows the user's current location in a hierarchy and provides a means of navigating upward.",
+  "template": "Breadcrumb.html",
+  "class": "ms-Breadcrumb"
+}

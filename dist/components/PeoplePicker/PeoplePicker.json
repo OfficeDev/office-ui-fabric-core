@@ -1,0 +1,40 @@
+{
+  "name": "PeoplePicker",
+  "notes": "",
+  "template": "PeoplePicker.html",
+  "class": "ms-PeoplePicker",
+  "dependencies": [
+    "Button",
+    "Label",
+    "Overlay",
+    "Persona"
+  ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "PeoplePicker.html",
+    "PeoplePicker.Compact.html",
+    "PeoplePicker.Disconnected.html",
+    "PeoplePicker.FacePile.html"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    },
+    {
+      "name": "Compact",
+      "template": "PeoplePicker.Compact.html",
+      "class": "ms-PeoplePicker--compact"
+    },
+    {
+      "name": "Disconnected",
+      "notes": "When the search can not be completed, an error message is shown.",
+      "template": "PeoplePicker.Disconnected.html"
+    },
+    {
+      "name": "Facepile",
+      "template": "PeoplePicker.FacePile.html",
+      "class": "ms-PeoplePicker--facePile"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Utility classes and mixins used throughout Fabric.
+
+
+// The best box is a border box.
+.ms-u-borderBox, .ms-u-borderBox:before, .ms-u-borderBox:after {
+  box-sizing: border-box;
+}
+
+// Ensures the block expands to the full height to enclose its floated childen.
+.ms-u-clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Basic border-box, margin, and padding reset.
+.ms-u-normalize {
+  .ms-u-borderBox;
+  .resetMargins;
+  .resetPadding;
+  .resetBoxShadow;
+}

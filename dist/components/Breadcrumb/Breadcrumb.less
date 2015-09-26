@@ -1,0 +1,51 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Breadcrumb styles
+
+
+.ms-Breadcrumb {
+  height: 40px;
+
+  .ms-Breadcrumb-currentLarge {
+    display: none;
+  }
+  .ms-Breadcrumb-parent, .ms-Breadcrumb-current {
+    font-size: @ms-font-size-m;
+    font-family: @ms-font-family-semilight;
+    line-height: 50px;
+    color: @ms-color-neutralSecondary;
+  }
+  .ms-Breadcrumb-parent {
+    color: @ms-color-neutralPrimary;
+    text-decoration: none;
+
+    &:hover {
+      color: @ms-color-black;
+    }
+
+    &:active {
+      color: @ms-color-themePrimary;
+    }
+  }
+
+  // Right-pointing chevron
+  // TODO: Localization, point arrow to left.
+  .ms-Breadcrumb-chevron {
+    padding: 0 7px 0 5px;
+  }
+
+  // Only show the big title on large and extra large displays.
+  @media (min-width: @ms-screen-lg-min) {
+    .ms-Breadcrumb-currentLarge {
+      display: inline;
+      font-family: @ms-font-family-regular;
+      font-size: @ms-font-size-xl;
+      color: @ms-color-themePrimary;
+      line-height: 42px;
+      margin-right: 20px;
+    }
+  }
+}

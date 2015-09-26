@@ -1,0 +1,155 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Pivot and tab styles
+
+
+.ms-Pivot {
+  .ms-font-m;
+  .ms-u-normalize;
+  height: 30px;
+  list-style-type: none;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.ms-Pivot-link {
+  color: @ms-color-neutralPrimary;
+  display: inline-block;
+  font-family: @ms-font-family-semilight;
+  font-size: @ms-font-size-m-plus;
+  line-height: 27px;
+  margin-right: 15px;
+
+  &:hover, 
+  &:focus {
+    color: @ms-color-black;
+    cursor: pointer;
+  }
+
+  &:active {
+    color: @ms-color-themePrimary;
+  }
+
+  //== State: Selected
+  &.is-selected {
+    color: @ms-color-themePrimary;
+    font-family: @ms-font-family-semibold;
+  }
+}
+
+// Overflow (ellipsis)
+.ms-Pivot-link.ms-Pivot-link--overflow {
+  color: @ms-color-neutralSecondary;
+
+  &.is-selected {
+    color: @ms-color-themePrimary;
+  }
+
+  &:hover:not(.is-selected), 
+  &:focus:not(.is-selected) { 
+    color: @ms-color-neutralDark; 
+  }
+
+  &:active {
+    color: @ms-color-themePrimary !important;
+  }
+}
+
+// Ellipsis icon
+.ms-Pivot-ellipsis {
+  font-size: @ms-font-size-m-plus;
+  position: relative;
+  top: 0;
+}
+
+
+//== Modifier: Large Pivots
+//
+.ms-Pivot.ms-Pivot--large {
+  .ms-Pivot-link {
+    font-size: @ms-font-size-l;
+
+    &.is-selected {
+      font-family: @ms-font-family-semilight;
+    }
+  }
+
+  .ms-Pivot-link.ms-Pivot-link--overflow {
+    &:after {
+      font-size: @ms-font-size-l;
+    }
+  }
+}
+
+
+//== Modifier: Tabs
+//
+.ms-Pivot.ms-Pivot--tabs {
+  height: 40px;
+
+  .ms-Pivot-link {
+    height: 40px;
+    background-color: @ms-color-neutralLighter;
+    line-height: 40px;
+    margin-right: -2px; // Remove space next to inline-block element
+    padding: 0 10px;
+
+    &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
+    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { 
+      color: @ms-color-black; 
+    }
+
+    &:active {
+      color: @ms-color-white !important;
+      background-color: @ms-color-themePrimary;
+    }
+
+    //== State: Selected
+    &.is-selected {
+      background-color: @ms-color-themePrimary;
+      color: @ms-color-white;
+      font-family: @ms-font-family-semilight;
+    }
+  }
+
+  .ms-Pivot-link.ms-Pivot-link--overflow {
+    &:hover:not(.is-selected), 
+    &:focus:not(.is-selected) {
+      background-color: @ms-color-white;
+    }
+
+    &:active {
+      background-color: @ms-color-themePrimary !important;
+    }
+  }
+}
+
+
+
+@media (min-width: @ms-screen-lg-min) {
+  .ms-Pivot-link {
+    font-size: @ms-font-size-m;
+  }
+
+  .ms-Pivot-link.ms-Pivot-link--overflow {
+    &:after {
+      font-size: @ms-font-size-m;
+    }
+  }
+}
+
+
+
+// All high contrast styling rules
+@media screen and (-ms-high-contrast: active) {
+  .ms-Pivot.ms-Pivot--tabs {
+    .ms-Pivot-link {
+      &.is-selected {
+        font-family: @ms-font-family-semibold;
+      }
+    }
+  }
+}

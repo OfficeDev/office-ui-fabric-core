@@ -1,0 +1,18 @@
+{
+  "name": "Link",
+  "notes": "",
+  "template": "Link.html",
+  "class": "ms-Link",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Link.html",
+    "Link.Hero.html"
+  ],
+  "branches": [
+    {
+      "name": "Hero",
+      "class": "ms-Link--hero",
+      "default": true
+    }
+  ]
+}

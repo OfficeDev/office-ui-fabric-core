@@ -1,0 +1,469 @@
+.ms-Overlay--none {
+  visibility: hidden;
+}
+
+.u-contentCenter {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  transition: 0.167s all cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+  .u-contentCenter {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .HomePage .u-contentCenter,
+  .ChannelPage .u-contentCenter {
+    max-width: 1200px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #0078d7;
+  cursor: pointer;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #004578;
+}
+
+a:active {
+  color: #0078d7;
+}
+
+.VideoPortal-content {
+  position: relative;
+}
+
+.VideoPortal-navBar {
+  display: block;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+  height: 40px;
+}
+
+.VideoPortal-page {
+  overflow: visible;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.ms-NavBar.is-open .ms-NavBar-items {
+  z-index: 1;
+}
+
+.ms-NavBar-link {
+  color: #333333;
+  text-decoration: none;
+}
+
+@media (min-width: 480px) {
+  .ms-NavBar-item.is-selected {
+    font-size: inherit;
+  }
+}
+
+.VideoList-item.ms-Grid-col {
+  margin-bottom: 16px;
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+  padding-left: 8px;
+  padding-right: 12px;
+}
+
+.VideoList-thumbLink {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.VideoList-thumbImg {
+  max-width: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
+.VideoList-thumbCaption {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 3px;
+  color: #ffffff;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.VideoList-text {
+  padding-top: 5px;
+  margin: 0;
+}
+
+.VideoList-title,
+.VideoList-channel,
+.VideoList-viewCount {
+  display: block;
+}
+
+.VideoList-title {
+  display: block;
+  top: 0;
+  left: 10px;
+  bottom: 50%;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.VideoList-channel {
+  bottom: 1.2em;
+}
+
+.VideoList-viewCount {
+  bottom: 0;
+}
+
+@media (min-width: 480px) {
+  .VideoList-item {
+    margin-right: -4px;
+  }
+}
+
+.SpotLight-container {
+  background-color: #212121;
+}
+
+.SpotLightList {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.SpotLight-title {
+  text-indent: 16px;
+}
+
+.SpotLight-item {
+  position: relative;
+  display: inline-block;
+  float: none;
+  margin: 0;
+}
+
+.SpotLight-thumb {
+  padding: 10px;
+}
+
+.SpotLight-thumbImg {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.SpotLight-text {
+  position: absolute;
+  right: 10px;
+  bottom: 13px;
+  left: 10px;
+  overflow: hidden;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+}
+
+.SpotLight-videoTitle,
+.SpotLight-videoLength {
+  color: #ffffff;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .SpotLightList {
+    overflow: hidden;
+  }
+
+  .SpotLight-container {
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .SpotLight-title {
+    text-indent: 8px;
+  }
+}
+
+.HomePage-content {
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.ChannelList-title {
+  padding-left: 10px;
+  border-width: 4px;
+  border-left-style: solid;
+}
+
+.ChannelList-titleText {
+  margin-right: 7px;
+}
+
+.PlayerPage-theater {
+  background-color: #212121;
+}
+
+.VideoPlayer-player {
+  max-width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.VideoPlayer-player iframe,
+.VideoPlayer-player video,
+.VideoPlayer-player .VideoPlayer-iframe {
+  background-color: #666666;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
+  height: 100%;
+  min-height: 100%;
+  cursor: pointer;
+}
+
+.VideoPlayer-player iframe:after,
+.VideoPlayer-player video:after,
+.VideoPlayer-player .VideoPlayer-iframe:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 90px solid rgba(0, 0, 0, 0.4);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: 0.167s border-color cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.VideoPlayer-player iframe:hover:after,
+.VideoPlayer-player video:hover:after,
+.VideoPlayer-player .VideoPlayer-iframe:hover:after {
+  border-left-color: rgba(0, 0, 0, 0.75);
+}
+
+.PlayerPage-content {
+  padding: 0 10px;
+}
+
+.PlayerPage-info {
+  margin-bottom: 20px;
+  padding-right: 32px;
+}
+
+.PlayerPage-header {
+  margin-bottom: 20px;
+}
+
+.PlayerPage-titleArea {
+  margin-top: 17px;
+  margin-bottom: 8px;
+}
+
+.PlayerPage-title {
+  margin-bottom: 5px;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.PlayerPage-titleSeparator {
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+  bottom: 2px;
+}
+
+.PlayerPage-channelLink {
+  font-size: 17px;
+  padding-left: 10px;
+  border-width: 4px;
+  border-left-style: solid;
+}
+
+.PlayerPage-channelLink:hover {
+  color: #000000;
+}
+
+.PlayerPage-channelText {
+  position: relative;
+  bottom: 2px;
+}
+
+.PlayerPage-metaData {
+  margin-bottom: 10px;
+}
+
+.PlayerPage-descriptionArea {
+  margin-bottom: 10px;
+}
+
+.PlayerPage-description {
+  display: inline;
+  word-wrap: break-word;
+}
+
+.PlayerPage-descriptionField {
+  position: relative;
+  margin-top: 17px;
+}
+
+.PlayerPage-viewCountText {
+  margin-right: 5px;
+}
+
+.SampleVideo-content {
+  background-color: #333333;
+  height: 120px;
+}
+
+@media (min-width: 320px) {
+  .PlayerPage-content {
+    padding: 0 10px 0 16px;
+  }
+
+  .PlayerPage-grid {
+    padding: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .PlayerPage-relatedList .VideoList-title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .PlayerPage-relatedList .VideoList-channel,
+  .PlayerPage-relatedList .VideoList-viewCount {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 640px) {
+  .PlayerPage-header {
+    margin-bottom: 25px;
+  }
+
+  .PlayerPage-titleArea {
+    margin-top: 35px;
+  }
+
+  .PlayerPage-description {
+    font-size: 14px;
+  }
+
+  .PlayerPage-title {
+    font-size: 28px;
+  }
+
+  .PlayerPage-metaData {
+    font-size: 17px;
+  }
+
+  .PlayerPage-channelLink {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .PlayerPage-content {
+    padding: 0;
+  }
+
+  .PlayerPage-relatedTitle {
+    margin-top: 42px;
+  }
+
+  .PlayerPage-relatedList .VideoList-text {
+    padding-top: 0;
+  }
+
+  .PlayerPage-relatedList .VideoList-title {
+    margin-bottom: 5px;
+    line-height: 1.2em;
+    max-height: 3.6em;
+    overflow: hidden;
+    white-space: normal;
+  }
+}
+
+.ChannelPage-content {
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.ChannelPage-pivots {
+  margin-bottom: 20px;
+}
+
+.ChannelPage-pivots .ms-Pivot-link {
+  font-size: 21px;
+}
+
+.ChannelsPage {
+  padding: 10px;
+}
+
+.ChannelGroup-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.ChannelGroup-channel {
+  padding: 10px 0 10px 10px;
+  border-width: 4px;
+  border-left-style: solid;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.ChannelGroup-channel:hover {
+  color: #000000;
+}
+
+@media (min-width: 480px) {
+  .ChannelsPage {
+    padding: 20px;
+  }
+}

@@ -41,7 +41,6 @@
   height: @CommandBar-height;
   white-space: nowrap;
   padding-left: 0;
-  padding-right: 15px;
   border: 0;
   position: relative;
 
@@ -53,15 +52,28 @@
 .ms-CommandBar-mainArea {
   overflow-x: hidden;
   display: block;
+  padding-left: @SearchBox-widthMdDownCollapsed + 8;
+  @media only screen and (min-width: @ms-screen-lg-min) {
+    padding-left: 24px;
+  }
 }
 
 .ms-CommandBar-sideCommands {
   float: right;
   text-align: right;
   width: auto;
+  padding-right: 8px;
 
   @media only screen and (min-width: @ms-screen-md-min) {
     min-width: @CommandBar-sideAreaWidthsm;
+  }
+
+  @media only screen and (min-width: @ms-screen-lg-min) {
+    padding-right: 12px;
+  }
+
+  @media only screen and (min-width: @ms-screen-xl-min) {
+    padding-right: 16px;
   }
 }
 
@@ -134,6 +146,10 @@
   &.is-visible {
     display: inline-block;
   }
+
+  .ms-Icon {
+    font-size: 14px;
+  }
 }
 
 .ms-CommandBarItem-link {
@@ -144,16 +160,15 @@
   min-width: 22px;
   text-align: center;
   position: relative;
-  padding: 0 6px;
+  padding: 0 8px;
+}
 
-  @media only screen and (min-width: @ms-screen-lg-min) {
-    padding-right: 8px;
-    padding-left: 6px;
-  }
+.ms-CommandBarItem-icon {
+  font-size: 17px;
 }
 
 .ms-CommandBarItem-chevronDown  {
-  vertical-align: top;
+  vertical-align: middle;
   padding-bottom: 3px;
   margin-top: @CommandBarItem-marginTop;
   font-size: 1.1em;
@@ -177,10 +192,12 @@
   box-sizing: border-box;
   border-color: transparent; // give a base state for animation
 
+
   @media only screen and (max-width: @ms-screen-md-max) {
     overflow: hidden;
     background-color: transparent;
     width: @SearchBox-widthLgCollapsed;
+    position: absolute;
   }
 
   transition: @ms-duration3 @ms-ease1;
@@ -193,6 +210,19 @@
 
   @media screen and (-ms-high-contrast: black-on-white) {
     border-right: 1px solid @ms-color-black;
+  }
+
+  &:hover {
+    background-color: @ms-color-themeLight;
+    color: @ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      .highContrastBorder(@ms-color-white);
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      .highContrastBorder(@ms-color-black);
+    }
   }
 
   .ms-Icon--search {

@@ -91,8 +91,8 @@
       // Set Search Behavior
       if($(window).width() < 640) {
 
-        $('.ms-CommandBarSearch').click(function() {
-          $(this).addClass('is-active');
+        $('.ms-CommandBarSearch-iconSearchWrapper').click(function() {
+          $(this).closest('.ms-CommandBarSearch').addClass('is-active');
         });
 
       }
@@ -100,24 +100,27 @@
       // Add resize event handler on commandBar
       $(window).resize(function() {
         var overFlowCommands;
+
+        // Initiate process commands and add commands to overflow on load
         overFlowCommands = processCommands(allCommands, $CommandMainArea.innerWidth());
         processOverflow(overFlowCommands, $OverflowCommand, $OverflowMenu);
-
+       
         if($(window).width() < 640 && mobileSwitch == false) {
-          allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
+         
           mobileSwitch = true;
 
           // Search Behavior
-          $('.ms-CommandBarSearch').unbind();
-          $('.ms-CommandBarSearch').click(function() {
-            $(this).addClass('is-active');
+          $('.ms-CommandBarSearch-iconSearchWrapper').unbind();
+          $('.ms-CommandBarSearch-iconSearchWrapper').click(function() {
+            $(this).closest('.ms-CommandBarSearch').addClass('is-active');
           });
 
         } else if($(window).width() > 639 && mobileSwitch == true) {
-          allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
+
           mobileSwitch = false;
 
           $('.ms-CommandBarSearch').unbind();
+
         }
 
       });
@@ -125,6 +128,10 @@
       // Hook up contextual menu
       $OverflowCommand.click(function() {
         $OverflowMenu.toggleClass('is-open');
+      });
+
+      $OverflowCommand.focusout(function() {
+        $OverflowMenu.removeClass('is-open');
       });
 
       $SearchBox.find('.ms-CommandBarSearch-input').click(function() {

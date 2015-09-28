@@ -24,12 +24,13 @@
 
 
 @SearchBox-height: 40px;
-@SearchBox-widthLgCollapsed: 40px;
+@SearchBox-widthLgCollapsed: 50px;
 @SearchBox-widthMdDownCollapsed: 36px;
 @SearchBox-widthXLarge: 208px;
 @SearchBox-iconSize: 17px;
 @SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
 @SearchBox-smallWidth: 36px;  
+@SearchBox-iconWrapperWidth: @SearchBox-widthLgCollapsed - (@SearchBox-sidePadding * 2);
 
 .highContrastBorder(@color) {
     border-left: 1px solid @color;
@@ -52,8 +53,8 @@
 .ms-CommandBar-mainArea {
   overflow-x: hidden;
   display: block;
-  padding-left: @SearchBox-widthMdDownCollapsed + 8;
-  @media only screen and (min-width: @ms-screen-lg-min) {
+  padding-left: @SearchBox-widthLgCollapsed;
+  @media only screen and (min-width: @ms-screen-xl-min) {
     padding-left: 24px;
   }
 }
@@ -64,7 +65,11 @@
   width: auto;
   padding-right: 8px;
 
-  @media only screen and (min-width: @ms-screen-md-min) {
+  .ms-CommandBarItem:last-child {
+    margin-right: 0;
+  }
+
+  @media only screen and (min-width: @ms-screen-lg-min) {
     min-width: @CommandBar-sideAreaWidthsm;
   }
 
@@ -149,6 +154,7 @@
 
   .ms-Icon {
     font-size: 14px;
+    color: @ms-color-neutralSecondary; 
   }
 }
 
@@ -193,7 +199,7 @@
   border-color: transparent; // give a base state for animation
 
 
-  @media only screen and (max-width: @ms-screen-md-max) {
+  @media only screen and (max-width: @ms-screen-lg-max) {
     overflow: hidden;
     background-color: transparent;
     width: @SearchBox-widthLgCollapsed;
@@ -308,7 +314,7 @@
   background-color: @ms-color-themeLight;
   color: @ms-color-black;
 
-  @media only screen and (max-width: @ms-screen-md-max) {
+  @media only screen and (max-width: @ms-screen-lg-max) {
     width: 100%;
     position: absolute;
     z-index: @ms-zIndex-front;
@@ -354,6 +360,8 @@
   cursor: pointer;
   padding: 0px @SearchBox-sidePadding;
   position: absolute;
+  width: @SearchBox-iconWrapperWidth;
+  text-align: center;
 }
 
 .ms-CommandBarSearch .ms-Icon:before {

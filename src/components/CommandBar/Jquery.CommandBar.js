@@ -54,7 +54,6 @@
           $menu.html('');
 
           // Add overflowed commands to ContextualMenu
-
           for(i = 0; i < overFlowCommands.length; i++) {
             var $Item = $(overFlowCommands[i]);
             // Hide Element in CommandBar
@@ -118,11 +117,9 @@
         } else if($(window).width() > 639 && mobileSwitch == true) {
 
           mobileSwitch = false;
-
           $('.ms-CommandBarSearch').unbind();
 
         }
-
       });
 
       // Hook up contextual menu

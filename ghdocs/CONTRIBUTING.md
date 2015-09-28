@@ -10,15 +10,22 @@ Missing a glyph in the icon font? Though we don't officially support them, you c
 
 **Don't modify CSS (this is just the output of our LESS) or anything in `dist/`.**
 
+### Pull Requests
 We gladly welcome PRs regarding…
 - Bug fixes (of course!)
 - Variants on components
 - Documentation updates
 - Things we haven't thought of yet :-)
 
+### Feature Requests
 Please be sure to open an issue before starting a hefty PR so we can let you know if we're likely to consider your request--and to make sure we aren't already planning on doing the work.
 
-##Labels for Issue Tracker
+### Contribution License Agreement
+For pull requests affecting fewer than 15 lines of code, you will need to sign a [Contribution License Agreement (CLA)](https://cla.microsoft.com/) before your contribution can be incorporated. To complete the CLA, you will need to submit the request via the form and then electronically sign the CLA when you receive the email containing the link to the document.
+
+This needs to only be done once for any Microsoft open source project.
+
+### Labels for Issue Tracker
 
 We track community issues via Github's issue tracker. To help us keep track of the different areas, please use the following labels:
 

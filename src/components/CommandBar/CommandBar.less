@@ -53,7 +53,7 @@
 .ms-CommandBar-mainArea {
   overflow-x: hidden;
   display: block;
-  padding-left: @SearchBox-widthLgCollapsed;
+  padding-left: @SearchBox-widthLgCollapsed + 8;
   @media only screen and (min-width: @ms-screen-xl-min) {
     padding-left: 24px;
   }
@@ -85,11 +85,12 @@
 // Command Bar Item
 .ms-CommandBarItem {
   display: inline-block;
-  margin-right: 8px;
+  margin-right: 0;
   color: @ms-color-themePrimary;
   height: @CommandBarItem-height;
   outline: none;
   vertical-align: top;
+  margin-right: -4px;
 
   .ms-CommandBarItem-chevronDown,
   .ms-CommandBarItem-commandText {
@@ -123,6 +124,7 @@
 
   // Hide labels and Chevrons SM-MD
   @media only screen and (min-width: @ms-screen-lg-min) {
+    margin-right: 8px;
     .ms-CommandBarItem-chevronDown,
     .ms-CommandBarItem-commandText {
       display: inline;
@@ -172,7 +174,7 @@
   padding: 0 6px;
   cursor: pointer;
   height: @CommandBarItem-height;
-  min-width: 22px;
+  min-width: 20px;
   text-align: center;
   position: relative;
   padding: 0 8px;
@@ -210,7 +212,6 @@
 
   @media only screen and (max-width: @ms-screen-lg-max) {
     overflow: hidden;
-    background-color: transparent;
     width: @SearchBox-widthLgCollapsed;
     position: absolute;
   }

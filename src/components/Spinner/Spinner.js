@@ -24,7 +24,7 @@ fabric.Spinner = function(target, spinnerType) {
     var eightSize = 0.18;
     var sixteenSize = 0.1;
     var circleObjects = [];
-    var animationSpeed = 100;
+    var animationSpeed = 50;
     var interval;
     var spinner;
     var numCircles;
@@ -67,29 +67,23 @@ fabric.Spinner = function(target, spinnerType) {
     }
 
     function _initializeOpacities() {
-        var i = numCircles, j;
-        while(i--) {
-            j = circleObjects.length;
-            while(j--) {
-                _fade(circleObjects[j]);
-            }
+        var i = 0;
+        var opacity;
+        var increment = (1 / (numCircles));
+        for(i; i < numCircles; i++) {
+            var circleObject = circleObjects[i];
+            opacity = (increment * i);
+            _setOpacity(circleObject.element, opacity);
         }
     }
 
     function _fade(circleObject) {
-        var opacity;
-        if(circleObject.j < numCircles) {
-            if(Math.floor(circleObject.j / (numCircles / 2))) {
-                opacity = _getOpacity(circleObject.element) - 2 / numCircles;
-            } else{
-                opacity = _getOpacity(circleObject.element) + 2 / numCircles;
-            }
-        } else {
-            circleObject.j = 0;
-            opacity = 2/ numCircles;
+        var increment = (1 / numCircles) * 0.5;
+        var opacity = _getOpacity(circleObject.element) - increment;
+        if(opacity <= increment) {
+            opacity = 1;
         }
         _setOpacity(circleObject.element, opacity);
-        circleObject.j++;
     }
 
     function _getOpacity(element) {

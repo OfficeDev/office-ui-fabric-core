@@ -1,6 +1,49 @@
 # Changelog
 
-All noteworthy changes to Office UI Fabric will be documented in this file. Office UI Fabric adheres to [Semantic Versioning](http://semver.org/).
+All noteworthy changes to Office UI Fabric will be documented in this file.
+
+## 1.1.0 - 9-25-2015
+
+### New
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/127: Add ProgressIndicator component
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/125: Add local testing server
+
+### Fixed
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/139: Remove extra "\" character on .ms-borderColor-themeLighterAlt--hover CSS class
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/111: DatePicker on top of other DatePicker with correct z-index
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/105: Changed margin-left on image if is-selectable state
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/103: Update persona presence size. Clean up persona markup in all applicable components.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/92: Fixed DatePicker bug where navigating to a previous month fails
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/91: Clean up and restructure choicefield Less. Update and rename templates.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/90: Command Bar Fixes
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/87: Fix spacing between dropdown list items and dropdown list container
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/85: Fix filename case sensitivity
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/82: Simplify bower path in postinstall script.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/70: Update links to CDN license for fonts and icons to a dynamic URL
+
+### Changed
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/151: NavBar - Replaced overlay pseudo element with Fabric Overlay component
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/149: Improved vanilla JS Consistency
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/146: Merge "develop" into "master" cla-not-required
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/137: Separated PickaDate from DatePicker
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/117: Removed non-existing icon "ppt-icon.png" from ListItem.less
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/115: Simplified DatePicker Markup
+
+### Documentation/Samples
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/142: Fixed typo
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/126: Update download link in Getting Started
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/97: Remove protocol from CDN reference to avoid cross HTTP/HTTPS requests
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/80: Remove non-existent icons.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/84: Update CONTRIBUTING with note about which branches to use
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/83: Remove extra period.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/77: Fix broken anchors in COMPONENTS.md
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/69: Clean up component demos
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/68: Add reference to Office Add-Ins resources
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/61: Add button variant html files for demo.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/62: Add/update dialog variant html files for demo.
+* https://github.com/OfficeDev/Office-UI-Fabric/pull/63: Add disabled state template file for dropdown
+
+
 
 ## 1.0.0 - 8-31-2015
 

@@ -37,9 +37,10 @@
         $(this).siblings('.ms-NavBar-item').removeClass('is-selected');
 
         // Close and blur the search box if it doesn't have text.
-        if ($navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field').val().length === 0) {
-          $('.ms-NavBar-item.ms-NavBar-item--search').removeClass('is-open').find('.ms-TextField-field').blur();
-        }
+		var $searchBox = $navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field');
+		if ($searchBox.length > 0 && $searchBox.val().length === 0) {
+			$('.ms-NavBar-item.ms-NavBar-item--search').removeClass('is-open').find('.ms-TextField-field').blur();
+		}
 
         // Does the selected item have a menu?
         if ($(this).hasClass('ms-NavBar-item--hasMenu')) {
@@ -80,10 +81,11 @@
       $(document).on('click', 'html', function(event) {
         $navBar.find('.ms-NavBar-item').removeClass('is-selected').find('.ms-ContextualMenu').removeClass('is-open');
 
-        // Close and blur the search box if it doesn't have text.
-        if ($navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field').val().length === 0) {
-          $navBar.find('.ms-NavBar-item.ms-NavBar-item--search').removeClass('is-open').find('.ms-TextField-field').blur();
-        }
+        // Close and blur the search box if it exists and doesn't have text.
+		var $searchBox = $navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field');
+		if ($searchBox.length > 0 && $searchBox.val().length === 0) {
+			$navBar.find('.ms-NavBar-item.ms-NavBar-item--search').removeClass('is-open').find('.ms-TextField-field').blur();
+		}
       });
     });
   };

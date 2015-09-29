@@ -70,7 +70,7 @@ fabric.Spinner = function(target, spinnerType) {
         var i = 0;
         var opacity;
         var increment = (1 / (numCircles));
-        for(i; i < numCircles; i++) {
+        for (i; i < numCircles; i++) {
             var circleObject = circleObjects[i];
             opacity = (increment * i);
             _setOpacity(circleObject.element, opacity);
@@ -80,7 +80,7 @@ fabric.Spinner = function(target, spinnerType) {
     function _fade(circleObject) {
         var increment = (1 / numCircles) * 0.5;
         var opacity = _getOpacity(circleObject.element) - increment;
-        if(opacity <= increment) {
+        if (opacity <= increment) {
             opacity = 1;
         }
         _setOpacity(circleObject.element, opacity);
@@ -120,7 +120,7 @@ fabric.Spinner = function(target, spinnerType) {
         var i = numCircles;
         var circleObject;
         var radius = (width- offset) * 0.5;
-        while(i--) {
+        while (i--) {
             var circle = _createCircle();
             var x = Math.round(width * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
             var y = Math.round(height * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;

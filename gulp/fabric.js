@@ -59,7 +59,7 @@ var monthNames = ["January", "February", "March",
                     "August", "September", "October",
                     "November", "December"];
 var bannerTemplate = ['/**',
-      ' * <%= pkg.name %> <%= pkg.version %>',
+      ' * Office UI Fabric <%= pkg.version %>',
       ' * <%= pkg.description %>',
       ' **/',
       ''].join('\n');

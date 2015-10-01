@@ -85,7 +85,6 @@
 // Command Bar Item
 .ms-CommandBarItem {
   display: inline-block;
-  margin-right: 0;
   color: @ms-color-themePrimary;
   height: @CommandBarItem-height;
   outline: none;
@@ -134,7 +133,8 @@
 }
 
 .ms-CommandBarItem.is-hidden {
-  display: none;
+  width: 0;
+  overflow: hidden;
 }
   
 //== Modifier: For commands with only an icon
@@ -148,9 +148,7 @@
 }
 
 .ms-CommandBarItem.ms-CommandBarItem--hasTextOnly {
-  .ms-CommandBarItem-commandText {
-    display: inline;
-  }
+  .ms-CommandBarItem-commandText,
   .ms-CommandBarItem-chevronDown {
     display: inline;
   }
@@ -164,7 +162,7 @@
   }
 
   .ms-Icon {
-    font-size: 14px;
+    font-size: @ms-font-size-m;
     color: @ms-color-neutralSecondary; 
   }
 }
@@ -181,7 +179,7 @@
 }
 
 .ms-CommandBarItem-icon {
-  font-size: 17px;
+ font-size: @ms-font-size-l;
 }
 
 .ms-CommandBarItem-chevronDown  {
@@ -216,7 +214,7 @@
     position: absolute;
   }
 
-  transition: @ms-duration3 @ms-ease1;
+  transition: @ms-duration1 @ms-ease1;
   transition-property: width, background-color;
 
   @media screen and (-ms-high-contrast: active) {

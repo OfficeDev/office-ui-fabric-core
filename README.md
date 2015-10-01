@@ -80,4 +80,4 @@ We add new features in minor versions (for example, x.**Y**.z), which we typical
 - [Contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md)
 
 ##Changelog
-- View a complete list of additions, fixes, and changes in the [changelog](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/CHANGELOG.md).
+We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, incuding the changelog between every release. View a complete list of additions, fixes, and changes since 1.0 in the [Releases section](https://github.com/OfficeDev/Office-UI-Fabric/releases).

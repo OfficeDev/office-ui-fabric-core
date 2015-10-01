@@ -1,0 +1,59 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// RTL overrides for Fabric Animations
+
+
+@import '_Fabric.Animations.less';
+
+// slideRightIn40
+.ms-u-slideRightIn40 {
+    .animationMix(fadeIn, slideLeft40; @ms-duration3; @ms-ease1);
+}
+
+// slideLeftIn40
+.ms-u-slideLeftIn40 {
+    .animationMix(fadeIn, slideRight40; @ms-duration3; @ms-ease1);
+}
+
+// slideRightIn400
+.ms-u-slideRightIn400 {
+    .animationMix(fadeIn, slideLeft400; @ms-duration3; @ms-ease1);
+}
+
+// slideLeftIn400
+.ms-u-slideLeftIn400 {
+    .animationMix(fadeIn, slideRight400; @ms-duration3; @ms-ease1);
+}
+
+// slideRightOut40
+.ms-u-slideRightOut40 {
+    .animationMix(fadeOut, slideLeftOut40; @ms-duration1; @ms-ease2);
+}
+
+// slideLeftOut40
+.ms-u-slideLeftOut40 {
+    .animationMix(fadeOut, slideRightOut40; @ms-duration1; @ms-ease2);
+}
+
+// slideRightOut400
+.ms-u-slideRightOut400 {
+    .animationMix(fadeOut, slideLeftOut400; @ms-duration1; @ms-ease2);
+}
+
+// slideLeftOut400
+.ms-u-slideLeftOut400 {
+    .animationMix(fadeOut, slideRightOut400; @ms-duration1; @ms-ease2);
+}
+
+// rotate90deg
+.ms-u-rotate90deg {
+    .animationMix(rotateN90; 0.1s; @ms-ease2);
+}
+
+// rotateN90deg
+.ms-u-rotateN90deg {
+    .animationMix(rotate90; 0.1s; @ms-ease2);
+}

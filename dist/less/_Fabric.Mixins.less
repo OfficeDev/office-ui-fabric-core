@@ -1,0 +1,275 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Vendor-prefixed mixins
+
+
+// Border radius.
+.border-radius (@ms-radius: 5px) {
+  border-radius: @ms-radius;
+  background-clip: padding-box;
+}
+
+// Drop shadow.
+.drop-shadow(@ms-x-offset: 0, @ms-y-offset: 0, @ms-blur: 5px, @ms-spread: 0, @ms-alpha: 0.4) {
+  box-shadow: @ms-x-offset @ms-y-offset @ms-blur @ms-spread rgba(0, 0, 0, @ms-alpha);
+}
+
+// Background gradient.
+.background-gradient (@ms-origin: left, @ms-start: #000, @ms-start-location: 0%, @ms-stop: #FFF, @ms-stop-location: 100%) {
+    background-color: @ms-start;
+    background-image: linear-gradient(@ms-origin, @ms-start @ms-start-location, @ms-stop @ms-stop-location);
+}
+
+// Rotation.
+.rotate (@ms-deg) {
+  transform: rotate(@ms-deg);
+}
+
+// Reset button styles.
+.button-reset() {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.resetAnimation() {
+    -webkit-animation: none;
+    -moz-animation:  none;
+    -ms-animation:  none;
+    -o-animation:  none;
+    animation:  none;
+}
+
+.resetBackface() {
+   backface-visibility: visible;
+}
+
+.resetBackground() {
+  background: 0;
+  background-clip: border-box;
+  background-origin: padding-box;
+}
+
+.resetBorder() {
+  border: 0;
+  border-collapse: separate;
+  border-image: none;
+  border-radius: 0;
+  border-spacing: 0;
+}
+
+.resetBoxShadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.resetBoxSizing() {
+   box-sizing: content-box;
+}
+
+.resetColumns() {
+  columns: auto;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: medium none currentColor;
+  column-rule-color: currentColor;
+  column-rule-style: none;
+  column-rule-width: none;
+  column-span: 1;
+  column-width: auto;
+}
+
+
+// Fonts and Typography Resets
+.resetFont() {
+  font: normal;
+  font-family: inherit;
+  font-size: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+}
+
+.resetTextStyling() {
+  text-align: inherit;
+  text-align-last: auto;
+  text-decoration: none;
+  text-decoration-color: inherit;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  line-height: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+
+// Box Model Resets
+.resetPadding() {
+  padding: 0;
+}
+
+.resetMargins() {
+  margin: 0;
+}
+
+.resetOverflow() {
+  overflow: visible;
+}
+
+.resetMax() {
+    max-height: none;
+    max-width: none;
+}
+
+.resetMin() {
+    min-height: 0;
+    min-width: 0;
+}
+
+.resetPositioning() {
+  bottom: auto;
+  left: auto;
+  top: auto;
+  left: auto;
+}
+
+.resetFloat() {
+  float: none;
+}
+
+.resetHeight(@ms-useMaxMin: false) {
+    height: auto;
+    & when (@ms-useMaxMin = true) {
+        min-height: 0;
+        max-height: 0;
+    }
+}
+
+.resetWidth(@ms-useMaxMin: false) {
+    width: auto;
+    & when (@ms-useMaxMin = true) {
+        min-width: 0;
+        max-width: 0;
+    }
+}
+
+.resetPosition() {
+  position: static;
+}
+
+.resetPerspective() {
+  -webkit-perspective: none;
+  -webkit-perspective-origin: 50% 50%;
+  perspective: none;
+  perspective-origin: 50% 50%;
+
+}
+
+.resetTransition() {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.resetListStyle() {
+  list-style: none;
+}
+
+.resetTransform() {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -webkit-transform-style: flat;
+  transform: none;
+  transform-style: flat;
+}
+
+.resetOutline() {
+  outline: 0;
+}
+
+.resetPageBreak() {
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+}
+
+.resetDisplay() {
+  display: block;
+}
+
+.resetVerticalAlign() {
+    vertical-align: baseline;
+}
+
+// Prevents the text within a block element from wrapping to second line.
+.noWrap() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Input placehoder
+.input-placeholder(@ms-rules) {
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-moz-placeholder,
+    &:-ms-input-placeholder {
+        @ms-rules();
+    }
+}
+
+// Animations
+.animationName(@ms-name) {
+    -webkit-animation-name: @ms-name;
+    -moz-animation-name: @ms-name;
+    -ms-animation-name: @ms-name;
+    -o-animation-name: @ms-name;
+    animation-name: @ms-name;
+}
+
+.animationDuration(@ms-duration) {
+    -webkit-animation-duration: @ms-duration;
+    -moz-animation-duration: @ms-duration;
+    -ms-animation-duration: @ms-duration;
+    -o-animation-duration: @ms-duration;
+}
+
+.animationTiming(@ms-function) {
+    -webkit-animation-timing-function: @ms-function;
+    -moz-animation-timing-function: @ms-function;
+    -ms-animation-timing-function: @ms-function;
+    -o-animation-timing-function: @ms-function;
+    animation-timing-function: @ms-function;
+}
+
+.animationFillMode(@ms-mode) {
+    -webkit-animation-fill-mode: @ms-mode;
+    -moz-animation-fill-mode: @ms-mode;
+    -ms-animation-fill-mode: @ms-mode;
+    -o-animation-fill-mode: @ms-mode;
+    animation-fill-mode: @ms-mode;
+}
+
+// Flexbox
+.flexBox() {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.alignItems(@ms-mode) {
+    -webkit-box-align: @ms-mode;
+    -moz-box-align: @ms-mode;
+    -ms-flex-align: @ms-mode;
+    -webkit-align-items: @ms-mode;
+    align-items: @ms-mode;
+}
+

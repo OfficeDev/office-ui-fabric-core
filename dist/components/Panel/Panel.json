@@ -1,0 +1,45 @@
+{
+  "name": "Panel",
+  "notes": "",
+  "template": "Panel.html",
+  "class": "ms-Panel",
+  "dependencies": [
+    "Button",
+    "CommandBar",
+    "Label",
+    "Overlay"
+  ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "Panel.html"
+  ],
+  "branches": [
+    {
+      "name": "Small",
+      "default": true,
+      "class": "ms-Panel--small",
+      "branches": [
+          {
+            "name": "Right",
+            "default": true
+          },
+          {
+            "name": "Left",
+            "class": "ms-Panel--left"
+          }
+      ]
+    },
+    {
+      "name": "Medium",
+      "class": "ms-Panel--medium"
+    },
+    {
+      "name": "Large",
+      "class": "ms-Panel--large"
+    },
+    {
+      "name": "Extra Large",
+      "class": "ms-Panel--extraLarge"
+    }
+  ]
+}

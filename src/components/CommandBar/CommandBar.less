@@ -176,6 +176,21 @@
   text-align: center;
   position: relative;
   padding: 0 8px;
+  display: block;
+  height: 100%;
+}
+
+.ms-CommandBarItem-link:focus {
+  outline: none;
+  &:before {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border: 1px solid @ms-color-neutralTertiary;
+    content: '';
+  }
 }
 
 .ms-CommandBarItem-icon {

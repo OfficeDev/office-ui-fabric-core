@@ -150,6 +150,10 @@
         $(this).closest('.ms-CommandBarSearch').addClass('is-active');
       });
 
+      $SearchBox.find('.ms-CommandBarSearch-input').on('focus', function() {
+        $(this).closest('.ms-CommandBarSearch').addClass('is-active');
+      });
+
        // When clicking the x clear the SearchBox and put state back to normal
       $SearchBox.find('.ms-CommandBarSearch-iconClearWrapper').click(function() {
         var $input = $(this).parent().find('.ms-CommandBarSearch-input');

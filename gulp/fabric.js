@@ -574,6 +574,7 @@ gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'bu
 gulp.task('nuget-pack', function(callback) {
     nugetpack({
             id: "OfficeUIFabric",
+            title: "Office UI Fabric",
             version: pkg.version,
             authors: "Microsoft Corporation",
             owners: "Microsoft Corporation",
@@ -589,8 +590,10 @@ gulp.task('nuget-pack', function(callback) {
         },
 
         [
+            {src: paths.componentsPath, dest: "/content/components/"},
             {src: paths.distCSS, dest: "/content/css/"},
-            {src: paths.distJS, dest: "/content/scripts/"}
+            {src: paths.distJS, dest: "/content/scripts/"},
+            {src: paths.distLess, dest: "/content/less/"}
         ],
 
         callback

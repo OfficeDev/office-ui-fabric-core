@@ -186,8 +186,6 @@
     $yearPicker.on('click', '.js-changeDate', function(event) {
       event.preventDefault();
 
-      console.log("about to change the year!");
-
       /** Get the requested date from the data attributes. */
       var newYear = $(this).attr('data-year');
       var newMonth = $(this).attr('data-month');

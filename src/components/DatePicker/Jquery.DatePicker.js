@@ -277,8 +277,7 @@
     $yearPicker.find('.ms-DatePicker-yearOption').removeClass('is-highlighted')
     $yearPicker.find('.ms-DatePicker-yearOption[data-year="' + $picker.get('highlight').year + '"]').addClass('is-highlighted');
   }
-
-
+  
   /** Scroll the page up so that the field the date picker is attached to is at the top. */
   function scrollUp($datePicker) {
     $('html, body').animate({

@@ -29,6 +29,7 @@ var colors = require('colors/safe');
 var path = require('path');
 var wrap = require('gulp-wrap');
 var uglify = require('gulp-uglify');
+var nugetpack = require('gulp-nuget-pack');
 
 // Define paths.
 var distPath = 'dist';
@@ -41,6 +42,7 @@ var paths = {
     distSamples: distPath + '/samples',
     distSampleComponents: distPath + '/samples/' +  '/Components',
     distJS: distPath + '/js',
+    distPackages: distPath + '/packages',
     srcPath: srcPath,
     srcSamples: srcPath + '/samples',
     componentsPath : 'src/components',
@@ -60,7 +62,7 @@ var monthNames = ["January", "February", "March",
                     "August", "September", "October",
                     "November", "December"];
 var bannerTemplate = ['/**',
-      ' * <%= pkg.name %> <%= pkg.version %>',
+      ' * Office UI Fabric <%= pkg.version %>',
       ' * <%= pkg.description %>',
       ' **/',
       ''].join('\n');
@@ -576,6 +578,38 @@ gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'bu
 // gulp.task('index-build-all', ['build-components-page']);
 
 //
+// Packaging tasks
+// ----------------------------------------------------------------------------
+gulp.task('nuget-pack', function(callback) {
+    nugetpack({
+            id: "OfficeUIFabric",
+            title: "Office UI Fabric",
+            version: pkg.version,
+            authors: "Microsoft Corporation",
+            owners: "Microsoft Corporation",
+            description: "Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office experience from scratch or adding new features to an existing one.",
+            summary: "The front-end framework for building experiences for Office and Office 365.",
+            language: "en-us",
+            projectUrl: "https://github.com/OfficeDev/Office-UI-Fabric",
+            licenseUrl: "https://github.com/OfficeDev/Office-UI-Fabric/blob/master/LICENSE",
+            copyright: "Copyright (c) Microsoft Corporation",
+            requireLicenseAcceptance: true,
+            tags: "Microsoft UI Fabric CSS",
+            outputDir: paths.distPackages
+        },
+
+        [
+            {src: paths.componentsPath, dest: "/content/components/"},
+            {src: paths.distCSS, dest: "/content/css/"},
+            {src: paths.distJS, dest: "/content/scripts/"},
+            {src: paths.distLess, dest: "/content/less/"}
+        ],
+
+        callback
+    );
+});
+
+//
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
@@ -657,9 +691,9 @@ gulp.task('watch:fabric-components', ['build-fabric-components', 'fabric-compone
 });
 
 // Watches all src fabric components but, builds the samples only
-gulp.task('watch:component-samples', ['build-component-samples', 'samples-index-build-components', 'fabric-server', 'component-samples-finished'], function () {
+gulp.task('watch:component-samples', ['build-component-samples', 'build-components-page', 'fabric-server',  'fabric-all-server'], function () {
     return gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-component-samples', 'samples-index-build-all', 'component-samples-updated', done);
+        runSequence('build-component-samples', done);
     }));
 });
 

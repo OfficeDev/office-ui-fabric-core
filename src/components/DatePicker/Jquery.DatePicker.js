@@ -2,8 +2,6 @@
 
 (function ($) {
 
-  console.log('DatePicker executed');
-
   /**
    * @param {object} options DatePicker options
    * @param {array} options.optionMonths An array of month abbreviations for the options grid

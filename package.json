@@ -26,6 +26,7 @@
     "gulp-data": "^1.2.0",
     "gulp-file": "^0.2.0",
     "gulp-folders": "^1.1.0",
+    "gulp-foreach": "^0.1.0",
     "gulp-header": "^1.2.2",
     "gulp-less": "^3.0.3",
     "gulp-minify-css": "^1.2.0",

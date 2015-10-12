@@ -23,6 +23,7 @@ var concat = require('gulp-concat');
 var tap = require('gulp-tap');
 var data = require('gulp-data');
 var folders = require('gulp-folders');
+var foreach = require('gulp-foreach');
 var browserSync = require('browser-sync').create();
 var colors = require('colors/safe');
 var path = require('path');
@@ -477,7 +478,8 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
 
              storedFiles[folder] = {
                 "name": file.basename,
-                "contents": file.contents.toString()
+                "contents": file.contents.toString(),
+                "files": []
             }
 
             var curString = file.contents.toString();
@@ -496,7 +498,8 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
 
             storedFiles[folder] = {
                 "name": file.basename,
-                "contents": file.contents.toString()
+                "contents": file.contents.toString(),
+                "files": []
             }
 
             var curString = file.contents.toString();
@@ -517,7 +520,9 @@ gulp.task('component-samples-template', ['build-component-data', 'component-samp
             .on('error', onGulpError)
         .pipe(data(function () {
             var jstag = '';
-            if(typeof storedFiles[folder].script != "undefined") { jstag = storedFiles[folder].script; }
+            var files =  storedFiles[folder]["files"];
+            for(var o=0; o < files.length; o++) {jstag += files[o];}
+            if(typeof storedFiles[folder][folder] != "undefined") { jstag += storedFiles[folder][folder]; }
             return { "componentName": folder, "stored": storedFiles[folder].contents, "jstag": jstag };
         }))
             .on('error', onGulpError)
@@ -533,11 +538,15 @@ gulp.task('component-samples-add-js', ['build-component-data'], folders(paths.co
 
     return gulp.src(paths.componentsPath + '/' + folder + '/*.js')
             .on('error', onGulpError)
-        .pipe(tap(function(file) {
-            var filename = file.path.replace(/^.*[\\\/]/, '')
-            storedFiles[folder].script = '<script type="text/javascript" src="' + filename+ '"></script>';
-        }))
+      .pipe(foreach(function(stream){
+          return stream
+            .pipe(tap(function(file) {
+                var filename = file.path.replace(/^.*[\\\/]/, '');
+                storedFiles[folder]["files"].push('<script type="text/javascript" src="' + filename+ '"></script>' + "\r\b");
+            }))
             .on('error', onGulpError);
+      }))
+      .on('error', onGulpError);
 }));
 
 gulp.task('build-sample-data', ['clean-samples'], folders(paths.srcSamples, function (folder) {

@@ -12,15 +12,19 @@
   width: auto;  
 }
 
-.ms-Facepile-circleFilled {
-  position: absolute;
+.ms-Facepile-circleFilled {  
   font-size: 32px; 
-  color: @ms-color-themePrimary;  
+  color: @ms-color-themePrimary;
   float: left;
 }
 
-.ms-Facepile-sansPicture {
-  position: absolute;
+.ms-Facepile-expand {
+  font-size: 32px; 
+  color: @ms-color-neutralLight;  
+  float: left;  
+}
+
+.ms-Facepile-sansPicture {  
   font-size: 32px; 
   color: @ms-color-neutralSecondaryAlt;  
   float: left;
@@ -45,16 +49,8 @@
   position: absolute;
   font-size: 16px;
   color: @ms-color-white;
-  top: 6px;
-  left: 8px;  
-}
-
-.ms-Facepile-image {
-  border-radius: 50%;
-  height: 32px;
-  width: 32px;  
-  float: left;
-  margin-right: 4px;
+  top: 7px;
+  left: 9px;  
 }
 
 .ms-Facepile-circle {
@@ -67,8 +63,24 @@
 
 .ms-Facepile-chevronThickDown {
   position: absolute;
-  font-size: 21px;
+  font-size: 16px;
   color: @ms-color-neutralSecondary;
-  top: 6px;
+  top: 8px;
   left: 8px; 
+}
+
+.ms-Facepile-itemBtn {
+  .button-reset();
+  position: relative;
+  height: 32px;
+  width: 32px;
+  background: none;
+  border: 0;
+  text-align: left;
+  margin-right: 0;
+  padding: 0;
+  outline: transparent;
+  .ms-Persona-image {
+    margin: 0;
+  }
 }

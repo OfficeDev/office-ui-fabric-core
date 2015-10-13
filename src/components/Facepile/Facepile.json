@@ -3,6 +3,9 @@
   "notes": "",
   "template": "Facepile.html",
   "class": "ms-Facepile",
+  "dependencies": [
+    "Persona"
+  ],
   "wrapBranches": true,
   "fileOrder": [
     "Facepile.html",

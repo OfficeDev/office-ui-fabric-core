@@ -12,22 +12,37 @@
   width: auto;  
 }
 
-.ms-Facepile-circleFilled {  
-  font-size: 32px; 
-  color: @ms-color-themePrimary;
-  float: left;
+.ms-Facepile-circleFilled {
+  border-radius: 50%;
+  background-color: @ms-color-themePrimary;
+  height: 32px;
+  width: 32px;
+
+  &:hover {
+    background-color: @ms-color-themeDark;
+  }
+
+  &:active {
+    background-color: @ms-color-themeDarker;
+  }
+
+  &:disabled {
+    background-color: @ms-color-neutralTertiaryAlt;
+  }
 }
 
 .ms-Facepile-expand {
-  font-size: 32px; 
-  color: @ms-color-neutralLight;  
-  float: left;  
+  border-radius: 50%;
+  background-color: @ms-color-neutralLight;
+  height: 32px;
+  width: 32px;
 }
 
 .ms-Facepile-sansPicture {  
-  font-size: 32px; 
-  color: @ms-color-neutralSecondaryAlt;  
-  float: left;
+  border-radius: 50%;
+  background-color: @ms-color-neutralSecondaryAlt;
+  height: 32px;
+  width: 32px;
 }
 
 .ms-Facepile-initials {
@@ -39,9 +54,21 @@
 
 .ms-Facepile-overflow {
   position: absolute;
-  color: @ms-color-themePrimary;  
+  color: @ms-color-neutralSecondary;
   top: 6px;
   left: 6px;
+
+  &:hover {
+    color: @ms-color-neutralDark;
+  }
+
+  &:active {
+    color: @ms-color-themePrimary;
+  } 
+
+  &:disabled {
+    color: @ms-color-neutralTertiaryAlt;
+  }
 }
 
 // AddFriend icon.
@@ -66,7 +93,19 @@
   font-size: 16px;
   color: @ms-color-neutralSecondary;
   top: 8px;
-  left: 8px; 
+  left: 8px;
+
+  &:hover {
+    color: @ms-color-neutralDark;
+  }
+
+  &:active {
+    color: @ms-color-themePrimary;
+  } 
+
+  &:disabled {
+    color: @ms-color-neutralTertiaryAlt;
+  }
 }
 
 .ms-Facepile-itemBtn {
@@ -77,7 +116,7 @@
   background: none;
   border: 0;
   text-align: left;
-  margin-right: 0;
+  margin: 0;
   padding: 0;
   outline: transparent;
   .ms-Persona-image {

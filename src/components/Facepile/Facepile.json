@@ -6,6 +6,7 @@
   "wrapBranches": true,
   "fileOrder": [
     "Facepile.html",
-    "Facepile.NoOverflow.html"    
+    "Facepile.NoOverflow.html",    
+    "Facepile.WithOverflow.html"    
   ]
 }

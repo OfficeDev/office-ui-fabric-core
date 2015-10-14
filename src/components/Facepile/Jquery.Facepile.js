@@ -15,6 +15,7 @@
     return this.each(function () {
       
       var $facePile = $(this);  
+      var $n = $(".ms-Persona--xs").length;
 
       /** Add member when button clicked (No Overflow) */
       $facePile.on('click', '.ms-Facepile-circleFilled-noOverflow', function(event) {                
@@ -23,8 +24,17 @@
 
       /** Add member when button clicked (With Overflow) */
       $facePile.on('click', '.ms-Facepile-circleFilled-withOverflow', function(event) {                
-        $(this).parent().next().children(':first').clone().appendTo(".ms-Facepile-members-withOverflow");        
+        $(this).parent().next().children(':first').clone().appendTo(".ms-Facepile-members-withOverflow");  
+
+        // Increment number of members by one
+        $n += 1;
+        $(".ms-Facepile-overflow").text("+" + $n);       
       });
+
+      // Display member count on page load
+      $(document).ready(function() {
+        $(".ms-Facepile-overflow").text("+" + $n);
+      });  
 
     });
 

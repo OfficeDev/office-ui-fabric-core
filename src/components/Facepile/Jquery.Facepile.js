@@ -17,31 +17,36 @@
       var $facePile = $(this);        
       var $n = $(".ms-Facepile-members-withOverflow > button").length;
 
-      /** Add member when button clicked (No Overflow) */
-      $facePile.on('click', '.ms-Facepile-circleFilled-noOverflow', function(event) {                
-        $(this).parent().next().children(':last').clone().prependTo(".ms-Facepile-members-noOverflow");        
+      /** Toggle background color of circle behind add person icon */
+      $(".ms-Facepile-personAdd").hover(function() {
+        $(".ms-Facepile-circleFilled-withOverflow").toggleClass("ms-Facepile-iconInner");
       });
 
-      /** Add member when button clicked (With Overflow) */
-      $facePile.on('click', '.ms-Facepile-circleFilled-withOverflow', function(event) {
-        $(this).parent().next().children(':first').clone().prependTo(".ms-Facepile-members-withOverflow");  
+      /** Add person when button clicked */
+      $facePile.on("click", ".js-addPerson", function(event) {
+        $(this).parent().next().children(":first").clone().prependTo(".ms-Facepile-members-withOverflow");  
 
-        // Increment members by one
+        /** Increment person count by one */
         $n += 1;
         $(".ms-Facepile-overflow").text("+" + $n);
 
-        // Display a maxiumum of 6 members
+        /** Display a maxiumum of 6 people */
         $(".ms-Facepile-members-withOverflow").children(":gt(4)").hide();
 
-        // Display chevronDown while members are 5 or less
+        /** Display counter when 5 people are present */
         if ($n > 4) {
           $("span.ms-Facepile-overflow").removeClass("is-hidden");
           $("i.ms-Facepile-chevronThickDown").addClass("is-hidden");
         }
 
+        /** Re-position counter when double digits reached */
+        if ($n > 9) {
+          $(".ms-Facepile-overflow").addClass("ms-Facepile-doubleDigits");
+        }
+
       });
 
-      // Display member count on page load
+      /** Display person count on page load */
       $(document).ready(function() {
         $(".ms-Facepile-overflow").text("+" + $n);
       });  

@@ -5,11 +5,5 @@
   "class": "ms-Facepile",
   "dependencies": [
     "Persona"
-  ],
-  "wrapBranches": true,
-  "fileOrder": [
-    "Facepile.html",
-    "Facepile.NoOverflow.html",    
-    "Facepile.WithOverflow.html"    
   ]
 }

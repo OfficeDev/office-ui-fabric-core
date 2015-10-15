@@ -15,12 +15,7 @@
     return this.each(function () {
       
       var $facePile = $(this);        
-      var $n = $(".ms-Facepile-members-withOverflow > button").length;
-
-      /** Toggle background color of circle behind add person icon */
-      $(".ms-Facepile-personAdd").hover(function() {
-        $(".ms-Facepile-circleFilled-withOverflow").toggleClass("ms-Facepile-iconInner");
-      });
+      var $n = $(".ms-Facepile-members-withOverflow > button").length;      
 
       /** Add person when button clicked */
       $facePile.on("click", ".js-addPerson", function(event) {

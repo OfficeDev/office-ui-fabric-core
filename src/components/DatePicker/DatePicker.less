@@ -320,22 +320,6 @@
   }
 }
 
-// State: The picker is showing the month components.
-.ms-DatePicker.is-pickingMonths {
-
-  // Hide the day picking components.
-  .ms-DatePicker-dayPicker,
-  .ms-DatePicker-monthComponents {
-    display: none;
-  }
-
-  // Show the month picking components.
-  .ms-DatePicker-monthPicker {
-    display: block;
-  }
-
-}
-
 // State: The picker is showing the year components.
 .ms-DatePicker.is-pickingYears {
 
@@ -526,6 +510,25 @@
 
     // Show the year picking components.
     .ms-DatePicker-yearPicker {
+      display: block;
+    }
+  }
+}
+
+//on smaller screens the month button toggles to the picking months state
+@media (max-width: 459px) {
+
+  // State: The picker is showing the month components.
+  .ms-DatePicker.is-pickingMonths {
+
+    // Hide the day picking components.
+    .ms-DatePicker-dayPicker,
+    .ms-DatePicker-monthComponents {
+      display: none;
+    }
+
+    // Show the month picking components.
+    .ms-DatePicker-monthPicker {
       display: block;
     }
   }

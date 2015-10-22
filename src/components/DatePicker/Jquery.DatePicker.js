@@ -69,7 +69,7 @@
           outfocus: 'ms-DatePicker-day--outfocus',
 
         }
-      },options));
+      },options||{}));
       var $picker = $dateField.pickadate('picker');
 
       /** Respond to built-in picker events. */

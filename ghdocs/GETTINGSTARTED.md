@@ -116,7 +116,7 @@ If you're building an Office Add-in, you can find simple instructions for using 
 
 Fabric meets the Office 365 browser support requirements for desktop and mobile devices. This includes support for the latest versions of Chrome, Firefox, Safari, and Internet Explorer.
 
-|| **Chrome (latest stable)** | **Firefox (last 2 versions)** | **Safari (latest)** | **IE8** | **IE9** | **IE10** | **IE11** | **Edge** |
+|| **Chrome (latest stable)** | **Firefox (last 2 versions)** | **Safari (latest)** | **Internet Explorer 8** | **Internet Explorer 9** | **Internet Explorer 10** | **Internet Explorer 11** | **Edge** |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | Windows | ![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![x](http://odux.azurewebsites.net/github/img/x.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|
 | Mac OS | ![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)|![check](http://odux.azurewebsites.net/github/img/check.png)| - | - | - | - | - |

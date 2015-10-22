@@ -20,10 +20,12 @@ For simple instructions for using Fabric components in Office Add-ins, see the a
 |:-----|:-----|
 |Buttons|![Buttons](http://odux.azurewebsites.net/github/img/buttons.png)|
 |Choice fields|![Choice fields](http://odux.azurewebsites.net/github/img/Choice.png)|
+|Date Picker|![Date/time picker](http://i.imgur.com/odFYZjM.png)![Date/time picker small](http://i.imgur.com/k0Yz8Bo.png)
 |Form field label|![Form field label](http://odux.azurewebsites.net/github/img/Label.png)|
 |Search box|![Search box](http://odux.azurewebsites.net/github/img/Search.png)|
 |Toggle|![Toggle](http://odux.azurewebsites.net/github/img/Toggle.png)|
 |Text fields|![Text field](http://odux.azurewebsites.net/github/img/TextFields.png)|
+
 
 
 

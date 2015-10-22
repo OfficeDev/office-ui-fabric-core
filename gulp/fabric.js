@@ -23,11 +23,13 @@ var concat = require('gulp-concat');
 var tap = require('gulp-tap');
 var data = require('gulp-data');
 var folders = require('gulp-folders');
+var foreach = require('gulp-foreach');
 var browserSync = require('browser-sync').create();
 var colors = require('colors/safe');
 var path = require('path');
 var wrap = require('gulp-wrap');
 var uglify = require('gulp-uglify');
+var nugetpack = require('gulp-nuget-pack');
 
 // Define paths.
 var distPath = 'dist';
@@ -40,6 +42,7 @@ var paths = {
     distSamples: distPath + '/samples',
     distSampleComponents: distPath + '/samples/' +  '/Components',
     distJS: distPath + '/js',
+    distPackages: distPath + '/packages',
     srcPath: srcPath,
     srcSamples: srcPath + '/samples',
     componentsPath : 'src/components',
@@ -59,7 +62,7 @@ var monthNames = ["January", "February", "March",
                     "August", "September", "October",
                     "November", "December"];
 var bannerTemplate = ['/**',
-      ' * <%= pkg.name %> <%= pkg.version %>',
+      ' * Office UI Fabric <%= pkg.version %>',
       ' * <%= pkg.description %>',
       ' **/',
       ''].join('\n');
@@ -475,7 +478,8 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
 
              storedFiles[folder] = {
                 "name": file.basename,
-                "contents": file.contents.toString()
+                "contents": file.contents.toString(),
+                "files": []
             }
 
             var curString = file.contents.toString();
@@ -494,7 +498,8 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
 
             storedFiles[folder] = {
                 "name": file.basename,
-                "contents": file.contents.toString()
+                "contents": file.contents.toString(),
+                "files": []
             }
 
             var curString = file.contents.toString();
@@ -515,7 +520,9 @@ gulp.task('component-samples-template', ['build-component-data', 'component-samp
             .on('error', onGulpError)
         .pipe(data(function () {
             var jstag = '';
-            if(typeof storedFiles[folder].script != "undefined") { jstag = storedFiles[folder].script; }
+            var files =  storedFiles[folder]["files"];
+            for(var o=0; o < files.length; o++) {jstag += files[o];}
+            if(typeof storedFiles[folder][folder] != "undefined") { jstag += storedFiles[folder][folder]; }
             return { "componentName": folder, "stored": storedFiles[folder].contents, "jstag": jstag };
         }))
             .on('error', onGulpError)
@@ -531,11 +538,15 @@ gulp.task('component-samples-add-js', ['build-component-data'], folders(paths.co
 
     return gulp.src(paths.componentsPath + '/' + folder + '/*.js')
             .on('error', onGulpError)
-        .pipe(tap(function(file) {
-            var filename = file.path.replace(/^.*[\\\/]/, '')
-            storedFiles[folder].script = '<script type="text/javascript" src="' + filename+ '"></script>';
-        }))
+      .pipe(foreach(function(stream){
+          return stream
+            .pipe(tap(function(file) {
+                var filename = file.path.replace(/^.*[\\\/]/, '');
+                storedFiles[folder]["files"].push('<script type="text/javascript" src="' + filename+ '"></script>' + "\r\b");
+            }))
             .on('error', onGulpError);
+      }))
+      .on('error', onGulpError);
 }));
 
 gulp.task('build-sample-data', ['clean-samples'], folders(paths.srcSamples, function (folder) {
@@ -565,6 +576,38 @@ gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'bu
 }); 
 
 // gulp.task('index-build-all', ['build-components-page']);
+
+//
+// Packaging tasks
+// ----------------------------------------------------------------------------
+gulp.task('nuget-pack', function(callback) {
+    nugetpack({
+            id: "OfficeUIFabric",
+            title: "Office UI Fabric",
+            version: pkg.version,
+            authors: "Microsoft Corporation",
+            owners: "Microsoft Corporation",
+            description: "Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office experience from scratch or adding new features to an existing one.",
+            summary: "The front-end framework for building experiences for Office and Office 365.",
+            language: "en-us",
+            projectUrl: "https://github.com/OfficeDev/Office-UI-Fabric",
+            licenseUrl: "https://github.com/OfficeDev/Office-UI-Fabric/blob/master/LICENSE",
+            copyright: "Copyright (c) Microsoft Corporation",
+            requireLicenseAcceptance: true,
+            tags: "Microsoft UI Fabric CSS",
+            outputDir: paths.distPackages
+        },
+
+        [
+            {src: paths.componentsPath, dest: "/content/components/"},
+            {src: paths.distCSS, dest: "/content/css/"},
+            {src: paths.distJS, dest: "/content/scripts/"},
+            {src: paths.distLess, dest: "/content/less/"}
+        ],
+
+        callback
+    );
+});
 
 //
 // Rolled up Build tasks
@@ -648,9 +691,9 @@ gulp.task('watch:fabric-components', ['build-fabric-components', 'fabric-compone
 });
 
 // Watches all src fabric components but, builds the samples only
-gulp.task('watch:component-samples', ['build-component-samples', 'samples-index-build-components', 'fabric-server', 'component-samples-finished'], function () {
+gulp.task('watch:component-samples', ['build-component-samples', 'build-components-page', 'fabric-server',  'fabric-all-server'], function () {
     return gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-component-samples', 'samples-index-build-all', 'component-samples-updated', done);
+        runSequence('build-component-samples', done);
     }));
 });
 

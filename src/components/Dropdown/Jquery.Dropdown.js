@@ -55,6 +55,11 @@
                 
                     /** Go ahead and open that dropdown. */
                     $dropdownWrapper.toggleClass('is-open');
+                    $('.ms-Dropdown').each(function(){
+                        if ($(this)[0] !== $dropdownWrapper[0]) {
+                            $(this).removeClass('is-open');
+                        }
+                    });
 
                     /** Temporarily bind an event to the document that will close this dropdown when clicking anywhere. */
                     $(document).bind("click.dropdown", function(event) {

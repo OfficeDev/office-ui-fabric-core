@@ -6,13 +6,13 @@
    * DatePicker Plugin
    */
 
-  $.fn.DatePicker = function () {
+  $.fn.DatePicker = function (options) {
 
     return this.each(function () {
 
       /** Set up variables and run the Pickadate plugin. */
       var $datePicker = $(this);
-      var $dateField = $datePicker.find('.ms-TextField-field').pickadate({
+      var $dateField = $datePicker.find('.ms-TextField-field').pickadate($.extend({
         // Strings and translations.
         weekdaysShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 
@@ -69,7 +69,7 @@
           outfocus: 'ms-DatePicker-day--outfocus',
 
         }
-      });
+      },options||{}));
       var $picker = $dateField.pickadate('picker');
 
       /** Respond to built-in picker events. */

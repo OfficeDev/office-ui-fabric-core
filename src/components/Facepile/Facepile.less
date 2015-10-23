@@ -6,19 +6,35 @@
 // Facepile styles
 
 
-.ms-Facepile {
+.ms-FacePile {
   position: relative;  
   height: 32px;
   width: auto;  
 }
 
-.ms-Facepile-circleFilled,
-.ms-Facepile-circleFilled-noOverflow,
-.ms-Facepile-circleFilled-withOverflow {
-  border-radius: 50%;
-  background-color: @ms-color-themePrimary;
+.ms-FacePile-members,
+.ms-FacePile-members-noOverflow,
+.ms-FacePile-members-withOverflow {
+  display: inline;
+}
+
+.ms-FacePile-itemBtn {
+  .button-reset();
+  position: relative;
   height: 32px;
   width: 32px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0;
+  outline: transparent;
+  border-radius: 50%;
+  vertical-align: top;
+}
+
+.ms-FacePile-itemBtn.ms-FacePile-itemBtn--addPerson {
+  background-color: @ms-color-themePrimary;
+  color: @ms-color-white;
+  font-size: @ms-font-size-l - 1;
 
   &:hover {
     background-color: @ms-color-themeDark;
@@ -33,57 +49,10 @@
   }
 }
 
-.ms-Facepile-iconInner {
-  background-color: @ms-color-themeDark;
-  
-  &:active {
-    background-color: @ms-color-themeDarker;
-  }
-
-  &:disabled {
-    background-color: @ms-color-neutralTertiaryAlt;
-  }
-}
-
-.ms-Facepile-members,
-.ms-Facepile-members-noOverflow,
-.ms-Facepile-members-withOverflow {
-  display: inline;
-}
-
-.ms-Facepile-expand {
-  border-radius: 50%;
+.ms-FacePile-itemBtn.ms-FacePile-itemBtn--expand {
   background-color: @ms-color-neutralLight;
-  height: 32px;
-  width: 32px;
-}
-
-.ms-Facepile-sansPicture {  
-  border-radius: 50%;
-  background-color: #99b433;
-  height: 32px;
-  width: 32px;
-}
-
-.ms-Facepile-sansPicture2 {  
-  border-radius: 50%;
-  background-color: #7e3877;
-  height: 32px;
-  width: 32px;
-}
-
-.ms-Facepile-initials {
-  position: absolute;
-  color: @ms-color-white;
-  top: 7px;
-  left: 10px;
-}
-
-.ms-Facepile-overflow {
-  position: absolute;
   color: @ms-color-neutralSecondary;
-  top: 6px;
-  left: 7px;
+  font-size: @ms-font-size-l - 1;
 
   &:hover {
     color: @ms-color-neutralDark;
@@ -91,66 +60,33 @@
 
   &:active {
     color: @ms-color-themePrimary;
-  } 
+  }
 
   &:disabled {
     color: @ms-color-neutralTertiaryAlt;
   }
 }
 
-.ms-Facepile-personAdd {  
-  position: absolute;
-  font-size: 16px;
-  color: @ms-color-white;
-  top: 7px;
-  left: 9px;  
-}
-
-.ms-Facepile-chevronThickDown {
-  position: absolute;
-  font-size: 16px;
-  color: @ms-color-neutralSecondary;
-  top: 9px;
-  left: 8px;
-
-  &:hover {
-    color: @ms-color-neutralDark;
-  }
-
-  &:active {
-    color: @ms-color-themePrimary;
-  } 
-
-  &:disabled {
-    color: @ms-color-neutralTertiaryAlt;
-  }
-}
-
-.ms-Facepile-itemBtn {
-  .button-reset();
+.ms-FacePile-addPersonIcon {  
   position: relative;
-  height: 32px;
-  width: 32px;
-  background: none;
-  border: 0;
-  text-align: left;
-  float: left;
-  margin-right: 4px;
-  padding: 0;
-  outline: transparent;
-  .ms-Persona-image {
-    margin: 0;
+  top: -1px;
+}
+
+.ms-FacePile-expandIcon {
+  &.is-hidden {
+    display: none;
   }
 }
 
-.is-hidden {
-  display: none;
-}
+.ms-FacePile-overflowText {
+  color: @ms-color-neutralSecondary;
+  font-size: @ms-font-size-m;
 
-.is-visibile {
-  display: block;
-}
+  &.is-visibile {
+    display: block;
+  }
 
-.ms-Facepile-doubleDigits {
-  left: 3px;
+  &.is-hidden {
+    display: none;
+  }
 }

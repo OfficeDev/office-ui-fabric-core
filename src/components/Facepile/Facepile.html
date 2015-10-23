@@ -1,32 +1,37 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-<div class="ms-Facepile">
-  <button class="ms-Facepile-itemBtn">
-    <div class="ms-Facepile-circleFilled-withOverflow js-addPerson">
-      <i class="ms-Facepile-personAdd ms-Icon ms-Icon--personAdd "></i>
-    </div>
+<div class="ms-FacePile">
+  <button class="ms-FacePile-itemBtn ms-FacePile-itemBtn--addPerson">
+    <i class="ms-FacePile-addPersonIcon ms-Icon ms-Icon--personAdd"></i>
   </button>
-  <div class="ms-Facepile-members-withOverflow">
-    <button class="ms-Facepile-itemBtn" title="Alton Lafferty">
+  <div class="ms-FacePile-members-withOverflow">
+    <button class="ms-FacePile-itemBtn" title="Alton Lafferty">
       <div class="ms-Persona ms-Persona--xs">
         <div class="ms-Persona-imageArea">
-          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+          <div class="ms-Persona-intials ms-Persona-initials--blue">AL</div>
           <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
         </div>
       </div>
     </button>  
-    <button class="ms-Facepile-itemBtn" title="JL">
-      <div class="ms-Facepile-sansPicture"></div>
-      <span class="ms-Facepile-initials ms-font-s">JL</span>
+    <button class="ms-FacePile-itemBtn" title="JL">
+      <div class="ms-Persona ms-Persona--xs">
+        <div class="ms-Persona-imageArea">
+          <div class="ms-Persona-intials ms-Persona-initials--green">AL</div>
+          <img class="ms-Persona-image" src="">
+        </div>
+      </div>
     </button>
-    <button class="ms-Facepile-itemBtn" title="AJ">
-      <div class="ms-Facepile-sansPicture2"></div>
-      <span class="ms-Facepile-initials ms-font-s">AJ</span>
+    <button class="ms-FacePile-itemBtn" title="AJ">
+      <div class="ms-Persona ms-Persona--xs">
+        <div class="ms-Persona-imageArea">
+          <div class="ms-Persona-intials ms-Persona-initials--purple">AJ</div>
+          <img class="ms-Persona-image" src="">
+        </div>
+      </div>
     </button>
   </div>
-  <button class="ms-Facepile-itemBtn">
-    <div class="ms-Facepile-expand"></div>
-    <span class="ms-Facepile-overflow ms-font-m is-hidden"></span>
-    <i class="ms-Facepile-chevronThickDown ms-Icon ms-Icon--chevronThickDown"></i> 
+  <button class="ms-FacePile-itemBtn ms-FacePile-itemBtn--expand">
+    <span class="ms-FacePile-overflowText is-hidden">+3</span>
+    <i class="ms-FacePile-expandIcon ms-Icon ms-Icon--chevronThickDown is-visible"></i>
   </button>
 </div>

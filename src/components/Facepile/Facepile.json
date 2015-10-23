@@ -2,7 +2,7 @@
   "name": "Facepile",
   "notes": "",
   "template": "Facepile.html",
-  "class": "ms-Facepile",
+  "class": "ms-FacePile",
   "dependencies": [
     "Persona"
   ]

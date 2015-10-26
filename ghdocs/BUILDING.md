@@ -45,7 +45,7 @@ This task will build all parts of Fabric, and then rerun every time you make a c
 This task will build only component samples and watch for changes within `/src/components/`. After the build runs, you can test your components by opening the `index.html` file located in any component inside `/dist/samples/Components/`.
 
 **Best used for tweaking and testing components.**
- 
+
 **NOTE:** This task does not update `/dist/components/`, it just updates `/dist/samples/Components/`.
 
 ###gulp watch:fabric-components

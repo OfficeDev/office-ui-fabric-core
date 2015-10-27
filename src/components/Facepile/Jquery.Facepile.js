@@ -20,7 +20,7 @@
       var $panel = $('.ms-Panel.ms-Panel--facePile');
       var $panelMain = $panel.find(".ms-Panel-main");
       var $picker = $('.ms-PeoplePicker.ms-PeoplePicker--facePile');
-      var $pickerResults = $peoplePicker.find(".ms-PeoplePicker-results");
+      var $pickerResults = $picker.find(".ms-PeoplePicker-results");
       var $pickerMembers = $picker.find('.ms-PeoplePicker-selectedPeople');
       var $pickerMembersCount = $picker.find(".ms-PeoplePicker-selectedCount");
       var $pickerSearchField = $picker.find(".ms-PeoplePicker-searchField");
@@ -46,12 +46,25 @@
       };
 
       /** Add person when button clicked */
-      $facePile.on("click", ".js-addPerson", function() {
+      $facePile.on("click", ".js-addPerson", function(event) {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
 
+        /** Stop the click event from propagating, which would just close the dropdown immediately. */
+        event.stopPropagation();
+
+        /** Before opening, size the results panel to match the people picker. */
+        $pickerResults.width($picker.width() - 2);
+
         /** Show the $results by setting the people picker to active. */
         $picker.addClass("is-active");
+
+        /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
+        $(document).bind("click.peoplepicker", function(event) {
+            $picker.removeClass('is-active');
+            $(document).unbind('click.peoplepicker');
+            isActive = false;
+        });
 
       });
 

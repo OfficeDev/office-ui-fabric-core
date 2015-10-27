@@ -6,18 +6,18 @@
 
 - [Getting Fabric](#getting-fabric)
 - [Building Fabric](#building-fabric)
-- [Add to your project](#add-to-your-project)
-- [Samples](#samples)
+- [Add Fabric to your project](#add-to-your-project)
+- [Fabric samples](#samples)
 - [Introductory tutorial](#introductory-tutorial)
 - [Supported browsers](#supported-browsers)
 
 ##Getting Fabric
 
-####Download
-[Download the latest release of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/archive/1.0.0.zip). Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the .zip. Minified versions of files should be used in production, whereas uncompressed versions should only be used for development or debugging. Right-to-left versions of files should be *loaded* instead of the non-right-to-left versions on pages using right-to-left languages.
+####Download Fabric
+Uncompressed, minified, uncompressed right-to-left, and minified right-to-left versions of Fabric and Fabric Components CSS are available in the `dist/` folder of the [Office UI Fabric .zip](https://github.com/OfficeDev/Office-UI-Fabric/archive/1.0.0.zip). Use minified versions of the files in production; use uncompressed versions for development or debugging. On pages that use right-to-left languages, load right-to-left versions instead of non-right-to-left versions of files.
 
-####Reference from a CDN
-To reference Fabric CSS from a CDN, just include a link in the `<head>` element on the page using Fabric:
+####Reference Fabric from a CDN
+To reference Fabric CSS from a CDN, include a link in the `<head>` element on the page using Fabric:
 
 ```html
 <link rel="stylesheet" href="//appsforoffice.microsoft.com/fabric/1.0/fabric.min.css">
@@ -25,11 +25,11 @@ To reference Fabric CSS from a CDN, just include a link in the `<head>` element 
 
 The uncompressed, minified, and right-to-left CSS files are also available on the CDN.
 
-##Building and Testing Fabric
+##Building and testing Fabric
 
-For detailed information on how to build Fabric, tweak it, and use its gulp tasks check out the doc located [here](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md).
+For information about how to build and tweak Fabric and use its gulp tasks, see [Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md).
 
-##Add to your project
+##Add Fabric to your project
 
 You don't have to rethink your front-end architecture to start using Fabric in your existing app or add-in, but some simple setup is required. Follow these steps to get started:
 
@@ -38,7 +38,7 @@ You don't have to rethink your front-end architecture to start using Fabric in y
 3. If you're using Fabric components, add a reference to fabric.components.css in the `<head>` after fabric.css.
 4. Optionally, you can choose to include Fabric Components' JavaScript, which is demonstration-only and should not be considered production-ready. We generally recommend against doing this because the code is not extensively tested and is used only for demonstration purposes in our documentation. If you'd still like to include it, add a `<script>` tag with a reference to `jquery.fabric.js` or `jquery.fabric.min.js` at the end of your page's `<body>` tag. Note that each plugin will need to be invoked in order to run.
 
-##Samples
+##Fabric samples
 
 To see several examples of Fabric in use, check out the sample HTML projects under `dist/samples`. The following samples are included:
 - **Office Add-in**. A simple Office add-in that showcases the use of Fabric and some of its components. This sample has [its own project](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample). 

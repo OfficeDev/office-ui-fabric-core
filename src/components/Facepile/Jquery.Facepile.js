@@ -14,39 +14,107 @@
     /** Iterate through each Facepile provided. */
     return this.each(function () {
       
-      var $facePile = $(this);        
-      var $n = $(".ms-FacePile-members-withOverflow > button").length;      
+      var $facePile = $(this);    
+      var $membersList = $(".ms-FacePile-members"); 
+      var $membersCount = $(".ms-FacePile-members > .ms-FacePile-itemBtn").length;
+      var $panel = $('.ms-Panel.ms-Panel--facePile');
+      var $panelMain = $panel.find(".ms-Panel-main");
+      var $picker = $('.ms-PeoplePicker.ms-PeoplePicker--facePile');
+      var $pickerResults = $peoplePicker.find(".ms-PeoplePicker-results");
+      var $pickerMembers = $picker.find('.ms-PeoplePicker-selectedPeople');
+      var $pickerMembersCount = $picker.find(".ms-PeoplePicker-selectedCount");
+      var $pickerSearchField = $picker.find(".ms-PeoplePicker-searchField");
 
-      /** Add person when button clicked */
-      $facePile.on("click", ".js-addPerson", function(event) {
-        $(this).parent().next().children(":first").clone().prependTo(".ms-FacePile-members-withOverflow");  
 
+      /** Increment member count and show/hide overflow text */
+      var incrementMembers = function() {
         /** Increment person count by one */
-        $n += 1;
-        $(".ms-FacePile-overflow").text("+" + $n);
+        $membersCount += 1;
+        // $(".ms-FacePile-overflowText").text("+" + $membersCount);
 
         /** Display a maxiumum of 6 people */
-        $(".ms-FacePile-members-withOverflow").children(":gt(4)").hide();
+        $(".ms-FacePile-members").children(":gt(4)").hide();
 
-        /** Display counter when 5 people are present */
-        if ($n > 4) {
-          $("span.ms-FacePile-overflow").removeClass("is-hidden");
-          $("i.ms-FacePile-chevronThickDown").addClass("is-hidden");
+        /** Display counter after 5 people are present */
+        if ($membersCount > 5) {
+          $(".ms-FacePile-overflowText").removeClass("is-hidden");
+          $(".ms-FacePile-expandIcon").addClass("is-hidden");
+
+          var remainingMembers = $membersCount - 5;
+          $(".ms-FacePile-overflowText").text("+" + remainingMembers);
         }
+      };
 
-        /** Re-position counter when double digits reached */
-        if ($n > 9) {
-          $(".ms-FacePile-overflow").addClass("ms-FacePile-doubleDigits");
-        }
+      /** Add person when button clicked */
+      $facePile.on("click", ".js-addPerson", function() {
+        $panelMain.css({display: "block"});
+        $panel.toggleClass("is-open");
 
+        /** Show the $results by setting the people picker to active. */
+        $picker.addClass("is-active");
+
+      });
+
+      /** Toggle members panel. */
+      $(".js-togglePanel").on("click", function() {
+        $panelMain.css({display: "block"});
+        $panel.toggleClass("is-open");
       });
 
       /** Display person count on page load */
       $(document).ready(function() {
-        $(".ms-FacePile-overflow").text("+" + $n);
-      });  
+        $(".ms-FacePile-overflowText").text("+" + $membersCount);
+      });
+
+      /** Show selected members from PeoplePicker in the FacePile */
+      $('.ms-PeoplePicker-result').on('click', function() {
+        var name = $(this).find(".ms-Persona-primaryText").html();
+        var title = $(this).find(".ms-Persona-secondaryText").html();
+        var selectedInitials = (function() {
+          var nameArray = name.split(' ');
+          var nameInitials = '';
+          for (i = 0; i < nameArray.length; i++) {
+            nameInitials += nameArray[i].charAt(0);
+          }
+
+          return nameInitials.substring(0,2);
+        })();
+
+        var facePileItem = 
+          '<button class="ms-FacePile-itemBtn" title="' + name + '">' +
+            '<div class="ms-Persona ms-Persona--xs">' +
+              '<div class="ms-Persona-imageArea">' +
+                '<div class="ms-Persona-initials ms-Persona-initials--blue">' + selectedInitials + '</div>' +
+                '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
+              '</div>' +
+              '<div class="ms-Persona-presence"></div>' +
+              '<div class="ms-Persona-details">' +
+                '<div class="ms-Persona-primaryText">' + name + '</div>' +
+                '<div class="ms-Persona-secondaryText">' + title + '</div>' +
+              '</div>' +
+            '</div>' +
+          '</button>';
+
+        /** Add new item to members list in facepile */
+        $membersList.prepend(facePileItem);
+
+        /** Increment member count */
+        incrementMembers();
+
+      });
+
+      /** Remove members in panel people picker */
+      $pickerMembers.on('click', '.js-selectedRemove', function() {
+        var memberText = $(this).parent().find('.ms-Persona-primaryText').text();
+
+        var $facePileMember = $membersList.find(".ms-Persona-primaryText:contains(" + memberText + ")").first();
+
+        if ($facePileMember) {
+          $facePileMember.parent().closest('.ms-FacePile-itemBtn').remove();
+        }
+      });
+
 
     });
-
   };
 })(jQuery);

@@ -74,10 +74,20 @@
       $results.on('click', '.ms-PeoplePicker-result', function (event) {
           var selectedName = $(this).find(".ms-Persona-primaryText").html();
           var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
+          var selectedInitials = (function() {
+            var name = selectedName.split(' ');
+            var nameInitials = '';
+            for (i = 0; i < name.length; i++) {
+              nameInitials += name[i].charAt(0);
+            }
+
+            return nameInitials.substring(0,2);;
+          })();
+
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
-                '<div class="ms-Persona ms-Persona--xs ms-Persona--square">' +
+                              '<div class="ms-Persona ms-Persona--xs">' +
                                    '<div class="ms-Persona-imageArea">' +
-                                     '<i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>' +
+                                     '<div class="ms-Persona-initials ms-Persona-initials--blue">' + selectedInitials + '</div>' +
                                      '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
                                    '</div>' +
                                    '<div class="ms-Persona-presence"></div>' +
@@ -90,11 +100,12 @@
                                 ' </button>' +
                                '</div>';
           var personaListItem = '<li class="ms-PeoplePicker-selectedPerson">' +
-                  '<div class="ms-Persona ms-Persona--square">' +
+                      '<div class="ms-Persona">' +
                          '<div class="ms-Persona-imageArea">' +
-                           '<i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>' +
-                            '<img class="ms-Persona-image" src="../persona/Persona.Person2.png"><div class="ms-Persona-presence"></div>' +
+                           '<div class="ms-Persona-initials ms-Persona-initials--blue">'  + selectedInitials + '</div>' +
+                            '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
                          '</div>' +
+                         '<div class="ms-Persona-presence"></div>' +
                          '<div class="ms-Persona-details">' +
                             '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +
                             '<div class="ms-Persona-secondaryText">' + selectedTitle + '</div>' +

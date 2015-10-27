@@ -4,6 +4,8 @@
   "template": "Facepile.html",
   "class": "ms-FacePile",
   "dependencies": [
+    "Panel",
+    "PeoplePicker",
     "Persona"
   ]
 }

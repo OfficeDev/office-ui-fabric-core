@@ -8,9 +8,11 @@
   <title>Component <%= componentName %></title>
 
   <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="../../../css/fabric.components.css">
   <link rel="stylesheet" href="<%= componentName %>.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../../js/jquery.fabric.min.js"></script>
   
   <%= jstag %>
  
@@ -23,6 +25,9 @@
         });
 
         $('.ms-Panel').FilePicker();
+      } else if ($('.ms-FacePile').length > 0) {
+          $('.ms-FacePile').FacePile();
+          $('.ms-PeoplePicker').PeoplePicker();
       } else {
         if ($.fn.<%= componentName %>) {
           $('.ms-<%= componentName %>').<%= componentName %>();

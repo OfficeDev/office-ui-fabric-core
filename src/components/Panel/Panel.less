@@ -32,6 +32,26 @@
   z-index: @ms-zIndex-front;
 }
 
+.ms-Panel-closeButton {
+  .button-reset();
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  height: 24px;
+  width: 24px;
+  outline: 0;
+  padding: 0;
+  color: @ms-color-neutralSecondary;
+
+  &:hover {
+    color: @ms-color-neutralPrimary;
+  }
+}
+
+.ms-Panel-closeIcon {
+  font-size: @ms-font-size-m;
+}
+
 // Scrollable content area, below the command buttons.
 .ms-Panel-contentInner {
   position: absolute;

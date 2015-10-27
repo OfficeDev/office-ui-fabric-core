@@ -9,13 +9,12 @@
 .ms-FacePile {
   position: relative;  
   height: 32px;
-  width: auto;  
-}
+  width: auto;
 
-.ms-FacePile-members,
-.ms-FacePile-members-noOverflow,
-.ms-FacePile-members-withOverflow {
-  display: inline;
+  .ms-Persona-presence,
+  .ms-Persona-details {
+    display: none;
+  }
 }
 
 .ms-FacePile-itemBtn {
@@ -25,7 +24,9 @@
   width: 32px;
   line-height: 32px;
   text-align: center;
+  float: left;
   padding: 0;
+  margin-right: 4px;
   outline: transparent;
   border-radius: 50%;
   vertical-align: top;
@@ -52,7 +53,6 @@
 .ms-FacePile-itemBtn.ms-FacePile-itemBtn--expand {
   background-color: @ms-color-neutralLight;
   color: @ms-color-neutralSecondary;
-  font-size: @ms-font-size-l - 1;
 
   &:hover {
     color: @ms-color-neutralDark;
@@ -73,18 +73,16 @@
 }
 
 .ms-FacePile-expandIcon {
+  font-size: @ms-font-size-l - 1;
+  line-height: 32px;
+
   &.is-hidden {
     display: none;
   }
 }
 
 .ms-FacePile-overflowText {
-  color: @ms-color-neutralSecondary;
   font-size: @ms-font-size-m;
-
-  &.is-visibile {
-    display: block;
-  }
 
   &.is-hidden {
     display: none;

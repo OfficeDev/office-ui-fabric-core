@@ -41,7 +41,7 @@ If you have a specific bug, feature request, or question, post it via the [issue
 ##Frequently asked questions
 
 #####How does Fabric work and where can I see some samples?
-Fabric is the "skin" for your Office or Office 365 app or add-in so your work will look just like Microsoft's. The included JavaScript is purely presentational (i.e. just for demo purposes) - feel free to swap it out with whatever meets your needs.
+Fabric is the "skin" for your Office or Office 365 app or add-in so your work will use the Microsoft official design language. The included JavaScript is purely presentational (i.e. just for demo purposes) - feel free to swap it out with whatever meets your needs.
 
 As for the samples, you can see details on what samples are available [here](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#samples) and how to build and watch them [here](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#gulp-tasks).
 

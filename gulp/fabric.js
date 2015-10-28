@@ -29,6 +29,7 @@ var path = require('path');
 var wrap = require('gulp-wrap');
 var uglify = require('gulp-uglify');
 var nugetpack = require('gulp-nuget-pack');
+var fileinclude = require('gulp-file-include');
 
 // Define paths.
 var distPath = 'dist';
@@ -231,6 +232,7 @@ gulp.task('copy-fabric', ['clean-fabric'], function () {
 gulp.task('copy-fabric-components', ['clean-fabric-components'], function () {
     // Copy all Components files.
     return gulp.src('src/components/**')
+        .pipe(fileinclude())
         .pipe(gulp.dest(paths.distComponents));
 });
 
@@ -243,7 +245,10 @@ gulp.task('copy-component-samples', ['clean-component-samples'], function() {
             paths.componentsPath + '/**/*.js',
             paths.componentsPath + '/**/*.gif'
         ])
-        .pipe(gulp.dest(paths.distSamples + '/Components'));
+        .pipe(fileinclude())
+        .on('error', onGulpError)
+        .pipe(gulp.dest(paths.distSamples + '/Components'))
+        .on('error', onGulpError);
 });
 
 gulp.task('copy-samples', ['clean-samples'], function () {
@@ -463,9 +468,9 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
         newArray = filesArray.map(function(file, i) {
             return paths.componentsPath + '/' +  folder + '/' + file;
         });
-        cfiles = gulp.src(newArray).on('error', onGulpError);
+        cfiles = gulp.src(newArray).on('error', onGulpError).pipe(fileinclude());
     } else {
-        cfiles = gulp.src(paths.componentsPath + '/' +  folder + '/*.html').on('error', onGulpError);
+        cfiles = gulp.src(paths.componentsPath + '/' +  folder + '/*.html').pipe(fileinclude());
     }
  
     if(manifest.wrapBranches === true) {

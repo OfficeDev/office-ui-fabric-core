@@ -6,6 +6,7 @@
   "dependencies": [
     "Panel",
     "PeoplePicker",
-    "Persona"
+    "Persona",
+    "PersonaCard"
   ]
 }

@@ -24,6 +24,7 @@
       var $pickerMembers = $picker.find('.ms-PeoplePicker-selectedPeople');
       var $pickerMembersCount = $picker.find(".ms-PeoplePicker-selectedCount");
       var $pickerSearchField = $picker.find(".ms-PeoplePicker-searchField");
+      var $personaCard = $('.ms-PersonaCard');
 
 
       /** Increment member count and show/hide overflow text */
@@ -124,7 +125,52 @@
 
         if ($facePileMember) {
           $facePileMember.parent().closest('.ms-FacePile-itemBtn').remove();
+
+          $membersCount -= 1;
+          console.log($membersCount);
+
+          /** Display counter after 5 people are present */
+          if ($membersCount <= 5) {
+            $(".ms-FacePile-overflowText").addClass("is-hidden");
+            $(".ms-FacePile-expandIcon").removeClass("is-hidden");
+
+            var remainingMembers = $membersCount - 5;
+            $(".ms-FacePile-overflowText").text("+" + remainingMembers);
+          }
         }
+      });
+
+      /** Show persona card when selecting a facepile item */
+      $facePile.on('click', '.ms-FacePile-itemBtn', function() {
+        var selectedName = $(this).find(".ms-Persona-primaryText").html();
+        var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
+        var selectedInitials = (function() {
+          var name = selectedName.split(' ');
+          var nameInitials = '';
+          for (i = 0; i < name.length; i++) {
+            nameInitials += name[i].charAt(0);
+          }
+
+          return nameInitials.substring(0,2);;
+        })();
+
+        /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
+        $(document).bind("click.personacard", function(event) {
+            $personaCard.removeClass('is-active');
+            $(document).unbind('click.personacard');
+            event.stopPropagation();
+        });
+
+        /** Show persona card */
+        setTimeout(function() { $personaCard.addClass('is-active'); }, 100);
+
+        /** Align persona card */
+        var itemPosition = $(this).offset().left;
+        var correctedPosition = itemPosition - 24;
+        
+        $personaCard.css({'left': correctedPosition});
+
+
       });
 
 

@@ -238,17 +238,24 @@ gulp.task('copy-fabric-components', ['clean-fabric-components'], function () {
 
 gulp.task('copy-component-samples', ['clean-component-samples'], function() {
 
-    return gulp.src([
-            paths.componentsPath + '/**/*.js', 
-            paths.componentsPath + '/**/*.jpg', 
-            paths.componentsPath + '/**/*.png', 
-            paths.componentsPath + '/**/*.js',
+    var images = gulp.src([ 
+            paths.componentsPath + '/**/*.jpg',
+            paths.componentsPath + '/**/*.png',
             paths.componentsPath + '/**/*.gif'
+        ])
+        .pipe(gulp.dest(paths.distSamples + '/Components'))
+        .on('error', onGulpError);
+
+    var jsfiles = gulp.src([
+            paths.componentsPath + '/**/*.js'
         ])
         .pipe(fileinclude())
         .on('error', onGulpError)
         .pipe(gulp.dest(paths.distSamples + '/Components'))
         .on('error', onGulpError);
+
+    return mergeStream(images, jsfiles);
+    
 });
 
 gulp.task('copy-samples', ['clean-samples'], function () {

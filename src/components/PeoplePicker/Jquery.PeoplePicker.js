@@ -83,12 +83,14 @@
 
             return nameInitials.substring(0,2);;
           })();
+          var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
+          var selectedImage = $(this).find('.ms-Persona-image').attr('src');
 
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
                               '<div class="ms-Persona ms-Persona--xs">' +
                                    '<div class="ms-Persona-imageArea">' +
-                                     '<div class="ms-Persona-initials ms-Persona-initials--blue">' + selectedInitials + '</div>' +
-                                     '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
+                                     '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
+                                     '<img class="ms-Persona-image" src="' + selectedImage + '">' +
                                    '</div>' +
                                    '<div class="ms-Persona-presence"></div>' +
                                    '<div class="ms-Persona-details">' +
@@ -102,8 +104,8 @@
           var personaListItem = '<li class="ms-PeoplePicker-selectedPerson">' +
                       '<div class="ms-Persona">' +
                          '<div class="ms-Persona-imageArea">' +
-                           '<div class="ms-Persona-initials ms-Persona-initials--blue">'  + selectedInitials + '</div>' +
-                            '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
+                           '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
+                           '<img class="ms-Persona-image" src="' + selectedImage + '">' +
                          '</div>' +
                          '<div class="ms-Persona-presence"></div>' +
                          '<div class="ms-Persona-details">' +

@@ -46,7 +46,7 @@
         }
       };
 
-      /** Add person when button clicked */
+      /** Open panel with active people picker */
       $facePile.on("click", ".js-addPerson", function(event) {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
@@ -59,6 +59,8 @@
 
         /** Show the $results by setting the people picker to active. */
         $picker.addClass("is-active");
+
+        $pickerSearchField.focus();
 
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
         $(document).bind("click.peoplepicker", function(event) {
@@ -93,13 +95,15 @@
 
           return nameInitials.substring(0,2);
         })();
+        var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
+        var selectedImage = $(this).find('.ms-Persona-image').attr('src');
 
         var facePileItem = 
-          '<button class="ms-FacePile-itemBtn" title="' + name + '">' +
+          '<button class="ms-FacePile-itemBtn ms-FacePile-itemBtn--member" title="' + name + '">' +
             '<div class="ms-Persona ms-Persona--xs">' +
               '<div class="ms-Persona-imageArea">' +
-                '<div class="ms-Persona-initials ms-Persona-initials--blue">' + selectedInitials + '</div>' +
-                '<img class="ms-Persona-image" src="../persona/Persona.Person2.png">' +
+                '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
+                '<img class="ms-Persona-image" src="' + selectedImage + '">' +
               '</div>' +
               '<div class="ms-Persona-presence"></div>' +
               '<div class="ms-Persona-details">' +
@@ -153,6 +157,13 @@
 
           return nameInitials.substring(0,2);;
         })();
+        var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
+        var selectedImage = $(this).find('.ms-Persona-image').attr('src');
+        var $card = $('.ms-PersonaCard')
+        var $cardName = $card.find('.ms-Persona-primaryText');
+        var $cardTitle = $card.find('.ms-Persona-secondaryText');
+        var $cardInitials = $card.find('.ms-Persona-initials');
+        var $cardImage = $card.find('.ms-Persona-image');
 
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
         $(document).bind("click.personacard", function(event) {
@@ -161,16 +172,34 @@
             event.stopPropagation();
         });
 
+        /** Add data to persona card */
+        $cardName.text(selectedName);
+        $cardTitle.text(selectedTitle);
+        $cardInitials.text(selectedInitials);
+        $cardInitials.removeClass();
+        $cardInitials.addClass(selectedClasses);
+        $cardImage.attr('src', selectedImage);
+
         /** Show persona card */
         setTimeout(function() { $personaCard.addClass('is-active'); }, 100);
 
         /** Align persona card */
         var itemPosition = $(this).offset().left;
-        var correctedPosition = itemPosition - 24;
-        
+        var correctedPosition = itemPosition - 26;
+
         $personaCard.css({'left': correctedPosition});
+      });
 
+      /** Dismiss persona card when clicking on the document */
+      $(document).on('click', function(e) {
+        var activePersonaCard = $('.ms-PersonaCard');
+        var memberBtn = $('.ms-FacePile-itemBtn--member')
 
+        if (!memberBtn.is(e.target) && memberBtn.has(e.target).length === 0 && !activePersonaCard.is(e.target) && activePersonaCard.has(e.target).length === 0) {
+          activePersonaCard.hide();
+        } else {
+          activePersonaCard.show();
+        }
       });
 
 

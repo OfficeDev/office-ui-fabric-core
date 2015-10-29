@@ -50,6 +50,9 @@
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
 
+        /** Close any open persona cards */
+        $personaCard.removeClass('is-active').hide();
+
         /** Stop the click event from propagating, which would just close the dropdown immediately. */
         event.stopPropagation();
 
@@ -130,7 +133,6 @@
           $facePileMember.parent().closest('.ms-FacePile-itemBtn').remove();
 
           $membersCount -= 1;
-          console.log($membersCount);
 
            /** Display a maxiumum of 5 people */
            $(".ms-FacePile-members").children(":lt(5)").show();
@@ -167,12 +169,14 @@
         var $cardInitials = $card.find('.ms-Persona-initials');
         var $cardImage = $card.find('.ms-Persona-image');
 
+        $personaCard.removeClass('is-active');
+
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
-        $(document).bind("click.personacard", function(event) {
-            $personaCard.removeClass('is-active');
-            $(document).unbind('click.personacard');
-            event.stopPropagation();
-        });
+        // $(document).bind("click.personacard", function(event) {
+        //     $personaCard.removeClass('is-active');
+        //     $(document).unbind('click.personacard');
+        //     event.stopPropagation();
+        // });
 
         /** Add data to persona card */
         $cardName.text(selectedName);

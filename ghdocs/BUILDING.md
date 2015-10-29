@@ -1,72 +1,61 @@
 ![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
 
-#Building Fabric, Gulp Tasks, and the Starter Template
+#Building Fabric, gulp tasks, and the Starter Template
 
-Office UI Fabric uses gulp to compile its LESS, build and serve demos, and generate/watch other parts of the framework for changes. Use it to customize Fabric to suit your project, or to test out changes you might want to make to specific aspects of the toolkit.
+Office UI Fabric uses gulp to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
 
 ##Contents
 
 - [Building Fabric](#building-fabric)
-- [Gulp Tasks](#gulp-tasks)
-- [Starter Template](#starter-template)
+- [Gulp tasks](#gulp-tasks)
+- [Starter template](#starter-template)
 
 ##Building Fabric
 
-Before you get started, make sure you have [node.js](https://nodejs.org/) and [git](https://git-scm.com/) installed.
+Before you get started, make sure you have [node.js](https://nodejs.org/) and [git](https://git-scm.com/) installed. To build Fabric:
 
-1. Clone the repo
-2. Navigate to the folder containing Fabric's gulpfile.js (Fabric's root)
+1. Clone the repo.
+2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
 3. npm install
 4. gulp
-5. The built files will be in `/dist/`
 
-##Gulp Tasks
+The built files will be in the `/dist/` folder.
 
-There are lots of ways to test and work with Fabric locally. Check out the tasks below to see how:
+##Gulp tasks
+
+You can test and work with Fabric locally in a number of ways. 
 
 ###gulp
 
-This task will build all parts of Fabric once, and move all build/changed files into `/dist/`. Every time you make changes, you will need to re-run this task.
-
-**Best used for building Fabric once after making changes.**
+Use this task to build Fabric once after you've made changes. This task will build all parts of Fabric and move all changed files into `/dist/`. Every time you make changes, re-run this task.
 
 ###gulp watch
 
-This task will build all parts of Fabric, and then rerun every time you make a change to any of the following folders: 
+Use this tak to build Fabric after you make any changes. This task will build all parts of Fabric, and then rerun every time you make a change to any of the following folders: 
 - `/src/components/`
 - `/src/less/`
 - `/src/samples/`
 - `/src/templates/`
 
-**Best used for building all of Fabric when you make any changes.**
-
 ###gulp watch:components-samples
 
-This task will build only component samples and watch for changes within `/src/components/`. After the build runs, you can test your components by opening the `index.html` file located in any component inside `/dist/samples/Components/`.
+Use this task to tweak and test components. This task will build only component samples and watch for changes within `/src/components/`. After the build runs, you can test your components by opening the `index.html` file located in any component inside `/dist/samples/Components/`.
 
-**Best used for tweaking and testing components.**
-
-**NOTE:** This task does not update `/dist/components/`, it just updates `/dist/samples/Components/`.
+**NOTE:** This task updates `/dist/samples/Components/`; it does not update `/dist/components/`.
 
 ###gulp watch:fabric-components
 
-This task watches `/src/components/` and builds the big fabric.components.css file that goes in `/dist/css/`. It also updates `/dist/components/`.
-
-**Best used for seeing your component changes in fabric.components.css.**
+Use this task to see your component changes in fabric.components.css. This task watches `/src/components/` and builds the big fabric.components.css file that goes in `/dist/css/`. It also updates `/dist/components/`.
 
 ###gulp watch:samples
 
-This task watches the samples within `/src/samples/`, builds them, and moves them to `/dist/samples/`.
-
-**Best used when you are working on samples and want to test them.**
+Use this task to test samples that you're working on. This task watches the samples within `/src/samples/`, builds them, and moves them to `/dist/samples/`.
 
 ###gulp watch:fabric
 
-This task builds all `/src/less/` files and outputs them together in `/dist/css/`.
+Use this task when you're working on core Fabric elements (fonts, mixins, colors, terse). This task builds all `/src/less/` files and outputs them together in `/dist/css/`.
 
-**Best used when you are working on fonts, mixins, colors, terse, etc. (core Fabric).**
-
-##Starter Template
+##Starter template
 
 The following starter template represents the minimum recommended HTML structure for an app or add-in that uses Fabric. Copy the code into your project to start working with a basic Fabric document.
 

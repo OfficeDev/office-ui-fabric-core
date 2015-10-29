@@ -31,9 +31,8 @@
       var incrementMembers = function() {
         /** Increment person count by one */
         $membersCount += 1;
-        // $(".ms-FacePile-overflowText").text("+" + $membersCount);
 
-        /** Display a maxiumum of 6 people */
+        /** Display a maxiumum of 5 people */
         $(".ms-FacePile-members").children(":gt(4)").hide();
 
         /** Display counter after 5 people are present */
@@ -132,6 +131,9 @@
 
           $membersCount -= 1;
           console.log($membersCount);
+
+           /** Display a maxiumum of 5 people */
+           $(".ms-FacePile-members").children(":lt(5)").show();
 
           /** Display counter after 5 people are present */
           if ($membersCount <= 5) {

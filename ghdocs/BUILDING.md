@@ -1,6 +1,6 @@
 ![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
 
-#Building Fabric, gulp tasks, and the Starter Template
+#Building Fabric, gulp tasks, and the starter template
 
 Office UI Fabric uses gulp to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
 

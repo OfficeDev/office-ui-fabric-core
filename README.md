@@ -21,7 +21,7 @@ Fabric is a responsive, mobile-first, front-end framework, designed to make it q
 - Fabric integrates with other frameworks like Bootstrap. Uniquely namespaced classes prevent conflicts.
 - Fabric is built with **LESS** for powerful customization.
 - Full language support (including right-to-left behavior) helps take the guesswork out of localization.
-- Full access to the source code and samples. You can tailor Fabric to your own specific needs. 
+- You get full access to the source code and samples. You can tailor Fabric to your own specific needs. 
 
 ##Why open source?
 
@@ -36,9 +36,14 @@ We will do our best to release frequently and keep the community up-to-date with
 
 If you have any issues, we will do our best to respond but we can't guarantee timely responses. Support is limited.
 
-If you have a specific bug, feature request, or question, post it via the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric/issues). For more info and labels, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md) section.
+If you have a specific bug, feature request, or question, post it via the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric/issues). For more information and labels, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md) section.
 
 ##Frequently asked questions
+
+#####How does Fabric work and where can I see some samples?
+Fabric provides the "skin" that you can use to apply the official Microsoft design language to your Office or Office 365 app or add-in. The JavaScript included with Fabric is for demo purposes only - feel free to swap it out with whatever meets your needs.
+
+For details about our samples, see [Fabric samples](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#samples). For information about  how to build and watch the Fabric samples, see [Building Fabric, gulp tasks, and the starter template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#gulp-tasks).
 
 #####How does Fabric compare to frameworks like Bootstrap and Foundation?
 Fabric solves many of the same problems that other front-end frameworks do, in a way that is specific to Microsoft. We have our own design language and interaction patterns that all Microsoft apps share. Like other frameworks, Fabric speeds up development by ensuring that your add-ins use standard typography, colors, icons, and more. You don't have to spend time overriding the styles of other frameworks. Fabric also includes components the other frameworks don’t have.
@@ -60,11 +65,16 @@ We add new features in minor versions (for example, x.**Y**.z), which we typical
 ##Documentation
 
 - [Getting started](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md)
+	- [Getting Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#getting-fabric)
 	- [Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#building-fabric)
 	- [Add to your project](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#add-to-your-project)
-	- [Starter template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#starter-template)
-	- [Introductory tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#starter-template#introductory-tutorial)
+	- [Samples](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#samples)
+	- [Introductory tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#introductory-tutorial)
 	- [Supported browsers](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#supported-browsers)
+- [Building Fabric, Gulp Tasks, and the Starter Template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md)
+	- [Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#building-fabric)
+	- [Gulp Tasks](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#gulp-tasks)
+	- [Starter Template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#starter-template)
 - [Features](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md)
 	- [Typography](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#typography)
 	- [Color](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/FEATURES.md#color)

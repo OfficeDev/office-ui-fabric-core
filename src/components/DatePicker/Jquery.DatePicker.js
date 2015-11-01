@@ -265,7 +265,7 @@
     var decadeText = startingYear + " - " + (startingYear + 11);
     var output = '<div class="ms-DatePicker-currentDecade">' + decadeText + '</div>';
     output += '<div class="ms-DatePicker-optionGrid">';
-    for (year = startingYear; year < (startingYear + 12); year++) {
+    for (var year = startingYear; year < (startingYear + 12); year++) {
       output += '<span class="ms-DatePicker-yearOption js-changeDate" data-year="' + year + '">' + year +'</span>';
     }
     output += '</div>';

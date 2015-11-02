@@ -58,7 +58,7 @@
   }
 }
 
-.ms-FacePile-itemBtn.ms-FacePile-itemBtn--expand {
+.ms-FacePile-itemBtn.ms-FacePile-itemBtn--overflow {
   background-color: @ms-color-neutralLight;
   color: @ms-color-neutralSecondary;
 
@@ -93,6 +93,19 @@
   font-size: @ms-font-size-m;
 
   &.is-hidden {
+    display: none;
+  }
+}
+
+//== Panels
+.ms-FacePile-panel.ms-FacePile-panel--addPerson {
+  .ms-FacePile-overflowContent {
+    display: none;
+  }
+}
+
+.ms-FacePile-panel.ms-FacePile-panel--overflow {
+  .ms-FacePile-addPersonContent {
     display: none;
   }
 }

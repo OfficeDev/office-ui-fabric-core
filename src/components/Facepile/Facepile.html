@@ -45,14 +45,14 @@
       </div>
     </button>
   </div>
-  <button class="ms-FacePile-itemBtn ms-FacePile-itemBtn--expand js-togglePanel">
+  <button class="ms-FacePile-itemBtn ms-FacePile-itemBtn--overflow js-togglePanel">
     <span class="ms-FacePile-overflowText is-hidden">+3</span>
     <i class="ms-FacePile-expandIcon ms-Icon ms-Icon--chevronThickDown"></i>
   </button>
 </div>
 
 
-<div class="ms-Panel ms-Panel--facePile">
+<div class="ms-FacePile-panel ms-FacePile-panel--addPerson ms-Panel">
   <div class="ms-Overlay ms-Overlay--dark js-togglePanel"></div>
   <div class="ms-Panel-main">
     <div class="ms-Panel-commands">
@@ -60,7 +60,12 @@
         <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
       </button> 
     </div>
-    <div class="ms-Panel-contentInner">
+    <!-- Show members / overflow content -->
+    <div class="ms-Panel-contentInner ms-FacePile-overflowContent">
+
+    </div>
+    <!-- Add person content -->
+    <div class="ms-Panel-contentInner ms-FacePile-addPersonContent">
       <span class="ms-Panel-headerText">Members</span>
       <div class="ms-PeoplePicker ms-PeoplePicker--facePile">
         <div class="ms-PeoplePicker-searchBox">

@@ -17,7 +17,7 @@
       var $facePile = $(this);    
       var $membersList = $(".ms-FacePile-members"); 
       var $membersCount = $(".ms-FacePile-members > .ms-FacePile-itemBtn").length;
-      var $panel = $('.ms-Panel.ms-Panel--facePile');
+      var $panel = $('.ms-FacePile-panel.ms-Panel');
       var $panelMain = $panel.find(".ms-Panel-main");
       var $picker = $('.ms-PeoplePicker.ms-PeoplePicker--facePile');
       var $pickerResults = $picker.find(".ms-PeoplePicker-results");
@@ -50,6 +50,11 @@
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
 
+        if ($panel.hasClass('ms-FacePile-panel--overflow') && !panel.hasClass('ms-FacePile-panel--addPerson')) {
+          $panel.removeClass('ms-FacePile-panel--overflow');
+          $panel.addClass('ms-FacePile-panel--addPerson');
+        }
+
         /** Close any open persona cards */
         $personaCard.removeClass('is-active').hide();
 
@@ -70,10 +75,11 @@
             $(document).unbind('click.peoplepicker');
             isActive = false;
         });
-
       });
 
-      /** Toggle members panel. */
+      /** Open panel with list of members */
+
+      /** Toggle panel. */
       $(".js-togglePanel").on("click", function() {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
@@ -170,13 +176,6 @@
         var $cardImage = $card.find('.ms-Persona-image');
 
         $personaCard.removeClass('is-active');
-
-        /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
-        // $(document).bind("click.personacard", function(event) {
-        //     $personaCard.removeClass('is-active');
-        //     $(document).unbind('click.personacard');
-        //     event.stopPropagation();
-        // });
 
         /** Add data to persona card */
         $cardName.text(selectedName);

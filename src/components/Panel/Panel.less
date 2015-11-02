@@ -14,22 +14,52 @@
   right: 0;
   top: 0;
   z-index: @ms-zIndex-Panel;
+  display: none;
 
   // Overlay used within panel
   .ms-Overlay {
+    display: none;
+    cursor: pointer;
     z-index: @ms-zIndex-back;
+  }
+}
+
+.ms-Panel.is-open {
+  display: block;
+
+  .ms-Panel-main {
+    display: block;
+    left: 0;
+    opacity: 1;
+    .ms-u-slideLeftIn40;
+  }
+}
+
+.ms-Panel.ms-Panel--right {
+
+  &.is-open {
+    .ms-Overlay {
+      display: block;
+    }
+
+    .ms-Panel-main {
+      left: 48px;
+      .ms-u-slideLeftIn40;
+    }
   }
 }
 
 // The panel itself, where the content goes.
 .ms-Panel-main {
   background-color: @ms-color-white;
-  bottom: 0;
   position: fixed;
-  right: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
   display: none; //prevent the panel from briefly showing up when the page loads
   z-index: @ms-zIndex-front;
+  // opacity: 0;
+  .ms-u-slideRightOut40;
 }
 
 .ms-Panel-closeButton {
@@ -74,30 +104,29 @@
 
 
 // Small screens.
-@media (min-width: @ms-screen-sm-min) {
+// @media (min-width: @ms-screen-sm-min) {
 
-  .ms-Panel {
-    display: none;
-  }
+  // .ms-Panel {
+  //   display: none;
+  // }
 
-  .ms-Panel.is-open {
-    display: block;
-  }
+  // .ms-Panel.is-open {
+  //   display: block;
+  // }
 
-  // Always hide overlay on small screens.
-  .ms-Panel .ms-Overlay {
-    display: none;
-  }
+  // .ms-Panel .ms-Overlay {
+  //   display: none;
+  // }
 
-  .ms-Panel.is-open .ms-Panel-main {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
-  }
+  // .ms-Panel.is-open .ms-Panel-main {
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   opacity: 1;
+  // }
 
-}
+// }
 
 // Medium screens.
 @media (min-width: @ms-screen-md-min) {
@@ -112,7 +141,9 @@
   .ms-Panel-main {
     border-left: 1px solid @ms-color-neutralLight;
     border-right: 1px solid @ms-color-neutralLight;
-    right: -40px;
+    // right: -40px;
+    left: auto;
+    right: 0;
     pointer-events: auto;
     width: 341px; // Add a pixel due to border-box.
     .ms-u-slideRightOut40;
@@ -122,6 +153,12 @@
     .drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
     .ms-u-slideLeftIn40;
+  }
+
+  .ms-Panel.ms-Panel--right.is-open {
+    .ms-Panel-main {
+      left: auto;
+    }
   }
 
   // On medium screens and up, the small panel attached to the left is a variant.

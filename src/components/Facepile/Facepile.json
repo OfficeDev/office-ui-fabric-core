@@ -4,6 +4,7 @@
   "template": "Facepile.html",
   "class": "ms-FacePile",
   "dependencies": [
+    "Overlay",
     "Panel",
     "PeoplePicker",
     "Persona",

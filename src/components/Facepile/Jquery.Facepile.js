@@ -37,8 +37,7 @@
 
         /** Display counter after 5 people are present */
         if ($membersCount > 5) {
-          $(".ms-FacePile-overflowText").removeClass("is-hidden");
-          $(".ms-FacePile-expandIcon").addClass("is-hidden");
+          $(".ms-FacePile-itemBtn--overflow").addClass("is-active");
 
           var remainingMembers = $membersCount - 5;
           $(".ms-FacePile-overflowText").text("+" + remainingMembers);
@@ -50,7 +49,7 @@
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
 
-        if ($panel.hasClass('ms-FacePile-panel--overflow') && !panel.hasClass('ms-FacePile-panel--addPerson')) {
+        if ($panel.hasClass('ms-FacePile-panel--overflow') && !$panel.hasClass('ms-FacePile-panel--addPerson')) {
           $panel.removeClass('ms-FacePile-panel--overflow');
           $panel.addClass('ms-FacePile-panel--addPerson');
         }
@@ -77,7 +76,68 @@
         });
       });
 
-      /** Open panel with list of members */
+      /** Search people picker items */
+      $pickerSearchField.on('keyup', function(evt) {
+        var suggested = [];
+        var newSuggestions = [];
+        var $pickerResult = $pickerResults.find('.ms-Persona-primaryText');
+
+        $pickerResult.each(function() { suggested.push($(this).text()) });
+
+        for (var i = 0; i < suggested.length; i++) {
+          var currentPersona = suggested[i].toLowerCase();
+          var currentValue = evt.target.value.toLowerCase();
+
+          if (currentPersona.indexOf(currentValue) > -1) {
+            newSuggestions.push(suggested[i]);
+          }
+
+          console.log(newSuggestions);
+        };
+
+        for (var i = 0; i < newSuggestions.length; i++) {
+          var name = newSuggestions[i];
+          var currentSuggestion = newSuggestions[i].toLowerCase();
+          var resultText = suggested[i].toLowerCase();
+          if (currentSuggestion === resultText) {
+            $pickerResults.find('.ms-Persona-primaryText').filter(function() { 
+              return $(this).text().toLowerCase() === currentSuggestion;
+            }).parents('.ms-PeoplePicker-result').addClass('ms-bgColor-red');
+
+            // $('.ms-Persona-primaryText:contains("' + name + 
+            //   '")').filter(function() {
+            //   return $(this).text() == currentSuggestion;
+            // }).first().addClass('ms-bgColor-red');
+            // $('.ms-Persona-primaryText:contains("' + currentSuggestion + '")').parent().addClass('ms-bgColor-red');
+            console.log($('.ms-Persona-primaryText:contains("' + name + '")'));
+            console.log('true');
+            console.log(resultText);
+            console.log(currentSuggestion);
+          } else {
+            $pickerResults.find('.ms-Persona-primaryText').filter(function() { 
+              return $(this).text().toLowerCase() != currentSuggestion;
+            }).parents('.ms-PeoplePicker-result').removeClass('ms-bgColor-red');
+
+            console.log('false');
+            console.log(resultText);
+            console.log(currentSuggestion);
+          }
+        };
+
+
+        
+      });
+
+      /** Open oveflow panel with list of members */
+      $facePile.on("click", ".js-overflowPanel", function(event) {
+        $panelMain.css({display: "block"});
+        $panel.toggleClass("is-open");
+
+        if ($panel.hasClass('ms-FacePile-panel--addPerson') && !$panel.hasClass('ms-FacePile-panel--overflow')) {
+          $panel.removeClass('ms-FacePile-panel--addPerson');
+          $panel.addClass('ms-FacePile-panel--overflow');
+        }
+      });
 
       /** Toggle panel. */
       $(".js-togglePanel").on("click", function() {
@@ -145,8 +205,7 @@
 
           /** Display counter after 5 people are present */
           if ($membersCount <= 5) {
-            $(".ms-FacePile-overflowText").addClass("is-hidden");
-            $(".ms-FacePile-expandIcon").removeClass("is-hidden");
+            $(".ms-FacePile-itemBtn--overflow").removeClass("is-active");
 
             var remainingMembers = $membersCount - 5;
             $(".ms-FacePile-overflowText").text("+" + remainingMembers);

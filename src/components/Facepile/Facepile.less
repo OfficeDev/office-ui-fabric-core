@@ -61,6 +61,11 @@
 .ms-FacePile-itemBtn.ms-FacePile-itemBtn--overflow {
   background-color: @ms-color-neutralLight;
   color: @ms-color-neutralSecondary;
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
 
   &:hover {
     color: @ms-color-neutralDark;
@@ -98,14 +103,12 @@
 }
 
 //== Panels
-.ms-FacePile-panel.ms-FacePile-panel--addPerson {
-  .ms-FacePile-overflowContent {
-    display: none;
-  }
-}
-
+// Overflow panel - only show member list
 .ms-FacePile-panel.ms-FacePile-panel--overflow {
-  .ms-FacePile-addPersonContent {
+  .ms-Panel-headerText,
+  .ms-PeoplePicker-searchBox,
+  .ms-PeoplePicker-results,
+  .ms-PeoplePicker-resultAction {
     display: none;
   }
 }

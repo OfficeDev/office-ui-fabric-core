@@ -165,7 +165,8 @@
 }
 
 // Result buttons
-.ms-PeoplePicker-resultBtn {
+.ms-PeoplePicker-resultBtn,
+.ms-PeoplePicker-peopleListBtn {
   .button-reset();
   position: relative;
   height: 50px;
@@ -176,11 +177,25 @@
   margin: 0 0 10px 0;
   padding: 0 0 0 9px;
 
-  &:hover { background-color: @ms-color-neutralLight; outline: 1px solid transparent; }
-  &:focus { outline: 1; }
+  &:hover { 
+    background-color: @ms-color-neutralLight; 
+    outline: 1px solid transparent; 
+  }
+  &:focus { 
+    outline: 1; 
+  }
 
   &.ms-PeoplePicker-resultBtn--compact {
     height: 30px;
+  }
+}
+
+.ms-PeoplePicker-peopleListBtn {
+  margin-bottom: 0;
+  padding: 0;
+
+  &:hover { 
+    background-color: transparent;
   }
 }
 
@@ -195,14 +210,11 @@
   top: 0;
   width: 30px;
   z-index: (@ms-zIndex-PeoplePicker + @ms-zIndex-back);
+  text-align: center;
 
   .ms-Icon {
     color: @ms-color-neutralSecondary;
     font-size: @ms-font-size-m-plus;
-    margin-top: -8px;
-    position: absolute;
-    text-align: center;
-    left: 8px;
   }
 
   &:hover { background-color: @ms-color-neutralTertiaryAlt; outline: 1px solid transparent; }
@@ -405,8 +417,11 @@
   }
 }
 
-// Facepile
-.ms-PeoplePicker.ms-PeoplePicker--facePile {
+
+//== Modifier: Facepile and Members list
+//
+.ms-PeoplePicker.ms-PeoplePicker--facePile,
+.ms-PeoplePicker.ms-PeoplePicker--membersList {
 
   .ms-PeoplePicker-searchBox {
     height: 30px;
@@ -427,7 +442,56 @@
   }
 }
 
-.ms-PeoplePicker-selectedHeader {
+.ms-PeoplePicker.ms-PeoplePicker--facePile {
+  //= State: Searching in peoplepicker search field
+  &.is-searching {
+    .ms-PeoplePicker-results {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .ms-PeoplePicker-results {
+    position: relative;
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .ms-Persona.ms-Persona--selectable {
+    padding: 0;
+  }
+
+  .ms-PeoplePicker-searchMore {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  .ms-PeoplePicker-searchMore,
+  .ms-PeoplePicker-searchMoreBtn,
+  .ms-PeoplePicker-searchMoreIcon {
+    height: 48px;
+  } 
+
+  .ms-PeoplePicker-searchMorePrimary {
+    font-size: @ms-font-size-s;
+  }
+
+  .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+    top: 0;
+    line-height: 48px;
+  }
+}
+
+.ms-PeoplePicker-selectedHeader,
+.ms-PeoplePicker-peopleListHeader {
   color: @ms-color-themePrimary;
   text-transform: uppercase;
   font-size: @ms-font-size-s;

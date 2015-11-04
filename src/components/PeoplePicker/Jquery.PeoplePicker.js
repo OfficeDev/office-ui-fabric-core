@@ -21,6 +21,7 @@
       var $selected = $peoplePicker.find('.ms-PeoplePicker-selected');
       var $selectedPeople = $peoplePicker.find(".ms-PeoplePicker-selectedPeople")
       var $selectedCount = $peoplePicker.find(".ms-PeoplePicker-selectedCount")
+      var $peopleList = $peoplePicker.find(".ms-PeoplePicker-peopleList")
       var isActive = false;
       var spinner;
 
@@ -32,8 +33,13 @@
         }, 367);
 
         /** Start by closing any open people pickers. */
-        if ( $('.ms-PeoplePicker').hasClass('is-active') ) {
-          $(".ms-PeoplePicker").removeClass("is-active");
+        if ( $peoplePicker.hasClass('is-active') ) {
+          $peoplePicker.removeClass("is-active");
+        }
+
+        if ($peoplePicker.hasClass('ms-PeoplePicker--facePile') && $searchField.val() === "") {
+          /** Display a maxiumum of 3 people */
+          $peopleList.children(":gt(2)").hide();
         }
 
         isActive = true;
@@ -50,6 +56,12 @@
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
         $(document).bind("click.peoplepicker", function(event) {
             $peoplePicker.removeClass('is-active');
+            if ($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+              $peoplePicker.removeClass('is-searching');
+              $('.ms-PeoplePicker-selected').show();
+              $('.ms-PeoplePicker-searchMore').removeClass('is-active');
+              $searchField.val("");
+            }
             $(document).unbind('click.peoplepicker');
             isActive = false;
         });
@@ -88,34 +100,34 @@
 
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
                               '<div class="ms-Persona ms-Persona--xs">' +
-                                   '<div class="ms-Persona-imageArea">' +
-                                     '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                                     '<img class="ms-Persona-image" src="' + selectedImage + '">' +
-                                   '</div>' +
-                                   '<div class="ms-Persona-presence"></div>' +
-                                   '<div class="ms-Persona-details">' +
-                                     '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +
-                                  ' </div>' +
-                                 '</div>' +
-                                 '<button class="ms-PeoplePicker-personaRemove">' +
-                                   '<i class="ms-Icon ms-Icon--x"></i>' +
-                                ' </button>' +
-                               '</div>';
+                               '<div class="ms-Persona-imageArea">' +
+                                 '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
+                                 '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                               '</div>' +
+                               '<div class="ms-Persona-presence"></div>' +
+                               '<div class="ms-Persona-details">' +
+                                 '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +
+                              ' </div>' +
+                             '</div>' +
+                             '<button class="ms-PeoplePicker-personaRemove">' +
+                               '<i class="ms-Icon ms-Icon--x"></i>' +
+                            ' </button>' +
+                           '</div>';
           var personaListItem = '<li class="ms-PeoplePicker-selectedPerson">' +
-                      '<div class="ms-Persona">' +
-                         '<div class="ms-Persona-imageArea">' +
-                           '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                           '<img class="ms-Persona-image" src="' + selectedImage + '">' +
-                         '</div>' +
-                         '<div class="ms-Persona-presence"></div>' +
-                         '<div class="ms-Persona-details">' +
-                            '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +
-                            '<div class="ms-Persona-secondaryText">' + selectedTitle + '</div>' +
-                          '</div>' +
-                        '</div>' +
-                        '<button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>' +
-                    '</li>';
-          if (!$peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+                                  '<div class="ms-Persona">' +
+                                     '<div class="ms-Persona-imageArea">' +
+                                       '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
+                                       '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                                     '</div>' +
+                                     '<div class="ms-Persona-presence"></div>' +
+                                     '<div class="ms-Persona-details">' +
+                                        '<div class="ms-Persona-primaryText">' + selectedName + '</div>' +
+                                        '<div class="ms-Persona-secondaryText">' + selectedTitle + '</div>' +
+                                      '</div>' +
+                                    '</div>' +
+                                    '<button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>' +
+                                '</li>';
+          if (!$peoplePicker.hasClass('ms-PeoplePicker--facePile') && !$peoplePicker.hasClass('ms-PeoplePicker--membersList') ) {
             $searchField.before(personaHTML);
             $peoplePicker.removeClass("is-active");
             resizeSearchField($peoplePicker);
@@ -129,6 +141,12 @@
 
             var count = $peoplePicker.find('.ms-PeoplePicker-selectedPerson').length;
             $selectedCount.html(count);
+
+            $peopleList.children().show();
+            $peopleList.children(":gt(2)").hide();
+            $('.ms-PeoplePicker-selected').show();
+            $('.ms-PeoplePicker-searchMore').removeClass('is-active');
+            $searchField.val("");
           }
       });
 
@@ -149,23 +167,29 @@
         var $searchMore = $(this);
         var primaryLabel = $searchMore.find(".ms-PeoplePicker-searchMorePrimary");
         var originalPrimaryLabelText = primaryLabel.html();
+        var searchFieldText = $searchField.val();
 
         /** Change to searching state. */
         $searchMore.addClass("is-searching");
-        primaryLabel.html("Searching for &ldquo;Sen&rdquo;");
+        primaryLabel.html("Searching for " + searchFieldText);
 
         /** Attach Spinner */
-        if (!spinner) {
-          spinner = new fabric.Spinner($searchMore.get(0));
-        } else {
-          spinner.start();
+        // if (!spinner) {
+        //   spinner = new fabric.Spinner($searchMore.get(0));
+        // } else {
+        //   spinner.start();
+        // }
+
+        /** Show all results in facepile variant */
+        if($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+          $peopleList.children().show();
         }
         
         /** Return the original state. */
         setTimeout(function() {
             $searchMore.removeClass("is-searching");
             primaryLabel.html(originalPrimaryLabelText);
-            spinner.stop();
+            // spinner.stop();
         }, 3000);
       });
 
@@ -190,6 +214,75 @@
           if ($peoplePicker.find('.ms-PeoplePicker-selectedPerson').length === 0) {
             $selected.removeClass('is-active');
           }
+      });
+
+
+      /** Search people picker items */
+      $peoplePicker.on('keyup', '.ms-PeoplePicker-searchField', function(evt) {
+        var suggested = [];
+        var newSuggestions = [];
+        var $pickerResult = $results.find('.ms-Persona-primaryText');
+
+        $peoplePicker.addClass('is-searching');
+
+        /** Hide members */
+        $selected.hide();
+
+        /** Show 5 results */
+        $peopleList.children(":lt(5)").show();
+
+        /** Show searchmore button */
+        $('.ms-PeoplePicker-searchMore').addClass('is-active');
+
+        /** Show members and hide searchmore when field is empty */
+        if($(this).val() === "") {
+          $peoplePicker.removeClass('is-searching');
+          $selected.show();
+          $('.ms-PeoplePicker-searchMore').removeClass('is-active');
+          $peopleList.children(":gt(2)").hide();
+        }
+
+        $pickerResult.each(function() { suggested.push($(this).text()) });
+
+        for (var i = 0; i < suggested.length; i++) {
+          var currentPersona = suggested[i].toLowerCase();
+          var currentValue = evt.target.value.toLowerCase();
+
+          if (currentPersona.indexOf(currentValue) > -1) {
+            newSuggestions.push(suggested[i]);
+          }
+        };
+
+        for (var i = 0; i < newSuggestions.length; i++) {
+          var name = newSuggestions[i];
+          var currentSuggestion = newSuggestions[i].toLowerCase();
+          var resultText = suggested[i].toLowerCase();
+          if (currentSuggestion === resultText) {
+            $results.find('.ms-Persona-primaryText').filter(function() { 
+              return $(this).text().toLowerCase() === currentSuggestion;
+            }).parents('.ms-PeoplePicker-result').show();
+
+            $peopleList.children(":gt(4)").hide();
+            // $results.find('.ms-Persona-primaryText:contains("' + name + 
+            //   '")').filter(function() {
+            //   return $(this).text() == currentSuggestion;
+            // }).addClass('ms-bgColor-red');
+
+            // $results.find('.ms-Persona-primaryText:contains("' + currentSuggestion + '")').parent().addClass('ms-bgColor-red');
+            console.log($('.ms-Persona-primaryText:contains("' + name + '")'));
+            console.log('true');
+            console.log(resultText);
+            console.log(currentSuggestion);
+          } else {
+            $results.find('.ms-Persona-primaryText').filter(function() { 
+              return $(this).text().toLowerCase() != currentSuggestion;
+            }).parents('.ms-PeoplePicker-result').hide();
+
+            console.log('false');
+            console.log(resultText);
+            console.log(currentSuggestion);
+          }
+        };
       });
 
     });

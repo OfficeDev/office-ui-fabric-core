@@ -38,8 +38,8 @@
         }
 
         if ($peoplePicker.hasClass('ms-PeoplePicker--facePile') && $searchField.val() === "") {
-          /** Display a maxiumum of 3 people */
-          $peopleList.children(":gt(2)").hide();
+          /** Display a maxiumum of 5 people */
+          $peopleList.children(":gt(4)").hide();
         }
 
         isActive = true;
@@ -48,7 +48,9 @@
         event.stopPropagation();
 
         /** Before opening, size the results panel to match the people picker. */
-        $results.width($peoplePicker.width() - 2);
+        if (!$peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+          $results.width($peoplePicker.width() - 2);
+        }
 
         /** Show the $results by setting the people picker to active. */
         $peoplePicker.addClass("is-active");
@@ -143,7 +145,7 @@
             $selectedCount.html(count);
 
             $peopleList.children().show();
-            $peopleList.children(":gt(2)").hide();
+            $peopleList.children(":gt(4)").hide();
             $('.ms-PeoplePicker-selected').show();
             $('.ms-PeoplePicker-searchMore').removeClass('is-active');
             $searchField.val("");
@@ -174,11 +176,11 @@
         primaryLabel.html("Searching for " + searchFieldText);
 
         /** Attach Spinner */
-        // if (!spinner) {
-        //   spinner = new fabric.Spinner($searchMore.get(0));
-        // } else {
-        //   spinner.start();
-        // }
+        if (!spinner) {
+          spinner = new fabric.Spinner($searchMore.get(0));
+        } else {
+          spinner.start();
+        }
 
         /** Show all results in facepile variant */
         if($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
@@ -189,7 +191,7 @@
         setTimeout(function() {
             $searchMore.removeClass("is-searching");
             primaryLabel.html(originalPrimaryLabelText);
-            // spinner.stop();
+            spinner.stop();
         }, 3000);
       });
 
@@ -231,7 +233,7 @@
         /** Show 5 results */
         $peopleList.children(":lt(5)").show();
 
-        /** Show searchmore button */
+        /** Show searchMore button */
         $('.ms-PeoplePicker-searchMore').addClass('is-active');
 
         /** Show members and hide searchmore when field is empty */
@@ -239,11 +241,13 @@
           $peoplePicker.removeClass('is-searching');
           $selected.show();
           $('.ms-PeoplePicker-searchMore').removeClass('is-active');
-          $peopleList.children(":gt(2)").hide();
+          $peopleList.children(":gt(4)").hide();
         }
 
+        /** Get array of suggested people */
         $pickerResult.each(function() { suggested.push($(this).text()) });
 
+        /** Iterate over array to find matches and add them to a new array */
         for (var i = 0; i < suggested.length; i++) {
           var currentPersona = suggested[i].toLowerCase();
           var currentValue = evt.target.value.toLowerCase();
@@ -253,6 +257,7 @@
           }
         };
 
+        /** Compare new array to persona elements and show/hide them */
         for (var i = 0; i < newSuggestions.length; i++) {
           var name = newSuggestions[i];
           var currentSuggestion = newSuggestions[i].toLowerCase();
@@ -263,24 +268,11 @@
             }).parents('.ms-PeoplePicker-result').show();
 
             $peopleList.children(":gt(4)").hide();
-            // $results.find('.ms-Persona-primaryText:contains("' + name + 
-            //   '")').filter(function() {
-            //   return $(this).text() == currentSuggestion;
-            // }).addClass('ms-bgColor-red');
 
-            // $results.find('.ms-Persona-primaryText:contains("' + currentSuggestion + '")').parent().addClass('ms-bgColor-red');
-            console.log($('.ms-Persona-primaryText:contains("' + name + '")'));
-            console.log('true');
-            console.log(resultText);
-            console.log(currentSuggestion);
           } else {
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() != currentSuggestion;
             }).parents('.ms-PeoplePicker-result').hide();
-
-            console.log('false');
-            console.log(resultText);
-            console.log(currentSuggestion);
           }
         };
       });

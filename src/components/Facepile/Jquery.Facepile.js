@@ -46,13 +46,13 @@
       };
 
 
-      /** Open panel with active people picker */
+      /** Open panel with people picker */
       $facePile.on("click", ".js-addPerson", function(event) {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
 
         if ($panel.hasClass('ms-FacePile-panel--overflow') && !$panel.hasClass('ms-FacePile-panel--addPerson')) {
-          $panel.removeClass('ms-FacePile-panel--overflow');
+          $panel.removeClass('ms-FacePile-panel--overflow ms-Panel--right');
           $panel.addClass('ms-FacePile-panel--addPerson');
         }
 
@@ -68,7 +68,7 @@
 
         if ($panel.hasClass('ms-FacePile-panel--addPerson') && !$panel.hasClass('ms-FacePile-panel--overflow')) {
           $panel.removeClass('ms-FacePile-panel--addPerson');
-          $panel.addClass('ms-FacePile-panel--overflow');
+          $panel.addClass('ms-FacePile-panel--overflow ms-Panel--right');
         }
       });
 
@@ -172,6 +172,7 @@
         var $cardInitials = $card.find('.ms-Persona-initials');
         var $cardImage = $card.find('.ms-Persona-image');
 
+        /** Close any open persona cards */
         $personaCard.removeClass('is-active');
 
         /** Add data to persona card */
@@ -185,11 +186,16 @@
         /** Show persona card */
         setTimeout(function() { $personaCard.addClass('is-active'); }, 100);
 
-        /** Align persona card */
-        var itemPosition = $(this).offset().left;
-        var correctedPosition = itemPosition - 26;
+        /** Align persona card on md and above screens */
+        if ($(window).width() > 480) {
+          var itemPosition = $(this).offset().left;
+          var correctedPosition = itemPosition - 26;
 
-        $personaCard.css({'left': correctedPosition});
+          $personaCard.css({'left': correctedPosition});          
+        } else {
+          $personaCard.css({'left': 0});
+        }
+
       });
 
       /** Dismiss persona card when clicking on the document */

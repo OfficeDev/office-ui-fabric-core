@@ -169,13 +169,17 @@
 .ms-PeoplePicker-peopleListBtn {
   .button-reset();
   position: relative;
-  height: 50px;
+  height: 34px;
   width: 100%;
   background: none;
   border: 0;
   text-align: left;
   margin: 0 0 10px 0;
   padding: 0 0 0 9px;
+
+  @media (min-width: @ms-screen-md-min) {
+    height: 50px;
+  }
 
   &:hover { 
     background-color: @ms-color-neutralLight; 
@@ -204,13 +208,17 @@
   .button-reset();
   display: block;
   transition: background-color .367s @ms-ease1;
-  height: 50px;
+  height: 34px;
   position: absolute;
   right: 0;
   top: 0;
   width: 30px;
   z-index: (@ms-zIndex-PeoplePicker + @ms-zIndex-back);
   text-align: center;
+
+  @media (min-width: @ms-screen-md-min) {
+    height: 50px;
+  }
 
   .ms-Icon {
     color: @ms-color-neutralSecondary;
@@ -244,22 +252,22 @@
 
 // After the result groups we have an area to trigger additional searches
 .ms-PeoplePicker-searchMore {
-    border-top: 1px solid @ms-color-neutralLight;
-    height: 69px;
-    position: relative;
+  border-top: 1px solid @ms-color-neutralLight;
+  height: 69px;
+  position: relative;
 
-    .ms-Spinner {
-      position: absolute;
-      width: 32px;
-      height: 32px;
-      top: 20px;
-      left: 20px;
-      display: none;
+  .ms-Spinner {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 20px;
+    left: 20px;
+    display: none;
 
-      .ms-Spinner-circle {
-        background-color: @ms-color-themePrimary;
-      }
+    .ms-Spinner-circle {
+      background-color: @ms-color-themePrimary;
     }
+  }
 }
 
 // Searching state
@@ -462,6 +470,20 @@
     border-bottom: 1px solid lightgray;
   }
 
+  .ms-Persona {
+    @media (max-width: @ms-screen-sm-max) {
+      .ms-Persona.ms-Persona--xs;
+    }
+
+    @media (min-width: @ms-screen-md-min) {
+      // .ms-Persona.ms-Persona--sm;
+
+      .ms-Persona-secondaryText {
+        display: block;
+      }
+    }
+  }
+
   .ms-Persona.ms-Persona--selectable {
     padding: 0;
   }
@@ -487,6 +509,13 @@
   .ms-PeoplePicker-searchMoreIcon .ms-Icon {
     top: 0;
     line-height: 48px;
+  }
+
+  .ms-Spinner {
+    top: 10px;
+    left: 30px;
+    height: 20px;
+    width: 20px;
   }
 }
 

@@ -142,9 +142,10 @@
           /** Display counter after 5 people are present */
           if ($membersCount <= 5) {
             $(".ms-FacePile-itemBtn--overflow").removeClass("is-active");
-
+          } else {
             var remainingMembers = $membersCount - 5;
             $(".ms-FacePile-overflowText").text("+" + remainingMembers);
+            console.log(remainingMembers);
           }
         }
       });

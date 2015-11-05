@@ -45,7 +45,6 @@
         }
       };
 
-
       /** Open panel with people picker */
       $facePile.on("click", ".js-addPerson", function(event) {
         $panelMain.css({display: "block"});
@@ -121,9 +120,7 @@
 
         /** Increment member count */
         incrementMembers();
-
       });
-
 
       /** Remove members in panel people picker */
       $pickerMembers.on('click', '.js-selectedRemove', function() {
@@ -150,9 +147,8 @@
         }
       });
 
-
       /** Show persona card when selecting a facepile item */
-      $facePile.on('click', '.ms-FacePile-itemBtn', function() {
+      $membersList.on('click', '.ms-FacePile-itemBtn', function() {
         var selectedName = $(this).find(".ms-Persona-primaryText").html();
         var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
         var selectedInitials = (function() {
@@ -195,7 +191,6 @@
         } else {
           $personaCard.css({'left': 0});
         }
-
       });
 
       /** Dismiss persona card when clicking on the document */

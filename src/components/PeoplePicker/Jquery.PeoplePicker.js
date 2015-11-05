@@ -38,8 +38,8 @@
           $peoplePicker.removeClass("is-active");
         }
 
+        /** Display a maxiumum of 5 people in facepile variant */
         if ($peoplePicker.hasClass('ms-PeoplePicker--facePile') && $searchField.val() === "") {
-          /** Display a maxiumum of 5 people */
           $peopleList.children(":gt(4)").hide();
         }
 
@@ -55,6 +55,13 @@
 
         /** Show the $results by setting the people picker to active. */
         $peoplePicker.addClass("is-active");
+
+        /** Animate results and members in facepile variant. */
+        if ($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+          $results.addClass('ms-u-slideDownIn20');
+          $selectedPeople.addClass('ms-u-slideDownIn20');
+          setTimeout(function() { $results.removeClass('ms-u-slideDownIn20'); $selectedPeople.removeClass('ms-u-slideDownIn20');}, 200);
+        }
 
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
         $(document).bind("click.peoplepicker", function(event) {
@@ -279,7 +286,7 @@
       });
 
       /** Show persona card when clicking a persona in the members list */
-      $peoplePicker.on('click', '.ms-Persona', function() {
+      $selectedPeople.on('click', '.ms-Persona', function() {
         var selectedName = $(this).find(".ms-Persona-primaryText").html();
         var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
         var selectedInitials = (function() {

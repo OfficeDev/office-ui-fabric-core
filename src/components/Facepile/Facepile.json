@@ -5,6 +5,7 @@
   "class": "ms-FacePile",
   "dependencies": [
     "Overlay",
+    "Link",
     "Panel",
     "PeoplePicker",
     "Persona",

@@ -25,7 +25,7 @@
       var $pickerMembers = $picker.find('.ms-PeoplePicker-selectedPeople');
       var $pickerMembersCount = $picker.find(".ms-PeoplePicker-selectedCount");
       var $pickerSearchField = $picker.find(".ms-PeoplePicker-searchField");
-      var $personaCard = $('.ms-PersonaCard');
+      var $personaCard = $('.ms-FacePile').find('.ms-PersonaCard');
 
 
       /** Increment member count and show/hide overflow text */
@@ -200,13 +200,14 @@
 
       /** Dismiss persona card when clicking on the document */
       $(document).on('click', function(e) {
-        var activePersonaCard = $('.ms-PersonaCard');
-        var memberBtn = $('.ms-FacePile-itemBtn--member')
+        var $activePersonaCard = $personaCard;
+        var $memberBtn = $('.ms-FacePile-itemBtn--member');
+        // var $peoplePickerMember = $('.ms-')
 
-        if (!memberBtn.is(e.target) && memberBtn.has(e.target).length === 0 && !activePersonaCard.is(e.target) && activePersonaCard.has(e.target).length === 0) {
-          activePersonaCard.hide();
+        if (!$memberBtn.is(e.target) && $memberBtn.has(e.target).length === 0 && !$activePersonaCard.is(e.target) && $activePersonaCard.has(e.target).length === 0) {
+          $activePersonaCard.hide();
         } else {
-          activePersonaCard.show();
+          $activePersonaCard.show();
         }
       });
 

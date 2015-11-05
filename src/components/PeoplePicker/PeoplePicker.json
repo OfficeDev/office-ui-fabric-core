@@ -7,7 +7,8 @@
     "Button",
     "Label",
     "Overlay",
-    "Persona"
+    "Persona",
+    "PersonaCard"
   ],
   "wrapBranches": true,
   "fileOrder": [

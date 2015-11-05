@@ -11,17 +11,15 @@
   height: 32px;
   width: auto;
 
-  .ms-Persona-presence,
-  .ms-Persona-details {
+  .ms-PersonaCard {
     display: none;
-  }
-}
+    position: absolute;
+    top: 40px;
+    height: 200px;
 
-.ms-FacePile ~ .ms-PersonaCard {
-  display: none;
-  margin-top: 5px;
-  &.is-active {
-    display: block;
+    &.is-active {
+      display: block;
+    }
   }
 }
 
@@ -38,6 +36,11 @@
   outline: transparent;
   border-radius: 50%;
   vertical-align: top;
+
+  .ms-Persona-presence,
+  .ms-Persona-details {
+    display: none;
+  }
 }
 
 .ms-FacePile-itemBtn.ms-FacePile-itemBtn--addPerson {

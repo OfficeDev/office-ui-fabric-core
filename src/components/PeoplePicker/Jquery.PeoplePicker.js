@@ -24,6 +24,7 @@
       var $peopleList = $peoplePicker.find(".ms-PeoplePicker-peopleList")
       var isActive = false;
       var spinner;
+      var $personaCard = $('.ms-PeoplePicker').find('.ms-PersonaCard');
 
       // Run when focused or clicked
       function peoplePickerActive(event) {
@@ -275,6 +276,72 @@
             }).parents('.ms-PeoplePicker-result').hide();
           }
         };
+      });
+
+      /** Show persona card when clicking a persona in the members list */
+      $peoplePicker.on('click', '.ms-Persona', function() {
+        var selectedName = $(this).find(".ms-Persona-primaryText").html();
+        var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
+        var selectedInitials = (function() {
+          var name = selectedName.split(' ');
+          var nameInitials = '';
+          for (i = 0; i < name.length; i++) {
+            nameInitials += name[i].charAt(0);
+          }
+
+          return nameInitials.substring(0,2);;
+        })();
+        var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
+        var selectedImage = $(this).find('.ms-Persona-image').attr('src');
+        var $card = $('.ms-PersonaCard')
+        var $cardName = $card.find('.ms-Persona-primaryText');
+        var $cardTitle = $card.find('.ms-Persona-secondaryText');
+        var $cardInitials = $card.find('.ms-Persona-initials');
+        var $cardImage = $card.find('.ms-Persona-image');
+
+        /** Close any open persona cards */
+        $personaCard.removeClass('is-active');
+
+        /** Add data to persona card */
+        $cardName.text(selectedName);
+        $cardTitle.text(selectedTitle);
+        $cardInitials.text(selectedInitials);
+        $cardInitials.removeClass();
+        $cardInitials.addClass(selectedClasses);
+        $cardImage.attr('src', selectedImage);
+
+        /** Show persona card */
+        setTimeout(function() { 
+          $personaCard.addClass('is-active'); 
+          $personaCard.show(); 
+        }, 100);
+
+        /** Align persona card on md and above screens */
+        if ($(window).width() > 480) {
+          var itemPositionLeft = $(this).offset().left;
+          var itemPositionTop = $(this).offset().top;
+          var correctedPositionTop = itemPositionTop + 10;
+          var correctedPositionLeft = itemPositionLeft;
+
+          $personaCard.css({'top': correctedPositionTop, 'left': 0});          
+        } else {
+          $personaCard.css({'top': 'auto'});
+        }
+
+      });
+
+      /** Dismiss persona card when clicking on the document */
+      $(document).on('click', function(e) {
+        var $activePersonaCard = $personaCard;
+        var $memberBtn = $('.ms-PeoplePicker-selectedPerson').find('.ms-Persona');
+
+        if (!$memberBtn.is(e.target) && !$activePersonaCard.is(e.target) && $activePersonaCard.has(e.target).length === 0) {
+          $activePersonaCard.hide();
+          $activePersonaCard.removeClass('is-active');
+          $activePersonaCard.removeAttr('style');
+        } else {
+          $activePersonaCard.show();
+        }
       });
 
     });

@@ -193,7 +193,7 @@ var buildLinkHtml = function (href, name) {
 // Component parts
 var componentsFolders = getFolders(paths.componentsPath);
 var catalogContents = "";
-var componentLinks = "";
+var componentLinks = [];
 var samplesLinks = "";
 var samplesFolders = getFolders(paths.srcSamples);
 
@@ -441,7 +441,7 @@ gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
 // ----------------------------------------------------------------------------
 
 gulp.task('reset-component-data', function() {
-    componentLinks = '';
+    componentLinks = [];
     storedFiles = {};
     componentsFolders = getFolders(paths.componentsPath);
 });
@@ -487,7 +487,7 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
 
             //Check if module was already included in string
             if(catalogContents.indexOf(folder + ':') < 0) {
-                componentLinks += buildLinkHtml('Components/' + folder, folder);
+                componentLinks.push(buildLinkHtml('Components/' + folder, folder));
             }
         }))
         .on('error', onGulpError);
@@ -506,7 +506,7 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
             curString = JSON.stringify(curString);
             //Check if module was already included in string
             if(catalogContents.indexOf(folder + ':') < 0) {
-                componentLinks += buildLinkHtml('Components/' + folder, folder);
+                componentLinks.push(buildLinkHtml('Components/' + folder, folder));
             }
         }))
             .on('error', onGulpError);
@@ -564,7 +564,7 @@ gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'bu
     return gulp.src(paths.templatePath + '/'+ 'samples-index.html')
         .on('error', onGulpError)
     .pipe(data(function () {
-        return { "components": buildLinkContainer(componentLinks), "samples" :  buildLinkContainer(samplesLinks)};
+        return { "components": buildLinkContainer(componentLinks.sort().join('')), "samples" :  buildLinkContainer(samplesLinks)};
     }))
         .on('error', onGulpError)
     .pipe(template())

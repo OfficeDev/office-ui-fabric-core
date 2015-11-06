@@ -194,14 +194,12 @@
 
       /** Dismiss persona card when clicking on the document */
       $(document).on('click', function(e) {
-        var $activePersonaCard = $personaCard;
         var $memberBtn = $('.ms-FacePile-itemBtn--member');
-        // var $peoplePickerMember = $('.ms-')
 
-        if (!$memberBtn.is(e.target) && $memberBtn.has(e.target).length === 0 && !$activePersonaCard.is(e.target) && $activePersonaCard.has(e.target).length === 0) {
-          $activePersonaCard.hide();
+        if (!$memberBtn.is(e.target) && $memberBtn.has(e.target).length === 0 && !$personaCard.is(e.target) && $personaCard.has(e.target).length === 0) {
+          $personaCard.removeClass('is-active');
         } else {
-          $activePersonaCard.show();
+          $personaCard.addClass('is-active');
         }
       });
 

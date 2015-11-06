@@ -480,8 +480,6 @@
     }
 
     @media (min-width: @ms-screen-md-min) {
-      // .ms-Persona.ms-Persona--sm;
-
       .ms-Persona-secondaryText {
         display: block;
       }
@@ -528,9 +526,11 @@
     display: none;
     position: absolute;
     height: 200px;
+    // animation-name: none;
 
     &.is-active {
       display: block;
+      // animation-name: fadeIn, slideUp10;
     }
   } 
 }
@@ -555,11 +555,4 @@
 .ms-PeoplePicker-peopleListItem {
   margin-bottom: 10px;
   position: relative;
-
-  &.is-visible {
-    display: block;
-  }
-  &.is-hidden {
-    display: none;
-  }
 }

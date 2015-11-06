@@ -247,7 +247,7 @@
         /** Get array of suggested people */
         $pickerResult.each(function() { suggested.push($(this).text()) });
 
-        /** Iterate over array to find matches and add them to a new array */
+        /** Iterate over array to find matches and show matching items */
         for (var i = 0; i < suggested.length; i++) {
           var currentPersona = suggested[i].toLowerCase();
           var currentValue = evt.target.value.toLowerCase();
@@ -256,15 +256,17 @@
             var currentSuggestion = suggested[i].toLowerCase();
 
             newSuggestions.push(suggested[i]);
+
             console.log('true ' + currentSuggestion);
+
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() === currentSuggestion;
-            }).parents('.ms-PeoplePicker-peopleListItem').removeClass('is-hidden').removeAttr('style').show();
+            }).parents('.ms-PeoplePicker-peopleListItem').show();
           } else {
             console.log('false ' + currentSuggestion);
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() != currentSuggestion;
-            }).parents('.ms-PeoplePicker-peopleListItem').addClass('is-hidden').removeAttr('style').hide();
+            }).parents('.ms-PeoplePicker-peopleListItem').hide();
           }
         };
 
@@ -273,6 +275,8 @@
           $peoplePicker.removeClass('is-searching');
           $selected.show();
           $('.ms-PeoplePicker-searchMore').removeClass('is-active');
+          $selectedPeople.addClass('ms-u-slideDownIn20');
+          setTimeout(function() { $selectedPeople.removeClass('ms-u-slideDownIn20');}, 1000);
           $peopleList.children(":gt(4)").hide();
         }
       });
@@ -311,8 +315,8 @@
 
         /** Show persona card */
         setTimeout(function() { 
-          $personaCard.addClass('is-active'); 
-          $personaCard.show(); 
+          $personaCard.addClass('is-active');
+          setTimeout(function(){$personaCard.css({'animation-name': 'none'});}, 300);
         }, 100);
 
         /** Align persona card on md and above screens */
@@ -331,15 +335,13 @@
 
       /** Dismiss persona card when clicking on the document */
       $(document).on('click', function(e) {
-        var $activePersonaCard = $personaCard;
         var $memberBtn = $('.ms-PeoplePicker-selectedPerson').find('.ms-Persona');
 
-        if (!$memberBtn.is(e.target) && !$activePersonaCard.is(e.target) && $activePersonaCard.has(e.target).length === 0) {
-          $activePersonaCard.hide();
-          $activePersonaCard.removeClass('is-active');
-          $activePersonaCard.removeAttr('style');
+        if (!$memberBtn.is(e.target) && !$personaCard.is(e.target) && $personaCard.has(e.target).length === 0) {
+          $personaCard.removeClass('is-active');
+          setTimeout(function(){$personaCard.removeAttr('style')}, 300);
         } else {
-          $activePersonaCard.show();
+          $personaCard.addClass('is-active');
         }
       });
 

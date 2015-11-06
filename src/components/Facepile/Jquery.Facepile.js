@@ -142,7 +142,6 @@
           } else {
             var remainingMembers = $membersCount - 5;
             $(".ms-FacePile-overflowText").text("+" + remainingMembers);
-            console.log(remainingMembers);
           }
         }
       });

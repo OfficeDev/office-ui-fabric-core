@@ -43,6 +43,13 @@
           $peopleList.children(":gt(4)").hide();
         }
 
+        /** Animate results and members in facepile variant. */
+        if ($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+          // $results.addClass('ms-u-slideDownIn20');
+          $selectedPeople.addClass('ms-u-slideDownIn20');
+          setTimeout(function() { $results.removeClass('ms-u-slideDownIn20'); $selectedPeople.removeClass('ms-u-slideDownIn20');}, 1000);
+        }
+
         isActive = true;
 
         /** Stop the click event from propagating, which would just close the dropdown immediately. */
@@ -55,13 +62,6 @@
 
         /** Show the $results by setting the people picker to active. */
         $peoplePicker.addClass("is-active");
-
-        /** Animate results and members in facepile variant. */
-        if ($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
-          $results.addClass('ms-u-slideDownIn20');
-          $selectedPeople.addClass('ms-u-slideDownIn20');
-          setTimeout(function() { $results.removeClass('ms-u-slideDownIn20'); $selectedPeople.removeClass('ms-u-slideDownIn20');}, 200);
-        }
 
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
         $(document).bind("click.peoplepicker", function(event) {
@@ -192,7 +192,7 @@
 
         /** Show all results in facepile variant */
         if($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
-          $peopleList.children().show();
+          setTimeout(function() {$peopleList.children().show();}, 1500);
         }
         
         /** Return the original state. */
@@ -200,7 +200,7 @@
             $searchMore.removeClass("is-searching");
             primaryLabel.html(originalPrimaryLabelText);
             spinner.stop();
-        }, 3000);
+        }, 1500);
       });
 
       /** Remove a result using the action icon. */
@@ -244,14 +244,6 @@
         /** Show searchMore button */
         $('.ms-PeoplePicker-searchMore').addClass('is-active');
 
-        /** Show members and hide searchmore when field is empty */
-        if($(this).val() === "") {
-          $peoplePicker.removeClass('is-searching');
-          $selected.show();
-          $('.ms-PeoplePicker-searchMore').removeClass('is-active');
-          $peopleList.children(":gt(4)").hide();
-        }
-
         /** Get array of suggested people */
         $pickerResult.each(function() { suggested.push($(this).text()) });
 
@@ -261,28 +253,28 @@
           var currentValue = evt.target.value.toLowerCase();
 
           if (currentPersona.indexOf(currentValue) > -1) {
-            newSuggestions.push(suggested[i]);
-          }
-        };
+            var currentSuggestion = suggested[i].toLowerCase();
 
-        /** Compare new array to persona elements and show/hide them */
-        for (var i = 0; i < newSuggestions.length; i++) {
-          var name = newSuggestions[i];
-          var currentSuggestion = newSuggestions[i].toLowerCase();
-          var resultText = suggested[i].toLowerCase();
-          if (currentSuggestion === resultText) {
+            newSuggestions.push(suggested[i]);
+            console.log('true ' + currentSuggestion);
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() === currentSuggestion;
-            }).parents('.ms-PeoplePicker-result').show();
-
-            $peopleList.children(":gt(4)").hide();
-
+            }).parents('.ms-PeoplePicker-peopleListItem').removeClass('is-hidden').removeAttr('style').show();
           } else {
+            console.log('false ' + currentSuggestion);
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() != currentSuggestion;
-            }).parents('.ms-PeoplePicker-result').hide();
+            }).parents('.ms-PeoplePicker-peopleListItem').addClass('is-hidden').removeAttr('style').hide();
           }
         };
+
+        /** Show members and hide searchmore when field is empty */
+        if($(this).val() === "") {
+          $peoplePicker.removeClass('is-searching');
+          $selected.show();
+          $('.ms-PeoplePicker-searchMore').removeClass('is-active');
+          $peopleList.children(":gt(4)").hide();
+        }
       });
 
       /** Show persona card when clicking a persona in the members list */

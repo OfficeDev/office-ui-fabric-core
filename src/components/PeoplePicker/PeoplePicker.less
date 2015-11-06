@@ -103,6 +103,7 @@
 // Show the results area when the people picker is active
 .ms-PeoplePicker.is-active .ms-PeoplePicker-results {
   display: block;
+  opacity: 1;
 }
 
 
@@ -470,7 +471,7 @@
     max-width: 100%;
     padding: 0;
     padding-bottom: 10px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid @ms-color-neutralLight;
   }
 
   .ms-Persona {
@@ -554,4 +555,11 @@
 .ms-PeoplePicker-peopleListItem {
   margin-bottom: 10px;
   position: relative;
+
+  &.is-visible {
+    display: block;
+  }
+  &.is-hidden {
+    display: none;
+  }
 }

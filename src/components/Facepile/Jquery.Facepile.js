@@ -48,12 +48,9 @@
       /** Open panel with people picker */
       $facePile.on("click", ".js-addPerson", function(event) {
         $panelMain.css({display: "block"});
-        $panel.toggleClass("is-open");
-
-        if ($panel.hasClass('ms-FacePile-panel--overflow') && !$panel.hasClass('ms-FacePile-panel--addPerson')) {
-          $panel.removeClass('ms-FacePile-panel--overflow ms-Panel--right');
-          $panel.addClass('ms-FacePile-panel--addPerson');
-        }
+        $panel.toggleClass("is-open")
+              .removeClass('ms-FacePile-panel--overflow ms-Panel--right')
+              .addClass('ms-FacePile-panel--addPerson');
 
         /** Close any open persona cards */
         $personaCard.removeClass('is-active').hide();
@@ -63,12 +60,9 @@
       /** Open oveflow panel with list of members */
       $facePile.on("click", ".js-overflowPanel", function(event) {
         $panelMain.css({display: "block"});
-        $panel.toggleClass("is-open");
-
-        if ($panel.hasClass('ms-FacePile-panel--addPerson') && !$panel.hasClass('ms-FacePile-panel--overflow')) {
-          $panel.removeClass('ms-FacePile-panel--addPerson');
-          $panel.addClass('ms-FacePile-panel--overflow ms-Panel--right');
-        }
+        $panel.toggleClass("is-open")
+              .removeClass('ms-FacePile-panel--addPerson')
+              .addClass('ms-FacePile-panel--overflow ms-Panel--right');
       });
 
 
@@ -198,6 +192,7 @@
 
         if (!$memberBtn.is(e.target) && $memberBtn.has(e.target).length === 0 && !$personaCard.is(e.target) && $personaCard.has(e.target).length === 0) {
           $personaCard.removeClass('is-active');
+          $personaCard.removeAttr('style');
         } else {
           $personaCard.addClass('is-active');
         }

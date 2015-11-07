@@ -257,13 +257,10 @@
 
             newSuggestions.push(suggested[i]);
 
-            console.log('true ' + currentSuggestion);
-
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() === currentSuggestion;
             }).parents('.ms-PeoplePicker-peopleListItem').show();
           } else {
-            console.log('false ' + currentSuggestion);
             $results.find('.ms-Persona-primaryText').filter(function() { 
               return $(this).text().toLowerCase() != currentSuggestion;
             }).parents('.ms-PeoplePicker-peopleListItem').hide();

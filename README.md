@@ -43,7 +43,7 @@ If you have a specific bug, feature request, or question, post it via the [issue
 #####How does Fabric work and where can I see some samples?
 Fabric provides the "skin" that you can use to apply the official Microsoft design language to your Office or Office 365 app or add-in. The JavaScript included with Fabric is for demo purposes only - feel free to swap it out with whatever meets your needs.
 
-For details about our samples, see [Fabric samples](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#samples). For information about  how to build and watch the Fabric samples, see [Building Fabric, gulp tasks, and the starter template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#gulp-tasks).
+For details about our samples, see [Fabric samples](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/GETTINGSTARTED.md#fabric-samples). For information about  how to build and watch the Fabric samples, see [Building Fabric, gulp tasks, and the starter template](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#gulp-tasks).
 
 #####How does Fabric compare to frameworks like Bootstrap and Foundation?
 Fabric solves many of the same problems that other front-end frameworks do, in a way that is specific to Microsoft. We have our own design language and interaction patterns that all Microsoft apps share. Like other frameworks, Fabric speeds up development by ensuring that your add-ins use standard typography, colors, icons, and more. You don't have to spend time overriding the styles of other frameworks. Fabric also includes components the other frameworks don’t have.

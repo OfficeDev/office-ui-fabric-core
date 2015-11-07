@@ -1,4 +1,4 @@
-![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
+![Office UI Fabric](http://odux.azurewebsites.net/github/img/lockupempty.png)
 
 #[Office UI Fabric](http://dev.office.com/fabric)
 

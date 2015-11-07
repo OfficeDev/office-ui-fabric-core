@@ -7,7 +7,7 @@
 - [Getting Fabric](#getting-fabric)
 - [Building Fabric](#building-fabric)
 - [Add Fabric to your project](#add-to-your-project)
-- [Fabric samples](#samples)
+- [Fabric samples](#fabric-samples)
 - [Introductory tutorial](#introductory-tutorial)
 - [Supported browsers](#supported-browsers)
 

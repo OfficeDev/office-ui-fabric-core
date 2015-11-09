@@ -737,9 +737,21 @@ gulp.task('build-bundles-data', function() {
                     }
                 }).map(function(entry) {
                     var entryFileName = entry.relativePath.split('/').slice(-1).join('');
+                    var entryName = entryFileName.replace('.less', ''); // e.g. Button
                     var entryBasePath = entry.basePath.replace('\\','/');
-                    bundleFilePaths[i]['files'].push(entryBasePath + '/' + entryFileName);
-                    return entryBasePath + '/' + entryFileName;
+                    var isEntryComponent = entryBasePath === paths.componentsPath;
+                    var relativePath = '../';
+                    var fullPath = relativePath + entryBasePath;
+
+                    if (isEntryComponent) {
+                        fullPath += '/' + entryName;
+                    }
+
+                    fullPath += '/' + entryFileName;
+
+                    bundleFilePaths[i]['files'].push(fullPath);
+
+                    return fullPath;
                 });
             });
         }

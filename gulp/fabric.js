@@ -36,6 +36,7 @@ var gulpif = require('gulp-if');
 var walkSync = require('walk-sync');
 var config = require('./config')
 var pkg = require('../package.json');
+var size = require('gulp-size');
 
 // Define paths.
 var distPath = 'dist';
@@ -223,6 +224,10 @@ gulp.task('clean-component-samples', function () {
 
 gulp.task('clean-samples', function () {
     return del.sync([paths.distSamples + '/*', '!' + paths.distSamples + '/{Components, Components/**}']);
+});
+
+gulp.task('clean-bundles', function () {
+    return del.sync([paths.bundlePath]);
 });
 
 //
@@ -619,7 +624,7 @@ gulp.task('nuget-pack', function(callback) {
 
 var bundleFilePaths = [];
 
-gulp.task('build-bundles-data', function() {
+gulp.task('build-bundles-data', ['clean-bundles'], function() {
     var bundles = config.bundles;
 
     if (bundles.length > 0) {
@@ -639,7 +644,7 @@ gulp.task('build-bundles-data', function() {
             var bundleMode = (excludes !== undefined && excludes.length > 0) || !options.preferIncludes ? 'exclude' : 'include';
 
             if (options.verbose) {
-                console.log(colors.green('Building in "' + bundleMode + '" bundle mode.'));
+                console.log(colors.yellow('Building ' + bundleName + 'bundle in "' + bundleMode + '" bundle mode.'));
             }
 
             var srcFolders = getFolders(paths.srcPath).filter(function(folderName) {
@@ -650,26 +655,24 @@ gulp.task('build-bundles-data', function() {
 
             srcFolders.forEach(function(dir) {
                 // Grab all LESS and JSON files as stats objects
-                var entries = walkSync.entries(paths.srcPath + '\\' + dir,  { globs: ['**/*.less', '**/*.json'] });
+                var entries = walkSync.entries(paths.srcPath + '\\' + dir,  { globs: ['**/*.less', '**/*.json', '!**/*.RTL.less'] });
 
                 // Cache collection of manifests for includes
                 var includeManifests = entries.filter(function(entry){
-                    var entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
-                    var entryName = entryFileName.replace('.json', ''); // e.g. Button
-                    var isEntryInclude = includes !== undefined && includes.indexOf(entryName) >= 0;
-                    var extension = path.extname(entryFileName);
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    let entryName = entryFileName.replace('.json', ''); // e.g. Button
+                    let isEntryInclude = includes !== undefined && includes.indexOf(entryName) >= 0;
+                    let extension = path.extname(entryFileName);
 
                     return extension === '.json' && isEntryInclude;
                 }).map(function(entry) {
-                    var entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
-                    var entryName = entryFileName.replace('.json', ''); // e.g. Button
-                    var entryBasePath = entry.basePath.replace('\\','/');
-                    var _manifest = JSON.parse(fs.readFileSync(entryBasePath + '/' + entryName + '/' + entryFileName));
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    let entryName = entryFileName.replace('.json', ''); // e.g. Button
+                    let entryBasePath = entry.basePath.replace('\\','/');
+                    let _manifest = JSON.parse(fs.readFileSync(entryBasePath + '/' + entryName + '/' + entryFileName));
 
                     return _manifest;
                 });
-
-                // console.log(includeManifests);
 
                 // Return a collection of the files listed in the config
                 var filteredEntries = entries.filter(function(entry) {
@@ -683,10 +686,10 @@ gulp.task('build-bundles-data', function() {
                         // Excludes are defined--prefer those first.
                         if (excludes !== undefined && excludes.length > 0) {
                             // Include the entry only if it is not listed as an exclude
-                            var includeEntry = excludes.indexOf(entryName) < 0;
+                            let includeEntry = excludes.indexOf(entryName) < 0;
 
                             if (!includeEntry && options.verbose) {
-                                console.log(colors.green('Excluded ' + entryName + '.less'));
+                                console.log(colors.green('Excluded ' + entryName + '.less from ' + bundleName + ' bundle.'));
                             }
 
                             return includeEntry;
@@ -695,14 +698,14 @@ gulp.task('build-bundles-data', function() {
 
                         // Includes are specified, but exludes are not. 
                         else if (includes !== undefined && includes.length >= 0 || bundleMode === 'include') {
-                            // The current entry is a Component
-                            var isEntryComponent = entryBasePath === paths.componentsPath;
+                            // The current entry is a Fabric Component
+                            let isEntryComponent = entryBasePath === paths.componentsPath;
 
-                            // The current entry is an include
-                            var isEntryInclude = includes.indexOf(entryName) >= 0;
+                            // The current entry is listed as an include
+                            let isEntryInclude = includes.indexOf(entryName) >= 0;
 
                             // Current entry is a dependency of an include
-                            var isEntryDependency = (function() {
+                            let isEntryDependency = (function() {
                                 if (isEntryComponent) {
                                     for (var l = 0; l < includeManifests.length; l++) {
                                         if (includeManifests[l]['dependencies']) {
@@ -748,6 +751,7 @@ gulp.task('build-bundles-data', function() {
                     }
 
                     fullPath += '/' + entryFileName;
+                    fullPath = fullPath.replace('src/', '');
 
                     bundleFilePaths[i]['files'].push(fullPath);
 
@@ -765,15 +769,65 @@ gulp.task('build-bundles', ['build-bundles-data'], function() {
 
     // Start processing bundles only if configured
     if (bundles.length > 0) {
-        for (var i = 0; i < bundles.length; i++) {
-            var bundleConfig = bundles[i];
-            var name = bundleConfig.name;
-            var output = 'fabric-' + name + '.css';
+        var _filesList = function(i) {
+            return bundleFilePaths[i]['files'];
+        }
 
-            console.log(colors.yellow('Bundle name and files: ' + output));
-            console.log(bundleFilePaths[i].files);
+        var bundleBase = function(index, bundleName) {
+            return gulp.src(paths.templatePath + '/'+ 'bundle-template.less')
+            .pipe(data(function () {
+                var filesList = _filesList(index);
+                return { 'files': filesList };
+            }))
+                .on('error', onGulpError)
+            .pipe(template())
+                .on('error', onGulpError)
+            .pipe(template())
+            .pipe(rename(bundleName + '.less'))
+            .pipe(gulp.dest(paths.bundlePath))
+            .pipe(less())
+                .on('error', onGulpError)
+            .pipe(header(bannerTemplate, bannerData))
+                .on('error', onGulpError)
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+            .pipe(rename(bundleName + '.css'))
+                .on('error', onGulpError)
+            .pipe(cssbeautify())
+                .on('error', onGulpError)
+            .pipe(csscomb())
+                .on('error', onGulpError)
+            .pipe(header(banners.cssCopyRight()))
+                .on('error', onGulpError)
+            .pipe(size({
+                'showFiles': true
+            }))
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.bundlePath))
+                .on('error', onGulpError)
+            .pipe(rename(bundleName + '.min.css'))
+                .on('error', onGulpError)
+            .pipe(cssMinify({
+                 'aggressiveMerging': false
+            }))
+                .on('error', onGulpError)
+            .pipe(header(banners.cssCopyRight()))
+                .on('error', onGulpError)
+            .pipe(size({
+                'showFiles': true
+            }))
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.bundlePath))
+                .on('error', onGulpError);            
+        }
 
-            // When finished, output name of each bundle and file size
+        for (var j = 0; j < bundles.length; j++) {
+            var bundleConfig = bundles[j];
+            var bundleName = bundleConfig.name;
+
+            bundleBase(j, bundleName);
         }
     } else {
         console.log(colors.red('No bundles configured.'));

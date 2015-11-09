@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var del = require('del');
 var fs = require('fs');
@@ -13,7 +15,6 @@ var mergeStream = require('merge-stream');
 var rename = require('gulp-rename');
 var es = require('event-stream');
 var _ = require('lodash');
-var pkg = require('../package.json');
 var header = require('gulp-header');
 var zip = require('gulp-zip');
 var gutil = require('gulp-util');
@@ -30,6 +31,11 @@ var path = require('path');
 var wrap = require('gulp-wrap');
 var uglify = require('gulp-uglify');
 var nugetpack = require('gulp-nuget-pack');
+var replace = require('gulp-replace');
+var gulpif = require('gulp-if');
+var walkSync = require('walk-sync');
+var config = require('./config')
+var pkg = require('../package.json');
 
 // Define paths.
 var distPath = 'dist';
@@ -47,7 +53,8 @@ var paths = {
     srcSamples: srcPath + '/samples',
     componentsPath : 'src/components',
     lessPath: srcPath + '/less',
-    templatePath : srcPath + '/templates'
+    templatePath : srcPath + '/templates',
+    bundlePath: distPath + '/bundles'
 };
 
 var storedFiles = {};
@@ -608,6 +615,164 @@ gulp.task('nuget-pack', function(callback) {
         callback
     );
 });
+
+
+var bundleFilePaths = [];
+
+gulp.task('build-bundles-data', function() {
+    var bundles = config.bundles;
+
+    if (bundles.length > 0) {
+        for (let i = 0; i < bundles.length; i++) {
+            var bundleConfig = bundles[i];
+            var bundleName = bundleConfig.name;
+            var includes = bundleConfig.includes || [];
+            var excludes = bundleConfig.excludes || [];
+            var options = bundleConfig.options || {};
+
+            bundleFilePaths[i] = {
+                'name': bundleName,
+                'files': []
+            }
+
+            // Default to "exclude" bundle mode if they are listed, or if preferIncludes is falsy 
+            var bundleMode = (excludes !== undefined && excludes.length > 0) || !options.preferIncludes ? 'exclude' : 'include';
+
+            if (options.verbose) {
+                console.log(colors.green('Building in "' + bundleMode + '" bundle mode.'));
+            }
+
+            var srcFolders = getFolders(paths.srcPath).filter(function(folderName) {
+                var foldersToSearch = ['less', 'components']
+
+                return foldersToSearch.indexOf(folderName) !== -1
+            });
+
+            srcFolders.forEach(function(dir) {
+                // Grab all LESS and JSON files as stats objects
+                var entries = walkSync.entries(paths.srcPath + '\\' + dir,  { globs: ['**/*.less', '**/*.json'] });
+
+                // Cache collection of manifests for includes
+                var includeManifests = entries.filter(function(entry){
+                    var entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    var entryName = entryFileName.replace('.json', ''); // e.g. Button
+                    var isEntryInclude = includes !== undefined && includes.indexOf(entryName) >= 0;
+                    var extension = path.extname(entryFileName);
+
+                    return extension === '.json' && isEntryInclude;
+                }).map(function(entry) {
+                    var entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    var entryName = entryFileName.replace('.json', ''); // e.g. Button
+                    var entryBasePath = entry.basePath.replace('\\','/');
+                    var _manifest = JSON.parse(fs.readFileSync(entryBasePath + '/' + entryName + '/' + entryFileName));
+
+                    return _manifest;
+                });
+
+                // console.log(includeManifests);
+
+                // Return a collection of the files listed in the config
+                var filteredEntries = entries.filter(function(entry) {
+                    var entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    var entryName = entryFileName.replace('.less', ''); // e.g. Button
+                    var entryBasePath = entry.basePath.replace('\\','/'); // e.g. src/components
+                    var extension = path.extname(entryFileName);
+
+                    // Only process LESS files
+                    if (extension === '.less') {
+                        // Excludes are defined--prefer those first.
+                        if (excludes !== undefined && excludes.length > 0) {
+                            // Include the entry only if it is not listed as an exclude
+                            var includeEntry = excludes.indexOf(entryName) < 0;
+
+                            if (!includeEntry && options.verbose) {
+                                console.log(colors.green('Excluded ' + entryName + '.less'));
+                            }
+
+                            return includeEntry;
+                        } 
+
+
+                        // Includes are specified, but exludes are not. 
+                        else if (includes !== undefined && includes.length >= 0 || bundleMode === 'include') {
+                            // The current entry is a Component
+                            var isEntryComponent = entryBasePath === paths.componentsPath;
+
+                            // The current entry is an include
+                            var isEntryInclude = includes.indexOf(entryName) >= 0;
+
+                            // Current entry is a dependency of an include
+                            var isEntryDependency = (function() {
+                                if (isEntryComponent) {
+                                    for (var l = 0; l < includeManifests.length; l++) {
+                                        if (includeManifests[l]['dependencies']) {
+                                            var _deps = includeManifests[l]['dependencies'] || [];
+
+                                            // Returns true only if current entry is listed as a dependency of an include
+                                            return _deps.indexOf(entryName) >= 0;
+                                        }
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            })();
+
+                            // Include the current entry straightaway if the entry is an include
+                            if (includes.indexOf(entryName) >= 0) {
+                                return true;
+                            }
+
+                            // Include the current entry if it is a Component and a dependency of an include
+                            if (isEntryComponent && isEntryDependency) {
+                                console.log(colors.yellow(entryName + ' included as a dependency of an include.'));
+                                return true;
+                            }
+                        } 
+
+                        // If neither includes nor excludes are defined, just make a full build
+                        else if ((excludes === undefined || excludes.length === 0) && 
+                                 (includes === undefined || includes.length === 0)) {
+                            return true;
+                        }
+                    }
+                }).map(function(entry) {
+                    var entryFileName = entry.relativePath.split('/').slice(-1).join('');
+                    var entryBasePath = entry.basePath.replace('\\','/');
+                    bundleFilePaths[i]['files'].push(entryBasePath + '/' + entryFileName);
+                    return entryBasePath + '/' + entryFileName;
+                });
+            });
+        }
+    } else {
+        console.log(colors.red('No bundles configured.'));
+    }
+});
+
+gulp.task('build-bundles', ['build-bundles-data'], function() {
+    var bundles = config.bundles;
+
+    // Start processing bundles only if configured
+    if (bundles.length > 0) {
+        for (var i = 0; i < bundles.length; i++) {
+            var bundleConfig = bundles[i];
+            var name = bundleConfig.name;
+            var output = 'fabric-' + name + '.css';
+
+            console.log(colors.yellow('Bundle name and files: ' + output));
+            console.log(bundleFilePaths[i].files);
+
+            // When finished, output name of each bundle and file size
+        }
+    } else {
+        console.log(colors.red('No bundles configured.'));
+    }
+});
+
+gulp.task('reset-bundles-data', function() {
+    bundleFilePaths = [];
+});
+
+
 
 //
 // Rolled up Build tasks

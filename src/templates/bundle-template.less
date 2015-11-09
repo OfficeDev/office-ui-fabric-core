@@ -1,0 +1,12 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Template for building a bundle of Fabric and Fabric Components CSS.
+
+
+@import (reference) '../less/Fabric.less';
+<% files.forEach(function(file) { %>
+@import '<%= file %>';
+<% }); %>

@@ -49,7 +49,7 @@ Use this task to see your component changes in fabric.components.css. This task 
 
 ###gulp watch:samples
 
-Use this task to test samples that you're working on. This task watches the samples within `/src/samples/`, builds them, and moves them to `/dist/samples/`.
+Use this task to test the samples that come with Fabric including the video portal and a simple form. This task watches the samples within `/src/samples/`, builds them, and moves them to `/dist/samples/`.
 
 ###gulp watch:fabric
 

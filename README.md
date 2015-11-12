@@ -1,5 +1,3 @@
-![Office UI Fabric](http://odux.azurewebsites.net/github/img/lockupempty.png)
-
 #[Office UI Fabric](http://dev.office.com/fabric)
 
 #####The front-end framework for building experiences for Office and Office 365.

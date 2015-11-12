@@ -33,7 +33,7 @@ If you have a specific bug, feature request, or question, post it via the [issue
 
 ##Licenses
 
-All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project. Usage of the fonts referenced on Office UI Fabric files is subject to the terms listed [here](http://aka.ms/fabric-font-license)
+All files on the Office UI Fabric GitHub repository are subject to the MIT license. Please read the License file at the root of the project. Usage of the fonts referenced on Office UI Fabric files is subject to the terms listed [here](http://aka.ms/fabric-font-license).
 
 
 ##Change log

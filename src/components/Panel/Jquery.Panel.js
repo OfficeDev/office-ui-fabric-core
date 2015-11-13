@@ -20,7 +20,6 @@
       /** Hook to open the panel. */
       $(".js-togglePanel").on("click", function() {
         // Panel must be set to display "block" in order for animations to render
-        $panelMain.css({display: "block"});
         $panel.toggleClass("is-open");
       });
 

@@ -784,7 +784,7 @@ gulp.task('build-bundles', ['build-bundles-data'], function() {
                 .on('error', onGulpError)
             .pipe(template())
             .pipe(rename(bundleName + '.less'))
-            .pipe(gulp.dest(paths.bundlePath))
+            .pipe(gulp.dest(paths.bundlePath + '/' + bundleName ))
             .pipe(less())
                 .on('error', onGulpError)
             .pipe(header(bannerTemplate, bannerData))
@@ -805,7 +805,7 @@ gulp.task('build-bundles', ['build-bundles-data'], function() {
                 'showFiles': true
             }))
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.bundlePath))
+            .pipe(gulp.dest(paths.bundlePath + '/' + bundleName))
                 .on('error', onGulpError)
             .pipe(rename(bundleName + '.min.css'))
                 .on('error', onGulpError)
@@ -819,15 +819,18 @@ gulp.task('build-bundles', ['build-bundles-data'], function() {
                 'showFiles': true
             }))
                 .on('error', onGulpError)
-            .pipe(gulp.dest(paths.bundlePath))
+            .pipe(gulp.dest(paths.bundlePath + '/' + bundleName))
                 .on('error', onGulpError);            
         }
 
-        for (var j = 0; j < bundles.length; j++) {
-            var bundleConfig = bundles[j];
-            var bundleName = bundleConfig.name;
+        let bundleConfig;
+        let bundleName;
 
-            bundleBase(j, bundleName);
+        for (let i = 0; i < bundleSpecs.length; i++) {
+            bundleConfig = bundleSpecs[i];
+            bundleName = bundleConfig.name;
+
+            bundleBase(i, bundleName);
         }
     } else {
         console.log(colors.red('No bundles configured.'));

@@ -641,17 +641,38 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                 'files': []
             }
 
-            // Default to "exclude" bundle mode if they are listed, or if preferIncludes is falsy 
-            var bundleMode = (excludes !== undefined && excludes.length > 0) || !options.preferIncludes ? 'exclude' : 'include';
+            // The manner in which a bundle's LESS file will be assembled.
+            // 
+            // "exclude": Builds all LESS files under /src and /components
+            //            except those listed in a bundle's "excludes" property.
+            // "include": Builds only the the LESS files listed in a bundle's 
+            //            "includes" property. Note that if an include has dependency 
+            //            LESS files, those will be included as well.
+            // "full":    Builds all LESS files. Only runs if no includes or 
+            //            excludes are defined.
+            let bundleMode = () => {
+                let _mode = '';
 
-            if (options.verbose) {
-                console.log(colors.yellow('Building ' + bundleName + 'bundle in "' + bundleMode + '" bundle mode.'));
-            }
+                if (excludes !== undefined && excludes.length > 0) {
+                    _mode = 'exclude';
+                } else if (includes !== undefined && includes.length > 0) {
+                    _mode = 'include'; 
+                } else if ((!excludes || excludes === undefined || excludes.length === 0) || 
+                         (!includes || includes === undefined || includes.length === 0)) {
+                    _mode = 'full';
+                }
 
-            var srcFolders = getFolders(paths.srcPath).filter(function(folderName) {
-                var foldersToSearch = ['less', 'components']
+                if (options.verbose) {
+                    console.log(colors.yellow('Building ' + colors.green(bundleName) + ' bundle in "' + colors.green(_mode) + '" bundle mode.'));
+                }
 
-                return foldersToSearch.indexOf(folderName) !== -1
+                return _mode;
+            }();
+
+            let srcFolders = getFolders(paths.srcPath).filter((folderName) => {
+                let foldersToSearch = ['less', 'components']
+
+                return foldersToSearch.indexOf(folderName) !== -1;
             });
 
             srcFolders.forEach(function(dir) {

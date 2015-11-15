@@ -6,7 +6,6 @@
 // Template for building a bundle of Fabric and Fabric Components CSS.
 
 
-@import (reference) '../less/Fabric.less';
+@import (reference) '../../less/Fabric.less';
 <% files.forEach(function(file) { %>
-@import '<%= file %>';
-<% }); %>
+@import '<%= file %>';<% }); %>

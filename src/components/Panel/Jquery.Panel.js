@@ -11,6 +11,16 @@
 (function ($) {
   $.fn.Panel = function () {
 
+
+    // Prefix function
+    var pfx = ["webkit", "moz", "MS", "o", ""];
+    function PrefixedEvent(element, type, callback) {
+      for (var p = 0; p < pfx.length; p++) {
+        if (!pfx[p]) type = type.toLowerCase();
+        element.addEventListener(pfx[p]+type, callback, false);
+      }
+    }
+
     /** Go through each panel we've been given. */
     return this.each(function () {
 
@@ -18,15 +28,32 @@
       var $panelMain = $panel.find(".ms-Panel-main");
 
       /** Hook to open the panel. */
-      $(".js-togglePanel").on("click", function() {
-        // Panel must be set to display "block" in order for animations to render
-        $panel.toggleClass("is-open");
+      $(".ms-PanelAction-close").on("click", function() {
+
+        // Display Panel first, to allow animations
+        $panel.addClass("ms-Panel-animateOut");
+
       });
 
-      $panelMain.on("animationend webkitAnimationEnd MSAnimationEnd", function(event) {
-        if (event.originalEvent.animationName === "fadeOut") {
+      $(".ms-PanelAction-open").on("click", function() {
+
+        // Display Panel first, to allow animations
+        $panel.addClass("is-open");
+
+        // Add animation class
+        $panel.addClass("ms-Panel-animateIn");
+
+      });
+
+      PrefixedEvent($panelMain[0], 'AnimationEnd', function(event) {
+        if (event.animationName.indexOf('Out') > -1) {
+
           // Hide and Prevent ms-Panel-main from being interactive
-          $(this).css({display: "none"});
+          $panel.removeClass('is-open');
+
+          // Remove animating classes for the next time we open panel
+          $panel.removeClass('ms-Panel-animateIn ms-Panel-animateOut');
+
         }
       });
 

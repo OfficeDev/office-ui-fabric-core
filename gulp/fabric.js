@@ -765,19 +765,22 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
 });
 
 gulp.task('build-bundles', ['build-bundles-data'], function() {
-    var bundles = config.bundles;
+    let bundleSpecs = config.bundles;
 
     // Start processing bundles only if configured
-    if (bundles.length > 0) {
-        var _filesList = function(i) {
+    if (bundleSpecs.length > 0) {
+        let _filesList = function(i) {
             return bundleFilePaths[i]['files'];
         }
 
-        var bundleBase = function(index, bundleName) {
+        let bundleBase = function(index, bundleName) {
             return gulp.src(paths.templatePath + '/'+ 'bundle-template.less')
             .pipe(data(function () {
                 var filesList = _filesList(index);
-                return { 'files': filesList };
+
+                return { 
+                    'files': filesList 
+                };
             }))
                 .on('error', onGulpError)
             .pipe(template())

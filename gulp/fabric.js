@@ -622,18 +622,19 @@ gulp.task('nuget-pack', function(callback) {
 });
 
 
+// Flat list of paths for each file that should be included in a bundle.
 var bundleFilePaths = [];
 
 gulp.task('build-bundles-data', ['clean-bundles'], function() {
-    var bundles = config.bundles;
+    let bundleSpecs = config.bundles;
 
-    if (bundles.length > 0) {
-        for (let i = 0; i < bundles.length; i++) {
-            var bundleConfig = bundles[i];
-            var bundleName = bundleConfig.name;
-            var includes = bundleConfig.includes || [];
-            var excludes = bundleConfig.excludes || [];
-            var options = bundleConfig.options || {};
+    if (bundleSpecs.length > 0) {
+        for (let i = 0; i < bundleSpecs.length; i++) {
+            let bundleConfig = bundleSpecs[i];
+            let bundleName = bundleConfig.name;
+            let includes = bundleConfig.includes || [];
+            let excludes = bundleConfig.excludes || [];
+            let options = bundleConfig.options || {};
 
             bundleFilePaths[i] = {
                 'name': bundleName,

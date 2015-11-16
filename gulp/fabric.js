@@ -744,12 +744,13 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                         } 
 
 
-                        // Includes are specified, but exludes are not. 
-                        else if (includes !== undefined && includes.length >= 0 || bundleMode === 'include') {
-                            // The current entry is a Fabric Component
+                        // Includes are specified, but excludes are not. 
+                        else if (bundleMode === 'include' && includes.length > 0) {
+                            // The current entry is a Fabric Component if it's 
+                            // in the /components folder.
                             let isEntryComponent = entryBasePath === paths.componentsPath;
 
-                            // The current entry is listed as an include
+                            // The current entry is listed as an include for the bundle.
                             let isEntryInclude = includes.indexOf(entryName) >= 0;
 
                             // The current entry is listed as a dependency, 
@@ -764,24 +765,26 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
 
                             // Include the current entry if it is a Component and a dependency of an include
                             if (isEntryComponent && isEntryDependency) {
-                                console.log(colors.yellow(entryName + ' included as a dependency of an include.'));
+                                if (options.verbose) {
+                                    console.log(colors.yellow(entryName) + ' included as a dependency of an include.');
+                                }
+
                                 return true;
                             }
                         } 
 
                         // If neither includes nor excludes are defined, just make a full build
-                        else if ((excludes === undefined || excludes.length === 0) && 
-                                 (includes === undefined || includes.length === 0)) {
+                        else if (bundleMode === 'full') {
                             return true;
                         }
                     }
                 }).map(function(entry) {
-                    var entryFileName = entry.relativePath.split('/').slice(-1).join('');
-                    var entryName = entryFileName.replace('.less', ''); // e.g. Button
-                    var entryBasePath = entry.basePath.replace('\\','/');
-                    var isEntryComponent = entryBasePath === paths.componentsPath;
-                    var relativePath = '../';
-                    var fullPath = relativePath + entryBasePath;
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join('');
+                    let entryName = entryFileName.replace('.less', ''); // e.g. Button
+                    let entryBasePath = entry.basePath.replace('\\','/');
+                    let isEntryComponent = entryBasePath === paths.componentsPath;
+                    let relativePath = '../../../src/';
+                    let fullPath = relativePath + entryBasePath;
 
                     if (isEntryComponent) {
                         fullPath += '/' + entryName;

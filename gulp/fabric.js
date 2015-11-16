@@ -715,11 +715,11 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
 
 
                 // Return a collection of the files listed in the config
-                var filteredEntries = entries.filter(function(entry) {
-                    var entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
-                    var entryName = entryFileName.replace('.less', ''); // e.g. Button
-                    var entryBasePath = entry.basePath.replace('\\','/'); // e.g. src/components
-                    var extension = path.extname(entryFileName);
+                let filteredEntries = entries.filter(function(entry) {
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    let entryName = entryFileName.replace('.less', ''); // e.g. Button
+                    let entryBasePath = entry.basePath.replace('\\','/'); // e.g. src/components
+                    let extension = path.extname(entryFileName);
 
                     // Only process LESS files
                     if (extension === '.less') {

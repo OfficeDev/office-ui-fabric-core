@@ -722,9 +722,14 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                     let extension = path.extname(entryFileName);
 
                     // Only process LESS files
-                    if (extension === '.less') {
+                    if (extension === '.less' && entryFileName !== 'Fabric.less' && entryFileName !== 'Fabric.Components.less') {
+                        // For now, strip out RTL. These will need to be handled independently.
+                        if (entryFileName.indexOf('.RTL') >= 0) {
+                            return false;
+                        }
+
                         // Excludes are defined--prefer those first.
-                        if (excludes !== undefined && excludes.length > 0) {
+                        if (bundleMode === 'exclude' && excludes.length > 0) {
                             // Include the entry only if it is not listed as an exclude
                             let includeEntry = excludes.indexOf(entryName) < 0;
 

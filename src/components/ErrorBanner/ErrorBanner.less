@@ -1,0 +1,94 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// ErrorBanner Styles
+
+
+@ErrorBanner-height: 52px;
+@ErrorBanner-iconSize: 40px;
+
+.ms-ErrorBanner {
+  position: relative;
+  border-bottom: 1px solid @ms-color-neutralSecondaryAlt;
+  background-color: @ms-color-themeLighterAlt;
+  width: 100%;
+  height: @ErrorBanner-height;
+  .ms-font-s();
+  text-align: center;
+  overflow: hidden;
+  .ms-u-slideDownIn20();
+
+  .ms-Icon {
+    font-size: 16px;
+  }
+}
+
+.ms-ErrorBanner {
+
+  &.is-hidden {
+    .ms-u-slideUpOut20();
+  }
+}
+
+.ms-ErrorBanner-expand,
+.ms-ErrorBanner-close {
+  height: @ErrorBanner-height;
+  width: @ErrorBanner-iconSize;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 2px 0 3px 0;
+}
+
+.ms-ErrorBanner-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: @ErrorBanner-height;
+}
+
+.ms-ErrorBanner-text {
+  display: inline-block;
+  padding: 18px 0;
+  max-width: 770px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.ms-ErrorBanner-expand {
+  vertical-align: top;
+
+  &:focus {
+    outline: 1px solid transparent;
+  }
+}
+
+.ms-ErrorBanner-action {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-right: 36px;
+
+  .ms-Button {
+    color: @ms-color-white;
+  }
+}
+
+.ms-ErrorBanner-clipper {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ms-ErrorBanner.is-expanded {
+  height: auto;
+
+  .ms-ErrorBanner-clipper {
+    white-space: normal;
+  }
+}

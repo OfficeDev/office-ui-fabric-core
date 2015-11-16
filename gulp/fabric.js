@@ -677,24 +677,42 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
 
             srcFolders.forEach(function(dir) {
                 // Grab all LESS and JSON files as stats objects
-                var entries = walkSync.entries(paths.srcPath + '\\' + dir,  { globs: ['**/*.less', '**/*.json', '!**/*.RTL.less'] });
+                let entries = walkSync.entries(paths.srcPath + '\\' + dir,  { globs: ['**/*.less', '**/*.json'] });
 
-                // Cache collection of manifests for includes
-                var includeManifests = entries.filter(function(entry){
+                // Cache Component manifests for includes and/or dependencies.
+                let cachedManifests = {};
+
+                entries.forEach((entry) => {
                     let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
                     let entryName = entryFileName.replace('.json', ''); // e.g. Button
                     let isEntryInclude = includes !== undefined && includes.indexOf(entryName) >= 0;
                     let extension = path.extname(entryFileName);
+                    let entryBasePath = entry.basePath.replace('\\','/');
+
+                    // Read children
+                    if (extension === '.json' && isEntryInclude) {
+                        // Manifest of an entry
+                        let includeManifest = JSON.parse(fs.readFileSync(entryBasePath + '/' + entryName + '/' + entryFileName));
+
+                        // Sniff child deps
+                        if (includeManifest['dependencies'] && includeManifest['dependencies'].length > 0) {
+                            includeManifest['dependencies'].forEach((dep) => {
+                                // Manifest of an dependency
+                                let depManifest = JSON.parse(fs.readFileSync(entryBasePath + '/' + dep + '/' + dep + '.json'));
+
+                                // Include the dependency's manifest if it hasn't been added already
+                                if (!cachedManifests.hasOwnProperty(dep)) {
+                                    cachedManifests[dep] = depManifest;
+                                }
+                            })
+                        }
+
+                        cachedManifests[entryName] = includeManifest;
+                    }
 
                     return extension === '.json' && isEntryInclude;
-                }).map(function(entry) {
-                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
-                    let entryName = entryFileName.replace('.json', ''); // e.g. Button
-                    let entryBasePath = entry.basePath.replace('\\','/');
-                    let _manifest = JSON.parse(fs.readFileSync(entryBasePath + '/' + entryName + '/' + entryFileName));
-
-                    return _manifest;
                 });
+
 
                 // Return a collection of the files listed in the config
                 var filteredEntries = entries.filter(function(entry) {

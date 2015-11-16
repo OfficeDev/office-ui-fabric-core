@@ -629,7 +629,10 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
     let bundleSpecs = config.bundles;
 
     if (bundleSpecs.length > 0) {
-        for (let i = 0; i < bundleSpecs.length; i++) {
+        // Cache length
+        var bundleSpecsLength = bundleSpecs.length;
+
+        for (let i = 0; i < bundleSpecsLength; i++) {
             let bundleConfig = bundleSpecs[i];
             let bundleName = bundleConfig.name;
             let includes = bundleConfig.includes || [];
@@ -873,8 +876,9 @@ gulp.task('build-bundles', ['build-bundles-data'], function() {
 
         let bundleConfig;
         let bundleName;
+        let bundleSpecsLength = bundleSpecs.length;
 
-        for (let i = 0; i < bundleSpecs.length; i++) {
+        for (let i = 0; i < bundleSpecsLength; i++) {
             bundleConfig = bundleSpecs[i];
             bundleName = bundleConfig.name;
 

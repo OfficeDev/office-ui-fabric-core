@@ -737,7 +737,7 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                             let includeEntry = excludes.indexOf(entryName) < 0;
 
                             if (!includeEntry && options.verbose) {
-                                console.log(colors.green('Excluded ' + entryName + '.less from ' + bundleName + ' bundle.'));
+                                console.log('Excluded ' + colors.green(entryName + '.less') + ' from ' + colors.green(bundleName) + ' bundle.');
                             }
 
                             return includeEntry;

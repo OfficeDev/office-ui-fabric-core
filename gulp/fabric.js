@@ -752,21 +752,10 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                             // The current entry is listed as an include
                             let isEntryInclude = includes.indexOf(entryName) >= 0;
 
-                            // Current entry is a dependency of an include
-                            let isEntryDependency = (function() {
-                                if (isEntryComponent) {
-                                    for (var l = 0; l < includeManifests.length; l++) {
-                                        if (includeManifests[l]['dependencies']) {
-                                            var _deps = includeManifests[l]['dependencies'] || [];
+                            // The current entry is listed as a dependency, 
+                            // either of an include or of an include's dependency.
+                            let isEntryDependency = isEntryComponent ? cachedManifests.hasOwnProperty(entryName) : false;
 
-                                            // Returns true only if current entry is listed as a dependency of an include
-                                            return _deps.indexOf(entryName) >= 0;
-                                        }
-                                    }
-                                } else {
-                                    return false;
-                                }
-                            })();
 
                             // Include the current entry straightaway if the entry is an include
                             if (includes.indexOf(entryName) >= 0) {

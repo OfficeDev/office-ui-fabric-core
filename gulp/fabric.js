@@ -733,7 +733,7 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                         entryFileName !== 'Fabric.Components.less') {
                         // For now, strip out RTL. These will need to be handled separately.
                         if (entryFileName.indexOf('.RTL') >= 0) {
-                            if (options.verbose) {
+                            if (options.logWarnings) {
                                 console.log(colors.yellow(entryFileName) + ' not included. Bundling of RTL files is not currently supported.');
                             }
 

@@ -98,7 +98,7 @@ var banners = {
     },
     cssCopyRight: function () {
         return '/* ' +  banners.msMessage  + ' */' + "\r\n";
-    } 
+    }
 } 
 
 //
@@ -632,14 +632,14 @@ gulp.task('nuget-pack', function(callback) {
 var bundleFilePaths = [];
 
 gulp.task('build-bundles-data', ['clean-bundles'], function() {
-    let bundleSpecs = config.bundles;
+    let allBundleSpecs = config.bundles;
 
-    if (bundleSpecs.length > 0) {
+    if (allBundleSpecs.length > 0) {
         // Cache length
-        var bundleSpecsLength = bundleSpecs.length;
+        let bundleSpecsLength = allBundleSpecs.length;
 
         for (let i = 0; i < bundleSpecsLength; i++) {
-            let bundleConfig = bundleSpecs[i];
+            let bundleConfig = allBundleSpecs[i];
             let bundleName = bundleConfig.name;
             let includes = bundleConfig.includes || [];
             let excludes = bundleConfig.excludes || [];
@@ -720,8 +720,7 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                     }
                 });
 
-
-                // Return a collection of the files listed in the config
+                // Return a collection of the files listed in the bundle's config.
                 let filteredEntries = entries.filter(function(entry) {
                     let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
                     let entryName = entryFileName.replace('.less', ''); // e.g. Button
@@ -731,24 +730,30 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                     // Only process LESS files
                     if (extension === '.less' && 
                         entryFileName !== 'Fabric.less' && 
-                        entryFileName !== 'Fabric.Components.less' &&
-                        entryFileName.indexOf('.RTL') < 0 // Ignore RTL for now
-                        ) {
-                        // Excludes are defined--prefer those first.
-                        if (bundleMode === 'exclude' && excludes.length > 0) {
-                            // Include the entry only if it is not listed as an exclude
-                            let includeEntry = excludes.indexOf(entryName) < 0;
+                        entryFileName !== 'Fabric.Components.less') {
+                        // For now, strip out RTL. These will need to be handled separately.
+                        if (entryFileName.indexOf('.RTL') >= 0) {
+                            if (options.verbose) {
+                                console.log(colors.yellow(entryFileName) + ' not included. Bundling of RTL files is not currently supported.');
+                            }
 
-                            if (!includeEntry && options.verbose) {
+                            return false;
+                        }
+
+                        // If excludes are defined, those should take precedence.
+                        if (bundleMode === 'exclude') {
+                            // Return the entry only if it is not listed as an exclude
+                            let shouldIncludeEntry = excludes.indexOf(entryName) < 0;
+
+                            if (!shouldIncludeEntry && options.verbose) {
                                 console.log('Excluded ' + colors.green(entryName + '.less') + ' from ' + colors.green(bundleName) + ' bundle.');
                             }
 
-                            return includeEntry;
+                            return shouldIncludeEntry;
                         } 
 
 
-                        // Includes are specified, but excludes are not. 
-                        else if (bundleMode === 'include' && includes.length > 0) {
+                        else if (bundleMode === 'include') {
                             // The current entry is a Fabric Component if it's 
                             // in the /components folder.
                             let isEntryComponent = entryBasePath === paths.componentsPath;
@@ -807,10 +812,9 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
 });
 
 gulp.task('build-bundles', ['clean-bundles','build-bundles-data'], function() {
-    let bundleSpecs = config.bundles;
+    let allBundleSpecs = config.bundles;
 
-    // Start processing bundles only if configured
-    if (bundleSpecs.length > 0) {
+    if (allBundleSpecs.length > 0) {
         let _filesList = (i) => {
             return bundleFilePaths[i]['files'];
         }
@@ -849,7 +853,7 @@ gulp.task('build-bundles', ['clean-bundles','build-bundles-data'], function() {
 
             return gulp.src(paths.templatePath + '/'+ 'bundle-template.less')
             .pipe(data(function () {
-                var filesList = _filesList(index);
+                let filesList = _filesList(index);
 
                 return { 
                     'files': filesList,
@@ -902,10 +906,10 @@ gulp.task('build-bundles', ['clean-bundles','build-bundles-data'], function() {
 
         let bundleConfig;
         let bundleName;
-        let bundleSpecsLength = bundleSpecs.length;
+        let bundleSpecsLength = allBundleSpecs.length;
 
         for (let i = 0; i < bundleSpecsLength; i++) {
-            bundleConfig = bundleSpecs[i];
+            bundleConfig = allBundleSpecs[i];
             bundleName = bundleConfig.name;
 
             bundleBase(i, bundleName);

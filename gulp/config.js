@@ -1,32 +1,36 @@
 // Build and bundling configuration options
 
 module.exports = {
-  // Use a custom namespace prefix for all CSS classes instead of ms-.
-  // This results in classes like od-font-m, od-Button, etc.
-  // This is useful for preventing style collisions if multiple versions of Fabric
-  // are used on a single page.
-  "classPrefix": "o365",
-
-  // Choose whether to build Fabric with a custom class prefix.
-  "useCustomClassPrefix": false,
-
-  // Configure
   "bundles": [
     {
-      "name": "sample-bundle",
-      "excludes": [
+      "name": "fabric-full",
+      "description": "A bundle containing all of Fabric's core and Component CSS.",
+      "excludes": [],
+      "options": {
+        // Log helpful messages about the bundles being built. 
+        "verbose": true,
+
+        // Log warnings about the bundles being built. 
+        "logWarnings": false
+      }
+    },
+    {
+      "name": "custom-bundle",
+      "description": "A custom bundle including a handful of modules.",
+      "includes": [
+        "_Fabric.Color.Variables",
+        "_Fabric.Color.Mixins",
+        "_Fabric.Typography.Variables",
+        "_Fabric.Typography",
+        "_Fabric.Typography.Fonts",
+        "_Fabric.Typography.Languageoverrides",
+        "_Fabric.Utilities",
         "Button",
-        "Breadcrumb",
-        "Callout",
-        "_Fabric.Typography"
+        "PersonaCard"
       ],
       "options": {
-        // By default, bundles are created by excludes. Set this to true to create a bottom-up
-        // bundle instead.
-        "preferIncludes": false,
-
-        // Include more verbose command-line messages about the bundles being built. 
-        "verbose": true
+        "verbose": true,
+        "logWarnings": false
       }
     }
   ]

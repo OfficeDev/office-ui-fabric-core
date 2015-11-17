@@ -1,5 +1,5 @@
 {
-  "name": "OperationMonitor",
+  "name": "ProgressIndicator",
   "notes": "A component for outputting determinate progress",
   "template": "ProgressIndicator.html",
   "class": "ms-ProgressIndicator"

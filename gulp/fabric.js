@@ -75,6 +75,12 @@ var bannerTemplate = ['/**',
       ' **/',
       ''].join('\n');
 
+var bundleBannerTemplate = ['/**',
+      ' * Office UI Fabric <%= pkg.version %>',
+      ' * <%= bundleDescription %>',
+      ' **/',
+      ''].join('\n');
+
 // Configure data objects to pass into banner plugin.
 var bannerData = {
     pkg : pkg,
@@ -834,6 +840,13 @@ gulp.task('build-bundles', ['clean-bundles','build-bundles-data'], function() {
         });
 
         let bundleBase = function(index, bundleName) {
+            let bundleDescription = allBundleSpecs[index].description;
+
+            let bundleBannerData = {
+                pkg : pkg,
+                bundleDescription: bundleDescription || pkg.description
+            }
+
             return gulp.src(paths.templatePath + '/'+ 'bundle-template.less')
             .pipe(data(function () {
                 var filesList = _filesList(index);
@@ -851,7 +864,7 @@ gulp.task('build-bundles', ['clean-bundles','build-bundles-data'], function() {
             .pipe(gulp.dest(paths.bundlePath + '/' + bundleName ))
             .pipe(less())
                 .on('error', onGulpError)
-            .pipe(header(bannerTemplate, bannerData))
+            .pipe(header(bundleBannerTemplate, bundleBannerData))
                 .on('error', onGulpError)
             .pipe(autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],

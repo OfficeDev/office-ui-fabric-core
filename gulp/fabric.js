@@ -783,8 +783,7 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                     let entryName = entryFileName.replace('.less', ''); // e.g. Button
                     let entryBasePath = entry.basePath.replace('\\','/');
                     let isEntryComponent = entryBasePath === paths.componentsPath;
-                    let relativePath = '../../../src/';
-                    let fullPath = relativePath + entryBasePath;
+                    let fullPath = entryBasePath;
 
                     if (isEntryComponent) {
                         fullPath += '/' + entryName;
@@ -804,14 +803,38 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
     }
 });
 
-gulp.task('build-bundles', ['build-bundles-data'], function() {
+gulp.task('build-bundles', ['clean-bundles','build-bundles-data'], function() {
     let bundleSpecs = config.bundles;
 
     // Start processing bundles only if configured
     if (bundleSpecs.length > 0) {
-        let _filesList = function(i) {
+        let _filesList = (i) => {
             return bundleFilePaths[i]['files'];
         }
+
+        // Core Fabric files that should be included by reference for their variables
+        // if they are not explicitly included
+        let _coreLessFiles = [
+            '_Fabric.Utilities',
+            '_Fabric.ZIndex.Variables',
+            '_Fabric.Mixins',
+            '_Fabric.Color.Variables',
+            '_Fabric.Color.Mixins',
+            '_Fabric.Typography.Variables',
+            '_Fabric.Typography',
+            '_Fabric.Typography.Fonts',
+            '_Fabric.Typography.Languageoverrides',
+            '_Fabric.Icons.Font',
+            '_Fabric.Icons',
+            '_Fabric.Animations',
+            '_Fabric.Responsive.Variables',
+            '_Fabric.Responsive.Utilities',
+            '_Fabric.Grid',
+            '_Office.Color.Variables',
+            '_Office.Color.Mixins'
+        ].map((file) => {
+            return 'less/' + file + '.less';
+        });
 
         let bundleBase = function(index, bundleName) {
             return gulp.src(paths.templatePath + '/'+ 'bundle-template.less')
@@ -819,7 +842,8 @@ gulp.task('build-bundles', ['build-bundles-data'], function() {
                 var filesList = _filesList(index);
 
                 return { 
-                    'files': filesList 
+                    'files': filesList,
+                    'coreFiles': _coreLessFiles
                 };
             }))
                 .on('error', onGulpError)

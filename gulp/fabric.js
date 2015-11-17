@@ -774,7 +774,7 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                             // Include the current entry if it is a Component and a dependency of an include
                             if (isEntryComponent && isEntryDependency) {
                                 if (options.verbose) {
-                                    console.log(colors.yellow(entryName) + ' included as a dependency of an include.');
+                                    console.log(colors.yellow(entryName) + ' included as a dependency of an include in ' + colors.green(bundleName) + '.');
                                 }
 
                                 return true;

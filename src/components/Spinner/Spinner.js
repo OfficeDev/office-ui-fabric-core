@@ -14,21 +14,19 @@ var fabric = fabric || {};
 
 /**
  * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
- * @param {string} type - The type of spinner. Set this property to "sixteen" for sixteen dot version. The default is eight.
  */
 
-fabric.Spinner = function(target, spinnerType) {
+fabric.Spinner = function(target) {
 
     var _target = target;
-    var _spinnerType = spinnerType || "eight";
     var eightSize = 0.18;
-    var sixteenSize = 0.1;
     var circleObjects = [];
-    var animationSpeed = 50;
+    var animationSpeed = 80;
     var interval;
     var spinner;
     var numCircles;
     var offsetSize;
+    var fadeIncrement = 0;
 
     /**
      * @function start - starts or restarts the animation sequence
@@ -37,7 +35,6 @@ fabric.Spinner = function(target, spinnerType) {
     function start() {
         interval = setInterval(function() {
             var i = circleObjects.length;
-
             while(i--) {
                 _fade(circleObjects[i]);
             }
@@ -55,13 +52,8 @@ fabric.Spinner = function(target, spinnerType) {
     //private methods
 
     function _init() {
-        if(_spinnerType === "sixteen") {
-            offsetSize = sixteenSize;
-            numCircles = 16;
-        } else {
-            offsetSize = eightSize;
-            numCircles = 8;
-        }
+        offsetSize = eightSize;
+        numCircles = 8;
         _createCirclesAndArrange();
         _initializeOpacities();
         start();
@@ -69,23 +61,24 @@ fabric.Spinner = function(target, spinnerType) {
 
     function _initializeOpacities() {
         var i = 0;
+        var j = 2;
         var opacity;
-        var increment = (1 / (numCircles));
+        fadeIncrement = (1 / (numCircles + 2));
 
         for (i; i < numCircles; i++) {
             var circleObject = circleObjects[i];
-            opacity = (increment * i);
+            opacity = (fadeIncrement * j++);
             _setOpacity(circleObject.element, opacity);
         }
     }
 
     function _fade(circleObject) {
-        var increment = (1 / numCircles) * 0.5;
-        var opacity = _getOpacity(circleObject.element) - increment;
+        var opacity = Math.round((_getOpacity(circleObject.element) - fadeIncrement) * 100) * 0.01;
 
-        if (opacity <= increment) {
-            opacity = 1;
+        if (opacity <= 0) {
+            opacity = 0.8;
         }
+
         _setOpacity(circleObject.element, opacity);
     }
 
@@ -114,7 +107,7 @@ fabric.Spinner = function(target, spinnerType) {
         } else {
             spinner = _target;
         }
-        
+
         var width = spinner.clientWidth;
         var height = spinner.clientHeight;
         var angle = 0;

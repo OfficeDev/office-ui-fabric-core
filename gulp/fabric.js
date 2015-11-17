@@ -712,8 +712,6 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
 
                         cachedManifests[entryName] = includeManifest;
                     }
-
-                    return extension === '.json' && isEntryInclude;
                 });
 
 
@@ -725,12 +723,11 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                     let extension = path.extname(entryFileName);
 
                     // Only process LESS files
-                    if (extension === '.less' && entryFileName !== 'Fabric.less' && entryFileName !== 'Fabric.Components.less') {
-                        // For now, strip out RTL. These will need to be handled independently.
-                        if (entryFileName.indexOf('.RTL') >= 0) {
-                            return false;
-                        }
-
+                    if (extension === '.less' && 
+                        entryFileName !== 'Fabric.less' && 
+                        entryFileName !== 'Fabric.Components.less' &&
+                        entryFileName.indexOf('.RTL') < 0 // Ignore RTL for now
+                        ) {
                         // Excludes are defined--prefer those first.
                         if (bundleMode === 'exclude' && excludes.length > 0) {
                             // Include the entry only if it is not listed as an exclude
@@ -780,7 +777,7 @@ gulp.task('build-bundles-data', ['clean-bundles'], function() {
                     }
                 }).map(function(entry) {
                     let entryFileName = entry.relativePath.split('/').slice(-1).join('');
-                    let entryName = entryFileName.replace('.less', ''); // e.g. Button
+                    let entryName = entryFileName.replace('.less', '');
                     let entryBasePath = entry.basePath.replace('\\','/');
                     let isEntryComponent = entryBasePath === paths.componentsPath;
                     let fullPath = entryBasePath;

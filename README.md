@@ -21,7 +21,7 @@ To build, test, and tweak Fabric locally, see [Building Fabric](https://github.c
 
 ##Learn more
 
-Visit [Fabric's interactive site](http://dev.office.com/fabric) to explore and learn more about Fabric. Find out about [Fabric's styles](http://dev.office.com/fabric/styles.html), [components](http://dev.office.com/fabric/components.html), and get answers to common questions on our [Resources & FAQ page](http://dev.office.com/fabric/gfabric-resources-and-faq.html).
+Visit [Fabric's interactive site](http://dev.office.com/fabric) to explore and learn more about Fabric. Find out about [Fabric's styles](http://dev.office.com/fabric/styles), [components](http://dev.office.com/fabric/components), and get answers to common questions on our [Resources & FAQ page](http://dev.office.com/fabric/gfabric-resources-and-faq).
 
 For a tutorial that shows you how to build a simple app or Office Add-in with Fabric, see our [Fabric tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md) or [Use Office UI Fabric with Office Add-ins on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
 

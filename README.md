@@ -14,7 +14,7 @@ Fabric is a responsive, mobile-first, collection of styles and tools designed to
 
 
 ##Get started
-To get started quickly by referencing from a CDN or adding directly to your project, see the [Getting started section](http://dev.office.com/fabric/getting-started.html) on the [Fabric documentation site](http://dev.office.com/fabric).
+To get started quickly by referencing from a CDN or adding directly to your project, see the [Getting started section](http://dev.office.com/fabric/getting-started) on the [Fabric documentation site](http://dev.office.com/fabric).
 
 To build, test, and tweak Fabric locally, see [Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md).
 

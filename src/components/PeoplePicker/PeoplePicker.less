@@ -461,7 +461,7 @@
       border-bottom: 0;
       padding: 20px 0 0;
     }
-    
+
     .ms-PeoplePicker-peopleListHeader {
       display: none;
     }
@@ -478,14 +478,18 @@
     border-bottom: 1px solid @ms-color-neutralLight;
   }
 
-  .ms-Persona {
-    @media (max-width: @ms-screen-sm-max) {
-      .ms-Persona.ms-Persona--xs;
-    }
+  // Personas are size xs on mobile, md (default) on md and above
+  .ms-PeoplePicker-results,
+  .ms-PeoplePicker-selectedPeople {
+    .ms-Persona {
+      @media (max-width: @ms-screen-sm-max) {
+        .ms-Persona.ms-Persona--xs;
+      }
 
-    @media (min-width: @ms-screen-md-min) {
-      .ms-Persona-secondaryText {
-        display: block;
+      @media (min-width: @ms-screen-md-min) {
+        .ms-Persona-secondaryText {
+          display: block;
+        }
       }
     }
   }

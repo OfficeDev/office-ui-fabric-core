@@ -65,18 +65,10 @@
               .addClass('ms-FacePile-panel--overflow ms-Panel--right');
       });
 
-
-      /** Toggle panel. */
-      $(".js-togglePanel").on("click", function() {
-        $panelMain.css({display: "block"});
-        $panel.toggleClass("is-open");
-      });
-
       /** Display person count on page load */
       $(document).ready(function() {
         $(".ms-FacePile-overflowText").text("+" + $membersCount);
       });
-
 
       /** Show selected members from PeoplePicker in the FacePile */
       $('.ms-PeoplePicker-result').on('click', function() {
@@ -182,7 +174,7 @@
 
           $personaCard.css({'left': correctedPosition});          
         } else {
-          $personaCard.css({'left': 0});
+          $personaCard.css({'left': 0, 'top': 'auto', 'position': 'fixed'});
         }
       });
 

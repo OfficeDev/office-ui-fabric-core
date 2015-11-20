@@ -56,6 +56,9 @@
         $personaCard.removeClass('is-active').hide();
       });
 
+      $panel.on("click", ".js-togglePanel", function() {
+        $panel.toggleClass("is-open");
+      });
 
       /** Open oveflow panel with list of members */
       $facePile.on("click", ".js-overflowPanel", function(event) {

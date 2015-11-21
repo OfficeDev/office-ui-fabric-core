@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
- * ErrorBanner component
+ * MessageBanner component
  *
  * A component to display error messages
  *
@@ -13,15 +13,15 @@
 var fabric = fabric || {};
 /**
  *
- * @param {HTMLElement} container - the target container for an instance of ErrorBanner
+ * @param {HTMLElement} container - the target container for an instance of MessageBanner
  * @constructor
  */
-fabric.ErrorBanner = function(container) {
+fabric.MessageBanner = function(container) {
     this.container = container;
     this.init();
 };
 
-fabric.ErrorBanner.prototype = (function() {
+fabric.MessageBanner.prototype = (function() {
 
     var _clipper;
     var _bufferSize;
@@ -42,11 +42,13 @@ fabric.ErrorBanner.prototype = (function() {
         _clientWidth = _errorBanner.offsetWidth;
         if ((_clientWidth - _bufferSize) > _initTextWidth && _initTextWidth < _textContainerMaxWidth) {
             _textWidth = "auto";
-            _chevronButton.style.display = "none";
+            _chevronButton.className = "ms-MessageBanner-expand";
             _collapse();
         } else {
             _textWidth = Math.min((_clientWidth - _bufferSize), _textContainerMaxWidth) + "px";
-            _chevronButton.style.display = "inline-block";
+            if(_chevronButton.className.indexOf("is-visible") === -1) {
+                _chevronButton.className += " is-visible";
+            }
         }
         _clipper.style.width = _textWidth;
     };
@@ -56,11 +58,11 @@ fabric.ErrorBanner.prototype = (function() {
      */
     var _cacheDOM = function(context) {
         _errorBanner = context.container;
-        _clipper = context.container.querySelector('.ms-ErrorBanner-clipper');
-        _chevronButton = context.container.querySelector('.ms-ErrorBanner-expand');
-        _actionButton = context.container.querySelector('.ms-ErrorBanner-action');
+        _clipper = context.container.querySelector('.ms-MessageBanner-clipper');
+        _chevronButton = context.container.querySelector('.ms-MessageBanner-expand');
+        _actionButton = context.container.querySelector('.ms-MessageBanner-action');
         _bufferSize = _actionButton.offsetWidth + _bufferElementsWidth;
-        _closeButton = context.container.querySelector('.ms-ErrorBanner-close');
+        _closeButton = context.container.querySelector('.ms-MessageBanner-close');
     };
 
     /**
@@ -73,11 +75,11 @@ fabric.ErrorBanner.prototype = (function() {
     };
 
     /**
-     * collapses component to only show truncated mesage
+     * collapses component to only show truncated message
      */
     var _collapse = function() {
         var icon = _chevronButton.querySelector('.ms-Icon');
-        _errorBanner.className = "ms-ErrorBanner";
+        _errorBanner.className = "ms-MessageBanner";
         icon.className = "ms-Icon ms-Icon--chevronsDown";
     };
 
@@ -93,19 +95,28 @@ fabric.ErrorBanner.prototype = (function() {
      * hides banner when close button is clicked
      */
     var _hideBanner = function() {
-        _errorBanner.className += " is-hidden";
-        setTimeout(function() {
-            _errorBanner.style.display = "none";
-        }, 500);
+        if(_errorBanner.className.indexOf("hide") === -1) {
+            _errorBanner.className += " hide";
+            setTimeout(function() {
+                _errorBanner.className = "ms-MessageBanner is-hidden";
+            }, 500);
+        }
     };
+
+    /**
+     * shows banner if the banner is hidden
+     */
+    var _showBanner = function() {
+        _errorBanner.className = "ms-MessageBanner";
+    }
 
     /**
      * sets handlers for resize and button click events
      */
     var _setListeners = function() {
-        window.addEventListener('resize', _onResize);
-        _chevronButton.addEventListener("click", _toggleExpansion);
-        _closeButton.addEventListener("click", _hideBanner);
+        window.addEventListener('resize', _onResize, false);
+        _chevronButton.addEventListener("click", _toggleExpansion, false);
+        _closeButton.addEventListener("click", _hideBanner, false);
     };
 
     /**
@@ -120,6 +131,7 @@ fabric.ErrorBanner.prototype = (function() {
     };
 
     return {
-        init: init
+        init: init,
+        showBanner: _showBanner
     }
 }());

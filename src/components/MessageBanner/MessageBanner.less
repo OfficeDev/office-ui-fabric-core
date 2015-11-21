@@ -3,19 +3,18 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// ErrorBanner Styles
+// MessageBanner Styles
 
+@MessageBanner-height: 52px;
+@MessageBanner-iconSize: 40px;
 
-@ErrorBanner-height: 52px;
-@ErrorBanner-iconSize: 40px;
-
-.ms-ErrorBanner {
+.ms-MessageBanner {
+  .ms-font-s();
   position: relative;
   border-bottom: 1px solid @ms-color-neutralSecondaryAlt;
   background-color: @ms-color-themeLighterAlt;
   width: 100%;
-  height: @ErrorBanner-height;
-  .ms-font-s();
+  height: @MessageBanner-height;
   text-align: center;
   overflow: hidden;
   .ms-u-slideDownIn20();
@@ -25,31 +24,38 @@
   }
 }
 
-.ms-ErrorBanner {
+.ms-MessageBanner {
+
+  &.hide {
+    .ms-u-slideUpOut20();
+  }
 
   &.is-hidden {
-    .ms-u-slideUpOut20();
+    display: none;
   }
 }
 
-.ms-ErrorBanner-expand,
-.ms-ErrorBanner-close {
-  height: @ErrorBanner-height;
-  width: @ErrorBanner-iconSize;
+.ms-MessageBanner-expand,
+.ms-MessageBanner-close {
+  height: @MessageBanner-height;
+  width: @MessageBanner-iconSize;
   cursor: pointer;
   border: none;
   background-color: transparent;
-  padding: 2px 0 3px 0;
+
+  &:focus {
+    outline: 1px solid transparent;
+  }
 }
 
-.ms-ErrorBanner-close {
+.ms-MessageBanner-close {
   position: absolute;
   right: 0;
   top: 0;
-  line-height: @ErrorBanner-height;
+  line-height: @MessageBanner-height;
 }
 
-.ms-ErrorBanner-text {
+.ms-MessageBanner-text {
   display: inline-block;
   padding: 18px 0;
   max-width: 770px;
@@ -57,15 +63,16 @@
   text-align: left;
 }
 
-.ms-ErrorBanner-expand {
+.ms-MessageBanner-expand {
+  display: none;
   vertical-align: top;
 
-  &:focus {
-    outline: 1px solid transparent;
+  &.is-visible {
+    display: inline-block;
   }
 }
 
-.ms-ErrorBanner-action {
+.ms-MessageBanner-action {
   display: inline-block;
   vertical-align: top;
   margin-top: 10px;
@@ -77,7 +84,7 @@
   }
 }
 
-.ms-ErrorBanner-clipper {
+.ms-MessageBanner-clipper {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -85,10 +92,10 @@
   vertical-align: top;
 }
 
-.ms-ErrorBanner.is-expanded {
+.ms-MessageBanner.is-expanded {
   height: auto;
 
-  .ms-ErrorBanner-clipper {
+  .ms-MessageBanner-clipper {
     white-space: normal;
   }
 }

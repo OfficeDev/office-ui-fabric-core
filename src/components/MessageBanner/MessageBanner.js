@@ -34,12 +34,25 @@ fabric.MessageBanner.prototype = (function() {
     var _actionButton;
     var _closeButton;
     var _bufferElementsWidth = 88;
+    var _bufferElementsWidthSmall = 35;
+    var SMALL_BREAK_POINT = 480;
 
     /**
      * sets styles on resize
      */
     var _onResize = function(event) {
         _clientWidth = _errorBanner.offsetWidth;
+        if(window.innerWidth >= SMALL_BREAK_POINT ) {
+            _resizeRegular();
+        } else {
+            _resizeSmall();
+        }
+    };
+
+    /**
+     * resize above 480 pixel breakpoint
+     */
+    var _resizeRegular = function() {
         if ((_clientWidth - _bufferSize) > _initTextWidth && _initTextWidth < _textContainerMaxWidth) {
             _textWidth = "auto";
             _chevronButton.className = "ms-MessageBanner-expand";
@@ -51,8 +64,20 @@ fabric.MessageBanner.prototype = (function() {
             }
         }
         _clipper.style.width = _textWidth;
-    };
+    }
 
+    /**
+     * resize below 480 pixel breakpoint
+     */
+    var _resizeSmall = function() {
+        if (_clientWidth - (_bufferElementsWidthSmall + _closeButton.offsetWidth) > _initTextWidth) {
+            _textWidth = "auto";
+            _collapse();
+        } else {
+            _textWidth = (_clientWidth - (_bufferElementsWidthSmall + _closeButton.offsetWidth)) + "px";
+        }
+        _clipper.style.width = _textWidth;
+    }
     /**
      * caches elements and values of the component
      */

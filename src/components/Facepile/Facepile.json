@@ -9,6 +9,7 @@
     "Panel",
     "PeoplePicker",
     "Persona",
-    "PersonaCard"
+    "PersonaCard",
+    "Spinner"
   ]
 }

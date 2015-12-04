@@ -19,9 +19,9 @@ var fabric = fabric || {};
 fabric.Spinner = function(target) {
 
     var _target = target;
-    var eightSize = 0.18;
+    var eightSize = 0.179;
     var circleObjects = [];
-    var animationSpeed = 80;
+    var animationSpeed = 90;
     var interval;
     var spinner;
     var numCircles;
@@ -61,9 +61,9 @@ fabric.Spinner = function(target) {
 
     function _initializeOpacities() {
         var i = 0;
-        var j = 2;
+        var j = 1;
         var opacity;
-        fadeIncrement = (1 / (numCircles + 2));
+        fadeIncrement = 1 / numCircles;
 
         for (i; i < numCircles; i++) {
             var circleObject = circleObjects[i];
@@ -73,10 +73,10 @@ fabric.Spinner = function(target) {
     }
 
     function _fade(circleObject) {
-        var opacity = Math.round((_getOpacity(circleObject.element) - fadeIncrement) * 100) * 0.01;
+        var opacity = _getOpacity(circleObject.element) - fadeIncrement;
 
         if (opacity <= 0) {
-            opacity = 0.8;
+            opacity = 1;
         }
 
         _setOpacity(circleObject.element, opacity);
@@ -100,7 +100,7 @@ fabric.Spinner = function(target) {
 
     function _createCirclesAndArrange() {
         //for backwards compatibility
-        if (_target.className !== "ms-Spinner") {
+        if (_target.className.indexOf("ms-Spinner") === -1) {
             spinner = document.createElement("div");
             spinner.className = "ms-Spinner";
             _target.appendChild(spinner);

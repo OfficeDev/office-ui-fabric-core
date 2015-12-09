@@ -5,6 +5,8 @@
 // --------------------------------------------------
 // People Picker styles
 
+@personaItemHeight: 42px;
+
 
 .ms-PeoplePicker {
   .ms-font-m;
@@ -179,7 +181,7 @@
   padding: 0 0 0 9px;
 
   @media (min-width: @ms-screen-md-min) {
-    height: 50px;
+    height: @personaItemHeight;
   }
 
   &:hover { 
@@ -217,7 +219,7 @@
   text-align: center;
 
   @media (min-width: @ms-screen-md-min) {
-    height: 50px;
+    height: @personaItemHeight;
   }
 
   .ms-Icon {
@@ -534,11 +536,9 @@
     display: none;
     position: absolute;
     height: 200px;
-    // animation-name: none;
 
     &.is-active {
       display: block;
-      // animation-name: fadeIn, slideUp10;
     }
   } 
 }
@@ -559,8 +559,12 @@
   list-style: none;
 }
 
-.ms-PeoplePicker-selectedPerson,
-.ms-PeoplePicker-peopleListItem {
+.ms-PeoplePicker-selectedPerson {
   margin-bottom: 10px;
+  position: relative;
+}
+
+.ms-PeoplePicker-peopleListItem {
+  margin-bottom: 8px;
   position: relative;
 }

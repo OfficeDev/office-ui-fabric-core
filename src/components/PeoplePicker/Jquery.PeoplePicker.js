@@ -124,7 +124,7 @@
                             ' </button>' +
                            '</div>';
           var personaListItem = '<li class="ms-PeoplePicker-selectedPerson">' +
-                                  '<div class="ms-Persona">' +
+                                  '<div class="ms-Persona ms-Persona--sm">' +
                                      '<div class="ms-Persona-imageArea">' +
                                        '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
                                        '<img class="ms-Persona-image" src="' + selectedImage + '">' +

@@ -39,6 +39,7 @@
 }
 
 .ms-SearchBox-field {
+  position: relative;
   .ms-u-normalize;
   border: 1px solid @ms-color-themeTertiary;
   border-radius: 0;
@@ -48,10 +49,12 @@
   height: 32px;
   padding: 6px 3px 7px 10px;
   width: 180px;
+  background-color: transparent;
+  z-index: 1;
 
   &:hover {
     border-color: @ms-color-themePrimary;
-    background-color: @ms-color-themeLight;
+    background-color: fade(@ms-color-themePrimary, 20%);
 
     & + .ms-SearchBox-label {
       color: @ms-color-black;
@@ -65,7 +68,11 @@
   &:focus {
     padding: 6px 32px 7px 10px;
     border-color: @ms-color-themePrimary;
-    background-color: @ms-color-themeLight;
+    background-color: fade(@ms-color-themePrimary, 20%);
+  }
+  
+  &::-ms-clear {
+    display: none;
   }
 }
 
@@ -82,6 +89,7 @@
   display: none;
   font-size: @ms-font-size-l;
   color: @ms-color-white;
+  z-index: 2;
 }
 
 .ms-SearchBox-label {

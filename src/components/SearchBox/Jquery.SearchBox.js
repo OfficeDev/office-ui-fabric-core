@@ -34,21 +34,24 @@
       $(this).find('.ms-SearchBox-field').on('blur', function() {
 
         // If cancel button is selected remove the text and show the label
-        if ( cancel == true ) {
+        if (cancel) {
           $(this).val('');
-          $(this).siblings('.ms-SearchBox-label').show();
         }
-
-        // Remove is-active class - hides cancel button
-        $(this).parent('.ms-SearchBox').removeClass('is-active');
-
+        
+        var $searchBox = $(this).parent('.ms-SearchBox');
+        // Prevents inputfield from gaining focus too soon
+        setTimeout(function() {
+          // Remove is-active class - hides cancel button
+          $searchBox.removeClass('is-active');
+        }, 10);
+        
         /** Only do this if no text was entered. */
         if ($(this).val().length === 0 ) {
           $(this).siblings('.ms-SearchBox-label').show();
         }
 
         // Reset cancel to false
-        cancel = false;
+        cancel = false; 
       });
 
 

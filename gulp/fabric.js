@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var del = require('del');
 var fs = require('fs');
 var less = require('gulp-less');
+var sass = require('gulp-sass');
 var batch = require('gulp-batch');
 var cssMinify = require('gulp-minify-css');
 var csscomb = require('gulp-csscomb');
@@ -38,6 +39,7 @@ var paths = {
     distPath: distPath,
     distComponents: distPath + '/components',
     distLess: distPath + '/less',
+    distSass: distPath + '/sass',
     distCSS: distPath + '/css',
     distSamples: distPath + '/samples',
     distSampleComponents: distPath + '/samples/' +  '/Components',
@@ -47,6 +49,7 @@ var paths = {
     srcSamples: srcPath + '/samples',
     componentsPath : 'src/components',
     lessPath: srcPath + '/less',
+    sassPath: srcPath + '/sass',
     templatePath : srcPath + '/templates'
 };
 
@@ -203,7 +206,7 @@ var samplesFolders = getFolders(paths.srcSamples);
 
 // Clean out the distribution folder.
 gulp.task('clean-fabric', function () {
-    return del.sync([paths.distLess, paths.distCSS]);
+    return del.sync([paths.distLess, paths.distCSS, paths.distSass]);
 });
 
 gulp.task('clean-fabric-components', function () {
@@ -222,11 +225,18 @@ gulp.task('clean-samples', function () {
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
+// Copy all SASS files to distribution folder.
+gulp.task('copy-fabric-sass', ['clean-fabric'], function () {
+    // Copy SASS files.
+    return gulp.src('src/sass/*')
+        .pipe(gulp.dest(paths.distSass));
+});
+
 // Copy all LESS files to distribution folder.
 gulp.task('copy-fabric', ['clean-fabric'], function () {
     // Copy LESS files.
     return gulp.src('src/less/*')
-        .pipe(gulp.dest(paths.distPath + '/less'));
+        .pipe(gulp.dest(paths.distLess));
 });
 
 gulp.task('copy-fabric-components', ['clean-fabric-components'], function () {
@@ -254,7 +264,7 @@ gulp.task('copy-samples', ['clean-samples'], function () {
 });
 
 // All Copy tasks
-gulp.task('copy', ['copy-fabric', 'copy-fabric-components', 'copy-component-samples', 'copy-samples']);
+gulp.task('copy', ['copy-fabric', 'copy-fabric-sass', 'copy-fabric-components', 'copy-component-samples', 'copy-samples']);
 
 //
 // LESS tasks
@@ -414,6 +424,80 @@ gulp.task('samples-less', ['clean-samples'], function () {
             .pipe(gulp.dest(paths.distSamples + '/' + folder + '/css'))
                 .on('error', onGulpError);
     });
+});
+
+//
+// Sass tasks
+// ----------------------------------------------------------------------------
+
+// Build Sass files for core Fabric into LTR and RTL CSS files.
+gulp.task('fabric-sass', ['clean-fabric'], function () {
+    
+    // Configure data objects to pass into banner plugin.
+    var bannerData = {
+        pkg : pkg,
+        date: date,
+        monthNames: monthNames
+    }
+
+    // Baseline set of tasks for building Fabric CSS.
+    var _fabricBase = function() {
+        return gulp.src(['src/sass/fabric.scss'])
+            .pipe(sass())
+                .on('error', onGulpError)
+            .pipe(rename('fabric.css'))
+                .on('error', onGulpError)
+            .pipe(header(bannerTemplate, bannerData))
+                .on('error', onGulpError)
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+                .on('error', onGulpError);
+    }
+    // Build full and minified Fabric CSS.
+    var fabric = _fabricBase()
+            .pipe(cssbeautify())
+                .on('error', onGulpError)
+            .pipe(csscomb())
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.distPath + '/sass-css/'))
+                .on('error', onGulpError)
+            .pipe(rename('fabric.min.css'))
+                .on('error', onGulpError)
+            .pipe(cssMinify())
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.distPath + '/sass-css/'))
+                .on('error', onGulpError);
+    // Build full and minified Fabric RTL CSS.
+    var fabricRtl = gulp.src('src/sass/fabric.rtl.scss')
+            .pipe(sass())
+                .on('error', onGulpError)
+            .pipe(flipper())
+                .on('error', onGulpError)
+            .pipe(rename('fabric.rtl.css'))
+                .on('error', onGulpError)
+            .pipe(header(bannerTemplate, bannerData))
+                .on('error', onGulpError)
+            .pipe(autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+                .on('error', onGulpError)
+            .pipe(cssbeautify())
+                .on('error', onGulpError)
+            .pipe(csscomb())
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.distPath + '/sass-css/'))
+                .on('error', onGulpError)
+            .pipe(rename('fabric.rtl.min.css'))
+                .on('error', onGulpError)
+            .pipe(cssMinify())
+                .on('error', onGulpError)
+            .pipe(gulp.dest(paths.distPath + '/sass-css/'))
+                .on('error', onGulpError);
+    // Merge all current streams into one.
+    return mergeStream(fabric, fabricRtl);
 });
 
 //
@@ -602,7 +686,8 @@ gulp.task('nuget-pack', function(callback) {
             {src: paths.componentsPath, dest: "/content/components/"},
             {src: paths.distCSS, dest: "/content/css/"},
             {src: paths.distJS, dest: "/content/scripts/"},
-            {src: paths.distLess, dest: "/content/less/"}
+            {src: paths.distLess, dest: "/content/less/"},
+            {src: paths.distSass, dest: "/content/sass/"}
         ],
 
         callback
@@ -613,7 +698,7 @@ gulp.task('nuget-pack', function(callback) {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'fabric-less']);
+gulp.task('build-fabric', ['clean-fabric', 'copy-fabric', 'copy-fabric-sass', 'fabric-less', 'fabric-sass']);
 
 // Build for Fabric component demos
 gulp.task('build-fabric-components', ['clean-fabric-components', 'copy-fabric-components', 'fabric-components-less', 'fabric-components-js']);

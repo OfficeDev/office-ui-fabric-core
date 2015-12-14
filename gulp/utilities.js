@@ -1,5 +1,6 @@
 var fs = require('fs');
-var fs = require('fs');
+var config = require('./config');
+var path = require('path');
 
 var Utilities = function() {
 	this.getDate = function() {
@@ -14,8 +15,13 @@ var Utilities = function() {
 					"November", "December"
 		];
 	}
-	this.parseManifest = function() {
+	this.parseManifest = function(folder) {
 		return JSON.parse(fs.readFileSync(config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
+	}
+	this.getFolders = function(dir) {
+		 return fs.readdirSync(dir).filter(function(file) {
+					return fs.statSync(path.join(dir, file)).isDirectory();
+				});
 	}
 }
 

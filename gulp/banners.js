@@ -1,11 +1,12 @@
 var utilities = require('./utilities');
+var plugins = require('./plugins');
+
 var Banners = function() {
-	
 	this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
 	
-	this.getBannerData = function(pkg) {
+	this.getBannerData = function() {
 		return {
-			pkg : pkg,
+			pkg : plugins.pkg,
 			date: utilities.getDate(),
 			monthNames: utilities.getMonths()
 		}
@@ -33,4 +34,4 @@ var Banners = function() {
 	
 }
 
-module.exports = Banners;
+module.exports = new Banners();

@@ -37,6 +37,13 @@ var FabricServer = function() {
 	
 	this.start = function() {
 		
+		expressServer.configure(function() {
+			expressServer.use(function(err, req, res, next) {
+				res.status(500);
+				res.render('error', { error: err });
+			});
+		});
+		
 		// Check for any paths that are outside of the root serve directory
 		if(this.specificPaths.length > 0){
 			for(var i = 0; i < this.specificPaths; i++) {
@@ -46,6 +53,7 @@ var FabricServer = function() {
 		
 		// Serve up root APP director for express
         expressServer.use(express.static(path.join(this.rootPath)));
+		
         return expressServer.listen(this.portNum);
 	}
 	

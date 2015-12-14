@@ -1,8 +1,10 @@
 var gulp = require('gulp');
-var config = require('./config');
-var errorHandling = require('./errorHandling');
-var componentsPageHelper = require('./components-page-helpers');
-var plugins = require('./plugins');
+
+var banners = require('./modules/Banners');
+var config = require('./modules/Config');
+var errorHandling = require('./modules/ErrorHandling');
+var plugins = require('./modules/Plugins');
+var ComponentsPageHelper = require('./modules/ComponentsPageHelpers');
 
 var samplesLinks = "";
 var componentLinks = [];
@@ -15,7 +17,7 @@ gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'bu
     return gulp.src(config.paths.templatePath + '/'+ 'samples-index.html')
         .on('error', errorHandling.onErrorInPipe)
     .pipe(plugins.data(function () {
-        return { "components": componentsPageHelper.buildLinkContainer(componentLinks.sort().join('')), "samples" :  componentsPageHelper.buildLinkContainer(samplesLinks)};
+        return { "components": ComponentsPageHelper.buildLinkContainer(componentLinks.sort().join('')), "samples" :  ComponentsPageHelper.buildLinkContainer(samplesLinks)};
     }))
         .on('error', errorHandling.onErrorInPipe)
     .pipe(plugins.template())

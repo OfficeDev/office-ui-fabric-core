@@ -1,15 +1,15 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 var gulp = require('gulp');
-var plugins = require('./gulp/plugins');
-var config = require('./gulp/config');
-var messaging = require('./gulp/messaging');
-var fabricServer = require('./gulp/fabric-server');
+var plugins = require('./gulp/modules/Plugins');
+var config = require('./gulp/modules/config');
+var messaging = require('./gulp/modules/messaging');
+var fabricServer = require('./gulp/modules/Server');
 
 //////////////////////////
 // INCLUDE FABRIC TASKS
 //////////////////////////
 
-plugins.requireDir('../gulp'); // This is from 
+plugins.requireDir('../../gulp'); // This is from 
 
 //
 // Local Server Configuration and Testing Website

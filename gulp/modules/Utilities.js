@@ -1,5 +1,5 @@
 var fs = require('fs');
-var config = require('./config');
+var config = require('./Config');
 var path = require('path');
 
 var Utilities = function() {

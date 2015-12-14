@@ -1,169 +1,54 @@
 var gulp = require('gulp');
-var del = require('del');
-var fs = require('fs');
-var less = require('gulp-less');
-var batch = require('gulp-batch');
-var cssMinify = require('gulp-minify-css');
-var csscomb = require('gulp-csscomb');
-var cssbeautify = require('gulp-cssbeautify');
-var file = require('gulp-file');
-var flipper = require('gulp-css-flipper');
-var autoprefixer = require('gulp-autoprefixer');
-var mergeStream = require('merge-stream');
-var rename = require('gulp-rename');
-var es = require('event-stream');
-var _ = require('lodash');
-var pkg = require('../package.json');
-var header = require('gulp-header');
-var zip = require('gulp-zip');
-var gutil = require('gulp-util');
-var runSequence = require('run-sequence');
-var template = require('gulp-template');
-var concat = require('gulp-concat');
-var tap = require('gulp-tap');
-var data = require('gulp-data');
-var folders = require('gulp-folders');
-var foreach = require('gulp-foreach');
-var browserSync = require('browser-sync').create();
-var colors = require('colors/safe');
-var path = require('path');
-var wrap = require('gulp-wrap');
-var uglify = require('gulp-uglify');
-var nugetpack = require('gulp-nuget-pack');
 
-// Define paths.
-var distPath = 'dist';
-var srcPath = 'src';
-var paths = {
-    distPath: distPath,
-    distComponents: distPath + '/components',
-    distLess: distPath + '/less',
-    distCSS: distPath + '/css',
-    distSamples: distPath + '/samples',
-    distSampleComponents: distPath + '/samples/' +  '/Components',
-    distJS: distPath + '/js',
-    distPackages: distPath + '/packages',
-    srcPath: srcPath,
-    srcSamples: srcPath + '/samples',
-    componentsPath : 'src/components',
-    lessPath: srcPath + '/less',
-    templatePath : srcPath + '/templates'
-};
+var utilities = require('./modules/Utilities');
+var banners = require('./modules/Banners');
+var fabricServer = require('./modules/Server');
+var config = require('./modules/Config');
+var messaging = require('./modules/Messaging');
+var errorHandling = require('./modules/ErrorHandling');
+var plugins = require('./modules/Plugins');
 
 var storedFiles = {};
-
-//
-// Build fabric banner
-// ----------------------------------------------------------------------------
-
-var date = new Date();
-var monthNames = ["January", "February", "March",
-                    "April", "May", "June", "July",
-                    "August", "September", "October",
-                    "November", "December"];
-var bannerTemplate = ['/**',
-      ' * Office UI Fabric <%= pkg.version %>',
-      ' * <%= pkg.description %>',
-      ' **/',
-      ''].join('\n');
-
-// Configure data objects to pass into banner plugin.
-var bannerData = {
-    pkg : pkg,
-    date: date,
-    monthNames: monthNames
-}
-
-var banners = {
-    msMessage: 'Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.',
-    jsCopyRight:  function () {
-        return '//' + banners.msMessage +  "\r\n";
-    },
-    htmlCopyRight: function () {
-        return '<!-- ' +  banners.msMessage  + ' -->' + "\r\n";
-    },
-    cssCopyRight: function () {
-        return '/* ' +  banners.msMessage  + ' */' + "\r\n";
-    } 
-}
- 
-//
-// Build Helpers
-// ----------------------------------------------------------------------------
-
-// Emit the end of the event so further pipes don't continue working
-// on pipes that have bad data/files in it. Essentially, errors shouldn't cause
-// tasks to exit now.
-var onGulpError = function (error) {
-    console.log(error);
-    this.emit('end');
-};
-
-// Success message
-var generateSuccess = function (message, showTip) {
-    var spacing = "\r\n";
-    var spaceDashes = colors.rainbow("---------------------------------------------------");
-    if(showTip == true) {
-        var tipsMessage = colors.gray("TIP: To test changes to Fabric source, check under /samples for demo HTML files of each Component.") + spacing;
-    } else {
-        var tipsMessage = "";
-    }
-    var consoleText = colors.green("Fabric Message: ") + colors.cyan(message);
-    var completeMessage = spaceDashes + spacing + spacing + consoleText + spacing + tipsMessage + spacing + spaceDashes;
-    return completeMessage;
-}
-
-var parseManifest = function (folder) {
-    return JSON.parse(fs.readFileSync(paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
-}
-
-// Helper for retrieving folders
-var getFolders = function (dir) {
-    return fs.readdirSync(dir)
-    .filter(function(file) {
-        return fs.statSync(path.join(dir, file)).isDirectory();
-    });
-}
 
 var buildEachComponentCss = function (destination) {
     return componentsFolders.map(function(folder) {
 
-        var manifest = parseManifest(folder);
+        var manifest = utilities.parseManifest(folder);
         var deps = manifest.dependencies || [];
 
-        return gulp.src(paths.templatePath + '/'+ 'component-manifest-template.less')
-            .pipe(data(function () {
+        return gulp.src(config.paths.templatePath + '/'+ 'component-manifest-template.less')
+            .pipe(plugins.data(function () {
                 return { "componentName": folder, "dependencies": deps };
             }))
-                .on('error', onGulpError)
-            .pipe(template())
-                .on('error', onGulpError)
-            .pipe(less())
-                .on('error', onGulpError)
-            .pipe(header(bannerTemplate, bannerData))
-                .on('error', onGulpError)
-            .pipe(autoprefixer({
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.template())
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.less())
+                .on('error', errorHandling.onErrorInPipe)
+             .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
             }))
-            .pipe(rename(folder + '.css'))
-                .on('error', onGulpError)
-            .pipe(cssbeautify())
-                .on('error', onGulpError)
-            .pipe(csscomb())
-                .on('error', onGulpError)
-            .pipe(header(banners.cssCopyRight()))
-                .on('error', onGulpError)
+            .pipe(plugins.rename(folder + '.css'))
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.cssbeautify())
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.csscomb())
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.header(banners.getCSSCopyRight()))
+                .on('error', errorHandling.onErrorInPipe)
             .pipe(gulp.dest(destination + folder))
-                .on('error', onGulpError)
-            .pipe(rename(folder + '.min.css'))
-                .on('error', onGulpError)
-            .pipe(cssMinify())
-                .on('error', onGulpError)
-            .pipe(header(banners.cssCopyRight()))
-                .on('error', onGulpError)
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.rename(folder + '.min.css'))
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.cssMinify())
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.header(banners.getCSSCopyRight()))
+                .on('error', errorHandling.onErrorInPipe)
             .pipe(gulp.dest(destination + folder))
-                .on('error', onGulpError);
+                .on('error', errorHandling.onErrorInPipe);
     });
 }
 
@@ -177,18 +62,18 @@ var buildLinkHtml = function (href, name) {
 }
 
 // Component parts
-var componentsFolders = getFolders(paths.componentsPath);
+var componentsFolders = utilities.getFolders(config.paths.componentsPath);
 var catalogContents = "";
 var componentLinks = [];
 var samplesLinks = "";
-var samplesFolders = getFolders(paths.srcSamples);
+var samplesFolders = utilities.getFolders(config.paths.srcSamples);
 
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
 
 gulp.task('clean-component-samples', function () {
-    return del.sync([paths.distSamples + '/Components']);
+    return plugins.del.sync([config.paths.distSamples + '/Components']);
 });
 
 
@@ -199,13 +84,13 @@ gulp.task('clean-component-samples', function () {
 gulp.task('copy-component-samples', ['clean-component-samples'], function() {
 
     return gulp.src([
-            paths.componentsPath + '/**/*.js', 
-            paths.componentsPath + '/**/*.jpg', 
-            paths.componentsPath + '/**/*.png', 
-            paths.componentsPath + '/**/*.js',
-            paths.componentsPath + '/**/*.gif'
+            config.paths.componentsPath + '/**/*.js', 
+            config.paths.componentsPath + '/**/*.jpg', 
+            config.paths.componentsPath + '/**/*.png', 
+            config.paths.componentsPath + '/**/*.js',
+            config.paths.componentsPath + '/**/*.gif'
         ])
-        .pipe(gulp.dest(paths.distSamples + '/Components'));
+        .pipe(gulp.dest(config.paths.distSamples + '/Components'));
 });
 
 //
@@ -213,7 +98,7 @@ gulp.task('copy-component-samples', ['clean-component-samples'], function() {
 // ----------------------------------------------------------------------------
 
 gulp.task('component-samples-less', ['clean-component-samples'], function() {
-   return buildEachComponentCss(paths.distSamples + '/Components/');
+   return buildEachComponentCss(config.paths.distSamples + '/Components/');
 });
 
 //
@@ -223,33 +108,32 @@ gulp.task('component-samples-less', ['clean-component-samples'], function() {
 gulp.task('reset-component-data', function() {
     componentLinks = [];
     storedFiles = {};
-    componentsFolders = getFolders(paths.componentsPath);
+    componentsFolders = utilities.getFolders(config.paths.componentsPath);
 });
 
-gulp.task('build-component-data', ['clean-component-samples'], folders(paths.componentsPath, function (folder) {
+gulp.task('build-component-data', ['clean-component-samples'], plugins.folders(config.paths.componentsPath, function (folder) {
 
-    var manifest = parseManifest(folder);
+    var manifest = utilities.parseManifest(folder);
     var filesArray = manifest.fileOrder;
-    var wrapBranches = manifest.wrapBranches;
     var cfiles;
     var newArray;
 
     if(typeof manifest.fileOrder != "undefined" || manifest.fileOrder != undefined) {
         // build gulp src array
         newArray = filesArray.map(function(file, i) {
-            return paths.componentsPath + '/' +  folder + '/' + file;
+            return config.paths.componentsPath + '/' +  folder + '/' + file;
         });
-        cfiles = gulp.src(newArray).on('error', onGulpError);
+        cfiles = gulp.src(newArray).on('error', errorHandling.onErrorInPipe);
     } else {
-        cfiles = gulp.src(paths.componentsPath + '/' +  folder + '/*.html').on('error', onGulpError);
+        cfiles = gulp.src(config.paths.componentsPath + '/' +  folder + '/*.html').on('error', errorHandling.onErrorInPipe);
     }
  
     if(manifest.wrapBranches === true) {
-        cfiles.pipe(wrap('<div class="sample-wrapper"><%= contents %></div>'))
-            .on('error', onGulpError)
-        .pipe(concat(folder + '.html'))
-            .on('error', onGulpError)
-        .pipe(tap(function (file) {
+        cfiles.pipe(plugins.wrap('<div class="sample-wrapper"><%= contents %></div>'))
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.concat(folder + '.html'))
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.tap(function (file) {
 
              storedFiles[folder] = {
                 "name": file.basename,
@@ -265,11 +149,11 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
                 componentLinks.push(buildLinkHtml('Components/' + folder, folder));
             }
         }))
-        .on('error', onGulpError);
+        .on('error', errorHandling.onErrorInPipe);
     } else {
-        cfiles.pipe(concat(folder + '.html'))
-            .on('error', onGulpError)
-        .pipe(tap(function (file) {
+        cfiles.pipe(plugins.concat(folder + '.html'))
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.tap(function (file) {
 
             storedFiles[folder] = {
                 "name": file.basename,
@@ -284,44 +168,44 @@ gulp.task('build-component-data', ['clean-component-samples'], folders(paths.com
                 componentLinks.push(buildLinkHtml('Components/' + folder, folder));
             }
         }))
-            .on('error', onGulpError);
+            .on('error', errorHandling.onErrorInPipe);
     }
     return cfiles;
 }));
 
-gulp.task('component-samples-template', ['build-component-data', 'component-samples-add-js'], folders(paths.componentsPath, function (folder) {
+gulp.task('component-samples-template', ['build-component-data', 'component-samples-add-js'], plugins.folders(config.paths.componentsPath, function (folder) {
 
-    return gulp.src(paths.templatePath + '/'+ 'individual-component-example.html')
-            .on('error', onGulpError)
-        .pipe(data(function () {
+    return gulp.src(config.paths.templatePath + '/'+ 'individual-component-example.html')
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.data(function () {
             var jstag = '';
             var files =  storedFiles[folder]["files"];
             for(var o=0; o < files.length; o++) {jstag += files[o];}
             if(typeof storedFiles[folder][folder] != "undefined") { jstag += storedFiles[folder][folder]; }
             return { "componentName": folder, "stored": storedFiles[folder].contents, "jstag": jstag };
         }))
-            .on('error', onGulpError)
-        .pipe(template())
-            .on('error', onGulpError)
-        .pipe(rename('index.html'))
-            .on('error', onGulpError)
-        .pipe(gulp.dest(paths.distSamples + '/Components/' +  folder))
-            .on('error', onGulpError);
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.template())
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.rename('index.html'))
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(gulp.dest(config.paths.distSamples + '/Components/' +  folder))
+            .on('error', errorHandling.onErrorInPipe);
 }));
 
-gulp.task('component-samples-add-js', ['build-component-data'], folders(paths.componentsPath, function (folder) {
+gulp.task('component-samples-add-js', ['build-component-data'], plugins.folders(config.paths.componentsPath, function (folder) {
 
-    return gulp.src(paths.componentsPath + '/' + folder + '/*.js')
-            .on('error', onGulpError)
-      .pipe(foreach(function(stream){
+    return gulp.src(config.paths.componentsPath + '/' + folder + '/*.js')
+            .on('error', errorHandling.onErrorInPipe)
+      .pipe(plugins.foreach(function(stream){
           return stream
-            .pipe(tap(function(file) {
+            .pipe(plugins.tap(function(file) {
                 var filename = file.path.replace(/^.*[\\\/]/, '');
                 storedFiles[folder]["files"].push('<script type="text/javascript" src="' + filename+ '"></script>' + "\r\b");
             }))
-            .on('error', onGulpError);
+            .on('error', errorHandling.onErrorInPipe);
       }))
-      .on('error', onGulpError);
+      .on('error', errorHandling.onErrorInPipe);
 }));
 
 //
@@ -329,18 +213,18 @@ gulp.task('component-samples-add-js', ['build-component-data'], folders(paths.co
 // ----------------------------------------------------------------------------
 
 gulp.task('build-components-page', ['clean-samples', 'build-component-data', 'build-sample-data'], function() {
-    return gulp.src(paths.templatePath + '/'+ 'samples-index.html')
-        .on('error', onGulpError)
-    .pipe(data(function () {
+    return gulp.src(config.paths.templatePath + '/'+ 'samples-index.html')
+        .on('error', errorHandling.onErrorInPipe)
+    .pipe(plugins.data(function () {
         return { "components": buildLinkContainer(componentLinks.sort().join('')), "samples" :  buildLinkContainer(samplesLinks)};
     }))
-        .on('error', onGulpError)
-    .pipe(template())
-        .on('error', onGulpError)
-    .pipe(rename('index.html'))
-        .on('error', onGulpError)
-    .pipe(gulp.dest(paths.distSamples))
-        .on('error', onGulpError);
+        .on('error', errorHandling.onErrorInPipe)
+    .pipe(plugins.template())
+        .on('error', errorHandling.onErrorInPipe)
+    .pipe(plugins.rename('index.html'))
+        .on('error', errorHandling.onErrorInPipe)
+    .pipe(gulp.dest(config.paths.distSamples))
+        .on('error', errorHandling.onErrorInPipe);
 });
 
 //
@@ -355,11 +239,11 @@ gulp.task('build-component-samples', ['clean-component-samples', 'copy-component
 // ----------------------------------------------------------------------------
 
 gulp.task('component-samples-finished', ['build-component-samples'], function () {
-    console.log(generateSuccess(' Component Samples build was successful! Yay!', true));
+    console.log(plugins.generateSuccess(' Component Samples build was successful! Yay!', true));
 });
 
 gulp.task('component-samples-updated', ['build-component-samples'], function () {
-    console.log(generateSuccess(' Components Samples updated successfully! Yay!'));
+    console.log(plugins.generateSuccess(' Components Samples updated successfully! Yay!'));
 });
 
 //
@@ -368,7 +252,7 @@ gulp.task('component-samples-updated', ['build-component-samples'], function () 
 
 // Watches all src fabric components but, builds the samples only
 gulp.task('watch:component-samples', ['build-component-samples', 'build-components-page', 'fabric-server',  'fabric-all-server'], function () {
-    return gulp.watch(paths.componentsPath + '/**/*', batch(function (events, done) {
-        runSequence('build-component-samples', done);
+    return gulp.watch(config.paths.componentsPath + '/**/*', plugins.batch(function (events, done) {
+        plugins.runSequence('build-component-samples', done);
     }));
 });

@@ -1,6 +1,6 @@
 var path = require('path');
-var config = require('./config');
-var pkg = require('../package.json');
+var config = require('./Config');
+var pkg = require('../../package.json');
 
 var Config = function() {
 	// Define paths.

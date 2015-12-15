@@ -8,13 +8,31 @@
 
 .ms-Spinner {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
+
+  &.ms-Spinner--large {
+    width: 28px;
+    height: 28px;
+
+    .ms-Spinner-label {
+      left: 36px;
+      top: 6px;
+    }
+  }
 }
 
 .ms-Spinner-circle {
   position: absolute;
   border-radius: 100px;
-  background-color: black;
+  background-color: @ms-color-themePrimary;
   opacity: 0;
+}
+
+.ms-Spinner-label {
+  position: relative;
+  .ms-font-s();
+  color: @ms-color-themePrimary;
+  left: 28px;
+  top: 2px;
 }

@@ -5,6 +5,7 @@
 // --------------------------------------------------
 // Breadcrumb styles
 
+
 .ms-Breadcrumb {
   margin: 23px 0 1px 0;
 
@@ -32,6 +33,8 @@
 .ms-Breadcrumb-list {
   display: inline;
   white-space: nowrap;
+  padding: 0;
+  margin: 0;
 
   .ms-Breadcrumb-listItem {
     list-style-type: none;
@@ -51,13 +54,14 @@
 .ms-Breadcrumb-overflow {
   display: none;
   position: relative;
+  margin-right: -4px;
 
   .ms-Breadcrumb-overflowButton {
     font-size: @ms-font-size-s;
     display: inline-block;
     color:@ms-color-themePrimary;
     margin-right: -4px;
-    padding: 12px 8px;
+    padding: 12px 8px 3px 8px;
     cursor: pointer;
   }
 }
@@ -136,6 +140,7 @@
 
   .ms-Breadcrumb-overflow {
     .ms-Breadcrumb-overflowButton {
+      padding-top: 8px;
       padding-bottom: 3px;
     }
   }
@@ -155,7 +160,7 @@
 
   .ms-Breadcrumb-overflow {
     .ms-Breadcrumb-overflowButton {
-      padding-top: 3px;
+      padding-top: 5px;
       padding-bottom: 3px;
     }
   }

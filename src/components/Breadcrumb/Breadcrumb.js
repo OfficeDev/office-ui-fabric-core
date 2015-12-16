@@ -15,6 +15,9 @@ var fabric = fabric || {};
  *
  * @param {HTMLElement} container - the target container for an instance of Breadcrumb
  * @constructor
+ *
+ * If dynamically populating a list run the constructor after the list has been populated
+ * in the DOM.
  */
 fabric.Breadcrumb = function(container) {
   this.container = container;
@@ -23,9 +26,10 @@ fabric.Breadcrumb = function(container) {
 
 fabric.Breadcrumb.prototype = (function() {
 
+  //medium breakpoint
   var MEDIUM = 640;
-  var SMALL = 480;
 
+  //cached DOM elements
   var _breadcrumb;
   var _listItems;
   var _contextMenu;
@@ -36,26 +40,9 @@ fabric.Breadcrumb.prototype = (function() {
   var _currentMaxItems = 0;
   var _itemCollection = [];
 
-  var _onResize = function(event) {
-    _closeOverflow(null);
-    _renderList();
-  };
-
-  var _renderList = function() {
-    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
-
-    if(maxItems !== _currentMaxItems) {
-      if(_itemCollection.length > maxItems) {
-        _breadcrumb.className += ' is-overflow';
-      } else {
-        _removeClass(_breadcrumb, ' is-overflow');
-      }
-      _addBreadcrumbItems(maxItems);
-      _addItemsToOverflow(maxItems);
-    }
-    _currentMaxItems = maxItems;
-  };
-
+  /**
+   * create internal model of list items from DOM
+   */
   var _createItemCollection = function() {
     var length = _listItems.length;
     var i = 0;
@@ -71,8 +58,39 @@ fabric.Breadcrumb.prototype = (function() {
     }
   };
 
+  /**
+   * Re-render lists on resize
+   *
+   */
+  var _onResize = function(event) {
+    _closeOverflow(null);
+    _renderList();
+  };
+
+  /**
+   * render breadcrumbs and overflow menus
+   */
+  var _renderList = function() {
+    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
+
+    if(maxItems !== _currentMaxItems) {
+      if(_itemCollection.length > maxItems) {
+        _breadcrumb.className += ' is-overflow';
+      } else {
+        _removeClass(_breadcrumb, ' is-overflow');
+      }
+      _addBreadcrumbItems(maxItems);
+      _addItemsToOverflow(maxItems);
+    }
+
+    _currentMaxItems = maxItems;
+  };
+
+  /**
+   * creates the overflow menu
+   */
   var _addItemsToOverflow = function(maxItems) {
-    _resetOverflowItems();
+    _resetList(_contextMenu);
     var end = _itemCollection.length - maxItems;
     var overflowItems = _itemCollection.slice(0, end);
 
@@ -88,24 +106,11 @@ fabric.Breadcrumb.prototype = (function() {
     });
   };
 
-  var _resetOverflowItems = function() {
-    while (_contextMenu.firstChild) {
-      _contextMenu.removeChild(_contextMenu.firstChild);
-    }
-  };
-
-  var _resetBreadcrumbs = function() {
-    var breadcrumbs = _breadcrumbList.querySelectorAll('.ms-Breadcrumb-listItem');
-    var length = breadcrumbs.length;
-    var i = 0;
-
-    for(i; i < length; i++) {
-      _breadcrumbList.removeChild(breadcrumbs[i]);
-    }
-  };
-
+  /**
+   * creates the breadcrumbs
+   */
   var _addBreadcrumbItems = function(maxItems) {
-    _resetBreadcrumbs();
+    _resetList(_breadcrumbList);
     var i = _itemCollection.length - maxItems;
 
     if(i >= 0) {
@@ -126,18 +131,36 @@ fabric.Breadcrumb.prototype = (function() {
     }
   };
 
+  /**
+   * resets a list by removing its children
+   */
+  var _resetList = function(list) {
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+  };
+
+  /**
+   * opens the overflow menu
+   */
   var _openOverflow = function(event) {
     if(_overflowMenu.className.indexOf(' is-open') === -1) {
       _overflowMenu.className += ' is-open';
     }
   };
 
+  /**
+   * closes the overflow menu
+   */
   var _closeOverflow = function(event) {
     if(!event || event.target !== _overflowButton) {
       _removeClass(_overflowMenu, ' is-open');
     }
   };
 
+  /**
+   * utility that removes a class from an element
+   */
   var _removeClass = function (element, value) {
     var index = element.className.indexOf(value);
     if(index > -1) {
@@ -157,6 +180,9 @@ fabric.Breadcrumb.prototype = (function() {
     _overflowMenu = _breadcrumb.querySelector('.ms-Breadcrumb-overflowMenu');
   };
 
+  /**
+   * sets handlers for resize and button click events
+   */
   var _setListeners = function() {
     window.addEventListener('resize', _onResize);
     _overflowButton.addEventListener('click', _openOverflow);
@@ -165,10 +191,16 @@ fabric.Breadcrumb.prototype = (function() {
     _overflowButton.addEventListener('click', removeOutlinesOnClick);
   };
 
+  /**
+   * removes focus outlines so they don't linger after click
+   */
   var removeOutlinesOnClick = function(event) {
     event.target.blur();
   };
 
+  /**
+   * initializes component
+   */
   var init = function() {
     _cacheDOM(this);
     _setListeners();

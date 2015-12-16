@@ -21,13 +21,6 @@
     vertical-align: top;
     margin: 10px 0;
   }
-
-  .ms-ContextualMenu {
-    border: none;
-    box-shadow: none;
-    position: relative;
-    width: 190px;
-  }
 }
 
 .ms-Breadcrumb-list {
@@ -90,6 +83,17 @@
     height: 16px;
     transform: rotate(45deg);
     background-color: white;
+  }
+
+  .ms-ContextualMenu {
+    border: none;
+    box-shadow: none;
+    position: relative;
+    width: 190px;
+
+    &.is-open {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -165,4 +169,3 @@
     }
   }
 }
-

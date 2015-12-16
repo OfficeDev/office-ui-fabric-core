@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 
-
 // Fabric Helper Modules
 var utilities = require('./modules/Utilities');
 var banners = require('./modules/Banners');
@@ -9,7 +8,6 @@ var config = require('./modules/Config');
 var messaging = require('./modules/Messaging');
 var errorHandling = require('./modules/ErrorHandling');
 var plugins = require('./modules/Plugins');
-
 
 //
 // Clean/Delete Tasks

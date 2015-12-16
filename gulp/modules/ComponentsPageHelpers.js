@@ -1,4 +1,8 @@
 var ComponentsPageHelpers = function() {
+	this.sampleLinks = '';
+	this.componentLinks = '';
+	
+	
 	this.buildLinkContainer = function(links) {
     	return '<div class="LinkContainer">'+ links +'</div>';
 	}

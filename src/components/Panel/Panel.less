@@ -123,18 +123,29 @@
 
   .ms-CommandBar {
     .ms-u-slideDownIn20();
-    animation-delay: 500ms;
+    animation-delay: 250ms;
   }
 }
 
 .ms-Panel.is-open .ms-Panel-main {
   opacity: 1;
+  pointer-events: auto;
   display: block;
 }
 
 .ms-Panel.is-open .ms-Overlay {
   display: block;
   pointer-events: auto;
+}
+
+.ms-Panel.is-open.ms-Panel-animateOut {
+  .ms-Panel-main {
+    .ms-u-fadeOut100();
+  }
+
+  .ms-Overlay {
+    display: none;
+  }
 }
 
 // Panel Modifier
@@ -192,6 +203,15 @@
       .ms-u-fadeOut200;
     }
   }
+
+  // Animate CommandBar in
+  .ms-Panel.is-open {
+
+    .ms-CommandBar {
+      animation-delay: 500ms;
+    }
+  }
+
 
   // When opened, the full-width panel is replaced with one that is 340px wide
   // and attached to the right of the screen.

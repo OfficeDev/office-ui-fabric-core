@@ -3,6 +3,7 @@ var config = require('./Config');
 var path = require('path');
 
 var Utilities = function() {
+	
 	this.getDate = function() {
 		return new Date();
 	}
@@ -15,13 +16,39 @@ var Utilities = function() {
 					"November", "December"
 		];
 	}
+	
 	this.parseManifest = function(folder) {
 		return JSON.parse(fs.readFileSync(config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
 	}
+	
 	this.getFolders = function(dir) {
 		 return fs.readdirSync(dir).filter(function(file) {
 					return fs.statSync(path.join(dir, file)).isDirectory();
 				});
+	}
+	
+	this.hasFileChangedInFolder = function(srcDir, distDir) {
+		var getSrcDir = fs.statSync(srcDir);
+		var getDistDir = fs.statSync(distDir);
+		
+		var srcDateTime = new Date(getSrcDir.mtime);
+		var distDateTime = new Date(getDistDir.mtime);
+		
+		var dateList = [];
+		
+		fs.readdirSync(srcDir,function(err, files) {
+			if (err) throw err;
+			files.forEach(function(file){
+				var curFile = fs.statSync(srcDir);
+				dateList.push(new Date(curFile.mtime));
+			});
+		});
+
+		if(srcDateTime.getTime() > distDateTime.getTime()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 

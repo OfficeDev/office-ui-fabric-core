@@ -53,6 +53,7 @@ var Config = function() {
 		{src: this.paths.distJS, dest: "/content/scripts/"},
 		{src: this.paths.distLess, dest: "/content/less/"}
 	];
+	
 }
 
 module.exports = new Config();

@@ -17,6 +17,7 @@
     "express": "^4.10.4",
     "glob": "^3.2.9",
     "gulp": "^3.9.0",
+    "gulp-apply-template": "0.0.2",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-batch": "^1.0.5",
     "gulp-concat": "^2.5.2",
@@ -49,6 +50,7 @@
     "merge-stream": "^1.0.0",
     "pretty-hrtime": "0.2.2",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.0"
+    "run-sequence": "^1.1.0",
+    "swig": "^1.4.2"
   }
 }

@@ -10,6 +10,7 @@ var plugins = require('./modules/Plugins');
 
 var storedFiles = {};
 
+
 var buildEachComponentCss = function (destination) {
     return componentsFolders.map(function(folder) {
 
@@ -192,6 +193,32 @@ gulp.task('component-samples-template', ['build-component-data', 'component-samp
         .pipe(gulp.dest(config.paths.distSamples + '/Components/' +  folder))
             .on('error', errorHandling.onErrorInPipe);
 }));
+
+
+//New Ultra fast Gulp task
+gulp.task('mega-components', ['component-samples-add-js'], function() {
+    
+    // Foreach through the folder list
+    // Check if the destination folder is older than the src folder
+        //If older than rebuild this whole folder and output to samples components
+        //If not then dont do it at all
+        
+    var folderList = utilities.getFolders(config.componentsPath);
+    for(var i=0; i < folderList.length; i++) {
+        
+        var currentFolder = folderList[i];
+        var hasFolderChanged = utilities.hasFolderChanged(
+                                    config.componentsPath + '/' + currentFolder,
+                                    config.distSampleComponents + '/' + currentFolder
+                               );
+                               
+        if(hasFolderChanged) {
+            // We need to get this folder
+        }
+        
+     }
+   
+});
 
 gulp.task('component-samples-add-js', ['build-component-data'], plugins.folders(config.paths.componentsPath, function (folder) {
 

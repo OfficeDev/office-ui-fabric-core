@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var fs = require('fs');
 
 var utilities = require('./modules/Utilities');
 var banners = require('./modules/Banners');
@@ -7,7 +8,7 @@ var config = require('./modules/Config');
 var messaging = require('./modules/Messaging');
 var errorHandling = require('./modules/ErrorHandling');
 var plugins = require('./modules/Plugins');
-
+var FoldersModel = require('./models/FoldersModel');
 var storedFiles = {};
 
 
@@ -196,27 +197,39 @@ gulp.task('component-samples-template', ['build-component-data', 'component-samp
 
 
 //New Ultra fast Gulp task
-gulp.task('mega-components', ['component-samples-add-js'], function() {
+gulp.task('mega-components', function() {
     
     // Foreach through the folder list
     // Check if the destination folder is older than the src folder
         //If older than rebuild this whole folder and output to samples components
         //If not then dont do it at all
         
-    var folderList = utilities.getFolders(config.componentsPath);
+    var folderList = utilities.getFolders(config.paths.componentsPath);
     for(var i=0; i < folderList.length; i++) {
         
-        var currentFolder = folderList[i];
-        var hasFolderChanged = utilities.hasFolderChanged(
-                                    config.componentsPath + '/' + currentFolder,
-                                    config.distSampleComponents + '/' + currentFolder
-                               );
-                               
-        if(hasFolderChanged) {
-            // We need to get this folder
-        }
+        var currentFolderName = config.paths.componentsPath + '/' + folderList[i];
         
+        // Add folder for tracking
+        FoldersModel.addFolder(currentFolderName, '');
+        var files = [];
+        files = fs.readdirSync(currentFolderName);
+        
+        // console.log(files);
+        for(var x=0; x < files.length; x++) {
+            var currentFile = files[x];
+            FoldersModel.addFile(
+                currentFolderName,
+                currentFile,
+                utilities.getFileModifiedTime(currentFolderName + '/' + files[x])
+            );
+            // console.log("made it herrr");
+        }
+       
+        // if(hasFolderChanged) {
+        //     // We need to get this folder
+        // }  
      }
+     console.log(FoldersModel.componentFolders);
    
 });
 

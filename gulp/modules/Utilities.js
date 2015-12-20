@@ -27,6 +27,11 @@ var Utilities = function() {
 				});
 	}
 	
+	this.getFileModifiedTime = function(file) {
+		var fileStats = fs.statSync(file);
+		return new Date(fileStats.mtime);
+	}
+	
 	this.hasFileChangedInFolder = function(srcDir, distDir) {
 		var getSrcDir = fs.statSync(srcDir);
 		var getDistDir = fs.statSync(distDir);

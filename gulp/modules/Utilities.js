@@ -17,6 +17,21 @@ var Utilities = function() {
 		];
 	}
 	
+	this.getManifestFileList = function(fileArray, folderPath) {
+		var newArray = [];
+		
+		if(typeof fileArray != "undefined" || fileArray != undefined) {
+			newArray = fileArray.map(function(file, i) {
+				return folderPath + '/' + file;
+			});
+			return newArray;
+		} else {
+			newArray.push(folderPath + '/*.html');
+			return newArray;
+		}
+		
+	}
+	
 	this.parseManifest = function(folder) {
 		return JSON.parse(fs.readFileSync(config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
 	}
@@ -33,23 +48,41 @@ var Utilities = function() {
 	}
 	
 	this.hasFileChangedInFolder = function(srcDir, distDir) {
-		var getSrcDir = fs.statSync(srcDir);
-		var getDistDir = fs.statSync(distDir);
 		
-		var srcDateTime = new Date(getSrcDir.mtime);
-		var distDateTime = new Date(getDistDir.mtime);
+		var getSrcDir;
+		var getDistDir;
+		var distDates = [];
+		var srcDates = [];
 		
-		var dateList = [];
+		try {
+            getDistDir = fs.readdirSync(distDir);
+			getSrcDir = fs.readdirSync(srcDir);
+        }
+        catch(e) {
+			return true;
+        }
+	
+		for( var i = 0; i < getSrcDir.length; i++) {
+			
+			var fileSrc = getSrcDir[i];
+			var fileStatSrc = fs.statSync(srcDir + '/' + fileSrc);
+			var fileDateSrc = new Date(fileStatSrc.mtime);
+			srcDates.push(fileDateSrc.getTime());
+			
+		}
 		
-		fs.readdirSync(srcDir,function(err, files) {
-			if (err) throw err;
-			files.forEach(function(file){
-				var curFile = fs.statSync(srcDir);
-				dateList.push(new Date(curFile.mtime));
-			});
-		});
-
-		if(srcDateTime.getTime() > distDateTime.getTime()) {
+		for( var x = 0; x < getDistDir.length; x++) {
+			
+			var fileDist = getSrcDir[i];
+			var fileStatDist = fs.statSync(srcDir + '/' + fileDist);
+			var fileDateDist = new Date(fileStatDist.mtime);
+			distDates.push(fileDateDist.getTime());
+		}
+		
+		var maxSrcDate = Math.max.apply(null, srcDates);
+		var maxDistDate = Math.max.apply(null, distDates);
+	
+		if(maxSrcDate > maxDistDate) {
 			return true;
 		} else {
 			return false;

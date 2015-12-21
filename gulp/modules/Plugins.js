@@ -34,6 +34,7 @@ var Plugins = function() {
 	this.nugetpack = require('gulp-nuget-pack');
 	this.requireDir = require('require-dir');
 	this.applyTemplate = require('gulp-apply-template');
+	this.debug = require('gulp-debug');
 }
 
 module.exports = new Plugins();

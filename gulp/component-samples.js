@@ -195,42 +195,142 @@ gulp.task('component-samples-template', ['build-component-data', 'component-samp
             .on('error', errorHandling.onErrorInPipe);
 }));
 
+gulp.task('template-components', function() {
+   
+   var folderList = utilities.getFolders(config.paths.componentsPath);
+    for(var i=0; i < folderList.length; i++) {
+       
+    // var currentFolder = FoldersModel.componentFolders[i];
+    //    var folderName = FoldersModel.componentFolders[i]["folderName"];
+    //    var currentFiles = currentFolder["files"];
+    //    var fileHasChanged = false;
+    //    var foldersHaveBeenAdded = FoldersModel.hasCatalogBeenCreated();
+       
+    //    for(var x=0; x < currentFiles.length; x++) {
+    //        var currentFile = currentFiles[x];
+    //        var currentFileName = currentFile.fileName;
+    //        var modifiedTime = currentFile.modifiedTime;
+    //        var newModifiedTime = utilities.getFileModifiedTime(folderName + '/' + currentFileName);
+    //        console.log(modifiedTime.getTime(), newModifiedTime.getTime());
+    //        if(modifiedTime.getTime() < newModifiedTime.getTime()) {
+    //            // Add this folder to the pipe
+    //            fileHasChanged = true;
+    //        }
+    //    }
+    
+       var folderName = folderList[i];
+       var srcFolderName = config.paths.componentsPath + '/' + folderName;
+       var distFolderName = config.paths.distComponents + '/' + folderName;
+       
+       var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName);
+       var mergedStreams = plugins.mergeStream();
+       
+       console.log(hasFileChanged);
+       
+       if(hasFileChanged) {
+           //Create a pipe with the whole folder
+           
+           // Glob all files together
+           // Check if they need to be wrapped
+           // Concat them
+           // Run stuff
+           
+           var manifest = utilities.parseManifest(folderName);
+           var filesArray = manifest.fileOrder;
+           var componentPipe;
+           
+           var fileGlob = utilities.getManifestFileList(filesArray, config.paths.componentsPath + '/' + folderName);
+           
+           componentPipe = gulp.src(fileGlob);
+           
+           if(manifest.wrapBranches == true) {
+               componentPipe.pipe(plugins.wrap('<div class="sample-wrapper"><%= contents %></div>'))
+           }
+           // Combine all files in the pipe
+           componentPipe.pipe(plugins.concat("index.html"));
+           
+           // Wrap all combined files with template
+           componentPipe.pipe(plugins.wrap({
+               src: config.paths.templatePath + '/componentSamplesTemplate.html',
+               data: {
+                   componentName: folderName
+               }
+           }));
+           
+           // Add Debugging
+           componentPipe.pipe(plugins.debug());
+           
+           //Rename the files
+           // componentPipe.pipe(plugins.rename('index.html'));
+           
+           // Move the files to a new location now
+           componentPipe.pipe(gulp.dest(config.paths.distSamples + '/Components/' +  folderName));
+           
+           // Add stream
+           mergedStreams.add(componentPipe);
+           
+       }
+   }
+   
+   return mergedStreams;
+
+});
+
 
 //New Ultra fast Gulp task
-gulp.task('mega-components', function() {
+gulp.task('catalog-components', function() {
     
-    // Foreach through the folder list
-    // Check if the destination folder is older than the src folder
-        //If older than rebuild this whole folder and output to samples components
-        //If not then dont do it at all
-        
     var folderList = utilities.getFolders(config.paths.componentsPath);
     for(var i=0; i < folderList.length; i++) {
         
         var currentFolderName = config.paths.componentsPath + '/' + folderList[i];
+        var folderName = folderList[i];
+        var folderIndex = FoldersModel.getFolderIndex(FoldersModel.componentFolders, currentFolderName);
+        var distFolder = false;
         
-        // Add folder for tracking
-        FoldersModel.addFolder(currentFolderName, '');
+        // Check if dist folder actually exists, if not then remove it from the catalog
+        try {
+            fs.statSync(config.paths.distSampleComponents);
+            distFolder = true;
+        }
+        catch(e) {
+            distFolder = false;
+            FoldersModel.clearFolders();
+        }
+       
+		if(folderIndex < 0) {
+            // Add folder for tracking
+            FoldersModel.addFolder(currentFolderName, '');
+        }
+       
         var files = [];
         files = fs.readdirSync(currentFolderName);
         
-        // console.log(files);
         for(var x=0; x < files.length; x++) {
+            
             var currentFile = files[x];
-            FoldersModel.addFile(
-                currentFolderName,
-                currentFile,
-                utilities.getFileModifiedTime(currentFolderName + '/' + files[x])
+            var fileExists = FoldersModel.getFileIndex(
+                FoldersModel.componentFolders,
+                currentFolderName, 
+                currentFile
             );
-            // console.log("made it herrr");
+            
+            if(fileExists < 0) {
+                FoldersModel.addFile(
+                    currentFolderName,
+                    currentFile,
+                    utilities.getFileModifiedTime(currentFolderName + '/' + files[x])
+                );
+            }
         }
-       
-        // if(hasFolderChanged) {
-        //     // We need to get this folder
-        // }  
-     }
-     console.log(FoldersModel.componentFolders);
-   
+        
+        if(i == folderList.length - 1) {
+            return;
+        }
+        
+    }
+     
+     // console.log(FoldersModel.componentFolders);
 });
 
 gulp.task('component-samples-add-js', ['build-component-data'], plugins.folders(config.paths.componentsPath, function (folder) {

@@ -1,9 +1,14 @@
 var ObjectHelper = function() {
 	
 	this.findKey = function(sourceObj, id) {
-		return sourceObj.filter(function( obj ) {
-			return +obj.id === +id;
-		})[ 0 ];
+		var index = -1;
+		sourceObj.some(function(entry, i) {
+			// console.log(entry);
+			if (id in entry) {
+				index = i;
+				return true;
+			}
+		});
 	}
 	
 	this.findIndexByKey = function(sourceArray, key) {

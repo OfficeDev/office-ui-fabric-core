@@ -59,6 +59,7 @@ var Utilities = function() {
 			getSrcDir = fs.readdirSync(srcDir);
         }
         catch(e) {
+			console.log(e);
 			return true;
         }
 	
@@ -73,7 +74,7 @@ var Utilities = function() {
 		
 		for( var x = 0; x < getDistDir.length; x++) {
 			
-			var fileDist = getSrcDir[i];
+			var fileDist = getSrcDir[x];
 			var fileStatDist = fs.statSync(srcDir + '/' + fileDist);
 			var fileDateDist = new Date(fileStatDist.mtime);
 			distDates.push(fileDateDist.getTime());
@@ -81,6 +82,8 @@ var Utilities = function() {
 		
 		var maxSrcDate = Math.max.apply(null, srcDates);
 		var maxDistDate = Math.max.apply(null, distDates);
+		
+		console.log(maxSrcDate, maxDistDate);
 	
 		if(maxSrcDate > maxDistDate) {
 			return true;

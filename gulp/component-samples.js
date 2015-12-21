@@ -198,6 +198,7 @@ gulp.task('component-samples-template', ['build-component-data', 'component-samp
 gulp.task('template-components', function() {
    
    var folderList = utilities.getFolders(config.paths.componentsPath);
+   var streams = [];
     for(var i=0; i < folderList.length; i++) {
        
     // var currentFolder = FoldersModel.componentFolders[i];
@@ -220,7 +221,7 @@ gulp.task('template-components', function() {
     
        var folderName = folderList[i];
        var srcFolderName = config.paths.componentsPath + '/' + folderName;
-       var distFolderName = config.paths.distComponents + '/' + folderName;
+       var distFolderName = config.paths.distSampleComponents + '/' + folderName;
        
        var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName);
        var mergedStreams = plugins.mergeStream();
@@ -267,13 +268,12 @@ gulp.task('template-components', function() {
            componentPipe.pipe(gulp.dest(config.paths.distSamples + '/Components/' +  folderName));
            
            // Add stream
-           mergedStreams.add(componentPipe);
+           //mergedStreams.add(componentPipe);
+           streams.push(componentPipe);
            
        }
    }
    
-   return mergedStreams;
-
 });
 
 

@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="<%= componentName %>.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  
-  <%= jstag %>
  
   <script type="text/javascript">
     $(document).ready(function() {
@@ -33,12 +31,14 @@
       if (typeof fabric !== "undefined") {
         if ('<%= componentName %>' in fabric) {
           var element = document.querySelector('.ms-<%= componentName %>');
-          var component = new fabric['<%= componentName %>'](element);
+          var component = new fabric['<%=  componentName %>'](element);
         }
       }
 
     });
   </script>
+  
+  <%= jsLinks %>
 
   <!-- Styles specifically for this page, not required for proper display on components  -->
   <style type="text/css">
@@ -100,7 +100,7 @@
 <body>
   <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker"><%= componentName %></h1>
   <div id="componentWrapper">
-    <%= components %>
+    <%= contents %>
   </div>
 </body>
 </html>

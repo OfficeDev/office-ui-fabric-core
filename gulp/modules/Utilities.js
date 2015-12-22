@@ -46,9 +46,25 @@ var Utilities = function() {
 		var fileStats = fs.statSync(file);
 		return new Date(fileStats.mtime);
 	}
+    
+    this.getFilesByExtension = function(srcDir, extName) {
+        try {
+            var files = fs.readdirSync(srcDir);
+            var filesWithExt = [];
+            for(var i = 0; i < files.length; i++) {
+                var currentFile = files[i];
+                if(path.extname(currentFile) == extName) {
+                    filesWithExt.push(currentFile);
+                }
+            }
+            return filesWithExt;
+        }
+        catch(e) {
+            return [];
+        }
+    }
 	
 	this.hasFileChangedInFolder = function(srcDir, distDir) {
-		
 		var getSrcDir;
 		var getDistDir;
 		var distDates = [];
@@ -59,32 +75,26 @@ var Utilities = function() {
 			getSrcDir = fs.readdirSync(srcDir);
         }
         catch(e) {
-			console.log(e);
-			return true;
+			return true; // We will return true if the directory doesnt exist
         }
 	
 		for( var i = 0; i < getSrcDir.length; i++) {
-			
 			var fileSrc = getSrcDir[i];
 			var fileStatSrc = fs.statSync(srcDir + '/' + fileSrc);
-			var fileDateSrc = new Date(fileStatSrc.mtime);
-			srcDates.push(fileDateSrc.getTime());
-			
+			var fileDateSrc = fileStatSrc.mtime.getTime();
+			srcDates.push(fileDateSrc);
 		}
 		
 		for( var x = 0; x < getDistDir.length; x++) {
-			
-			var fileDist = getSrcDir[x];
-			var fileStatDist = fs.statSync(srcDir + '/' + fileDist);
-			var fileDateDist = new Date(fileStatDist.mtime);
-			distDates.push(fileDateDist.getTime());
+			var fileDist = getDistDir[x];
+			var fileStatDist = fs.statSync(distDir + '/' + fileDist);
+			var fileDateDist = fileStatDist.mtime.getTime();
+			distDates.push(fileDateDist);
 		}
 		
 		var maxSrcDate = Math.max.apply(null, srcDates);
 		var maxDistDate = Math.max.apply(null, distDates);
-		
-		console.log(maxSrcDate, maxDistDate);
-	
+	 
 		if(maxSrcDate > maxDistDate) {
 			return true;
 		} else {

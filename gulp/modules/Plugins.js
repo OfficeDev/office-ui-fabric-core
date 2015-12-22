@@ -35,6 +35,8 @@ var Plugins = function() {
 	this.requireDir = require('require-dir');
 	this.applyTemplate = require('gulp-apply-template');
 	this.debug = require('gulp-debug');
+    this.gulpif = require('gulp-if');
+    this.changed = require('gulp-changed');
 }
 
 module.exports = new Plugins();

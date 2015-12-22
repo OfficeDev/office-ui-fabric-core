@@ -3,6 +3,9 @@ var config = require('./Config');
 var pkg = require('../../package.json');
 
 var Config = function() {
+    //Debug Mode
+    this.debugMode = true;
+    
 	// Define paths.
 	this.distPath = 'dist';
 	this.srcPath = 'src';

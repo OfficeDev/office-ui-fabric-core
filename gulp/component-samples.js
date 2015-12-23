@@ -57,7 +57,7 @@ gulp.task('ComponentSamples-less',  function() {
         var destFolder = config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = config.paths.componentsPath + '/' + componentName;
         var distFolderName = config.paths.distSampleComponents + '/' + componentName;
-        var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName);
+        var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
         
         if(hasFileChanged) {
             return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
@@ -80,7 +80,7 @@ gulp.task('ComponentSamples-build', function() {
        var folderName = folderList[i];
        var srcFolderName = config.paths.componentsPath + '/' + folderName;
        var distFolderName = config.paths.distSampleComponents + '/' + folderName;
-       var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName);
+       var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
        if(hasFileChanged) {
            

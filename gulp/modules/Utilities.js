@@ -41,17 +41,12 @@ var Utilities = function() {
 					return fs.statSync(path.join(dir, file)).isDirectory();
 				});
 	}
-	
-	this.getFileModifiedTime = function(file) {
-		var fileStats = fs.statSync(file);
-		return new Date(fileStats.mtime);
-	}
     
     this.getFilesByExtension = function(srcDir, extName) {
         try {
             var files = fs.readdirSync(srcDir);
-            var filesWithExt = [];
             if(extName.length > 0) {
+            	var filesWithExt = [];
                 for(var i = 0; i < files.length; i++) {
                     var currentFile = files[i];
                     if(path.extname(currentFile) == extName) {
@@ -59,8 +54,9 @@ var Utilities = function() {
                     }
                 }
                 return filesWithExt;
-            }
-            return files;
+            } else {
+            	return files;
+			}
         }
         catch(e) {
             return [];
@@ -78,7 +74,7 @@ var Utilities = function() {
         return fileDates;
     }
 	
-	this.hasFileChangedInFolder = function(srcDir, distDir, extension) {
+	this.hasFileChangedInFolder = function(srcDir, distDir, srcExtension, distExtension) {
 		var getSrcDir;
 		var getDistDir;
 		var distDates = [];
@@ -86,9 +82,13 @@ var Utilities = function() {
         var maxSrcDate = 0;
         var maxDistDate = 0;
 		
+		if(distExtension == undefined) {
+			distExtension = srcExtension;
+		}
+		
 		try {
-            getDistDir = this.getFilesByExtension(distDir);
-			getSrcDir = this.getFilesByExtension(srcDir);
+			getDistDir = this.getFilesByExtension(distDir, distExtension);
+			getSrcDir = this.getFilesByExtension(srcDir, srcExtension);
         }
         catch(e) {
 			return true; // We will return true if the directory doesnt exist
@@ -96,20 +96,6 @@ var Utilities = function() {
 	   
         srcDates = this.getFilesDates(getSrcDir, srcDir);
         distDates = this.getFilesDates(getDistDir, distDir);
-        
-		// for( var i = 0; i < getSrcDir.length; i++) {
-		// 	var fileSrc = getSrcDir[i];
-		// 	var fileStatSrc = fs.statSync(srcDir + '/' + fileSrc);
-		// 	var fileDateSrc = fileStatSrc.mtime.getTime();
-		// 	srcDates.push(fileDateSrc);
-		// }
-		
-		// for( var x = 0; x < getDistDir.length; x++) {
-		// 	var fileDist = getDistDir[x];
-		// 	var fileStatDist = fs.statSync(distDir + '/' + fileDist);
-		// 	var fileDateDist = fileStatDist.mtime.getTime();
-		// 	distDates.push(fileDateDist);
-		// }
 		
 		maxSrcDate = Math.max.apply(null, srcDates);
 		maxDistDate = Math.max.apply(null, distDates);

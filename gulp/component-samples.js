@@ -118,7 +118,7 @@ gulp.task('ComponentSamples-build', function() {
                     jsLinks: jsLinks
                 }
            ))
-            .on('error', errorHandling.onErrorInPipe)
+           .on('error', errorHandling.onErrorInPipe)
            .pipe(plugins.debug(
                 {
                     title: folderName

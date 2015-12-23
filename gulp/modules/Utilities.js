@@ -51,49 +51,68 @@ var Utilities = function() {
         try {
             var files = fs.readdirSync(srcDir);
             var filesWithExt = [];
-            for(var i = 0; i < files.length; i++) {
-                var currentFile = files[i];
-                if(path.extname(currentFile) == extName) {
-                    filesWithExt.push(currentFile);
+            if(extName.length > 0) {
+                for(var i = 0; i < files.length; i++) {
+                    var currentFile = files[i];
+                    if(path.extname(currentFile) == extName) {
+                        filesWithExt.push(currentFile);
+                    }
                 }
+                return filesWithExt;
             }
-            return filesWithExt;
+            return files;
         }
         catch(e) {
             return [];
         }
     }
+    
+    this.getFilesDates = function(files, filePath) {
+        var fileDates = [];
+        for( var i = 0; i < files.length; i++) {
+			var fileSrc = files[i];
+			var fileStatSrc = fs.statSync(filePath + '/' + fileSrc);
+			var fileDateSrc = fileStatSrc.mtime.getTime();
+			fileDates.push(fileDateSrc);
+		}
+        return fileDates;
+    }
 	
-	this.hasFileChangedInFolder = function(srcDir, distDir) {
+	this.hasFileChangedInFolder = function(srcDir, distDir, extension) {
 		var getSrcDir;
 		var getDistDir;
 		var distDates = [];
 		var srcDates = [];
+        var maxSrcDate = 0;
+        var maxDistDate = 0;
 		
 		try {
-            getDistDir = fs.readdirSync(distDir);
-			getSrcDir = fs.readdirSync(srcDir);
+            getDistDir = this.getFilesByExtension(distDir);
+			getSrcDir = this.getFilesByExtension(srcDir);
         }
         catch(e) {
 			return true; // We will return true if the directory doesnt exist
         }
-	
-		for( var i = 0; i < getSrcDir.length; i++) {
-			var fileSrc = getSrcDir[i];
-			var fileStatSrc = fs.statSync(srcDir + '/' + fileSrc);
-			var fileDateSrc = fileStatSrc.mtime.getTime();
-			srcDates.push(fileDateSrc);
-		}
+	   
+        srcDates = this.getFilesDates(getSrcDir, srcDir);
+        distDates = this.getFilesDates(getDistDir, distDir);
+        
+		// for( var i = 0; i < getSrcDir.length; i++) {
+		// 	var fileSrc = getSrcDir[i];
+		// 	var fileStatSrc = fs.statSync(srcDir + '/' + fileSrc);
+		// 	var fileDateSrc = fileStatSrc.mtime.getTime();
+		// 	srcDates.push(fileDateSrc);
+		// }
 		
-		for( var x = 0; x < getDistDir.length; x++) {
-			var fileDist = getDistDir[x];
-			var fileStatDist = fs.statSync(distDir + '/' + fileDist);
-			var fileDateDist = fileStatDist.mtime.getTime();
-			distDates.push(fileDateDist);
-		}
+		// for( var x = 0; x < getDistDir.length; x++) {
+		// 	var fileDist = getDistDir[x];
+		// 	var fileStatDist = fs.statSync(distDir + '/' + fileDist);
+		// 	var fileDateDist = fileStatDist.mtime.getTime();
+		// 	distDates.push(fileDateDist);
+		// }
 		
-		var maxSrcDate = Math.max.apply(null, srcDates);
-		var maxDistDate = Math.max.apply(null, distDates);
+		maxSrcDate = Math.max.apply(null, srcDates);
+		maxDistDate = Math.max.apply(null, distDates);
 	 
 		if(maxSrcDate > maxDistDate) {
 			return true;

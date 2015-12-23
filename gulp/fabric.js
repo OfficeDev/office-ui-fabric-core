@@ -26,13 +26,13 @@ gulp.task('Fabric-nuke', function () {
 gulp.task('Fabric-copyLess', function () {
     // Copy LESS files.
     return gulp.src('src/less/*')
-            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
+            .pipe(plugins.changed(config.paths.distLess))
                 .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.gulpif(config.debugMode, plugins.debug({
                     title: "Moving LESS files over to Dist"
             })))
                 .on('error', errorHandling.onErrorInPipe)
-            .pipe(gulp.dest(config.paths.distPath + '/less'))
+            .pipe(gulp.dest(config.paths.distLess))
                 .on('error', errorHandling.onErrorInPipe);
 });
 
@@ -41,11 +41,9 @@ gulp.task('Fabric-copyLess', function () {
 // ----------------------------------------------------------------------------
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
-gulp.task('Fabric-buildLess', ['clean-fabric'], function () {
+gulp.task('Fabric-buildLess', function () {
     // Baseline set of tasks for building Fabric CSS.
     var fabric = gulp.src([config.paths.srcLess + '/' + 'fabric.less'])
-            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
-                .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.gulpif(config.debugMode, plugins.debug({
                     title: "Building Core Fabric LESS"
             })))
@@ -55,6 +53,8 @@ gulp.task('Fabric-buildLess', ['clean-fabric'], function () {
             .pipe(plugins.rename('fabric.css'))
                 .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
                 .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
@@ -76,8 +76,6 @@ gulp.task('Fabric-buildLess', ['clean-fabric'], function () {
                 
     // Build full and minified Fabric RTL CSS.
     var fabricRtl = gulp.src(config.paths.srcLess + '/' + 'fabric.rtl.less')
-            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
-                .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.gulpif(config.debugMode, plugins.debug({
                     title: "Building RTL Fabric LESS"
             })))
@@ -89,6 +87,8 @@ gulp.task('Fabric-buildLess', ['clean-fabric'], function () {
             .pipe(plugins.rename('fabric.rtl.css'))
                 .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
+                .on('error', errorHandling.onErrorInPipe)
+            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
                 .on('error', errorHandling.onErrorInPipe)
             .pipe(plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],

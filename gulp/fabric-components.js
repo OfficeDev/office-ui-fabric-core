@@ -1,7 +1,4 @@
 var gulp = require('gulp');
-
-var storedFiles = {};
-
 var utilities = require('./modules/Utilities');
 var banners = require('./modules/Banners');
 var fabricServer = require('./modules/Server');

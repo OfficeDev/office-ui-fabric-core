@@ -33,7 +33,7 @@ var Config = function() {
             'urlPath': '/css',
             'folderPath': '../css'
         }
-    ]
+    ];
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",

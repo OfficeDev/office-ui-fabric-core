@@ -28,15 +28,15 @@ gulp.task('ComponentSamples-copyAssets', function() {
             config.paths.componentsPath + '/**/*.js',
             config.paths.componentsPath + '/**/*.gif'
         ])
-        .on('error', errorHandling.onErrorInPipe)
+            .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.changed(config.paths.distSamples + '/Components'))
-        .on('error', errorHandling.onErrorInPipe)
+            .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.gulpif(config.debugMode, plugins.debug({
                     title: "Copying Component Assets"
                 })))
-        .on('error', errorHandling.onErrorInPipe)
+            .on('error', errorHandling.onErrorInPipe)
         .pipe(gulp.dest(config.paths.distSamples + '/Components'))
-        .on('error', errorHandling.onErrorInPipe);
+            .on('error', errorHandling.onErrorInPipe);
 });
 
 //

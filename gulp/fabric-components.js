@@ -9,6 +9,8 @@ var config = require('./modules/Config');
 var messaging = require('./modules/Messaging');
 var errorHandling = require('./modules/ErrorHandling');
 var plugins = require('./modules/Plugins');
+var ComponentHelper = require('./modules/ComponentHelper');
+var folderList = utilities.getFolders(config.paths.componentsPath);
 
 //
 // Clean/Delete Tasks
@@ -23,10 +25,10 @@ gulp.task('FabricComponents-nuke', function () {
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('FabricComponents-copyAssets', ['clean-fabric-components'], function () {
+gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
     return gulp.src(config.paths.componentsPath + '/**')
-        .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
+        .pipe(plugins.changed(config.paths.distComponents))
             .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.gulpif(config.debugMode, plugins.debug({
                 title: "Moving Fabric Component Assets to Dist"
@@ -40,13 +42,13 @@ gulp.task('FabricComponents-copyAssets', ['clean-fabric-components'], function (
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-gulp.task('fabric-components-less', ['clean-fabric-components'], function () {
+gulp.task('FabricComponents-less', function () {
 
-    var components = gulp.src(config.paths.srcLess + '/fabric.components.less')
+    return gulp.src(config.paths.srcLess + '/fabric.components.less')
         .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
             .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.gulpif(config.debugMode, plugins.debug({
-                title: "Moving Fabric Component Assets to Dist"
+                title: "Building Fabric Components Less into One Files"
         })))
             .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.less())
@@ -88,27 +90,45 @@ gulp.task('fabric-components-less', ['clean-fabric-components'], function () {
             .on('error', errorHandling.onErrorInPipe)
         .pipe(gulp.dest(config.paths.distCSS))
             .on('error', errorHandling.onErrorInPipe);
+});
 
-    var componentsCSS = buildEachComponentCss(config.paths.distComponents + '/');
-    return plugins.mergeStream(components, componentsCSS);
+gulp.task('FabricComponents-less', function () {
+    return folderList.map(function(componentName) {
+        var manifest = utilities.parseManifest(componentName);
+        var deps = manifest.dependencies || [];
+        var srcTemplate = config.paths.templatePath + '/'+ 'component-manifest-template.less';
+        var destFolder = config.paths.distComponents + '/' + componentName;
+        var srcFolderName = config.paths.componentsPath + '/' + componentName;
+        var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
+        
+        if(hasFileChanged) {
+            return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
+        } else {
+            return;
+        }
+    });
 });
 
 //
 // JS Only tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
-
+gulp.task('FabricComponents-Movejs', function() {
     return gulp.src(config.paths.componentsPath + '/**/*.js')
         .pipe(plugins.concat('jquery.fabric.js'))
             .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.header(banners.getJSCopyRight()))
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.changed(config.paths.distJS))
+            .on('error', errorHandling.onErrorInPipe)
+        .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+                title: "Moving Fabric Component JS"
+        })))
         .pipe(gulp.dest(config.paths.distJS))
             .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.rename('jquery.fabric.min.js'))
             .on('error', errorHandling.onErrorInPipe)
         .pipe(plugins.uglify())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.header(banners.getJSCopyRight()))
             .on('error', errorHandling.onErrorInPipe)
         .pipe(gulp.dest(config.paths.distJS));
 });
@@ -118,17 +138,17 @@ gulp.task('fabric-components-js', ['clean-fabric-components'], function() {
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
-gulp.task('build-fabric-components', ['clean-fabric-components', 'copy-fabric-components', 'fabric-components-less', 'fabric-components-js']);
+gulp.task('FabricComponents', ['FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-Movejs']);
 
 //
 // Fabric Messages
 // ----------------------------------------------------------------------------
 
-gulp.task('fabric-components-finished', ['build-fabric-components'], function () {
+gulp.task('FabricComponents-finished', ['FabricComponents'], function () {
     console.log(messaging.generateSuccess(' Components build was successful! Yay!', true));
 });
 
-gulp.task('fabric-components-updated', ['build-fabric-components'], function () {
+gulp.task('FabricComponents-updated', ['FabricComponents'], function () {
     console.log(messaging.generateSuccess(' Components updated successfully! Yay!'));
 });
 
@@ -138,8 +158,8 @@ gulp.task('fabric-components-updated', ['build-fabric-components'], function () 
 // ----------------------------------------------------------------------------
 
 // Watches all src fabric components and builds fabric.components.
-gulp.task('watch:fabric-components', ['build-fabric-components', 'fabric-components-finished'], function () {
+gulp.task('FabricComponents-watch', ['FabricComponents', 'FabricComponents-finished'], function () {
     return gulp.watch(config.paths.componentsPath + '/**/*', plugins.batch(function (events, done) {
-        plugins.runSequence('build-fabric-components', 'fabric-components-updated', done);
+        plugins.runSequence('FabricComponents', 'FabricComponents-updated', done);
     }));
 });

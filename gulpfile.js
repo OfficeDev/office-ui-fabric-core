@@ -32,8 +32,6 @@ gulp.task('fabric-server', function() {
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
-// All Copy tasks
-gulp.task('copy', ['copy-fabric', 'copy-fabric-components', 'copy-component-samples', 'copy-samples']);
 
 
 //
@@ -41,13 +39,11 @@ gulp.task('copy', ['copy-fabric', 'copy-fabric-components', 'copy-component-samp
 // ----------------------------------------------------------------------------
 
 var watchTasks = [
-    'build-fabric', 
-    'build-fabric-components', 
-    'build-component-samples', 
-    'build-samples', 
-    'build-components-page', 
-    'fabric-server', 
-    'fabric-all-server'
+    'Fabric', 
+    'FabricComponents', 
+    'ComponentSamples', 
+    'Samples',
+    'fabric-server'
 ];
 
 // Watch and build Fabric when sources change.

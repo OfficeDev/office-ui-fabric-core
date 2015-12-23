@@ -21,7 +21,7 @@ var Config = function() {
 		srcPath: this.srcPath,
 		srcSamples: this.srcPath + '/samples',
 		componentsPath : 'src/components',
-		lessPath: this.srcPath + '/less',
+		srcLess: this.srcPath + '/less',
 		templatePath : this.srcPath + '/templates'
 	};
 	// Server Configuration
@@ -59,6 +59,7 @@ var Config = function() {
     
     // Build Messsages
     this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
+    this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
 	
 }
 

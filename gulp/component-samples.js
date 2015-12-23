@@ -124,7 +124,6 @@ gulp.task('ComponentSamples-build', function() {
    }
 });
 
-
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
@@ -137,7 +136,6 @@ gulp.task('ComponentSamples', ComponentSamplesTasks);
 //
 // Fabric Messages
 // ----------------------------------------------------------------------------
-
 gulp.task('ComponentSamples-finished', ComponentSamplesTasks, function () {
     console.log(messaging.generateSuccess(config.componentSamplesFinished, true));
 });

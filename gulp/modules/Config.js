@@ -56,6 +56,9 @@ var Config = function() {
 		{src: this.paths.distJS, dest: "/content/scripts/"},
 		{src: this.paths.distLess, dest: "/content/less/"}
 	];
+    
+    // Build Messsages
+    this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
 	
 }
 

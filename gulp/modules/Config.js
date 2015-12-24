@@ -3,7 +3,7 @@ var pkg = require('../../package.json');
 
 var Config = function() {
     //Debug Mode
-    this.debugMode = true;
+    this.debugMode = false;
     
 	// Define paths.
 	this.distPath = 'dist';

@@ -26,7 +26,7 @@ var Config = function() {
 	// Server Configuration
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
-	this.projectDirectory =  path.resolve(__dirname, '../' + this.paths.distSamples);
+	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distSamples);
 	this.servePaths = [
         {
             'urlPath': '/css',

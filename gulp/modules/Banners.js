@@ -7,7 +7,7 @@ var Banners = function() {
 	this.getBannerData = function() {
 		return {
 			pkg : Plugins.pkg,
-			date: Utilities.getDate(),
+			date: new Date(),
 			monthNames: Utilities.getMonths()
 		}
 	}

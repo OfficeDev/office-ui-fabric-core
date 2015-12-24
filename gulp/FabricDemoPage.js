@@ -7,8 +7,6 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var folderList = Utilites.getFolders(Config.paths.srcSamples);
 
-var ComponentsPageHelper = require('./modules/ComponentsPageHelpers');
-
 var samplesLinks = "";
 var componentLinks = [];
 

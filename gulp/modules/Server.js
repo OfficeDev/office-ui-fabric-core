@@ -37,30 +37,19 @@ var FabricServer = function() {
 	}
 	
 	this.start = function() {
+		// Check for any paths that are outside of the root serve directory
+		if(this.specificPaths.length > 0){
+            console.log("hmmmmmmm");
+			for(var i = 0; i < this.specificPaths.length; i++) {
+                var pathJoined = path.join(this.rootPath, this.specificPaths[i].folderPath);
+                console.log(pathJoined);
+				expressServer.use(this.specificPaths[i].urlPath, express.static(pathJoined));
+			}
+		}
 		
-		// expressServer.configure(function() {
-		// 	expressServer.use(function(err, req, res, next) {
-		// 		res.status(500);
-		// 		res.render('error', { error: err });
-		// 	});
-		// });
-		
-		// // Check for any paths that are outside of the root serve directory
-		// if(this.specificPaths.length > 0){
-		// 	for(var i = 0; i < this.specificPaths; i++) {
-		// 		expressServer.use(this.specificPaths[i].urlPath, express.static(path.join(this.rootPath, this.specificPaths[i].folderPath)));
-		// 	}
-		// }
-		
-		// // Serve up root APP director for express
-        // expressServer.use(express.static(path.join(this.rootPath)));
-		
-        //return expressServer.listen(this.portNum);
-		
-		return connect.server({
-			port: this.portNum,
-			root: [path.join(this.rootPath)]
-		});
+		// Serve up root APP director for express
+        expressServer.use(express.static(path.join(this.rootPath)));
+        return expressServer.listen(this.portNum);
 	}
 	
 }

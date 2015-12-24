@@ -1,12 +1,8 @@
 var fs = require('fs');
-var config = require('./Config');
+var Config = require('./Config');
 var path = require('path');
 
 var Utilities = function() {
-	
-	this.getDate = function() {
-		return new Date();
-	}
 	
 	this.getMonths = function() {
 		return [
@@ -32,7 +28,7 @@ var Utilities = function() {
 	}
 	
 	this.parseManifest = function(folder) {
-        var manifest = fs.readFileSync(config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json');
+        var manifest = fs.readFileSync(Config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json');
 		return JSON.parse(manifest.toString());
 	}
 	

@@ -42,11 +42,12 @@ var watchTasks = [
     'Fabric', 
     'FabricComponents', 
     'ComponentSamples', 
-    'Samples'
+    'Samples',
+    'FabricDemoPage',
 ];
 
 // Watch and build Fabric when sources change.
-gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'fabric-all-finished'], function () {
+gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(watchTasks, done);
     }));
@@ -56,8 +57,8 @@ gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples',
 // Default Build
 // ----------------------------------------------------------------------------
 
-gulp.task('build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'fabric-all-finished']);
-gulp.task('re-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'fabric-all-updated']);
+gulp.task('build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'All-finished']);
+gulp.task('re-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'FabricDemoPage', 'All-updated']);
 
 gulp.task('default', ['build']);
 
@@ -65,15 +66,15 @@ gulp.task('default', ['build']);
 // Fabric Messages
 // ----------------------------------------------------------------------------
 
-gulp.task('fabric-all-finished', watchTasks, function () {
+gulp.task('All-finished', watchTasks, function () {
     console.log(ConsoleHelper.generateSuccess('All Fabric built successfully, you may now celebrate and dance!', true));
 });
 
-gulp.task('fabric-all-server', watchTasks, function () {
-    console.log(ConsoleHelper.generateSuccess('Fabric built successfully! ' + "\r\n" + 'Fabric samples located at ' + Config.projectURL + ':' + config.port, false));
+gulp.task('All-server', watchTasks, function () {
+    console.log(ConsoleHelper.generateSuccess('Fabric built successfully! ' + "\r\n" + 'Fabric samples located at ' + Config.projectURL + ':' + Config.port, false));
 });
 
-gulp.task('fabric-all-updated', watchTasks, function () {
+gulp.task('All-updated', watchTasks, function () {
     console.log(ConsoleHelper.generateSuccess('All Fabric parts updated successfully! Yay!', true));
 });
 

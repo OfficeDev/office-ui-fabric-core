@@ -1,11 +1,11 @@
 var gulp = require('gulp');
 
-var utilities = require('./modules/Utilities');
-var config = require('./modules/Config');
-var messaging = require('./modules/Messaging');
-var errorHandling = require('./modules/ErrorHandling');
-var plugins = require('./modules/Plugins');
-var folderList = utilities.getFolders(config.paths.srcSamples);
+var Utilites = require('./modules/Utilities');
+var Config = require('./modules/Config');
+var ConsoleHelper = require('./modules/ConsoleHelper');
+var ErrorHandling = require('./modules/ErrorHandling');
+var Plugins = require('./modules/Plugins');
+var folderList = Utilites.getFolders(Config.paths.srcSamples);
 
 //
 // Clean/Delete Tasks
@@ -13,7 +13,7 @@ var folderList = utilities.getFolders(config.paths.srcSamples);
 
 
 gulp.task('Samples-nuke', function () {
-    return plugins.del.sync([config.paths.distSamples + '/*', '!' + config.paths.distSamples + '/{Components, Components/**}']);
+    return Plugins.del.sync([Config.paths.distSamples + '/*', '!' + Config.paths.distSamples + '/{Components, Components/**}']);
 });
 
 //
@@ -22,13 +22,13 @@ gulp.task('Samples-nuke', function () {
 
 gulp.task('Samples-copyAssets', function () {
     // Copy all samples files.
-    return gulp.src(config.paths.srcSamples + '/**')
-        .pipe(plugins.changed(config.paths.distSamples))
-            .on('error', errorHandling.onErrorInPipe)
-         .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+    return gulp.src(Config.paths.srcSamples + '/**')
+        .pipe(Plugins.changed(Config.paths.distSamples))
+            .on('error', ErrorHandling.onErrorInPipe)
+         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Moving All Sample Assets"
          })))
-        .pipe(gulp.dest(config.paths.distSamples));
+        .pipe(gulp.dest(Config.paths.distSamples));
 });
 
 //
@@ -38,33 +38,33 @@ gulp.task('Samples-copyAssets', function () {
 gulp.task('Samples-buildLess', function () {
     // Build minified Fabric Components CSS for each Component.
     return folderList.map(function(folder) {
-        return gulp.src(config.paths.srcSamples + '/' + folder + '/less/' + folder + '.less')
-                .pipe(plugins.changed(config.paths.distSamples + '/' + folder + '/css', {extension: '.css'}))
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+        return gulp.src(Config.paths.srcSamples + '/' + folder + '/less/' + folder + '.less')
+                .pipe(Plugins.changed(Config.paths.distSamples + '/' + folder + '/css', {extension: '.css'}))
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                            title: "Building Sample LESS for " + folder
                  })))
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.less())
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.autoprefixer({
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.less())
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.autoprefixer({
                     browsers: ['last 2 versions', 'ie >= 9'],
                     cascade: false
                 }))
-                .pipe(plugins.rename(folder + '.css'))
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.cssbeautify())
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.csscomb())
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(gulp.dest(config.paths.distSamples + '/' + folder + '/css'))
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.rename(folder + '.min.css'))
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.cssMinify())
-                    .on('error', errorHandling.onErrorInPipe)
-                .pipe(gulp.dest(config.paths.distSamples + '/' + folder + '/css'))
-                    .on('error', errorHandling.onErrorInPipe);
+                .pipe(Plugins.rename(folder + '.css'))
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.cssbeautify())
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.csscomb())
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(gulp.dest(Config.paths.distSamples + '/' + folder + '/css'))
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.rename(folder + '.min.css'))
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.cssMinify())
+                    .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(gulp.dest(Config.paths.distSamples + '/' + folder + '/css'))
+                    .on('error', ErrorHandling.onErrorInPipe);
     });
 });
 
@@ -90,7 +90,7 @@ gulp.task('Samples-updated', ['Samples'], function () {
 
 // Watch and build Fabric when sources change.
 gulp.task('Samples-watch', ['Samples', 'Samples-finished'], function () {
-    return gulp.watch(config.paths.srcSamples + '/**/*', plugins.batch(function (events, done) {
-        plugins.runSequence('Samples', 'Samples-updated', done);
+    return gulp.watch(Config.paths.srcSamples + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence('Samples', 'Samples-updated', done);
     }));
 });

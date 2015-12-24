@@ -10,10 +10,10 @@ var Utilities = function() {
 	
 	this.getMonths = function() {
 		return [
-					"January", "February", "March",
-					"April", "May", "June", "July",
-					"August", "September", "October",
-					"November", "December"
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
 		];
 	}
 	
@@ -29,18 +29,24 @@ var Utilities = function() {
 			newArray.push(folderPath + '/*.html');
 			return newArray;
 		}
-		
 	}
 	
 	this.parseManifest = function(folder) {
-		return JSON.parse(fs.readFileSync(config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json'));
+        var manifest = fs.readFileSync(config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json');
+		return JSON.parse(manifest.toString());
 	}
 	
 	this.getFolders = function(dir) {
-		 return fs.readdirSync(dir).filter(function(file) {
-					return fs.statSync(path.join(dir, file)).isDirectory();
-				});
-	}
+        try {
+		  var folders = fs.readdirSync(dir).filter(function(file) {
+                            return fs.statSync(path.join(dir, file)).isDirectory();
+                        });
+          return folders;
+        }
+        catch(e) {
+            return [];
+        }
+    }
     
     this.getFilesByExtension = function(srcDir, extName) {
         try {

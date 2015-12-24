@@ -1,9 +1,8 @@
 var fs = require('fs');
-var config = require('./Config');
 var path = require('path');
 var colors = require('colors/safe');
 
-var Messaging = function() {
+var ConsoleHelper = function() {
 	this.generateSuccess = function(message, showTip) {
 		var spacing = "\r\n";
 		var tipsMessage = "";
@@ -17,4 +16,4 @@ var Messaging = function() {
 	}
 }
 
-module.exports = new Messaging();
+module.exports = new ConsoleHelper();

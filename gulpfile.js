@@ -1,38 +1,38 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 var gulp = require('gulp');
-var plugins = require('./gulp/modules/Plugins');
-var config = require('./gulp/modules/config');
-var messaging = require('./gulp/modules/messaging');
-var fabricServer = require('./gulp/modules/Server');
+var Plugins = require('./gulp/modules/Plugins');
+var Config = require('./gulp/modules/Config');
+var ConsoleHelper = require('./gulp/modules/ConsoleHelper');
+var Server = require('./gulp/modules/Server');
 
 //////////////////////////
 // INCLUDE FABRIC TASKS
 //////////////////////////
 
-plugins.requireDir('../../gulp'); // This is from 
+Plugins.requireDir('../../gulp');
 
 //
 // Local Server Configuration and Testing Website
 // ----------------------------------------------------------------------------
 
-fabricServer.configServer(
-   config.port, // Port Number
-   config.projectURL, // URL To access the server
-   config.projectDirectory // Directory to serve up
+Server.configServer(
+   Config.port, // Port Number
+   Config.projectURL, // URL To access the server
+   Config.projectDirectory // Directory to serve up
 );
 
 // Config Paths
-fabricServer.serveSpecificPaths(config.servePaths);
+Server.serveSpecificPaths(Config.servePaths);
 
-gulp.task('fabric-server', function() {
-    return fabricServer.start();
+gulp.task('FabricServer', function() {
+    return Server.start();
 });
 
+
 //
-// Copying Files Tasks
-// ----------------------------------------------------------------------------
-
-
+// Nuke Tasks
+// ---------------------------------------------------------------------------
+gulp.task('nuke', ['Fabric-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
 
 //
 // Watch Tasks
@@ -42,14 +42,13 @@ var watchTasks = [
     'Fabric', 
     'FabricComponents', 
     'ComponentSamples', 
-    'Samples',
-    'fabric-server'
+    'Samples'
 ];
 
 // Watch and build Fabric when sources change.
-gulp.task('watch', watchTasks, function () {
-    gulp.watch(config.paths.srcPath + '/**/*', plugins.batch(function (events, done) {
-        plugins.runSequence('re-build', done);
+gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'fabric-all-finished'], function () {
+    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence(watchTasks, done);
     }));
 });
 
@@ -57,8 +56,8 @@ gulp.task('watch', watchTasks, function () {
 // Default Build
 // ----------------------------------------------------------------------------
 
-gulp.task('build', ['build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'build-components-page', 'fabric-all-finished']); 
-gulp.task('re-build', ['reset-sample-data', 'reset-component-data', 'build-fabric', 'build-fabric-components', 'build-component-samples', 'build-samples', 'build-components-page', 'fabric-all-finished']); 
+gulp.task('build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'fabric-all-finished']);
+gulp.task('re-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'fabric-all-updated']);
 
 gulp.task('default', ['build']);
 
@@ -66,16 +65,16 @@ gulp.task('default', ['build']);
 // Fabric Messages
 // ----------------------------------------------------------------------------
 
-gulp.task('fabric-all-finished', ['build-fabric', 'build-fabric-components', 'build-samples'], function () {
-    console.log(messaging.generateSuccess('All Fabric built successfully, you may now celebrate and dance!', true));
+gulp.task('fabric-all-finished', watchTasks, function () {
+    console.log(ConsoleHelper.generateSuccess('All Fabric built successfully, you may now celebrate and dance!', true));
 });
 
-gulp.task('fabric-all-server', ['build-fabric', 'build-fabric-components', 'build-samples'], function () {
-    console.log(messaging.generateSuccess('Fabric built successfully! ' + "\r\n" + 'Fabric samples located at ' + config.projectURL + ':' + config.port, false));
+gulp.task('fabric-all-server', watchTasks, function () {
+    console.log(ConsoleHelper.generateSuccess('Fabric built successfully! ' + "\r\n" + 'Fabric samples located at ' + Config.projectURL + ':' + config.port, false));
 });
 
-gulp.task('fabric-all-updated', ['build-fabric', 'build-fabric-components', 'build-samples'], function () {
-    console.log(messaging.generateSuccess('All Fabric parts updated successfully! Yay!', true));
+gulp.task('fabric-all-updated', watchTasks, function () {
+    console.log(ConsoleHelper.generateSuccess('All Fabric parts updated successfully! Yay!', true));
 });
 
 
@@ -83,7 +82,7 @@ gulp.task('fabric-all-updated', ['build-fabric', 'build-fabric-components', 'bui
 // Packaging tasks
 // ----------------------------------------------------------------------------
 gulp.task('nuget-pack', function(callback) {
-    plugins.nugetpack(config.nugetConfig, config.nugetPaths, callback);
+    Plugins.nugetpack(Config.nugetConfig, Config.nugetPaths, callback);
 });
 
 

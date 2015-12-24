@@ -1,56 +1,55 @@
 var gulp = require('gulp');
 var fs = require('fs');
 
-var banners = require('./Banners');
-var fabricServer = require('./Server');
-var config = require('./Config');
-var errorHandling = require('./ErrorHandling');
-var plugins = require('./Plugins');
+var Banners = require('./Banners');
+var Config = require('./Config');
+var ErrorHandling = require('./ErrorHandling');
+var Plugins = require('./Plugins');
 
 var ComponentSamplesHelper = function() {
 	
     this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps) {
         return gulp.src(srcTemplate)
-            .pipe(plugins.data(function () {
+            .pipe(Plugins.data(function () {
                 return { "componentName": componentName, "dependencies": deps };
             }))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.template())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.less())
-                .on('error', errorHandling.onErrorInPipe)
-                .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.autoprefixer({
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.template())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.less())
+                .on('error', ErrorHandling.onErrorInPipe)
+                .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
             }))
-            .pipe(plugins.rename(componentName + '.css'))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.cssbeautify())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.csscomb())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.header(banners.getCSSCopyRight()))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+            .pipe(Plugins.rename(componentName + '.css'))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.cssbeautify())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.csscomb())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.header(Banners.getCSSCopyRight()))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Component Sample LESS"
                 })))
-                .on('error', errorHandling.onErrorInPipe)
+                .on('error', ErrorHandling.onErrorInPipe)
             .pipe(gulp.dest(destFolder))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.rename(componentName + '.min.css'))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.cssMinify())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.header(banners.getCSSCopyRight()))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.rename(componentName + '.min.css'))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.cssMinify())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.header(Banners.getCSSCopyRight()))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Minifying Component Sample LESS"
                 })))
-                .on('error', errorHandling.onErrorInPipe)
+                .on('error', ErrorHandling.onErrorInPipe)
             .pipe(gulp.dest(destFolder))
-                .on('error', errorHandling.onErrorInPipe);
+                .on('error', ErrorHandling.onErrorInPipe);
     }
     
 }

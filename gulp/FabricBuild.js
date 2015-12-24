@@ -1,13 +1,11 @@
 var gulp = require('gulp');
 
 // Fabric Helper Modules
-var utilities = require('./modules/Utilities');
-var banners = require('./modules/Banners');
-var fabricServer = require('./modules/Server');
-var config = require('./modules/Config');
-var messaging = require('./modules/Messaging');
-var errorHandling = require('./modules/ErrorHandling');
-var plugins = require('./modules/Plugins');
+var Banners = require('./modules/Banners');
+var Config = require('./modules/Config');
+var ConsoleHelper = require('./modules/ConsoleHelper');
+var ErrorHandling = require('./modules/ErrorHandling');
+var Plugins = require('./modules/Plugins');
 
 //
 // Clean/Delete Tasks
@@ -15,7 +13,7 @@ var plugins = require('./modules/Plugins');
 
 // Clean out the distribution folder.
 gulp.task('Fabric-nuke', function () {
-    return plugins.del.sync([config.paths.distLess, config.paths.distCSS]);
+    return Plugins.del.sync([Config.paths.distLess, Config.paths.distCSS]);
 });
 
 //
@@ -26,14 +24,14 @@ gulp.task('Fabric-nuke', function () {
 gulp.task('Fabric-copyLess', function () {
     // Copy LESS files.
     return gulp.src('src/less/*')
-            .pipe(plugins.changed(config.paths.distLess))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+            .pipe(Plugins.changed(Config.paths.distLess))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Moving LESS files over to Dist"
             })))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(gulp.dest(config.paths.distLess))
-                .on('error', errorHandling.onErrorInPipe);
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distLess))
+                .on('error', ErrorHandling.onErrorInPipe);
 });
 
 //
@@ -43,72 +41,72 @@ gulp.task('Fabric-copyLess', function () {
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 gulp.task('Fabric-buildLess', function () {
     // Baseline set of tasks for building Fabric CSS.
-    var fabric = gulp.src([config.paths.srcLess + '/' + 'fabric.less'])
-            .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+    var fabric = gulp.src([Config.paths.srcLess + '/' + 'fabric.less'])
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Core Fabric LESS"
             })))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.less())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.rename('fabric.css'))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.autoprefixer({
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.less())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.rename('fabric.css'))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
             }))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.cssbeautify())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.csscomb())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(gulp.dest(config.paths.distCSS))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.rename('fabric.min.css'))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.cssMinify())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(gulp.dest(config.paths.distCSS))
-                .on('error', errorHandling.onErrorInPipe);
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.cssbeautify())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.csscomb())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distCSS))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.rename('fabric.min.css'))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.cssMinify())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distCSS))
+                .on('error', ErrorHandling.onErrorInPipe);
                 
     // Build full and minified Fabric RTL CSS.
-    var fabricRtl = gulp.src(config.paths.srcLess + '/' + 'fabric.rtl.less')
-            .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+    var fabricRtl = gulp.src(Config.paths.srcLess + '/' + 'fabric.rtl.less')
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building RTL Fabric LESS"
             })))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.less())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.flipper())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.rename('fabric.rtl.css'))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.autoprefixer({
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.less())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.flipper())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.rename('fabric.rtl.css'))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
             }))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.cssbeautify())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.csscomb())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(gulp.dest(config.paths.distCSS))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.rename('fabric.rtl.min.css'))
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(plugins.cssMinify())
-                .on('error', errorHandling.onErrorInPipe)
-            .pipe(gulp.dest(config.paths.distCSS))
-                .on('error', errorHandling.onErrorInPipe);
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.cssbeautify())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.csscomb())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distCSS))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.rename('fabric.rtl.min.css'))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.cssMinify())
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distCSS))
+                .on('error', ErrorHandling.onErrorInPipe);
     // Merge all current streams into one.
-    return plugins.mergeStream(fabric, fabricRtl);
+    return Plugins.mergeStream(fabric, fabricRtl);
 });
 
 //
@@ -122,11 +120,11 @@ gulp.task('Fabric', ['Fabric-copyLess', 'Fabric-buildLess']);
 // ----------------------------------------------------------------------------
 
 gulp.task('Fabric-finished', ['Fabric'], function () {
-    console.log(messaging.generateSuccess('Fabric core-build complete, you may now celebrate and dance!', true));
+    console.log(ConsoleHelper.generateSuccess('Fabric core-build complete, you may now celebrate and dance!', true));
 });
 
 gulp.task('Fabric-updated', ['Fabric'], function () {
-    console.log(messaging.generateSuccess(' Fabric updated successfully', false));
+    console.log(ConsoleHelper.generateSuccess(' Fabric updated successfully', false));
 });
 
 //
@@ -135,7 +133,7 @@ gulp.task('Fabric-updated', ['Fabric'], function () {
 
 // Watch and build Fabric when sources change.
 gulp.task('Fabric-watch', ['Fabric', 'Fabric-finished'], function () {
-    return gulp.watch(config.paths.lessPath + '/**/*', plugins.batch(function (events, done) {
-        plugins.runSequence('Fabric', 'Fabric-updated', done);
+    return gulp.watch(Config.paths.lessPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence('Fabric', 'Fabric-updated', done);
     }));
 });

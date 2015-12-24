@@ -1,20 +1,19 @@
 var gulp = require('gulp');
-var utilities = require('./modules/Utilities');
-var banners = require('./modules/Banners');
-var fabricServer = require('./modules/Server');
-var config = require('./modules/Config');
-var messaging = require('./modules/Messaging');
-var errorHandling = require('./modules/ErrorHandling');
-var plugins = require('./modules/Plugins');
+var Utilities = require('./modules/Utilities');
+var Banners = require('./modules/Banners');
+var Config = require('./modules/Config');
+var ConsoleHelper = require('./modules/ConsoleHelper');
+var ErrorHandling = require('./modules/ErrorHandling');
+var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
-var folderList = utilities.getFolders(config.paths.componentsPath);
+var folderList = Utilities.getFolders(Config.paths.componentsPath);
 
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
 
 gulp.task('FabricComponents-nuke', function () {
-    return plugins.del.sync([config.paths.distComponents, config.paths.distJS]);
+    return Plugins.del.sync([Config.paths.distComponents, Config.paths.distJS]);
 });
 
 
@@ -24,14 +23,14 @@ gulp.task('FabricComponents-nuke', function () {
 
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
-    return gulp.src(config.paths.componentsPath + '/**')
-        .pipe(plugins.changed(config.paths.distComponents))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+    return gulp.src(Config.paths.componentsPath + '/**')
+        .pipe(Plugins.changed(Config.paths.distComponents))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Moving Fabric Component Assets to Dist"
         })))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distComponents));
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distComponents));
 });
 
 //
@@ -41,62 +40,62 @@ gulp.task('FabricComponents-copyAssets', function () {
 // Build Components LESS files
 gulp.task('FabricComponents-less', function () {
 
-    return gulp.src(config.paths.srcLess + '/fabric.components.less')
-        .pipe(plugins.changed(config.paths.distCSS, {extension: '.css'}))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+    return gulp.src(Config.paths.srcLess + '/fabric.components.less')
+        .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building Fabric Components Less into One Files"
         })))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.less())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.header(banners.getBannerTemplate(), banners.getBannerData()))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.autoprefixer({
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.less())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.autoprefixer({
             browsers: ['last 2 versions', 'ie >= 9'],
             cascade: false
         }))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.rename('fabric.components.css'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.cssbeautify())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.csscomb())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distCSS))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.rename('fabric.components.min.css'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.cssMinify())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distCSS))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.flipper())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.cssbeautify())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.csscomb())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.rename('fabric.components.rtl.css'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distCSS))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.cssMinify())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.rename('fabric.components.rtl.min.css'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distCSS))
-            .on('error', errorHandling.onErrorInPipe);
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.rename('fabric.components.css'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.cssbeautify())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.csscomb())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distCSS))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.rename('fabric.components.min.css'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.cssMinify())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distCSS))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.flipper())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.cssbeautify())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.csscomb())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.rename('fabric.components.rtl.css'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distCSS))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.cssMinify())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.rename('fabric.components.rtl.min.css'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distCSS))
+            .on('error', ErrorHandling.onErrorInPipe);
 });
 
 gulp.task('FabricComponents-less', function () {
     return folderList.map(function(componentName) {
-        var manifest = utilities.parseManifest(componentName);
+        var manifest = Utilities.parseManifest(componentName);
         var deps = manifest.dependencies || [];
-        var srcTemplate = config.paths.templatePath + '/'+ 'component-manifest-template.less';
-        var destFolder = config.paths.distComponents + '/' + componentName;
-        var srcFolderName = config.paths.componentsPath + '/' + componentName;
-        var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
+        var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
+        var destFolder = Config.paths.distComponents + '/' + componentName;
+        var srcFolderName = Config.paths.componentsPath + '/' + componentName;
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
         
         if(hasFileChanged) {
             return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
@@ -111,23 +110,23 @@ gulp.task('FabricComponents-less', function () {
 // ----------------------------------------------------------------------------
 
 gulp.task('FabricComponents-Movejs', function() {
-    return gulp.src(config.paths.componentsPath + '/**/*.js')
-        .pipe(plugins.concat('jquery.fabric.js'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.header(banners.getJSCopyRight()))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.changed(config.paths.distJS))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+    return gulp.src(Config.paths.componentsPath + '/**/*.js')
+        .pipe(Plugins.concat('jquery.fabric.js'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.header(Banners.getJSCopyRight()))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.changed(Config.paths.distJS))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Moving Fabric Component JS"
         })))
-        .pipe(gulp.dest(config.paths.distJS))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.rename('jquery.fabric.min.js'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.uglify())
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distJS));
+        .pipe(gulp.dest(Config.paths.distJS))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.rename('jquery.fabric.min.js'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.uglify())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distJS));
 });
 
 //
@@ -142,11 +141,11 @@ gulp.task('FabricComponents', ['FabricComponents-less', 'FabricComponents-copyAs
 // ----------------------------------------------------------------------------
 
 gulp.task('FabricComponents-finished', ['FabricComponents'], function () {
-    console.log(messaging.generateSuccess(' Components build was successful! Yay!', true));
+    console.log(ConsoleHelper.generateSuccess(' Components build was successful! Yay!', true));
 });
 
 gulp.task('FabricComponents-updated', ['FabricComponents'], function () {
-    console.log(messaging.generateSuccess(' Components updated successfully! Yay!'));
+    console.log(ConsoleHelper.generateSuccess(' Components updated successfully! Yay!'));
 });
 
 
@@ -156,7 +155,7 @@ gulp.task('FabricComponents-updated', ['FabricComponents'], function () {
 
 // Watches all src fabric components and builds fabric.components.
 gulp.task('FabricComponents-watch', ['FabricComponents', 'FabricComponents-finished'], function () {
-    return gulp.watch(config.paths.componentsPath + '/**/*', plugins.batch(function (events, done) {
-        plugins.runSequence('FabricComponents', 'FabricComponents-updated', done);
+    return gulp.watch(Config.paths.componentsPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence('FabricComponents', 'FabricComponents-updated', done);
     }));
 });

@@ -1,5 +1,4 @@
 var path = require('path');
-var config = require('./Config');
 var pkg = require('../../package.json');
 
 var Config = function() {

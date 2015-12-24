@@ -1,19 +1,19 @@
 var gulp = require('gulp');
 var fs = require('fs');
-var utilities = require('./modules/Utilities');
-var config = require('./modules/Config');
-var messaging = require('./modules/Messaging');
-var errorHandling = require('./modules/ErrorHandling');
-var plugins = require('./modules/Plugins');
+var Utilities = require('./modules/Utilities');
+var Config = require('./modules/Config');
+var ConsoleHelper = require('./modules/ConsoleHelper');
+var ErrorHandling = require('./modules/ErrorHandling');
+var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
-var folderList = utilities.getFolders(config.paths.componentsPath);
+var folderList = Utilities.getFolders(Config.paths.componentsPath);
 
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentSamples-nuke', function () {
-    return plugins.del.sync([config.paths.distSamples + '/Components']);
+    return Plugins.del.sync([Config.paths.distSamples + '/Components']);
 });
 
 //
@@ -22,21 +22,21 @@ gulp.task('ComponentSamples-nuke', function () {
 
 gulp.task('ComponentSamples-copyAssets', function() {
     return gulp.src([
-            config.paths.componentsPath + '/**/*.js', 
-            config.paths.componentsPath + '/**/*.jpg', 
-            config.paths.componentsPath + '/**/*.png', 
-            config.paths.componentsPath + '/**/*.js',
-            config.paths.componentsPath + '/**/*.gif'
+            Config.paths.componentsPath + '/**/*.js', 
+            Config.paths.componentsPath + '/**/*.jpg', 
+            Config.paths.componentsPath + '/**/*.png', 
+            Config.paths.componentsPath + '/**/*.js',
+            Config.paths.componentsPath + '/**/*.gif'
         ])
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.changed(config.paths.distSamples + '/Components'))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(plugins.gulpif(config.debugMode, plugins.debug({
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Copying Component Assets"
                 })))
-            .on('error', errorHandling.onErrorInPipe)
-        .pipe(gulp.dest(config.paths.distSamples + '/Components'))
-            .on('error', errorHandling.onErrorInPipe);
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distSamples + '/Components'))
+            .on('error', ErrorHandling.onErrorInPipe);
 });
 
 //
@@ -46,13 +46,13 @@ gulp.task('ComponentSamples-copyAssets', function() {
 gulp.task('ComponentSamples-less',  function() {
    return folderList.map(function(componentName) {
 
-        var manifest = utilities.parseManifest(componentName);
+        var manifest = Utilities.parseManifest(componentName);
         var deps = manifest.dependencies || [];
-        var srcTemplate = config.paths.templatePath + '/'+ 'component-manifest-template.less';
-        var destFolder = config.paths.distSampleComponents + '/' + componentName;
-        var srcFolderName = config.paths.componentsPath + '/' + componentName;
-        var distFolderName = config.paths.distSampleComponents + '/' + componentName;
-        var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
+        var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
+        var destFolder = Config.paths.distSampleComponents + '/' + componentName;
+        var srcFolderName = Config.paths.componentsPath + '/' + componentName;
+        var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
         
         if(hasFileChanged) {
             return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
@@ -71,29 +71,29 @@ gulp.task('ComponentSamples-build', function() {
    
    for(var i=0; i < folderList.length; i++) {
        var folderName = folderList[i];
-       var srcFolderName = config.paths.componentsPath + '/' + folderName;
-       var distFolderName = config.paths.distSampleComponents + '/' + folderName;
-       var hasFileChanged = utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
+       var srcFolderName = Config.paths.componentsPath + '/' + folderName;
+       var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
+       var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
        if(hasFileChanged) {    
-           var manifest = utilities.parseManifest(folderName);
+           var manifest = Utilities.parseManifest(folderName);
            var filesArray = manifest.fileOrder;
            var componentPipe;
-           var fileGlob = utilities.getManifestFileList(filesArray, config.paths.componentsPath + '/' + folderName);
-           var jsFiles = utilities.getFilesByExtension(srcFolderName, '.js');
+           var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
+           var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
            var jsLinks = '';
            
            for(var x = 0; x < jsFiles.length; x++) {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
            }
            componentPipe = gulp.src(fileGlob)
-           .pipe(plugins.gulpif(manifest.wrapBranches, plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
-                .on('error', errorHandling.onErrorInPipe)
-           .pipe(plugins.concat("index.html"))
-                .on('error', errorHandling.onErrorInPipe)
-           .pipe(plugins.wrap(
+           .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
+                .on('error', ErrorHandling.onErrorInPipe)
+           .pipe(Plugins.concat("index.html"))
+                .on('error', ErrorHandling.onErrorInPipe)
+           .pipe(Plugins.wrap(
                 {
-                    src:  config.paths.templatePath + '/componentSampleTemplate.html'  
+                    src:  Config.paths.templatePath + '/componentSampleTemplate.html'  
                 },
                 {
                     componentName: folderName
@@ -102,15 +102,15 @@ gulp.task('ComponentSamples-build', function() {
                     jsLinks: jsLinks
                 }
            ))
-                .on('error', errorHandling.onErrorInPipe)
-           .pipe(plugins.debug(
+                .on('error', ErrorHandling.onErrorInPipe)
+           .pipe(Plugins.debug(
                 {
                     title: folderName
                 }
            ))
-                .on('error', errorHandling.onErrorInPipe)
-           .pipe(gulp.dest(config.paths.distSamples + '/Components/' +  folderName))
-                .on('error', errorHandling.onErrorInPipe);
+                .on('error', ErrorHandling.onErrorInPipe)
+           .pipe(gulp.dest(Config.paths.distSamples + '/Components/' +  folderName))
+                .on('error', ErrorHandling.onErrorInPipe);
            
            // Add stream
            streams.push(componentPipe);
@@ -118,7 +118,7 @@ gulp.task('ComponentSamples-build', function() {
    }
    
    if(streams.length > 0) {
-       return plugins.mergeStream(streams);
+       return Plugins.mergeStream(streams);
    } else {
        return;
    }
@@ -137,11 +137,11 @@ gulp.task('ComponentSamples', ComponentSamplesTasks);
 // Fabric Messages
 // ----------------------------------------------------------------------------
 gulp.task('ComponentSamples-finished', ComponentSamplesTasks, function () {
-    console.log(messaging.generateSuccess(config.componentSamplesFinished, true));
+    console.log(ConsoleHelper.generateSuccess(Config.componentSamplesFinished, true));
 });
 
 gulp.task('ComponentSamples-updated', ComponentSamplesTasks, function () {
-    console.log(messaging.generateSuccess(config.componentSamplesUpdate));
+    console.log(ConsoleHelper.generateSuccess(Config.componentSamplesUpdate));
 });
 
 //
@@ -150,7 +150,7 @@ gulp.task('ComponentSamples-updated', ComponentSamplesTasks, function () {
 
 // Watches all src fabric components but, builds the samples only
 gulp.task('ComponentSamples-watch', ['ComponentSamples'], function () {
-    return gulp.watch(config.paths.componentsPath + '/**/*', plugins.batch(function (events, done) {
-        plugins.runSequence('ComponentSamples', 'ComponentSamples-updated', done);
+    return gulp.watch(Config.paths.componentsPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence('ComponentSamples', 'ComponentSamples-updated', done);
     }));
 });

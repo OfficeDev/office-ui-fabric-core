@@ -49,8 +49,19 @@ var watchTasks = [
 // Watch and build Fabric when sources change.
 gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(watchTasks, done);
+        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
+});
+
+// Watch and build Fabric when sources change.
+gulp.task('watch-debug', ['debugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+    }));
+});
+
+gulp.task('debugMode', function() {
+    return Config.debugMode = true;
 });
 
 //

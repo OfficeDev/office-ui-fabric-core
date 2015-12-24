@@ -103,11 +103,9 @@ gulp.task('ComponentSamples-build', function() {
                 }
            ))
                 .on('error', ErrorHandling.onErrorInPipe)
-           .pipe(Plugins.debug(
-                {
-                    title: folderName
-                }
-           ))
+           .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Building Sample Component " + folderName
+                })))
                 .on('error', ErrorHandling.onErrorInPipe)
            .pipe(gulp.dest(Config.paths.distSamples + '/Components/' +  folderName))
                 .on('error', ErrorHandling.onErrorInPipe);

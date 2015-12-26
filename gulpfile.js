@@ -86,7 +86,7 @@ gulp.task('All-server', watchTasks, function () {
 });
 
 gulp.task('All-updated', watchTasks, function () {
-    console.log(ConsoleHelper.generateSuccess('All Fabric parts updated successfully! Yay!', true));
+    console.log(ConsoleHelper.generateSuccess('UPDATE COMPLETE: All Fabric parts updated successfully! Yay!', false));
 });
 
 

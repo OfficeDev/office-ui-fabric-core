@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulputil = require('gulp-util');
 var Utilities = require('./modules/Utilities');
 var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
@@ -7,6 +8,7 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
+var tidy = require("tidy-html5").tidy_html5;
 
 //
 // Clean/Delete Tasks
@@ -23,7 +25,7 @@ gulp.task('FabricComponents-nuke', function () {
 
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
-    return gulp.src(Config.paths.componentsPath + '/**')
+    return gulp.src([Config.paths.componentsPath + '/**', '!' + Config.paths.componentsPath + '/**/*.html'])
         .pipe(Plugins.changed(Config.paths.distComponents))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -32,6 +34,43 @@ gulp.task('FabricComponents-copyAssets', function () {
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distComponents));
 });
+
+
+function htmllintReporter(filepath, issues) {
+	if (issues.length > 0) {
+		issues.forEach(function (issue) {
+			gulputil.log(gulputil.colors.cyan('[gulp-htmllint] ') + gulputil.colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + gulputil.colors.red('(' + issue.code + ') ' + issue.msg));
+		});
+ 
+		process.exitCode = 1;
+	}
+}
+
+gulp.task('FabricComponents-copyAndParseHTML', function () {
+
+    // Copy all Components files.
+    return gulp.src(Config.paths.componentsPath + '/**/*.html')
+        // Run HTML Tidy
+      	.pipe(Plugins.htmllint({
+              config: {
+                'doctype-first': false,
+                'line-end-style': false,
+                'spec-char-escape': true,
+                'id-no-dup': true,
+                'class-style': false,
+                'attr-name-style': false
+              }
+          }, htmllintReporter))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.changed(Config.paths.distComponents))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Copy Fabric Component HTML files"
+        })))
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(gulp.dest(Config.paths.distComponents));
+});
+
 
 //
 // LESS tasks
@@ -51,10 +90,12 @@ gulp.task('FabricComponents-less', function () {
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(Plugins.autoprefixer({
-            browsers: ['last 2 versions', 'ie >= 9'],
-            cascade: false
-        }))
+        .pipe(Plugins.autoprefixer(
+            {
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }
+        ))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.rename('fabric.components.css'))
             .on('error', ErrorHandling.onErrorInPipe)
@@ -134,7 +175,7 @@ gulp.task('FabricComponents-Movejs', function() {
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
-gulp.task('FabricComponents', ['FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-Movejs']);
+gulp.task('FabricComponents', ['FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-copyAndParseHTML', 'FabricComponents-Movejs']);
 
 //
 // Fabric Messages

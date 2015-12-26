@@ -9,7 +9,7 @@
     "url": "https://github.com/OfficeDev/Office-UI-Fabric"
   },
   "dependencies": {
-    "htmltidy": "https://github.com/battletoilet/gulp-htmltidy.git"
+    "htmltidy": "https://github.com/battletoilet/htmltidy.git"
   },
   "private": false,
   "ignore": [

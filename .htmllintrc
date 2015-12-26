@@ -1,0 +1,8 @@
+{
+    "doctype-first": "none",
+    "line-end-style":  "none",
+    "spec-char-escape": true,
+    "id-no-dup": true,
+    "class-style":  "none",
+    "attr-name-style":  "none"
+}

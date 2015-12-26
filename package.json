@@ -50,6 +50,7 @@
     "gulp-wrap": "^0.11.0",
     "gulp-zip": "^3.0.2",
     "htmltidy": "0.0.6",
+    "htmltidy2": "^0.1.4",
     "lodash": "^3.10.1",
     "merge-stream": "^1.0.0",
     "pretty-hrtime": "0.2.2",

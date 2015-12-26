@@ -35,32 +35,37 @@ gulp.task('FabricComponents-copyAssets', function () {
         .pipe(gulp.dest(Config.paths.distComponents));
 });
 
-
-function htmllintReporter(filepath, issues) {
-	if (issues.length > 0) {
-		issues.forEach(function (issue) {
-			gulputil.log(gulputil.colors.cyan('[gulp-htmllint] ') + gulputil.colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + gulputil.colors.red('(' + issue.code + ') ' + issue.msg));
-		});
- 
-		process.exitCode = 1;
-	}
-}
-
 gulp.task('FabricComponents-copyAndParseHTML', function () {
 
     // Copy all Components files.
     return gulp.src(Config.paths.componentsPath + '/**/*.html')
         // Run HTML Tidy
-      	.pipe(Plugins.htmllint({
-              config: {
-                'doctype-first': false,
-                'line-end-style': false,
-                'spec-char-escape': true,
-                'id-no-dup': true,
-                'class-style': false,
-                'attr-name-style': false
-              }
-          }, htmllintReporter))
+      	// .pipe(Plugins.htmllint({config: Config.htmlLintPath}, ErrorHandling.handlHTMLLintError))
+        .pipe(Plugins.verifyHTML({
+            showErrors: true,
+            showWarnings: true,
+            "doctype": "omit",
+            "drop-empty-elements": false,
+            "drop-empty-paras": false,
+        }, function(err, html) {
+            var newError = '';
+            // console.log(err);
+                  
+            newError = err.replace('About this fork of Tidy: http://w3c.github.com/tidy-html5/', '');
+            newError = newError.replace('Bug reports and comments: https://github.com/w3c/tidy-html5/issues/', '');
+            newError = newError.replace('Or send questions and comments to html-tidy@w3.org', '');
+            newError = newError.replace('Latest HTML specification: http://dev.w3.org/html5/spec-author-view/', '');
+            newError = newError.replace('HTML language reference: http://dev.w3.org/html5/markup/', '');
+            newError = newError.replace('Validate your HTML5 documents: http://validator.w3.org/nu/', '');
+            newError = newError.replace('Lobby your company to join the W3C: http://www.w3.org/Consortium', '');
+            
+            if(newError.indexOf("\n") > -1) {
+                console.log("Found error"); 
+            }
+            
+            console.log(newError);
+            
+        }))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.changed(Config.paths.distComponents))
             .on('error', ErrorHandling.onErrorInPipe)

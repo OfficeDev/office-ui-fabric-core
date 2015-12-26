@@ -5,6 +5,9 @@ var Config = function() {
     //Debug Mode
     this.debugMode = false;
     
+    // HTML Linting Configuration path
+    this.htmlLintPath = '.htmllintrc';
+    
 	// Define paths.
 	this.distPath = 'dist';
 	this.srcPath = 'src';

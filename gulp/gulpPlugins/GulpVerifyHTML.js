@@ -1,10 +1,10 @@
 var gutil = require('gulp-util');
 var through = require('through2');
-var tidy = require("tidy-html5").tidy_html5;
+var tidy = require("htmltidy").tidy;
 
 const PLUGIN_NAME = 'GulpVerifyHTML';
 
-var VerifyHTML = function(options) {
+var VerifyHTML = function(options, callback) {
     
     return through.obj(function (fileChunk, enc, cb) {
         if (!options) {
@@ -21,7 +21,7 @@ var VerifyHTML = function(options) {
             return cb();
         }
 
-        var result = tidy(fileChunk.contents, options);
+        var result = tidy(fileChunk.contents, options, callback);
         
         fileChunk.contents = new Buffer(String(result));
         this.push(fileChunk);

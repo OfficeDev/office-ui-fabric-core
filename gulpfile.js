@@ -4,6 +4,16 @@ var Plugins = require('./gulp/modules/Plugins');
 var Config = require('./gulp/modules/Config');
 var ConsoleHelper = require('./gulp/modules/ConsoleHelper');
 var Server = require('./gulp/modules/Server');
+var Utilites = require('./gulp/modules/Utilities');
+var ErrorHandling = require('./gulp/modules/ErrorHandling');
+
+var watchTasks = [
+    'Fabric', 
+    'FabricComponents', 
+    'ComponentSamples', 
+    'Samples',
+    'FabricDemoPage'
+];
 
 //////////////////////////
 // INCLUDE FABRIC TASKS
@@ -28,7 +38,6 @@ gulp.task('FabricServer', function() {
     return Server.start();
 });
 
-
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
@@ -37,14 +46,6 @@ gulp.task('nuke', ['Fabric-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuk
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
-
-var watchTasks = [
-    'Fabric', 
-    'FabricComponents', 
-    'ComponentSamples', 
-    'Samples',
-    'FabricDemoPage',
-];
 
 // Watch and build Fabric when sources change.
 gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {

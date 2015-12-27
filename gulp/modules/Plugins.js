@@ -37,10 +37,6 @@ var Plugins = function() {
 	this.debug = require('gulp-debug');
     this.gulpif = require('gulp-if');
     this.changed = require('gulp-changed');
-    this.tidy = require('htmltidy');
-    this.htmltidy = require('gulp-htmltidy');
-    this.verifyHTML = require('../gulpPlugins/GulpVerifyHTML');
-    this.htmllint = require('gulp-htmllint');
 }
 
 module.exports = new Plugins();

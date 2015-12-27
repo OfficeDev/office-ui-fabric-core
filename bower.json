@@ -8,9 +8,6 @@
     "type": "git",
     "url": "https://github.com/OfficeDev/Office-UI-Fabric"
   },
-  "dependencies": {
-    "htmltidy": "https://github.com/battletoilet/htmltidy.git"
-  },
   "private": false,
   "ignore": [
     "node_modules",

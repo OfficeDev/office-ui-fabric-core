@@ -5,19 +5,17 @@ var Config = require('./modules/Config');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
-var folderList = Utilites.getFolders(Config.paths.srcSamples);
-
-var samplesLinks = "";
-var componentLinks = [];
 
 //
 // Sample Index Page Build
 // ----------------------------------------------------------------------------
 
-gulp.task('FabricDemoPage', function() {
-   
+gulp.task('FabricDemoPage', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples'], function() {
     var getComponentFolders = Utilites.getFolders(Config.paths.distSampleComponents);
     var getSamplesFolders =  Utilites.getFolders(Config.paths.distSamples);
+    
+    var index = getSamplesFolders.indexOf("Components");
+    getSamplesFolders.splice(index, 1);
     
     return gulp.src(Config.paths.templatePath + '/'+ 'samples-index.html')
         .on('error', ErrorHandling.onErrorInPipe)

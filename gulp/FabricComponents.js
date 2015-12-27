@@ -8,7 +8,6 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
-var tidy = require("tidy-html5").tidy_html5;
 
 //
 // Clean/Delete Tasks
@@ -25,7 +24,7 @@ gulp.task('FabricComponents-nuke', function () {
 
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
-    return gulp.src([Config.paths.componentsPath + '/**', '!' + Config.paths.componentsPath + '/**/*.html'])
+    return gulp.src([Config.paths.componentsPath + '/**'])
         .pipe(Plugins.changed(Config.paths.distComponents))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -35,65 +34,23 @@ gulp.task('FabricComponents-copyAssets', function () {
         .pipe(gulp.dest(Config.paths.distComponents));
 });
 
-gulp.task('FabricComponents-copyAndParseHTML', function () {
-
-    // Copy all Components files.
-    return gulp.src(Config.paths.componentsPath + '/**/*.html')
-        // Run HTML Tidy
-      	// .pipe(Plugins.htmllint({config: Config.htmlLintPath}, ErrorHandling.handlHTMLLintError))
-        .pipe(Plugins.verifyHTML({
-            showErrors: true,
-            showWarnings: true,
-            "doctype": "omit",
-            "drop-empty-elements": false,
-            "drop-empty-paras": false,
-        }, function(err, html) {
-            var newError = '';
-            // console.log(err);
-                  
-            newError = err.replace('About this fork of Tidy: http://w3c.github.com/tidy-html5/', '');
-            newError = newError.replace('Bug reports and comments: https://github.com/w3c/tidy-html5/issues/', '');
-            newError = newError.replace('Or send questions and comments to html-tidy@w3.org', '');
-            newError = newError.replace('Latest HTML specification: http://dev.w3.org/html5/spec-author-view/', '');
-            newError = newError.replace('HTML language reference: http://dev.w3.org/html5/markup/', '');
-            newError = newError.replace('Validate your HTML5 documents: http://validator.w3.org/nu/', '');
-            newError = newError.replace('Lobby your company to join the W3C: http://www.w3.org/Consortium', '');
-            
-            if(newError.indexOf("\n") > -1) {
-                console.log("Found error"); 
-            }
-            
-            console.log(newError);
-            
-        }))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(Plugins.changed(Config.paths.distComponents))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Copy Fabric Component HTML files"
-        })))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(gulp.dest(Config.paths.distComponents));
-});
-
-
 //
 // LESS tasks
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-gulp.task('FabricComponents-less', function () {
+gulp.task('FabricComponents-compiledLess', function () {
 
     return gulp.src(Config.paths.srcLess + '/fabric.components.less')
+        .pipe(Plugins.less())
+            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building Fabric Components Less into One Files"
         })))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(Plugins.less())
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.autoprefixer(
             {
@@ -180,7 +137,7 @@ gulp.task('FabricComponents-Movejs', function() {
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
-gulp.task('FabricComponents', ['FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-copyAndParseHTML', 'FabricComponents-Movejs']);
+gulp.task('FabricComponents', ['FabricComponents-compiledLess', 'FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-Movejs']);
 
 //
 // Fabric Messages

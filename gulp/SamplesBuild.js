@@ -77,11 +77,11 @@ gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildLess']);
 // ----------------------------------------------------------------------------
 
 gulp.task('Samples-finished', ['Samples'], function () {
-    console.log(messaging.generateSuccess('Samples done, experience fabric by sample!', true));
+    console.log(ConsoleHelper.generateSuccess('Samples done, experience fabric by sample!', true));
 });
 
 gulp.task('Samples-updated', ['Samples'], function () {
-    console.log(messaging.generateSuccess(' Samples done updating', false));
+    console.log(ConsoleHelper.generateSuccess(' Samples done updating', false));
 });
 
 //

@@ -99,7 +99,9 @@ fabric.Breadcrumb.prototype = (function() {
     overflowItems.forEach(function(item) {
       var li = document.createElement('li');
       li.className = 'ms-ContextualMenu-item';
-      li.setAttribute('tabindex', item.tabIndex);
+      if(!isNaN(item.tabIndex)) {
+        li.setAttribute('tabindex', item.tabIndex);
+      }
       var a = document.createElement('a');
       a.className = 'ms-ContextualMenu-link';
       a.setAttribute('href', item.link);
@@ -125,7 +127,9 @@ fabric.Breadcrumb.prototype = (function() {
         listItem.className = 'ms-Breadcrumb-listItem';
         a.className = 'ms-Breadcrumb-itemLink';
         a.setAttribute('href', item.link);
-        a.setAttribute('tabindex', item.tabIndex);
+        if(!isNaN(item.tabIndex)) {
+          a.setAttribute('tabindex', item.tabIndex);
+        }
         a.textContent = item.text;
         chevron.className = 'ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight';
         listItem.appendChild(a);
@@ -153,6 +157,12 @@ fabric.Breadcrumb.prototype = (function() {
       removeOutlinesOnClick(event);
       // force focus rect onto overflow button
       _overflowButton.focus();
+    }
+  };
+
+  var _overflowKeyPress = function(event) {
+    if(event.keyCode === 13) {
+      _openOverflow(event);
     }
   };
 
@@ -193,7 +203,7 @@ fabric.Breadcrumb.prototype = (function() {
   var _setListeners = function() {
     window.addEventListener('resize', _onResize);
     _overflowButton.addEventListener('click', _openOverflow, false);
-    _overflowButton.addEventListener('focus', _openOverflow, false);
+    _overflowButton.addEventListener('keypress', _overflowKeyPress, false);
     document.addEventListener('click', _closeOverflow, false);
     _breadcrumbList.addEventListener('click', removeOutlinesOnClick, false);
   };

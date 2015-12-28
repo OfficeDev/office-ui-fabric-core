@@ -1,5 +1,3 @@
-![Office UI Fabric](http://odux.azurewebsites.net/github/img/OfficeUIFabricLogoBluePadSm-01.png)
-
 #Contributing
 
 Office UI Fabric is an evolving snapshot of the Office 365 Design Language - from one of the Microsoft Design Studios that works with it. This means that it is updated frequently, and exists as a source of truth to help everyone build consistent Office 365 experiences.

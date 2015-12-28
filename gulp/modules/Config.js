@@ -6,12 +6,14 @@ var pkg = require('../../package.json');
  */
 var Config = function() {
     this.debugMode = false;
+    this.cssPreprocessor = "less";
     this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
 	this.distPath = 'dist';
 	this.srcPath = 'src';
 	this.paths = {
 		distComponents: this.distPath + '/components',
 		distLess: this.distPath + '/less',
+        distSass: this.distPath + '/sass',
 		distCSS: this.distPath + '/css',
 		distSamples: this.distPath + '/samples',
 		distSampleComponents: this.distPath + '/samples/' +  '/Components',
@@ -19,6 +21,7 @@ var Config = function() {
 		distPackages: this.distPath + '/packages',
 		srcPath: this.srcPath,
 		srcSamples: this.srcPath + '/samples',
+        srcSass: this.srcPath + '/sass',
 		componentsPath : 'src/components',
 		srcLess: this.srcPath + '/less',
 		templatePath : this.srcPath + '/templates'

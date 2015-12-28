@@ -5,6 +5,7 @@
 // --------------------------------------------------
 // Panel styles
 
+@ms-Panel-mdWidth: 340px;
 
 // The panel covers the entire screen.
 .ms-Panel {
@@ -14,10 +15,16 @@
   right: 0;
   top: 0;
   z-index: @ms-zIndex-Panel;
+  display: none;
+  pointer-events: none;
 
   // Overlay used within panel
   .ms-Overlay {
     z-index: @ms-zIndex-back;
+    display: none;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity @ms-duration3 @ms-ease1;
   }
 }
 
@@ -30,6 +37,7 @@
   top: 0;
   display: none; //prevent the panel from briefly showing up when the page loads
   z-index: @ms-zIndex-front;
+  width: 100%;
 }
 
 // Scrollable content area, below the command buttons.
@@ -52,39 +60,72 @@
   height: 70px;
 }
 
-
-// Small screens.
-@media (min-width: @ms-screen-sm-min) {
-
-  .ms-Panel {
-    display: none;
-  }
-
-  .ms-Panel.is-open {
-    display: block;
-  }
-
-  // Always hide overlay on small screens.
-  .ms-Panel .ms-Overlay {
-    display: none;
-  }
-
-  .ms-Panel.is-open .ms-Panel-main {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 1;
-  }
-
+.ms-Panel.is-open {
+  display: block;
 }
+
+.ms-Panel.is-open .ms-Panel-main {
+  opacity: 1;
+  display: block;
+}
+
+.ms-Panel.is-open .ms-Overlay {
+  display: block;
+  pointer-events: auto;
+}
+
+// Panel Modifier
+.ms-Panel {
+  .ms-CommandBarItem .ms-CommandBarItem-commandText {
+    display: inline-block;
+  }
+  .ms-CommandBar-mainArea {
+    padding-left: 8px;
+  }
+}
+
 
 // Medium screens.
 @media (min-width: @ms-screen-md-min) {
 
-  .ms-Panel {
-    display: block;
-    pointer-events: none;
+  // Animations -- Default
+  .ms-Panel.is-open.ms-Panel-animateIn {
+    .ms-Panel-main {
+      .ms-u-slideLeftIn40;
+    }
+
+    .ms-Overlay {
+      .ms-u-fadeIn200;
+    }
+  }
+
+  .ms-Panel.is-open.ms-Panel-animateOut {
+    .ms-Panel-main {
+      .ms-u-slideRightOut40;
+    }
+    .ms-Overlay {
+      .ms-u-fadeOut200;
+    }
+  }
+
+  // Animations - Left panel
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn {
+    .ms-Panel-main {
+      .ms-u-slideRightIn40;
+    }
+
+    .ms-Overlay {
+      .ms-u-fadeIn200;
+    }
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut {
+    .ms-Panel-main {
+      .ms-u-slideLeftOut40;
+    }
+    .ms-Overlay {
+      .ms-u-fadeOut200;
+    }
   }
 
   // When opened, the full-width panel is replaced with one that is 340px wide
@@ -92,36 +133,23 @@
   .ms-Panel-main {
     border-left: 1px solid @ms-color-neutralLight;
     border-right: 1px solid @ms-color-neutralLight;
-    right: -40px;
     pointer-events: auto;
-    width: 341px; // Add a pixel due to border-box.
-    .ms-u-slideRightOut40;
+    width: @ms-Panel-mdWidth; // Add a pixel due to border-box.
   }
 
   .ms-Panel.is-open .ms-Panel-main {
     .drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
-    .ms-u-slideLeftIn40;
   }
 
   // On medium screens and up, the small panel attached to the left is a variant.
   .ms-Panel.ms-Panel--small.ms-Panel--left.is-open .ms-Panel-main {
     .drop-shadow(30px, 0px, 30px, -30px, .2);
-    .ms-u-slideRightIn40;
   }
 
   .ms-Panel.ms-Panel--small.ms-Panel--left .ms-Panel-main {
     left: 0;
     right: auto;
-    .ms-u-slideLeftOut40;
-  }
-
-  // Display the overlay, but with 0 opacity so that we can animate it.
-  .ms-Panel .ms-Overlay {
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity @ms-duration3 @ms-ease1;
   }
 
   // When the panel is opened, animate to full opacity

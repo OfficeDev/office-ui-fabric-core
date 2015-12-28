@@ -32,8 +32,12 @@
       // Vanilla JS Components
       if (typeof fabric !== "undefined") {
         if ('<%= componentName %>' in fabric) {
-          var element = document.querySelector('.ms-<%= componentName %>');
-          var component = new fabric['<%= componentName %>'](element);
+          var elements = document.querySelectorAll('.ms-<%= componentName %>');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['<%= componentName %>'](elements[i]);
+          }
         }
       }
 

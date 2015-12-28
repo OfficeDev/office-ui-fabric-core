@@ -76,7 +76,9 @@ gulp.task('ComponentSamples-build', function() {
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
        if(hasFileChanged) {    
-           var manifest = Utilities.parseManifest(folderName);
+           
+           var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
+           
            var filesArray = manifest.fileOrder;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);

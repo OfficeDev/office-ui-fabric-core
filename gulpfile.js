@@ -55,10 +55,29 @@ gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples',
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-debug', ['debugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
+});
+
+
+// Watch and build Fabric when sources change.
+gulp.task('watch-sass-debug', ['debugMode', 'SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+    }));
+});
+
+// Watch and build Fabric when sources change.
+gulp.task('watch-debug', ['cssPreprocessor', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+    }));
+});
+
+gulp.task('SassMode', function() {
+    return Config.cssPreprocessor = "sass";
 });
 
 gulp.task('debugMode', function() {
@@ -71,6 +90,8 @@ gulp.task('debugMode', function() {
 
 gulp.task('build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'All-finished']);
 gulp.task('re-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'FabricDemoPage', 'All-updated']);
+
+gulp.task('build-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'All-finished']);
 
 gulp.task('default', ['build']);
 

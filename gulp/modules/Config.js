@@ -1,18 +1,15 @@
 var path = require('path');
 var pkg = require('../../package.json');
 
+/**
+ * Configuration class containing all properties to be used throughout the build          
+ */
 var Config = function() {
-    //Debug Mode
     this.debugMode = false;
-    
-    // HTML Linting Configuration path
-    this.htmlLintPath = '.htmllintrc';
-    
-	// Define paths.
+    this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
 	this.distPath = 'dist';
 	this.srcPath = 'src';
 	this.paths = {
-		distPath: this.distPath,
 		distComponents: this.distPath + '/components',
 		distLess: this.distPath + '/less',
 		distCSS: this.distPath + '/css',
@@ -26,7 +23,6 @@ var Config = function() {
 		srcLess: this.srcPath + '/less',
 		templatePath : this.srcPath + '/templates'
 	};
-	// Server Configuration
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
 	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distSamples);
@@ -58,11 +54,8 @@ var Config = function() {
 		{src: this.paths.distJS, dest: "/content/scripts/"},
 		{src: this.paths.distLess, dest: "/content/less/"}
 	];
-    
-    // Build Messsages
     this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
     this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
-	
 }
 
 module.exports = new Config();

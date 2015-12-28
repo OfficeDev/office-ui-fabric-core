@@ -6,8 +6,18 @@ var Config = require('./Config');
 var ErrorHandling = require('./ErrorHandling');
 var Plugins = require('./Plugins');
 
+/**
+ * Helper class for building ComponentSamples
+ */
 var ComponentSamplesHelper = function() {
-	
+	/**
+     * Builds a commmonly used Gulp task for building a components styles..
+     * @param {String} destFolder Contains the path to the destination folder.
+     * @param {String} srcTemplate Contains the path to the source template to be applied.
+     * @param {String} componentName Name of the component.
+     * @param {String} deps LESS Dependencies to be added to the styles.
+     * @returns {Stream} returns a stream.
+     */
     this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps) {
         return gulp.src(srcTemplate)
             .pipe(Plugins.data(function () {

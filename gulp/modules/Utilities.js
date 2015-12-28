@@ -2,8 +2,14 @@ var fs = require('fs');
 var Config = require('./Config');
 var path = require('path');
 
+/**
+ * Helpful assortment of Utilites used throughout the build
+ */
 var Utilities = function() {
-	
+	/**
+     * Retrieves all months
+     * @returns {array} An array with the month names as strings
+     */
 	this.getMonths = function() {
 		return [
             "January", "February", "March",
@@ -12,7 +18,12 @@ var Utilities = function() {
             "November", "December"
 		];
 	}
-	
+	/**
+     * Process and return the list of files for the component either by whats in the directory or what's listed in the manifest
+     * @param {array} fileArray     An array with just file names
+     * @param {string} folderPath   A string containing the path to where the files are located.
+     * @returns {array}              Returns an array containing new list and order for files  
+     */
 	this.getManifestFileList = function(fileArray, folderPath) {
 		var newArray = [];
 		
@@ -26,12 +37,20 @@ var Utilities = function() {
 			return newArray;
 		}
 	}
-	
-	this.parseManifest = function(folder) {
-        var manifest = fs.readFileSync(Config.paths.componentsPath + '/' +  folder + '/' +  folder + '.json');
+	/**
+     * Parse a specific component's manifest (JSON) file
+     * @param {string}  jsonFileLocation string containing the path to folder/file of the JSON manifest
+     * @returns {object} Object Containing the manifest data in an object 
+     */
+	this.parseManifest = function(jsonFileLocation) {
+        var manifest = fs.readFileSync(jsonFileLocation);
 		return JSON.parse(manifest.toString());
 	}
-	
+	/**
+     * Return an array of folders from specified directory without files
+     * @param {string} dir  Path to directory
+     * @returns {array}      Returns an array of folders within an folder wihout files
+     */
 	this.getFolders = function(dir) {
         try {
 		  var folders = fs.readdirSync(dir).filter(function(file) {
@@ -43,7 +62,12 @@ var Utilities = function() {
             return [];
         }
     }
-    
+    /**
+     * Return an Array of files inside a directory by extension name
+     * @param {string} srcDir   The src directory path
+     * @param {string} extName  The filename extension somtimes .less or .css
+     * @returns {array}          Returns an ARray of filesnames    
+     */
     this.getFilesByExtension = function(srcDir, extName) {
         try {
             var files = fs.readdirSync(srcDir);
@@ -64,7 +88,12 @@ var Utilities = function() {
             return [];
         }
     }
-    
+    /**
+     * Returns an array of each file in the array given
+     * @param {array}   files An array of files needing dates
+     * @param {string}  filePath Base path to each file given in the array
+     * @returns {array} Returns an array with all file dates
+     */
     this.getFilesDates = function(files, filePath) {
         var fileDates = [];
         for( var i = 0; i < files.length; i++) {
@@ -75,7 +104,13 @@ var Utilities = function() {
 		}
         return fileDates;
     }
-	
+	/**
+     * Check if a source directory is newer than the dist directory
+     * @param {string} srcDir The working source directory
+     * @param {string} distDir The compiled distributed directory
+     * @param {string} srcExtension Optional source extension if you want to only compare certain files
+     * @param {string} distExtension Option dist extension if you want to compare certain files, needs dist and src extensions
+     */
 	this.hasFileChangedInFolder = function(srcDir, distDir, srcExtension, distExtension) {
 		var getSrcDir;
 		var getDistDir;

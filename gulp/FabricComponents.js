@@ -93,11 +93,12 @@ gulp.task('FabricComponents-compiledLess', function () {
 
 gulp.task('FabricComponents-less', function () {
     return folderList.map(function(componentName) {
-        var manifest = Utilities.parseManifest(componentName);
-        var deps = manifest.dependencies || [];
+       
         var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
         var destFolder = Config.paths.distComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
+        var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
+        var deps = manifest.dependencies || [];
         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
         
         if(hasFileChanged) {

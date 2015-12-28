@@ -1,8 +1,9 @@
 // Add plugins here to use throughout the fabric build
+/**
+ * Class for accessing gulp and node plugins
+ */
 var Plugins = function() {
-	this.gulp = require('gulp');
 	this.del = require('del');
-	this.fs = require('fs');
 	this.less = require('gulp-less');
 	this.batch = require('gulp-batch');
 	this.cssMinify = require('gulp-minify-css');

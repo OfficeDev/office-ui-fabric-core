@@ -1,22 +1,15 @@
 var path = require('path');
 var gulputil = require('gulp-util');
-
+/**
+ * Custom Error Handling Class for Various Tasks
+ */
 var ErrorHandling = function() {
+    /**
+     * Generic error handler for errors in the Pipe
+     * @param {any} error Error message
+     */
 	this.onErrorInPipe = function(error) {
 		 console.log(error);
-	}
-    this.onHTMLError = function(error) {
-        console.log(error);
-        console.log("Html error occured");
-    }
-    this.handlHTMLLintError = function(filepath, issues) {
-        if (issues.length > 0) {
-            issues.forEach(function (issue) {
-                gulputil.log(gulputil.colors.cyan('[gulp-htmllint] ') + gulputil.colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + gulputil.colors.red('(' + issue.code + ') ' + issue.msg));
-            });
-    
-            process.exitCode = 1;
-        }
     }
 }
 

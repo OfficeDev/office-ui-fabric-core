@@ -27,7 +27,7 @@ fabric.Breadcrumb = function(container) {
 fabric.Breadcrumb.prototype = (function() {
 
   //medium breakpoint
-  var MEDIUM = 640;
+  var MEDIUM = 639;
 
   //cached DOM elements
   var _breadcrumb;
@@ -49,12 +49,14 @@ fabric.Breadcrumb.prototype = (function() {
     var item;
     var text;
     var link;
+    var tabIndex;
 
     for(i; i < length; i++) {
       item = _listItems[i].querySelector('.ms-Breadcrumb-itemLink');
       text = item.textContent;
       link = item.getAttribute('href');
-      _itemCollection.push({text: text, link: link});
+      tabIndex = parseInt(item.getAttribute('tabindex'), 10);
+      _itemCollection.push({text: text, link: link, tabIndex: tabIndex});
     }
   };
 
@@ -97,6 +99,7 @@ fabric.Breadcrumb.prototype = (function() {
     overflowItems.forEach(function(item) {
       var li = document.createElement('li');
       li.className = 'ms-ContextualMenu-item';
+      li.setAttribute('tabindex', item.tabIndex);
       var a = document.createElement('a');
       a.className = 'ms-ContextualMenu-link';
       a.setAttribute('href', item.link);
@@ -122,8 +125,9 @@ fabric.Breadcrumb.prototype = (function() {
         listItem.className = 'ms-Breadcrumb-listItem';
         a.className = 'ms-Breadcrumb-itemLink';
         a.setAttribute('href', item.link);
+        a.setAttribute('tabindex', item.tabIndex);
         a.textContent = item.text;
-        chevron.className = 'ms-Icon ms-Icon--chevronRight';
+        chevron.className = 'ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight';
         listItem.appendChild(a);
         listItem.appendChild(chevron);
         _breadcrumbList.appendChild(listItem);
@@ -146,6 +150,9 @@ fabric.Breadcrumb.prototype = (function() {
   var _openOverflow = function(event) {
     if(_overflowMenu.className.indexOf(' is-open') === -1) {
       _overflowMenu.className += ' is-open';
+      removeOutlinesOnClick(event);
+      // force focus rect onto overflow button
+      _overflowButton.focus();
     }
   };
 
@@ -185,10 +192,10 @@ fabric.Breadcrumb.prototype = (function() {
    */
   var _setListeners = function() {
     window.addEventListener('resize', _onResize);
-    _overflowButton.addEventListener('click', _openOverflow);
-    document.addEventListener('click', _closeOverflow);
-    _breadcrumbList.addEventListener('click', removeOutlinesOnClick);
-    _overflowButton.addEventListener('click', removeOutlinesOnClick);
+    _overflowButton.addEventListener('click', _openOverflow, false);
+    _overflowButton.addEventListener('focus', _openOverflow, false);
+    document.addEventListener('click', _closeOverflow, false);
+    _breadcrumbList.addEventListener('click', removeOutlinesOnClick, false);
   };
 
   /**

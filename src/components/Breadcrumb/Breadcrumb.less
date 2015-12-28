@@ -14,13 +14,13 @@
       display: inline;
     }
   }
+}
 
-  .ms-Icon--chevronRight {
-    font-size: @ms-font-size-l;
-    color: @ms-color-neutralSecondary;
-    vertical-align: top;
-    margin: 10px 0;
-  }
+.ms-Breadcrumb-chevron {
+  font-size: @ms-font-size-l;
+  color: @ms-color-neutralSecondary;
+  vertical-align: top;
+  margin: 10px 0;
 }
 
 .ms-Breadcrumb-list {
@@ -37,7 +37,7 @@
     display: inline-block;
 
     &:last-of-type {
-      .ms-Icon--chevronRight {
+      .ms-Breadcrumb-chevron {
         display: none;
       }
     }
@@ -128,18 +128,18 @@
 }
 
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: @ms-screen-md-max) {
   .ms-Breadcrumb {
     margin: 10px 0;
-
-    .ms-Icon--chevronRight {
-      font-size: @ms-font-size-m;
-      margin-top: 7px;
-    }
   }
 
   .ms-Breadcrumb-itemLink {
     font-size: @ms-font-size-l;
+  }
+
+  .ms-Breadcrumb-chevron {
+    font-size: @ms-font-size-m;
+    margin-top: 7px;
   }
 
   .ms-Breadcrumb-overflow {
@@ -150,16 +150,14 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: @ms-screen-sm-max) {
   .ms-Breadcrumb-itemLink {
     font-size: @ms-font-size-m;
     max-width: 116px;
   }
 
-  .ms-Breadcrumb {
-    .ms-Icon--chevronRight {
-      margin-top: 4px;
-    }
+  .ms-Breadcrumb-chevron {
+    margin-top: 4px;
   }
 
   .ms-Breadcrumb-overflow {

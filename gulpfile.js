@@ -70,14 +70,14 @@ gulp.task('watch-sass-debug', ['debugMode', 'SassMode', 'Fabric', 'FabricCompone
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-debug', ['cssPreprocessor', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug', ['debugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
 gulp.task('SassMode', function() {
-    return Config.cssPreprocessor = "sass";
+    return Config.buildSass = true;
 });
 
 gulp.task('debugMode', function() {

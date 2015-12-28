@@ -6,7 +6,9 @@ var pkg = require('../../package.json');
  */
 var Config = function() {
     this.debugMode = false;
-    this.cssPreprocessor = "less";
+    this.lessExtension = "less";
+    this.sassExtension = "scss"
+    this.buildSass = false;
     this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
 	this.distPath = 'dist';
 	this.srcPath = 'src';

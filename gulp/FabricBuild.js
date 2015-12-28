@@ -13,7 +13,7 @@ var Plugins = require('./modules/Plugins');
 
 // Clean out the distribution folder.
 gulp.task('Fabric-nuke', function () {
-    return Plugins.del.sync([Config.paths.distLess, Config.paths.distCSS]);
+    return Plugins.del.sync([Config.paths.distLess, Config.paths.distCSS, Config.paths.distSass]);
 });
 
 //
@@ -23,15 +23,26 @@ gulp.task('Fabric-nuke', function () {
 // Copy all LESS files to distribution folder.
 gulp.task('Fabric-copyAssets', function () {
     // Copy LESS files.
-    return gulp.src([Config.paths.srcLess, Config.paths.srcSass])
+     var moveLess = gulp.src([Config.paths.srcLess + '/**/*'])
             .pipe(Plugins.changed(Config.paths.distLess))
                 .on('error', ErrorHandling.onErrorInPipe)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Moving LESS files over to Dist"
+                    title: "Moving LESS Assets over to Dist"
             })))
                 .on('error', ErrorHandling.onErrorInPipe)
-            .pipe(gulp.dest(Config.distPath))
+            .pipe(gulp.dest(Config.paths.distLess))
                 .on('error', ErrorHandling.onErrorInPipe);
+                
+     var moveSass =  gulp.src([Config.paths.srcSass + '/**/*'])
+            .pipe(Plugins.changed(Config.paths.distSass))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Moving SASS files over to Dist"
+            })))
+                .on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distSass))
+                .on('error', ErrorHandling.onErrorInPipe);
+     return Plugins.mergeStream(moveLess, moveSass);
 });
 
 //
@@ -42,19 +53,22 @@ gulp.task('Fabric-copyAssets', function () {
 gulp.task('Fabric-buildLess', function () {
     var srcPath;
     var cssPlugin;
+    var fileExtension; 
     
-    // Baseline set of tasks for building Fabric CSS.
-    if(Config.cssPreprocessor == "sass") {
+    // Check if building SASS
+    if(Config.buildSass) {
         srcPath = Config.paths.srcSass;
         cssPlugin = Plugins.sass;
+        fileExtension = Config.sassExtension;
     } else {
         srcPath = Config.paths.srcLess;
         cssPlugin = Plugins.less;
+        fileExtension = Config.lessExtension;
     }
     
-    var fabric = gulp.src(srcPath + '/' + 'Fabric.sass')
+    var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Core Fabric" + Config.cssPreprocessor
+                    title: "Building Core Fabric " + fileExtension + " File"
             })))
                 .on('error', ErrorHandling.onErrorInPipe)
             .pipe(cssPlugin())
@@ -84,9 +98,9 @@ gulp.task('Fabric-buildLess', function () {
                 .on('error', ErrorHandling.onErrorInPipe);
                 
     // Build full and minified Fabric RTL CSS.
-    var fabricRtl = gulp.src(srcPath + '/' + 'Fabric.Rtl.less')
+    var fabricRtl = gulp.src(srcPath + '/' + 'Fabric.Rtl.' + fileExtension)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building RTL Fabric LESS"
+                    title: "Building RTL Fabric LESS " + fileExtension + " File"
             })))
                 .on('error', ErrorHandling.onErrorInPipe)
             .pipe(cssPlugin())

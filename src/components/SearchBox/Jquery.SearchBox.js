@@ -30,7 +30,7 @@
         $searchField.addClass('hovering')
       });
 
-      $searchField.on('mouseout', function(event) {
+      $searchField.on('mouseout', function() {
         $searchField.removeClass('hovering');
       });
 
@@ -40,7 +40,7 @@
       });
 
       /** Show the label again when leaving the field. */
-      $(this).find('.ms-SearchBox-field').on('blur', function(event) {
+      $(this).find('.ms-SearchBox-field').on('blur', function() {
 
         // If cancel button is selected remove the text and show the label
         if (cancel) {
@@ -61,10 +61,8 @@
         }
 
         // Reset cancel to false
-        cancel = false; 
+        cancel = false;
       });
-
-
     });
 
   };

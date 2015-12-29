@@ -48,7 +48,7 @@ Now open up your favorite text editor or IDE and create a new file called index.
 
 ## Step 2 – Adding Fabric to a project
 
-Download Fabric, unzip it, and copy **fabric.css** and **fabric.components.css** into your **css/** folder. Then add the following lines to the `<head>` section of your index.html document:
+Go to our release page and [Download the latest version of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), the link is under Downloads. After downloading the zip, extract the contents to a folder. Then go into /dist/css. Copy **fabric.css** and **fabric.components.css** into your  **todo/css/** project folder. Then add the following lines to the `<head>` section of your index.html document:
 
 
 ```html
@@ -60,12 +60,14 @@ The first file includes the core Fabric styles (typography, colors, animations, 
 
 After linking to the Fabric CSS files, your page will now have access to all of the colors, fonts, animations, and component styles that Fabric offers.
 
-We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your css/ directory and add a link to it _after_ fabric.components.css in index.html:
+### Create a new styles sheet for our application
+
+We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your todo/css/ directory and add a link to it _after_ fabric.components.css in index.html:
 
 ```html
 <link href="css/fabric.css" type="text/css" rel="stylesheet" />
 <link href="css/fabric.components.css" type="text/css" rel="stylesheet" />
-<link href="css/app.css" type="text/css" rel="stylesheet" />
+**<link href="css/app.css" type="text/css" rel="stylesheet" />**
 ```
 
 NOTE: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 

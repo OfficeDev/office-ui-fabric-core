@@ -70,7 +70,7 @@ We will now create a CSS file for your application, which we'll use to add custo
 <link href="css/app.css" type="text/css" rel="stylesheet" />
 ```
 
-NOTE: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
+**_NOTE_**: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
 
 At this point, your directory should look like this:
 

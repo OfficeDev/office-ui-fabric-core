@@ -20,7 +20,7 @@ If you're building an Office Add-in, you can find simple instructions for using 
 
 ## Components Overview
 
-Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.
+Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and, in this tutorial, we will be tweaking a few of them.
 
 Now, let's get started building our application.
 

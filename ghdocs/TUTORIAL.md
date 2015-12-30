@@ -531,7 +531,7 @@ Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-
     </div>
 ```
 
-Now let's copy this new list item code and paste it at least 10 times inside of `<ul class=”ms-List”></ul>`. Afterwards  you should now be complete with the first part of this tutorial below is the complete HTML and CSS.
+Now let's copy this new list item code and paste it at least 10 times inside of `<ul class="ms-List"></ul>` to fill out the UI of the app. With this final step, you just completed the tutorial! Below is the complete HTML and CSS:
 
 ### Final HTML
 ```html

@@ -48,7 +48,7 @@ Now open up your favorite text editor or IDE and create a new file called index.
 
 ## Step 2 – Adding Fabric to a project
 
-Go to our release page and [Download the latest version of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), the link is under Downloads. After downloading the zip, extract the contents to a folder. Then go into /dist/css. Copy **fabric.css** and **fabric.components.css** into your  **todo/css/** project folder. Then add the following lines to the `<head>` section of your index.html document:
+Go [here to download the latest .zip of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), and then extract the contents. Then go into `/dist/css` and copy **fabric.css** and **fabric.components.css** into your `todo/css/` project folder. Then add the following lines to the `<head>` section of your index.html document:
 
 
 ```html
@@ -60,9 +60,9 @@ The first file includes the core Fabric styles (typography, colors, animations, 
 
 After linking to the Fabric CSS files, your page will now have access to all of the colors, fonts, animations, and component styles that Fabric offers.
 
-### Create a new styles sheet for our application
+### Create a new style sheet for our application
 
-We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your todo/css/ directory and add a link to it _after_ fabric.components.css in index.html:
+We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your `todo/css/` directory and add a link to it _after_ fabric.components.css in index.html:
 
 ```html
 <link href="css/fabric.css" type="text/css" rel="stylesheet" />
@@ -173,7 +173,7 @@ dist/components/Button/Button.html
 dist/components/TextField/TextField.html
 ```
 
-First, copy all the contents from TextField.html and paste it inside of the first column `<div class="ms-Grid-col"></div> <!-- First Column -->`, then remove the `<label class="ms-Label">Name</label>` element and `<span class="ms-TextField-description">This should be your first and last name.</span>`.  At this point your Second Column HTML should look like this:
+First, copy all the contents from TextField.html and paste it inside of the first column `<div class="ms-Grid-col"></div> <!-- First Column -->`, then remove the `<label class="ms-Label">Name</label>` element and `<span class="ms-TextField-description">This should be your first and last name.</span>`.  At this point your second column HTML should look like this:
 
 ```html
 <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10">
@@ -183,7 +183,7 @@ First, copy all the contents from TextField.html and paste it inside of the firs
 </div> <!-- First Column -->
 ```
 
-**_NOTE_**: We are removing the `<label>` and `<span` elements because we don't need them in this example.
+**_NOTE_**: We are removing the `<label>` and `<span>` elements because we don't need them in this example.
 
 Copy all the contents from Button.html and paste it into our second column `<div class="ms-Grid-col"></div> <!-- Second Column -->`. Now change the text inside of the button `<span class="ms-Button-description">` **Create account** to **Add Todo** and changing the description to say **Add a todo task to the list**. We should also remove `<span class="ms-Button-description"></span>` After the past few edits, **your index.html should look like the following**:
 
@@ -240,7 +240,7 @@ Now, let's add some styles to app.css to position the ListHeader:
 }
 ```
 
-Now we should plain-looking title inside a white strip. Let's change that with a few Fabric typography classes: add `ms-font-xxl` and `ms-fontWeight-light` after the ListHeader class on   our  `<div class="ListHeader">Todo List</div>` element. This element should now look like the following:
+Now we should have a simple title inside a white strip. Let's change that with a few Fabric typography classes: add `ms-font-xxl` and `ms-fontWeight-light` after the ListHeader class on   our  `<div class="ListHeader">Todo List</div>` element. This element should now look like the following:
 
 ```html
 <div class="ListHeader ms-font-xxl ms-fontWeight-light">Todo List</div>
@@ -290,7 +290,7 @@ Go ahead and open up `dist/components/List/List.html` from your extracted Fabric
 </div>
 ```
 
-Now, let's remove the background colors ( `background-color: #000000;`, `background-color: #cdcdcd;`) we used to test `<div class="TodoBar"></div>` and `<div class="TodoList></div>`. **_Your app.css file should look like the following:
+Now, let's remove the background colors ( `background-color: #000000;`, `background-color: #cdcdcd;`) we used to test `<div class="TodoBar"></div>` and `<div class="TodoList></div>`. **Your app.css file should look like the following:**
 
 ```css
 html, 
@@ -475,9 +475,9 @@ Here is a screenshot of what your app should look like at this moment:
 
 It's starting to look pretty good! It still needs something more, so let's add a background color and adjust the padding and margins of our TextField and Button components.
 
-**_NOTE_**: Fabric comes with a large assortment of colors that can be referenced on our [Styles Section](http://dev.office.com/fabric/styles#color)
+**_NOTE_**: Fabric comes with a large assortment of colors that can be referenced on our [Styles Section](http://dev.office.com/fabric/styles#color).
 
-To accomplish this, let's add the following new styles to app.css below our `TodoBar {}` block of styles:
+To accomplish this, let's add the following new styles to app.css below our `.TodoBar` block of styles:
 
 ```css
 
@@ -509,9 +509,9 @@ These styles are going to override the default component styling and will help o
 
 **Hang on, this part gets a bit tricky**
 
-We really want to tweak our list component for our purposes, we want to have a title and description with the x and checkmark. Since we don't need the paper clip and flag, go ahead and remove all `<div class="ms-ListItem is-selectable"></div>` elements **Except the first one** this will give us one element to work with. 
+But now we'd really like to tweak our component by adding a title and a description along with icons for an x and a checkmark. Since we don't need the paper clip and flag, go ahead and remove all `<div class="ms-ListItem is-selectable"></div>` elements **except the first one** so we have one element to work with.
 
-Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>` and `<div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>`. Then changed `ms-Icon ms-Icon--flag` to `ms-Icon ms-Icon--x` and `ms-Icon ms-Icon--pinLeft` to `ms-Icon ms-Icon--check`. our new list html should look like the following: 
+Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>` and `<div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>`. Then change the icons to the x and the check: replace `ms-Icon ms-Icon--flag` with `ms-Icon ms-Icon--x` and `ms-Icon ms-Icon--pinLeft` with `ms-Icon ms-Icon--check`. Our new list HTML should look like the following:
 
 ```html
    <div class="TodoList">

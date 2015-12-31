@@ -1,6 +1,6 @@
 # Fabric Tutorial Part 1
 
-###Contents
+### Contents
 
 - [Overview](#overview)
 - [Components Overview](#components-overview)
@@ -20,7 +20,7 @@ If you're building an Office Add-in, you can find simple instructions for using 
 
 ## Components Overview
 
-Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and in this tutorial, we will be tweaking a few of them.
+Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and, in this tutorial, we will be tweaking a few of them.
 
 Now, let's get started building our application.
 
@@ -48,7 +48,7 @@ Now open up your favorite text editor or IDE and create a new file called index.
 
 ## Step 2 – Adding Fabric to a project
 
-Download Fabric, unzip it, and copy **fabric.css** and **fabric.components.css** into your **css/** folder. Then add the following lines to the `<head>` section of your index.html document:
+Go [here to download the latest .zip of Fabric  (the first zip "office-ui-fabrc-[version].zip")](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), and then extract the contents. Then go into `/dist/css` and copy **fabric.css** and **fabric.components.css** into your `todo/css/` project folder. Then add the following lines to the `<head>` section of your index.html document:
 
 
 ```html
@@ -60,7 +60,9 @@ The first file includes the core Fabric styles (typography, colors, animations, 
 
 After linking to the Fabric CSS files, your page will now have access to all of the colors, fonts, animations, and component styles that Fabric offers.
 
-We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your css/ directory and add a link to it _after_ fabric.components.css in index.html:
+### Create a new style sheet for our application
+
+We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your `todo/css/` directory and add a link to it _after_ fabric.components.css in index.html:
 
 ```html
 <link href="css/fabric.css" type="text/css" rel="stylesheet" />
@@ -68,7 +70,7 @@ We will now create a CSS file for your application, which we'll use to add custo
 <link href="css/app.css" type="text/css" rel="stylesheet" />
 ```
 
-NOTE: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
+**_NOTE_**: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
 
 At this point, your directory should look like this:
 
@@ -126,7 +128,6 @@ Now let's add styles for these elements. Open up app.css and add two CSS rules: 
 }
 
 .TodoList {
-  float: left;
   width: 100%;
   height: auto;
   background-color: #cdcdcd;
@@ -154,46 +155,68 @@ Go ahead and refresh—the extra white space along the top and sides should go a
 
 ## Step 4 – Using Fabric components
 
-Fabric includes a responsive grid system, similar to those seen in other UI toolkits, that we will use for our TodoBar section. Let's add the following HTML inside  `<div class="TodoBar"></div>`:
+Fabric includes a responsive grid system, similar to those seen in other UI toolkits, that we will be using for our TodoBar section. Let's add the following HTML inside  `<div class="TodoBar"></div>`:
 
 ```html
 <div class="ms-Grid">
   <div class="ms-Grid-row">
-    <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10"></div>
-    <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2"></div>
+    <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10"></div> <!-- First Column -->
+    <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2"></div> <!-- Second Column -->
   </div>
 </div>
 ```
 
-Now for the fun part: let's add some component HTML into our ToDo app. Navigate to where you extracted your .zip of Fabric, then open the following component files in your code editor:
+Now for the fun part: let's add some component HTML into our ToDo app. Navigate to where you extracted Fabric, then open the following component files in your code editor:
 
 ```
 dist/components/Button/Button.html
 dist/components/TextField/TextField.html
 ```
 
-First, copy all the contents from TextField.html and paste it into the first `.ms-Grid-col ` `<div>`, then remove the `<label>` element. The HTML should look now like this:
+First, copy all the contents from TextField.html and paste it inside of the first column `<div class="ms-Grid-col"></div> <!-- First Column -->`, then remove the `<label class="ms-Label">Name</label>` element and `<span class="ms-TextField-description">This should be your first and last name.</span>`.  At this point your second column HTML should look like this:
 
 ```html
 <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10">
-  <div class="ms-TextField">
-    <input class="ms-TextField-field">
-  </div>
-</div>
+    <div class="ms-TextField">
+        <input class="ms-TextField-field">
+    </div>
+</div> <!-- First Column -->
 ```
 
-NOTE: We are removing the `<label>` element because we don't need it in this example. Fabric components can be customized fairly easily.
+**_NOTE_**: We are removing the `<label>` and `<span>` elements because we don't need them in this example.
 
-Copy all the contents from Button.html and paste it into our second column. Let's tweak the text as well by changing **Create account** to **Add Todo** and changing the description to say **Add a todo task to the list**. After all that, it should look like the following:
+Copy all the contents from Button.html and paste it into our second column `<div class="ms-Grid-col"></div> <!-- Second Column -->`. Now change the text inside of the button `<span class="ms-Button-label">` from **Create account** to **Add Todo**. We should also remove `<span class="ms-Button-description"></span>` After the past few edits, your **index.html** should look like the following:
 
 ```html
-<div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2">
-  <button class="ms-Button">
-    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-    <span class="ms-Button-label">Add Todo</span>
-    <span class="ms-Button-description">Add a todo task to the list</span>
-  </button>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+      <link href="css/fabric.css" type="text/css" rel="stylesheet" />
+      <link href="css/fabric.components.css" type="text/css" rel="stylesheet" />
+      <link href="css/app.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+      <div class="TodoBar">
+        <div class="ms-Grid">
+            <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10">
+                    <div class="ms-TextField">
+                        <input class="ms-TextField-field">
+                    </div>
+                </div> <!-- First Column -->
+                <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2">
+                    <button class="ms-Button">
+                        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                        <span class="ms-Button-label">Add Todo</span>
+                    </button>
+                </div> <!-- Second Column -->
+            </div>
+        </div>
+      </div>
+      <div class="TodoList"></div>
+  </body>
+</html>
 ```
 
 ## Step 5 – Using Fabric typography
@@ -208,7 +231,6 @@ Now, let's add some styles to app.css to position the ListHeader:
 
 ```css
 .ListHeader {
-  float: left;
   width: 100%;
   height: auto;
   margin-top: 60px;
@@ -218,19 +240,19 @@ Now, let's add some styles to app.css to position the ListHeader:
 }
 ```
 
-After that we should have plain-looking title inside a white strip. Let's change that with a few Fabric typography classes: add `ms-font-xxl` and `ms-fontWeight-light` after the ListHeader class on your title element. Our ListHeader should now look like the following:
+Now we should have a simple title inside a white strip. Let's change that with a few Fabric typography classes: add `ms-font-xxl` and `ms-fontWeight-light` after the ListHeader class on   our  `<div class="ListHeader">Todo List</div>` element. This element should now look like the following:
 
 ```html
 <div class="ListHeader ms-font-xxl ms-fontWeight-light">Todo List</div>
 ```
 
-NOTE: `.ms-font-xxl` is a "base" typography class, each of which sets a size, color, font-family, and weight. `.ms-fontWeight-light` is one of several helper classes that override a single property and should usually be combined with a base typography class.
+**_NOTE_**: `.ms-font-xxl` is a "base" typography class, each of which sets a size, color, font-family, and weight. `.ms-fontWeight-light` is one of several helper classes that override a single property and should usually be combined with a base typography class.
 
 ## Step 6 – Adding more complex components
 
 Now, let's get our list up and running using some hard-coded content. In Part 2, we will use JavaScript to add real data and interactions.
 
-Go ahead and open up `dist/components/List/List.html` from your extracted Fabric .zip into your text editor, then copy all of the contents and paste it inside of `<div class="TodoList"></div>`. Your code should now look like this:
+Go ahead and open up `dist/components/List/List.html` from your extracted Fabric .zip into your text editor, then copy all of the contents and paste it inside of `<div class="TodoList"></div>`. This div should now look like the following:
 
 ```html
 <div class="TodoList">
@@ -268,48 +290,208 @@ Go ahead and open up `dist/components/List/List.html` from your extracted Fabric
 </div>
 ```
 
-Now, let's remove the background colors we used to test our two container `<divs> (.TodoList, .TodoBar)`. Their styles should now look like the following:
+Now, let's remove the background colors ( `background-color: #000000;`, `background-color: #cdcdcd;`) we used to test `<div class="TodoBar"></div>` and `<div class="TodoList></div>`. Your **app.css** file should look like the following:
 
 ```css
+html, 
+body {
+  margin: 0;
+}
+
 .TodoBar {
-  position: fixed;
+  position: fixed; /* This bar should always be fixed to the top */
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
   z-index: 2;
-  background-color: #000000;
 }
 
 .TodoList {
-  float: left;
-  margin-top: 60px;
   width: 100%;
   height: auto;
   z-index: 1;
   min-height: 200px;
-  background-color: #000000;
+}
+
+.ListHeader {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
 }
 ```
 
-Here is what your app should look like at this moment:
+
+ And here is what your HTML should look like:
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+      <link href="css/fabric.css" type="text/css" rel="stylesheet" />
+      <link href="css/fabric.components.css" type="text/css" rel="stylesheet" />
+      <link href="css/app.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+      <div class="TodoBar">
+        <div class="ms-Grid">
+            <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10">
+                    <div class="ms-TextField">
+                        <input class="ms-TextField-field">
+                        <span class="ms-TextField-description">This should be your first and last name.</span>
+                    </div>
+                </div> <!-- First Column -->
+                <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2">
+                    <button class="ms-Button">
+                        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                        <span class="ms-Button-label">Add ToDo</span>
+                        <span class="ms-Button-description">Description of the action this button takes</span>
+                    </button>
+                </div> <!-- Second Column -->
+            </div>
+        </div>
+      </div>
+      <div class="ListHeader ms-font-xxl ms-fontWeight-light">Todo List</div>
+      <div class="TodoList">
+          <ul class="ms-List">
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-selected is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-secondaryText">Meeting notes</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+                <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+                </div>
+            </div>
+         </ul>
+      </div>
+  </body>
+</html>
+```
+ 
+
+Here is a screenshot of what your app should look like at this moment:
 
 ![Second screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/SecondAppLook.png)
 
 It's starting to look pretty good! It still needs something more, so let's add a background color and adjust the padding and margins of our TextField and Button components.
 
-To accomplish this, let's add the following new styles to app.css:
+**_NOTE_**: Fabric comes with a large assortment of colors that can be referenced on our [Styles Section](http://dev.office.com/fabric/styles#color).
+
+To accomplish this, let's add the following new styles to app.css below our `.TodoBar` block of styles:
 
 ```css
+
 .TodoBar {
-  position: fixed;
+  position: fixed; /* This bar should always be fixed to the top */
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
   z-index: 2;
-  background-color: #0078D7; /* Use a better background-color */
+  background-color: #0078D7; /* New Background Color */
 }
+
+... styles hidden
 
 .ms-TextField .ms-TextField-field {
   margin-top: 14px;
@@ -323,24 +505,223 @@ To accomplish this, let's add the following new styles to app.css:
 
 These styles are going to override the default component styling and will help our TextField and Button stand out with some minor positioning adjustments.
 
-Now let's tweak our list a bit. For our purposes, we really want to just have a title and description with the x and checkmark. Since we don't need the paper clip and flag, let's modify one list item to look like the following:
+**Hang on, this part gets a bit tricky!**
+
+But now we'd really like to tweak our component by adding a title and a description along with icons for an x and a checkmark. Since we don't need the paper clip and flag, go ahead and remove all `<div class="ms-ListItem is-selectable"></div>` elements **except the first one** so we have one element to work with.
+
+Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>`,  `<div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>`, and `<span class="ms-ListItem-secondaryText">Meeting notes</span>`. Then change the icons to the x and the check: replace `ms-Icon ms-Icon--flag` with `ms-Icon ms-Icon--x` and `ms-Icon ms-Icon--pinLeft` with `ms-Icon ms-Icon--check`. Our new list HTML should look like the following:
 
 ```html
-<li class="ms-List-item">
-  <div class="ms-ListItem is-unread">
-    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
-    <span class="ms-ListItem-metaText">2:42p</span>
-    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
-    <div class="ms-ListItem-actions">
-      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
-      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+   <div class="TodoList">
+        <ul class="ms-List">
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+        </ul>
     </div>
-  </div>
-</li>
 ```
 
-Now let's copy this new list item code and paste it at least 10 times inside of `<ul class=”ms-List”></ul>`, making sure to remove the old list item code.
+Now let's copy this new list item code and paste it at least 10 times inside of `<ul class="ms-List"></ul>` to fill out the UI of the app. With this final step, you just completed the tutorial! Below is the complete HTML and CSS:
+
+### Final HTML
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+      <link href="css/fabric.css" type="text/css" rel="stylesheet" />
+      <link href="css/fabric.components.css" type="text/css" rel="stylesheet" />
+      <link href="css/app.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+      <div class="TodoBar">
+        <div class="ms-Grid">
+            <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10">
+                    <div class="ms-TextField">
+                        <input class="ms-TextField-field">
+                        <span class="ms-TextField-description">This should be your first and last name.</span>
+                    </div>
+                </div> <!-- First Column -->
+                <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2">
+                    <button class="ms-Button">
+                        <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+                        <span class="ms-Button-label">Add ToDo</span>
+                        <span class="ms-Button-description">Description of the action this button takes</span>
+                    </button>
+                </div> <!-- Second Column -->
+            </div>
+        </div>
+      </div>
+      <div class="ListHeader ms-font-xxl ms-fontWeight-light">Todo List</div>
+      <div class="TodoList">
+        <ul class="ms-List">
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            <div class="ms-ListItem is-unread is-selectable">
+                <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+                <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+                <span class="ms-ListItem-metaText">2:42p</span>
+                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-actions">
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
+                   <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
+                </div>
+            </div>
+            
+         </ul>
+      </div>
+  </body>
+</html>
+```
+
+```css
+html, 
+body {
+  margin: 0;
+}
+
+.TodoBar {
+  position: fixed; /* This bar should always be fixed to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+  background-color: #0078D7;
+}
+
+.TodoList {
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  min-height: 200px;
+}
+
+.ListHeader {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.ms-TextField .ms-TextField-field {
+  margin-top: 14px;
+}
+
+.ms-Button {
+  margin-top: 14px;
+  width: 100%;
+}
+```
+
 
 Your app should look exactly like this:
 

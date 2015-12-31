@@ -48,7 +48,7 @@ Now open up your favorite text editor or IDE and create a new file called index.
 
 ## Step 2 – Adding Fabric to a project
 
-Go [here to download the latest .zip of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), and then extract the contents. Then go into `/dist/css` and copy **fabric.css** and **fabric.components.css** into your `todo/css/` project folder. Then add the following lines to the `<head>` section of your index.html document:
+Go [here to download the latest .zip of Fabric  (the first zip "office-ui-fabrc-[version].zip")](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), and then extract the contents. Then go into `/dist/css` and copy **fabric.css** and **fabric.components.css** into your `todo/css/` project folder. Then add the following lines to the `<head>` section of your index.html document:
 
 
 ```html
@@ -185,7 +185,7 @@ First, copy all the contents from TextField.html and paste it inside of the firs
 
 **_NOTE_**: We are removing the `<label>` and `<span>` elements because we don't need them in this example.
 
-Copy all the contents from Button.html and paste it into our second column `<div class="ms-Grid-col"></div> <!-- Second Column -->`. Now change the text inside of the button `<span class="ms-Button-description">` **Create account** to **Add Todo** and changing the description to say **Add a todo task to the list**. We should also remove `<span class="ms-Button-description"></span>` After the past few edits, **your index.html should look like the following**:
+Copy all the contents from Button.html and paste it into our second column `<div class="ms-Grid-col"></div> <!-- Second Column -->`. Now change the text inside of the button `<span class="ms-Button-label">` from **Create account** to **Add Todo**. We should also remove `<span class="ms-Button-description"></span>` After the past few edits, your **index.html** should look like the following:
 
 ```html
 <!DOCTYPE html>
@@ -208,7 +208,7 @@ Copy all the contents from Button.html and paste it into our second column `<div
                 <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2">
                     <button class="ms-Button">
                         <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-                        <span class="ms-Button-label">Create account</span>
+                        <span class="ms-Button-label">Add Todo</span>
                     </button>
                 </div> <!-- Second Column -->
             </div>
@@ -290,7 +290,7 @@ Go ahead and open up `dist/components/List/List.html` from your extracted Fabric
 </div>
 ```
 
-Now, let's remove the background colors ( `background-color: #000000;`, `background-color: #cdcdcd;`) we used to test `<div class="TodoBar"></div>` and `<div class="TodoList></div>`. **Your app.css file should look like the following:**
+Now, let's remove the background colors ( `background-color: #000000;`, `background-color: #cdcdcd;`) we used to test `<div class="TodoBar"></div>` and `<div class="TodoList></div>`. Your **app.css** file should look like the following:
 
 ```css
 html, 
@@ -491,9 +491,7 @@ To accomplish this, let's add the following new styles to app.css below our `.To
   background-color: #0078D7; /* New Background Color */
 }
 
-```
-_... styles hidden_
-```css
+... styles hidden
 
 .ms-TextField .ms-TextField-field {
   margin-top: 14px;
@@ -507,18 +505,17 @@ _... styles hidden_
 
 These styles are going to override the default component styling and will help our TextField and Button stand out with some minor positioning adjustments.
 
-**Hang on, this part gets a bit tricky**
+**Hang on, this part gets a bit tricky!**
 
 But now we'd really like to tweak our component by adding a title and a description along with icons for an x and a checkmark. Since we don't need the paper clip and flag, go ahead and remove all `<div class="ms-ListItem is-selectable"></div>` elements **except the first one** so we have one element to work with.
 
-Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>` and `<div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>`. Then change the icons to the x and the check: replace `ms-Icon ms-Icon--flag` with `ms-Icon ms-Icon--x` and `ms-Icon ms-Icon--pinLeft` with `ms-Icon ms-Icon--check`. Our new list HTML should look like the following:
+Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>`,  `<div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>`, and `<span class="ms-ListItem-secondaryText">Meeting notes</span>`. Then change the icons to the x and the check: replace `ms-Icon ms-Icon--flag` with `ms-Icon ms-Icon--x` and `ms-Icon ms-Icon--pinLeft` with `ms-Icon ms-Icon--check`. Our new list HTML should look like the following:
 
 ```html
    <div class="TodoList">
         <ul class="ms-List">
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -568,7 +565,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
         <ul class="ms-List">
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -579,7 +575,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -590,7 +585,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -601,7 +595,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -612,7 +605,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -623,7 +615,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -634,7 +625,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -645,7 +635,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -656,7 +645,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -667,7 +655,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
@@ -678,7 +665,6 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
             </div>
             <div class="ms-ListItem is-unread is-selectable">
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
-                <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
                 <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>

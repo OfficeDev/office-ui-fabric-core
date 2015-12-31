@@ -1,6 +1,7 @@
 {
   "name": "TextField",
   "notes": "",
+  "description": "Fabric includes several basic text fields to cover different use cases including a simple text field for one line entry, a multiline variant for more than one line of text entry, a variant that includes placeholder text for prompting the user, and a minimalist underlined variant.",
   "template": "TextField.html",
   "class": "ms-TextField",
   "fileOrder": [

@@ -99,6 +99,7 @@
           var selectedInitials = (function() {
             var name = selectedName.split(' ');
             var nameInitials = '';
+
             for (i = 0; i < name.length; i++) {
               nameInitials += name[i].charAt(0);
             }
@@ -108,6 +109,7 @@
           var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
           var selectedImage = $(this).find('.ms-Persona-image').attr('src');
 
+          /** Token html */
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
                               '<div class="ms-Persona ms-Persona--xs">' +
                                '<div class="ms-Persona-imageArea">' +
@@ -123,6 +125,7 @@
                                '<i class="ms-Icon ms-Icon--x"></i>' +
                             ' </button>' +
                            '</div>';
+          /** List item html */
           var personaListItem = '<li class="ms-PeoplePicker-selectedPerson">' +
                                   '<div class="ms-Persona ms-Persona--sm">' +
                                      '<div class="ms-Persona-imageArea">' +
@@ -137,23 +140,32 @@
                                     '</div>' +
                                     '<button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>' +
                                 '</li>';
+          /** Tokenize selected persona if not facepile or memberslist variants */
           if (!$peoplePicker.hasClass('ms-PeoplePicker--facePile') && !$peoplePicker.hasClass('ms-PeoplePicker--membersList') ) {
             $searchField.before(personaHTML);
             $peoplePicker.removeClass("is-active");
             resizeSearchField($peoplePicker);
           }
+          /** Add selected persona to a list if facepile or memberslist variants */
           else {
             if (!$selected.hasClass('is-active')) {
               $selected.addClass('is-active');
             }
+            /** Prepend persona list item html to selected people list */
             $selectedPeople.prepend(personaListItem);
+            /** Close the picker */
             $peoplePicker.removeClass("is-active");
-
+            /** Get the total amount of selected personas and display that number */
             var count = $peoplePicker.find('.ms-PeoplePicker-selectedPerson').length;
             $selectedCount.html(count);
-
+            /** Return picker back to default state:
+            - Show only the first five results in the people list for when the picker is reopened
+            - Make searchMore inactive
+            - Clear any search field text 
+            */
             $peopleList.children().show();
             $peopleList.children(":gt(4)").hide();
+
             $('.ms-PeoplePicker-selected').show();
             $('.ms-PeoplePicker-searchMore').removeClass('is-active');
             $searchField.val("");
@@ -226,7 +238,6 @@
           }
       });
 
-
       /** Search people picker items */
       $peoplePicker.on('keyup', '.ms-PeoplePicker-searchField', function(evt) {
         var suggested = [];
@@ -285,6 +296,7 @@
         var selectedInitials = (function() {
           var name = selectedName.split(' ');
           var nameInitials = '';
+
           for (i = 0; i < name.length; i++) {
             nameInitials += name[i].charAt(0);
           }
@@ -327,7 +339,6 @@
         } else {
           $personaCard.css({'top': 'auto'});
         }
-
       });
 
       /** Dismiss persona card when clicking on the document */
@@ -341,12 +352,11 @@
           $personaCard.addClass('is-active');
         }
       });
-
     });
   };
 
+  /** Resize the search field to match the search box */
   function resizeSearchField($peoplePicker) {
-
     var $searchBox = $peoplePicker.find('.ms-PeoplePicker-searchBox');
 
     // Where is the right edge of the search box?
@@ -368,7 +378,7 @@
       newFieldWidth = "100%";
     }
 
+    // Set the width of the search field
     $peoplePicker.find('.ms-PeoplePicker-searchField').outerWidth(newFieldWidth);
   }
-
 })(jQuery);

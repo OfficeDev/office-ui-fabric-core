@@ -61,7 +61,6 @@ var ComponentSamplesHelper = function() {
             .pipe(gulp.dest(destFolder))
                 .on('error', ErrorHandling.onErrorInPipe);
     }
-    
 };
 
 module.exports = new ComponentSamplesHelper();

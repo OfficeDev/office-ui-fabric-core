@@ -49,7 +49,7 @@ var FabricServer = function() {
      * @return {any} Returns express server
      */
 	this.start = function() {
-		// Check for any paths that are outside of the root serve directory
+		// Check for any paths that are outside of the root server directory
 		if(this.specificPaths.length > 0) {
 			for(var i = 0; i < this.specificPaths.length; i++) {
                 var pathJoined = path.join(this.rootPath, this.specificPaths[i].folderPath);

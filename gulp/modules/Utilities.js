@@ -66,7 +66,7 @@ var Utilities = function() {
      * Return an Array of files inside a directory by extension name
      * @param {string} srcDir   The src directory path
      * @param {string} extName  The filename extension somtimes .less or .css
-     * @returns {array}          Returns an ARray of filesnames    
+     * @returns {array}          Returns an Array of filenames    
      */
     this.getFilesByExtension = function(srcDir, extName) {
         try {
@@ -128,7 +128,7 @@ var Utilities = function() {
 			getSrcDir = this.getFilesByExtension(srcDir, srcExtension);
         }
         catch(e) {
-			return true; // We will return true if the directory doesnt exist
+			return true; // We will return true if the directory doesn't exist
         }
 	   
         srcDates = this.getFilesDates(getSrcDir, srcDir);

@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var gulputil = require('gulp-util');
 var Utilities = require('./modules/Utilities');
 var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');

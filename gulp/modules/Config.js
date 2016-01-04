@@ -10,23 +10,23 @@ var Config = function() {
     this.sassExtension = "scss";
     this.buildSass = false;
     this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
-	this.distPath = 'dist';
-	this.srcPath = 'src';
+	var distPath = 'dist';
+	var srcPath = 'src';
 	this.paths = {
-		distComponents: this.distPath + '/components',
-		distLess: this.distPath + '/less',
-        distSass: this.distPath + '/sass',
-		distCSS: this.distPath + '/css',
-		distSamples: this.distPath + '/samples',
-		distSampleComponents: this.distPath + '/samples/' +  '/Components',
-		distJS: this.distPath + '/js',
-		distPackages: this.distPath + '/packages',
-		srcPath: this.srcPath,
-		srcSamples: this.srcPath + '/samples',
-        srcSass: this.srcPath + '/sass',
+		distComponents: distPath + '/components',
+		distLess: distPath + '/less',
+        distSass: distPath + '/sass',
+		distCSS: distPath + '/css',
+		distSamples: distPath + '/samples',
+		distSampleComponents: distPath + '/samples/' +  '/Components',
+		distJS: distPath + '/js',
+		distPackages: distPath + '/packages',
+		srcPath: srcPath,
+		srcSamples: srcPath + '/samples',
+        srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		srcLess: this.srcPath + '/less',
-		templatePath : this.srcPath + '/templates'
+		srcLess: srcPath + '/less',
+		templatePath : srcPath + '/templates'
 	};
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";

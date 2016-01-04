@@ -24,8 +24,7 @@
         $(this).addClass('is-active');
 
         /** Function for switching selected item into view by adding a class to ul. */
-        var updateForItem = function(item){
-          var wrapper = document.getElementById("detailList");
+        var updateForItem = function(wrapper, item){
           var previousItem = wrapper.className + "";
           var detail = item.charAt(0).toUpperCase() + item.slice(1);
           var nextItem = "ms-PersonaCard-detail"+detail;
@@ -38,7 +37,7 @@
         /** Get id of selected item */
         var el = $(this).attr('id');
         /** Add detail class to ul to switch it into view. */
-        updateForItem(el);
+        updateForItem($(this).parent().next().find('#detailList')[0], el);
 
         /** Display the corresponding details. */
         var requestedAction = $(this).attr('id');

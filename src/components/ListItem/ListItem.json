@@ -1,6 +1,7 @@
 {
   "name": "ListItem",
   "notes": "",
+  "description": "List item variants that are places inside of {0}List{1}. List variants support several states including Unread, Checked, Picture, and Unseen",
   "template": "ListItem.html",
   "class": "ms-ListItem",
   "fileOrder": [

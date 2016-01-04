@@ -1,6 +1,7 @@
 {
   "name": "CommandBar",
   "notes": "",
+  "description": "Fabric's Command Bar is an area for developers to add a comanding surface to panels and pages. Unlike the nav bar, this component is for action items and not links to other pages. For a more traditional navigation, see {0}NavBar {1} component.",
   "accessibilityNotes": 
     {
       "role": "CommandBar",

@@ -1,6 +1,7 @@
 {
   "name": "Link",
   "notes": "",
+  "description": "A component containing styles for links with several variants.",
   "template": "Link.html",
   "class": "ms-Link",
   "wrapBranches": true,

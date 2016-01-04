@@ -1,6 +1,7 @@
 {
   "name": "Dialog",
   "notes": "",
+  "description": "A popup box that animates in over an application, used for requesting a desicion from a user containing only a few or less potential actions. Dialog has several variants that display different possible styles and actions.",
   "accessibilityNotes": 
     {
       "role": "Dialog",

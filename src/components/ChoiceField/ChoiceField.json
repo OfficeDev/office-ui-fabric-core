@@ -1,6 +1,7 @@
 {
   "name": "ChoiceField",
   "notes": "Radio buttons and checkboxes.",
+  "description": "Fabric's version of radio button groups and checkboxes",
   "class": "ms-ChoiceField",
   "dependencies": [
     "Label"

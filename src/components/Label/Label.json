@@ -1,6 +1,7 @@
 {
   "name": "Label",
   "notes": "A standard form label.",
+  "descripton": "Styling for form labels.",
   "template": "Label.html",
   "class": "ms-Label",
   "wrapBranches": true,

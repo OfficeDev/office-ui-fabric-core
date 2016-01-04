@@ -62,6 +62,6 @@ var ComponentSamplesHelper = function() {
                 .on('error', ErrorHandling.onErrorInPipe);
     }
     
-}
+};
 
 module.exports = new ComponentSamplesHelper();

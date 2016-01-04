@@ -34,11 +34,10 @@ var Plugins = function() {
 	this.uglify = require('gulp-uglify');
 	this.nugetpack = require('gulp-nuget-pack');
 	this.requireDir = require('require-dir');
-	this.applyTemplate = require('gulp-apply-template');
 	this.debug = require('gulp-debug');
     this.gulpif = require('gulp-if');
     this.changed = require('gulp-changed');
     this.sass = require('gulp-sass');
-}
+};
 
 module.exports = new Plugins();

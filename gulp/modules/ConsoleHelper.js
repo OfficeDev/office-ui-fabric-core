@@ -20,7 +20,7 @@ var ConsoleHelper = function() {
 		var consoleText = colors.green("Fabric Message: ") + colors.cyan(message);
 		var completeMessage = spaceDashes + spacing + spacing + consoleText + spacing + tipsMessage + spacing + spaceDashes;
 		return completeMessage;
-	}
-}
+	};
+};
 
 module.exports = new ConsoleHelper();

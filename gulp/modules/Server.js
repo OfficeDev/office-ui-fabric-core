@@ -32,7 +32,7 @@ var FabricServer = function() {
 		this.url = url;
 		this.rootPath = rootPath;
         return;
-	}
+	};
 	/**
      * Set custom url paths to go to directories inside or out of project
      * @param {array} paths An array containing objects with the keys 'urlPath': '/someUrlPath', 'folderPath': 'C:\some\custom\folderlocation'
@@ -43,7 +43,7 @@ var FabricServer = function() {
 			this.specificPaths = paths;
 		}
         return;
-	}
+	};
 	/**
      * Start the express server
      * @return {any} Returns express server
@@ -60,8 +60,8 @@ var FabricServer = function() {
 		// Serve up root APP director for express
         expressServer.use(express.static(path.join(this.rootPath)));
         return expressServer.listen(this.portNum);
-	}
+	};
 	
-}
+};
 
 module.exports = new FabricServer();

@@ -62,6 +62,6 @@ var Config = function() {
 	];
     this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
     this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
-}
+};
 
 module.exports = new Config();

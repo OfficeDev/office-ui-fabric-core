@@ -17,7 +17,7 @@ var Utilities = function() {
             "August", "September", "October",
             "November", "December"
 		];
-	}
+	};
 	/**
      * Process and return the list of files for the component either by whats in the directory or what's listed in the manifest
      * @param {array} fileArray     An array with just file names
@@ -36,7 +36,7 @@ var Utilities = function() {
 			newArray.push(folderPath + '/*.html');
 			return newArray;
 		}
-	}
+	};
 	/**
      * Parse a specific component's manifest (JSON) file
      * @param {string}  jsonFileLocation string containing the path to folder/file of the JSON manifest
@@ -45,7 +45,7 @@ var Utilities = function() {
 	this.parseManifest = function(jsonFileLocation) {
         var manifest = fs.readFileSync(jsonFileLocation);
 		return JSON.parse(manifest.toString());
-	}
+	};
 	/**
      * Return an array of folders from specified directory without files
      * @param {string} dir  Path to directory
@@ -61,7 +61,7 @@ var Utilities = function() {
         catch(e) {
             return [];
         }
-    }
+    };
     /**
      * Return an Array of files inside a directory by extension name
      * @param {string} srcDir   The src directory path
@@ -87,7 +87,7 @@ var Utilities = function() {
         catch(e) {
             return [];
         }
-    }
+    };
     /**
      * Returns an array of each file in the array given
      * @param {array}   files An array of files needing dates
@@ -103,7 +103,7 @@ var Utilities = function() {
 			fileDates.push(fileDateSrc);
 		}
         return fileDates;
-    }
+    };
 	/**
      * Check if a source directory is newer than the dist directory
      * @param {string} srcDir The working source directory
@@ -142,7 +142,7 @@ var Utilities = function() {
 		} else {
 			return false;
 		}
-	}
-}
+	};
+};
 
 module.exports = new Utilities();

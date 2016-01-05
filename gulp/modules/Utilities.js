@@ -44,7 +44,7 @@ var Utilities = function() {
      */
 	this.parseManifest = function(jsonFileLocation) {
         var manifest = fs.readFileSync(jsonFileLocation);
-		return JSON.parse(manifest.toString());
+        return JSON.parse(manifest.toString());
 	};
 	/**
      * Return an array of folders from specified directory without files
@@ -53,10 +53,10 @@ var Utilities = function() {
      */
 	this.getFolders = function(dir) {
         try {
-		  var folders = fs.readdirSync(dir).filter(function(file) {
+            var folders = fs.readdirSync(dir).filter(function(file) {
                             return fs.statSync(path.join(dir, file)).isDirectory();
                         });
-          return folders;
+            return folders;
         }
         catch(e) {
             return [];

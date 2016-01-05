@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
  * Persona Card Plugin
@@ -24,7 +24,7 @@
         $(this).addClass('is-active');
 
         /** Function for switching selected item into view by adding a class to ul. */
-        var updateForItem = function(item){
+        var updateForItem = function(wrapper, item){
           var wrapper = document.getElementById("detailList");
           var previousItem = wrapper.className + "";
           var detail = item.charAt(0).toUpperCase() + item.slice(1);
@@ -38,7 +38,7 @@
         /** Get id of selected item */
         var el = $(this).attr('id');
         /** Add detail class to ul to switch it into view. */
-        updateForItem(el);
+        updateForItem($(this).parent().next().find('#detailList')[0], el);
 
         /** Display the corresponding details. */
         var requestedAction = $(this).attr('id');

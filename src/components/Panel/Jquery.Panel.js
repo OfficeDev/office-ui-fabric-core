@@ -11,10 +11,10 @@
 (function ($) {
   $.fn.Panel = function () {
 
+    var pfx = ["webkit", "moz", "MS", "o", ""];
 
     // Prefix function
-    var pfx = ["webkit", "moz", "MS", "o", ""];
-    function PrefixedEvent(element, type, callback) {
+    function prefixedEvent(element, type, callback) {
       for (var p = 0; p < pfx.length; p++) {
         if (!pfx[p]) type = type.toLowerCase();
         element.addEventListener(pfx[p]+type, callback, false);
@@ -45,7 +45,7 @@
 
       });
 
-      PrefixedEvent($panelMain[0], 'AnimationEnd', function(event) {
+      prefixedEvent($panelMain[0], 'AnimationEnd', function(event) {
         if (event.animationName.indexOf('Out') > -1) {
 
           // Hide and Prevent ms-Panel-main from being interactive

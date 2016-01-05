@@ -15,15 +15,24 @@
     return this.each(function () {
       // Set cancel to false
       var cancel = false;
+      var $searchField = $(this).find('.ms-SearchBox-field');
 
       /** SearchBox focus - hide label and show cancel button */
-      $(this).find('.ms-SearchBox-field').on('focus', function() {
+      $searchField.on('focus', function() {
         /** Hide the label on focus. */
         $(this).siblings('.ms-SearchBox-label').hide();
         // Show cancel button by adding is-active class
         $(this).parent('.ms-SearchBox').addClass('is-active');
       });
 
+      /** 'hovering' class allows for more fine grained control of hover state */
+      $searchField.on('mouseover', function() {
+        $searchField.addClass('hovering')
+      });
+
+      $searchField.on('mouseout', function() {
+        $searchField.removeClass('hovering');
+      });
 
       // If cancel button is selected, change cancel value to true
       $(this).find('.ms-SearchBox-closeButton').on('mousedown', function() {
@@ -34,14 +43,18 @@
       $(this).find('.ms-SearchBox-field').on('blur', function() {
 
         // If cancel button is selected remove the text and show the label
-        if ( cancel == true ) {
+        if (cancel) {
           $(this).val('');
-          $(this).siblings('.ms-SearchBox-label').show();
+          $searchField.addClass('hovering');
         }
-
-        // Remove is-active class - hides cancel button
-        $(this).parent('.ms-SearchBox').removeClass('is-active');
-
+        
+        var $searchBox = $(this).parent('.ms-SearchBox');
+        // Prevents inputfield from gaining focus too soon
+        setTimeout(function() {
+          // Remove is-active class - hides cancel button
+          $searchBox.removeClass('is-active');
+        }, 10);
+        
         /** Only do this if no text was entered. */
         if ($(this).val().length === 0 ) {
           $(this).siblings('.ms-SearchBox-label').show();
@@ -50,8 +63,6 @@
         // Reset cancel to false
         cancel = false;
       });
-
-
     });
 
   };

@@ -3,167 +3,88 @@
 (function ($) {
 
   /**
-   * @param {object} options DatePicker options
-   * @param {array} options.optionMonths An array of month abbreviations for the options grid
-   * @param {string} options.label A label for the DatePicker
-   * @param {string} options.placeholderText Placeholder text for the DatePicker textfield
+   * DatePicker Plugin
    */
+
   $.fn.DatePicker = function (options) {
 
-    var datePicker;
-    var self = this;
-    var optionMonths = options && options.optionMonths || ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    var label = options && options.label || "Start Date";
-    var placeholderText = options && options.placeholderText || "Select a date";
+    return this.each(function () {
 
-    /** check if the PickaDate plugin exists, if not load the plugin */
-    if (!$().pickadate) {
-      var firstScript = document.getElementsByTagName("script")[0];
-      var script = document.createElement("script");
-      script.onload = returnDatePicker;
-      script.src = "PickaDate.js";
-      firstScript.parentNode.insertBefore(script, firstScript);
-    } else {
-      datePicker = returnDatePicker();
-    }
+      /** Set up variables and run the Pickadate plugin. */
+      var $datePicker = $(this);
+      var $dateField = $datePicker.find('.ms-TextField-field').pickadate($.extend({
+        // Strings and translations.
+        weekdaysShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
 
-    function returnDatePicker() {
-      /** Iterate through each date picker provided. */
-      return self.each(function () {
+        // Don't render the buttons
+        today: '',
+        clear: '',
+        close: '',
 
-        var $datePicker = $(this);
+        // Events
+        onStart: function() {
+          initCustomView($datePicker);
+        },
 
-        /**create the body of the datepicker */
-        appendElements($datePicker, optionMonths);
+        // Classes
+        klass: {
 
-        /** insert label and placeholder text */
-        $datePicker.find('.ms-Label').text(label);
-        $datePicker.find('.ms-TextField-field').attr("placeholder", placeholderText + "...");
+          // The element states
+          input: 'ms-DatePicker-input',
+          active: 'ms-DatePicker-input--active',
 
-        /** Set up variables and run the Pickadate plugin. */
-        var $dateField = $datePicker.find('.ms-TextField-field').pickadate({
-          // Strings and translations.
-          weekdaysShort: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+          // The root picker and states
+          picker: 'ms-DatePicker-picker',
+          opened: 'ms-DatePicker-picker--opened',
+          focused: 'ms-DatePicker-picker--focused',
 
-          // Don't render the buttons
-          today: '',
-          clear: '',
-          close: '',
+          // The picker holder
+          holder: 'ms-DatePicker-holder',
 
-          // Events
-          onStart: function() {
-            initCustomView($datePicker);
-          },
+          // The picker frame, wrapper, and box
+          frame: 'ms-DatePicker-frame',
+          wrap: 'ms-DatePicker-wrap',
+          box: 'ms-DatePicker-dayPicker',
 
-          // Classes
-          klass: {
+          // The picker header
+          header: 'ms-DatePicker-header',
 
-            // The element states
-            input: 'ms-DatePicker-input',
-            active: 'ms-DatePicker-input--active',
+          // Month & year labels
+          month: 'ms-DatePicker-month',
+          year: 'ms-DatePicker-year',
 
-            // The root picker and states
-            picker: 'ms-DatePicker-picker',
-            opened: 'ms-DatePicker-picker--opened',
-            focused: 'ms-DatePicker-picker--focused',
+          // Table of dates
+          table: 'ms-DatePicker-table',
 
-            // The picker holder
-            holder: 'ms-DatePicker-holder',
+          // Weekday labels
+          weekdays: 'ms-DatePicker-weekday',
 
-            // The picker frame, wrapper, and box
-            frame: 'ms-DatePicker-frame',
-            wrap: 'ms-DatePicker-wrap',
-            box: 'ms-DatePicker-dayPicker',
+          // Day states
+          day: 'ms-DatePicker-day',
+          disabled: 'ms-DatePicker-day--disabled',
+          selected: 'ms-DatePicker-day--selected',
+          highlighted: 'ms-DatePicker-day--highlighted',
+          now: 'ms-DatePicker-day--today',
+          infocus: 'ms-DatePicker-day--infocus',
+          outfocus: 'ms-DatePicker-day--outfocus',
 
-            // The picker header
-            header: 'ms-DatePicker-header',
+        }
+      },options||{}));
+      var $picker = $dateField.pickadate('picker');
 
-            // Month & year labels
-            month: 'ms-DatePicker-month',
-            year: 'ms-DatePicker-year',
-
-            // Table of dates
-            table: 'ms-DatePicker-table',
-
-            // Weekday labels
-            weekdays: 'ms-DatePicker-weekday',
-
-            // Day states
-            day: 'ms-DatePicker-day',
-            disabled: 'ms-DatePicker-day--disabled',
-            selected: 'ms-DatePicker-day--selected',
-            now: 'ms-DatePicker-day--today',
-            infocus: 'ms-DatePicker-day--infocus',
-            outfocus: 'ms-DatePicker-day--outfocus'
-          }
-        });
-        var $picker = $dateField.pickadate('picker');
-
-        /** Respond to built-in picker events. */
-        $picker.on({
-          render: function() {
-            updateCustomView($datePicker);
-          },
-          open: function() {
-            scrollUp($datePicker);
-          }
-        });
-
+      /** Respond to built-in picker events. */
+      $picker.on({
+        render: function() {
+          updateCustomView($datePicker);
+        },
+        open: function() {
+          scrollUp($datePicker);
+        }
       });
-    }
 
-    return datePicker;
+    });
   };
 
-  /**
-   * Create the body of the DatePicker plugin and
-   * append it to the date picker element
-   * @param {object} $datePicker JQuery object
-   * @param {array} optionMonths
-   */
-  function appendElements($datePicker, optionMonths) {
-    var elements = '<div class="ms-TextField">';
-    elements += '<label class="ms-Label"></label>';
-    elements += '<i class="ms-DatePicker-event ms-Icon ms-Icon--event"></i>';
-    elements += '<input class="ms-TextField-field" type="text">';
-    elements += '</div>';
-    elements += '<div class="ms-DatePicker-monthComponents">';
-    elements += '<span class="ms-DatePicker-nextMonth js-nextMonth"><i class="ms-Icon ms-Icon--chevronRight"></i></span>';
-    elements += '<span class="ms-DatePicker-prevMonth js-prevMonth"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>';
-    elements += '<div class="ms-DatePicker-headerToggleView js-showMonthPicker"></div>';
-    elements += '</div>';
-    elements += '<span class="ms-DatePicker-goToday js-goToday">Go to today</span>';
-    elements += '<div class="ms-DatePicker-monthPicker">';
-    elements += '<div class="ms-DatePicker-header">';
-    elements += '<div class="ms-DatePicker-yearComponents">';
-    elements += '<span class="ms-DatePicker-nextYear js-nextYear"><i class="ms-Icon ms-Icon--chevronRight"></i></span>';
-    elements += '<span class="ms-DatePicker-prevYear js-prevYear"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>';
-    elements += '</div>';
-    elements += '<div class="ms-DatePicker-currentYear js-showYearPicker"></div>';
-    elements += '</div>';
-    elements += '<div class="ms-DatePicker-optionGrid">';
-    elements += '</div></div>';
-    elements += '<div class="ms-DatePicker-yearPicker">';
-    elements += '<div class="ms-DatePicker-decadeComponents">';
-    elements += '<span class="ms-DatePicker-nextDecade js-nextDecade"><i class="ms-Icon ms-Icon--chevronRight"></i></span>';
-    elements += '<span class="ms-DatePicker-prevDecade js-prevDecade"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>';
-    elements += '</div></div>';
-    $datePicker.append(elements);
-    $datePicker.find('.ms-DatePicker-optionGrid').append(createMonthOptions(optionMonths));
-  }
-  /**
-   * creates month elements for the month grid
-   * @param {array} optionMonths
-   * @returns {string}
-   */
-  function createMonthOptions(optionMonths) {
-    var i = 0;
-    var content = "";
-    for(i; i < 12; i++) {
-      content += '<span class="ms-DatePicker-monthOption js-changeDate" data-month="' + i + '">' + optionMonths[i] + '</span>';
-    }
-    return content;
-  }
   /**
    * After the Pickadate plugin starts, this function
    * adds additional controls to the picker view.
@@ -316,8 +237,10 @@
 
   }
 
+
   /** Whenever the picker renders, do our own rendering on the custom controls. */
   function updateCustomView($datePicker) {
+
     /** Get some variables ready. */
     var $monthPicker = $datePicker.find('.ms-DatePicker-monthPicker');
     var $yearPicker = $datePicker.find('.ms-DatePicker-yearPicker');
@@ -342,7 +265,7 @@
     var decadeText = startingYear + " - " + (startingYear + 11);
     var output = '<div class="ms-DatePicker-currentDecade">' + decadeText + '</div>';
     output += '<div class="ms-DatePicker-optionGrid">';
-    for (year = startingYear; year < (startingYear + 12); year++) {
+    for (var year = startingYear; year < (startingYear + 12); year++) {
       output += '<span class="ms-DatePicker-yearOption js-changeDate" data-year="' + year + '">' + year +'</span>';
     }
     output += '</div>';
@@ -354,7 +277,7 @@
     $yearPicker.find('.ms-DatePicker-yearOption').removeClass('is-highlighted')
     $yearPicker.find('.ms-DatePicker-yearOption[data-year="' + $picker.get('highlight').year + '"]').addClass('is-highlighted');
   }
-
+  
   /** Scroll the page up so that the field the date picker is attached to is at the top. */
   function scrollUp($datePicker) {
     $('html, body').animate({

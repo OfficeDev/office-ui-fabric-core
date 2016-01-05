@@ -85,6 +85,7 @@
   line-height: 30px;
   padding: 0 32px 0 10px;
   position: relative;
+  overflow: hidden;
 }
 
 // Container for the dropdown items, displayed as a panel on small screens.
@@ -101,6 +102,7 @@
   top: 0;
   right: 0;
   bottom: 0;
+  overflow-y: scroll;
 
   &:before {
     content: '';
@@ -173,7 +175,6 @@
     right: auto;
     bottom: auto;
     left: auto;
-    overflow-y: scroll;
     max-width: 100%;
   }
 

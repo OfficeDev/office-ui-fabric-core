@@ -1,0 +1,353 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Typographic mixins arranged with appropriate size and family combinations.
+@import 'Fabric.Typography.Variables';
+
+// Super Styles (LIMITED USE)
+// Weights: Light
+@mixin ms-font-su {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-light;
+  font-size: $ms-font-size-su;
+  font-weight: normal;
+}
+// No touch class for Super
+
+// Extra-Extra-Large
+// Allowed weights: Light, SemiLight
+@mixin ms-font-xxl {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-light;
+  font-size: $ms-font-size-xxl;
+  font-weight: normal;
+}
+
+// Extra-Large Styles
+// Allowed weights: Light, SemiLight
+@mixin ms-font-xl {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-light;
+  font-size: $ms-font-size-xl;
+  font-weight: normal;
+}
+
+// Large Styles
+// Allowed weights: SemiLight, Regular, Semibold
+@mixin ms-font-l {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-semilight;
+  font-size: $ms-font-size-l;
+  font-weight: normal;
+}
+
+// Medium Plus Styles
+// Allowed weights: SemiLight, Regular, Semibold
+@mixin ms-font-m-plus {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-regular;
+  font-size: $ms-font-size-m-plus;
+  font-weight: normal;
+}
+
+// Medium Styles
+// Allowed weights: SemiLight, Regular, Semibold
+@mixin ms-font-m {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-regular;
+  font-size: $ms-font-size-m;
+  font-weight: normal;
+}
+
+// Small Plus Styles
+// Allowed weights: SemiLight, Regular, Semibold
+@mixin ms-font-s-plus {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-regular;
+  font-size: $ms-font-size-s-plus;
+  font-weight: normal;
+}
+
+// Small Styles
+// Allowed weights: SemiLight, Regular, Semibold
+@mixin ms-font-s {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-regular;
+  font-size: $ms-font-size-s;
+  font-weight: normal;
+}
+
+// XS Styles
+// Allowed weights: SemiLight, Regular, Semibold
+@mixin ms-font-xs {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-regular;
+  font-size: $ms-font-size-xs;
+  font-weight: normal;
+}
+
+// Micro Styles (LIMITED USE)
+// Weights: Semibold
+@mixin ms-font-mi {
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-semibold;
+  font-size: $ms-font-size-mi;
+  font-weight: normal;
+}
+
+//== Helper classes & mixins
+//
+// Helper mixins to override default type values
+
+// Font weights
+@mixin ms-fontWeight-light{
+  font-family: $ms-font-family-light;
+}
+
+@mixin ms-fontWeight-semilight{
+  font-family: $ms-font-family-semilight;
+}
+
+@mixin ms-fontWeight-regular {
+  font-family: $ms-font-family-regular;
+}
+
+@mixin ms-fontWeight-semibold {
+  font-family: $ms-font-family-semibold;
+}
+
+// Font sizes
+@mixin ms-fontSize-su {
+  font-size: $ms-font-size-su;
+}
+
+@mixin ms-fontSize-xxl {
+  font-size: $ms-font-size-xxl;
+}
+
+@mixin ms-fontSize-xl {
+  font-size: $ms-font-size-xl;
+}
+
+@mixin ms-fontSize-l {
+  font-size: $ms-font-size-l;
+}
+
+@mixin ms-fontSize-mPlus {
+  font-size: $ms-font-size-m-plus;
+}
+
+@mixin ms-fontSize-m {
+  font-size: $ms-font-size-m;
+}
+
+@mixin ms-fontSize-sPlus {
+  font-size: $ms-font-size-s-plus;
+}
+
+@mixin ms-fontSize-s {
+  font-size: $ms-font-size-s;
+}
+
+@mixin ms-fontSize-xs {
+  font-size: $ms-font-size-xs;
+}
+
+@mixin ms-fontSize-mi {
+  font-size: $ms-font-size-mi;
+}
+
+// Theme colors
+@mixin ms-fontColor-themeDarker {
+  color: $ms-color-themeDarker;
+}
+
+@mixin ms-fontColor-themeDark {
+  color: $ms-color-themeDark;
+}
+
+@mixin ms-fontColor-themeDarkAlt {
+  color: $ms-color-themeDarkAlt;
+}
+
+@mixin ms-fontColor-themePrimary {
+  color: $ms-color-themePrimary;
+}
+
+@mixin ms-fontColor-themeSecondary {
+  color: $ms-color-themeSecondary;
+}
+
+@mixin ms-fontColor-themeTertiary {
+  color: $ms-color-themeTertiary;
+}
+
+@mixin ms-fontColor-themeLight {
+  color: $ms-color-themeLight;
+}
+
+@mixin ms-fontColor-themeLighter {
+  color: $ms-color-themeLighter;
+}
+
+@mixin ms-fontColor-themeLighterAlt {
+  color: $ms-color-themeLighterAlt;
+}
+
+
+// Neutral colors
+@mixin ms-fontColor-black {
+  color: $ms-color-black;
+}
+
+@mixin ms-fontColor-neutralDark {
+  color: $ms-color-neutralDark;
+}
+
+@mixin ms-fontColor-neutralPrimary {
+  color: $ms-color-neutralPrimary;
+}
+
+@mixin ms-fontColor-neutralSecondary {
+ color: $ms-color-neutralSecondary;
+}
+
+@mixin ms-fontColor-neutralSecondaryAlt { 
+  color: $ms-color-neutralSecondaryAlt;
+}
+
+@mixin ms-fontColor-neutralTertiary {
+  color: $ms-color-neutralTertiary;
+}
+
+@mixin ms-fontColor-neutralTertiaryAlt { 
+  color: $ms-color-neutralTertiaryAlt;
+}
+
+@mixin ms-fontColor-neutralLight {
+  color: $ms-color-neutralLight;
+}
+
+@mixin ms-fontColor-neutralLighter {
+  color: $ms-color-neutralLighter;
+}
+
+@mixin ms-fontColor-neutralLighterAlt {
+  color: $ms-color-neutralLighterAlt;
+}
+
+@mixin ms-fontColor-white {
+  color: $ms-color-white;
+}
+
+// Brand and accent colors
+@mixin ms-fontColor-yellow {
+  color: $ms-color-yellow;
+}
+
+@mixin ms-fontColor-yellowLight {
+  color: $ms-color-yellowLight;
+}
+
+@mixin ms-fontColor-orange {
+  color: $ms-color-orange;
+}
+
+@mixin ms-fontColor-orangeLighter {
+  color: $ms-color-orangeLighter;
+}
+
+@mixin ms-fontColor-orangeLight {
+  color: $ms-color-orangeLight;
+}
+
+@mixin ms-fontColor-redDark {
+  color: $ms-color-redDark;
+}
+
+@mixin ms-fontColor-red {
+  color: $ms-color-red;
+}
+
+@mixin ms-fontColor-magentaDark {
+  color: $ms-color-magentaDark;
+}
+
+@mixin ms-fontColor-magenta {
+  color: $ms-color-magenta;
+}
+
+@mixin ms-fontColor-magentaLight {
+  color: $ms-color-magentaLight;
+}
+
+@mixin ms-fontColor-purpleDark {
+  color: $ms-color-purpleDark;
+}
+
+@mixin ms-fontColor-purple {
+  color: $ms-color-purple;
+}
+
+@mixin ms-fontColor-purpleLight {
+  color: $ms-color-purpleLight;
+}
+
+@mixin ms-fontColor-blueDark {
+  color: $ms-color-blueDark;
+}
+
+@mixin ms-fontColor-blueMid {
+  color: $ms-color-blueMid;
+}
+
+@mixin ms-fontColor-blue {
+  color: $ms-color-blue;
+}
+
+@mixin ms-fontColor-blueLight {
+  color: $ms-color-blueLight;
+}
+
+@mixin ms-fontColor-tealDark {
+  color: $ms-color-tealDark;
+}
+
+@mixin ms-fontColor-teal {
+  color: $ms-color-teal;
+}
+
+@mixin ms-fontColor-tealLight {
+  color: $ms-color-tealLight;
+}
+
+@mixin ms-fontColor-greenDark {
+  color: $ms-color-greenDark;
+}
+
+@mixin ms-fontColor-green {
+  color: $ms-color-green;
+}
+
+@mixin ms-fontColor-greenLight {
+  color: $ms-color-greenLight;
+}
+
+// Utility colors
+@mixin ms-fontColor-error {
+  color: $ms-color-error;
+}
+
+@mixin ms-fontColor-alert {
+  color: $ms-color-alert;
+}
+
+@mixin ms-fontColor-info {
+  color: $ms-color-info;
+}
+
+@mixin ms-fontColor-success {
+  color: $ms-color-success;
+}

@@ -1,0 +1,34 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Fluid 12-column grids for small, medium, and large devices
+
+
+//== Grid container (same for all sizes)
+//
+@mixin ms-Grid {
+  @include ms-u-borderBox;
+  @include ms-u-clearfix;
+  padding: 0 8px;
+}
+
+//== Grid rows (pull first and last column out)
+//
+@mixin ms-Grid-row {
+  margin: 0 -8px;
+  @include ms-u-borderBox;
+  @include ms-u-clearfix;
+}
+
+//== Grid cells
+//
+@mixin ms-Grid-col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  @include ms-u-borderBox;
+  float: left;
+}

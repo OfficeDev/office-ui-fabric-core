@@ -5,6 +5,11 @@
 // --------------------------------------------------
 // Panel styles
 
+@ms-Panel-mdWidth: 340px;
+@CommandButtonLightBlue: #b5d8f4;
+@CommandButtonLighterBlue: #d7eaf9;
+@CommandButtonDarkBlue: #07288b;
+@CommandButtonBlue: #2488D8;
 
 // The panel covers the entire screen.
 .ms-Panel {
@@ -15,12 +20,17 @@
   top: 0;
   z-index: @ms-zIndex-Panel;
   display: none;
+  pointer-events: none;
 
   // Overlay used within panel
   .ms-Overlay {
     display: none;
     cursor: pointer;
     z-index: @ms-zIndex-back;
+    display: none;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity @ms-duration3 @ms-ease1;
   }
 }
 
@@ -58,8 +68,60 @@
   bottom: 0;
   display: none; //prevent the panel from briefly showing up when the page loads
   z-index: @ms-zIndex-front;
-  // opacity: 0;
-  .ms-u-slideRightOut40;
+  width: 100%;
+
+  .ms-CommandBar {
+    .ms-CommandBarItem {
+      user-select: none;
+
+      &:hover {
+        background-color: @CommandButtonLighterBlue;
+      }
+
+      &:active {
+        background-color: @CommandButtonLightBlue;
+
+        .ms-CommandBarItem-icon {
+          color: @CommandButtonDarkBlue;;
+        }
+
+        .ms-CommandBarItem-commandText {
+          color: @ms-color-black;
+        }
+      }
+    }
+
+    .ms-CommandBarItem:first-child {
+      background-color: @ms-color-themePrimary;
+      box-shadow: inset 0 1px 0 0 @CommandButtonBlue;
+
+      .ms-CommandBarItem-icon {
+        color: @ms-color-white;
+      }
+
+      .ms-CommandBarItem-commandText {
+        color: @ms-color-white;
+      }
+
+      .ms-CommandBarItem-linkWrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      &:hover {
+        background-color: @ms-color-themeDark;
+        box-shadow: none;
+
+        .ms-CommandBarItem-icon {
+          color: @ms-color-white;
+        }
+
+        .ms-CommandBarItem-commandText {
+          color: @ms-color-white;
+        }
+      }
+    }
+  }
 }
 
 .ms-Panel-closeButton {
@@ -102,57 +164,115 @@
   height: 74px;
 }
 
+.ms-Panel.is-open {
+  display: block;
 
-// Small screens.
-// @media (min-width: @ms-screen-sm-min) {
+  .ms-CommandBar {
+    .ms-u-slideDownIn20();
+    animation-delay: 250ms;
+  }
+}
 
-  // .ms-Panel {
-  //   display: none;
-  // }
+.ms-Panel.is-open .ms-Panel-main {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
 
-  // .ms-Panel.is-open {
-  //   display: block;
-  // }
+.ms-Panel.is-open .ms-Overlay {
+  display: block;
+  pointer-events: auto;
+}
 
-  // .ms-Panel .ms-Overlay {
-  //   display: none;
-  // }
+.ms-Panel.is-open.ms-Panel-animateOut {
+  .ms-Panel-main {
+    .ms-u-fadeOut100();
+  }
 
-  // .ms-Panel.is-open .ms-Panel-main {
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   opacity: 1;
-  // }
+  .ms-Overlay {
+    display: none;
+  }
+}
 
-// }
+// Panel Modifier
+.ms-Panel {
+  .ms-CommandBarItem .ms-CommandBarItem-commandText {
+    display: inline-block;
+  }
+  .ms-CommandBar-mainArea {
+    padding-left: 0;
+    margin-left: -1px;
+    overflow: hidden;
+  }
+}
+
 
 // Medium screens.
 @media (min-width: @ms-screen-md-min) {
 
-  .ms-Panel {
-    display: block;
-    pointer-events: none;
+  // Animations -- Default
+  .ms-Panel.is-open.ms-Panel-animateIn {
+    .ms-Panel-main {
+      .ms-u-slideLeftIn40;
+    }
+
+    .ms-Overlay {
+      .ms-u-fadeIn200;
+    }
   }
+
+  .ms-Panel.is-open.ms-Panel-animateOut {
+    .ms-Panel-main {
+      .ms-u-slideRightOut40;
+    }
+    .ms-Overlay {
+      .ms-u-fadeOut200;
+    }
+  }
+
+  // Animations - Left panel
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn {
+    .ms-Panel-main {
+      .ms-u-slideRightIn40;
+    }
+
+    .ms-Overlay {
+      .ms-u-fadeIn200;
+    }
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut {
+    .ms-Panel-main {
+      .ms-u-slideLeftOut40;
+    }
+    .ms-Overlay {
+      .ms-u-fadeOut200;
+    }
+  }
+
+  // Animate CommandBar in
+  .ms-Panel.is-open {
+
+    .ms-CommandBar {
+      animation-delay: 500ms;
+    }
+  }
+
 
   // When opened, the full-width panel is replaced with one that is 340px wide
   // and attached to the right of the screen.
   .ms-Panel-main {
     border-left: 1px solid @ms-color-neutralLight;
     border-right: 1px solid @ms-color-neutralLight;
-    // right: -40px;
     left: auto;
     right: 0;
     pointer-events: auto;
-    width: 341px; // Add a pixel due to border-box.
-    .ms-u-slideRightOut40;
+    width: @ms-Panel-mdWidth; // Add a pixel due to border-box.
   }
 
   .ms-Panel.is-open .ms-Panel-main {
     .drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
-    .ms-u-slideLeftIn40;
   }
 
   .ms-Panel.ms-Panel--right.is-open {
@@ -164,21 +284,11 @@
   // On medium screens and up, the small panel attached to the left is a variant.
   .ms-Panel.ms-Panel--small.ms-Panel--left.is-open .ms-Panel-main {
     .drop-shadow(30px, 0px, 30px, -30px, .2);
-    .ms-u-slideRightIn40;
   }
 
   .ms-Panel.ms-Panel--small.ms-Panel--left .ms-Panel-main {
     left: 0;
     right: auto;
-    .ms-u-slideLeftOut40;
-  }
-
-  // Display the overlay, but with 0 opacity so that we can animate it.
-  .ms-Panel .ms-Overlay {
-    display: block;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity @ms-duration3 @ms-ease1;
   }
 
   // When the panel is opened, animate to full opacity

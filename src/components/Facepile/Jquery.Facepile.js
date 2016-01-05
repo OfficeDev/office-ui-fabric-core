@@ -13,7 +13,9 @@
 
     /** Iterate through each Facepile provided. */
     return this.each(function () {
-      
+      $('.ms-PeoplePicker').PeoplePicker();
+      $('.ms-Panel').Panel();
+
       var $facePile = $(this);    
       var $membersList = $(".ms-FacePile-members"); 
       var $membersCount = $(".ms-FacePile-members > .ms-FacePile-itemBtn").length;

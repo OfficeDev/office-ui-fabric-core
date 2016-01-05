@@ -8,6 +8,11 @@
     "type": "git",
     "url": "https://github.com/OfficeDev/Office-UI-Fabric"
   },
+  "main": [
+    "dist/css/fabric.css",
+    "dist/css/fabric.components.css",
+    "dist/js/jquery.fabric.js"
+  ],
   "private": false,
   "ignore": [
     "node_modules",

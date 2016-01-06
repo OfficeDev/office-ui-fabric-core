@@ -1,0 +1,145 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Panel</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Panel.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Panel) {
+          $('.ms-Panel').Panel();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Panel' in fabric) {
+          var element = document.querySelector('.ms-Panel');
+          var component = new fabric['Panel'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.Panel.js"></script>
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Panel</h1>
+  <div id="componentWrapper">
+    <div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<button class="ms-Button ms-PanelAction-open">
+  <span class="ms-Button-label">Open panel</span>
+</button>
+
+<div class="ms-Panel">
+  <div class="ms-Overlay ms-Overlay--dark ms-PanelAction-close"></div>
+  <div class="ms-Panel-main">
+        <div class="ms-Panel-commands">
+            <div class="ms-CommandBar">
+                <div class="ms-CommandBar-sideCommands">
+                </div>
+                <div class="ms-CommandBar-mainArea">
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ms-Panel-contentInner">
+          <span class="ms-Panel-headerText">Panel</span>
+          <p class="ms-font-m">Content goes here.</p>
+        </div>
+  </div>
+</div>
+</div>
+  </div>
+</body>
+</html>

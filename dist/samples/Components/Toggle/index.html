@@ -1,0 +1,127 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Toggle</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Toggle.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Toggle) {
+          $('.ms-Toggle').Toggle();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Toggle' in fabric) {
+          var element = document.querySelector('.ms-Toggle');
+          var component = new fabric['Toggle'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Toggle</h1>
+  <div id="componentWrapper">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Toggle">
+  <span class="ms-Toggle-description">Let apps use my location</span>
+  <input type="checkbox" id="demo-toggle-3" class="ms-Toggle-input" />
+  <label for="demo-toggle-3" class="ms-Toggle-field">
+    <span class="ms-Label ms-Label--off">Off</span>
+    <span class="ms-Label ms-Label--on">On</span>
+  </label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Toggle ms-Toggle--textLeft">
+  <span class="ms-Toggle-description">Let apps use my location</span>
+  <input type="checkbox" id="demo-toggle-1" class="ms-Toggle-input" />
+  <label for="demo-toggle-1" class="ms-Toggle-field">
+    <span class="ms-Label ms-Label--off">Off</span>
+    <span class="ms-Label ms-Label--on">On</span>
+  </label>
+</div>
+
+  </div>
+</body>
+</html>

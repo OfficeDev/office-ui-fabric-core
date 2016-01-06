@@ -1,0 +1,151 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component DatePicker</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="DatePicker.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.DatePicker) {
+          $('.ms-DatePicker').DatePicker();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('DatePicker' in fabric) {
+          var element = document.querySelector('.ms-DatePicker');
+          var component = new fabric['DatePicker'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.DatePicker.js"></script><script type="text/javascript" src="PickaDate.js"></script>
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">DatePicker</h1>
+  <div id="componentWrapper">
+    <!-- This is a sample Date Picker that works for Gregorian calendars. It uses jQuery and pickadate.js for demonstration. -->
+<!-- For more information on this version of pickadate.js (3.5.3), go here: https://github.com/amsul/pickadate.js/tree/505e00b9208a81ffb169338042c0b9c781e76fb7 -->
+
+<div class="ms-DatePicker">
+  <div class="ms-TextField">
+    <label class="ms-Label">Start date</label>
+    <i class="ms-DatePicker-event ms-Icon ms-Icon--event"></i>
+    <input class="ms-TextField-field" type="text" placeholder="Select a date&hellip;">
+  </div>
+  <div class="ms-DatePicker-monthComponents">
+    <span class="ms-DatePicker-nextMonth js-nextMonth"><i class="ms-Icon ms-Icon--chevronRight"></i></span>
+    <span class="ms-DatePicker-prevMonth js-prevMonth"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>
+    <div class="ms-DatePicker-headerToggleView js-showMonthPicker"></div>
+  </div>
+  <span class="ms-DatePicker-goToday js-goToday">Go to today</span>
+  <div class="ms-DatePicker-monthPicker">
+    <div class="ms-DatePicker-header">
+      <div class="ms-DatePicker-yearComponents">
+        <span class="ms-DatePicker-nextYear js-nextYear"><i class="ms-Icon ms-Icon--chevronRight"></i></span>
+        <span class="ms-DatePicker-prevYear js-prevYear"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>
+      </div>
+      <div class="ms-DatePicker-currentYear js-showYearPicker"></div>
+    </div>
+    <div class="ms-DatePicker-optionGrid">
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="0">Jan</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="1">Feb</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="2">Mar</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="3">Apr</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="4">May</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="5">Jun</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="6">Jul</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="7">Aug</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="8">Sep</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="9">Oct</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="10">Nov</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="11">Dec</span>
+    </div>
+  </div>
+  <div class="ms-DatePicker-yearPicker">
+    <div class="ms-DatePicker-decadeComponents">
+      <span class="ms-DatePicker-nextDecade js-nextDecade"><i class="ms-Icon ms-Icon--chevronRight"></i></span>
+      <span class="ms-DatePicker-prevDecade js-prevDecade"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>

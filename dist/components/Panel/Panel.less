@@ -1,0 +1,308 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Panel styles
+
+@ms-Panel-mdWidth: 340px;
+@CommandButtonLightBlue: #b5d8f4;
+@CommandButtonLighterBlue: #d7eaf9;
+@CommandButtonDarkBlue: #07288b;
+@CommandButtonBlue: #2488D8;
+
+// The panel covers the entire screen.
+.ms-Panel {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: @ms-zIndex-Panel;
+  display: none;
+  pointer-events: none;
+
+  // Overlay used within panel
+  .ms-Overlay {
+    z-index: @ms-zIndex-back;
+    display: none;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity @ms-duration3 @ms-ease1;
+  }
+}
+
+// The panel itself, where the content goes.
+.ms-Panel-main {
+  background-color: @ms-color-white;
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: none; //prevent the panel from briefly showing up when the page loads
+  z-index: @ms-zIndex-front;
+  width: 100%;
+
+  .ms-CommandBar {
+
+    .ms-CommandBarItem {
+      user-select: none;
+
+      &:hover {
+        background-color: @CommandButtonLighterBlue;
+      }
+
+      &:active {
+        background-color: @CommandButtonLightBlue;
+
+        .ms-CommandBarItem-icon {
+          color: @CommandButtonDarkBlue;;
+        }
+
+        .ms-CommandBarItem-commandText {
+          color: @ms-color-black;
+        }
+      }
+    }
+
+    .ms-CommandBarItem:first-child {
+      background-color: @ms-color-themePrimary;
+      box-shadow: inset 0 1px 0 0 @CommandButtonBlue;
+
+      .ms-CommandBarItem-icon {
+        color: @ms-color-white;
+      }
+
+      .ms-CommandBarItem-commandText {
+        color: @ms-color-white;
+      }
+
+      .ms-CommandBarItem-linkWrapper {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      &:hover {
+        background-color: @ms-color-themeDark;
+        box-shadow: none;
+
+        .ms-CommandBarItem-icon {
+          color: @ms-color-white;
+        }
+
+        .ms-CommandBarItem-commandText {
+          color: @ms-color-white;
+        }
+      }
+    }
+  }
+}
+
+// Scrollable content area, below the command buttons.
+.ms-Panel-contentInner {
+  position: absolute;
+  top: 40px; // Push it below the commands.
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 32px 20px 32px;
+  overflow-y: auto;
+}
+
+// Header text at the top of the panel.
+.ms-Panel-headerText {
+  font-family: @ms-font-family-light;
+  font-size: @ms-font-size-xl;
+  color: @ms-color-neutralPrimary;
+  line-height: 82px; // Magic number that places text baseline at 50px.
+  height: 70px;
+}
+
+.ms-Panel.is-open {
+  display: block;
+
+  .ms-CommandBar {
+    .ms-u-slideDownIn20();
+    animation-delay: 250ms;
+  }
+}
+
+.ms-Panel.is-open .ms-Panel-main {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+.ms-Panel.is-open .ms-Overlay {
+  display: block;
+  pointer-events: auto;
+}
+
+.ms-Panel.is-open.ms-Panel-animateOut {
+  .ms-Panel-main {
+    .ms-u-fadeOut100();
+  }
+
+  .ms-Overlay {
+    display: none;
+  }
+}
+
+// Panel Modifier
+.ms-Panel {
+  .ms-CommandBarItem .ms-CommandBarItem-commandText {
+    display: inline-block;
+  }
+  .ms-CommandBar-mainArea {
+    padding-left: 0;
+    margin-left: -1px;
+    overflow: hidden;
+  }
+}
+
+
+// Medium screens.
+@media (min-width: @ms-screen-md-min) {
+
+  // Animations -- Default
+  .ms-Panel.is-open.ms-Panel-animateIn {
+    .ms-Panel-main {
+      .ms-u-slideLeftIn40;
+    }
+
+    .ms-Overlay {
+      .ms-u-fadeIn200;
+    }
+  }
+
+  .ms-Panel.is-open.ms-Panel-animateOut {
+    .ms-Panel-main {
+      .ms-u-slideRightOut40;
+    }
+    .ms-Overlay {
+      .ms-u-fadeOut200;
+    }
+  }
+
+  // Animations - Left panel
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn {
+    .ms-Panel-main {
+      .ms-u-slideRightIn40;
+    }
+
+    .ms-Overlay {
+      .ms-u-fadeIn200;
+    }
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut {
+    .ms-Panel-main {
+      .ms-u-slideLeftOut40;
+    }
+    .ms-Overlay {
+      .ms-u-fadeOut200;
+    }
+  }
+
+  // Animate CommandBar in
+  .ms-Panel.is-open {
+
+    .ms-CommandBar {
+      animation-delay: 500ms;
+    }
+  }
+
+
+  // When opened, the full-width panel is replaced with one that is 340px wide
+  // and attached to the right of the screen.
+  .ms-Panel-main {
+    border-left: 1px solid @ms-color-neutralLight;
+    border-right: 1px solid @ms-color-neutralLight;
+    pointer-events: auto;
+    width: @ms-Panel-mdWidth; // Add a pixel due to border-box.
+  }
+
+  .ms-Panel.is-open .ms-Panel-main {
+    .drop-shadow(-30px, 0px, 30px, -30px, .2);
+    left: auto;
+  }
+
+  // On medium screens and up, the small panel attached to the left is a variant.
+  .ms-Panel.ms-Panel--small.ms-Panel--left.is-open .ms-Panel-main {
+    .drop-shadow(30px, 0px, 30px, -30px, .2);
+  }
+
+  .ms-Panel.ms-Panel--small.ms-Panel--left .ms-Panel-main {
+    left: 0;
+    right: auto;
+  }
+
+  // When the panel is opened, animate to full opacity
+  // and activate pointer events so can be clicked.
+  .ms-Panel.is-open .ms-Overlay {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// Large screens.
+@media (min-width: @ms-screen-lg-min) {
+
+  // All but the small panel (medium to extra large) become
+  // fluid with a fixed left margin of 48px when opened.
+  .ms-Panel.ms-Panel--medium,
+  .ms-Panel.ms-Panel--large,
+  .ms-Panel.ms-Panel--extraLarge {
+    .ms-Panel-main {
+      left: 47px; // Remove a pixel due to border-box.
+      width: auto;
+    }
+  }
+
+  .ms-Panel.ms-Panel--medium.is-open,
+  .ms-Panel.ms-Panel--large.is-open,
+  .ms-Panel.ms-Panel--extraLarge.is-open {
+    .ms-Panel-main {
+      width: auto;
+    }
+  }
+
+}
+
+// Extra large screens.
+@media (min-width: @ms-screen-xl-min) {
+
+  // Medium panel changes to 643px fixed width, while all other
+  // sizes remain the same as they were on large screens.
+  .ms-Panel.ms-Panel--medium .ms-Panel-main {
+    left: auto;
+    width: 644px; // Add a pixel due to border-box.
+  }
+
+  .ms-Panel.ms-Panel--medium.is-open .ms-Panel-main {
+    left: auto;
+    right: 0;
+    width: 644px; // Add a pixel due to border-box.
+  }
+
+}
+
+// Extra extra large screens.
+@media (min-width: @ms-screen-xxl-min) {
+
+  // Large panels have an increased left margin of 428px.
+  .ms-Panel.ms-Panel--large .ms-Panel-main {
+    left: 427px; // Remove a pixel due to border-box.
+  }
+
+  // Extra large panels have an increased left margin of 176px.
+  .ms-Panel.ms-Panel--extraLarge .ms-Panel-main {
+    left: 175px; // Remove a pixel due to border-box.
+  }
+
+  // For now, the small left panel is hidden on XXL screens and up.
+  .ms-Panel.ms-Panel--small.ms-Panel--left {
+    display: none;
+  }
+}

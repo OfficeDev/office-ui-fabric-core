@@ -1,0 +1,438 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Persona</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Persona.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Persona) {
+          $('.ms-Persona').Persona();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Persona' in fabric) {
+          var element = document.querySelector('.ms-Persona');
+          var component = new fabric['Persona'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Persona</h1>
+  <div id="componentWrapper">
+    <div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--tiny">
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+  </div>
+</div>
+
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--xs">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--sm">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--lg">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+    <div class="ms-Persona-tertiaryText">In a meeting</div>
+  </div>
+</div>
+
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--xl">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+    <div class="ms-Persona-tertiaryText">In a meeting</div>
+    <div class="ms-Persona-optionalText">Available at 4:00pm</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona ms-Persona--square ms-Persona--tiny">
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona ms-Persona--square ms-Persona--xs">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona ms-Persona--square ms-Persona--sm">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona ms-Persona--square ms-Persona--lg">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+    <div class="ms-Persona-tertiaryText">In a meeting</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--xl">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+    <div class="ms-Persona-tertiaryText">In a meeting</div>
+    <div class="ms-Persona-optionalText">Available at 4:00pm</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--available">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--away">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--blocked">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--busy">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--dnd">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--offline">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--available">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--away">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--blocked">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--busy">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--dnd">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+<div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Persona ms-Persona--square ms-Persona--offline">
+  <div class="ms-Persona-imageArea">
+    <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+    <img class="ms-Persona-image" src="Persona.Person2.png">
+  </div>
+  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-details">
+    <div class="ms-Persona-primaryText">Alton Lafferty</div>
+    <div class="ms-Persona-secondaryText">Accountant</div>
+  </div>
+</div>
+</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component List</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="List.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.List) {
+          $('.ms-List').List();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('List' in fabric) {
+          var element = document.querySelector('.ms-List');
+          var component = new fabric['List'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">List</h1>
+  <div id="componentWrapper">
+    <div class="sample-wrapper"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<ul class="ms-List">
+  <div class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selected is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+</ul>
+</div>
+<div class="sample-wrapper"><ul class="ms-List ms-List--grid">
+  <div class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selected is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+  <div class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </div>
+</ul>
+</div>
+  </div>
+</body>
+</html>

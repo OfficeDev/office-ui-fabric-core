@@ -1,0 +1,79 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Fabric Core Color Variables
+
+
+//== Theme Colors
+//
+$ms-color-themeDarker:     #004578;
+$ms-color-themeDark:       #005a9e;
+$ms-color-themeDarkAlt:    #106ebe;
+$ms-color-themePrimary:    #0078d7;
+$ms-color-themeSecondary:  #2b88d8;
+$ms-color-themeTertiary:   #71afe5;
+$ms-color-themeLight:      #c7e0f4;
+$ms-color-themeLighter:    #deecf9;
+$ms-color-themeLighterAlt: #eff6fc;
+
+
+//== Grayscale Colors
+//
+$ms-color-black:               #000000;
+$ms-color-neutralDark:         #212121;
+$ms-color-neutralPrimary:      #333333;
+$ms-color-neutralSecondary:    #666666;
+$ms-color-neutralSecondaryAlt: #767676;
+$ms-color-neutralTertiary:     #a6a6a6;
+$ms-color-neutralTertiaryAlt:  #c8c8c8;
+$ms-color-neutralLight:        #eaeaea;
+$ms-color-neutralLighter:      #f4f4f4;
+$ms-color-neutralLighterAlt:   #f8f8f8;
+$ms-color-white:               #ffffff;
+
+
+//== Translucent Colors
+//
+$ms-color-blackTranslucent40:  rgba(0,0,0,.4);
+$ms-color-whiteTranslucent40:  rgba(255,255,255,.4);
+
+
+//== Core brand and accent colors
+//
+$ms-color-yellow:        #ffb900;
+$ms-color-yellowLight:   #fff100;
+$ms-color-orange:        #d83b01;
+$ms-color-orangeLight:   #ff8c00;
+$ms-color-redDark:       #a80000;
+$ms-color-red:           #e81123;
+$ms-color-magentaDark:   #5c005c;
+$ms-color-magenta:       #b4009e;
+$ms-color-magentaLight:  #e3008c;
+$ms-color-purpleDark:    #32145a;
+$ms-color-purple:        #5c2d91;
+$ms-color-purpleLight:   #b4a0ff;
+$ms-color-blueDark:      #002050;
+$ms-color-blueMid:       #00188f;
+$ms-color-blue:          #0078d7;
+$ms-color-blueLight:     #00bcf2;
+$ms-color-tealDark:      #004b50;
+$ms-color-teal:          #008272;
+$ms-color-tealLight:     #00b294;
+$ms-color-greenDark:     #004b1c;
+$ms-color-green:         #107c10;
+$ms-color-greenLight:    #bad80a;
+
+
+//== Other Colors
+//
+$ms-color-error:             $ms-color-redDark;
+$ms-color-errorBackground:   #fde7e9;
+$ms-color-success:           $ms-color-green;
+$ms-color-successBackground: #dff6dd;
+$ms-color-alert:             $ms-color-orange;
+$ms-color-alertBackground:   $ms-color-neutralLighter;
+$ms-color-infoBackground:    $ms-color-neutralLighter;
+$ms-color-info:              $ms-color-green;
+$ms-color-orangeLighter:     #ea4300;

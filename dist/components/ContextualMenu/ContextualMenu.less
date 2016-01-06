@@ -1,0 +1,148 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Contextual Menu styles
+
+
+.ms-ContextualMenu {
+  .ms-font-m;
+  .ms-u-normalize;
+  display: none;
+
+  // Hidden by default, then trigger this state to show it.
+  &.is-open {
+    .drop-shadow;
+    background-color: @ms-color-white;
+    border: 1px solid @ms-color-neutralTertiaryAlt;
+    display: block;
+    list-style-type: none;
+    position: absolute;
+    width: 180px;
+    z-index: (@ms-zIndex-ContextualMenu + @ms-zIndex-middle);
+  }
+}
+
+.ms-ContextualMenu-item {
+  .ms-u-borderBox;
+  position: relative;
+}
+
+// Modifier: Menu item Dividers
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider {
+  cursor: default;
+  display: block;
+  height: 1px;
+  margin: 4px 0;
+  background-color: @ms-color-neutralLight;
+  position: relative;
+}
+
+// Modifier: Menu item Headers
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  color: @ms-color-themePrimary;
+  font-size: @ms-font-size-s;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 30px;
+}
+
+.ms-ContextualMenu-link {
+  text-decoration: none;
+  color: @ms-color-neutralPrimary;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+  position: relative;
+
+  // Shorten the first and last items to maintain baseline alignment.
+  &:first-child, 
+  &:last-child {
+    height: 39px;
+  }
+
+  &:hover,
+  &:active {
+    background-color: @ms-color-neutralLight;
+    color: @ms-color-black;
+  }
+
+  &:active {
+    border: 1px solid @ms-color-themePrimary;
+  }
+
+  &.is-selected {
+    background-color: @ms-color-themeLight;
+    color: @ms-color-black;
+    font-family: @ms-font-family-semibold;
+
+    &:hover {
+      background-color: @ms-color-themeLight;
+    }
+  }
+
+  &.is-disabled {
+    background-color: @ms-color-white;
+    color: @ms-color-neutralTertiary;
+    cursor: default;
+    pointer-events: none;
+
+    &:active { 
+      border-color: @ms-color-white; 
+    }
+  }
+}
+
+// Modifier: Contextual menu with submenu
+.ms-ContextualMenu-link.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  left: 178px; // Move the submenu to the left of the menu item that triggered it
+}
+
+// Right chevron.
+// Note: The .ms-ContextualMenu-caretRight class has been deprecated.
+// Please use .ms-ContextualMenu-subMenuIcon.
+.ms-ContextualMenu-subMenuIcon,
+.ms-ContextualMenu-caretRight {
+  color: @ms-color-neutralSecondary;
+  font-size: @ms-font-size-m-plus + 1;
+  height: 39px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 7px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+//== Modifier: Multi-select menu 
+//
+.ms-ContextualMenu.ms-ContextualMenu--multiselect {
+  .ms-ContextualMenu-link {
+    padding: 0 30px;
+
+    // Multi-select checkmark
+    &.is-selected {
+      background-color: @ms-color-white;
+
+      // Checkmark
+      &:after {
+        .ms-Icon;
+        color: @ms-color-neutralPrimary;
+        content: '\e041';
+        font-size: @ms-font-size-s;
+        height: 39px;
+        line-height: 40px;
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+}

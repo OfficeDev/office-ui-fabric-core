@@ -1,0 +1,171 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component ChoiceField</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="ChoiceField.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.ChoiceField) {
+          $('.ms-ChoiceField').ChoiceField();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('ChoiceField' in fabric) {
+          var element = document.querySelector('.ms-ChoiceField');
+          var component = new fabric['ChoiceField'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">ChoiceField</h1>
+  <div id="componentWrapper">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceField">
+  <input id="demo-radio-unselected" class="ms-ChoiceField-input" type="radio">
+  <label for="demo-radio-unselected" class="ms-ChoiceField-field"><span class="ms-Label">Unselected</span></label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceField">
+  <input id="demo-radio-unselected" class="ms-ChoiceField-input" type="radio" checked>
+  <label for="demo-radio-unselected" class="ms-ChoiceField-field"><span class="ms-Label">Selected</span></label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceField">
+  <input id="demo-radio-unselected" class="ms-ChoiceField-input" type="radio" disabled>
+  <label for="demo-radio-unselected" class="ms-ChoiceField-field"><span class="ms-Label">Unselected</span></label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceField">
+  <input id="demo-checkbox-unselected" class="ms-ChoiceField-input" type="checkbox">
+  <label for="demo-checkbox-unselected" class="ms-ChoiceField-field"><span class="ms-Label">Selected</span></label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceField">
+  <input id="demo-checkbox-selected" class="ms-ChoiceField-input" type="checkbox" checked>
+  <label for="demo-checkbox-selected" class="ms-ChoiceField-field"><span class="ms-Label">Selected</span></label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceField">
+  <input id="demo-checkbox-unselected" class="ms-ChoiceField-input" type="checkbox" disabled>
+  <label for="demo-checkbox-unselected" class="ms-ChoiceField-field"><span class="ms-Label">Selected</span></label>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-ChoiceFieldGroup">
+  <div class="ms-ChoiceFieldGroup-title">
+    <label class="ms-Label is-required">Pick one</label>
+  </div>
+  <div class="ms-ChoiceField">
+    <input id="radio1-a" class="ms-ChoiceField-input" type="radio" name="radio1">
+    <label for="radio1-a" class="ms-ChoiceField-field"><span class="ms-Label">A</span></label>
+  </div>
+  <div class="ms-ChoiceField">
+    <input id="radio1-b" class="ms-ChoiceField-input" type="radio" name="radio1">
+    <label for="radio1-b" class="ms-ChoiceField-field"><span class="ms-Label">B</span></label>
+  </div>
+  <div class="ms-ChoiceField">
+    <input id="radio1-c" class="ms-ChoiceField-input" type="radio" name="radio1">
+    <label for="radio1-c" class="ms-ChoiceField-field"><span class="ms-Label">C</span></label>
+  </div>
+  <div class="ms-ChoiceField">
+    <input id="radio1-d" class="ms-ChoiceField-input" type="radio" name="radio1">
+    <label for="radio1-d" class="ms-ChoiceField-field"><span class="ms-Label">D</span></label>
+  </div>
+</div>  
+
+  </div>
+</body>
+</html>

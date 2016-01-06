@@ -1,0 +1,41 @@
+{
+  "name": "Toggle",
+  "notes": "",
+  "template": "Toggle.html",
+  "class": "ms-Toggle",
+  "fileOrder": [
+    "Toggle.html",
+    "Toggle.TextLeft.html"
+  ],
+  "branches": [
+      {
+        "name": "Text above",
+        "class": "ms-Toggle--textAbove",
+        "default": true,
+        "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+        ]
+      },
+      {
+        "name": "Text left",
+        "class": "ms-Toggle--textLeft",
+        "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+        ]
+      }
+  ]
+}

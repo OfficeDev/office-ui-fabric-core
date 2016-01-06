@@ -1,0 +1,211 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Callout</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Callout.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Callout) {
+          $('.ms-Callout').Callout();
+        }
+      }
+
+      // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Callout' in fabric) {
+          var element = document.querySelector('.ms-Callout');
+          var component = new fabric['Callout'](element);
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-Dialog {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Callout</h1>
+  <div id="componentWrapper">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <a href="#" class="ms-Callout-link ms-Link ms-Link--hero">Learn more</a>
+      </div>
+    </div>    
+  </div>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout ms-Callout--close ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <button class="ms-Callout-close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <a href="#" class="ms-Callout-link ms-Link ms-Link--hero">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout ms-Callout--actionText ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-Callout-subText--s">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Callout-actionText ms-Button-icon"><i class="ms-Icon ms-Icon--check"></i></span>
+          <span class="ms-Button-label">Save</span>
+        </button>
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--x"></i></span>
+          <span class="ms-Callout-actionText ms-Button-label">Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout ms-Callout--OOBE ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-button ms-Button ms-Button--primary">
+          <span class="ms-Button-label">More</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+        <button class="ms-Callout-button ms-Button">
+          <span class="ms-Button-label">Got it</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout ms-Callout--peek ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">Uploaded 2 items to <span class="ms-Link">Alton's OneDrive</span></p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-button ms-Button">
+          <span class="ms-Button-label">More</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</body>
+</html>

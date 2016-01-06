@@ -1,0 +1,31 @@
+{
+  "name": "Spinner",
+  "notes": "An animating activity indicator.",
+  "template": "Spinner.html",
+  "class": "ms-Spinner",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Spinner.html",
+    "Spinner.Large.html",
+    "Spinner.Message.html",
+    "Spinner.Message.Large.html"
+  ],
+  "branches": [
+    {
+      "name": "Standard",
+      "default": true
+    },
+    {
+      "name": "Large",
+      "class": "ms-Spinner--large"
+    },
+    {
+      "name": "Standard with message ",
+      "class": "ms-Spinner"
+    },
+    {
+      "name": "Large with message",
+      "class": "ms-Spinner--large"
+    }
+  ]
+}

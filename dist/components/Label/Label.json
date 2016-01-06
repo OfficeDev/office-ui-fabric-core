@@ -1,0 +1,26 @@
+{
+  "name": "Label",
+  "notes": "A standard form label.",
+  "template": "Label.html",
+  "class": "ms-Label",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Label.html",
+    "Label.Disabled.html",
+    "Label.Required.html"
+  ],
+  "branches": [
+    {
+      "name": "Standard",
+      "default": true
+    },
+    {
+      "name": "Disabled",
+      "class": "is-disabled"
+    },
+    {
+      "name": "Required",
+      "class": "is-required"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ Office UI Fabric uses gulp to compile its LESS, build and serve demos, and gener
 Before you get started, make sure you have [node.js](https://nodejs.org/) and [git](https://git-scm.com/) installed. To build Fabric:
 
 1. Clone the repo.
-2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
+2. Navigate to the folder that has the gulpfile.js file (Fabric's root).
 3. npm install
 4. gulp
 
@@ -21,7 +21,7 @@ The built files will be in the `/dist/` folder.
 
 ##Gulp tasks
 
-You can test and work with Fabric locally in a number of ways using the tasks listed below. 
+You can test and work with Fabric locally in using any of the tasks listed below. 
 
 ###gulp
 
@@ -29,19 +29,19 @@ Builds everything incrementally. Running this the first time will be slow but ru
 
 ###gulp watch
 
-Builds everything and watches everything. After running this once, your builds should be a lot faster. Now if you make a change anything anywhere in fabric, only that area/section/file will get build/changed/moved etc:
+Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in fabric, only that area/section/file will get build/changed/moved etc:
 
 ###gulp watch-debug
 
-Builds everything and watches everything. After running this once, your builds should be a lot faster. This task is similar to gulp watch except you can now get a readout of what files are in the pipe, this will be helpful if you want to make sure the file you are working on get's picked up and added to the pipe.
+Builds and watches everything. After running this once, your builds will a lot faster. This task is similar to gulp watch except you can now get a readout of what files are in the pipe. This will be helpful to make sure the build is working and building properly. 
 
 ###gulp watch-sass
 
-Builds everything and watches everything but builds only Sass versions of our core library files.
+Builds and watches everything but builds only Sass versions of our core library files.
 
 ###gulp watch-sass-debug
 
-Builds everything and watches everything but uses the Sass versions of the files and gives a readout of files in the pipe.
+Builds and watches everything but uses the Sass versions of the files and gives a readout of files in the pipe.
 
 ##Starter template
 

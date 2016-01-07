@@ -143,6 +143,17 @@ var Utilities = function() {
 			return false;
 		}
 	};
+    /**
+     * Add ignore flag to the beginning of each file given in the array
+     * @param {array} An array of files to change
+     */
+    this.setIgnoreFlagOnFiles = function(filesArray) {
+        for (var i = 0; i < filesArray.length; i++) {
+            var element = filesArray[i];
+            filesArray[i] = '!' + element;
+        }
+        return filesArray;
+    };
 };
 
 module.exports = new Utilities();

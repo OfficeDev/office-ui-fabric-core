@@ -62,6 +62,11 @@ var Config = function() {
 	];
     this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
     this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
+    //JS Files to be ignored in the JS Linter for Components
+    //NOTE: Only use this for third party files, do not add any Fabric JS files to this.
+    this.ignoreComponentJSLinting = [
+         this.paths.componentsPath + '/DatePicker/PickaDate.js'
+    ];
 };
 
 module.exports = new Config();

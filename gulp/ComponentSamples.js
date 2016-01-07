@@ -21,13 +21,14 @@ gulp.task('ComponentSamples-nuke', function () {
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentSamples-copyAssets', function() {
-    return gulp.src([
-            Config.paths.componentsPath + '/**/*.js', 
-            Config.paths.componentsPath + '/**/*.jpg', 
-            Config.paths.componentsPath + '/**/*.png', 
-            Config.paths.componentsPath + '/**/*.js',
-            Config.paths.componentsPath + '/**/*.gif'
-        ])
+    var paths = [
+        Config.paths.componentsPath + '/**/*.jpg', 
+        Config.paths.componentsPath + '/**/*.png',
+        Config.paths.componentsPath + '/**/*.gif'
+    ];
+    var newPaths = paths.concat(newPaths, Config.ignoreComponentJSLinting);
+    
+    return gulp.src(newPaths)
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
             .on('error', ErrorHandling.onErrorInPipe)
@@ -37,6 +38,23 @@ gulp.task('ComponentSamples-copyAssets', function() {
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distSamples + '/Components'))
             .on('error', ErrorHandling.onErrorInPipe);
+});
+
+gulp.task('ComponentSamples-moveJS', function() {
+    var paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
+    var newPaths = paths.concat([Config.paths.componentsPath + '/**/*.js']);
+
+    return gulp.src(newPaths)
+            .pipe(Plugins.jshint())
+            .pipe(ErrorHandling.JSHintErrors)
+            //.pipe(Plugins.gulpif(Config.debugMode, '', Plugins.jshint.reporter('fail')))
+            .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
+                //.on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Copying Component Assets"
+                })))
+            //.on('error', ErrorHandling.onErrorInPipe)
+            .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
 //
@@ -128,7 +146,7 @@ gulp.task('ComponentSamples-build', function() {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-var ComponentSamplesTasks = ['ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-less'];
+var ComponentSamplesTasks = ['ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-less', 'ComponentSamples-moveJS'];
 
 //Build Fabric Component Samples
 gulp.task('ComponentSamples', ComponentSamplesTasks);

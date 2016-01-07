@@ -56,7 +56,23 @@
 }
 
 .ms-Toggle-input {
-  display: none; // Hide the original, unstyled element
+  position: absolute;
+  opacity: 0;
+  top: 0;
+
+  &:focus:not(:disabled) {
+    &:not(:checked) {
+      + .ms-Toggle-field {
+        background-color: @ms-color-neutralLight;
+      }      
+    }
+
+    &:checked {
+      + .ms-Toggle-field {
+        background-color: @ms-color-themeDark;
+      }
+    }
+  }
 }
 
 // Description text
@@ -122,8 +138,6 @@
 
 // On/Off slide states
 .ms-Toggle-input {
-  position: relative;
-
   // 'Off' state - slider on the left
   &:not(:checked) + .ms-Toggle-field {
     background-color: @ms-color-neutralLighter;

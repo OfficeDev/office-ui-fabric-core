@@ -39,12 +39,11 @@ gulp.task('Samples-buildLess', function () {
     // Build minified Fabric Components CSS for each Component.
     return folderList.map(function(folder) {
         return gulp.src(Config.paths.srcSamples + '/' + folder + '/less/' + folder + '.less')
+                .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
                 .pipe(Plugins.changed(Config.paths.distSamples + '/' + folder + '/css', {extension: '.css'}))
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                            title: "Building Sample LESS for " + folder
                  })))
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.less())
                     .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.autoprefixer({
@@ -52,19 +51,12 @@ gulp.task('Samples-buildLess', function () {
                     cascade: false
                 }))
                 .pipe(Plugins.rename(folder + '.css'))
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.cssbeautify())
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.csscomb())
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(gulp.dest(Config.paths.distSamples + '/' + folder + '/css'))
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.rename(folder + '.min.css'))
-                    .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.cssMinify())
-                    .on('error', ErrorHandling.onErrorInPipe)
-                .pipe(gulp.dest(Config.paths.distSamples + '/' + folder + '/css'))
-                    .on('error', ErrorHandling.onErrorInPipe);
+                .pipe(gulp.dest(Config.paths.distSamples + '/' + folder + '/css'));
     });
 });
 

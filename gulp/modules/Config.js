@@ -67,6 +67,8 @@ var Config = function() {
     this.ignoreComponentJSLinting = [
          this.paths.componentsPath + '/DatePicker/PickaDate.js'
     ];
+    //Errors
+    this.genericBuildError = "Hmm, something went wrong in the build... Here is the error dump";
 };
 
 module.exports = new Config();

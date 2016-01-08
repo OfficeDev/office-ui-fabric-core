@@ -26,18 +26,15 @@ gulp.task('ComponentSamples-copyAssets', function() {
         Config.paths.componentsPath + '/**/*.png',
         Config.paths.componentsPath + '/**/*.gif'
     ];
-    var newPaths = paths.concat(newPaths, Config.ignoreComponentJSLinting);
+    var newPaths = paths.concat(Config.ignoreComponentJSLinting);
     
     return gulp.src(newPaths)
-            .on('error', ErrorHandling.onErrorInPipe)
+        .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
         .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Copying Component Assets"
                 })))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(gulp.dest(Config.paths.distSamples + '/Components'))
-            .on('error', ErrorHandling.onErrorInPipe);
+        .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
 gulp.task('ComponentSamples-moveJS', function() {
@@ -46,14 +43,12 @@ gulp.task('ComponentSamples-moveJS', function() {
 
     return gulp.src(newPaths)
             .pipe(Plugins.jshint())
+            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
             .pipe(ErrorHandling.JSHintErrors)
-            //.pipe(Plugins.gulpif(Config.debugMode, '', Plugins.jshint.reporter('fail')))
             .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
-                //.on('error', ErrorHandling.onErrorInPipe)
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Copying Component Assets"
-                })))
-            //.on('error', ErrorHandling.onErrorInPipe)
+            .pipe(Plugins.debug({
+                title: "Copying Component Assets"
+            }))
             .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
@@ -107,10 +102,9 @@ gulp.task('ComponentSamples-build', function() {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
            }
            componentPipe = gulp.src(fileGlob)
+           .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
-                .on('error', ErrorHandling.onErrorInPipe)
            .pipe(Plugins.concat("index.html"))
-                .on('error', ErrorHandling.onErrorInPipe)
            .pipe(Plugins.wrap(
                 {
                     src:  Config.paths.templatePath + '/componentSampleTemplate.html'  
@@ -122,13 +116,10 @@ gulp.task('ComponentSamples-build', function() {
                     jsLinks: jsLinks
                 }
            ))
-                .on('error', ErrorHandling.onErrorInPipe)
            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Sample Component " + folderName
                 })))
-                .on('error', ErrorHandling.onErrorInPipe)
-           .pipe(gulp.dest(Config.paths.distSamples + '/Components/' +  folderName))
-                .on('error', ErrorHandling.onErrorInPipe);
+           .pipe(gulp.dest(Config.paths.distSamples + '/Components/' +  folderName));
            
            // Add stream
            streams.push(componentPipe);

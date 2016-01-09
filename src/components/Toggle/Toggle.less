@@ -55,26 +55,6 @@
   }
 }
 
-.ms-Toggle-input {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-
-  &:focus:not(:disabled) {
-    &:not(:checked) {
-      + .ms-Toggle-field {
-        background-color: @ms-color-neutralLight;
-      }      
-    }
-
-    &:checked {
-      + .ms-Toggle-field {
-        background-color: @ms-color-themeDark;
-      }
-    }
-  }
-}
-
 // Description text
 .ms-Toggle-description {
   position: relative;
@@ -113,21 +93,15 @@
 
   & when (@direction = left) {
     &:before {
+      right: auto;
       border-right: 2.5px solid @ms-color-white;
-    }
-
-    &:hover { 
-      background-color: @ms-color-neutralLight; 
     }
   }
 
   & when (@direction = right) {
     &:before {
+      left: auto;
       border-left: 2.5px solid @ms-color-white;
-    }
-
-    &:hover { 
-      background-color: @ms-color-themeDark; 
     }
   }
 
@@ -138,8 +112,12 @@
 
 // On/Off slide states
 .ms-Toggle-input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+
   // 'Off' state - slider on the left
-  &:not(:checked) + .ms-Toggle-field {
+  & + .ms-Toggle-field {
     background-color: @ms-color-neutralLighter;
 
     .ms-Toggle-slider(left);
@@ -155,20 +133,28 @@
   }
 
   // 'On' state - slider on the right
-  &:checked {
-    & + .ms-Toggle-field {
-      background-color: @ms-color-themePrimary;
+  &:checked + .ms-Toggle-field {
+    background-color: @ms-color-themePrimary;
 
-      .ms-Toggle-slider(right);
+    .ms-Toggle-slider(right);
 
-      // Show the on label / hide the off label
-      .ms-Label--off {
-        display: none;
-      }
+    // Show the on label / hide the off label
+    .ms-Label--off {
+      display: none;
+    }
 
-      .ms-Label--on {
-        display: block;
-      }
+    .ms-Label--on {
+      display: block;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    & + .ms-Toggle-field { 
+      background-color: @ms-color-neutralLight; 
+    }
+    &:checked + .ms-Toggle-field {
+      background-color: @ms-color-themeDark; 
     }
   }
 }

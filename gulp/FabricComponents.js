@@ -37,9 +37,10 @@ gulp.task('FabricComponents-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-gulp.task('FabricComponents-compiledLess', function () {
+var testingthis = gulp.task('FabricComponents-compiledLess', function () {
 
-    return gulp.src(Config.paths.srcLess + '/fabric.components.less')
+    var stream = gulp.src(Config.paths.srcLess + '/fabric.components.less')
+        .pipe(Plugins.plumber())
         .pipe(Plugins.lesshint({
             configPath: './.lesshintrc'
         }))
@@ -71,6 +72,8 @@ gulp.task('FabricComponents-compiledLess', function () {
         .pipe(Plugins.cssMinify())
         .pipe(Plugins.rename('fabric.components.rtl.min.css'))
         .pipe(gulp.dest(Config.paths.distCSS));
+     return stream;
+     
 });
 
 gulp.task('FabricComponents-less', function () {

@@ -67,16 +67,10 @@ var ErrorHandling = function() {
      */
 	this.onErrorInPipe = function(error) {
         if(error) {
-            if(error.plugin == 'gulp-less') {
-                var errorString = error.message;
-                console.log(errorString);
-                return;
-            } else {
-                that.generateBuildError(error[0]);
-                that.addError(error[0]);
-                console.log(error);
-                return;
-            }
+            that.generateBuildError(error[0]);
+            that.addError(error[0]);
+            console.log(error);
+            return;
         }
         
 		that.generateBuildError(Config.genericBuildError);
@@ -141,6 +135,7 @@ var ErrorHandling = function() {
             error.message
         );
         that.generatePluginError('Less Compiler', errorString);
+        this.emit('end');
     }
 };
 

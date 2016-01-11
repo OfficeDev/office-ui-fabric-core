@@ -67,10 +67,15 @@ var ErrorHandling = function() {
      */
 	this.onErrorInPipe = function(error) {
         if(error) {
-            that.generateBuildError(error[0]);
-            that.addError(error[0]);
-            console.log(error);
-            return;
+            if(error.plugin == 'gulp-less') {
+                // We have a custom error handler specifically for less but this still will get triggered
+                return;
+            } else {
+                that.generateBuildError(error[0]);
+                that.addError(error[0]);
+                console.log(error);
+                return;
+            }
         }
         
 		that.generateBuildError(Config.genericBuildError);

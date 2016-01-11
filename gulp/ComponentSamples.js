@@ -38,17 +38,19 @@ gulp.task('ComponentSamples-copyAssets', function() {
 });
 
 gulp.task('ComponentSamples-moveJS', function() {
-    var paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
-    var newPaths = paths.concat([Config.paths.componentsPath + '/**/*.js']);
-
+    var paths;
+    var newPaths;
+    paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
+    newPaths = paths.concat([Config.paths.componentsPath + '/**/*.js']);
+   
     return gulp.src(newPaths)
-            .pipe(Plugins.jshint())
             .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-            .pipe(ErrorHandling.JSHintErrors)
+            .pipe(Plugins.jshint())
+            .pipe(ErrorHandling.JSHintErrors())
             .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
-            .pipe(Plugins.debug({
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Copying Component Assets"
-            }))
+            })))
             .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 

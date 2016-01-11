@@ -121,7 +121,7 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
      if(returnFailedBuild) {
         process.exit(1);
      } else {
-        return ErrorHandling.showSuccessBuild("No build errors, Fabric built succesfully");
+        return;
      }
 });
 

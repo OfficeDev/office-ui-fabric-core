@@ -148,11 +148,13 @@ var Utilities = function() {
      * @param {array} An array of files to change
      */
     this.setIgnoreFlagOnFiles = function(filesArray) {
-        for (var i = 0; i < filesArray.length; i++) {
-            var element = filesArray[i];
-            filesArray[i] = '!' + element;
+        var newFilesArray = filesArray.slice();
+        
+        for (var i = 0; i < newFilesArray.length; i++) {
+            var element = newFilesArray[i];
+            newFilesArray[i] = '!' + element;
         }
-        return filesArray;
+        return newFilesArray;
     };
 };
 

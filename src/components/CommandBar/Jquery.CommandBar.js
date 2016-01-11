@@ -7,25 +7,24 @@
 (function ($) {
   $.fn.CommandBar = function () {
 
-    var createMenuItem = function(text, icon, link) {
+    var createMenuItem = function(text) {
       var item = '<li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link"" href="#">';
         item += text;
         item += '</a></li>';
         
       return item;
-    }
+    };
 
     var saveCommands = function($commands, $commandWidth, $commandarea) {
       var commands = [];
-      $commands.each(function(index) {
+      $commands.each(function() {
         var $Item = $(this);
         var $rightOffset = ($Item.position().left + $Item.outerWidth() + $commandWidth + 10) - $commandarea.position().left; // Added padding of 10
         commands.push({ jquery: $Item, rightOffset: $rightOffset});
-        console.log($Item.outerWidth(), index, $commandarea.position().left, $Item.position().left);
       });
 
       return commands;
-    }
+    };
 
     var processCommands = function(commands, width, overflowwidth) {
         var overFlowCommands = [];
@@ -45,7 +44,7 @@
           }
         }
         return overFlowCommands;
-    }
+    };
 
     var processOverflow = function(overFlowCommands, $oCommand, $menu) {
         var overflowStrings = '';
@@ -56,7 +55,7 @@
           $menu.html('');
 
           // Add overflowed commands to ContextualMenu
-          for(i = 0; i < overFlowCommands.length; i++) {
+          for(var i = 0; i < overFlowCommands.length; i++) {
             var $Item = $(overFlowCommands[i]);
             // Hide Element in CommandBar
             $Item.addClass('is-hidden');
@@ -67,7 +66,7 @@
         } else {
           $oCommand.removeClass("is-visible");
         }
-    }
+    };
 
     /** Go through each CommandBar we've been given. */
     return this.each(function () {
@@ -102,10 +101,7 @@
       $(window).resize(function() {
         var overFlowCommands;
 
-        if($(window).width() < 640 && mobileSwitch == false) {
-
-          console.log("Switching to mobile");
-
+        if($(window).width() < 640 && mobileSwitch === false) {
           // Go through process and save commands
           allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
          
@@ -117,19 +113,14 @@
             $(this).closest('.ms-CommandBarSearch').addClass('is-active');
           });
 
-        } else if($(window).width() > 639 && mobileSwitch == true) {
-
-          console.log("Switching to Desktop");
-
+        } else if($(window).width() > 639 && mobileSwitch === true) {
           // Go through process and save commands
           allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
 
           mobileSwitch = false;
           $('.ms-CommandBarSearch').unbind();
 
-        } 
-
-        console.log(allCommands, $CommandMainArea.innerWidth());
+        }
 
         // Initiate process commands and add commands to overflow on load
         overFlowCommands = processCommands(allCommands, $CommandMainArea.innerWidth(), $OverflowCommandWidth);

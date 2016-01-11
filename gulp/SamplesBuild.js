@@ -44,7 +44,7 @@ gulp.task('Samples-buildLess', function () {
                 .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                            title: "Building Sample LESS for " + folder
                  })))
-                .pipe(Plugins.less())
+                .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
                     .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.autoprefixer({
                     browsers: ['last 2 versions', 'ie >= 9'],

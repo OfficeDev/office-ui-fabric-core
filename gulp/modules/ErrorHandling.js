@@ -11,7 +11,7 @@ var ErrorHandling = function() {
     var that = this;
     this.numberOfErrors = function() {
         return errors.length;
-    };
+    };  
     this.numberOfWarnings = function() {
         return warnings.length;
     };
@@ -133,16 +133,14 @@ var ErrorHandling = function() {
         return cb(null, file); 
     });
     this.LESSCompileErrors = function(error) {
-            var errorString = that.createLineErrorMessage(
-                error.path,
-                error.line,
-                error.character,
-                error.code,
-                error.reason
-            );
-                
-            if(error.id == "(error)") {
-                that.generatePluginError('jsHint', errorString);
+        var errorString = that.createLineErrorMessage(
+            error.filename,
+            error.line,
+            error.column,
+            'No Code',
+            error.message
+        );
+        that.generatePluginError('Less Compiler', errorString);
     }
 };
 

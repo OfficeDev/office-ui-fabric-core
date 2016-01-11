@@ -69,7 +69,7 @@ gulp.task('Fabric-buildLess', function () {
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Core Fabric " + fileExtension + " File"
             })))
-            .pipe(cssPlugin())
+            .pipe(cssPlugin().on('error', ErrorHandling.LESSCompileErrors))
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
@@ -84,29 +84,29 @@ gulp.task('Fabric-buildLess', function () {
             .pipe(Plugins.cssMinify())
             .pipe(gulp.dest(Config.paths.distCSS));
                 
-    // // Build full and minified Fabric RTL CSS.
-    // var fabricRtl = gulp.src(srcPath + '/' + 'Fabric.Rtl.' + fileExtension)
-    //         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-    //         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-    //                 title: "Building RTL Fabric LESS " + fileExtension + " File"
-    //         })))
-    //         .pipe(cssPlugin())
-    //         .pipe(Plugins.flipper())
-    //         .pipe(Plugins.rename('fabric.rtl.css'))
-    //         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-    //         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
-    //         .pipe(Plugins.autoprefixer({
-    //             browsers: ['last 2 versions', 'ie >= 9'],
-    //             cascade: false
-    //         }))
-    //         .pipe(Plugins.cssbeautify())
-    //         .pipe(Plugins.csscomb())
-    //         .pipe(gulp.dest(Config.paths.distCSS))
-    //         .pipe(Plugins.rename('fabric.rtl.min.css'))
-    //         .pipe(Plugins.cssMinify())
-    //         .pipe(gulp.dest(Config.paths.distCSS));
-    // // Merge all current streams into one.
-    // return Plugins.mergeStream(fabric, fabricRtl);
+    // Build full and minified Fabric RTL CSS.
+    var fabricRtl = gulp.src(srcPath + '/' + 'Fabric.Rtl.' + fileExtension)
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Building RTL Fabric LESS " + fileExtension + " File"
+            })))
+            .pipe(cssPlugin().on('error', ErrorHandling.LESSCompileErrors))
+            .pipe(Plugins.flipper())
+            .pipe(Plugins.rename('fabric.rtl.css'))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+            .pipe(Plugins.autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+            .pipe(Plugins.cssbeautify())
+            .pipe(Plugins.csscomb())
+            .pipe(gulp.dest(Config.paths.distCSS))
+            .pipe(Plugins.rename('fabric.rtl.min.css'))
+            .pipe(Plugins.cssMinify())
+            .pipe(gulp.dest(Config.paths.distCSS));
+    // Merge all current streams into one.
+    return Plugins.mergeStream(fabric, fabricRtl);
 });
 
 //

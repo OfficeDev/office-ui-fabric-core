@@ -25,7 +25,7 @@ var ComponentSamplesHelper = function() {
                 return { "componentName": componentName, "dependencies": deps };
             }))
             .pipe(Plugins.template())
-            .pipe(Plugins.less())
+            .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],

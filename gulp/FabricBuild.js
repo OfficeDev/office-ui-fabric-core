@@ -57,10 +57,6 @@ gulp.task('Fabric-copyAssets', function () {
      return Plugins.mergeStream(moveLess, moveSass);
 });
 
-var handlerFunction = function(error) {
-    
-}
-
 //
 // LESS tasks
 // ----------------------------------------------------------------------------

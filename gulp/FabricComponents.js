@@ -40,8 +40,13 @@ gulp.task('FabricComponents-copyAssets', function () {
 gulp.task('FabricComponents-compiledLess', function () {
 
     return gulp.src(Config.paths.srcLess + '/fabric.components.less')
-        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(Plugins.less())
+        .pipe(Plugins.lesshint({
+            configPath: './.lesshintrc'
+        }))
+        .pipe(ErrorHandling.LESSHintErrors)
+        .pipe(Plugins.less({
+             errorReporting: ErrorHandling.LESSCompileErrors
+        }))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

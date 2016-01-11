@@ -19,6 +19,10 @@ var ErrorHandling = function() {
         errors.push(error);
         return;  
     };
+    this.addWarning = function(warning) {
+        warnings.push(warning);
+        return;  
+    };
     this.generateError = function(error) {
          gulputil.log(gulputil.colors.red(error));
          return;
@@ -102,6 +106,33 @@ var ErrorHandling = function() {
         }
         return cb(null, file); 
     });
+    this.LESSHintErrors = map(function (file, cb) {
+        if (!file.lesshint.success) {
+            file.lesshint.results.forEach(function (err) {
+                if (err) {
+                    var errorString = that.createLineErrorMessage(
+                         gulputil.colors.yellow(err.severity) + ' ' + err.message,
+                         err.file,
+                         err.line,
+                         err.source,
+                         'NA',
+                         ''
+                    );
+                        
+                    if(err.severity == "Error") {
+                         that.generatePluginError('lessHint', errorString);
+                    } else {
+                         gulputil.log(errorString);
+                         that.addWarning(errorString);
+                    }
+                }
+            });
+        }
+        return cb(null, file); 
+    });
+    this.LESSCompileErrors = function(error) {
+        console.log(error);
+    }
 };
 
 module.exports = new ErrorHandling();

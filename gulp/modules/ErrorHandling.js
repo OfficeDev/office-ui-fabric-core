@@ -32,7 +32,11 @@ var ErrorHandling = function() {
         return;
     };
     this.showNumberOfErrors = function(numberOfErrors) {
-        gulputil.log(gulputil.colors.red("Number Of Errors: " +  gulputil.colors.yellow(numberOfErrors)));
+        gulputil.log(gulputil.colors.red("Number Of errors: " +  gulputil.colors.yellow(numberOfErrors)));
+        return;
+    };
+    this.showNumberOfWarnings = function(numberOfErrors) {
+        gulputil.log(gulputil.colors.yellow("Number Of warnings: " +  gulputil.colors.yellow(numberOfErrors)));
         return;
     };
     this.showSuccessBuild = function(successMessage) {
@@ -65,9 +69,7 @@ var ErrorHandling = function() {
         if(error) {
             if(error.plugin == 'gulp-less') {
                 var errorString = error.message;
-                // that.generatePluginError(error.plugin, errorString);
-                // that.addError(errorString);
-                console.log(error.message);
+                console.log(errorString);
                 return;
             } else {
                 that.generateBuildError(error[0]);

@@ -133,7 +133,16 @@ var ErrorHandling = function() {
         return cb(null, file); 
     });
     this.LESSCompileErrors = function(error) {
-        console.log(error);
+            var errorString = that.createLineErrorMessage(
+                error.path,
+                error.line,
+                error.character,
+                error.code,
+                error.reason
+            );
+                
+            if(error.id == "(error)") {
+                that.generatePluginError('jsHint', errorString);
     }
 };
 

@@ -44,7 +44,7 @@ gulp.task('FabricComponents-compiledLess', function () {
             configPath: './.lesshintrc'
         }))
         .pipe(ErrorHandling.LESSHintErrors)
-        .pipe(Plugins.less())
+        .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

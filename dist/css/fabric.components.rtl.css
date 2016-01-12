@@ -4335,10 +4335,12 @@
 }
 
 .ms-Persona.ms-Persona--busy .ms-Persona-presence {
+  background-color: #d93b3b;
   background: repeating-linear-gradient(-45deg,#e57a79,#e57a79 1px,#d00e0d 0,#d00e0d 2px);
 }
 
 .ms-Persona.ms-Persona--busy.ms-Persona--square .ms-Persona-presence {
+  background-color: #d93b3b;
   background: repeating-linear-gradient(-45deg,#e57a79,#e57a79 3px,#d00e0d 3px,#d00e0d 6px);
 }
 

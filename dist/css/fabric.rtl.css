@@ -1,9 +1,7 @@
 /**
- * Office UI Fabric 1.1.3
+ * Office UI Fabric 1.2.1
  * The front-end framework for building experiences for Office 365.
  **/
-@charset 'UTF-8';
-
 .ms-u-borderBox,
 .ms-u-borderBox:before,
 .ms-u-borderBox:after {
@@ -1622,10 +1620,6 @@
 *[lang='vi-VN'] .ms-fontWeight-semibold-hover:hover {
   font-family: 'Segoe UI Semibold Vietnamese', 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe WP Semibold', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
 }
-
-/*
-  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
-*/
 
 /*
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
@@ -4324,8 +4318,7 @@
 .ms-Icon--folderSearch,
 .ms-Icon--listCheck,
 .ms-Icon--listGroup,
-.ms-Icon--timeline
-.ms-Icon--mailCheck,
+.ms-Icon--timeline .ms-Icon--mailCheck,
 .ms-Icon--listCheckbox,
 .ms-Icon--sunQuestion,
 .ms-Icon--chevronThinLeft,
@@ -5059,7 +5052,10 @@
   }
 }
 
-.ms-u-fadeIn400 {
+.ms-u-fadeIn100,
+.ms-u-fadeIn200,
+.ms-u-fadeIn400,
+.ms-u-fadeIn500 {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeIn;
   -webkit-animation-fill-mode: both;
@@ -5072,43 +5068,16 @@
 }
 
 .ms-u-fadeIn100 {
-  -webkit-animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation-duration: 0.167s;
           animation-duration: 0.167s;
 }
 
 .ms-u-fadeIn200 {
-  -webkit-animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation-duration: 0.267s;
           animation-duration: 0.267s;
 }
 
 .ms-u-fadeIn500 {
-  -webkit-animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
-          animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation-duration: 0.467s;
           animation-duration: 0.467s;
 }
@@ -5136,7 +5105,10 @@
   }
 }
 
-.ms-u-fadeOut400 {
+.ms-u-fadeOut100,
+.ms-u-fadeOut200,
+.ms-u-fadeOut400,
+.ms-u-fadeOut500 {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
@@ -5149,43 +5121,16 @@
 }
 
 .ms-u-fadeOut100 {
-  -webkit-animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation-duration: 0.1s;
           animation-duration: 0.1s;
 }
 
 .ms-u-fadeOut200 {
-  -webkit-animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation-duration: 0.167s;
           animation-duration: 0.167s;
 }
 
 .ms-u-fadeOut500 {
-  -webkit-animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
-          animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
   -webkit-animation-duration: 0.467s;
           animation-duration: 0.467s;
 }
@@ -6466,4 +6411,154 @@
 
 .ms-Grid-col .ms-Grid {
   padding: 0;
+}
+
+.ms-fontColor-officeAccent1,
+.ms-fontColor-officeAccent1--hover:hover {
+  color: #ffffff;
+}
+
+.ms-fontColor-officeAccent2,
+.ms-fontColor-officeAccent2--hover:hover {
+  color: #000000;
+}
+
+.ms-fontColor-officeAccent3,
+.ms-fontColor-officeAccent3--hover:hover {
+  color: #e7e6e5;
+}
+
+.ms-fontColor-officeAccent4,
+.ms-fontColor-officeAccent4--hover:hover {
+  color: #44546a;
+}
+
+.ms-fontColor-officeAccent5,
+.ms-fontColor-officeAccent5--hover:hover {
+  color: #5b9bd5;
+}
+
+.ms-fontColor-officeAccent6,
+.ms-fontColor-officeAccent6--hover:hover {
+  color: #ed7d31;
+}
+
+.ms-fontColor-officeAccent7,
+.ms-fontColor-officeAccent7--hover:hover {
+  color: #a5a5a5;
+}
+
+.ms-fontColor-officeAccent8,
+.ms-fontColor-officeAccent8--hover:hover {
+  color: #ffc001;
+}
+
+.ms-fontColor-officeAccent9,
+.ms-fontColor-officeAccent9--hover:hover {
+  color: #4472c4;
+}
+
+.ms-fontColor-officeAccent10,
+.ms-fontColor-officeAccent10--hover:hover {
+  color: #70ad47;
+}
+
+.ms-bgColor-officeAccent1,
+.ms-bgColor-officeAccent1--hover:hover {
+  background-color: #ffffff;
+}
+
+.ms-bgColor-officeAccent2,
+.ms-bgColor-officeAccent2--hover:hover {
+  background-color: #000000;
+}
+
+.ms-bgColor-officeAccent3,
+.ms-bgColor-officeAccent3--hover:hover {
+  background-color: #e7e6e5;
+}
+
+.ms-bgColor-officeAccent4,
+.ms-bgColor-officeAccent4--hover:hover {
+  background-color: #44546a;
+}
+
+.ms-bgColor-officeAccent5,
+.ms-bgColor-officeAccent5--hover:hover {
+  background-color: #5b9bd5;
+}
+
+.ms-bgColor-officeAccent6,
+.ms-bgColor-officeAccent6--hover:hover {
+  background-color: #ed7d31;
+}
+
+.ms-bgColor-officeAccent7,
+.ms-bgColor-officeAccent7--hover:hover {
+  background-color: #a5a5a5;
+}
+
+.ms-bgColor-officeAccent8,
+.ms-bgColor-officeAccent8--hover:hover {
+  background-color: #ffc001;
+}
+
+.ms-bgColor-officeAccent9,
+.ms-bgColor-officeAccent9--hover:hover {
+  background-color: #4472c4;
+}
+
+.ms-bgColor-officeAccent10,
+.ms-bgColor-officeAccent10--hover:hover {
+  background-color: #70ad47;
+}
+
+.ms-borderColor-officeAccent1,
+.ms-borderColor-officeAccent1--hover:hover {
+  border-color: #ffffff;
+}
+
+.ms-borderColor-officeAccent2,
+.ms-borderColor-officeAccent2--hover:hover {
+  border-color: #000000;
+}
+
+.ms-borderColor-officeAccent3,
+.ms-borderColor-officeAccent3--hover:hover {
+  border-color: #e7e6e5;
+}
+
+.ms-borderColor-officeAccent4,
+.ms-borderColor-officeAccent4--hover:hover {
+  border-color: #44546a;
+}
+
+.ms-borderColor-officeAccent5,
+.ms-borderColor-officeAccent5--hover:hover {
+  border-color: #5b9bd5;
+}
+
+.ms-borderColor-officeAccent6,
+.ms-borderColor-officeAccent6--hover:hover {
+  border-color: #ed7d31;
+}
+
+.ms-borderColor-officeAccent7,
+.ms-borderColor-officeAccent7--hover:hover {
+  border-color: #a5a5a5;
+}
+
+.ms-borderColor-officeAccent8,
+.ms-borderColor-officeAccent8--hover:hover {
+  border-color: #ffc001;
+}
+
+.ms-borderColor-officeAccent9,
+.ms-borderColor-officeAccent9--hover:hover {
+  border-color: #4472c4;
+}
+
+.ms-borderColor-officeAccent10,
+.ms-borderColor-officeAccent10--hover:hover {
+  border-color: #70ad47;
 }

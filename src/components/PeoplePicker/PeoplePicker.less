@@ -280,7 +280,6 @@
   }
 
   .ms-PeoplePicker-searchMoreIcon {
-
     .ms-Icon {
       display: none;
     }
@@ -332,7 +331,7 @@
 
   .ms-Icon {
     color: @ms-color-neutralPrimary;
-    font-size: @ms-font-size-xl + 3;
+    font-size: @ms-font-size-xl;
     position: absolute;
     text-align: center;
     top: 27px;
@@ -432,7 +431,6 @@
 //
 .ms-PeoplePicker.ms-PeoplePicker--facePile,
 .ms-PeoplePicker.ms-PeoplePicker--membersList {
-
   .ms-PeoplePicker-searchBox {
     height: 30px;
     min-height: 30px;
@@ -512,7 +510,15 @@
   .ms-PeoplePicker-searchMoreBtn,
   .ms-PeoplePicker-searchMoreIcon {
     height: 48px;
-  } 
+  }
+
+  .ms-PeoplePicker-searchMoreBtn {
+    padding-left: 48px;
+  }
+
+  .ms-PeoplePicker-searchMoreIcon {
+    width: 48px;
+  }
 
   .ms-PeoplePicker-searchMorePrimary {
     font-size: @ms-font-size-s;
@@ -524,8 +530,8 @@
   }
 
   .ms-Spinner {
-    top: 10px;
-    left: 30px;
+    top: 16px;
+    left: 14px;
     height: 20px;
     width: 20px;
   }

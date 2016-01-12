@@ -1,6 +1,6 @@
 #Building Fabric, gulp tasks, and the starter template
 
-Office UI Fabric uses gulp to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
+Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
 
 ##Contents
 
@@ -14,8 +14,8 @@ Before you get started, make sure you have [node.js](https://nodejs.org/) and [g
 
 1. Clone the repo.
 2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
-3. npm install
-4. gulp
+3. `npm install`
+4. `gulp`
 
 The built files will be in the `/dist/` folder.
 
@@ -25,11 +25,11 @@ You can test and work with Fabric locally in a number of ways.
 
 ###gulp
 
-Use this task to build Fabric once after you've made changes. This task will build all parts of Fabric and move all changed files into `/dist/`. Every time you make changes, re-run this task.
+Use this task to manually build Fabric after you've made changes. This task will build all parts of Fabric and move the changed files into `/dist/`.
 
 ###gulp watch
 
-Use this tak to build Fabric after you make any changes. This task will build all parts of Fabric, and then rerun every time you make a change to any of the following folders: 
+Use this task to automatically build Fabric whenever you make any changes within any of the following folders: 
 - `/src/components/`
 - `/src/less/`
 - `/src/samples/`
@@ -51,7 +51,7 @@ Use this task to test the samples that come with Fabric including the video port
 
 ###gulp watch:fabric
 
-Use this task when you're working on core Fabric elements (fonts, mixins, colors, terse). This task builds all `/src/less/` files and outputs them together in `/dist/css/`.
+Use this task when you're working on [core styles](http://dev.office.com/fabric/styles) such as typography, color, icons, and animations. This task builds all `/src/less/` files and outputs them together in `/dist/css/`.
 
 ##Starter template
 

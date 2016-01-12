@@ -38,6 +38,9 @@ var Plugins = function() {
     this.gulpif = require('gulp-if');
     this.changed = require('gulp-changed');
     this.sass = require('gulp-sass');
+    this.jshint = require('gulp-jshint');
+    this.plumber = require('gulp-plumber');
+    this.lesshint = require('gulp-lesshint');
 };
 
 module.exports = new Plugins();

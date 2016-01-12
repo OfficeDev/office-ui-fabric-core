@@ -1,0 +1,11 @@
+{
+  "curly":     true,
+  "boss":      true,
+  "jquery":    true,
+  "eqeqeq":    true,
+  "strict":    false,
+  "newcap":    false,
+  "undef":     true,
+  "unused":    true,
+  "browser": true
+}

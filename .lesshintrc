@@ -1,0 +1,46 @@
+{
+    "duplicateProperty": {
+        "enabled": true
+    },
+    "hexNotation": {
+        "enabled": true,
+        "style":  "lowercase"
+    },
+    "hexValidation": {
+        "enabled": true,
+        "style":  "lowercase"
+    },
+    "idSelector": {
+        "enabled": true
+    },
+    "importantRule": {
+        "enabled": true
+    },
+    "importantRule": {
+        "enabled": true
+    },
+    "spaceAfterPropertyColon": {
+        "enabled": true,
+        "style": "one_space"
+    },
+    "spaceAfterPropertyValue": {
+        "enabled": true,
+        "style": "no_space"
+    },
+    "spaceAroundComma": {
+        "enabled": true,
+        "style": "after"
+    },
+    "spaceBeforeBrace": {
+        "enabled": true,
+        "style": "one_space"
+    },
+    "spaceBetweenParens": {
+        "enabled": true,
+        "style": "no_space"
+    },
+    "trailingSemicolon": {
+        "enabled": true
+
+    }
+}

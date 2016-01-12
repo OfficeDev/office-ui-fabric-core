@@ -30,7 +30,7 @@
             $(this).siblings('.ms-Label').show();
           }
         });
-      };
+      }
 
       /** Underlined - adding/removing a focus class */
       if ($(this).hasClass('ms-TextField--underlined')) {
@@ -44,7 +44,7 @@
         $(this).find('.ms-TextField-field').on('blur', function() {
           $(this).parent('.ms-TextField--underlined').removeClass('is-active');
         });
-      };
+      }
 
     });
   };

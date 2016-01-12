@@ -311,6 +311,7 @@
   }
 
   // TODO: Works in Chrome, but not working in IE
+  &:focus,
   &:active {
       background-color: @ms-color-themeLight;
   }
@@ -331,7 +332,7 @@
 
   .ms-Icon {
     color: @ms-color-neutralPrimary;
-    font-size: @ms-font-size-xl;
+    font-size: @ms-font-size-m + 2;
     position: absolute;
     text-align: center;
     top: 27px;
@@ -552,9 +553,8 @@
 .ms-PeoplePicker-selectedHeader,
 .ms-PeoplePicker-peopleListHeader {
   color: @ms-color-themePrimary;
-  text-transform: uppercase;
   font-size: @ms-font-size-s;
-  font-family: @ms-font-family-light;
+  font-family: @ms-font-family-regular;
   height: 50px;
   line-height: 50px;
 }
@@ -566,11 +566,11 @@
 }
 
 .ms-PeoplePicker-selectedPerson {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   position: relative;
 }
 
 .ms-PeoplePicker-peopleListItem {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   position: relative;
 }

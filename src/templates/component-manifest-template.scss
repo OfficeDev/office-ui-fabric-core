@@ -1,0 +1,13 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Template for building a standalone component with dependencies included.
+
+
+@import '../scss/Fabric.scss';
+<% dependencies.forEach(function(dep){ %>
+@import '../components/<%= dep %>/<%= dep %>.scss';
+<% }); %>
+@import '../components/<%= componentName %>/<%= componentName %>.scss';

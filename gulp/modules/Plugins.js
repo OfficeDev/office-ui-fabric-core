@@ -38,6 +38,7 @@ var Plugins = function() {
     this.gulpif = require('gulp-if');
     this.changed = require('gulp-changed');
     this.sass = require('gulp-sass');
+    this.lessToScss = require('gulp-less-to-scss');
 };
 
 module.exports = new Plugins();

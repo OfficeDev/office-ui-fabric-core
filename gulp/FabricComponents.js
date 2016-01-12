@@ -8,6 +8,29 @@ var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 
+// LESS/SASS detection and logic
+var srcPath;
+var cssPlugin;
+var fileExtension; 
+var template;
+var name;
+
+// Check if building SASS
+if(Config.buildSass) {
+    srcPath = Config.paths.srcSass;
+    cssPlugin = Plugins.sass;
+    fileExtension = '.' + Config.sassExtension;
+    template = 'component-manifest-template' + fileExtension
+    name = "SASS";
+} else {
+    srcPath = Config.paths.srcLess;
+    cssPlugin = Plugins.less;
+    fileExtension = '.' + Config.lessExtension;
+    template = 'component-manifest-template' + fileExtension
+    name = "LESS";
+}
+
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -38,17 +61,17 @@ gulp.task('FabricComponents-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-gulp.task('FabricComponents-compiledLess', function () {
+gulp.task('FabricComponents-buildAndCombineStyles', function () {
 
     return gulp.src(Config.paths.srcLess + '/fabric.components.less')
-        .pipe(Plugins.less())
+        .pipe(cssPlugin())
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Building Fabric Components Less into One Files"
+                title: "Building Fabric Components " + name + " into One Files"
         })))
             .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.autoprefixer(
@@ -90,18 +113,25 @@ gulp.task('FabricComponents-compiledLess', function () {
             .on('error', ErrorHandling.onErrorInPipe);
 });
 
-gulp.task('FabricComponents-less', function () {
+gulp.task('FabricComponents-buildStyles', function () {
     return folderList.map(function(componentName) {
        
-        var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
+        var srcTemplate = Config.paths.templatePath + '/'+ template;
         var destFolder = Config.paths.distComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
         var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
         var deps = manifest.dependencies || [];
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, fileExtension, '.css');
         
         if(hasFileChanged) {
-            return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
+            return ComponentHelper.buildComponentStyles(
+                        destFolder, 
+                        srcTemplate, 
+                        componentName, 
+                        deps, 
+                        cssPlugin,
+                        name
+                   );
         } else {
             return;
         }
@@ -112,7 +142,7 @@ gulp.task('FabricComponents-less', function () {
 // JS Only tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('FabricComponents-Movejs', function() {
+gulp.task('FabricComponents-moveJs', function() {
     return gulp.src(Config.paths.componentsPath + '/**/*.js')
         .pipe(Plugins.concat('jquery.fabric.js'))
             .on('error', ErrorHandling.onErrorInPipe)
@@ -137,7 +167,7 @@ gulp.task('FabricComponents-Movejs', function() {
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
-gulp.task('FabricComponents', ['FabricComponents-compiledLess', 'FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-Movejs']);
+gulp.task('FabricComponents', ['FabricComponents-buildAndCombineStyles', 'FabricComponents-buildStyles', 'FabricComponents-copyAssets', 'FabricComponents-moveJs']);
 
 //
 // Fabric Messages

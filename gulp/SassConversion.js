@@ -30,27 +30,3 @@ gulp.task('SassConversion-template', function () {
             .pipe(gulp.dest(Config.paths.templatePath + '/'));
 });
 
-//
-// LESS tasks
-// ----------------------------------------------------------------------------
-
-gulp.task('ComponentSamples-less',  function() {
-   return folderList.map(function(componentName) {
-
-        var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
-        var destFolder = Config.paths.distSampleComponents + '/' + componentName;
-        var srcFolderName = Config.paths.componentsPath + '/' + componentName;
-        var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
-        var deps = manifest.dependencies || [];
-        var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
-        
-        if(hasFileChanged) {
-            return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
-        } else {
-            return;
-        }
-
-   });
-});
-

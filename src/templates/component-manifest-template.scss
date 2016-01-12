@@ -5,9 +5,10 @@
 // --------------------------------------------------
 // Template for building a standalone component with dependencies included.
 
+/*Sasssssssss*/
 
-@import '../scss/Fabric.scss';
+@import '../scss/Fabric';
 <% dependencies.forEach(function(dep){ %>
-@import '../components/<%= dep %>/<%= dep %>.scss';
+@import '../components/<%= dep %>/<%= dep %>';
 <% }); %>
-@import '../components/<%= componentName %>/<%= componentName %>.scss';
+@import '../components/<%= componentName %>/<%= componentName %>';

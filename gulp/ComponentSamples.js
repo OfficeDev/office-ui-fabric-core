@@ -8,6 +8,27 @@ var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 
+// LESS/SASS detection and logic
+var srcPath;
+var cssPlugin;
+var fileExtension;
+var template;
+
+// Check if building SASS
+if(Config.buildSass) {
+    srcPath = Config.paths.srcSass;
+    cssPlugin = Plugins.sass;
+    fileExtension = '.' + Config.sassExtension;
+    template = 'component-manifest-template' + fileExtension;
+    name = "SASS";
+} else {
+    srcPath = Config.paths.srcLess;
+    cssPlugin = Plugins.less;
+    fileExtension = '.' + Config.lessExtension;
+    template = 'component-manifest-template' + fileExtension;
+    name = "LESS";
+}
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -40,22 +61,29 @@ gulp.task('ComponentSamples-copyAssets', function() {
 });
 
 //
-// LESS tasks
+// Styles tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('ComponentSamples-less',  function() {
+gulp.task('ComponentSamples-buildStyles',  function() {
    return folderList.map(function(componentName) {
 
-        var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
+        var srcTemplate = Config.paths.templatePath + '/'+ template;
         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
         var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
         var deps = manifest.dependencies || [];
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, fileExtension, '.css');
         
         if(hasFileChanged) {
-            return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
+            return ComponentHelper.buildComponentStyles(
+                        destFolder, 
+                        srcTemplate, 
+                        componentName, 
+                        deps,
+                        cssPlugin,
+                        name
+                    );
         } else {
             return;
         }
@@ -128,7 +156,7 @@ gulp.task('ComponentSamples-build', function() {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-var ComponentSamplesTasks = ['ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-less'];
+var ComponentSamplesTasks = ['ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-buildStyles'];
 
 //Build Fabric Component Samples
 gulp.task('ComponentSamples', ComponentSamplesTasks);

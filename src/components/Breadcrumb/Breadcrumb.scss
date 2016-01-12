@@ -6,16 +6,6 @@
 // Breadcrumb styles
 
 
-.ms-Breadcrumb {
-  margin: 23px 0 1px 0;
-
-   &.is-overflow {
-    .ms-Breadcrumb-overflow {
-      display: inline;
-    }
-  }
-}
-
 .ms-Breadcrumb-chevron {
   font-size: $ms-font-size-l;
   color: $ms-color-neutralSecondary;

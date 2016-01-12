@@ -7,6 +7,23 @@ var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 
+var srcPath;
+var cssPlugin;
+var fileExtension; 
+
+// Check if building SASS
+if(Config.buildSass) {
+    srcPath = Config.paths.srcSass;
+    cssPlugin = Plugins.sass;
+    fileExtension = Config.sassExtension;
+    name = "SASS";
+} else {
+    srcPath = Config.paths.srcLess;
+    cssPlugin = Plugins.less;
+    fileExtension = Config.lessExtension;
+    name = "LESS";
+}
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -51,21 +68,6 @@ gulp.task('Fabric-copyAssets', function () {
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 gulp.task('Fabric-buildLess', function () {
-    var srcPath;
-    var cssPlugin;
-    var fileExtension; 
-    
-    // Check if building SASS
-    if(Config.buildSass) {
-        srcPath = Config.paths.srcSass;
-        cssPlugin = Plugins.sass;
-        fileExtension = Config.sassExtension;
-    } else {
-        srcPath = Config.paths.srcLess;
-        cssPlugin = Plugins.less;
-        fileExtension = Config.lessExtension;
-    }
-    
     var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Core Fabric " + fileExtension + " File"
@@ -100,7 +102,7 @@ gulp.task('Fabric-buildLess', function () {
     // Build full and minified Fabric RTL CSS.
     var fabricRtl = gulp.src(srcPath + '/' + 'Fabric.Rtl.' + fileExtension)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building RTL Fabric LESS " + fileExtension + " File"
+                    title: "Building RTL Fabric " + name + " " + fileExtension + " File"
             })))
                 .on('error', ErrorHandling.onErrorInPipe)
             .pipe(cssPlugin())

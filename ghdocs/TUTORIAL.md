@@ -166,7 +166,7 @@ Fabric includes a responsive grid system, similar to those seen in other UI tool
 </div>
 ```
 
-Now for the fun part: let's add some components into our app! Navigate to where you extracted Fabric, then open the following component files in your code editor:
+Now for the fun part: let's add some components to our app! Navigate to where you extracted Fabric, then open the following component files in your code editor:
 
 ```
 dist/components/Button/Button.html

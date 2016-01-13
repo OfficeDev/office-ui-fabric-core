@@ -33,7 +33,7 @@ todo/
 |-- css/
 ```
 
-Now open up your favorite text editor or IDE and create a new file called index.html in the root `todo/` directory, containg a simple HTML document:
+Now open up your favorite text editor or IDE and create a new file called index.html in the root `todo/` directory, containing a simple HTML document:
 
 ```html
 <!DOCTYPE html>

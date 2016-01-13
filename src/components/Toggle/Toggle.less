@@ -6,7 +6,7 @@
 // Toggle styles
 
 
-@import (reference) '../Label/Label.less';
+@import (reference) '../Label/Label';
 
 
 // Toggle
@@ -26,30 +26,30 @@
   }
 
   &:hover {
-    .ms-Label { 
-      color: @ms-color-black; 
+    .ms-Label {
+      color: @ms-color-black;
     }
   }
 
   &:active {
-    .ms-Label { 
-      color: @ms-color-neutralPrimary; 
+    .ms-Label {
+      color: @ms-color-neutralPrimary;
     }
   }
 
   // Disabled state
   &.is-disabled {
     .ms-Label {
-      .ms-Label.is-disabled !important;
-    }
-    .ms-Toggle-field {
-      background-color: @ms-color-white !important;
-      border-color: @ms-color-neutralTertiaryAlt !important;
-      pointer-events: none !important;
-      cursor: default !important;
+      .ms-Toggle-field {
+        background-color: @ms-color-white;
+        border-color: @ms-color-neutralTertiaryAlt;
+        pointer-events: none;
+        cursor: default;
+        color: @ms-color-neutralTertiary;
 
-      &:before {
-        background-color: @ms-color-neutralTertiaryAlt !important;
+        &:before {
+          background-color: @ms-color-neutralTertiaryAlt;
+        }
       }
     }
   }
@@ -79,8 +79,7 @@
   cursor: pointer;
 }
 
-// Slider mixin
-.ms-Toggle-slider(@direction) {
+.ms-Toggle-sliderBase() {
   // Slider pseudo element
   &:before {
     position: absolute;
@@ -88,35 +87,35 @@
     box-sizing: content-box;
     content: '';
     top: -2.5px;
-    @{direction}: -2.5px;
     width: 12px;
     height: 20px;
     background-color: @ms-color-neutralSecondaryAlt;
     outline: 2px solid transparent;
   }
+  &:active {
+    background-color: @ms-color-themePrimary;
+  }
+}
 
-  & when (@direction = left) {
-    &:before {
-      border-right: 2.5px solid @ms-color-white;
-    }
-
-    &:hover { 
-      background-color: @ms-color-neutralLight; 
-    }
+.ms-Toggle-sliderLeft() {
+  &:before {
+    left: -2.5px;
+    border-right: 2.5px solid @ms-color-white;
   }
 
-  & when (@direction = right) {
-    &:before {
-      border-left: 2.5px solid @ms-color-white;
-    }
+  &:hover {
+    background-color: @ms-color-neutralLight;
+  }
+}
 
-    &:hover { 
-      background-color: @ms-color-themeDark; 
-    }
+.ms-Toggle-sliderRight() {
+  &:before {
+    right: -2.5px;
+    border-left: 2.5px solid @ms-color-white;
   }
 
-  &:active { 
-    background-color: @ms-color-themePrimary; 
+  &:hover {
+    background-color: @ms-color-themeDark;
   }
 }
 
@@ -128,7 +127,8 @@
   &:not(:checked) + .ms-Toggle-field {
     background-color: @ms-color-neutralLighter;
 
-    .ms-Toggle-slider(left);
+    .ms-Toggle-sliderBase();
+    .ms-Toggle-sliderLeft();
 
     // Show the off label / hide the on label
     .ms-Label--off {
@@ -145,7 +145,9 @@
     & + .ms-Toggle-field {
       background-color: @ms-color-themePrimary;
 
-      .ms-Toggle-slider(right);
+      // .ms-Toggle-slider(right);
+      .ms-Toggle-sliderBase();
+      .ms-Toggle-sliderRight();
 
       // Show the on label / hide the off label
       .ms-Label--off {

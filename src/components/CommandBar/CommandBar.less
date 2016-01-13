@@ -29,7 +29,7 @@
 @SearchBox-widthXLarge: 208px;
 @SearchBox-iconSize: 17px;
 @SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
-@SearchBox-smallWidth: 36px;  
+@SearchBox-smallWidth: 36px;
 @SearchBox-iconWrapperWidth: @SearchBox-widthLgCollapsed - (@SearchBox-sidePadding * 2);
 
 .highContrastBorder(@color) {
@@ -107,7 +107,7 @@
     height: 38px;
     outline: none;
   }
-  
+
   &:hover {
     background-color: @ms-color-themeLight;
     color: @ms-color-themePrimary;
@@ -136,7 +136,7 @@
   width: 0;
   overflow: hidden;
 }
-  
+
 //== Modifier: For commands with only an icon
 //
 .ms-CommandBarItem.icon-only,
@@ -163,15 +163,13 @@
 
   .ms-Icon {
     font-size: @ms-font-size-m;
-    color: @ms-color-neutralSecondary; 
+    color: @ms-color-neutralSecondary;
   }
 }
 
 .ms-CommandBarItem-link {
   line-height: @CommandBarItem-height - 1;
-  padding: 0 6px;
   cursor: pointer;
-  height: @CommandBarItem-height;
   min-width: 20px;
   text-align: center;
   position: relative;
@@ -197,7 +195,7 @@
  font-size: @ms-font-size-l;
 }
 
-.ms-CommandBarItem-chevronDown  {
+.ms-CommandBarItem-chevronDown {
   vertical-align: middle;
   padding-bottom: 3px;
   margin-top: @CommandBarItem-marginTop;
@@ -265,7 +263,7 @@
   height: @SearchBox-height;
   // Due to a bug in IE9, we have to use a transparent left border instead of left padding
   padding: @SearchBox-sidePadding @SearchBox-sidePadding @SearchBox-sidePadding 0;
-  border: none;
+  border: 0;
   border-left: @SearchBox-height + 2 solid transparent;
   background-color: transparent;
   width: 100%;
@@ -289,7 +287,7 @@
   // hide IE's X button for clearing the input (we have our own)
   &::-ms-clear {
     display: none;
-  } 
+  }
 
   //Placeholder text styles
   &::placeholder {
@@ -320,7 +318,7 @@
 .ms-CommandBarSearch-iconArrowWrapper {
   top: 0;
   padding-left: 8px;
-  padding-right: 8px;  
+  padding-right: 8px;
 }
 
 .ms-CommandBarSearch-iconClearWrapper {
@@ -348,7 +346,7 @@
     background-color: @ms-color-themeLight;
     color: @ms-color-black;
   }
-  
+
   .ms-CommandBarSearch-input {
     cursor: text;
     padding-right: @SearchBox-height; // leave room for the X

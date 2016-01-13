@@ -136,7 +136,6 @@ var ErrorHandling = function() {
         if(error) {
             switch(error.plugin) {
                 case 'gulp-autoprefixer':
-                    console.log("Auto prefixer");
                     break;
                 case 'gulp-less':
                     break;
@@ -198,17 +197,17 @@ var ErrorHandling = function() {
                     if (err) {
                         var errorString = that.createLineErrorMessage(
                             gulputil.colors.yellow(err.severity) + ' ' + err.message,
-                            ' ' + err.file,
+                            err.file,
                             err.line,
                             err.source,
                             'NA',
                             ''
-                        );
+                        );  
                         if(err.severity == "warning") {
                             gulputil.log(errorString);
                             that.addWarning(errorString);
                         } else {
-                            that.generatePluginError('lessHint', errorString);
+                           that.generatePluginError('lessHint', errorString);
                         }
                     }
                 });

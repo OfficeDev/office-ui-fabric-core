@@ -16,9 +16,6 @@
     "importantRule": {
         "enabled": true
     },
-    "importantRule": {
-        "enabled": true
-    },
     "spaceAfterPropertyColon": {
         "enabled": true,
         "style": "one_space"
@@ -36,19 +33,24 @@
         "style": "one_space"
     },
     "spaceBetweenParens": {
-        "enabled": true,
-        "style": "no_space"
+        "enabled": false
     },
     "trailingSemicolon": {
         "enabled": true
     },
     "zeroUnit": {
-        "no_unit": true
+        "enabled": false
     },
     "qualifyingElement": {
         "allowWithClass": true
     },
     "propertyOrdering":  {
-        "style": false
+        "enabled": false
+    },
+    "stringQuotes": {
+      "enabled": false  
+    },
+    "urlQuotes": {
+      "enabled": true  
     }
 }

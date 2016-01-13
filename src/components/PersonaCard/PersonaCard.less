@@ -97,8 +97,8 @@
       border: 1px solid @ms-color-neutralTertiaryAlt;
       background-color: @ms-color-white;
       position: absolute;
-      border-right: none;
-      border-bottom: none;
+      border-right: 0;
+      border-bottom: 0;
       bottom: -4px;
       left: 15px;
     }
@@ -137,7 +137,7 @@
   min-height: 48px;
   color: @ms-color-neutralSecondary;
   padding: 9px 20px;
-  transition: max-height @ms-duration2 @ms-ease1 .2s;
+  transition: max-height @ms-duration2 @ms-ease1 0.2s;
   box-sizing: border-box;
 
   // State: Contents are collapsed to a single line.
@@ -152,7 +152,7 @@
   }
 }
 
-// Active detail items 
+// Active detail items
 .ms-PersonaCard-detailChat,
 .ms-PersonaCard-detailPhone,
 .ms-PersonaCard-detailVideo,
@@ -168,23 +168,33 @@
   overflow-y: auto;
 }
 
-.ms-PersonaCard-detailChat { margin-left: 0 !important; }
-.ms-PersonaCard-detailPhone { margin-left: -100% !important; }
-.ms-PersonaCard-detailVideo { margin-left: -200% !important; }
-.ms-PersonaCard-detailMail { margin-left: -300% !important; }
-.ms-PersonaCard-detailOrg { margin-left: -400% !important; }
+.ms-PersonaCard-detailChat {
+  margin-left: 0;
+}
+.ms-PersonaCard-detailPhone {
+  margin-left: -100%;
+}
+.ms-PersonaCard-detailVideo {
+  margin-left: -200%;
+}
+.ms-PersonaCard-detailMail {
+  margin-left: -300%;
+}
+.ms-PersonaCard-detailOrg {
+  margin-left: -400%;
+}
 
 .ms-PersonaCard-detailChat .detail-1,
 .ms-PersonaCard-detailPhone .detail-2,
 .ms-PersonaCard-detailVideo .detail-3,
-.ms-PersonaCard-detailMail .detail-4{
+.ms-PersonaCard-detailMail .detail-4 {
   max-height: 78px;
-  transition: max-height .25s ease;
+  transition: max-height 0.25s ease;
 }
 
 .ms-PersonaCard-detailOrg .detail-5 {
   max-height: 300px;
-  transition: max-height .25s ease;
+  transition: max-height 0.25s ease;
 }
 
 // Inactive Items

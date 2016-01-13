@@ -73,6 +73,9 @@ gulp.task('ComponentSamples-moveJS', function() {
 
 gulp.task('ComponentSamples-styleHinting',  function() {
     return gulp.src(Config.paths.componentsPath + '/**/*.less')
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Checking LESS Compile errors and linting"
+            })))
             .pipe(Plugins.lesshint({
                 configPath: './.lesshintrc'
             }))
@@ -81,7 +84,6 @@ gulp.task('ComponentSamples-styleHinting',  function() {
 
 gulp.task('ComponentSamples-less', ['ComponentSamples-styleHinting'], function() {
    return folderList.map(function(componentName) {
-
         var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;

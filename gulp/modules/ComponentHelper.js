@@ -11,7 +11,7 @@ var Plugins = require('./Plugins');
  */
 var ComponentSamplesHelper = function() {
 	/**
-     * Builds a commmonly used Gulp task for building a components styles..
+     * A commmonly used Gulp task for building a component's styles.
      * @param {String} destFolder Contains the path to the destination folder.
      * @param {String} srcTemplate Contains the path to the source template to be applied.
      * @param {String} componentName Name of the component.

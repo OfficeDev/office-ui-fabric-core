@@ -73,10 +73,10 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
-            // .pipe(Plugins.autoprefixer({
-            //     browsers: ['last 2 versions', 'ie >= 9'],
-            //     cascade: false
-            // }))
+            .pipe(Plugins.autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))

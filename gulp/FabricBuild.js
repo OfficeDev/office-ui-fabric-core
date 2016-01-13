@@ -62,9 +62,9 @@ gulp.task('Fabric-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
-gulp.task('Fabric-buildLess', function () {
+gulp.task('Fabric-buildStyles', function () {
 
-    return gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
+    var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Core Fabric " + fileExtension + " File"
@@ -73,10 +73,10 @@ gulp.task('Fabric-buildLess', function () {
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
-            .pipe(Plugins.autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
-            }))
+            // .pipe(Plugins.autoprefixer({
+            //     browsers: ['last 2 versions', 'ie >= 9'],
+            //     cascade: false
+            // }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))
@@ -113,7 +113,7 @@ gulp.task('Fabric-buildLess', function () {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildLess']);
+gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
 
 //
 // Fabric Messages

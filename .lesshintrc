@@ -41,6 +41,14 @@
     },
     "trailingSemicolon": {
         "enabled": true
-
+    },
+    "zeroUnit": {
+        "no_unit": true
+    },
+    "qualifyingElement": {
+        "allowWithClass": true
+    },
+    "propertyOrdering":  {
+        "style": false
     }
 }

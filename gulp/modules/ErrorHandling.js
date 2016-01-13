@@ -134,15 +134,19 @@ var ErrorHandling = function() {
      */
 	this.onErrorInPipe = function(error) {
         if(error) {
-            if(error.plugin == 'gulp-less') {
-                // We have a custom error handler specifically for less but this still will get triggered
-                return;
-            } else {
-                that.generateBuildError(error[0]);
-                that.addError(error[0]);
-                console.log(error);
-                return;
+            switch(error.plugin) {
+                case 'gulp-autoprefixer':
+                    console.log("Auto prefixer");
+                    break;
+                case 'gulp-less':
+                    break;
+                default:
+                    that.generateBuildError(error[0]);
+                    that.addError(error[0]);
+                    console.log(error.plugin);
+                    break;
             }
+            return;
         }
         
 		that.generateBuildError(Config.genericBuildError);
@@ -194,18 +198,17 @@ var ErrorHandling = function() {
                     if (err) {
                         var errorString = that.createLineErrorMessage(
                             gulputil.colors.yellow(err.severity) + ' ' + err.message,
-                            err.file,
+                            ' ' + err.file,
                             err.line,
                             err.source,
                             'NA',
                             ''
                         );
-                            
-                        if(err.severity == "Error") {
-                            that.generatePluginError('lessHint', errorString);
-                        } else {
+                        if(err.severity == "warning") {
                             gulputil.log(errorString);
                             that.addWarning(errorString);
+                        } else {
+                            that.generatePluginError('lessHint', errorString);
                         }
                     }
                 });

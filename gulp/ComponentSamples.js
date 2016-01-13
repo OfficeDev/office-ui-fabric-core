@@ -71,7 +71,15 @@ gulp.task('ComponentSamples-moveJS', function() {
 // LESS tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('ComponentSamples-less',  function() {
+gulp.task('ComponentSamples-styleHinting',  function() {
+    return gulp.src(Config.paths.componentsPath + '/**/*.less')
+            .pipe(Plugins.lesshint({
+                configPath: './.lesshintrc'
+            }))
+            .pipe(ErrorHandling.LESSHintErrors());
+});
+
+gulp.task('ComponentSamples-less', ['ComponentSamples-styleHinting'], function() {
    return folderList.map(function(componentName) {
 
         var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
@@ -155,7 +163,8 @@ gulp.task('ComponentSamples-build', function() {
 var ComponentSamplesTasks = [
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
-    'ComponentSamples-less', 
+    'ComponentSamples-less',
+    'ComponentSamples-styleHinting',
     'ComponentSamples-moveJS',
     'ComponentSamples-copyIgnoredFiles'
 ];

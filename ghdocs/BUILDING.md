@@ -21,7 +21,7 @@ The built files will be in the `/dist/` folder.
 
 ##Gulp tasks
 
-You can test and work with Fabric locally in using any of the tasks listed below. 
+You can test and work with Fabric locally using any of the tasks listed below.
 
 ###gulp
 
@@ -29,7 +29,7 @@ Builds everything incrementally. Running this the first time will be slow but ru
 
 ###gulp watch
 
-Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in fabric, only that area/section/file will get build/changed/moved etc:
+Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric, only that area/section/file will get build/changed/moved etc:
 
 ###gulp watch-debug
 

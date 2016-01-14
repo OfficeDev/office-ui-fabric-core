@@ -1,6 +1,7 @@
 {
   "name": "Overlay",
   "notes": "",
+  "description": "An element that takes over the screen to help bring focus to an element for the user. Used in conjunction with the {0} Panel {1} and {2} Dialog {3} and available in clear and dark.",
   "template": "Overlay.html",
   "class": "ms-Overlay",
   "wrapBranches": true,

@@ -44,7 +44,10 @@
 
         // Does the selected item have a menu?
         if ($(this).hasClass('ms-NavBar-item--hasMenu')) {
-
+          
+          // First, close any neighboring menus.
+          $(this).siblings('.ms-NavBar-item--hasMenu').children('.ms-ContextualMenu:first').removeClass('is-open');
+          
           // Toggle 'is-open' to open or close it.
           $(this).children('.ms-ContextualMenu:first').toggleClass('is-open');
 

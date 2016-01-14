@@ -12,21 +12,22 @@ var cssPlugin;
 var fileExtension;
 var prefixLinter;
 
-console.log(Config.buildSass);
-
-// Check if building SASS
-if(Config.buildSass === true) {
-    srcPath = Config.paths.srcSass;
-    cssPlugin = Plugins.sass;
-    fileExtension = Config.sassExtension;
-    console.log("Sass mode activated");
-    // prefixLinter = ;
-} else {
-    srcPath = Config.paths.srcLess;
-    cssPlugin = Plugins.less;
-    fileExtension = Config.lessExtension;
-    // prefixLinter = ;
-}
+//
+// Configure Tasks
+// ----------------------------------------------------------------------------
+gulp.task('Fabric-configureBuild', function () {
+    // Check if building SASS
+    if(Config.buildSass) {
+        srcPath = Config.paths.srcSass;
+        cssPlugin = Plugins.sass;
+        fileExtension = Config.sassExtension;
+    } else {
+        srcPath = Config.paths.srcLess;
+        cssPlugin = Plugins.less;
+        fileExtension = Config.lessExtension;
+    }
+    return;
+});
 
 
 //
@@ -37,6 +38,34 @@ if(Config.buildSass === true) {
 gulp.task('Fabric-nuke', function () {
     return Plugins.del.sync([Config.paths.distLess, Config.paths.distCSS, Config.paths.distSass]);
 });
+
+//
+// Style Linting
+// ---------------------------------------------------------------------------
+gulp.task('Fabric-styleHinting',  function() {
+    var stream;
+    if(Config.buildSass) {
+        stream = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
+                    .pipe(Plugins.gulpif( Config.debugMode, Plugins.debug({
+                        title: "Checking Sass Compile errors and linting"
+                    })))
+                    .pipe(Plugins.lesshint({
+                        configPath: './.lesshintrc'
+                    }))
+                    .pipe(ErrorHandling.LESSHintErrors());
+    } else {
+          stream = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
+                    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                        title: "Checking LESS Compile errors and linting"
+                    })))
+                    .pipe(Plugins.scsslint({
+                        customReport: ErrorHandling.SASSLintErrors
+                    }))
+                    .pipe(ErrorHandling.LESSHintErrors());
+    }
+    return stream;
+});
+
 
 //
 // Copying Files Tasks
@@ -68,8 +97,7 @@ gulp.task('Fabric-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
-gulp.task('Fabric-buildStyles', function () {
-    console.log(cssPlugin);
+gulp.task('Fabric-buildStyles', ['Fabric-configureBuild'], function () {
     var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -119,7 +147,7 @@ gulp.task('Fabric-buildStyles', function () {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
+gulp.task('Fabric', ['Fabric-configureBuild', 'Fabric-copyAssets', 'Fabric-buildStyles']);
 
 //
 // Fabric Messages

@@ -63,7 +63,7 @@ gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples',
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-sass', ['ConfigureEnvironment-setSassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
@@ -71,25 +71,17 @@ gulp.task('watch-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSam
 
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-sass-debug', ['debugMode', 'SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-sass-debug', ['ConfigureEnvironment-setSassMode', 'ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-debug', ['debugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
-});
-
-gulp.task('SassMode', function() {
-    return Config.buildSass = true;
-});
-
-gulp.task('debugMode', function() {
-    return Config.debugMode = true;
 });
 
 //
@@ -135,8 +127,6 @@ gulp.task('build', buildWithMessages);
 
 var rebuildWithMessages = buildTasks.concat(['All-updated']);
 gulp.task('re-build', rebuildWithMessages);
-
-gulp.task('build-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'All-finished']);
 
 gulp.task('default', ['build']);
 

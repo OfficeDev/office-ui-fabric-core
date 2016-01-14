@@ -230,6 +230,23 @@ var ErrorHandling = function() {
         that.generatePluginError('Less Compiler', errorString);
         this.emit('end');
     }
+    
+    this.SASSlintErrors = function(file) {
+         if (!file.scsslint.success) {
+             
+            var errorString = that.createLineErrorMessage(
+                error.filename,
+                error.line,
+                error.column,
+                'No Code',
+                error.message
+            );
+            that.generatePluginError('SASS Compiler', errorString);
+            
+            
+           //  gutil.log(file.scsslint.issues.length + ' issues found in ' + file.path);
+         }
+    };
 };
 
 module.exports = new ErrorHandling();

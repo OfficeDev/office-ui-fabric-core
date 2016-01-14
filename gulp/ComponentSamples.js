@@ -68,7 +68,7 @@ gulp.task('ComponentSamples-moveJS', function() {
 });
 
 //
-// LESS tasks
+// Style Linting
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentSamples-styleHinting',  function() {

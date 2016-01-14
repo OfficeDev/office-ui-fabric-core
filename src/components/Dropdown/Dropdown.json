@@ -1,7 +1,7 @@
 {
   "name": "Dropdown",
   "notes": "",
-  "description": "Fabrics re-implemenation and styling for the dropdown Form element. This dropdown takes current items in a real HTML dropdown and creates a shimmed version that can be styled and selected.",
+  "description": "The styling for a dropdown component and its disabled variant. This dropdown takes current items in a real HTML dropdown and creates a shimmed version that can be styled and selected.",
   "template": "Dropdown.html",
   "class": "ms-Dropdown",
   "fileOrder": [

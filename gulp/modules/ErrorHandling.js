@@ -106,12 +106,12 @@ var ErrorHandling = function() {
     };
     /**
      * Helper function for creating a pretty error message.
-     * @param {string} messageStart The beginning of the error message usually "Error has occured, not yay.. "
+     * @param {string} messageStart The beginning of the error message usually "Error has occurred, not yay.. "
      * @param {string} path Path or file location of error, source file as well
-     * @param {string} line The line number  where the error occured
+     * @param {string} line The line number  where the error occurred
      * @param {string} character The character or column of the error
      * @param {string} code The error code associtated with this (optional)
-     * @param {string} reason The error message/reason that the error occured
+     * @param {string} reason The error message/reason that the error occurred
      * @return {string} Containing all of the parameters joined together and formatted to look pretty.
      */
     this.createLineErrorMessage = function(messageStart, path, line, character, code, reason) {
@@ -165,7 +165,7 @@ var ErrorHandling = function() {
                     if (err) {
                         var error = err.error;
                         var errorString = that.createLineErrorMessage(
-                            'Error occured in JSHint ', 
+                            'Error occurred in JSHint ', 
                             file.path,
                             error.line,
                             error.character,

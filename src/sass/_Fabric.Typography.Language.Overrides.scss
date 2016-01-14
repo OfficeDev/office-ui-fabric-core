@@ -34,14 +34,14 @@
 }
 
 // Base font stack.
-$ms-font-system-base: 'Segoe UI', Tahoma, Arial, sans-serif;
+$ms-font-system-base: 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif;
 
 // Variables for each of the non-distributed (native) font stacks.
-$ms-font-stack-japanese: 'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-system-base;
-$ms-font-stack-korean: 'Malgun Gothic', Gulim, $ms-font-system-base;
-$ms-font-stack-chinese-simplified: 'Microsoft Yahei', Verdana, Simsun, $ms-font-system-base;
-$ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-system-base;
-$ms-font-stack-hindi: 'Nirmala UI', $ms-font-system-base;
+$ms-font-stack-japanese: YuGothic, "Meiryo UI", Meiryo, "MS Pgothic", Osaka, $ms-font-system-base;
+$ms-font-stack-korean: "Malgun Gothic", Gulim, $ms-font-system-base;
+$ms-font-stack-chinese-simplified: "Microsoft Yahei", Verdana, Simsun, $ms-font-system-base;
+$ms-font-stack-chinese-traditional: "Microsoft Jhenghei", Pmingliu, $ms-font-system-base;
+$ms-font-stack-hindi: "Nirmala UI", $ms-font-system-base;
 
 
 //== Web fonts

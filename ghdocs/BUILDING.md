@@ -1,6 +1,6 @@
 #Building Fabric, gulp tasks, and the starter template
 
-Office UI Fabric uses gulp to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
+Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
 
 ##Contents
 
@@ -13,27 +13,27 @@ Office UI Fabric uses gulp to compile its LESS, build and serve demos, and gener
 Before you get started, make sure you have [node.js](https://nodejs.org/) and [git](https://git-scm.com/) installed. To build Fabric:
 
 1. Clone the repo.
-2. Navigate to the folder that has the gulpfile.js file (Fabric's root).
-3. npm install
-4. gulp
+2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
+3. `npm install`
+4. `gulp`
 
 The built files will be in the `/dist/` folder.
 
 ##Gulp tasks
 
-You can test and work with Fabric locally using any of the tasks listed below.
+You can test and work with Fabric locally using the tasks below.
 
 ###gulp
 
-Builds everything incrementally. Running this the first time will be slow but running it again will be really fast. This task will build all parts of Fabric and move all changed files into `/dist/`. Every time you make changes, re-run this task.
+Builds everything incrementally. This will run slowly the first time and very quickly on subsequent runs. This task will build all parts of Fabric and move all changed files into `/dist/`. Every time you make changes, re-run this task.
 
 ###gulp watch
 
-Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric, only that area/section/file will get build/changed/moved etc:
+Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric, only that area/section/file will get built/changed/moved.
 
 ###gulp watch-debug
 
-Builds and watches everything. After running this once, your builds will a lot faster. This task is similar to gulp watch except you can now get a readout of what files are in the pipe. This will be helpful to make sure the build is working and building properly. 
+This task is similar to `gulp watch` except you can now get a readout of what files are in the pipe. This will be helpful to make sure that the build is working properly. 
 
 ###gulp watch-sass
 
@@ -42,6 +42,7 @@ Builds and watches everything but builds only Sass versions of our core library 
 ###gulp watch-sass-debug
 
 Builds and watches everything but uses the Sass versions of the files and gives a readout of files in the pipe.
+
 
 ##Starter template
 

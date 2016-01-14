@@ -9,17 +9,23 @@ var Plugins = require('./modules/Plugins');
 
 var srcPath;
 var cssPlugin;
-var fileExtension; 
+var fileExtension;
+var prefixLinter;
+
+console.log(Config.buildSass);
 
 // Check if building SASS
-if(Config.buildSass) {
+if(Config.buildSass === true) {
     srcPath = Config.paths.srcSass;
     cssPlugin = Plugins.sass;
     fileExtension = Config.sassExtension;
+    console.log("Sass mode activated");
+    // prefixLinter = ;
 } else {
     srcPath = Config.paths.srcLess;
     cssPlugin = Plugins.less;
     fileExtension = Config.lessExtension;
+    // prefixLinter = ;
 }
 
 
@@ -63,7 +69,7 @@ gulp.task('Fabric-copyAssets', function () {
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 gulp.task('Fabric-buildStyles', function () {
-
+    console.log(cssPlugin);
     var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

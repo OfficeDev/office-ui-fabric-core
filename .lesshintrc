@@ -16,6 +16,11 @@
     "importantRule": {
         "enabled": true
     },
+    "importPath": {
+        "enabled": false,
+        "filenameExtension": false,
+        "leadingUnderscore": false
+    },
     "spaceAfterPropertyColon": {
         "enabled": true,
         "style": "one_space"

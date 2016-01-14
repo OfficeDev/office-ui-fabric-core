@@ -84,12 +84,12 @@ var ErrorHandling = function() {
         return;
     };
     /**
-     * Using Gulp.util, log a succesfull message to the console
+     * Using Gulp.util, log a successfull message to the console
      * @param {string} successMessage Message to be logged
      * @return {void}
      */
     this.showSuccessBuild = function(successMessage) {
-        gulputil.log(gulputil.colors.magenta("Succesful build: " +  gulputil.colors.green(successMessage)));
+        gulputil.log(gulputil.colors.magenta("Successful build: " +  gulputil.colors.green(successMessage)));
         return;
     };
     /**

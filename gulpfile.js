@@ -69,7 +69,6 @@ gulp.task('watch-sass', ['ConfigureEnvironment-setSassMode', 'Fabric', 'FabricCo
     }));
 });
 
-
 // Watch and build Fabric when sources change.
 gulp.task('watch-sass-debug', ['ConfigureEnvironment-setSassMode', 'ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {

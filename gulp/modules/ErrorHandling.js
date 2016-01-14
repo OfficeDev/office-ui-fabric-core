@@ -230,22 +230,46 @@ var ErrorHandling = function() {
         that.generatePluginError('Less Compiler', errorString);
         this.emit('end');
     }
-    
-    this.SASSlintErrors = function(file) {
-         if (!file.scsslint.success) {
-             
-            var errorString = that.createLineErrorMessage(
-                error.filename,
-                error.line,
-                error.column,
-                'No Code',
-                error.message
-            );
-            that.generatePluginError('SASS Compiler', errorString);
-            
-            
-           //  gutil.log(file.scsslint.issues.length + ' issues found in ' + file.path);
-         }
+    /**
+     * SASSHint error handler
+     * @param {object} file     Data containing file information
+     */
+    this.SASSlintErrors = function(file, cb) {
+        return map(function (file, cb) {
+            var errors = file.sassLint[0];
+            var messages = errors.messages;
+          
+            if(messages.length > 0) {
+                for(var i = 0; i < messages.length; i++) {
+                   var message = messages[i];
+                   var errorString;
+                    if(message.severity == 1) {
+                        errorString = that.createLineErrorMessage(
+                            gulputil.colors.yellow("Warning") + ' ' + message.message,
+                            file.path,
+                            message.line,
+                            ' ',
+                            message.ruleId,
+                            ' '
+                        );
+                        gulputil.log(errorString);
+                        that.addWarning(errorString);
+                    } else {
+                         errorString = that.createLineErrorMessage(
+                            gulputil.colors.red("Error or something") + ' ' + message.message,
+                            file.path,
+                            message.line,
+                            ' ',
+                            message.ruleId,
+                            ' '
+                         );  
+                        that.generatePluginError('SassHinting', errorString);
+                        that.addError(errorString);
+                    }
+                }
+            }
+            return cb(null, file); 
+        });
     };
 };
 

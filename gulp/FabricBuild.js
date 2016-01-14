@@ -43,25 +43,24 @@ gulp.task('Fabric-nuke', function () {
 // Style Linting
 // ---------------------------------------------------------------------------
 gulp.task('Fabric-styleHinting',  function() {
-    var stream;
     if(Config.buildSass) {
-        stream = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
-                    .pipe(Plugins.gulpif( Config.debugMode, Plugins.debug({
-                        title: "Checking Sass Compile errors and linting"
-                    })))
-                    .pipe(Plugins.lesshint({
-                        configPath: './.lesshintrc'
-                    }))
-                    .pipe(ErrorHandling.LESSHintErrors());
+        var stream;
+        stream = gulp.src(Config.paths.srcSass + '/Fabric.scss')
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Checking SASS Compile errors and linting"
+            })))
+            .pipe(Plugins.scsslint())
+            .pipe(ErrorHandling.SASSlintErrors());
+      
     } else {
-          stream = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
-                    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                        title: "Checking LESS Compile errors and linting"
-                    })))
-                    .pipe(Plugins.scsslint({
-                        customReport: ErrorHandling.SASSLintErrors
-                    }))
-                    .pipe(ErrorHandling.LESSHintErrors());
+        stream = gulp.src(Config.paths.srcLess + '/Fabric.less')
+            .pipe(Plugins.gulpif( Config.debugMode, Plugins.debug({
+                title: "Checking LESS Compile errors and linting"
+            })))
+            .pipe(Plugins.lesshint({
+                configPath: './.lesshintrc'
+            }))
+            .pipe(ErrorHandling.LESSHintErrors());
     }
     return stream;
 });
@@ -97,7 +96,7 @@ gulp.task('Fabric-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
-gulp.task('Fabric-buildStyles', ['Fabric-configureBuild'], function () {
+gulp.task('Fabric-buildStyles', ['Fabric-configureBuild', 'Fabric-styleHinting'], function () {
     var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -147,7 +146,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-configureBuild'], function () {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-configureBuild', 'Fabric-copyAssets', 'Fabric-buildStyles']);
+gulp.task('Fabric', ['Fabric-configureBuild', 'Fabric-copyAssets', 'Fabric-styleHinting', 'Fabric-buildStyles']);
 
 //
 // Fabric Messages

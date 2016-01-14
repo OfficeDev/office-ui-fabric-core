@@ -39,7 +39,7 @@ var FabricServer = function() {
      * @return {null}
      */
 	this.serveSpecificPaths = function(paths) {
-		if(paths.length > 0) {
+		if (paths.length > 0) {
 			this.specificPaths = paths;
 		}
         return;
@@ -50,7 +50,7 @@ var FabricServer = function() {
      */
 	this.start = function() {
 		// Check for any paths that are outside of the root server directory
-		if(this.specificPaths.length > 0) {
+		if (this.specificPaths.length > 0) {
 			for(var i = 0; i < this.specificPaths.length; i++) {
                 var pathJoined = path.join(this.rootPath, this.specificPaths[i].folderPath);
 				expressServer.use(this.specificPaths[i].urlPath, express.static(pathJoined));

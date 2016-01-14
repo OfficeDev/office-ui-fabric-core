@@ -62,16 +62,16 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generateBuildError = function(error) {
-        gulputil.log(gulputil.colors.red("Build Error: ") + gulputil.colors.yellow(error));
+        gulputil.log(gulputil.colors.red("Build error: ") + gulputil.colors.yellow(error));
         return;
     };
-     /**
+    /**
      * Using Gulp.util, log the current number of errors
      * @param {number} numberOfErrors The number of errors to log
      * @return {void}
      */
     this.showNumberOfErrors = function(numberOfErrors) {
-        gulputil.log(gulputil.colors.red("Number Of errors: " +  gulputil.colors.yellow(numberOfErrors)));
+        gulputil.log(gulputil.colors.red("Number of errors: " +  gulputil.colors.yellow(numberOfErrors)));
         return;
     };
     /**
@@ -80,7 +80,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showNumberOfWarnings = function(numberOfErrors) {
-        gulputil.log(gulputil.colors.yellow("Number Of warnings: " +  gulputil.colors.yellow(numberOfErrors)));
+        gulputil.log(gulputil.colors.yellow("Number of warnings: " +  gulputil.colors.yellow(numberOfErrors)));
         return;
     };
     /**
@@ -89,7 +89,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showSuccessBuild = function(successMessage) {
-        gulputil.log(gulputil.colors.magenta("Succesful Build: " +  gulputil.colors.green(successMessage)));
+        gulputil.log(gulputil.colors.magenta("Succesful build: " +  gulputil.colors.green(successMessage)));
         return;
     };
     /**
@@ -133,7 +133,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
 	this.onErrorInPipe = function(error) {
-        if(error) {
+        if (error) {
             switch(error.plugin) {
                 case 'gulp-autoprefixer':
                     break;
@@ -173,7 +173,7 @@ var ErrorHandling = function() {
                             error.reason
                         );
                             
-                        if(error.id == "(error)") {
+                        if (error.id == "(error)") {
                             that.generatePluginError('jsHint', errorString);
                         } else {
                             gulputil.log(errorString);
@@ -203,7 +203,7 @@ var ErrorHandling = function() {
                             'NA',
                             ''
                         );  
-                        if(err.severity == "warning") {
+                        if (err.severity == "warning") {
                             gulputil.log(errorString);
                             that.addWarning(errorString);
                         } else {
@@ -227,7 +227,7 @@ var ErrorHandling = function() {
             'No Code',
             error.message
         );
-        that.generatePluginError('Less Compiler', errorString);
+        that.generatePluginError('Less compiler', errorString);
         this.emit('end');
     }
     /**
@@ -239,11 +239,11 @@ var ErrorHandling = function() {
             var errors = file.sassLint[0];
             var messages = errors.messages;
           
-            if(messages.length > 0) {
+            if (messages.length > 0) {
                 for(var i = 0; i < messages.length; i++) {
                    var message = messages[i];
                    var errorString;
-                    if(message.severity == 1) {
+                    if (message.severity == 1) {
                         errorString = that.createLineErrorMessage(
                             gulputil.colors.yellow("Warning") + ' ' + message.message,
                             file.path,

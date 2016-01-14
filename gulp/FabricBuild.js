@@ -17,7 +17,7 @@ var prefixLinter;
 // ----------------------------------------------------------------------------
 gulp.task('Fabric-configureBuild', function () {
     // Check if building SASS
-    if(Config.buildSass) {
+    if (Config.buildSass) {
         srcPath = Config.paths.srcSass;
         cssPlugin = Plugins.sass;
         fileExtension = Config.sassExtension;
@@ -43,7 +43,7 @@ gulp.task('Fabric-nuke', function () {
 // Style Linting
 // ---------------------------------------------------------------------------
 gulp.task('Fabric-styleHinting',  function() {
-    if(Config.buildSass) {
+    if (Config.buildSass) {
         var stream;
         stream = gulp.src(Config.paths.srcSass + '/Fabric.scss')
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -54,7 +54,7 @@ gulp.task('Fabric-styleHinting',  function() {
       
     } else {
         stream = gulp.src(Config.paths.srcLess + '/Fabric.less')
-            .pipe(Plugins.gulpif( Config.debugMode, Plugins.debug({
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Checking LESS Compile errors and linting"
             })))
             .pipe(Plugins.lesshint({

@@ -88,7 +88,7 @@ gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'Fabric', 'Fabric
 //
 gulp.task('Errors-checkAllErrors', buildTasks,  function() {
     var returnFailedBuild = false;
-     if(ErrorHandling.numberOfErrors() > 0) {
+     if (ErrorHandling.numberOfErrors() > 0) {
          ErrorHandling.generateError("------------------------------------------");
          ErrorHandling.generateBuildError("Errors in build, please fix and re build Fabric");
          ErrorHandling.showNumberOfErrors(ErrorHandling.numberOfErrors());
@@ -98,7 +98,7 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
          returnFailedBuild = true;
      }
           
-     if(ErrorHandling.numberOfWarnings() > 0) {
+     if (ErrorHandling.numberOfWarnings() > 0) {
          ErrorHandling.generateError("------------------------------------------");
          ErrorHandling.generateBuildError("Warnings in build, please fix and re build Fabric");
          ErrorHandling.showNumberOfWarnings(ErrorHandling.numberOfWarnings());
@@ -109,7 +109,7 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
          returnFailedBuild = true;
      }
      
-     if(returnFailedBuild) {
+     if (returnFailedBuild) {
         process.exit(1);
      } else {
         return;

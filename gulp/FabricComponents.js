@@ -37,7 +37,7 @@ gulp.task('FabricComponents-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-var testingthis = gulp.task('FabricComponents-compiledLess', function () {
+gulp.task('FabricComponents-compiledLess', function () {
 
     var stream = gulp.src(Config.paths.srcLess + '/fabric.components.less')
         .pipe(Plugins.plumber())
@@ -86,7 +86,7 @@ gulp.task('FabricComponents-less', function () {
         var deps = manifest.dependencies || [];
         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
         
-        if(hasFileChanged) {
+        if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
         } else {
             return;

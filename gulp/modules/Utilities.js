@@ -27,7 +27,7 @@ var Utilities = function() {
 	this.getManifestFileList = function(fileArray, folderPath) {
 		var newArray = [];
 		
-		if(typeof fileArray != "undefined" || fileArray != undefined) {
+		if (typeof fileArray != "undefined" || fileArray != undefined) {
 			newArray = fileArray.map(function(file, i) {
 				return folderPath + '/' + file;
 			});
@@ -71,11 +71,11 @@ var Utilities = function() {
     this.getFilesByExtension = function(srcDir, extName) {
         try {
             var files = fs.readdirSync(srcDir);
-            if(extName.length > 0) {
+            if (extName.length > 0) {
             	var filesWithExt = [];
                 for(var i = 0; i < files.length; i++) {
                     var currentFile = files[i];
-                    if(path.extname(currentFile) == extName) {
+                    if (path.extname(currentFile) == extName) {
                         filesWithExt.push(currentFile);
                     }
                 }
@@ -119,7 +119,7 @@ var Utilities = function() {
         var maxSrcDate = 0;
         var maxDistDate = 0;
 		
-		if(distExtension == undefined) {
+		if (distExtension == undefined) {
 			distExtension = srcExtension;
 		}
 		
@@ -137,7 +137,7 @@ var Utilities = function() {
 		maxSrcDate = Math.max.apply(null, srcDates);
 		maxDistDate = Math.max.apply(null, distDates);
 	 
-		if(maxSrcDate > maxDistDate) {
+		if (maxSrcDate > maxDistDate) {
 			return true;
 		} else {
 			return false;

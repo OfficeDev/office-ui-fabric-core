@@ -92,7 +92,7 @@ gulp.task('ComponentSamples-less', ['ComponentSamples-styleHinting'], function()
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
         
-        if(hasFileChanged) {
+        if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
         } else {
             return;
@@ -113,7 +113,7 @@ gulp.task('ComponentSamples-build', function() {
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
-       if(hasFileChanged) {    
+       if (hasFileChanged) {    
            
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
            
@@ -151,7 +151,7 @@ gulp.task('ComponentSamples-build', function() {
        }
    }
    
-   if(streams.length > 0) {
+   if (streams.length > 0) {
        return Plugins.mergeStream(streams);
    } else {
        return;

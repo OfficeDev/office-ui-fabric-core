@@ -16,8 +16,8 @@
   background-color: transparent;
   position: fixed;
   height: 100%;
-  width:  100%;
-  top:  0;
+  width: 100%;
+  top: 0;
   left: 0;
   z-index: @ms-zIndex-Dialog;
 
@@ -29,7 +29,7 @@
 
   // Flexbox for Modern Browsers
 	.flexBox();
-	.alignItems(center); 
+	.alignItems(center);
 
 	&::before {
   	.dialogPositioningIE9Fallback();
@@ -66,8 +66,7 @@
 .ms-Dialog-button.ms-Dialog-button--close {
   display: none;
   position: absolute;
-  margin:  0;
-  padding: 0;
+  margin: 0;
   border: 0;
   background: none;
   cursor: pointer;
@@ -105,8 +104,8 @@
   width: 100%;
 
   // Add margin bottom between compound buttons
-  .ms-Button.ms-Button--compound:not(:last-child) { 
-    margin-bottom: 20px; 
+  .ms-Button.ms-Button--compound:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
@@ -121,28 +120,28 @@
 .ms-Dialog-actions {
   position: relative;
   width: 100%;
-  min-height:  24px;
+  min-height: 24px;
   line-height: 24px;
   margin: 20px 0 0;
   font-size: 0;
-  
-  .ms-Button { 
-    line-height: normal; 
+
+  .ms-Button {
+    line-height: normal;
   }
 }
 
 .ms-Dialog-actionsRight {
   text-align: right;
   font-size: 0;
-  
+
   // Reset spacing for first button
   .ms-Dialog-action:first-child {
-    margin: 0; 
+    margin: 0;
   }
-  
+
   // Spacing between bottom buttons
-  .ms-Dialog-action + .ms-Dialog-action { 
-    margin: 0 0 0 16px; 
+  .ms-Dialog-action + .ms-Dialog-action {
+    margin: 0 0 0 16px;
   }
 }
 
@@ -150,12 +149,12 @@
 //= Modifier: Dialog with close button
 //
 .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) {
-  // Push the right side over so the icon doesn't overlap the text 
+  // Push the right side over so the icon doesn't overlap the text
   .ms-Dialog-title {
     margin-right: 20px;
   }
 
-  // Show the close button  
+  // Show the close button
   .ms-Dialog-button.ms-Dialog-button--close {
     display: block;
   }
@@ -202,6 +201,6 @@
   .ms-Dialog-main {
     width: auto;
     min-width: 288px;
-    max-width: 340px; 
+    max-width: 340px;
   }
 }

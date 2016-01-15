@@ -6,7 +6,7 @@
 // Single line (input) and multiline (textarea) form field styles
 
 
-@import (reference) '../Label/Label.less';
+@import (reference) '../Label/Label';
 
 
 .ms-TextField {
@@ -42,7 +42,7 @@
 
 //= State: An active textfield
 .ms-TextField.is-active {
-  border-color: @ms-color-themePrimary !important;
+  border-color: @ms-color-themePrimary;
 }
 
 .ms-TextField-field {
@@ -135,7 +135,7 @@
   }
 
   .ms-TextField-field {
-    border: none;
+    border: 0;
     float: left;
     display: table-cell;
     text-align: left;

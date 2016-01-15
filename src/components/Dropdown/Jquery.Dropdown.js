@@ -18,7 +18,6 @@
             var $dropdownWrapper = $(this),
                 $originalDropdown = $dropdownWrapper.children('.ms-Dropdown-select'),
                 $originalDropdownOptions = $originalDropdown.children('option'),
-                originalDropdownID = this.id,
                 newDropdownTitle = '',
                 newDropdownItems = '',
                 newDropdownSource = '';
@@ -62,12 +61,12 @@
                     });
 
                     /** Temporarily bind an event to the document that will close this dropdown when clicking anywhere. */
-                    $(document).bind("click.dropdown", function(event) {
+                    $(document).bind("click.dropdown", function() {
                         $dropdownWrapper.removeClass('is-open');
                         $(document).unbind('click.dropdown');
                     });
                 }
-            };
+            }
 
             /** Toggle open/closed state of the dropdown when clicking its title. */
             $dropdownWrapper.on('click', '.ms-Dropdown-title', function(event) {
@@ -104,7 +103,7 @@
                         if (!$dropdownWrapper.hasClass('is-disabled')) {
 
                             // Item text
-                            var selectedItemText = $(this).find('.ms-Dropdown-item.is-selected').text()
+                            var selectedItemText = $(this).find('.ms-Dropdown-item.is-selected').text();
 
                             $(this).find('.ms-Dropdown-title').html(selectedItemText);
 
@@ -134,7 +133,7 @@
                 if (!$dropdownWrapper.hasClass('is-disabled')) {
 
                     /** Deselect all items and select this one. */
-                    $(this).siblings('.ms-Dropdown-item').removeClass('is-selected')
+                    $(this).siblings('.ms-Dropdown-item').removeClass('is-selected');
                     $(this).addClass('is-selected');
 
                     /** Update the replacement dropdown's title. */

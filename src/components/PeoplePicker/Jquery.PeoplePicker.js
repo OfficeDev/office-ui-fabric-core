@@ -1,5 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+var fabric = fabric || {};
+
 /**
  * People Picker Plugin
  *
@@ -8,6 +10,7 @@
  * @param  {jQuery Object}  One or more .ms-PeoplePicker components
  * @return {jQuery Object}  The same components (allows for chaining)
  */
+
 (function ($) {
   $.fn.PeoplePicker = function () {
 
@@ -17,10 +20,9 @@
       var $peoplePicker = $(this);
       var $searchField = $peoplePicker.find(".ms-PeoplePicker-searchField");
       var $results = $peoplePicker.find(".ms-PeoplePicker-results");
-      var $searchMore = $peoplePicker.find(".ms-PeoplePicker-searchMore");
       var $selected = $peoplePicker.find('.ms-PeoplePicker-selected');
-      var $selectedPeople = $peoplePicker.find(".ms-PeoplePicker-selectedPeople")
-      var $selectedCount = $peoplePicker.find(".ms-PeoplePicker-selectedCount")
+      var $selectedPeople = $peoplePicker.find(".ms-PeoplePicker-selectedPeople");
+      var $selectedCount = $peoplePicker.find(".ms-PeoplePicker-selectedCount");
       var isActive = false;
       var spinner;
 
@@ -48,12 +50,12 @@
         $peoplePicker.addClass("is-active");
 
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
-        $(document).bind("click.peoplepicker", function(event) {
+        $(document).bind("click.peoplepicker", function() {
             $peoplePicker.removeClass('is-active');
             $(document).unbind('click.peoplepicker');
             isActive = false;
         });
-      };
+      }
       
       /** Set to active when focusing on the input. */
       $peoplePicker.on('focus', '.ms-PeoplePicker-searchField', function(event) {
@@ -71,7 +73,7 @@
       });
 
       /** Add the selected person to the text field or selected list and close the people picker. */
-      $results.on('click', '.ms-PeoplePicker-result', function (event) {
+      $results.on('click', '.ms-PeoplePicker-result', function () {
           var selectedName = $(this).find(".ms-Persona-primaryText").html();
           var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
@@ -120,11 +122,11 @@
       });
 
       /** Remove the persona when clicking the personaRemove button. */
-      $peoplePicker.on('click', '.ms-PeoplePicker-personaRemove', function(event) {
+      $peoplePicker.on('click', '.ms-PeoplePicker-personaRemove', function() {
         $(this).parents('.ms-PeoplePicker-persona').remove();
 
         /** Make the search field 100% width if all personas have been removed */
-        if ( $('.ms-PeoplePicker-persona').length == 0 ) {
+        if ( $('.ms-PeoplePicker-persona').length === 0 ) {
           $peoplePicker.find('.ms-PeoplePicker-searchField').outerWidth('100%');
         } else {
           resizeSearchField($peoplePicker);
@@ -132,7 +134,7 @@
       });
 
       /** Trigger additional searching when clicking the search more area. */
-      $results.on('click', '.js-searchMore', function(event) {
+      $results.on('click', '.js-searchMore', function() {
         var $searchMore = $(this);
         var primaryLabel = $searchMore.find(".ms-PeoplePicker-searchMorePrimary");
         var originalPrimaryLabelText = primaryLabel.html();

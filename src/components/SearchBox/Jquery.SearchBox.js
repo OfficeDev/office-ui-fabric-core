@@ -27,7 +27,7 @@
 
       /** 'hovering' class allows for more fine grained control of hover state */
       $searchField.on('mouseover', function() {
-        $searchField.addClass('hovering')
+        $searchField.addClass('hovering');
       });
 
       $searchField.on('mouseout', function() {

@@ -17,7 +17,7 @@
       var $listItem = $(this);
 
       /** Detect clicks on selectable list items. */
-      $listItem.on('click', '.js-toggleSelection', function(event) {
+      $listItem.on('click', '.js-toggleSelection', function() {
         $(this).parents('.ms-ListItem').toggleClass('is-selected');
       });
 

@@ -20,32 +20,70 @@ gulp.task('ComponentSamples-nuke', function () {
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
+gulp.task('ComponentSamples-copyIgnoredFiles', function() {
+    return Config.ignoreComponentJSLinting.map(function(element) {
+        var src = element.src;
+        var dist = element.dist;
+        return gulp.src(src)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Copying Ignored Files"
+            })))
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.changed(dist))
+            .pipe(gulp.dest(dist));
+    });
+});
+
 gulp.task('ComponentSamples-copyAssets', function() {
-    return gulp.src([
-            Config.paths.componentsPath + '/**/*.js', 
-            Config.paths.componentsPath + '/**/*.jpg', 
-            Config.paths.componentsPath + '/**/*.png', 
-            Config.paths.componentsPath + '/**/*.js',
-            Config.paths.componentsPath + '/**/*.gif'
-        ])
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
-            .on('error', ErrorHandling.onErrorInPipe)
+    var paths = [
+        Config.paths.componentsPath + '/**/*.jpg', 
+        Config.paths.componentsPath + '/**/*.png',
+        Config.paths.componentsPath + '/**/*.gif'
+    ];
+
+    return gulp.src(paths)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Copying Component Assets"
-                })))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(gulp.dest(Config.paths.distSamples + '/Components'))
-            .on('error', ErrorHandling.onErrorInPipe);
+                title: "Copying Component Assets"
+            })))
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
+        .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
+});
+
+gulp.task('ComponentSamples-moveJS', function() {
+    var paths;
+    var newPaths;
+    paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
+    newPaths = paths.concat([Config.paths.componentsPath + '/**/*.js']);
+   
+    return gulp.src(newPaths)
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.jshint())
+            .pipe(ErrorHandling.JSHintErrors())
+            .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Copying Component Assets"
+            })))
+            .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
 //
-// LESS tasks
+// Style Linting
 // ----------------------------------------------------------------------------
 
-gulp.task('ComponentSamples-less',  function() {
-   return folderList.map(function(componentName) {
+gulp.task('ComponentSamples-styleHinting',  function() {
+    return gulp.src(Config.paths.componentsPath + '/**/*.less')
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Checking LESS Compile errors and linting"
+            })))
+            .pipe(Plugins.lesshint({
+                configPath: './.lesshintrc'
+            }))
+            .pipe(ErrorHandling.LESSHintErrors());
+});
 
+gulp.task('ComponentSamples-less', ['ComponentSamples-styleHinting'], function() {
+   return folderList.map(function(componentName) {
         var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
@@ -54,7 +92,7 @@ gulp.task('ComponentSamples-less',  function() {
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.less', '.css');
         
-        if(hasFileChanged) {
+        if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
         } else {
             return;
@@ -75,7 +113,7 @@ gulp.task('ComponentSamples-build', function() {
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
-       if(hasFileChanged) {    
+       if (hasFileChanged) {    
            
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
            
@@ -89,10 +127,9 @@ gulp.task('ComponentSamples-build', function() {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
            }
            componentPipe = gulp.src(fileGlob)
+           .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
-                .on('error', ErrorHandling.onErrorInPipe)
            .pipe(Plugins.concat("index.html"))
-                .on('error', ErrorHandling.onErrorInPipe)
            .pipe(Plugins.wrap(
                 {
                     src:  Config.paths.templatePath + '/componentSampleTemplate.html'  
@@ -104,20 +141,17 @@ gulp.task('ComponentSamples-build', function() {
                     jsLinks: jsLinks
                 }
            ))
-                .on('error', ErrorHandling.onErrorInPipe)
            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Sample Component " + folderName
                 })))
-                .on('error', ErrorHandling.onErrorInPipe)
-           .pipe(gulp.dest(Config.paths.distSamples + '/Components/' +  folderName))
-                .on('error', ErrorHandling.onErrorInPipe);
+           .pipe(gulp.dest(Config.paths.distSamples + '/Components/' +  folderName));
            
            // Add stream
            streams.push(componentPipe);
        }
    }
    
-   if(streams.length > 0) {
+   if (streams.length > 0) {
        return Plugins.mergeStream(streams);
    } else {
        return;
@@ -128,7 +162,14 @@ gulp.task('ComponentSamples-build', function() {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-var ComponentSamplesTasks = ['ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-less'];
+var ComponentSamplesTasks = [
+    'ComponentSamples-build', 
+    'ComponentSamples-copyAssets', 
+    'ComponentSamples-less',
+    'ComponentSamples-styleHinting',
+    'ComponentSamples-moveJS',
+    'ComponentSamples-copyIgnoredFiles'
+];
 
 //Build Fabric Component Samples
 gulp.task('ComponentSamples', ComponentSamplesTasks);

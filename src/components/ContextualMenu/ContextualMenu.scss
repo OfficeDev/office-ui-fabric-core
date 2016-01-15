@@ -12,7 +12,7 @@
   display: none;
 
   // Hidden by default, then trigger this state to show it.
-   &.is-open {
+  &.is-open {
     @include drop-shadow;
     background-color: $ms-color-white;
     border: 1px solid $ms-color-neutralTertiaryAlt;
@@ -61,38 +61,38 @@
   position: relative;
 
   // Shorten the first and last items to maintain baseline alignment.
-   &:first-child, 
-   &:last-child {
+  &:first-child, 
+  &:last-child {
     height: 39px;
   }
 
-   &:hover,
-   &:active {
+  &:hover,
+  &:active {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
   }
 
-   &:active {
+  &:active {
     border: 1px solid $ms-color-themePrimary;
   }
 
-   &.is-selected {
+  &.is-selected {
     background-color: $ms-color-themeLight;
     color: $ms-color-black;
     font-family: $ms-font-family-semibold;
 
-     &:hover {
+    &:hover {
       background-color: $ms-color-themeLight;
     }
   }
 
-   &.is-disabled {
+  &.is-disabled {
     background-color: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
     pointer-events: none;
 
-     &:active { 
+    &:active { 
       border-color: $ms-color-white; 
     }
   }
@@ -129,11 +129,11 @@
     padding: 0 30px;
 
     // Multi-select checkmark
-     &.is-selected {
+    &.is-selected {
       background-color: $ms-color-white;
 
       // Checkmark
-       &:after {
+      &:after {
         @include ms-Icon;
         color: $ms-color-neutralPrimary;
         content: '\e041';

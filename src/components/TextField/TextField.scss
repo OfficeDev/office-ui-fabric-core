@@ -58,16 +58,16 @@
   min-width: 180px;
   outline: 1px solid transparent;
 
-   &:hover {
+  &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-   &:focus {
+  &:focus {
     border-color: $ms-color-themePrimary;
   }
 
-   &:hover,
-   &:focus {
+  &:hover,
+  &:focus {
     outline: 1px solid transparent;
   }
 
@@ -95,7 +95,7 @@
     padding: 7px 0 7px 10px;
   }
 
-   &.is-disabled {
+  &.is-disabled {
     color: $ms-color-neutralTertiary;
 
     .ms-Label {
@@ -113,12 +113,12 @@
   width: 100%;
   min-width: 180px;
 
-   &:hover {
+  &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-   &:active,
-   &:focus {
+  &:active,
+  &:focus {
     border-color: $ms-color-themePrimary;
   }
 
@@ -142,13 +142,13 @@
     padding-top: 8px;
     padding-bottom: 2px;
 
-     &:active,
-     &:focus {
+    &:active,
+    &:focus {
       outline: 0;
     }
   }
 
-   &.is-disabled {
+  &.is-disabled {
     border-bottom-color: $ms-color-neutralLight;
 
     .ms-Label {

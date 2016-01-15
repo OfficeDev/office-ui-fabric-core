@@ -7,7 +7,7 @@
 
 /*Sasssssssss*/
 
-@import '../scss/Fabric';
+@import '../sass/Fabric';
 <% dependencies.forEach(function(dep){ %>
 @import '../components/<%= dep %>/<%= dep %>';
 <% }); %>

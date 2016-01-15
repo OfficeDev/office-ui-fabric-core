@@ -14,7 +14,7 @@
   display: inline-block;
 
   // State: Disabled searchbox
-   &.is-disabled {
+  &.is-disabled {
     .ms-SearchBox-label {
       @include ms-Label.is-disabled;
     }
@@ -30,7 +30,7 @@
   }
 
   // State: Active searchbox
-   &.is-active {
+  &.is-active {
     .ms-SearchBox-closeButton {
       display: block;
       outline: 1px solid transparent;
@@ -52,11 +52,11 @@
   background-color: transparent;
   z-index: $ms-zIndex-back;
 
-   &.hovering {
+  &.hovering {
     border-color: $ms-color-themePrimary;
     background-color: fade($ms-color-themePrimary, 20%);
 
-     & + .ms-SearchBox-label {
+    & + .ms-SearchBox-label {
       color: $ms-color-black;
 
       .ms-Icon {
@@ -65,13 +65,13 @@
     }
   }
 
-   &:focus {
+  &:focus {
     padding: 6px 32px 7px 10px;
     border-color: $ms-color-themePrimary;
     background-color: fade($ms-color-themePrimary, 20%);
   }
   
-   &::-ms-clear {
+  &::-ms-clear {
     display: none;
   }
 }

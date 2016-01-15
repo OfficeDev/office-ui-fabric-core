@@ -13,14 +13,14 @@
 	display: block;
 	padding: 5px 0;
 
-	 &.is-required {
-		 &:after {
+	&.is-required {
+		&:after {
 			content: ' *';
 			color: $ms-color-error;
 		}
 	}
 
-	 &.is-disabled {
+	&.is-disabled {
 		color: $ms-color-neutralTertiary;
 	}
 }

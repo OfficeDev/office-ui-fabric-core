@@ -43,7 +43,7 @@
 	width: 52px;
 	height: 52px;
 
-	 &[src=""] {
+	&[src=""] {
 		display: none;
 	}
 }
@@ -71,7 +71,7 @@
 .ms-Persona-secondaryText, 
 .ms-Persona-tertiaryText, 
 .ms-Persona-optionalText {
-	@include noWrap();
+	@mixin noWrap();
 	width: 190px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -393,9 +393,9 @@
 	cursor: pointer;
 	padding: 0 10px;
 
-	 &:not(.ms-Persona--xl) {
-		 &:hover,
-		 &:focus {
+	&:not(.ms-Persona--xl) {
+		&:hover,
+		&:focus {
 			background-color: $ms-color-themeLighter;
 			outline: 1px solid transparent;
 		}

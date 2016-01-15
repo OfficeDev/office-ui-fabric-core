@@ -71,7 +71,6 @@ gulp.task('ComponentSamples-copyAssets', function() {
 
 gulp.task('ComponentSamples-buildStyles', ['ComponentSamples-configureBuild'],  function() {
    return folderList.map(function(componentName) {
-
         var srcTemplate = Config.paths.templatePath + '/'+ template;
         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
@@ -80,7 +79,7 @@ gulp.task('ComponentSamples-buildStyles', ['ComponentSamples-configureBuild'],  
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, fileExtension, '.css');
         
-        if(hasFileChanged) {
+        if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(
                         destFolder, 
                         srcTemplate, 
@@ -108,7 +107,7 @@ gulp.task('ComponentSamples-build', function() {
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
-       if(hasFileChanged) {    
+       if (hasFileChanged) {    
            
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
            
@@ -118,7 +117,7 @@ gulp.task('ComponentSamples-build', function() {
            var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
            var jsLinks = '';
            
-           for(var x = 0; x < jsFiles.length; x++) {
+           for (var x = 0; x < jsFiles.length; x++) {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
            }
            componentPipe = gulp.src(fileGlob)
@@ -150,7 +149,7 @@ gulp.task('ComponentSamples-build', function() {
        }
    }
    
-   if(streams.length > 0) {
+   if (streams.length > 0) {
        return Plugins.mergeStream(streams);
    } else {
        return;

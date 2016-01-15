@@ -13,23 +13,23 @@
   position: relative;
   outline: 0;
 
-   &:hover,
-   &:focus,
-   &:active {
+  &:hover,
+  &:focus,
+  &:active {
     .ms-Dropdown-title,
     .ms-Dropdown-caretDown {
       color: $ms-color-black;
     }
   }
 
-   &:hover,
-   &:active {
+  &:hover,
+  &:active {
     .ms-Dropdown-title {
       border-color: $ms-color-neutralSecondaryAlt; 
     }
   }
 
-   &:focus {
+  &:focus {
     .ms-Dropdown-title {
       border-color: $ms-color-themePrimary;
     }
@@ -104,7 +104,7 @@
   bottom: 0;
   overflow-y: scroll;
 
-   &:before {
+  &:before {
     content: '';
     position: absolute;
     z-index: -1;
@@ -128,24 +128,24 @@
   white-space: nowrap;
 
   // Shorten the first and last items to maintain baseline alignment.
-   &:first-child, 
-   &:last-child {
+  &:first-child, 
+  &:last-child {
     height: 39px;
   }
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
     outline: 1px solid transparent;
   }
 
-   &:active {
+  &:active {
     background-color: $ms-color-neutralLight;
     border-color: $ms-color-themePrimary;
     color: $ms-color-black;
   }
 
-   &.is-disabled {
+  &.is-disabled {
     background: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
@@ -162,7 +162,7 @@
   color: $ms-color-black;
   line-height: 40px;
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-themeLight;
   }
 }

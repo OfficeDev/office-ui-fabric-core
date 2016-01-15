@@ -94,7 +94,7 @@
     vertical-align: top;
   }
 
-   &:hover {
+  &:hover {
     color: $ms-color-neutralSecondary;
     outline: 1px solid transparent;
   }
@@ -117,7 +117,7 @@
 //== State: Unseen list item
 //
 .ms-ListItem.is-unseen {
-   &:after {
+  &:after {
     border-right: 10px solid transparent;
     border-top: 10px solid $ms-color-themePrimary;
     left: 0;
@@ -143,13 +143,13 @@
     margin-left: 0;
   }
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-neutralLight;
     cursor: pointer;
     outline: 1px solid transparent;
 
     // Insert the empty box.
-     &:before {
+    &:before {
       @include ms-Icon;
       position: absolute;
       top: 12px;
@@ -166,12 +166,12 @@
 //
 .ms-ListItem.is-selected {
   // Insert the checkmark.
-   &:before {
+  &:before {
     border: 1px solid transparent;
   }
 
-   &:before, 
-   &:hover:before {
+  &:before, 
+  &:hover:before {
     @include ms-Icon;
     content: '\e041';
     font-size: $ms-font-size-m-plus;
@@ -181,7 +181,7 @@
     left: 6px;
   }
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-themeLight;
     outline: 1px solid transparent;
   }

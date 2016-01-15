@@ -11,7 +11,7 @@
 // The persona card docks to the bottom of the viewport.
 .ms-PersonaCard {
   @include ms-font-m;
-  .ms-u-slideUpIn10;
+  @include ms-u-slideUpIn10;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -75,20 +75,20 @@
   position: relative;
   @include ms-u-borderBox;
 
-   &:hover {
+  &:hover {
     color: $ms-color-neutralDark;
   }
 
-   &:active {
+  &:active {
     color: $ms-color-themePrimary;
   }
 
   // Currently-selected action
-   &.is-active {
+  &.is-active {
     color: $ms-color-themePrimary;
 
     // Arrow
-     &:after {
+    &:after {
       @include ms-u-borderBox;
       @include rotate(45deg);
       content: "";
@@ -112,7 +112,7 @@
   float: right;
   margin-top: -1px;
 
-   &:hover {
+  &:hover {
     color: $ms-color-themePrimary;
   }
 }
@@ -141,7 +141,7 @@
   box-sizing: border-box;
 
   // State: Contents are collapsed to a single line.
-   &.is-collapsed {
+  &.is-collapsed {
     height: 30px;
     overflow: hidden;
 
@@ -224,7 +224,7 @@
   text-align: center;
   width: 30px;
 
-   &:after {
+  &:after {
     @include ms-Icon;
     content: '\e087';
   }
@@ -240,7 +240,7 @@
 }
 
 .ms-PersonaCard-action.ms-PersonaCard-orgChart {
-   &:after {
+  &:after {
     display: none; // Hide arrow for orgchart action
   }
 }

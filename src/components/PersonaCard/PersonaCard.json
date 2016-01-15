@@ -1,6 +1,7 @@
 {
   "name": "PersonaCard",
   "notes": "",
+  "description": "The visualization of details of an individual including Skype contact details, email, location information, and organizational placement via the embedded {0} OrgChart {1}. PersonaCards are often invoked when a {2} Persona {3} is hovered over or tapped.",
   "template": "PersonaCard.html",
   "class": "ms-PersonaCard",
   "wrapBranches": true,

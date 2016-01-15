@@ -6,6 +6,16 @@
 // Breadcrumb styles
 
 
+.ms-Breadcrumb {
+  margin: 23px 0 1px 0;
+
+  &.is-overflow {
+    .ms-Breadcrumb-overflow {
+      display: inline;
+    }
+  }
+}
+
 .ms-Breadcrumb-chevron {
   font-size: $ms-font-size-l;
   color: $ms-color-neutralSecondary;
@@ -26,7 +36,7 @@
     padding: 0;
     display: inline-block;
 
-     &:last-of-type {
+    &:last-of-type {
       .ms-Breadcrumb-chevron {
         display: none;
       }
@@ -53,7 +63,7 @@
   display: none;
   position: absolute;
 
-   &.is-open {
+  &.is-open {
     display: block;
     top: 36px;
     left: 0;
@@ -63,7 +73,7 @@
     z-index: ($ms-zIndex-ContextualMenu + $ms-zIndex-middle);
   }
 
-   &:before {
+  &:before {
     position: absolute;
     @include drop-shadow;
     top: -6px;
@@ -81,7 +91,7 @@
     position: relative;
     width: 190px;
 
-     &.is-open {
+    &.is-open {
       margin-bottom: 0;
     }
   }
@@ -92,16 +102,16 @@
   text-decoration: none;
   outline: transparent;
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-neutralLighter;
   }
 
-   &:focus {
+  &:focus {
     outline: $ms-color-neutralSecondaryAlt solid 1px;
     color: $ms-color-black;
   }
 
-   &:active {
+  &:active {
     outline: transparent;
     background-color: $ms-color-neutralTertiaryAlt;
   }

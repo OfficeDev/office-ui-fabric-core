@@ -17,7 +17,7 @@
 	min-width: 80px;
 	padding: 4px 20px 6px;
 
-	 &:hover {
+	&:hover {
 		background-color: $ms-color-neutralLight;
 		border-color: $ms-color-neutralLight;
 		outline: 1px solid transparent;
@@ -27,7 +27,7 @@
 		}
 	}
 
-	 &:focus {
+	&:focus {
 		background-color: $ms-color-neutralLight;
 		border-color: $ms-color-themePrimary;
 		outline: 1px solid transparent;
@@ -37,7 +37,7 @@
 		}
 	}
 
-	 &:active {
+	&:active {
 		background-color: $ms-color-themePrimary;
 		border-color: $ms-color-themePrimary;
 
@@ -46,8 +46,8 @@
 		}
 	}
 
-	 &:disabled, 
-	 &.is-disabled {
+	&:disabled, 
+	&.is-disabled {
 		background-color: $ms-color-neutralLighter;
 		border-color: $ms-color-neutralLighter;
 		cursor: default;
@@ -56,8 +56,8 @@
 			color: $ms-color-neutralTertiary;
 		}
 
-		 &:hover, 
-		 &:focus {
+		&:hover, 
+		&:focus {
 			outline: 0;
 		}
 	}
@@ -90,23 +90,23 @@
 		color: $ms-color-white;
 	}
 
-	 &:hover {
+	&:hover {
 		background-color: $ms-color-themeDark;
 		border-color: $ms-color-themeDark;
 	}
 
-	 &:focus {
+	&:focus {
 		background-color: $ms-color-themeDark;
 		border-color: $ms-color-themeDarker;
 	}
 
-	 &:active {
+	&:active {
 		background-color: $ms-color-themePrimary;
 		border-color: $ms-color-themePrimary;
 	}
 
-	 &:disabled, 
-	 &.is-disabled {
+	&:disabled, 
+	&.is-disabled {
 		background-color: $ms-color-neutralLighter;
 		border-color: $ms-color-neutralLighter;
 
@@ -133,7 +133,9 @@
 		top: 1px;
 
 		.ms-Icon {
-			@include ms-Icon--circle;
+           &:before {
+            @include ms-Icon--circleEmpty;
+           }
 			border-width: 2px;
 			height: 18px;
 			line-height: 18px;
@@ -152,8 +154,8 @@
 		text-decoration: none;
 	}
 
-	 &:hover, 
-	 &:focus {
+	&:hover, 
+	&:focus {
 		.ms-Button-icon {
 			.ms-Icon {
 				color: $ms-color-themeDark;
@@ -165,7 +167,7 @@
 		}
 	}
 
-	 &:active {
+	&:active {
 		.ms-Button-icon {
 			.ms-Icon {
 				color: $ms-color-themePrimary;
@@ -177,8 +179,8 @@
 		}
 	}
 
-	 &:disabled, 
-	 &.is-disabled {
+	&:disabled, 
+	&.is-disabled {
 		.ms-Button-icon {
 			.ms-Icon {
 				color: $ms-color-neutralTertiaryAlt;
@@ -218,13 +220,13 @@
 		top: 3px;
 	}
 
-	 &:hover {
+	&:hover {
 		.ms-Button-description { 
 			color: $ms-color-neutralDark; 
 		}
 	}
 
-	 &:focus {
+	&:focus {
 		border-color: $ms-color-themePrimary;
 		background-color: $ms-color-neutralLighter;
 
@@ -237,7 +239,7 @@
 		}
 	}
 
-	 &:active {
+	&:active {
 		background-color: $ms-color-themePrimary;
 
 		.ms-Button-description, 
@@ -246,15 +248,15 @@
 		}
 	}
 
-	 &:disabled, 
-	 &.is-disabled {
+	&:disabled, 
+	&.is-disabled {
 		.ms-Button-label, 
 		.ms-Button-description {
 			color: $ms-color-neutralTertiary;
 		}
 
-		 &:focus,
-		 &:active {
+		&:focus,
+		&:active {
 			border-color: $ms-color-neutralLighter;
 			background-color: $ms-color-neutralLighter;
 
@@ -290,8 +292,8 @@
 		font-family: $ms-font-family-regular;
 	}
 
-	 &:hover, 
-	 &:focus {
+	&:hover, 
+	&:focus {
 		.ms-Button-icon {
 			color: $ms-color-neutralDark;
 		}
@@ -301,15 +303,15 @@
 		}
 	}
 
-	 &:active {
+	&:active {
 		.ms-Button-icon,
 		.ms-Button-label {
 			color: $ms-color-themePrimary;
 		}
 	}
 
-	 &:disabled, 
-	 &.is-disabled {
+	&:disabled, 
+	&.is-disabled {
 		.ms-Button-icon {
 			color: $ms-color-neutralTertiaryAlt;
 		}

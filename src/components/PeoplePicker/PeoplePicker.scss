@@ -21,7 +21,7 @@
   min-height: 40px;
   width: 100%;
 
-   &:hover { border-color: $ms-color-neutralSecondaryAlt; }
+  &:hover { border-color: $ms-color-neutralSecondaryAlt; }
 }
 
 // Highlight the search box when the people picker is active
@@ -73,13 +73,13 @@
   text-align: center;
   width: 30px;
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-neutralLight;
     color: $ms-color-neutralPrimary;
     cursor: pointer;
   }
 
-   &:focus {
+  &:focus {
     background-color: $ms-color-neutralLight;
     color: $ms-color-neutralPrimary;
     border: 1px solid $ms-color-themePrimary;
@@ -118,7 +118,7 @@
   border-top: 1px solid $ms-color-neutralLight;
 
   // The first result group needs to be bumped up 1px to account for border on ms-PeoplePicker-results
-   &:first-child {
+  &:first-child {
     border-top: none;
   }
 }
@@ -146,14 +146,14 @@
 
   .ms-Persona {
 
-     &:hover {
-      @include ms-Persona.ms-Persona--darkText;
+    &:hover {
+      @include ms-Persona--darkText;
       cursor: pointer;
     }
 
     // TODO: Active style is being blocked by the inner content on IE
     // http://stackoverflow.com/questions/5594102/active-css-selector-not-working-for-ie8-and-ie9?rq=1
-     &:active {
+    &:active {
       background-color: $ms-color-themeLight;
     }
   }
@@ -176,10 +176,10 @@
   margin: 0 0 10px 0;
   padding: 0 0 0 9px;
 
-   &:hover { background-color: $ms-color-neutralLight; outline: 1px solid transparent; }
-   &:focus { outline: 1; }
+  &:hover { background-color: $ms-color-neutralLight; outline: 1px solid transparent; }
+  &:focus { outline: 1; }
 
-   &.ms-PeoplePicker-resultBtn--compact {
+  &.ms-PeoplePicker-resultBtn--compact {
     height: 30px;
   }
 }
@@ -205,8 +205,8 @@
     left: 8px;
   }
 
-   &:hover { background-color: $ms-color-neutralTertiaryAlt; outline: 1px solid transparent; }
-   &:active { background-color: $ms-color-themeTertiary; }
+  &:hover { background-color: $ms-color-neutralTertiaryAlt; outline: 1px solid transparent; }
+  &:active { background-color: $ms-color-themeTertiary; }
 }
 
 // A result can contain additional content (usually a ms-PeoplePicker-resultList of Persona components) that is hidden initially
@@ -268,7 +268,7 @@
     color: $ms-color-themePrimary;
   }
 
-   &:hover {
+  &:hover {
     background-color: transparent;
     cursor: default;
   }
@@ -284,13 +284,13 @@
   padding-left: 70px;
   text-align: left;
 
-   &:hover {
+  &:hover {
       background-color: $ms-color-neutralLight;
       cursor: pointer;
   }
 
   // TODO: Works in Chrome, but not working in IE
-   &:active {
+  &:active {
       background-color: $ms-color-themeLight;
   }
 }
@@ -335,7 +335,7 @@
 .ms-PeoplePicker-searchMore.ms-PeoplePicker-searchMore--disconnected {
 
   // Do nothing on hover
-   &:hover {
+  &:hover {
     background-color: inherit;
     cursor: default;
   }
@@ -422,7 +422,7 @@
   margin-bottom: 20px;
   display: none;
 
-   &.is-active {
+  &.is-active {
     display: block;
   }
 }

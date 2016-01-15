@@ -26,11 +26,11 @@ $MessageBanner-iconSize: 40px;
 }
 
 .ms-MessageBanner {
-   &.hide {
+  &.hide {
     @include ms-u-slideUpOut20();
   }
 
-   &.is-hidden {
+  &.is-hidden {
     display: none;
   }
 }
@@ -43,7 +43,7 @@ $MessageBanner-iconSize: 40px;
   border: none;
   background-color: transparent;
 
-   &:focus {
+  &:focus {
     outline: 1px solid transparent;
   }
 }
@@ -69,7 +69,7 @@ $MessageBanner-iconSize: 40px;
   display: none;
   vertical-align: top;
 
-   &.is-visible {
+  &.is-visible {
     display: inline-block;
   }
 }

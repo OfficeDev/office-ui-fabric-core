@@ -5,6 +5,17 @@
 // --------------------------------------------------
 // Form field label styles
 
+@mixin ms-Label-is-disabled {
+     color: $ms-color-neutralPrimary; 
+}
+
+@mixin ms-Label-is-required {
+     &:after {
+        content: ' *';
+        color: $ms-color-error;
+    }
+}
+
 
 .ms-Label {
 	@include ms-font-s;
@@ -13,14 +24,11 @@
 	display: block;
 	padding: 5px 0;
 
-	 &.is-required {
-		 &:after {
-			content: ' *';
-			color: $ms-color-error;
-		}
+	&.is-required {
+		@include ms-Label-is-required;
 	}
 
-	 &.is-disabled {
-		color: $ms-color-neutralTertiary;
+	&.is-disabled {
+		 @include ms-Label-is-disabled;
 	}
 }

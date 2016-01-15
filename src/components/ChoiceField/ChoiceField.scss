@@ -25,12 +25,12 @@
 		pointer-events: none;
 		cursor: default;
 
-		 &:before {
+		&:before {
 			background-color: $ms-color-neutralTertiaryAlt;
 			color: $ms-color-neutralTertiaryAlt;
 		}
 
-		 &:after {
+		&:after {
 			border-color: $ms-color-neutralLight;
 		}
 
@@ -46,7 +46,7 @@
 	opacity: 0;
 	top: 8px;
 
-	 &:focus:not(:disabled) {
+	&:focus:not(:disabled) {
 		+ .ms-ChoiceField-field:after {
 			border-color: $ms-color-neutralSecondaryAlt;
 		}
@@ -61,7 +61,7 @@
 	position: relative;
 
 	// The actual styled choicefield element - radio button by default
-	 &:after {
+	&:after {
 		content: '';
 		display: inline-block;
 		border: 1px $ms-color-neutralTertiaryAlt solid;
@@ -76,8 +76,8 @@
 		position: absolute;			
 	}
 
-	 &:hover {
-		 &:after {
+	&:hover {
+		&:after {
 			border-color: $ms-color-neutralSecondaryAlt;
 		}
 
@@ -91,7 +91,7 @@
 .ms-ChoiceField-input:checked {
 	+ .ms-ChoiceField-field {
 		// Circle indicating a checked radio button
-		 &:before {
+		&:before {
 			background-color: $ms-color-neutralSecondary;
 			border-color: $ms-color-neutralSecondary;
 			color: $ms-color-neutralSecondary;
@@ -108,7 +108,7 @@
 			box-sizing: border-box;
 		}
 
-		 &:hover:before {
+		&:hover:before {
 			background-color: $ms-color-neutralDark;
 			color: $ms-color-neutralDark;
 		}
@@ -125,7 +125,7 @@
 // A selected checkbox 
 .ms-ChoiceField-input[type="checkbox"]:checked {
 	+ .ms-ChoiceField-field {
-		 &:before {
+		&:before {
 			@include ms-Icon;
 			content: '\e041';
 			background-color: transparent;

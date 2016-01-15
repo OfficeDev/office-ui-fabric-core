@@ -11,12 +11,12 @@
   text-decoration: none;
   cursor: pointer;
 
-   &:hover,
-   &:focus {
+  &:hover,
+  &:focus {
     color: $ms-color-themeDarker;
   }
 
-   &:active {
+  &:active {
     color: $ms-color-themePrimary;
   }
 }

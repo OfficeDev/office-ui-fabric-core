@@ -15,19 +15,22 @@ var fileExtension;
 var template;
 
 // Check if building SASS
-if(Config.buildSass) {
+gulp.task('ComponentSamples-configureBuild', function () {
+  if(Config.buildSass) {
     srcPath = Config.paths.srcSass;
     cssPlugin = Plugins.sass;
     fileExtension = '.' + Config.sassExtension;
     template = 'component-manifest-template' + fileExtension;
     name = "SASS";
-} else {
+  } else {
     srcPath = Config.paths.srcLess;
     cssPlugin = Plugins.less;
     fileExtension = '.' + Config.lessExtension;
     template = 'component-manifest-template' + fileExtension;
     name = "LESS";
-}
+  }
+  return;
+});
 
 //
 // Clean/Delete Tasks
@@ -64,9 +67,8 @@ gulp.task('ComponentSamples-copyAssets', function() {
 // Styles tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('ComponentSamples-buildStyles',  function() {
+gulp.task('ComponentSamples-buildStyles', ['ComponentSamples-configureBuild'],  function() {
    return folderList.map(function(componentName) {
-
         var srcTemplate = Config.paths.templatePath + '/'+ template;
         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
@@ -75,7 +77,7 @@ gulp.task('ComponentSamples-buildStyles',  function() {
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, fileExtension, '.css');
         
-        if(hasFileChanged) {
+        if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(
                         destFolder, 
                         srcTemplate, 
@@ -103,7 +105,7 @@ gulp.task('ComponentSamples-build', function() {
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
-       if(hasFileChanged) {    
+       if (hasFileChanged) {    
            
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
            
@@ -113,7 +115,7 @@ gulp.task('ComponentSamples-build', function() {
            var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
            var jsLinks = '';
            
-           for(var x = 0; x < jsFiles.length; x++) {
+           for (var x = 0; x < jsFiles.length; x++) {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
            }
            componentPipe = gulp.src(fileGlob)
@@ -145,7 +147,7 @@ gulp.task('ComponentSamples-build', function() {
        }
    }
    
-   if(streams.length > 0) {
+   if (streams.length > 0) {
        return Plugins.mergeStream(streams);
    } else {
        return;
@@ -156,7 +158,7 @@ gulp.task('ComponentSamples-build', function() {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-var ComponentSamplesTasks = ['ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-buildStyles'];
+var ComponentSamplesTasks = ['ComponentSamples-configureBuild', 'ComponentSamples-build', 'ComponentSamples-copyAssets', 'ComponentSamples-buildStyles'];
 
 //Build Fabric Component Samples
 gulp.task('ComponentSamples', ComponentSamplesTasks);

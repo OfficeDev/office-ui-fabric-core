@@ -6,7 +6,7 @@
 // Single line (input) and multiline (textarea) form field styles
 
 
-@import (reference) '../Label/Label.scss';
+@import '../Label/Label.scss';
 
 
 .ms-TextField {
@@ -24,20 +24,20 @@
     cursor: default;
   }
 
-  .input-placeholder({
+  @include input-placeholder{
     color: $ms-color-neutralTertiary;
-  })
+  }
 }
 
 //= State: A required textfield
 .ms-TextField.is-required {
   .ms-Label {
-    @include ms-Label.is-required;
+    @include ms-Label-is-required
   }
 
-  .input-placeholder({
-    @include ms-Label.is-required;
-  })
+  @include input-placeholder {
+    @include ms-Label-is-required
+  }
 }
 
 //= State: An active textfield
@@ -58,22 +58,22 @@
   min-width: 180px;
   outline: 1px solid transparent;
 
-   &:hover {
+  &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-   &:focus {
+  &:focus {
     border-color: $ms-color-themePrimary;
   }
 
-   &:hover,
-   &:focus {
+  &:hover,
+  &:focus {
     outline: 1px solid transparent;
   }
 
-  .input-placeholder({
+  @include input-placeholder {
     color: $ms-color-neutralSecondary;
-  })
+  }
 }
 
 .ms-TextField-description {
@@ -95,11 +95,11 @@
     padding: 7px 0 7px 10px;
   }
 
-   &.is-disabled {
+  &.is-disabled {
     color: $ms-color-neutralTertiary;
 
     .ms-Label {
-      @include ms-Label.is-disabled;
+      @include ms-Label-is-disabled;
     }
   }
 }
@@ -113,12 +113,12 @@
   width: 100%;
   min-width: 180px;
 
-   &:hover {
+  &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-   &:active,
-   &:focus {
+  &:active,
+  &:focus {
     border-color: $ms-color-themePrimary;
   }
 
@@ -142,17 +142,17 @@
     padding-top: 8px;
     padding-bottom: 2px;
 
-     &:active,
-     &:focus {
+    &:active,
+    &:focus {
       outline: 0;
     }
   }
 
-   &.is-disabled {
+  &.is-disabled {
     border-bottom-color: $ms-color-neutralLight;
 
     .ms-Label {
-      @include ms-Label.is-disabled;
+      @include ms-Label-is-disabled;
     }
 
     .ms-TextField-field {

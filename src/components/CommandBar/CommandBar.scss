@@ -32,7 +32,7 @@ $SearchBox-sidePadding: 8px; // padding in input on left and right sides without
 $SearchBox-smallWidth: 36px;  
 $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePadding * 2);
 
-@mixin highContrastBorder($color){
+@mixin highContrastBorder($color) {
     border-left: 1px solid $color;
     border-right: 1px solid $color;
 }
@@ -45,7 +45,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   border: 0;
   position: relative;
 
-   &:focus {
+  &:focus {
     outline: none;
   }
 }
@@ -108,7 +108,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     outline: none;
   }
   
-   &:hover {
+  &:hover {
     background-color: $ms-color-themeLight;
     color: $ms-color-themePrimary;
 
@@ -157,7 +157,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
 .ms-CommandBarItem-overflow {
   display: none;
 
-   &.is-visible {
+  &.is-visible {
     display: inline-block;
   }
 
@@ -182,7 +182,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
 
 .ms-CommandBarItem-link:focus {
   outline: none;
-   &:before {
+  &:before {
     position: absolute;
     left: 2px;
     right: 2px;
@@ -205,7 +205,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   line-height: 1em;
   color: $ms-color-neutralSecondary;
 
-   &:before {
+  &:before {
     height: 10px;
     line-height: $CommandBarItem-textHeight;
   }
@@ -241,7 +241,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     border-right: 1px solid $ms-color-black;
   }
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-themeLight;
     color: $ms-color-themePrimary;
 
@@ -287,19 +287,19 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   -webkit-border-radius: 0;
 
   // hide IE's X button for clearing the input (we have our own)
-   &::-ms-clear {
+  &::-ms-clear {
     display: none;
   } 
 
   //Placeholder text styles
-   &::placeholder {
+  &::placeholder {
     color: $ms-color-neutralPrimary;
     opacity: 1;
     font-size: $ms-font-size-m;
   }
 
   //Fixes older firefox issue.
-   &:placeholder {
+  &:placeholder {
     color: $ms-color-neutralPrimary;
     opacity: 1;
     font-size: $ms-font-size-m;
@@ -344,7 +344,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     max-width: 100%;
   }
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-themeLight;
     color: $ms-color-black;
   }
@@ -355,16 +355,16 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     border-left-width: $SearchBox-sidePadding;
   }
 
-   &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
+  &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
     border-left-width: $SearchBox-height; // leave room for arrow
   }
 
   // when focused, remove the search icon and possibly show arrow icon
-   & .ms-CommandBarSearch-iconSearchWrapper {
+  & .ms-CommandBarSearch-iconSearchWrapper {
     display: none;
   }
 
-   &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
+  &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
     display: block;
   }
 

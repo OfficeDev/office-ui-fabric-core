@@ -53,7 +53,7 @@
   padding-left: 20px;
   position: relative;
 
-   &:hover {
+  &:hover {
     cursor: pointer;
     background-color: $ms-color-themeLighter;
     color: $ms-color-black;
@@ -63,20 +63,20 @@
     }
   }
 
-   &:active {
+  &:active {
     color: $ms-color-themePrimary;
   }
 
   // The currently-selected item.
-   &.is-selected {
+  &.is-selected {
     font-family: $ms-font-family-semibold;
   }
 
   // Items can be disabled.
-   &.is-disabled {
+  &.is-disabled {
     color: $ms-color-neutralTertiary;
 
-     &:hover {
+    &:hover {
       cursor: default;
       border: none;
     }
@@ -87,7 +87,7 @@
   color: $ms-color-neutralPrimary;
   text-decoration: none;
 
-   &:active {
+  &:active {
     color: $ms-color-themePrimary;
   }
 }
@@ -101,8 +101,8 @@
     display: none;
   }
 
-   &:hover {
-     &:after {
+  &:hover {
+    &:after {
       color: $ms-color-neutralDark;
     }
   }
@@ -123,7 +123,7 @@
   width: 30px;
 
   // Search icon.
-   &:after {
+  &:after {
     @include ms-Icon;
     color: $ms-color-neutralSecondary;
     content: '\e039';
@@ -140,7 +140,7 @@
   }
 
   // Opened state.
-   &.is-open {
+  &.is-open {
     width: 200px;
     padding-right: 40px;
     border: none;
@@ -248,13 +248,13 @@
     font-size: $ms-font-size-m;
     padding: 0;
 
-     &:hover {
+    &:hover {
       border-bottom: 2px solid $ms-color-themePrimary;
       background-color: transparent;
     }
 
     // The currently-selected item.
-     &.is-selected {
+    &.is-selected {
       font-family: $ms-font-family-semibold;
       border-bottom: 2px solid $ms-color-themePrimary;
     }
@@ -263,7 +263,7 @@
   // Modifier: Items can contain subitems.
   .ms-NavBar-item.ms-NavBar-item--hasMenu {
     // Add chevron icon.
-     &:after {
+    &:after {
       position: relative;
       top: 3px;
       padding-top: 0;

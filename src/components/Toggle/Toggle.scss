@@ -6,7 +6,7 @@
 // Toggle styles
 
 
-@import (reference) '../Label/Label.scss';
+@import '../Label/Label.scss';
 
 
 // Toggle
@@ -25,22 +25,22 @@
     font-size: $ms-font-size-s;
   }
 
-   &:hover {
+  &:hover {
     .ms-Label { 
       color: $ms-color-black; 
     }
   }
 
-   &:active {
+  &:active {
     .ms-Label { 
       color: $ms-color-neutralPrimary; 
     }
   }
 
   // Disabled state
-   &.is-disabled {
+  &.is-disabled {
     .ms-Label {
-      .ms-Label.is-disabled !important;
+     @include ms-Label-is-disabled;
     }
     .ms-Toggle-field {
       background-color: $ms-color-white !important;
@@ -48,15 +48,11 @@
       pointer-events: none !important;
       cursor: default !important;
 
-       &:before {
+      &:before {
         background-color: $ms-color-neutralTertiaryAlt !important;
       }
     }
   }
-}
-
-.ms-Toggle-input {
-  display: none; // Hide the original, unstyled element
 }
 
 // Description text
@@ -80,9 +76,9 @@
 }
 
 // Slider mixin
-@mixin ms-Toggle-slider($direction){
+@mixin ms-Toggle-slider($direction) {
   // Slider pseudo element
-   &:before {
+  &:before {
     position: absolute;
     display: block;
     box-sizing: content-box;
@@ -95,37 +91,33 @@
     outline: 2px solid transparent;
   }
 
-   & when ($direction = left) {
-     &:before {
+  @if $direction == left {
+    &:before {
+      right: auto;
       border-right: 2.5px solid $ms-color-white;
     }
-
-     &:hover { 
-      background-color: $ms-color-neutralLight; 
-    }
   }
 
-   & when ($direction = right) {
-     &:before {
+  @if $direction == right {
+    &:before {
+      left: auto;
       border-left: 2.5px solid $ms-color-white;
     }
-
-     &:hover { 
-      background-color: $ms-color-themeDark; 
-    }
   }
 
-   &:active { 
+  &:active { 
     background-color: $ms-color-themePrimary; 
   }
 }
 
 // On/Off slide states
 .ms-Toggle-input {
-  position: relative;
+  position: absolute;
+  opacity: 0;
+  top: 0;
 
   // 'Off' state - slider on the left
-   &:not(:checked) + .ms-Toggle-field {
+  & + .ms-Toggle-field {
     background-color: $ms-color-neutralLighter;
 
     @include ms-Toggle-slider(left);
@@ -141,20 +133,29 @@
   }
 
   // 'On' state - slider on the right
-   &:checked {
-     & + .ms-Toggle-field {
-      background-color: $ms-color-themePrimary;
+  &:checked + .ms-Toggle-field {
+    background-color: $ms-color-themePrimary;
 
-      @include ms-Toggle-slider(right);
+    @include ms-Toggle-slider(right);
 
-      // Show the on label / hide the off label
-      .ms-Label--off {
-        display: none;
-      }
+    // Show the on label / hide the off label
+    .ms-Label--off {
+      display: none;
+    }
 
-      .ms-Label--on {
-        display: block;
-      }
+    .ms-Label--on {
+      display: block;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    & + .ms-Toggle-field { 
+      background-color: $ms-color-neutralLight; 
+    }
+    
+    &:checked + .ms-Toggle-field {
+      background-color: $ms-color-themeDark; 
     }
   }
 }

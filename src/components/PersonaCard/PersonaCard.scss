@@ -11,7 +11,7 @@
 // The persona card docks to the bottom of the viewport.
 .ms-PersonaCard {
   @include ms-font-m;
-  .ms-u-slideUpIn10;
+  @include ms-u-slideUpIn10;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -64,45 +64,49 @@
   height: 48px;
 }
 
-.ms-PersonaCard-action {
-  display: inline-block;
-  cursor: pointer;
-  font-size: $ms-font-size-l;
-  height: 48px;
-  line-height: 48px;
-  padding: 0 10px;
-  color: $ms-color-neutralSecondary;
-  position: relative;
-  @include ms-u-borderBox;
+@mixin ms-PersonaCard-action {
+    display: inline-block;
+    cursor: pointer;
+    font-size: $ms-font-size-l;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 10px;
+    color: $ms-color-neutralSecondary;
+    position: relative;
+    @include ms-u-borderBox;
 
-   &:hover {
-    color: $ms-color-neutralDark;
-  }
-
-   &:active {
-    color: $ms-color-themePrimary;
-  }
-
-  // Currently-selected action
-   &.is-active {
-    color: $ms-color-themePrimary;
-
-    // Arrow
-     &:after {
-      @include ms-u-borderBox;
-      @include rotate(45deg);
-      content: "";
-      width: 10px;
-      height: 10px;
-      border: 1px solid $ms-color-neutralTertiaryAlt;
-      background-color: $ms-color-white;
-      position: absolute;
-      border-right: none;
-      border-bottom: none;
-      bottom: -4px;
-      left: 15px;
+    &:hover {
+        color: $ms-color-neutralDark;
     }
-  }
+
+    &:active {
+        color: $ms-color-themePrimary;
+    }
+
+    // Currently-selected action
+    &.is-active {
+        color: $ms-color-themePrimary;
+
+        // Arrow
+        &:after {
+        @include ms-u-borderBox;
+        @include rotate(45deg);
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: 1px solid $ms-color-neutralTertiaryAlt;
+        background-color: $ms-color-white;
+        position: absolute;
+        border-right: none;
+        border-bottom: none;
+        bottom: -4px;
+        left: 15px;
+        }
+    }
+}
+
+.ms-PersonaCard-action {
+  @include ms-PersonaCard-action;
 }
 
 .ms-PersonaCard-overflow {
@@ -112,7 +116,7 @@
   float: right;
   margin-top: -1px;
 
-   &:hover {
+  &:hover {
     color: $ms-color-themePrimary;
   }
 }
@@ -141,7 +145,7 @@
   box-sizing: border-box;
 
   // State: Contents are collapsed to a single line.
-   &.is-collapsed {
+  &.is-collapsed {
     height: 30px;
     overflow: hidden;
 
@@ -224,7 +228,7 @@
   text-align: center;
   width: 30px;
 
-   &:after {
+  &:after {
     @include ms-Icon;
     content: '\e087';
   }
@@ -240,7 +244,7 @@
 }
 
 .ms-PersonaCard-action.ms-PersonaCard-orgChart {
-   &:after {
+  &:after {
     display: none; // Hide arrow for orgchart action
   }
 }

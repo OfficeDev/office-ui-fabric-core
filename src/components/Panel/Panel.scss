@@ -48,11 +48,11 @@ $CommandButtonBlue: #2488D8;
     .ms-CommandBarItem {
       user-select: none;
 
-       &:hover {
+      &:hover {
         background-color: $CommandButtonLighterBlue;
       }
 
-       &:active {
+      &:active {
         background-color: $CommandButtonLightBlue;
 
         .ms-CommandBarItem-icon {
@@ -82,7 +82,7 @@ $CommandButtonBlue: #2488D8;
         padding-right: 12px;
       }
 
-       &:hover {
+      &:hover {
         background-color: $ms-color-themeDark;
         box-shadow: none;
 
@@ -167,40 +167,40 @@ $CommandButtonBlue: #2488D8;
   // Animations -- Default
   .ms-Panel.is-open.ms-Panel-animateIn {
     .ms-Panel-main {
-      .ms-u-slideLeftIn40;
+      @include ms-u-slideLeftIn40;
     }
 
     .ms-Overlay {
-      .ms-u-fadeIn200;
+      @include ms-u-fadeIn200;
     }
   }
 
   .ms-Panel.is-open.ms-Panel-animateOut {
     .ms-Panel-main {
-      .ms-u-slideRightOut40;
+      @include ms-u-slideRightOut40;
     }
     .ms-Overlay {
-      .ms-u-fadeOut200;
+      @include ms-u-fadeOut200;
     }
   }
 
   // Animations - Left panel
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn {
     .ms-Panel-main {
-      .ms-u-slideRightIn40;
+      @include ms-u-slideRightIn40;
     }
 
     .ms-Overlay {
-      .ms-u-fadeIn200;
+      @include ms-u-fadeIn200;
     }
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut {
     .ms-Panel-main {
-      .ms-u-slideLeftOut40;
+      @include ms-u-slideLeftOut40;
     }
     .ms-Overlay {
-      .ms-u-fadeOut200;
+      @include ms-u-fadeOut200;
     }
   }
 

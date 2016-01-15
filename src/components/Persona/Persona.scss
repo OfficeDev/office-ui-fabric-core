@@ -43,7 +43,7 @@
 	width: 52px;
 	height: 52px;
 
-	 &[src=""] {
+	&[src=""] {
 		display: none;
 	}
 }
@@ -374,16 +374,20 @@
 //== Modifier: Persona with darker text
 //
 // Note: Typically applied when the component has a colored background.
-.ms-Persona.ms-Persona--darkText {
-	.ms-Persona-primaryText {
+
+@mixin ms-Persona--darkText {
+    .ms-Persona-primaryText {
 		color: $ms-color-neutralDark;
 	}
-
+    
 	.ms-Persona-secondaryText, 
 	.ms-Persona-tertiaryText, 
 	.ms-Persona-optionalText {
 		color: $ms-color-neutralPrimary;
 	}
+}
+.ms-Persona.ms-Persona--darkText {
+	@include ms-Persona--darkText;
 }
 
 
@@ -393,9 +397,9 @@
 	cursor: pointer;
 	padding: 0 10px;
 
-	 &:not(.ms-Persona--xl) {
-		 &:hover,
-		 &:focus {
+	&:not(.ms-Persona--xl) {
+		&:hover,
+		&:focus {
 			background-color: $ms-color-themeLighter;
 			outline: 1px solid transparent;
 		}

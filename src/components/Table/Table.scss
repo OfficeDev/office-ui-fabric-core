@@ -19,14 +19,14 @@
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-neutralLighter;
     cursor: pointer;
     outline: 1px solid transparent;
   }
 
   // Rows can be selected.
-   &.is-selected {
+  &.is-selected {
     background-color: $ms-color-themeLight;
 
     // A checkmark in a selected row.
@@ -34,12 +34,12 @@
       background-color: $ms-color-themePrimary;
 
       // Hide the checkbox.
-       &:before {
+      &:before {
         display: none;
       }
 
       // But show the mark.
-       &:after {
+      &:after {
         @include ms-Icon;
         content: '\e041';
         color: $ms-color-white;
@@ -85,7 +85,7 @@
   position: relative;
 
   // Empty checkbox.
-   &:before {
+  &:before {
     border: 1px solid $ms-color-neutralTertiary;
     content: '';
     display: block;
@@ -101,12 +101,12 @@
 @media screen and (-ms-high-contrast: active) {
   .ms-Table-row {
     // Rows can be selected.
-     &.is-selected {
+    &.is-selected {
       // A checkmark in a selected row.
       .ms-Table-rowCheck {
         background: none;
         // Show the checkbox.
-         &:before {
+        &:before {
           display: block;
         }
       }

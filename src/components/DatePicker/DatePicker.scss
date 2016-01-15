@@ -48,7 +48,7 @@
 
 // When the picker opens, reveal the content.
 .ms-DatePicker-picker.ms-DatePicker-picker--opened .ms-DatePicker-holder {
-    .ms-u-slideDownIn10;
+    @include ms-u-slideDownIn10;
     @include ms-u-borderBox;
     @include drop-shadow;
     border: 1px solid $ms-color-neutralLight;
@@ -96,7 +96,7 @@
   color: $ms-color-themePrimary;
   margin-top: -1px;
 
-   &:hover {
+  &:hover {
     color: $ms-color-themeDark;
     cursor: pointer;
   }
@@ -121,7 +121,7 @@
     margin: 0;
     padding: 0;
 
-     &:hover { outline: 1px solid transparent; }
+    &:hover { outline: 1px solid transparent; }
   }
 }
 
@@ -222,7 +222,7 @@
   position: relative;
   top: 3px;
 
-   &:hover {
+  &:hover {
     color: $ms-color-neutralDark;
     cursor: pointer;
     outline: 1px solid transparent;
@@ -258,7 +258,7 @@
 .ms-DatePicker-currentYear {
   color: $ms-color-themePrimary;
 
-   &:hover {
+  &:hover {
     color: $ms-color-themeDark;
     cursor: pointer;
   }
@@ -290,12 +290,12 @@
   color: $ms-color-neutralPrimary;
   text-align: center;
 
-   &:hover {
+  &:hover {
     background-color: $ms-color-neutralTertiaryAlt;
     outline: 1px solid transparent;
   }
 
-   &.is-highlighted {
+  &.is-highlighted {
     background-color: $ms-color-neutralPrimary;
     color: $ms-color-white;
   }
@@ -315,7 +315,7 @@
   position: absolute;
   right: 9px;
 
-   &:hover {
+  &:hover {
     outline: 1px solid transparent;
   }
 }
@@ -410,7 +410,7 @@
     font-size: 17px;
     color: $ms-color-neutralPrimary;
 
-     &:hover {
+    &:hover {
       color: $ms-color-neutralPrimary;
       cursor: default;
     }
@@ -469,7 +469,7 @@
     font-size: 12px;
     margin: 0 10px 10px 0;
 
-     &:hover {
+    &:hover {
       outline: 1px solid transparent;
     }
   }

@@ -23,18 +23,18 @@
   line-height: 27px;
   margin-right: 15px;
 
-   &:hover, 
-   &:focus {
+  &:hover, 
+  &:focus {
     color: $ms-color-black;
     cursor: pointer;
   }
 
-   &:active {
+  &:active {
     color: $ms-color-themePrimary;
   }
 
   //== State: Selected
-   &.is-selected {
+  &.is-selected {
     color: $ms-color-themePrimary;
     font-family: $ms-font-family-semibold;
   }
@@ -44,16 +44,16 @@
 .ms-Pivot-link.ms-Pivot-link--overflow {
   color: $ms-color-neutralSecondary;
 
-   &.is-selected {
+  &.is-selected {
     color: $ms-color-themePrimary;
   }
 
-   &:hover:not(.is-selected), 
-   &:focus:not(.is-selected) { 
+  &:hover:not(.is-selected), 
+  &:focus:not(.is-selected) { 
     color: $ms-color-neutralDark; 
   }
 
-   &:active {
+  &:active {
     color: $ms-color-themePrimary !important;
   }
 }
@@ -72,13 +72,13 @@
   .ms-Pivot-link {
     font-size: $ms-font-size-l;
 
-     &.is-selected {
+    &.is-selected {
       font-family: $ms-font-family-semilight;
     }
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-     &:after {
+    &:after {
       font-size: $ms-font-size-l;
     }
   }
@@ -97,18 +97,18 @@
     margin-right: -2px; // Remove space next to inline-block element
     padding: 0 10px;
 
-     &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
-     &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { 
+    &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
+    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { 
       color: $ms-color-black; 
     }
 
-     &:active {
+    &:active {
       color: $ms-color-white !important;
       background-color: $ms-color-themePrimary;
     }
 
     //== State: Selected
-     &.is-selected {
+    &.is-selected {
       background-color: $ms-color-themePrimary;
       color: $ms-color-white;
       font-family: $ms-font-family-semilight;
@@ -116,12 +116,12 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-     &:hover:not(.is-selected), 
-     &:focus:not(.is-selected) {
+    &:hover:not(.is-selected), 
+    &:focus:not(.is-selected) {
       background-color: $ms-color-white;
     }
 
-     &:active {
+    &:active {
       background-color: $ms-color-themePrimary !important;
     }
   }
@@ -135,7 +135,7 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-     &:after {
+    &:after {
       font-size: $ms-font-size-m;
     }
   }
@@ -147,7 +147,7 @@
 @media screen and (-ms-high-contrast: active) {
   .ms-Pivot.ms-Pivot--tabs {
     .ms-Pivot-link {
-       &.is-selected {
+      &.is-selected {
         font-family: $ms-font-family-semibold;
       }
     }

@@ -15,20 +15,25 @@ var fileExtension;
 var template;
 var name;
 
-// Check if building SASS
-if(Config.buildSass) {
-    srcPath = Config.paths.srcSass;
-    cssPlugin = Plugins.sass;
-    fileExtension = '.' + Config.sassExtension;
-    template = 'component-manifest-template' + fileExtension
-    name = "SASS";
-} else {
-    srcPath = Config.paths.srcLess;
-    cssPlugin = Plugins.less;
-    fileExtension = '.' + Config.lessExtension;
-    template = 'component-manifest-template' + fileExtension
-    name = "LESS";
-}
+
+gulp.task('FabricComponents-configureBuild', function() {
+  // Check if building SASS
+  if(Config.buildSass) {
+      srcPath = Config.paths.srcSass;
+      cssPlugin = Plugins.sass;
+      fileExtension = '.' + Config.sassExtension;
+      template = 'component-manifest-template' + fileExtension
+      name = "SASS";
+  } else {
+      srcPath = Config.paths.srcLess;
+      cssPlugin = Plugins.less;
+      fileExtension = '.' + Config.lessExtension;
+      template = 'component-manifest-template' + fileExtension
+      name = "LESS";
+  }
+  return;
+});
+  
 
 
 //
@@ -47,12 +52,11 @@ gulp.task('FabricComponents-nuke', function () {
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
     return gulp.src([Config.paths.componentsPath + '/**'])
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.changed(Config.paths.distComponents))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Moving Fabric Component Assets to Dist"
         })))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distComponents));
 });
 
@@ -61,59 +65,45 @@ gulp.task('FabricComponents-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-gulp.task('FabricComponents-buildAndCombineStyles', function () {
-
-    return gulp.src(Config.paths.srcLess + '/fabric.components.less')
-        .pipe(cssPlugin())
-            .on('error', ErrorHandling.onErrorInPipe)
+gulp.task('FabricComponents-buildAndCombineStyles', ['FabricComponents-configureBuild'], function () {
+    var stream = gulp.src(Config.paths.srcLess + '/fabric.components.less')
+        .pipe(Plugins.plumber())
+        .pipe(Plugins.lesshint({
+            configPath: './.lesshintrc'
+        }))
+        .pipe(ErrorHandling.LESSHintErrors())
+        .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building Fabric Components " + name + " into One Files"
         })))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.autoprefixer(
             {
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
             }
         ))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.rename('fabric.components.css'))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.cssbeautify())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.csscomb())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distCSS))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.rename('fabric.components.min.css'))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.cssMinify())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distCSS))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.flipper())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.cssbeautify())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.csscomb())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.rename('fabric.components.rtl.css'))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distCSS))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.cssMinify())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.rename('fabric.components.rtl.min.css'))
-            .on('error', ErrorHandling.onErrorInPipe)
-        .pipe(gulp.dest(Config.paths.distCSS))
-            .on('error', ErrorHandling.onErrorInPipe);
+        .pipe(gulp.dest(Config.paths.distCSS));
+     return stream;
+     
 });
 
-gulp.task('FabricComponents-buildStyles', function () {
+gulp.task('FabricComponents-buildStyles', ['FabricComponents-configureBuild'], function () {
     return folderList.map(function(componentName) {
        
         var srcTemplate = Config.paths.templatePath + '/'+ template;
@@ -144,21 +134,16 @@ gulp.task('FabricComponents-buildStyles', function () {
 
 gulp.task('FabricComponents-moveJs', function() {
     return gulp.src(Config.paths.componentsPath + '/**/*.js')
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.concat('jquery.fabric.js'))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.header(Banners.getJSCopyRight()))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.changed(Config.paths.distJS))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Moving Fabric Component JS"
         })))
         .pipe(gulp.dest(Config.paths.distJS))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.rename('jquery.fabric.min.js'))
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(Plugins.uglify())
-            .on('error', ErrorHandling.onErrorInPipe)
         .pipe(gulp.dest(Config.paths.distJS));
 });
 

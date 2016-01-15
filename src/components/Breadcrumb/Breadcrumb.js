@@ -48,7 +48,7 @@ fabric.Breadcrumb.prototype = (function() {
     var i = 0;
     var item;
     var text;
-    var link;
+    var link; 
     var tabIndex;
 
     for(i; i < length; i++) {
@@ -64,10 +64,10 @@ fabric.Breadcrumb.prototype = (function() {
    * Re-render lists on resize
    *
    */
-  var _onResize = function(event) {
+  var _onResize = function() {
     _closeOverflow(null);
     _renderList();
-  };
+  }; 
 
   /**
    * render breadcrumbs and overflow menus
@@ -227,6 +227,6 @@ fabric.Breadcrumb.prototype = (function() {
 
   return {
     init: init
-  }
+  };
 
 }());

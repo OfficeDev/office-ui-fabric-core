@@ -21,7 +21,9 @@
   min-height: 40px;
   width: 100%;
 
-  &:hover { border-color: @ms-color-neutralSecondaryAlt; }
+  &:hover {
+   border-color: @ms-color-neutralSecondaryAlt;
+  }
 }
 
 // Highlight the search box when the people picker is active
@@ -31,7 +33,7 @@
 
 // The search field.
 .ms-PeoplePicker-searchField {
-  border: none;
+  border: 0;
   box-sizing: border-box;
   display: inline-block;
   float: left;
@@ -119,7 +121,7 @@
 
   // The first result group needs to be bumped up 1px to account for border on ms-PeoplePicker-results
   &:first-child {
-    border-top: none;
+    border-top: 0;
   }
 }
 
@@ -176,8 +178,14 @@
   margin: 0 0 10px 0;
   padding: 0 0 0 9px;
 
-  &:hover { background-color: @ms-color-neutralLight; outline: 1px solid transparent; }
-  &:focus { outline: 1; }
+  &:hover {
+   background-color: @ms-color-neutralLight;
+   outline: 1px solid transparent;
+  }
+
+  &:focus {
+   outline: 1;
+  }
 
   &.ms-PeoplePicker-resultBtn--compact {
     height: 30px;
@@ -188,7 +196,7 @@
 .ms-PeoplePicker-resultAction {
   .button-reset();
   display: block;
-  transition: background-color .367s @ms-ease1;
+  transition: background-color 0.367s @ms-ease1;
   height: 50px;
   position: absolute;
   right: 0;
@@ -205,8 +213,14 @@
     left: 8px;
   }
 
-  &:hover { background-color: @ms-color-neutralTertiaryAlt; outline: 1px solid transparent; }
-  &:active { background-color: @ms-color-themeTertiary; }
+  &:hover {
+    background-color: @ms-color-neutralTertiaryAlt;
+    outline: 1px solid transparent;
+  }
+
+  &:active {
+    background-color: @ms-color-themeTertiary;
+  }
 }
 
 // A result can contain additional content (usually a ms-PeoplePicker-resultList of Persona components) that is hidden initially

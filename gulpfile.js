@@ -15,6 +15,14 @@ var watchTasks = [
     'FabricDemoPage'
 ];
 
+var buildTasks = [
+    'Fabric', 
+    'FabricComponents', 
+    'ComponentSamples', 
+    'Samples', 
+    'FabricDemoPage'
+];
+
 //////////////////////////
 // INCLUDE FABRIC TASKS
 //////////////////////////
@@ -55,43 +63,69 @@ gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples',
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
-    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
-    }));
-});
-
-
-// Watch and build Fabric when sources change.
-gulp.task('watch-sass-debug', ['debugMode', 'SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-sass', ['ConfigureEnvironment-setSassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-debug', ['debugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-sass-debug', ['ConfigureEnvironment-setSassMode', 'ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
-gulp.task('SassMode', function() {
-    return Config.buildSass = true;
+// Watch and build Fabric when sources change.
+gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+    }));
 });
 
-gulp.task('debugMode', function() {
-    return Config.debugMode = true;
+//
+// Check For errors
+//
+gulp.task('Errors-checkAllErrors', buildTasks,  function() {
+    var returnFailedBuild = false;
+     if (ErrorHandling.numberOfErrors() > 0) {
+         ErrorHandling.generateError("------------------------------------------");
+         ErrorHandling.generateBuildError("Errors in build, please fix and re build Fabric");
+         ErrorHandling.showNumberOfErrors(ErrorHandling.numberOfErrors());
+         ErrorHandling.generateError("------------------------------------------");
+         ErrorHandling.generateBuildError("Exiting build");
+         ErrorHandling.generateError("------------------------------------------");
+         returnFailedBuild = true;
+     }
+          
+     if (ErrorHandling.numberOfWarnings() > 0) {
+         ErrorHandling.generateError("------------------------------------------");
+         ErrorHandling.generateBuildError("Warnings in build, please fix and re build Fabric");
+         ErrorHandling.showNumberOfWarnings(ErrorHandling.numberOfWarnings());
+         ErrorHandling.generateError("------------------------------------------");
+         ErrorHandling.generateBuildError("Exiting build");
+         ErrorHandling.generateError("------------------------------------------");
+
+         returnFailedBuild = true;
+     }
+     
+     if (returnFailedBuild) {
+        process.exit(1);
+     } else {
+        return;
+     }
 });
+
 
 //
 // Default Build
 // ----------------------------------------------------------------------------
 
-gulp.task('build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'All-finished']);
-gulp.task('re-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricServer', 'FabricDemoPage', 'All-updated']);
+var buildWithMessages = buildTasks.concat(['Errors-checkAllErrors', 'All-finished']);
+gulp.task('build', buildWithMessages);
 
-gulp.task('build-sass', ['SassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'All-finished']);
+var rebuildWithMessages = buildTasks.concat(['All-updated']);
+gulp.task('re-build', rebuildWithMessages);
 
 gulp.task('default', ['build']);
 
@@ -99,7 +133,8 @@ gulp.task('default', ['build']);
 // Fabric Messages
 // ----------------------------------------------------------------------------
 
-gulp.task('All-finished', watchTasks, function () {
+var allFinishedtasks = watchTasks.concat(['Errors-checkAllErrors']);
+gulp.task('All-finished', allFinishedtasks, function () {
     console.log(ConsoleHelper.generateSuccess('All Fabric built successfully, you may now celebrate and dance!', true));
 });
 

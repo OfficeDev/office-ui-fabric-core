@@ -94,7 +94,6 @@
     /** Get some variables ready. */
     var $monthControls = $datePicker.find('.ms-DatePicker-monthComponents');
     var $goToday = $datePicker.find('.ms-DatePicker-goToday');
-    var $dayPicker = $datePicker.find('.ms-DatePicker-dayPicker');
     var $monthPicker = $datePicker.find('.ms-DatePicker-monthPicker');
     var $yearPicker = $datePicker.find('.ms-DatePicker-yearPicker');
     var $pickerWrapper = $datePicker.find('.ms-DatePicker-wrap');
@@ -201,18 +200,18 @@
     });
 
     /** Switch to the default state. */
-    $monthPicker.on('click', '.js-showDayPicker', function(event) {
+    $monthPicker.on('click', '.js-showDayPicker', function() {
       $datePicker.removeClass('is-pickingMonths');
       $datePicker.removeClass('is-pickingYears');
     });
 
     /** Switch to the is-pickingMonths state. */
-    $monthControls.on('click', '.js-showMonthPicker', function(event) {
+    $monthControls.on('click', '.js-showMonthPicker', function() {
       $datePicker.toggleClass('is-pickingMonths');
     });
 
     /** Switch to the is-pickingYears state. */
-    $monthPicker.on('click', '.js-showYearPicker', function(event) {
+    $monthPicker.on('click', '.js-showYearPicker', function() {
       $datePicker.toggleClass('is-pickingYears');
     });
 
@@ -222,13 +221,13 @@
   function changeHighlightedDate($picker, newYear, newMonth, newDay) {
 
     /** All variables are optional. If not provided, default to the current value. */
-    if (newYear == null) {
+    if (newYear === null) {
       newYear = $picker.get('highlight').year;
     }
-    if (newMonth == null) {
+    if (newMonth === null) {
       newMonth = $picker.get('highlight').month;
     }
-    if (newDay == null) {
+    if (newDay === null) {
       newDay = $picker.get('highlight').date;
     }
 
@@ -244,14 +243,13 @@
     /** Get some variables ready. */
     var $monthPicker = $datePicker.find('.ms-DatePicker-monthPicker');
     var $yearPicker = $datePicker.find('.ms-DatePicker-yearPicker');
-    var $pickerWrapper = $datePicker.find('.ms-DatePicker-wrap');
     var $picker = $datePicker.find('.ms-TextField-field').pickadate('picker');
 
     /** Set the correct year. */
     $monthPicker.find('.ms-DatePicker-currentYear').text($picker.get('view').year);
 
     /** Highlight the current month. */
-    $monthPicker.find('.ms-DatePicker-monthOption').removeClass('is-highlighted')
+    $monthPicker.find('.ms-DatePicker-monthOption').removeClass('is-highlighted');
     $monthPicker.find('.ms-DatePicker-monthOption[data-month="' + $picker.get('highlight').month + '"]').addClass('is-highlighted');
 
     /** Generate the grid of years for the year picker view. */
@@ -274,7 +272,7 @@
     $yearPicker.append(output);
 
     /** Highlight the current year. */
-    $yearPicker.find('.ms-DatePicker-yearOption').removeClass('is-highlighted')
+    $yearPicker.find('.ms-DatePicker-yearOption').removeClass('is-highlighted');
     $yearPicker.find('.ms-DatePicker-yearOption[data-year="' + $picker.get('highlight').year + '"]').addClass('is-highlighted');
   }
   

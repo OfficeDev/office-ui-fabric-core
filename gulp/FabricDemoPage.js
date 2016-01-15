@@ -18,18 +18,14 @@ gulp.task('FabricDemoPage', ['Fabric', 'FabricComponents', 'ComponentSamples', '
     getSamplesFolders.splice(index, 1);
     
     return gulp.src(Config.paths.templatePath + '/'+ 'samples-index.html')
-        .on('error', ErrorHandling.onErrorInPipe)
+    .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
     .pipe(Plugins.data(function () {
         return { 
                     "components" : getComponentFolders, 
                     "samples": getSamplesFolders
                };
     }))
-        .on('error', ErrorHandling.onErrorInPipe)
     .pipe(Plugins.template())
-        .on('error', ErrorHandling.onErrorInPipe)
     .pipe(Plugins.rename('index.html'))
-        .on('error', ErrorHandling.onErrorInPipe)
-    .pipe(gulp.dest(Config.paths.distSamples))
-        .on('error', ErrorHandling.onErrorInPipe);
+    .pipe(gulp.dest(Config.paths.distSamples));
 });

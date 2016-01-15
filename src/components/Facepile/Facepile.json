@@ -2,7 +2,7 @@
   "name": "Facepile",
   "notes": "",
   "template": "Facepile.html",
-  "class": "ms-FacePile",
+  "class": "ms-Facepile",
   "dependencies": [
     "Overlay",
     "Link",

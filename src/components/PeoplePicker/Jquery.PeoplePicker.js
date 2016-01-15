@@ -40,13 +40,13 @@ var fabric = fabric || {};
           $peoplePicker.removeClass("is-active");
         }
 
-        /** Display a maxiumum of 5 people in facepile variant */
-        if ($peoplePicker.hasClass('ms-PeoplePicker--facePile') && $searchField.val() === "") {
+        /** Display a maxiumum of 5 people in Facepile variant */
+        if ($peoplePicker.hasClass('ms-PeoplePicker--Facepile') && $searchField.val() === "") {
           $peopleList.children(":gt(4)").hide();
         }
 
-        /** Animate results and members in facepile variant. */
-        if ($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+        /** Animate results and members in Facepile variant. */
+        if ($peoplePicker.hasClass('ms-PeoplePicker--Facepile')) {
           // $results.addClass('ms-u-slideDownIn20');
           $selectedPeople.addClass('ms-u-slideDownIn20');
           setTimeout(function() { $results.removeClass('ms-u-slideDownIn20'); $selectedPeople.removeClass('ms-u-slideDownIn20');}, 1000);
@@ -58,7 +58,7 @@ var fabric = fabric || {};
         event.stopPropagation();
 
         /** Before opening, size the results panel to match the people picker. */
-        if (!$peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+        if (!$peoplePicker.hasClass('ms-PeoplePicker--Facepile')) {
           $results.width($peoplePicker.width() - 2);
         }
 
@@ -68,7 +68,7 @@ var fabric = fabric || {};
         /** Temporarily bind an event to the document that will close the people picker when clicking anywhere. */
         $(document).bind("click.peoplepicker", function() {
             $peoplePicker.removeClass('is-active');
-            if ($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+            if ($peoplePicker.hasClass('ms-PeoplePicker--Facepile')) {
               $peoplePicker.removeClass('is-searching');
               $('.ms-PeoplePicker-selected').show();
               $('.ms-PeoplePicker-searchMore').removeClass('is-active');
@@ -142,13 +142,13 @@ var fabric = fabric || {};
                                     '</div>' +
                                     '<button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>' +
                                 '</li>';
-          /** Tokenize selected persona if not facepile or memberslist variants */
-          if (!$peoplePicker.hasClass('ms-PeoplePicker--facePile') && !$peoplePicker.hasClass('ms-PeoplePicker--membersList') ) {
+          /** Tokenize selected persona if not Facepile or memberslist variants */
+          if (!$peoplePicker.hasClass('ms-PeoplePicker--Facepile') && !$peoplePicker.hasClass('ms-PeoplePicker--membersList') ) {
             $searchField.before(personaHTML);
             $peoplePicker.removeClass("is-active");
             resizeSearchField($peoplePicker);
           }
-          /** Add selected persona to a list if facepile or memberslist variants */
+          /** Add selected persona to a list if Facepile or memberslist variants */
           else {
             if (!$selected.hasClass('is-active')) {
               $selected.addClass('is-active');
@@ -204,8 +204,8 @@ var fabric = fabric || {};
           spinner.start();
         }
 
-        /** Show all results in facepile variant */
-        if($peoplePicker.hasClass('ms-PeoplePicker--facePile')) {
+        /** Show all results in Facepile variant */
+        if($peoplePicker.hasClass('ms-PeoplePicker--Facepile')) {
           setTimeout(function() {$peopleList.children().show();}, 1500);
         }
         

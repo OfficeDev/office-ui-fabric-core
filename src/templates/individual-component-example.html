@@ -23,9 +23,6 @@
         });
 
         $('.ms-Panel').FilePicker();
-      } else if ($('.ms-FacePile').length > 0) {
-          $('.ms-FacePile').FacePile();
-          //$('.ms-PeoplePicker').PeoplePicker();
       } else {
         if ($.fn.<%= componentName %>) {
           $('.ms-<%= componentName %>').<%= componentName %>();

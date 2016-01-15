@@ -1,6 +1,7 @@
 {
   "name": "Persona",
   "notes": "The persona component is used to represent a person. A placeholder icon is included in every persona as a fallback for when there is no img src or the img hasn't been received yet from the server.",
+  "description": "The persona component is used to represent a person. Circular framing of the user's avatar is currently the default along with circular presence indicators. A placeholder icon is included in every persona as a fallback for when there is no img src or the img hasn't been received yet from the server.",
   "template": "Persona.html",
   "class": "ms-Persona",
   "wrapBranches": true,

@@ -6,16 +6,11 @@
 // Icon definitions
 
 
+@import './Fabric.Icons';
+
 // Base icon definition
 .ms-Icon {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  font-family: 'Office365Icons';
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  speak: none;
+  @include ms-Icon();
 }
 
 // Modifiers: Each of the icons.

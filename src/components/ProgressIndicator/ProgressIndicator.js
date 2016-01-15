@@ -99,5 +99,5 @@ fabric.ProgressIndicator.prototype = (function() {
     setProgress: setProgress,
     setTotal: setTotal,
     cacheDOM: cacheDOM
-  }
+  };
 }());

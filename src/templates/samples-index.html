@@ -34,12 +34,18 @@
 <body>
 
 	<h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Components</h1>
-
-	<%= components %>
+    <div class="LinkContainer">
+        <% components.forEach(function(component) { %>
+            <a href="Components/<%= component %>/index.html" class="ms-Link ms-font-l ms-fontWeight-semilight ms-bgColor-neutralLighter--hover"><%= component %></a>
+        <% }); %>
+    </div>
 
 	<h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Samples</h1>
-
-	<%= samples %>
+    <div class="LinkContainer">
+        <% samples.forEach(function(sample) { %>
+            <a href="<%= sample %>/index.html" class="ms-Link ms-font-l ms-fontWeight-semilight ms-bgColor-neutralLighter--hover"><%= sample %></a>
+        <% }); %>
+    </div>
 
 </body>
 </html>

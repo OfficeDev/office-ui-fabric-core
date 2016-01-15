@@ -3,13 +3,13 @@
 ### Contents
 
 - [Overview](#overview)
-- [Components Overview](#components-overview)
-- [Step 1 – Setting up your project](#setting-up-your-project)
-- [Step 2 – Adding Fabric to a project](#adding-to-a-project)
-- [Step 3 – Prepping your app](#prepping-your-app)
-- [Step 4 – Using Fabric components](#using-fabric-components)
-- [Step 5 – Using Fabric typography](#using-fabric-typography)
-- [Step 6 – Adding more complex components](#adding-complex-components)
+- [Components overview](#components-overview)
+- [Step 1 – Setting up your project](#step-1--setting-up-your-project)
+- [Step 2 – Adding Fabric to a project](#step-2--adding-fabric-to-a-project)
+- [Step 3 – Prepping your app](#step-3--prepping-your-app)
+- [Step 4 – Using Fabric components](#step-4--using-fabric-components)
+- [Step 5 – Using Fabric typography](#step-5--using-fabric-typography)
+- [Step 6 – Adding more complex components](#step-6--adding-more-complex-components)
 
 ## Overview
 
@@ -22,7 +22,7 @@ If you're building an Office Add-in, you can find simple instructions for using 
 
 Components are snippets of HTML and CSS that can be used in any application as a skin for common UI elements like Textfields, Toggle Switches, Lists, and People Pickers. Fabric's components exist in Microsoft products today and are used by millions of customers. Components can be manipulated fairly easily, and, in this tutorial, we will be tweaking a few of them.
 
-Now, let's get started building our application.
+Now, let's start building our application.
 
 ## Step 1 – Setting up your project
 
@@ -33,7 +33,7 @@ todo/
 |-- css/
 ```
 
-Now open up your favorite text editor or IDE and create a new file called index.html in the root directory (todo/), then add the following to it:
+Now open up your favorite text editor or IDE and create a new file called index.html in the root `todo/` directory, containing a simple HTML document:
 
 ```html
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ Now open up your favorite text editor or IDE and create a new file called index.
 
 ## Step 2 – Adding Fabric to a project
 
-Go [here to download the latest .zip of Fabric  (the first zip "office-ui-fabrc-[version].zip")](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest), and then extract the contents. Then go into `/dist/css` and copy **fabric.css** and **fabric.components.css** into your `todo/css/` project folder. Then add the following lines to the `<head>` section of your index.html document:
+Go to the [latest release of Fabric](https://github.com/OfficeDev/Office-UI-Fabric/releases/latest) and scroll down to the downloads section. Download the first ZIP file (e.g. office-ui-fabric-[version].zip) and extract its contents. Then go into `/dist/css` and copy **fabric.css** and **fabric.components.css** into your `todo/css/` project folder. Then add the following lines to the `<head>` section of your `index.html` document:
 
 
 ```html
@@ -56,13 +56,13 @@ Go [here to download the latest .zip of Fabric  (the first zip "office-ui-fabrc-
 <link href="css/fabric.components.css" type="text/css" rel="stylesheet" />
 ```
 
-The first file includes the core Fabric styles (typography, colors, animations, etc.), while the second includes styles for all of Fabric's components. Note that Fabric comes with several other CSS files that can be used to improve or optimize your application. These include .rtl.css versions for right-to-left languages, as well as individual CSS files for each component, so you can use only the components your application needs. There are also .min.css versions of each of these, which should be used in production to save bandwidth. For now, we will use the full versions of the core Fabric styles and components for simpler debugging and quicker development.
+The first file includes the core Fabric styles (typography, colors, animations, etc.) and the second includes styles for all of the components. Note that Fabric comes with several other CSS files that can be used to improve or optimize your application. These include .rtl.css versions for right-to-left languages, as well as individual CSS files for each component, allowing you to include styles for only the components your application uses. There are also .min.css versions of each of these, which should be used in production to save bandwidth. For now, we will use the full versions of the core Fabric styles and components for simple debugging and quick development.
 
 After linking to the Fabric CSS files, your page will now have access to all of the colors, fonts, animations, and component styles that Fabric offers.
 
 ### Create a new style sheet for our application
 
-We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary.  Create a new file titled **app.css** in your `todo/css/` directory and add a link to it _after_ fabric.components.css in index.html:
+We will now create a CSS file for your application, which we'll use to add custom styles and to override Fabric component styles where necessary. Create a new file titled **app.css** in your `todo/css/` directory and add a link to it _after_ fabric.components.css in index.html:
 
 ```html
 <link href="css/fabric.css" type="text/css" rel="stylesheet" />
@@ -70,7 +70,7 @@ We will now create a CSS file for your application, which we'll use to add custo
 <link href="css/app.css" type="text/css" rel="stylesheet" />
 ```
 
-**_NOTE_**: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles there will have a high enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
+**_NOTE_**: It's important that app.css goes _after_ Fabric's CSS files to ensure that any application-specific styles will have enough specificity to override Fabric styles if necessary. While Fabric does have a lot great pre-existing styles, you may need tweak them to fit your application's specific requirements. 
 
 At this point, your directory should look like this:
 
@@ -101,7 +101,7 @@ And index.html should look like this:
 
 ## Step 3 – Prepping your app
 
-Let's start adding Fabric Components to our ToDo app. Below is a preview of what our app will look like when we're finished:
+Let's start adding Fabric components to our app. Below is a preview of what our finished app will look like:
 
 ![Third screenshot of ToDo app](http://odux.azurewebsites.net/github/img/tutorials/intro/ThirdAppLook.png)
 
@@ -166,7 +166,7 @@ Fabric includes a responsive grid system, similar to those seen in other UI tool
 </div>
 ```
 
-Now for the fun part: let's add some component HTML into our ToDo app. Navigate to where you extracted Fabric, then open the following component files in your code editor:
+Now for the fun part: let's add some components to our app! Navigate to where you extracted Fabric, then open the following component files in your code editor:
 
 ```
 dist/components/Button/Button.html

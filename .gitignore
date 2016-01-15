@@ -54,3 +54,4 @@ ehthumbs.db
 *.msi
 *.msm
 *.msp
+.vscode/

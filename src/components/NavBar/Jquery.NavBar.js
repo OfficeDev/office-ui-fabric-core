@@ -44,7 +44,10 @@
 
         // Does the selected item have a menu?
         if ($(this).hasClass('ms-NavBar-item--hasMenu')) {
-
+          
+          // First, close any neighboring menus.
+          $(this).siblings('.ms-NavBar-item--hasMenu').children('.ms-ContextualMenu:first').removeClass('is-open');
+          
           // Toggle 'is-open' to open or close it.
           $(this).children('.ms-ContextualMenu:first').toggleClass('is-open');
 
@@ -78,7 +81,7 @@
       });
 
       // Hide any menus and close the search box when clicking anywhere in the document.
-      $(document).on('click', 'html', function(event) {
+      $(document).on('click', 'html', function() {
 		var $searchBox = $navBar.find('.ms-NavBar-item.ms-NavBar-item--search .ms-TextField-field');  
         $navBar.find('.ms-NavBar-item').removeClass('is-selected').find('.ms-ContextualMenu').removeClass('is-open');
 

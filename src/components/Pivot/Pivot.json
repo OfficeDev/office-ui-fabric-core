@@ -1,6 +1,7 @@
 {
   "name": "Pivot",
   "notes": "",
+  "description": "A navigational, layout component that allows users to switch between different sets of content. Fabric provides a typography focused variant - Pivot - and a tabular variant - Tabs - along with two sizes for each. All variants include an overflow button that can be used in conjunction with {0} ContextualMenu {1} to present more options to the user.",
   "template": "Pivot.html",
   "class": "ms-Pivot",
   "wrapBranches": true,

@@ -10,8 +10,10 @@
   .ms-u-normalize;
   margin-bottom: 17px;
   z-index: @ms-zIndex-DatePicker;
-  
-  .ms-TextField{ position: relative; }
+
+  .ms-TextField {
+   position: relative;
+  }
 }
 
 // Base wrapper for the date picker.
@@ -26,11 +28,11 @@
 // Insert a calendar icon over the date field.
 .ms-DatePicker-event {
   color: @ms-color-neutralSecondary;
-  font-size:   21px;
+  font-size: 21px;
   line-height: 20px;
   pointer-events: none;
   position: absolute;
-  right:  5px;
+  right: 5px;
   bottom: 5px;
   z-index: @ms-zIndex-middle;
 }
@@ -56,9 +58,9 @@
 }
 
 // When a picker opens, always open it in front of other closed pickers
-.ms-DatePicker-picker--focused.ms-DatePicker-picker--opened { 
-  position: relative; 
-  z-index: @ms-zIndex-front; 
+.ms-DatePicker-picker--focused.ms-DatePicker-picker--opened {
+  position: relative;
+  z-index: @ms-zIndex-front;
 }
 
 
@@ -121,13 +123,16 @@
     margin: 0;
     padding: 0;
 
-    &:hover { outline: 1px solid transparent; }
+    &:hover {
+        outline: 1px solid transparent;
+    }
   }
 }
 
 
 // The days on the calendar.
-.ms-DatePicker-day, .ms-DatePicker-weekday {
+.ms-DatePicker-day,
+.ms-DatePicker-weekday {
   width: 40px;
   height: 40px;
   padding: 0;
@@ -214,7 +219,6 @@
   display: block;
   float: right;
   margin-left: 10px;
-  text-align: center;
   line-height: 40px;
   text-align: center;
   font-size: 21px;

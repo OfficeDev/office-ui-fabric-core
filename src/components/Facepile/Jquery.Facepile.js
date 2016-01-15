@@ -22,11 +22,7 @@
       var $panel = $('.ms-FacePile-panel.ms-Panel');
       var $panelMain = $panel.find(".ms-Panel-main");
       var $picker = $('.ms-PeoplePicker.ms-PeoplePicker--facePile');
-      var $pickerResults = $picker.find(".ms-PeoplePicker-results");
-      var $pickerMembersArea = $picker.find('.ms-PeoplePicker-selected');
       var $pickerMembers = $picker.find('.ms-PeoplePicker-selectedPeople');
-      var $pickerMembersCount = $picker.find(".ms-PeoplePicker-selectedCount");
-      var $pickerSearchField = $picker.find(".ms-PeoplePicker-searchField");
       var $personaCard = $('.ms-FacePile').find('.ms-PersonaCard');
 
 
@@ -48,7 +44,7 @@
       };
 
       /** Open panel with people picker */
-      $facePile.on("click", ".js-addPerson", function(event) {
+      $facePile.on("click", ".js-addPerson", function() {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open")
               .removeClass('ms-FacePile-panel--overflow ms-Panel--right')
@@ -63,7 +59,7 @@
       });
 
       /** Open oveflow panel with list of members */
-      $facePile.on("click", ".js-overflowPanel", function(event) {
+      $facePile.on("click", ".js-overflowPanel", function() {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open")
               .removeClass('ms-FacePile-panel--addPerson')
@@ -82,7 +78,7 @@
         var selectedInitials = (function() {
           var nameArray = name.split(' ');
           var nameInitials = '';
-          for (i = 0; i < nameArray.length; i++) {
+          for (var i = 0; i < nameArray.length; i++) {
             nameInitials += nameArray[i].charAt(0);
           }
 
@@ -144,15 +140,15 @@
         var selectedInitials = (function() {
           var name = selectedName.split(' ');
           var nameInitials = '';
-          for (i = 0; i < name.length; i++) {
+          for (var i = 0; i < name.length; i++) {
             nameInitials += name[i].charAt(0);
           }
 
-          return nameInitials.substring(0,2);;
+          return nameInitials.substring(0,2);
         })();
         var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
         var selectedImage = $(this).find('.ms-Persona-image').attr('src');
-        var $card = $('.ms-PersonaCard')
+        var $card = $('.ms-PersonaCard');
         var $cardName = $card.find('.ms-Persona-primaryText');
         var $cardTitle = $card.find('.ms-Persona-secondaryText');
         var $cardInitials = $card.find('.ms-Persona-initials');

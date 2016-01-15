@@ -40,7 +40,7 @@ fabric.MessageBanner.prototype = (function() {
     /**
      * sets styles on resize
      */
-    var _onResize = function(event) {
+    var _onResize = function() {
         _clientWidth = _errorBanner.offsetWidth;
         if(window.innerWidth >= SMALL_BREAK_POINT ) {
             _resizeRegular();
@@ -64,7 +64,7 @@ fabric.MessageBanner.prototype = (function() {
             }
         }
         _clipper.style.width = _textWidth;
-    }
+    };
 
     /**
      * resize below 480 pixel breakpoint
@@ -77,7 +77,7 @@ fabric.MessageBanner.prototype = (function() {
             _textWidth = (_clientWidth - (_bufferElementsWidthSmall + _closeButton.offsetWidth)) + "px";
         }
         _clipper.style.width = _textWidth;
-    }
+    };
     /**
      * caches elements and values of the component
      */
@@ -133,7 +133,7 @@ fabric.MessageBanner.prototype = (function() {
      */
     var _showBanner = function() {
         _errorBanner.className = "ms-MessageBanner";
-    }
+    };
 
     /**
      * sets handlers for resize and button click events
@@ -158,5 +158,5 @@ fabric.MessageBanner.prototype = (function() {
     return {
         init: init,
         showBanner: _showBanner
-    }
+    };
 }());

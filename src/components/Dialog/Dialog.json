@@ -13,11 +13,13 @@
     "Dialog.html",
     "Dialog.Close.html",
     "Dialog.LgHeader.html",
-    "Dialog.Multiline.html"
+    "Dialog.Multiline.html",
+    "Dialog.Blocking.html"
   ],
   "dependencies": [
     "Button",
-    "ChoiceField"
+    "ChoiceField",
+    "Overlay"
   ],
   "branches": [
     {
@@ -54,6 +56,11 @@
       "name": "Large Header",
       "class": "ms-Dialog--lgHeader",
       "template": "Dialog.LgHeader.html"
+    },
+    {
+      "name": "Blocking",
+      "class": "ms-Dialog--blocking",
+      "template": "Dialog.Blocking.html"
     }
   ]
 }

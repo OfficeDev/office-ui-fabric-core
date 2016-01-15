@@ -147,7 +147,7 @@
   .ms-Persona {
 
     &:hover {
-      @include ms-Persona.ms-Persona--darkText;
+      @include ms-Persona--darkText;
       cursor: pointer;
     }
 

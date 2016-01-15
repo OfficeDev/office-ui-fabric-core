@@ -71,7 +71,7 @@
 .ms-Persona-secondaryText, 
 .ms-Persona-tertiaryText, 
 .ms-Persona-optionalText {
-	@mixin noWrap();
+	@include noWrap();
 	width: 190px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -374,16 +374,20 @@
 //== Modifier: Persona with darker text
 //
 // Note: Typically applied when the component has a colored background.
-.ms-Persona.ms-Persona--darkText {
-	.ms-Persona-primaryText {
+
+@mixin ms-Persona--darkText {
+    .ms-Persona-primaryText {
 		color: $ms-color-neutralDark;
 	}
-
+    
 	.ms-Persona-secondaryText, 
 	.ms-Persona-tertiaryText, 
 	.ms-Persona-optionalText {
 		color: $ms-color-neutralPrimary;
 	}
+}
+.ms-Persona.ms-Persona--darkText {
+	@include ms-Persona--darkText;
 }
 
 

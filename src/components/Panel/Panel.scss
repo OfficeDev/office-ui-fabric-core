@@ -140,7 +140,7 @@ $CommandButtonBlue: #2488D8;
 
 .ms-Panel.is-open.ms-Panel-animateOut {
   .ms-Panel-main {
-    @mixin ms-u-fadeOut100();
+    @include ms-u-fadeOut100();
   }
 
   .ms-Overlay {

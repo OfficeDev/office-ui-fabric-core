@@ -16,7 +16,7 @@
   // State: Disabled searchbox
   &.is-disabled {
     .ms-SearchBox-label {
-      @include ms-Label.is-disabled;
+      @include ms-Label-is-disabled;
     }
     .ms-SearchBox-icon {
       color: $ms-color-neutralTertiaryAlt;

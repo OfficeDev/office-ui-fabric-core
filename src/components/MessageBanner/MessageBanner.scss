@@ -27,7 +27,7 @@ $MessageBanner-iconSize: 40px;
 
 .ms-MessageBanner {
   &.hide {
-    @mixin ms-u-slideUpOut20();
+    @include ms-u-slideUpOut20();
   }
 
   &.is-hidden {

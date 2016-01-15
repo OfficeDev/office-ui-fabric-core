@@ -118,7 +118,7 @@
 }
 
 .ms-Breadcrumb-itemLink {
-  @mixin ms-font-xl();
+  @include ms-font-xl();
   display: inline-block;
   padding: 0 4px;
   max-width: 160px;

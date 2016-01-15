@@ -64,45 +64,49 @@
   height: 48px;
 }
 
-.ms-PersonaCard-action {
-  display: inline-block;
-  cursor: pointer;
-  font-size: $ms-font-size-l;
-  height: 48px;
-  line-height: 48px;
-  padding: 0 10px;
-  color: $ms-color-neutralSecondary;
-  position: relative;
-  @include ms-u-borderBox;
+@mixin ms-PersonaCard-action {
+    display: inline-block;
+    cursor: pointer;
+    font-size: $ms-font-size-l;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 10px;
+    color: $ms-color-neutralSecondary;
+    position: relative;
+    @include ms-u-borderBox;
 
-  &:hover {
-    color: $ms-color-neutralDark;
-  }
-
-  &:active {
-    color: $ms-color-themePrimary;
-  }
-
-  // Currently-selected action
-  &.is-active {
-    color: $ms-color-themePrimary;
-
-    // Arrow
-    &:after {
-      @include ms-u-borderBox;
-      @include rotate(45deg);
-      content: "";
-      width: 10px;
-      height: 10px;
-      border: 1px solid $ms-color-neutralTertiaryAlt;
-      background-color: $ms-color-white;
-      position: absolute;
-      border-right: none;
-      border-bottom: none;
-      bottom: -4px;
-      left: 15px;
+    &:hover {
+        color: $ms-color-neutralDark;
     }
-  }
+
+    &:active {
+        color: $ms-color-themePrimary;
+    }
+
+    // Currently-selected action
+    &.is-active {
+        color: $ms-color-themePrimary;
+
+        // Arrow
+        &:after {
+        @include ms-u-borderBox;
+        @include rotate(45deg);
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: 1px solid $ms-color-neutralTertiaryAlt;
+        background-color: $ms-color-white;
+        position: absolute;
+        border-right: none;
+        border-bottom: none;
+        bottom: -4px;
+        left: 15px;
+        }
+    }
+}
+
+.ms-PersonaCard-action {
+  @include ms-PersonaCard-action;
 }
 
 .ms-PersonaCard-overflow {

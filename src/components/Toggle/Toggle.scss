@@ -91,14 +91,14 @@
     outline: 2px solid transparent;
   }
 
-  & when ($direction = left) {
+  @if $direction == left {
     &:before {
       right: auto;
       border-right: 2.5px solid $ms-color-white;
     }
   }
 
-  & when ($direction = right) {
+  @if $direction == right {
     &:before {
       left: auto;
       border-left: 2.5px solid $ms-color-white;

@@ -16,23 +16,21 @@ var template;
 
 // Check if building SASS
 gulp.task('ComponentSamples-configureBuild', function () {
-//    if(Config.buildSass) {
-        srcPath = Config.paths.srcSass;
-        cssPlugin = Plugins.sass;
-        fileExtension = '.' + Config.sassExtension;
-        template = 'component-manifest-template' + fileExtension;
-        name = "SASS";
-    // } else {
-    //     srcPath = Config.paths.srcLess;
-    //     cssPlugin = Plugins.less;
-    //     fileExtension = '.' + Config.lessExtension;
-    //     template = 'component-manifest-template' + fileExtension;
-    //     name = "LESS";
-    // }
-    return;
+  if(Config.buildSass) {
+    srcPath = Config.paths.srcSass;
+    cssPlugin = Plugins.sass;
+    fileExtension = '.' + Config.sassExtension;
+    template = 'component-manifest-template' + fileExtension;
+    name = "SASS";
+  } else {
+    srcPath = Config.paths.srcLess;
+    cssPlugin = Plugins.less;
+    fileExtension = '.' + Config.lessExtension;
+    template = 'component-manifest-template' + fileExtension;
+    name = "LESS";
+  }
+  return;
 });
-
-
 
 //
 // Clean/Delete Tasks

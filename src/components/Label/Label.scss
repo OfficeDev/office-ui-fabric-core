@@ -9,6 +9,13 @@
      color: $ms-color-neutralPrimary; 
 }
 
+@mixin ms-Label-is-required {
+     &:after {
+        content: ' *';
+        color: $ms-color-error;
+    }
+}
+
 
 .ms-Label {
 	@include ms-font-s;
@@ -18,10 +25,7 @@
 	padding: 5px 0;
 
 	&.is-required {
-		&:after {
-			content: ' *';
-			color: $ms-color-error;
-		}
+		@include ms-Label-is-required;
 	}
 
 	&.is-disabled {

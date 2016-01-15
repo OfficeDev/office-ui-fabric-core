@@ -133,7 +133,9 @@
 		top: 1px;
 
 		.ms-Icon {
-			@include ms-Icon--circle;
+           &:before {
+            @include ms-Icon--circleEmpty;
+           }
 			border-width: 2px;
 			height: 18px;
 			line-height: 18px;

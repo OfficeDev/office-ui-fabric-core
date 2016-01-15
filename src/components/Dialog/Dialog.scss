@@ -7,7 +7,7 @@
 
 
 // Mixin for IE9 specific styles
-.dialogPositioningIE9Fallback() {
+@mixin dialogPositioningIE9Fallback {
   vertical-align: middle;
   display: inline-block;
 }
@@ -29,7 +29,7 @@
 
   // Flexbox for Modern Browsers
 	@include flexBox();
-	.alignItems(center); 
+	@include alignItems(center); 
 
 	&::before {
   	@include dialogPositioningIE9Fallback();

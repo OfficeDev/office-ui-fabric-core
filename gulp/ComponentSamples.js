@@ -200,7 +200,7 @@ var ComponentSamplesTasks = [
     'ComponentSamples-configureBuild', 
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
-    'ComponentSamples-less',
+    'ComponentSamples-buildStyles',
     'ComponentSamples-styleHinting',
     'ComponentSamples-moveJS',
     'ComponentSamples-copyIgnoredFiles'

@@ -12,6 +12,7 @@ var cssPlugin;
 var fileExtension; 
 var name;
 var prefixLinter;
+var compileErrorHandler;
 
 //
 // Configure Tasks
@@ -22,11 +23,13 @@ gulp.task('Fabric-configureBuild', function () {
         srcPath = Config.paths.srcSass;
         cssPlugin = Plugins.sass;
         fileExtension = Config.sassExtension;
+        compileErrorHandler = ErrorHandling.SASSCompileErrors;
         name = "SASS";
     } else {
         srcPath = Config.paths.srcLess;
         cssPlugin = Plugins.less;
         fileExtension = Config.lessExtension;
+        compileErrorHandler = ErrorHandling.LESSCompileErrors;
         name = "LESS";
     }
     return;
@@ -105,7 +108,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-configureBuild', 'Fabric-styleHinting']
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Core Fabric " + fileExtension + " File"
             })))
-            .pipe(cssPlugin().on('error', ErrorHandling.LESSCompileErrors))
+            .pipe(cssPlugin().on('error', compileErrorHandler))
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))

@@ -14,7 +14,7 @@ var cssPlugin;
 var fileExtension; 
 var template;
 var name;
-
+var compileErrorHandler;
 
 gulp.task('FabricComponents-configureBuild', function() {
   // Check if building SASS
@@ -22,13 +22,15 @@ gulp.task('FabricComponents-configureBuild', function() {
       srcPath = Config.paths.srcSass;
       cssPlugin = Plugins.sass;
       fileExtension = '.' + Config.sassExtension;
-      template = 'component-manifest-template' + fileExtension
+      template = 'component-manifest-template' + fileExtension;
+      compileErrorHandler = ErrorHandling.SASSCompileErrors;
       name = "SASS";
   } else {
       srcPath = Config.paths.srcLess;
       cssPlugin = Plugins.less;
       fileExtension = '.' + Config.lessExtension;
-      template = 'component-manifest-template' + fileExtension
+      template = 'component-manifest-template' + fileExtension;
+      compileErrorHandler = ErrorHandling.LessCompileErrors;
       name = "LESS";
   }
   return;
@@ -72,7 +74,7 @@ gulp.task('FabricComponents-buildAndCombineStyles', ['FabricComponents-configure
             configPath: './.lesshintrc'
         }))
         .pipe(ErrorHandling.LESSHintErrors())
-        .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
+        .pipe(Plugins.less().on('error', compileErrorHandler))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

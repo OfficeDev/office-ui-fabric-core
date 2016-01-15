@@ -192,6 +192,7 @@ var ErrorHandling = function() {
      */
     this.LESSHintErrors = function(file, cb) {
         return map(function (file, cb) {
+           
             if (!file.lesshint.success) {
                 file.lesshint.results.forEach(function (err) {
                     if (err) {
@@ -228,6 +229,22 @@ var ErrorHandling = function() {
             error.message
         );
         that.generatePluginError('Less compiler', errorString);
+        this.emit('end');
+    }
+    /**
+     * Less Compiler error handler
+     * @param {object} error An object containing the error data.
+     */
+    this.SASSCompileErrors = function(error) {
+        var errorString = that.createLineErrorMessage(
+            ' ' + error.file,
+            error.line,
+            error.column,
+            'No Code',
+            error.messageFormatted
+        );
+        that.generatePluginError('SASS compiler', errorString);
+        //console.log(error);
         this.emit('end');
     }
     /**

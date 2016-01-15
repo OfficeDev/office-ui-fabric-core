@@ -6,7 +6,7 @@
 // Toggle styles
 
 
-@import (reference) '../Label/Label.scss';
+@import '../Label/Label.scss';
 
 
 // Toggle
@@ -40,7 +40,7 @@
   // Disabled state
   &.is-disabled {
     .ms-Label {
-      @include ms-Label.is-disabled !important;
+     @include ms-Label-is-disabled;
     }
     .ms-Toggle-field {
       background-color: $ms-color-white !important;

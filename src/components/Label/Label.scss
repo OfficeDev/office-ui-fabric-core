@@ -5,6 +5,10 @@
 // --------------------------------------------------
 // Form field label styles
 
+@mixin ms-Label-is-disabled {
+     color: $ms-color-neutralPrimary; 
+}
+
 
 .ms-Label {
 	@include ms-font-s;
@@ -21,6 +25,6 @@
 	}
 
 	&.is-disabled {
-		color: $ms-color-neutralTertiary;
+		 @include ms-Label-is-disabled;
 	}
 }

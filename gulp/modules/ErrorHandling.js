@@ -139,16 +139,16 @@ var ErrorHandling = function() {
                     break;
                 case 'gulp-less':
                     break;
+                case 'gulp-sass':
+                    break;
                 default:
                     that.generateBuildError(error[0]);
                     that.addError(error[0]);
-                    console.log(error.plugin);
                     break;
             }
             return;
         }
-        
-		that.generateBuildError(Config.genericBuildError);
+		    that.generateBuildError(Config.genericBuildError);
         that.generateBuildError(error);
         that.addError(error);
         return;
@@ -229,6 +229,7 @@ var ErrorHandling = function() {
             error.message
         );
         that.generatePluginError('Less compiler', errorString);
+        console.log(error);
         this.emit('end');
     }
     /**
@@ -244,7 +245,6 @@ var ErrorHandling = function() {
             error.messageFormatted
         );
         that.generatePluginError('SASS compiler', errorString);
-        //console.log(error);
         this.emit('end');
     }
     /**

@@ -7,6 +7,25 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var folderList = Utilites.getFolders(Config.paths.srcSamples);
 
+// LESS/SASS detection and logic
+var srcPath;
+var cssPlugin;
+var fileExtension;
+var template;
+var compileErrorHandler;
+
+// Check if building SASS
+gulp.task('Samples-configureBuild', function () {
+    srcPath = Config.paths.srcLess;
+    cssPlugin = Plugins.less;
+    fileExtension = '.' + Config.lessExtension;
+    template = 'component-manifest-template' + fileExtension;
+    compileErrorHandler = ErrorHandling.LESSCompileErrors;
+    name = "LESS";
+    return;
+});
+
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -35,7 +54,7 @@ gulp.task('Samples-copyAssets', function () {
 // LESS tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Samples-buildLess', function () {
+gulp.task('Samples-buildStyles', ['Samples-configureBuild'], function () {
     // Build minified Fabric Components CSS for each Component.
     return folderList.map(function(folder) {
         return gulp.src(Config.paths.srcSamples + '/' + folder + '/less/' + folder + '.less')
@@ -44,7 +63,7 @@ gulp.task('Samples-buildLess', function () {
                 .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                            title: "Building Sample LESS for " + folder
                  })))
-                .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
+                .pipe(cssPlugin().on('error', compileErrorHandler))
                     .on('error', ErrorHandling.onErrorInPipe)
                 .pipe(Plugins.autoprefixer({
                     browsers: ['last 2 versions', 'ie >= 9'],
@@ -62,7 +81,7 @@ gulp.task('Samples-buildLess', function () {
 
 
 // Roll up for samples
-gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildLess']);
+gulp.task('Samples', ['Samples-configureBuild', 'Samples-copyAssets', 'Samples-buildStyles']);
 
 //
 // Fabric Messages

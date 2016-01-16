@@ -1,6 +1,7 @@
 {
   "name": "Label",
   "notes": "A standard form label.",
+  "descripton": "Styling for form labels including the required and disabled variants.",
   "template": "Label.html",
   "class": "ms-Label",
   "wrapBranches": true,

@@ -5,7 +5,7 @@ var BuildConfig = function() {
   this.fileExtension;
   this.template;
   this.compileErrorHandler;
-  this.name;
+  this.processorName;
 };
 
 module.exports = new BuildConfig();

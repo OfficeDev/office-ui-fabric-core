@@ -46,17 +46,19 @@ gulp.task('FabricServer', function() {
     return Server.start();
 });
 
+
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
 gulp.task('nuke', ['Fabric-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
+
 
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
 
 // Watch and build Fabric when sources change.
-gulp.task('watch', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch', ['ConfigureEnvironment-setLessMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
@@ -77,11 +79,12 @@ gulp.task('watch-sass-debug', ['ConfigureEnvironment-setSassMode', 'ConfigureEnv
 });
 
 // Watch and build Fabric when sources change.
-gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug', ['ConfigureEnvironment-setLessMode', 'ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
+
 
 //
 // Check For errors
@@ -129,6 +132,7 @@ gulp.task('re-build', rebuildWithMessages);
 
 gulp.task('default', ['build']);
 
+
 //
 // Fabric Messages
 // ----------------------------------------------------------------------------
@@ -153,7 +157,3 @@ gulp.task('All-updated', watchTasks, function () {
 gulp.task('nuget-pack', function(callback) {
     Plugins.nugetpack(Config.nugetConfig, Config.nugetPaths, callback);
 });
-
-
-
-

@@ -2,35 +2,12 @@ var gulp = require('gulp');
 var fs = require('fs');
 var Utilities = require('./modules/Utilities');
 var Config = require('./modules/Config');
+var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
-
-// LESS/SASS detection and logic
-var srcPath;
-var cssPlugin;
-var fileExtension;
-var template;
-
-// Check if building SASS
-gulp.task('ComponentSamples-configureBuild', function () {
-  if(Config.buildSass) {
-    srcPath = Config.paths.srcSass;
-    cssPlugin = Plugins.sass;
-    fileExtension = '.' + Config.sassExtension;
-    template = 'component-manifest-template' + fileExtension;
-    name = "SASS";
-  } else {
-    srcPath = Config.paths.srcLess;
-    cssPlugin = Plugins.less;
-    fileExtension = '.' + Config.lessExtension;
-    template = 'component-manifest-template' + fileExtension;
-    name = "LESS";
-  }
-  return;
-});
 
 //
 // Clean/Delete Tasks
@@ -109,15 +86,15 @@ gulp.task('ComponentSamples-styleHinting',  function() {
 // Styles tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('ComponentSamples-buildStyles', ['ComponentSamples-configureBuild'],  function() {
+gulp.task('ComponentSamples-buildStyles', function() {
    return folderList.map(function(componentName) {
-        var srcTemplate = Config.paths.templatePath + '/'+ template;
+        var srcTemplate = Config.paths.templatePath + '/'+ BuildConfig.template;
         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
         var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
         var deps = manifest.dependencies || [];
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, fileExtension, '.css');
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, BuildConfig.fileExtension, '.css');
         
         if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(
@@ -125,7 +102,7 @@ gulp.task('ComponentSamples-buildStyles', ['ComponentSamples-configureBuild'],  
                         srcTemplate, 
                         componentName, 
                         deps,
-                        cssPlugin,
+                        BuildConfig.processorPlugin,
                         name
                     );
         } else {
@@ -197,7 +174,6 @@ gulp.task('ComponentSamples-build', function() {
 // ----------------------------------------------------------------------------
 
 var ComponentSamplesTasks = [
-    'ComponentSamples-configureBuild', 
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',

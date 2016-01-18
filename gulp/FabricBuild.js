@@ -3,7 +3,7 @@ var gulp = require('gulp');
 // Fabric Helper Modules
 var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
-var BuildConfig = require('./modules/Config');
+var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
@@ -77,12 +77,14 @@ gulp.task('Fabric-copyAssets', function () {
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 
 gulp.task('Fabric-buildStyles', ['Fabric-styleHinting'], function () {
+  
+  console.log(BuildConfig.processorPlugin);
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Core Fabric " + BuildConfig.fileExtension + " File"
             })))
-            .pipe(BuildConfig.processorName().on('error', BuildConfig.compileErrorHandler))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
@@ -101,9 +103,9 @@ gulp.task('Fabric-buildStyles', ['Fabric-styleHinting'], function () {
     var fabricRtl = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.Rtl.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building RTL Fabric " + name + " " + BuildConfig.fileExtension + " File"
+                    title: "Building RTL Fabric " + BuildConfig.processorName + " " + BuildConfig.fileExtension + " File"
             })))
-            .pipe(BuildConfig.cssPlugin().on('error', ErrorHandling.LESSCompileErrors))
+            .pipe(BuildConfig.processorPlugin().on('error', ErrorHandling.LESSCompileErrors))
             .pipe(Plugins.flipper())
             .pipe(Plugins.rename('fabric.rtl.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))

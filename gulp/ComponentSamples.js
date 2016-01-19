@@ -72,14 +72,16 @@ gulp.task('ComponentSamples-moveJS', function() {
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentSamples-styleHinting',  function() {
-    return gulp.src(Config.paths.componentsPath + '/**/*.less')
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Checking LESS Compile errors and linting"
-            })))
-            .pipe(Plugins.lesshint({
-                configPath: './.lesshintrc'
-            }))
-            .pipe(ErrorHandling.LESSHintErrors());
+    if (!Config.buildSass) {
+       return gulp.src(Config.paths.componentsPath + '/**/*.less')
+          .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+              title: "Checking LESS Compile errors and linting"
+          })))
+          .pipe(Plugins.lesshint({
+              configPath: './.lesshintrc'
+          }))
+         .pipe(ErrorHandling.LESSHintErrors());
+    }
 });
 
 //
@@ -94,7 +96,7 @@ gulp.task('ComponentSamples-buildStyles', function() {
         var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
         var deps = manifest.dependencies || [];
         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, BuildConfig.fileExtension, '.css');
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.' + BuildConfig.fileExtension, '.css');
         
         if (hasFileChanged) {
             return ComponentHelper.buildComponentStyles(
@@ -103,7 +105,8 @@ gulp.task('ComponentSamples-buildStyles', function() {
                         componentName, 
                         deps,
                         BuildConfig.processorPlugin,
-                        name
+                        BuildConfig.processorName,
+                        BuildConfig.compileErrorHandler
                     );
         } else {
             return;

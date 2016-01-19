@@ -6,7 +6,7 @@
 // Link (anchor) styles
 
 
-.ms-Link {
+@mixin ms-Link {
   color: $ms-color-themePrimary;
   text-decoration: none;
   cursor: pointer;
@@ -21,6 +21,9 @@
   }
 }
 
+.ms-Link {
+  @include ms-Link;
+}
 
 //== Modifier: Hero Links
 //

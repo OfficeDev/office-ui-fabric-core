@@ -376,7 +376,7 @@
 // Note: Typically applied when the component has a colored background.
 
 @mixin ms-Persona--darkText {
-    .ms-Persona-primaryText {
+  .ms-Persona-primaryText {
 		color: $ms-color-neutralDark;
 	}
     

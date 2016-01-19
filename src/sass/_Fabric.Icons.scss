@@ -18,8 +18,8 @@
 
 // Modifiers: Each of the icons.
 @mixin ms-Icon--circleEmpty { content: '\e000'; } /* '' */
-@mixin ms-Icon--circleFillcontent { content: '\e001'; } /* '' */
-@mixin ms-Icon--placeholdercontent { content: '\e002'; } /* '' */
+@mixin ms-Icon--circleFill { content: '\e001'; } /* '' */
+@mixin ms-Icon--placeholder { content: '\e002'; } /* '' */
 @mixin ms-Icon--star { content: '\e003'; } /* '' */
 @mixin ms-Icon--plus { content: '\e004'; } /* '' */
 @mixin ms-Icon--minus { content: '\e005'; } /* '' */

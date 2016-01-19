@@ -19,19 +19,18 @@ var ComponentSamplesHelper = function() {
      * @param {function} cssPlugin The gulp plugin or function used for the specific css preprocessor
      * @return {stream} returns a stream.
      */
-    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, cssPlugin, name) {
-        
+    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler) {
         return gulp.src(srcTemplate)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Com ponent Styles"
+                    title: "Building Component Styles"
                 })))
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.data(function () {
                 return { "componentName": componentName, "dependencies": deps };
             }))
             .pipe(Plugins.template())
-            .pipe(cssPlugin())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(processorPlugin().on('error', errorHandler))
             .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
@@ -49,7 +48,7 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Minifying Component Sample " + name
-                })))
+            })))
             .pipe(gulp.dest(destFolder));
     }
 };

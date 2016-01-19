@@ -147,7 +147,16 @@
   .ms-Persona {
 
     &:hover {
-      @include ms-Persona--darkText;
+      .ms-Persona-primaryText {
+        color: $ms-color-neutralDark;
+      }
+
+      .ms-Persona-secondaryText, 
+      .ms-Persona-tertiaryText, 
+      .ms-Persona-optionalText {
+        color: $ms-color-neutralPrimary;
+      }
+
       cursor: pointer;
     }
 

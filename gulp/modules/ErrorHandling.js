@@ -255,7 +255,6 @@ var ErrorHandling = function() {
         return map(function (file, cb) {
             var errors = file.sassLint[0];
             var messages = errors.messages;
-          
             if (messages.length > 0) {
                 for(var i = 0; i < messages.length; i++) {
                    var message = messages[i];
@@ -273,14 +272,14 @@ var ErrorHandling = function() {
                         that.addWarning(errorString);
                     } else {
                          errorString = that.createLineErrorMessage(
-                            gulputil.colors.red("Error or something") + ' ' + message.message,
+                            gulputil.colors.red("Error ") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
-                         );  
-                        that.generatePluginError('SassHinting', errorString);
+                         );
+                        gulputil.log(errorString);
                         that.addError(errorString);
                     }
                 }

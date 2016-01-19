@@ -40,11 +40,11 @@ gulp.task('Samples-copyAssets', function () {
 gulp.task('Samples-buildStyles',  function () {
     // Build minified Fabric Components CSS for each Component.
     return folderList.map(function(folder) {
-        return gulp.src(Config.paths.srcSamples + '/' + folder + '/less/' + folder + '.less')
+        return gulp.src(Config.paths.srcSamples + '/' + folder + '/' + BuildConfig.processorName +'/' + folder + '.' + BuildConfig.fileExtension)
                 .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
                 .pipe(Plugins.changed(Config.paths.distSamples + '/' + folder + '/css', {extension: '.css'}))
                 .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                           title: "Building Sample LESS for " + folder
+                           title: "Building Sample " + BuildConfig.processorName +" for " + folder
                  })))
                 .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
                     .on('error', ErrorHandling.onErrorInPipe)

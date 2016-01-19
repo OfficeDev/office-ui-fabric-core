@@ -130,13 +130,11 @@
 		display: inline-block;
 		font-size: $ms-font-size-s;
 		position: relative;
-		top: 1px;
+		top: -8px;
 
 		.ms-Icon {
-           &:before {
-            @include ms-Icon--circleEmpty;
-           }
-			border-width: 2px;
+      border-radius: 18px;
+      border: 1px solid $ms-color-themePrimary;
 			height: 18px;
 			line-height: 18px;
 			width: 18px;

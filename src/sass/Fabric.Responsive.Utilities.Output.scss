@@ -202,7 +202,7 @@
   left: auto;
 }
 
-// Small Offset classes 1 ... 11
+// Small Offset classes 0 ... 11
 .ms-u-smOffset11 {
   margin-left: 91.66666666666666%;
 }
@@ -235,6 +235,9 @@
 }
 .ms-u-smOffset1 {
   margin-left: 8.333333333333332%;
+}
+.ms-u-smOffset0 {
+  margin-left: 0;
 }
 
 // Medium screens
@@ -354,7 +357,7 @@
     left: auto;
   }
   
-  // Medium Offset classes 1 ... 11
+  // Medium Offset classes 0 ... 11
   .ms-u-mdOffset11 {
     margin-left: 91.66666666666666%;
   }
@@ -387,6 +390,9 @@
   }
   .ms-u-mdOffset1 {
     margin-left: 8.333333333333332%;
+  }
+  .ms-u-mdOffset0 {
+    margin-left: 0;
   }
 }
 
@@ -507,7 +513,7 @@
     left: auto;
   }
   
-  // Large Offset classes 1 ... 11
+  // Large Offset classes 0 ... 11
   .ms-u-lgOffset11 {
     margin-left: 91.66666666666666%;
   }
@@ -540,6 +546,9 @@
   }
   .ms-u-lgOffset1 {
     margin-left: 8.333333333333332%;
+  }
+  .ms-u-lgOffset0 {
+    margin-left: 0;
   }
 }
 
@@ -660,7 +669,7 @@
     left: auto;
   }
   
-  // Large Offset classes 1 ... 11
+  // Large Offset classes 0 ... 11
   .ms-u-xlOffset11 {
     margin-left: 91.66666666666666%;
   }
@@ -693,6 +702,9 @@
   }
   .ms-u-xlOffset1 {
     margin-left: 8.333333333333332%;
+  }
+  .ms-u-xlOffset0 {
+    margin-left: 0;
   }
 }
 
@@ -813,7 +825,7 @@
     left: auto;
   }
   
-  // Extra extra large Offset classes 1 ... 11
+  // Extra extra large Offset classes 0 ... 11
   .ms-u-xxlOffset11 {
     margin-left: 91.66666666666666%;
   }
@@ -846,6 +858,9 @@
   }
   .ms-u-xxlOffset1 {
     margin-left: 8.333333333333332%;
+  }
+  .ms-u-xxlOffset0 {
+    margin-left: 0;
   }
 }
 
@@ -966,7 +981,7 @@
     left: auto;
   }
   
-  // Extra extra extra large Offset classes 1 ... 11
+  // Extra extra extra large Offset classes 0 ... 11
   .ms-u-xxxlOffset11 {
     margin-left: 91.66666666666666%;
   }
@@ -999,5 +1014,8 @@
   }
   .ms-u-xxxlOffset1 {
     margin-left: 8.333333333333332%;
+  }
+  .ms-u-xxxlOffset0 {
+    margin-left: 0;
   }
 }

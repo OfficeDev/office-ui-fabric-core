@@ -222,7 +222,7 @@ fabric.Breadcrumb.prototype = (function() {
     _cacheDOM(this);
     _setListeners();
     _createItemCollection();
-    _onResize(null);
+    _onResize();
   };
 
   return {

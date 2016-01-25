@@ -98,8 +98,16 @@ gulp.task('FabricComponents-less', function () {
 // JS Only tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('FabricComponents-Movejs', function() {
-    return gulp.src(Config.paths.componentsPath + '/**/*.js')
+gulp.task('FabricComponents-typescript', function() {
+    return gulp.src(Config.paths.componentsPath + '/**/*.ts')
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.tsc(Config.typescriptConfig))
+        .pipe(gulp.dest(Config.paths.distComponents));
+});
+
+
+gulp.task('FabricComponents-concatJS', ['FabricComponents-typescript'], function() {
+    return gulp.src(Config.paths.distComponents + '/**/*.js')
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.concat('jquery.fabric.js'))
         .pipe(Plugins.header(Banners.getJSCopyRight()))
@@ -118,7 +126,7 @@ gulp.task('FabricComponents-Movejs', function() {
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
-gulp.task('FabricComponents', ['FabricComponents-compiledLess', 'FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-Movejs']);
+gulp.task('FabricComponents', ['FabricComponents-compiledLess', 'FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-concatJS']);
 
 //
 // Fabric Messages

@@ -50,11 +50,20 @@ gulp.task('ComponentSamples-copyAssets', function() {
         .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
-gulp.task('ComponentSamples-moveJS', function() {
+
+gulp.task('ComponentSamples-typescript', function() {
+    return gulp.src(Config.paths.componentsPath + '/**/*.ts')
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.tsc(Config.typescriptConfig))
+        .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
+});
+
+
+gulp.task('ComponentSamples-moveJS', ['ComponentSamples-typescript'], function() {
     var paths;
     var newPaths;
     paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
-    newPaths = paths.concat([Config.paths.componentsPath + '/**/*.js']);
+    newPaths = paths.concat([Config.paths.distSamples + '/**/*.js']);
    
     return gulp.src(newPaths)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))

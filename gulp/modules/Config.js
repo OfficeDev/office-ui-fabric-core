@@ -37,6 +37,9 @@ var Config = function() {
             'folderPath': '../css'
         }
     ];
+    this.typescriptConfig = {
+        module: 'amd'
+    };
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",

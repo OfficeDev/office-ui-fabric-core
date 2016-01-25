@@ -1,6 +1,7 @@
 {
   "name": "Button",
   "notes": "",
+  "description": "A simple button that contains multiple variants and can be used for action-oriented screens or dialogs.",
   "template": "Button.html",
   "class": "ms-Button",
   "wrapBranches": true,

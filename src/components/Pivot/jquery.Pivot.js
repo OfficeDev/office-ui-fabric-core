@@ -19,8 +19,16 @@
       /** When clicking/tapping a link, select it. */
       $pivotContainer.on('click', '.ms-Pivot-link', function(event) {
         event.preventDefault();
-        $(this).siblings('.ms-Pivot-link').removeClass('is-selected');
-        $(this).addClass('is-selected');
+        /** Check if current selection has elipses child element **/
+        var $elipsisCheck = $(this).find('.ms-Pivot-ellipsis');
+        
+        /** Only execute when no elipses element can be found **/
+        if($elipsisCheck.length === 0){
+  
+          $(this).siblings('.ms-Pivot-link').removeClass('is-selected');
+          $(this).addClass('is-selected');
+        }
+  
       });
 
     });

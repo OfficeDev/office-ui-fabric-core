@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="<%= componentName %>.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  
+  <%= jstag %>
  
   <script type="text/javascript">
     $(document).ready(function() {
@@ -27,7 +29,7 @@
         }
       }
 
-       // Vanilla JS Components
+      // Vanilla JS Components
       if (typeof fabric !== "undefined") {
         if ('<%= componentName %>' in fabric) {
           var elements = document.querySelectorAll('.ms-<%= componentName %>');
@@ -41,8 +43,6 @@
 
     });
   </script>
-  
-  <%= jsLinks %>
 
   <!-- Styles specifically for this page, not required for proper display on components  -->
   <style type="text/css">
@@ -99,7 +99,7 @@
 <body>
   <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker"><%= componentName %></h1>
   <div id="componentWrapper">
-    <%= contents %>
+    <%= stored %>
   </div>
 </body>
 </html>

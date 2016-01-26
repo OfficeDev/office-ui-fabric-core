@@ -20,3 +20,4 @@
  - [Pint](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
  - [Beer](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
  - [Tea](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
+- **App launcher component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/81) and may be included in a future release of Fabric.

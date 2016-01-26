@@ -8,3 +8,4 @@
 - **TreeView component.** See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/238) for details.
 - **Code snippets for Visual Studio.** This would be nice to have but is not a priority for us at this time. See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/233) for details.
 - **Custom HTML elements for components,** using something like [Polymer](https://www.polymer-project.org/). See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/223).
+- **Single components file with both left-to-right and right-to-left.** We've had [one request](https://github.com/OfficeDev/Office-UI-Fabric/issues/210) for this so far and it's something we could consider adding if more people show interest. Right now it seems that most teams are okay with swapping out the CSS file depending on whether the page is being displayed as LTR or RTL.

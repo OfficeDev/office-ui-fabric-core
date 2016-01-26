@@ -62,6 +62,17 @@
   vertical-align: top;
   display: block;
   margin-bottom: 8px;
+
+  &.is-required {
+    &:after {
+      content: ' *';
+      color: @ms-color-error;
+    }
+  }
+
+  &.is-disabled {
+    color: @ms-color-neutralTertiary;
+  }
 }
 
 // Toggle input field

@@ -16,3 +16,7 @@
 - **Input masks**. We've had a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/133) but do not have any plans to build it at this time.
 - **Timer component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/132) but is not something we plan to work on at this time.
 - **Vertical navbar component.** See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/122).
+- **Icon requests.** Please submit an issue for any icons you'd like to see included with Fabric. Currently we have requests for:
+ - [Pint](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
+ - [Beer](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
+ - [Tea](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)

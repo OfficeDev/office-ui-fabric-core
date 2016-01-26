@@ -11,22 +11,26 @@ var Plugins = require('./Plugins');
  */
 var ComponentSamplesHelper = function() {
 	/**
-     * A commonly used Gulp task for building a component's styles.
-     * @param {String} destFolder Contains the path to the destination folder.
-     * @param {String} srcTemplate Contains the path to the source template to be applied.
-     * @param {String} componentName Name of the component.
-     * @param {String} deps LESS Dependencies to be added to the styles.
-     * @returns {Stream} returns a stream.
+     * Builds a commmonly used Gulp task for building a components styles..
+     * @param {string} destFolder Contains the path to the destination folder.
+     * @param {string} srcTemplate Contains the path to the source template to be applied.
+     * @param {string} componentName Name of the component.
+     * @param {string} deps LESS Dependencies to be added to the styles.
+     * @param {function} cssPlugin The gulp plugin or function used for the specific css preprocessor
+     * @return {stream} returns a stream.
      */
-    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps) {
+    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler) {
         return gulp.src(srcTemplate)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Building Component Styles"
+                })))
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.data(function () {
                 return { "componentName": componentName, "dependencies": deps };
             }))
             .pipe(Plugins.template())
-            .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(processorPlugin().on('error', errorHandler))
             .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
                 cascade: false
@@ -36,15 +40,15 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.csscomb())
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Component Sample LESS"
+                    title: "Building Component Styles " + componentName + " - " + name
                 })))
             .pipe(gulp.dest(destFolder))
             .pipe(Plugins.rename(componentName + '.min.css'))
             .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Minifying Component Sample LESS"
-                })))
+                    title: "Minifying Component Sample " + name
+            })))
             .pipe(gulp.dest(destFolder));
     }
 };

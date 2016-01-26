@@ -1,6 +1,7 @@
 {
   "name": "Dialog",
   "notes": "",
+  "description": "A popup box component that animates in over an application. It is primarily used for confirmation tasks, light-weight creation/edit tasks, and simple management tasks. Dialog has several variants including closeable, large header, multiline button, and blocking. Blocking or modal dialogs do not allow for a light dismiss (clicking/tapping outside the dialog box) and should be used when a user's explicit answer is required for them to proceed such as confirming the deletion of data.",
   "accessibilityNotes": 
     {
       "role": "Dialog",
@@ -13,11 +14,13 @@
     "Dialog.html",
     "Dialog.Close.html",
     "Dialog.LgHeader.html",
-    "Dialog.Multiline.html"
+    "Dialog.Multiline.html",
+    "Dialog.Blocking.html"
   ],
   "dependencies": [
     "Button",
-    "ChoiceField"
+    "ChoiceField",
+    "Overlay"
   ],
   "branches": [
     {
@@ -54,6 +57,11 @@
       "name": "Large Header",
       "class": "ms-Dialog--lgHeader",
       "template": "Dialog.LgHeader.html"
+    },
+    {
+      "name": "Blocking",
+      "class": "ms-Dialog--blocking",
+      "template": "Dialog.Blocking.html"
     }
   ]
 }

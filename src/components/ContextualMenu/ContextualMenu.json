@@ -1,6 +1,7 @@
 {
   "name": "ContextualMenu",
   "notes": "",
+  "description": "A hidden menu containing actionable items pertaining to an object such as a link or piece of text that should be invoked by a click or hover event. This menu is used by other components including the {0} CommandBar {1}. Custom JavaScript will be needed to complete the functionality of this component.",
   "template": "ContextualMenu.html",
   "class": "ms-ContextualMenu",
   "fileOrder": [

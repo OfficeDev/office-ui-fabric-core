@@ -1,6 +1,7 @@
 {
   "name": "CommandBar",
   "notes": "",
+  "description": "A commanding surface for panels, pages, and applications. Unlike the {0} NavBar {1}, this component is intended for action and not navigation.",
   "accessibilityNotes": 
     {
       "role": "CommandBar",

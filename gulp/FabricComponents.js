@@ -2,11 +2,13 @@ var gulp = require('gulp');
 var Utilities = require('./modules/Utilities');
 var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
+var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
+
 
 //
 // Clean/Delete Tasks
@@ -49,19 +51,14 @@ gulp.task('FabricComponents-moveJs', function () {
 // ----------------------------------------------------------------------------
 
 // Build Components LESS files
-gulp.task('FabricComponents-compiledLess', function () {
-
-    var stream = gulp.src(Config.paths.srcLess + '/fabric.components.less')
+gulp.task('FabricComponents-buildAndCombineStyles', function () {
+    var stream = gulp.src(BuildConfig.srcPath + '/Fabric.Components.' + BuildConfig.fileExtension)
         .pipe(Plugins.plumber())
-        .pipe(Plugins.lesshint({
-            configPath: './.lesshintrc'
-        }))
-        .pipe(ErrorHandling.LESSHintErrors())
-        .pipe(Plugins.less().on('error', ErrorHandling.LESSCompileErrors))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+        .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Building Fabric Components Less into One Files"
+                title: "Building Fabric Components " + BuildConfig.processorName + " into One Files"
         })))
         .pipe(Plugins.autoprefixer(
             {
@@ -88,18 +85,26 @@ gulp.task('FabricComponents-compiledLess', function () {
      
 });
 
-gulp.task('FabricComponents-less', function () {
+gulp.task('FabricComponents-buildStyles', function () {
     return folderList.map(function(componentName) {
        
-        var srcTemplate = Config.paths.templatePath + '/'+ 'component-manifest-template.less';
+        var srcTemplate = Config.paths.templatePath + '/'+ BuildConfig.template;
         var destFolder = Config.paths.distComponents + '/' + componentName;
         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
         var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
         var deps = manifest.dependencies || [];
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.less', '.css');
+        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.' + BuildConfig.fileExtension, '.css');
         
-        if (hasFileChanged) {
-            return ComponentHelper.buildComponentStyles(destFolder, srcTemplate, componentName, deps);
+        if(hasFileChanged) {
+            return ComponentHelper.buildComponentStyles(
+                        destFolder, 
+                        srcTemplate, 
+                        componentName, 
+                        deps, 
+                        BuildConfig.processorPlugin,
+                        BuildConfig.processorName,
+                        BuildConfig.compileErrorHandler
+                   );
         } else {
             return;
         }
@@ -110,7 +115,8 @@ gulp.task('FabricComponents-less', function () {
 // JS Only tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('FabricComponents-concatJs', function() {
+
+gulp.task('FabricComponents-moveJs', function() {
     return gulp.src(Config.paths.componentsPath + '/**/*.js')
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.concat('jquery.fabric.js'))
@@ -130,7 +136,13 @@ gulp.task('FabricComponents-concatJs', function() {
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
-gulp.task('FabricComponents', ['FabricComponents-compiledLess', 'FabricComponents-less', 'FabricComponents-copyAssets', 'FabricComponents-concatJs']);
+gulp.task('FabricComponents', [
+    'FabricComponents-buildAndCombineStyles', 
+    'FabricComponents-buildStyles', 
+    'FabricComponents-copyAssets', 
+    'FabricComponents-moveJs'
+    ]
+);
 
 //
 // Fabric Messages

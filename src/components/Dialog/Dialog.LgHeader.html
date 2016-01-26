@@ -1,9 +1,15 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--lgHeader">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog - Large Header</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
 <div class="ms-Dialog ms-Dialog--lgHeader">
-  <div class="ms-Overlay"></div>
+  <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
   <div class="ms-Dialog-main">
-    <button class="ms-Dialog-button ms-Dialog-button--close">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
       <i class="ms-Icon ms-Icon--x"></i>
     </button>
     <div class="ms-Dialog-header">

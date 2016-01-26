@@ -1,6 +1,7 @@
 {
   "name": "Callout",
   "notes": "Callouts & Peeks.",
+  "description": "A pop-out out notification area with several variants to allow a more detailed description or set of actions on an object or item.",
   "class": "ms-Callout",
   "dependencies": [
     "Button",

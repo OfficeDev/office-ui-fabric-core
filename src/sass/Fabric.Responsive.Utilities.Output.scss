@@ -6,6 +6,7 @@
 // Responsive utilities based on defined variables, component visibility,
 // and size for different displays.
 @import "./Fabric.Responsive.Variables";
+@import "./Fabric.Responsive.Utilities.Variables";
 
 //== Responsive visiblity classes
 //
@@ -88,706 +89,706 @@
 
 // Small screens (default)
 .ms-u-sm12 {
-  width: 100%;
+  @include ms-u-sm12;
 }
 .ms-u-sm11 {
-  width: 91.66666666666666%;
+  @include ms-u-sm11;
 }
 .ms-u-sm10 {
-  width: 83.33333333333334%;
+  @include ms-u-sm10;
 }
 .ms-u-sm9 {
-  width: 75%;
+  @include ms-u-sm9;
 }
 .ms-u-sm8 {
-  width: 66.66666666666666%;
+  @include ms-u-sm8;
 }
 .ms-u-sm7 {
-  width: 58.333333333333336%;
+  @include ms-u-sm7;
 }
 .ms-u-sm6 {
-  width: 50%;
+  @include ms-u-sm6;
 }
 .ms-u-sm5 {
-  width: 41.66666666666667%;
+  @include ms-u-sm5;
 }
 .ms-u-sm4 {
-  width: 33.33333333333333%;
+  @include ms-u-sm4;
 }
 .ms-u-sm3 {
-  width: 25%;
+  @include ms-u-sm3;
 }
 .ms-u-sm2 {
-  width: 16.666666666666664%;
+  @include ms-u-sm2;
 }
 .ms-u-sm1 {
-  width: 8.333333333333332%;
+  @include ms-u-sm1;
 }
 .ms-u-smPull12 {
-  right: 100%;
+  @include ms-u-smPull12;
 }
 .ms-u-smPull11 {
-  right: 91.66666666666666%;
+  @include ms-u-smPull11;
 }
 .ms-u-smPull10 {
-  right: 83.33333333333334%;
+  @include ms-u-smPull10;
 }
 .ms-u-smPull9 {
-  right: 75%;
+  @include ms-u-smPull9;
 }
 .ms-u-smPull8 {
-  right: 66.66666666666666%;
+  @include ms-u-smPull8;
 }
 .ms-u-smPull7 {
-  right: 58.333333333333336%;
+  @include ms-u-smPull7;
 }
 .ms-u-smPull6 {
-  right: 50%;
+  @include ms-u-smPull6;
 }
 .ms-u-smPull5 {
-  right: 41.66666666666667%;
+  @include ms-u-smPull5;
 }
 .ms-u-smPull4 {
-  right: 33.33333333333333%;
+  @include ms-u-smPull4;
 }
 .ms-u-smPull3 {
-  right: 25%;
+  @include ms-u-smPull3;
 }
 .ms-u-smPull2 {
-  right: 16.666666666666664%;
+  @include ms-u-smPull2;
 }
 .ms-u-smPull1 {
-  right: 8.333333333333332%;
+  @include ms-u-smPull1;
 }
 .ms-u-smPull0 {
-  right: auto;
+  @include ms-u-smPull0;
 }
 .ms-u-smPush12 {
-  left: 100%;
+  @include ms-u-smPush12;
 }
 .ms-u-smPush11 {
-  left: 91.66666666666666%;
+  @include ms-u-smPush11;
 }
 .ms-u-smPush10 {
-  left: 83.33333333333334%;
+  @include ms-u-smPush10;
 }
 .ms-u-smPush9 {
-  left: 75%;
+  @include ms-u-smPush9;
 }
 .ms-u-smPush8 {
-  left: 66.66666666666666%;
+  @include ms-u-smPush8;
 }
 .ms-u-smPush7 {
-  left: 58.333333333333336%;
+  @include ms-u-smPush7;
 }
 .ms-u-smPush6 {
-  left: 50%;
+  @include ms-u-smPush6;
 }
 .ms-u-smPush5 {
-  left: 41.66666666666667%;
+  @include ms-u-smPush5;
 }
 .ms-u-smPush4 {
-  left: 33.33333333333333%;
+  @include ms-u-smPush4;
 }
 .ms-u-smPush3 {
-  left: 25%;
+  @include ms-u-smPush3;
 }
 .ms-u-smPush2 {
-  left: 16.666666666666664%;
+  @include ms-u-smPush2;
 }
 .ms-u-smPush1 {
-  left: 8.333333333333332%;
+  @include ms-u-smPush1;
 }
 .ms-u-smPush0 {
-  left: auto;
+  @include ms-u-smPush0;
 }
 
 // Medium screens
 @media (min-width: $ms-screen-md-min) {
   .ms-u-md12 {
-    width: 100%;
+    @include ms-u-md12;
   }
   .ms-u-md11 {
-    width: 91.66666666666666%;
+    @include ms-u-md11;
   }
   .ms-u-md10 {
-    width: 83.33333333333334%;
+    @include ms-u-md10;
   }
   .ms-u-md9 {
-    width: 75%;
+    @include ms-u-md9;
   }
   .ms-u-md8 {
-    width: 66.66666666666666%;
+    @include ms-u-md8;
   }
   .ms-u-md7 {
-    width: 58.333333333333336%;
+    @include ms-u-md7;
   }
   .ms-u-md6 {
-    width: 50%;
+    @include ms-u-md6;
   }
   .ms-u-md5 {
-    width: 41.66666666666667%;
+    @include ms-u-md5;
   }
   .ms-u-md4 {
-    width: 33.33333333333333%;
+    @include ms-u-md4;
   }
   .ms-u-md3 {
-    width: 25%;
+    @include ms-u-md3;
   }
   .ms-u-md2 {
-    width: 16.666666666666664%;
+    @include ms-u-md2;
   }
   .ms-u-md1 {
-    width: 8.333333333333332%;
+    @include ms-u-md1;
   }
   .ms-u-mdPull12 {
-    right: 100%;
+    @include ms-u-mdPull12;
   }
   .ms-u-mdPull11 {
-    right: 91.66666666666666%;
+    @include ms-u-mdPull11;
   }
   .ms-u-mdPull10 {
-    right: 83.33333333333334%;
+    @include ms-u-mdPull10;
   }
   .ms-u-mdPull9 {
-    right: 75%;
+    @include ms-u-mdPull9;
   }
   .ms-u-mdPull8 {
-    right: 66.66666666666666%;
+    @include ms-u-mdPull8;
   }
   .ms-u-mdPull7 {
-    right: 58.333333333333336%;
+    @include ms-u-mdPull7;
   }
   .ms-u-mdPull6 {
-    right: 50%;
+    @include ms-u-mdPull6;
   }
   .ms-u-mdPull5 {
-    right: 41.66666666666667%;
+    @include ms-u-mdPull5;
   }
   .ms-u-mdPull4 {
-    right: 33.33333333333333%;
+    @include ms-u-mdPull4;
   }
   .ms-u-mdPull3 {
-    right: 25%;
+    @include ms-u-mdPull3;
   }
   .ms-u-mdPull2 {
-    right: 16.666666666666664%;
+    @include ms-u-mdPull2;
   }
   .ms-u-mdPull1 {
-    right: 8.333333333333332%;
+    @include ms-u-mdPull1;
   }
   .ms-u-mdPull0 {
-    right: auto;
+    @include ms-u-mdPull0;
   }
   .ms-u-mdPush12 {
-    left: 100%;
+    @include ms-u-mdPush12;
   }
   .ms-u-mdPush11 {
-    left: 91.66666666666666%;
+    @include ms-u-mdPush11;
   }
   .ms-u-mdPush10 {
-    left: 83.33333333333334%;
+    @include ms-u-mdPush10;
   }
   .ms-u-mdPush9 {
-    left: 75%;
+    @include ms-u-mdPush9;
   }
   .ms-u-mdPush8 {
-    left: 66.66666666666666%;
+    @include ms-u-mdPush8;
   }
   .ms-u-mdPush7 {
-    left: 58.333333333333336%;
+    @include ms-u-mdPush7;
   }
   .ms-u-mdPush6 {
-    left: 50%;
+    @include ms-u-mdPush6;
   }
   .ms-u-mdPush5 {
-    left: 41.66666666666667%;
+    @include ms-u-mdPush5;
   }
   .ms-u-mdPush4 {
-    left: 33.33333333333333%;
+    @include ms-u-mdPush4;
   }
   .ms-u-mdPush3 {
-    left: 25%;
+    @include ms-u-mdPush3;
   }
   .ms-u-mdPush2 {
-    left: 16.666666666666664%;
+    @include ms-u-mdPush2;
   }
   .ms-u-mdPush1 {
-    left: 8.333333333333332%;
+    @include ms-u-mdPush1;
   }
   .ms-u-mdPush0 {
-    left: auto;
+    @include ms-u-mdPush0;
   }
 }
 
 // Large screens
 @media (min-width: $ms-screen-lg-min) {
   .ms-u-lg12 {
-    width: 100%;
+    @include ms-u-lg12;
   }
   .ms-u-lg11 {
-    width: 91.66666666666666%;
+    @include ms-u-lg11;
   }
   .ms-u-lg10 {
-    width: 83.33333333333334%;
+    @include ms-u-lg10;
   }
   .ms-u-lg9 {
-    width: 75%;
+    @include ms-u-lg9;
   }
   .ms-u-lg8 {
-    width: 66.66666666666666%;
+    @include ms-u-lg8;
   }
   .ms-u-lg7 {
-    width: 58.333333333333336%;
+    @include ms-u-lg7;
   }
   .ms-u-lg6 {
-    width: 50%;
+    @include ms-u-lg6;
   }
   .ms-u-lg5 {
-    width: 41.66666666666667%;
+    @include ms-u-lg5;
   }
   .ms-u-lg4 {
-    width: 33.33333333333333%;
+    @include ms-u-lg4;
   }
   .ms-u-lg3 {
-    width: 25%;
+    @include ms-u-lg3;
   }
   .ms-u-lg2 {
-    width: 16.666666666666664%;
+    @include ms-u-lg2;
   }
   .ms-u-lg1 {
-    width: 8.333333333333332%;
+    @include ms-u-lg1;
   }
   .ms-u-lgPull12 {
-    right: 100%;
+    @include ms-u-lgPull12;
   }
   .ms-u-lgPull11 {
-    right: 91.66666666666666%;
+    @include ms-u-lgPull11;
   }
   .ms-u-lgPull10 {
-    right: 83.33333333333334%;
+    @include ms-u-lgPull10;
   }
   .ms-u-lgPull9 {
-    right: 75%;
+    @include ms-u-lgPull9;
   }
   .ms-u-lgPull8 {
-    right: 66.66666666666666%;
+    @include ms-u-lgPull8;
   }
   .ms-u-lgPull7 {
-    right: 58.333333333333336%;
+    @include ms-u-lgPull7;
   }
   .ms-u-lgPull6 {
-    right: 50%;
+    @include ms-u-lgPull6;
   }
   .ms-u-lgPull5 {
-    right: 41.66666666666667%;
+    @include ms-u-lgPull5;
   }
   .ms-u-lgPull4 {
-    right: 33.33333333333333%;
+    @include ms-u-lgPull4;
   }
   .ms-u-lgPull3 {
-    right: 25%;
+    @include ms-u-lgPull3;
   }
   .ms-u-lgPull2 {
-    right: 16.666666666666664%;
+    @include ms-u-lgPull2;
   }
   .ms-u-lgPull1 {
-    right: 8.333333333333332%;
+    @include ms-u-lgPull1;
   }
   .ms-u-lgPull0 {
-    right: auto;
+    @include ms-u-lgPull0;
   }
   .ms-u-lgPush12 {
-    left: 100%;
+    @include ms-u-lgPush12;
   }
   .ms-u-lgPush11 {
-    left: 91.66666666666666%;
+    @include ms-u-lgPush11;
   }
   .ms-u-lgPush10 {
-    left: 83.33333333333334%;
+    @include ms-u-lgPush10;
   }
   .ms-u-lgPush9 {
-    left: 75%;
+    @include ms-u-lgPush9;
   }
   .ms-u-lgPush8 {
-    left: 66.66666666666666%;
+    @include ms-u-lgPush8;
   }
   .ms-u-lgPush7 {
-    left: 58.333333333333336%;
+    @include ms-u-lgPush7;
   }
   .ms-u-lgPush6 {
-    left: 50%;
+    @include ms-u-lgPush6;
   }
   .ms-u-lgPush5 {
-    left: 41.66666666666667%;
+    @include ms-u-lgPush5;
   }
   .ms-u-lgPush4 {
-    left: 33.33333333333333%;
+    @include ms-u-lgPush4;
   }
   .ms-u-lgPush3 {
-    left: 25%;
+    @include ms-u-lgPush3;
   }
   .ms-u-lgPush2 {
-    left: 16.666666666666664%;
+    @include ms-u-lgPush2;
   }
   .ms-u-lgPush1 {
-    left: 8.333333333333332%;
+    @include ms-u-lgPush1;
   }
   .ms-u-lgPush0 {
-    left: auto;
+    @include ms-u-lgPush0;
   }
 }
 
 // Extra large screens
 @media (min-width: $ms-screen-xl-min) {
   .ms-u-xl12 {
-    width: 100%;
+    @include ms-u-xl12;
   }
   .ms-u-xl11 {
-    width: 91.66666666666666%;
+    @include ms-u-xl11;
   }
   .ms-u-xl10 {
-    width: 83.33333333333334%;
+    @include ms-u-xl10;
   }
   .ms-u-xl9 {
-    width: 75%;
+    @include ms-u-xl9;
   }
   .ms-u-xl8 {
-    width: 66.66666666666666%;
+    @include ms-u-xl8;
   }
   .ms-u-xl7 {
-    width: 58.333333333333336%;
+    @include ms-u-xl7;
   }
   .ms-u-xl6 {
-    width: 50%;
+    @include ms-u-xl6;
   }
   .ms-u-xl5 {
-    width: 41.66666666666667%;
+    @include ms-u-xl5;
   }
   .ms-u-xl4 {
-    width: 33.33333333333333%;
+    @include ms-u-xl4;
   }
   .ms-u-xl3 {
-    width: 25%;
+    @include ms-u-xl3;
   }
   .ms-u-xl2 {
-    width: 16.666666666666664%;
+    @include ms-u-xl2;
   }
   .ms-u-xl1 {
-    width: 8.333333333333332%;
+    @include ms-u-xl1;
   }
   .ms-u-xlPull12 {
-    right: 100%;
+    @include ms-u-xlPull12;
   }
   .ms-u-xlPull11 {
-    right: 91.66666666666666%;
+    @include ms-u-xlPull11;
   }
   .ms-u-xlPull10 {
-    right: 83.33333333333334%;
+    @include ms-u-xlPull10;
   }
   .ms-u-xlPull9 {
-    right: 75%;
+    @include ms-u-xlPull9;
   }
   .ms-u-xlPull8 {
-    right: 66.66666666666666%;
+    @include ms-u-xlPull8;
   }
   .ms-u-xlPull7 {
-    right: 58.333333333333336%;
+    @include ms-u-xlPull7;
   }
   .ms-u-xlPull6 {
-    right: 50%;
+    @include ms-u-xlPull6;
   }
   .ms-u-xlPull5 {
-    right: 41.66666666666667%;
+    @include ms-u-xlPull5;
   }
   .ms-u-xlPull4 {
-    right: 33.33333333333333%;
+    @include ms-u-xlPull4;
   }
   .ms-u-xlPull3 {
-    right: 25%;
+    @include ms-u-xlPull3;
   }
   .ms-u-xlPull2 {
-    right: 16.666666666666664%;
+    @include ms-u-xlPull2;
   }
   .ms-u-xlPull1 {
-    right: 8.333333333333332%;
+    @include ms-u-xlPull1;
   }
   .ms-u-xlPull0 {
-    right: auto;
+    @include ms-u-xlPull0;
   }
   .ms-u-xlPush12 {
-    left: 100%;
+    @include ms-u-xlPush12;
   }
   .ms-u-xlPush11 {
-    left: 91.66666666666666%;
+    @include ms-u-xlPush11;
   }
   .ms-u-xlPush10 {
-    left: 83.33333333333334%;
+    @include ms-u-xlPush10;
   }
   .ms-u-xlPush9 {
-    left: 75%;
+    @include ms-u-xlPush9;
   }
   .ms-u-xlPush8 {
-    left: 66.66666666666666%;
+    @include ms-u-xlPush8;
   }
   .ms-u-xlPush7 {
-    left: 58.333333333333336%;
+    @include ms-u-xlPush7;
   }
   .ms-u-xlPush6 {
-    left: 50%;
+    @include ms-u-xlPush6;
   }
   .ms-u-xlPush5 {
-    left: 41.66666666666667%;
+    @include ms-u-xlPush5;
   }
   .ms-u-xlPush4 {
-    left: 33.33333333333333%;
+    @include ms-u-xlPush4;
   }
   .ms-u-xlPush3 {
-    left: 25%;
+    @include ms-u-xlPush3;
   }
   .ms-u-xlPush2 {
-    left: 16.666666666666664%;
+    @include ms-u-xlPush2;
   }
   .ms-u-xlPush1 {
-    left: 8.333333333333332%;
+    @include ms-u-xlPush1;
   }
   .ms-u-xlPush0 {
-    left: auto;
+    @include ms-u-xlPush0;
   }
 }
 
 // Extra extra large screens
 @media (min-width: $ms-screen-xxl-min) {
   .ms-u-xxl12 {
-    width: 100%;
+    @include ms-u-xxl12;
   }
   .ms-u-xxl11 {
-    width: 91.66666666666666%;
+    @include ms-u-xxl11;
   }
   .ms-u-xxl10 {
-    width: 83.33333333333334%;
+    @include ms-u-xxl10;
   }
   .ms-u-xxl9 {
-    width: 75%;
+    @include ms-u-xxl9;
   }
   .ms-u-xxl8 {
-    width: 66.66666666666666%;
+    @include ms-u-xxl8;
   }
   .ms-u-xxl7 {
-    width: 58.333333333333336%;
+    @include ms-u-xxl7;
   }
   .ms-u-xxl6 {
-    width: 50%;
+    @include ms-u-xxl6;
   }
   .ms-u-xxl5 {
-    width: 41.66666666666667%;
+    @include ms-u-xxl5;
   }
   .ms-u-xxl4 {
-    width: 33.33333333333333%;
+    @include ms-u-xxl4;
   }
   .ms-u-xxl3 {
-    width: 25%;
+    @include ms-u-xxl3;
   }
   .ms-u-xxl2 {
-    width: 16.666666666666664%;
+    @include ms-u-xxl2;
   }
   .ms-u-xxl1 {
-    width: 8.333333333333332%;
+    @include ms-u-xxl1;
   }
   .ms-u-xxlPull12 {
-    right: 100%;
+    @include ms-u-xxlPull12;
   }
   .ms-u-xxlPull11 {
-    right: 91.66666666666666%;
+    @include ms-u-xxlPull11;
   }
   .ms-u-xxlPull10 {
-    right: 83.33333333333334%;
+    @include ms-u-xxlPull10;
   }
   .ms-u-xxlPull9 {
-    right: 75%;
+    @include ms-u-xxlPull9;
   }
   .ms-u-xxlPull8 {
-    right: 66.66666666666666%;
+    @include ms-u-xxlPull8;
   }
   .ms-u-xxlPull7 {
-    right: 58.333333333333336%;
+    @include ms-u-xxlPull7;
   }
   .ms-u-xxlPull6 {
-    right: 50%;
+    @include ms-u-xxlPull6;
   }
   .ms-u-xxlPull5 {
-    right: 41.66666666666667%;
+    @include ms-u-xxlPull5;
   }
   .ms-u-xxlPull4 {
-    right: 33.33333333333333%;
+    @include ms-u-xxlPull4;
   }
   .ms-u-xxlPull3 {
-    right: 25%;
+    @include ms-u-xxlPull3;
   }
   .ms-u-xxlPull2 {
-    right: 16.666666666666664%;
+    @include ms-u-xxlPull2;
   }
   .ms-u-xxlPull1 {
-    right: 8.333333333333332%;
+    @include ms-u-xxlPull1;
   }
   .ms-u-xxlPull0 {
-    right: auto;
+    @include ms-u-xxlPull0;
   }
   .ms-u-xxlPush12 {
-    left: 100%;
+    @include ms-u-xxlPush12;
   }
   .ms-u-xxlPush11 {
-    left: 91.66666666666666%;
+    @include ms-u-xxlPush11;
   }
   .ms-u-xxlPush10 {
-    left: 83.33333333333334%;
+    @include ms-u-xxlPush10;
   }
   .ms-u-xxlPush9 {
-    left: 75%;
+    @include ms-u-xxlPush9;
   }
   .ms-u-xxlPush8 {
-    left: 66.66666666666666%;
+    @include ms-u-xxlPush8;
   }
   .ms-u-xxlPush7 {
-    left: 58.333333333333336%;
+    @include ms-u-xxlPush7;
   }
   .ms-u-xxlPush6 {
-    left: 50%;
+    @include ms-u-xxlPush6;
   }
   .ms-u-xxlPush5 {
-    left: 41.66666666666667%;
+    @include ms-u-xxlPush5;
   }
   .ms-u-xxlPush4 {
-    left: 33.33333333333333%;
+    @include ms-u-xxlPush4;
   }
   .ms-u-xxlPush3 {
-    left: 25%;
+    @include ms-u-xxlPush3;
   }
   .ms-u-xxlPush2 {
-    left: 16.666666666666664%;
+    @include ms-u-xxlPush2;
   }
   .ms-u-xxlPush1 {
-    left: 8.333333333333332%;
+    @include ms-u-xxlPush1;
   }
   .ms-u-xxlPush0 {
-    left: auto;
+    @include ms-u-xxlPush0;
   }
 }
 
 // Extra extra extra large screens
 @media (min-width: $ms-screen-xxxl-min) {
   .ms-u-xxxl12 {
-    width: 100%;
+    @include ms-u-xxxl12;
   }
   .ms-u-xxxl11 {
-    width: 91.66666666666666%;
+    @include ms-u-xxxl11;
   }
   .ms-u-xxxl10 {
-    width: 83.33333333333334%;
+    @include ms-u-xxxl10;
   }
   .ms-u-xxxl9 {
-    width: 75%;
+    @include ms-u-xxxl9;
   }
   .ms-u-xxxl8 {
-    width: 66.66666666666666%;
+    @include ms-u-xxxl8;
   }
   .ms-u-xxxl7 {
-    width: 58.333333333333336%;
+    @include ms-u-xxxl7;
   }
   .ms-u-xxxl6 {
-    width: 50%;
+    @include ms-u-xxxl6;
   }
   .ms-u-xxxl5 {
-    width: 41.66666666666667%;
+    @include ms-u-xxxl5;
   }
   .ms-u-xxxl4 {
-    width: 33.33333333333333%;
+    @include ms-u-xxxl4;
   }
   .ms-u-xxxl3 {
-    width: 25%;
+    @include ms-u-xxxl3;
   }
   .ms-u-xxxl2 {
-    width: 16.666666666666664%;
+    @include ms-u-xxxl2;
   }
   .ms-u-xxxl1 {
-    width: 8.333333333333332%;
+    @include ms-u-xxxl1;
   }
   .ms-u-xxxlPull12 {
-    right: 100%;
+    @include ms-u-xxxlPull12;
   }
   .ms-u-xxxlPull11 {
-    right: 91.66666666666666%;
+    @include ms-u-xxxlPull11;
   }
   .ms-u-xxxlPull10 {
-    right: 83.33333333333334%;
+    @include ms-u-xxxlPull10;
   }
   .ms-u-xxxlPull9 {
-    right: 75%;
+    @include ms-u-xxxlPull9;
   }
   .ms-u-xxxlPull8 {
-    right: 66.66666666666666%;
+    @include ms-u-xxxlPull8;
   }
   .ms-u-xxxlPull7 {
-    right: 58.333333333333336%;
+    @include ms-u-xxxlPull7;
   }
   .ms-u-xxxlPull6 {
-    right: 50%;
+    @include ms-u-xxxlPull6;
   }
   .ms-u-xxxlPull5 {
-    right: 41.66666666666667%;
+    @include ms-u-xxxlPull5;
   }
   .ms-u-xxxlPull4 {
-    right: 33.33333333333333%;
+    @include ms-u-xxxlPull4;
   }
   .ms-u-xxxlPull3 {
-    right: 25%;
+    @include ms-u-xxxlPull3;
   }
   .ms-u-xxxlPull2 {
-    right: 16.666666666666664%;
+    @include ms-u-xxxlPull2;
   }
   .ms-u-xxxlPull1 {
-    right: 8.333333333333332%;
+    @include ms-u-xxxlPull1;
   }
   .ms-u-xxxlPull0 {
-    right: auto;
+    @include ms-u-xxxlPull0;
   }
   .ms-u-xxxlPush12 {
-    left: 100%;
+    @include ms-u-xxxlPush12;
   }
   .ms-u-xxxlPush11 {
-    left: 91.66666666666666%;
+    @include ms-u-xxxlPush11;
   }
   .ms-u-xxxlPush10 {
-    left: 83.33333333333334%;
+    @include ms-u-xxxlPush10;
   }
   .ms-u-xxxlPush9 {
-    left: 75%;
+    @include ms-u-xxxlPush9;
   }
   .ms-u-xxxlPush8 {
-    left: 66.66666666666666%;
+    @include ms-u-xxxlPush8;
   }
   .ms-u-xxxlPush7 {
-    left: 58.333333333333336%;
+    @include ms-u-xxxlPush7;
   }
   .ms-u-xxxlPush6 {
-    left: 50%;
+    @include ms-u-xxxlPush6;
   }
   .ms-u-xxxlPush5 {
-    left: 41.66666666666667%;
+    @include ms-u-xxxlPush5;
   }
   .ms-u-xxxlPush4 {
-    left: 33.33333333333333%;
+    @include ms-u-xxxlPush4;
   }
   .ms-u-xxxlPush3 {
-    left: 25%;
+    @include ms-u-xxxlPush3;
   }
   .ms-u-xxxlPush2 {
-    left: 16.666666666666664%;
+    @include ms-u-xxxlPush2;
   }
   .ms-u-xxxlPush1 {
-    left: 8.333333333333332%;
+    @include ms-u-xxxlPush1;
   }
   .ms-u-xxxlPush0 {
-    left: auto;
+    @include ms-u-xxxlPush0;
   }
 }

@@ -3,31 +3,10 @@ var gulp = require('gulp');
 // Fabric Helper Modules
 var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
+var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
-
-var srcPath;
-var cssPlugin;
-var fileExtension;
-var prefixLinter;
-
-//
-// Configure Tasks
-// ----------------------------------------------------------------------------
-gulp.task('Fabric-configureBuild', function () {
-    // Check if building SASS
-    if (Config.buildSass) {
-        srcPath = Config.paths.srcSass;
-        cssPlugin = Plugins.sass;
-        fileExtension = Config.sassExtension;
-    } else {
-        srcPath = Config.paths.srcLess;
-        cssPlugin = Plugins.less;
-        fileExtension = Config.lessExtension;
-    }
-    return;
-});
 
 
 //
@@ -43,17 +22,8 @@ gulp.task('Fabric-nuke', function () {
 // Style Linting
 // ---------------------------------------------------------------------------
 gulp.task('Fabric-styleHinting',  function() {
-    if (Config.buildSass) {
-        var stream;
-        stream = gulp.src(Config.paths.srcSass + '/Fabric.scss')
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Checking SASS Compile errors and linting"
-            })))
-            .pipe(Plugins.scsslint())
-            .pipe(ErrorHandling.SASSlintErrors());
-      
-    } else {
-        stream = gulp.src(Config.paths.srcLess + '/Fabric.less')
+    if (!Config.buildSass) {
+       return gulp.src(Config.paths.srcLess + '/Fabric.less')
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Checking LESS Compile errors and linting"
             })))
@@ -61,8 +31,8 @@ gulp.task('Fabric-styleHinting',  function() {
                 configPath: './.lesshintrc'
             }))
             .pipe(ErrorHandling.LESSHintErrors());
+      
     }
-    return stream;
 });
 
 
@@ -96,15 +66,16 @@ gulp.task('Fabric-copyAssets', function () {
 // ----------------------------------------------------------------------------
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
-gulp.task('Fabric-buildStyles', ['Fabric-configureBuild', 'Fabric-styleHinting'], function () {
-    var fabric = gulp.src(srcPath + '/' + 'Fabric.' + fileExtension)
+
+gulp.task('Fabric-buildStyles', ['Fabric-styleHinting'], function () {
+    var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Core Fabric " + fileExtension + " File"
+                    title: "Building Core Fabric " + BuildConfig.fileExtension + " File"
             })))
-            .pipe(cssPlugin().on('error', ErrorHandling.LESSCompileErrors))
-            .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+            .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
@@ -118,15 +89,15 @@ gulp.task('Fabric-buildStyles', ['Fabric-configureBuild', 'Fabric-styleHinting']
             .pipe(gulp.dest(Config.paths.distCSS));
                 
     // Build full and minified Fabric RTL CSS.
-    var fabricRtl = gulp.src(srcPath + '/' + 'Fabric.Rtl.' + fileExtension)
+    var fabricRtl = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.Rtl.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building RTL Fabric LESS " + fileExtension + " File"
+                    title: "Building RTL Fabric " + BuildConfig.processorName + " " + BuildConfig.fileExtension + " File"
             })))
-            .pipe(cssPlugin().on('error', ErrorHandling.LESSCompileErrors))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.flipper())
             .pipe(Plugins.rename('fabric.rtl.css'))
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
@@ -146,7 +117,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-configureBuild', 'Fabric-styleHinting']
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-configureBuild', 'Fabric-copyAssets', 'Fabric-styleHinting', 'Fabric-buildStyles']);
+gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-styleHinting', 'Fabric-buildStyles']);
 
 //
 // Fabric Messages

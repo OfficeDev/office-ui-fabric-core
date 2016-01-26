@@ -4,10 +4,11 @@
 // Office UI Fabric
 // --------------------------------------------------
 // Template for building a standalone component with dependencies included.
-// Less
 
-@import (reference) '../less/Fabric.less';
-<% dependencies.forEach(function(dep) { %>
-@import '../components/<%= dep %>/<%= dep %>.less';
+/*Sasssssssss*/
+
+@import '../sass/Fabric.Common';
+<% dependencies.forEach(function(dep){ %>
+@import '../components/<%= dep %>/<%= dep %>';
 <% }); %>
-@import '../components/<%= componentName %>/<%= componentName %>.less';
+@import '../components/<%= componentName %>/<%= componentName %>';

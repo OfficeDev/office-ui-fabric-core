@@ -116,32 +116,31 @@ var Utilities = function() {
 		var getDistDir;
 		var distDates = [];
 		var srcDates = [];
-        var maxSrcDate = 0;
-        var maxDistDate = 0;
+    var maxSrcDate = 0;
+    var maxDistDate = 0;
 		
 		if (distExtension == undefined) {
-			distExtension = srcExtension;
+	     distExtension = srcExtension;
 		}
 		
-		try {
-			getDistDir = this.getFilesByExtension(distDir, distExtension);
-			getSrcDir = this.getFilesByExtension(srcDir, srcExtension);
-        }
-        catch(e) {
-			return true; // We will return true if the directory doesn't exist
-        }
-	   
-        srcDates = this.getFilesDates(getSrcDir, srcDir);
-        distDates = this.getFilesDates(getDistDir, distDir);
-		
-		maxSrcDate = Math.max.apply(null, srcDates);
-		maxDistDate = Math.max.apply(null, distDates);
-	 
-		if (maxSrcDate > maxDistDate) {
-			return true;
-		} else {
-			return false;
-		}
+    try {
+      getDistDir = this.getFilesByExtension(distDir, distExtension);
+      getSrcDir = this.getFilesByExtension(srcDir, srcExtension);
+    } catch(e) {
+      return true; // We will return true if the directory doesn't exist
+    }
+
+    srcDates = this.getFilesDates(getSrcDir, srcDir);
+    distDates = this.getFilesDates(getDistDir, distDir);
+
+    maxSrcDate = Math.max.apply(null, srcDates);
+    maxDistDate = Math.max.apply(null, distDates);
+
+    if (maxSrcDate > maxDistDate) {
+      return true;
+    } else {
+      return false;
+    }
 	};
     /**
      * Add ignore flag to the beginning of each file given in the array

@@ -139,16 +139,16 @@ var ErrorHandling = function() {
                     break;
                 case 'gulp-less':
                     break;
+                case 'gulp-sass':
+                    break;
                 default:
                     that.generateBuildError(error[0]);
                     that.addError(error[0]);
-                    console.log(error.plugin);
                     break;
             }
             return;
         }
-        
-		that.generateBuildError(Config.genericBuildError);
+		    that.generateBuildError(Config.genericBuildError);
         that.generateBuildError(error);
         that.addError(error);
         return;
@@ -192,6 +192,7 @@ var ErrorHandling = function() {
      */
     this.LESSHintErrors = function(file, cb) {
         return map(function (file, cb) {
+           
             if (!file.lesshint.success) {
                 file.lesshint.results.forEach(function (err) {
                     if (err) {
@@ -228,6 +229,22 @@ var ErrorHandling = function() {
             error.message
         );
         that.generatePluginError('Less compiler', errorString);
+        console.log(error);
+        this.emit('end');
+    }
+    /**
+     * Less Compiler error handler
+     * @param {object} error An object containing the error data.
+     */
+    this.SASSCompileErrors = function(error) {
+        var errorString = that.createLineErrorMessage(
+            ' ' + error.file,
+            error.line,
+            error.column,
+            'No Code',
+            error.messageFormatted
+        );
+        that.generatePluginError('SASS compiler', errorString);
         this.emit('end');
     }
     /**
@@ -238,7 +255,6 @@ var ErrorHandling = function() {
         return map(function (file, cb) {
             var errors = file.sassLint[0];
             var messages = errors.messages;
-          
             if (messages.length > 0) {
                 for(var i = 0; i < messages.length; i++) {
                    var message = messages[i];
@@ -256,14 +272,14 @@ var ErrorHandling = function() {
                         that.addWarning(errorString);
                     } else {
                          errorString = that.createLineErrorMessage(
-                            gulputil.colors.red("Error or something") + ' ' + message.message,
+                            gulputil.colors.red("Error ") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
-                         );  
-                        that.generatePluginError('SassHinting', errorString);
+                         );
+                        gulputil.log(errorString);
                         that.addError(errorString);
                     }
                 }

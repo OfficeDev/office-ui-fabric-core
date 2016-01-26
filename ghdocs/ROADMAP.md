@@ -13,3 +13,4 @@
 - **Increment/decrement component.** We've had a [request for this component](https://github.com/OfficeDev/Office-UI-Fabric/issues/196) but have no need for it in product at this time. If anyone wants to build it and submit a pull request we can review the design and implementation and consider adding it.
 - **File upload component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/134) and is something we can see the value in, but do not have designs for at this time.
 - **Input masks**. We've had a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/133) but do not have any plans to build it at this time.
+- **Timer component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/132) but is not something we plan to work on at this time.

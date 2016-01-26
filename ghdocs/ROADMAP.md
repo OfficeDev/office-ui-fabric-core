@@ -15,3 +15,4 @@
 - **File upload component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/134) and is something we can see the value in, but do not have designs for at this time.
 - **Input masks**. We've had a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/133) but do not have any plans to build it at this time.
 - **Timer component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/132) but is not something we plan to work on at this time.
+- **Vertical navbar component.** See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/122).

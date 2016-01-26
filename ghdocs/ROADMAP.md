@@ -4,6 +4,7 @@
 - **Create TypeScript implementations of each component.** This will remove our dependency on jQuery, which most teams are not in favor of, and standardize our code samples. Of course you are always free to write your own JavaScript or use whatever framework you prefer to interact with Fabric styles and components.
 - **Card component.** We're identifying the most common scenarios and getting design support to have this added. See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/152).
 - **Searchable dropdown component.** See [this issue](https://github.com/OfficeDev/Office-UI-Fabric/issues/130) for the original request.
+- **Replace LESS with Sass.** This work is underway, see [issue 56](https://github.com/OfficeDev/Office-UI-Fabric/issues/56) and [pull request 279](https://github.com/OfficeDev/Office-UI-Fabric/pull/279).
 
 ## Possible Future Improvements
 - **Provide standard layouts for building full-page apps.** We've received a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/284) and it's something we'd like to add once we have a more clearly-defined set of UI patterns. For now, please send us screenshots of your full-page apps so that we can understand what common layouts we could provide.

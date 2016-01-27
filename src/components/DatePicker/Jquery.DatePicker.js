@@ -8,7 +8,7 @@
 
   $.fn.DatePicker = function (options) {
 
-    return this.each(function () {
+    var picker = this.map(function () {
 
       /** Set up variables and run the Pickadate plugin. */
       var $datePicker = $(this);
@@ -82,7 +82,11 @@
         }
       });
 
-    });
+      return $picker;
+      
+    }).get();
+    
+    return picker;
   };
 
   /**

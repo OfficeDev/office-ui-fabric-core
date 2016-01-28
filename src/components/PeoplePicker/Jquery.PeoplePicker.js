@@ -109,14 +109,22 @@ var fabric = fabric || {};
             return nameInitials.substring(0,2);
           })();
           var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
-          var selectedImage = $(this).find('.ms-Persona-image').attr('src');
+          var selectedImage = (function() {
+            if ($(this).find('.ms-Persona-image').length) {
+              var selectedImageSrc = $(this).find('.ms-Persona-image').attr('src');
+              return '<img class="ms-Persona-image" src="' + selectedImageSrc + '" alt="Persona image">';
+            } else {
+              return '';
+              // return $(this).find('.ms-Persona-image').attr('src');
+            }
+          })();
 
           /** Token html */
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
                               '<div class="ms-Persona ms-Persona--xs ms-Persona--square">' +
                                '<div class="ms-Persona-imageArea">' +
                                  '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                                 '<img class="ms-Persona-image" src="' + selectedImage + '" alt="Persona image">' +
+                                 selectedImage +
                                '</div>' +
                                '<div class="ms-Persona-presence"></div>' +
                                '<div class="ms-Persona-details">' +

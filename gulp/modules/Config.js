@@ -54,7 +54,7 @@ var Config = function() {
 		outputDir: this.paths.distPackages
 	};
 	this.nugetPaths = [
-		{src: this.paths.componentsPath, dest: "/content/components/"},
+		{src: this.paths.distComponents, dest: "/content/components/"},
 		{src: this.paths.distCSS, dest: "/content/css/"},
 		{src: this.paths.distJS, dest: "/content/scripts/"},
 		{src: this.paths.distLess, dest: "/content/less/"},

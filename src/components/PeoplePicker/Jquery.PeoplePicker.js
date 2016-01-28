@@ -116,7 +116,6 @@ var fabric = fabric || {};
               return '<img class="ms-Persona-image" src="' + selectedImageSrc + '" alt="Persona image">';
             } else {
               return '';
-              // return $(this).find('.ms-Persona-image').attr('src');
             }
           })();
 

@@ -56,13 +56,15 @@
       });
 
       $panel.on("click", ".js-togglePanel", function() {
-        $panel.toggleClass("is-open");
+        $panel.toggleClass("is-open")
+              .addClass("ms-Panel-animateIn");
       });
 
       /** Open oveflow panel with list of members */
       $Facepile.on("click", ".js-overflowPanel", function() {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open")
+              .addClass("ms-Panel-animateIn")
               .removeClass('ms-Facepile-panel--addPerson')
               .addClass('ms-Facepile-panel--overflow ms-Panel--right');
       });

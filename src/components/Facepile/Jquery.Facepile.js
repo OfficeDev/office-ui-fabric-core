@@ -47,6 +47,7 @@
       $Facepile.on("click", ".js-addPerson", function() {
         $panelMain.css({display: "block"});
         $panel.toggleClass("is-open")
+              .addClass("ms-Panel-animateIn")
               .removeClass('ms-Facepile-panel--overflow ms-Panel--right')
               .addClass('ms-Facepile-panel--addPerson');
 

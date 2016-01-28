@@ -6,6 +6,24 @@
 // Persona styles
 
 
+//= Colors used in the initials color block
+$ms-color-initials-lightBlue: #6ba5e7;
+$ms-color-initials-blue: #2d89ef;
+$ms-color-initials-darkBlue: #2b5797;
+$ms-color-initials-teal: #00aba9;
+$ms-color-initials-lightGreen: #99b433;
+$ms-color-initials-green: #00a300;
+$ms-color-initials-darkGreen: #1e7145;
+$ms-color-initials-lightPink: #e773bd;
+$ms-color-initials-pink: #ff0097;
+$ms-color-initials-magenta: #7e3878;
+$ms-color-initials-purple: #603cba;
+$ms-color-initials-black: #1d1d1d;
+$ms-color-initials-orange: #da532c;
+$ms-color-initials-red: #ee1111;
+$ms-color-initials-darkRed: #b91d47;
+
+
 .ms-Persona {
 	@include ms-font-m;
 	@include ms-u-normalize;
@@ -17,21 +35,76 @@
 .ms-Persona-imageArea {
 	position: relative;
 	display: block;
-	background-color: transparent;
 	overflow: hidden;
-	width: 52px;
-	height: 52px;
+	text-align: center;
+	width: 48px;
+	height: 48px;
 	border-radius: 50%;
-	background-color: $ms-color-neutralTertiary;
 }
 
+//= Note: The doughboy placeholder is being deprecated.
+// The initials color block (.ms-Persona-initials) will be used going forward
+// as a fallback when the persona does not have an image.
 .ms-Persona-placeholder {
   color: $ms-color-white;
   position: absolute;
   right: 0;
   left: 0;
   font-size: 47px;
-  top: 7px;
+  top: 9px;
+}
+
+.ms-Persona-initials {
+	color: $ms-color-white;
+	font-size: $ms-font-size-l;
+	font-family: $ms-font-family-light;
+	line-height: 48px;
+
+	&.ms-Persona-initials--lightBlue {
+		background-color: $ms-color-initials-lightBlue;
+	}
+	&.ms-Persona-initials--blue {
+		background-color: $ms-color-initials-blue;
+	}
+	&.ms-Persona-initials--darkBlue {
+		background-color: $ms-color-initials-darkBlue;
+	}
+	&.ms-Persona-initials--teal {
+		background-color: $ms-color-initials-teal;
+	}
+	&.ms-Persona-initials--lightGreen {
+		background-color: $ms-color-initials-lightGreen;
+	}
+	&.ms-Persona-initials--green {
+		background-color: $ms-color-initials-green;
+	}
+	&.ms-Persona-initials--darkGreen {
+		background-color: $ms-color-initials-darkGreen;
+	}
+	&.ms-Persona-initials--lightPink {
+		background-color: $ms-color-initials-lightPink;
+	}
+	&.ms-Persona-initials--pink {
+		background-color: $ms-color-initials-pink;
+	}
+	&.ms-Persona-initials--magenta {
+		background-color: $ms-color-initials-magenta;
+	}
+	&.ms-Persona-initials--purple {
+		background-color: $ms-color-initials-purple;
+	}
+	&.ms-Persona-initials--black {
+		background-color: $ms-color-initials-black;
+	}
+	&.ms-Persona-initials--orange {
+		background-color: $ms-color-initials-orange;
+	}
+	&.ms-Persona-initials--red {
+		background-color: $ms-color-initials-red;
+	}
+	&.ms-Persona-initials--darkRed {
+		background-color: $ms-color-initials-darkRed;
+	}
 }
 
 .ms-Persona-image {
@@ -40,16 +113,16 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 52px;
-	height: 52px;
+	width: 48px;
+	height: 48px;
+}
 
-	&[src=""] {
-		display: none;
-	}
+.ms-Persona-image[src=""] {
+   display: none;
 }
 
 .ms-Persona-presence {
-	background-color: $ms-color-presence-available;
+  background-color: $ms-color-presence-available;
   position: absolute;
   height: 12px;
   width: 12px;
@@ -68,8 +141,8 @@
 }
 
 .ms-Persona-primaryText,
-.ms-Persona-secondaryText, 
-.ms-Persona-tertiaryText, 
+.ms-Persona-secondaryText,
+.ms-Persona-tertiaryText,
 .ms-Persona-optionalText {
 	@include noWrap();
 	width: 190px;
@@ -85,8 +158,8 @@
 	line-height: 1.4;
 }
 
-.ms-Persona-secondaryText, 
-.ms-Persona-tertiaryText, 
+.ms-Persona-secondaryText,
+.ms-Persona-tertiaryText,
 .ms-Persona-optionalText {
 	color: $ms-color-neutralSecondary;
 	font-family: $ms-font-family-regular;
@@ -99,7 +172,7 @@
 	padding-top: 3px;
 }
 
-.ms-Persona-tertiaryText, 
+.ms-Persona-tertiaryText,
 .ms-Persona-optionalText {
 	padding-top: 5px;
 	display: none; // Hidden on default persona
@@ -119,7 +192,7 @@
 		left: 0;
 		bottom: auto;
 		right: auto;
-		height: 52px;
+		height: 48px;
 		width: 5px;
 		border-radius: 0;
 		border: 0;
@@ -164,7 +237,7 @@
 
 //== Modifier: Tiny Persona with read only state
 //
-// This variant includes a semicolon, and is 
+// This variant includes a semicolon, and is
 // most often presented within a People Picker.
 .ms-Persona.ms-Persona--tiny.ms-Persona--readonly {
 	padding: 0;
@@ -198,7 +271,12 @@
 
 	.ms-Persona-placeholder {
 	  font-size: 28px;
-	  top: 4px;
+	  top: 6px;
+	}
+
+	.ms-Persona-initials {
+		font-size: $ms-font-size-s;
+		line-height: 32px;
 	}
 
 	.ms-Persona-presence {
@@ -245,6 +323,11 @@
 	  top: 5px;
 	}
 
+	.ms-Persona-initials {
+		font-size: $ms-font-size-m;
+		line-height: 40px;
+	}
+
 	.ms-Persona-presence {
 		left: 27px;
 	}
@@ -286,7 +369,12 @@
 
 	.ms-Persona-placeholder {
 	  font-size: 67px;
-	  top: 9px;
+	  top: 10px;
+	}
+
+	.ms-Persona-initials {
+		font-size: $ms-font-size-xxl;
+		line-height: 72px;
 	}
 
 	.ms-Persona-presence {
@@ -332,6 +420,11 @@
 	  top: 12px;
 	}
 
+	.ms-Persona-initials {
+		font-size: $ms-font-size-su;
+		line-height: 100px;
+	}
+
 	.ms-Persona-presence {
 		height: 20px;
 		width: 20px;
@@ -352,7 +445,7 @@
 		padding-top: 2px;
 	}
 
-	.ms-Persona-tertiaryText, 
+	.ms-Persona-tertiaryText,
 	.ms-Persona-optionalText {
 		padding-top: 5px;
 		display: block; // Show tertiary and optional text
@@ -374,20 +467,16 @@
 //== Modifier: Persona with darker text
 //
 // Note: Typically applied when the component has a colored background.
-
-@mixin ms-Persona--darkText {
-  .ms-Persona-primaryText {
+.ms-Persona.ms-Persona--darkText {
+	.ms-Persona-primaryText {
 		color: $ms-color-neutralDark;
 	}
-    
-	.ms-Persona-secondaryText, 
-	.ms-Persona-tertiaryText, 
+
+	.ms-Persona-secondaryText,
+	.ms-Persona-tertiaryText,
 	.ms-Persona-optionalText {
 		color: $ms-color-neutralPrimary;
 	}
-}
-.ms-Persona.ms-Persona--darkText {
-	@include ms-Persona--darkText;
 }
 
 
@@ -433,24 +522,7 @@
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-blocked-background;
 		// Use a gradient to include the stripe on modern browsers.
-		background-image: -webkit-linear-gradient(
-			bottom,
-			$ms-color-presence-blocked-background 0%,
-			$ms-color-presence-blocked-background 48%,
-			$ms-color-presence-blocked-line 40%,
-			$ms-color-presence-blocked-line 58%,
-			$ms-color-presence-blocked-background 52%,
-			$ms-color-presence-blocked-background 100%
-		);
-		background-image: linear-gradient(
-			to bottom,
-			$ms-color-presence-blocked-background 0%,
-			$ms-color-presence-blocked-background 48%,
-			$ms-color-presence-blocked-line 40%,
-			$ms-color-presence-blocked-line 58%,
-			$ms-color-presence-blocked-background 52%,
-			$ms-color-presence-blocked-background 100%
-		);
+		background-image: linear-gradient( to bottom, $ms-color-presence-blocked-background 0%, $ms-color-presence-blocked-background 48%, $ms-color-presence-blocked-line 40%, $ms-color-presence-blocked-line 58%, $ms-color-presence-blocked-background 52%, $ms-color-presence-blocked-background 100% );
 	}
 }
 
@@ -461,13 +533,7 @@
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-busy-average;
 		// Replace solid background with stripes on modern browsers.
-		background: repeating-linear-gradient(
-			-45deg,
-			$ms-color-presence-busy-stripe-light,
-			$ms-color-presence-busy-stripe-light 1px,
-			$ms-color-presence-busy-stripe-dark 0px,
-			$ms-color-presence-busy-stripe-dark 2px
-		);
+		background: repeating-linear-gradient( -45deg, $ms-color-presence-busy-stripe-light, $ms-color-presence-busy-stripe-light 1px, $ms-color-presence-busy-stripe-dark 0px, $ms-color-presence-busy-stripe-dark 2px );
 	}
 }
 
@@ -478,13 +544,7 @@
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-busy-average;
 		// Replace solid background with stripes on modern browsers.
-		background: repeating-linear-gradient(
-			-45deg,
-			$ms-color-presence-busy-stripe-light,
-			$ms-color-presence-busy-stripe-light 3px,
-			$ms-color-presence-busy-stripe-dark 3px,
-			$ms-color-presence-busy-stripe-dark 6px
-		);
+		background: repeating-linear-gradient( -45deg, $ms-color-presence-busy-stripe-light, $ms-color-presence-busy-stripe-light 3px, $ms-color-presence-busy-stripe-dark 3px, $ms-color-presence-busy-stripe-dark 6px );
 	}
 }
 
@@ -495,24 +555,7 @@
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-dnd-background;
 		// Use a gradient to include the stripe on modern browsers.
-		background-image: -webkit-linear-gradient(
-			bottom,
-			$ms-color-presence-dnd-background 0%,
-			$ms-color-presence-dnd-background 48%,
-			$ms-color-presence-dnd-line 48%,
-			$ms-color-presence-dnd-line 52%,
-			$ms-color-presence-dnd-background 52%,
-			$ms-color-presence-dnd-background 100%
-		);
-		background-image: linear-gradient(
-			to bottom,
-			$ms-color-presence-dnd-background 0%,
-			$ms-color-presence-dnd-background 48%,
-			$ms-color-presence-dnd-line 48%,
-			$ms-color-presence-dnd-line 52%,
-			$ms-color-presence-dnd-background 52%,
-			$ms-color-presence-dnd-background 100%
-		);
+		background-image: linear-gradient( to bottom, $ms-color-presence-dnd-background 0%, $ms-color-presence-dnd-background 48%, $ms-color-presence-dnd-line 48%, $ms-color-presence-dnd-line 52%, $ms-color-presence-dnd-background 52%, $ms-color-presence-dnd-background 100% );
 	}
 }
 

@@ -15,6 +15,8 @@ We gladly welcome PRs regarding…
 - Documentation updates
 - Things we haven't thought of yet :-)
 
+When creating a pull request, please describe in detail the problem you are solving and reference an [open issue](https://github.com/OfficeDev/Office-UI-Fabric/issues) if possible. Screenshots or a [demonstration on CodePen](http://codepen.io/pen?template=gPGzgX) are also appreciated. 
+
 ### Feature requests
 Please be sure to open an issue before starting a hefty PR so we can let you know if we're likely to consider your request--and to make sure we aren't already planning on doing the work.
 

@@ -113,7 +113,7 @@ var fabric = fabric || {};
 
           /** Token html */
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
-                              '<div class="ms-Persona ms-Persona--xs">' +
+                              '<div class="ms-Persona ms-Persona--xs ms-Persona--square">' +
                                '<div class="ms-Persona-imageArea">' +
                                  '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
                                  '<img class="ms-Persona-image" src="' + selectedImage + '">' +

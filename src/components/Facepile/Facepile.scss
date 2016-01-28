@@ -48,7 +48,8 @@
   color: $ms-color-white;
   font-size: $ms-font-size-l - 1;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $ms-color-themeDark;
   }
 

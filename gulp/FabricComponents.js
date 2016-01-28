@@ -25,12 +25,24 @@ gulp.task('FabricComponents-nuke', function () {
 
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
-    return gulp.src([Config.paths.componentsPath + '/**'])
+    return gulp.src([Config.paths.componentsPath + '/**', '!' + Config.paths.componentsPath + '/**/*.js'])
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.changed(Config.paths.distComponents))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Moving Fabric Component Assets to Dist"
         })))
+        .pipe(gulp.dest(Config.paths.distComponents));
+});
+
+gulp.task('FabricComponents-moveJs', function () {
+    // Copy all Components files.
+    return gulp.src([Config.paths.componentsPath + '/**/*.js'])
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.changed(Config.paths.distComponents))
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Moving Fabric Component Assets to Dist"
+        })))
+        .pipe(Plugins.fileinclude())
         .pipe(gulp.dest(Config.paths.distComponents));
 });
 
@@ -102,6 +114,7 @@ gulp.task('FabricComponents-buildStyles', function () {
 //
 // JS Only tasks
 // ----------------------------------------------------------------------------
+
 
 gulp.task('FabricComponents-moveJs', function() {
     return gulp.src(Config.paths.componentsPath + '/**/*.js')

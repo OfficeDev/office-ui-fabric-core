@@ -5,6 +5,8 @@
 // --------------------------------------------------
 // People Picker styles
 
+@personaItemHeight: 42px;
+
 
 .ms-PeoplePicker {
   .ms-font-m;
@@ -105,6 +107,7 @@
 // Show the results area when the people picker is active
 .ms-PeoplePicker.is-active .ms-PeoplePicker-results {
   display: block;
+  opacity: 1;
 }
 
 
@@ -167,10 +170,11 @@
 }
 
 // Result buttons
-.ms-PeoplePicker-resultBtn {
+.ms-PeoplePicker-resultBtn,
+.ms-PeoplePicker-peopleListBtn {
   .button-reset();
   position: relative;
-  height: 50px;
+  height: 34px;
   width: 100%;
   background: none;
   border: 0;
@@ -178,13 +182,17 @@
   margin: 0 0 10px 0;
   padding: 0 0 0 9px;
 
+  @media (min-width: @ms-screen-md-min) {
+    height: @personaItemHeight;
+  }
+
   &:hover {
-   background-color: @ms-color-neutralLight;
-   outline: 1px solid transparent;
+    background-color: @ms-color-neutralLight;
+    outline: 1px solid transparent;
   }
 
   &:focus {
-   outline: 1;
+    outline: 1;
   }
 
   &.ms-PeoplePicker-resultBtn--compact {
@@ -192,25 +200,34 @@
   }
 }
 
+.ms-PeoplePicker-peopleListBtn {
+  margin-bottom: 0;
+  padding: 0;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
 // Actionable icon on a result
 .ms-PeoplePicker-resultAction {
   .button-reset();
   display: block;
+  height: 34px;
   transition: background-color 0.367s @ms-ease1;
-  height: 50px;
   position: absolute;
   right: 0;
   top: 0;
   width: 30px;
-  z-index: (@ms-zIndex-PeoplePicker + @ms-zIndex-back);
+  text-align: center;
+
+  @media (min-width: @ms-screen-md-min) {
+    height: @personaItemHeight;
+  }
 
   .ms-Icon {
     color: @ms-color-neutralSecondary;
     font-size: @ms-font-size-m-plus;
-    margin-top: -8px;
-    position: absolute;
-    text-align: center;
-    left: 8px;
   }
 
   &:hover {
@@ -246,22 +263,22 @@
 
 // After the result groups we have an area to trigger additional searches
 .ms-PeoplePicker-searchMore {
-    border-top: 1px solid @ms-color-neutralLight;
-    height: 69px;
-    position: relative;
+  border-top: 1px solid @ms-color-neutralLight;
+  height: 69px;
+  position: relative;
 
-    .ms-Spinner {
-      position: absolute;
-      width: 32px;
-      height: 32px;
-      top: 20px;
-      left: 20px;
-      display: none;
+  .ms-Spinner {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 20px;
+    left: 20px;
+    display: none;
 
-      .ms-Spinner-circle {
-        background-color: @ms-color-themePrimary;
-      }
+    .ms-Spinner-circle {
+      background-color: @ms-color-themePrimary;
     }
+  }
 }
 
 // Searching state
@@ -272,7 +289,6 @@
   }
 
   .ms-PeoplePicker-searchMoreIcon {
-
     .ms-Icon {
       display: none;
     }
@@ -304,6 +320,7 @@
   }
 
   // TODO: Works in Chrome, but not working in IE
+  &:focus,
   &:active {
       background-color: @ms-color-themeLight;
   }
@@ -324,7 +341,7 @@
 
   .ms-Icon {
     color: @ms-color-neutralPrimary;
-    font-size: @ms-font-size-xl + 3;
+    font-size: @ms-font-size-m + 2;
     position: absolute;
     text-align: center;
     top: 27px;
@@ -419,9 +436,11 @@
   }
 }
 
-// Facepile
-.ms-PeoplePicker.ms-PeoplePicker--facePile {
 
+//== Modifier: Facepile and Members list
+//
+.ms-PeoplePicker.ms-PeoplePicker--Facepile,
+.ms-PeoplePicker.ms-PeoplePicker--membersList {
   .ms-PeoplePicker-searchBox {
     height: 30px;
     min-height: 30px;
@@ -429,6 +448,10 @@
 
   .ms-PeoplePicker-searchField {
     height: 28px;
+  }
+
+  .ms-Persona {
+    cursor: pointer;
   }
 }
 
@@ -441,21 +464,122 @@
   }
 }
 
-.ms-PeoplePicker-selectedHeader {
+.ms-PeoplePicker.ms-PeoplePicker--Facepile {
+  //= State: Searching in peoplepicker search field
+  &.is-searching {
+    .ms-PeoplePicker-results {
+      border-bottom: 0;
+      padding: 20px 0 0;
+    }
+
+    .ms-PeoplePicker-peopleListHeader {
+      display: none;
+    }
+  }
+
+  .ms-PeoplePicker-results {
+    position: relative;
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @ms-color-neutralLight;
+  }
+
+  // Personas are size xs on mobile, md (default) on md and above
+  .ms-PeoplePicker-results,
+  .ms-PeoplePicker-selectedPeople {
+    .ms-Persona {
+      @media (max-width: @ms-screen-sm-max) {
+        .ms-Persona.ms-Persona--xs;
+      }
+
+      @media (min-width: @ms-screen-md-min) {
+        .ms-Persona-secondaryText {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .ms-Persona.ms-Persona--selectable {
+    padding: 0;
+  }
+
+  .ms-PeoplePicker-searchMore {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  .ms-PeoplePicker-searchMore,
+  .ms-PeoplePicker-searchMoreBtn,
+  .ms-PeoplePicker-searchMoreIcon {
+    height: 48px;
+  }
+
+  .ms-PeoplePicker-searchMoreBtn {
+    padding-left: 48px;
+  }
+
+  .ms-PeoplePicker-searchMoreIcon {
+    width: 48px;
+  }
+
+  .ms-PeoplePicker-searchMorePrimary {
+    font-size: @ms-font-size-s;
+  }
+
+  .ms-PeoplePicker-searchMoreIcon .ms-Icon {
+    top: 0;
+    line-height: 48px;
+  }
+
+  .ms-Spinner {
+    top: 16px;
+    left: 14px;
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.ms-PeoplePicker.ms-PeoplePicker--Facepile {
+  .ms-PersonaCard {
+    display: none;
+    position: absolute;
+    height: 200px;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+.ms-PeoplePicker-selectedHeader,
+.ms-PeoplePicker-peopleListHeader {
   color: @ms-color-themePrimary;
-  text-transform: uppercase;
   font-size: @ms-font-size-s;
-  font-family: @ms-font-family-light;
+  font-family: @ms-font-family-regular;
   height: 50px;
   line-height: 50px;
 }
 
-.ms-PeoplePicker-selectedPeople {
+.ms-PeoplePicker-selectedPeople,
+.ms-PeoplePicker-peopleList {
   .ms-u-normalize;
   list-style: none;
 }
 
 .ms-PeoplePicker-selectedPerson {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.ms-PeoplePicker-peopleListItem {
+  margin-bottom: 6px;
   position: relative;
 }

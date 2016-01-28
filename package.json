@@ -32,6 +32,7 @@
     "gulp-data": "^1.2.0",
     "gulp-debug": "^2.1.2",
     "gulp-file": "^0.2.0",
+    "gulp-file-include": "^0.13.7",
     "gulp-folders": "^1.1.0",
     "gulp-foreach": "^0.1.0",
     "gulp-header": "^1.2.2",

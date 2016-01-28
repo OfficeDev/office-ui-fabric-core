@@ -65,6 +65,7 @@ gulp.task('ComponentSamples-moveJS', function() {
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Copying Component Assets"
             })))
+            .pipe(Plugins.fileinclude())
             .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
@@ -143,6 +144,7 @@ gulp.task('ComponentSamples-build', function() {
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
+           .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(
                 {

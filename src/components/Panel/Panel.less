@@ -24,27 +24,51 @@
 
   // Overlay used within panel
   .ms-Overlay {
-    z-index: @ms-zIndex-back;
     display: none;
+    cursor: pointer;
+    z-index: @ms-zIndex-back;
     pointer-events: none;
     opacity: 1;
     transition: opacity @ms-duration3 @ms-ease1;
   }
 }
 
+.ms-Panel.is-open {
+  display: block;
+
+  .ms-Panel-main {
+    display: block;
+    left: 0;
+    opacity: 1;
+    .ms-u-slideLeftIn40;
+  }
+}
+
+.ms-Panel.ms-Panel--right {
+  &.is-open {
+    .ms-Overlay {
+      display: block;
+    }
+
+    .ms-Panel-main {
+      left: 48px;
+      .ms-u-slideLeftIn40;
+    }
+  }
+}
+
 // The panel itself, where the content goes.
 .ms-Panel-main {
   background-color: @ms-color-white;
-  bottom: 0;
   position: fixed;
-  right: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
   display: none; //prevent the panel from briefly showing up when the page loads
   z-index: @ms-zIndex-front;
   width: 100%;
 
   .ms-CommandBar {
-
     .ms-CommandBarItem {
       user-select: none;
 
@@ -98,6 +122,26 @@
   }
 }
 
+.ms-Panel-closeButton {
+  .button-reset();
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  height: 24px;
+  width: 24px;
+  outline: 0;
+  padding: 0;
+  color: @ms-color-neutralSecondary;
+
+  &:hover {
+    color: @ms-color-neutralPrimary;
+  }
+}
+
+.ms-Panel-closeIcon {
+  font-size: @ms-font-size-m;
+}
+
 // Scrollable content area, below the command buttons.
 .ms-Panel-contentInner {
   position: absolute;
@@ -111,11 +155,15 @@
 
 // Header text at the top of the panel.
 .ms-Panel-headerText {
-  font-family: @ms-font-family-light;
+  font-family: @ms-font-family-semilight;
   font-size: @ms-font-size-xl;
   color: @ms-color-neutralPrimary;
-  line-height: 82px; // Magic number that places text baseline at 50px.
-  height: 70px;
+  margin: 10px 0;
+  line-height: 28px;
+
+  @media (min-width: @ms-screen-md-min) {
+      margin: 30px 0 20px;
+  }
 }
 
 .ms-Panel.is-open {
@@ -218,6 +266,8 @@
   .ms-Panel-main {
     border-left: 1px solid @ms-color-neutralLight;
     border-right: 1px solid @ms-color-neutralLight;
+    left: auto;
+    right: 0;
     pointer-events: auto;
     width: @ms-Panel-mdWidth; // Add a pixel due to border-box.
   }
@@ -225,6 +275,12 @@
   .ms-Panel.is-open .ms-Panel-main {
     .drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
+  }
+
+  .ms-Panel.ms-Panel--right.is-open {
+    .ms-Panel-main {
+      left: auto;
+    }
   }
 
   // On medium screens and up, the small panel attached to the left is a variant.

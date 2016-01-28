@@ -6,6 +6,24 @@
 // Persona styles
 
 
+//= Colors used in the initials color block
+@ms-color-initials-lightBlue: #6ba5e7;
+@ms-color-initials-blue: #2d89ef;
+@ms-color-initials-darkBlue: #2b5797;
+@ms-color-initials-teal: #00aba9;
+@ms-color-initials-lightGreen: #99b433;
+@ms-color-initials-green: #00a300;
+@ms-color-initials-darkGreen: #1e7145;
+@ms-color-initials-lightPink: #e773bd;
+@ms-color-initials-pink: #ff0097;
+@ms-color-initials-magenta: #7e3878;
+@ms-color-initials-purple: #603cba;
+@ms-color-initials-black: #1d1d1d;
+@ms-color-initials-orange: #da532c;
+@ms-color-initials-red: #ee1111;
+@ms-color-initials-darkRed: #b91d47;
+
+
 .ms-Persona {
 	.ms-font-m;
 	.ms-u-normalize;
@@ -18,19 +36,75 @@
 	position: relative;
 	display: block;
 	overflow: hidden;
-	width: 52px;
-	height: 52px;
+	text-align: center;
+	width: 48px;
+	height: 48px;
 	border-radius: 50%;
-	background-color: @ms-color-neutralTertiary;
 }
 
+//= Note: The doughboy placeholder is being deprecated.
+// The initials color block (.ms-Persona-initials) will be used going forward
+// as a fallback when the persona does not have an image.
 .ms-Persona-placeholder {
   color: @ms-color-white;
   position: absolute;
   right: 0;
   left: 0;
   font-size: 47px;
-  top: 7px;
+  top: 9px;
+}
+
+.ms-Persona-initials {
+	color: @ms-color-white;
+	font-size: @ms-font-size-l;
+	font-family: @ms-font-family-light;
+	line-height: 48px;
+
+	&.ms-Persona-initials--lightBlue {
+		background-color: @ms-color-initials-lightBlue;
+	}
+	&.ms-Persona-initials--blue {
+		background-color: @ms-color-initials-blue;
+	}
+	&.ms-Persona-initials--darkBlue {
+		background-color: @ms-color-initials-darkBlue;
+	}
+	&.ms-Persona-initials--teal {
+		background-color: @ms-color-initials-teal;
+	}
+	&.ms-Persona-initials--lightGreen {
+		background-color: @ms-color-initials-lightGreen;
+	}
+	&.ms-Persona-initials--green {
+		background-color: @ms-color-initials-green;
+	}
+	&.ms-Persona-initials--darkGreen {
+		background-color: @ms-color-initials-darkGreen;
+	}
+	&.ms-Persona-initials--lightPink {
+		background-color: @ms-color-initials-lightPink;
+	}
+	&.ms-Persona-initials--pink {
+		background-color: @ms-color-initials-pink;
+	}
+	&.ms-Persona-initials--magenta {
+		background-color: @ms-color-initials-magenta;
+	}
+	&.ms-Persona-initials--purple {
+		background-color: @ms-color-initials-purple;
+	}
+	&.ms-Persona-initials--black {
+		background-color: @ms-color-initials-black;
+	}
+	&.ms-Persona-initials--orange {
+		background-color: @ms-color-initials-orange;
+	}
+	&.ms-Persona-initials--red {
+		background-color: @ms-color-initials-red;
+	}
+	&.ms-Persona-initials--darkRed {
+		background-color: @ms-color-initials-darkRed;
+	}
 }
 
 .ms-Persona-image {
@@ -39,8 +113,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 52px;
-	height: 52px;
+	width: 48px;
+	height: 48px;
 }
 
 .ms-Persona-image[src=""] {
@@ -118,7 +192,7 @@
 		left: 0;
 		bottom: auto;
 		right: auto;
-		height: 52px;
+		height: 48px;
 		width: 5px;
 		border-radius: 0;
 		border: 0;
@@ -197,7 +271,12 @@
 
 	.ms-Persona-placeholder {
 	  font-size: 28px;
-	  top: 4px;
+	  top: 6px;
+	}
+
+	.ms-Persona-initials {
+		font-size: @ms-font-size-s;
+		line-height: 32px;
 	}
 
 	.ms-Persona-presence {
@@ -244,6 +323,11 @@
 	  top: 5px;
 	}
 
+	.ms-Persona-initials {
+		font-size: @ms-font-size-m;
+		line-height: 40px;
+	}
+
 	.ms-Persona-presence {
 		left: 27px;
 	}
@@ -285,7 +369,12 @@
 
 	.ms-Persona-placeholder {
 	  font-size: 67px;
-	  top: 9px;
+	  top: 10px;
+	}
+
+	.ms-Persona-initials {
+		font-size: @ms-font-size-xxl;
+		line-height: 72px;
 	}
 
 	.ms-Persona-presence {
@@ -329,6 +418,11 @@
 	.ms-Persona-placeholder {
 	  font-size: 95px;
 	  top: 12px;
+	}
+
+	.ms-Persona-initials {
+		font-size: @ms-font-size-su;
+		line-height: 100px;
 	}
 
 	.ms-Persona-presence {

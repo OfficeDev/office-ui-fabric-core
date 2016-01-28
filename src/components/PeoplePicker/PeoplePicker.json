@@ -8,14 +8,15 @@
     "Button",
     "Label",
     "Overlay",
-    "Persona"
+    "Persona",
+    "PersonaCard"
   ],
   "wrapBranches": true,
   "fileOrder": [
     "PeoplePicker.html",
     "PeoplePicker.Compact.html",
     "PeoplePicker.Disconnected.html",
-    "PeoplePicker.FacePile.html"
+    "PeoplePicker.Facepile.html"
   ],
   "branches": [
     {
@@ -34,8 +35,8 @@
     },
     {
       "name": "Facepile",
-      "template": "PeoplePicker.FacePile.html",
-      "class": "ms-PeoplePicker--facePile"
+      "template": "PeoplePicker.Facepile.html",
+      "class": "ms-PeoplePicker--Facepile"
     }
   ]
 }

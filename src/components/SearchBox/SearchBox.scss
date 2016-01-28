@@ -33,7 +33,7 @@
   &.is-active {
     .ms-SearchBox-closeButton {
       display: block;
-      outline: 1px solid transparent;
+      outline: transparent 1px solid;
     }
   }
 }
@@ -42,7 +42,7 @@
   position: relative;
   @include ms-u-normalize;
   border: 1px solid $ms-color-themeTertiary;
-  outline: transparent;
+  outline: transparent 1px solid;
   border-radius: 0;
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-m;

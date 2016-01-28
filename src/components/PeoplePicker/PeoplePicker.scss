@@ -265,6 +265,7 @@ $personaItemHeight: 42px;
   border-top: 1px solid $ms-color-neutralLight;
   height: 69px;
   position: relative;
+  overflow: hidden;
 
   .ms-Spinner {
     position: absolute;
@@ -560,6 +561,7 @@ $personaItemHeight: 42px;
 
   .ms-PeoplePicker-searchMorePrimary {
     font-size: $ms-font-size-s;
+    line-height: 48px;
   }
 
   .ms-PeoplePicker-searchMoreIcon .ms-Icon {

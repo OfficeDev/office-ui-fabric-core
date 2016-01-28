@@ -116,7 +116,7 @@ var fabric = fabric || {};
                               '<div class="ms-Persona ms-Persona--xs ms-Persona--square">' +
                                '<div class="ms-Persona-imageArea">' +
                                  '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                                 '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                                 '<img class="ms-Persona-image" src="' + selectedImage + '" alt="Persona image">' +
                                '</div>' +
                                '<div class="ms-Persona-presence"></div>' +
                                '<div class="ms-Persona-details">' +
@@ -132,7 +132,7 @@ var fabric = fabric || {};
                                   '<div class="ms-Persona ms-Persona--sm">' +
                                      '<div class="ms-Persona-imageArea">' +
                                        '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                                       '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                                       '<img class="ms-Persona-image" src="' + selectedImage + '" alt="Persona image">' +
                                      '</div>' +
                                      '<div class="ms-Persona-presence"></div>' +
                                      '<div class="ms-Persona-details">' +

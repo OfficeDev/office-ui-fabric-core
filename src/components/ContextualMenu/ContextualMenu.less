@@ -8,19 +8,21 @@
 
 .ms-ContextualMenu {
   .ms-font-m;
-  .ms-u-normalize;
+  .resetMargins;
+  .resetPadding;
+  .ms-u-borderBox;
+  .drop-shadow;
+  background-color: @ms-color-white;
+  border: 1px solid @ms-color-neutralTertiaryAlt;
+  list-style-type: none;
+  position: absolute;
+  width: 180px;
+  z-index: (@ms-zIndex-ContextualMenu + @ms-zIndex-middle);
   display: none;
 
   // Hidden by default, then trigger this state to show it.
   &.is-open {
-    .drop-shadow;
-    background-color: @ms-color-white;
-    border: 1px solid @ms-color-neutralTertiaryAlt;
     display: block;
-    list-style-type: none;
-    position: absolute;
-    width: 180px;
-    z-index: (@ms-zIndex-ContextualMenu + @ms-zIndex-middle);
   }
 }
 

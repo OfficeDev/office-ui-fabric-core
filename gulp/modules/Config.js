@@ -21,6 +21,7 @@ var Config = function() {
 		distSampleComponents: distPath + '/samples/' +  '/Components',
 		distJS: distPath + '/js',
 		distPackages: distPath + '/packages',
+		bundlePath: distPath + '/bundles',
 		srcPath: srcPath,
 		srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',

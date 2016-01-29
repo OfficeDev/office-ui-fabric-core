@@ -27,6 +27,17 @@ var Banners = function() {
       			''].join('\n');
 	};
     /**
+     * Retrieve Banner Template for custom bundle with Template Variables
+     * @returns {String} with template variables for pkg version and pkg description
+     */
+  this.bundleBannerTemplate = function() {
+    return ['/**',
+        ' * Office UI Fabric <%= pkg.version %>',
+        ' * <%= bundleDescription %>',
+        ' **/',
+        ''].join('\n');
+    };
+    /**
      * Retrieve Copyright Comment for Javascript
      * @returns {String} containing Javascript Comment Speicific Copyright Message
      */

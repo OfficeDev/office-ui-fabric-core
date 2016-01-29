@@ -43,6 +43,10 @@ var Plugins = function() {
   this.plumber = require('gulp-plumber');
   this.lesshint = require('gulp-lesshint');
   this.scsslint = require('gulp-sass-lint');
+  this.replace = require('gulp-replace');
+  this.walkSync = require('walk-sync');
+  this.size = require('gulp-size');
+  this.fs = require('fs');
 };
 
 module.exports = new Plugins();

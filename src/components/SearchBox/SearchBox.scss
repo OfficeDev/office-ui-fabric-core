@@ -33,7 +33,7 @@
   &.is-active {
     .ms-SearchBox-closeButton {
       display: block;
-      outline: 1px solid transparent;
+      outline: transparent 1px solid;
     }
   }
 }
@@ -42,6 +42,7 @@
   position: relative;
   @include ms-u-normalize;
   border: 1px solid $ms-color-themeTertiary;
+  outline: transparent 1px solid;
   border-radius: 0;
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-m;
@@ -50,11 +51,11 @@
   padding: 6px 3px 7px 10px;
   width: 180px;
   background-color: transparent;
-  z-index: $ms-zIndex-back;
+  z-index: $ms-zIndex-middle;
 
   &.hovering {
     border-color: $ms-color-themePrimary;
-    background-color: fade($ms-color-themePrimary, 20%);
+    background-color: transparentize($ms-color-themePrimary, 0.8);
 
     & + .ms-SearchBox-label {
       color: $ms-color-black;
@@ -68,7 +69,7 @@
   &:focus {
     padding: 6px 32px 7px 10px;
     border-color: $ms-color-themePrimary;
-    background-color: fade($ms-color-themePrimary, 20%);
+    background-color: transparentize($ms-color-themePrimary, 0.8);
   }
   
   &::-ms-clear {

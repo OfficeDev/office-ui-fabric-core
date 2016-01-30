@@ -54,11 +54,10 @@ var Config = function() {
 		outputDir: this.paths.distPackages
 	};
 	this.nugetPaths = [
-		{src: this.paths.componentsPath, dest: "/content/components/"},
-		{src: this.paths.distCSS, dest: "/content/css/"},
-		{src: this.paths.distJS, dest: "/content/scripts/"},
+		{src: this.paths.distCSS, dest: "/content/"},
 		{src: this.paths.distLess, dest: "/content/less/"},
-        {src: this.paths.distSass, dest: "/content/sass/"}
+		{src: this.paths.distSass, dest: "/content/sass/"},
+		{src: this.paths.distJS, dest: "/scripts/"}
 	];
   this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
   this.componentSamplesFinished = ' Component Samples build was successful! Yay!';

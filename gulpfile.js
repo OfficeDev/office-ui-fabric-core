@@ -115,13 +115,13 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
 // Default Build
 // ----------------------------------------------------------------------------
 
-var buildWithMessages = buildTasks.concat(['ConfigureEnvironment-setLessMode','Errors-checkAllErrors', 'All-finished']);
+var buildWithMessages = buildTasks.concat(['ConfigureEnvironment-setSassMode','Errors-checkAllErrors', 'All-finished']);
 gulp.task('build', buildWithMessages);
 
 var rebuildWithMessages = buildTasks.concat(['All-updated']);
 gulp.task('re-build', rebuildWithMessages);
 
-gulp.task('default', ['ConfigureEnvironment-setLessMode', 'build']);
+gulp.task('default', ['ConfigureEnvironment-setSassMode', 'build']);
 
 
 //

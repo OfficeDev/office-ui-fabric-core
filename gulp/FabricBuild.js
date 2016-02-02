@@ -18,23 +18,6 @@ gulp.task('Fabric-nuke', function () {
     return Plugins.del.sync([Config.paths.distLess, Config.paths.distCSS, Config.paths.distSass]);
 });
 
-//
-// Style Linting
-// ---------------------------------------------------------------------------
-gulp.task('Fabric-styleHinting',  function() {
-    if (!Config.buildSass) {
-       return gulp.src(Config.paths.srcLess + '/Fabric.less')
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Checking LESS Compile errors and linting"
-            })))
-            .pipe(Plugins.lesshint({
-                configPath: './.lesshintrc'
-            }))
-            .pipe(ErrorHandling.LESSHintErrors());
-      
-    }
-});
-
 
 //
 // Copying Files Tasks
@@ -67,7 +50,7 @@ gulp.task('Fabric-copyAssets', function () {
 
 // Build LESS files for core Fabric into LTR and RTL CSS files.
 
-gulp.task('Fabric-buildStyles', ['Fabric-styleHinting'], function () {
+gulp.task('Fabric-buildStyles', function () {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -117,7 +100,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-styleHinting'], function () {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-styleHinting', 'Fabric-buildStyles']);
+gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
 
 //
 // Fabric Messages

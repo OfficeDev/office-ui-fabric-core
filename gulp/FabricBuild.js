@@ -23,25 +23,16 @@ gulp.task('Fabric-nuke', function () {
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
-// Copy all LESS files to distribution folder.
-gulp.task('Fabric-copyAssets', function () {
-    // Copy LESS files.
-     var moveLess = gulp.src([Config.paths.srcLess + '/**/*'])
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.changed(Config.paths.distLess))
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Moving LESS Assets over to Dist"
-            })))
-            .pipe(gulp.dest(Config.paths.distLess));
-                
+// Copy all Sass files to distribution folder.
+gulp.task('Fabric-copyAssets', function () {            
      var moveSass =  gulp.src([Config.paths.srcSass + '/**/*'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Moving SASS files over to Dist"
+                    title: "Moving Sass files over to Dist"
             })))
             .pipe(gulp.dest(Config.paths.distSass));
-     return Plugins.mergeStream(moveLess, moveSass);
+     return moveSass;
 });
 
 //

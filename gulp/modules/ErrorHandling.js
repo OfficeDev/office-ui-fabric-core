@@ -137,8 +137,6 @@ var ErrorHandling = function() {
             switch(error.plugin) {
                 case 'gulp-autoprefixer':
                     break;
-                case 'gulp-less':
-                    break;
                 case 'gulp-sass':
                     break;
                 default:
@@ -186,54 +184,7 @@ var ErrorHandling = function() {
         });
     };
     /**
-     * LESSHint error handler
-     * @param {object} file     Data containing file information
-     * @param {function} cb     Callback data with error or no arguments
-     */
-    this.LESSHintErrors = function(file, cb) {
-        return map(function (file, cb) {
-           
-            if (!file.lesshint.success) {
-                file.lesshint.results.forEach(function (err) {
-                    if (err) {
-                        var errorString = that.createLineErrorMessage(
-                            gulputil.colors.yellow(err.severity) + ' ' + err.message,
-                            err.file,
-                            err.line,
-                            err.source,
-                            'NA',
-                            ''
-                        );  
-                        if (err.severity == "warning") {
-                            gulputil.log(errorString);
-                            that.addWarning(errorString);
-                        } else {
-                           that.generatePluginError('lessHint', errorString);
-                        }
-                    }
-                });
-            }
-            return cb(null, file); 
-        });
-    };
-    /**
-     * Less Compiler error handler
-     * @param {object} error An object containing the error data.
-     */
-    this.LESSCompileErrors = function(error) {
-        var errorString = that.createLineErrorMessage(
-            error.filename,
-            error.line,
-            error.column,
-            'No Code',
-            error.message
-        );
-        that.generatePluginError('Less compiler', errorString);
-        console.log(error);
-        this.emit('end');
-    }
-    /**
-     * Less Compiler error handler
+     * Sass Compiler error handler
      * @param {object} error An object containing the error data.
      */
     this.SASSCompileErrors = function(error) {

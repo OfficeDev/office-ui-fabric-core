@@ -6,7 +6,6 @@ var pkg = require('../../package.json');
  */
 var Config = function() {
   this.debugMode = false;
-  this.lessExtension = "less";
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
@@ -24,7 +23,6 @@ var Config = function() {
 		srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		srcLess: srcPath + '/less',
 		templatePath : srcPath + '/templates'
 	};
 	this.port =  process.env.PORT || 2020;

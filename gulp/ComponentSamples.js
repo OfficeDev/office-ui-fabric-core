@@ -69,21 +69,6 @@ gulp.task('ComponentSamples-moveJS', function() {
             .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
-// Style Linting
-// ----------------------------------------------------------------------------
-
-gulp.task('ComponentSamples-styleHinting',  function() {
-    if (!Config.buildSass) {
-       return gulp.src(Config.paths.componentsPath + '/**/*.less')
-          .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-              title: "Checking LESS Compile errors and linting"
-          })))
-          .pipe(Plugins.lesshint({
-              configPath: './.lesshintrc'
-          }))
-         .pipe(ErrorHandling.LESSHintErrors());
-    }
-});
 
 //
 // Styles tasks
@@ -182,7 +167,6 @@ var ComponentSamplesTasks = [
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
-    'ComponentSamples-styleHinting',
     'ComponentSamples-moveJS',
     'ComponentSamples-copyIgnoredFiles'
 ];

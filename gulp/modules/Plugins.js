@@ -4,7 +4,6 @@
  */
 var Plugins = function() {
 	this.del = require('del');
-	this.less = require('gulp-less');
 	this.batch = require('gulp-batch');
 	this.cssMinify = require('gulp-minify-css');
 	this.csscomb = require('gulp-csscomb');
@@ -38,10 +37,8 @@ var Plugins = function() {
   this.gulpif = require('gulp-if');
   this.changed = require('gulp-changed');
   this.sass = require('gulp-sass');
-  this.lessToScss = require('gulp-less-to-scss');
   this.jshint = require('gulp-jshint');
   this.plumber = require('gulp-plumber');
-  this.lesshint = require('gulp-lesshint');
   this.scsslint = require('gulp-sass-lint');
   this.scsslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');

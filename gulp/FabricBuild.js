@@ -36,10 +36,10 @@ gulp.task('Fabric-copyAssets', function () {
 });
 
 //
-// LESS tasks
+// Sass tasks
 // ----------------------------------------------------------------------------
 
-// Build LESS files for core Fabric into LTR and RTL CSS files.
+// Build Sass files for core Fabric into LTR and RTL CSS files.
 
 gulp.task('Fabric-buildStyles', function () {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
@@ -111,7 +111,7 @@ gulp.task('Fabric-updated', ['Fabric'], function () {
 
 // Watch and build Fabric when sources change.
 gulp.task('Fabric-watch', ['Fabric', 'Fabric-finished'], function () {
-    return gulp.watch(Config.paths.lessPath + '/**/*', Plugins.batch(function (events, done) {
+    return gulp.watch(Config.paths.sassPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence('Fabric', 'Fabric-updated', done);
     }));
 });

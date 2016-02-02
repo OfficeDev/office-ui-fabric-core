@@ -15,7 +15,7 @@ var Plugins = require('./modules/Plugins');
 
 // Clean out the distribution folder.
 gulp.task('Fabric-nuke', function () {
-    return Plugins.del.sync([Config.paths.distLess, Config.paths.distCSS, Config.paths.distSass]);
+    return Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass]);
 });
 
 

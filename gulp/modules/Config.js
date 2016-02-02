@@ -14,7 +14,6 @@ var Config = function() {
 	var srcPath = 'src';
 	this.paths = {
 		distComponents: distPath + '/components',
-		distLess: distPath + '/less',
     distSass: distPath + '/sass',
 		distCSS: distPath + '/css',
 		distSamples: distPath + '/samples',
@@ -57,8 +56,7 @@ var Config = function() {
 		{src: this.paths.componentsPath, dest: "/content/components/"},
 		{src: this.paths.distCSS, dest: "/content/css/"},
 		{src: this.paths.distJS, dest: "/content/scripts/"},
-		{src: this.paths.distLess, dest: "/content/less/"},
-        {src: this.paths.distSass, dest: "/content/sass/"}
+    {src: this.paths.distSass, dest: "/content/sass/"}
 	];
   this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
   this.componentSamplesFinished = ' Component Samples build was successful! Yay!';

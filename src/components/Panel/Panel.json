@@ -12,7 +12,8 @@
   ],
   "wrapBranches": true,
   "fileOrder": [
-    "Panel.html"
+    "Panel.html",
+    "Panel.Medium.html"
   ],
   "branches": [
     {

@@ -39,6 +39,7 @@ $CommandButtonBlue: #2488D8;
   .ms-CommandBarItem .ms-CommandBarItem-commandText {
     display: inline-block;
   }
+  
   .ms-CommandBar-mainArea {
     padding-left: 0;
     margin-left: -1px;
@@ -316,5 +317,3 @@ $CommandButtonBlue: #2488D8;
   line-height: 82px; // Magic number that places text baseline at 50px.
   height: 70px;
 }
-
-

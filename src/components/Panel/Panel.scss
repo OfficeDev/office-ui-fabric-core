@@ -122,9 +122,17 @@ $CommandButtonBlue: #2488D8;
   }
 }
 
+//== Modifier: Small panel (fixed width)
+//
+.ms-Panel.ms-Panel--sm {
+  .ms-Panel-main {
+    width: $ms-Panel-smWidth;
+  }
+}
+
 //== Modifier: Medium panel 
 // Lg screens - (anchored right, fluid width)
-// Xl screens - (anchored right, fixed width)
+// Xl screens - (anchored right, fluid width)
 //
 .ms-Panel.ms-Panel--md {
   .ms-Panel-main {
@@ -133,24 +141,24 @@ $CommandButtonBlue: #2488D8;
     }
 
     @media (min-width: $ms-screen-xl-min) {
-      width: $ms-Panel-mdWidthXlScreen;
+      width: calc(100% - 643px);
     }
   }
 }
 
 //== Modifier: Large panel 
-// Xl screens - (anchored right, fluid width)
-// XXl screens - (anchored right, fixed width);
+// Lg screens - (anchored right, fluid width)
+// XXl screens - (anchored right, fluid width);
 //
 .ms-Panel.ms-Panel--lg {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-xl-min) {
+    @media (min-width: $ms-screen-lg-min) {
       width: calc(100% - #{$ms-Panel-lightDismissArea});
     }
 
     @media (min-width: $ms-screen-xxl-min) {
-      width: $ms-Panel-lgWidth;
-    }    
+      width: calc(100% - 428px);
+    }
   }
 }
 
@@ -159,8 +167,12 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-xxl-min) {
-      width: $ms-Panel-xlWidth;
+    @media (min-width: $ms-screen-lg-min) {
+      width: calc(100% - #{$ms-Panel-lightDismissArea});
+    }
+    
+    @media (min-width: $ms-screen-xl-min) {
+      width: calc(100% - 176px);
     }    
   }
 }

@@ -147,6 +147,26 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--sm {
   .ms-Panel-main {
     width: $ms-Panel-smWidth;
+
+    @media (min-width: $ms-screen-md-min) {
+      width: $ms-Panel-mdWidth;;
+    }
+  }
+}
+
+//== Modifier: Medium, Large, Extra Largs panels (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--md,
+.ms-Panel.ms-Panel--lg,
+.ms-Panel.ms-Panel--xl {
+  .ms-Panel-main {
+    @media (min-width: $ms-screen-md-min) {
+      width: 100%;
+    }
+
+    @media (min-width: $ms-screen-lg-min) {
+      left: $ms-Panel-smLightDismiss;
+    }
   }
 }
 
@@ -154,12 +174,8 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--md {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-lg-min) {
-      width: 100%;
-      left: $ms-Panel-smLightDismiss;
-    }
-
     @media (min-width: $ms-screen-xl-min) {
+      left: auto;
       width: $ms-Panel-lgWidth;
     }
   }
@@ -169,11 +185,6 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--lg {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-lg-min) {
-      width: 100%;
-      left: $ms-Panel-smLightDismiss;
-    }
-
     @media (min-width: $ms-screen-xxl-min) {
       left: $ms-Panel-lgLightDismiss;
     }
@@ -184,11 +195,6 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-lg-min) {
-      width: 100%;
-      left: $ms-Panel-smLightDismiss;
-    }
-    
     @media (min-width: $ms-screen-xl-min) {
       left: $ms-Panel-mdLightDismiss;
     }    

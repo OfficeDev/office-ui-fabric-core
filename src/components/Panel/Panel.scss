@@ -342,62 +342,24 @@ $CommandButtonBlue: #2488D8;
 }
 
 // Large screens.
-@media (min-width: $ms-screen-lg-min) {
+// @media (min-width: $ms-screen-lg-min) {
 
   // All but the small panel (medium to extra large) become
   // fluid with a fixed left margin of 48px when opened.
-  .ms-Panel.ms-Panel--medium,
-  .ms-Panel.ms-Panel--large,
-  .ms-Panel.ms-Panel--extraLarge {
-    .ms-Panel-main {
-      left: 47px; // Remove a pixel due to border-box.
-      width: auto;
-    }
-  }
+  // .ms-Panel.ms-Panel--md,
+  // .ms-Panel.ms-Panel--lg,
+  // .ms-Panel.ms-Panel--xl {
+  //   .ms-Panel-main {
+  //     left: 47px; // Remove a pixel due to border-box.
+  //     width: auto;
+  //   }
+  // }
 
-  .ms-Panel.ms-Panel--medium.is-open,
-  .ms-Panel.ms-Panel--large.is-open,
-  .ms-Panel.ms-Panel--extraLarge.is-open {
-    .ms-Panel-main {
-      width: auto;
-    }
-  }
-
-}
-
-// Extra large screens.
-@media (min-width: $ms-screen-xl-min) {
-
-  // Medium panel changes to 643px fixed width, while all other
-  // sizes remain the same as they were on large screens.
-  .ms-Panel.ms-Panel--medium .ms-Panel-main {
-    left: auto;
-    width: 644px; // Add a pixel due to border-box.
-  }
-
-  .ms-Panel.ms-Panel--medium.is-open .ms-Panel-main {
-    left: auto;
-    right: 0;
-    width: 644px; // Add a pixel due to border-box.
-  }
-
-}
-
-// Extra extra large screens.
-@media (min-width: $ms-screen-xxl-min) {
-
-  // Large panels have an increased left margin of 428px.
-  .ms-Panel.ms-Panel--large .ms-Panel-main {
-    left: 427px; // Remove a pixel due to border-box.
-  }
-
-  // Extra large panels have an increased left margin of 176px.
-  .ms-Panel.ms-Panel--extraLarge .ms-Panel-main {
-    left: 175px; // Remove a pixel due to border-box.
-  }
-
-  // For now, the small left panel is hidden on XXL screens and up.
-  .ms-Panel.ms-Panel--small.ms-Panel--left {
-    display: none;
-  }
-}
+  // .ms-Panel.ms-Panel--md.is-open,
+  // .ms-Panel.ms-Panel--lg.is-open,
+  // .ms-Panel.ms-Panel--xl.is-open {
+  //   .ms-Panel-main {
+  //     width: auto;
+  //   }
+  // }
+// }

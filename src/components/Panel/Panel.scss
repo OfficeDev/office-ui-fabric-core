@@ -39,7 +39,7 @@ $CommandButtonBlue: #2488D8;
   .ms-CommandBarItem .ms-CommandBarItem-commandText {
     display: inline-block;
   }
-  
+
   .ms-CommandBar-mainArea {
     padding-left: 0;
     margin-left: -1px;
@@ -58,8 +58,7 @@ $CommandButtonBlue: #2488D8;
   z-index: $ms-zIndex-front;
   width: 100%;
 
-  // On medium and up screens the full-width panel is replaced with one that is 340px wide
-  // and attached to the right of the screen.
+  // Medium screens and up - (anchored right, fixed width)
   @media (min-width: $ms-screen-md-min) {
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
@@ -156,7 +155,8 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--md {
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
-      width: calc(100% - #{$ms-Panel-smLightDismiss});
+      width: 100%;
+      left: $ms-Panel-smLightDismiss;
     }
 
     @media (min-width: $ms-screen-xl-min) {
@@ -170,11 +170,12 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--lg {
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
-      width: calc(100% - #{$ms-Panel-smLightDismiss});
+      width: 100%;
+      left: $ms-Panel-smLightDismiss;
     }
 
     @media (min-width: $ms-screen-xxl-min) {
-      width: calc(100% - #{$ms-Panel-lgLightDismiss});
+      left: $ms-Panel-lgLightDismiss;
     }
   }
 }
@@ -184,11 +185,12 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
-      width: calc(100% - #{$ms-Panel-smLightDismiss});
+      width: 100%;
+      left: $ms-Panel-smLightDismiss;
     }
     
     @media (min-width: $ms-screen-xl-min) {
-      width: calc(100% - #{$ms-Panel-mdLightDismiss});
+      left: $ms-Panel-mdLightDismiss;
     }    
   }
 }

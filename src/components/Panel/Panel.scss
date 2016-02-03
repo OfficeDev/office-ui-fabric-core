@@ -5,7 +5,9 @@
 // --------------------------------------------------
 // Panel styles
 
+$ms-Panel-smWidth: 272px;
 $ms-Panel-mdWidth: 340px;
+$ms-Panel-mdWidthXlScreen: 644px;
 $CommandButtonLightBlue: #b5d8f4;
 $CommandButtonLighterBlue: #d7eaf9;
 $CommandButtonDarkBlue: #07288b;
@@ -93,6 +95,45 @@ $CommandButtonBlue: #2488D8;
           color: $ms-color-white;
         }
       }
+    }
+  }
+}
+
+
+//== Modifier: Light Dismiss on small screens (fixed width)
+//
+.ms-Panel.ms-Panel--lightDismiss {
+  .ms-Panel-main {
+    @media (max-width: $ms-screen-sm-max) {
+      width: $ms-Panel-smWidth;
+    }
+  }
+}
+
+
+//== Modifier: Left anchored panel (anchored left, fixed width)
+//
+.ms-Panel.ms-Panel--left {
+  .ms-Panel-main {
+    right: auto;
+    left: 0;
+    width: $ms-Panel-smWidth;
+  }
+}
+
+
+//== Modifier: Medium panel 
+// Lg screens - (anchored right, fluid width)
+// Xl screens - (anchored right, fixed width)
+//
+.ms-Panel.ms-Panel--md {
+  .ms-Panel-main {
+    @media (min-width: $ms-screen-lg-min) {
+      width: calc(100% - 48px);
+    }
+
+    @media (min-width: $ms-screen-xl-min) {
+      width: $ms-Panel-mdWidthXlScreen;
     }
   }
 }

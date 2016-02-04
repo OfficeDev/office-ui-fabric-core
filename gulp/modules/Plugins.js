@@ -39,8 +39,7 @@ var Plugins = function() {
   this.sass = require('gulp-sass');
   this.jshint = require('gulp-jshint');
   this.plumber = require('gulp-plumber');
-  this.scsslint = require('gulp-sass-lint');
-  this.scsslint = require('gulp-sass-lint');
+  this.sasslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');
 };
 

@@ -70,6 +70,16 @@ gulp.task('ComponentSamples-moveJS', function() {
 });
 
 
+gulp.task('ComponentSamples-styleHinting',  function() {
+   return gulp.src(Config.paths.componentsPath + '/**/*.scss')
+      // .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+      .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+          title: "Checking SASS Compile errors and linting"
+      })))
+     .pipe(Plugins.sasslint())
+     .pipe(Plugins.sasslint.failOnError());
+ });
+
 //
 // Styles tasks
 // ----------------------------------------------------------------------------
@@ -168,7 +178,8 @@ var ComponentSamplesTasks = [
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
     'ComponentSamples-moveJS',
-    'ComponentSamples-copyIgnoredFiles'
+    'ComponentSamples-copyIgnoredFiles',
+    'ComponentSamples-styleHinting'
 ];
 
 //Build Fabric Component Samples

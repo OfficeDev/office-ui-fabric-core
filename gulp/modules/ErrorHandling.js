@@ -138,6 +138,7 @@ var ErrorHandling = function() {
                 case 'gulp-autoprefixer':
                     break;
                 case 'gulp-sass':
+                    this.emit('end');
                     break;
                 default:
                     that.generateBuildError(error[0]);
@@ -230,13 +231,17 @@ var ErrorHandling = function() {
                             message.ruleId,
                             ' '
                          );
+                        console.log("hererererre");
                         gulputil.log(errorString);
                         that.addError(errorString);
                     }
                 }
+              return cb(errorString);
+            } else {
+              return cb(null, file);
             }
-            return cb(null, file); 
-        });
+             
+        }, {failures: true});
     };
 };
 

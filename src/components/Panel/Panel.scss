@@ -69,6 +69,8 @@ $CommandButtonBlue: #2488D8;
   }
 
   .ms-CommandBar {
+    outline: 1px solid transparent;
+
     .ms-CommandBarItem {
       user-select: none;
 
@@ -104,6 +106,7 @@ $CommandButtonBlue: #2488D8;
       .ms-CommandBarItem-linkWrapper {
         padding-left: 12px;
         padding-right: 12px;
+        cursor: pointer;
       }
 
       &:hover {
@@ -127,6 +130,8 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--lightDismiss {
   .ms-Panel-main {
     @media (max-width: $ms-screen-sm-max) {
+      border-left: 1px solid $ms-color-neutralLight;
+      border-right: 1px solid $ms-color-neutralLight;
       width: $ms-Panel-smWidth;
     }
   }
@@ -220,6 +225,10 @@ $CommandButtonBlue: #2488D8;
   .ms-Overlay {
     display: block;
     pointer-events: auto;
+
+    @media screen and (-ms-high-contrast: active) {
+      opacity: 0;
+    }
   }
 
   &.ms-Panel-animateOut {
@@ -284,6 +293,16 @@ $CommandButtonBlue: #2488D8;
       cursor: pointer;
       opacity: 1;
       pointer-events: auto;
+    }
+
+    &.ms-Panel-animateIn,
+    &.ms-Panel--left.ms-Panel-animateIn {
+      .ms-Overlay {
+        @media screen and (-ms-high-contrast: active) {
+          opacity: 0;
+          animation-name: none;
+        }
+      }
     }
   }
 }

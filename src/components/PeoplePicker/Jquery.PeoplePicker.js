@@ -176,7 +176,6 @@ var fabric = fabric || {};
             $peopleList.children().show();
             $peopleList.children(":gt(4)").hide();
 
-            $('.ms-PeoplePicker-selected').show();
             $('.ms-PeoplePicker-searchMore').removeClass('is-active');
             $searchField.val("");
           }
@@ -298,7 +297,7 @@ var fabric = fabric || {};
         /** Show members and hide searchmore when field is empty */
         if ($(this).val() === "") {
           $peoplePicker.removeClass('is-searching');
-          $selected.show();
+          // $selected.show();
           $('.ms-PeoplePicker-searchMore').removeClass('is-active');
           $selectedPeople.addClass('ms-u-slideDownIn20');
           setTimeout(function() { $selectedPeople.removeClass('ms-u-slideDownIn20');}, 1000);

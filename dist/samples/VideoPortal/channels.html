@@ -1,0 +1,79 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Video Portal Example App</title>
+  
+  <!-- jQuery, required for the sample Component plugins -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Fabric core and Components CSS -->
+  <link rel="stylesheet" type="text/css" href="../../css/fabric.css">
+  <link rel="stylesheet" type="text/css" href="../../css/fabric.components.css">
+
+  <!-- Application-specific CSS -->
+  <link rel="stylesheet" href="css/VideoPortal.css">
+</head>
+<body>
+  <div class="VideoPortal">
+    <div class="VideoPortal-content">
+    <!-- Host for NavBar component -->
+      <div class="VideoPortal-navBar">
+        <!-- Fabric NavBar component -->
+        <div class="ms-NavBar">
+          <div class="ms-NavBar-openMenu js-openMenu">
+            <i class="ms-Icon ms-Icon--menu"></i>
+          </div>
+          <ul class="ms-NavBar-items">
+            <li class="ms-NavBar-item ms-NavBar-item--search ms-u-hiddenSm">
+              <div class="ms-TextField">
+                <input class="ms-TextField-field">
+              </div>
+            </li>
+            <li class="ms-NavBar-item"><a class="ms-NavBar-link" href="index.html">Home</a></li>
+            <li class="ms-NavBar-item is-selected"><a class="ms-NavBar-link" href="channels.html">All Channels</a></li>
+            <li class="ms-NavBar-item ms-NavBar-item--hasMenu">
+              <a class="ms-NavBar-link" href="#">My Channels</a>
+              <i class="ms-NavBar-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+              <ul class="ms-ContextualMenu">
+                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Employee interviews</a></li>
+                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Executive Briefings</a></li>
+                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Web Tech Talks</a></li>
+              </ul>
+            </li>
+            <li class="ms-NavBar-item ms-NavBar-item--right"><i class="ms-Icon ms-Icon--upload"></i> Upload</li>
+          </ul>
+        </div>
+      </div>
+      <div class="VideoPortal-page ChannelsPage">
+        <div class="ms-Grid">
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #dc0606;">Technical Presentations</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #2e75b6;">Employee Interviews</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #bf9000;">Executive Briefings</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #548235;">Research Insights</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #2e75b6;">Acquisitions and Mergers Overview</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #bf9000;">Web Tech Talks</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #dc0606;">Brown Bag Series</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #548235;">Sales Reports</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #2e75b6;">Growth Initiatives</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #2e75b6;">Holding Projetions</a>
+            <a href="channel.html" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: #dc0606;">Customer Trends</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fabric jQuery plugin for NavBar component -->
+  <script src="../../components/NavBar/Jquery.Navbar.js"></script>
+  <script>
+    $(document).ready(function() {
+        // Invoke the NavBar jQuery plugin if it's available
+        if ($.fn.NavBar) {
+          $('.ms-NavBar').NavBar();
+        }
+    });
+  </script>
+</body>
+</html>

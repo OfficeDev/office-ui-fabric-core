@@ -1,0 +1,203 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Font definitions
+
+
+// Font weights.
+@ms-light:     "Segoe UI Light";
+@ms-regular:   "Segoe UI Regular";
+@ms-semibold:  "Segoe UI Semibold";
+@ms-semilight: "Segoe UI Semilight";
+
+
+// Font paths.
+@ms-font-directory:         "https://appsforoffice.microsoft.com/fabric/fonts";
+@ms-font-path-arabic:       "SegoeUI-Arabic";
+@ms-font-path-cyrillic:     "SegoeUI-Cyrillic";
+@ms-font-path-easteuropean: "SegoeUI-EastEuropean";
+@ms-font-path-greek:        "SegoeUI-Greek";
+@ms-font-path-hebrew:       "SegoeUI-Hebrew";
+@ms-font-path-vietnamese:   "SegoeUI-Vietnamese";
+@ms-font-path-westeuropean: "SegoeUI-WestEuropean";
+
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+
+// Mixins to generate @font-face rules for unique languages.
+.SegoeUILight(@ms-font-language, @ms-font-path) {
+  @font-face {
+    font-family: "@{ms-light} @{ms-font-language}";
+    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.eot?#iefix') format('embedded-opentype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.woff') format('woff'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.ttf') format('truetype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.SegoeUIRegular(@ms-font-language, @ms-font-path) {
+  @font-face {
+    font-family: "@{ms-regular} @{ms-font-language}";
+    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.eot?#iefix') format('embedded-opentype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.woff') format('woff'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.ttf') format('truetype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Regular.svg#SegoeUI-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.SegoeUISemilight(@ms-font-language, @ms-font-path) {
+  @font-face {
+    font-family: "@{ms-semilight} @{ms-font-language}";
+    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.eot?#iefix') format('embedded-opentype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.ttf') format('truetype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semilight.svg#SegoeUI-Semilight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+.SegoeUISemibold(@ms-font-language, @ms-font-path) {
+  @font-face {
+    font-family: "@{ms-semibold} @{ms-font-language}";
+    src: url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.woff') format('woff'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.ttf') format('truetype'),
+         url('@{ms-font-directory}/@{ms-font-path}/SegoeUI-Semibold.svg#SegoeUI-Semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+
+// Additional @font-face rules for the Leelawadee font.
+@font-face {
+  font-family: "Leelawadee UI Bold";
+  src: url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.eot?#iefix') format('embedded-opentype'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.woff') format('woff'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.ttf') format('truetype'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold#LeelawadeeUI-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Leelawadee UI";
+  src: url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.eot?#iefix') format('embedded-opentype'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.woff') format('woff'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.ttf') format('truetype'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular#LeelawadeeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Leelawadee UI Semilight";
+  src: url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.eot?#iefix') format('embedded-opentype'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.ttf') format('truetype'),
+       url('@{ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight#LeelawadeeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// Mixins to generate language-specific font faces.
+.SegoeUIArabicLight {
+  .SegoeUILight("Arabic", @ms-font-path-arabic);
+}
+.SegoeUIArabicRegular {
+  .SegoeUIRegular("Arabic", @ms-font-path-arabic);
+}
+.SegoeUIArabicSemibold {
+  .SegoeUISemibold("Arabic", @ms-font-path-arabic);
+}
+.SegoeUIArabicSemilight {
+  .SegoeUISemilight("Arabic", @ms-font-path-arabic);
+}
+
+.SegoeUICyrillicLight {
+  .SegoeUILight("Cyrillic", @ms-font-path-cyrillic);
+}
+.SegoeUICyrillicRegular {
+  .SegoeUIRegular("Cyrillic", @ms-font-path-cyrillic);
+}
+.SegoeUICyrillicSemibold {
+  .SegoeUISemibold("Cyrillic", @ms-font-path-cyrillic);
+}
+.SegoeUICyrillicSemilight {
+  .SegoeUISemilight("Cyrillic", @ms-font-path-cyrillic);
+}
+
+.SegoeUIEastEuropeanLight {
+  .SegoeUILight("EastEuropean", @ms-font-path-easteuropean);
+}
+.SegoeUIEastEuropeanRegular {
+  .SegoeUIRegular("EastEuropean", @ms-font-path-easteuropean);
+}
+.SegoeUIEastEuropeanSemibold {
+  .SegoeUISemibold("EastEuropean", @ms-font-path-easteuropean);
+}
+.SegoeUIEastEuropeanSemilight {
+  .SegoeUISemilight("EastEuropean", @ms-font-path-easteuropean);
+}
+
+.SegoeUIGreekLight {
+  .SegoeUILight("Greek", @ms-font-path-greek);
+}
+.SegoeUIGreekRegular {
+  .SegoeUIRegular("Greek", @ms-font-path-greek);
+}
+.SegoeUIGreekSemibold {
+  .SegoeUISemibold("Greek", @ms-font-path-greek);
+}
+.SegoeUIGreekSemilight {
+  .SegoeUISemilight("Greek", @ms-font-path-greek);
+}
+
+.SegoeUIHebrewLight {
+  .SegoeUILight("Hebrew", @ms-font-path-hebrew);
+}
+.SegoeUIHebrewRegular {
+  .SegoeUIRegular("Hebrew", @ms-font-path-hebrew);
+}
+.SegoeUIHebrewSemibold {
+  .SegoeUISemibold("Hebrew", @ms-font-path-hebrew);
+}
+.SegoeUIHebrewSemilight {
+  .SegoeUISemilight("Hebrew", @ms-font-path-hebrew);
+}
+
+.SegoeUIVietnameseLight {
+  .SegoeUILight("Vietnamese", @ms-font-path-vietnamese);
+}
+.SegoeUIVietnameseRegular {
+  .SegoeUIRegular("Vietnamese", @ms-font-path-vietnamese);
+}
+.SegoeUIVietnameseSemibold {
+  .SegoeUISemibold("Vietnamese", @ms-font-path-vietnamese);
+}
+.SegoeUIVietnameseSemilight {
+  .SegoeUISemilight("Vietnamese", @ms-font-path-vietnamese);
+}
+
+.SegoeUIWestEuropeanLight {
+  .SegoeUILight("WestEuropean", @ms-font-path-westeuropean);
+}
+.SegoeUIWestEuropeanRegular {
+  .SegoeUIRegular("WestEuropean", @ms-font-path-westeuropean);
+}
+.SegoeUIWestEuropeanSemibold {
+  .SegoeUISemibold("WestEuropean", @ms-font-path-westeuropean);
+}
+.SegoeUIWestEuropeanSemilight {
+  .SegoeUISemilight("WestEuropean", @ms-font-path-westeuropean);
+}

@@ -1,0 +1,449 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Fabric Core Color Mixins
+
+@import "Fabric.Color.Mixins";
+
+//== Background colors
+//
+// Theme colors
+.ms-bgColor-themeDark,
+.ms-bgColor-themeDark--hover:hover {
+  @include ms-bgColor-themeDark;
+}
+
+.ms-bgColor-themeDarkAlt, 
+.ms-bgColor-themeDarkAlt--hover:hover {
+  @include ms-bgColor-themeDarkAlt;
+}
+
+.ms-bgColor-themeDarker, 
+.ms-bgColor-themeDarker--hover:hover {
+  @include ms-bgColor-themeDarker;
+}
+
+.ms-bgColor-themePrimary, 
+.ms-bgColor-themePrimary--hover:hover {
+  @include ms-bgColor-themePrimary;
+}
+
+.ms-bgColor-themeSecondary, 
+.ms-bgColor-themeSecondary--hover:hover {
+  @include ms-bgColor-themeSecondary;
+}
+
+.ms-bgColor-themeTertiary, 
+.ms-bgColor-themeTertiary--hover:hover {
+  @include ms-bgColor-themeTertiary;
+}
+
+.ms-bgColor-themeLight, 
+.ms-bgColor-themeLight--hover:hover {
+  @include ms-bgColor-themeLight;
+}
+
+.ms-bgColor-themeLighter, 
+.ms-bgColor-themeLighter--hover:hover {
+  @include ms-bgColor-themeLighter;
+}
+
+.ms-bgColor-themeLighterAlt, 
+.ms-bgColor-themeLighterAlt--hover:hover {
+  @include ms-bgColor-themeLighterAlt;
+}
+
+// Neutral colors
+.ms-bgColor-black, 
+.ms-bgColor-black--hover:hover {
+  @include ms-bgColor-black;
+}
+
+.ms-bgColor-neutralDark, 
+.ms-bgColor-neutralDark--hover:hover {
+  @include ms-bgColor-neutralDark;
+}
+
+.ms-bgColor-neutralPrimary, 
+.ms-bgColor-neutralPrimary--hover:hover {
+  @include ms-bgColor-neutralPrimary;
+}
+
+.ms-bgColor-neutralSecondary, 
+.ms-bgColor-neutralSecondary--hover:hover {
+  @include ms-bgColor-neutralSecondary;
+}
+
+.ms-bgColor-neutralSecondaryAlt, 
+.ms-bgColor-neutralSecondaryAlt--hover:hover {
+  @include ms-bgColor-neutralSecondaryAlt;
+}
+
+.ms-bgColor-neutralTertiary, 
+.ms-bgColor-neutralTertiary--hover:hover {
+  @include ms-bgColor-neutralTertiary;
+}
+
+.ms-bgColor-neutralTertiaryAlt, 
+.ms-bgColor-neutralTertiaryAlt--hover:hover {
+  @include ms-bgColor-neutralTertiaryAlt;
+}
+
+.ms-bgColor-neutralLight, 
+.ms-bgColor-neutralLight--hover:hover {
+  @include ms-bgColor-neutralLight;
+}
+
+.ms-bgColor-neutralLighter, 
+.ms-bgColor-neutralLighter--hover:hover {
+  @include ms-bgColor-neutralLighter;
+}
+
+.ms-bgColor-neutralLighterAlt, 
+.ms-bgColor-neutralLighterAlt--hover:hover {
+  @include ms-bgColor-neutralLighterAlt;
+}
+
+.ms-bgColor-white, 
+.ms-bgColor-white--hover:hover {
+  @include ms-bgColor-white;
+}
+
+
+// Brand and accent colors
+.ms-bgColor-yellow {
+  @include ms-bgColor-yellow;
+}
+
+.ms-bgColor-yellowLight {
+  @include ms-bgColor-yellowLight;
+}
+
+.ms-bgColor-orange {
+  @include ms-bgColor-orange;
+}
+
+.ms-bgColor-orangeLight {
+  @include ms-bgColor-orangeLight;
+}
+
+.ms-bgColor-redDark {
+  @include ms-bgColor-redDark;
+}
+
+.ms-bgColor-red {
+  @include ms-bgColor-red;
+}
+
+.ms-bgColor-magentaDark {
+  @include ms-bgColor-magentaDark;
+}
+
+.ms-bgColor-magenta {
+  @include ms-bgColor-magenta;
+}
+
+.ms-bgColor-magentaLight {
+  @include ms-bgColor-magentaLight;
+}
+
+.ms-bgColor-purpleDark {
+  @include ms-bgColor-purpleDark;
+}
+
+.ms-bgColor-purple {
+  @include ms-bgColor-purple;
+}
+
+.ms-bgColor-purpleLight {
+  @include ms-bgColor-purpleLight;
+}
+
+.ms-bgColor-blueDark {
+  @include ms-bgColor-blueDark;
+}
+
+.ms-bgColor-blueMid {
+  @include ms-bgColor-blueMid;
+}
+
+.ms-bgColor-blue {
+  @include ms-bgColor-blue;
+}
+
+.ms-bgColor-blueLight {
+  @include ms-bgColor-blueLight;
+}
+
+.ms-bgColor-tealDark {
+  @include ms-bgColor-tealDark;
+}
+
+.ms-bgColor-teal {
+  @include ms-bgColor-teal;
+}
+
+.ms-bgColor-tealLight {
+  @include ms-bgColor-tealLight;
+}
+
+.ms-bgColor-greenDark {
+  @include ms-bgColor-greenDark;
+}
+
+.ms-bgColor-green {
+  @include ms-bgColor-green;
+}
+
+.ms-bgColor-greenLight {
+  @include ms-bgColor-greenLight;
+}
+
+// Others
+.ms-bgColor-error {
+  @include ms-bgColor-error;
+}
+
+.ms-bgColor-alert {
+  @include ms-bgColor-alert;
+}
+
+.ms-bgColor-info {
+  @include ms-bgColor-info;
+}
+
+.ms-bgColor-success {
+  @include ms-bgColor-success;
+}
+
+.ms-bgColor-orangeLighter, 
+.ms-bgColor-orangeLighter--hover:hover {
+  @include ms-bgColor-orangeLighter;
+}
+
+
+//== Border colors
+//
+
+// Theme colors
+.ms-borderColor-themeDark, 
+.ms-borderColor-themeDark--hover:hover {
+  @include ms-borderColor-themeDark;
+}
+
+.ms-borderColor-themeDarkAlt, 
+.ms-borderColor-themeDarkAlt--hover:hover {
+  @include ms-borderColor-themeDarkAlt;
+}
+
+.ms-borderColor-themeDarker, 
+.ms-borderColor-themeDarker--hover:hover {
+  @include ms-borderColor-themeDarker;
+}
+
+.ms-borderColor-themePrimary, 
+.ms-borderColor-themePrimary--hover:hover {
+  @include ms-borderColor-themePrimary;
+}
+
+.ms-borderColor-themeSecondary, 
+.ms-borderColor-themeSecondary--hover:hover {
+  @include ms-borderColor-themeSecondary;
+}
+
+.ms-borderColor-themeTertiary, 
+.ms-borderColor-themeTertiary--hover:hover {
+  @include ms-borderColor-themeTertiary;
+}
+
+.ms-borderColor-themeLight, 
+.ms-borderColor-themeLight--hover:hover {
+  @include ms-borderColor-themeLight;
+}
+
+.ms-borderColor-themeLighter, 
+.ms-borderColor-themeLighter--hover:hover {
+  @include ms-borderColor-themeLighter;
+}
+
+.ms-borderColor-themeLighterAlt, 
+.ms-borderColor-themeLighterAlt--hover:hover {
+  @include ms-borderColor-themeLighterAlt;
+}
+
+
+// Neutral colors
+.ms-borderColor-black, 
+.ms-borderColor-black--hover:hover {
+  @include ms-borderColor-black;
+}
+
+.ms-borderColor-neutralDark, 
+.ms-borderColor-neutralDark--hover:hover {
+  @include ms-borderColor-neutralDark;
+}
+
+.ms-borderColor-neutralPrimary, 
+.ms-borderColor-neutralPrimary--hover:hover {
+  @include ms-borderColor-neutralPrimary;
+}
+
+.ms-borderColor-neutralSecondary, 
+.ms-borderColor-neutralSecondary--hover:hover {
+  @include ms-borderColor-neutralSecondary;
+}
+
+.ms-borderColor-neutralSecondaryAlt, 
+.ms-borderColor-neutralSecondaryAlt--hover:hover {
+  @include ms-borderColor-neutralSecondaryAlt;
+}
+
+.ms-borderColor-neutralTertiary, 
+.ms-borderColor-neutralTertiary--hover:hover {
+  @include ms-borderColor-neutralTertiary;
+}
+
+.ms-borderColor-neutralTertiaryAlt, 
+.ms-borderColor-neutralTertiaryAlt--hover:hover {
+  @include ms-borderColor-neutralTertiaryAlt;
+}
+
+.ms-borderColor-neutralLight, 
+.ms-borderColor-neutralLight--hover:hover {
+  @include ms-borderColor-neutralLight;
+}
+
+.ms-borderColor-neutralLighter, 
+.ms-borderColor-neutralLighter--hover:hover {
+  @include ms-borderColor-neutralLighter;
+}
+
+.ms-borderColor-neutralLighterAlt, 
+.ms-borderColor-neutralLighterAlt--hover:hover {
+  @include ms-borderColor-neutralLighterAlt;
+}
+
+.ms-borderColor-white, 
+.ms-borderColor-white--hover:hover { 
+  @include ms-borderColor-white;
+}
+
+// Brand and accent colors
+.ms-borderColor-yellow {
+  @include ms-borderColor-yellow;
+}
+
+.ms-borderColor-yellowLight {
+  @include ms-borderColor-yellowLight;
+}
+
+.ms-borderColor-orange {
+  @include ms-borderColor-orange;
+}
+
+.ms-borderColor-orangeLight {
+  @include ms-borderColor-orangeLight;
+}
+
+.ms-borderColor-redDark {
+  @include ms-borderColor-redDark;
+}
+
+.ms-borderColor-red {
+  @include ms-borderColor-red;
+}
+
+.ms-borderColor-magentaDark {
+  @include ms-borderColor-magentaDark;
+}
+
+.ms-borderColor-magenta {
+  @include ms-borderColor-magenta;
+}
+
+.ms-borderColor-magentaLight {
+  @include ms-borderColor-magentaLight;
+}
+
+.ms-borderColor-purpleDark {
+  @include ms-borderColor-purpleDark;
+}
+
+.ms-borderColor-purple {
+  @include ms-borderColor-purple;
+}
+
+.ms-borderColor-purpleLight {
+  @include ms-borderColor-purpleLight;
+}
+
+.ms-borderColor-blueDark {
+  @include ms-borderColor-blueDark;
+}
+
+.ms-borderColor-blueMid {
+  @include ms-borderColor-blueMid;
+}
+
+.ms-borderColor-blue {
+  @include ms-borderColor-blue;
+}
+
+.ms-borderColor-blueLight {
+  @include ms-borderColor-blueLight;
+}
+
+.ms-borderColor-tealDark {
+  @include ms-borderColor-tealDark;
+}
+
+.ms-borderColor-teal {
+  @include ms-borderColor-teal;
+}
+
+.ms-borderColor-tealLight {
+  @include ms-borderColor-tealLight;
+}
+
+.ms-borderColor-greenDark {
+  @include ms-borderColor-greenDark;
+}
+
+.ms-borderColor-green {
+  @include ms-borderColor-green;
+}
+
+.ms-borderColor-greenLight {
+  @include ms-borderColor-greenLight;
+}
+
+// Status colors
+.ms-borderColor-error {
+  @include ms-borderColor-error;
+}
+
+.ms-borderColor-success {
+  @include ms-borderColor-success;
+}
+
+.ms-borderColor-info {
+  @include ms-borderColor-info;
+}
+
+.ms-borderColor-alert {
+  @include ms-borderColor-alert;
+}
+
+// Others
+.ms-borderColor-orangeLighter, 
+.ms-borderColor-orangeLighter--hover:hover {
+  @include ms-borderColor-orangeLighter;
+}
+
+// Individual borders, by request
+.ms-borderColorTop-themePrimary, 
+.ms-borderColorTop-themePrimary--hover:hover {
+  @include ms-borderColorTop-themePrimary;
+}

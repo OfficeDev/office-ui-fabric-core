@@ -1,0 +1,405 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Fabric Core Color Mixins
+
+
+//== Background colors
+//
+// Theme colors
+@mixin ms-bgColor-themeDark {
+  background-color: $ms-color-themeDark;
+}
+
+@mixin ms-bgColor-themeDarkAlt {
+  background-color: $ms-color-themeDarkAlt;
+}
+
+@mixin ms-bgColor-themeDarker {
+  background-color: $ms-color-themeDarker;
+}
+
+@mixin ms-bgColor-themePrimary {
+  background-color: $ms-color-themePrimary;
+}
+
+@mixin ms-bgColor-themeSecondary {
+  background-color: $ms-color-themeSecondary;
+}
+
+@mixin ms-bgColor-themeTertiary {
+  background-color: $ms-color-themeTertiary;
+}
+
+@mixin ms-bgColor-themeLight {
+  background-color: $ms-color-themeLight;
+}
+
+@mixin ms-bgColor-themeLighter {
+  background-color: $ms-color-themeLighter;
+}
+
+@mixin ms-bgColor-themeLighterAlt {
+  background-color: $ms-color-themeLighterAlt;
+}
+
+// Neutral colors
+@mixin ms-bgColor-black {
+  background-color: $ms-color-black;
+}
+
+@mixin ms-bgColor-neutralDark {
+  background-color: $ms-color-neutralDark;
+}
+
+@mixin ms-bgColor-neutralPrimary {
+  background-color: $ms-color-neutralPrimary;
+}
+
+@mixin ms-bgColor-neutralSecondary {
+  background-color: $ms-color-neutralSecondary;
+}
+
+@mixin ms-bgColor-neutralSecondaryAlt {
+  background-color: $ms-color-neutralSecondaryAlt;
+}
+
+@mixin ms-bgColor-neutralTertiary {
+  background-color: $ms-color-neutralTertiary;
+}
+
+@mixin ms-bgColor-neutralTertiaryAlt {
+  background-color: $ms-color-neutralTertiaryAlt;
+}
+
+@mixin ms-bgColor-neutralLight {
+  background-color: $ms-color-neutralLight;
+}
+
+@mixin ms-bgColor-neutralLighter {
+  background-color: $ms-color-neutralLighter;
+}
+
+@mixin ms-bgColor-neutralLighterAlt {
+  background-color: $ms-color-neutralLighterAlt;
+}
+
+@mixin ms-bgColor-white {
+  background-color: $ms-color-white;
+}
+
+
+// Brand and accent colors
+@mixin ms-bgColor-yellow {
+  background-color: $ms-color-yellow;
+}
+
+@mixin ms-bgColor-yellowLight {
+  background-color: $ms-color-yellowLight;
+}
+
+@mixin ms-bgColor-orange {
+  background-color: $ms-color-orange;
+}
+
+@mixin ms-bgColor-orangeLight {
+  background-color: $ms-color-orangeLight;
+}
+
+@mixin ms-bgColor-redDark {
+  background-color: $ms-color-redDark;
+}
+
+@mixin ms-bgColor-red {
+  background-color: $ms-color-red;
+}
+
+@mixin ms-bgColor-magentaDark {
+  background-color: $ms-color-magentaDark;
+}
+
+@mixin ms-bgColor-magenta {
+  background-color: $ms-color-magenta;
+}
+
+@mixin ms-bgColor-magentaLight {
+  background-color: $ms-color-magentaLight;
+}
+
+@mixin ms-bgColor-purpleDark {
+  background-color: $ms-color-purpleDark;
+}
+
+@mixin ms-bgColor-purple {
+  background-color: $ms-color-purple;
+}
+
+@mixin ms-bgColor-purpleLight {
+  background-color: $ms-color-purpleLight;
+}
+
+@mixin ms-bgColor-blueDark {
+  background-color: $ms-color-blueDark;
+}
+
+@mixin ms-bgColor-blueMid {
+  background-color: $ms-color-blueMid;
+}
+
+@mixin ms-bgColor-blue {
+  background-color: $ms-color-blue;
+}
+
+@mixin ms-bgColor-blueLight {
+  background-color: $ms-color-blueLight;
+}
+
+@mixin ms-bgColor-tealDark {
+  background-color: $ms-color-tealDark;
+}
+
+@mixin ms-bgColor-teal {
+  background-color: $ms-color-teal;
+}
+
+@mixin ms-bgColor-tealLight {
+  background-color: $ms-color-tealLight;
+}
+
+@mixin ms-bgColor-greenDark {
+  background-color: $ms-color-greenDark;
+}
+
+@mixin ms-bgColor-green {
+  background-color: $ms-color-green;
+}
+
+@mixin ms-bgColor-greenLight {
+  background-color: $ms-color-greenLight;
+}
+
+// Others
+@mixin ms-bgColor-error {
+  background-color: $ms-color-errorBackground;
+}
+
+@mixin ms-bgColor-alert {
+  background-color: $ms-color-alertBackground;
+}
+
+@mixin ms-bgColor-info {
+  background-color: $ms-color-infoBackground;
+}
+
+@mixin ms-bgColor-success {
+  background-color: $ms-color-successBackground;
+}
+
+@mixin ms-bgColor-orangeLighter {
+  background-color: $ms-color-orangeLighter;
+}
+
+
+//== Border colors
+//
+
+// Theme colors
+@mixin ms-borderColor-themeDark {
+  border-color: $ms-color-themeDark;
+}
+
+@mixin ms-borderColor-themeDarkAlt {
+  border-color: $ms-color-themeDarkAlt;
+}
+
+@mixin ms-borderColor-themeDarker {
+  border-color: $ms-color-themeDarker;
+}
+
+@mixin ms-borderColor-themePrimary {
+  border-color: $ms-color-themePrimary;
+}
+
+@mixin ms-borderColor-themeSecondary {
+  border-color: $ms-color-themeSecondary;
+}
+
+@mixin ms-borderColor-themeTertiary {
+  border-color: $ms-color-themeTertiary;
+}
+
+@mixin ms-borderColor-themeLight {
+  border-color: $ms-color-themeLight;
+}
+
+@mixin ms-borderColor-themeLighter {
+  border-color: $ms-color-themeLighter;
+}
+
+@mixin ms-borderColor-themeLighterAlt {
+  border-color: $ms-color-themeLighterAlt;
+}
+
+
+// Neutral colors
+@mixin ms-borderColor-black {
+  border-color: $ms-color-black;
+}
+
+@mixin ms-borderColor-neutralDark {
+  border-color: $ms-color-neutralDark;
+}
+
+@mixin ms-borderColor-neutralPrimary {
+  border-color: $ms-color-neutralPrimary;
+}
+
+@mixin ms-borderColor-neutralSecondary {
+  border-color: $ms-color-neutralSecondary;
+}
+
+@mixin ms-borderColor-neutralSecondaryAlt {
+  border-color: $ms-color-neutralSecondaryAlt;
+}
+
+@mixin ms-borderColor-neutralTertiary {
+  border-color: $ms-color-neutralTertiary;
+}
+
+@mixin ms-borderColor-neutralTertiaryAlt {
+  border-color: $ms-color-neutralTertiaryAlt;
+}
+
+@mixin ms-borderColor-neutralLight {
+  border-color: $ms-color-neutralLight;
+}
+
+@mixin ms-borderColor-neutralLighter {
+  border-color: $ms-color-neutralLighter;
+}
+
+@mixin ms-borderColor-neutralLighterAlt {
+  border-color: $ms-color-neutralLighterAlt;
+}
+
+@mixin ms-borderColor-white { 
+  border-color: $ms-color-white; 
+}
+
+// Brand and accent colors
+@mixin ms-borderColor-yellow {
+  border-color: $ms-color-yellow;
+}
+
+@mixin ms-borderColor-yellowLight {
+  border-color: $ms-color-yellowLight;
+}
+
+@mixin ms-borderColor-orange {
+  border-color: $ms-color-orange;
+}
+
+@mixin ms-borderColor-orangeLight {
+  border-color: $ms-color-orangeLight;
+}
+
+@mixin ms-borderColor-redDark {
+  border-color: $ms-color-redDark;
+}
+
+@mixin ms-borderColor-red {
+  border-color: $ms-color-red;
+}
+
+@mixin ms-borderColor-magentaDark {
+  border-color: $ms-color-magentaDark;
+}
+
+@mixin ms-borderColor-magenta {
+  border-color: $ms-color-magenta;
+}
+
+@mixin ms-borderColor-magentaLight {
+  border-color: $ms-color-magentaLight;
+}
+
+@mixin ms-borderColor-purpleDark {
+  border-color: $ms-color-purpleDark;
+}
+
+@mixin ms-borderColor-purple {
+  border-color: $ms-color-purple;
+}
+
+@mixin ms-borderColor-purpleLight {
+  border-color: $ms-color-purpleLight;
+}
+
+@mixin ms-borderColor-blueDark {
+  border-color: $ms-color-blueDark;
+}
+
+@mixin ms-borderColor-blueMid {
+  border-color: $ms-color-blueMid;
+}
+
+@mixin ms-borderColor-blue {
+  border-color: $ms-color-blue;
+}
+
+@mixin ms-borderColor-blueLight {
+  border-color: $ms-color-blueLight;
+}
+
+@mixin ms-borderColor-tealDark {
+  border-color: $ms-color-tealDark;
+}
+
+@mixin ms-borderColor-teal {
+  border-color: $ms-color-teal;
+}
+
+@mixin ms-borderColor-tealLight {
+  border-color: $ms-color-tealLight;
+}
+
+@mixin ms-borderColor-greenDark {
+  border-color: $ms-color-greenDark;
+}
+
+@mixin ms-borderColor-green {
+  border-color: $ms-color-green;
+}
+
+@mixin ms-borderColor-greenLight {
+  border-color: $ms-color-greenLight;
+}
+
+// Status colors
+@mixin ms-borderColor-error {
+  border-color: $ms-color-error;
+}
+
+@mixin ms-borderColor-success {
+  border-color: $ms-color-success;
+}
+
+@mixin ms-borderColor-info {
+  border-color: $ms-color-info;
+}
+
+@mixin ms-borderColor-alert {
+  border-color: $ms-color-alert;
+}
+
+// Others
+@mixin ms-borderColor-orangeLighter {
+  border-color: $ms-color-orangeLighter;
+}
+
+// Individual borders, by request
+@mixin ms-borderColorTop-themePrimary {
+  border-top-color: $ms-color-themePrimary;
+}

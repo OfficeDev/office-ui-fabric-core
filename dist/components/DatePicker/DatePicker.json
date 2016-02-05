@@ -1,0 +1,18 @@
+{
+  "name": "DatePicker",
+  "notes": "This is a sample Date Picker that works for Gregorian calendars. It uses jQuery and <a href='http://amsul.ca/pickadate.js/'>pickadate.js</a> for demonstration.",
+  "description": "This is a sample Date Picker that works for Gregorian calendars. It uses jQuery and <a href='http://amsul.ca/pickadate.js/'>pickadate.js</a> for demonstration purposes.",
+  "template": "DatePicker.html",
+  "class": "ms-DatePicker",
+   "dependencies": [
+    "TextField",
+    "Label",
+    "Link"
+  ],
+  "branches": [
+    {
+      "name": "Default",
+      "default": true
+    }
+  ]
+}

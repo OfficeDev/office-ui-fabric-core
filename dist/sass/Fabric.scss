@@ -1,0 +1,39 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// Core Module Loader
+
+
+// Common utilities
+@import './Fabric.Utilities.Output';
+@import './Fabric.ZIndex.Variables';
+@import './Fabric.Mixins';
+
+// Colors
+@import './Fabric.Color.Variables';
+@import './Fabric.Color.Mixins.Output';
+
+// Typography
+@import './Fabric.Typography.Variables';
+@import './Fabric.Typography.Output';
+@import './Fabric.Typography.Fonts.Output';
+@import './Fabric.Typography.Language.Overrides.Output';
+
+// Icons
+@import './Fabric.Icons.Font.Output';
+@import './Fabric.Icons.Output';
+
+// Animations
+@import './Fabric.Animations.Output';
+
+// Responsive
+@import './Fabric.Responsive.Variables';
+@import './Fabric.Responsive.Utilities.Variables';
+@import './Fabric.Responsive.Utilities.Output';
+
+// Grid
+@import './Fabric.Grid.Output';
+
+// Office colors
+@import './Office.Color.Variables';

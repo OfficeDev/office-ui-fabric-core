@@ -1,0 +1,94 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Import Fabric and Fabric Components to use its variables and mixins
+@import '../../../sass/Fabric.Common.scss';
+@import '../../../sass/Fabric.Components.scss';
+
+html,
+body {
+  @include ms-font-m;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  @include ms-Link;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1 { 
+  @include ms-font-xxl;
+  color: inherit;
+  letter-spacing: -1px;
+}
+
+h2 { 
+  @include ms-font-xl;
+  color: inherit;
+}
+
+h3 {
+  @include ms-font-l;
+  color: inherit;
+}
+
+h4 { 
+  @include ms-font-m; 
+  color: inherit;
+}
+
+h5 { 
+  @include ms-font-s;
+  color: inherit;
+}
+
+h6 {
+  @include ms-font-xs;
+  color: inherit;
+}
+
+.u-contentCenter {
+  max-width: 400px;
+  padding: 0 20px 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.Container {
+  margin: 0;
+  padding: 0;
+}
+
+.Header {
+  border-bottom-style: solid;
+  border-bottom-width: 20px;
+}
+
+.Header-text {
+  padding: 40px 0 35px;
+}
+
+.Content {
+  padding: 20px 0;
+}
+
+.Intro {
+  margin-bottom: 16px;
+}
+
+.SubmitButton {
+  margin-top: 20px;
+}

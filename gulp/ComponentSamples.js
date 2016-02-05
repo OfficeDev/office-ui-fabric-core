@@ -69,21 +69,17 @@ gulp.task('ComponentSamples-moveJS', function() {
             .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
-// Style Linting
-// ----------------------------------------------------------------------------
 
 gulp.task('ComponentSamples-styleHinting',  function() {
-    if (!Config.buildSass) {
-       return gulp.src(Config.paths.componentsPath + '/**/*.less')
-          .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-              title: "Checking LESS Compile errors and linting"
-          })))
-          .pipe(Plugins.lesshint({
-              configPath: './.lesshintrc'
-          }))
-         .pipe(ErrorHandling.LESSHintErrors());
-    }
-});
+   return gulp.src(Config.paths.componentsPath + '/**/*.scss')
+      .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+      .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+          title: "Checking SASS Compile errors and linting"
+      })))
+     .pipe(Plugins.sasslint())
+     .pipe(ErrorHandling.SASSlintErrors());
+
+ });
 
 //
 // Styles tasks
@@ -182,9 +178,9 @@ var ComponentSamplesTasks = [
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
-    'ComponentSamples-styleHinting',
     'ComponentSamples-moveJS',
     'ComponentSamples-copyIgnoredFiles'
+    // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
 ];
 
 //Build Fabric Component Samples

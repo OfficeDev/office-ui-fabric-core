@@ -6,7 +6,6 @@ var pkg = require('../../package.json');
  */
 var Config = function() {
   this.debugMode = false;
-  this.lessExtension = "less";
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
@@ -14,7 +13,6 @@ var Config = function() {
 	var srcPath = 'src';
 	this.paths = {
 		distComponents: distPath + '/components',
-		distLess: distPath + '/less',
     distSass: distPath + '/sass',
 		distCSS: distPath + '/css',
 		distSamples: distPath + '/samples',
@@ -25,7 +23,6 @@ var Config = function() {
 		srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		srcLess: srcPath + '/less',
 		templatePath : srcPath + '/templates'
 	};
 	this.port =  process.env.PORT || 2020;
@@ -57,8 +54,7 @@ var Config = function() {
 		{src: this.paths.distComponents, dest: "/content/components/"},
 		{src: this.paths.distCSS, dest: "/content/css/"},
 		{src: this.paths.distJS, dest: "/content/scripts/"},
-		{src: this.paths.distLess, dest: "/content/less/"},
-        {src: this.paths.distSass, dest: "/content/sass/"}
+    {src: this.paths.distSass, dest: "/content/sass/"}
 	];
   this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
   this.componentSamplesFinished = ' Component Samples build was successful! Yay!';

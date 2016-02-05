@@ -47,10 +47,10 @@ gulp.task('FabricComponents-moveJs', function () {
 });
 
 //
-// LESS tasks
+// Sass tasks
 // ----------------------------------------------------------------------------
 
-// Build Components LESS files
+// Build Components Sass files
 gulp.task('FabricComponents-buildAndCombineStyles', function () {
     var stream = gulp.src(BuildConfig.srcPath + '/Fabric.Components.' + BuildConfig.fileExtension)
         .pipe(Plugins.plumber())

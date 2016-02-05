@@ -16,6 +16,16 @@
   "private": false,
   "ignore": [
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "*.sublime*",
+    "typings",
+    "ghdocs",
+    "server",
+    "gulp",
+    ".travis.yml",
+    ".sass-lint.yml",
+    ".htmllintrc",
+    ".jshintrc",
+    ".csscomb.json"
   ]
 }

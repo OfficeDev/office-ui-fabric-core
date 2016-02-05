@@ -96,8 +96,9 @@ var fabric = fabric || {};
 
       /** Add the selected person to the text field or selected list and close the people picker. */
       $results.on('click', '.ms-PeoplePicker-result', function () {
-          var selectedName = $(this).find(".ms-Persona-primaryText").html();
-          var selectedTitle = $(this).find(".ms-Persona-secondaryText").html();
+          var $this = $(this); 
+          var selectedName = $this.find(".ms-Persona-primaryText").html();
+          var selectedTitle = $this.find(".ms-Persona-secondaryText").html();
           var selectedInitials = (function() {
             var name = selectedName.split(' ');
             var nameInitials = '';
@@ -108,15 +109,22 @@ var fabric = fabric || {};
 
             return nameInitials.substring(0,2);
           })();
-          var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
-          var selectedImage = $(this).find('.ms-Persona-image').attr('src');
+          var selectedClasses = $this.find('.ms-Persona-initials').attr('class');
+          var selectedImage = (function() {
+            if ($this.find('.ms-Persona-image').length) {
+              var selectedImageSrc = $this.find('.ms-Persona-image').attr('src');
+              return '<img class="ms-Persona-image" src="' + selectedImageSrc + '" alt="Persona image">';
+            } else {
+              return '';
+            }
+          })();
 
           /** Token html */
           var personaHTML = '<div class="ms-PeoplePicker-persona">' +
                               '<div class="ms-Persona ms-Persona--xs ms-Persona--square">' +
                                '<div class="ms-Persona-imageArea">' +
                                  '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                                 '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                                 selectedImage +
                                '</div>' +
                                '<div class="ms-Persona-presence"></div>' +
                                '<div class="ms-Persona-details">' +
@@ -132,7 +140,7 @@ var fabric = fabric || {};
                                   '<div class="ms-Persona ms-Persona--sm">' +
                                      '<div class="ms-Persona-imageArea">' +
                                        '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                                       '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                                       selectedImage +
                                      '</div>' +
                                      '<div class="ms-Persona-presence"></div>' +
                                      '<div class="ms-Persona-details">' +
@@ -168,7 +176,6 @@ var fabric = fabric || {};
             $peopleList.children().show();
             $peopleList.children(":gt(4)").hide();
 
-            $('.ms-PeoplePicker-selected').show();
             $('.ms-PeoplePicker-searchMore').removeClass('is-active');
             $searchField.val("");
           }

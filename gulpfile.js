@@ -52,29 +52,26 @@ gulp.task('FabricServer', function() {
 // ---------------------------------------------------------------------------
 gulp.task('nuke', ['Fabric-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
 
-
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
 
-
 // Watch Sass
-gulp.task('watch-build', ['ConfigureEnvironment-setSassMode', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-build', ['ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
-gulp.task('watch', ['ConfigureEnvironment-setSassMode', 'watch-build']);
+gulp.task('watch', ['watch-build']);
 
-
-gulp.task('watch-debug-build', ['ConfigureEnvironment-setSassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
-gulp.task('watch-debug', ['ConfigureEnvironment-setSassMode', 'ConfigureEnvironment-setDebugMode', 'watch-debug-build']);
+gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'watch-debug-build']);
 
 
 //
@@ -115,13 +112,13 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
 // Default Build
 // ----------------------------------------------------------------------------
 
-var buildWithMessages = buildTasks.concat(['ConfigureEnvironment-setSassMode','Errors-checkAllErrors', 'All-finished']);
+var buildWithMessages = buildTasks.concat(['Errors-checkAllErrors', 'All-finished']);
 gulp.task('build', buildWithMessages);
 
 var rebuildWithMessages = buildTasks.concat(['All-updated']);
 gulp.task('re-build', rebuildWithMessages);
 
-gulp.task('default', ['ConfigureEnvironment-setSassMode', 'build']);
+gulp.task('default', ['build']);
 
 
 //

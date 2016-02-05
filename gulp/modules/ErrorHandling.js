@@ -231,7 +231,6 @@ var ErrorHandling = function() {
                             message.ruleId,
                             ' '
                          );
-                        console.log("hererererre");
                         gulputil.log(errorString);
                         that.addError(errorString);
                     }

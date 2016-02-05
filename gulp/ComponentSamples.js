@@ -135,7 +135,7 @@ gulp.task('ComponentSamples-build', function() {
            var jsLinks = '';
            
            for (var x = 0; x < jsFiles.length; x++) {
-               jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
+               jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
            }
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))

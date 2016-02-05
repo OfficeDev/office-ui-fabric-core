@@ -42,14 +42,15 @@
     .ms-Label {
      @include ms-Label-is-disabled;
     }
+    
     .ms-Toggle-field {
-      background-color: $ms-color-white !important;
-      border-color: $ms-color-neutralTertiaryAlt !important;
-      pointer-events: none !important;
-      cursor: default !important;
+      background-color: $ms-color-white;
+      border-color: $ms-color-neutralTertiaryAlt;
+      pointer-events: none;
+      cursor: default;
 
       &:before {
-        background-color: $ms-color-neutralTertiaryAlt !important;
+        background-color: $ms-color-neutralTertiaryAlt;
       }
     }
   }
@@ -84,7 +85,6 @@
     box-sizing: content-box;
     content: '';
     top: -2.5px;
-    #{$direction}: -2.5px;
     width: 12px;
     height: 20px;
     background-color: $ms-color-neutralSecondaryAlt;
@@ -95,6 +95,7 @@
     &:before {
       right: auto;
       border-right: 2.5px solid $ms-color-white;
+      left: -2.5px;
     }
   }
 
@@ -102,6 +103,7 @@
     &:before {
       left: auto;
       border-left: 2.5px solid $ms-color-white;
+      right: -2.5px;
     }
   }
 
@@ -159,7 +161,6 @@
     }
   }
 }
-
 
 //== Modifier: Toggle with description text left
 //

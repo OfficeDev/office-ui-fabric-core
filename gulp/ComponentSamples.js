@@ -76,7 +76,7 @@ gulp.task('ComponentSamples-styleHinting',  function() {
       .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
           title: "Checking SASS Compile errors and linting"
       })))
-     .pipe(Plugins.sasslint())
+     .pipe(Plugins.scsslint())
      .pipe(ErrorHandling.SASSlintErrors());
 
  });
@@ -179,8 +179,8 @@ var ComponentSamplesTasks = [
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
     'ComponentSamples-moveJS',
-    'ComponentSamples-copyIgnoredFiles'
-    // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
+    'ComponentSamples-copyIgnoredFiles',
+    'ComponentSamples-styleHinting'
 ];
 
 //Build Fabric Component Samples

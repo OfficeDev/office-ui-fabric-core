@@ -205,42 +205,39 @@ var ErrorHandling = function() {
      */
     this.SASSlintErrors = function(file, cb) {
         return map(function (file, cb) {
-            var errors = file.sassLint[0];
-            var messages = errors.messages;
+            var errors = file.scsslint;
+            var messages = errors.issues;
             if (messages.length > 0) {
                 for(var i = 0; i < messages.length; i++) {
                    var message = messages[i];
                    var errorString;
-                    if (message.severity == 1) {
+                    if (message.severity == "warning") {
                         errorString = that.createLineErrorMessage(
-                            gulputil.colors.yellow("Warning") + ' ' + message.message,
+                            gulputil.colors.yellow("Warning") + ' ' + message.reason,
                             file.path,
                             message.line,
+                            message.column,
                             ' ',
-                            message.ruleId,
                             ' '
                         );
                         gulputil.log(errorString);
                         that.addWarning(errorString);
                     } else {
                          errorString = that.createLineErrorMessage(
-                            gulputil.colors.red("Error ") + ' ' + message.message,
+                            gulputil.colors.red("Error ") + ' ' + message.reason,
                             file.path,
                             message.line,
+                            message.column,
                             ' ',
-                            message.ruleId,
                             ' '
                          );
                         gulputil.log(errorString);
                         that.addError(errorString);
                     }
                 }
-              return cb(errorString);
-            } else {
-              return cb(null, file);
             }
-             
-        }, {failures: true});
+            return cb(null, file);
+        });
     };
 };
 

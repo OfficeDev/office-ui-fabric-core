@@ -176,7 +176,6 @@ var fabric = fabric || {};
             $peopleList.children().show();
             $peopleList.children(":gt(4)").hide();
 
-            $('.ms-PeoplePicker-selected').show();
             $('.ms-PeoplePicker-searchMore').removeClass('is-active');
             $searchField.val("");
           }

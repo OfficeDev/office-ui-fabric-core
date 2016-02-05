@@ -65,7 +65,7 @@ var Utilities = function() {
     /**
      * Return an Array of files inside a directory by extension name
      * @param {string} srcDir   The src directory path
-     * @param {string} extName  The filename extension somtimes .less or .css
+     * @param {string} extName  The filename extension sometimes .scss or .css
      * @returns {array}          Returns an Array of filenames    
      */
     this.getFilesByExtension = function(srcDir, extName) {

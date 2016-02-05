@@ -76,8 +76,9 @@
 
       /** Show selected members from PeoplePicker in the Facepile */
       $('.ms-PeoplePicker-result').on('click', function() {
-        var name = $(this).find(".ms-Persona-primaryText").html();
-        var title = $(this).find(".ms-Persona-secondaryText").html();
+        var $this = $(this);
+        var name = $this.find(".ms-Persona-primaryText").html();
+        var title = $this.find(".ms-Persona-secondaryText").html();
         var selectedInitials = (function() {
           var nameArray = name.split(' ');
           var nameInitials = '';
@@ -87,15 +88,22 @@
 
           return nameInitials.substring(0,2);
         })();
-        var selectedClasses = $(this).find('.ms-Persona-initials').attr('class');
-        var selectedImage = $(this).find('.ms-Persona-image').attr('src');
+        var selectedClasses = $this.find('.ms-Persona-initials').attr('class');
+        var selectedImage = (function() {
+          if ($this.find('.ms-Persona-image').length) {
+            var selectedImageSrc = $this.find('.ms-Persona-image').attr('src');
+            return '<img class="ms-Persona-image" src="' + selectedImageSrc + '" alt="Persona image">';
+          } else {
+            return '';
+          }
+        })();
 
         var FacepileItem = 
           '<button class="ms-Facepile-itemBtn ms-Facepile-itemBtn--member" title="' + name + '">' +
             '<div class="ms-Persona ms-Persona--xs">' +
               '<div class="ms-Persona-imageArea">' +
                 '<div class="' + selectedClasses + '">' + selectedInitials + '</div>' +
-                '<img class="ms-Persona-image" src="' + selectedImage + '">' +
+                selectedImage +
               '</div>' +
               '<div class="ms-Persona-presence"></div>' +
               '<div class="ms-Persona-details">' +

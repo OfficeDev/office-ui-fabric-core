@@ -1,0 +1,23 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Video Portal Example App
+// --------------------------------------------------
+// Load all page and component styles
+
+
+// Import both Fabric and Fabric Components by reference to access variables
+// and mixins from each without compiling their contents.
+@import '../../../sass/Fabric.Common.scss';
+@import '../../../sass/Fabric.Components.scss';
+
+// Import all LESS
+@import 'Utilities';
+@import 'Base.scss';
+@import 'NavBar';
+@import 'VideoListItem';
+@import 'SpotLight';
+@import 'HomePage';
+@import 'PlayerPage';
+@import 'ChannelPage';
+@import 'ChannelsPage';

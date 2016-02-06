@@ -1,0 +1,19 @@
+{
+  "name": "Link",
+  "notes": "",
+  "description": "A component containing styles for links including two variants.",
+  "template": "Link.html",
+  "class": "ms-Link",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Link.html",
+    "Link.Hero.html"
+  ],
+  "branches": [
+    {
+      "name": "Hero",
+      "class": "ms-Link--hero",
+      "default": true
+    }
+  ]
+}

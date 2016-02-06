@@ -1,0 +1,1116 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Office UI Fabric 2.0.1
+ * The front-end framework for building experiences for Office 365.
+ **/
+/*Sasssssssss*/
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+.ms-Button {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  cursor: pointer;
+  display: inline-block;
+  height: 32px;
+  min-width: 80px;
+  padding: 4px 20px 6px;
+}
+
+.ms-Button:hover {
+  background-color: #eaeaea;
+  border-color: #eaeaea;
+  outline: 1px solid transparent;
+}
+
+.ms-Button:hover .ms-Button-label {
+  color: #000000;
+}
+
+.ms-Button:focus {
+  background-color: #eaeaea;
+  border-color: #0078d7;
+  outline: 1px solid transparent;
+}
+
+.ms-Button:focus .ms-Button-label {
+  color: #000000;
+}
+
+.ms-Button:active {
+  background-color: #0078d7;
+  border-color: #0078d7;
+}
+
+.ms-Button:active .ms-Button-label {
+  color: #ffffff;
+}
+
+.ms-Button:disabled,
+.ms-Button.is-disabled {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+  cursor: default;
+}
+
+.ms-Button:disabled .ms-Button-label,
+.ms-Button.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button:disabled:hover,
+.ms-Button:disabled:focus,
+.ms-Button.is-disabled:hover,
+.ms-Button.is-disabled:focus {
+  outline: 0;
+}
+
+.ms-Button + .ms-Button {
+  margin-left: 6px;
+}
+
+.ms-Button-label {
+  color: #333333;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.ms-Button-icon,
+.ms-Button-description {
+  display: none;
+}
+
+.ms-Button.ms-Button--primary {
+  background-color: #0078d7;
+  border-color: #0078d7;
+}
+
+.ms-Button.ms-Button--primary .ms-Button-label {
+  color: #ffffff;
+}
+
+.ms-Button.ms-Button--primary:hover {
+  background-color: #005a9e;
+  border-color: #005a9e;
+}
+
+.ms-Button.ms-Button--primary:focus {
+  background-color: #005a9e;
+  border-color: #004578;
+}
+
+.ms-Button.ms-Button--primary:active {
+  background-color: #0078d7;
+  border-color: #0078d7;
+}
+
+.ms-Button.ms-Button--primary:disabled,
+.ms-Button.ms-Button--primary.is-disabled {
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+}
+
+.ms-Button.ms-Button--primary:disabled .ms-Button-label,
+.ms-Button.ms-Button--primary.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--hero {
+  background-color: transparent;
+  border: none;
+  vertical-align: top;
+  line-height: normal;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon {
+  color: #0078d7;
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-icon .ms-Icon {
+  border-radius: 18px;
+  border: 1px solid #0078d7;
+  height: 18px;
+  line-height: 18px;
+  width: 18px;
+  font-size: 12px;
+  margin: 0;
+}
+
+.ms-Button.ms-Button--hero .ms-Button-label {
+  color: #0078d7;
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  position: relative;
+  top: -5px;
+  text-decoration: none;
+}
+
+.ms-Button.ms-Button--hero:hover .ms-Button-icon .ms-Icon,
+.ms-Button.ms-Button--hero:focus .ms-Button-icon .ms-Icon {
+  color: #005a9e;
+}
+
+.ms-Button.ms-Button--hero:hover .ms-Button-label,
+.ms-Button.ms-Button--hero:focus .ms-Button-label {
+  color: #004578;
+}
+
+.ms-Button.ms-Button--hero:active .ms-Button-icon .ms-Icon {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--hero:active .ms-Button-label {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--hero:disabled .ms-Button-icon .ms-Icon,
+.ms-Button.ms-Button--hero.is-disabled .ms-Button-icon .ms-Icon {
+  color: #c8c8c8;
+}
+
+.ms-Button.ms-Button--hero:disabled .ms-Button-label,
+.ms-Button.ms-Button--hero.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--compound {
+  height: auto;
+  min-height: 72px;
+  max-width: 280px;
+  padding: 20px;
+}
+
+.ms-Button.ms-Button--compound .ms-Button-label {
+  display: block;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+  position: relative;
+  text-align: left;
+  margin-top: -5px;
+}
+
+.ms-Button.ms-Button--compound .ms-Button-description {
+  color: #666666;
+  display: block;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  position: relative;
+  text-align: left;
+  top: 3px;
+}
+
+.ms-Button.ms-Button--compound:hover .ms-Button-description {
+  color: #212121;
+}
+
+.ms-Button.ms-Button--compound:focus {
+  border-color: #0078d7;
+  background-color: #f4f4f4;
+}
+
+.ms-Button.ms-Button--compound:focus .ms-Button-label {
+  color: #333333;
+}
+
+.ms-Button.ms-Button--compound:focus .ms-Button-description {
+  color: #666666;
+}
+
+.ms-Button.ms-Button--compound:active {
+  background-color: #0078d7;
+}
+
+.ms-Button.ms-Button--compound:active .ms-Button-description,
+.ms-Button.ms-Button--compound:active .ms-Button-label {
+  color: #ffffff;
+}
+
+.ms-Button.ms-Button--compound:disabled .ms-Button-label,
+.ms-Button.ms-Button--compound:disabled .ms-Button-description,
+.ms-Button.ms-Button--compound.is-disabled .ms-Button-label,
+.ms-Button.ms-Button--compound.is-disabled .ms-Button-description {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--compound:disabled:focus,
+.ms-Button.ms-Button--compound:disabled:active,
+.ms-Button.ms-Button--compound.is-disabled:focus,
+.ms-Button.ms-Button--compound.is-disabled:active {
+  border-color: #f4f4f4;
+  background-color: #f4f4f4;
+}
+
+.ms-Button.ms-Button--compound:disabled:focus .ms-Button-label,
+.ms-Button.ms-Button--compound:disabled:focus .ms-Button-description,
+.ms-Button.ms-Button--compound:disabled:active .ms-Button-label,
+.ms-Button.ms-Button--compound:disabled:active .ms-Button-description,
+.ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-label,
+.ms-Button.ms-Button--compound.is-disabled:focus .ms-Button-description,
+.ms-Button.ms-Button--compound.is-disabled:active .ms-Button-label,
+.ms-Button.ms-Button--compound.is-disabled:active .ms-Button-description {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--command {
+  background-color: transparent;
+  border: none;
+  height: 32px;
+  line-height: 32px;
+  min-width: 0;
+  padding: 0 8px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.ms-Button.ms-Button--command .ms-Button-icon {
+  color: #666666;
+  display: inline-block;
+  margin-right: 4px;
+  position: relative;
+}
+
+.ms-Button.ms-Button--command .ms-Button-label {
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+.ms-Button.ms-Button--command:hover .ms-Button-icon,
+.ms-Button.ms-Button--command:focus .ms-Button-icon {
+  color: #212121;
+}
+
+.ms-Button.ms-Button--command:hover .ms-Button-label,
+.ms-Button.ms-Button--command:focus .ms-Button-label {
+  color: #000000;
+}
+
+.ms-Button.ms-Button--command:active .ms-Button-icon,
+.ms-Button.ms-Button--command:active .ms-Button-label {
+  color: #0078d7;
+}
+
+.ms-Button.ms-Button--command:disabled .ms-Button-icon,
+.ms-Button.ms-Button--command.is-disabled .ms-Button-icon {
+  color: #c8c8c8;
+}
+
+.ms-Button.ms-Button--command:disabled .ms-Button-label,
+.ms-Button.ms-Button--command.is-disabled .ms-Button-label {
+  color: #a6a6a6;
+}
+
+.ms-Button.ms-Button--command + .ms-Button.ms-Button--command {
+  margin-left: 14px;
+}
+
+.ms-CommandBar {
+  background-color: #eff6fc;
+  height: 40px;
+  white-space: nowrap;
+  padding-left: 0;
+  border: 0;
+  position: relative;
+}
+
+.ms-CommandBar:focus {
+  outline: none;
+}
+
+.ms-CommandBar-mainArea {
+  overflow-x: hidden;
+  display: block;
+  padding-left: 58px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .ms-CommandBar-mainArea {
+    padding-left: 24px;
+  }
+}
+
+.ms-CommandBar-sideCommands {
+  float: right;
+  text-align: right;
+  width: auto;
+  padding-right: 8px;
+}
+
+.ms-CommandBar-sideCommands .ms-CommandBarItem:last-child {
+  margin-right: 0;
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBar-sideCommands {
+    min-width: 128px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBar-sideCommands {
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .ms-CommandBar-sideCommands {
+    padding-right: 16px;
+  }
+}
+
+.ms-CommandBarItem {
+  display: inline-block;
+  color: #0078d7;
+  height: 40px;
+  outline: none;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
+.ms-CommandBarItem .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem .ms-CommandBarItem-commandText {
+  display: none;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    height: 38px;
+    outline: none;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    height: 38px;
+    outline: none;
+  }
+}
+
+.ms-CommandBarItem:hover {
+  background-color: #c7e0f4;
+  color: #0078d7;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem:hover {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem:hover {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBarItem {
+    margin-right: 8px;
+  }
+
+  .ms-CommandBarItem .ms-CommandBarItem-chevronDown,
+  .ms-CommandBarItem .ms-CommandBarItem-commandText {
+    display: inline;
+  }
+}
+
+.ms-CommandBarItem.is-hidden {
+  width: 0;
+  overflow: hidden;
+}
+
+.ms-CommandBarItem.icon-only .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem.icon-only .ms-CommandBarItem-commandText,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly .ms-CommandBarItem-commandText {
+  display: none;
+}
+
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly .ms-CommandBarItem-commandText,
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly .ms-CommandBarItem-chevronDown {
+  display: inline;
+}
+
+.ms-CommandBarItem-overflow {
+  display: none;
+}
+
+.ms-CommandBarItem-overflow.is-visible {
+  display: inline-block;
+}
+
+.ms-CommandBarItem-overflow .ms-Icon {
+  font-size: 14px;
+  color: #666666;
+}
+
+.ms-CommandBarItem-link {
+  line-height: 39px;
+  padding: 0 6px;
+  cursor: pointer;
+  height: 40px;
+  min-width: 20px;
+  text-align: center;
+  position: relative;
+  padding: 0 8px;
+  display: block;
+  height: 100%;
+}
+
+.ms-CommandBarItem-link:focus {
+  outline: none;
+}
+
+.ms-CommandBarItem-link:focus:before {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  border: 1px solid #a6a6a6;
+  content: '';
+}
+
+.ms-CommandBarItem-icon {
+  font-size: 17px;
+}
+
+.ms-CommandBarItem-chevronDown {
+  vertical-align: middle;
+  padding-bottom: 3px;
+  margin-top: 13px;
+  font-size: 1.1em;
+  line-height: 1em;
+  color: #666666;
+}
+
+.ms-CommandBarItem-chevronDown:before {
+  height: 10px;
+  line-height: 16px;
+}
+
+.ms-CommandBarSearch {
+  float: left;
+  width: 208px;
+  max-width: 208px;
+  background-color: #deecf9;
+  color: #333333;
+  height: 40px;
+  position: relative;
+  box-sizing: border-box;
+  border-color: transparent;
+  transition: 0.167s cubic-bezier(0.1, 0.9, 0.2, 1);
+  transition-property: width, background-color;
+}
+
+@media only screen and (max-width: 1023px) {
+  .ms-CommandBarSearch {
+    overflow: hidden;
+    width: 50px;
+    position: absolute;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch {
+    border-right: 1px solid #ffffff;
+    z-index: 10;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch {
+    border-right: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarSearch:hover {
+  background-color: #c7e0f4;
+  color: #0078d7;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch:hover {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch:hover {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarSearch .ms-Icon--search {
+  margin-left: 2px;
+  margin-top: 12px;
+  vertical-align: top;
+}
+
+.ms-CommandBarSearch-input {
+  height: 40px;
+  padding: 8px 8px 8px 0;
+  border: none;
+  border-left: 42px solid transparent;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch-input {
+    border-left: 40px solid #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch-input {
+    border-left: 40px solid #ffffff;
+  }
+}
+
+.ms-CommandBarSearch-input::-ms-clear {
+  display: none;
+}
+
+.ms-CommandBarSearch-input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input::-moz-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input::placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input:placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper {
+  display: block;
+  padding-left: 15px;
+}
+
+.ms-CommandBarSearch-iconArrowWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper,
+.ms-CommandBarSearch-iconArrowWrapper {
+  top: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.ms-CommandBarSearch-iconClearWrapper {
+  display: none;
+  top: 1px;
+  right: 0px;
+  z-index: 10;
+}
+
+.ms-CommandBarSearch.is-active {
+  background-color: #c7e0f4;
+  color: #000000;
+}
+
+@media only screen and (max-width: 1023px) {
+  .ms-CommandBarSearch.is-active {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    max-width: 100%;
+  }
+}
+
+.ms-CommandBarSearch.is-active:hover {
+  background-color: #c7e0f4;
+  color: #000000;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-input {
+  cursor: text;
+  padding-right: 40px;
+  border-left-width: 8px;
+}
+
+.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
+  border-left-width: 40px;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-iconSearchWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
+  display: block;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-input {
+  padding-right: 40px;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-iconClearWrapper {
+  display: block;
+}
+
+.ms-CommandBarSearch-iconWrapper {
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  padding: 0px 8px;
+  position: absolute;
+  width: 34px;
+  text-align: center;
+}
+
+.ms-CommandBarSearch .ms-Icon:before {
+  font-size: 17px;
+  color: #0078d7;
+}
+
+.ms-Label {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0;
+}
+
+.ms-Label.is-required:after {
+  content: ' *';
+  color: #a80000;
+}
+
+.ms-Label.is-disabled {
+  color: #333333;
+}
+
+.ms-Overlay {
+  background-color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 200;
+}
+
+.ms-Overlay.ms-Overlay--dark {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ms-Overlay--none {
+  visibility: hidden;
+}
+
+.ms-Panel {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 300;
+  display: none;
+  pointer-events: none;
+}
+
+.ms-Panel .ms-Overlay {
+  z-index: 0;
+  display: none;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.367s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+.ms-Panel-main {
+  background-color: #ffffff;
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: none;
+  z-index: 10;
+  width: 100%;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:hover {
+  background-color: #d7eaf9;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:active {
+  background-color: #b5d8f4;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:active .ms-CommandBarItem-icon {
+  color: #07288b;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:active .ms-CommandBarItem-commandText {
+  color: #000000;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child {
+  background-color: #0078d7;
+  box-shadow: inset 0 1px 0 0 #2488d8;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child .ms-CommandBarItem-icon {
+  color: #ffffff;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child .ms-CommandBarItem-commandText {
+  color: #ffffff;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child .ms-CommandBarItem-linkWrapper {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child:hover {
+  background-color: #005a9e;
+  box-shadow: none;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child:hover .ms-CommandBarItem-icon {
+  color: #ffffff;
+}
+
+.ms-Panel-main .ms-CommandBar .ms-CommandBarItem:first-child:hover .ms-CommandBarItem-commandText {
+  color: #ffffff;
+}
+
+.ms-Panel-closeButton {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  height: 24px;
+  width: 24px;
+  outline: 0;
+  padding: 0;
+  color: #666666;
+}
+
+.ms-Panel-closeButton:hover {
+  color: #333333;
+}
+
+.ms-Panel-closeIcon {
+  font-size: 14px;
+}
+
+.ms-Panel-contentInner {
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 32px 20px 32px;
+  overflow-y: auto;
+}
+
+.ms-Panel-headerText {
+  font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 21px;
+  color: #333333;
+  line-height: 82px;
+  height: 70px;
+}
+
+.ms-Panel.is-open {
+  display: block;
+}
+
+.ms-Panel.is-open .ms-CommandBar {
+  -webkit-animation-name: fadeIn, slideDownIn20;
+          animation-name: fadeIn, slideDownIn20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+
+.ms-Panel.is-open .ms-Panel-main {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+.ms-Panel.is-open .ms-Overlay {
+  display: block;
+  pointer-events: auto;
+}
+
+.ms-Panel.is-open.ms-Panel-animateOut .ms-Panel-main {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-duration: 0.367s;
+          animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-duration: 0.1s;
+          animation-duration: 0.1s;
+}
+
+.ms-Panel.is-open.ms-Panel-animateOut .ms-Overlay {
+  display: none;
+}
+
+.ms-Panel .ms-CommandBarItem .ms-CommandBarItem-commandText {
+  display: inline-block;
+}
+
+.ms-Panel .ms-CommandBar-mainArea {
+  padding-left: 0;
+  margin-left: -1px;
+  overflow: hidden;
+}
+
+@media (min-width: 480px) {
+  .ms-Panel.is-open.ms-Panel-animateIn .ms-Panel-main {
+    -webkit-animation-name: fadeIn, slideLeftIn40;
+            animation-name: fadeIn, slideLeftIn40;
+    -webkit-animation-duration: 0.367s;
+       -moz-animation-duration: 0.367s;
+        -ms-animation-duration: 0.367s;
+         -o-animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+
+  .ms-Panel.is-open.ms-Panel-animateIn .ms-Overlay {
+    -webkit-animation-duration: 0.367s;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 0.267s;
+            animation-duration: 0.267s;
+  }
+
+  .ms-Panel.is-open.ms-Panel-animateOut .ms-Panel-main {
+    -webkit-animation-name: fadeOut, slideRightOut40;
+            animation-name: fadeOut, slideRightOut40;
+    -webkit-animation-duration: 0.167s;
+       -moz-animation-duration: 0.167s;
+        -ms-animation-duration: 0.167s;
+         -o-animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+
+  .ms-Panel.is-open.ms-Panel-animateOut .ms-Overlay {
+    -webkit-animation-duration: 0.367s;
+    -webkit-animation-name: fadeOut;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-name: fadeOut;
+            animation-name: fadeOut;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Panel-main {
+    -webkit-animation-name: fadeIn, slideRightIn40;
+            animation-name: fadeIn, slideRightIn40;
+    -webkit-animation-duration: 0.367s;
+       -moz-animation-duration: 0.367s;
+        -ms-animation-duration: 0.367s;
+         -o-animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Overlay {
+    -webkit-animation-duration: 0.367s;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 0.267s;
+            animation-duration: 0.267s;
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut .ms-Panel-main {
+    -webkit-animation-name: fadeOut, slideLeftOut40;
+            animation-name: fadeOut, slideLeftOut40;
+    -webkit-animation-duration: 0.167s;
+       -moz-animation-duration: 0.167s;
+        -ms-animation-duration: 0.167s;
+         -o-animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+  }
+
+  .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut .ms-Overlay {
+    -webkit-animation-duration: 0.367s;
+    -webkit-animation-name: fadeOut;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-name: fadeOut;
+            animation-name: fadeOut;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+  }
+
+  .ms-Panel.is-open .ms-CommandBar {
+    -webkit-animation-delay: 500ms;
+            animation-delay: 500ms;
+  }
+
+  .ms-Panel-main {
+    border-left: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    pointer-events: auto;
+    width: 340px;
+  }
+
+  .ms-Panel.is-open .ms-Panel-main {
+    box-shadow: -30px 0px 30px -30px rgba(0, 0, 0, 0.2);
+    left: auto;
+  }
+
+  .ms-Panel.ms-Panel--small.ms-Panel--left.is-open .ms-Panel-main {
+    box-shadow: 30px 0px 30px -30px rgba(0, 0, 0, 0.2);
+  }
+
+  .ms-Panel.ms-Panel--small.ms-Panel--left .ms-Panel-main {
+    left: 0;
+    right: auto;
+  }
+
+  .ms-Panel.is-open .ms-Overlay {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .ms-Panel.ms-Panel--medium .ms-Panel-main,
+  .ms-Panel.ms-Panel--large .ms-Panel-main,
+  .ms-Panel.ms-Panel--extraLarge .ms-Panel-main {
+    left: 47px;
+    width: auto;
+  }
+
+  .ms-Panel.ms-Panel--medium.is-open .ms-Panel-main,
+  .ms-Panel.ms-Panel--large.is-open .ms-Panel-main,
+  .ms-Panel.ms-Panel--extraLarge.is-open .ms-Panel-main {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ms-Panel.ms-Panel--medium .ms-Panel-main {
+    left: auto;
+    width: 644px;
+  }
+
+  .ms-Panel.ms-Panel--medium.is-open .ms-Panel-main {
+    left: auto;
+    right: 0;
+    width: 644px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .ms-Panel.ms-Panel--large .ms-Panel-main {
+    left: 427px;
+  }
+
+  .ms-Panel.ms-Panel--extraLarge .ms-Panel-main {
+    left: 175px;
+  }
+
+  .ms-Panel.ms-Panel--small.ms-Panel--left {
+    display: none;
+  }
+}

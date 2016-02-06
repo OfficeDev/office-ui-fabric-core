@@ -1,0 +1,50 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Office UI Fabric 2.0.1
+ * The front-end framework for building experiences for Office 365.
+ **/
+/*Sasssssssss*/
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+.ms-ProgressIndicator-itemName {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 4px;
+  line-height: 20px;
+}
+
+.ms-ProgressIndicator-itemDescription {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #767676;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.ms-ProgressIndicator-itemProgress {
+  position: relative;
+  width: 180px;
+  height: 2px;
+  padding: 8px 0;
+}
+
+.ms-ProgressIndicator-progressTrack {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #eaeaea;
+}
+
+.ms-ProgressIndicator-progressBar {
+  position: absolute;
+  height: 2px;
+  background-color: #0078d7;
+}

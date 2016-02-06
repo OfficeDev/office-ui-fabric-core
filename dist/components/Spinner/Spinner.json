@@ -1,0 +1,32 @@
+{
+  "name": "Spinner",
+  "notes": "An animating activity indicator.",
+  "description": "A progress/loading indicator that is ideally used when the length of time to completion for a task is indeterminate. If the length of time is known or can be determined, use the {0} ProgressIndicator {1}",
+  "template": "Spinner.html",
+  "class": "ms-Spinner",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Spinner.html",
+    "Spinner.Large.html",
+    "Spinner.Message.html",
+    "Spinner.Message.Large.html"
+  ],
+  "branches": [
+    {
+      "name": "Standard",
+      "default": true
+    },
+    {
+      "name": "Large",
+      "class": "ms-Spinner--large"
+    },
+    {
+      "name": "Standard with message ",
+      "class": "ms-Spinner"
+    },
+    {
+      "name": "Large with message",
+      "class": "ms-Spinner--large"
+    }
+  ]
+}

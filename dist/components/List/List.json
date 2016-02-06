@@ -1,0 +1,25 @@
+{
+  "name": "List",
+  "notes": "",
+  "description": "A component for displaying lists that need actions, icons, and additional descriptive information. There are two variants for List including the Default List and Grid List. Lists contain {0} ListItems {1} that have their own set of variants.",
+  "template": "List.html",
+  "class": "ms-List",
+  "wrapBranches": true,
+  "fileOrder": [
+    "List.html",
+    "List.Grid.html"
+  ],
+  "dependencies": [
+    "ListItem"
+  ],
+  "branches": [
+    {
+      "name": "Basic",
+      "default": true
+    },
+    {
+      "name": "Grid",
+      "class": "ms-List--grid"
+    }
+  ]
+}

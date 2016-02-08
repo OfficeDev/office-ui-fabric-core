@@ -11,40 +11,29 @@
  * @namespace fabric
  */
 var fabric = fabric || {};
-/**
- *
- * @param {HTMLElement} container - the target container for an instance of Breadcrumb
- * @constructor
- *
- * If dynamically populating a list run the constructor after the list has been populated
- * in the DOM.
- */
-fabric.Breadcrumb = function(container) {
-  this.container = container;
-  this.init();
-};
 
-fabric.Breadcrumb.prototype = (function() {
+class Breadcrumb {
+  public container: HTMLElement;
 
   //medium breakpoint
-  var MEDIUM = 639;
+  private MEDIUM: number = 639;
 
   //cached DOM elements
-  var _breadcrumb;
-  var _listItems;
-  var _contextMenu;
-  var _overflowButton;
-  var _overflowMenu;
-  var _breadcrumbList;
+  private _breadcrumb: HTMLElement;
+  private _listItems: NodeListOf<HTMLElement>;
+  private _contextMenu: HTMLElement;
+  private _overflowButton: HTMLElement;
+  private _overflowMenu: HTMLElement;
+  private _breadcrumbList: HTMLElement;
 
-  var _currentMaxItems = 0;
-  var _itemCollection = [];
+  private _currentMaxItems: number = 0;
+  private _itemCollection: Array<any> = [];
 
   /**
    * create internal model of list items from DOM
    */
-  var _createItemCollection = function() {
-    var length = _listItems.length;
+  private _createItemCollection() {
+    var length = this._listItems.length;
     var i = 0;
     var item;
     var text;
@@ -52,49 +41,49 @@ fabric.Breadcrumb.prototype = (function() {
     var tabIndex;
 
     for(i; i < length; i++) {
-      item = _listItems[i].querySelector('.ms-Breadcrumb-itemLink');
+      item = this._listItems[i].querySelector('.ms-Breadcrumb-itemLink');
       text = item.textContent;
       link = item.getAttribute('href');
       tabIndex = parseInt(item.getAttribute('tabindex'), 10);
-      _itemCollection.push({text: text, link: link, tabIndex: tabIndex});
+      this._itemCollection.push({text: text, link: link, tabIndex: tabIndex});
     }
-  };
+  }
 
   /**
    * Re-render lists on resize
    *
    */
-  var _onResize = function() {
-    _closeOverflow(null);
-    _renderList();
-  }; 
+  private _onResize() {
+    this._closeOverflow(null);
+    this._renderList();
+  }
 
   /**
    * render breadcrumbs and overflow menus
    */
-  var _renderList = function() {
-    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
+  private _renderList() {
+    var maxItems = window.innerWidth > this.MEDIUM ? 4 : 2;
 
-    if(maxItems !== _currentMaxItems) {
-      if(_itemCollection.length > maxItems) {
-        _breadcrumb.className += ' is-overflow';
+    if(maxItems !== this._currentMaxItems) {
+      if(this._itemCollection.length > maxItems) {
+        this._breadcrumb.className += ' is-overflow';
       } else {
-        _removeClass(_breadcrumb, ' is-overflow');
+        this._removeClass(this._breadcrumb, ' is-overflow');
       }
-      _addBreadcrumbItems(maxItems);
-      _addItemsToOverflow(maxItems);
+      this._addBreadcrumbItems(maxItems);
+      this._addItemsToOverflow(maxItems);
     }
 
-    _currentMaxItems = maxItems;
-  };
+    this._currentMaxItems = maxItems;
+  }
 
   /**
    * creates the overflow menu
    */
-  var _addItemsToOverflow = function(maxItems) {
-    _resetList(_contextMenu);
-    var end = _itemCollection.length - maxItems;
-    var overflowItems = _itemCollection.slice(0, end);
+  private _addItemsToOverflow(maxItems) {
+    this._resetList(this._contextMenu);
+    var end = this._itemCollection.length - maxItems;
+    var overflowItems = this._itemCollection.slice(0, end);
 
     overflowItems.forEach(function(item) {
       var li = document.createElement('li');
@@ -107,21 +96,21 @@ fabric.Breadcrumb.prototype = (function() {
       a.setAttribute('href', item.link);
       a.textContent = item.text;
       li.appendChild(a);
-      _contextMenu.appendChild(li);
+      this._contextMenu.appendChild(li);
     });
-  };
+  }
 
   /**
    * creates the breadcrumbs
    */
-  var _addBreadcrumbItems = function(maxItems) {
-    _resetList(_breadcrumbList);
-    var i = _itemCollection.length - maxItems;
+  private _addBreadcrumbItems(maxItems) {
+    this._resetList(this._breadcrumbList);
+    var i = this._itemCollection.length - maxItems;
 
     if(i >= 0) {
-      for(i; i < _itemCollection.length; i++) {
+      for(i; i < this._itemCollection.length; i++) {
         var listItem = document.createElement('li');
-        var item = _itemCollection[i];
+        var item = this._itemCollection[i];
         var a = document.createElement('a');
         var chevron = document.createElement('i');
         listItem.className = 'ms-Breadcrumb-listItem';
@@ -134,99 +123,109 @@ fabric.Breadcrumb.prototype = (function() {
         chevron.className = 'ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight';
         listItem.appendChild(a);
         listItem.appendChild(chevron);
-        _breadcrumbList.appendChild(listItem);
+        this._breadcrumbList.appendChild(listItem);
       }
     }
-  };
+  }
 
   /**
    * resets a list by removing its children
    */
-  var _resetList = function(list) {
+  private _resetList(list) {
     while (list.firstChild) {
       list.removeChild(list.firstChild);
     }
-  };
+  }
 
   /**
    * opens the overflow menu
    */
-  var _openOverflow = function(event) {
-    if(_overflowMenu.className.indexOf(' is-open') === -1) {
-      _overflowMenu.className += ' is-open';
-      removeOutlinesOnClick(event);
+  private _openOverflow(event) {
+    if(this._overflowMenu.className.indexOf(' is-open') === -1) {
+      this._overflowMenu.className += ' is-open';
+      this.removeOutlinesOnClick(event);
       // force focus rect onto overflow button
-      _overflowButton.focus();
+      this._overflowButton.focus();
     }
-  };
+  }
 
-  var _overflowKeyPress = function(event) {
+  private _overflowKeyPress(event) {
     if(event.keyCode === 13) {
-      _openOverflow(event);
+      this._openOverflow(event);
     }
-  };
+  }
 
   /**
    * closes the overflow menu
    */
-  var _closeOverflow = function(event) {
-    if(!event || event.target !== _overflowButton) {
-      _removeClass(_overflowMenu, ' is-open');
+  private _closeOverflow(event) {
+    if(!event || event.target !== this._overflowButton) {
+      this._removeClass(this._overflowMenu, ' is-open');
     }
-  };
+  }
 
   /**
    * utility that removes a class from an element
    */
-  var _removeClass = function (element, value) {
+  private _removeClass(element, value) {
     var index = element.className.indexOf(value);
     if(index > -1) {
       element.className = element.className.substring(0, index);
     }
-  };
+  }
 
   /**
    * caches elements and values of the component
    */
-  var _cacheDOM = function(context) {
-    _breadcrumb = context.container;
-    _breadcrumbList = _breadcrumb.querySelector('.ms-Breadcrumb-list');
-    _listItems = _breadcrumb.querySelectorAll('.ms-Breadcrumb-listItem');
-    _contextMenu = _breadcrumb.querySelector('.ms-ContextualMenu');
-    _overflowButton = _breadcrumb.querySelector('.ms-Breadcrumb-overflowButton');
-    _overflowMenu = _breadcrumb.querySelector('.ms-Breadcrumb-overflowMenu');
-  };
+  private _cacheDOM() {
+    this._breadcrumb = this.container;
+    this._breadcrumbList = <HTMLElement>this._breadcrumb.querySelector('.ms-Breadcrumb-list');
+    this._listItems = <NodeListOf<HTMLElement>>this._breadcrumb.querySelectorAll('.ms-Breadcrumb-listItem');
+    this._contextMenu = <HTMLElement>this._breadcrumb.querySelector('.ms-ContextualMenu');
+    this._overflowButton = <HTMLElement>this._breadcrumb.querySelector('.ms-Breadcrumb-overflowButton');
+    this._overflowMenu = <HTMLElement>this._breadcrumb.querySelector('.ms-Breadcrumb-overflowMenu');
+  }
 
   /**
    * sets handlers for resize and button click events
    */
-  var _setListeners = function() {
-    window.addEventListener('resize', _onResize);
-    _overflowButton.addEventListener('click', _openOverflow, false);
-    _overflowButton.addEventListener('keypress', _overflowKeyPress, false);
-    document.addEventListener('click', _closeOverflow, false);
-    _breadcrumbList.addEventListener('click', removeOutlinesOnClick, false);
-  };
+  private _setListeners() {
+    window.addEventListener('resize', this._onResize.bind(this));
+    this._overflowButton.addEventListener('click', this._openOverflow, false);
+    this._overflowButton.addEventListener('keypress', this._overflowKeyPress, false);
+    document.addEventListener('click', this._closeOverflow.bind(this), false);
+    this._breadcrumbList.addEventListener('click', this.removeOutlinesOnClick, false);
+  }
 
   /**
    * removes focus outlines so they don't linger after click
    */
-  var removeOutlinesOnClick = function(event) {
+  public removeOutlinesOnClick(event) {
     event.target.blur();
-  };
+  }
 
   /**
    * initializes component
    */
-  var init = function() {
-    _cacheDOM(this);
-    _setListeners();
-    _createItemCollection();
-    _onResize();
-  };
+  public init() {
+    this._cacheDOM();
+    this._setListeners();
+    this._createItemCollection();
+    this._onResize();
+  }
 
-  return {
-    init: init
-  };
+  /**
+   *
+   * @param {HTMLElement} container - the target container for an instance of Breadcrumb
+   * @constructor
+   *
+   * If dynamically populating a list run the constructor after the list has been populated
+   * in the DOM.
+   */
+  constructor(container: any) {
+    this.container = container;
+    this.init();
+  }
+}
 
-}());
+fabric.Breadcrumb = Breadcrumb;

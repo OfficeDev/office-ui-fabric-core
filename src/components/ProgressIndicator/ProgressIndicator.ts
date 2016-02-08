@@ -11,24 +11,17 @@
  * @namespace fabric
  */
 var fabric = fabric || {};
-/**
- *
- * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
- * @constructor
- */
-fabric.ProgressIndicator = function(container) {
-  this.container = container;
-  this.cacheDOM();
-};
 
-fabric.ProgressIndicator.prototype = (function() {
+class ProgressIndicator {
 
-  var _progress;
-  var _width;
-  var _itemName;
-  var _total;
-  var _itemDescription;
-  var _progressBar;
+  public container: HTMLElement;
+
+  private _progress: number;
+  private _width: number;
+  private _itemName: HTMLElement;
+  private _total: number;
+  private _itemDescription: HTMLElement;
+  private _progressBar: HTMLElement;
 
   /**
    * Sets the progress percentage for a determinate
@@ -38,20 +31,20 @@ fabric.ProgressIndicator.prototype = (function() {
    * injecting it into the function
    * @param {number} percent - a floating point number from 0 to 1
    */
-  var setProgressPercent = function(percent) {
-    _progressBar.style.width = Math.round(_width * percent) + "px";
-  };
+  public setProgressPercent(percent) {
+    this._progressBar.style.width = Math.round(this._width * percent) + "px";
+  }
 
   /**
    * Sets the progress for a determinate operation.
    * Use this in combination with setTotal.
    * @param {number} progress
    */
-  var setProgress = function(progress) {
-    _progress = progress;
-    var percentage = _progress / _total;
+  public setProgress = function(progress) {
+    this._progress = progress;
+    var percentage = this._progress / this._total;
     this.setProgressPercent(percentage);
-  };
+  }
 
   /**
    * Sets the total file size, etc. for a
@@ -59,45 +52,48 @@ fabric.ProgressIndicator.prototype = (function() {
    * combination with setProgress
    * @param {number} total
    */
-  var setTotal = function(total) {
-    _total = total;
-  };
+  public setTotal (total) {
+    this._total = total;
+  }
 
   /**
    * Sets the text for the title or label
    * of an instance
    * @param {string} name
    */
-  var setName = function(name) {
-    _itemName.innerHTML = name;
-  };
+  public setName(name) {
+    this._itemName.innerHTML = name;
+  }
 
   /**
    * Sets the text for a description
    * of an instance
    * @param {string} name
    */
-  var setDescription = function(description) {
-    _itemDescription.innerHTML = description;
-  };
+  public setDescription(description) {
+    this._itemDescription.innerHTML = description;
+  }
 
   /**
    * caches elements and values of the component
    *
    */
-  var cacheDOM = function() {
-    _itemName = this.container.querySelector('.ms-ProgressIndicator-itemName') || null; //an itemName element is optional
-    _itemDescription = this.container.querySelector('.ms-ProgressIndicator-itemDescription') || null; //an itemDescription element is optional
-    _progressBar = this.container.querySelector('.ms-ProgressIndicator-progressBar');
-    _width = this.container.querySelector('.ms-ProgressIndicator-itemProgress').offsetWidth;
-  };
+  public cacheDOM = function() {
+    this._itemName = this.container.querySelector('.ms-ProgressIndicator-itemName') || null; //an itemName element is optional
+    this._itemDescription = this.container.querySelector('.ms-ProgressIndicator-itemDescription') || null; //an itemDescription element is optional
+    this._progressBar = this.container.querySelector('.ms-ProgressIndicator-progressBar');
+    this._width = this.container.querySelector('.ms-ProgressIndicator-itemProgress').offsetWidth;
+  }
 
-  return {
-    setProgressPercent: setProgressPercent,
-    setName: setName,
-    setDescription: setDescription,
-    setProgress: setProgress,
-    setTotal: setTotal,
-    cacheDOM: cacheDOM
-  };
-}());
+  /**
+   *
+   * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
+   * @constructor
+   */
+  constructor(container) {
+    this.container = container;
+    this.cacheDOM();
+  }
+}
+
+fabric.ProgressIndicator = ProgressIndicator;

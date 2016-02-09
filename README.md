@@ -37,4 +37,4 @@ All files on the Office UI Fabric GitHub repository are subject to the MIT licen
 
 
 ##Changelog
-We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, incuding the changelog between every release. View a complete list of additions, fixes, and changes since 1.0 on the [Releases page](https://github.com/OfficeDev/Office-UI-Fabric/releases).
+We use [GitHub Releases](https://github.com/blog/1547-release-your-software) to manage our releases, including the changelog between every release. View a complete list of additions, fixes, and changes since 1.0 on the [Releases page](https://github.com/OfficeDev/Office-UI-Fabric/releases).

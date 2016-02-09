@@ -15,7 +15,7 @@ var ComponentSamplesHelper = function() {
      * @param {string} destFolder Contains the path to the destination folder.
      * @param {string} srcTemplate Contains the path to the source template to be applied.
      * @param {string} componentName Name of the component.
-     * @param {string} deps LESS Dependencies to be added to the styles.
+     * @param {string} deps Sass Dependencies to be added to the styles.
      * @param {function} cssPlugin The gulp plugin or function used for the specific css preprocessor
      * @return {stream} returns a stream.
      */

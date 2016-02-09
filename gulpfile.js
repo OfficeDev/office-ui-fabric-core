@@ -52,48 +52,27 @@ gulp.task('FabricServer', function() {
 // ---------------------------------------------------------------------------
 gulp.task('nuke', ['Fabric-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
 
-
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
 
-
-//Main watch task
-gulp.task('watch-build', ['ConfigureEnvironment-setLessMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function() {
-    return gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
-    }));
-});
-
-gulp.task('watch', ['ConfigureEnvironment-setLessMode', 'watch-build']);
-
 // Watch Sass
-gulp.task('watch-sass-build', ['ConfigureEnvironment-setSassMode', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-build', ['ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
-gulp.task('watch-sass', ['ConfigureEnvironment-setSassMode', 'watch-sass-build']);
+gulp.task('watch', ['watch-build']);
 
-
-gulp.task('watch-sass-debug-build', ['ConfigureEnvironment-setSassMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
-gulp.task('watch-sass-debug', ['ConfigureEnvironment-setSassMode', 'ConfigureEnvironment-setDebugMode', 'watch-sass-debug-build']);
+gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'watch-debug-build']);
 
-// Watch and build Fabric when sources change.
-gulp.task('watch-debug-build', ['ConfigureEnvironment-setLessMode', 'ConfigureEnvironment-setDebugMode', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
-    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
-    }));
-});
-
-// Watch and build Fabric when sources change.
-gulp.task('watch-debug', ['ConfigureEnvironment-setLessMode']);
 
 //
 // Check For errors
@@ -133,13 +112,13 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
 // Default Build
 // ----------------------------------------------------------------------------
 
-var buildWithMessages = buildTasks.concat(['ConfigureEnvironment-setLessMode','Errors-checkAllErrors', 'All-finished']);
+var buildWithMessages = buildTasks.concat(['Errors-checkAllErrors', 'All-finished']);
 gulp.task('build', buildWithMessages);
 
 var rebuildWithMessages = buildTasks.concat(['All-updated']);
 gulp.task('re-build', rebuildWithMessages);
 
-gulp.task('default', ['ConfigureEnvironment-setLessMode', 'build']);
+gulp.task('default', ['build']);
 
 
 //

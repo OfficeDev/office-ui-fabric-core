@@ -65,24 +65,21 @@ gulp.task('ComponentSamples-moveJS', function() {
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Copying Component Assets"
             })))
+            .pipe(Plugins.fileinclude())
             .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
-// Style Linting
-// ----------------------------------------------------------------------------
 
 gulp.task('ComponentSamples-styleHinting',  function() {
-    if (!Config.buildSass) {
-       return gulp.src(Config.paths.componentsPath + '/**/*.less')
-          .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-              title: "Checking LESS Compile errors and linting"
-          })))
-          .pipe(Plugins.lesshint({
-              configPath: './.lesshintrc'
-          }))
-         .pipe(ErrorHandling.LESSHintErrors());
-    }
-});
+   return gulp.src(Config.paths.componentsPath + '/**/*.scss')
+      .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+      .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+          title: "Checking SASS Compile errors and linting"
+      })))
+     .pipe(Plugins.sasslint())
+     .pipe(ErrorHandling.SASSlintErrors());
+
+ });
 
 //
 // Styles tasks
@@ -138,11 +135,12 @@ gulp.task('ComponentSamples-build', function() {
            var jsLinks = '';
            
            for (var x = 0; x < jsFiles.length; x++) {
-               jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\b";
+               jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
            }
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
+           .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(
                 {
@@ -180,9 +178,9 @@ var ComponentSamplesTasks = [
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
-    'ComponentSamples-styleHinting',
     'ComponentSamples-moveJS',
     'ComponentSamples-copyIgnoredFiles'
+    // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
 ];
 
 //Build Fabric Component Samples

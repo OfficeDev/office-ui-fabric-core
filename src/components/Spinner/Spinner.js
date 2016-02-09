@@ -27,6 +27,7 @@ fabric.Spinner = function(target) {
     var numCircles;
     var offsetSize;
     var fadeIncrement = 0;
+    var parentSize;
 
     /**
      * @function start - starts or restarts the animation sequence
@@ -52,8 +53,18 @@ fabric.Spinner = function(target) {
     //private methods
 
     function _init() {
+        //for backwards compatibility
+        if (_target.className.indexOf("ms-Spinner") === -1) {
+            spinner = document.createElement("div");
+            spinner.className = "ms-Spinner";
+            _target.appendChild(spinner);
+        } else {
+            spinner = _target;
+        }
+
         offsetSize = eightSize;
         numCircles = 8;
+        parentSize = spinner.className.indexOf("large") > -1 ? 28 : 20;
         _createCirclesAndArrange();
         _initializeOpacities();
         start();
@@ -92,40 +103,29 @@ fabric.Spinner = function(target) {
 
     function _createCircle() {
         var circle = document.createElement('div');
-        var parentWidth = parseInt(window.getComputedStyle(spinner).getPropertyValue("width"), 10);
         circle.className = "ms-Spinner-circle";
-        circle.style.width = circle.style.height = parentWidth * offsetSize + "px";
+        circle.style.width = circle.style.height = parentSize * offsetSize + "px";
         return circle;
     }
 
     function _createCirclesAndArrange() {
-        //for backwards compatibility
-        if (_target.className.indexOf("ms-Spinner") === -1) {
-            spinner = document.createElement("div");
-            spinner.className = "ms-Spinner";
-            _target.appendChild(spinner);
-        } else {
-            spinner = _target;
-        }
 
-        var width = spinner.clientWidth;
-        var height = spinner.clientHeight;
         var angle = 0;
-        var offset = width * offsetSize;
+        var offset = parentSize * offsetSize;
         var step = (2 * Math.PI) / numCircles;
         var i = numCircles;
         var circleObject;
-        var radius = (width- offset) * 0.5;
+        var radius = (parentSize - offset) * 0.5;
 
         while (i--) {
             var circle = _createCircle();
-            var x = Math.round(width * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
-            var y = Math.round(height * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
+            var x = Math.round(20 * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
+            var y = Math.round(20 * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
             spinner.appendChild(circle);
             circle.style.left = x + 'px';
             circle.style.top = y + 'px';
             angle += step;
-            circleObject = {element:circle, j:i};
+            circleObject = { element:circle, j:i };
             circleObjects.push(circleObject);
         }
     }

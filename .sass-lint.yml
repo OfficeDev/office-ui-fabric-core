@@ -12,13 +12,14 @@ rules:
   variable-name-format: 0
   mixin-name-format: 0
   force-element-nesting: 0
+  nesting-depth: 0
   clean-import-paths:
   - 0
   extends-before-mixins: 2
   extends-before-declarations: 2
   placeholder-in-extend: 2
   mixins-before-declarations:
-    - 2
+    - 0
     -
       exclude:
         - breakpoint

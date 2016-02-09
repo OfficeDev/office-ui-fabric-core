@@ -22,7 +22,7 @@ var size = Plugins.size;
 var data = Plugins.data;
 var template = Plugins.template;
 var rename = Plugins.rename;
-var less = Plugins.less;
+var sass = Plugins.sass;
 var header = Plugins.header;
 var autoprefixer = Plugins.autoprefixer;
 var cssbeautify = Plugins.cssbeautify;
@@ -62,14 +62,14 @@ gulp.task('Bundles-buildData', function() {
                 'files': []
             }
 
-            // The manner in which a bundle's LESS file will be assembled.
+            // The manner in which a bundle's SASS file will be assembled.
             // 
-            // "exclude": Builds all LESS files under /src and /components
+            // "exclude": Builds all SASS files under /src and /components
             //            except those listed in a bundle's "excludes" property.
-            // "include": Builds only the the LESS files listed in a bundle's 
+            // "include": Builds only the the SASS files listed in a bundle's 
             //            "includes" property. Note that if an include has dependency 
-            //            LESS files, those will be included as well.
-            // "full":    Builds all LESS files. Only runs if no includes or 
+            //            SASS files, those will be included as well.
+            // "full":    Builds all SASS files. Only runs if no includes or 
             //            excludes are defined.
             let bundleMode = () => {
                 let _mode = '';
@@ -91,20 +91,20 @@ gulp.task('Bundles-buildData', function() {
             }();
 
             let srcFolders = Utilities.getFolders(Config.paths.srcPath).filter((folderName) => {
-                let foldersToSearch = ['less', 'components']
+                let foldersToSearch = ['sass', 'components']
 
                 return foldersToSearch.indexOf(folderName) !== -1;
             });
 
             srcFolders.forEach(function(dir) {
-                // Grab all LESS and JSON files as stats objects
-                let entries = Plugins.walkSync.entries(Config.paths.srcPath + '\\' + dir,  { globs: ['**/*.less', '**/*.json'] });
+                // Grab all SCSS and JSON files as stats objects
+                let entries = Plugins.walkSync.entries(Config.paths.srcPath + '\\' + dir,  { globs: ['**/*.scss',"!**/_Fabric.*.scss", '**/*.json'] });
 
                 // Cache Component manifests for includes and/or dependencies.
                 let cachedManifests = {};
 
                 entries.forEach((entry) => {
-                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.scss
                     let entryName = entryFileName.replace('.json', ''); // e.g. Button
                     let isEntryInclude = includes !== undefined && includes.indexOf(entryName) >= 0;
                     let extension = path.extname(entryFileName);
@@ -134,15 +134,15 @@ gulp.task('Bundles-buildData', function() {
 
                 // Return a collection of the files listed in the bundle's config.
                 let filteredEntries = entries.filter(function(entry) {
-                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.less
-                    let entryName = entryFileName.replace('.less', ''); // e.g. Button
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.scss
+                    let entryName = entryFileName.replace('.scss', ''); // e.g. Button
                     let entryBasePath = entry.basePath.replace('\\','/'); // e.g. src/components
                     let extension = path.extname(entryFileName);
 
-                    // Only process LESS files
-                    if (extension === '.less' && 
-                        entryFileName !== 'Fabric.less' && 
-                        entryFileName !== 'Fabric.Components.less') {
+                    // Only process SCSS files
+                    if (extension === '.scss' && 
+                        entryFileName !== 'Fabric.scss' && 
+                        entryFileName !== 'Fabric.Components.scss') {
                         // For now, strip out RTL. These will need to be handled separately.
                         if (entryFileName.indexOf('.RTL') >= 0) {
                             if (options.logWarnings) {
@@ -158,7 +158,7 @@ gulp.task('Bundles-buildData', function() {
                             let shouldIncludeEntry = excludes.indexOf(entryName) < 0;
 
                             if (!shouldIncludeEntry && options.verbose) {
-                                gulputil.log('Excluded ' + colors.green(entryName + '.less') + ' from ' + colors.green(bundleName) + ' bundle.');
+                                gulputil.log('Excluded ' + colors.green(entryName + '.scss') + ' from ' + colors.green(bundleName) + ' bundle.');
                             }
 
                             return shouldIncludeEntry;
@@ -200,7 +200,7 @@ gulp.task('Bundles-buildData', function() {
                     }
                 }).map(function(entry) {
                     let entryFileName = entry.relativePath.split('/').slice(-1).join('');
-                    let entryName = entryFileName.replace('.less', '');
+                    let entryName = entryFileName.replace('.scss', '');
                     let entryBasePath = entry.basePath.replace('\\','/');
                     let isEntryComponent = entryBasePath === Config.paths.componentsPath;
                     let fullPath = entryBasePath;
@@ -231,32 +231,6 @@ gulp.task('Bundles-build', function() {
           return bundleFilePaths[i]['files'];
         }
 
-        // console.log(_filesList());
-
-        // Core Fabric files that should be included by reference for their variables
-        // if they are not explicitly included
-        let _coreLessFiles = [
-            '_Fabric.Utilities',
-            '_Fabric.ZIndex.Variables',
-            '_Fabric.Mixins',
-            '_Fabric.Color.Variables',
-            '_Fabric.Color.Mixins',
-            '_Fabric.Typography.Variables',
-            '_Fabric.Typography',
-            '_Fabric.Typography.Fonts',
-            '_Fabric.Typography.Languageoverrides',
-            '_Fabric.Icons.Font',
-            '_Fabric.Icons',
-            '_Fabric.Animations',
-            '_Fabric.Responsive.Variables',
-            '_Fabric.Responsive.Utilities',
-            '_Fabric.Grid',
-            '_Office.Color.Variables',
-            '_Office.Color.Mixins'
-        ].map((file) => {
-            return 'less/' + file + '.less';
-        });
-
         let bundleBase = function(index, bundleName) {
             let bundleDescription = allBundleSpecs[index].description;
 
@@ -265,20 +239,20 @@ gulp.task('Bundles-build', function() {
                 bundleDescription: bundleDescription || pkg.description
             }
 
-            return gulp.src(Config.paths.templatePath + '/'+ 'bundle-template.less')
+            return gulp.src(Config.paths.templatePath + '/'+ 'bundle-template.scss')
             // .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(data(function () {
                 let filesList = _filesList(index);
 
                 return { 
                     'files': filesList,
-                    'coreFiles': _coreLessFiles
+                    // 'coreFiles': _coreSassFiles
                 };
             }))
             .pipe(template())
-            .pipe(rename(bundleName + '.less'))
+            .pipe(rename(bundleName + '.scss'))
             .pipe(gulp.dest(Config.paths.bundlePath + '/' + bundleName ))
-            .pipe(less())
+            .pipe(sass())
             .pipe(header(Banners.bundleBannerTemplate(), bundleBannerData))
             .pipe(autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],

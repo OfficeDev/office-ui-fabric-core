@@ -152,6 +152,11 @@ gulp.task('Bundles-buildData', function() {
                             return false;
                         }
 
+                        // Exclude partials, whose output shouldn't be compiled.
+                        if (entryFileName[0] === '_') {
+                            return false;
+                        }
+
                         // If excludes are defined, those should take precedence.
                         if (bundleMode === 'exclude') {
                             // Return the entry only if it is not listed as an exclude

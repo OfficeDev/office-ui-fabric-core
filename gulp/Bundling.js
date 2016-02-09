@@ -39,17 +39,20 @@ gulp.task('Bundles-nuke', function () {
     return Plugins.del.sync([Config.paths.bundlePath]);
 });
 
-
 // Flat list of paths for each file that should be included in a bundle.
 var bundleFilePaths = [];
 
+// Assemble collection of file paths for each entry of each specified bundle.
+// This task populates bundleFilePaths, from which each bundle's SASS file is 
+// generated.
 gulp.task('Bundles-buildData', function() {
     let allBundleSpecs = Config.bundlesConfig.bundles;
 
     if (allBundleSpecs.length > 0) {
-        // Cache length
+        // Cache number of bundles specified in Config.js.
         let bundleSpecsLength = allBundleSpecs.length;
 
+        // Iterate over each bundle to assemble the appropriate data for it.
         for (let i = 0; i < bundleSpecsLength; i++) {
             let bundleConfig = allBundleSpecs[i];
             let bundleName = bundleConfig.name;
@@ -57,6 +60,7 @@ gulp.task('Bundles-buildData', function() {
             let excludes = bundleConfig.excludes || [];
             let options = bundleConfig.options || {};
 
+            // The name of each bundle and the paths to each file included.
             bundleFilePaths[i] = {
                 'name': bundleName,
                 'files': []
@@ -90,19 +94,24 @@ gulp.task('Bundles-buildData', function() {
                 return _mode;
             }();
 
+            // Walk the SASS and components folders.
             let srcFolders = Utilities.getFolders(Config.paths.srcPath).filter((folderName) => {
                 let foldersToSearch = ['sass', 'components']
 
                 return foldersToSearch.indexOf(folderName) !== -1;
             });
 
+            // Iterate over each folder and grab all of the SCSS and JSON files.
+            // We'll work with these to determine which files to include or exclude.
             srcFolders.forEach(function(dir) {
-                // Grab all SCSS and JSON files as stats objects
+                // Grab all SCSS and JSON files as fs.stats objects.
                 let entries = Plugins.walkSync.entries(Config.paths.srcPath + '\\' + dir,  { globs: ['**/*.scss',"!**/_Fabric.*.scss", '**/*.json'] });
 
                 // Cache Component manifests for includes and/or dependencies.
                 let cachedManifests = {};
 
+                // Walk each entry to determine if it has a manifest, which we
+                // use to determine any dependency components.
                 entries.forEach((entry) => {
                     let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.scss
                     let entryName = entryFileName.replace('.json', ''); // e.g. Button
@@ -132,14 +141,22 @@ gulp.task('Bundles-buildData', function() {
                     }
                 });
 
-                // Return a collection of the files listed in the bundle's config.
+                // Return a collection of the files listed in the bundle's config
+                // and any dependencies.
                 let filteredEntries = entries.filter(function(entry) {
-                    let entryFileName = entry.relativePath.split('/').slice(-1).join(''); // e.g. Button.scss
-                    let entryName = entryFileName.replace('.scss', ''); // e.g. Button
-                    let entryBasePath = entry.basePath.replace('\\','/'); // e.g. src/components
+                    // The full name of the file with extension, e.g. Button.scss
+                    let entryFileName = entry.relativePath.split('/').slice(-1).join('');
+
+                    // Just the name of the file without the extension, e.g. Button
+                    let entryName = entryFileName.replace('.scss', '');
+
+                    // Just the base directory the file was included in, e.g. src/components
+                    let entryBasePath = entry.basePath.replace('\\','/');
+
+                    // The file's isolated extension, either .scss or .json.
                     let extension = path.extname(entryFileName);
 
-                    // Only process SCSS files
+                    // Only process SCSS files.
                     if (extension === '.scss' && 
                         entryFileName !== 'Fabric.scss' && 
                         entryFileName !== 'Fabric.Components.scss') {
@@ -159,7 +176,7 @@ gulp.task('Bundles-buildData', function() {
 
                         // If excludes are defined, those should take precedence.
                         if (bundleMode === 'exclude') {
-                            // Return the entry only if it is not listed as an exclude
+                            // Return the entry only if it is not listed as an exclude.
                             let shouldIncludeEntry = excludes.indexOf(entryName) < 0;
 
                             if (!shouldIncludeEntry && options.verbose) {
@@ -169,7 +186,7 @@ gulp.task('Bundles-buildData', function() {
                             return shouldIncludeEntry;
                         } 
 
-
+                        // Otherwise, run in "include" mode if it is specified.
                         else if (bundleMode === 'include') {
                             // The current entry is a Fabric Component if it's 
                             // in the /components folder.
@@ -198,12 +215,16 @@ gulp.task('Bundles-buildData', function() {
                             }
                         } 
 
-                        // If neither includes nor excludes are defined, just make a full build
+                        // If neither includes nor excludes are defined, simply run a full build.
                         else if (bundleMode === 'full') {
                             return true;
                         }
                     }
-                }).map(function(entry) {
+                })
+
+                // Then, assemble a final list of paths for each file that will
+                // be pushed into the SASS template.
+                .map(function(entry) {
                     let entryFileName = entry.relativePath.split('/').slice(-1).join('');
                     let entryName = entryFileName.replace('.scss', '');
                     let entryBasePath = entry.basePath.replace('\\','/');
@@ -232,10 +253,7 @@ gulp.task('Bundles-build', function() {
     let allBundleSpecs = Config.bundlesConfig.bundles;
 
     if (allBundleSpecs.length > 0) {
-        let _filesList = (i) => {
-          return bundleFilePaths[i]['files'];
-        }
-
+        // Generic build for SASS bundle file.
         let bundleBase = function(index, bundleName) {
             let bundleDescription = allBundleSpecs[index].description;
 
@@ -247,11 +265,9 @@ gulp.task('Bundles-build', function() {
             return gulp.src(Config.paths.templatePath + '/'+ 'bundle-template.scss')
             // .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(data(function () {
-                let filesList = _filesList(index);
-
+                // Grab the files listed for the given bundle in bundleFilePaths.
                 return { 
-                    'files': filesList,
-                    // 'coreFiles': _coreSassFiles
+                    'files': bundleFilePaths[index]['files']
                 };
             }))
             .pipe(template())

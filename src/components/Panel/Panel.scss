@@ -165,12 +165,9 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--lg,
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-md-min) {
-      width: 100%;
-    }
-
     @media (min-width: $ms-screen-lg-min) {
       left: $ms-Panel-smLightDismiss;
+      width: 100%;
     }
   }
 }

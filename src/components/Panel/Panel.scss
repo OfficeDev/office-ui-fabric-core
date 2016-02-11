@@ -79,7 +79,7 @@ $CommandButtonBlue: #2488D8;
 }
 
 //== Modifier: Light Dismiss on small screens (fixed width)
-// Note: This panel should only be used for dropdown menus.
+// Note: This panel should only be used for dropdown menus on small screens.
 .ms-Panel.ms-Panel--lightDismiss {
   .ms-Panel-main {
     border-left: 1px solid $ms-color-neutralLight;
@@ -244,11 +244,6 @@ $CommandButtonBlue: #2488D8;
       }
     }
 
-    // Animate CommandBar in
-    .ms-CommandBar {
-      animation-delay: 500ms;
-    }
-    
     // Animate overlay to full opacity, activate pointer events
     .ms-Overlay {
       cursor: pointer;
@@ -370,6 +365,13 @@ $CommandButtonBlue: #2488D8;
     .ms-CommandBar {
       @include ms-u-slideDownIn20();
       animation-delay: 250ms;
+    }
+
+    @media (min-width: $ms-screen-md-min) {
+      // Animate CommandBar in
+      .ms-CommandBar {
+        animation-delay: 500ms;
+      }
     }
   }
 }

@@ -54,7 +54,7 @@ $CommandButtonBlue: #2488D8;
   position: fixed;
   right: 0;
   top: 0;
-  display: none; //prevent the panel from briefly showing up when the page loads
+  display: none;
   z-index: $ms-zIndex-front;
   width: 100%;
 
@@ -71,56 +71,9 @@ $CommandButtonBlue: #2488D8;
   .ms-CommandBar {
     outline: 1px solid transparent;
 
-    .ms-CommandBarItem {
-      user-select: none;
-
-      &:hover {
-        background-color: $CommandButtonLighterBlue;
-      }
-
-      &:active {
-        background-color: $CommandButtonLightBlue;
-
-        .ms-CommandBarItem-icon {
-          color: $CommandButtonDarkBlue;;
-        }
-
-        .ms-CommandBarItem-commandText {
-          color: $ms-color-black;
-        }
-      }
-    }
-
-    .ms-CommandBarItem:first-child {
-      background-color: $ms-color-themePrimary;
-      box-shadow: inset 0 1px 0 0 $CommandButtonBlue;
-
-      .ms-CommandBarItem-icon {
-        color: $ms-color-white;
-      }
-
-      .ms-CommandBarItem-commandText {
-        color: $ms-color-white;
-      }
-
-      .ms-CommandBarItem-linkWrapper {
-        padding-left: 12px;
-        padding-right: 12px;
-        cursor: pointer;
-      }
-
-      &:hover {
-        background-color: $ms-color-themeDark;
-        box-shadow: none;
-
-        .ms-CommandBarItem-icon {
-          color: $ms-color-white;
-        }
-
-        .ms-CommandBarItem-commandText {
-          color: $ms-color-white;
-        }
-      }
+    // The commandbar is not displayed by default on md+ screens
+    @media (min-width: $ms-screen-md-min) {
+      display: none;
     }
   }
 }
@@ -134,7 +87,7 @@ $CommandButtonBlue: #2488D8;
     width: $ms-Panel-smWidth;
   }
 
-  // Hide commands and content inner on sm
+  // Hide commands and content inner
   .ms-Panel-commands,
   .ms-Panel-contentInner {
     display: none;
@@ -148,7 +101,7 @@ $CommandButtonBlue: #2488D8;
     background-color: $ms-color-whiteTranslucent40;
   }
 
-  // Hide commands
+  // Commands are not displayed
   .ms-Panel-commands {
     display: none;
   }
@@ -220,11 +173,6 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.is-open {
   display: block;
-
-  .ms-CommandBar {
-    @include ms-u-slideDownIn20();
-    animation-delay: 250ms;
-  }
 
   .ms-Panel-main {
     opacity: 1;
@@ -353,4 +301,72 @@ $CommandButtonBlue: #2488D8;
   color: $ms-color-neutralPrimary;
   line-height: 82px; // Magic number that places text baseline at 50px.
   height: 70px;
+}
+
+// Deprecated: Animated commandbar
+.ms-Panel.ms-Panel--animatedCommands {
+  .ms-CommandBar {
+    @media (min-width: $ms-screen-md-min) {
+      display: block;
+    }    
+  }
+
+  .ms-CommandBarItem {
+    user-select: none;
+
+    &:hover {
+      background-color: $CommandButtonLighterBlue;
+    }
+
+    &:active {
+      background-color: $CommandButtonLightBlue;
+
+      .ms-CommandBarItem-icon {
+        color: $CommandButtonDarkBlue;;
+      }
+
+      .ms-CommandBarItem-commandText {
+        color: $ms-color-black;
+      }
+    }
+  }
+
+  .ms-CommandBarItem:first-child {
+    background-color: $ms-color-themePrimary;
+    box-shadow: inset 0 1px 0 0 $CommandButtonBlue;
+
+    .ms-CommandBarItem-icon {
+      color: $ms-color-white;
+    }
+
+    .ms-CommandBarItem-commandText {
+      color: $ms-color-white;
+    }
+
+    .ms-CommandBarItem-linkWrapper {
+      padding-left: 12px;
+      padding-right: 12px;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: $ms-color-themeDark;
+      box-shadow: none;
+
+      .ms-CommandBarItem-icon {
+        color: $ms-color-white;
+      }
+
+      .ms-CommandBarItem-commandText {
+        color: $ms-color-white;
+      }
+    }
+  }
+
+  &.is-open {
+    .ms-CommandBar {
+      @include ms-u-slideDownIn20();
+      animation-delay: 250ms;
+    }
+  }
 }

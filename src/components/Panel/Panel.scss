@@ -126,34 +126,29 @@ $CommandButtonBlue: #2488D8;
 }
 
 //== Modifier: Light Dismiss on small screens (fixed width)
-//
+// Note: This panel should only be used for dropdown menus.
 .ms-Panel.ms-Panel--lightDismiss {
   .ms-Panel-main {
-    @media (max-width: $ms-screen-sm-max) {
-      border-left: 1px solid $ms-color-neutralLight;
-      border-right: 1px solid $ms-color-neutralLight;
-      width: $ms-Panel-smWidth;
-    }
+    border-left: 1px solid $ms-color-neutralLight;
+    border-right: 1px solid $ms-color-neutralLight;
+    width: $ms-Panel-smWidth;
   }
 
-  // Hide commands and content inner on sm - this should only be used for dropdown menus
+  // Hide commands and content inner on sm
   .ms-Panel-commands,
   .ms-Panel-contentInner {
     display: none;
-
-    @media (min-width: $ms-screen-md-min) {
-      display: block;
-    }
   }
 }
 
 //== Modifier: Left anchored panel (anchored left, fixed width)
-//
+// Note: This panel variant should only be used for left nav.
 .ms-Panel.ms-Panel--left {
   .ms-Overlay.ms-Overlay--dark {
     background-color: $ms-color-whiteTranslucent40;
   }
 
+  // Hide commands
   .ms-Panel-commands {
     display: none;
   }

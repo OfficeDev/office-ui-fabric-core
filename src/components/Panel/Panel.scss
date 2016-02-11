@@ -135,11 +135,29 @@ $CommandButtonBlue: #2488D8;
       width: $ms-Panel-smWidth;
     }
   }
+
+  // Hide commands and content inner on sm - this should only be used for dropdown menus
+  .ms-Panel-commands,
+  .ms-Panel-contentInner {
+    display: none;
+
+    @media (min-width: $ms-screen-md-min) {
+      display: block;
+    }
+  }
 }
 
 //== Modifier: Left anchored panel (anchored left, fixed width)
 //
 .ms-Panel.ms-Panel--left {
+  .ms-Overlay.ms-Overlay--dark {
+    background-color: $ms-color-whiteTranslucent40;
+  }
+
+  .ms-Panel-commands {
+    display: none;
+  }
+
   .ms-Panel-main {
     right: auto;
     left: 0;
@@ -167,7 +185,7 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
       left: $ms-Panel-smLightDismiss;
-      width: 100%;
+      width: auto;
     }
   }
 }

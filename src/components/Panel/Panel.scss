@@ -87,7 +87,8 @@ $CommandButtonBlue: #2488D8;
     width: $ms-Panel-smWidth;
   }
 
-  // Hide commands and content inner
+  // Commands and content inner are not displayed
+  // Note: Replace with a dropdown contextual menu.
   .ms-Panel-commands,
   .ms-Panel-contentInner {
     display: none;
@@ -101,8 +102,10 @@ $CommandButtonBlue: #2488D8;
     background-color: $ms-color-whiteTranslucent40;
   }
 
-  // Commands are not displayed
-  .ms-Panel-commands {
+  // Commands and content inner are not displayed
+  // Note: Replace with a leftnav menu
+  .ms-Panel-commands,
+  .ms-Panel-contentInner {
     display: none;
   }
 
@@ -117,10 +120,10 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--sm {
   .ms-Panel-main {
-    width: $ms-Panel-smWidth;
+    width: 100%;
 
     @media (min-width: $ms-screen-md-min) {
-      width: $ms-Panel-mdWidth;;
+      width: $ms-Panel-mdWidth;
     }
   }
 }

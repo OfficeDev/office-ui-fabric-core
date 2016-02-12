@@ -258,9 +258,15 @@ $CommandButtonBlue: #2488D8;
     }
   }
 
+  &.ms-Panel-animateIn {
+    .ms-Panel-main {
+      @include ms-u-fadeIn100;
+    }
+  }
+
   &.ms-Panel-animateOut {
     .ms-Panel-main {
-      @include ms-u-fadeOut100();
+      @include ms-u-fadeOut100;
     }
 
     .ms-Overlay {

@@ -85,6 +85,7 @@ $CommandButtonBlue: #2488D8;
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
     width: $ms-Panel-smWidth;
+    @include drop-shadow(-30px, 0px, 30px, -30px, .2);
   }
 
   // Commands and content inner are not displayed
@@ -98,18 +99,22 @@ $CommandButtonBlue: #2488D8;
 //== Modifier: Left anchored panel (anchored left, fixed width)
 // Note: This panel variant should only be used for left nav.
 .ms-Panel.ms-Panel--left {
+  .ms-Panel-main {
+    right: auto;
+    left: 0;
+    border-left: 1px solid $ms-color-neutralLight;
+    border-right: 1px solid $ms-color-neutralLight;
+    width: $ms-Panel-smWidth;
+    @include drop-shadow(-30px, 0px, 30px, 30px, .2);
+  }
+
   // Commands and content inner are not displayed
-  // Note: Replace with a leftnav menu
+  // Note: Replace with a leftnav menu.
   .ms-Panel-commands,
   .ms-Panel-contentInner {
     display: none;
   }
 
-  .ms-Panel-main {
-    right: auto;
-    left: 0;
-    width: $ms-Panel-smWidth;
-  }
 }
 
 //== Modifier: Small panel (anchored right, fixed width)

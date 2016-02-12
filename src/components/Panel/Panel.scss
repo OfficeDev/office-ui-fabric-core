@@ -33,17 +33,8 @@ $CommandButtonBlue: #2488D8;
     display: none;
     pointer-events: none;
     opacity: 1;
+    cursor: pointer;
     transition: opacity $ms-duration3 $ms-ease1;
-  }
-
-  .ms-CommandBarItem .ms-CommandBarItem-commandText {
-    display: inline-block;
-  }
-
-  .ms-CommandBar-mainArea {
-    padding-left: 0;
-    margin-left: -1px;
-    overflow: hidden;
   }
 }
 
@@ -75,6 +66,20 @@ $CommandButtonBlue: #2488D8;
     @media (min-width: $ms-screen-md-min) {
       display: none;
     }
+  }
+
+  .ms-CommandBarItem {
+    margin-left: 8px;
+
+    .ms-CommandBarItem-commandText {
+      display: inline-block;
+    }
+  }
+
+  .ms-CommandBar-mainArea {
+    padding-left: 0;
+    margin-left: -1px;
+    overflow: hidden;
   }
 }
 
@@ -365,7 +370,8 @@ $CommandButtonBlue: #2488D8;
   height: 70px;
 }
 
-// Deprecated: Animated commandbar
+//== Modifier: Deprecated Animated commandbar
+//
 .ms-Panel.ms-Panel--animatedCommands {
   .ms-CommandBar {
     @media (min-width: $ms-screen-md-min) {

@@ -288,8 +288,12 @@ $CommandButtonBlue: #2488D8;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0 32px 20px 32px;
+  padding: 0 16px 20px;
   overflow-y: auto;
+
+  @media (min-width: $ms-screen-lg-min) {
+    padding: 0 32px 20px;
+  } 
 }
 
 // Header text at the top of the panel.

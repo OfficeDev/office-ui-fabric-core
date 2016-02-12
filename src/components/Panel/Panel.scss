@@ -94,6 +94,26 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-contentInner {
     display: none;
   }
+
+  // Animations -- Default (anchored right)
+  &.ms-Panel-animateIn {
+    .ms-Panel-main {
+      @include ms-u-slideLeftIn40;
+    }
+
+    .ms-Overlay {
+      @include ms-u-fadeIn200;
+    }
+  }
+  
+  &.ms-Panel-animateOut {
+    .ms-Panel-main {
+      @include ms-u-slideRightOut40;
+    }
+    .ms-Overlay {
+      @include ms-u-fadeOut200;
+    }
+  }
 }
 
 //== Modifier: Left anchored panel (anchored left, fixed width)
@@ -114,7 +134,46 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-contentInner {
     display: none;
   }
+  
+  // Animations -- Default (anchored right)
+  &.ms-Panel-animateIn {
+    .ms-Panel-main {
+      @include ms-u-slideLeftIn40;
+    }
 
+    .ms-Overlay {
+      @include ms-u-fadeIn200;
+    }
+  }
+  
+  &.ms-Panel-animateOut {
+    .ms-Panel-main {
+      @include ms-u-slideRightOut40;
+    }
+    .ms-Overlay {
+      @include ms-u-fadeOut200;
+    }
+  }
+
+  // Animations - Left panel (anchored left)
+  &.ms-Panel-animateIn {
+    .ms-Panel-main {
+      @include ms-u-slideRightIn40;
+    }
+
+    .ms-Overlay {
+      @include ms-u-fadeIn200;
+    }
+  }
+
+  &.ms-Panel--left.ms-Panel-animateOut {
+    .ms-Panel-main {
+      @include ms-u-slideLeftOut40;
+    }
+    .ms-Overlay {
+      @include ms-u-fadeOut200;
+    }
+  }
 }
 
 //== Modifier: Small panel (anchored right, fixed width)

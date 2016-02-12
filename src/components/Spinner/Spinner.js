@@ -119,8 +119,8 @@ fabric.Spinner = function(target) {
 
         while (i--) {
             var circle = _createCircle();
-            var x = Math.round(20 * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
-            var y = Math.round(20 * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
+            var x = Math.round(parentSize * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
+            var y = Math.round(parentSize * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
             spinner.appendChild(circle);
             circle.style.left = x + 'px';
             circle.style.top = y + 'px';

@@ -98,10 +98,6 @@ $CommandButtonBlue: #2488D8;
 //== Modifier: Left anchored panel (anchored left, fixed width)
 // Note: This panel variant should only be used for left nav.
 .ms-Panel.ms-Panel--left {
-  .ms-Overlay.ms-Overlay--dark {
-    background-color: $ms-color-whiteTranslucent40;
-  }
-
   // Commands and content inner are not displayed
   // Note: Replace with a leftnav menu
   .ms-Panel-commands,

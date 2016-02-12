@@ -378,9 +378,8 @@ $CommandButtonBlue: #2488D8;
   height: 28px;
   line-height: 1;
 
-  @media (min-width: $ms-screen-md-min) {
-    line-height: 82px; // Magic number that places text baseline at 50px.
-    height: 70px;
+  @media (min-width: $ms-screen-xl-min) {
+    margin-top: 30px;
   } 
 }
 

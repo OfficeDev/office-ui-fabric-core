@@ -8,6 +8,7 @@
 
 ## Possible Future Improvements
 - **Provide standard layouts for building full-page apps.** We've received a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/284) and it's something we'd like to add once we have a more clearly-defined set of UI patterns. For now, please send us screenshots of your full-page apps so that we can understand what common layouts we could provide.
+- **Additional samples of Fabric classes and components in use.** We currently provide a basic form example and the video portal example. These are a start, but we've [received requests](https://github.com/OfficeDev/Office-UI-Fabric/issues/301#issuecomment-184346264) for additional samples that show Fabric being used to build simple apps.
 - **TreeView component.** See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/238) for details.
 - **Code snippets for Visual Studio.** This would be nice to have but is not a priority for us at this time. See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/233) for details.
 - **Custom HTML elements for components,** using something like [Polymer](https://www.polymer-project.org/). See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/223).

@@ -5,12 +5,12 @@
 // --------------------------------------------------
 // Panel styles
 
-$ms-Panel-smWidth: 272px;
-$ms-Panel-mdWidth: 340px;
-$ms-Panel-lgWidth: 643px;
-$ms-Panel-smLightDismiss: 48px;
-$ms-Panel-mdLightDismiss: 176px;
-$ms-Panel-lgLightDismiss: 428px;
+$Panel-width-sm: 272px;
+$Panel-width-md: 340px;
+$Panel-width-lg: 643px;
+$Panel-margin-sm: 48px;
+$Panel-margin-md: 176px;
+$Panel-margin-lg: 428px;
 $CommandBarHeight: 40px;
 $CommandButtonLightBlue: #b5d8f4;
 $CommandButtonLighterBlue: #d7eaf9;
@@ -55,7 +55,7 @@ $CommandButtonBlue: #2488D8;
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
     pointer-events: auto;
-    width: $ms-Panel-mdWidth;
+    width: $Panel-width-md;
     @include drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
   }
@@ -90,7 +90,7 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
-    width: $ms-Panel-smWidth;
+    width: $Panel-width-sm;
     @include drop-shadow(-30px, 0px, 30px, -30px, .2);
   }
 
@@ -130,7 +130,7 @@ $CommandButtonBlue: #2488D8;
     left: 0;
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
-    width: $ms-Panel-smWidth;
+    width: $Panel-width-sm;
     @include drop-shadow(-30px, 0px, 30px, 30px, .2);
   }
 
@@ -189,7 +189,7 @@ $CommandButtonBlue: #2488D8;
     width: 100%;
 
     @media (min-width: $ms-screen-md-min) {
-      width: $ms-Panel-mdWidth;
+      width: $Panel-width-md;
     }
   }
 }
@@ -201,7 +201,7 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
-      left: $ms-Panel-smLightDismiss;
+      left: $Panel-margin-sm;
       width: auto;
     }
   }
@@ -213,7 +213,7 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     @media (min-width: $ms-screen-xl-min) {
       left: auto;
-      width: $ms-Panel-lgWidth;
+      width: $Panel-width-lg;
     }
   }
 }
@@ -223,7 +223,7 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--lg {
   .ms-Panel-main {
     @media (min-width: $ms-screen-xxl-min) {
-      left: $ms-Panel-lgLightDismiss;
+      left: $Panel-margin-lg;
     }
   }
 }
@@ -233,7 +233,7 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
     @media (min-width: $ms-screen-xl-min) {
-      left: $ms-Panel-mdLightDismiss;
+      left: $Panel-margin-md;
     }    
   }
 }
@@ -366,7 +366,11 @@ $CommandButtonBlue: #2488D8;
 
   @media (min-width: $ms-screen-lg-min) {
     padding: 0 32px 20px;
-  } 
+  }
+
+  @media (min-width: $ms-screen-xxl-min) {
+    padding: 0 40px 20px;
+  }
 }
 
 // Header text at the top of the panel.

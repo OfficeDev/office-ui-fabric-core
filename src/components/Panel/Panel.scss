@@ -232,7 +232,7 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
-    @media (min-width: $ms-screen-xl-min) {
+    @media (min-width: $ms-screen-xxl-min) {
       left: $Panel-margin-md;
     }    
   }

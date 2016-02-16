@@ -5,12 +5,12 @@
 // --------------------------------------------------
 // Panel styles
 
-$Panel-width-sm: 272px;
-$Panel-width-md: 340px;
-$Panel-width-lg: 643px;
-$Panel-margin-sm: 48px;
-$Panel-margin-md: 176px;
+$Panel-width-lightDismiss: 272px;
+$Panel-width-sm: 340px;
+$Panel-width-md: 643px;
+$Panel-margin-md: 48px;
 $Panel-margin-lg: 428px;
+$Panel-margin-xl: 176px;
 $CommandBarHeight: 40px;
 $CommandButtonLightBlue: #b5d8f4;
 $CommandButtonLighterBlue: #d7eaf9;
@@ -55,7 +55,7 @@ $CommandButtonBlue: #2488D8;
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
     pointer-events: auto;
-    width: $Panel-width-md;
+    width: $Panel-width-sm;
     @include drop-shadow(-30px, 0px, 30px, -30px, .2);
     left: auto;
   }
@@ -90,7 +90,7 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
-    width: $Panel-width-sm;
+    width: $Panel-width-lightDismiss;
     @include drop-shadow(-30px, 0px, 30px, -30px, .2);
   }
 
@@ -130,7 +130,7 @@ $CommandButtonBlue: #2488D8;
     left: 0;
     border-left: 1px solid $ms-color-neutralLight;
     border-right: 1px solid $ms-color-neutralLight;
-    width: $Panel-width-sm;
+    width: $Panel-width-lightDismiss;
     @include drop-shadow(-30px, 0px, 30px, 30px, .2);
   }
 
@@ -189,7 +189,7 @@ $CommandButtonBlue: #2488D8;
     width: 100%;
 
     @media (min-width: $ms-screen-md-min) {
-      width: $Panel-width-md;
+      width: $Panel-width-sm;
     }
   }
 }
@@ -201,7 +201,7 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
-      left: $Panel-margin-sm;
+      left: $Panel-margin-md;
       width: auto;
     }
   }
@@ -213,7 +213,7 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     @media (min-width: $ms-screen-xl-min) {
       left: auto;
-      width: $Panel-width-lg;
+      width: $Panel-width-md;
     }
   }
 }
@@ -233,7 +233,7 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
     @media (min-width: $ms-screen-xxl-min) {
-      left: $Panel-margin-md;
+      left: $Panel-margin-xl;
     }    
   }
 }

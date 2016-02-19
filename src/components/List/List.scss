@@ -9,6 +9,7 @@
 .ms-List {
 	@include ms-font-m;
 	@include ms-u-normalize;
+  list-style-type: none;
 }
 
 

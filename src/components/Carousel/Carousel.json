@@ -1,6 +1,6 @@
 {
   "name": "Carousel",
-  "notes": "Slideshow basically and stuff for things related to webersites.",
+  "notes": "Carousel to display hero pictures or hero data.",
   "template": "Carousel.html",
   "class": "ms-Carousel",
     "dependencies": [

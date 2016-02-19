@@ -17,9 +17,10 @@ var ComponentSamplesHelper = function() {
      * @param {string} componentName Name of the component.
      * @param {string} deps Sass Dependencies to be added to the styles.
      * @param {function} cssPlugin The gulp plugin or function used for the specific css preprocessor
+     * @param {boolean} showSize Whether or not to show the size of built files after compiling
      * @return {stream} returns a stream.
      */
-    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler) {
+    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler, showSize) {
         return gulp.src(srcTemplate)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Component Styles"
@@ -48,6 +49,9 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Minifying Component Sample " + name
+            })))
+            .pipe(Plugins.gulpif(showSize, Plugins.size({
+                'showFiles': true
             })))
             .pipe(gulp.dest(destFolder));
     }

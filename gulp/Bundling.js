@@ -10,6 +10,7 @@ var Config = require('./modules/Config');
 var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
+var ComponentHelper = require('./modules/ComponentHelper');
 var Plugins = require('./modules/Plugins');
 var Utilities = require('./modules/Utilities');
 var Banners = require('./modules/Banners');
@@ -255,47 +256,25 @@ gulp.task('Bundles-build', function() {
     if (allBundleSpecs.length > 0) {
         // Generic build for SASS bundle file.
         let bundleBase = function(index, bundleName) {
-            let bundleDescription = allBundleSpecs[index].description;
+            return ComponentHelper.buildComponentStyles(
+                // destFolder
+                Config.paths.bundlePath + '/' + bundleName, 
 
-            let bundleBannerData = {
-                pkg : pkg,
-                bundleDescription: bundleDescription || pkg.description
-            }
+                // srcTemplate
+                Config.paths.templatePath + '/'+ 'bundle-template.scss', 
 
-            return gulp.src(Config.paths.templatePath + '/'+ 'bundle-template.scss')
-            // .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(data(function () {
-                // Grab the files listed for the given bundle in bundleFilePaths.
-                return { 
-                    'files': bundleFilePaths[index]['files']
-                };
-            }))
-            .pipe(template())
-            .pipe(rename(bundleName + '.scss'))
-            .pipe(gulp.dest(Config.paths.bundlePath + '/' + bundleName ))
-            .pipe(sass())
-            .pipe(header(Banners.bundleBannerTemplate(), bundleBannerData))
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
-            }))
-            .pipe(rename(bundleName + '.css'))
-            .pipe(cssbeautify())
-            .pipe(csscomb())
-            .pipe(header(Banners.getCSSCopyRight()))
-            .pipe(size({
-                'showFiles': true
-            }))
-            .pipe(gulp.dest(Config.paths.bundlePath + '/' + bundleName))
-            .pipe(rename(bundleName + '.min.css'))
-            .pipe(cssMinify({
-                 'aggressiveMerging': false
-            }))
-            .pipe(header(Banners.getCSSCopyRight()))
-            .pipe(size({
-                'showFiles': true
-            }))
-            .pipe(gulp.dest(Config.paths.bundlePath + '/' + bundleName));            
+                // componentName 
+                bundleName, 
+
+                // deps
+                bundleFilePaths[index]['files'], 
+
+                // BuildConfig
+                BuildConfig.processorPlugin,
+                BuildConfig.processorName,
+                BuildConfig.compileErrorHandler,
+                true
+           );
         }
 
         let bundleConfig;

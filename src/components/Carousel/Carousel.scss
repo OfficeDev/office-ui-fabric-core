@@ -25,75 +25,75 @@ $ms-Carousel-negMarginLeft: -477px;
 }
 
 .ms-Carousel-slide {
-	height: $ms-Carousel-height;
-	width: 100%;
-	max-width: $ms-Carousel-slideLargeWidth; 
-	margin-left: 0;
-	padding: 24px;
-	padding-top: 0;
-	box-sizing: border-box;
-	left: 50%;
-	transform: translateX(-50%);
-	position: absolute;
+  height: $ms-Carousel-height;
+  width: 100%;
+  max-width: $ms-Carousel-slideLargeWidth; 
+  margin-left: 0;
+  padding: 24px;
+  padding-top: 0;
+  box-sizing: border-box;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
 
-	@media (min-width: $ms-screen-xl-min) {
-		top: 0;
-		padding: 0;
-	}
+  @media (min-width: $ms-screen-xl-min) {
+    top: 0;
+    padding: 0;
+  }
 }
 
 .ms-Carousel-innerSlide {
-	float: left;
-	position: relative;
-	height: 100%;
-	width: 100%;
-	box-sizing: border-box;
+  float: left;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .ms-Carousel-slideTitle {
-	@include ms-font-xl;
-	color: $ms-color-white;
-	margin-bottom: 8px;
-	@media (min-width: $ms-screen-xl-min) {
-		@include ms-font-xxl;
-		color: $ms-color-white;
-	}
+  @include ms-font-xl;
+  color: $ms-color-white;
+  margin-bottom: 8px;
+  @media (min-width: $ms-screen-xl-min) {
+    @include ms-font-xxl;
+    color: $ms-color-white;
+  }
 }
 
 .ms-Carousel-slideSubTitle {
-	@include ms-font-m;
-	line-height: $ms-font-size-xl;
-	color: $ms-color-white;
-	@media (min-width: $ms-screen-xl-min) {
-		@include ms-font-l;
-		line-height: $ms-font-size-xxl;
-		color: $ms-color-white;
-	}
+  @include ms-font-m;
+  line-height: $ms-font-size-xl;
+  color: $ms-color-white;
+  @media (min-width: $ms-screen-xl-min) {
+    @include ms-font-l;
+    line-height: $ms-font-size-xxl;
+    color: $ms-color-white;
+  }
 }
 
 // Animation Layers
 .ms-Carousel-animationLayerOne,
-.ms-Carousel-animationLayerTwo {
-	height: auto;
-	width: 100%;
-  position: relative;
-	@media (min-width: $ms-screen-xl-min) {
+  .ms-Carousel-animationLayerTwo {
+    height: auto;
+    width: 100%;
+    position: relative;
+  @media (min-width: $ms-screen-xl-min) {
     float: left;
-		width: 50%;
+    width: 50%;
     height: 100%;
-	}
+  }
 }
 
 .ms-Carousel-animationLayerOne.is-hidden {
-	opacity: 0;
+  opacity: 0;
 }
 
 .ms-Carousel-staticContent {
-	width: 100%;
-	max-width: $ms-Carousel-slideLargeWidth;
+  width: 100%;
+  max-width: $ms-Carousel-slideLargeWidth;
   overflow: hidden;
-	z-index: $ms-zIndex-front;
-	height: auto;
+  z-index: $ms-zIndex-front;
+  height: auto;
   box-sizing: border-box;
   text-align: center;
   h1 {
@@ -104,33 +104,33 @@ $ms-Carousel-negMarginLeft: -477px;
     margin-top: 38px;
   }
 
-	@media (min-width: $ms-screen-xl-min) {
+  @media (min-width: $ms-screen-xl-min) {
     top: 0;
     position: absolute;
-		left: 50%;
+    left: 50%;
     transform: translateX(-50%);
     text-align: left;
-	}
+  }
 }
 
 .ms-Carousel-staticContentImage {
-	width: auto;
-	height: 50px;
-	margin-top: 24px;
-	margin-bottom: 24px;
-	@media (min-width: $ms-screen-xl-min) {
-		width: auto;
-		height: auto;
-		margin-top: 0;
-	}
+  width: auto;
+  height: 50px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  @media (min-width: $ms-screen-xl-min) {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+  }
 }
 
 .ms-Carousel-controls {
   width: 100%;
-	max-width: $ms-Carousel-slideLargeWidth;
+  max-width: $ms-Carousel-slideLargeWidth;
   overflow: hidden;
-	z-index: $ms-zIndex-front;
-	height: 50px;
+  z-index: $ms-zIndex-front;
+  height: 50px;
   box-sizing: border-box;
   position: absolute;
   left: 50%;
@@ -139,83 +139,83 @@ $ms-Carousel-negMarginLeft: -477px;
 }
 
 .ms-Carousel-pagination {
-	height: auto;
-	width: auto;
-	position: absolute;
-	left: 50%;
-	height: 10px;
-	top: 50%;
+  height: auto;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  height: 10px;
+  top: 50%;
   transform: translateY(-50%) translateX(-50%);
 }
 
 .ms-Carousel-paginationButton {
-	color: $ms-color-white;
-	height: $ms-Carousel-paginationButtonSize;
-	font-size: $ms-Carousel-paginationButtonSize;
-	margin-right: 2px;
-	opacity: 0.5;
+  color: $ms-color-white;
+  height: $ms-Carousel-paginationButtonSize;
+  font-size: $ms-Carousel-paginationButtonSize;
+  margin-right: 2px;
+  opacity: 0.5;
 }
 
 .ms-Carousel-paginationButton:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .ms-Carousel-paginationButton.is-active {
-	opacity: 1;
+  opacity: 1;
 }
 
 .ms-Carousel-leftArrow,
 .ms-Carousel-rightArrow {
-	position: absolute;
-	height: $ms-Carousel-controls-height;
-	width: $ms-Carousel-arrowLgWidth;
-	font-size: 48px;
-	color: $ms-color-white;
+  position: absolute;
+  height: $ms-Carousel-controls-height;
+  width: $ms-Carousel-arrowLgWidth;
+  font-size: 48px;
+  color: $ms-color-white;
 }
 
 .ms-Carousel-leftArrow:before,
 .ms-Carousel-rightArrow:before {
-	position: absolute;
-	top: 50%;
-	margin-top: -($ms-Carousel-arrowFontSize/2);
-	left: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -($ms-Carousel-arrowFontSize/2);
+  left: 0;
 }
 .ms-Carousel-rightArrow:before {
-	right: 0;
-	left: auto;
+  right: 0;
+  left: auto;
 }
 
 .ms-Carousel-leftArrow:hover,
 .ms-Carousel-rightArrow:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .ms-Carousel-leftArrow {
-	left: 0;
-	@media (min-width: $ms-screen-xl-min) {
-		left: -13px;
-	}
+  left: 0;
+  @media (min-width: $ms-screen-xl-min) {
+    left: -13px;
+  }
 }
 
 .ms-Carousel-rightArrow {
-	right: 0;
-	@media (min-width: $ms-screen-xl-min) {
-		right: -13px;
-	}
+  right: 0;
+  @media (min-width: $ms-screen-xl-min) {
+    right: -13px;
+  }
 }
 
 // 
 // Demo slide styles
 // --------------------------------
 .ms-Carousel-slideGif {
-	width: 220px;
-	margin-top: 24px;
-	@media (min-width: $ms-screen-xl-min) {
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: auto; 
-	}
+  width: 220px;
+  margin-top: 24px;
+  @media (min-width: $ms-screen-xl-min) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto; 
+  }
 }
 
 .ms-Carousel--slideOne,
@@ -231,7 +231,7 @@ $ms-Carousel-negMarginLeft: -477px;
       }
     }
   }
-  
+
   .ms-Carousel-animationLayerTwo {
     .ms-Carousel-customSlidePosition {
       text-align: center;
@@ -239,7 +239,7 @@ $ms-Carousel-negMarginLeft: -477px;
         color: $ms-color-white;
         font-size: 220px;
       }
-      
+
       @media (min-width: $ms-screen-xl-min) {
         position: absolute;
         top: 50%;
@@ -254,9 +254,9 @@ $ms-Carousel-negMarginLeft: -477px;
 }
 
 .ms-Button {
-	margin-top: 46px;
-	display: none;
-	@media (min-width: $ms-screen-xl-min) {
-		display: inline-block;
-	}
+  margin-top: 46px;
+  display: none;
+  @media (min-width: $ms-screen-xl-min) {
+    display: inline-block;
+  }
 }

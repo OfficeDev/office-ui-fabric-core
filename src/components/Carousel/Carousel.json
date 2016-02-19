@@ -1,9 +1,0 @@
-{
-  "name": "Carousel",
-  "notes": "Carousel to display hero pictures or hero data.",
-  "template": "Carousel.html",
-  "class": "ms-Carousel",
-    "dependencies": [
-    "Button"
-  ]
-}

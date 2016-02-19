@@ -9,6 +9,7 @@
 .ms-Table {
   display: table;
   width: 100%;
+  border-collapse: collapse;
 }
 
 .ms-Table-row {
@@ -58,12 +59,15 @@
 }
 
 // Style the first row as a header.
-.ms-Table-row:first-child {
+.ms-Table-head {
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
 
-  .ms-Table-cell, .ms-Table-rowCheck {
+  .ms-Table-cell, 
+  .ms-Table-rowCheck {
+    font-weight: normal;
+    text-align: left;
     border-bottom: 1px solid $ms-color-neutralLight;
   }
 

@@ -1,164 +1,162 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * MessageBanner component
- *
- * A component to display error messages
- *
- */
+"use strict";
 
 /**
  * @namespace fabric
  */
-var fabric = fabric || {};
-
-class MessageBanner {
-    public container: HTMLElement;
-
-    private _clipper: any;
-    private _bufferSize: number;
-    private _textContainerMaxWidth: number = 700;
-    private _clientWidth: number;
-    private _textWidth: string;
-    private _initTextWidth: number;
-    private _chevronButton: HTMLElement;
-    private _errorBanner: HTMLElement;
-    private _actionButton: HTMLElement;
-    private _closeButton: HTMLElement;
-    private _bufferElementsWidth: number = 88;
-    private _bufferElementsWidthSmall: number = 35;
-    private SMALL_BREAK_POINT: number = 480;
+namespace fabric {
 
     /**
-     * sets styles on resize
+     * MessageBanner component
+     *
+     * A component to display error messages
+     *
      */
-    private _onResize() {
-        this._clientWidth = this._errorBanner.offsetWidth;
-        if(window.innerWidth >= this.SMALL_BREAK_POINT ) {
-            this._resizeRegular();
-        } else {
-            this._resizeSmall();
+    export class MessageBanner {
+        public container: HTMLElement;
+
+        private _clipper: any;
+        private _bufferSize: number;
+        private _textContainerMaxWidth: number = 700;
+        private _clientWidth: number;
+        private _textWidth: string;
+        private _initTextWidth: number;
+        private _chevronButton: HTMLElement;
+        private _errorBanner: HTMLElement;
+        private _actionButton: HTMLElement;
+        private _closeButton: HTMLElement;
+        private _bufferElementsWidth: number = 88;
+        private _bufferElementsWidthSmall: number = 35;
+        private SMALL_BREAK_POINT: number = 480;
+
+        /**
+         * initializes component
+         */
+        public init() {
+            this._cacheDOM();
+            this._setListeners();
+            this._clientWidth = this._errorBanner.offsetWidth;
+            this._initTextWidth = this._clipper.offsetWidth;
+            this._onResize();
         }
-    };
 
-    /**
-     * resize above 480 pixel breakpoint
-     */
-    private _resizeRegular() {
-        if ((this._clientWidth - this._bufferSize) > this._initTextWidth && this._initTextWidth < this._textContainerMaxWidth) {
-            this._textWidth = "auto";
-            this._chevronButton.className = "ms-MessageBanner-expand";
-            this._collapse();
-        } else {
-            this._textWidth = Math.min((this._clientWidth - this._bufferSize), this._textContainerMaxWidth) + "px";
-            if(this._chevronButton.className.indexOf("is-visible") === -1) {
-                this._chevronButton.className += " is-visible";
+        /**
+         * shows banner if the banner is hidden
+         */
+        public showBanner() {
+            this._errorBanner.className = "ms-MessageBanner";
+        }
+
+        /**
+         * sets styles on resize
+         */
+        private _onResize() {
+            this._clientWidth = this._errorBanner.offsetWidth;
+            if (window.innerWidth >= this.SMALL_BREAK_POINT ) {
+                this._resizeRegular();
+            } else {
+                this._resizeSmall();
+            }
+        };
+
+        /**
+         * resize above 480 pixel breakpoint
+         */
+        private _resizeRegular() {
+            if ((this._clientWidth - this._bufferSize) > this._initTextWidth && this._initTextWidth < this._textContainerMaxWidth) {
+                this._textWidth = "auto";
+                this._chevronButton.className = "ms-MessageBanner-expand";
+                this._collapse();
+            } else {
+                this._textWidth = Math.min((this._clientWidth - this._bufferSize), this._textContainerMaxWidth) + "px";
+                if (this._chevronButton.className.indexOf("is-visible") === -1) {
+                    this._chevronButton.className += " is-visible";
+                }
+            }
+            this._clipper.style.width = this._textWidth;
+        };
+
+        /**
+         * resize below 480 pixel breakpoint
+         */
+        private _resizeSmall() {
+            if (this._clientWidth - (this._bufferElementsWidthSmall + this._closeButton.offsetWidth) > this._initTextWidth) {
+                this._textWidth = "auto";
+                this._collapse();
+            } else {
+                this._textWidth = (this._clientWidth - (this._bufferElementsWidthSmall + this._closeButton.offsetWidth)) + "px";
+            }
+            this._clipper.style.width = this._textWidth;
+        };
+        /**
+         * caches elements and values of the component
+         */
+        private _cacheDOM() {
+            this._errorBanner = this.container;
+            this._clipper = <HTMLElement>this.container.querySelector(".ms-MessageBanner-clipper");
+            this._chevronButton = <HTMLElement>this.container.querySelector(".ms-MessageBanner-expand");
+            this._actionButton = <HTMLElement>this.container.querySelector(".ms-MessageBanner-action");
+            this._bufferSize = this._actionButton.offsetWidth + this._bufferElementsWidth;
+            this._closeButton = <HTMLElement>this.container.querySelector(".ms-MessageBanner-close");
+        };
+
+        /**
+         * expands component to show full error message
+         */
+        private _expand() {
+            let icon = this._chevronButton.querySelector(".ms-Icon");
+            this._errorBanner.className += " is-expanded";
+            icon.className = "ms-Icon ms-Icon--chevronsUp";
+        };
+
+        /**
+         * collapses component to only show truncated message
+         */
+        private _collapse() {
+            let icon = this._chevronButton.querySelector(".ms-Icon");
+            this._errorBanner.className = "ms-MessageBanner";
+            icon.className = "ms-Icon ms-Icon--chevronsDown";
+        };
+
+        private _toggleExpansion() {
+            if (this._errorBanner.className.indexOf("is-expanded") > -1) {
+                this._collapse();
+            } else {
+                this._expand();
+            }
+        };
+
+        private _hideMessageBanner() {
+            this._errorBanner.className = "ms-MessageBanner is-hidden";
+        }
+
+        /**
+         * hides banner when close button is clicked
+         */
+        private _hideBanner() {
+            if (this._errorBanner.className.indexOf("hide") === -1) {
+                this._errorBanner.className += " hide";
+                setTimeout(this._hideMessageBanner.bind(this), 500);
             }
         }
-        this._clipper.style.width = this._textWidth;
-    };
 
-    /**
-     * resize below 480 pixel breakpoint
-     */
-    private _resizeSmall() {
-        if (this._clientWidth - (this._bufferElementsWidthSmall + this._closeButton.offsetWidth) > this._initTextWidth) {
-            this._textWidth = "auto";
-            this._collapse();
-        } else {
-            this._textWidth = (this._clientWidth - (this._bufferElementsWidthSmall + this._closeButton.offsetWidth)) + "px";
+        /**
+         * sets handlers for resize and button click events
+         */
+        private _setListeners() {
+            window.addEventListener("resize", this._onResize.bind(this), false);
+            this._chevronButton.addEventListener("click", this._toggleExpansion.bind(this), false);
+            this._closeButton.addEventListener("click", this._hideBanner.bind(this), false);
         }
-        this._clipper.style.width = this._textWidth;
-    };
-    /**
-     * caches elements and values of the component
-     */
-    private _cacheDOM() {
-        this._errorBanner = this.container;
-        this._clipper = <HTMLElement>this.container.querySelector('.ms-MessageBanner-clipper');
-        this._chevronButton = <HTMLElement>this.container.querySelector('.ms-MessageBanner-expand');
-        this._actionButton = <HTMLElement>this.container.querySelector('.ms-MessageBanner-action');
-        this._bufferSize = this._actionButton.offsetWidth + this._bufferElementsWidth;
-        this._closeButton = <HTMLElement>this.container.querySelector('.ms-MessageBanner-close');
-    };
 
-    /**
-     * expands component to show full error message
-     */
-    private _expand() {
-        var icon = this._chevronButton.querySelector('.ms-Icon');
-        this._errorBanner.className += " is-expanded";
-        icon.className = "ms-Icon ms-Icon--chevronsUp";
-    };
-
-    /**
-     * collapses component to only show truncated message
-     */
-    private _collapse() {
-        var icon = this._chevronButton.querySelector('.ms-Icon');
-        this._errorBanner.className = "ms-MessageBanner";
-        icon.className = "ms-Icon ms-Icon--chevronsDown";
-    };
-
-    private _toggleExpansion() {
-        if (this._errorBanner.className.indexOf("is-expanded") > -1) {
-            this._collapse();
-        } else {
-            this._expand();
-        }
-    };
-
-    private _hideMessageBanner() {
-        this._errorBanner.className = "ms-MessageBanner is-hidden";
-    }
-
-    /**
-     * hides banner when close button is clicked
-     */
-    private _hideBanner() {
-        if(this._errorBanner.className.indexOf("hide") === -1) {
-            this._errorBanner.className += " hide";
-            setTimeout(this._hideMessageBanner.bind(this), 500);
+        /**
+         *
+         * @param {HTMLElement} container - the target container for an instance of MessageBanner
+         * @constructor
+         */
+        constructor(container: any) {
+            this.container = container;
+            this.init();
         }
     }
-
-    /**
-     * shows banner if the banner is hidden
-     */
-    public showBanner() {
-        this._errorBanner.className = "ms-MessageBanner";
-    }
-
-    /**
-     * sets handlers for resize and button click events
-     */
-    private _setListeners() {
-        window.addEventListener('resize', this._onResize.bind(this), false);
-        this._chevronButton.addEventListener("click", this._toggleExpansion.bind(this), false);
-        this._closeButton.addEventListener("click", this._hideBanner.bind(this), false);
-    }
-
-    /**
-     * initializes component
-     */
-    public init() {
-        this._cacheDOM();
-        this._setListeners();
-        this._clientWidth = this._errorBanner.offsetWidth;
-        this._initTextWidth = this._clipper.offsetWidth;
-        this._onResize();
-    }
-
-
-    /**
-     *
-     * @param {HTMLElement} container - the target container for an instance of MessageBanner
-     * @constructor
-     */
-    constructor(container: any) {
-        this.container = container;
-        this.init();
-    }
-}
-
-fabric.MessageBanner = MessageBanner;
+} // end fabric namespace

@@ -120,28 +120,29 @@
 //== Modifier: Hero button
 //
 .ms-Button.ms-Button--hero {
-	background-color: transparent;
-	border: none;
-	vertical-align: top;
-	line-height: normal;
+  background-color: transparent;
+  border: none;
+  vertical-align: top;
+  line-height: normal;
 
-	.ms-Button-icon {
-		color: $ms-color-themePrimary;
-		display: inline-block;
-		font-size: $ms-font-size-s;
-		position: relative;
-		top: -8px;
+  .ms-Button-icon {
+    color: $ms-color-themePrimary;
+    display: inline-block;
+    font-size: $ms-font-size-s;
+    position: relative;
+    top: -8px;
+    text-align: center;
 
-		.ms-Icon {
+    .ms-Icon {
       border-radius: 18px;
       border: 1px solid $ms-color-themePrimary;
-			height: 18px;
-			line-height: 18px;
-			width: 18px;
-			font-size: $ms-font-size-s;
-			margin: 0;
-		}
-	}
+      height: 18px;
+      line-height: 18px;
+      width: 18px;
+      font-size: $ms-font-size-s;
+      margin: 0;
+    }
+  }
 
 	.ms-Button-label {
 		color: $ms-color-themePrimary;

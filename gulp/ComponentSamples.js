@@ -52,10 +52,17 @@ gulp.task('ComponentSamples-copyAssets', function() {
 
 
 gulp.task('ComponentSamples-typescript', function() {
-    return gulp.src(Config.paths.componentsPath + '/**/*.ts')
+    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(Plugins.tsc(Config.typescriptConfig))
-        .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
+        .pipe(Plugins.tslint())
+        .pipe(Plugins.tslint.report("verbose"))
+        .pipe(Plugins.tsc(Config.typescriptProject));
+
+    return Plugins.mergeStream( [
+      tscResult.dts.pipe(gulp.dest(Config.paths.distSamples + '/Components')),
+      tscResult.js.pipe(gulp.dest(Config.paths.distSamples + '/Components'))
+    ]);
+        
 });
 
 

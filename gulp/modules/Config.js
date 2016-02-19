@@ -1,5 +1,6 @@
 var path = require('path');
 var pkg = require('../../package.json');
+var Plugins = require('./Plugins');
 
 /**
  * Configuration class containing all properties to be used throughout the build          
@@ -38,8 +39,11 @@ var Config = function() {
         }
     ];
     this.typescriptConfig = {
-        module: 'amd'
+        module: 'commonjs',
+        declaration: true,
+        target: 'ES5'
     };
+    this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",

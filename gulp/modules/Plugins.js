@@ -43,6 +43,7 @@ var Plugins = function() {
     this.lesshint = require('gulp-lesshint');
     this.scsslint = require('gulp-sass-lint');
 	this.tsc = require('gulp-typescript');
+	this.tslint = require("gulp-tslint");
 };
 
 module.exports = new Plugins();

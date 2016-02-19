@@ -170,18 +170,18 @@
 
             // Add new Background color
             $thisCarousel.css({
-            'background-color': $nSlide.data('bgcolor')
+              'background-color': $nSlide.data('bgcolor')
             });
 
             setTimeout(function() {
-            // Clean out the current styles
-            clearSlideStyles($cSlideI);
+              // Clean out the current styles
+              clearSlideStyles($cSlideI);
 
-            // Add Classes to next slide
-            $nSlide.show();
+              // Add Classes to next slide
+              $nSlide.show();
 
-            $nSlide.find('.' + animationLayerOneClass).addClass(slideLeftIn80);
-            $nSlide.find('.' + animationLayerTwoClass).addClass(slideLeftIn40);
+              $nSlide.find('.' + animationLayerOneClass).addClass(slideLeftIn80);
+              $nSlide.find('.' + animationLayerTwoClass).addClass(slideLeftIn40);
             }, 300);
             
           } else if(direction === "left") {

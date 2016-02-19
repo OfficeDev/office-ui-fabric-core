@@ -38,22 +38,22 @@ $ms-duration4: 0.467s;
 
 // slideRightIn80
 @mixin ms-u-slideRightIn80 {
-    @include animationMix((fadeIn, slideRightIn80), $ms-duration3, $ms-ease1);
+    @include animationMix((fadeIn, slideRightIn80), $ms-duration3, $ms-ease2);
 }
 
 // slideLeftOut80
 @mixin ms-u-slideLeftOut80 {
-    @include animationMix((fadeOut, slideLeftOut80), $ms-duration3, $ms-ease1);
+    @include animationMix((fadeOut, slideLeftOut80), $ms-duration3, $ms-ease2);
 }
 
 // slideRightOut80
 @mixin ms-u-slideRightOut80 {
-    @include animationMix((fadeOut, slideRightOut80), $ms-duration3, $ms-ease1);
+    @include animationMix((fadeOut, slideRightOut80), $ms-duration3, $ms-ease2);
 }
 
 // slideLeftIN80
 @mixin ms-u-slideLeftIn80 {
-    @include animationMix((fadeIn, slideLeftIn80), $ms-duration3, $ms-ease1);
+    @include animationMix((fadeIn, slideLeftIn80), $ms-duration3, $ms-ease2);
 }
 
 // slideRightIn400

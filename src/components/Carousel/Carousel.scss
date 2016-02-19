@@ -16,10 +16,9 @@ $ms-Carousel-negMarginLeft: -477px;
 
 .ms-Carousel {
   width: 100%;
-  height: $ms-Carousel-height;
   position: relative;
+  height: $ms-Carousel-height;
   background-color: $ms-Carousel-slideOneColor;
-  float: left;
   overflow: hidden;
   transition: background-color 1000ms linear;
   box-sizing: border-box;
@@ -73,18 +72,15 @@ $ms-Carousel-negMarginLeft: -477px;
 }
 
 // Animation Layers
-.ms-Carousel-animationLayerOne {
+.ms-Carousel-animationLayerOne,
+.ms-Carousel-animationLayerTwo {
 	height: auto;
 	width: 100%;
-	float: left;
-	position: relative;
-	text-align: center;
+  position: relative;
 	@media (min-width: $ms-screen-xl-min) {
-		height: 208px;
-		max-width: 440px;
-		position: absolute;
-		top: 168px;
-		text-align: left;
+    float: left;
+		width: 50%;
+    height: 100%;
 	}
 }
 
@@ -92,40 +88,28 @@ $ms-Carousel-negMarginLeft: -477px;
 	opacity: 0;
 }
 
-.ms-Carousel-animationLayerTwo {
-	width: 100%;
-	height: auto;
-	float: left;
-	position: relative;
-	text-align: center;
-
-	@media (min-width: $ms-screen-xl-min) {
-		position: absolute;
-		height: 100%;
-		text-align: left;
-		float: none;
-	}
-}
-
 .ms-Carousel-staticContent {
 	width: 100%;
-	max-width: 300px;
-	position: absolute;
-	height: auto;
-	position: relative;
-	text-align: center;
-	margin-bottom: 8px;
-	font-size: $ms-font-size-xxl;
-	color: $ms-color-white;
-	font-family: $ms-font-family-regular;
-	margin-top: 31px;
-	left: 50%;
-	top: 0;
+	max-width: $ms-Carousel-slideLargeWidth;
+  overflow: hidden;
 	z-index: $ms-zIndex-front;
+	height: auto;
+  box-sizing: border-box;
+  text-align: center;
+  h1 {
+    @include ms-font-su;
+    color: $ms-color-white;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 38px;
+  }
 
 	@media (min-width: $ms-screen-xl-min) {
-		padding-top: 34px;
-		transform: translateX(-148%);
+    top: 0;
+    position: absolute;
+		left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
 	}
 }
 
@@ -142,30 +126,26 @@ $ms-Carousel-negMarginLeft: -477px;
 }
 
 .ms-Carousel-controls {
-	width: 100%;
-	position: absolute;
-	z-index: 11;
-	bottom: 20px;
+  width: 100%;
+	max-width: $ms-Carousel-slideLargeWidth;
+  overflow: hidden;
+	z-index: $ms-zIndex-front;
 	height: 50px;
-	@media (min-width: $ms-screen-xl-min) {
-		margin: auto;
-		width: $ms-Carousel-slideLargeWidth;
-		left: 50%;
-		margin-left: $ms-Carousel-negMarginLeft;
-		overflow: hidden;
-		box-sizing: border-box;
-	}
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
 }
 
 .ms-Carousel-pagination {
-	height: $ms-Carousel-controls-height;
+	height: auto;
 	width: auto;
 	position: absolute;
 	left: 50%;
-	magin-left: -10px;
 	height: 10px;
 	top: 50%;
-	margin-top: -($ms-Carousel-paginationButtonSize/2);
+  transform: translateY(-50%) translateX(-50%);
 }
 
 .ms-Carousel-paginationButton {
@@ -224,7 +204,9 @@ $ms-Carousel-negMarginLeft: -477px;
 	}
 }
 
-// Demo Slide Styles
+// 
+// Demo slide styles
+// --------------------------------
 .ms-Carousel-slideGif {
 	width: 220px;
 	margin-top: 24px;
@@ -236,37 +218,39 @@ $ms-Carousel-negMarginLeft: -477px;
 	}
 }
 
-.ms-Carousel-slide.ms-Carousel--slideOne {
-	.ms-Carousel-slideGif {
-		top: 18px;
-		right: 30px;
-	}
-}
-
-.ms-Carousel-slide.ms-Carousel--slideTwo {
-	.ms-Carousel-slideGif {
-		top: 34px;
-		width: 595px;
-		right: -33px;
-	}
-	.ms-Carousel-animationLayerOne {
-		
-		@media (min-width: $ms-screen-xl-min) {
-			max-width: 260px;
-		}
-	}
-}
-
-.ms-Carousel-slide.ms-Carousel--slideThree {
-	.ms-Carousel-animationLayerOne {
-		@media (min-width: $ms-screen-xl-min) {
-			max-width: 290px;
-		}
-	}
-	.ms-Carousel-slideGif{
-		top: 46px;
-		width: 484px;
-	}
+.ms-Carousel--slideOne,
+.ms-Carousel--slideTwo,
+.ms-Carousel--slideThree {
+  .ms-Carousel-animationLayerOne {
+    .ms-Carousel-customSlidePosition {
+      text-align: center;
+      @media (min-width: $ms-screen-xl-min) {
+        position: absolute;
+        bottom: 100px;
+        text-align: left;
+      }
+    }
+  }
+  
+  .ms-Carousel-animationLayerTwo {
+    .ms-Carousel-customSlidePosition {
+      text-align: center;
+      .ms-Icon {
+        color: $ms-color-white;
+        font-size: 220px;
+      }
+      
+      @media (min-width: $ms-screen-xl-min) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        .ms-Icon {
+          font-size: 324px;
+        }
+      }
+    }
+  }
 }
 
 .ms-Button {

@@ -1,0 +1,278 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Carousel styles
+
+$ms-Carousel-height: 446px;
+$ms-Carousel-slideOneColor: #72b542;
+$ms-Carousel-slideLargeWidth: 830px;
+$ms-Carousel-controls-height: 50px;
+$ms-Carousel-arrowLgWidth: 58px;
+$ms-Carousel-arrowFontSize: 48px;
+$ms-Carousel-paginationButtonSize: 12px;
+$ms-Carousel-negMarginLeft: -477px;
+
+.ms-Carousel {
+  width: 100%;
+  height: $ms-Carousel-height;
+  position: relative;
+  background-color: $ms-Carousel-slideOneColor;
+  float: left;
+  overflow: hidden;
+  transition: background-color 1000ms linear;
+  box-sizing: border-box;
+}
+
+.ms-Carousel-slide {
+	height: $ms-Carousel-height;
+	width: 100%;
+	max-width: $ms-Carousel-slideLargeWidth; 
+	margin-left: 0;
+	padding: 24px;
+	padding-top: 0;
+	box-sizing: border-box;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+
+	@media (min-width: $ms-screen-xl-min) {
+		top: 0;
+		padding: 0;
+	}
+}
+
+.ms-Carousel-innerSlide {
+	float: left;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.ms-Carousel-slideTitle {
+	@include ms-font-xl;
+	color: $ms-color-white;
+	margin-bottom: 8px;
+	@media (min-width: $ms-screen-xl-min) {
+		@include ms-font-xxl;
+		color: $ms-color-white;
+	}
+}
+
+.ms-Carousel-slideSubTitle {
+	@include ms-font-m;
+	line-height: $ms-font-size-xl;
+	color: $ms-color-white;
+	@media (min-width: $ms-screen-xl-min) {
+		@include ms-font-l;
+		line-height: $ms-font-size-xxl;
+		color: $ms-color-white;
+	}
+}
+
+// Animation Layers
+.ms-Carousel-animationLayerOne {
+	height: auto;
+	width: 100%;
+	float: left;
+	position: relative;
+	text-align: center;
+	@media (min-width: $ms-screen-xl-min) {
+		height: 208px;
+		max-width: 440px;
+		position: absolute;
+		top: 168px;
+		text-align: left;
+	}
+}
+
+.ms-Carousel-animationLayerOne.is-hidden {
+	opacity: 0;
+}
+
+.ms-Carousel-animationLayerTwo {
+	width: 100%;
+	height: auto;
+	float: left;
+	position: relative;
+	text-align: center;
+
+	@media (min-width: $ms-screen-xl-min) {
+		position: absolute;
+		height: 100%;
+		text-align: left;
+		float: none;
+	}
+}
+
+.ms-Carousel-staticContent {
+	width: 100%;
+	max-width: 300px;
+	position: absolute;
+	height: auto;
+	position: relative;
+	text-align: center;
+	margin-bottom: 8px;
+	font-size: $ms-font-size-xxl;
+	color: $ms-color-white;
+	font-family: $ms-font-family-regular;
+	margin-top: 31px;
+	left: 50%;
+	top: 0;
+	z-index: $ms-zIndex-front;
+
+	@media (min-width: $ms-screen-xl-min) {
+		padding-top: 34px;
+		transform: translateX(-148%);
+	}
+}
+
+.ms-Carousel-staticContentImage {
+	width: auto;
+	height: 50px;
+	margin-top: 24px;
+	margin-bottom: 24px;
+	@media (min-width: $ms-screen-xl-min) {
+		width: auto;
+		height: auto;
+		margin-top: 0;
+	}
+}
+
+.ms-Carousel-controls {
+	width: 100%;
+	position: absolute;
+	z-index: 11;
+	bottom: 20px;
+	height: 50px;
+	@media (min-width: $ms-screen-xl-min) {
+		margin: auto;
+		width: $ms-Carousel-slideLargeWidth;
+		left: 50%;
+		margin-left: $ms-Carousel-negMarginLeft;
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+}
+
+.ms-Carousel-pagination {
+	height: $ms-Carousel-controls-height;
+	width: auto;
+	position: absolute;
+	left: 50%;
+	magin-left: -10px;
+	height: 10px;
+	top: 50%;
+	margin-top: -($ms-Carousel-paginationButtonSize/2);
+}
+
+.ms-Carousel-paginationButton {
+	color: $ms-color-white;
+	height: $ms-Carousel-paginationButtonSize;
+	font-size: $ms-Carousel-paginationButtonSize;
+	margin-right: 2px;
+	opacity: 0.5;
+}
+
+.ms-Carousel-paginationButton:hover {
+	cursor: pointer;
+}
+
+.ms-Carousel-paginationButton.is-active {
+	opacity: 1;
+}
+
+.ms-Carousel-leftArrow,
+.ms-Carousel-rightArrow {
+	position: absolute;
+	height: $ms-Carousel-controls-height;
+	width: $ms-Carousel-arrowLgWidth;
+	font-size: 48px;
+	color: $ms-color-white;
+}
+
+.ms-Carousel-leftArrow:before,
+.ms-Carousel-rightArrow:before {
+	position: absolute;
+	top: 50%;
+	margin-top: -($ms-Carousel-arrowFontSize/2);
+	left: 0;
+}
+.ms-Carousel-rightArrow:before {
+	right: 0;
+	left: auto;
+}
+
+.ms-Carousel-leftArrow:hover,
+.ms-Carousel-rightArrow:hover {
+	cursor: pointer;
+}
+
+.ms-Carousel-leftArrow {
+	left: 0;
+	@media (min-width: $ms-screen-xl-min) {
+		left: -13px;
+	}
+}
+
+.ms-Carousel-rightArrow {
+	right: 0;
+	@media (min-width: $ms-screen-xl-min) {
+		right: -13px;
+	}
+}
+
+// Demo Slide Styles
+.ms-Carousel-slideGif {
+	width: 220px;
+	margin-top: 24px;
+	@media (min-width: $ms-screen-xl-min) {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: auto; 
+	}
+}
+
+.ms-Carousel-slide.ms-Carousel--slideOne {
+	.ms-Carousel-slideGif {
+		top: 18px;
+		right: 30px;
+	}
+}
+
+.ms-Carousel-slide.ms-Carousel--slideTwo {
+	.ms-Carousel-slideGif {
+		top: 34px;
+		width: 595px;
+		right: -33px;
+	}
+	.ms-Carousel-animationLayerOne {
+		
+		@media (min-width: $ms-screen-xl-min) {
+			max-width: 260px;
+		}
+	}
+}
+
+.ms-Carousel-slide.ms-Carousel--slideThree {
+	.ms-Carousel-animationLayerOne {
+		@media (min-width: $ms-screen-xl-min) {
+			max-width: 290px;
+		}
+	}
+	.ms-Carousel-slideGif{
+		top: 46px;
+		width: 484px;
+	}
+}
+
+.ms-Button {
+	margin-top: 46px;
+	display: none;
+	@media (min-width: $ms-screen-xl-min) {
+		display: inline-block;
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Carousel",
+  "notes": "Slideshow basically and stuff for things related to webersites.",
+  "template": "Carousel.html",
+  "class": "ms-Carousel",
+    "dependencies": [
+    "Button"
+  ]
+}

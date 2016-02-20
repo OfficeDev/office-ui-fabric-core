@@ -273,6 +273,11 @@ gulp.task('Bundles-build', function() {
                 BuildConfig.processorPlugin,
                 BuildConfig.processorName,
                 BuildConfig.compileErrorHandler,
+
+                // showSize
+                true,
+
+                // outputSass
                 true
            );
         }
@@ -299,3 +304,5 @@ gulp.task('Bundles-resetData', function() {
 gulp.task('Bundles-buildAll', function() {
   Plugins.runSequence('Bundles-nuke','Bundles-buildData', 'Bundles-build');
 });
+
+gulp.task('Bundles', ['Bundles-buildAll']);

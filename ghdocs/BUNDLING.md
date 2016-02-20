@@ -1,6 +1,4 @@
 # Custom Bundling
-This pull request adds build-time support for custom "bundles" of Fabric CSS, allowing for the creation of pre-configured subsets of Fabric's styles.
-
 ## What are bundles and why are they useful?
 "Bundles" are simply preconfigured CSS files that are made up of only the pieces of Fabric you specify. This allows you to tailor Fabric to the needs of your app and reduce the impact of including all of Fabric or Fabric's components. The end result is similar to the output of something like `src/sass/Fabric.scss`
 
@@ -37,7 +35,6 @@ This will produce the following:
 // SCSS template for building a bundle of Fabric and Fabric Components CSS.
 
 @import '../../../src/sass/_Fabric.Common.scss';
-
 
 @import '../../../src/components/Breadcrumb/Breadcrumb.scss';
 @import '../../../src/components/Button/Button.scss';
@@ -106,7 +103,6 @@ This will produce the following:
 
 @import '../../../src/sass/_Fabric.Common.scss';
 
-
 @import '../../../src/components/Button/Button.scss';
 @import '../../../src/components/Link/Link.scss';
 @import '../../../src/components/OrgChart/OrgChart.scss';
@@ -115,7 +111,7 @@ This will produce the following:
 ```
 
 #### Neither excludes nor includes
-If neither "excludes" or "includes" are specified, the bundle will inlclude all of Fabric's CSS.
+If neither "excludes" nor "includes" are specified, the bundle will inlclude all of Fabric's CSS.
 
 
 ### `gulp Bundles`

@@ -352,7 +352,12 @@
   @include ms-fontColor-greenLight;
 }
 
-// Utility colors
+// Message colors
+.ms-fontColor-info, 
+.ms-fontColor-info--hover:hover {
+  @include ms-fontColor-info;
+}
+
 .ms-fontColor-error, 
 .ms-fontColor-error--hover:hover {
   @include ms-fontColor-error;
@@ -361,11 +366,6 @@
 .ms-fontColor-alert, 
 .ms-fontColor-alert--hover:hover {
   @include ms-fontColor-alert;
-}
-
-.ms-fontColor-info, 
-.ms-fontColor-info--hover:hover {
-  @include ms-fontColor-info;
 }
 
 .ms-fontColor-success, 

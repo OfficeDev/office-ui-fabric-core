@@ -335,17 +335,17 @@
   color: $ms-color-greenLight;
 }
 
-// Utility colors
+// Message colors
+@mixin ms-fontColor-info {
+  color: $ms-color-info;
+}
+
 @mixin ms-fontColor-error {
   color: $ms-color-error;
 }
 
 @mixin ms-fontColor-alert {
   color: $ms-color-alert;
-}
-
-@mixin ms-fontColor-info {
-  color: $ms-color-info;
 }
 
 @mixin ms-fontColor-success {

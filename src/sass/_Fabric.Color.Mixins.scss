@@ -382,17 +382,17 @@
 }
 
 
-// Status colors
+// Message colors
+@mixin ms-borderColor-info {
+  border-color: $ms-color-info;
+}
+
 @mixin ms-borderColor-error {
   border-color: $ms-color-error;
 }
 
 @mixin ms-borderColor-success {
   border-color: $ms-color-success;
-}
-
-@mixin ms-borderColor-info {
-  border-color: $ms-color-info;
 }
 
 @mixin ms-borderColor-alert {

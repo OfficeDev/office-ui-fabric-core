@@ -423,17 +423,17 @@
 }
 
 
-// Status colors
+// Message colors
+.ms-borderColor-info {
+  @include ms-borderColor-info;
+}
+
 .ms-borderColor-error {
   @include ms-borderColor-error;
 }
 
 .ms-borderColor-success {
   @include ms-borderColor-success;
-}
-
-.ms-borderColor-info {
-  @include ms-borderColor-info;
 }
 
 .ms-borderColor-alert {

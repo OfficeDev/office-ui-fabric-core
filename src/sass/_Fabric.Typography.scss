@@ -340,14 +340,14 @@
   color: $ms-color-info;
 }
 
+@mixin ms-fontColor-success {
+  color: $ms-color-success;
+}
+
 @mixin ms-fontColor-error {
   color: $ms-color-error;
 }
 
 @mixin ms-fontColor-alert {
   color: $ms-color-alert;
-}
-
-@mixin ms-fontColor-success {
-  color: $ms-color-success;
 }

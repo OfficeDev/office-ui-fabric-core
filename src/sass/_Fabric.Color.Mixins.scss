@@ -189,16 +189,16 @@
   background-color: $ms-color-infoBackground;
 }
 
+@mixin ms-bgColor-success {
+  background-color: $ms-color-successBackground;
+}
+
 @mixin ms-bgColor-error {
   background-color: $ms-color-errorBackground;
 }
 
 @mixin ms-bgColor-alert {
   background-color: $ms-color-alertBackground;
-}
-
-@mixin ms-bgColor-success {
-  background-color: $ms-color-successBackground;
 }
 
 
@@ -387,12 +387,12 @@
   border-color: $ms-color-info;
 }
 
-@mixin ms-borderColor-error {
-  border-color: $ms-color-error;
-}
-
 @mixin ms-borderColor-success {
   border-color: $ms-color-success;
+}
+
+@mixin ms-borderColor-error {
+  border-color: $ms-color-error;
 }
 
 @mixin ms-borderColor-alert {

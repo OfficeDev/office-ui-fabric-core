@@ -210,16 +210,16 @@
   @include ms-bgColor-info;
 }
 
+.ms-bgColor-success {
+  @include ms-bgColor-success;
+}
+
 .ms-bgColor-error {
   @include ms-bgColor-error;
 }
 
 .ms-bgColor-alert {
   @include ms-bgColor-alert;
-}
-
-.ms-bgColor-success {
-  @include ms-bgColor-success;
 }
 
 
@@ -428,12 +428,12 @@
   @include ms-borderColor-info;
 }
 
-.ms-borderColor-error {
-  @include ms-borderColor-error;
-}
-
 .ms-borderColor-success {
   @include ms-borderColor-success;
+}
+
+.ms-borderColor-error {
+  @include ms-borderColor-error;
 }
 
 .ms-borderColor-alert {

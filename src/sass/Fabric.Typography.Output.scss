@@ -358,6 +358,11 @@
   @include ms-fontColor-info;
 }
 
+.ms-fontColor-success, 
+.ms-fontColor-success--hover:hover {
+  @include ms-fontColor-success;
+}
+
 .ms-fontColor-error, 
 .ms-fontColor-error--hover:hover {
   @include ms-fontColor-error;
@@ -366,9 +371,4 @@
 .ms-fontColor-alert, 
 .ms-fontColor-alert--hover:hover {
   @include ms-fontColor-alert;
-}
-
-.ms-fontColor-success, 
-.ms-fontColor-success--hover:hover {
-  @include ms-fontColor-success;
 }

@@ -184,17 +184,17 @@
   background-color: $ms-color-greenLight;
 }
 
-// Others
+// Message colors
+@mixin ms-bgColor-info {
+  background-color: $ms-color-infoBackground;
+}
+
 @mixin ms-bgColor-error {
   background-color: $ms-color-errorBackground;
 }
 
 @mixin ms-bgColor-alert {
   background-color: $ms-color-alertBackground;
-}
-
-@mixin ms-bgColor-info {
-  background-color: $ms-color-infoBackground;
 }
 
 @mixin ms-bgColor-success {

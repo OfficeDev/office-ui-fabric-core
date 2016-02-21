@@ -205,17 +205,17 @@
   @include ms-bgColor-greenLight;
 }
 
-// Others
+// Message colors
+.ms-bgColor-info {
+  @include ms-bgColor-info;
+}
+
 .ms-bgColor-error {
   @include ms-bgColor-error;
 }
 
 .ms-bgColor-alert {
   @include ms-bgColor-alert;
-}
-
-.ms-bgColor-info {
-  @include ms-bgColor-info;
 }
 
 .ms-bgColor-success {

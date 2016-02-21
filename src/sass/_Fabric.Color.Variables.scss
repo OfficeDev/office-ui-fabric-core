@@ -67,13 +67,13 @@ $ms-color-green:         #107c10;
 $ms-color-greenLight:    #bad80a;
 
 
-//== Other Colors
+//== Message colors
 //
-$ms-color-error:             $ms-color-redDark;
-$ms-color-errorBackground:   #fde7e9;
+$ms-color-info:              $ms-color-green;
+$ms-color-infoBackground:    $ms-color-neutralLighter;
 $ms-color-success:           $ms-color-green;
 $ms-color-successBackground: #dff6dd;
 $ms-color-alert:             $ms-color-orange;
 $ms-color-alertBackground:   $ms-color-neutralLighter;
-$ms-color-infoBackground:    $ms-color-neutralLighter;
-$ms-color-info:              $ms-color-green;
+$ms-color-error:             $ms-color-redDark;
+$ms-color-errorBackground:   #fde7e9;

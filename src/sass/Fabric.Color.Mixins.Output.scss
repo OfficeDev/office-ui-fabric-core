@@ -129,6 +129,10 @@
   @include ms-bgColor-orangeLight;
 }
 
+.ms-bgColor-orangeLighter {
+  @include ms-bgColor-orangeLighter;
+}
+
 .ms-bgColor-redDark {
   @include ms-bgColor-redDark;
 }
@@ -216,11 +220,6 @@
 
 .ms-bgColor-success {
   @include ms-bgColor-success;
-}
-
-.ms-bgColor-orangeLighter, 
-.ms-bgColor-orangeLighter--hover:hover {
-  @include ms-bgColor-orangeLighter;
 }
 
 
@@ -347,6 +346,10 @@
   @include ms-borderColor-orangeLight;
 }
 
+.ms-borderColor-orangeLighter {
+  @include ms-borderColor-orangeLighter;
+}
+
 .ms-borderColor-redDark {
   @include ms-borderColor-redDark;
 }
@@ -419,6 +422,7 @@
   @include ms-borderColor-greenLight;
 }
 
+
 // Status colors
 .ms-borderColor-error {
   @include ms-borderColor-error;
@@ -436,11 +440,6 @@
   @include ms-borderColor-alert;
 }
 
-// Others
-.ms-borderColor-orangeLighter, 
-.ms-borderColor-orangeLighter--hover:hover {
-  @include ms-borderColor-orangeLighter;
-}
 
 // Individual borders, by request
 .ms-borderColorTop-themePrimary, 

@@ -255,12 +255,12 @@
   color: $ms-color-orange;
 }
 
-@mixin ms-fontColor-orangeLighter {
-  color: $ms-color-orangeLighter;
-}
-
 @mixin ms-fontColor-orangeLight {
   color: $ms-color-orangeLight;
+}
+
+@mixin ms-fontColor-orangeLighter {
+  color: $ms-color-orangeLighter;
 }
 
 @mixin ms-fontColor-redDark {

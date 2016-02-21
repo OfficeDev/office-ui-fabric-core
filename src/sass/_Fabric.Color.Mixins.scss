@@ -108,6 +108,10 @@
   background-color: $ms-color-orangeLight;
 }
 
+@mixin ms-bgColor-orangeLighter {
+  background-color: $ms-color-orangeLighter;
+}
+
 @mixin ms-bgColor-redDark {
   background-color: $ms-color-redDark;
 }
@@ -195,10 +199,6 @@
 
 @mixin ms-bgColor-success {
   background-color: $ms-color-successBackground;
-}
-
-@mixin ms-bgColor-orangeLighter {
-  background-color: $ms-color-orangeLighter;
 }
 
 
@@ -305,6 +305,10 @@
   border-color: $ms-color-orangeLight;
 }
 
+@mixin ms-borderColor-orangeLighter {
+  border-color: $ms-color-orangeLighter;
+}
+
 @mixin ms-borderColor-redDark {
   border-color: $ms-color-redDark;
 }
@@ -377,6 +381,7 @@
   border-color: $ms-color-greenLight;
 }
 
+
 // Status colors
 @mixin ms-borderColor-error {
   border-color: $ms-color-error;
@@ -394,10 +399,6 @@
   border-color: $ms-color-alert;
 }
 
-// Others
-@mixin ms-borderColor-orangeLighter {
-  border-color: $ms-color-orangeLighter;
-}
 
 // Individual borders, by request
 @mixin ms-borderColorTop-themePrimary {

@@ -252,14 +252,14 @@
   @include ms-fontColor-orange;
 }
 
-.ms-fontColor-orangeLighter, .ms-fontColor-orangeLighter-hover:hover,
-.ms-fontColor-orangeLighter, .ms-fontColor-orangeLighter--hover:hover {
-  @include ms-fontColor-orangeLighter;
-}
-
 .ms-fontColor-orangeLight, 
 .ms-fontColor-orangeLight--hover:hover {
   @include ms-fontColor-orangeLight;
+}
+
+.ms-fontColor-orangeLighter,
+.ms-fontColor-orangeLighter--hover:hover {
+  @include ms-fontColor-orangeLighter;
 }
 
 .ms-fontColor-redDark, 

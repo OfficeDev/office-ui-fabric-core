@@ -5,14 +5,13 @@
 // --------------------------------------------------
 // Data table styles
 
-table,
 .ms-Table {
   display: table;
   width: 100%;
   border-collapse: collapse;
 }
 
-tr,
+.ms-Table tr,
 .ms-Table-row {
   display: table-row;
   height: 30px;
@@ -54,23 +53,23 @@ tr,
   }
 }
 
-th,
-td,
+.ms-Table th,
+.ms-Table td,
 .ms-Table-cell {
   display: table-cell;
   padding: 0 10px;
 }
 
 // Style the first row as a header.
-thead td,
-thead th,
+.ms-Table thead td,
+.ms-Table thead th,
 .ms-Table-head {
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
 }
 
-thead,
+.ms-Table thead,
 .ms-Table-head {
   
   td,
@@ -94,7 +93,7 @@ thead,
 }
 
 // On selectable tables, each row has a checkbox.
-.ms-Table-rowCheck {
+.ms-Table .ms-Table-rowCheck {
   display: table-cell;
   width: 20px;
   position: relative;

@@ -5,13 +5,14 @@
 // --------------------------------------------------
 // Data table styles
 
-
+table,
 .ms-Table {
   display: table;
   width: 100%;
   border-collapse: collapse;
 }
 
+tr,
 .ms-Table-row {
   display: table-row;
   height: 30px;
@@ -53,17 +54,27 @@
   }
 }
 
+th,
+td,
 .ms-Table-cell {
   display: table-cell;
   padding: 0 10px;
 }
 
 // Style the first row as a header.
+thead td,
+thead th,
 .ms-Table-head {
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
+}
 
+thead,
+.ms-Table-head {
+  
+  td,
+  th,
   .ms-Table-cell, 
   .ms-Table-rowCheck {
     font-weight: normal;
@@ -87,7 +98,8 @@
   display: table-cell;
   width: 20px;
   position: relative;
-
+  padding: 0;
+  
   // Empty checkbox.
   &:before {
     border: 1px solid $ms-color-neutralTertiary;

@@ -255,12 +255,12 @@
   color: $ms-color-orange;
 }
 
-@mixin ms-fontColor-orangeLighter {
-  color: $ms-color-orangeLighter;
-}
-
 @mixin ms-fontColor-orangeLight {
   color: $ms-color-orangeLight;
+}
+
+@mixin ms-fontColor-orangeLighter {
+  color: $ms-color-orangeLighter;
 }
 
 @mixin ms-fontColor-redDark {
@@ -335,19 +335,19 @@
   color: $ms-color-greenLight;
 }
 
-// Utility colors
-@mixin ms-fontColor-error {
-  color: $ms-color-error;
-}
-
-@mixin ms-fontColor-alert {
-  color: $ms-color-alert;
-}
-
+// Message colors
 @mixin ms-fontColor-info {
   color: $ms-color-info;
 }
 
 @mixin ms-fontColor-success {
   color: $ms-color-success;
+}
+
+@mixin ms-fontColor-alert {
+  color: $ms-color-alert;
+}
+
+@mixin ms-fontColor-error {
+  color: $ms-color-error;
 }

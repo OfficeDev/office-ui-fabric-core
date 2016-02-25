@@ -2,7 +2,7 @@
 // "use strict";
 
 // @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
-/// <reference path="../../jquery.d.ts"/>
+/// <reference path="../../../typings/jquery.d.ts"/>
 
 namespace fabric {
 
@@ -14,7 +14,7 @@ namespace fabric {
     constructor(container: any) {
       let $contextualMenu = $(container);
       // Set selected states.
-      $contextualMenu.on("click", ".ms-ContextualMenu-link:not(.is-disabled)", (event) => {
+      $contextualMenu.on("click", ".ms-ContextualMenu-link:not(.is-disabled)", function(event) {
         event.preventDefault();
 
         // Check if multiselect - set selected states
@@ -50,14 +50,3 @@ namespace fabric {
     }
   }
 }
-
-(function (fabric, $) {
-
-  $.fn.ContextualMenu = function () {
-    /** Go through each nav bar we've been given. */
-    return this.each(function () {
-      return new fabric.ContextualMenu(this);
-    });
-  };
-
-})(fabric, jQuery);

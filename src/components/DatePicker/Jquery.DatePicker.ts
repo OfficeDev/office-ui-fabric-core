@@ -2,8 +2,8 @@
 // "use strict";
 
 // @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
-/// <reference path="../../jquery.d.ts"/>
-/// <reference path="../../pickadate.d.ts"/>
+/// <reference path="../../../typings/jquery.d.ts"/>
+/// <reference path="../../../typings/pickadate.d.ts"/>
 
 namespace fabric {
   /**
@@ -24,7 +24,7 @@ namespace fabric {
         today: "",
 
         // Events
-        onStart: function() {
+        onStart: () => {
           this.initCustomView($datePicker);
         },
 
@@ -75,10 +75,10 @@ namespace fabric {
 
       /** Respond to built-in picker events. */
       $picker.on({
-        render: function() {
+        render: () => {
           this.updateCustomView($datePicker);
         },
-        open: function() {
+        open: () => {
           this.scrollUp($datePicker);
         },
       });
@@ -166,10 +166,12 @@ namespace fabric {
       $monthPicker.on("click", ".js-changeDate", (event) => {
         event.preventDefault();
 
+        let $changeDate = $(event.toElement);
+
         /** Get the requested date from the data attributes. */
-        let newYear = $(this).attr("data-year");
-        let newMonth = $(this).attr("data-month");
-        let newDay = $(this).attr("data-day");
+        let newYear = $changeDate.attr("data-year");
+        let newMonth = $changeDate.attr("data-month");
+        let newDay = $changeDate.attr("data-day");
 
         /** Update the date. */
         this.changeHighlightedDate($picker, newYear, newMonth, newDay);
@@ -183,11 +185,12 @@ namespace fabric {
       /** Change the highlighted year. */
       $yearPicker.on("click", ".js-changeDate", (event) => {
         event.preventDefault();
+        let $changeDate = $(event.toElement);
 
         /** Get the requested date from the data attributes. */
-        let newYear = $(this).attr("data-year");
-        let newMonth = $(this).attr("data-month");
-        let newDay = $(this).attr("data-day");
+        let newYear = $changeDate.attr("data-year");
+        let newMonth = $changeDate.attr("data-month");
+        let newDay = $changeDate.attr("data-day");
 
         /** Update the date. */
         this.changeHighlightedDate($picker, newYear, newMonth, newDay);
@@ -219,13 +222,13 @@ namespace fabric {
     public changeHighlightedDate($picker, newYear, newMonth, newDay) {
 
       /** All letiables are optional. If not provided, default to the current value. */
-      if (newYear === null) {
+      if (typeof newYear === "undefined" || newYear === null) {
         newYear = $picker.get("highlight").year;
       }
-      if (newMonth === null) {
+      if (typeof newMonth === "undefined" || newMonth === null) {
         newMonth = $picker.get("highlight").month;
       }
-      if (newDay === null) {
+      if (typeof newDay === "undefined" || newDay === null) {
         newDay = $picker.get("highlight").date;
       }
 
@@ -281,12 +284,3 @@ namespace fabric {
     }
   }
 }
-
-
-(function (fabric, $) {
-  $.fn.DatePicker = function (options) {
-    return this.each(function () {
-      return new fabric.DatePicker(this, options);
-    });
-  };
-})(fabric, jQuery);

@@ -2,8 +2,7 @@
 // "use strict";
 
 // @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
-/// <reference path="../../jquery.d.ts"/>
-
+/// <reference path="../../../typings/jquery.d.ts"/>
 
 namespace fabric {
   /**
@@ -36,9 +35,7 @@ namespace fabric {
   }
 }
 
-(function (fabric, $) {
-  $.fn.Dialog = function () {
-
+$(document).ready(function() {
     /** Iterate through the sample buttons, which can be used to open the Dialogs. */
     $(".js-DialogAction--open").each(function () {
         /** Open the associated dialog on click. */
@@ -47,10 +44,4 @@ namespace fabric {
           $(target).show();
         });
     });
-
-
-    return this.each(function () {
-      return new fabric.Dialog(this);
-    });
-  };
-})(fabric, jQuery);
+});

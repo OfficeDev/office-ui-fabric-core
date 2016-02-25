@@ -2,7 +2,7 @@
 // "use strict";
 
 // @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
-/// <reference path="../../jquery.d.ts"/>
+/// <reference path="../../../typings/jquery.d.ts"/>
 
 namespace fabric {
   /**
@@ -91,16 +91,6 @@ namespace fabric {
           $navBar.find(".ms-NavBar-item.ms-NavBar-item--search").removeClass("is-open").find(".ms-TextField-field").blur();
         }
       });
-    };
+    }
   }
 }
-
-(function (fabric, $) {
-  $.fn.NavBar = function () {
-
-    /** Go through each nav bar we've been given. */
-    return this.each(function () {
-      return new fabric.NavBar(this);
-    });
-  };
-})(fabric, jQuery);

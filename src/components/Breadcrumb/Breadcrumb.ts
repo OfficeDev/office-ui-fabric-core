@@ -1,10 +1,10 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-"use strict";
 
 /**
  * @namespace fabric
  */
 namespace fabric {
+  "use strict";
 
   /**
    * Breadcrumb component
@@ -208,8 +208,8 @@ namespace fabric {
      */
     private _setListeners() {
       window.addEventListener("resize", this._onResize.bind(this));
-      this._overflowButton.addEventListener("click", this._openOverflow, false);
-      this._overflowButton.addEventListener("keypress", this._overflowKeyPress, false);
+      this._overflowButton.addEventListener("click", this._openOverflow.bind(this), false);
+      this._overflowButton.addEventListener("keypress", this._overflowKeyPress.bind(this), false);
       document.addEventListener("click", this._closeOverflow.bind(this), false);
       this._breadcrumbList.addEventListener("click", this.removeOutlinesOnClick, false);
     }

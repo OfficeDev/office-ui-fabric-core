@@ -16,19 +16,6 @@
  
   <script type="text/javascript">
     $(document).ready(function() {
-      // File Picker demo fixes
-      if ($('.ms-FilePicker').length > 0) {
-        $('.ms-FilePicker').css({
-          "position": "absolute !important"
-        });
-
-        $('.ms-Panel').FilePicker();
-      } else {
-        if ($.fn.<%= componentName %>) {
-          $('.ms-<%= componentName %>').<%= componentName %>();
-        }
-      }
-
       // Vanilla JS Components
       if (typeof fabric !== "undefined") {
         if ('<%= componentName %>' in fabric) {

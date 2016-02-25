@@ -2,7 +2,7 @@
 // "use strict";
 
 // @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
-/// <reference path="../../jquery.d.ts"/>
+/// <reference path="../../../typings/jquery.d.ts"/>
 
 namespace fabric {
 
@@ -52,13 +52,3 @@ namespace fabric {
     }
   }
 }
-
-(function ($) {
-  $.fn.TextField = function () {
-
-    /** Iterate through each text field provided. */
-    return this.each(function () {
-      return new fabric.TextField(this);
-    });
-  };
-})(jQuery);

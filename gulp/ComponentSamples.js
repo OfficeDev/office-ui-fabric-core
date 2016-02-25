@@ -137,6 +137,11 @@ gulp.task('ComponentSamples-build', function() {
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
            var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
+           var tsFiles = Utilities.getFilesByExtension(srcFolderName, '.ts');
+           for (var tsFileIndex=0; tsFileIndex < tsFiles.length; ++tsFileIndex ) {
+             tsFiles[tsFileIndex] = tsFiles[tsFileIndex].replace(".ts", ".js");
+           }
+           jsFiles = jsFiles.concat(tsFiles);
            var jsLinks = '';
            
            for(var x = 0; x < jsFiles.length; x++) {

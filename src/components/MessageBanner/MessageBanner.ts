@@ -1,10 +1,10 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-"use strict";
 
 /**
  * @namespace fabric
  */
 namespace fabric {
+    "use strict";
 
     /**
      * MessageBanner component
@@ -57,7 +57,7 @@ namespace fabric {
             } else {
                 this._resizeSmall();
             }
-        };
+        }
 
         /**
          * resize above 480 pixel breakpoint
@@ -74,7 +74,7 @@ namespace fabric {
                 }
             }
             this._clipper.style.width = this._textWidth;
-        };
+        }
 
         /**
          * resize below 480 pixel breakpoint
@@ -87,7 +87,8 @@ namespace fabric {
                 this._textWidth = (this._clientWidth - (this._bufferElementsWidthSmall + this._closeButton.offsetWidth)) + "px";
             }
             this._clipper.style.width = this._textWidth;
-        };
+        }
+
         /**
          * caches elements and values of the component
          */
@@ -98,7 +99,7 @@ namespace fabric {
             this._actionButton = <HTMLElement>this.container.querySelector(".ms-MessageBanner-action");
             this._bufferSize = this._actionButton.offsetWidth + this._bufferElementsWidth;
             this._closeButton = <HTMLElement>this.container.querySelector(".ms-MessageBanner-close");
-        };
+        }
 
         /**
          * expands component to show full error message
@@ -107,7 +108,7 @@ namespace fabric {
             let icon = this._chevronButton.querySelector(".ms-Icon");
             this._errorBanner.className += " is-expanded";
             icon.className = "ms-Icon ms-Icon--chevronsUp";
-        };
+        }
 
         /**
          * collapses component to only show truncated message
@@ -116,7 +117,7 @@ namespace fabric {
             let icon = this._chevronButton.querySelector(".ms-Icon");
             this._errorBanner.className = "ms-MessageBanner";
             icon.className = "ms-Icon ms-Icon--chevronsDown";
-        };
+        }
 
         private _toggleExpansion() {
             if (this._errorBanner.className.indexOf("is-expanded") > -1) {
@@ -124,7 +125,7 @@ namespace fabric {
             } else {
                 this._expand();
             }
-        };
+        }
 
         private _hideMessageBanner() {
             this._errorBanner.className = "ms-MessageBanner is-hidden";

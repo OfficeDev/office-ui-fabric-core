@@ -2,7 +2,7 @@
 // "use strict";
 
 // @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
-/// <reference path="../../jquery.d.ts"/>
+/// <reference path="../../../typings/jquery.d.ts"/>
 
 namespace fabric {
 
@@ -63,12 +63,3 @@ namespace fabric {
     }
   }
 }
-
-(function (fabric, $) {
-  $.fn.Panel = function () {
-    /** Go through each panel we've been given. */
-    return this.each(function () {
-      return new fabric.Panel(this);
-    });
-  };
-})(fabric, jQuery);

@@ -2,7 +2,6 @@
 
 //
 // Office UI Fabric
-// --------------------------------------------------
 // Core Module Loader
 
 
@@ -24,14 +23,13 @@
 // Icons
 @import './Fabric.Icons.Font.Output';
 @import './Fabric.Icons.Output';
-@import './Fabric.Icons.Font.MDL2.Output';
-@import './Fabric.Icons.MDL2.Output';
 
 // Animations
 @import './Fabric.Animations.Output';
 
 // Responsive
 @import './Fabric.Responsive.Variables';
+@import './Fabric.Responsive.Utilities.Variables';
 @import './Fabric.Responsive.Utilities.Output';
 
 // Grid

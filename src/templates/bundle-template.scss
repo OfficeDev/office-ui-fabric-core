@@ -1,0 +1,17 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// SCSS template for building a bundle of Fabric and Fabric Components CSS.
+
+@import '../../../src/sass/_Fabric.Common.scss';
+
+<% 
+var relativePath = '../../../src/';
+
+// Then, include each dependency
+dependencies.forEach(function(dep) { 
+%>
+@import '<%= relativePath + dep %>';<% 
+}); %>

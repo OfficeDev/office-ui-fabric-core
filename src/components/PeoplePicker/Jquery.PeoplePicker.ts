@@ -7,6 +7,7 @@
 
 namespace fabric {
 
+
   /** Resize the search field to match the search box */
   function resizeSearchField($peoplePicker) {
     let $searchBox = $peoplePicker.find(".ms-PeoplePicker-searchBox");
@@ -25,7 +26,7 @@ namespace fabric {
     // Adjust the width of the field to fit the remaining space.
     let newFieldWidth: any = searchBoxRightEdge - lastPersonaRightEdge - 7;
 
-    // Don't let the field get too tiny.
+    // Don"t let the field get too tiny.
     if (newFieldWidth < 100) {
       newFieldWidth = "100%";
     }
@@ -43,9 +44,13 @@ namespace fabric {
    * @return {jQuery Object}  The same components (allows for chaining)
    */
 
+   // todo:
+   // how to include spinner component?
+
   export class PeoplePicker {
 
     constructor(container) {
+
       let $peoplePicker = $(container);
       let $searchField = $peoplePicker.find(".ms-PeoplePicker-searchField");
       let $results = $peoplePicker.find(".ms-PeoplePicker-results");
@@ -190,7 +195,7 @@ namespace fabric {
             $peoplePicker.removeClass("is-active");
             resizeSearchField($peoplePicker);
           } else {
-          /** Add selected persona to a list if Facepile or memberslist letiants */
+            /** Add selected persona to a list if Facepile or memberslist letiants */
             if (!$selected.hasClass("is-active")) {
               $selected.addClass("is-active");
             }
@@ -199,8 +204,8 @@ namespace fabric {
             /** Close the picker */
             $peoplePicker.removeClass("is-active");
             /** Get the total amount of selected personas and display that number */
-            let count = $peoplePicker.find(".ms-PeoplePicker-selectedPerson").length;
-            $selectedCount.html(String(count));
+            let count: any = $peoplePicker.find(".ms-PeoplePicker-selectedPerson").length;
+            $selectedCount.html(count);
             /** Return picker back to default state:
             - Show only the first five results in the people list for when the picker is reopened
             - Make searchMore inactive
@@ -407,6 +412,7 @@ namespace fabric {
           $personaCard.addClass("is-active");
         }
       });
+
     }
   }
 }

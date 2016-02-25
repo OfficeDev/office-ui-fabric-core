@@ -6,27 +6,25 @@ var Plugins = require('./Plugins');
  * Configuration class containing all properties to be used throughout the build          
  */
 var Config = function() {
-    this.debugMode = false;
-    this.lessExtension = "less";
-    this.sassExtension = "scss";
-    this.buildSass = false;
-    this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
+  this.debugMode = false;
+  this.sassExtension = "scss";
+  this.buildSass = false;
+  this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
 	var distPath = 'dist';
 	var srcPath = 'src';
 	this.paths = {
 		distComponents: distPath + '/components',
-		distLess: distPath + '/less',
-        distSass: distPath + '/sass',
+    distSass: distPath + '/sass',
 		distCSS: distPath + '/css',
 		distSamples: distPath + '/samples',
 		distSampleComponents: distPath + '/samples/' +  '/Components',
 		distJS: distPath + '/js',
 		distPackages: distPath + '/packages',
+		bundlePath: distPath + '/bundles',
 		srcPath: srcPath,
 		srcSamples: srcPath + '/samples',
-        srcSass: srcPath + '/sass',
+    srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		srcLess: srcPath + '/less',
 		templatePath : srcPath + '/templates'
 	};
 	this.port =  process.env.PORT || 2020;
@@ -61,22 +59,55 @@ var Config = function() {
 		outputDir: this.paths.distPackages
 	};
 	this.nugetPaths = [
-		{src: this.paths.componentsPath, dest: "/content/components/"},
-		{src: this.paths.distCSS, dest: "/content/css/"},
-		{src: this.paths.distJS, dest: "/content/scripts/"},
-		{src: this.paths.distLess, dest: "/content/less/"},
-        {src: this.paths.distSass, dest: "/content/sass/"}
+		{src: this.paths.distCSS, dest: "/content/"},
+		{src: this.paths.distSass, dest: "/content/sass/"},
+		{src: this.paths.distJS, dest: "/scripts/"}
 	];
-    this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
-    this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
-    //JS Files to be ignored in the JS Linter for Components
-    //NOTE: Only use this for third party files, do not add any Fabric JS files to this.
-    this.ignoreComponentJSLinting = [{
-         src: this.paths.componentsPath + '/DatePicker/PickaDate.js',
-         dist: this.paths.distSampleComponents + '/DatePicker/'
-    }];
-    //Errors
-    this.genericBuildError = "Hmm, something went wrong in the build... Here is the error dump";
+  this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
+  this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
+  //JS Files to be ignored in the JS Linter for Components
+  //NOTE: Only use this for third party files, do not add any Fabric JS files to this.
+  this.ignoreComponentJSLinting = [{
+        src: this.paths.componentsPath + '/DatePicker/PickaDate.js',
+        dist: this.paths.distSampleComponents + '/DatePicker/'
+  }];
+  //Errors
+  this.genericBuildError = "Hmm, something went wrong in the build... Here is the error dump";
+	this.bundlesConfig = {
+    "bundles": [
+        {
+          "name": "fabric-full",
+          "description": "A bundle containing all of Fabric's core and Component CSS.",
+          "excludes": [],
+          "options": {
+            // Log helpful messages about the bundles being built. 
+            "verbose": true,
+
+            // Log warnings about the bundles being built. 
+            "logWarnings": false
+          }
+        },
+        {
+          "name": "custom-bundle",
+          "description": "A custom bundle including a handful of modules.",
+          "includes": [
+            "_Fabric.Color.Variables",
+            "_Fabric.Color.Mixins",
+            "_Fabric.Typography.Variables",
+            "_Fabric.Typography",
+            "_Fabric.Typography.Fonts",
+            "_Fabric.Typography.Languageoverrides",
+            "_Fabric.Utilities",
+            "Button",
+            "PersonaCard"
+          ],
+          "options": {
+            "verbose": true,
+            "logWarnings": false
+          }
+        }
+      ]    
+	}
 };
 
 module.exports = new Config();

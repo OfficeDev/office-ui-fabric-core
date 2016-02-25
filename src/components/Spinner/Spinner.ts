@@ -29,17 +29,32 @@ namespace fabric {
         public spinner: HTMLElement;
         public numCircles: number;
         public offsetSize: number;
+        public parentSize: number;
         public fadeIncrement: number = 0;
 
         private circleObjects: Array<CircleObject> = [];
         private _target: HTMLElement;
 
         /**
+         * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
+         */
+        constructor(container) {
+            this._target = container;
+            this._init();
+        }
+
+
+        /**
          * @function start - starts or restarts the animation sequence
          * @memberOf fabric.Spinner
          */
         public start() {
-            this.interval = setInterval(this._fadeCircles.bind(this), this.animationSpeed);
+            this.interval = setInterval(() => {
+                let i = this.circleObjects.length;
+                while (i--) {
+                    this._fade(this.circleObjects[i]);
+                }
+            }, this.animationSpeed);
         }
 
         /**
@@ -53,8 +68,18 @@ namespace fabric {
         // private methods
 
         private _init() {
+            // for backwards compatibility
+            if (this._target.className.indexOf("ms-Spinner") === -1) {
+                this.spinner = document.createElement("div");
+                this.spinner.className = "ms-Spinner";
+                this._target.appendChild(this.spinner);
+            } else {
+                this.spinner = this._target;
+            }
+
             this.offsetSize = this.eightSize;
             this.numCircles = 8;
+            this.parentSize = this.spinner.className.indexOf("large") > -1 ? 28 : 20;
             this._createCirclesAndArrange();
             this._initializeOpacities();
             this.start();
@@ -93,35 +118,24 @@ namespace fabric {
 
         private _createCircle() {
             let circle = document.createElement("div");
-            let parentWidth = parseInt(window.getComputedStyle(this.spinner).getPropertyValue("width"), 10);
             circle.className = "ms-Spinner-circle";
-            circle.style.width = circle.style.height = parentWidth * this.offsetSize + "px";
+            circle.style.width = circle.style.height = this.parentSize * this.offsetSize + "px";
             return circle;
         }
 
         private _createCirclesAndArrange() {
-            // for backwards compatibility
-            if (this._target.className.indexOf("ms-Spinner") === -1) {
-                this.spinner = document.createElement("div");
-                this.spinner.className = "ms-Spinner";
-                this._target.appendChild(this.spinner);
-            } else {
-                this.spinner = this._target;
-            }
 
-            let width = this.spinner.clientWidth;
-            let height = this.spinner.clientHeight;
             let angle = 0;
-            let offset = width * this.offsetSize;
+            let offset = this.parentSize * this.offsetSize;
             let step = (2 * Math.PI) / this.numCircles;
             let i = this.numCircles;
             let circleObject;
-            let radius = (width - offset) * 0.5;
+            let radius = (this.parentSize - offset) * 0.5;
 
             while (i--) {
                 let circle = this._createCircle();
-                let x = Math.round(width * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
-                let y = Math.round(height * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
+                let x = Math.round(this.parentSize * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
+                let y = Math.round(this.parentSize * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
                 this.spinner.appendChild(circle);
                 circle.style.left = x + "px";
                 circle.style.top = y + "px";
@@ -130,20 +144,5 @@ namespace fabric {
                 this.circleObjects.push(circleObject);
             }
         }
-
-        private _fadeCircles() {
-            let i = this.circleObjects.length;
-            while (i--) {
-                this._fade(this.circleObjects[i]);
-            }
-        }
-
-        /**
-         * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
-         */
-        constructor (target) {
-            this._target = target;
-            this._init();
-        }
     }
-} // end fabric namespace
+}

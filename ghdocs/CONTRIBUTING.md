@@ -6,7 +6,7 @@ For this reason, some of the fundamental elements - iconography, typography, ani
 
 Missing a glyph in the icon font? Though we don't officially support them, you can use alternative icon font solutions like [Fontello](http://fontello.com/), [Icomoon](https://icomoon.io/app/#/select), or [Fontastic](http://fontastic.me/) to fill in those gaps.
 
-**Don't modify CSS (this is just the output of our LESS) or anything in `dist/`.**
+**Don't modify CSS (this is just the output of our Sass) or anything in `dist/`.**
 
 ### Pull requests
 We gladly welcome PRs regarding…
@@ -14,6 +14,8 @@ We gladly welcome PRs regarding…
 - Variants on components
 - Documentation updates
 - Things we haven't thought of yet :-)
+
+When creating a pull request, please describe in detail the problem you are solving and reference an [open issue](https://github.com/OfficeDev/Office-UI-Fabric/issues) if possible. Screenshots or a [demonstration on CodePen](http://codepen.io/pen?template=gPGzgX) are also appreciated. 
 
 ### Feature requests
 Please be sure to open an issue before starting a hefty PR so we can let you know if we're likely to consider your request--and to make sure we aren't already planning on doing the work.

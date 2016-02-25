@@ -137,18 +137,17 @@ var ErrorHandling = function() {
             switch(error.plugin) {
                 case 'gulp-autoprefixer':
                     break;
-                case 'gulp-less':
+                case 'gulp-sass':
+                    this.emit('end');
                     break;
                 default:
                     that.generateBuildError(error[0]);
                     that.addError(error[0]);
-                    console.log(error.plugin);
                     break;
             }
             return;
         }
-        
-		that.generateBuildError(Config.genericBuildError);
+		    that.generateBuildError(Config.genericBuildError);
         that.generateBuildError(error);
         that.addError(error);
         return;
@@ -186,48 +185,18 @@ var ErrorHandling = function() {
         });
     };
     /**
-     * LESSHint error handler
-     * @param {object} file     Data containing file information
-     * @param {function} cb     Callback data with error or no arguments
-     */
-    this.LESSHintErrors = function(file, cb) {
-        return map(function (file, cb) {
-            if (!file.lesshint.success) {
-                file.lesshint.results.forEach(function (err) {
-                    if (err) {
-                        var errorString = that.createLineErrorMessage(
-                            gulputil.colors.yellow(err.severity) + ' ' + err.message,
-                            err.file,
-                            err.line,
-                            err.source,
-                            'NA',
-                            ''
-                        );  
-                        if (err.severity == "warning") {
-                            gulputil.log(errorString);
-                            that.addWarning(errorString);
-                        } else {
-                           that.generatePluginError('lessHint', errorString);
-                        }
-                    }
-                });
-            }
-            return cb(null, file); 
-        });
-    };
-    /**
-     * Less Compiler error handler
+     * Sass Compiler error handler
      * @param {object} error An object containing the error data.
      */
-    this.LESSCompileErrors = function(error) {
+    this.SASSCompileErrors = function(error) {
         var errorString = that.createLineErrorMessage(
-            error.filename,
+            ' ' + error.file,
             error.line,
             error.column,
             'No Code',
-            error.message
+            error.messageFormatted
         );
-        that.generatePluginError('Less compiler', errorString);
+        that.generatePluginError('SASS compiler', errorString);
         this.emit('end');
     }
     /**
@@ -238,7 +207,6 @@ var ErrorHandling = function() {
         return map(function (file, cb) {
             var errors = file.sassLint[0];
             var messages = errors.messages;
-          
             if (messages.length > 0) {
                 for(var i = 0; i < messages.length; i++) {
                    var message = messages[i];
@@ -256,20 +224,23 @@ var ErrorHandling = function() {
                         that.addWarning(errorString);
                     } else {
                          errorString = that.createLineErrorMessage(
-                            gulputil.colors.red("Error or something") + ' ' + message.message,
+                            gulputil.colors.red("Error ") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
-                         );  
-                        that.generatePluginError('SassHinting', errorString);
+                         );
+                        gulputil.log(errorString);
                         that.addError(errorString);
                     }
                 }
+              return cb(errorString);
+            } else {
+              return cb(null, file);
             }
-            return cb(null, file); 
-        });
+             
+        }, {failures: true});
     };
 };
 

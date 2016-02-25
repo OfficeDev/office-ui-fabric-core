@@ -1,0 +1,49 @@
+#########################
+## Sample Sass Lint File
+#########################
+# Linter Options
+options:
+# File Options
+files:
+  include: '*.s+(a|c)ss'
+# Rule Configuration
+rules:
+  class-name-format: 0
+  variable-name-format: 0
+  mixin-name-format: 0
+  force-element-nesting: 0
+  nesting-depth: 0
+  clean-import-paths:
+  - 0
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
+  mixins-before-declarations:
+    - 0
+    -
+      exclude:
+        - breakpoint
+        - mq
+
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  no-important: 2
+  hex-notation:
+    - 2
+    -
+      style: uppercase
+  indentation:
+    - 0
+    -
+      size: 2
+  property-sort-order:
+    - 0
+    -
+      ignore-custom-properties: true
+  variable-for-property:
+    - 2
+    -
+      properties:
+        - margin
+        - content

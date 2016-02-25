@@ -29,7 +29,8 @@
     "Persona.Presence.Square.Blocked.html",
     "Persona.Presence.Square.Busy.html",
     "Persona.Presence.Square.Dnd.html",
-    "Persona.Presence.Square.Offline.html"
+    "Persona.Presence.Square.Offline.html",
+    "Persona.Initials.html"
   ],
   "branches": [
     {

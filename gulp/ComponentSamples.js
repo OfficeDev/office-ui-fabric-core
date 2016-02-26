@@ -132,17 +132,7 @@ gulp.task('ComponentSamples-build', function() {
            var filesArray = manifest.fileOrder;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
-           // var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
-           // var tsFiles = Utilities.getFilesByExtension(srcFolderName, '.ts');
-           // for (var tsFileIndex=0; tsFileIndex < tsFiles.length; ++tsFileIndex ) {
-           //   tsFiles[tsFileIndex] = tsFiles[tsFileIndex].replace(".ts", ".js");
-           // }
-           // jsFiles = jsFiles.concat(tsFiles);
-           var jsLinks = '';
-           
-           // for (var x = 0; x < jsFiles.length; x++) {
-           //     jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
-           // }
+
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
@@ -154,9 +144,6 @@ gulp.task('ComponentSamples-build', function() {
                 },
                 {
                     componentName: folderName
-                },
-                {
-                    jsLinks: jsLinks
                 }
            ))
            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({

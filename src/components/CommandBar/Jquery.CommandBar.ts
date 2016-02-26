@@ -102,7 +102,7 @@ module fabric {
       }
 
       // Add resize event handler on commandBar
-      $(window).resize(function() {
+      $(window).resize(() => {
         if ($(window).width() < 640 && mobileSwitch === false) {
           // Go through process and save commands
           allCommands = this.saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);

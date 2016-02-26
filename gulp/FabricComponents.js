@@ -116,20 +116,30 @@ gulp.task('FabricComponents-buildStyles', function () {
 // JS Only tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('FabricComponents-typescript', function() {
-    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
-        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(Plugins.tslint())
-        .pipe(Plugins.tslint.report("verbose"))
-        .pipe(Plugins.tsc(Config.typescriptProject));
+// gulp.task('FabricComponents-typescript', function() {
+//     var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
+//         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+//         .pipe(Plugins.tslint())
+//         .pipe(Plugins.tslint.report("verbose"))
+//         .pipe(Plugins.tsc(Config.typescriptProject));
 
-    return Plugins.mergeStream( [
-      tscResult.dts.pipe(gulp.dest(Config.paths.distComponents)),
-      tscResult.js.pipe(gulp.dest(Config.paths.distComponents))
-    ]);
-});
+//     return Plugins.mergeStream( [
+//       tscResult.dts.pipe(gulp.dest(Config.paths.distComponents)),
+//       tscResult.js.pipe(gulp.dest(Config.paths.distComponents))
+//                   .pipe(Plugins.concat('fabric.js'))
+//                   .pipe(Plugins.header(Banners.getJSCopyRight()))
+//                   .pipe(Plugins.changed(Config.paths.distJS))
+//                   .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+//                         title: "Concat Fabric Component JS built from TS"
+//                   })))
+//                   .pipe(gulp.dest(Config.paths.distJS))
+//                   .pipe(Plugins.rename('fabric.min.js'))
+//                   .pipe(Plugins.uglify())
+//                   .pipe(gulp.dest(Config.paths.distJS))
+//     ]);
+// });
 
-gulp.task('FabricComponents-concatJs', ['FabricComponents-typescript'], function() {
+gulp.task('FabricComponents-concatJs', ['ComponentJS-typescript'], function() {
     return gulp.src(Config.paths.distComponents + '/**/*.js')
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.concat('jquery.fabric.js'))

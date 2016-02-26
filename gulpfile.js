@@ -9,6 +9,7 @@ var ErrorHandling = require('./gulp/modules/ErrorHandling');
 
 var watchTasks = [
     'Fabric', 
+    'ComponentJS',
     'FabricComponents', 
     'ComponentSamples', 
     'Samples',
@@ -17,6 +18,7 @@ var watchTasks = [
 
 var buildTasks = [
     'Fabric', 
+    'ComponentJS',
     'FabricComponents', 
     'ComponentSamples', 
     'Samples', 

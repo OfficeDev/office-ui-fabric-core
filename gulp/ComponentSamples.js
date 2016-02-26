@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var fs = require('fs');
 var Utilities = require('./modules/Utilities');
+var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
 var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
@@ -51,22 +52,7 @@ gulp.task('ComponentSamples-copyAssets', function() {
         .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
-
-gulp.task('ComponentSamples-typescript', function() {
-    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
-        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(Plugins.tslint())
-        .pipe(Plugins.tslint.report("verbose"))
-        .pipe(Plugins.tsc(Config.typescriptProject));
-
-    return Plugins.mergeStream( [
-      tscResult.dts.pipe(gulp.dest(Config.paths.distSamples + '/Components')),
-      tscResult.js.pipe(gulp.dest(Config.paths.distSamples + '/Components'))
-    ]);
-});
-
-
-gulp.task('ComponentSamples-moveJS', ['ComponentSamples-typescript'], function() {
+gulp.task('ComponentSamples-moveJS', ['ComponentJS-typescript'], function() {
     var paths;
     var newPaths;
     paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
@@ -146,17 +132,17 @@ gulp.task('ComponentSamples-build', function() {
            var filesArray = manifest.fileOrder;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
-           var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
-           var tsFiles = Utilities.getFilesByExtension(srcFolderName, '.ts');
-           for (var tsFileIndex=0; tsFileIndex < tsFiles.length; ++tsFileIndex ) {
-             tsFiles[tsFileIndex] = tsFiles[tsFileIndex].replace(".ts", ".js");
-           }
-           jsFiles = jsFiles.concat(tsFiles);
+           // var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
+           // var tsFiles = Utilities.getFilesByExtension(srcFolderName, '.ts');
+           // for (var tsFileIndex=0; tsFileIndex < tsFiles.length; ++tsFileIndex ) {
+           //   tsFiles[tsFileIndex] = tsFiles[tsFileIndex].replace(".ts", ".js");
+           // }
+           // jsFiles = jsFiles.concat(tsFiles);
            var jsLinks = '';
            
-           for (var x = 0; x < jsFiles.length; x++) {
-               jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
-           }
+           // for (var x = 0; x < jsFiles.length; x++) {
+           //     jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
+           // }
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))

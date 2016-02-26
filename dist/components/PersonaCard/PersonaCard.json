@@ -1,0 +1,28 @@
+{
+  "name": "PersonaCard",
+  "notes": "",
+  "description": "The visualization of details of an individual including Skype contact details, email, location information, and organizational placement via the embedded {0} OrgChart {1}. PersonaCards are often invoked when a {2} Persona {3} is hovered over or tapped.",
+  "template": "PersonaCard.html",
+  "class": "ms-PersonaCard",
+  "wrapBranches": true,
+  "fileOrder": [
+    "PersonaCard.html",
+    "PersonaCard.Square.html"
+  ],
+  "dependencies": [
+    "Persona",
+    "OrgChart",
+    "Link"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    },
+    {
+      "name": "Circles",
+      "notes": "This persona card uses circle personas and has the org chart built in.",
+      "class": "ms-PersonaCard--circles"
+    }
+  ]
+}

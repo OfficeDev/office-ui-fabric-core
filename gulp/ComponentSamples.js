@@ -63,7 +63,6 @@ gulp.task('ComponentSamples-typescript', function() {
       tscResult.dts.pipe(gulp.dest(Config.paths.distSamples + '/Components')),
       tscResult.js.pipe(gulp.dest(Config.paths.distSamples + '/Components'))
     ]);
-        
 });
 
 

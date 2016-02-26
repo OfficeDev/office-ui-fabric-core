@@ -25,7 +25,7 @@ gulp.task('FabricComponents-nuke', function () {
 
 gulp.task('FabricComponents-copyAssets', function () {
     // Copy all Components files.
-    return gulp.src([Config.paths.componentsPath + '/**', '!' + Config.paths.componentsPath + '/**/*.js'])
+    return gulp.src([Config.paths.componentsPath + '/**', '!' + Config.paths.componentsPath + '/**/*.js', '!' + Config.paths.componentsPath + '/**/*.ts'])
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.changed(Config.paths.distComponents))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -34,7 +34,7 @@ gulp.task('FabricComponents-copyAssets', function () {
         .pipe(gulp.dest(Config.paths.distComponents));
 });
 
-gulp.task('FabricComponents-moveJs', function () {
+gulp.task('FabricComponents-copyJs', function () {
     // Copy all Components files.
     return gulp.src([Config.paths.componentsPath + '/**/*.js'])
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
@@ -45,6 +45,7 @@ gulp.task('FabricComponents-moveJs', function () {
         .pipe(Plugins.fileinclude())
         .pipe(gulp.dest(Config.paths.distComponents));
 });
+
 
 //
 // Sass tasks
@@ -115,9 +116,21 @@ gulp.task('FabricComponents-buildStyles', function () {
 // JS Only tasks
 // ----------------------------------------------------------------------------
 
+gulp.task('FabricComponents-typescript', function() {
+    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.tslint())
+        .pipe(Plugins.tslint.report("verbose"))
+        .pipe(Plugins.tsc(Config.typescriptProject));
 
-gulp.task('FabricComponents-moveJs', function() {
-    return gulp.src(Config.paths.componentsPath + '/**/*.js')
+    return Plugins.mergeStream( [
+      tscResult.dts.pipe(gulp.dest(Config.paths.distComponents)),
+      tscResult.js.pipe(gulp.dest(Config.paths.distComponents))
+    ]);
+});
+
+gulp.task('FabricComponents-concatJs', ['FabricComponents-typescript'], function() {
+    return gulp.src(Config.paths.distComponents + '/**/*.js')
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.concat('jquery.fabric.js'))
         .pipe(Plugins.header(Banners.getJSCopyRight()))
@@ -140,7 +153,7 @@ gulp.task('FabricComponents', [
     'FabricComponents-buildAndCombineStyles', 
     'FabricComponents-buildStyles', 
     'FabricComponents-copyAssets', 
-    'FabricComponents-moveJs'
+    'FabricComponents-concatJs'
     ]
 );
 

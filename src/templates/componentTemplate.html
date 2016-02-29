@@ -1,0 +1,24 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!-- componentTemplate.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component <%= componentName %></title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="<%= componentName %>.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker"><%= componentName %></h1>
+  <div id="componentWrapper">
+    <!-- You write code for this content block in another file -->
+    {% block content %} {% endblock %}
+  </div>
+</body>
+</html>

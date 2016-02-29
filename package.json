@@ -40,6 +40,7 @@
     "gulp-jshint": "^2.0.0",
     "gulp-minify-css": "^1.2.0",
     "gulp-nuget-pack": "0.0.6",
+    "gulp-nunjucks-render": "^2.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",

@@ -45,6 +45,7 @@ var Plugins = function() {
   this.fs = require('fs');
   this.sasslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');
+  this.nunjucks = require('gulp-nunjucks-render')
 };
 
 module.exports = new Plugins();

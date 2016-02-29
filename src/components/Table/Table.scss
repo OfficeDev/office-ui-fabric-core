@@ -61,7 +61,6 @@
 }
 
 // Style the first row as a header.
-.ms-Table thead td,
 .ms-Table thead th,
 .ms-Table-head {
   font-family: $ms-font-family-semilight;
@@ -93,7 +92,7 @@
 }
 
 // On selectable tables, each row has a checkbox.
-.ms-Table .ms-Table-rowCheck {
+.ms-Table-rowCheck {
   display: table-cell;
   width: 20px;
   position: relative;

@@ -36,7 +36,7 @@ State | Applied to | Result
 <!-- @todo Create a page showing how to import fabric.css, fabric.components.css, and jquery.fabric.js onto a page. -->
 1. Confirm that you have [references to Fabric's CSS]() on your page. No JavaScript is required for this component.
 2. Copy the HTML from one of the samples above into your page.
-5. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
+3. Replace the sample HTML content (such as the content of `.ms-Button-label`) with your content.
 
 ## Dependencies
 This component has no dependencies.

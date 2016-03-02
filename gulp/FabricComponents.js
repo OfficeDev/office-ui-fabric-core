@@ -34,19 +34,6 @@ gulp.task('FabricComponents-copyAssets', function () {
         .pipe(gulp.dest(Config.paths.distComponents));
 });
 
-gulp.task('FabricComponents-copyJs', function () {
-    // Copy all Components files.
-    return gulp.src([Config.paths.componentsPath + '/**/*.js'])
-        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(Plugins.changed(Config.paths.distComponents))
-        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Moving Fabric Component Assets to Dist"
-        })))
-        .pipe(Plugins.fileinclude())
-        .pipe(gulp.dest(Config.paths.distComponents));
-});
-
-
 //
 // Sass tasks
 // ----------------------------------------------------------------------------
@@ -121,7 +108,7 @@ gulp.task('FabricComponents', [
     'FabricComponents-buildAndCombineStyles', 
     'FabricComponents-buildStyles', 
     'FabricComponents-copyAssets', 
-    'ComponentJS-typescript'
+    'ComponentJS'
     ]
 );
 

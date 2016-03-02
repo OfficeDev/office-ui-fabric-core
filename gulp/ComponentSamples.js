@@ -52,24 +52,6 @@ gulp.task('ComponentSamples-copyAssets', function() {
         .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
-gulp.task('ComponentSamples-moveJS', ['ComponentJS-typescript'], function() {
-    var paths;
-    var newPaths;
-    paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
-    newPaths = paths.concat([Config.paths.distSamples + '/**/*.js']);
-   
-    return gulp.src(newPaths)
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.jshint())
-            .pipe(ErrorHandling.JSHintErrors())
-            .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Copying Component Assets"
-            })))
-            .pipe(Plugins.fileinclude())
-            .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
-});
-
 
 gulp.task('ComponentSamples-styleHinting',  function() {
    return gulp.src(Config.paths.componentsPath + '/**/*.scss')
@@ -171,7 +153,7 @@ var ComponentSamplesTasks = [
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
-    'ComponentSamples-moveJS',
+    'ComponentJS',
     'ComponentSamples-copyIgnoredFiles'
     // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
 ];

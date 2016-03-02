@@ -4,6 +4,27 @@ var Config = require('./modules/Config');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 
+//
+// Clean/Delete Tasks
+// ----------------------------------------------------------------------------
+
+gulp.task('ComponentJS-nuke', function () {
+    return Plugins.del.sync([Config.paths.distJS, Config.paths.distLibPath]);
+});
+
+
+//
+// Library tasks
+// ----------------------------------------------------------------------------
+gulp.task('ComponentJS-copyLib', function() {
+    return gulp.src(Config.paths.srcLibPath + '/**/*')
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.changed(Config.paths.distLibPath))
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+              title: "Copying /lib folder to dist folder"
+        })))
+        .pipe(gulp.dest(Config.paths.distLibPath));
+});
 
 //
 // Typescript tasks
@@ -11,41 +32,54 @@ var Plugins = require('./modules/Plugins');
 
 gulp.task('ComponentJS-typescript', function() {
     var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
+
+        // only process TS files that have changed since last compiled to /dist/Components
+        .pipe(Plugins.changed(Config.paths.distComponents, {extension: '.js'}))
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+
+        // tslint options set by tslint.json
         .pipe(Plugins.tslint())
         .pipe(Plugins.tslint.report("verbose"))
+
+        // Typescript project is set to give us both definitions and javascript
         .pipe(Plugins.tsc(Config.typescriptProject));
 
     return Plugins.mergeStream( [
 
-      // place output in both the Samples folder and the Components folder
+      // place .d.ts output in both the Samples folder and the Components folder
       tscResult.dts.pipe(gulp.dest(Config.paths.distSamples + '/Components'))
-                   .pipe(gulp.dest(Config.paths.distComponents)),
+                   .pipe(gulp.dest(Config.paths.distComponents))
+                   .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                     title: "Output Fabric Component .d.ts built from TypeScript"
+                   }))),
 
-      // place output in both the Samples folder and the Components folder
+      // place .js output in both the Samples folder and the Components folder
       tscResult.js.pipe(gulp.dest(Config.paths.distSamples + '/Components'))
                   .pipe(gulp.dest(Config.paths.distComponents))
-                  .pipe(Plugins.debug({
-                        title: "Output Fabric Component JS built from TS"
-                  }))
-
-                  // concat the output files into a single fabric.js file
-                  .pipe(Plugins.concat('fabric.js'))
-                  .pipe(Plugins.header(Banners.getJSCopyRight()))
-                  // .pipe(Plugins.changed(Config.paths.distJS)) // doing this prevents the file from getting updated if it already exists
                   .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                        title: "Concat Fabric Component JS built from TS"
+                    title: "Output Fabric Component .js built from TypeScript"
                   })))
-                  .pipe(gulp.dest(Config.paths.distJS))
-
-                  // minify the concat file
-                  .pipe(Plugins.rename('fabric.min.js'))
-                  .pipe(Plugins.uglify())
-                  .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                        title: "Minify Fabric Component JS built from TS"
-                  })))
-                  .pipe(gulp.dest(Config.paths.distJS))
     ]);
+});
+
+//
+// Concat and minify the output files into a single fabric.js file
+gulp.task('ComponentJS-concatJS', ['ComponentJS-typescript'], function() {
+
+    return gulp.src(Config.paths.distComponents + '/**/*.js')
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+        .pipe(Plugins.concat('fabric.js'))
+        .pipe(Plugins.header(Banners.getJSCopyRight()))
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Concat Fabric Component JS"
+        })))
+        .pipe(gulp.dest(Config.paths.distJS))
+        .pipe(Plugins.rename('fabric.min.js'))
+        .pipe(Plugins.uglify())
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Minify Fabric Component JS"
+        })))
+        .pipe(gulp.dest(Config.paths.distJS));
 });
 
 
@@ -54,7 +88,9 @@ gulp.task('ComponentJS-typescript', function() {
 // ----------------------------------------------------------------------------
 
 var ComponentJSTasks = [
+    'ComponentJS-copyLib',
     'ComponentJS-typescript',
+    'ComponentJS-concatJS'
 ];
 
 //Build Fabric Component Samples

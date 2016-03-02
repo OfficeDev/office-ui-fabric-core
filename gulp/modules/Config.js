@@ -25,7 +25,9 @@ var Config = function() {
 		srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		templatePath : srcPath + '/templates'
+		templatePath : srcPath + '/templates',
+    srcLibPath: 'lib',
+    distLibPath: distPath + '/lib'
 	};
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";

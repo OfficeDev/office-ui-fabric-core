@@ -30,7 +30,7 @@ namespace fabric {
     private _itemCollection: Array<any> = [];
 
     /**
-     * removes focus outlines so they don't linger after click
+     *  removes focus outlines so they don't linger after click
      */
     public removeOutlinesOnClick(event) {
       event.target.blur();

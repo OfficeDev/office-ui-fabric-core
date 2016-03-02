@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+// @TODO - we can add this once jquery is removed
 // "use strict";
 
-// @TODO - this could be done through nuget, but may not be needed since this should be temporary until we remove jquery completely
 /// <reference path="../../../typings/jquery.d.ts"/>
 /// <reference path="../../../typings/pickadate.d.ts"/>
 

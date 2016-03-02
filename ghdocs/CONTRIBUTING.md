@@ -6,7 +6,7 @@ For this reason, some of the fundamental elements - iconography, typography, ani
 
 Missing a glyph in the icon font? Though we don't officially support them, you can use alternative icon font solutions like [Fontello](http://fontello.com/), [Icomoon](https://icomoon.io/app/#/select), or [Fontastic](http://fontastic.me/) to fill in those gaps.
 
-**Don't modify CSS (this is just the output of our LESS) or anything in `dist/`.**
+**Don't modify CSS (this is just the output of our Sass) or anything in `dist/`.**
 
 ### Pull requests
 We gladly welcome PRs regarding…

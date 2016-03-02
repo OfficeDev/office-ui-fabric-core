@@ -13,6 +13,9 @@
     "ListItem.Image.html",
     "ListItem.Document.html"
   ],
+  "dependencies": [
+    "List"
+  ],
   "branches": [
     {
       "name": "Standard",

@@ -17,9 +17,11 @@ var ComponentSamplesHelper = function() {
      * @param {string} componentName Name of the component.
      * @param {string} deps Sass Dependencies to be added to the styles.
      * @param {function} cssPlugin The gulp plugin or function used for the specific css preprocessor
+     * @param {boolean} showSize Whether or not to show the size of built files after compiling
+     * @param {boolean} outputSass Whether or not to also output the SCSS file used
      * @return {stream} returns a stream.
      */
-    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler) {
+    this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler, showSize, outputSass) {
         return gulp.src(srcTemplate)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Building Component Styles"
@@ -30,6 +32,8 @@ var ComponentSamplesHelper = function() {
             }))
             .pipe(Plugins.template())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.gulpif(outputSass, Plugins.rename(componentName + '.scss')))
+            .pipe(Plugins.gulpif(outputSass, gulp.dest(destFolder)))
             .pipe(processorPlugin().on('error', errorHandler))
             .pipe(Plugins.autoprefixer({
                 browsers: ['last 2 versions', 'ie >= 9'],
@@ -48,6 +52,9 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Minifying Component Sample " + name
+            })))
+            .pipe(Plugins.gulpif(showSize, Plugins.size({
+                'showFiles': true
             })))
             .pipe(gulp.dest(destFolder));
     }

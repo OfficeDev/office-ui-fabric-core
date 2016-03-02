@@ -220,15 +220,15 @@
   /** Change the highlighted date. */
   function changeHighlightedDate($picker, newYear, newMonth, newDay) {
 
-    /** All variables are optional. If not provided, default to the current value. */
-    if (newYear === null) {
-      newYear = $picker.get('highlight').year;
+    /** All letiables are optional. If not provided, default to the current value. */
+    if (typeof newYear === "undefined" || newYear === null) {
+      newYear = $picker.get("highlight").year;
     }
-    if (newMonth === null) {
-      newMonth = $picker.get('highlight').month;
+    if (typeof newMonth === "undefined" || newMonth === null) {
+      newMonth = $picker.get("highlight").month;
     }
-    if (newDay === null) {
-      newDay = $picker.get('highlight').date;
+    if (typeof newDay === "undefined" || newDay === null) {
+      newDay = $picker.get("highlight").date;
     }
 
     /** Update it. */

@@ -24,3 +24,4 @@
  - [Tea](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
 - **App launcher component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/81) and may be included in a future release of Fabric.
 - **Slider component.** See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/360).
+- **Generic ListItem styles.** Our current ListItem component is for an email item, and contains many icons and pieces of text that developers are unlikely to need. We want to replace this with a small set of generic list items that can be used for most scenarios. We might also add list items specific to content, such as for showing a file.

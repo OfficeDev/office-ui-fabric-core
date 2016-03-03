@@ -5,6 +5,7 @@
 - **Card component.** We're identifying the most common scenarios and getting design support to have this added. See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/152).
 - **Searchable dropdown component.** See [this issue](https://github.com/OfficeDev/Office-UI-Fabric/issues/130) for the original request.
 - **Improved component documentation.** Our website will be updated with more details on what each component should be used for, and how to make it work in your project.
+- **Simple pagination component.** As requested in [this issue](https://github.com/OfficeDev/Office-UI-Fabric/issues/131).
 
 ## Possible Future Improvements
 - **Provide standard layouts for building full-page apps.** We've received a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/284) and it's something we'd like to add once we have a more clearly-defined set of UI patterns. For now, please send us screenshots of your full-page apps so that we can understand what common layouts we could provide.

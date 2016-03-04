@@ -1,0 +1,5 @@
+@@include('PeoplePicker.html')
+@@include('PeoplePicker.Compact.html')
+@@include('PeoplePicker.Disconnected.html')
+@@include('PeoplePicker.MembersList.html')
+@@include('PeoplePicker.Facepile.html')

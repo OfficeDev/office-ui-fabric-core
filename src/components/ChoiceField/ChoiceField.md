@@ -6,12 +6,12 @@ Allows selection from one or more options.
 ### Checkbox
 Used to indicate a simple yes or no choice.
 
-[ Example here: ChoiceField.Checkbox.html ]
+@@include('ChoiceField.Checkbox.html')
 
 ### Radio button group
 Used to indicate a single choice from multiple options.
 
-[ Example here: ChoiceField.ChoiceFieldGroup.html ]
+@@include('ChoiceField.ChoiceFieldGroup.html')
 
 ## States
 State | Applied to | Result

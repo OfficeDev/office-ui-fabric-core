@@ -4,27 +4,27 @@ Notification area that provides a detailed description or set of actions on an o
 ## Variants
 
 ### Standard
-[ Example here: Callout.html ]
+@@include('Callout.html')
 
 ### Close
 Includes an icon to dismiss the callout.
 
-[ Example here: Callout.Close.html ]
+@@include('Callout.Close.html')
 
 ### Action text
 Includes buttons to take action.
 
-[ Example here: Callout.ActionText.html ]
+@@include('Callout.ActionText.html')
 
 ### OOBE (Out Of the Box Experience)
 Draws attention to one aspect of the application during a tour.
 
-[ Example here: Callout.Oobe.html ]
+@@include('Callout.Oobe.html')
 
 ### Peek
 A smaller callout with an action.
 
-[Example here: Callout.Peek.html]
+@@include('Callout.Peek.html')
 
 ## States
 This component has only the default state.

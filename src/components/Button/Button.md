@@ -4,27 +4,27 @@ Allows users to take action, such as submitting a form or dismissing a message.
 ## Variants
 
 ### Standard
-[ Example here: Button.html ]
+@@include('Button.html')
 
 ### Primary
 Where multiple buttons are presented together, this is the default action when submitting the form.
 
-[ Example here: Button.Primary.html ]
+@@include('Button.Primary.html')
 
 ### Command
 Includes an icon.
 
-[ Example here: Button.Command.html ]
+@@include('Button.Command.html')
 
 ### Compound
 Provides a second line of text to explain the action the button takes.
 
-[ Example here: Button.Compound.html ]
+@@include('Button.Compound.html')
 
 ### Hero
 Similar to the Command variant, but with a larger size to draw attention to important actions.
 
-[Example here: Button.Hero.html]
+@@include('Button.Hero.html')
 
 ## States
 

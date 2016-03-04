@@ -4,7 +4,7 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 ## Variants
 
 ### Standard
-[ Example here: CommandBar.html ]
+@@include('CommandBar.html')
 
 ## States
 State | Applied to | Result

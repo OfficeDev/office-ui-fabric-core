@@ -41,6 +41,10 @@ $ms-color-initials-darkRed: 		#b91d47;
 	height: 48px;
 	border-radius: 50%;
 	z-index: $ms-zIndex-back;
+
+	@media screen and (-ms-high-contrast: active) {
+		border: 1px solid $ms-color-white;
+  }
 }
 
 //= Note: The doughboy placeholder is being deprecated.
@@ -197,6 +201,10 @@ $ms-color-initials-darkRed: 		#b91d47;
 		width: 5px;
 		border-radius: 0;
 		border: 0;
+
+		@media screen and (-ms-high-contrast: active) {
+			border: 1px solid $ms-color-white;
+	  }
 	}
 }
 
@@ -219,6 +227,10 @@ $ms-color-initials-darkRed: 		#b91d47;
 		top: 10px;
 		left: 0;
 		border: 0;
+
+		@media screen and (-ms-high-contrast: active) {
+			border: 1px solid $ms-color-white;
+	  }
 	}
 
 	.ms-Persona-details {

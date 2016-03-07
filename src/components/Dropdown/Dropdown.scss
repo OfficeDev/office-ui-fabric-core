@@ -34,6 +34,11 @@
       border-color: $ms-color-themePrimary;
     }
   }
+
+  .ms-Label {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
 }
 
 //== State: A disabled dropdown
@@ -43,10 +48,28 @@
     border-color: $ms-color-neutralLighter;
     color: $ms-color-neutralTertiary;
     cursor: default;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-disabledOnBlack;
+      color: $ms-color-disabledOnBlack;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-disabledOnWhite;
+      color: $ms-color-disabledOnWhite;
+    }
   }
   
   .ms-Dropdown-caretDown {
     color: $ms-color-neutralTertiary;
+
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-disabledOnBlack;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-disabledOnWhite;
+    }
   }
 }
 

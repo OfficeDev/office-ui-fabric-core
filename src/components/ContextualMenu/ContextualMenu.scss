@@ -49,6 +49,35 @@
   padding: 0 18px;
 }
 
+// Mixin for high contrast mode link states
+@mixin contextualMenuLinkState {
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-selectedOnBlack;
+    border-color: $ms-color-selectedOnBlack;
+    color: $ms-color-black;
+
+    &:focus {
+      border-color: $ms-color-black;
+    }
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-black;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-selectedOnWhite;
+    border-color: $ms-color-selectedOnWhite;
+    color: $ms-color-white;
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-white;
+    }
+  }
+}
+
 .ms-ContextualMenu-link {
   text-decoration: none;
   color: $ms-color-neutralPrimary;
@@ -81,6 +110,10 @@
     color: $ms-color-black;
   }
 
+  &:hover {
+    @include contextualMenuLinkState;
+  }
+
   &:active {
     border: 1px solid $ms-color-themePrimary;
   }
@@ -88,6 +121,14 @@
   &:focus {
     border-color: $ms-color-themePrimary;
     outline: 0;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-white;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-black;
+    }
   }
 
   &.is-selected {
@@ -99,28 +140,25 @@
       background-color: $ms-color-themeLight;
     }
 
-    @media screen and (-ms-high-contrast: active) {
-      background-color: $ms-color-selectedOnBlack;
-      border-color: $ms-color-selectedOnBlack;
-      color: $ms-color-black;
-    }
-
-    @media screen and (-ms-high-contrast: black-on-white) {
-      background-color: $ms-color-selectedOnWhite;
-      border-color: $ms-color-selectedOnWhite;
-      color: $ms-color-white;
-    }
+    @include contextualMenuLinkState;
   }
 
   &.is-disabled {
-    background-color: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
     pointer-events: none;
 
     &:active,
     &:focus { 
-      border-color: $ms-color-white; 
+      border-color: $ms-color-white;
+
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-black;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-white;
+      }
     }
 
     @media screen and (-ms-high-contrast: active) {

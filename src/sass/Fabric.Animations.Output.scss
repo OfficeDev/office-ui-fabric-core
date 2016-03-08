@@ -11,7 +11,6 @@
 
 @import "Fabric.Animations";
 
-// slideRightIn40
 .ms-u-slideRightIn40 {
     @include ms-u-slideRightIn40;
 }
@@ -24,7 +23,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideLeftIn40
 .ms-u-slideLeftIn40 {
     @include ms-u-slideLeftIn40;
 }
@@ -37,7 +35,42 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideRightIn400
+.ms-u-slideRightIn40 {
+    @include ms-u-slideRightIn40;
+}
+@-webkit-keyframes slideRightIn40 {
+    from { -webkit-transform:translate3d(-40px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideRightIn40 {
+    from { transform:translate3d(-40px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+.ms-u-slideRightIn80 {
+  @include ms-u-slideRightIn80;
+}
+@-webkit-keyframes slideRightIn80 {
+    from { -webkit-transform:translate3d(-80px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideRightIn80 {
+    from { transform:translate3d(-80px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+.ms-u-slideLeftIn80 {
+  @include ms-u-slideLeftIn80;
+}
+@-webkit-keyframes slideLeftIn80 {
+    from { -webkit-transform:translate3d(80px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideLeftIn80 {
+    from { transform:translate3d(80px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
 .ms-u-slideRightIn400 {
     @include ms-u-slideRightIn400;
 }
@@ -50,7 +83,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideLeftIn400
 .ms-u-slideLeftIn400 {
     @include ms-u-slideLeftIn400;
 }
@@ -63,7 +95,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideUpIn20
 .ms-u-slideUpIn20 {
     @include ms-u-slideUpIn20;
 }
@@ -76,7 +107,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideUpIn10
 .ms-u-slideUpIn10 {
     @include ms-u-slideUpIn10;
 }
@@ -89,7 +119,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideDownIn20
 .ms-u-slideDownIn20 {
     @include ms-u-slideDownIn20;
 }
@@ -102,7 +131,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideDownIn10
 .ms-u-slideDownIn10 {
     @include ms-u-slideDownIn10;
 }
@@ -115,7 +143,6 @@
     to { transform:translate3d(0px, 0px, 0px); }
 }
 
-// slideRightOut40
 .ms-u-slideRightOut40 {
     @include ms-u-slideRightOut40;
 }
@@ -128,7 +155,6 @@
     to { transform:translate3d(40px, 0px, 0px); }
 }
 
-// slideLeftOut40
 .ms-u-slideLeftOut40 {
     @include ms-u-slideLeftOut40;
 }
@@ -141,7 +167,30 @@
     to { transform:translate3d(-40px, 0px, 0px); }
 }
 
-// slideRightOut400
+.ms-u-slideLeftOut80 {
+  @include ms-u-slideLeftOut80;
+}
+@-webkit-keyframes slideLeftOut80 {
+     from { -webkit-transform:translate3d(0, 0px, 0px); }
+    to { -webkit-transform:translate3d(-80px, 0px, 0px); }
+}
+@keyframes slideLeftOut80 {
+     from { transform:translate3d(0, 0px, 0px); }
+    to { transform:translate3d(-80px, 0px, 0px); }
+}
+
+.ms-u-slideRightOut80 {
+  @include ms-u-slideRightOut80;
+}
+@-webkit-keyframes slideRightOut80 {
+    from { -webkit-transform:translate3d(0px, 0px, 0px); }
+    to { -webkit-transform:translate3d(80px, 0px, 0px); }
+}
+@keyframes slideRightOut80 {
+    from { transform:translate3d(0px, 0px, 0px); }
+    to { transform:translate3d(80px, 0px, 0px); }
+}
+
 .ms-u-slideRightOut400 {
     @include ms-u-slideRightOut400;
 }
@@ -154,7 +203,6 @@
     to { transform:translate3d(400px, 0px, 0px); }
 }
 
-// slideLeftOut400
 .ms-u-slideLeftOut400 {
     @include ms-u-slideLeftOut400;
 }
@@ -167,7 +215,6 @@
     to { transform:translate3d(-400px, 0px, 0px); }
 }
 
-// slideUpOut20
 .ms-u-slideUpOut20 {
     @include ms-u-slideUpOut20;
 }
@@ -180,7 +227,6 @@
     to { transform:translate3d(0px, -20px, 0px); }
 }
 
-// slideUpOut10
 .ms-u-slideUpOut10 {
     @include ms-u-slideUpOut10;
 }
@@ -193,7 +239,6 @@
     to { transform:translate3d(0px, -10px, 0px); }
 }
 
-// slideDownOut20
 .ms-u-slideDownOut20 {
     @include ms-u-slideDownOut20;
 }
@@ -206,7 +251,6 @@
     to { transform:translate3d(0px, 20px, 0px); }
 }
 
-// slideDownOut10
 .ms-u-slideDownOut10 {
     @include ms-u-slideDownOut10;
 }
@@ -219,7 +263,6 @@
     to { transform:translate3d(0px, 10px, 0px); }
 }
 
-// scaleUpIn100
 .ms-u-scaleUpIn100 {
     @include ms-u-scaleUpIn100;
 }
@@ -232,7 +275,6 @@
     to { transform:scale3d(1, 1, 1); }
 }
 
-// scaleDownIn100
 .ms-u-scaleDownIn100 {
     @include ms-u-scaleDownIn100;
 }
@@ -245,7 +287,6 @@
     to { transform:scale3d(1, 1, 1); }
 }
 
-// scaleUpOut103
 .ms-u-scaleUpOut103 {
     @include ms-u-scaleUpOut103;
 }
@@ -258,7 +299,6 @@
     to { transform:scale3d(1.03, 1.03, 1); }
 }
 
-// scaleDownOut98
 .ms-u-scaleDownOut98 {
     @include ms-u-scaleDownOut98;
 }
@@ -315,7 +355,6 @@
     to { opacity: 0; }
 }
 
-// rotate90deg
 .ms-u-rotate90deg {
     @include ms-u-rotate90deg;
 }
@@ -328,7 +367,6 @@
     to { transform:rotateZ(90deg); }
 }
 
-// rotateN90deg
 .ms-u-rotateN90deg {
     @include ms-u-rotateN90deg;
 }
@@ -341,27 +379,22 @@
     to { transform:rotateZ(0deg); }
 }
 
-// expandCollapse400
 .ms-u-expandCollapse400 {
     @include ms-u-expandCollapse400;
 }
 
-// expandCollapse200
 .ms-u-expandCollapse200 {
     @include ms-u-expandCollapse200;
 }
 
-// expandCollapse100
 .ms-u-expandCollapse100 {
     @include ms-u-expandCollapse100;
 }
 
-// delay100
 .ms-u-delay100 {
     @include ms-u-delay100;
 }
 
-// delay200
 .ms-u-delay200 {
     @include ms-u-delay200;
 }

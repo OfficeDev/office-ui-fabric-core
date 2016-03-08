@@ -5,6 +5,34 @@
 // --------------------------------------------------
 // Contextual Menu styles
 
+// Mixin for high contrast mode link states
+@mixin contextualMenuLinkState {
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-selectedOnBlack;
+    border-color: $ms-color-selectedOnBlack;
+    color: $ms-color-black;
+
+    &:focus {
+      border-color: $ms-color-black;
+    }
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-black;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-selectedOnWhite;
+    border-color: $ms-color-selectedOnWhite;
+    color: $ms-color-white;
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-white;
+    }
+  }
+}
 
 .ms-ContextualMenu {
   @include ms-font-m;
@@ -47,35 +75,6 @@
   height: 40px;
   line-height: 40px;
   padding: 0 18px;
-}
-
-// Mixin for high contrast mode link states
-@mixin contextualMenuLinkState {
-  @media screen and (-ms-high-contrast: active) {
-    background-color: $ms-color-selectedOnBlack;
-    border-color: $ms-color-selectedOnBlack;
-    color: $ms-color-black;
-
-    &:focus {
-      border-color: $ms-color-black;
-    }
-
-    + .ms-ContextualMenu-subMenuIcon,
-    + .ms-ContextualMenu-caretRight {
-      color: $ms-color-black;
-    }
-  }
-
-  @media screen and (-ms-high-contrast: black-on-white) {
-    background-color: $ms-color-selectedOnWhite;
-    border-color: $ms-color-selectedOnWhite;
-    color: $ms-color-white;
-
-    + .ms-ContextualMenu-subMenuIcon,
-    + .ms-ContextualMenu-caretRight {
-      color: $ms-color-white;
-    }
-  }
 }
 
 .ms-ContextualMenu-link {

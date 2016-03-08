@@ -40,31 +40,31 @@
 
 		@media screen and (-ms-high-contrast: active) {
 			&:before {
-				background-color: $ms-color-disabledOnBlack;
-				color: $ms-color-disabledOnBlack;
+				background-color: $ms-color-contrastBlackDisabled;
+				color: $ms-color-contrastBlackDisabled;
 			}
 
 			&:after {
-				border-color: $ms-color-disabledOnBlack;
+				border-color: $ms-color-contrastBlackDisabled;
 			}
 
 			.ms-Label {
-				color: $ms-color-disabledOnBlack;
+				color: $ms-color-contrastBlackDisabled;
 			}
 		}
 
 		@media screen and (-ms-high-contrast: black-on-white) {
 			&:before {
-				background-color: $ms-color-disabledOnWhite;
-				color: $ms-color-disabledOnWhite;
+				background-color: $ms-color-contrastWhiteDisabled;
+				color: $ms-color-contrastWhiteDisabled;
 			}
 
 			&:after {
-				border-color: $ms-color-disabledOnWhite;
+				border-color: $ms-color-contrastWhiteDisabled;
 			}
 
 			.ms-Label {
-				color: $ms-color-disabledOnWhite;
+				color: $ms-color-contrastWhiteDisabled;
 			}
   	}
 	}

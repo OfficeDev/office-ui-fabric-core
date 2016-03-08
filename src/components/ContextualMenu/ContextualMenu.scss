@@ -8,8 +8,8 @@
 // Mixin for high contrast mode link states
 @mixin contextualMenuLinkState {
   @media screen and (-ms-high-contrast: active) {
-    background-color: $ms-color-selectedOnBlack;
-    border-color: $ms-color-selectedOnBlack;
+    background-color: $ms-color-contrastBlackSelected;
+    border-color: $ms-color-contrastBlackSelected;
     color: $ms-color-black;
 
     &:focus {
@@ -23,8 +23,8 @@
   }
 
   @media screen and (-ms-high-contrast: black-on-white) {
-    background-color: $ms-color-selectedOnWhite;
-    border-color: $ms-color-selectedOnWhite;
+    background-color: $ms-color-contrastWhiteSelected;
+    border-color: $ms-color-contrastWhiteSelected;
     color: $ms-color-white;
 
     + .ms-ContextualMenu-subMenuIcon,
@@ -161,11 +161,11 @@
     }
 
     @media screen and (-ms-high-contrast: active) {
-      color: $ms-color-disabledOnBlack;
+      color: $ms-color-contrastBlackDisabled;
     }
 
     @media screen and (-ms-high-contrast: black-on-white) {
-      color: $ms-color-disabledOnWhite;
+      color: $ms-color-contrastWhiteDisabled;
     }
   }
 }

@@ -60,6 +60,14 @@
   padding: 0 18px;
   position: relative;
 
+  @media screen and (-ms-high-contrast: active) {
+    border-color: $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-color: $ms-color-white;
+  }
+
   // Shorten the first and last items to maintain baseline alignment.
   &:first-child, 
   &:last-child {
@@ -67,13 +75,19 @@
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
   }
 
   &:active {
     border: 1px solid $ms-color-themePrimary;
+  }
+
+  &:focus {
+    border-color: $ms-color-themePrimary;
+    outline: 0;
   }
 
   &.is-selected {
@@ -84,6 +98,18 @@
     &:hover {
       background-color: $ms-color-themeLight;
     }
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-selectedOnBlack;
+      border-color: $ms-color-selectedOnBlack;
+      color: $ms-color-black;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-selectedOnWhite;
+      border-color: $ms-color-selectedOnWhite;
+      color: $ms-color-white;
+    }
   }
 
   &.is-disabled {
@@ -92,8 +118,17 @@
     cursor: default;
     pointer-events: none;
 
-    &:active { 
+    &:active,
+    &:focus { 
       border-color: $ms-color-white; 
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-disabledOnBlack;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-disabledOnWhite;
     }
   }
 }

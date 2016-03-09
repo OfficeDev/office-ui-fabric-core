@@ -8,6 +8,9 @@
     "Dropdown.html",
     "Dropdown.Disabled.html"
   ],
+  "dependencies": [
+    "Label"
+  ],
   "branches": [
     {
       "name": "Enabled",

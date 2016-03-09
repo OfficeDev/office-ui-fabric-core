@@ -7,6 +7,14 @@
 
 @mixin ms-Label-is-disabled {
   color: $ms-color-neutralTertiary; 
+
+  @media screen and (-ms-high-contrast: active) {
+    color: $ms-color-contrastBlackDisabled;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    color: $ms-color-contrastWhiteDisabled;
+  }
 }
 
 @mixin ms-Label-is-required {
@@ -31,4 +39,10 @@
 	&.is-disabled {
 		 @include ms-Label-is-disabled;
 	}
+}
+
+.is-disabled {
+  .ms-Label {
+    @include ms-Label-is-disabled;
+  }
 }

@@ -9,7 +9,7 @@
 .ms-Pivot {
   @include ms-font-m;
   @include ms-u-normalize;
-  height: 30px;
+  height: 40px;
   list-style-type: none;
   overflow-x: hidden;
   white-space: nowrap;
@@ -18,10 +18,11 @@
 .ms-Pivot-link {
   color: $ms-color-neutralPrimary;
   display: inline-block;
+  position: relative;
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-m-plus;
-  line-height: 27px;
-  margin-right: 15px;
+  line-height: 40px;
+  margin-right: 8px;
 
   &:hover, 
   &:focus {
@@ -37,6 +38,16 @@
   &.is-selected {
     color: $ms-color-themePrimary;
     font-family: $ms-font-family-semibold;
+
+    &:after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-color: $ms-color-themePrimary;
+    }
   }
 }
 

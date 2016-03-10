@@ -19,36 +19,76 @@
   color: $ms-color-neutralPrimary;
   display: inline-block;
   position: relative;
-  font-family: $ms-font-family-semilight;
+  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-m-plus;
   line-height: 40px;
   margin-right: 8px;
 
+  &:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-contrastWhiteSelected;
+    }
+  }
+
   &:hover, 
-  &:focus {
+  &:focus,
+  &:active {
     color: $ms-color-black;
     cursor: pointer;
+
+    + .ms-Pivot-dropdownIcon {
+      color: $ms-color-neutralDark;
+    }
   }
 
   &:active {
-    color: $ms-color-themePrimary;
+    font-family: $ms-font-family-semibold;
+
+    &:after {
+      display: block;
+    }
   }
 
   //== State: Selected
   &.is-selected {
-    color: $ms-color-themePrimary;
+    color: $ms-color-black;
     font-family: $ms-font-family-semibold;
 
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-contrastWhiteSelected;
+    }
+
     &:after {
-      content: '';
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background-color: $ms-color-themePrimary;
+      display: block;
+    }
+
+    + .ms-Pivot-dropdownIcon {
+      color: $ms-color-neutralDark;
     }
   }
+}
+
+.ms-Pivot-dropdownIcon {
+  font-size: $ms-font-size-m-plus + 1;
+  position: relative;
+  top: 2px;
 }
 
 // Overflow (ellipsis)
@@ -65,7 +105,9 @@
   }
 
   &:active {
-    color: $ms-color-themePrimary !important;
+    &:after {
+      display: none;
+    }
   }
 }
 
@@ -83,8 +125,12 @@
   .ms-Pivot-link {
     font-size: $ms-font-size-l;
 
+    &:active {
+      font-family: $ms-font-family-regular;
+    }
+
     &.is-selected {
-      font-family: $ms-font-family-semilight;
+      font-family: $ms-font-family-regular;
     }
   }
 
@@ -123,6 +169,16 @@
       background-color: $ms-color-themePrimary;
       color: $ms-color-white;
       font-family: $ms-font-family-semilight;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: $ms-color-contrastBlackSelected;
+        color: $ms-color-black;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        background-color: $ms-color-contrastWhiteSelected;
+        color: $ms-color-white;
+      }
     }
   }
 

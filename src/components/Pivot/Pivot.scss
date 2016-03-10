@@ -57,6 +57,14 @@
   &:active {
     font-family: $ms-font-family-semibold;
 
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-contrastWhiteSelected;
+    }
+
     &:after {
       display: block;
     }
@@ -153,6 +161,7 @@
     line-height: 40px;
     margin-right: -2px; // Remove space next to inline-block element
     padding: 0 10px;
+    font-family: $ms-font-family-semilight !important;
 
     &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
     &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { 
@@ -162,6 +171,17 @@
     &:active {
       color: $ms-color-white !important;
       background-color: $ms-color-themePrimary;
+      font-family: $ms-font-family-semilight;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: $ms-color-contrastBlackSelected;
+        color: $ms-color-black;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        background-color: $ms-color-contrastWhiteSelected;
+        color: $ms-color-white;
+      }
     }
 
     //== State: Selected

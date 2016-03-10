@@ -35,12 +35,6 @@
     transform: rotate(-45deg);
     height: 0;
     width: 0;
-
-    @media screen and (-ms-high-contrast: active) {
-      border: 0 !important;
-      width: 20px !important;
-      height: 20px !important;
-    }
   }
 
   &:before {
@@ -109,6 +103,21 @@
   &:after {
     @include arrowBorders(transparent, transparent, $ms-color-white, $ms-color-white);
     bottom: -10px;
+  }
+}
+
+// High contrast mode styling for callout arrows
+.ms-Callout.ms-Callout--arrowRight,
+.ms-Callout.ms-Callout--arrowLeft,
+.ms-Callout.ms-Callout--arrowBottom,
+.ms-Callout.ms-Callout--arrowTop {
+  &:before,
+  &:after {
+    @media screen and (-ms-high-contrast: active) {
+      border: 0;
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 

@@ -112,7 +112,7 @@ This will produce the following:
 ```
 
 #### Neither excludes nor includes
-If neither "excludes" nor "includes" are specified, the bundle will inlclude all of Fabric's CSS.
+If neither "excludes" nor "includes" are specified, the bundle will include all of Fabric's CSS.
 
 
 ### `gulp Bundles`

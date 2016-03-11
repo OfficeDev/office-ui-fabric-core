@@ -94,8 +94,9 @@ Here's an example "include" bundle that includes only the Button and PersonaCard
 ]
 ```
 
-```scss
 This will produce the following:
+
+```scss
 //
 // Office UI Fabric
 // --------------------------------------------------

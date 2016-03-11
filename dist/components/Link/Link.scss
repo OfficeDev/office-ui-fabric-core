@@ -1,0 +1,26 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Link (anchor) styles
+
+
+@mixin ms-Link {
+  color: $ms-color-themePrimary;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $ms-color-themeDarker;
+  }
+
+  &:active {
+    color: $ms-color-themePrimary;
+  }
+}
+
+.ms-Link {
+  @include ms-Link;
+}

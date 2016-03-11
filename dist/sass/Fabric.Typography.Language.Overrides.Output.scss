@@ -1,0 +1,56 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Language override definitions
+
+@import "./Fabric.Typography.Language.Overrides";
+
+// Generate the override classes for non-distributed fonts.
+@include language-override-system-fonts(ja-JP, $ms-font-stack-japanese);
+@include language-override-system-fonts(ko-KR, $ms-font-stack-korean);
+@include language-override-system-fonts(ch-ZHS, $ms-font-stack-chinese-simplified);
+@include language-override-system-fonts(ch-ZHT, $ms-font-stack-chinese-traditional);
+@include language-override-system-fonts(hi-IN, $ms-font-stack-hindi);
+
+// Generate the override classes for web fonts.
+// Leelawadee
+// th-TH
+@include language-override-web-fonts(th-TH, $ms-font-family-semilight-leelawadee, $ms-font-family-semilight-leelawadee, $ms-font-family-regular-leelawadee, $ms-font-family-semibold-leelawadee);
+
+// Arabic
+// ar
+@include language-override-web-fonts(ar, $ms-font-family-light-arabic, $ms-font-family-semilight-arabic, $ms-font-family-regular-arabic, $ms-font-family-semibold-arabic);
+
+// Cyrillic
+// bg-BG, ru-RU, uk-UA
+@include language-override-web-fonts(bg-BG, $ms-font-family-light-cyrillic, $ms-font-family-semilight-cyrillic, $ms-font-family-regular-cyrillic, $ms-font-family-semibold-cyrillic);
+@include language-override-web-fonts(ru-RU, $ms-font-family-light-cyrillic, $ms-font-family-semilight-cyrillic, $ms-font-family-regular-cyrillic, $ms-font-family-semibold-cyrillic);
+@include language-override-web-fonts(uk-UA, $ms-font-family-light-cyrillic, $ms-font-family-semilight-cyrillic, $ms-font-family-regular-cyrillic, $ms-font-family-semibold-cyrillic);
+
+// East European
+// cs-CZ, et-EE, hr-HR, hu-HU, lt-LT, pl-PL, lt-sr-SP, tr-TR, sk-SK, kk-KZ
+@include language-override-web-fonts(cs-CZ, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(et-EE, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(hr-HR, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(hu-HU, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(lt-LT, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(lv-LV, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(pl-PL, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(lt-sr-SP, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(tr-TR, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(sk-SK, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-web-fonts(kk-KZ, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+
+// Greek
+// el-GR
+@include language-override-web-fonts(el-GR, $ms-font-family-light-greek, $ms-font-family-semilight-greek, $ms-font-family-regular-greek, $ms-font-family-semibold-greek);
+
+// Hebrew
+// he-IL
+@include language-override-web-fonts(he-IL, $ms-font-family-light-hebrew, $ms-font-family-semilight-hebrew, $ms-font-family-regular-hebrew, $ms-font-family-semibold-hebrew);
+
+// Vietnamese
+// vi-VN
+@include language-override-web-fonts(vi-VN, $ms-font-family-light-vietnamese, $ms-font-family-semilight-vietnamese, $ms-font-family-regular-vietnamese, $ms-font-family-semibold-vietnamese);

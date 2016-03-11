@@ -1,0 +1,13 @@
+{
+  "name": "Link",
+  "notes": "",
+  "description": "A component containing styles for links including two variants.",
+  "template": "Link.html",
+  "class": "ms-Link",
+  "branches": [
+    {
+      "name": "Default",
+      "default": true
+    }
+  ]
+}

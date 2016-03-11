@@ -1,0 +1,42 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--close">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog - Close</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
+<div class="ms-Dialog ms-Dialog--close">
+  <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
+  <div class="ms-Dialog-main">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Dialog-header">
+      <p class="ms-Dialog-title">All emails together</p>
+    </div>
+    <div class="ms-Dialog-inner">
+      <div class="ms-Dialog-content">
+        <p class="ms-Dialog-subText">Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.</p>
+        <div class="ms-ChoiceField">
+          <input id="demo-checkbox-unselected1" class="ms-ChoiceField-input" type="checkbox">
+          <label for="demo-checkbox-unselected1" class="ms-ChoiceField-field"><span class="ms-Label">Option1</span></label>
+        </div>
+        <div class="ms-ChoiceField">
+          <input id="demo-checkbox-unselected2" class="ms-ChoiceField-input" type="checkbox">
+          <label for="demo-checkbox-unselected2" class="ms-ChoiceField-field"><span class="ms-Label">Option2</span></label>
+        </div>
+      </div>
+      <div class="ms-Dialog-actions">
+        <div class="ms-Dialog-actionsRight">
+          <button class="ms-Dialog-action ms-Button ms-Button--primary">
+            <span class="ms-Button-label">Save</span>
+          </button>
+          <button class="ms-Dialog-action ms-Button">
+            <span class="ms-Button-label">Cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

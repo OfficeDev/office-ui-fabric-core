@@ -1,0 +1,771 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Icon definitions
+
+
+@import './Fabric.Icons';
+
+// Base icon definition
+.ms-Icon {
+  @include ms-Icon();
+}
+
+// Modifiers: Each of the icons.
+//*-- Start
+.ms-Icon--circleEmpty:before { @include ms-Icon--circleEmpty; } 
+.ms-Icon--circleFill:before { @include ms-Icon--circleFill; } 
+.ms-Icon--placeholder:before { @include ms-Icon--placeholder; } 
+.ms-Icon--star:before { @include ms-Icon--star; } 
+.ms-Icon--plus:before { @include ms-Icon--plus; } 
+.ms-Icon--minus:before { @include ms-Icon--minus; } 
+.ms-Icon--question:before { @include ms-Icon--question; } 
+.ms-Icon--exclamation:before { @include ms-Icon--exclamation; } 
+.ms-Icon--person:before { @include ms-Icon--person; } 
+.ms-Icon--mail:before { @include ms-Icon--mail; } 
+.ms-Icon--infoCircle:before { @include ms-Icon--infoCircle; } 
+.ms-Icon--alert:before { @include ms-Icon--alert; } 
+.ms-Icon--xCircle:before { @include ms-Icon--xCircle; } 
+.ms-Icon--mailOpen:before { @include ms-Icon--mailOpen; } 
+.ms-Icon--people:before { @include ms-Icon--people; } 
+.ms-Icon--bell:before { @include ms-Icon--bell; } 
+.ms-Icon--calendar:before { @include ms-Icon--calendar; } 
+.ms-Icon--scheduling:before { @include ms-Icon--scheduling; } 
+.ms-Icon--event:before { @include ms-Icon--event; } 
+.ms-Icon--folder:before { @include ms-Icon--folder; } 
+.ms-Icon--documents:before { @include ms-Icon--documents; } 
+.ms-Icon--onedrive:before { @include ms-Icon--onedrive; } 
+.ms-Icon--chat:before { @include ms-Icon--chat; } 
+.ms-Icon--sites:before { @include ms-Icon--sites; } 
+.ms-Icon--listBullets:before { @include ms-Icon--listBullets; } 
+.ms-Icon--calendarWeek:before { @include ms-Icon--calendarWeek; } 
+.ms-Icon--calendarWorkWeek:before { @include ms-Icon--calendarWorkWeek; } 
+.ms-Icon--calendarDay:before { @include ms-Icon--calendarDay; } 
+.ms-Icon--folderMove:before { @include ms-Icon--folderMove; } 
+.ms-Icon--panel:before { @include ms-Icon--panel; } 
+.ms-Icon--popout:before { @include ms-Icon--popout; } 
+.ms-Icon--menu:before { @include ms-Icon--menu; } 
+.ms-Icon--home:before { @include ms-Icon--home; } 
+.ms-Icon--favorites:before { @include ms-Icon--favorites; } 
+.ms-Icon--phone:before { @include ms-Icon--phone; } 
+.ms-Icon--mailSend:before { @include ms-Icon--mailSend; } 
+.ms-Icon--save:before { @include ms-Icon--save; } 
+.ms-Icon--trash:before { @include ms-Icon--trash; } 
+.ms-Icon--pencil:before { @include ms-Icon--pencil; } 
+.ms-Icon--flag:before { @include ms-Icon--flag; } 
+.ms-Icon--reply:before { @include ms-Icon--reply; } 
+.ms-Icon--miniatures:before { @include ms-Icon--miniatures; } 
+.ms-Icon--voicemail:before { @include ms-Icon--voicemail; } 
+.ms-Icon--play:before { @include ms-Icon--play; } 
+.ms-Icon--pause:before { @include ms-Icon--pause; } 
+.ms-Icon--onlineAdd:before { @include ms-Icon--onlineAdd; } 
+.ms-Icon--onlineJoin:before { @include ms-Icon--onlineJoin; } 
+.ms-Icon--replyAll:before { @include ms-Icon--replyAll; } 
+.ms-Icon--attachment:before { @include ms-Icon--attachment; } 
+.ms-Icon--drm:before { @include ms-Icon--drm; } 
+.ms-Icon--pinDown:before { @include ms-Icon--pinDown; } 
+.ms-Icon--refresh:before { @include ms-Icon--refresh; } 
+.ms-Icon--gear:before { @include ms-Icon--gear; } 
+.ms-Icon--smiley:before { @include ms-Icon--smiley; } 
+.ms-Icon--info:before { @include ms-Icon--info; } 
+.ms-Icon--lock:before { @include ms-Icon--lock; } 
+.ms-Icon--search:before { @include ms-Icon--search; } 
+.ms-Icon--questionReverse:before { @include ms-Icon--questionReverse; } 
+.ms-Icon--notRecurring:before { @include ms-Icon--notRecurring; } 
+.ms-Icon--tasks:before { @include ms-Icon--tasks; } 
+.ms-Icon--check:before { @include ms-Icon--check; } 
+.ms-Icon--x:before { @include ms-Icon--x; } 
+.ms-Icon--ellipsis:before { @include ms-Icon--ellipsis; } 
+.ms-Icon--dot:before { @include ms-Icon--dot; } 
+.ms-Icon--arrowUp:before { @include ms-Icon--arrowUp; } 
+.ms-Icon--arrowDown:before { @include ms-Icon--arrowDown; } 
+.ms-Icon--arrowLeft:before { @include ms-Icon--arrowLeft; } 
+.ms-Icon--arrowRight:before { @include ms-Icon--arrowRight; } 
+.ms-Icon--download:before { @include ms-Icon--download; } 
+.ms-Icon--directions:before { @include ms-Icon--directions; } 
+.ms-Icon--microphone:before { @include ms-Icon--microphone; } 
+.ms-Icon--caretUp:before { @include ms-Icon--caretUp; } 
+.ms-Icon--caretDown:before { @include ms-Icon--caretDown; } 
+.ms-Icon--caretLeft:before { @include ms-Icon--caretLeft; } 
+.ms-Icon--caretRight:before { @include ms-Icon--caretRight; } 
+.ms-Icon--caretUpLeft:before { @include ms-Icon--caretUpLeft; } 
+.ms-Icon--caretUpRight:before { @include ms-Icon--caretUpRight; } 
+.ms-Icon--caretDownRight:before { @include ms-Icon--caretDownRight; } 
+.ms-Icon--caretDownLeft:before { @include ms-Icon--caretDownLeft; } 
+.ms-Icon--note:before { @include ms-Icon--note; } 
+.ms-Icon--noteReply:before { @include ms-Icon--noteReply; } 
+.ms-Icon--noteForward:before { @include ms-Icon--noteForward; } 
+.ms-Icon--key:before { @include ms-Icon--key; } 
+.ms-Icon--tile:before { @include ms-Icon--tile; } 
+.ms-Icon--taskRecurring:before { @include ms-Icon--taskRecurring; } 
+.ms-Icon--starEmpty:before { @include ms-Icon--starEmpty; } 
+.ms-Icon--upload:before { @include ms-Icon--upload; } 
+.ms-Icon--wrench:before { @include ms-Icon--wrench; } 
+.ms-Icon--share:before { @include ms-Icon--share; } 
+.ms-Icon--documentReply:before { @include ms-Icon--documentReply; } 
+.ms-Icon--documentForward:before { @include ms-Icon--documentForward; } 
+.ms-Icon--partner:before { @include ms-Icon--partner; } 
+.ms-Icon--reactivate:before { @include ms-Icon--reactivate; } 
+.ms-Icon--sort:before { @include ms-Icon--sort; } 
+.ms-Icon--personAdd:before { @include ms-Icon--personAdd; } 
+.ms-Icon--chevronUp:before { @include ms-Icon--chevronUp; } 
+.ms-Icon--chevronDown:before { @include ms-Icon--chevronDown; } 
+.ms-Icon--chevronLeft:before { @include ms-Icon--chevronLeft; } 
+.ms-Icon--chevronRight:before { @include ms-Icon--chevronRight; } 
+.ms-Icon--peopleAdd:before { @include ms-Icon--peopleAdd; } 
+.ms-Icon--newsfeed:before { @include ms-Icon--newsfeed; } 
+.ms-Icon--notebook:before { @include ms-Icon--notebook; } 
+.ms-Icon--link:before { @include ms-Icon--link; } 
+.ms-Icon--chevronsUp:before { @include ms-Icon--chevronsUp; } 
+.ms-Icon--chevronsDown:before { @include ms-Icon--chevronsDown; } 
+.ms-Icon--chevronsLeft:before { @include ms-Icon--chevronsLeft; } 
+.ms-Icon--chevronsRight:before { @include ms-Icon--chevronsRight; } 
+.ms-Icon--clutter:before { @include ms-Icon--clutter; } 
+.ms-Icon--subscribe:before { @include ms-Icon--subscribe; } 
+.ms-Icon--unsubscribe:before { @include ms-Icon--unsubscribe; } 
+.ms-Icon--personRemove:before { @include ms-Icon--personRemove; } 
+.ms-Icon--receiptForward:before { @include ms-Icon--receiptForward; } 
+.ms-Icon--receiptReply:before { @include ms-Icon--receiptReply; } 
+.ms-Icon--receiptCheck:before { @include ms-Icon--receiptCheck; } 
+.ms-Icon--peopleRemove:before { @include ms-Icon--peopleRemove; } 
+.ms-Icon--merge:before { @include ms-Icon--merge; } 
+.ms-Icon--split:before { @include ms-Icon--split; } 
+.ms-Icon--eventCancel:before { @include ms-Icon--eventCancel; } 
+.ms-Icon--eventShare:before { @include ms-Icon--eventShare; } 
+.ms-Icon--today:before { @include ms-Icon--today; } 
+.ms-Icon--oofReply:before { @include ms-Icon--oofReply; } 
+.ms-Icon--voicemailReply:before { @include ms-Icon--voicemailReply; } 
+.ms-Icon--voicemailForward:before { @include ms-Icon--voicemailForward; } 
+.ms-Icon--ribbon:before { @include ms-Icon--ribbon; } 
+.ms-Icon--contact:before { @include ms-Icon--contact; } 
+.ms-Icon--eye:before { @include ms-Icon--eye; } 
+.ms-Icon--glasses:before { @include ms-Icon--glasses; } 
+.ms-Icon--print:before { @include ms-Icon--print; } 
+.ms-Icon--room:before { @include ms-Icon--room; } 
+.ms-Icon--post:before { @include ms-Icon--post; } 
+.ms-Icon--toggle:before { @include ms-Icon--toggle; } 
+.ms-Icon--touch:before { @include ms-Icon--touch; } 
+.ms-Icon--clock:before { @include ms-Icon--clock; } 
+.ms-Icon--fax:before { @include ms-Icon--fax; } 
+.ms-Icon--lightning:before { @include ms-Icon--lightning; } 
+.ms-Icon--dialpad:before { @include ms-Icon--dialpad; } 
+.ms-Icon--phoneTransfer:before { @include ms-Icon--phoneTransfer; } 
+.ms-Icon--phoneAdd:before { @include ms-Icon--phoneAdd; } 
+.ms-Icon--late:before { @include ms-Icon--late; } 
+.ms-Icon--chatAdd:before { @include ms-Icon--chatAdd; } 
+.ms-Icon--conflict:before { @include ms-Icon--conflict; } 
+.ms-Icon--navigate:before { @include ms-Icon--navigate; } 
+.ms-Icon--camera:before { @include ms-Icon--camera; } 
+.ms-Icon--filter:before { @include ms-Icon--filter; } 
+.ms-Icon--fullscreen:before { @include ms-Icon--fullscreen; } 
+.ms-Icon--new:before { @include ms-Icon--new; } 
+.ms-Icon--mailEmpty:before { @include ms-Icon--mailEmpty; } 
+.ms-Icon--editBox:before { @include ms-Icon--editBox; } 
+.ms-Icon--waffle:before { @include ms-Icon--waffle; } 
+.ms-Icon--work:before { @include ms-Icon--work; } 
+.ms-Icon--eventRecurring:before { @include ms-Icon--eventRecurring; } 
+.ms-Icon--cart:before { @include ms-Icon--cart; } 
+.ms-Icon--socialListening:before { @include ms-Icon--socialListening; } 
+.ms-Icon--mapMarker:before { @include ms-Icon--mapMarker; } 
+.ms-Icon--org:before { @include ms-Icon--org; } 
+.ms-Icon--replyAlt:before { @include ms-Icon--replyAlt; } 
+.ms-Icon--replyAllAlt:before { @include ms-Icon--replyAllAlt; } 
+.ms-Icon--eventInfo:before { @include ms-Icon--eventInfo; } 
+.ms-Icon--group:before { @include ms-Icon--group; } 
+.ms-Icon--money:before { @include ms-Icon--money; } 
+.ms-Icon--graph:before { @include ms-Icon--graph; } 
+.ms-Icon--noteEdit:before { @include ms-Icon--noteEdit; } 
+.ms-Icon--dashboard:before { @include ms-Icon--dashboard; } 
+.ms-Icon--mailEdit:before { @include ms-Icon--mailEdit; } 
+.ms-Icon--pinLeft:before { @include ms-Icon--pinLeft; } 
+.ms-Icon--heart:before { @include ms-Icon--heart; } 
+.ms-Icon--heartEmpty:before { @include ms-Icon--heartEmpty; } 
+.ms-Icon--picture:before { @include ms-Icon--picture; } 
+.ms-Icon--cake:before { @include ms-Icon--cake; } 
+.ms-Icon--books:before { @include ms-Icon--books; } 
+.ms-Icon--chart:before { @include ms-Icon--chart; } 
+.ms-Icon--video:before { @include ms-Icon--video; } 
+.ms-Icon--soccer:before { @include ms-Icon--soccer; } 
+.ms-Icon--meal:before { @include ms-Icon--meal; } 
+.ms-Icon--balloon:before { @include ms-Icon--balloon; } 
+.ms-Icon--cat:before { @include ms-Icon--cat; } 
+.ms-Icon--dog:before { @include ms-Icon--dog; } 
+.ms-Icon--bag:before { @include ms-Icon--bag; } 
+.ms-Icon--music:before { @include ms-Icon--music; } 
+.ms-Icon--stopwatch:before { @include ms-Icon--stopwatch; } 
+.ms-Icon--coffee:before { @include ms-Icon--coffee; } 
+.ms-Icon--briefcase:before { @include ms-Icon--briefcase; } 
+.ms-Icon--pill:before { @include ms-Icon--pill; } 
+.ms-Icon--trophy:before { @include ms-Icon--trophy; } 
+.ms-Icon--firstAid:before { @include ms-Icon--firstAid; } 
+.ms-Icon--plane:before { @include ms-Icon--plane; } 
+.ms-Icon--page:before { @include ms-Icon--page; } 
+.ms-Icon--car:before { @include ms-Icon--car; } 
+.ms-Icon--dogAlt:before { @include ms-Icon--dogAlt; } 
+.ms-Icon--document:before { @include ms-Icon--document; } 
+.ms-Icon--metadata:before { @include ms-Icon--metadata; } 
+.ms-Icon--pointItem:before { @include ms-Icon--pointItem; } 
+.ms-Icon--text:before { @include ms-Icon--text; } 
+.ms-Icon--fieldText:before { @include ms-Icon--fieldText; } 
+.ms-Icon--fieldNumber:before { @include ms-Icon--fieldNumber; } 
+.ms-Icon--dropdown:before { @include ms-Icon--dropdown; } 
+.ms-Icon--radioButton:before { @include ms-Icon--radioButton; } 
+.ms-Icon--checkbox:before { @include ms-Icon--checkbox; } 
+.ms-Icon--story:before { @include ms-Icon--story; } 
+.ms-Icon--bold:before { @include ms-Icon--bold; } 
+.ms-Icon--italic:before { @include ms-Icon--italic; } 
+.ms-Icon--underline:before { @include ms-Icon--underline; } 
+.ms-Icon--quote:before { @include ms-Icon--quote; } 
+.ms-Icon--styleRemove:before { @include ms-Icon--styleRemove; } 
+.ms-Icon--pictureAdd:before { @include ms-Icon--pictureAdd; } 
+.ms-Icon--pictureRemove:before { @include ms-Icon--pictureRemove; } 
+.ms-Icon--desktop:before { @include ms-Icon--desktop; } 
+.ms-Icon--tablet:before { @include ms-Icon--tablet; } 
+.ms-Icon--mobile:before { @include ms-Icon--mobile; } 
+.ms-Icon--table:before { @include ms-Icon--table; } 
+.ms-Icon--hide:before { @include ms-Icon--hide; } 
+.ms-Icon--shield:before { @include ms-Icon--shield; } 
+.ms-Icon--header:before { @include ms-Icon--header; } 
+.ms-Icon--paint:before { @include ms-Icon--paint; } 
+.ms-Icon--support:before { @include ms-Icon--support; } 
+.ms-Icon--settings:before { @include ms-Icon--settings; } 
+.ms-Icon--creditCard:before { @include ms-Icon--creditCard; } 
+.ms-Icon--reload:before { @include ms-Icon--reload; } 
+.ms-Icon--peopleSecurity:before { @include ms-Icon--peopleSecurity; } 
+.ms-Icon--fieldTextBox:before { @include ms-Icon--fieldTextBox; } 
+.ms-Icon--multiChoice:before { @include ms-Icon--multiChoice; } 
+.ms-Icon--fieldMail:before { @include ms-Icon--fieldMail; } 
+.ms-Icon--contactForm:before { @include ms-Icon--contactForm; } 
+.ms-Icon--circleHalfFilled:before { @include ms-Icon--circleHalfFilled; } 
+.ms-Icon--documentPDF:before { @include ms-Icon--documentPDF; } 
+.ms-Icon--bookmark:before { @include ms-Icon--bookmark; } 
+.ms-Icon--circleUnfilled:before { @include ms-Icon--circleUnfilled; } 
+.ms-Icon--circleFilled:before { @include ms-Icon--circleFilled; } 
+.ms-Icon--textBox:before { @include ms-Icon--textBox; } 
+.ms-Icon--drop:before { @include ms-Icon--drop; } 
+.ms-Icon--sun:before { @include ms-Icon--sun; } 
+.ms-Icon--lifesaver:before { @include ms-Icon--lifesaver; } 
+.ms-Icon--lifesaverLock:before { @include ms-Icon--lifesaverLock; } 
+.ms-Icon--mailUnread:before { @include ms-Icon--mailUnread; } 
+.ms-Icon--mailRead:before { @include ms-Icon--mailRead; } 
+.ms-Icon--inboxCheck:before { @include ms-Icon--inboxCheck; } 
+.ms-Icon--folderSearch:before { @include ms-Icon--folderSearch; } 
+.ms-Icon--collapse:before { @include ms-Icon--collapse; } 
+.ms-Icon--expand:before { @include ms-Icon--expand; } 
+.ms-Icon--ascending:before { @include ms-Icon--ascending; } 
+.ms-Icon--descending:before { @include ms-Icon--descending; } 
+.ms-Icon--filterClear:before { @include ms-Icon--filterClear; } 
+.ms-Icon--checkboxEmpty:before { @include ms-Icon--checkboxEmpty; } 
+.ms-Icon--checkboxMixed:before { @include ms-Icon--checkboxMixed; } 
+.ms-Icon--boards:before { @include ms-Icon--boards; } 
+.ms-Icon--checkboxCheck:before { @include ms-Icon--checkboxCheck; } 
+.ms-Icon--frowny:before { @include ms-Icon--frowny; } 
+.ms-Icon--lightBulb:before { @include ms-Icon--lightBulb; } 
+.ms-Icon--globe:before { @include ms-Icon--globe; } 
+.ms-Icon--deviceWipe:before { @include ms-Icon--deviceWipe; } 
+.ms-Icon--listCheck:before { @include ms-Icon--listCheck; } 
+.ms-Icon--listGroup:before { @include ms-Icon--listGroup; } 
+.ms-Icon--timeline:before { @include ms-Icon--timeline; } 
+.ms-Icon--fontIncrease:before { @include ms-Icon--fontIncrease; } 
+.ms-Icon--fontDecrease:before { @include ms-Icon--fontDecrease; } 
+.ms-Icon--fontColor:before { @include ms-Icon--fontColor; } 
+.ms-Icon--mailCheck:before { @include ms-Icon--mailCheck; } 
+.ms-Icon--mailDown:before { @include ms-Icon--mailDown; } 
+.ms-Icon--listCheckbox:before { @include ms-Icon--listCheckbox; } 
+.ms-Icon--sunAdd:before { @include ms-Icon--sunAdd; } 
+.ms-Icon--sunQuestion:before { @include ms-Icon--sunQuestion; } 
+.ms-Icon--chevronThinUp:before { @include ms-Icon--chevronThinUp; } 
+.ms-Icon--chevronThinDown:before { @include ms-Icon--chevronThinDown; } 
+.ms-Icon--chevronThinLeft:before { @include ms-Icon--chevronThinLeft; } 
+.ms-Icon--chevronThinRight:before { @include ms-Icon--chevronThinRight; } 
+.ms-Icon--chevronThickUp:before { @include ms-Icon--chevronThickUp; } 
+.ms-Icon--chevronThickDown:before { @include ms-Icon--chevronThickDown; } 
+.ms-Icon--chevronThickLeft:before { @include ms-Icon--chevronThickLeft; } 
+.ms-Icon--chevronThickRight:before { @include ms-Icon--chevronThickRight; } 
+.ms-Icon--linkRemove:before { @include ms-Icon--linkRemove; } 
+.ms-Icon--alertOutline:before { @include ms-Icon--alertOutline; } 
+.ms-Icon--documentLandscape:before { @include ms-Icon--documentLandscape; } 
+.ms-Icon--documentAdd:before { @include ms-Icon--documentAdd; } 
+.ms-Icon--toggleMiddle:before { @include ms-Icon--toggleMiddle; } 
+.ms-Icon--embed:before { @include ms-Icon--embed; } 
+.ms-Icon--listNumbered:before { @include ms-Icon--listNumbered; } 
+.ms-Icon--peopleCheck:before { @include ms-Icon--peopleCheck; } 
+.ms-Icon--caretUpOutline:before { @include ms-Icon--caretUpOutline; } 
+.ms-Icon--caretDownOutline:before { @include ms-Icon--caretDownOutline; } 
+.ms-Icon--caretLeftOutline:before { @include ms-Icon--caretLeftOutline; } 
+.ms-Icon--caretRightOutline:before { @include ms-Icon--caretRightOutline; } 
+.ms-Icon--mailSync:before { @include ms-Icon--mailSync; } 
+.ms-Icon--mailError:before { @include ms-Icon--mailError; } 
+.ms-Icon--mailPause:before { @include ms-Icon--mailPause; } 
+.ms-Icon--peopleSync:before { @include ms-Icon--peopleSync; } 
+.ms-Icon--peopleError:before { @include ms-Icon--peopleError; } 
+.ms-Icon--peoplePause:before { @include ms-Icon--peoplePause; } 
+.ms-Icon--circleBall:before { @include ms-Icon--circleBall; } 
+.ms-Icon--circleBalloons:before { @include ms-Icon--circleBalloons; } 
+.ms-Icon--circleCar:before { @include ms-Icon--circleCar; } 
+.ms-Icon--circleCat:before { @include ms-Icon--circleCat; } 
+.ms-Icon--circleCoffee:before { @include ms-Icon--circleCoffee; } 
+.ms-Icon--circleDog:before { @include ms-Icon--circleDog; } 
+.ms-Icon--circleLightning:before { @include ms-Icon--circleLightning; } 
+.ms-Icon--circlePill:before { @include ms-Icon--circlePill; } 
+.ms-Icon--circlePlane:before { @include ms-Icon--circlePlane; } 
+.ms-Icon--circlePoodle:before { @include ms-Icon--circlePoodle; } 
+.ms-Icon--checkPeople:before { @include ms-Icon--checkPeople; } 
+.ms-Icon--documentSearch:before { @include ms-Icon--documentSearch; } 
+.ms-Icon--sortLines:before { @include ms-Icon--sortLines; } 
+.ms-Icon--calendarPublic:before { @include ms-Icon--calendarPublic; } 
+.ms-Icon--contactPublic:before { @include ms-Icon--contactPublic; } 
+.ms-Icon--classNotebook:before { @include ms-Icon--classNotebook; } 
+.ms-Icon--triangleUp:before { @include ms-Icon--triangleUp; } 
+.ms-Icon--triangleRight:before { @include ms-Icon--triangleRight; } 
+.ms-Icon--triangleDown:before { @include ms-Icon--triangleDown; } 
+.ms-Icon--triangleLeft:before { @include ms-Icon--triangleLeft; } 
+.ms-Icon--triangleEmptyUp:before { @include ms-Icon--triangleEmptyUp; } 
+.ms-Icon--triangleEmptyRight:before { @include ms-Icon--triangleEmptyRight; } 
+.ms-Icon--triangleEmptyDown:before { @include ms-Icon--triangleEmptyDown; } 
+.ms-Icon--triangleEmptyLeft:before { @include ms-Icon--triangleEmptyLeft; } 
+.ms-Icon--filePDF:before { @include ms-Icon--filePDF; } 
+.ms-Icon--fileImage:before { @include ms-Icon--fileImage; } 
+.ms-Icon--fileDocument:before { @include ms-Icon--fileDocument; } 
+.ms-Icon--listGroup2:before { @include ms-Icon--listGroup2; } 
+.ms-Icon--copy:before { @include ms-Icon--copy; } 
+.ms-Icon--creditCardOutline:before { @include ms-Icon--creditCardOutline; } 
+.ms-Icon--mailPublic:before { @include ms-Icon--mailPublic; } 
+.ms-Icon--folderPublic:before { @include ms-Icon--folderPublic; } 
+.ms-Icon--teamwork:before { @include ms-Icon--teamwork; } 
+.ms-Icon--move:before { @include ms-Icon--move; } 
+.ms-Icon--classroom:before { @include ms-Icon--classroom; } 
+.ms-Icon--menu2:before { @include ms-Icon--menu2; } 
+.ms-Icon--plus2:before { @include ms-Icon--plus2; } 
+.ms-Icon--tag:before { @include ms-Icon--tag; } 
+.ms-Icon--arrowUp2:before { @include ms-Icon--arrowUp2; } 
+.ms-Icon--arrowDown2:before { @include ms-Icon--arrowDown2; } 
+.ms-Icon--circlePlus:before { @include ms-Icon--circlePlus; } 
+.ms-Icon--circleInfo:before { @include ms-Icon--circleInfo; } 
+.ms-Icon--section:before { @include ms-Icon--section; } 
+.ms-Icon--sections:before { @include ms-Icon--sections; } 
+.ms-Icon--at:before { @include ms-Icon--at; } 
+.ms-Icon--arrowUpRight:before { @include ms-Icon--arrowUpRight; } 
+.ms-Icon--arrowDownRight:before { @include ms-Icon--arrowDownRight; } 
+.ms-Icon--arrowDownLeft:before { @include ms-Icon--arrowDownLeft; } 
+.ms-Icon--arrowUpLeft:before { @include ms-Icon--arrowUpLeft; } 
+.ms-Icon--bundle:before { @include ms-Icon--bundle; } 
+.ms-Icon--pictureEdit:before { @include ms-Icon--pictureEdit; } 
+.ms-Icon--protectionCenter:before { @include ms-Icon--protectionCenter; } 
+.ms-Icon--alert2:before { @include ms-Icon--alert2; } 
+
+//*-- end
+// Modifier: Place the icon in a circle.
+.ms-Icon--circle {
+  @include ms-Icon--circle;
+}
+
+// Modifiers: Some icons require custom alignment when placed in circles.
+.ms-Icon--circle {
+  &.ms-Icon--star:before {
+    top: -2%;
+    left: 1%;
+  }
+  &.ms-Icon--person:before {
+    top: -2%;
+    left: -3%;
+  }
+  &.ms-Icon--alert:before {
+    top: -4%;
+  }
+  &.ms-Icon--mailOpen:before {
+    top: -5%;
+  }
+  &.ms-Icon--people:before {
+    top: -4%;
+    left: -7%;
+  }
+  &.ms-Icon--bell:before {
+    top: -3%;
+  }
+  &.ms-Icon--scheduling:before {
+    top: -3%;
+    left: 6%;
+  }
+  &.ms-Icon--documents:before {
+    top: -1%;
+    left: -2%;
+  }
+  &.ms-Icon--listBullets:before {
+    top: -1%;
+    left: 5%;
+  }
+  &.ms-Icon--panel:before {
+    left: -2%;
+  }
+  &.ms-Icon--popout:before {
+    top: -2%;
+    left: -2%;
+  }
+  &.ms-Icon--home:before {
+    top: -4%;
+  }
+  &.ms-Icon--favorites:before {
+    top: -2%;
+    left: 2%;
+  }
+  &.ms-Icon--phone:before {
+    top: -2%;
+    left: -2%;
+  }
+  &.ms-Icon--mailSend:before {
+    left: -10%;
+  }
+  &.ms-Icon--pencil:before {
+    top: -2%;
+    left: 3%;
+  }
+  &.ms-Icon--flag:before {
+    left: 3%;
+  }
+  &.ms-Icon--miniatures:before {
+    left: -3%;
+  }
+  &.ms-Icon--voicemail:before {
+    top: 2%;
+    left: -7%;
+  }
+  &.ms-Icon--onlineAdd:before {
+    top: -1%;
+    left: 2%;
+  }
+  &.ms-Icon--pinDown:before {
+    top: 5%;
+  }
+  &.ms-Icon--gear:before {
+    left: 2%;
+  }
+  &.ms-Icon--check:before {
+    top: 3%;
+  }
+  &.ms-Icon--ellipsis:before {
+    top: 2%;
+    left: -12%;
+  }
+  &.ms-Icon--directions:before {
+    left: 10%;
+  }
+  &.ms-Icon--microphone:before {
+    top: -3%;
+  }
+  &.ms-Icon--caretDown:before {
+    top: 5%;
+    left: 2%;
+  }
+  &.ms-Icon--caretLeft:before {
+    left: -6%;
+  }
+  &.ms-Icon--caretRight:before {
+    left: 6%;
+  }
+  &.ms-Icon--caretUpLeft:before {
+    top: 5%;
+    left: 5%;
+  }
+  &.ms-Icon--caretUpRight:before {
+    top: 5%;
+    left: -3%;
+  }
+  &.ms-Icon--caretDownRight:before {
+    left: -3%;
+  }
+  &.ms-Icon--caretDownLeft:before {
+    left: 4%;
+  }
+  &.ms-Icon--note:before {
+    top: 2%;
+    left: -3%;
+  }
+  &.ms-Icon--noteReply:before {
+    top: 6%;
+    left: 3%;
+  }
+  &.ms-Icon--noteForward:before {
+    top: 6%;
+  }
+  &.ms-Icon--key:before {
+    top: 5%;
+    left: 1%;
+  }
+  &.ms-Icon--tile:before {
+    top: -1%;
+    left: -18%;
+  }
+  &.ms-Icon--taskRecurring:before {
+    top: 2%;
+    left: -1%;
+  }
+  &.ms-Icon--starEmpty:before {
+    top: -4%;
+    left: 1%;
+  }
+  &.ms-Icon--documentReply:before {
+    top: -2%;
+    left: 7%;
+  }
+  &.ms-Icon--documentForward:before {
+    left: 5%;
+  }
+  &.ms-Icon--partner:before {
+    top: -2%;
+  }
+  &.ms-Icon--reactivate:before {
+    top: -2%;
+    left: 6%;
+  }
+  &.ms-Icon--sort:before {
+    left: -19%;
+  }
+  &.ms-Icon--personAdd:before {
+    top: -2%;
+    left: 6%;
+  }
+  &.ms-Icon--chevronDown:before {
+    top: 4%;
+  }
+  &.ms-Icon--chevronLeft:before {
+    left: -5%;
+  }
+  &.ms-Icon--chevronRight:before {
+    left: 4%;
+  }
+  &.ms-Icon--peopleAdd:before {
+    top: -5%;
+    left: -12%;
+  }
+  &.ms-Icon--newsfeed:before {
+    left: -4%;
+  }
+  &.ms-Icon--notebook:before {
+    left: -4%;
+  }
+  &.ms-Icon--link:before {
+    top: 2%;
+    left: -18%;
+  }
+  &.ms-Icon--chevronsDown:before {
+    top: 5%;
+  }
+  &.ms-Icon--chevronsLeft:before {
+    left: -5%;
+  }
+  &.ms-Icon--chevronsRight:before {
+    left: 4%;
+  }
+  &.ms-Icon--personRemove:before {
+    left: 5%;
+  }
+  &.ms-Icon--receiptForward:before {
+    left: -20%;
+  }
+  &.ms-Icon--receiptReply:before {
+    left: -20%;
+  }
+  &.ms-Icon--receiptCheck:before {
+    left: -20%;
+  }
+  &.ms-Icon--peopleRemove:before {
+    top: -3%;
+    left: -12%;
+  }
+  &.ms-Icon--merge:before {
+    top: 2%;
+  }
+  &.ms-Icon--split:before {
+    top: 2%;
+  }
+  &.ms-Icon--eventCancel:before {
+    left: -2%;
+  }
+  &.ms-Icon--today:before {
+    top: -2%;
+  }
+  &.ms-Icon--oofReply:before {
+    left: 5%;
+  }
+  &.ms-Icon--voicemailReply:before {
+    top: 4%;
+    left: -25%;
+  }
+  &.ms-Icon--voicemailForward:before {
+    top: 4%;
+    left: -20%;
+  }
+  &.ms-Icon--eye:before {
+    top: -4%;
+  }
+  &.ms-Icon--post:before {
+    top: -4%;
+    left: 4%;
+  }
+  &.ms-Icon--fax:before {
+    top: -3%;
+    left: -2%;
+  }
+  &.ms-Icon--lightning:before {
+    top: 2%;
+    left: 1%;
+  }
+  &.ms-Icon--filter:before {
+    top: 7%;
+  }
+  &.ms-Icon--cart:before {
+    left: 3%;
+  }
+  &.ms-Icon--socialListening:before {
+    top: 2%;
+  }
+  &.ms-Icon--mapMarker:before {
+    top: 2%;
+  }
+  &.ms-Icon--replyAllAlt:before {
+    left: -16%;
+  }
+  &.ms-Icon--group:before {
+    left: -33%;
+  }
+  &.ms-Icon--money:before {
+    left: -8%;
+  }
+  &.ms-Icon--noteEdit:before {
+    left: 4%;
+  }
+  &.ms-Icon--mailEdit:before {
+    top: 3%;
+    left: 7%;
+  }
+  &.ms-Icon--pinLeft:before {
+    left: -6%;
+  }
+  &.ms-Icon--heart:before {
+    top: 5%;
+  }
+  &.ms-Icon--heartEmpty:before {
+    top: 5%;
+  }
+  &.ms-Icon--cake:before {
+    top: -5%;
+  }
+  &.ms-Icon--books:before {
+    left: -8%;
+  }
+  &.ms-Icon--video:before {
+    top: -3%;
+    left: 3%;
+  }
+  &.ms-Icon--balloon:before {
+    top: 4%;
+    left: -1%;
+  }
+  &.ms-Icon--music:before {
+    top: -2%;
+    left: -5%;
+  }
+  &.ms-Icon--stopwatch:before {
+    top: -3%;
+    left: 3%;
+  }
+  &.ms-Icon--coffee:before {
+    top: -3%;
+    left: 3%;
+  }
+  &.ms-Icon--plane:before {
+    left: 4%;
+  }
+  &.ms-Icon--dogAlt:before {
+    left: -15%;
+  }
+  &.ms-Icon--metadata:before {
+    top: -4%;
+    left: 4%;
+  }
+  &.ms-Icon--text:before {
+    top: -4%;
+    left: 10%;
+  }
+  &.ms-Icon--fieldText:before {
+    left: -14%;
+  }
+  &.ms-Icon--fieldNumber:before {
+    left: -14%;
+  }
+  &.ms-Icon--dropdown:before {
+    left: -14%;
+  }
+  &.ms-Icon--story:before {
+    left: -5%;
+  }
+  &.ms-Icon--bold:before {
+    left: 4%;
+  }
+  &.ms-Icon--underline:before {
+    top: 4%;
+  }
+  &.ms-Icon--quote:before {
+    left: -4%;
+  }
+  &.ms-Icon--styleRemove:before {
+    top: 4%;
+    left: 5%;
+  }
+  &.ms-Icon--pictureAdd:before {
+    left: -6%;
+  }
+  &.ms-Icon--pictureRemove:before {
+    left: -6%;
+  }
+  &.ms-Icon--mobile:before {
+    left: -3%;
+  }
+  &.ms-Icon--hide:before {
+    top: -4%;
+  }
+  &.ms-Icon--header:before {
+    left: -9%;
+  }
+  &.ms-Icon--msn:before {
+    left: 3%;
+  }
+  &.ms-Icon--peopleCheck:before {
+    left: -7%;
+    top: -3%;
+  }
+  &.ms-Icon--caretDownOutline:before {
+    top: 6%;
+  }
+  &.ms-Icon--caretLeftOutline:before {
+    left: -5%;
+  }
+  &.ms-Icon--caretRightOutline:before {
+    left: 5%;
+  }
+  &.ms-Icon--sway:before {
+    left: -3%;
+  }
+  &.ms-Icon--mailSync:before {
+    left: 8%;
+    top: 3%;
+  }
+  &.ms-Icon--peopleSync:before {
+    left: -8%;
+  }
+  &.ms-Icon--peopleError:before {
+    left: -8%;
+  }
+  &.ms-Icon--peoplePause:before {
+    left: -8%;
+  }
+  &.ms-Icon--documentSearch:before {
+    left: 8%;
+  }
+  &.ms-Icon--dynamicsMarketing:before {
+    left: -8%;
+  }
+}

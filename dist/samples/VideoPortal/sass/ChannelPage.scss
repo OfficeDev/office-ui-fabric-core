@@ -1,0 +1,21 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Video Portal Example App
+// --------------------------------------------------
+// Individual Channel Page styles
+
+
+.ChannelPage-content { 
+  padding: 10px; 
+  padding-top: 20px; 
+}
+
+.ChannelPage-pivots {
+  margin-bottom: 20px;
+
+  // Small override for Fabric Pivot component
+  .ms-Pivot-link { 
+    font-size: $ms-font-size-xl; 
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "ProgressIndicator",
+  "notes": "A component for outputting determinate progress",
+  "description": "A simple, determinate progress indicator that allows the user to see the status of activities. Unlike the {0} Spinner {1}, ProgressIndicator should accurately display the progress of the activity while the Spinner is used when the time is indeterminate.",
+  "template": "ProgressIndicator.html",
+  "class": "ms-ProgressIndicator"
+}

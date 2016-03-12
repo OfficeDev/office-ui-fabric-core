@@ -9,7 +9,7 @@ namespace fabric {
   /**
    * Breadcrumb component
    *
-   * Shows the user's current location in a hierarchy and provides a means of navigating upward.
+   * Shows the user"s current location in a hierarchy and provides a means of navigating upward.
    *
    */
   export class Breadcrumb {
@@ -30,7 +30,7 @@ namespace fabric {
     private _itemCollection: Array<any> = [];
 
     /**
-     *  removes focus outlines so they don't linger after click
+     *  removes focus outlines so they don"t linger after click
      */
     public removeOutlinesOnClick(event) {
       event.target.blur();
@@ -110,7 +110,9 @@ namespace fabric {
         }
         let a = document.createElement("a");
         a.className = "ms-ContextualMenu-link";
-        a.setAttribute("href", item.link);
+        if (item.link !== null) {
+          a.setAttribute("href", item.link);
+        }
         a.textContent = item.text;
         li.appendChild(a);
         this._contextMenu.appendChild(li);
@@ -132,7 +134,9 @@ namespace fabric {
           let chevron = document.createElement("i");
           listItem.className = "ms-Breadcrumb-listItem";
           a.className = "ms-Breadcrumb-itemLink";
-          a.setAttribute("href", item.link);
+          if (item.link !== null) {
+              a.setAttribute("href", item.link);
+          }
           if (!isNaN(item.tabIndex)) {
             a.setAttribute("tabindex", item.tabIndex);
           }

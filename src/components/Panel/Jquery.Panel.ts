@@ -60,6 +60,35 @@ namespace fabric {
 
         }
       });
+
+      // Pivots for sample page to show letiant panel sizes
+      $(".panelVariant-item").on("click", function() {
+        let className = $(this).find("span").attr("class");
+
+        $(".panelVariant-item").removeClass("is-selected");
+        $(this).addClass("is-selected");
+
+        switch (className) {
+          case "is-default":
+            $(".ms-Panel").removeClass().addClass("ms-Panel");
+            break;
+          case "is-left":
+            $(".ms-Panel").removeClass().addClass("ms-Panel ms-Panel--left");
+            break;
+          case "is-lightDismiss":
+            $(".ms-Panel").removeClass().addClass("ms-Panel ms-Panel--lightDismiss");
+            break;
+          case "is-md":
+            $(".ms-Panel").removeClass().addClass("ms-Panel ms-Panel--md");
+            break;
+          case "is-lg":
+            $(".ms-Panel").removeClass().addClass("ms-Panel ms-Panel--lg");
+            break;
+          case "is-xl":
+            $(".ms-Panel").removeClass().addClass("ms-Panel ms-Panel--xl");
+            break;
+        }
+      });
     }
   }
 }

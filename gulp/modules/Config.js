@@ -36,6 +36,14 @@ var Config = function() {
         {
             'urlPath': '/css',
             'folderPath': '../css'
+        },
+        {
+            'urlPath': '/js',
+            'folderPath': '../js'
+        },
+        {
+            'urlPath': '/lib',
+            'folderPath': '../lib'
         }
     ];
     this.typescriptConfig = {
@@ -61,9 +69,9 @@ var Config = function() {
 		outputDir: this.paths.distPackages
 	};
 	this.nugetPaths = [
-		{src: this.paths.distCSS, dest: "/content/"},
-		{src: this.paths.distSass, dest: "/content/sass/"},
-		{src: this.paths.distJS, dest: "/scripts/"}
+		{src: this.paths.distCSS, dest: "/content/Content/"},
+		{src: this.paths.distSass, dest: "/content/Content/sass/"},
+		{src: this.paths.distJS, dest: "/content/Scripts/"}
 	];
   this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
   this.componentSamplesFinished = ' Component Samples build was successful! Yay!';

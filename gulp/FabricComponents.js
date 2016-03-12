@@ -43,6 +43,7 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
     var stream = gulp.src(BuildConfig.srcPath + '/Fabric.Components.' + BuildConfig.fileExtension)
         .pipe(Plugins.plumber())
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+        .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
         .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
         .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -60,6 +61,8 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
         .pipe(gulp.dest(Config.paths.distCSS))
         .pipe(Plugins.rename('fabric.components.min.css'))
         .pipe(Plugins.cssMinify())
+        .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+        .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
         .pipe(gulp.dest(Config.paths.distCSS))
         .pipe(Plugins.flipper())
         .pipe(Plugins.cssbeautify())
@@ -67,6 +70,8 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
         .pipe(Plugins.rename('fabric.components.rtl.css'))
         .pipe(gulp.dest(Config.paths.distCSS))
         .pipe(Plugins.cssMinify())
+        .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+        .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
         .pipe(Plugins.rename('fabric.components.rtl.min.css'))
         .pipe(gulp.dest(Config.paths.distCSS));
      return stream;

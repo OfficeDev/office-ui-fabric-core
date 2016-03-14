@@ -124,6 +124,11 @@
   border: none;
   vertical-align: top;
   line-height: normal;
+  font-size: 0;
+
+  > * + * {
+    margin-left: 4px;
+  }
 
   .ms-Button-icon {
     color: $ms-color-themePrimary;

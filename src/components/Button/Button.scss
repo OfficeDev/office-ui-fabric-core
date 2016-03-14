@@ -63,6 +63,10 @@
 	}
 }
 
+a.ms-Button {
+  text-decoration: none;
+}
+
 // Add space between adjacent buttons.
 .ms-Button + .ms-Button {
 	margin-left: 6px;

@@ -12,7 +12,7 @@
 .ms-TextField {
   @include ms-font-m;
   @include ms-u-normalize;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 //= State: A disabled textfield
@@ -50,10 +50,10 @@
   border: 1px solid $ms-color-neutralTertiaryAlt;
   border-radius: 0;
   font-family: $ms-font-family-semilight;
-  font-size: $ms-font-size-s;
+  font-size: $ms-font-size-m;
   color: $ms-color-neutralPrimary;
   height: 32px;
-  padding: 6px 10px 8px;
+  padding: 6px 10px 6px;
   width: 100%;
   min-width: 180px;
   outline: 1px solid transparent;
@@ -78,7 +78,7 @@
 
 .ms-TextField-description {
   color: $ms-color-neutralSecondaryAlt;
-  font-size: $ms-font-size-xs;
+  font-size: $ms-font-size-s;
 }
 
 
@@ -90,7 +90,7 @@
   .ms-Label {
     position: absolute;
     font-family: $ms-font-family-semilight;
-    font-size: $ms-font-size-s;
+    font-size: $ms-font-size-m;
     color: $ms-color-neutralSecondary;
     padding: 7px 0 7px 10px;
   }
@@ -123,7 +123,7 @@
   }
 
   .ms-Label {
-    font-size: $ms-font-size-s;
+    font-size: $ms-font-size-m;
     margin-right: 8px;
     display: table-cell;
     vertical-align: bottom;

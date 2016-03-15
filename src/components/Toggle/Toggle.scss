@@ -166,6 +166,14 @@
     .ms-Label--on {
       display: block;
     }
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-white;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-black;
+    }    
   }
 
   &:focus,

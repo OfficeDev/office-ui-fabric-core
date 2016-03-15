@@ -119,7 +119,7 @@ fabric.Breadcrumb.prototype = (function() {
   var _addBreadcrumbItems = function(maxItems) {
     _resetList(_breadcrumbList);
     var i = _itemCollection.length - maxItems;
-
+    i=i<0? 0 : i;
     if(i >= 0) {
       for(i; i < _itemCollection.length; i++) {
         var listItem = document.createElement('li');

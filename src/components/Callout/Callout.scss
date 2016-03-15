@@ -117,6 +117,10 @@
       border: 0;
       width: 20px;
       height: 20px;
+      background-color: $ms-color-black;
+    }
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-white;
     }
   }
 }

@@ -14,7 +14,6 @@
 .ms-Table tr,
 .ms-Table-row {
   display: table-row;
-  height: 30px;
   line-height: 30px;
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-s;
@@ -70,10 +69,9 @@
 
 .ms-Table thead,
 .ms-Table-head {
-  
   td,
   th,
-  .ms-Table-cell, 
+  .ms-Table-cell,
   .ms-Table-rowCheck {
     font-weight: normal;
     text-align: left;
@@ -97,7 +95,7 @@
   width: 20px;
   position: relative;
   padding: 0;
-  
+
   // Empty checkbox.
   &:before {
     border: 1px solid $ms-color-neutralTertiary;

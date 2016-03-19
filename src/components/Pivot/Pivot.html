@@ -1,10 +1,37 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 <ul class="ms-Pivot">
-  <li class="ms-Pivot-link is-selected">My files</li>
-  <li class="ms-Pivot-link">Recent</li>
-  <li class="ms-Pivot-link">Shared with me</li>
-  <li class="ms-Pivot-link ms-Pivot-link--overflow">
-    <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--ellipsis"></i>
-  </li>
+    <li class="ms-Pivot-link is-selected" data-pivotContent="[data-demo='simple']>.files">My files</li>
+    <li class="ms-Pivot-link" data-pivotContent="[data-demo='simple']>.recent">Recent</li>
+    <li class="ms-Pivot-link" data-pivotContent="[data-demo='simple']>.shared">Shared with me</li>
+    <li class="ms-Pivot-link ms-Pivot-link--overflow">
+        <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--ellipsis"></i>
+    </li>
 </ul>
+<div data-demo="simple">
+    <div class="ms-Pivot-content is-selected files">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi erat lacus, auctor eu elit ut, pulvinar eleifend neque. Duis
+        nec nulla id dolor tristique euismod et et nulla. Morbi in ligula risus. Donec urna risus, vehicula at vehicula sed,
+        rhoncus in quam. Nulla nunc magna, egestas vitae tincidunt ac, luctus vitae ipsum. Sed purus magna, aliquam at urna
+        sed, viverra scelerisque ante. Quisque eget pharetra erat. Curabitur aliquet est id lorem tincidunt viverra. Pellentesque
+        semper, risus sed efficitur porttitor, purus quam vehicula tortor, id feugiat nisi odio posuere dui. Nam convallis
+        imperdiet nunc, et porttitor justo fringilla at. Suspendisse viverra molestie diam, id semper purus posuere quis.
+        Curabitur et nisi convallis mi facilisis scelerisque. Vestibulum vulputate tellus nisl, quis malesuada lorem dapibus
+        eu. Ut a mauris dictum, congue ligula a, tempus diam.
+    </div>
+    <div class="ms-Pivot-content recent">
+        Maecenas at nulla in odio varius aliquet. Aliquam viverra pellentesque tincidunt. Etiam ac maximus risus, sed condimentum
+        metus. Quisque convallis felis euismod, dictum nibh vitae, ultricies leo. Curabitur hendrerit et libero sit amet
+        pharetra. Praesent vitae augue quis tellus viverra dapibus. Phasellus luctus turpis neque, vitae dignissim ante rutrum
+        a. Pellentesque quis pretium est, scelerisque ultrices nisl. Maecenas pretium nisi non nulla varius efficitur. Cras
+        sed nisi id ipsum ultricies malesuada ac et nunc.
+    </div>
+    <div class="ms-Pivot-content shared">
+        Donec ut nulla tellus. Donec malesuada felis eget nibh aliquet congue. Curabitur euismod tellus sit amet quam aliquet, ac
+        pulvinar felis euismod. Suspendisse suscipit dolor sit amet urna consectetur, vitae eleifend magna laoreet. Curabitur
+        lacinia massa nec lorem bibendum, ut vestibulum massa hendrerit. Mauris nec finibus tellus, a tempor urna. Nam ac
+        tortor id lacus iaculis sodales eget vitae nunc. Vivamus consectetur gravida ipsum, quis ultricies libero pretium
+        facilisis. Mauris molestie condimentum gravida. Praesent posuere accumsan quam, a feugiat ante porttitor ut. Quisque
+        ligula massa, fermentum dapibus tellus quis, commodo laoreet nibh.
+    </div>
+</div>

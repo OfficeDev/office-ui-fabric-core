@@ -118,11 +118,16 @@ gulp.task('ComponentSamples-buildStyles', function() {
 gulp.task('ComponentSamples-build', function() {
    var streams = [];
    
+   //Get components for Handlebar
+   Config.handleBarsConfig.batch = [];
+   
    for(var i=0; i < folderList.length; i++) {
        var folderName = folderList[i];
        var srcFolderName = Config.paths.componentsPath + '/' + folderName;
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
+       // Push to Handlebars config
+       Config.handleBarsConfig.batch.push('./' + srcFolderName);
        
        if (hasFileChanged) {
            

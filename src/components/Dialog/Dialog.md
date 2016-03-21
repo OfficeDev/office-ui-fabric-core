@@ -84,7 +84,7 @@ This component has only the default state.
         </div>
     </div>
     ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Breadcrumbs on the page:
+3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
     ```
     <script>
         $(document).ready(function() {

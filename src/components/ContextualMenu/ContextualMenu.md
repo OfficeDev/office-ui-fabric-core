@@ -53,7 +53,7 @@ State | Applied to | Result
         <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-disabled" href="#">Sports</a></li>
     </ul>
     ```
-3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Breadcrumbs on the page:
+3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all ContextualMenu components on the page:
     ```
     <script>
         $(document).ready(function() {

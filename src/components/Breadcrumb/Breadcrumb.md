@@ -23,7 +23,7 @@ State | Applied to | Result
         <script src="jquery.fabric.min.js"></script>
     </head>
     ```
-2. Add the following HTML to your page:
+2. Copy the HTML from the sample above into your page. For example:
     ```
     <div class="ms-Breadcrumb">
         <div class="ms-Breadcrumb-overflow">

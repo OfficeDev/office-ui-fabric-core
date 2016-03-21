@@ -12,12 +12,10 @@
 @import "Fabric.Typography.Fonts";
 
 @font-face {
-  font-family: 'Office365Icons';
-  src: url('#{$ms-font-directory}/icons/office365icons.eot?');
-  src: url('#{$ms-font-directory}/icons/office365icons.eot?#iefix') format('embedded-opentype'),
-       url('#{$ms-font-directory}/icons/office365icons.woff?') format('woff'),
-       url('#{$ms-font-directory}/icons/office365icons.ttf?') format('truetype'),
-       url('#{$ms-font-directory}/icons/office365icons.svg?#office365icons') format('svg');
+  font-family: 'FabricMDL2Icons';
+  src: url('#{$ms-font-directory}/icons/FabricMDL2Icons.woff') format('woff'),
+       url('#{$ms-font-directory}/icons/FabricMDL2Icons.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+

@@ -65,11 +65,11 @@
 }
 
 .ms-Dropdown-caretDown {
-  color: $ms-color-neutralSecondary;
-  font-size: $ms-font-size-l;
+  color: $ms-color-neutralDark;
+  font-size: $ms-font-size-xs;
   position: absolute;
-  right: 9px;
-  bottom: 5px;
+  right: 12px;
+  bottom: 10px;
   z-index: 1;
   pointer-events: none;
 }
@@ -81,9 +81,9 @@
   border: 1px solid $ms-color-neutralTertiaryAlt;
   cursor: pointer;
   display: block;
-  height: 32px;
-  line-height: 30px;
-  padding: 0 32px 0 10px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 36px 0 10px;
   position: relative;
   overflow: hidden;
 }
@@ -120,18 +120,12 @@
   box-sizing: border-box;
   cursor: pointer;
   display: block;
-  height: 40px;
-  line-height: 38px;
+  height: 36px;
+  line-height: 36px;
   padding: 0 10px;
   position: relative;
   border: 1px solid transparent;
   white-space: nowrap;
-
-  // Shorten the first and last items to maintain baseline alignment.
-  &:first-child, 
-  &:last-child {
-    height: 39px;
-  }
 
   &:hover {
     background-color: $ms-color-neutralLight;
@@ -149,18 +143,13 @@
     background: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
-    line-height: 40px;
   }
 }
 
 //== State: A selected dropdown item
-// Note: .ms-Dropdown-item--selected is deprecated and will be removed in a future version.
-// Use .is-selected instead.
-.ms-Dropdown-item.is-selected,
-.ms-Dropdown-item.ms-Dropdown-item--selected {
+.ms-Dropdown-item.is-selected {
   background-color: $ms-color-themeLight;
   color: $ms-color-black;
-  line-height: 40px;
 
   &:hover {
     background-color: $ms-color-themeLight;

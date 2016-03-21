@@ -8,14 +8,14 @@
 
 // Base left-to-right mixin definition.
 @mixin LTR {
-  html[dir='ltr'] & {
+  [dir='ltr'] & {
     @content;
   }
 }
 
 // Base right-to-left mixin definition.
 @mixin RTL {
-  html[dir='rtl'] & {
+  [dir='rtl'] & {
     @content;
   }
 }

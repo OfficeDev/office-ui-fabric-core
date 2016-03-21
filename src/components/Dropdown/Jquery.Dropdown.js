@@ -130,7 +130,7 @@
 
             /** Select an option from the dropdown. */
             $dropdownWrapper.on('click', '.ms-Dropdown-item', function () {
-                if (!$(this).hasClass('is-disabled')) {
+                if (!$dropdownWrapper.hasClass('is-disabled') && !$(this).hasClass('is-disabled')) {
 
                     /** Deselect all items and select this one. */
                     $(this).siblings('.ms-Dropdown-item').removeClass('is-selected');

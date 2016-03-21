@@ -12,6 +12,10 @@
     "Button.Compound.html",
     "Button.Command.html"
   ],
+  "data":  {
+    "label": "Create sdfsdf Account",
+    "description": "Description of this action this button takes"
+  },
   "branches": [
     {
       "name": "Action",

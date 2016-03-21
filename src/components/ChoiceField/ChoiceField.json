@@ -15,6 +15,42 @@
     "ChoiceField.Checkbox.Disabled.html",
     "ChoiceField.ChoiceFieldGroup.html"
   ],
+  "data": {
+    "unselectedTitle": "Unselected",
+    "selectedTitle": "Selected",
+    "choiceFieldGroups": [
+      {
+        "groupTitle": "Pick one",
+        "labelModifier": "is-required",
+        "choiceFields": [
+          {
+            "labelText": "A",
+            "choiceFieldModifier": "",
+            "name": "radioa",
+            "id": "radioa"
+          },
+          {
+            "labelText": "B",
+            "choiceFieldModifier": "",
+            "name": "radiob",
+            "id": "radiob"
+          },
+          {
+            "labelText": "C",
+            "choiceFieldModifier": "",
+            "name": "radioc",
+            "id": "radioc"
+          },
+          {
+            "labelText": "D",
+            "choiceFieldModifier": "",
+            "name": "radioc",
+            "id": "radioc"
+          }
+        ]
+      }
+    ]
+  },
   "branches": [
     {
       "name": "Radio button",

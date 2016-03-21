@@ -101,6 +101,14 @@ var Config = function() {
         }
       ]    
 	}
+   this.handleBarsConfig = {
+    ignorePartials: true,
+    partials:  {
+      
+    },
+    batch: []
+  };
+ 
 };
 
 module.exports = new Config();

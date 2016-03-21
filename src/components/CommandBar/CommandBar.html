@@ -1,75 +1,46 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 <div class="ms-CommandBar">
-  <div class="ms-CommandBarSearch">
-    <input class="ms-CommandBarSearch-input" type="text" placeholder="Search" tabindex="1"/>
-    <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper">
-      <i class="ms-Icon ms-Icon--search"></i>
-    </div>
-    <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconClearWrapper ms-font-s">
-      <i class="ms-Icon ms-Icon--x"></i>
-    </div>
-  </div>  
-  <div class="ms-CommandBar-sideCommands">
-    <div class="ms-CommandBarItem">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--reactivate"></span>
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Undo</span>
-          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-        </a>
+  {{#if hasSearch}}
+    <div class="ms-CommandBarSearch">
+      <input class="ms-CommandBarSearch-input" type="text" placeholder="Search" tabindex="1"/>
+      <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper">
+        <i class="ms-Icon ms-Icon--search"></i>
       </div>
-    </div>
+      <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconClearWrapper ms-font-s">
+        <i class="ms-Icon ms-Icon--x"></i>
+      </div>
+    </div>  
+  {{/if}}
+  <div class="ms-CommandBar-sideCommands">
+    {{#each sideCommands}}
+      <div class="ms-CommandBarItem">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <a class="ms-CommandBarItem-link" tabindex="1">
+            <span class="ms-CommandBarItem-icon ms-Icon {{icon}}"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">{{commandText}}</span>
+            {{#if hasDropdown}}
+              <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+            {{/if}}
+          </a>
+        </div>
+      </div>
+    {{/each}}
   </div>
   <div class="ms-CommandBar-mainArea">
-    <div class="ms-CommandBarItem">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--star"></span>
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">New</span>
-          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-        </a>
+     {{#each commands}}
+      <div class="ms-CommandBarItem {{#if textOnly}} ms-CommandBarItem--hasTextOnly{{/if}}">
+        <div class="ms-CommandBarItem-linkWrapper">
+          <a class="ms-CommandBarItem-link" tabindex="1">
+            <span class="ms-CommandBarItem-icon ms-Icon {{icon}}"></span>
+            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">{{commandText}}</span>
+            {{#if hasDropdown}}
+              <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+            {{/if}}
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="ms-CommandBarItem">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Delete</span>
-        </a>
-      </div>
-    </div>
-    <div class="ms-CommandBarItem">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--flag"></span>
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Archive</span>
-        </a>
-      </div>
-    </div>
-    <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Junk</span>
-        </a>
-      </div>
-    </div>
-    <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Move To</span>
-          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-        </a>
-      </div>
-    </div>
-    <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="1">
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Categories</span>
-          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-        </a>
-      </div>
-    </div>
+    {{/each}}
     <!-- Overflow Command -->
     <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
       <div class="ms-CommandBarItem-linkWrapper">

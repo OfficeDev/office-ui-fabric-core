@@ -124,11 +124,12 @@ gulp.task('ComponentSamples-build', function() {
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        
-       if (hasFileChanged) {    
+       if (hasFileChanged) {
            
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
            
            var filesArray = manifest.fileOrder;
+           var fileData = manifest.data;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
            var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
@@ -137,9 +138,11 @@ gulp.task('ComponentSamples-build', function() {
            for (var x = 0; x < jsFiles.length; x++) {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
            }
+           
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
+           .pipe(Plugins.handlebars(fileData, Config.handleBarsConfig))
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(

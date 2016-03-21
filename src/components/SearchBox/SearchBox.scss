@@ -88,9 +88,14 @@
   background-color: $ms-color-themePrimary;
   text-align: center;
   display: none;
-  font-size: $ms-font-size-l;
+  font-size: $ms-font-size-m-plus;
   color: $ms-color-white;
   z-index: $ms-zIndex-front;
+
+  .ms-Icon {
+    position: relative;
+    bottom: -2px;
+  }
 }
 
 .ms-SearchBox-label {
@@ -104,6 +109,8 @@
 
 .ms-SearchBox-icon {
   margin-right: 7px;
-  font-size: $ms-font-size-l;
+  font-size: $ms-font-size-m-plus;
   color: $ms-color-neutralSecondaryAlt;
+  position: relative;
+  bottom: -2px;
 }

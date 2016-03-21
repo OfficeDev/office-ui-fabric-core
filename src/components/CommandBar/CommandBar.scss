@@ -27,7 +27,7 @@ $SearchBox-height: 40px;
 $SearchBox-widthLgCollapsed: 50px;
 $SearchBox-widthMdDownCollapsed: 36px;
 $SearchBox-widthXLarge: 208px;
-$SearchBox-iconSize: 17px;
+$SearchBox-iconSize: 16px;
 $SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
 $SearchBox-smallWidth: 36px;  
 $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePadding * 2);
@@ -162,7 +162,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   }
 
   .ms-Icon {
-    font-size: $ms-font-size-m;
+    font-size: $ms-font-size-l;
     color: $ms-color-neutralSecondary; 
   }
 }
@@ -180,6 +180,10 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   height: 100%;
 }
 
+.ms-CommandBarItem-commandText {
+  margin-right: 4px;
+}
+
 .ms-CommandBarItem-link:focus {
   outline: none;
   &:before {
@@ -195,13 +199,16 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
 
 .ms-CommandBarItem-icon {
  font-size: $ms-font-size-l;
+ margin-right: 4px;
+ position: relative;
+ bottom: -4px;
 }
 
 .ms-CommandBarItem-chevronDown  {
   vertical-align: middle;
   padding-bottom: 3px;
   margin-top: $CommandBarItem-marginTop;
-  font-size: 1.1em;
+  font-size: $ms-font-size-xs;
   line-height: 1em;
   color: $ms-color-neutralSecondary;
 
@@ -262,6 +269,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
 }
 
 .ms-CommandBarSearch-input {
+  @include ms-font-m;
   height: $SearchBox-height;
   // Due to a bug in IE9, we have to use a transparent left border instead of left padding
   padding: $SearchBox-sidePadding $SearchBox-sidePadding $SearchBox-sidePadding 0;
@@ -272,7 +280,6 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   box-sizing: border-box;
   outline: none;
   cursor: pointer;
-  font-size: $ms-font-size-m;
 
   @media screen and (-ms-high-contrast: active) {
     border-left: $SearchBox-height solid $ms-color-black;
@@ -385,6 +392,11 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   position: absolute;
   width: $SearchBox-iconWrapperWidth;
   text-align: center;
+
+  .ms-Icon {
+    position: relative;
+    bottom: -2px;
+  }
 }
 
 .ms-CommandBarSearch .ms-Icon:before {

@@ -257,6 +257,13 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
   margin-right: 0;
 }
 
+.ms-DetailsRow-cellIcon {
+  display: inline-block;
+  margin-right: 6px;
+  position: relative;
+  bottom: -2px;
+}
+
 .ms-DetailsRow-check {
   display: inline-block;
   cursor: default;

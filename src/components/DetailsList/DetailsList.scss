@@ -5,111 +5,329 @@
 // --------------------------------------------------
 // Styles for details list
 
+// Variables
+$rowHeight: 36px;
+$selectedColor: $ms-color-themeLighter;
+$selectedHoverColor: $ms-color-themeLight;
+$focusedBorderColor: $ms-color-neutralTertiary;
+$selectedColor: $ms-color-themeLighter;
+$selectedHoverColor: $ms-color-themeLight;
+$unselectedHoverColor: $ms-color-themeLighterAlt;
 
+//== DetailsList
+//
 .ms-DetailsList {
-  display: table;
-  width: 100%;
+  position: relative;
 }
 
-.ms-DetailsList-row {
-  display: table-row;
-  height: 30px;
-  line-height: 30px;
-  font-family: $ms-font-family-semilight;
-  font-size: $ms-font-size-s;
-  color: $ms-color-neutralPrimary;
-
-  &:hover {
-    background-color: $ms-color-neutralLighter;
-    cursor: pointer;
-    outline: 1px solid transparent;
-  }
-
-  // Rows can be selected.
-  &.is-selected {
-    background-color: $ms-color-themeLight;
-
-    // A checkmark in a selected row.
-    .ms-DetailsList-rowCheck {
-      background-color: $ms-color-themePrimary;
-
-      // Hide the checkbox.
-      &:before {
-        display: none;
-      }
-
-      // But show the mark.
-      &:after {
-        @include ms-Icon;
-        content: '\e041';
-        color: $ms-color-white;
-        font-size: 12px;
-        position: absolute;
-        left: 4px;
-        top: 9px;
-      }
-    }
-  }
+.ms-DetailsList.is-horizontalConstrained {
+  overflow-x: auto;
+  overflow-y: inherit;
 }
 
 .ms-DetailsList-cell {
-  display: table-cell;
-  padding: 0 10px;
+    word-break: break-word;
 }
 
-// Style the first row as a header.
-.ms-DetailsList-row:first-child {
-  font-family: $ms-font-family-semilight;
-  font-size: $ms-font-size-xs;
-  color: $ms-color-neutralSecondary;
 
-  .ms-DetailsList-cell, .ms-DetailsList-rowCheck {
-    border-bottom: 1px solid $ms-color-neutralLight;
+//== DetailsHeader
+// 
+.ms-DetailsHeader {
+  display: inline-block;
+  min-width: 100%;
+  height: $rowHeight;
+  line-height: $rowHeight;
+  white-space: nowrap;
+  padding-bottom: 1px;
+  border-bottom: 1px solid $ms-color-neutralLight;
+  margin-bottom: 1px;
+  cursor: default;
+
+  @include user-select(none);
+
+  &.is-singleSelect {
+    padding-left: 40px;
   }
 
-  .ms-DetailsList-rowCheck:after {
-    @include ms-Icon;
-    content: '\e041';
-    color: $ms-color-neutralTertiary;
-    font-size: 12px;
-    position: absolute;
-    left: 4px;
-    top: 9px;
+  &.is-resizingColumn .ms-DetailsHeader-sizerCover {
+    background: transparent;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    cursor: col-resize;
   }
 }
 
-// On selectable tables, each row has a checkbox.
-.ms-DetailsList-rowCheck {
-  display: table-cell;
-  width: 20px;
+.ms-DetailsHeader-cell.is-check .ms-Check-circle {
+  visibility: hidden;
+}
+
+.ms-DetailsHeader-cell.is-check:hover .ms-Check-circle,
+.ms-DetailsHeader.is-allSelected .ms-Check-circle {
+  visibility: visible;
+}
+
+.ms-DetailsHeader-cellWrapper {
+  display: inline-block;
   position: relative;
+}
 
-  // Empty checkbox.
-  &:before {
-    border: 1px solid $ms-color-neutralTertiary;
-    content: '';
-    display: block;
-    height: 14px;
-    left: 2px;
-    position: absolute;
-    top: 6px;
-    width: 14px;
+.ms-DetailsHeader-cellSizeWrapper {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 16px;
+
+  &:last-child {
+    margin-right: 0;
   }
 }
 
-// All high contrast styling rules
-@media screen and (-ms-high-contrast: active) {
-  .ms-DetailsList-row {
-    // Rows can be selected.
-    &.is-selected {
-      // A checkmark in a selected row.
-      .ms-DetailsList-rowCheck {
-        background: none;
-        // Show the checkbox.
-        &:before {
-          display: block;
-        }
-      }
+.ms-DetailsHeader-filterChevron.ms-Icon {
+  color: $ms-color-neutralTertiary;
+  padding-left: 4px;
+  vertical-align: middle;
+}
+
+.ms-DetailsHeader-cell {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 8px;
+  color: $ms-color-neutralTertiary;
+  border: none;
+  background: none;
+  border: none;
+  line-height: inherit;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+  height: $rowHeight;
+  vertical-align: top;
+
+  &.is-check {
+    position: relative;
+    padding: 8px 10px;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &.is-sortable {
+    color: $ms-color-black;
+    cursor: default;
+
+    &:hover {
+      background-color: $ms-color-neutralLight;
     }
   }
+
+  &.is-filter {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    text-align: center;
+    color: $ms-color-black;
+
+    &:hover {
+      background-color: $ms-color-neutralLight;
+    }
+  }
+
+  &.is-filter:before {
+    content: '';
+    position: absolute;
+    border-left: 1px solid $ms-color-neutralTertiary;
+    top: 10px;
+    bottom: 10px;
+    left: 0;
+  }
+
+  &.is-sizer {
+    position: absolute;
+    width: 16px;
+    cursor: col-resize;
+    bottom: 0;
+    top: 0;
+    height: inherit;
+    z-index: 99;
+  }
+
+  &.is-sorted.is-sortable .ms-DetailsHeader-sortArrow {
+    display: inline;
+  }
+
+  &is-sortedDescending .ms-DetailsHeader-sortArrow {
+    transform: rotate(180deg);
+  }
+}
+
+.ms-DetailsHeader-cell.is-resizing.is-sizer:after,
+.ms-DetailsHeader-cell.is-sizer:hover:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: $ms-color-neutralLight;
+  border: 1px solid $ms-color-white;
+}
+
+.ms-Fabric.is-focusVisible .ms-DetailsHeader-cell:focus:before,
+// TODO: Scope this state to *not* apply when wrapped in ms-Fabric
+.ms-DetailsHeader-cell:focus:before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid $ms-color-neutralTertiary;
+}
+
+.ms-DetailsHeader-sortArrow.ms-Icon {
+  font-size: 12px;
+  margin-right: 4px;
+  display: none;
+  color: $ms-color-neutralTertiary;
+}
+
+
+//== DetailsRow
+//
+.ms-DetailsRow {
+  position: relative;
+  display: inline-block;
+  min-width: 100%;
+  min-height: $rowHeight;
+  vertical-align: top;
+  white-space: nowrap;
+  padding: 10px 0;
+
+  @include user-select(none);
+
+  cursor: default;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &.ms-DetailsRow.is-selected {
+    background: $selectedColor;
+  }
+}
+
+.ms-Fabric.is-stationary .ms-DetailsRow:hover,
+// TODO: Scope this state to *not* apply when wrapped in ms-Fabric
+.ms-DetailsRow:hover {
+  background: $unselectedHoverColor;
+}
+
+.ms-Fabric.is-stationary .ms-DetailsRow.is-selected:hover,
+// TODO: Scope this state to *not* apply when wrapped in ms-Fabric
+.ms-DetailsRow.is-selected:hover {
+  background: $selectedHoverColor;
+}
+
+.ms-DetailsRow-cell {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 8px;
+  vertical-align: top;
+  white-space: normal;
+  word-break: break-word;
+  margin-right: 16px;
+
+  &.is-clipped {
+    overflow: hidden;
+  }
+}
+
+.ms-DetailsRow-cell:last-child {
+  margin-right: 0;
+}
+
+.ms-DetailsRow-check {
+  display: inline-block;
+  cursor: default;
+  padding: 10px;
+  margin: -10px 0;
+  box-sizing: border-box;
+  vertical-align: top;
+  background: none;
+  border: none;
+
+  &:focus {
+   outline: transparent;
+  }
+}
+
+.ms-DetailsRow-check {
+  visibility: hidden;
+}
+
+.ms-Fabric.is-stationary .ms-DetailsRow:hover .ms-DetailsRow-check,
+// TODO: Scope this state to *not* apply when wrapped in ms-Fabric
+.ms-DetailsRow:hover .ms-DetailsRow-check,
+.ms-DetailsRow.is-selected .ms-DetailsRow-check {
+  visibility: visible;
+}
+
+.ms-Fabric.is-focusVisible .ms-DetailsRow:focus .ms-DetailsRow-focusBox,
+// TODO: Scope this state to *not* apply when wrapped in ms-Fabric
+.ms-DetailsRow:focus .ms-DetailsRow-focusBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 1px solid $focusedBorderColor;
+}
+
+.ms-DetailsRow-cellMeasurer {
+  position: absolute;
+  visibility: hidden;
+  white-space: nowrap;
+  top: -1000000000;
+}
+
+//== Check
+// 
+.ms-Check {
+  display: inline-block;
+  cursor: default;
+  line-height: 0;
+  vertical-align: top;
+
+  &.is-checked {
+
+    .ms-Check-circle {
+      fill: $ms-color-themePrimary;
+      stroke: $ms-color-white;
+      stroke-width: 1px;
+    }
+
+    .ms-Check-check {
+      stroke: $ms-color-white;
+    }
+  }
+}
+
+.ms-Check-circle {
+  fill: $ms-color-white;
+  stroke: $ms-color-neutralTertiaryAlt;
+}
+
+.ms-Check-check {
+  stroke: $ms-color-neutralTertiaryAlt;
 }

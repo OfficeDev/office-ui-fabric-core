@@ -68,3 +68,6 @@ State | Applied to | Result
 
 ## Dependencies
 This component has no dependencies.
+
+## Accessibility
+More details will be added here.

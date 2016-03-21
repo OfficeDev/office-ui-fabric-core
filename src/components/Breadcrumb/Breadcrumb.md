@@ -3,7 +3,7 @@ Shows the current location in a hierarchy and provides a means of navigating upw
 
 ## Variants
 
-### Standard
+### Default
 @@include('Breadcrumb.html')
 
 ## States

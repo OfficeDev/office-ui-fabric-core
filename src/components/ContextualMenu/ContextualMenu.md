@@ -3,7 +3,7 @@ Presents options associated with an object. Often opened via a right-click or ov
 
 ## Variants
 
-### Standard
+### Default
 A standard menu of commands. Should close when a command is invoked.
 
 @@include('ContextualMenu.html')

@@ -3,7 +3,7 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 
 ## Variants
 
-### Standard
+### Default
 @@include('CommandBar.html')
 
 ## States

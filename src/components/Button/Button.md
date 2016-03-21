@@ -3,7 +3,7 @@ Allows users to take action, such as submitting a form or dismissing a message.
 
 ## Variants
 
-### Standard
+### Default
 @@include('Button.html')
 
 ### Primary

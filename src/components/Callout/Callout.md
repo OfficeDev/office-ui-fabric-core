@@ -3,7 +3,7 @@ Notification area that provides a detailed description or set of actions on an o
 
 ## Variants
 
-### Standard
+### Default
 @@include('Callout.html')
 
 ### Close

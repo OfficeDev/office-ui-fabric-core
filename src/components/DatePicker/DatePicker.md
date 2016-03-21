@@ -3,7 +3,7 @@ Allows for the selection of a date into a text field.
 
 ## Variants
 
-### Standard
+### Default
 @@include('DatePicker.html')
 
 ## States

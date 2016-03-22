@@ -13,7 +13,7 @@
 	border: 1px solid $ms-color-neutralLighter;
 	cursor: pointer;
 	display: inline-block;
-	height: 32px;
+	height: 36px;
 	min-width: 80px;
 	padding: 4px 20px 6px;
 
@@ -129,8 +129,9 @@
     color: $ms-color-themePrimary;
     display: inline-block;
     font-size: $ms-font-size-s;
+    margin-right: 2px;
     position: relative;
-    top: -8px;
+    top: -7px;
     text-align: center;
 
     .ms-Icon {
@@ -273,8 +274,8 @@
 .ms-Button.ms-Button--command {
 	background-color: transparent;
 	border: none;
-	height: 32px;
-	line-height: 32px;
+	height: 36px;
+	line-height: 36px;
 	min-width: 0;
 	padding: 0 8px;
 	text-align: left;
@@ -285,6 +286,7 @@
 		display: inline-block;
 		margin-right: 4px;
 		position: relative;
+		bottom: -1px;
 	}
 
 	.ms-Button-label {

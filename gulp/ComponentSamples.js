@@ -134,7 +134,6 @@ gulp.task('ComponentSamples-build', function() {
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
            
            var filesArray = manifest.fileOrder;
-           var fileData = manifest.data;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
            var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
@@ -147,7 +146,7 @@ gulp.task('ComponentSamples-build', function() {
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
-           .pipe(Plugins.handlebars(fileData, Config.handleBarsConfig))
+           .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(

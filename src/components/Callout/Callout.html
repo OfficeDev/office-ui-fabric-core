@@ -1,23 +1,20 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
-<div class="ms-Callout ms-Callout--{{arrowPosition}} ms-Callout--{{modifierClass}}">
+<div 
+  class="ms-Callout 
+    {{#if props.arrowPosition}} ms-Callout--{{props.arrowPosition}} {{/if}} 
+    {{#if props.modifier}} ms-Callout--{{props.modifier}} {{/if}}">
   <div class="ms-Callout-main">
     <div class="ms-Callout-header">
-      <p class="ms-Callout-title">{{title}}</p>
+      <p class="ms-Callout-title">{{{props.title}}}</p>
     </div>
     <div class="ms-Callout-inner">
       <div class="ms-Callout-content">
-        <p class="ms-Callout-subText {{#if hasSmallSubText}} ms-Callout-subText--{{subTextSize}} {{/if}}">{{subText}}</p>
+        <p class="ms-Callout-subText {{#if props.subText}} ms-Callout-subText--{{props.subTextSize}} {{/if}}">{{props.subText}}</p>
       </div>
       <div class="ms-Callout-actions">
-         {{#each calloutActions}}
-          {{> Link 
-            title=title 
-            linkText=title 
-            customClasses="ms-Callout-link" 
-            tabIndex=0 
-            hasHref=false modifierClass=linkModifier}}
-         {{/each}}
+          {{#each props.actions}}
+            {{renderPartial component props}}
+          {{/each}}
       </div>
     </div>    
   </div>

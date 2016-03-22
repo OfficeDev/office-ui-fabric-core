@@ -1,22 +1,5 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-<div class="ms-Callout ms-Callout--OOBE ms-Callout--arrowLeft">
-  <div class="ms-Callout-main">
-    <div class="ms-Callout-header">
-      <p class="ms-Callout-title">{{title}}</p>
-    </div>
-    <div class="ms-Callout-inner">
-      <div class="ms-Callout-content">
-        <p class="ms-Callout-subText">{{subText}}</p>
-      </div>
-      <div class="ms-Callout-actions">
-        {{#each oobeActions}}
-          <button class="ms-Callout-button ms-Button {{buttonType}}">
-            <span class="ms-Button-label">{{title}}</span>
-            <span class="ms-Button-description">{{description}}</span>
-          </button>
-        {{/each}}
-      </div>
-    </div>
-  </div>
-</div>
+{{> Callout
+  props=propsOobe
+}}

@@ -1,32 +1,5 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 {{> Callout
-  title=title
-  calloutActions=actionTextActions
-  hasSmallSubText=false
-  subText=subText
-  modifierClass="actionText"
-  arrowPosition="arrowLeft"
-  subTextSize="s"
+  props=propsActionText
 }}
-
-<div class="ms-Callout ms-Callout--actionText ms-Callout--arrowLeft">
-  <div class="ms-Callout-main">
-    <div class="ms-Callout-header">
-      <p class="ms-Callout-title">{{title}}</p>
-    </div>
-    <div class="ms-Callout-inner">
-      <div class="ms-Callout-content">
-        <p class="ms-Callout-subText ms-Callout-subText--s">{{subText}}</p>
-      </div>
-      <div class="ms-Callout-actions">
-        {{#each actionTextActions}}
-          <button class="ms-Callout-action ms-Button {{buttonModifier}}">
-            <span class="ms-Callout-actionText ms-Button-icon"><i class="ms-Icon ms-Icon--{{icon}}"></i></span>
-            <span class="ms-Button-label">{{title}}</span>
-          </button>
-        {{/each}}
-      </div>
-    </div>
-  </div>
-</div>

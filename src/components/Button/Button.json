@@ -12,11 +12,29 @@
     "Button.Compound.html",
     "Button.Command.html"
   ],
-  "data":  {
-    "label": "Create sdfsdf Account",
+  "props":  {
+    "label": "Create Account"
+  },
+  "propsCommand": {
+    "label": "Create Account",
+    "icon": "plus",
+    "modifier": "command"
+  },
+  "propsCompound": {
+    "label": "Create Account",
     "description": "Description of this action this button takes",
-    "hasIcon": true,
-    "hasDescription": true
+    "icon": "plus",
+    "modifier": "compound"
+  },
+  "propsHero": {
+    "label": "Create Account",
+    "icon": "circlePlus",
+    "modifier": "hero"
+  },
+  "propsPrimary": {
+    "label": "Create Account",
+    "icon": "circlePlus",
+    "modifier": "primary"
   },
   "branches": [
     {

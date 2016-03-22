@@ -1,6 +1,6 @@
 var path = require('path');
 var pkg = require('../../package.json');
-
+var Plugins = require('./Plugins');
 /**
  * Configuration class containing all properties to be used throughout the build          
  */
@@ -101,7 +101,7 @@ var Config = function() {
         }
       ]    
 	}
-   this.handleBarsConfig = {
+  this.handleBarsConfig = {
     ignorePartials: true,
     partials:  {
       
@@ -109,7 +109,31 @@ var Config = function() {
     batch: [],
     helpers:  {
       concat: function(item1, item2) {
-          return item1 + item2;
+        return item1 + item2;
+      },
+      renderPartial: function(partial, props) {
+        var hbs = Plugins.handlebars.Handlebars;
+        var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
+        var template = hbs.compile(fileContents);
+        var thisProps = {props: props};
+        return new hbs.SafeString(template(thisProps));
+      }.bind(this),
+      renderInlinePartial: function(partial, propsString) {
+        var hbs = Plugins.handlebars.Handlebars;
+        var props = JSON.parse(propsString);
+        var template = hbs.compile(that.paths.componentsPath + '/' + partial);
+        return template(props);
+      }.bind(this),
+      tokenReplace: function(string, replaceArray) {
+        var newStr;
+        if(replaceArray) {
+          for (var i = 0; i < replaceArray.length; i++) {
+            newStr = string.replace(new RegExp("\\{"+i+"\\}","g"), replaceArray[i]);
+          }
+        } else {
+          newStr = string;
+        }
+        return newStr;
       }
     }
   };

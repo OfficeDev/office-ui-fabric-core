@@ -7,7 +7,7 @@
   "dependencies": [
     "ContextualMenu"
   ],
-  "data": {
+  "props": {
     "breadcrumbs":
       [
         {
@@ -29,10 +29,10 @@
           "name": "Folder 5"
         },
         {
-          "name": "Folder 3"
+          "name": "Folder 6"
         },
         {
-          "name": "Folder 3"
+          "name": "Folder 7"
         }
       ]
     }

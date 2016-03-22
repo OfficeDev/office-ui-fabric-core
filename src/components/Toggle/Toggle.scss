@@ -20,8 +20,7 @@
   // Action label (on/off) on the right of the toggle
   .ms-Label {
     position: relative;
-    padding: 0 0 0 62px;
-    font-size: $ms-font-size-s;
+    padding: 0 0 0 55px;
   }
 
   &:hover {
@@ -57,7 +56,7 @@
 // Description text
 .ms-Toggle-description {
   position: relative;
-  font-size: $ms-font-size-s;
+  font-size: $ms-font-size-m;
   vertical-align: top;
   display: block;
   margin-bottom: 8px;
@@ -67,10 +66,11 @@
 .ms-Toggle-field {
   position: relative;
   display: inline-block;
-  width: 57px;
+  width: 45px;
   height: 20px;
   box-sizing: border-box;
-  border: 2.5px $ms-color-neutralTertiaryAlt solid;
+  border: 1px $ms-color-neutralSecondary solid;
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -79,28 +79,27 @@
   // Slider pseudo element
   &:before {
     position: absolute;
-    display: block;
-    box-sizing: content-box;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    transition: all .1s ease;
+    border-radius: 10px;
     content: '';
-    top: -2.5px;
-    #{$direction}: -2.5px;
-    width: 12px;
-    height: 20px;
+    #{$direction}: 4px;
     background-color: $ms-color-neutralSecondaryAlt;
-    outline: 2px solid transparent;
+    outline: 1px solid transparent;
   }
 
   @if $direction == left {
     &:before {
       right: auto;
-      border-right: 2.5px solid $ms-color-white;
     }
   }
 
   @if $direction == right {
     &:before {
-      left: auto;
-      border-left: 2.5px solid $ms-color-white;
+      background-color: $ms-color-white;
+      left: 28px;
     }
   }
 
@@ -117,7 +116,7 @@
 
   // 'Off' state - slider on the left
   & + .ms-Toggle-field {
-    background-color: $ms-color-neutralLighter;
+    // background-color: $ms-color-neutralLighter;
 
     @include ms-Toggle-slider(left);
 
@@ -134,6 +133,7 @@
   // 'On' state - slider on the right
   &:checked + .ms-Toggle-field {
     background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
 
     @include ms-Toggle-slider(right);
 
@@ -149,6 +149,10 @@
 
   &:focus,
   &:hover {
+    &:before {
+      background-color: $ms-color-white;
+    }
+
     & + .ms-Toggle-field { 
       background-color: $ms-color-neutralLight; 
     }

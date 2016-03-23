@@ -28,7 +28,7 @@
   },
   "propsHero": {
     "label": "Create Account",
-    "icon": "circlePlus",
+    "icon": "plus",
     "modifier": "hero"
   },
   "propsPrimary": {

@@ -5,8 +5,6 @@
   "template": "NavBar.html",
   "class": "ms-NavBar",
   "dependencies": [
-    "List",
-    "ListItem",
     "ContextualMenu",
     "Overlay"
   ]

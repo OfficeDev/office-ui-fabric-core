@@ -2,10 +2,11 @@
 
 <div class="ms-ChoiceField">
   <input 
-    id="demo-radio-unselected" 
-    class="ms-ChoiceField-input" 
-    type="{{props.type}}" 
+    id="{{props.id}}" 
+    class="ms-ChoiceField-input"
+    type="{{props.type}}"
+    name="{{props.name}}"
     {{#if props.disabled}} disabled {{/if}}
     {{#if props.checked}} checked {{/if}}>
-  <label for="demo-radio-unselected" class="ms-ChoiceField-field"><span class="ms-Label">{{props.label}}</span></label>
+  <label for="{{props.id}}" class="ms-ChoiceField-field"><span class="ms-Label">{{props.label}}</span></label>
 </div> 

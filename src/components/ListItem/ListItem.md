@@ -1,44 +1,63 @@
 # List Item
 Suitable for presenting a summary of an item, with associated actions. Most often used within a List component.
 
-@@include('ListItem.html')
-@@include('ListItem.Selectable.html')
-@@include('ListItem.Selected.html')
-@@include('ListItem.Unseen.html')
-@@include('ListItem.Unread.html')
-@@include('ListItem.Image.html')
-@@include('ListItem.Document.html')
-
-
-
 ## Variants
 
 ### Default
-A standard vertical list of items.
+@@include('ListItem.html')
 
+### Image
+The same as the default variant, with a thumbnail image added.
+@@include('ListItem.Image.html')
 
-
-### Grid
-Places the list items in a grid, with the number of columns adjusting based on the screen size.
-
-
+### Document
+Showcases a document by providing a thumbnail, title, and some metadata.
+@@include('ListItem.Document.html')
 
 ## States
-This component has only the default state.
+
+### Selectable
+Apply the `is-selectable` class to make it possible to select the item.
+@@include('ListItem.Selectable.html')
+
+### Selected
+When applied alongside the `is-selectable` class, `is-selected` will mark it as selected.
+@@include('ListItem.Selected.html')
+
+### Unseen
+Use `is-unseen` to indicate that the item has not been seen.
+@@include('ListItem.Unseen.html')
+
+### Unread
+Use `is-unread` to indicate that the item has not been read.
+@@include('ListItem.Unread.html')
 
 ## Using this component
-1. Confirm that you have references to Fabric's CSS on your page:
+1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
     ```
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
+        <script src="jquery-2.2.1.min.js"></script>
+        <script src="jquery.fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page.
-3. Replace the content with whatever you'd like to display as a list. The samples use `.ms-ListItem` components, but you can place any content within `.ms-List`.
+3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
+    ```
+    <script>
+        $(document).ready(function() {
+            if ($.fn.ListItem) {
+                $('.ms-ListItem').ListItem();
+            }
+        });
+    </script>
+    ```
+4. Verify that the component is working the same as in the sample above.
+5. Replace the sample HTML content (such as the content of `.ms-ListItem-primaryText`) with your content.
 
 ## Dependencies
-This component has no dependencies on other components, although it does often contain ListItem components.
+This component has no dependencies on other components, although it is most often used within a List component.
 
 ## Accessibility
-You can use a `ul` element if your content is unordered, or `ol` if the order of the content is important.
+More details will be added here.

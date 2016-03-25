@@ -10,22 +10,23 @@
  */
 (function ($) {    
     /* Show/Hide the appropriate details for the selected Action */
-    function toggleDetails(target){		
+    function toggleDetails(target, $personaCard){		
         if('undefined' === typeof target){
             var targetIds = [];
             $('.ms-PersonaCard-action.is-active').each(function(){
-                target = $(this).attr('data-detailsTargetId');
+                target = $(this).attr('data-detailsTargetName');
 		        if('undefined' !== typeof target){
                     targetIds.push(target);
                 }
             });
-            targetIds.forEach(toggleDetails);
+            targetIds.forEach(function(a){toggleDetails(a, $personaCard);});
         }
         else{
-            var actionUrl = $("li[data-detailsTargetId='" + target + "']").attr('data-actionUrl');
+            var actionUrl = $personaCard.find("li[data-detailsTargetName='" + target + "']").attr('data-actionUrl');
             if("undefined" === typeof actionUrl){
-                $('#' + target).parent().children().removeClass('is-active').hide();
-		        $('#' + target).addClass('is-active').show();
+                var t = $personaCard.find("ul[data-Name='" + target + "']");
+                t.parent().children().removeClass('is-active').hide();
+		        t.addClass('is-active').show();
             }
             else{
                 document.location.href=actionUrl;
@@ -34,13 +35,13 @@
 	}    
   
     $.fn.PersonaCard = function () {
-    toggleDetails();
+    
 
     /** Go through each PersonaCard  we've been given. */
     return this.each(function () {
 
       var $personaCard = $(this);
-
+      toggleDetails(undefined, $personaCard);
       /** Register action click handler */
       $personaCard.on('click', '.ms-PersonaCard-action', handleActionClick);
       $personaCard.on('click', '.ms-PersonaCard-overflow', handleActionClick);
@@ -51,12 +52,11 @@
         /** Select the correct tab. */
         $personaCard.find('.ms-PersonaCard-action').removeClass('is-active');
         $(this).addClass('is-active');
-        var target = $(this).attr('data-detailsTargetId');
-        toggleDetails(target);        
+        var target = $(this).attr('data-detailsTargetName');
+        toggleDetails(target, $personaCard);        
       }
       
       /** Toggle more details. */
-      /** --(DM) NOT USED?   */
       $personaCard.on('click', '.ms-PersonaCard-detailExpander', function() {
         $(this).parent('.ms-PersonaCard-actionDetails').toggleClass('is-collapsed');
       });

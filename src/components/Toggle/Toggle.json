@@ -8,6 +8,9 @@
     "Toggle.html",
     "Toggle.TextLeft.html"
   ],
+  "dependencies": [
+    "Label"
+  ],
   "branches": [
       {
         "name": "Text above",

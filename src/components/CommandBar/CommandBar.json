@@ -12,6 +12,74 @@
   "dependencies": [
     "ContextualMenu"
   ],
+  "props": {
+    "searchBox": {
+      "component": "SearchBox",
+      "props":  {
+        //to be figured outttt
+      }
+    },
+    "overflow": {
+      "component": "Button",
+      "props":  {
+        "label": "Overflow",
+        "icon": "ellipsis",
+        "modifier": "command"
+      }
+    },
+    "commands": [
+      {
+        "component": "Button",
+        "props":  {
+          "label": "New",
+          "icon": "Start",
+          "modifier": "command"
+        }
+      },
+      {
+        "component": "Button",
+        "props":  {
+          "label": "New",
+          "icon": "Start",
+          "modifier": "command"
+        }
+      },
+      {
+        "component": "Button",
+        "props":  {
+          "label": "New",
+          "icon": "Start",
+          "modifier": "command"
+        }
+      },
+      {
+        "component": "Button",
+        "props":  {
+          "label": "New",
+          "icon": "Start",
+          "modifier": "command"
+        }
+      },
+      {
+        "component": "Button",
+        "props":  {
+          "label": "New",
+          "icon": "Start",
+          "modifier": "command"
+        }
+      }
+    ],
+    "sideCommands": [
+      {
+        "component": "Button",
+        "props":  {
+          "label": "New",
+          "icon": "Start",
+          "modifier": "command"
+        }
+      }
+    ]
+  },
   "data": {
     "hasSearch": true,
     "commands":  [
@@ -61,22 +129,5 @@
         "textOnly": false
       }
     ]
-  },
-  "branches": [
-    {
-      "name": "Default",
-      "default": true,
-      "template": "CommandBar.html",
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true
-        },
-        {
-          "name": "Close button",
-          "class": "ms-Dialog--close"
-        }
-      ]
-    }
-  ]
+  }
 }

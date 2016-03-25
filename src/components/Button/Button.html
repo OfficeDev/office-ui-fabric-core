@@ -8,4 +8,10 @@
   {{#if props.description}}
     <span class="ms-Button-description">{{props.description}}</span>
   {{/if}}
+  {{#if props.splitIcon}}
+    <span class="ms-Button-splitIcon"><i class="ms-Icon ms-Icon--{{props.splitIcon}}"></i></span>
+  {{/if}}
+  {{#if props.dropdownIcon}}
+    <span class="ms-Button-dropdownIcon"><i class="ms-Icon ms-Icon--{{props.dropdownIcon}}"></i></span>
+  {{/if}}
 </button>

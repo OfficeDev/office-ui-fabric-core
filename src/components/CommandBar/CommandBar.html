@@ -14,43 +14,16 @@
   {{/if}}
   <div class="ms-CommandBar-sideCommands">
     {{#each sideCommands}}
-      <div class="ms-CommandBarItem">
-        <div class="ms-CommandBarItem-linkWrapper">
-          <a class="ms-CommandBarItem-link" tabindex="1">
-            <span class="ms-CommandBarItem-icon ms-Icon {{icon}}"></span>
-            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">{{commandText}}</span>
-            {{#if hasDropdown}}
-              <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-            {{/if}}
-          </a>
-        </div>
-      </div>
+      {{renderPartial component props}}
     {{/each}}
   </div>
   <div class="ms-CommandBar-mainArea">
-     {{#each commands}}
-      <div class="ms-CommandBarItem {{#if textOnly}} ms-CommandBarItem--hasTextOnly{{/if}}">
-        <div class="ms-CommandBarItem-linkWrapper">
-          <a class="ms-CommandBarItem-link" tabindex="1">
-            <span class="ms-CommandBarItem-icon ms-Icon {{icon}}"></span>
-            <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">{{commandText}}</span>
-            {{#if hasDropdown}}
-              <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-            {{/if}}
-          </a>
-        </div>
-      </div>
+    {{#each commands}}
+      {{renderPartial component props}}
     {{/each}}
     <!-- Overflow Command -->
-    <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
-      <div class="ms-CommandBarItem-linkWrapper">
-        <a class="ms-CommandBarItem-link" tabindex="2">
-          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis"></span>
-          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Ellipsis</span>
-          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-        </a>
-      </div>
-      <ul class="ms-CommandBar-overflowMenu ms-ContextualMenu"></ul>
+    <div class="ms-CommandBarItem-overflow">
+      {{renderPartial overflow.component overflow.props}}
     </div>
     <!-- End Overflow Command -->
   </div>

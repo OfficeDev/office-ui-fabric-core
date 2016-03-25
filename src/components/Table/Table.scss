@@ -5,15 +5,15 @@
 // --------------------------------------------------
 // Data table styles
 
-
 .ms-Table {
   display: table;
   width: 100%;
+  border-collapse: collapse;
 }
 
+.ms-Table tr,
 .ms-Table-row {
   display: table-row;
-  height: 30px;
   line-height: 30px;
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-s;
@@ -52,18 +52,29 @@
   }
 }
 
+.ms-Table th,
+.ms-Table td,
 .ms-Table-cell {
   display: table-cell;
   padding: 0 10px;
 }
 
 // Style the first row as a header.
-.ms-Table-row:first-child {
+.ms-Table thead th,
+.ms-Table-head {
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
+}
 
-  .ms-Table-cell, .ms-Table-rowCheck {
+.ms-Table thead,
+.ms-Table-head {
+  td,
+  th,
+  .ms-Table-cell,
+  .ms-Table-rowCheck {
+    font-weight: normal;
+    text-align: left;
     border-bottom: 1px solid $ms-color-neutralLight;
   }
 
@@ -83,6 +94,7 @@
   display: table-cell;
   width: 20px;
   position: relative;
+  padding: 0;
 
   // Empty checkbox.
   &:before {

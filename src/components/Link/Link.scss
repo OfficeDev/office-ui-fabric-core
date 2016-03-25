@@ -24,10 +24,3 @@
 .ms-Link {
   @include ms-Link;
 }
-
-//== Modifier: Hero Links
-//
-.ms-Link.ms-Link--hero {
-  font-family: $ms-font-family-semilight;
-  padding: 2px 8px 4px;
-}

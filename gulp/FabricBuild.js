@@ -48,6 +48,7 @@ gulp.task('Fabric-buildStyles', function () {
                     title: "Building Core Fabric " + BuildConfig.fileExtension + " File"
             })))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
@@ -60,6 +61,8 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric.min.css'))
             .pipe(Plugins.cssMinify())
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
                 
     // Build full and minified Fabric RTL CSS.
@@ -79,9 +82,12 @@ gulp.task('Fabric-buildStyles', function () {
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric.rtl.min.css'))
             .pipe(Plugins.cssMinify())
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
     // Merge all current streams into one.
     return Plugins.mergeStream(fabric, fabricRtl);

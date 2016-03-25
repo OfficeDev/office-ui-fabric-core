@@ -104,7 +104,9 @@ fabric.Breadcrumb.prototype = (function() {
       }
       var a = document.createElement('a');
       a.className = 'ms-ContextualMenu-link';
-      a.setAttribute('href', item.link);
+      if (item.link !== null) {
+        a.setAttribute('href', item.link);
+      }
       a.textContent = item.text;
       li.appendChild(a);
       _contextMenu.appendChild(li);
@@ -126,7 +128,9 @@ fabric.Breadcrumb.prototype = (function() {
         var chevron = document.createElement('i');
         listItem.className = 'ms-Breadcrumb-listItem';
         a.className = 'ms-Breadcrumb-itemLink';
-        a.setAttribute('href', item.link);
+        if (item.link !== null) {
+            a.setAttribute('href', item.link);
+        }
         if(!isNaN(item.tabIndex)) {
           a.setAttribute('tabindex', item.tabIndex);
         }

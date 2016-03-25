@@ -34,6 +34,7 @@ fabric.Spinner = function(target) {
      * @memberOf fabric.Spinner
      */
     function start() {
+        stop();
         interval = setInterval(function() {
             var i = circleObjects.length;
             while(i--) {

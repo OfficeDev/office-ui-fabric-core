@@ -1,0 +1,31 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// List and Grid styles
+
+
+.ms-List {
+  @include ms-font-m;
+  @include ms-u-normalize;
+  list-style-type: none;
+}
+
+
+//== Modifier: List rendered as a grid
+//
+.ms-List.ms-List--grid {
+	@media (min-width: $ms-screen-md-min) {
+		.ms-ListItem {
+			@include ms-u-sm4;
+			float: left;
+			border-width: 0 1px 1px 0;
+		}
+
+		// Remove the border from the last column.
+		.ms-ListItem:nth-child(3n) {
+			border-width: 0 0 1px 0;
+		}
+	}
+}

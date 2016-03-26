@@ -1,0 +1,23 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Icon font-family definition
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+
+@import "Fabric.Typography.Fonts";
+
+@font-face {
+  font-family: 'Office365Icons';
+  src: url('#{$ms-font-directory}/icons/office365icons.eot?');
+  src: url('#{$ms-font-directory}/icons/office365icons.eot?#iefix') format('embedded-opentype'),
+       url('#{$ms-font-directory}/icons/office365icons.woff?') format('woff'),
+       url('#{$ms-font-directory}/icons/office365icons.ttf?') format('truetype'),
+       url('#{$ms-font-directory}/icons/office365icons.svg?#office365icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

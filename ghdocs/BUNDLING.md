@@ -11,7 +11,7 @@ Then, configure your bundle in `gulp/Config.js` in the `bundlesConfig` property.
 
 ### Exclude vs include
 #### `excludes`
-If you list your files in "excludes", the bundle will be comprised of each .scss file in `src/sass` and `src/components` **except** for the files specified. For now, component dependencies are not included when in "exclude" mode. Partial .scss files, whose filenames begin with '_' (minus the quotes), are always excluded from bundles, since they produce no output.
+If you list your files in "excludes", the bundle will be comprised of each .scss file in `src/sass` and `src/components` **except** for the files specified. For now, component dependencies are not included when in "exclude" mode. 
 
 Here's an example "excludes" bundle that excludes the Language Overrides styles:
 ```javascript
@@ -78,7 +78,7 @@ This will produce the following:
 ```
 
 #### `includes`
-If instead you use "includes", the bundle will include only the files specified. If the file is a component that has dependencies, like mentioned above, those will also be included. If you aren't sure what a component's dependencies are, look for the "dependencies" property in that component's JSON file in `src/{ComponentName}/{ComponentName}.json`. Note that the build looks for dependencies two children deep, or in other words, dependencies of dependencies. Also, as noted in `exludes` above, partial .scss files beginning with '_' will not be included in bundles, even if they are explicitly listed.
+If instead you use "includes", the bundle will include only the files specified. If the file is a component that has dependencies, like mentioned above, those will also be included. If you aren't sure what a component's dependencies are, look for the "dependencies" property in that component's JSON file in `src/{ComponentName}/{ComponentName}.json`. Note that the build looks for dependencies two children deep, or in other words, dependencies of dependencies.
 
 Here's an example "include" bundle that includes only the Button and PersonaCard components:
 ```javascript

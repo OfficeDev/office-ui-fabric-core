@@ -1,0 +1,188 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Video Portal Example App</title>
+  
+  <!-- jQuery, required for the sample Component plugins -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Fabric core and Components CSS -->
+  <link rel="stylesheet" type="text/css" href="../../css/fabric.css">
+  <link rel="stylesheet" type="text/css" href="../../css/fabric.components.css">
+
+  <!-- Application-specific CSS -->
+  <link rel="stylesheet" href="css/VideoPortal.css">
+</head>
+<body>
+  <div class="VideoPortal">
+    <div class="VideoPortal-content">
+    <!-- Host for NavBar component -->
+      <div class="VideoPortal-navBar">
+        <!-- Fabric NavBar component -->
+        <div class="ms-NavBar">
+          <div class="ms-NavBar-openMenu js-openMenu">
+            <i class="ms-Icon ms-Icon--menu"></i>
+          </div>
+          <ul class="ms-NavBar-items">
+            <li class="ms-NavBar-item ms-NavBar-item--search ms-u-hiddenSm">
+              <div class="ms-TextField">
+                <input class="ms-TextField-field">
+              </div>
+            </li>
+            <li class="ms-NavBar-item"><a class="ms-NavBar-link" href="index.html">Home</a></li>
+            <li class="ms-NavBar-item"><a class="ms-NavBar-link" href="channels.html">All Channels</a></li>
+            <li class="ms-NavBar-item ms-NavBar-item--hasMenu">
+              <a class="ms-NavBar-link" href="#">My Channels</a>
+              <i class="ms-NavBar-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+              <ul class="ms-ContextualMenu">
+                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Employee interviews</a></li>
+                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Executive Briefings</a></li>
+                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Web Tech Talks</a></li>
+              </ul>
+            </li>
+            <li class="ms-NavBar-item ms-NavBar-item--right"><i class="ms-Icon ms-Icon--upload"></i> Upload</li>
+          </ul>
+        </div>
+      </div>
+      <div class="VideoPortal-page PlayerPage">
+        <!-- Video player container -->
+        <div class="PlayerPage-theater">
+          <div class="PlayerPage-theaterBackground ms-bgColor-neutralDark"></div>
+          <div class="PlayerPage-theaterPlayer u-contentCenter">
+            <div class="VideoPlayer">
+              <div class="VideoPlayer-player">
+                <!-- Actual video player element goes here.
+                     Can be a <video> element or embedded iFrame player. -->
+                <div class="VideoPlayer-iframe">
+                  <img class="VideoList-thumbImg" src="http://lorempixel.com/960/540/business/4" alt="Video Title">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main page content -->
+        <div class="PlayerPage-content u-contentCenter">
+          <div class="PlayerPage-grid ms-Grid">
+            <div class="ms-Grid-row">
+              <div class="PlayerPage-info PlayerPage-contentCell ms-u-clearfix ms-Grid-col ms-u-sm12 ms-u-lg10 ms-u-xl8">
+                <div class="PlayerPage-header">
+                  <div class="PlayerPage-titleArea">
+                    <h3 class="PlayerPage-title ms-font-xl ms-fontWeight-light">
+                       <span class="PlayerPage-titleText">Dynamically procrastinate B2C users after installed base benefits</span>
+                     </h3>
+                  </div>
+                  
+                  <div class="PlayerPage-channel">
+                    <a href="channel.html" class="PlayerPage-channelLink ms-fontColor-neutralSecondary ms-fontWeight-light" style="border-color: #dc0606">
+                      <span class="PlayerPage-channelText">
+                        Community Videos
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="PlayerPage-descriptionArea u-clearFloat">
+                  <div class="PlayerPage-metaData u-clearFloat ms-font-m ms-fontSize-l ms-fontColor-neutralSecondaryAlt ms-fontWeight-semilight">
+                    <span class="ms-u-hiddenSm">Uploaded on</span>
+                    <span class="PlayerPage-date">July 27, 2014</span>
+                    <span class="PlayerPage-titleSeparator ms-fontColor-neutralTertiaryAlt">|</span>
+                    <span class="PlayerPage-viewCountText">345 views</span>
+                  </div>
+
+                  <p class="PlayerPage-description ms-font-m-plus">
+                    Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+                  </p>
+                </div>
+              </div>
+
+              <div class="PlayerPage-related PlayerPage-contentCell ms-Grid-col ms-u-sm12 ms-u-xl4">
+                <h3 class="PlayerPage-relatedTitle ms-font-xl ms-fontWeight-semilight">You might also like</h3>
+
+                <!-- Start list of related/recommended videos -->
+                <div class="PlayerPage-relatedList ms-Grid">
+                  <div class="ms-Grid-row">
+                    <div class="VideoList-item ms-Grid-col ms-Grid ms-u-sm12 ms-u-md6 ms-u-lg4 ms-u-xl12">
+                      <div class="ms-Grid-row">
+                        <div class="VideoList-thumb ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html" class="VideoList-thumbLink">
+                            <img class="VideoList-thumbImg" src="http://lorempixel.com/300/168/business/5" alt="Video Title">
+                            <span class="VideoList-thumbCaption">3:49</span>   
+                          </a>
+                        </div>
+                        <div class="VideoList-text ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html"><span class="VideoList-title ms-font-m-plus" title="Dramatically maintain clicks-and-mortar solutions.">Dramatically maintain clicks-and-mortar solutions</span></a>
+                          <span class="VideoList-viewCount ms-font-s-plus ms-fontColor-neutralSecondaryAlt">946 views</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="VideoList-item ms-Grid-col ms-Grid ms-u-sm12 ms-u-md6 ms-u-lg4 ms-u-xl12">
+                      <div class="ms-Grid-row">
+                        <div class="VideoList-thumb ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html" class="VideoList-thumbLink">
+                            <img class="VideoList-thumbImg" src="http://lorempixel.com/300/168/business/8" alt="Video Title">
+                            <span class="VideoList-thumbCaption">3:49</span>   
+                          </a>
+                        </div>
+                        <div class="VideoList-text ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html"><span class="VideoList-title ms-font-m-plus" title="Completely synergize resource sucking relationships">Completely synergize resource sucking relationships</span></a>
+                          <span class="VideoList-viewCount ms-font-s-plus ms-fontColor-neutralSecondaryAlt">946 views</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="VideoList-item ms-Grid-col ms-Grid ms-u-sm12 ms-u-md6 ms-u-lg4 ms-u-xl12">
+                      <div class="ms-Grid-row">
+                        <div class="VideoList-thumb ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html" class="VideoList-thumbLink">
+                            <img class="VideoList-thumbImg" src="http://lorempixel.com/300/168/business/7" alt="Video Title">
+                            <span class="VideoList-thumbCaption">3:49</span>   
+                          </a>
+                        </div>
+                        <div class="VideoList-text ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html"><span class="VideoList-title ms-font-m-plus" title="Efficiently procrastinate B2C users after installed base benefits">Efficiently procrastinate B2C users after installed base benefits</span></a>
+                          <span class="VideoList-viewCount ms-font-s-plus ms-fontColor-neutralSecondaryAlt">946 views</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="VideoList-item ms-Grid-col ms-Grid ms-u-sm12 ms-u-md6 ms-u-lg4 ms-u-xl12">
+                      <div class="ms-Grid-row">
+                        <div class="VideoList-thumb ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html" class="VideoList-thumbLink">
+                            <img class="VideoList-thumbImg" src="http://lorempixel.com/300/168/business/4" alt="Video Title">
+                            <span class="VideoList-thumbCaption">3:49</span>   
+                          </a>
+                        </div>
+                        <div class="VideoList-text ms-Grid-col ms-u-sm12 ms-u-lg12 ms-u-xl6">
+                          <a href="player.html"><span class="VideoList-title ms-font-m-plus" title="Dramatically maintain clicks-and-mortar solutions.">Seamlessly visualize quality intellectual capital</span></a>
+                          <span class="VideoList-viewCount ms-font-s-plus ms-fontColor-neutralSecondaryAlt">946 views</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Fabric jQuery plugin for NavBar component -->
+  <script src="../../components/NavBar/Jquery.Navbar.js"></script>
+  <script>
+    $(document).ready(function() {
+        // Invoke the NavBar jQuery plugin if it's available
+        if ($.fn.NavBar) {
+          $('.ms-NavBar').NavBar();
+        }
+    });
+  </script>
+</body>
+</html>

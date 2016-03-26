@@ -1,0 +1,76 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Font definitions
+
+@import "Fabric.Typography.Fonts";
+
+// Additional @font-face rules for the Leelawadee font.
+@font-face {
+  font-family: "Leelawadee UI Bold";
+  src: url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.eot?#iefix') format('embedded-opentype'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.woff') format('woff'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.ttf') format('truetype'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold#LeelawadeeUI-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Leelawadee UI";
+  src: url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.eot?#iefix') format('embedded-opentype'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.woff') format('woff'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.ttf') format('truetype'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular#LeelawadeeUI-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Leelawadee UI Semilight";
+  src: url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.eot?#iefix') format('embedded-opentype'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.ttf') format('truetype'),
+       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight#LeelawadeeUI-Semilight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// Mixins to generate language-specific font faces.
+@include SegoeUIArabicLight;
+@include SegoeUIArabicRegular;
+@include SegoeUIArabicSemibold;
+@include SegoeUIArabicSemilight;
+
+@include SegoeUICyrillicLight;
+@include SegoeUICyrillicRegular;
+@include SegoeUICyrillicSemibold;
+@include SegoeUICyrillicSemilight;
+
+@include SegoeUIEastEuropeanLight;
+@include SegoeUIEastEuropeanRegular;
+@include SegoeUIEastEuropeanSemibold;
+@include SegoeUIEastEuropeanSemilight;
+
+@include SegoeUIGreekLight;
+@include SegoeUIGreekRegular;
+@include SegoeUIGreekSemibold;
+@include SegoeUIGreekSemilight;
+
+@include SegoeUIHebrewLight;
+@include SegoeUIHebrewRegular;
+@include SegoeUIHebrewSemibold;
+@include SegoeUIHebrewSemilight;
+
+@include SegoeUIVietnameseLight;
+@include SegoeUIVietnameseRegular;
+@include SegoeUIVietnameseSemibold;
+@include SegoeUIVietnameseSemilight;
+
+@include SegoeUIWestEuropeanLight;
+@include SegoeUIWestEuropeanRegular;
+@include SegoeUIWestEuropeanSemibold;
+@include SegoeUIWestEuropeanSemilight;

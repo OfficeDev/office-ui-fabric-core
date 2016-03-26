@@ -1,0 +1,1022 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Responsive utilities based on defined variables, component visibility,
+// and size for different displays.
+@import "./Fabric.Responsive.Variables";
+@import "./Fabric.Responsive.Utilities.Variables";
+
+//== Responsive visiblity classes
+//
+
+// Hidden on small
+@media (max-width: $ms-screen-sm-max) {
+  .ms-u-hiddenSm,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on medium
+@media (min-width: $ms-screen-md-min) and (max-width: $ms-screen-md-max) {
+  .ms-u-hiddenMd,
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on large
+@media (min-width: $ms-screen-lg-min) and (max-width: $ms-screen-lg-max) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLg,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra large
+@media (min-width: $ms-screen-xl-min) and (max-width: $ms-screen-xl-max) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXl,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra extra large
+@media (min-width: $ms-screen-xxl-min) and (max-width: $ms-screen-xxl-max) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxl,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra extra extra large
+@media (min-width: $ms-screen-xxxl-min) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxxl {
+    display: none !important;
+  }
+}
+
+
+//== Responsive sizes
+//
+// These are all based on a 12 column grid. For example,
+// ms-u-sm6 sets the width to 50% (6/12) on small screens.
+
+// Small screens (default)
+.ms-u-sm12 {
+  @include ms-u-sm12;
+}
+.ms-u-sm11 {
+  @include ms-u-sm11;
+}
+.ms-u-sm10 {
+  @include ms-u-sm10;
+}
+.ms-u-sm9 {
+  @include ms-u-sm9;
+}
+.ms-u-sm8 {
+  @include ms-u-sm8;
+}
+.ms-u-sm7 {
+  @include ms-u-sm7;
+}
+.ms-u-sm6 {
+  @include ms-u-sm6;
+}
+.ms-u-sm5 {
+  @include ms-u-sm5;
+}
+.ms-u-sm4 {
+  @include ms-u-sm4;
+}
+.ms-u-sm3 {
+  @include ms-u-sm3;
+}
+.ms-u-sm2 {
+  @include ms-u-sm2;
+}
+.ms-u-sm1 {
+  @include ms-u-sm1;
+}
+.ms-u-smPull12 {
+  @include ms-u-smPull12;
+}
+.ms-u-smPull11 {
+  @include ms-u-smPull11;
+}
+.ms-u-smPull10 {
+  @include ms-u-smPull10;
+}
+.ms-u-smPull9 {
+  @include ms-u-smPull9;
+}
+.ms-u-smPull8 {
+  @include ms-u-smPull8;
+}
+.ms-u-smPull7 {
+  @include ms-u-smPull7;
+}
+.ms-u-smPull6 {
+  @include ms-u-smPull6;
+}
+.ms-u-smPull5 {
+  @include ms-u-smPull5;
+}
+.ms-u-smPull4 {
+  @include ms-u-smPull4;
+}
+.ms-u-smPull3 {
+  @include ms-u-smPull3;
+}
+.ms-u-smPull2 {
+  @include ms-u-smPull2;
+}
+.ms-u-smPull1 {
+  @include ms-u-smPull1;
+}
+.ms-u-smPull0 {
+  @include ms-u-smPull0;
+}
+.ms-u-smPush12 {
+  @include ms-u-smPush12;
+}
+.ms-u-smPush11 {
+  @include ms-u-smPush11;
+}
+.ms-u-smPush10 {
+  @include ms-u-smPush10;
+}
+.ms-u-smPush9 {
+  @include ms-u-smPush9;
+}
+.ms-u-smPush8 {
+  @include ms-u-smPush8;
+}
+.ms-u-smPush7 {
+  @include ms-u-smPush7;
+}
+.ms-u-smPush6 {
+  @include ms-u-smPush6;
+}
+.ms-u-smPush5 {
+  @include ms-u-smPush5;
+}
+.ms-u-smPush4 {
+  @include ms-u-smPush4;
+}
+.ms-u-smPush3 {
+  @include ms-u-smPush3;
+}
+.ms-u-smPush2 {
+  @include ms-u-smPush2;
+}
+.ms-u-smPush1 {
+  @include ms-u-smPush1;
+}
+.ms-u-smPush0 {
+  @include ms-u-smPush0;
+}
+
+// Small Offset classes 0 ... 11
+.ms-u-smOffset11 {
+  margin-left: 91.66666666666666%;
+}
+.ms-u-smOffset10 {
+  margin-left: 83.33333333333334%;
+}
+.ms-u-smOffset9 {
+  margin-left: 75%;
+}
+.ms-u-smOffset8 {
+  margin-left: 66.66666666666666%;
+}
+.ms-u-smOffset7 {
+  margin-left: 58.333333333333336%;
+}
+.ms-u-smOffset6 {
+  margin-left: 50%;
+}
+.ms-u-smOffset5 {
+  margin-left: 41.66666666666667%;
+}
+.ms-u-smOffset4 {
+  margin-left: 33.33333333333333%;
+}
+.ms-u-smOffset3 {
+  margin-left: 25%;
+}
+.ms-u-smOffset2 {
+  margin-left: 16.666666666666664%;
+}
+.ms-u-smOffset1 {
+  margin-left: 8.333333333333332%;
+}
+.ms-u-smOffset0 {
+  margin-left: 0;
+}
+
+// Medium screens
+@media (min-width: $ms-screen-md-min) {
+  .ms-u-md12 {
+    @include ms-u-md12;
+  }
+  .ms-u-md11 {
+    @include ms-u-md11;
+  }
+  .ms-u-md10 {
+    @include ms-u-md10;
+  }
+  .ms-u-md9 {
+    @include ms-u-md9;
+  }
+  .ms-u-md8 {
+    @include ms-u-md8;
+  }
+  .ms-u-md7 {
+    @include ms-u-md7;
+  }
+  .ms-u-md6 {
+    @include ms-u-md6;
+  }
+  .ms-u-md5 {
+    @include ms-u-md5;
+  }
+  .ms-u-md4 {
+    @include ms-u-md4;
+  }
+  .ms-u-md3 {
+    @include ms-u-md3;
+  }
+  .ms-u-md2 {
+    @include ms-u-md2;
+  }
+  .ms-u-md1 {
+    @include ms-u-md1;
+  }
+  .ms-u-mdPull12 {
+    @include ms-u-mdPull12;
+  }
+  .ms-u-mdPull11 {
+    @include ms-u-mdPull11;
+  }
+  .ms-u-mdPull10 {
+    @include ms-u-mdPull10;
+  }
+  .ms-u-mdPull9 {
+    @include ms-u-mdPull9;
+  }
+  .ms-u-mdPull8 {
+    @include ms-u-mdPull8;
+  }
+  .ms-u-mdPull7 {
+    @include ms-u-mdPull7;
+  }
+  .ms-u-mdPull6 {
+    @include ms-u-mdPull6;
+  }
+  .ms-u-mdPull5 {
+    @include ms-u-mdPull5;
+  }
+  .ms-u-mdPull4 {
+    @include ms-u-mdPull4;
+  }
+  .ms-u-mdPull3 {
+    @include ms-u-mdPull3;
+  }
+  .ms-u-mdPull2 {
+    @include ms-u-mdPull2;
+  }
+  .ms-u-mdPull1 {
+    @include ms-u-mdPull1;
+  }
+  .ms-u-mdPull0 {
+    @include ms-u-mdPull0;
+  }
+  .ms-u-mdPush12 {
+    @include ms-u-mdPush12;
+  }
+  .ms-u-mdPush11 {
+    @include ms-u-mdPush11;
+  }
+  .ms-u-mdPush10 {
+    @include ms-u-mdPush10;
+  }
+  .ms-u-mdPush9 {
+    @include ms-u-mdPush9;
+  }
+  .ms-u-mdPush8 {
+    @include ms-u-mdPush8;
+  }
+  .ms-u-mdPush7 {
+    @include ms-u-mdPush7;
+  }
+  .ms-u-mdPush6 {
+    @include ms-u-mdPush6;
+  }
+  .ms-u-mdPush5 {
+    @include ms-u-mdPush5;
+  }
+  .ms-u-mdPush4 {
+    @include ms-u-mdPush4;
+  }
+  .ms-u-mdPush3 {
+    @include ms-u-mdPush3;
+  }
+  .ms-u-mdPush2 {
+    @include ms-u-mdPush2;
+  }
+  .ms-u-mdPush1 {
+    @include ms-u-mdPush1;
+  }
+  .ms-u-mdPush0 {
+    @include ms-u-mdPush0;
+  }
+  
+  // Medium Offset classes 0 ... 11
+  .ms-u-mdOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+  .ms-u-mdOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+  .ms-u-mdOffset9 {
+    margin-left: 75%;
+  }
+  .ms-u-mdOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+  .ms-u-mdOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+  .ms-u-mdOffset6 {
+    margin-left: 50%;
+  }
+  .ms-u-mdOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+  .ms-u-mdOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+  .ms-u-mdOffset3 {
+    margin-left: 25%;
+  }
+  .ms-u-mdOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+  .ms-u-mdOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+  .ms-u-mdOffset0 {
+    margin-left: 0;
+  }
+}
+
+// Large screens
+@media (min-width: $ms-screen-lg-min) {
+  .ms-u-lg12 {
+    @include ms-u-lg12;
+  }
+  .ms-u-lg11 {
+    @include ms-u-lg11;
+  }
+  .ms-u-lg10 {
+    @include ms-u-lg10;
+  }
+  .ms-u-lg9 {
+    @include ms-u-lg9;
+  }
+  .ms-u-lg8 {
+    @include ms-u-lg8;
+  }
+  .ms-u-lg7 {
+    @include ms-u-lg7;
+  }
+  .ms-u-lg6 {
+    @include ms-u-lg6;
+  }
+  .ms-u-lg5 {
+    @include ms-u-lg5;
+  }
+  .ms-u-lg4 {
+    @include ms-u-lg4;
+  }
+  .ms-u-lg3 {
+    @include ms-u-lg3;
+  }
+  .ms-u-lg2 {
+    @include ms-u-lg2;
+  }
+  .ms-u-lg1 {
+    @include ms-u-lg1;
+  }
+  .ms-u-lgPull12 {
+    @include ms-u-lgPull12;
+  }
+  .ms-u-lgPull11 {
+    @include ms-u-lgPull11;
+  }
+  .ms-u-lgPull10 {
+    @include ms-u-lgPull10;
+  }
+  .ms-u-lgPull9 {
+    @include ms-u-lgPull9;
+  }
+  .ms-u-lgPull8 {
+    @include ms-u-lgPull8;
+  }
+  .ms-u-lgPull7 {
+    @include ms-u-lgPull7;
+  }
+  .ms-u-lgPull6 {
+    @include ms-u-lgPull6;
+  }
+  .ms-u-lgPull5 {
+    @include ms-u-lgPull5;
+  }
+  .ms-u-lgPull4 {
+    @include ms-u-lgPull4;
+  }
+  .ms-u-lgPull3 {
+    @include ms-u-lgPull3;
+  }
+  .ms-u-lgPull2 {
+    @include ms-u-lgPull2;
+  }
+  .ms-u-lgPull1 {
+    @include ms-u-lgPull1;
+  }
+  .ms-u-lgPull0 {
+    @include ms-u-lgPull0;
+  }
+  .ms-u-lgPush12 {
+    @include ms-u-lgPush12;
+  }
+  .ms-u-lgPush11 {
+    @include ms-u-lgPush11;
+  }
+  .ms-u-lgPush10 {
+    @include ms-u-lgPush10;
+  }
+  .ms-u-lgPush9 {
+    @include ms-u-lgPush9;
+  }
+  .ms-u-lgPush8 {
+    @include ms-u-lgPush8;
+  }
+  .ms-u-lgPush7 {
+    @include ms-u-lgPush7;
+  }
+  .ms-u-lgPush6 {
+    @include ms-u-lgPush6;
+  }
+  .ms-u-lgPush5 {
+    @include ms-u-lgPush5;
+  }
+  .ms-u-lgPush4 {
+    @include ms-u-lgPush4;
+  }
+  .ms-u-lgPush3 {
+    @include ms-u-lgPush3;
+  }
+  .ms-u-lgPush2 {
+    @include ms-u-lgPush2;
+  }
+  .ms-u-lgPush1 {
+    @include ms-u-lgPush1;
+  }
+  .ms-u-lgPush0 {
+    @include ms-u-lgPush0;
+  }
+  
+  // Large Offset classes 0 ... 11
+  .ms-u-lgOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+  .ms-u-lgOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+  .ms-u-lgOffset9 {
+    margin-left: 75%;
+  }
+  .ms-u-lgOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+  .ms-u-lgOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+  .ms-u-lgOffset6 {
+    margin-left: 50%;
+  }
+  .ms-u-lgOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+  .ms-u-lgOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+  .ms-u-lgOffset3 {
+    margin-left: 25%;
+  }
+  .ms-u-lgOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+  .ms-u-lgOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+  .ms-u-lgOffset0 {
+    margin-left: 0;
+  }
+}
+
+// Extra large screens
+@media (min-width: $ms-screen-xl-min) {
+  .ms-u-xl12 {
+    @include ms-u-xl12;
+  }
+  .ms-u-xl11 {
+    @include ms-u-xl11;
+  }
+  .ms-u-xl10 {
+    @include ms-u-xl10;
+  }
+  .ms-u-xl9 {
+    @include ms-u-xl9;
+  }
+  .ms-u-xl8 {
+    @include ms-u-xl8;
+  }
+  .ms-u-xl7 {
+    @include ms-u-xl7;
+  }
+  .ms-u-xl6 {
+    @include ms-u-xl6;
+  }
+  .ms-u-xl5 {
+    @include ms-u-xl5;
+  }
+  .ms-u-xl4 {
+    @include ms-u-xl4;
+  }
+  .ms-u-xl3 {
+    @include ms-u-xl3;
+  }
+  .ms-u-xl2 {
+    @include ms-u-xl2;
+  }
+  .ms-u-xl1 {
+    @include ms-u-xl1;
+  }
+  .ms-u-xlPull12 {
+    @include ms-u-xlPull12;
+  }
+  .ms-u-xlPull11 {
+    @include ms-u-xlPull11;
+  }
+  .ms-u-xlPull10 {
+    @include ms-u-xlPull10;
+  }
+  .ms-u-xlPull9 {
+    @include ms-u-xlPull9;
+  }
+  .ms-u-xlPull8 {
+    @include ms-u-xlPull8;
+  }
+  .ms-u-xlPull7 {
+    @include ms-u-xlPull7;
+  }
+  .ms-u-xlPull6 {
+    @include ms-u-xlPull6;
+  }
+  .ms-u-xlPull5 {
+    @include ms-u-xlPull5;
+  }
+  .ms-u-xlPull4 {
+    @include ms-u-xlPull4;
+  }
+  .ms-u-xlPull3 {
+    @include ms-u-xlPull3;
+  }
+  .ms-u-xlPull2 {
+    @include ms-u-xlPull2;
+  }
+  .ms-u-xlPull1 {
+    @include ms-u-xlPull1;
+  }
+  .ms-u-xlPull0 {
+    @include ms-u-xlPull0;
+  }
+  .ms-u-xlPush12 {
+    @include ms-u-xlPush12;
+  }
+  .ms-u-xlPush11 {
+    @include ms-u-xlPush11;
+  }
+  .ms-u-xlPush10 {
+    @include ms-u-xlPush10;
+  }
+  .ms-u-xlPush9 {
+    @include ms-u-xlPush9;
+  }
+  .ms-u-xlPush8 {
+    @include ms-u-xlPush8;
+  }
+  .ms-u-xlPush7 {
+    @include ms-u-xlPush7;
+  }
+  .ms-u-xlPush6 {
+    @include ms-u-xlPush6;
+  }
+  .ms-u-xlPush5 {
+    @include ms-u-xlPush5;
+  }
+  .ms-u-xlPush4 {
+    @include ms-u-xlPush4;
+  }
+  .ms-u-xlPush3 {
+    @include ms-u-xlPush3;
+  }
+  .ms-u-xlPush2 {
+    @include ms-u-xlPush2;
+  }
+  .ms-u-xlPush1 {
+    @include ms-u-xlPush1;
+  }
+  .ms-u-xlPush0 {
+    @include ms-u-xlPush0;
+  }
+  
+  // Large Offset classes 0 ... 11
+  .ms-u-xlOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+  .ms-u-xlOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+  .ms-u-xlOffset9 {
+    margin-left: 75%;
+  }
+  .ms-u-xlOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+  .ms-u-xlOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+  .ms-u-xlOffset6 {
+    margin-left: 50%;
+  }
+  .ms-u-xlOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+  .ms-u-xlOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+  .ms-u-xlOffset3 {
+    margin-left: 25%;
+  }
+  .ms-u-xlOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+  .ms-u-xlOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+  .ms-u-xlOffset0 {
+    margin-left: 0;
+  }
+}
+
+// Extra extra large screens
+@media (min-width: $ms-screen-xxl-min) {
+  .ms-u-xxl12 {
+    @include ms-u-xxl12;
+  }
+  .ms-u-xxl11 {
+    @include ms-u-xxl11;
+  }
+  .ms-u-xxl10 {
+    @include ms-u-xxl10;
+  }
+  .ms-u-xxl9 {
+    @include ms-u-xxl9;
+  }
+  .ms-u-xxl8 {
+    @include ms-u-xxl8;
+  }
+  .ms-u-xxl7 {
+    @include ms-u-xxl7;
+  }
+  .ms-u-xxl6 {
+    @include ms-u-xxl6;
+  }
+  .ms-u-xxl5 {
+    @include ms-u-xxl5;
+  }
+  .ms-u-xxl4 {
+    @include ms-u-xxl4;
+  }
+  .ms-u-xxl3 {
+    @include ms-u-xxl3;
+  }
+  .ms-u-xxl2 {
+    @include ms-u-xxl2;
+  }
+  .ms-u-xxl1 {
+    @include ms-u-xxl1;
+  }
+  .ms-u-xxlPull12 {
+    @include ms-u-xxlPull12;
+  }
+  .ms-u-xxlPull11 {
+    @include ms-u-xxlPull11;
+  }
+  .ms-u-xxlPull10 {
+    @include ms-u-xxlPull10;
+  }
+  .ms-u-xxlPull9 {
+    @include ms-u-xxlPull9;
+  }
+  .ms-u-xxlPull8 {
+    @include ms-u-xxlPull8;
+  }
+  .ms-u-xxlPull7 {
+    @include ms-u-xxlPull7;
+  }
+  .ms-u-xxlPull6 {
+    @include ms-u-xxlPull6;
+  }
+  .ms-u-xxlPull5 {
+    @include ms-u-xxlPull5;
+  }
+  .ms-u-xxlPull4 {
+    @include ms-u-xxlPull4;
+  }
+  .ms-u-xxlPull3 {
+    @include ms-u-xxlPull3;
+  }
+  .ms-u-xxlPull2 {
+    @include ms-u-xxlPull2;
+  }
+  .ms-u-xxlPull1 {
+    @include ms-u-xxlPull1;
+  }
+  .ms-u-xxlPull0 {
+    @include ms-u-xxlPull0;
+  }
+  .ms-u-xxlPush12 {
+    @include ms-u-xxlPush12;
+  }
+  .ms-u-xxlPush11 {
+    @include ms-u-xxlPush11;
+  }
+  .ms-u-xxlPush10 {
+    @include ms-u-xxlPush10;
+  }
+  .ms-u-xxlPush9 {
+    @include ms-u-xxlPush9;
+  }
+  .ms-u-xxlPush8 {
+    @include ms-u-xxlPush8;
+  }
+  .ms-u-xxlPush7 {
+    @include ms-u-xxlPush7;
+  }
+  .ms-u-xxlPush6 {
+    @include ms-u-xxlPush6;
+  }
+  .ms-u-xxlPush5 {
+    @include ms-u-xxlPush5;
+  }
+  .ms-u-xxlPush4 {
+    @include ms-u-xxlPush4;
+  }
+  .ms-u-xxlPush3 {
+    @include ms-u-xxlPush3;
+  }
+  .ms-u-xxlPush2 {
+    @include ms-u-xxlPush2;
+  }
+  .ms-u-xxlPush1 {
+    @include ms-u-xxlPush1;
+  }
+  .ms-u-xxlPush0 {
+    @include ms-u-xxlPush0;
+  }
+  
+  // Extra extra large Offset classes 0 ... 11
+  .ms-u-xxlOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+  .ms-u-xxlOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+  .ms-u-xxlOffset9 {
+    margin-left: 75%;
+  }
+  .ms-u-xxlOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+  .ms-u-xxlOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+  .ms-u-xxlOffset6 {
+    margin-left: 50%;
+  }
+  .ms-u-xxlOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+  .ms-u-xxlOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+  .ms-u-xxlOffset3 {
+    margin-left: 25%;
+  }
+  .ms-u-xxlOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+  .ms-u-xxlOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+  .ms-u-xxlOffset0 {
+    margin-left: 0;
+  }
+}
+
+// Extra extra extra large screens
+@media (min-width: $ms-screen-xxxl-min) {
+  .ms-u-xxxl12 {
+    @include ms-u-xxxl12;
+  }
+  .ms-u-xxxl11 {
+    @include ms-u-xxxl11;
+  }
+  .ms-u-xxxl10 {
+    @include ms-u-xxxl10;
+  }
+  .ms-u-xxxl9 {
+    @include ms-u-xxxl9;
+  }
+  .ms-u-xxxl8 {
+    @include ms-u-xxxl8;
+  }
+  .ms-u-xxxl7 {
+    @include ms-u-xxxl7;
+  }
+  .ms-u-xxxl6 {
+    @include ms-u-xxxl6;
+  }
+  .ms-u-xxxl5 {
+    @include ms-u-xxxl5;
+  }
+  .ms-u-xxxl4 {
+    @include ms-u-xxxl4;
+  }
+  .ms-u-xxxl3 {
+    @include ms-u-xxxl3;
+  }
+  .ms-u-xxxl2 {
+    @include ms-u-xxxl2;
+  }
+  .ms-u-xxxl1 {
+    @include ms-u-xxxl1;
+  }
+  .ms-u-xxxlPull12 {
+    @include ms-u-xxxlPull12;
+  }
+  .ms-u-xxxlPull11 {
+    @include ms-u-xxxlPull11;
+  }
+  .ms-u-xxxlPull10 {
+    @include ms-u-xxxlPull10;
+  }
+  .ms-u-xxxlPull9 {
+    @include ms-u-xxxlPull9;
+  }
+  .ms-u-xxxlPull8 {
+    @include ms-u-xxxlPull8;
+  }
+  .ms-u-xxxlPull7 {
+    @include ms-u-xxxlPull7;
+  }
+  .ms-u-xxxlPull6 {
+    @include ms-u-xxxlPull6;
+  }
+  .ms-u-xxxlPull5 {
+    @include ms-u-xxxlPull5;
+  }
+  .ms-u-xxxlPull4 {
+    @include ms-u-xxxlPull4;
+  }
+  .ms-u-xxxlPull3 {
+    @include ms-u-xxxlPull3;
+  }
+  .ms-u-xxxlPull2 {
+    @include ms-u-xxxlPull2;
+  }
+  .ms-u-xxxlPull1 {
+    @include ms-u-xxxlPull1;
+  }
+  .ms-u-xxxlPull0 {
+    @include ms-u-xxxlPull0;
+  }
+  .ms-u-xxxlPush12 {
+    @include ms-u-xxxlPush12;
+  }
+  .ms-u-xxxlPush11 {
+    @include ms-u-xxxlPush11;
+  }
+  .ms-u-xxxlPush10 {
+    @include ms-u-xxxlPush10;
+  }
+  .ms-u-xxxlPush9 {
+    @include ms-u-xxxlPush9;
+  }
+  .ms-u-xxxlPush8 {
+    @include ms-u-xxxlPush8;
+  }
+  .ms-u-xxxlPush7 {
+    @include ms-u-xxxlPush7;
+  }
+  .ms-u-xxxlPush6 {
+    @include ms-u-xxxlPush6;
+  }
+  .ms-u-xxxlPush5 {
+    @include ms-u-xxxlPush5;
+  }
+  .ms-u-xxxlPush4 {
+    @include ms-u-xxxlPush4;
+  }
+  .ms-u-xxxlPush3 {
+    @include ms-u-xxxlPush3;
+  }
+  .ms-u-xxxlPush2 {
+    @include ms-u-xxxlPush2;
+  }
+  .ms-u-xxxlPush1 {
+    @include ms-u-xxxlPush1;
+  }
+  .ms-u-xxxlPush0 {
+    @include ms-u-xxxlPush0;
+  }
+  
+  // Extra extra extra large Offset classes 0 ... 11
+  .ms-u-xxxlOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+  .ms-u-xxxlOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+  .ms-u-xxxlOffset9 {
+    margin-left: 75%;
+  }
+  .ms-u-xxxlOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+  .ms-u-xxxlOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+  .ms-u-xxxlOffset6 {
+    margin-left: 50%;
+  }
+  .ms-u-xxxlOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+  .ms-u-xxxlOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+  .ms-u-xxxlOffset3 {
+    margin-left: 25%;
+  }
+  .ms-u-xxxlOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+  .ms-u-xxxlOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+  .ms-u-xxxlOffset0 {
+    margin-left: 0;
+  }
+}

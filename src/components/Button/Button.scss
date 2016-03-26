@@ -79,7 +79,6 @@
 	display: none;
 }
 
-
 //== Modifier: Primary action button
 //
 .ms-Button.ms-Button--primary {
@@ -324,4 +323,13 @@
 // Add space between adjacent command buttons.
 .ms-Button.ms-Button--command + .ms-Button.ms-Button--command {
 	margin-left: 14px;
+}
+
+//== Modifier: Button with no label
+//
+
+.ms-Button.ms-Button--noLabel {
+  .ms-Button-icon {
+    margin-right: 0;
+  }
 }

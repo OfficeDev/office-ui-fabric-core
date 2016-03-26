@@ -10,19 +10,18 @@
     },
   "class": "ms-CommandBar",
   "dependencies": [
-    "ContextualMenu"
+    "ContextualMenu",
+    "Button"
   ],
   "props": {
     "searchBox": {
       "component": "SearchBox",
       "props":  {
-        //to be figured outttt
       }
     },
     "overflow": {
       "component": "Button",
       "props":  {
-        "label": "Overflow",
         "icon": "ellipsis",
         "modifier": "command"
       }
@@ -32,7 +31,7 @@
         "component": "Button",
         "props":  {
           "label": "New",
-          "icon": "Start",
+          "icon": "star",
           "modifier": "command"
         }
       },
@@ -40,7 +39,7 @@
         "component": "Button",
         "props":  {
           "label": "New",
-          "icon": "Start",
+          "icon": "star",
           "modifier": "command"
         }
       },
@@ -48,7 +47,7 @@
         "component": "Button",
         "props":  {
           "label": "New",
-          "icon": "Start",
+          "icon": "star",
           "modifier": "command"
         }
       },
@@ -56,7 +55,7 @@
         "component": "Button",
         "props":  {
           "label": "New",
-          "icon": "Start",
+          "icon": "star",
           "modifier": "command"
         }
       },
@@ -64,7 +63,7 @@
         "component": "Button",
         "props":  {
           "label": "New",
-          "icon": "Start",
+          "icon": "star",
           "modifier": "command"
         }
       }
@@ -74,59 +73,9 @@
         "component": "Button",
         "props":  {
           "label": "New",
-          "icon": "Start",
+          "icon": "star",
           "modifier": "command"
         }
-      }
-    ]
-  },
-  "data": {
-    "hasSearch": true,
-    "commands":  [
-      {
-        "icon": "ms-Icon--start",
-        "commandText": "New",
-        "hasDropdown": false,
-        "hasTextOnly": false
-      },
-      {
-        "icon": "ms-Icon--x",
-        "commandText": "Delete",
-        "hasDropdown": false,
-        "hasTextOnly": false
-      },
-      {
-        "icon": "ms-Icon--mailDown",
-        "commandText": "Archive",
-        "hasDropdown": false,
-        "hasTextOnly": false
-      },
-      {
-        "icon": "ms-Icon--trash",
-        "commandText": "Junk",
-        "hasDropdown": false,
-        "hasTextOnly": true
-      },
-      {
-        "icon": "ms-Icon--arrowRight",
-        "commandText": "Move To",
-        "hasDropdown": true,
-        "hasTextOnly": true
-      },
-       {
-        "icon": "ms-Icon--dropdown",
-        "commandText": "Categories",
-        "hasDropdown": true,
-        "hasTextOnly": true
-      }
-    ],
-    
-    "sideCommands": [
-       {
-        "icon": "ms-Icon--reactivate",
-        "commandText": "Undo",
-        "hasDropdown": true,
-        "textOnly": false
       }
     ]
   }

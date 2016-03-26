@@ -1,7 +1,7 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 <div class="ms-CommandBar">
-  {{#if hasSearch}}
+  {{#if props.hasSearch}}
     <div class="ms-CommandBarSearch">
       <input class="ms-CommandBarSearch-input" type="text" placeholder="Search" tabindex="1"/>
       <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper">
@@ -13,18 +13,16 @@
     </div>  
   {{/if}}
   <div class="ms-CommandBar-sideCommands">
-    {{#each sideCommands}}
+    {{#each props.sideCommands}}
       {{renderPartial component props}}
     {{/each}}
   </div>
   <div class="ms-CommandBar-mainArea">
-    {{#each commands}}
+    {{#each props.commands}}
       {{renderPartial component props}}
     {{/each}}
     <!-- Overflow Command -->
-    <div class="ms-CommandBarItem-overflow">
-      {{renderPartial overflow.component overflow.props}}
-    </div>
+      {{renderPartial props.overflow.component props.overflow.props}}
     <!-- End Overflow Command -->
   </div>
 </div>

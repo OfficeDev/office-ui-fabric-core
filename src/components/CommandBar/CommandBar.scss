@@ -48,12 +48,31 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   &:focus {
     outline: none;
   }
+  
+  // Command Bar Item
+  .ms-Button {
+   height: 100%;
+   
+   .ms-Button-label {
+     color: $ms-color-neutralPrimary;
+   }
+  }
+  
+  .ms-Button:hover {
+    background-color: $ms-color-themeLight;
+    .ms-Button-label {
+      color: $ms-color-neutralDark; 
+    }
+  }
+
 }
 
 .ms-CommandBar-mainArea {
   overflow-x: hidden;
   display: block;
   padding-left: $SearchBox-widthLgCollapsed + 8;
+  height: 100%;
+  
   @media only screen and (min-width: $ms-screen-xl-min) {
     padding-left: 24px;
   }
@@ -64,8 +83,9 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   text-align: right;
   width: auto;
   padding-right: 8px;
+  height: 100%;
 
-  .ms-CommandBarItem:last-child {
+  .ms-Button:last-child {
     margin-right: 0;
   }
 
@@ -82,134 +102,130 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   }
 }
 
-// Command Bar Item
-.ms-CommandBarItem {
-  display: inline-block;
-  color: $ms-color-themePrimary;
-  height: $CommandBarItem-height;
-  outline: none;
-  vertical-align: top;
-  margin-right: -4px;
-
-  .ms-CommandBarItem-chevronDown,
-  .ms-CommandBarItem-commandText {
-    display: none;
-  }
-
-  @media screen and (-ms-high-contrast: active) {
-    @include highContrastBorder($ms-color-black);
-    height: 38px;
-    outline: none;
-  }
-
-  @media screen and (-ms-high-contrast: black-on-white) {
-    @include highContrastBorder($ms-color-white);
-    height: 38px;
-    outline: none;
-  }
+@mixin ms-Button-modifiers {
   
-  &:hover {
-    background-color: $ms-color-themeLight;
-    color: $ms-color-themePrimary;
+ 
 
-    @media screen and (-ms-high-contrast: active) {
-      @include highContrastBorder($ms-color-white);
+    // .ms-CommandBarItem-chevronDown,
+    // .ms-CommandBarItem-commandText {
+    //   display: none;
+    // }
+
+    // @media screen and (-ms-high-contrast: active) {
+    //   @include highContrastBorder($ms-color-black);
+    //   height: 38px;
+    //   outline: none;
+    // }
+
+    // @media screen and (-ms-high-contrast: black-on-white) {
+    //   @include highContrastBorder($ms-color-white);
+    //   height: 38px;
+    //   outline: none;
+    // }
+    
+    // &:hover {
+    //   background-color: $ms-color-themeLight;
+    //   color: $ms-color-themePrimary;
+
+    //   @media screen and (-ms-high-contrast: active) {
+    //     @include highContrastBorder($ms-color-white);
+    //   }
+
+    //   @media screen and (-ms-high-contrast: black-on-white) {
+    //     @include highContrastBorder($ms-color-black);
+    //   }
+    // }
+
+    // Hide labels and Chevrons SM-MD
+    @media only screen and (min-width: $ms-screen-lg-min) {
+      margin-right: 8px;
+      .ms-CommandBarItem-chevronDown,
+      .ms-CommandBarItem-commandText {
+        display: inline;
+      }
     }
-
-    @media screen and (-ms-high-contrast: black-on-white) {
-      @include highContrastBorder($ms-color-black);
-    }
-  }
-
-  // Hide labels and Chevrons SM-MD
-  @media only screen and (min-width: $ms-screen-lg-min) {
-    margin-right: 8px;
-    .ms-CommandBarItem-chevronDown,
-    .ms-CommandBarItem-commandText {
-      display: inline;
-    }
-  }
-
-}
-
-.ms-CommandBarItem.is-hidden {
-  width: 0;
-  overflow: hidden;
-}
   
-//== Modifier: For commands with only an icon
-//
-.ms-CommandBarItem.icon-only,
-.ms-CommandBarItem.ms-CommandBarItem--iconOnly {
-  .ms-CommandBarItem-chevronDown,
-  .ms-CommandBarItem-commandText {
-    display: none;
-  }
-}
 
-.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly {
-  .ms-CommandBarItem-commandText,
-  .ms-CommandBarItem-chevronDown {
-    display: inline;
-  }
-}
+  // .ms-Button.is-hidden {
+  //   width: 0;
+  //   overflow: hidden;
+  // }
+  
+  // //== Modifier: For commands with only an icon
+  // //
+  // .ms-Button.icon-only,
+  // .ms-Button.ms-Button--iconOnly {
+  //   .ms-CommandBarItem-chevronDown,
+  //   .ms-CommandBarItem-commandText {
+  //     display: none;
+  //   }
+  // }
 
-.ms-CommandBarItem-overflow {
-  display: none;
+  // .ms-Button.ms-Button--hasTextOnly {
+  //   .ms-CommandBarItem-commandText,
+  //   .ms-CommandBarItem-chevronDown {
+  //     display: inline;
+  //   }
+  // }
 
-  &.is-visible {
-    display: inline-block;
-  }
+  // .ms-Button-overflow {
+  //   display: none;
 
-  .ms-Icon {
-    font-size: $ms-font-size-m;
-    color: $ms-color-neutralSecondary; 
-  }
-}
+  //   &.is-visible {
+  //     display: inline-block;
+  //   }
 
-.ms-CommandBarItem-link {
-  line-height: $CommandBarItem-height - 1;
-  padding: 0 6px;
-  cursor: pointer;
-  height: $CommandBarItem-height;
-  min-width: 20px;
-  text-align: center;
-  position: relative;
-  padding: 0 8px;
-  display: block;
-  height: 100%;
-}
+  //   .ms-Icon {
+  //     font-size: $ms-font-size-m;
+  //     color: $ms-color-neutralSecondary; 
+  //   }
+  // }
 
-.ms-CommandBarItem-link:focus {
-  outline: none;
-  &:before {
-    position: absolute;
-    left: 2px;
-    right: 2px;
-    top: 2px;
-    bottom: 2px;
-    border: 1px solid $ms-color-neutralTertiary;
-    content: '';
-  }
-}
+  // .ms-Button-link {
+  //   line-height: $CommandBarItem-height - 1;
+  //   padding: 0 6px;
+  //   cursor: pointer;
+  //   height: $CommandBarItem-height;
+  //   min-width: 20px;
+  //   text-align: center;
+  //   position: relative;
+  //   padding: 0 8px;
+  //   display: block;
+  //   height: 100%;
+  // }
 
-.ms-CommandBarItem-icon {
- font-size: $ms-font-size-l;
-}
+  // .ms-Button-link:focus {
+  //   outline: none;
+  //   &:before {
+  //     position: absolute;
+  //     left: 2px;
+  //     right: 2px;
+  //     top: 2px;
+  //     bottom: 2px;
+  //     border: 1px solid $ms-color-neutralTertiary;
+  //     content: '';
+  //   }
+  // }
 
-.ms-CommandBarItem-chevronDown  {
-  vertical-align: middle;
-  padding-bottom: 3px;
-  margin-top: $CommandBarItem-marginTop;
-  font-size: 1.1em;
-  line-height: 1em;
-  color: $ms-color-neutralSecondary;
+  // .ms-Button-icon {
+  //  font-size: $ms-font-size-l;
+  // }
 
-  &:before {
-    height: 10px;
-    line-height: $CommandBarItem-textHeight;
-  }
-}
+  // .ms-Button-chevronDown  {
+  //   vertical-align: middle;
+  //   padding-bottom: 3px;
+  //   margin-top: $CommandBarItem-marginTop;
+  //   font-size: 1.1em;
+  //   line-height: 1em;
+  //   color: $ms-color-neutralSecondary;
+
+  //   &:before {
+  //     height: 10px;
+  //     line-height: $CommandBarItem-textHeight;
+  //   }
+  // }
+  
+} // End buttonModifications
 
 .ms-CommandBarSearch {
   float: left;

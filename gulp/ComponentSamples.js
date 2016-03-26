@@ -130,8 +130,8 @@ gulp.task('ComponentSamples-build', function() {
        Config.handleBarsConfig.batch.push('./' + srcFolderName);
        
        if (hasFileChanged) {
-           
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
+           
            
            var filesArray = manifest.fileOrder;
            var componentPipe;

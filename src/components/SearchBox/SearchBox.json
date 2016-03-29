@@ -21,5 +21,12 @@
     "label": "Search",
     "defaultValue": "",
     "icon": "search"
+  },
+  "propsCommandBar": {
+    "label": "Search",
+    "defaultValue": "",
+    "icon": "search",
+    "closeIcon": "x",
+    "modifier": "commandBar"
   }
 }

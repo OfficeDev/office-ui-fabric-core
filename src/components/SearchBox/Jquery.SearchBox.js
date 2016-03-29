@@ -10,55 +10,58 @@
  */
 (function ($) {
   $.fn.SearchBox = function () {
-
+    
+    function setHasText($sbox, $field) {
+      // Show cancel button by adding is-active class
+      if ($field.val().length > 0 ) {
+        $sbox.addClass('has-text');
+      } else {
+        $sbox.removeClass('has-text');
+        console.log("has tex");
+      }
+    }
+    
     /** Iterate through each text field provided. */
     return this.each(function () {
       // Set cancel to false
       var cancel = false;
-      var $searchField = $(this).find('.ms-SearchBox-field');
-
+      var $thisSearchBox = $(this);
+      var $searchField = $thisSearchBox.find('.ms-SearchBox-field');
+      
+      setHasText($thisSearchBox, $searchField);
+      
       /** SearchBox focus - hide label and show cancel button */
       $searchField.on('focus', function() {
+        setHasText($thisSearchBox, $searchField);
         /** Hide the label on focus. */
-        $(this).siblings('.ms-SearchBox-label').hide();
-        // Show cancel button by adding is-active class
-        $(this).parent('.ms-SearchBox').addClass('is-active');
+        $thisSearchBox.addClass('is-active');
       });
-
-      /** 'hovering' class allows for more fine grained control of hover state */
-      $searchField.on('mouseover', function() {
-        $searchField.addClass('hovering');
-      });
-
-      $searchField.on('mouseout', function() {
-        $searchField.removeClass('hovering');
+      
+      $searchField.on('keydown', function() {
+        setHasText($thisSearchBox, $searchField);
       });
 
       // If cancel button is selected, change cancel value to true
-      $(this).find('.ms-SearchBox-closeButton').on('mousedown', function() {
+      $thisSearchBox.find('.ms-SearchBox-closeButton').on('mousedown', function() {
         cancel = true;
       });
 
       /** Show the label again when leaving the field. */
-      $(this).find('.ms-SearchBox-field').on('blur', function() {
+      $thisSearchBox.find('.ms-SearchBox-field').on('blur', function() {
 
         // If cancel button is selected remove the text and show the label
         if (cancel) {
           $(this).val('');
-          $searchField.addClass('hovering');
         }
-        
-        var $searchBox = $(this).parent('.ms-SearchBox');
+   
         // Prevents inputfield from gaining focus too soon
         setTimeout(function() {
           // Remove is-active class - hides cancel button
-          $searchBox.removeClass('is-active');
+          $thisSearchBox.removeClass('is-active');
         }, 10);
         
         /** Only do this if no text was entered. */
-        if ($(this).val().length === 0 ) {
-          $(this).siblings('.ms-SearchBox-label').show();
-        }
+        setHasText($thisSearchBox, $searchField);
 
         // Reset cancel to false
         cancel = false;

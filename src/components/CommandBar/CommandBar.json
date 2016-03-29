@@ -21,7 +21,8 @@
       "props":  {
         "label": "Search",
         "icon": "search",
-        "defaultValue": ""
+        "defaultValue": "",
+        "modifier": "commandBar"
       }
     },
     "overflow": {

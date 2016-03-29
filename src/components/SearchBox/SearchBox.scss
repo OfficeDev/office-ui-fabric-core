@@ -13,6 +13,36 @@
   margin-bottom: 10px;
   display: inline-block;
 
+  // State: Active searchbox
+  &.is-active {
+    .ms-SearchBox-closeButton {
+      display: block;
+      outline: transparent 1px solid;
+    }
+    .ms-SearchBox-label {
+      display: none;
+    }
+  }
+  
+  &.has-text {
+    .ms-SearchBox-text {
+      display: none;
+    }
+  }
+  
+  &:hover {
+    background-color: transparentize($ms-color-themePrimary, 0.8);
+    border-color: $ms-color-themePrimary;
+    
+    .ms-SearchBox-label {
+      color: $ms-color-black;
+
+      .ms-Icon {
+        color: $ms-color-neutralPrimary;
+      }
+    }
+  }
+  
   // State: Disabled searchbox
   &.is-disabled {
     .ms-SearchBox-label {
@@ -28,14 +58,6 @@
       cursor: default;
     }
   }
-
-  // State: Active searchbox
-  &.is-active {
-    .ms-SearchBox-closeButton {
-      display: block;
-      outline: transparent 1px solid;
-    }
-  }
 }
 
 .ms-SearchBox-field {
@@ -48,23 +70,11 @@
   font-size: $ms-font-size-m;
   color: $ms-color-black;
   height: 32px;
-  padding: 6px 3px 7px 10px;
+  padding: 6px 3px 7px 32px;
   width: 180px;
   background-color: transparent;
   z-index: $ms-zIndex-middle;
-
-  &.hovering {
-    border-color: $ms-color-themePrimary;
-    background-color: transparentize($ms-color-themePrimary, 0.8);
-
-    & + .ms-SearchBox-label {
-      color: $ms-color-black;
-
-      .ms-Icon {
-        color: $ms-color-neutralPrimary;
-      }
-    }
-  }
+  transition: padding-left $ms-duration1;
 
   &:focus {
     padding: 6px 32px 7px 10px;
@@ -100,10 +110,86 @@
   padding-left: 8px;
   line-height: 32px;
   color: $ms-color-neutralSecondary;
+  
+  .ms-Icon {
+    margin-right: 7px;
+    font-size: $ms-font-size-l;
+    color: $ms-color-neutralSecondaryAlt;
+  }
 }
 
-.ms-SearchBox-icon {
-  margin-right: 7px;
-  font-size: $ms-font-size-l;
-  color: $ms-color-neutralSecondaryAlt;
+//== Modifier: CommandBar Search
+//
+
+.ms-SearchBox.ms-SearchBox--commandBar {
+  border: 0;
+  @include ms-bgColor-themeLighter;
+  
+  .ms-SearchBox-field {
+    border: 0;
+    width: 208px;
+    height: 40px;
+    background: transparent;
+    padding-left: 40px;
+  }
+  
+  .ms-SearchBox-label {
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 0;
+  }
+  
+  .ms-SearchBox-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    margin-right: 8px;
+    color: $ms-color-themePrimary;
+  }
+  
+  .ms-SearchBox-closeButton {
+    background: none;
+    color: $ms-color-themePrimary;
+    height: 100%;
+  }
+  
+  &:hover {
+    border: none;
+    background-color: none;
+    
+    .ms-SearchBox-label {
+      color: $ms-color-neutralDark;
+    }
+    
+    .ms-SearchBox-icon {
+      color: $ms-color-themePrimary;
+    }
+  }
 }
+
+.ms-SearchBox.ms-SearchBox--commandBar.is-active {
+   @include ms-bgColor-themeLight;
+  
+  .ms-SearchBox-label {
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    
+    .ms-SearchBox-text {
+      display: none;
+    }
+    
+    .ms-SearchBox-icon {
+      width: 16px;
+      margin-left: 16px;
+      margin-right: 8px;
+      display: inline-block;
+    }
+  }
+}
+
+
+
+

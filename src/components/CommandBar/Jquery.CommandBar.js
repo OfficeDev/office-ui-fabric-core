@@ -76,10 +76,12 @@
       var $OverflowCommand = $CommandBar.find('.ms-CommandBarItem-overflow');
       var $OverflowCommandWidth = $CommandBar.find('.ms-CommandBarItem-overflow').outerWidth();
       var $OverflowMenu = $CommandBar.find('.ms-CommandBar-overflowMenu');
-      var $SearchBox = $CommandBar.find('.ms-CommandBarSearch');
+      //var $SearchBox = $(".ms-SearchBox").SearchBox(); // Searchbox dependency
       var mobileSwitch = false;
       var overFlowCommands;
       var allCommands;
+      
+      $(".ms-SearchBox").SearchBox(); // Searchbox dependency
 
       // Go through process and save commands
       allCommands = saveCommands($CommandBarItems, $OverflowCommandWidth, $CommandMainArea);
@@ -137,26 +139,26 @@
         $OverflowMenu.removeClass('is-open');
       });
 
-      $SearchBox.find('.ms-CommandBarSearch-input').click(function() {
-        $(this).closest('.ms-CommandBarSearch').addClass('is-active');
-      });
+      // $SearchBox.find('.ms-CommandBarSearch-input').click(function() {
+      //   $(this).closest('.ms-CommandBarSearch').addClass('is-active');
+      // });
 
-      $SearchBox.find('.ms-CommandBarSearch-input').on('focus', function() {
-        $(this).closest('.ms-CommandBarSearch').addClass('is-active');
-      });
+      // $SearchBox.find('.ms-CommandBarSearch-input').on('focus', function() {
+      //   $(this).closest('.ms-CommandBarSearch').addClass('is-active');
+      // });
 
-       // When clicking the x clear the SearchBox and put state back to normal
-      $SearchBox.find('.ms-CommandBarSearch-iconClearWrapper').click(function() {
-        var $input = $(this).parent().find('.ms-CommandBarSearch-input');
-        $input.val('');
-        $input.parent().removeClass('is-active');
-      });
+      //  // When clicking the x clear the SearchBox and put state back to normal
+      // $SearchBox.find('.ms-CommandBarSearch-iconClearWrapper').click(function() {
+      //   var $input = $(this).parent().find('.ms-CommandBarSearch-input');
+      //   $input.val('');
+      //   $input.parent().removeClass('is-active');
+      // });
 
-      $SearchBox.parent().find('.ms-CommandBarSearch-input').blur(function() {
-        var $input = $(this);
-        $input.val('');
-        $input.parent().removeClass('is-active');
-      });
+      // $SearchBox.parent().find('.ms-CommandBarSearch-input').blur(function() {
+      //   var $input = $(this);
+      //   $input.val('');
+      //   $input.parent().removeClass('is-active');
+      // });
 
     });
   };

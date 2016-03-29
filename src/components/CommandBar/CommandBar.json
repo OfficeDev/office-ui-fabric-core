@@ -11,12 +11,17 @@
   "class": "ms-CommandBar",
   "dependencies": [
     "ContextualMenu",
-    "Button"
+    "Button",
+    "Label",
+    "SearchBox"
   ],
   "props": {
     "searchBox": {
       "component": "SearchBox",
       "props":  {
+        "label": "Search",
+        "icon": "search",
+        "defaultValue": ""
       }
     },
     "overflow": {

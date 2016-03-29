@@ -1,16 +1,8 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
 <div class="ms-CommandBar">
-  {{#if props.hasSearch}}
-    <div class="ms-CommandBarSearch">
-      <input class="ms-CommandBarSearch-input" type="text" placeholder="Search" tabindex="1"/>
-      <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper">
-        <i class="ms-Icon ms-Icon--search"></i>
-      </div>
-      <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconClearWrapper ms-font-s">
-        <i class="ms-Icon ms-Icon--x"></i>
-      </div>
-    </div>  
+  {{#if props.searchBox}}
+    {{renderPartial props.searchBox.component props.searchBox.props}}
   {{/if}}
   <div class="ms-CommandBar-sideCommands">
     {{#each props.sideCommands}}

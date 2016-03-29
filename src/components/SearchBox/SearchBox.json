@@ -16,5 +16,10 @@
         "name": "Disabled",
         "class": "is-disabled"
       }
-  ]
+  ],
+  "props": {
+    "label": "Search",
+    "defaultValue": "",
+    "icon": "search"
+  }
 }

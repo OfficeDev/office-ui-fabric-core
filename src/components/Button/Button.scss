@@ -282,7 +282,7 @@
 	.ms-Button-icon {
 		color: $ms-color-neutralSecondary;
 		display: inline-block;
-		margin-right: 4px;
+		padding-right: 8px;
 		position: relative;
 	}
 
@@ -322,14 +322,10 @@
 
 // Add space between adjacent command buttons.
 .ms-Button.ms-Button--command + .ms-Button.ms-Button--command {
-	margin-left: 14px;
+	margin-left: 8px;
 }
 
 //== Modifier: Button with no label
 //
 
-.ms-Button.ms-Button--noLabel {
-  .ms-Button-icon {
-    margin-right: 0;
-  }
-}
+.ms-Button.ms-Button--noLabel {}

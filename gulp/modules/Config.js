@@ -32,7 +32,11 @@ var Config = function() {
 	this.servePaths = [
         {
             'urlPath': '/css',
-            'folderPath': '../css'
+            'folderPath': '../css',
+        },
+        {
+            'urlPath': '/js',
+            'folderPath': '../js',
         }
     ];
 	this.nugetConfig = {

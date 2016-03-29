@@ -17,7 +17,6 @@
         $sbox.addClass('has-text');
       } else {
         $sbox.removeClass('has-text');
-        console.log("has tex");
       }
     }
     
@@ -35,10 +34,6 @@
         setHasText($thisSearchBox, $searchField);
         /** Hide the label on focus. */
         $thisSearchBox.addClass('is-active');
-      });
-      
-      $searchField.on('keydown', function() {
-        setHasText($thisSearchBox, $searchField);
       });
 
       // If cancel button is selected, change cancel value to true

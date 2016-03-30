@@ -10,8 +10,10 @@
   @include ms-font-m;
   @include ms-u-normalize;
   position: relative;
-  margin-bottom: 10px;
   display: inline-block;
+  overflow: hidden;
+  transition: width $ms-duration1;
+  width: 180px;
 
   // State: Active searchbox
   &.is-active {
@@ -71,7 +73,7 @@
   color: $ms-color-black;
   height: 32px;
   padding: 6px 3px 7px 32px;
-  width: 180px;
+  width: 100%;
   background-color: transparent;
   z-index: $ms-zIndex-middle;
   transition: padding-left $ms-duration1;
@@ -124,10 +126,10 @@
 .ms-SearchBox.ms-SearchBox--commandBar {
   border: 0;
   @include ms-bgColor-themeLighter;
+  width: 208px;
   
   .ms-SearchBox-field {
     border: 0;
-    width: 208px;
     height: 40px;
     background: transparent;
     padding-left: 40px;
@@ -166,6 +168,10 @@
     .ms-SearchBox-icon {
       color: $ms-color-themePrimary;
     }
+  }
+   
+  &.is-collapsed {
+    width: 50px;
   }
 }
 

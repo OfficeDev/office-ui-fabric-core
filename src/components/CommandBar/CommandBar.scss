@@ -95,19 +95,37 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   .ms-SearchBox-label {
     height: 100%;
   }
-
+  
+  .ms-SearchBox {
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: top;
+    transition: margin-right $ms-duration2;
+    width: 100%;
+  }
+  
+  .ms-SearchBox.is-collapsed {}
+  
+  .ms-SearchBox.is-collapsed.is-expanded {
+    width: 100%;
+  }
+  
+  // Search is collapsed unless ativated and its only
+  // collapsed < L break points
+  
+  @media only screen and (min-width: $ms-screen-xl-min) {
+    .ms-SearchBox {
+      margin-right: 24px;
+    }
+  }
 }
 
 .ms-CommandBar-mainArea {
   overflow-x: hidden;
   display: block;
-  padding-left: $SearchBox-widthLgCollapsed + 8;
+  // padding-left: $SearchBox-widthLgCollapsed + 8;
   height: 100%;
   overflow: hidden;
-  
-  @media only screen and (min-width: $ms-screen-xl-min) {
-    padding-left: 24px;
-  }
 }
 
 .ms-CommandBar-sideCommands {

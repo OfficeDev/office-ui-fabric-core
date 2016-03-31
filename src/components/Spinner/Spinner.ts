@@ -49,6 +49,7 @@ namespace fabric {
          * @memberOf fabric.Spinner
          */
         public start() {
+            this.stop();
             this.interval = setInterval(() => {
                 let i = this.circleObjects.length;
                 while (i--) {

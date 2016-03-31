@@ -101,7 +101,6 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     display: inline-block;
     vertical-align: top;
     transition: margin-right $ms-duration2;
-    width: 100%;
   }
   
   .ms-SearchBox.is-collapsed {}

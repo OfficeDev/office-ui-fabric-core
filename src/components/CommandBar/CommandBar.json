@@ -29,7 +29,8 @@
       "component": "Button",
       "props":  {
         "icon": "ellipsis",
-        "modifier": "command"
+        "modifier": "command",
+        "customClasses": "ms-CommandBar-overflowButton"
       }
     },
     "commands": [

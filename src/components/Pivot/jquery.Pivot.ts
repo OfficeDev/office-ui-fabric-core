@@ -11,11 +11,15 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-Pivot components.
    *
-   * @param  {jQuery Object}  One or more .ms-Pivot components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class Pivot {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of Pivot
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let $pivotContainer = $(container);
 
       /** When clicking/tapping a link, select it. */

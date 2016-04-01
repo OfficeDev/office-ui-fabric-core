@@ -38,17 +38,16 @@ namespace fabric {
         /**
          * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
          */
-        constructor(container) {
+        constructor(container: HTMLElement) {
             this._target = container;
             this._init();
         }
-
 
         /**
          * @function start - starts or restarts the animation sequence
          * @memberOf fabric.Spinner
          */
-        public start() {
+        public start(): void {
             this.stop();
             this.interval = setInterval(() => {
                 let i = this.circleObjects.length;
@@ -62,13 +61,13 @@ namespace fabric {
          * @function stop - stops the animation sequence
          * @memberOf fabric.Spinner
          */
-        public stop() {
+        public stop(): void {
             clearInterval(this.interval);
         }
 
         // private methods
 
-        private _init() {
+        private _init(): void {
             // for backwards compatibility
             if (this._target.className.indexOf("ms-Spinner") === -1) {
                 this.spinner = document.createElement("div");
@@ -86,7 +85,7 @@ namespace fabric {
             this.start();
         }
 
-        private _initializeOpacities() {
+        private _initializeOpacities(): void {
             let i = 0;
             let j = 1;
             let opacity;
@@ -99,7 +98,7 @@ namespace fabric {
             }
         }
 
-        private _fade(circleObject) {
+        private _fade(circleObject: CircleObject): void {
             let opacity = this._getOpacity(circleObject.element) - this.fadeIncrement;
 
             if (opacity <= 0) {
@@ -109,22 +108,22 @@ namespace fabric {
             this._setOpacity(circleObject.element, opacity);
         }
 
-        private _getOpacity(element) {
+        private _getOpacity(element: HTMLElement): number {
             return parseFloat(window.getComputedStyle(element).getPropertyValue("opacity"));
         }
 
-        private _setOpacity(element, opacity) {
-            element.style.opacity = opacity;
+        private _setOpacity(element: HTMLElement, opacity: number): void {
+            element.style.opacity = opacity.toString();
         }
 
-        private _createCircle() {
+        private _createCircle(): HTMLElement {
             let circle = document.createElement("div");
             circle.className = "ms-Spinner-circle";
             circle.style.width = circle.style.height = this.parentSize * this.offsetSize + "px";
             return circle;
         }
 
-        private _createCirclesAndArrange() {
+        private _createCirclesAndArrange(): void {
 
             let angle = 0;
             let offset = this.parentSize * this.offsetSize;

@@ -10,11 +10,15 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-PersonaCard components.
    *
-   * @param  {jQuery Object}  One or more .ms-PersonaCard components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class PersonaCard {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of PersonaCard
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let $personaCard = $(container);
 
       /** When selecting an action, show its details. */

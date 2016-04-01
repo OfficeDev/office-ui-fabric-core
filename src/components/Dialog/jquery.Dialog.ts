@@ -9,12 +9,15 @@ namespace fabric {
    * Dialog Plugin
    *
    * Adds basic demonstration functionality to .ms-Dialog components.
-   *
-   * @param  {jQuery Object}  One or more .ms-Dialog components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class Dialog {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of Dialog
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let dialog = container;
 
       /** Have the dialogs hidden for their initial state */
@@ -32,9 +35,12 @@ namespace fabric {
         $(dialog).hide();
       });
     }
-  }
-}
+  } // end Dialog
+} // end Fabric namespace
 
+
+/* presentation code for the samples - 
+   configure any sample buttons so that they open the associated Dialog */
 $(document).ready(function() {
     /** Iterate through the sample buttons, which can be used to open the Dialogs. */
     $(".js-DialogAction--open").each(function () {

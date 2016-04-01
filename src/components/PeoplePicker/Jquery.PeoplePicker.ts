@@ -40,16 +40,15 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-PeoplePicker components.
    * 
-   * @param  {jQuery Object}  One or more .ms-PeoplePicker components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
-
-   // todo:
-   // how to include spinner component?
-
   export class PeoplePicker {
 
-    constructor(container) {
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of PeoplePicker
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
 
       let $peoplePicker = $(container);
       let $searchField = $peoplePicker.find(".ms-PeoplePicker-searchField");

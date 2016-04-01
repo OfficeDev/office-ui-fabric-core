@@ -10,12 +10,15 @@ namespace fabric {
    * Text Field Plugin
    *
    * Adds basic demonstration functionality to .ms-TextField components.
-   *
-   * @param  {jQuery Object}  One or more .ms-TextField components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class TextField {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLDivElement} container - the target container for an instance of TextField
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let $textField = $(container);
 
       /** Does it have a placeholder? */

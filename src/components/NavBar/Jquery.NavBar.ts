@@ -9,7 +9,13 @@ namespace fabric {
    * Nav Bar Plugin
    */
   export class NavBar {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of NavBar
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let $navBar = $(container);
 
       // Open the nav bar on mobile.

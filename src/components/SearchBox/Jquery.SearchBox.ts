@@ -11,12 +11,15 @@ namespace fabric {
    * SearchBox Plugin
    *
    * Adds basic demonstration functionality to .ms-SearchBox components.
-   *
-   * @param  {jQuery Object}  One or more .ms-SearchBox components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class SearchBox {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLDivElement} container - the target container for an instance of SearchBox
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
 
       let $searchBox = $(container);
 

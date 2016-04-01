@@ -24,6 +24,16 @@ namespace fabric {
     private _progressBar: HTMLElement;
 
     /**
+     *
+     * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
+      this.container = container;
+      this.cacheDOM();
+    }
+
+    /**
      * Sets the progress percentage for a determinate
      * operation. Either use this or setProgress
      * and setTotal as setProgressPercent assumes
@@ -31,7 +41,7 @@ namespace fabric {
      * injecting it into the function
      * @param {number} percent - a floating point number from 0 to 1
      */
-    public setProgressPercent(percent) {
+    public setProgressPercent(percent: number): void {
       this._progressBar.style.width = Math.round(this._width * percent) + "px";
     }
 
@@ -40,7 +50,7 @@ namespace fabric {
      * Use this in combination with setTotal.
      * @param {number} progress
      */
-    public setProgress(progress) {
+    public setProgress(progress: number): void {
       this._progress = progress;
       let percentage = this._progress / this._total;
       this.setProgressPercent(percentage);
@@ -52,7 +62,7 @@ namespace fabric {
      * combination with setProgress
      * @param {number} total
      */
-    public setTotal(total) {
+    public setTotal(total: number): void {
       this._total = total;
     }
 
@@ -61,7 +71,7 @@ namespace fabric {
      * of an instance
      * @param {string} name
      */
-    public setName(name) {
+    public setName(name: string): void {
       this._itemName.innerHTML = name;
     }
 
@@ -70,7 +80,7 @@ namespace fabric {
      * of an instance
      * @param {string} name
      */
-    public setDescription(description) {
+    public setDescription(description: string): void {
       this._itemDescription.innerHTML = description;
     }
 
@@ -78,7 +88,7 @@ namespace fabric {
      * caches elements and values of the component
      *
      */
-    public cacheDOM() {
+    public cacheDOM(): void {
       // an itemName element is optional
       this._itemName = <HTMLElement>this.container.querySelector(".ms-ProgressIndicator-itemName") || null;
       // an itemDescription element is optional
@@ -86,16 +96,6 @@ namespace fabric {
       this._progressBar = <HTMLElement>this.container.querySelector(".ms-ProgressIndicator-progressBar");
       let itemProgress = <HTMLElement>this.container.querySelector(".ms-ProgressIndicator-itemProgress");
       this._width = itemProgress.offsetWidth;
-    }
-
-    /**
-     *
-     * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
-     * @constructor
-     */
-    constructor(container) {
-      this.container = container;
-      this.cacheDOM();
     }
   }
 } // end fabric namespace

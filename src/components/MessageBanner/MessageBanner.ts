@@ -15,7 +15,7 @@ namespace fabric {
     export class MessageBanner {
         public container: HTMLElement;
 
-        private _clipper: any;
+        private _clipper: HTMLElement;
         private _bufferSize: number;
         private _textContainerMaxWidth: number = 700;
         private _clientWidth: number;
@@ -30,9 +30,19 @@ namespace fabric {
         private SMALL_BREAK_POINT: number = 480;
 
         /**
+         *
+         * @param {HTMLElement} container - the target container for an instance of MessageBanner
+         * @constructor
+         */
+        constructor(container: HTMLElement) {
+            this.container = container;
+            this.init();
+        }
+
+        /**
          * initializes component
          */
-        public init() {
+        public init(): void {
             this._cacheDOM();
             this._setListeners();
             this._clientWidth = this._errorBanner.offsetWidth;
@@ -43,14 +53,14 @@ namespace fabric {
         /**
          * shows banner if the banner is hidden
          */
-        public showBanner() {
+        public showBanner(): void {
             this._errorBanner.className = "ms-MessageBanner";
         }
 
         /**
          * sets styles on resize
          */
-        private _onResize() {
+        private _onResize(): void {
             this._clientWidth = this._errorBanner.offsetWidth;
             if (window.innerWidth >= this.SMALL_BREAK_POINT ) {
                 this._resizeRegular();
@@ -62,7 +72,7 @@ namespace fabric {
         /**
          * resize above 480 pixel breakpoint
          */
-        private _resizeRegular() {
+        private _resizeRegular(): void {
             if ((this._clientWidth - this._bufferSize) > this._initTextWidth && this._initTextWidth < this._textContainerMaxWidth) {
                 this._textWidth = "auto";
                 this._chevronButton.className = "ms-MessageBanner-expand";
@@ -79,7 +89,7 @@ namespace fabric {
         /**
          * resize below 480 pixel breakpoint
          */
-        private _resizeSmall() {
+        private _resizeSmall(): void {
             if (this._clientWidth - (this._bufferElementsWidthSmall + this._closeButton.offsetWidth) > this._initTextWidth) {
                 this._textWidth = "auto";
                 this._collapse();
@@ -92,7 +102,7 @@ namespace fabric {
         /**
          * caches elements and values of the component
          */
-        private _cacheDOM() {
+        private _cacheDOM(): void {
             this._errorBanner = this.container;
             this._clipper = <HTMLElement>this.container.querySelector(".ms-MessageBanner-clipper");
             this._chevronButton = <HTMLElement>this.container.querySelector(".ms-MessageBanner-expand");
@@ -104,7 +114,7 @@ namespace fabric {
         /**
          * expands component to show full error message
          */
-        private _expand() {
+        private _expand(): void {
             let icon = this._chevronButton.querySelector(".ms-Icon");
             this._errorBanner.className += " is-expanded";
             icon.className = "ms-Icon ms-Icon--chevronsUp";
@@ -113,13 +123,13 @@ namespace fabric {
         /**
          * collapses component to only show truncated message
          */
-        private _collapse() {
+        private _collapse(): void {
             let icon = this._chevronButton.querySelector(".ms-Icon");
             this._errorBanner.className = "ms-MessageBanner";
             icon.className = "ms-Icon ms-Icon--chevronsDown";
         }
 
-        private _toggleExpansion() {
+        private _toggleExpansion(): void {
             if (this._errorBanner.className.indexOf("is-expanded") > -1) {
                 this._collapse();
             } else {
@@ -127,14 +137,14 @@ namespace fabric {
             }
         }
 
-        private _hideMessageBanner() {
+        private _hideMessageBanner(): void {
             this._errorBanner.className = "ms-MessageBanner is-hidden";
         }
 
         /**
          * hides banner when close button is clicked
          */
-        private _hideBanner() {
+        private _hideBanner(): void {
             if (this._errorBanner.className.indexOf("hide") === -1) {
                 this._errorBanner.className += " hide";
                 setTimeout(this._hideMessageBanner.bind(this), 500);
@@ -144,20 +154,10 @@ namespace fabric {
         /**
          * sets handlers for resize and button click events
          */
-        private _setListeners() {
+        private _setListeners(): void {
             window.addEventListener("resize", this._onResize.bind(this), false);
             this._chevronButton.addEventListener("click", this._toggleExpansion.bind(this), false);
             this._closeButton.addEventListener("click", this._hideBanner.bind(this), false);
-        }
-
-        /**
-         *
-         * @param {HTMLElement} container - the target container for an instance of MessageBanner
-         * @constructor
-         */
-        constructor(container: any) {
-            this.container = container;
-            this.init();
         }
     }
 } // end fabric namespace

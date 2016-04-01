@@ -14,12 +14,15 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-Facepile components.
    *
-   * @param  {jQuery Object}  One or more .ms-Facepile components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class Facepile {
 
-    constructor(container) {
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of Facepile
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       new fabric.PeoplePicker($(".ms-PeoplePicker"));
       new fabric.Panel($(".ms-Panel"));
 

@@ -22,12 +22,15 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-Panel components.
    *
-   * @param  {jQuery Object}  One or more .ms-Panel components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class Panel {
 
-    constructor(container) {
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of Panel
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let $panel = $(container);
       let $panelMain = $panel.find(".ms-Panel-main");
 

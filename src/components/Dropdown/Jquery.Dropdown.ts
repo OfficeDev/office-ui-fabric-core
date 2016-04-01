@@ -12,12 +12,15 @@ namespace fabric {
      * Given .ms-Dropdown containers with generic <select> elements inside, this plugin hides the original
      * dropdown and creates a new "fake" dropdown that can more easily be styled across browsers.
      * 
-     * @param  {jQuery Object}  One or more .ms-Dropdown containers, each with a dropdown (.ms-Dropdown-select)
-     * @return {jQuery Object}  The same containers (allows for chaining)
      */
     export class Dropdown {
 
-        constructor(container) {
+        /**
+         *
+         * @param {HTMLElement} container - the target container for an instance of Dropdown
+         * @constructor
+         */
+        constructor(container: HTMLElement) {
             let $dropdownWrapper = $(container),
                 $originalDropdown = $dropdownWrapper.children(".ms-Dropdown-select"),
                 $originalDropdownOptions = $originalDropdown.children("option"),
@@ -43,7 +46,7 @@ namespace fabric {
             newDropdownSource += "<ul class='ms-Dropdown-items'>" + newDropdownItems + "</ul>";
             $dropdownWrapper.append(newDropdownSource);
 
-            function _openDropdown(evt) {
+            function _openDropdown(evt: Event): void {
                 if (!$dropdownWrapper.hasClass("is-disabled")) {
 
                     /** First, let"s close any open dropdowns on this page. */

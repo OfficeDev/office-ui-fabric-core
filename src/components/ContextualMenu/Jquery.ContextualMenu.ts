@@ -11,7 +11,12 @@ namespace fabric {
    */
   export class ContextualMenu {
 
-    constructor(container: any) {
+    /**
+     *
+     * @param {HTMLDivElement} container - the target container for an instance of ContextualMenu
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       let $contextualMenu = $(container);
       // Set selected states.
       $contextualMenu.on("click", ".ms-ContextualMenu-link:not(.is-disabled)", function(event) {

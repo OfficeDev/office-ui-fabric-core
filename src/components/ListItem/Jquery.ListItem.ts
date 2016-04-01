@@ -10,11 +10,15 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-ListItem components.
    *
-   * @param  {jQuery Object}  One or more .ms-ListItem components
-   * @return {jQuery Object}  The same components (allows for chaining)
    */
   export class ListItem {
-    constructor(container) {
+
+    /**
+     *
+     * @param {HTMLElement} container - the target container for an instance of ListItem
+     * @constructor
+     */
+    constructor(container: HTMLElement) {
       /** Detect clicks on selectable list items. */
       $(container).on("click", ".js-toggleSelection", function() {
         $(this).parents(".ms-ListItem").toggleClass("is-selected");

@@ -11,6 +11,32 @@
 
 @import "Fabric.Animations";
 
+// slideRightIn10
+.ms-u-slideRightIn10 {
+    @include ms-u-slideRightIn10;
+}
+@-webkit-keyframes slideRightIn10 {
+    from { -webkit-transform:translate3d(-10px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideRightIn10 {
+    from { transform:translate3d(-10px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+// slideRightIn20
+.ms-u-slideRightIn20 {
+    @include ms-u-slideRightIn20;
+}
+@-webkit-keyframes slideRightIn20 {
+    from { -webkit-transform:translate3d(-20px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideRightIn20 {
+    from { transform:translate3d(-20px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
 // slideRightIn40
 .ms-u-slideRightIn40 {
     @include ms-u-slideRightIn40;
@@ -21,6 +47,32 @@
 }
 @keyframes slideRightIn40 {
     from { transform:translate3d(-40px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+// slideLeftIn10
+.ms-u-slideLeftIn10 {
+    @include ms-u-slideLeftIn10;
+}
+@-webkit-keyframes slideLeftIn10 {
+    from { -webkit-transform:translate3d(10px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideLeftIn10 {
+    from { transform:translate3d(10px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+// slideLeftIn20
+.ms-u-slideLeftIn20 {
+    @include ms-u-slideLeftIn20;
+}
+@-webkit-keyframes slideLeftIn20 {
+    from { -webkit-transform:translate3d(20px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideLeftIn20 {
+    from { transform:translate3d(20px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
 }
 

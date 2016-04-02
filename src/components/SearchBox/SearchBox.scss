@@ -172,6 +172,27 @@
    
   &.is-collapsed {
     width: 50px;
+    min-height: 40px;
+    
+    .ms-SearchBox-field {
+      display: none;
+    }
+    
+    .ms-SearchBox-text {
+      display: none;
+    }
+  }
+  
+  &.is-collapsed.is-active {
+    width: 100%;
+    
+    .ms-SearchBox-field {
+      display: block;
+    }
+    
+    .ms-SearchBox-text {
+      display: inline-block;
+    }
   }
 }
 

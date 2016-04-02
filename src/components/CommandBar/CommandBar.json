@@ -84,6 +84,18 @@
           "modifier": "command"
         }
       }
-    ]
+    ],
+    "contextualMenu": {
+      "component": "ContextualMenu",
+      "props": {
+        "state": "",
+        "items": [
+          {
+            "title": "BLANK",
+            "state": ""
+          }
+        ]
+      }
+    }
   }
 }

@@ -10,26 +10,191 @@
     "ContextualMenu.Dividers.html",
     "ContextualMenu.Multiselect.html"
   ],
-  "data":  {
-    
-  },
-  "branches": [
+  "props":  {
+    "state": "is-open",
+    "items": [
       {
-        "name": "Standard",
-        "default": true
+        "title": "Animals",
+        "state": ""
       },
       {
-        "name": "Sub menu",
-        "template": "contextualmenu.submenu.html"
+        "title": "Books",
+        "state": ""
       },
       {
-        "name": "Group",
-        "template": "contextualmenu.dividers.html"
+        "title": "Education",
+        "state": "is-selected"
       },
       {
-        "name": "Multi-select",
-        "template": "contextualmenu.multiselect.html",
-        "class": "ms-ContextualMenu--multiselect"
+        "title": "Music",
+        "state": ""
+      },
+      {
+        "title": "Sports",
+        "state": "is-disabled"
       }
-  ]
+    ]
+  },
+  "propsSubMenu":  {
+    "state": "is-open",
+    "items": [
+      {
+        "title": "Animals",
+        "state": ""
+      },
+      {
+        "title": "Books",
+        "state": "",
+        "subMenuItems": [
+          {
+            "title": "Fiction",
+            "state": ""
+          },
+          {
+            "title": "Humor",
+            "state": ""
+          },
+          {
+            "title": "Magazines",
+            "state": "is-selected"
+          },
+          {
+            "title": "Non-fiction",
+            "state": ""
+          },
+          {
+            "title": "Textbooks",
+            "state": ""
+          }
+        ]
+      },
+      {
+        "title": "Education",
+        "state": "is-selected"
+      },
+      {
+        "title": "Music",
+        "state": ""
+      },
+      {
+        "title": "Sports",
+        "state": "is-disabled"
+      }
+    ]
+  },
+  "propsDividers":  {
+    "state": "is-open",
+    "items": [
+      {
+        "title": "Delete",
+        "state": ""
+      },
+      {
+        "title": "Flag",
+        "state": ""
+      },
+      {
+        "modifier": "divider",
+        "title": ""
+      },
+      {
+        "title": "Important",
+        "state": "is-selected"
+      },
+      {
+        "title": "Move",
+        "state": ""
+      },
+      {
+        "modifier": "divider",
+        "title": ""
+      },
+      {
+        "title": "Move",
+        "state": "is-disabled",
+        "subMenuItems": [
+          {
+            "title": "Fiction",
+            "state": ""
+          },
+          {
+            "title": "Humor",
+            "state": ""
+          },
+          {
+            "title": "Magazines",
+            "state": "is-selected"
+          },
+          {
+            "title": "Non-fiction",
+            "state": ""
+          },
+          {
+            "title": "Textbooks",
+            "state": ""
+          }
+        ]
+      },
+      {
+        "title": "Create Rule...",
+        "state": "is-selected"
+      },
+      {},
+      {
+        "title": "Verdana",
+        "state": "is-disabled"
+      }
+    ]
+  },
+  "propsMultiselect":  {
+    "state": "is-open",
+    "items": [
+      {
+        "title": "SORT BY",
+        "state": "",
+        "modifier": "header"
+      },
+      {
+        "title": "Date",
+        "state": ""
+      },
+      {
+        "title": "Sender",
+        "state": "is-selected"
+      },
+      {
+        "modifier": "divider",
+        "title": ""
+      },
+      {
+        "title": "ORDER",
+        "state": "",
+        "modifier": "header"
+      },
+      {
+        "title": "Newest on top",
+        "state": "is-disabled"
+      },
+      {
+        "title": "Oldest on top",
+        "state": "is-disabled"
+      },
+      {
+        "modifier": "divider",
+        "title": ""
+      },
+      {
+        "title": "CONVERSATIONS",
+        "modifier": "header"
+      },
+      {
+        "title": "On",
+        "state": ""
+      },
+      {
+        "title": "Off",
+        "state": ""
+      }
+    ]
+  }
 }

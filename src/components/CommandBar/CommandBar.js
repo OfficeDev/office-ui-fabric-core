@@ -22,90 +22,246 @@ fabric.CommandBar = function(container) {
 
 fabric.CommandBar.prototype = (function() {
   
+  var CONTEXTUAL_MENU = ".ms-ContextualMenu";
+  var CB_SEARCH_BOX = ".ms-SearchBox";
+  var CB_MAIN_AREA = ".ms-CommandBar-mainArea";
+  var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
+  var OVERFLOW_WIDTH = 41.5;
+  
+  var ResponsiveVariables = {
+    "sm-min": 320,
+    "md-min": 480,
+    "lg-min": 640,
+    "xl-min": 1024,
+    "xxl-min": 1366,
+    "xxxl-min": 1920
+  };
+  
+  ResponsiveVariables["sm-max"] = ResponsiveVariables["md-min"] - 1;
+  ResponsiveVariables["md-max"] = ResponsiveVariables["lg-min"] - 1;
+  ResponsiveVariables["lg-max"] = ResponsiveVariables["xl-min"] - 1;
+  ResponsiveVariables["xl-max"] = ResponsiveVariables["xxl-min"] - 1;
+  ResponsiveVariables["xxl-max"] = ResponsiveVariables["xxxl-min"] - 1;
+
+  var visibleCommands = [];
+  var commandWidths = [];
+  var overflowCommands = [];
+  var itemCollection = [];
+  var contextualItemContainerRef;
+  var contextualItemLink;
+  var breakpoint = "sm";
+  var _elements = {};
+
   var _getScreenSize = function() {
     // First we need to set what the screen is doing, check screen size
-    var w = window,
-    var window = {};
+    var w = window;
+    var wSize = {};
     var d = document,
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0];
         
-    window.x = w.innerWidth || e.clientWidth || g.clientWidth,
-    window.y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-    return w
+    wSize.x = w.innerWidth || e.clientWidth || g.clientWidth,
+    wSize.y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    
+    return wSize;
   };
   
-  var visibleCommands = [];
-  var commandWidths = [];
-  var overflowCommands = [];
-  
-  var _elements = {
-    container: this.container,
-    mainArea: document.querySelector('.ms-CommandBar-mainArea'),
-    mainItems: [],
-    overflowCommand: document.querySelector('.ms-CommandBarItem-overflow')
+  var _setBreakpoint = function() {
+    var screenSize = _getScreenSize().x;
+    
+    switch(true) {
+      case (screenSize <= ResponsiveVariables['sm-max']):
+        if(breakpoint != "sm") { _saveCommandWidths(); }
+        breakpoint = "sm";
+        break;
+      case (screenSize >= ResponsiveVariables['md-min'] && screenSize <= ResponsiveVariables['md-max']):
+        if(breakpoint != "md") { _saveCommandWidths(); }
+        breakpoint = "md";
+        break;
+      case (screenSize >= ResponsiveVariables['lg-min'] && screenSize <= ResponsiveVariables['lg-max']):
+        if(breakpoint != "lg") { _saveCommandWidths(); }
+        breakpoint = "lg";
+        break;
+      case (screenSize >= ResponsiveVariables['xl-min'] && screenSize <= ResponsiveVariables['xl-max']):
+        if(breakpoint != "xl") { _saveCommandWidths(); }
+        breakpoint = "xl";
+        break;
+      case (screenSize >= ResponsiveVariables['xxl-min'] && screenSize <= ResponsiveVariables['xxl-max']):
+        if(breakpoint != "xxl") { _saveCommandWidths(); }
+        breakpoint = "xxl";
+        break;
+      case (screenSize >= ResponsiveVariables['xxxl-min']):
+        if(breakpoint != "xxxl") { _saveCommandWidths(); }
+        breakpoint = "xxxl";
+        break;
+    }
   };
   
+  var _setElements = function() {
+    _elements = {
+      container: this.container,
+      mainArea: document.querySelector(CB_MAIN_AREA),
+      mainItems: [],
+      overflowCommand: document.querySelector(CB_ITEM_OVERFLOW),
+      contextMenu: document.querySelector(CONTEXTUAL_MENU),
+      searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)
+    }
+  };
+  
+  var _createItemCollection = function() {
+    var item,
+        label,
+        iconClasses,
+        splitClasses,
+        icon,
+        href,
+        items = document.querySelectorAll(CB_MAIN_AREA + ' .ms-Button:not(.ms-CommandBar-overflowButton)');
+    
+    for (var i = 0; i < items.length; i++) {
+      item = items[i];
+      label = item.querySelector(".ms-Button-label").textContent;
+      iconClasses = item.querySelector(".ms-Icon").className;
+      splitClasses = iconClasses.split(' ');
+      icon = splitClasses.map(function(cName) { if (cName.indexOf('ms-Icon--') > -1) { return cName; } });
+      
+      itemCollection.push({
+        item: item,
+        label: label,
+        icon: icon
+      });
+    }
+    return;
+  };
+  
+  var _createContextualRef = function() {
+   contextualItemContainerRef = _elements.contextMenu.querySelector('.ms-ContextualMenu-item').cloneNode(true);
+   contextualItemLink = contextualItemContainerRef.querySelector('.ms-ContextualMenu-link').cloneNode(false);
+   contextualItemContainerRef.innerHTML = '';
+  };
+
   var _getElementWidth = function(element) {
     var width;
-    if(element.offsetParent === null) {
+    
+    if (element.offsetParent === null) {
       element.setAttribute('style', 'opacity: 0, display: block;');
     }
     width = element.getBoundingClientRect().width;
+    styles = window.getComputedStyle(element);
+    width += parseInt(styles.marginLeft) + parseInt(styles.marginRight);
     element.setAttribute('style', '');
     return width;
   }
-
-  var _createItemCollection = function() {
-    var items = document.querySelectorAll('.ms-CommandBar-mainArea .ms-Button :not(.ms-CommandBar-overflowButton)');
-    for(var i = 0; i < items.length; i++) {
-      var item = items[i];
-      var label = item.querySelector(".ms-Button-label").textContent;
-      var iconClass = item.querySelector(".ms-Icon").className;;
-    }
-  };
   
   var _saveCommandWidths = function() {
-    for (var i = 0; i < mainItems.length; i++) {
-      commandWidths[i] = mainItems[i].getBoundingClientRect().width;
+    
+    for (var i = 0; i < itemCollection.length; i++) {
+      commandWidths[i] = _getElementWidth(itemCollection[i].item);
     }
   };
   
   var _updateCommands = function() {
-    var overflowCommandWidth = _elements.overflowCommand.getBoundingClientRect().width;
-    var mainCommandSurfaceAreaWidth = _elements.mainArea.getBoundingClientRect().width;
-    var totalAreaWidth = mainCommandSurfaceAreaWidth - overflowCommandWidth;
-    var totalCommandWidth = 0;
+    var overflowCommandWidth = _getElementWidth(_elements.overflowCommand);
+    var mainCommandSurfaceAreaWidth = _elements.mainArea.getBoundingClientRect().width; 
+    var totalAreaWidth = mainCommandSurfaceAreaWidth;
+    var searchCommandWidth =  _getElementWidth(_elements.searchBox);
+    var totalCommandWidth = searchCommandWidth + OVERFLOW_WIDTH; // Start with searchbox width
     
-    for (var i = 0; i < mainItems.length; i++) {
-      totalCommandWidth += _getElementWidth(commandWidths[i]);
+    // Reset overflow and visible
+    visibleCommands = [];
+    overflowCommands = [];
+    
+    for (var i = 0; i < itemCollection.length; i++) {
+      totalCommandWidth += commandWidths[i];
       
       if (totalCommandWidth < totalAreaWidth) {
-        visibleCommands.push(mainItems[i]);
+        visibleCommands.push(itemCollection[i]);
       } else {
-        overflowCommands.push(mainItems[i]);  
+        overflowCommands.push(itemCollection[i]);  
       }
     }
   };
   
   var _drawCommands = function() {
-    // Hide commands
+    // Remove existing commands
+    _elements.contextMenu.innerHTML = "";
+    
     for (var i = 0; i < overflowCommands.length; i++) {
-      overflowCommands.classList.add('is-hidden');
+      
+      overflowCommands[i].item.classList.add('is-hidden');
+      // Add all items to contextual menu.
+      var newCItem = contextualItemContainerRef.cloneNode(false);
+      var newClink = contextualItemLink.cloneNode(false);
+      newClink.innerText = overflowCommands[i].label;
+      newCItem.appendChild(newClink);
+      _elements.contextMenu.appendChild(newCItem);
     }
     
     // Show visible commands
     for (var i = 0; i < visibleCommands.length; i++) {
-      visibleCommands.classList.remove('is-visible');
+      visibleCommands[i].item.classList.remove('is-hidden'); 
     }
-    
+  };
+  
+  var _setWindowEvent = function() {
+    window.onresize = _doResize;
+  };
+  
+  var _handleSearchClick = function(e) {
+    e.target.classList.add('is-expanded');
+  };
+  
+  var _setSmSearchClick = function() {
+    _elements.searchBox.removeEventListener("click", _handleSearchClick, false);
+    _elements.searchBox.addEventListener("click", _handleSearchClick, false);
+    document.documentElement.addEventListener("click", function(e) {
+      if(e.target.className.indexOf(CB_SEARCH_BOX.replace('.', '')) > -1) {
+        e.stopPropagation();
+      }
+    }, false);
+  };
+
+  var _setUIState = function() {
+    switch(breakpoint) {
+      case "sm":
+        _elements.searchBox.classList.add('is-collapsed');
+        _setSmSearchClick();
+        break;
+      case "md":
+        _elements.searchBox.classList.add('is-collapsed');
+        break;
+      case "lg":
+        _elements.searchBox.classList.add('is-collapsed');
+        break;
+      case "xl":
+        _elements.searchBox.classList.remove('is-collapsed');
+        break;
+      default:
+        _elements.searchBox.classList.remove('is-collapsed');
+        break;
+    }
+  };
+  
+  var _doResize = function() {
+    _setBreakpoint();
+    _setUIState();
+    _updateCommands();
+    _drawCommands();
   };
   
   /**
    * initializes component
    */
+  
   var init = function() {
-    return CommandBar;
+    _setElements();
+    _setBreakpoint();
+    _setUIState();
+    _createItemCollection();
+    _createContextualRef();
+    _saveCommandWidths();
+    _updateCommands();
+    _drawCommands();
+    _setWindowEvent();
   };
 
   return {

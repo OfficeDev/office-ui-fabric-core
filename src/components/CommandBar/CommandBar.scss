@@ -44,7 +44,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   padding-left: 0;
   border: 0; 
   position: relative;
-
+  
   &:focus {
     outline: none;
   }
@@ -80,6 +80,10 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
       .ms-Button-icon {
         padding-right: 0;
       }
+    }
+    
+    &.is-hidden {
+      display: none;
     }
   }
   

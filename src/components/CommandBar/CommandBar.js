@@ -67,8 +67,8 @@ fabric.CommandBar.prototype = (function() {
         e = d.documentElement,
         g = d.getElementsByTagName('body')[0];
         
-    wSize.x = w.innerWidth || e.clientWidth || g.clientWidth,
-    wSize.y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+    wSize.x = w.innerWidth || e.clientWidth || g.clientWidth;
+    wSize.y = w.innerHeight || e.clientHeight || g.clientHeight;
     
     return wSize;
   };
@@ -78,27 +78,27 @@ fabric.CommandBar.prototype = (function() {
     
     switch(true) {
       case (screenSize <= ResponsiveVariables['sm-max']):
-        if(breakpoint != "sm") { _saveCommandWidths(); }
+        if(breakpoint !== "sm") { _saveCommandWidths(); }
         breakpoint = "sm";
         break;
       case (screenSize >= ResponsiveVariables['md-min'] && screenSize <= ResponsiveVariables['md-max']):
-        if(breakpoint != "md") { _saveCommandWidths(); }
+        if(breakpoint !== "md") { _saveCommandWidths(); }
         breakpoint = "md";
         break;
       case (screenSize >= ResponsiveVariables['lg-min'] && screenSize <= ResponsiveVariables['lg-max']):
-        if(breakpoint != "lg") { _saveCommandWidths(); }
+        if(breakpoint !== "lg") { _saveCommandWidths(); }
         breakpoint = "lg";
         break;
       case (screenSize >= ResponsiveVariables['xl-min'] && screenSize <= ResponsiveVariables['xl-max']):
-        if(breakpoint != "xl") { _saveCommandWidths(); }
+        if(breakpoint !== "xl") { _saveCommandWidths(); }
         breakpoint = "xl";
         break;
       case (screenSize >= ResponsiveVariables['xxl-min'] && screenSize <= ResponsiveVariables['xxl-max']):
-        if(breakpoint != "xxl") { _saveCommandWidths(); }
+        if(breakpoint !== "xxl") { _saveCommandWidths(); }
         breakpoint = "xxl";
         break;
       case (screenSize >= ResponsiveVariables['xxxl-min']):
-        if(breakpoint != "xxxl") { _saveCommandWidths(); }
+        if(breakpoint !== "xxxl") { _saveCommandWidths(); }
         breakpoint = "xxxl";
         break;
     }
@@ -113,7 +113,7 @@ fabric.CommandBar.prototype = (function() {
       overflowCommand: document.querySelector(CB_ITEM_OVERFLOW),
       contextMenu: document.querySelector(CONTEXTUAL_MENU),
       searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)
-    }
+    };
   };
   
   var _createItemCollection = function() {
@@ -122,11 +122,8 @@ fabric.CommandBar.prototype = (function() {
         iconClasses,
         splitClasses,
         icon,
-        href,
         items = document.querySelectorAll(CB_MAIN_AREA + ' .ms-Button:not(.ms-CommandBar-overflowButton)');
     
-     
-    console.log(items);
     for (var i = 0; i < items.length; i++) {
       item = items[i];
       label = item.querySelector(".ms-Button-label").textContent;
@@ -157,10 +154,11 @@ fabric.CommandBar.prototype = (function() {
   };
 
   var _getElementWidth = function(element) {
-    var width;
+    var width,
+        styles;
     
     if (element.offsetParent === null) {
-      element.setAttribute('style', 'opacity: 0, display: block;');
+      element.setAttribute('style', 'position: absolute; opacity: 0; display: block;');
     }
     
     width = element.getBoundingClientRect().width;
@@ -168,12 +166,14 @@ fabric.CommandBar.prototype = (function() {
     width += parseInt(styles.marginLeft) + parseInt(styles.marginRight);
     element.setAttribute('style', '');
     return width;
-  }
+  };
   
   var _saveCommandWidths = function() {
     
     for (var i = 0; i < itemCollection.length; i++) {
-      commandWidths[i] = _getElementWidth(itemCollection[i].item);
+      var item = itemCollection[i].item;
+      var width = _getElementWidth(item);
+      commandWidths[i] = width;
     }
   };
   
@@ -191,7 +191,7 @@ fabric.CommandBar.prototype = (function() {
     // Reset overflow and visible
     visibleCommands = [];
     overflowCommands = [];
-    
+       
     for (var i = 0; i < itemCollection.length; i++) {
       totalCommandWidth += commandWidths[i];
       
@@ -207,7 +207,6 @@ fabric.CommandBar.prototype = (function() {
     // Remove existing commands
     _elements.contextMenu.innerHTML = "";
     
-    console.log(overflowCommands);
     for (var i = 0; i < overflowCommands.length; i++) {
       
       overflowCommands[i].item.classList.add('is-hidden');
@@ -225,8 +224,8 @@ fabric.CommandBar.prototype = (function() {
     }
     
     // Show visible commands
-    for (var i = 0; i < visibleCommands.length; i++) {
-      visibleCommands[i].item.classList.remove('is-hidden'); 
+    for (var x = 0; x < visibleCommands.length; x++) {
+      visibleCommands[x].item.classList.remove('is-hidden'); 
     }
   };
   
@@ -282,6 +281,9 @@ fabric.CommandBar.prototype = (function() {
       _elements.overflowCommand.classList.remove('is-hidden');
     } else {
       _elements.overflowCommand.classList.add('is-hidden');
+      if(activeCommand === _elements.overflowCommand) {
+        _elements.contextMenu.classList.remove('is-open');
+      }
     }
   };
   

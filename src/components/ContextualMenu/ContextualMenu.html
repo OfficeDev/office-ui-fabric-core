@@ -5,18 +5,20 @@
     {{#if modifier}}
       <li class="ms-ContextualMenu-item ms-ContextualMenu-item--{{modifier}}">{{title}}</li>
     {{else}}
-      <li class="ms-ContextualMenu-item">
-        <a class="ms-ContextualMenu-link  {{#if state}} {{state}} {{/if}}" {{#if href}} href="" {{/if}}>{{title}}</a>
+      <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}} {{#if icon}} ms-ContextualMenu-item--hasIcon {{/if}}">
+        <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
+        {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}}"></i>{{/if}}
       </li>
       {{#if subMenuItems}}
         <ul class="ms-ContextualMenu">
           {{#each subMenuItems}}
-            <li class="ms-ContextualMenu-item">
-              <a class="ms-ContextualMenu-link  {{#if state}} {{state}} {{/if}}" {{#if href}} href="" {{/if}}>{{title}}</a>
-            </li>
+            <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}} {{#if icon}} ms-ContextualMenu-item--hasIcon {{/if}}">
+              <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
+              {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}}"></i>{{/if}}
+            </li> 
           {{/each}}
         </ul>
       {{/if}}
     {{/if}}
   {{/each}}
-</ul>
+</ul> 

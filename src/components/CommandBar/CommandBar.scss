@@ -109,8 +109,12 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   
   .ms-SearchBox.is-collapsed {}
   
-  .ms-SearchBox.is-collapsed.is-expanded {
+  .ms-SearchBox.is-collapsed.is-active {
     width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: $ms-zIndex-front;
   }
   
   // Search is collapsed unless ativated and its only

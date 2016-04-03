@@ -92,7 +92,8 @@
         "items": [
           {
             "title": "BLANK",
-            "state": ""
+            "state": "",
+            "icon": "star"
           }
         ]
       }

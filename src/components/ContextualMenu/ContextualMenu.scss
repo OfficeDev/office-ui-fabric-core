@@ -27,6 +27,46 @@
 .ms-ContextualMenu-item {
   @include ms-u-borderBox;
   position: relative;
+   
+  &:hover,
+  &:active {
+    background-color: $ms-color-neutralLight;
+    color: $ms-color-black;
+  }
+
+  &:active {
+    border: 1px solid $ms-color-themePrimary;
+  }
+
+  &.is-selected {
+    background-color: $ms-color-themeLight;
+    color: $ms-color-black;
+    font-family: $ms-font-family-semibold;
+
+    &:hover {
+      background-color: $ms-color-themeLight;
+    }
+  }
+
+  &.is-disabled {
+    background-color: $ms-color-white;
+    
+    &:active { 
+      border-color: $ms-color-white; 
+    }
+    
+    .ms-ContextualMenu-link {
+      color: $ms-color-neutralTertiary;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .ms-Icon { 
+      color: $ms-color-neutralTertiary;
+      pointer-events: none;
+      cursor: default;
+    }
+  } 
 }
 
 // Modifier: Menu item Dividers
@@ -59,43 +99,6 @@
   line-height: 40px;
   padding: 0 18px;
   position: relative;
-
-  // Shorten the first and last items to maintain baseline alignment.
-  &:first-child, 
-  &:last-child {
-    height: 39px;
-  }
-
-  &:hover,
-  &:active {
-    background-color: $ms-color-neutralLight;
-    color: $ms-color-black;
-  }
-
-  &:active {
-    border: 1px solid $ms-color-themePrimary;
-  }
-
-  &.is-selected {
-    background-color: $ms-color-themeLight;
-    color: $ms-color-black;
-    font-family: $ms-font-family-semibold;
-
-    &:hover {
-      background-color: $ms-color-themeLight;
-    }
-  }
-
-  &.is-disabled {
-    background-color: $ms-color-white;
-    color: $ms-color-neutralTertiary;
-    cursor: default;
-    pointer-events: none;
-
-    &:active { 
-      border-color: $ms-color-white; 
-    }
-  }
 }
 
 // Modifier: Contextual menu with submenu
@@ -150,5 +153,18 @@
         left: 10px;
       }
     }
+  }
+}
+
+
+//== Modifier: Context menu item has icon
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasIcon {
+  .ms-Icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    font-size: $ms-font-size-s;
+    text-align: center;
   }
 }

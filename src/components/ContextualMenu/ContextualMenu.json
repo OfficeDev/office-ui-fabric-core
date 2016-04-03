@@ -8,7 +8,8 @@
     "ContextualMenu.html",
     "ContextualMenu.SubMenu.html",
     "ContextualMenu.Dividers.html",
-    "ContextualMenu.Multiselect.html"
+    "ContextualMenu.Multiselect.html",
+    "ContextualMenu.Icons.html"
   ],
   "props":  {
     "state": "is-open",
@@ -32,6 +33,36 @@
       {
         "title": "Sports",
         "state": "is-disabled"
+      }
+    ]
+  },
+  "propsIcons":  {
+    "state": "is-open",
+    "items": [
+      {
+        "title": "Animals",
+        "state": "",
+        "icon": "star"
+      },
+      {
+        "title": "Books",
+        "state": "",
+        "icon": "star"
+      },
+      {
+        "title": "Education",
+        "state": "is-selected",
+        "icon": "star"
+      },
+      {
+        "title": "Music",
+        "state": "",
+        "icon": "star"
+      },
+      {
+        "title": "Sports",
+        "state": "is-disabled",
+        "icon": "star"
       }
     ]
   },

@@ -25,6 +25,7 @@ fabric.CommandBar.prototype = (function() {
   var CONTEXTUAL_MENU = ".ms-ContextualMenu";
   var CB_SEARCH_BOX = ".ms-SearchBox";
   var CB_MAIN_AREA = ".ms-CommandBar-mainArea";
+  var CB_SIDE_COMMAND_AREA = ".ms-CommandBar-mainArea";
   var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
   var OVERFLOW_WIDTH = 41.5;
   
@@ -49,8 +50,14 @@ fabric.CommandBar.prototype = (function() {
   var itemCollection = [];
   var contextualItemContainerRef;
   var contextualItemLink;
+  var contextualItemIcon;
   var breakpoint = "sm";
   var _elements = {};
+  var activeCommand;
+  
+  var _hasClass = function(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+  };
 
   var _getScreenSize = function() {
     // First we need to set what the screen is doing, check screen size
@@ -101,6 +108,7 @@ fabric.CommandBar.prototype = (function() {
     _elements = {
       container: this.container,
       mainArea: document.querySelector(CB_MAIN_AREA),
+      sideCommandArea: document.querySelector(CB_SIDE_COMMAND_AREA),
       mainItems: [],
       overflowCommand: document.querySelector(CB_ITEM_OVERFLOW),
       contextMenu: document.querySelector(CONTEXTUAL_MENU),
@@ -117,12 +125,20 @@ fabric.CommandBar.prototype = (function() {
         href,
         items = document.querySelectorAll(CB_MAIN_AREA + ' .ms-Button:not(.ms-CommandBar-overflowButton)');
     
+     
+    console.log(items);
     for (var i = 0; i < items.length; i++) {
       item = items[i];
       label = item.querySelector(".ms-Button-label").textContent;
       iconClasses = item.querySelector(".ms-Icon").className;
       splitClasses = iconClasses.split(' ');
-      icon = splitClasses.map(function(cName) { if (cName.indexOf('ms-Icon--') > -1) { return cName; } });
+      
+      for(var o = 0; o < splitClasses.length; o++) {
+       if (splitClasses[o].indexOf('ms-Icon--') > -1) {
+          icon =  splitClasses[o];
+          break;
+       }
+      }
       
       itemCollection.push({
         item: item,
@@ -136,6 +152,7 @@ fabric.CommandBar.prototype = (function() {
   var _createContextualRef = function() {
    contextualItemContainerRef = _elements.contextMenu.querySelector('.ms-ContextualMenu-item').cloneNode(true);
    contextualItemLink = contextualItemContainerRef.querySelector('.ms-ContextualMenu-link').cloneNode(false);
+   contextualItemIcon = contextualItemContainerRef.querySelector('.ms-Icon').cloneNode(false);
    contextualItemContainerRef.innerHTML = '';
   };
 
@@ -145,6 +162,7 @@ fabric.CommandBar.prototype = (function() {
     if (element.offsetParent === null) {
       element.setAttribute('style', 'opacity: 0, display: block;');
     }
+    
     width = element.getBoundingClientRect().width;
     styles = window.getComputedStyle(element);
     width += parseInt(styles.marginLeft) + parseInt(styles.marginRight);
@@ -160,10 +178,14 @@ fabric.CommandBar.prototype = (function() {
   };
   
   var _updateCommands = function() {
-    var overflowCommandWidth = _getElementWidth(_elements.overflowCommand);
+    var searchCommandWidth = 0;
     var mainCommandSurfaceAreaWidth = _elements.mainArea.getBoundingClientRect().width; 
     var totalAreaWidth = mainCommandSurfaceAreaWidth;
-    var searchCommandWidth =  _getElementWidth(_elements.searchBox);
+    
+    if(_elements.searchBox) {
+      searchCommandWidth =  _getElementWidth(_elements.searchBox);
+    }
+    
     var totalCommandWidth = searchCommandWidth + OVERFLOW_WIDTH; // Start with searchbox width
     
     // Reset overflow and visible
@@ -185,14 +207,20 @@ fabric.CommandBar.prototype = (function() {
     // Remove existing commands
     _elements.contextMenu.innerHTML = "";
     
+    console.log(overflowCommands);
     for (var i = 0; i < overflowCommands.length; i++) {
       
       overflowCommands[i].item.classList.add('is-hidden');
       // Add all items to contextual menu.
       var newCItem = contextualItemContainerRef.cloneNode(false);
       var newClink = contextualItemLink.cloneNode(false);
+      var newIcon = contextualItemIcon.cloneNode(false);
+      var iconClass =  overflowCommands[i].icon;
+      
       newClink.innerText = overflowCommands[i].label;
       newCItem.appendChild(newClink);
+      newIcon.className = "ms-Icon " + iconClass;
+      newCItem.appendChild(newIcon);
       _elements.contextMenu.appendChild(newCItem);
     }
     
@@ -207,7 +235,13 @@ fabric.CommandBar.prototype = (function() {
   };
   
   var _handleSearchClick = function(e) {
-    e.target.classList.add('is-expanded');
+    if(!_hasClass(e.target, "ms-SearchBox-field")) {
+      if(_hasClass(_elements.searchBox, "is-active")) {
+        _elements.searchBox.classList.remove('is-active');
+      } else {
+        _elements.searchBox.classList.add('is-active');
+      }
+    }
   };
   
   var _setSmSearchClick = function() {
@@ -228,9 +262,11 @@ fabric.CommandBar.prototype = (function() {
         break;
       case "md":
         _elements.searchBox.classList.add('is-collapsed');
+        _setSmSearchClick();
         break;
       case "lg":
         _elements.searchBox.classList.add('is-collapsed');
+        _setSmSearchClick();
         break;
       case "xl":
         _elements.searchBox.classList.remove('is-collapsed');
@@ -241,11 +277,54 @@ fabric.CommandBar.prototype = (function() {
     }
   };
   
+  var _checkOverflow = function() {
+    if(overflowCommands.length > 0) {
+      _elements.overflowCommand.classList.remove('is-hidden');
+    } else {
+      _elements.overflowCommand.classList.add('is-hidden');
+    }
+  };
+  
+  var _toggleOverflowMenu = function() {
+    var left;
+
+    if(_hasClass(_elements.contextMenu, "is-open")) {
+      _elements.contextMenu.setAttribute("style", "");
+      _elements.contextMenu.classList.remove('is-open');
+    } else {
+      // Show contextual menu
+      activeCommand = _elements.overflowCommand;
+      left = activeCommand.getBoundingClientRect().left;
+      _elements.contextMenu.classList.add('is-open');
+      _redrawMenu();
+    }
+     
+  };
+  
+  var _redrawMenu = function() {
+    var left;
+    
+    if(_hasClass(_elements.contextMenu, "is-open")) {
+       left = activeCommand.getBoundingClientRect().left;
+       _drawOverflowMenu(left);
+    }
+  };
+  
+  var _drawOverflowMenu = function(left) {
+    _elements.contextMenu.setAttribute("style", "left: " + left + "px; transform: translateX(-50%)");
+  };
+  
+  var _setOverflowAction = function() {
+    _elements.overflowCommand.addEventListener("click", _toggleOverflowMenu.bind(this));
+  };
+  
   var _doResize = function() {
     _setBreakpoint();
     _setUIState();
     _updateCommands();
     _drawCommands();
+    _checkOverflow();
+    _redrawMenu();
   };
   
   /**
@@ -262,6 +341,8 @@ fabric.CommandBar.prototype = (function() {
     _updateCommands();
     _drawCommands();
     _setWindowEvent();
+    _setOverflowAction();
+    _checkOverflow();
   };
 
   return {

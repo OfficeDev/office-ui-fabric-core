@@ -10,30 +10,70 @@
     "Button.Primary.html",
     "Button.Hero.html",
     "Button.Compound.html",
-    "Button.Command.html"
+    "Button.Command.html",
+    "Button.Submenu.html"
   ],
   "props":  {
-    "label": "Create Account"
+    "label": "Create Account",
+    "tag": "button"
   },
   "propsCommand": {
     "label": "Create Account",
     "icon": "plus",
-    "modifier": "command"
+    "modifier": "command",
+    "tag": "button"
   },
   "propsCompound": {
     "label": "Create Account",
     "description": "Description of this action this button takes",
     "icon": "plus",
-    "modifier": "compound"
+    "modifier": "compound",
+    "tag": "button"
   },
   "propsHero": {
     "label": "Create Account",
     "icon": "plus",
-    "modifier": "hero"
+    "modifier": "hero",
+    "tag": "button"
   },
   "propsPrimary": {
     "label": "Create Account",
     "icon": "circlePlus",
-    "modifier": "primary"
+    "modifier": "primary",
+    "tag": "button"
+  },
+  "propsSubmenu": {
+    "label": "Reply",
+    "modifier": "dropdown",
+    "splitIcon": "chevronDown",
+    "tag": "button",
+    "dropdown": {
+      "component": "ContextualMenu",
+      "props":  {
+        "state": "is-open",
+        "items": [
+          {
+            "title": "Reply",
+            "state": ""
+          },
+          {
+            "title": "Reply all",
+            "state": ""
+          },
+          {
+            "title": "Forward",
+            "state": "is-selected"
+          },
+          {
+            "title": "Flag",
+            "state": ""
+          },
+          {
+            "title": "Delete",
+            "state": "is-disabled"
+          }
+        ]
+      }
+    }
   }
 }

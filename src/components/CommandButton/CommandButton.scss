@@ -1,0 +1,154 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Button styles
+
+
+.ms-CommandButton {
+	@include ms-font-m;
+	@include ms-u-normalize;
+	background-color: $ms-color-neutralLighter;
+	border: 1px solid $ms-color-neutralLighter;
+	cursor: pointer;
+	display: inline-block;
+	height: 32px;
+	min-width: 80px;
+	padding: 4px 20px 6px;
+  outline: 1px solid transparent;
+
+	&:hover {
+		border-color: $ms-color-neutralLight;
+	}
+
+	&:focus {
+		border-color: $ms-color-themePrimary;
+	}
+  
+  &:hover,
+  &:focus {
+    background-color: $ms-color-neutralLight;
+    outline: 0;
+    
+    .ms-CommandButton-label {
+			color: $ms-color-black;
+		}
+    
+    .ms-CommandButton-icon {
+      color: $ms-color-neutralDark;
+    }
+  }
+
+	&:active {
+		background-color: $ms-color-themePrimary;
+		border-color: $ms-color-themePrimary;
+
+		.ms-CommandButton-label {
+			color: $ms-color-white;
+		}
+	}
+
+	&:disabled, 
+	&.is-disabled {
+		background-color: $ms-color-neutralLighter;
+		border-color: $ms-color-neutralLighter;
+		cursor: default;
+
+		.ms-CommandButton-label {
+			color: $ms-color-neutralTertiary;
+		}
+	}
+}
+
+.ms-CommandButton-icon {
+  color: $ms-color-neutralSecondary;
+  display: inline-block;
+  padding-right: 8px;
+  position: relative;
+}
+
+.ms-CommandButton-label {
+	color: $ms-color-neutralPrimary;
+	font-family: $ms-font-family-regular;
+	font-size: $ms-font-size-m;
+}
+
+// Add space between adjacent command buttons.
+.ms-CommandButton + .ms-CommandButton {
+	margin-left: 8px;
+}
+
+//== Modifier: Button with a dropdown menu
+//
+.ms-CommandButton-splitIcon {
+  @include ms-u-normalize;
+  margin-left: -4px;
+  border: 0;
+  height: 40px;
+  padding: 0;
+  background-color: $ms-color-themeLighterAlt;
+  width: 21px;
+  color: $ms-color-neutralDark;
+  
+  .ms-Icon {
+    border-left: 1px solid $ms-color-neutralTertiaryAlt;
+    width: 100%;
+    height: 16px;
+    font-size: $ms-font-size-l;
+  }
+  
+  &:hover {
+    background-color: $ms-color-neutralLight;
+    border-color: $ms-color-neutralLight;
+    outline: 1px solid transparent;
+    color: $ms-color-black;
+  }
+
+  &:focus {
+    background-color: $ms-color-neutralLight;
+    border-color: $ms-color-themePrimary;
+    outline: 1px solid transparent;
+
+    .ms-Button-label {
+      color: $ms-color-black;
+    }
+  }
+
+  &:active {
+    background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
+
+    .ms-Button-label {
+      color: $ms-color-white;
+    }
+  }
+
+  &:disabled, 
+  &.is-disabled {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralLighter;
+    cursor: default;
+
+    .ms-Button-label {
+      color: $ms-color-neutralTertiary;
+    }
+
+    &:hover, 
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.ms-CommandButton.ms-CommandButton--dropdown {
+  background-color: $ms-color-themeLighterAlt;
+  padding-right: 0;
+}
+
+.ms-CommandButton-dropdownContainer {
+   .ms-Button {
+     height: 40px;
+   }
+
+}

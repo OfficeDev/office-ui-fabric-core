@@ -325,7 +325,75 @@
 	margin-left: 8px;
 }
 
-//== Modifier: Button with no label
+//== Modifier: Button with a dropdown menu
 //
 
-.ms-Button.ms-Button--noLabel {}
+.ms-Button.ms-Button--dropdown {
+  background-color: $ms-color-themeLighterAlt;
+  padding-right: 0;
+}
+
+.ms-Button-dropdownContainer {
+   .ms-Button {
+     height: 40px;
+   }
+   .ms-Button-splitIcon {
+      @include ms-u-normalize;
+      margin-left: -4px;
+      border: 0;
+      height: 40px;
+      padding: 0;
+      background-color: $ms-color-themeLighterAlt;
+      width: 21px;
+      color: $ms-color-neutralDark;
+      
+      .ms-Icon {
+        border-left: 1px solid $ms-color-neutralTertiaryAlt;
+        width: 100%;
+        height: 16px;
+        font-size: $ms-font-size-l;
+      }
+      
+      &:hover {
+        background-color: $ms-color-neutralLight;
+        border-color: $ms-color-neutralLight;
+        outline: 1px solid transparent;
+        color: $ms-color-black;
+      }
+
+      &:focus {
+        background-color: $ms-color-neutralLight;
+        border-color: $ms-color-themePrimary;
+        outline: 1px solid transparent;
+
+        .ms-Button-label {
+          color: $ms-color-black;
+        }
+      }
+
+      &:active {
+        background-color: $ms-color-themePrimary;
+        border-color: $ms-color-themePrimary;
+
+        .ms-Button-label {
+          color: $ms-color-white;
+        }
+      }
+
+      &:disabled, 
+      &.is-disabled {
+        background-color: $ms-color-neutralLighter;
+        border-color: $ms-color-neutralLighter;
+        cursor: default;
+
+        .ms-Button-label {
+          color: $ms-color-neutralTertiary;
+        }
+
+        &:hover, 
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+}

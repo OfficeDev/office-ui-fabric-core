@@ -1,17 +1,28 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
-<button class="{{props.customClasses}} ms-Button {{#if props.modifier}} ms-Button--{{props.modifier}} {{/if}} {{#if props.label}}{{else}}ms-Button--noLabel{{/if}}">
-  {{#if props.icon}}
-    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--{{props.icon}}"></i></span>
-  {{/if}}
-  <span class="ms-Button-label">{{props.label}}</span>
-  {{#if props.description}}
-    <span class="ms-Button-description">{{props.description}}</span>
-  {{/if}}
+{{#if props.dropdown}}
+ <div class="ms-Button-dropdownContainer">
+{{/if}}
+  <{{props.tag}} 
+    class="{{props.customClasses}} ms-Button 
+      {{#if props.modifier}} ms-Button--{{props.modifier}} {{/if}} 
+      {{#if props.label}}{{else}}ms-Button--noLabel{{/if}}">
+    {{#if props.icon}}
+      <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--{{props.icon}}"></i></span>
+    {{/if}}
+    <span class="ms-Button-label">{{props.label}}</span>
+    {{#if props.description}}
+      <span class="ms-Button-description">{{props.description}}</span>
+    {{/if}}
+    {{#if props.dropdownIcon}}
+      <span class="ms-Button-dropdownIcon"><i class="ms-Icon ms-Icon--{{props.dropdownIcon}}"></i></span>
+    {{/if}}
+  </{{props.tag}}>
   {{#if props.splitIcon}}
-    <span class="ms-Button-splitIcon"><i class="ms-Icon ms-Icon--{{props.splitIcon}}"></i></span>
+    <{{props.tag}}  class="ms-Button-splitIcon">
+      <i class="ms-Icon ms-Icon--{{props.splitIcon}}"></i>
+    </{{props.tag}}>
   {{/if}}
-  {{#if props.dropdownIcon}}
-    <span class="ms-Button-dropdownIcon"><i class="ms-Icon ms-Icon--{{props.dropdownIcon}}"></i></span>
-  {{/if}}
-</button>
+{{#if props.dropdown}}
+  {{renderPartial props.dropdown.component props.dropdown.props}}
+ </div>
+{{/if}}

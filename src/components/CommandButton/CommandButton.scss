@@ -5,49 +5,65 @@
 // --------------------------------------------------
 // Button styles
 
+$CommandButton-height: 40px;
 
 .ms-CommandButton {
-	@include ms-font-m;
+  width: auto;
+  position: relative;
+}
+
+//== Mixins: Base button, focus, and icon alignments
+//
+@mixin ms-CommandButton-iconBase {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+@mixin ms-CommandBar-focusRectangle {
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid $ms-color-neutralPrimary;
+  position: absolute;
+  z-index: 10;
+  content: '';
+}
+
+@mixin ms-CommandBarButton-buttonBase {
+  @include ms-font-m;
 	@include ms-u-normalize;
-	background-color: $ms-color-neutralLighter;
-	border: 1px solid $ms-color-neutralLighter;
+	background-color: $ms-color-themeLighterAlt;
+	border: 1px solid $ms-color-themeLighterAlt;
 	cursor: pointer;
 	display: inline-block;
-	height: 32px;
-	min-width: 80px;
-	padding: 4px 20px 6px;
+	height: $CommandButton-height;
+  line-height: $CommandButton-height;
   outline: 1px solid transparent;
-
-	&:hover {
-		border-color: $ms-color-neutralLight;
+  padding: 0 8px;
+  position: relative;
+  
+  &:hover {
+    background-color: $ms-color-themeLight;
+    .ms-CommandButton-label {
+			color: $ms-color-neutralDark;
+		}
 	}
 
-	&:focus {
-		border-color: $ms-color-themePrimary;
+	&:focus::before {
+		@include  ms-CommandBar-focusRectangle;
 	}
   
-  &:hover,
   &:focus {
-    background-color: $ms-color-neutralLight;
     outline: 0;
-    
-    .ms-CommandButton-label {
-			color: $ms-color-black;
-		}
-    
-    .ms-CommandButton-icon {
-      color: $ms-color-neutralDark;
-    }
   }
+}
 
-	&:active {
-		background-color: $ms-color-themePrimary;
-		border-color: $ms-color-themePrimary;
-
-		.ms-CommandButton-label {
-			color: $ms-color-white;
-		}
-	}
+.ms-CommandButton-button {
+  min-width: 80px;
+  @include ms-CommandBarButton-buttonBase;
 
 	&:disabled, 
 	&.is-disabled {
@@ -61,94 +77,68 @@
 	}
 }
 
-.ms-CommandButton-icon {
-  color: $ms-color-neutralSecondary;
-  display: inline-block;
-  padding-right: 8px;
-  position: relative;
-}
-
-.ms-CommandButton-label {
-	color: $ms-color-neutralPrimary;
-	font-family: $ms-font-family-regular;
-	font-size: $ms-font-size-m;
-}
-
 // Add space between adjacent command buttons.
 .ms-CommandButton + .ms-CommandButton {
 	margin-left: 8px;
 }
 
+.ms-CommandButton-icon {
+  color: $ms-color-themePrimary;
+  display: inline-block;
+  padding-right: 8px;
+  position: relative;
+  font-size: $ms-font-size-l;
+  min-width: 17px;
+  height: 100%;
+  
+  .ms-Icon {
+   @include ms-CommandButton-iconBase;
+  }
+}
+
+.ms-CommandButton-label {
+  @include ms-font-m;
+  color: $ms-color-neutralPrimary;
+  line-height: $CommandButton-height;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: -4px;
+  
+  &:hover {
+    color: $ms-color-neutralDark; 
+  }
+}
+
+.ms-CommandButton-dropdownIcon {
+  display: inline-block;
+  position: relative;
+  @include ms-font-l;
+  min-width: 17px;
+  height: 100%;
+  
+  .ms-Icon {
+   @include ms-CommandButton-iconBase; 
+  }
+  
+  &:focus::before {
+   @include ms-CommandBar-focusRectangle;
+  }
+}
+
 //== Modifier: Button with a dropdown menu
 //
 .ms-CommandButton-splitIcon {
-  @include ms-u-normalize;
+  @include ms-CommandBarButton-buttonBase;
+  @include ms-font-l;
   margin-left: -4px;
-  border: 0;
-  height: 40px;
-  padding: 0;
-  background-color: $ms-color-themeLighterAlt;
   width: 21px;
-  color: $ms-color-neutralDark;
   
   .ms-Icon {
     border-left: 1px solid $ms-color-neutralTertiaryAlt;
-    width: 100%;
-    height: 16px;
-    font-size: $ms-font-size-l;
-  }
-  
-  &:hover {
-    background-color: $ms-color-neutralLight;
-    border-color: $ms-color-neutralLight;
-    outline: 1px solid transparent;
-    color: $ms-color-black;
-  }
-
-  &:focus {
-    background-color: $ms-color-neutralLight;
-    border-color: $ms-color-themePrimary;
-    outline: 1px solid transparent;
-
-    .ms-Button-label {
-      color: $ms-color-black;
-    }
-  }
-
-  &:active {
-    background-color: $ms-color-themePrimary;
-    border-color: $ms-color-themePrimary;
-
-    .ms-Button-label {
-      color: $ms-color-white;
-    }
-  }
-
-  &:disabled, 
-  &.is-disabled {
-    background-color: $ms-color-neutralLighter;
-    border-color: $ms-color-neutralLighter;
-    cursor: default;
-
-    .ms-Button-label {
-      color: $ms-color-neutralTertiary;
-    }
-
-    &:hover, 
-    &:focus {
-      outline: 0;
-    }
+    @include ms-CommandButton-iconBase;
   }
 }
 
 .ms-CommandButton.ms-CommandButton--dropdown {
-  background-color: $ms-color-themeLighterAlt;
-  padding-right: 0;
-}
-
-.ms-CommandButton-dropdownContainer {
-   .ms-Button {
-     height: 40px;
-   }
-
 }

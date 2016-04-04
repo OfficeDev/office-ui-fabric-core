@@ -7,16 +7,25 @@
   "wrapBranches": true,
   "fileOrder": [
     "CommandButton.html",
+    "CommandButton.Dropdown.html",
     "CommandButton.Submenu.html"
   ],
   "props": {
-    "label": "Create Account",
-    "icon": "plus",
+    "label": "Command",
+    "icon": "circleFill",
     "modifier": "command",
     "tag": "button"
   },
+  "propsDropdown": {
+    "label": "Command",
+    "icon": "circleFill",
+    "modifier": "command",
+    "tag": "button",
+    "dropdownIcon": "chevronDown"
+  },
   "propsSubmenu": {
     "label": "Reply",
+    "icon": "circleFill",
     "modifier": "dropdown",
     "splitIcon": "chevronDown",
     "tag": "button",

@@ -54,28 +54,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   
   .ms-Button {
    height: 100%;
-   
-   .ms-Button-label {
-    color: $ms-color-neutralPrimary;
-    line-height: $CommandBar-height;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-   }
-   
-   .ms-Button-icon {
-    color: $ms-color-themePrimary;
-    font-size: $ms-font-size-l;
-    height: 100%;
-    min-width: 17px;
-    
-    .ms-Icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-   }
-   
+
     &.ms-Button--noLabel {
       .ms-Button-icon {
         padding-right: 0;
@@ -87,12 +66,6 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     }
   }
   
-  .ms-Button:hover {
-    background-color: $ms-color-themeLight;
-    .ms-Button-label {
-      color: $ms-color-neutralDark; 
-    }
-  }
   
   .ms-SearchBox,
   .ms-SearchBox-field,
@@ -106,8 +79,6 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     vertical-align: top;
     transition: margin-right $ms-duration2;
   }
-  
-  .ms-SearchBox.is-collapsed {}
   
   .ms-SearchBox.is-collapsed.is-active {
     width: 100%;

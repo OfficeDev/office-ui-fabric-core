@@ -41,39 +41,5 @@
     "icon": "circlePlus",
     "modifier": "primary",
     "tag": "button"
-  },
-  "propsSubmenu": {
-    "label": "Reply",
-    "modifier": "dropdown",
-    "splitIcon": "chevronDown",
-    "tag": "button",
-    "dropdown": {
-      "component": "ContextualMenu",
-      "props":  {
-        "state": "is-open",
-        "items": [
-          {
-            "title": "Reply",
-            "state": ""
-          },
-          {
-            "title": "Reply all",
-            "state": ""
-          },
-          {
-            "title": "Forward",
-            "state": "is-selected"
-          },
-          {
-            "title": "Flag",
-            "state": ""
-          },
-          {
-            "title": "Delete",
-            "state": "is-disabled"
-          }
-        ]
-      }
-    }
   }
 }

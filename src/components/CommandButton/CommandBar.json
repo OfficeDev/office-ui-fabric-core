@@ -13,8 +13,7 @@
     "ContextualMenu",
     "Button",
     "Label",
-    "SearchBox",
-    "CommandButton"
+    "SearchBox"
   ],
   "props": {
     "searchBox": {
@@ -27,62 +26,62 @@
       }
     },
     "overflow": {
-      "component": "CommandButton",
+      "component": "Button",
       "props":  {
         "icon": "ellipsis",
-        "customClasses": "ms-CommandBar-overflowButton",
-        "tag": "button"
+        "modifier": "command",
+        "customClasses": "ms-CommandBar-overflowButton"
       }
     },
     "commands": [
       {
-        "component": "CommandButton",
+        "component": "Button",
         "props":  {
           "label": "New",
           "icon": "star",
-          "tag": "button"
+          "modifier": "command"
         }
       },
       {
-        "component": "CommandButton",
+        "component": "Button",
         "props":  {
           "label": "New",
           "icon": "star",
-          "tag": "button"
+          "modifier": "command"
         }
       },
       {
-        "component": "CommandButton",
+        "component": "Button",
         "props":  {
           "label": "New",
           "icon": "star",
-          "tag": "button"
+          "modifier": "command"
         }
       },
       {
-        "component": "CommandButton",
+        "component": "Button",
         "props":  {
           "label": "New",
           "icon": "star",
-          "tag": "button"
+          "modifier": "command"
         }
       },
       {
-        "component": "CommandButton",
+        "component": "Button",
         "props":  {
           "label": "New",
           "icon": "star",
-          "tag": "button"
+          "modifier": "command"
         }
       }
     ],
     "sideCommands": [
       {
-        "component": "CommandButton",
+        "component": "Button",
         "props":  {
           "label": "New",
           "icon": "star",
-          "tag": "button"
+          "modifier": "command"
         }
       }
     ],

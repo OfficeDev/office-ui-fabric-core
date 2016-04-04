@@ -1,9 +1,10 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
- <div class="ms-CommandButton">
-  <{{props.tag}} 
-    class="{{props.customClasses}} ms-CommandButton-button {{#if props.modifier}} ms-CommandButton--{{props.modifier}} {{/if}} {{#if props.label}}{{else}}ms-CommandButton--noLabel{{/if}}">
+<div class="ms-CommandButton {{#if props.modifier}} ms-CommandButton--{{props.modifier}} {{/if}}">
+  <{{props.tag}} class="{{props.customClasses}} ms-CommandButton-button  {{#if props.label}}{{else}}ms-CommandButton--noLabel{{/if}}">
     {{#if props.icon}}
-      <span class="ms-CommandButton-icon"><i class="ms-Icon ms-Icon--{{props.icon}}"></i></span>
+      <span class="ms-CommandButton-icon">
+        <i class="ms-Icon ms-Icon--{{props.icon}}"></i>
+      </span>
     {{/if}}
     <span class="ms-CommandButton-label">{{props.label}}</span>
     {{#if props.dropdownIcon}}
@@ -18,4 +19,4 @@
   {{#if props.dropdown}}
     {{renderPartial props.dropdown.component props.dropdown.props}}
   {{/if}}
- </div>
+</div>

@@ -9,6 +9,10 @@ $CommandButton-height: 40px;
 
 .ms-CommandButton {
   display: inline-block;
+  
+  &.is-hidden {
+    display: none;
+  }
 }
 
 //== Mixins: Base button, focus, and icon alignments

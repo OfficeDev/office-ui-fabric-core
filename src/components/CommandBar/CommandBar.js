@@ -23,10 +23,17 @@ fabric.CommandBar = function(container) {
 fabric.CommandBar.prototype = (function() {
   
   var CONTEXTUAL_MENU = ".ms-ContextualMenu";
+  var CONTEXTUAL_MENU_ITEM = ".ms-ContextualMenu-item";
+  var CONTEXTUAL_MENU_LINK = ".ms-ContextualMenu-link";
   var CB_SEARCH_BOX = ".ms-SearchBox";
   var CB_MAIN_AREA = ".ms-CommandBar-mainArea";
   var CB_SIDE_COMMAND_AREA = ".ms-CommandBar-mainArea";
   var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
+  var SEARCH_BOX_FIELD = ".ms-SearchBox-field";
+  var COMMAND_BUTTON = ".ms-CommandButton";
+  var COMMAND_BUTTON_LABEL = ".ms-CommandButton-label";
+  var ICON = '.ms-Icon';
+  
   var OVERFLOW_WIDTH = 41.5;
   
   var ResponsiveVariables = {
@@ -122,16 +129,16 @@ fabric.CommandBar.prototype = (function() {
         iconClasses,
         splitClasses,
         icon,
-        items = document.querySelectorAll(CB_MAIN_AREA + ' .ms-Button:not(.ms-CommandBar-overflowButton)');
+        items = document.querySelectorAll(CB_MAIN_AREA + ' ' + COMMAND_BUTTON +':not('+ CB_ITEM_OVERFLOW +')');
     
     for (var i = 0; i < items.length; i++) {
       item = items[i];
-      label = item.querySelector(".ms-Button-label").textContent;
-      iconClasses = item.querySelector(".ms-Icon").className;
+      label = item.querySelector(COMMAND_BUTTON_LABEL).textContent;
+      iconClasses = item.querySelector(ICON).className;
       splitClasses = iconClasses.split(' ');
       
       for(var o = 0; o < splitClasses.length; o++) {
-       if (splitClasses[o].indexOf('ms-Icon--') > -1) {
+       if (splitClasses[o].indexOf(ICON.replace('.', '') + '--') > -1) {
           icon =  splitClasses[o];
           break;
        }
@@ -147,8 +154,8 @@ fabric.CommandBar.prototype = (function() {
   };
   
   var _createContextualRef = function() {
-   contextualItemContainerRef = _elements.contextMenu.querySelector('.ms-ContextualMenu-item').cloneNode(true);
-   contextualItemLink = contextualItemContainerRef.querySelector('.ms-ContextualMenu-link').cloneNode(false);
+   contextualItemContainerRef = _elements.contextMenu.querySelector(CONTEXTUAL_MENU_ITEM).cloneNode(true);
+   contextualItemLink = contextualItemContainerRef.querySelector(CONTEXTUAL_MENU_LINK).cloneNode(false);
    contextualItemIcon = contextualItemContainerRef.querySelector('.ms-Icon').cloneNode(false);
    contextualItemContainerRef.innerHTML = '';
   };
@@ -218,7 +225,7 @@ fabric.CommandBar.prototype = (function() {
       
       newClink.innerText = overflowCommands[i].label;
       newCItem.appendChild(newClink);
-      newIcon.className = "ms-Icon " + iconClass;
+      newIcon.className = ICON.replace('.', "") + " " + iconClass;
       newCItem.appendChild(newIcon);
       _elements.contextMenu.appendChild(newCItem);
     }
@@ -233,24 +240,42 @@ fabric.CommandBar.prototype = (function() {
     window.onresize = _doResize;
   };
   
+  var _toggleSearchActive = function() {
+    if(_hasClass(_elements.searchBox, "is-active")) {
+      _elements.searchBox.classList.remove('is-active');
+    } else {
+      _elements.searchBox.classList.add('is-active');
+    }
+  };
+  
+  // If clicking inside searchbox but the target is not the field
   var _handleSearchClick = function(e) {
-    if(!_hasClass(e.target, "ms-SearchBox-field")) {
-      if(_hasClass(_elements.searchBox, "is-active")) {
-        _elements.searchBox.classList.remove('is-active');
-      } else {
-        _elements.searchBox.classList.add('is-active');
-      }
+    if(!_hasClass(e.target, SEARCH_BOX_FIELD.replace(".", ""))) {
+      _toggleSearchActive();
+      _clickOutsideSearch();
     }
   };
   
   var _setSmSearchClick = function() {
     _elements.searchBox.removeEventListener("click", _handleSearchClick, false);
     _elements.searchBox.addEventListener("click", _handleSearchClick, false);
-    document.documentElement.addEventListener("click", function(e) {
-      if(e.target.className.indexOf(CB_SEARCH_BOX.replace('.', '')) > -1) {
-        e.stopPropagation();
+  };
+  
+  var _handleOutsideSearchClick = function(e) {
+
+      if(e.target) {
+        if(!_elements.searchBox.contains(e.target)) {
+          _toggleSearchActive();
+          document.removeEventListener("click", _handleOutsideSearchClick, false);
+        }
+      } else {
+        _toggleSearchActive();
+        document.removeEventListener("click", _handleOutsideSearchClick, false);
       }
-    }, false);
+  };
+  
+  var _clickOutsideSearch = function() {
+    document.addEventListener('click', _handleOutsideSearchClick, false);  
   };
 
   var _setUIState = function() {

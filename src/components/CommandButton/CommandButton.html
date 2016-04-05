@@ -1,6 +1,6 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-<div class="ms-CommandButton {{#if props.modifier}}ms-CommandButton--{{props.modifier}}{{/if}}">
-  <{{props.tag}} class="{{props.customClasses}} ms-CommandButton-button  {{#if props.label}}{{else}}ms-CommandButton--noLabel{{/if}}">
+<div class="{{props.customClasses}} ms-CommandButton {{#if props.modifier}}ms-CommandButton--{{props.modifier}}{{/if}}">
+  <{{props.tag}} class="ms-CommandButton-button">
     {{#if props.icon}}
       <span class="ms-CommandButton-icon">
         <i class="ms-Icon ms-Icon--{{props.icon}}"></i>

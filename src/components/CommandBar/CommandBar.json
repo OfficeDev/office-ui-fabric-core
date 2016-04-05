@@ -31,7 +31,8 @@
       "props":  {
         "icon": "ellipsis",
         "customClasses": "ms-CommandBar-overflowButton",
-        "tag": "button"
+        "tag": "button",
+        "modifier": "noLabel"
       }
     },
     "commands": [

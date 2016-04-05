@@ -32,10 +32,11 @@
       if (typeof fabric !== "undefined") {
         if ('<%= componentName %>' in fabric) {
           var elements = document.querySelectorAll('.ms-<%= componentName %>');
+          console.log(elements);
           var i = elements.length;
-          var component;
+          var component = [];
           while(i--) {
-            component = new fabric['<%= componentName %>'](elements[i]);
+            component[i] = new fabric['<%= componentName %>'](elements[i]);
           }
         }
       }

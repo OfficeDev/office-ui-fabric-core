@@ -65,7 +65,7 @@ namespace fabric {
       function peoplePickerActive(event) {
         /** Scroll the view so that the people picker is at the top. */
         $("html, body").animate({
-          scrollTop: $peoplePicker.offset().top
+          scrollTop: $peoplePicker.offset().top,
         }, 367);
 
         /** Start by closing any open people pickers. */

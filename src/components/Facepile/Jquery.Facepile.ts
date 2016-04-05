@@ -23,8 +23,8 @@ namespace fabric {
      * @constructor
      */
     constructor(container: HTMLElement) {
-      new fabric.PeoplePicker($(".ms-PeoplePicker"));
-      new fabric.Panel($(".ms-Panel"));
+      new fabric.PeoplePicker(<HTMLElement>document.querySelector(".ms-PeoplePicker"));
+      new fabric.Panel(<HTMLElement>document.querySelector(".ms-Panel"));
 
       let $Facepile = $(container);
       let $membersList = $(".ms-Facepile-members");

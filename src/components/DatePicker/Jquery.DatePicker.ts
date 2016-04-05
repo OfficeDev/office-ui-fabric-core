@@ -279,7 +279,7 @@ namespace fabric {
     /** Scroll the page up so that the field the date picker is attached to is at the top. */
     public scrollUp($datePicker) {
       $("html, body").animate({
-        scrollTop: $datePicker.offset().top
+        scrollTop: $datePicker.offset().top,
       }, 367);
     }
   }

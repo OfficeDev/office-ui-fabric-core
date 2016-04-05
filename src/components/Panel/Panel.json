@@ -8,7 +8,8 @@
     "Button",
     "CommandBar",
     "Label",
-    "Overlay"
+    "Overlay",
+    "Pivot"
   ],
   "wrapBranches": true,
   "fileOrder": [
@@ -18,7 +19,7 @@
     {
       "name": "Small",
       "default": true,
-      "class": "ms-Panel--small",
+      "class": "ms-Panel--sm",
       "branches": [
           {
             "name": "Right",
@@ -32,15 +33,15 @@
     },
     {
       "name": "Medium",
-      "class": "ms-Panel--medium"
+      "class": "ms-Panel--md"
     },
     {
       "name": "Large",
-      "class": "ms-Panel--large"
+      "class": "ms-Panel--lg"
     },
     {
       "name": "Extra Large",
-      "class": "ms-Panel--extraLarge"
+      "class": "ms-Panel--xl"
     }
   ]
 }

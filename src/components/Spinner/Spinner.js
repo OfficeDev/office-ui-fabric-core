@@ -19,7 +19,7 @@ var fabric = fabric || {};
 fabric.Spinner = function(target) {
 
     var _target = target;
-    var eightSize = 0.179;
+    var eightSize = 0.2;
     var circleObjects = [];
     var animationSpeed = 90;
     var interval;
@@ -27,13 +27,14 @@ fabric.Spinner = function(target) {
     var numCircles;
     var offsetSize;
     var fadeIncrement = 0;
-    var parentSize;
+    var parentSize = 20;
 
     /**
      * @function start - starts or restarts the animation sequence
      * @memberOf fabric.Spinner
      */
     function start() {
+        stop();
         interval = setInterval(function() {
             var i = circleObjects.length;
             while(i--) {
@@ -53,18 +54,8 @@ fabric.Spinner = function(target) {
     //private methods
 
     function _init() {
-        //for backwards compatibility
-        if (_target.className.indexOf("ms-Spinner") === -1) {
-            spinner = document.createElement("div");
-            spinner.className = "ms-Spinner";
-            _target.appendChild(spinner);
-        } else {
-            spinner = _target;
-        }
-
-        offsetSize = eightSize;
-        numCircles = 8;
-        parentSize = spinner.className.indexOf("large") > -1 ? 28 : 20;
+        _setTargetElement();
+        _setPropertiesForSize();
         _createCirclesAndArrange();
         _initializeOpacities();
         start();
@@ -127,6 +118,27 @@ fabric.Spinner = function(target) {
             angle += step;
             circleObject = { element:circle, j:i };
             circleObjects.push(circleObject);
+        }
+    }
+
+    function _setPropertiesForSize() {
+        if (spinner.className.indexOf("large") > -1) {
+            parentSize = 28;
+            eightSize = 0.179;
+        }
+
+        offsetSize = eightSize;
+        numCircles = 8;
+    }
+
+    function _setTargetElement() {
+        //for backwards compatibility
+        if (_target.className.indexOf("ms-Spinner") === -1) {
+            spinner = document.createElement("div");
+            spinner.className = "ms-Spinner";
+            _target.appendChild(spinner);
+        } else {
+            spinner = _target;
         }
     }
 

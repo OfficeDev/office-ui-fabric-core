@@ -23,13 +23,13 @@ namespace fabric {
      */
     export class Spinner {
 
-        public eightSize: number = 0.179;
+        public eightSize: number = 0.2;
         public animationSpeed: number = 90;
         public interval: number;
         public spinner: HTMLElement;
         public numCircles: number;
         public offsetSize: number;
-        public parentSize: number;
+        public parentSize: number = 20;
         public fadeIncrement: number = 0;
 
         private circleObjects: Array<CircleObject> = [];
@@ -68,6 +68,24 @@ namespace fabric {
         // private methods
 
         private _init(): void {
+            this._setTargetElement();
+            this._setPropertiesForSize();
+            this._createCirclesAndArrange();
+            this._initializeOpacities();
+            this.start();
+        }
+
+        private _setPropertiesForSize(): void {
+            if (this.spinner.className.indexOf("large") > -1) {
+                this.parentSize = 28;
+                this.eightSize = 0.179;
+            }
+
+            this.offsetSize = this.eightSize;
+            this.numCircles = 8;
+        }
+
+        private _setTargetElement(): void {
             // for backwards compatibility
             if (this._target.className.indexOf("ms-Spinner") === -1) {
                 this.spinner = document.createElement("div");
@@ -76,13 +94,6 @@ namespace fabric {
             } else {
                 this.spinner = this._target;
             }
-
-            this.offsetSize = this.eightSize;
-            this.numCircles = 8;
-            this.parentSize = this.spinner.className.indexOf("large") > -1 ? 28 : 20;
-            this._createCirclesAndArrange();
-            this._initializeOpacities();
-            this.start();
         }
 
         private _initializeOpacities(): void {

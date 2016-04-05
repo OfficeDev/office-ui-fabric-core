@@ -49,7 +49,8 @@ var Config = function() {
     this.typescriptConfig = {
         module: 'commonjs',
         declaration: true,
-        target: 'ES5'
+        target: 'ES5',
+        noEmitOnError: true
     };
     this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {

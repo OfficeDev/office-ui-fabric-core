@@ -204,8 +204,8 @@ namespace fabric {
       $(document).on("click", function(e) {
         let $memberBtn = $(".ms-Facepile-itemBtn--member");
 
-        if (!$memberBtn.is(e.target) && $memberBtn.has(e.target).length === 0
-            && !$personaCard.is(e.target) && $personaCard.has(e.target).length === 0) {
+        if (!$memberBtn.is(e.target) && $memberBtn.has(e.target).length === 0 &&
+            !$personaCard.is(e.target) && $personaCard.has(e.target).length === 0) {
           $personaCard.removeClass("is-active");
           $personaCard.removeAttr("style");
         } else {

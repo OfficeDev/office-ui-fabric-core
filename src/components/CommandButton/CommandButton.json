@@ -5,34 +5,73 @@
   "template": "CommandButton.html",
   "class": "ms-CommandButon",
   "wrapBranches": true,
+  "dependencies": [
+    "ContextualMenu"
+  ],
   "fileOrder": [
     "CommandButton.html",
+    "CommandButton.NoLabel.html",
+    "CommandButton.NoLabelSplit.html",
     "CommandButton.Dropdown.html",
-    "CommandButton.Submenu.html"
+    "CommandButton.Split.html"
   ],
   "props": {
     "label": "Command",
     "icon": "circleFill",
-    "modifier": "command",
     "tag": "button"
   },
   "propsDropdown": {
     "label": "Command",
     "icon": "circleFill",
-    "modifier": "command",
     "tag": "button",
     "dropdownIcon": "chevronDown"
   },
-  "propsSubmenu": {
+  "propsSplit": {
     "label": "Reply",
     "icon": "circleFill",
-    "modifier": "dropdown",
     "splitIcon": "chevronDown",
     "tag": "button",
     "dropdown": {
       "component": "ContextualMenu",
       "props":  {
-        "state": "is-open",
+        "items": [
+          {
+            "title": "Reply",
+            "state": ""
+          },
+          {
+            "title": "Reply all",
+            "state": ""
+          },
+          {
+            "title": "Forward",
+            "state": "is-selected"
+          },
+          {
+            "title": "Flag",
+            "state": ""
+          },
+          {
+            "title": "Delete",
+            "state": "is-disabled"
+          }
+        ]
+      }
+    }
+  },
+  "propsNoLabel": {
+    "icon": "circleFill",
+    "modifier": "noLabel",
+    "tag": "button"
+  },
+  "propsNoLabelSplit": {
+    "icon": "circleFill",
+    "modifier": "noLabel",
+    "tag": "button",
+    "splitIcon": "chevronDown",
+    "dropdown": {
+      "component": "ContextualMenu",
+      "props":  {
         "items": [
           {
             "title": "Reply",

@@ -8,8 +8,7 @@
 $CommandButton-height: 40px;
 
 .ms-CommandButton {
-  width: auto;
-  position: relative;
+  display: inline-block;
 }
 
 //== Mixins: Base button, focus, and icon alignments
@@ -44,6 +43,7 @@ $CommandButton-height: 40px;
   outline: 1px solid transparent;
   padding: 0 8px;
   position: relative;
+  vertical-align: top;
   
   &:hover {
     background-color: $ms-color-themeLight;
@@ -62,7 +62,6 @@ $CommandButton-height: 40px;
 }
 
 .ms-CommandButton-button {
-  min-width: 80px;
   @include ms-CommandBarButton-buttonBase;
 
 	&:disabled, 
@@ -126,8 +125,6 @@ $CommandButton-height: 40px;
   }
 }
 
-//== Modifier: Button with a dropdown menu
-//
 .ms-CommandButton-splitIcon {
   @include ms-CommandBarButton-buttonBase;
   @include ms-font-l;
@@ -140,5 +137,11 @@ $CommandButton-height: 40px;
   }
 }
 
-.ms-CommandButton.ms-CommandButton--dropdown {
+// Modifier: Small button Modifier
+//
+
+.ms-CommandButton.ms-CommandButton--noLabel {
+  .ms-CommandButton-icon {
+    padding-right: 0;
+  }
 }

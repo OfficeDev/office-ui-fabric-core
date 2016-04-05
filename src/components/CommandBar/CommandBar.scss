@@ -178,6 +178,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   padding: 0 8px;
   display: block;
   height: 100%;
+  text-decoration: none;
 }
 
 .ms-CommandBarItem-link:focus {
@@ -194,7 +195,8 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
 }
 
 .ms-CommandBarItem-icon {
- font-size: $ms-font-size-l;
+  font-size: $ms-font-size-l;
+  color: $ms-color-themePrimary;
 }
 
 .ms-CommandBarItem-chevronDown  {

@@ -62,11 +62,11 @@ fabric.CommandBar.prototype = (function() {
   var _elements = {};
   var activeCommand;
   
-  var _hasClass = function(element, cls) {
+  function _hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-  };
+  }
 
-  var _getScreenSize = function() {
+  function _getScreenSize() {
     // First we need to set what the screen is doing, check screen size
     var w = window;
     var wSize = {};
@@ -78,9 +78,9 @@ fabric.CommandBar.prototype = (function() {
     wSize.y = w.innerHeight || e.clientHeight || g.clientHeight;
     
     return wSize;
-  };
+  }
   
-  var _setBreakpoint = function() {
+  function _setBreakpoint() {
     var screenSize = _getScreenSize().x;
     
     switch(true) {
@@ -109,9 +109,9 @@ fabric.CommandBar.prototype = (function() {
         breakpoint = "xxxl";
         break;
     }
-  };
+  }
   
-  var _setElements = function() {
+  function _setElements() {
     _elements = {
       container: this.container,
       mainArea: document.querySelector(CB_MAIN_AREA),
@@ -121,9 +121,9 @@ fabric.CommandBar.prototype = (function() {
       contextMenu: document.querySelector(CONTEXTUAL_MENU),
       searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)
     };
-  };
+  }
   
-  var _createItemCollection = function() {
+  function _createItemCollection() {
     var item,
         label,
         iconClasses,
@@ -151,16 +151,16 @@ fabric.CommandBar.prototype = (function() {
       });
     }
     return;
-  };
+  }
   
-  var _createContextualRef = function() {
+  function _createContextualRef() {
    contextualItemContainerRef = _elements.contextMenu.querySelector(CONTEXTUAL_MENU_ITEM).cloneNode(true);
    contextualItemLink = contextualItemContainerRef.querySelector(CONTEXTUAL_MENU_LINK).cloneNode(false);
    contextualItemIcon = contextualItemContainerRef.querySelector('.ms-Icon').cloneNode(false);
    contextualItemContainerRef.innerHTML = '';
-  };
+  }
 
-  var _getElementWidth = function(element) {
+  function _getElementWidth(element) {
     var width,
         styles;
     
@@ -173,18 +173,18 @@ fabric.CommandBar.prototype = (function() {
     width += parseInt(styles.marginLeft) + parseInt(styles.marginRight);
     element.setAttribute('style', '');
     return width;
-  };
+  }
   
-  var _saveCommandWidths = function() {
+  function _saveCommandWidths() {
     
     for (var i = 0; i < itemCollection.length; i++) {
       var item = itemCollection[i].item;
       var width = _getElementWidth(item);
       commandWidths[i] = width;
     }
-  };
+  }
   
-  var _updateCommands = function() {
+  function _updateCommands() {
     var searchCommandWidth = 0;
     var mainCommandSurfaceAreaWidth = _elements.mainArea.getBoundingClientRect().width; 
     var totalAreaWidth = mainCommandSurfaceAreaWidth;
@@ -208,9 +208,9 @@ fabric.CommandBar.prototype = (function() {
         overflowCommands.push(itemCollection[i]);  
       }
     }
-  };
+  }
   
-  var _drawCommands = function() {
+  function _drawCommands() {
     // Remove existing commands
     _elements.contextMenu.innerHTML = "";
     
@@ -234,34 +234,34 @@ fabric.CommandBar.prototype = (function() {
     for (var x = 0; x < visibleCommands.length; x++) {
       visibleCommands[x].item.classList.remove('is-hidden'); 
     }
-  };
+  }
   
-  var _setWindowEvent = function() {
+  function _setWindowEvent() {
     window.onresize = _doResize;
-  };
+  }
   
-  var _toggleSearchActive = function() {
+  function _toggleSearchActive() {
     if(_hasClass(_elements.searchBox, "is-active")) {
       _elements.searchBox.classList.remove('is-active');
     } else {
       _elements.searchBox.classList.add('is-active');
     }
-  };
+  }
   
   // If clicking inside searchbox but the target is not the field
-  var _handleSearchClick = function(e) {
+  function _handleSearchClick(e) {
     if(!_hasClass(e.target, SEARCH_BOX_FIELD.replace(".", ""))) {
       _toggleSearchActive();
       _clickOutsideSearch();
     }
-  };
+  }
   
-  var _setSmSearchClick = function() {
+  function _setSmSearchClick() {
     _elements.searchBox.removeEventListener("click", _handleSearchClick, false);
     _elements.searchBox.addEventListener("click", _handleSearchClick, false);
-  };
+  }
   
-  var _handleOutsideSearchClick = function(e) {
+  function _handleOutsideSearchClick(e) {
 
       if(e.target) {
         if(!_elements.searchBox.contains(e.target)) {
@@ -272,13 +272,13 @@ fabric.CommandBar.prototype = (function() {
         _toggleSearchActive();
         document.removeEventListener("click", _handleOutsideSearchClick, false);
       }
-  };
+  }
   
-  var _clickOutsideSearch = function() {
+  function _clickOutsideSearch() {
     document.addEventListener('click', _handleOutsideSearchClick, false);  
-  };
+  }
 
-  var _setUIState = function() {
+  function _setUIState() {
     switch(breakpoint) {
       case "sm":
         _elements.searchBox.classList.add('is-collapsed');
@@ -299,9 +299,9 @@ fabric.CommandBar.prototype = (function() {
         _elements.searchBox.classList.remove('is-collapsed');
         break;
     }
-  };
+  }
   
-  var _checkOverflow = function() {
+  function _checkOverflow() {
     if(overflowCommands.length > 0) {
       _elements.overflowCommand.classList.remove('is-hidden');
     } else {
@@ -310,9 +310,9 @@ fabric.CommandBar.prototype = (function() {
         _elements.contextMenu.classList.remove('is-open');
       }
     }
-  };
+  }
   
-  var _toggleOverflowMenu = function() {
+  function _toggleOverflowMenu() {
     var left;
 
     if(_hasClass(_elements.contextMenu, "is-open")) {
@@ -326,39 +326,39 @@ fabric.CommandBar.prototype = (function() {
       _redrawMenu();
     }
      
-  };
+  }
   
-  var _redrawMenu = function() {
+  function _redrawMenu() {
     var left;
     
     if(_hasClass(_elements.contextMenu, "is-open")) {
        left = activeCommand.getBoundingClientRect().left;
        _drawOverflowMenu(left);
     }
-  };
+  }
   
-  var _drawOverflowMenu = function(left) {
+  function _drawOverflowMenu(left) {
     _elements.contextMenu.setAttribute("style", "left: " + left + "px; transform: translateX(-50%)");
-  };
+  }
   
-  var _setOverflowAction = function() {
+  function _setOverflowAction() {
     _elements.overflowCommand.addEventListener("click", _toggleOverflowMenu.bind(this));
-  };
+  }
   
-  var _doResize = function() {
+  function _doResize() {
     _setBreakpoint();
     _setUIState();
     _updateCommands();
     _drawCommands();
     _checkOverflow();
     _redrawMenu();
-  };
+  }
   
   /**
    * initializes component
    */
   
-  var init = function() {
+  function init() {
     _setElements();
     _setBreakpoint();
     _setUIState();
@@ -370,7 +370,7 @@ fabric.CommandBar.prototype = (function() {
     _setWindowEvent();
     _setOverflowAction();
     _checkOverflow();
-  };
+  }
 
   return {
     init: init

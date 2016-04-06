@@ -1,0 +1,10 @@
+{
+  "name": "Breadcrumb",
+  "notes": "A component that shows the user's current location in a hierarchy and provides a means of navigating up or down it.",
+  "description": "Shows the user's current location in a hierarchy and provides a means of navigating upward.",
+  "template": "Breadcrumb.html",
+  "class": "ms-Breadcrumb",
+  "dependencies": [
+    "ContextualMenu"
+  ]
+}

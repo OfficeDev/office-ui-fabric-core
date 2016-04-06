@@ -1,0 +1,191 @@
+{
+  "name": "Persona",
+  "notes": "The persona component is used to represent a person. A placeholder icon is included in every persona as a fallback for when there is no img src or the img hasn't been received yet from the server.",
+  "description": "The persona component is used to represent a person. Circular framing of the user's avatar is currently the default along with circular presence indicators. A placeholder icon is included in every persona as a fallback for when there is no img src or the img hasn't been received yet from the server.",
+  "template": "Persona.html",
+  "class": "ms-Persona",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Persona.Tiny.html",
+    "Persona.ExtraSmall.html",
+    "Persona.Small.html",
+    "Persona.html",
+    "Persona.Large.html",
+    "Persona.ExtraLarge.html",
+    "Persona.Square.Tiny.html",
+    "Persona.Square.ExtraSmall.html",
+    "Persona.Square.Small.html",
+    "Persona.Square.html",
+    "Persona.Square.Large.html",
+    "Persona.Square.ExtraLarge.html",
+    "Persona.Presence.Available.html",
+    "Persona.Presence.Away.html",
+    "Persona.Presence.Blocked.html",
+    "Persona.Presence.Busy.html",
+    "Persona.Presence.Dnd.html",
+    "Persona.Presence.Offline.html",
+    "Persona.Presence.Square.Available.html",
+    "Persona.Presence.Square.Away.html",
+    "Persona.Presence.Square.Blocked.html",
+    "Persona.Presence.Square.Busy.html",
+    "Persona.Presence.Square.Dnd.html",
+    "Persona.Presence.Square.Offline.html",
+    "Persona.Initials.html"
+  ],
+  "branches": [
+    {
+      "name": "Sizes",
+      "default": true,
+      "branches": [
+        {
+          "name": "Tiny/recipient",
+          "notes": "This one is usually used within a People Picker to represent a person in a minimal way.",
+          "class": "ms-Persona--tiny",
+          "branches": [
+            {
+              "name": "Editable",
+              "default": true
+            },
+            {
+              "name": "Read-only",
+              "class": "ms-Persona--readonly"
+            }
+          ]
+        },
+        {
+          "name": "Extra small",
+          "class": "ms-Persona--xs",
+          "branches": [
+            {
+              "name": "Regular",
+              "default": true
+            },
+            {
+              "name": "Dark text",
+              "class": "ms-Persona--darkText",
+              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
+            },
+            {
+              "name": "Selectable",
+              "class": "ms-Persona--selectable"
+            }
+          ]
+        },
+        {
+          "name": "Small",
+          "class": "ms-Persona--sm",
+          "notes": "This should be no smaller than...",
+          "branches": [
+            {
+              "name": "Regular",
+              "default": true
+            },
+            {
+              "name": "Dark text",
+              "class": "ms-Persona--darkText",
+              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
+            },
+            {
+              "name": "Selectable",
+              "class": "ms-Persona--selectable"
+            }
+          ]
+        },
+        {
+          "name": "Medium",
+          "default": true,
+          "branches": [
+            {
+              "name": "Regular",
+              "default": true
+            },
+            {
+              "name": "Dark text",
+              "class": "ms-Persona--darkText",
+              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
+            },
+            {
+              "name": "Selectable",
+              "class": "ms-Persona--selectable"
+            }
+          ]
+        },
+        {
+          "name": "Large",
+          "class": "ms-Persona--lg",
+          "branches": [
+            {
+              "name": "Regular",
+              "default": true
+            },
+            {
+              "name": "Dark text",
+              "class": "ms-Persona--darkText",
+              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
+            },
+            {
+              "name": "Selectable",
+              "class": "ms-Persona--selectable"
+            }
+          ]
+        },
+        {
+          "name": "Extra large",
+          "class": "ms-Persona--xl",
+          "branches": [
+            {
+              "name": "Regular",
+              "default": true
+            },
+            {
+              "name": "Dark text",
+              "class": "ms-Persona--darkText",
+              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
+            },
+            {
+              "name": "Selectable",
+              "class": "ms-Persona--selectable"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Presence",
+      "notes": "An extra large Persona is shown here to better see the presence indicator. The same options and appearance apply to all sizes.",
+      "class": "ms-Persona--xl",
+      "branches": [
+        {
+          "name": "Available",
+          "class": "ms-Persona--available",
+          "default": true
+        },
+        {
+          "name": "Away",
+          "class": "ms-Persona--away"
+        },
+        {
+          "name": "Blocked",
+          "class": "ms-Persona--blocked"
+        },
+        {
+          "name": "Busy",
+          "class": "ms-Persona--busy"
+        },
+        {
+          "name": "Do not disturb",
+          "class": "ms-Persona--dnd"
+        },
+        {
+          "name": "Offline",
+          "class": "ms-Persona--offline"
+        },
+        {
+          "name": "No presence",
+          "notes": "The presence indicator is not required.",
+          "template": "Persona.No-Presence.html"
+        }
+      ]
+    }
+  ]
+}

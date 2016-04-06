@@ -7,6 +7,10 @@
 
 @import "Fabric.Utilities";
 
+.ms-Fabric {
+  @include ms-Fabric;
+}
+
 // The best box is a border box.
 .ms-u-borderBox, .ms-u-borderBox:before, .ms-u-borderBox:after {
   @include ms-u-borderBox;

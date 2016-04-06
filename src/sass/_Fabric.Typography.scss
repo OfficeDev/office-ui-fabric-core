@@ -7,94 +7,73 @@
 @import 'Fabric.Typography.Variables';
 
 // Super Styles (LIMITED USE)
-// Weights: Light
 @mixin ms-font-su {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-light;
   font-size: $ms-font-size-su;
-  font-weight: normal;
+  font-weight: 100;
 }
-// No touch class for Super
 
 // Extra-Extra-Large
-// Allowed weights: Light, SemiLight
 @mixin ms-font-xxl {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-light;
   font-size: $ms-font-size-xxl;
-  font-weight: normal;
+  font-weight: 100;
 }
 
 // Extra-Large Styles
-// Allowed weights: Light, SemiLight
 @mixin ms-font-xl {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-light;
   font-size: $ms-font-size-xl;
-  font-weight: normal;
+  font-weight: 100;
 }
 
 // Large Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-l {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-l;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 // Medium Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-m-plus {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-m-plus;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 // Medium Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-m {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-m;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 // Small Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-s-plus {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-s-plus;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 // Small Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-s {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-s;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 // XS Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-xs {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-xs;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 // Micro Styles (LIMITED USE)
-// Weights: Semibold
 @mixin ms-font-mi {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-semibold;
   font-size: $ms-font-size-mi;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 //== Helper classes & mixins

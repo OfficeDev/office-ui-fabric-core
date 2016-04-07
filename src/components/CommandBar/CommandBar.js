@@ -26,6 +26,7 @@ fabric.CommandBar = function(context) {
   var CB_SIDE_COMMAND_AREA = ".ms-CommandBar-mainArea";
   var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
   var SEARCH_BOX_FIELD = ".ms-SearchBox-field";
+  var SEARCH_BOX_CLOSE = ".ms-SearchBox-closeField";
   var COMMAND_BUTTON = ".ms-CommandButton";
   var COMMAND_BUTTON_LABEL = ".ms-CommandButton-label";
   var ICON = '.ms-Icon';
@@ -121,7 +122,8 @@ fabric.CommandBar = function(context) {
       mainItems: [],
       overflowCommand: document.querySelector(CB_ITEM_OVERFLOW),
       contextMenu: document.querySelector(CONTEXTUAL_MENU),
-      searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)
+      searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
+      searchBoxClose: document.querySelector(SEARCH_BOX_CLOSE)
     };
   }
   
@@ -242,42 +244,33 @@ fabric.CommandBar = function(context) {
     window.onresize = _doResize;
   }
   
-  function _toggleSearchActive() {
-    if(_hasClass(_elements.searchBox, "is-active")) {
-      _elements.searchBox.classList.remove('is-active');
-    } else {
-      _elements.searchBox.classList.add('is-active');
-    }
+  function _removeSearchEvent() {
+     _elements.searchBox.removeEventListener("click", _handleSearchClick, false);
   }
   
   function _handleSearchClick(e) {
+    // If the target is NOT the searchbox field then make it active, and 
+    // add document event click
     if(!_hasClass(e.target, SEARCH_BOX_FIELD.replace(".", ""))) {
-      _toggleSearchActive();
-      _clickOutsideSearch();
+      _removeSearchEvent();
+      _elements.searchBoxClose.addEventListener('click', _handleOutsideSearchClick, false);
+      document.addEventListener('click', _handleOutsideSearchClick, false);
     }
   }
   
   function _setSmSearchClick() {
-    _elements.searchBox.removeEventListener("click", _handleSearchClick, false);
+    _removeSearchEvent();
     _elements.searchBox.addEventListener("click", _handleSearchClick, false);
   }
   
   function _handleOutsideSearchClick(e) {
-    console.log(e.target); 
-      if(e.target) {
-        if(!_elements.searchBox.contains(e.target)) {
-          _toggleSearchActive();
-          document.removeEventListener("click", _handleOutsideSearchClick, false);
-        }
-      } else {
-        _toggleSearchActive();
+    if(e.target) {
+      // If the click isnt the searchbox or a child of, remove active state
+      if(!_elements.searchBox.contains(e.target) || e.target !== _elements.searchBox) {
+         _elements.searchBox.classList.add('is-active');
         document.removeEventListener("click", _handleOutsideSearchClick, false);
       }
-  }
-  
-  function _clickOutsideSearch() {
-    document.addEventListener('click', _handleOutsideSearchClick, false); 
-    console.log("Document click"); 
+    }
   }
 
   function _setUIState() {

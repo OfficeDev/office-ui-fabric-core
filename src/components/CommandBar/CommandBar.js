@@ -59,7 +59,7 @@ fabric.CommandBar = function(context) {
   var _elements = {};
   var activeCommand;
   
-  function processCommands() {
+  function redrawCommands() {
     _updateCommands();
     _drawCommands();
     _checkOverflow();
@@ -243,35 +243,6 @@ fabric.CommandBar = function(context) {
   function _setWindowEvent() {
     window.onresize = _doResize;
   }
-  
-  function _removeSearchEvent() {
-     _elements.searchBox.removeEventListener("click", _handleSearchClick, false);
-  }
-  
-  function _handleSearchClick(e) {
-    // If the target is NOT the searchbox field then make it active, and 
-    // add document event click
-    if(!_hasClass(e.target, SEARCH_BOX_FIELD.replace(".", ""))) {
-      _removeSearchEvent();
-      _elements.searchBoxClose.addEventListener('click', _handleOutsideSearchClick, false);
-      document.addEventListener('click', _handleOutsideSearchClick, false);
-    }
-  }
-  
-  function _setSmSearchClick() {
-    _removeSearchEvent();
-    _elements.searchBox.addEventListener("click", _handleSearchClick, false);
-  }
-  
-  function _handleOutsideSearchClick(e) {
-    if(e.target) {
-      // If the click isnt the searchbox or a child of, remove active state
-      if(!_elements.searchBox.contains(e.target) || e.target !== _elements.searchBox) {
-         _elements.searchBox.classList.add('is-active');
-        document.removeEventListener("click", _handleOutsideSearchClick, false);
-      }
-    }
-  }
 
   function _setUIState() {
     switch(breakpoint) {
@@ -344,7 +315,7 @@ fabric.CommandBar = function(context) {
     _setBreakpoint();
     _setUIState();
     _redrawMenu();
-    processCommands();
+    redrawCommands();
   }
   
   /**
@@ -367,7 +338,7 @@ fabric.CommandBar = function(context) {
   _init();
 
   return {
-    processCommands: processCommands
+    redrawCommands: redrawCommands
   };
 
 };

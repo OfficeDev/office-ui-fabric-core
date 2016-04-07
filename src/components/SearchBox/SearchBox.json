@@ -29,5 +29,13 @@
     "icon": "search",
     "closeIcon": "x",
     "modifier": "commandBar"
+  },
+  "propsCollapsed": {
+    "label": "Search",
+    "defaultValue": "",
+    "icon": "search",
+    "closeIcon": "x",
+    "modifier": "commandBar",
+    "state": "is-collapsed"
   }
 }

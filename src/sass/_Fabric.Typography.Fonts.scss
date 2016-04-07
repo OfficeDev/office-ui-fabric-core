@@ -43,7 +43,7 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean";
     src: url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.ttf') format('truetype');
-    font-weight: 300;
+    font-weight: 200;
     font-style: normal;
   }
 }

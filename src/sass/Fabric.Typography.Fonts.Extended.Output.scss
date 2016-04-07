@@ -6,12 +6,12 @@
 
 // Additional @font-face rules for the Leelawadee font.
 @font-face {
-  font-family: "Leelawadee UI Bold";
+  font-family: "Leelawadee UI";
   src: url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.eot?#iefix') format('embedded-opentype'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.woff') format('woff'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold.ttf') format('truetype'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Bold#LeelawadeeUI-Bold') format('svg');
-  font-weight: normal;
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -21,17 +21,16 @@
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.woff') format('woff'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular.ttf') format('truetype'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Regular#LeelawadeeUI-Regular') format('svg');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Leelawadee UI Semilight";
-  src: url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.eot?#iefix') format('embedded-opentype'),
-       url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'),
+  font-family: "Leelawadee UI";
+  src: url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.woff') format('woff'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight.ttf') format('truetype'),
        url('#{$ms-font-directory}/LeelawadeeUI-Thai/LeelawadeeUI-Semilight#LeelawadeeUI-Semilight') format('svg');
-  font-weight: normal;
+  font-weight: 200;
   font-style: normal;
 }
 

@@ -5,11 +5,12 @@
 // --------------------------------------------------
 // Fabric Core Typography variables
 
+$ms-font-system-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
 
-$ms-font-family-light:     'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
-$ms-font-family-regular:   'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
-$ms-font-family-semilight: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
-$ms-font-family-semibold:  'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+$ms-font-family-light:     'Segoe UI Light', $ms-font-system-base;
+$ms-font-family-regular:   $ms-font-system-base;
+$ms-font-family-semilight: 'Segoe UI Semilight', $ms-font-system-base;
+$ms-font-family-semibold:  'Segoe UI Semibold', $ms-font-system-base;
 
 
 //== Type sizes

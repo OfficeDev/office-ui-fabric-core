@@ -17,40 +17,40 @@
 // Generate the override classes for web fonts.
 // Leelawadee
 // th
-@include language-override-web-fonts(th, $ms-font-family-semilight-leelawadee, $ms-font-family-semilight-leelawadee, $ms-font-family-regular-leelawadee, $ms-font-family-semibold-leelawadee);
+@include language-override-system-fonts(th, $ms-font-stack-leelawadee);
 
 // Arabic
 // ar
-@include language-override-web-fonts(ar, $ms-font-family-light-arabic, $ms-font-family-semilight-arabic, $ms-font-family-regular-arabic, $ms-font-family-semibold-arabic);
+@include language-override-system-fonts(ar, $ms-font-stack-arabic);
 
 // Cyrillic
 // bg, ru, uk
-@include language-override-web-fonts(bg, $ms-font-family-light-cyrillic, $ms-font-family-semilight-cyrillic, $ms-font-family-regular-cyrillic, $ms-font-family-semibold-cyrillic);
-@include language-override-web-fonts(ru, $ms-font-family-light-cyrillic, $ms-font-family-semilight-cyrillic, $ms-font-family-regular-cyrillic, $ms-font-family-semibold-cyrillic);
-@include language-override-web-fonts(uk, $ms-font-family-light-cyrillic, $ms-font-family-semilight-cyrillic, $ms-font-family-regular-cyrillic, $ms-font-family-semibold-cyrillic);
+@include language-override-system-fonts(bg, $ms-font-stack-cyrillic);
+@include language-override-system-fonts(ru, $ms-font-stack-cyrillic);
+@include language-override-system-fonts(uk, $ms-font-stack-cyrillic);
 
 // East European
 // cs, et, hr, hu, lt, pl, lt, tr, sk, kk
-@include language-override-web-fonts(cs, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(et, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(hr, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(hu, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(lt, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(lv, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(pl, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(lt, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(tr, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(sk, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
-@include language-override-web-fonts(kk, $ms-font-family-light-eastEuropean, $ms-font-family-semilight-eastEuropean, $ms-font-family-regular-eastEuropean, $ms-font-family-semibold-eastEuropean);
+@include language-override-system-fonts(cs, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(et, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(hr, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(hu, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lt, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lv, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(pl, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lt, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(tr, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(sk, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(kk, $ms-font-stack-eastEuropean);
 
 // Greek
 // el
-@include language-override-web-fonts(el, $ms-font-family-light-greek, $ms-font-family-semilight-greek, $ms-font-family-regular-greek, $ms-font-family-semibold-greek);
+@include language-override-system-fonts(el, $ms-font-stack-greek);
 
 // Hebrew
 // he
-@include language-override-web-fonts(he, $ms-font-family-light-hebrew, $ms-font-family-semilight-hebrew, $ms-font-family-regular-hebrew, $ms-font-family-semibold-hebrew);
+@include language-override-system-fonts(he, $ms-font-stack-hebrew);
 
 // Vietnamese
 // vi
-@include language-override-web-fonts(vi, $ms-font-family-light-vietnamese, $ms-font-family-semilight-vietnamese, $ms-font-family-regular-vietnamese, $ms-font-family-semibold-vietnamese);
+@include language-override-system-fonts(vi, $ms-font-stack-vietnamese);

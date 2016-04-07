@@ -15,12 +15,8 @@ var fabric = fabric || {};
  *
  * @constructor
  */
-fabric.CommandBar = function(container) {
-  this.container = container;
-  this.init();
-};
 
-fabric.CommandBar.prototype = (function() {
+fabric.CommandBar = function(context) {
   
   var CONTEXTUAL_MENU = ".ms-ContextualMenu";
   var CONTEXTUAL_MENU_ITEM = ".ms-ContextualMenu-item";
@@ -61,6 +57,12 @@ fabric.CommandBar.prototype = (function() {
   var breakpoint = "sm";
   var _elements = {};
   var activeCommand;
+  
+  function processCommands() {
+    _updateCommands();
+    _drawCommands();
+    _checkOverflow();
+  }
   
   function _hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
@@ -113,7 +115,7 @@ fabric.CommandBar.prototype = (function() {
   
   function _setElements() {
     _elements = {
-      container: this.container,
+      container: context.container,
       mainArea: document.querySelector(CB_MAIN_AREA),
       sideCommandArea: document.querySelector(CB_SIDE_COMMAND_AREA),
       mainItems: [],
@@ -248,7 +250,6 @@ fabric.CommandBar.prototype = (function() {
     }
   }
   
-  // If clicking inside searchbox but the target is not the field
   function _handleSearchClick(e) {
     if(!_hasClass(e.target, SEARCH_BOX_FIELD.replace(".", ""))) {
       _toggleSearchActive();
@@ -262,7 +263,7 @@ fabric.CommandBar.prototype = (function() {
   }
   
   function _handleOutsideSearchClick(e) {
-
+    console.log(e.target); 
       if(e.target) {
         if(!_elements.searchBox.contains(e.target)) {
           _toggleSearchActive();
@@ -275,7 +276,8 @@ fabric.CommandBar.prototype = (function() {
   }
   
   function _clickOutsideSearch() {
-    document.addEventListener('click', _handleOutsideSearchClick, false);  
+    document.addEventListener('click', _handleOutsideSearchClick, false); 
+    console.log("Document click"); 
   }
 
   function _setUIState() {
@@ -348,17 +350,14 @@ fabric.CommandBar.prototype = (function() {
   function _doResize() {
     _setBreakpoint();
     _setUIState();
-    _updateCommands();
-    _drawCommands();
-    _checkOverflow();
     _redrawMenu();
+    processCommands();
   }
   
   /**
    * initializes component
    */
-  
-  function init() {
+  function _init() {
     _setElements();
     _setBreakpoint();
     _setUIState();
@@ -371,9 +370,11 @@ fabric.CommandBar.prototype = (function() {
     _setOverflowAction();
     _checkOverflow();
   }
+  
+  _init();
 
   return {
-    init: init
+    processCommands: processCommands
   };
 
-}());
+};

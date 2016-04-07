@@ -42,27 +42,28 @@
       {
         "title": "Animals",
         "state": "",
-        "icon": "star"
+        "icon": "check"
       },
       {
         "title": "Books",
-        "state": "",
-        "icon": "star"
+        "state": ""
+      },
+       {
+        "modifier": "divider",
+        "title": ""
       },
       {
         "title": "Education",
-        "state": "is-selected",
-        "icon": "star"
+        "state": "is-selected"
       },
       {
         "title": "Music",
         "state": "",
-        "icon": "star"
+        "icon": "check"
       },
       {
         "title": "Sports",
-        "state": "is-disabled",
-        "icon": "star"
+        "state": "is-disabled"
       }
     ]
   },

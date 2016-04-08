@@ -2,10 +2,10 @@
 
 /**
  * Dropdown Plugin
- * 
+ *
  * Given .ms-Dropdown containers with generic <select> elements inside, this plugin hides the original
  * dropdown and creates a new "fake" dropdown that can more easily be styled across browsers.
- * 
+ *
  * @param  {jQuery Object}  One or more .ms-Dropdown containers, each with a dropdown (.ms-Dropdown-select)
  * @return {jQuery Object}  The same containers (allows for chaining)
  */
@@ -24,7 +24,7 @@
 
             /** Go through the options to fill up newDropdownTitle and newDropdownItems. */
             $originalDropdownOptions.each(function (index, option) {
-        
+
                 /** If the option is selected, it should be the new dropdown's title. */
                 if (option.selected) {
                     newDropdownTitle = option.text;
@@ -32,7 +32,7 @@
 
                 /** Add this option to the list of items. */
                 newDropdownItems += '<li class="ms-Dropdown-item' + ( (option.disabled) ? ' is-disabled"' : '"' ) + '>' + option.text + '</li>';
-            
+
             });
 
             /** Insert the replacement dropdown. */
@@ -51,7 +51,7 @@
                     /** Before opening, size the items list to match the dropdown. */
                     var dropdownWidth = $(this).parents(".ms-Dropdown").width();
                     $(this).next(".ms-Dropdown-items").css('width', dropdownWidth + 'px');
-                
+
                     /** Go ahead and open that dropdown. */
                     $dropdownWrapper.toggleClass('is-open');
                     $('.ms-Dropdown').each(function(){
@@ -119,7 +119,7 @@
 
                             $(this).removeClass('is-open');
                         }
-                    }                
+                    }
                 }
 
                 // Close dropdown on esc
@@ -130,7 +130,7 @@
 
             /** Select an option from the dropdown. */
             $dropdownWrapper.on('click', '.ms-Dropdown-item', function () {
-                if (!$dropdownWrapper.hasClass('is-disabled')) {
+                if (!$dropdownWrapper.hasClass('is-disabled') && !$(this).hasClass('is-disabled')) {
 
                     /** Deselect all items and select this one. */
                     $(this).siblings('.ms-Dropdown-item').removeClass('is-selected');

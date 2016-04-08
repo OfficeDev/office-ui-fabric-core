@@ -6,14 +6,12 @@
 // Typographic mixins arranged with appropriate size and family combinations.
 @import 'Fabric.Typography.Variables';
 
-$ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
-
 // Super Styles (LIMITED USE)
 @mixin ms-font-su {
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-su;
-  font-weight: 100;
+  font-weight: $ms-font-weight-light;
 }
 
 // Extra-Extra-Large
@@ -21,7 +19,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-xxl;
-  font-weight: 100;
+  font-weight: $ms-font-weight-light;
 }
 
 // Extra-Large Styles
@@ -29,7 +27,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-xl;
-  font-weight: 100;
+  font-weight: $ms-font-weight-light;
 }
 
 // Large Styles
@@ -37,7 +35,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-l;
-  font-weight: 300;
+  font-weight: $ms-font-weight-semilight;
 }
 
 // Medium Plus Styles
@@ -45,7 +43,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-m-plus;
-  font-weight: 400;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Medium Styles
@@ -53,7 +51,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-m;
-  font-weight: 400;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Small Plus Styles
@@ -61,7 +59,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-s-plus;
-  font-weight: 400;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Small Styles
@@ -69,7 +67,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-s;
-  font-weight: 400;
+  font-weight: $ms-font-weight-regular;
 }
 
 // XS Styles
@@ -77,7 +75,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
     font-family: $ms-font-family;
   font-size: $ms-font-size-xs;
-  font-weight: 400;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Micro Styles (LIMITED USE)
@@ -85,7 +83,7 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family;
   font-size: $ms-font-size-mi;
-  font-weight: 600;
+  font-weight: $ms-font-weight-semibold;
 }
 
 //== Helper classes & mixins
@@ -93,20 +91,20 @@ $ms-font-family:  "Segoe UI WestEuropean", "Comic Sans MS";
 // Helper mixins to override default type values
 
 // Font weights
-@mixin ms-fontWeight-light{
-  font-family: $ms-font-family-light;
+@mixin ms-fontWeight-light {
+  font-weight: $ms-font-weight-light;
 }
 
-@mixin ms-fontWeight-semilight{
-  font-family: $ms-font-family-semilight;
+@mixin ms-fontWeight-semilight {
+  font-weight: $ms-font-weight-semilight;
 }
 
 @mixin ms-fontWeight-regular {
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
 }
 
 @mixin ms-fontWeight-semibold {
-  font-family: $ms-font-family-semibold;
+  font-weight: $ms-font-weight-semibold;
 }
 
 // Font sizes

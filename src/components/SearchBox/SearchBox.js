@@ -93,22 +93,29 @@ fabric.SearchBox = function(context) {
   
   function _setCloseButtonAction() {
     _searchBoxCloseButton.addEventListener("mousedown", function() {
-      _cancel = true;
+      _clearSearchBox();
+    }, false);
+    _searchBoxCloseButton.addEventListener("keydown", function(e) {
+      var keyCode = e.keyCode;
+      if(keyCode === 13) {
+       _clearSearchBox();
+      }
     }, false);
   }
   
-  function _handleBlur() {
-    if(_cancel) {
-      _searchBoxField.value = "";
-    }
-    setTimeout(function() {
-      console.log(_searchBox.contains(document.activeElement));
-      if(!_searchBox.contains(document.activeElement)) {
-        _searchBox.classList.remove(SB_IS_ACTIVE);
-      }
-    }, 10);
+  function _clearSearchBox() {
+    _searchBoxField.value = "";
+    _searchBox.classList.remove(SB_IS_ACTIVE);
     _setHasText();
     _cancel = false;
+  }
+  
+  function _handleBlur() {
+    setTimeout(function() {
+      if(!_searchBox.contains(document.activeElement)) {
+        _clearSearchBox();
+      }
+    }, 10);
   }
   
   function _setBlurAction() {

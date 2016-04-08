@@ -250,15 +250,16 @@ fabric.CommandBar = function(context) {
     switch(breakpoint) {
       case "sm":
         _elements.searchBox.classList.add('is-collapsed');
-        _setSmSearchClick();
+        searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
+        searchBoxClass.
         break;
       case "md":
         _elements.searchBox.classList.add('is-collapsed');
-        _setSmSearchClick();
+        searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
         break;
       case "lg":
         _elements.searchBox.classList.add('is-collapsed');
-        _setSmSearchClick();
+        searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
         break;
       case "xl":
         _elements.searchBox.classList.remove('is-collapsed');
@@ -335,7 +336,6 @@ fabric.CommandBar = function(context) {
     _setWindowEvent();
     _setOverflowAction();
     _checkOverflow();
-    
   }
   
   _init();

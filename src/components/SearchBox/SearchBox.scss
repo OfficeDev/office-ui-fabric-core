@@ -14,7 +14,11 @@
   overflow: hidden;
   transition: width $ms-duration1;
   width: 180px;
-
+  
+  .ms-CommandButton {
+    display: none;
+  }
+  
   // State: Active searchbox
   &.is-active {
     .ms-SearchBox-label {
@@ -195,6 +199,10 @@
     
     .ms-SearchBox-text {
       display: inline-block;
+    }
+    
+    .ms-SearchBox-close {
+      display: block;
     }
   }
 }

@@ -1,0 +1,21 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Colorful theme for Excel
+
+
+@import "../sass/Fabric.Color.Variables";
+
+$ms-color-themePrimary:    #1D7044;
+$ms-color-themeDarker:     darken($ms-color-themePrimary, 30);
+$ms-color-themeDark:       darken($ms-color-themePrimary, 20);
+$ms-color-themeDarkAlt:    darken($ms-color-themePrimary, 10);
+$ms-color-themeSecondary:  lighten($ms-color-themePrimary, 10);
+$ms-color-themeTertiary:   lighten($ms-color-themePrimary, 20);
+$ms-color-themeLight:      lighten($ms-color-themePrimary, 30);
+$ms-color-themeLighter:    lighten($ms-color-themePrimary, 40);
+$ms-color-themeLighterAlt: lighten($ms-color-themePrimary, 50);
+
+@import "./ThemeBase";

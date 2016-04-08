@@ -1,0 +1,436 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Base Theme CSS
+
+
+@import "../sass/Fabric.Mixins";
+
+//== Typography
+//
+
+// Theme colors
+.ms-fontColor-themeDarker,
+.ms-fontColor-themeDarker--hover:hover {
+  color: $ms-color-themeDarker;
+}
+
+.ms-fontColor-themeDark, 
+.ms-fontColor-themeDark--hover:hover {
+  color: $ms-color-themeDark;
+}
+
+.ms-fontColor-themeDarkAlt, 
+.ms-fontColor-themeDarkAlt--hover:hover {
+  color: $ms-color-themeDarkAlt;
+}
+
+.ms-fontColor-themePrimary, 
+.ms-fontColor-themePrimary--hover:hover {
+  color: $ms-color-themePrimary;
+}
+
+.ms-fontColor-themeSecondary, 
+.ms-fontColor-themeSecondary--hover:hover {
+  color: $ms-color-themeSecondary;
+}
+
+.ms-fontColor-themeTertiary, 
+.ms-fontColor-themeTertiary--hover:hover {
+  color: $ms-color-themeTertiary;
+}
+
+.ms-fontColor-themeLight, 
+.ms-fontColor-themeLight--hover:hover {
+  color: $ms-color-themeLight;
+}
+
+.ms-fontColor-themeLighter, 
+.ms-fontColor-themeLighter--hover:hover {
+  color: $ms-color-themeLighter;
+}
+
+.ms-fontColor-themeLighterAlt, 
+.ms-fontColor-themeLighterAlt--hover:hover {
+  color: $ms-color-themeLighterAlt;
+}
+
+
+//== Background & Borders
+//
+
+// Backgrounds
+.ms-bgColor-themeDark,
+.ms-bgColor-themeDark--hover:hover {
+  background-color: $ms-color-themeDark;
+}
+
+.ms-bgColor-themeDarkAlt, 
+.ms-bgColor-themeDarkAlt--hover:hover {
+  background-color: $ms-color-themeDarkAlt;
+}
+
+.ms-bgColor-themeDarker, 
+.ms-bgColor-themeDarker--hover:hover {
+  background-color: $ms-color-themeDarker;
+}
+
+.ms-bgColor-themePrimary, 
+.ms-bgColor-themePrimary--hover:hover {
+  background-color: $ms-color-themePrimary;
+}
+
+.ms-bgColor-themeSecondary, 
+.ms-bgColor-themeSecondary--hover:hover {
+  background-color: $ms-color-themeSecondary;
+}
+
+.ms-bgColor-themeTertiary, 
+.ms-bgColor-themeTertiary--hover:hover {
+  background-color: $ms-color-themeTertiary;
+}
+
+.ms-bgColor-themeLight, 
+.ms-bgColor-themeLight--hover:hover {
+  background-color: $ms-color-themeLight;
+}
+
+.ms-bgColor-themeLighter, 
+.ms-bgColor-themeLighter--hover:hover {
+  background-color: $ms-color-themeLighter;
+}
+
+.ms-bgColor-themeLighterAlt, 
+.ms-bgColor-themeLighterAlt--hover:hover {
+  background-color: $ms-color-themeLighterAlt;
+}
+
+// Borders
+.ms-borderColor-themeDark, 
+.ms-borderColor-themeDark--hover:hover {
+  border-color: $ms-color-themeDark;
+}
+
+.ms-borderColor-themeDarkAlt, 
+.ms-borderColor-themeDarkAlt--hover:hover {
+  border-color: $ms-color-themeDarkAlt;
+}
+
+.ms-borderColor-themeDarker, 
+.ms-borderColor-themeDarker--hover:hover {
+  border-color: $ms-color-themeDarker;
+}
+
+.ms-borderColor-themePrimary, 
+.ms-borderColor-themePrimary--hover:hover {
+  border-color: $ms-color-themePrimary;
+}
+
+.ms-borderColor-themeSecondary, 
+.ms-borderColor-themeSecondary--hover:hover {
+  border-color: $ms-color-themeSecondary;
+}
+
+.ms-borderColor-themeTertiary, 
+.ms-borderColor-themeTertiary--hover:hover {
+  border-color: $ms-color-themeTertiary;
+}
+
+.ms-borderColor-themeLight, 
+.ms-borderColor-themeLight--hover:hover {
+  border-color: $ms-color-themeLight;
+}
+
+.ms-borderColor-themeLighter, 
+.ms-borderColor-themeLighter--hover:hover {
+  border-color: $ms-color-themeLighter;
+}
+
+.ms-borderColor-themeLighterAlt, 
+.ms-borderColor-themeLighterAlt--hover:hover {
+  border-color: $ms-color-themeLighterAlt;
+}
+
+
+//== Components
+//
+
+// Button
+.ms-Button {
+  background-color: $ms-color-neutralLighter;
+  border-color: 1px solid $ms-color-neutralLighter;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $ms-color-neutralLight;
+    border-color: $ms-color-neutralLight;
+
+    .ms-Button-label {
+      color: $ms-color-black;
+    }
+  }
+
+  &:focus {
+    background-color: $ms-color-neutralLight;
+    border-color: $ms-color-themePrimary;
+
+    .ms-Button-label {
+      color: $ms-color-black;
+    }
+  }
+
+  &:active {
+    background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
+
+    .ms-Button-label {
+      color: $ms-color-white;
+    }
+  }
+
+  &:disabled, 
+  &.is-disabled {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralLighter;
+
+    .ms-Button-label {
+      color: $ms-color-neutralTertiary;
+    }
+  }
+}
+
+//== Modifier: Primary action button
+//
+.ms-Button.ms-Button--primary {
+  background-color: $ms-color-themePrimary;
+  border-color: $ms-color-themePrimary;
+
+  .ms-Button-label {
+    color: $ms-color-white;
+  }
+
+  &:hover {
+    background-color: $ms-color-themeDark;
+    border-color: $ms-color-themeDark;
+  }
+
+  &:focus {
+    background-color: $ms-color-themeDark;
+    border-color: $ms-color-themeDarker;
+  }
+
+  &:active {
+    background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
+  }
+
+  &:disabled, 
+  &.is-disabled {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralLighter;
+
+    .ms-Button-label {
+      color: $ms-color-neutralTertiary;
+    }
+  }
+}
+
+
+//== Modifier: Hero button
+//
+.ms-Button.ms-Button--hero {
+  .ms-Button-icon {
+    color: $ms-color-themePrimary;
+
+    .ms-Icon {
+      border-color: $ms-color-themePrimary;
+    }
+  }
+
+  .ms-Button-label {
+    color: $ms-color-themePrimary;
+  }
+
+  &:hover, 
+  &:focus {
+    .ms-Button-icon {
+      .ms-Icon {
+        color: $ms-color-themeDark;
+      }
+    }
+
+    .ms-Button-label {
+      color: $ms-color-themeDarker;
+    }
+  }
+
+  &:active {
+    .ms-Button-icon {
+      .ms-Icon {
+        color: $ms-color-themePrimary;
+      }
+    }
+
+    .ms-Button-label {
+      color: $ms-color-themePrimary;
+    }
+  }
+
+  &:disabled, 
+  &.is-disabled {
+    .ms-Button-icon {
+      .ms-Icon {
+        color: $ms-color-neutralTertiaryAlt;
+      }
+    }
+
+    .ms-Button-label {
+      color: $ms-color-neutralTertiary;
+    }
+  }
+}
+
+
+//== Modifier: Compound button
+//
+.ms-Button.ms-Button--compound {
+  .ms-Button-description {
+    color: $ms-color-neutralSecondary;
+  }
+
+  &:hover {
+    .ms-Button-description { 
+      color: $ms-color-neutralDark; 
+    }
+  }
+
+  &:focus {
+    border-color: $ms-color-themePrimary;
+    background-color: $ms-color-neutralLighter;
+
+    .ms-Button-label { 
+      color: $ms-color-neutralPrimary; 
+    }
+
+    .ms-Button-description { 
+      color: $ms-color-neutralSecondary; 
+    }
+  }
+
+  &:active {
+    background-color: $ms-color-themePrimary;
+
+    .ms-Button-description, 
+    .ms-Button-label { 
+      color: $ms-color-white; 
+    }
+  }
+
+  &:disabled, 
+  &.is-disabled {
+    .ms-Button-label, 
+    .ms-Button-description {
+      color: $ms-color-neutralTertiary;
+    }
+
+    &:focus,
+    &:active {
+      border-color: $ms-color-neutralLighter;
+      background-color: $ms-color-neutralLighter;
+
+      .ms-Button-label,
+      .ms-Button-description {
+        color: $ms-color-neutralTertiary; 
+      }
+    }
+  }
+}
+
+
+// TextField
+.ms-TextField {
+  color: $ms-color-neutralPrimary;
+}
+
+//= State: A disabled textfield
+.ms-TextField.is-disabled {
+  .ms-TextField-field {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralLighter;
+  }
+
+  @include input-placeholder {
+    color: $ms-color-neutralTertiary;
+  }
+}
+
+//= State: An active textfield
+.ms-TextField.is-active {
+  border-color: $ms-color-themePrimary;
+}
+
+.ms-TextField-field {
+  border: 1px solid $ms-color-neutralTertiaryAlt;
+  color: $ms-color-neutralPrimary;
+
+  &:hover {
+    border-color: $ms-color-neutralSecondaryAlt;
+  }
+
+  &:focus {
+    border-color: $ms-color-themePrimary;
+  }
+
+  &:hover,
+  &:focus {
+
+  }
+
+  @include input-placeholder {
+    color: $ms-color-neutralSecondary;
+  }
+}
+
+.ms-TextField-description {
+  color: $ms-color-neutralSecondaryAlt;
+}
+
+
+//== Modifier: Single line (default), placeholder label
+//
+.ms-TextField.ms-TextField--placeholder {
+  .ms-Label {
+    color: $ms-color-neutralSecondary;
+  }
+
+  &.is-disabled {
+    color: $ms-color-neutralTertiary;
+  }
+}
+
+
+//== Modifier: Single line (default), underlined
+//
+.ms-TextField.ms-TextField--underlined {
+  border-color: $ms-color-neutralTertiaryAlt;
+
+  &:hover {
+    border-color: $ms-color-neutralSecondaryAlt;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $ms-color-themePrimary;
+  }
+
+  &.is-disabled {
+    border-bottom-color: $ms-color-neutralLight;
+
+    .ms-TextField-field {
+      background-color: transparent;
+      color: $ms-color-neutralTertiary;
+    }
+  }
+}

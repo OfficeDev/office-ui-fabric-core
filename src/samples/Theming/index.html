@@ -38,13 +38,26 @@
     margin: 0 auto;
   }
 
-  .ColorSquare {
-    float: left;
-    width: 100px;
-    height: 100px;
+  .ColorSquares {
+    margin-top: 20px;
+  }
+
+  .ColorSquares.ColorSquares--backgrounds .ColorSquare {
     color: #fff;
+    border-color: transparent;
+  }
+  
+  .ColorSquares.ColorSquares--borders .ColorSquare {
+  }
+
+  .ColorSquare {
+    /*float: left;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    padding: 10px;
     padding: 10px;
     box-sizing: border-box;
+    border: 1px solid #ddd;
   }
   </style>
 </head>
@@ -60,14 +73,38 @@
     </ul>
   </header>
 
-  <main class="Container ms-bgColor-white">
+  <main class="Container ms-bgColor-white ms-font-m">
     <h1 class="ms-font-xl ms-fontColor-themePrimary">Title, Segoe UI, 21px</h1>
 
     <p class="ms-font-m">
       Body Text Segoe UI Regular 14px. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet.
     </p>
   
-    <div class="ColorSquares ms-u-clearfix">
+    <h3 class="ms-font-l">Subtitle Segoe UI Semilight 17px</h3>
+
+    <div class="ComponentSamples">
+      <a href="#" class="ms-Link">Link 14px</a>
+
+      <div class="ms-TextField">
+        <label class="ms-Label">Label 12px</label>
+        <input class="ms-TextField-field">
+        <span class="ms-TextField-description">Description 11px</span>
+      </div>
+
+      <div class="Buttons">
+        <button class="ms-Button ms-Button--primary">
+          <span class="ms-Button-label">Create account</span>
+        </button>
+
+        <button class="ms-Button">
+          <span class="ms-Button-label">Cancel</span>
+        </button>
+      </div>
+    </div>
+  
+    <h2 class="ms-font-xl">Backgrounds</h2>
+
+    <div class="ColorSquares ColorSquares--backgrounds ms-u-clearfix">
       <div class="ColorSquare ms-bgColor-themeDarker ms-font-s">themeDarker</div>
       <div class="ColorSquare ms-bgColor-themeDark ms-font-s">themeDark</div>
       <div class="ColorSquare ms-bgColor-themeDarkAlt ms-font-s">themeDarkAlt</div>
@@ -77,14 +114,20 @@
       <div class="ColorSquare ms-bgColor-themeLight ms-font-s">themeLight</div>
       <div class="ColorSquare ms-bgColor-themeLighter ms-font-s">themeLighter</div>
       <div class="ColorSquare ms-bgColor-themeLighterAlt ms-font-s">themeLighterAlt</div>
-    </div>
+    </div>  
 
-    <div>
-      <div class="ms-TextField">
-        <label class="ms-Label">Name</label>
-        <input class="ms-TextField-field">
-        <span class="ms-TextField-description">This should be your first and last name.</span>
-      </div>
+    <h2 class="ms-font-xl">Borders</h2>
+
+    <div class="ColorSquares ColorSquares--borders ms-u-clearfix">
+      <div class="ColorSquare ms-borderColor-themeDarkAlt--hover ms-font-s">themeDarker</div>
+      <div class="ColorSquare ms-borderColor-themeDark--hover ms-font-s">themeDark</div>
+      <div class="ColorSquare ms-borderColor-themeDarker--hover ms-font-s">themeDarkAlt</div>
+      <div class="ColorSquare ms-borderColor-themeDark--hover ms-font-s">themePrimary</div>
+      <div class="ColorSquare ms-borderColor-themeDarkAlt--hover ms-font-s">themeSecondary</div>
+      <div class="ColorSquare ms-borderColor-themePrimary--hover ms-font-s">themeTertiary</div>
+      <div class="ColorSquare ms-borderColor-themeSecondary--hover ms-font-s">themeLight</div>
+      <div class="ColorSquare ms-borderColor-themeTertiary--hover ms-font-s">themeLighter</div>
+      <div class="ColorSquare ms-borderColor-themeLight--hover ms-font-s">themeLighterAlt</div>
     </div>
 
   </main>
@@ -113,6 +156,18 @@
 
         $('.Theme-black').on('click', function() {
           themeCss.attr('href', urlPrefix + 'black' + urlSuffix);
+        });
+
+        $('.Theme-darkGrey').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'darkgrey' + urlSuffix);
+        });
+
+        $('.Theme-colorfulWord').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'colorful-word' + urlSuffix);
+        });
+
+        $('.Theme-colorfulExcel').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'colorful-excel' + urlSuffix);
         });
 
     });

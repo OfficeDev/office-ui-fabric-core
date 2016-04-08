@@ -1,0 +1,121 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Theming example</title>
+
+  <!-- jQuery, required for the sample Component plugins -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!-- Fabric core and Components CSS -->
+  <link rel="stylesheet" type="text/css" href="../../css/fabric.css">
+  <link rel="stylesheet" type="text/css" href="../../css/fabric.components.css">
+
+  <!-- Default theme CSS -->
+  <link id="theme-style" rel="stylesheet" type="text/css" href="../../css/colorful.css">
+
+  <style>
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .Header {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .Container {
+    max-width: 480px;
+    box-sizing: border-box;
+    padding: 20px;
+    /*border: 1px solid #c8c8c8;*/
+    margin: 0 auto;
+  }
+
+  .ColorSquare {
+    float: left;
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  </style>
+</head>
+<body>
+  <header class="Header">
+    <ul class="ms-Pivot ms-Pivot--tabs">
+      <li class="ms-Pivot-link is-selected Theme-none">No theme</li>
+      <li class="ms-Pivot-link Theme-white">White</li>
+      <li class="ms-Pivot-link Theme-black">Black</li>
+      <li class="ms-Pivot-link Theme-darkGrey">Dark Grey</li>
+      <li class="ms-Pivot-link Theme-colorfulWord">Colorful (Word)</li>
+      <li class="ms-Pivot-link Theme-colorfulExcel">Colorful (Excel)</li>
+    </ul>
+  </header>
+
+  <main class="Container ms-bgColor-white">
+    <h1 class="ms-font-xl ms-fontColor-themePrimary">Title, Segoe UI, 21px</h1>
+
+    <p class="ms-font-m">
+      Body Text Segoe UI Regular 14px. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet.
+    </p>
+  
+    <div class="ColorSquares ms-u-clearfix">
+      <div class="ColorSquare ms-bgColor-themeDarker ms-font-s">themeDarker</div>
+      <div class="ColorSquare ms-bgColor-themeDark ms-font-s">themeDark</div>
+      <div class="ColorSquare ms-bgColor-themeDarkAlt ms-font-s">themeDarkAlt</div>
+      <div class="ColorSquare ms-bgColor-themePrimary ms-font-s">themePrimary</div>
+      <div class="ColorSquare ms-bgColor-themeSecondary ms-font-s">themeSecondary</div>
+      <div class="ColorSquare ms-bgColor-themeTertiary ms-font-s">themeTertiary</div>
+      <div class="ColorSquare ms-bgColor-themeLight ms-font-s">themeLight</div>
+      <div class="ColorSquare ms-bgColor-themeLighter ms-font-s">themeLighter</div>
+      <div class="ColorSquare ms-bgColor-themeLighterAlt ms-font-s">themeLighterAlt</div>
+    </div>
+
+    <div>
+      <div class="ms-TextField">
+        <label class="ms-Label">Name</label>
+        <input class="ms-TextField-field">
+        <span class="ms-TextField-description">This should be your first and last name.</span>
+      </div>
+    </div>
+
+  </main>
+  <!-- Fabric jQuery plugin for DatePicker component -->
+  <script src="../../components/Pivot/Jquery.Pivot.js"></script>
+  <script>
+    $(document).ready(function() {
+        // Check to make sure the Pivot plugin is available. Then, find 
+        // the element you wish to run Pivot on, and run the plugin on it.
+        if ($.fn.Pivot) {
+          $('.ms-Pivot').Pivot();
+        }
+
+        var themeCss = $('link#theme-style');
+        var urlPrefix = '../../css/';
+        var urlSuffix = '.css';
+
+
+        $('.Theme-none').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'colorful' + urlSuffix);
+        });
+
+        $('.Theme-white').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'white' + urlSuffix);
+        });
+
+        $('.Theme-black').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'black' + urlSuffix);
+        });
+
+    });
+  </script>
+</body>
+</html>

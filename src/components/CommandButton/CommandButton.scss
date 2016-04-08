@@ -65,9 +65,16 @@ $CommandButton-height: 40px;
   }
 }
 
-.ms-CommandButton-button {
-  @include ms-CommandBarButton-buttonBase;
+.ms-CommandButton-button,
+.ms-CommandButton-splitIcon {
+   @include ms-CommandBarButton-buttonBase;
+}
 
+
+.ms-CommandButton-button {
+  border: 0;
+  margin: 0;
+  
 	&:disabled, 
 	&.is-disabled {
 		background-color: $ms-color-neutralLighter;
@@ -130,7 +137,6 @@ $CommandButton-height: 40px;
 }
 
 .ms-CommandButton-splitIcon {
-  @include ms-CommandBarButton-buttonBase;
   @include ms-font-l;
   margin-left: -4px;
   width: 21px;

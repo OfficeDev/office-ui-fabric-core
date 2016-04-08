@@ -6,7 +6,8 @@
   "template": "SearchBox.html",
   "class": "ms-SearchBox",
   "dependencies": [
-    "Label"
+    "Label",
+    "CommandButton"
   ],
   "branches": [
       {
@@ -21,14 +22,32 @@
   "props": {
     "label": "Search",
     "defaultValue": "",
-    "icon": "search"
+    "icon": "search",
+    "clearButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "x",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-close"
+      }
+    }
   },
   "propsCommandBar": {
     "label": "Search",
     "defaultValue": "",
     "icon": "search",
     "closeIcon": "x",
-    "modifier": "commandBar"
+    "modifier": "commandBar",
+    "clearButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "x",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-close"
+      }
+    }
   },
   "propsCollapsed": {
     "label": "Search",
@@ -36,6 +55,15 @@
     "icon": "search",
     "closeIcon": "x",
     "modifier": "commandBar",
-    "state": "is-collapsed"
+    "state": "is-collapsed",
+    "clearButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "x",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-close"
+      }
+    }
   }
 }

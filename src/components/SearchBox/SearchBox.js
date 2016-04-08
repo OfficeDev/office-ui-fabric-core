@@ -21,7 +21,7 @@ fabric.SearchBox = function(context) {
   
   var SB = '.ms-SearchBox';
   var SB_FIELD = '.ms-SearchBox-field';
-  var SB_CLOSE_BUTTON = '.ms-SearchBox-closeButton';
+  var SB_CLOSE_BUTTON = '.ms-CommandButton';
   var SB_HAS_TEXT = 'has-text';
   var SB_IS_ACTIVE = 'is-active';
   var SB_IS_COLLAPSED = 'is-collapsed';
@@ -97,20 +97,23 @@ fabric.SearchBox = function(context) {
     }, false);
   }
   
-  function _setBlurAction() {
-    _searchBoxField.addEventListener("blur", function() {
-      if(_cancel) {
-        _searchBoxField.value = "";
+  function _handleBlur() {
+    if(_cancel) {
+      _searchBoxField.value = "";
+    }
+    setTimeout(function() {
+      console.log(_searchBox.contains(document.activeElement));
+      if(!_searchBox.contains(document.activeElement)) {
+        _searchBox.classList.remove(SB_IS_ACTIVE);
       }
-      //if(!_searchBox.contains(document.activeElement)) {
-        console.log(document.activeElement);
-        // setTimeout(function() {
-        // _searchBox.classList.remove(SB_IS_ACTIVE);
-        // }, 100);
-        _setHasText();
-        _cancel = false;
-      //}
-    }, true);
+    }, 10);
+    _setHasText();
+    _cancel = false;
+  }
+  
+  function _setBlurAction() {
+    _searchBoxField.addEventListener("blur", _handleBlur, true);
+    _searchBoxCloseButton.addEventListener("blur", _handleBlur, true);
   }
   
   function _checkState() {

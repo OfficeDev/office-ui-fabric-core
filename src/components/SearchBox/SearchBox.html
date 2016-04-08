@@ -5,5 +5,6 @@
     {{#if props.icon}}<i class="ms-SearchBox-icon ms-Icon ms-Icon--{{props.icon}}"></i>{{/if}}
     <span class="ms-SearchBox-text">{{props.label}}</span>
   </label>
-  <a class="ms-SearchBox-closeButton" tabindex="0"><i class="ms-Icon ms-Icon--x"></i></a>
+  {{renderPartial props.clearButton.component props.clearButton.props}}
+  <!--<button class="ms-SearchBox-closeButton"><i class="ms-Icon ms-Icon--x"></i></button>-->
 </div>

@@ -93,6 +93,26 @@ gulp.task('Fabric-buildStyles', function () {
     return Plugins.mergeStream(fabric, fabricRtl);
 });
 
+gulp.task('Fabric-buildThemes', function () {
+   return gulp.src(['src/themes/**/*.scss', '!src/themes/ThemeBase.scss'])
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                    title: "Building Fabric themes " + BuildConfig.fileExtension + " File"
+            })))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+            .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+            .pipe(Plugins.autoprefixer({
+                browsers: ['last 2 versions', 'ie >= 9'],
+                cascade: false
+            }))
+            .pipe(Plugins.cssbeautify())
+            .pipe(Plugins.csscomb())
+            .pipe(gulp.dest(Config.paths.distCSS));
+
+});
+
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------

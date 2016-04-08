@@ -8,49 +8,50 @@
 @import "./Fabric.Typography.Language.Overrides";
 
 // Generate the override classes for non-distributed fonts.
-@include language-override-system-fonts(ja, $ms-font-stack-japanese);
-@include language-override-system-fonts(ko, $ms-font-stack-korean);
-@include language-override-system-fonts(cme, $ms-font-stack-chinese-simplified);
+@include language-override-system-fonts(jpn, $ms-font-stack-japanese);
+@include language-override-system-fonts(kor, $ms-font-stack-korean);
+@include language-override-system-fonts(cmn, $ms-font-stack-chinese-simplified);
 @include language-override-system-fonts(yue, $ms-font-stack-chinese-traditional);
-@include language-override-system-fonts(hi, $ms-font-stack-hindi);
+@include language-override-system-fonts(hin, $ms-font-stack-hindi);
 
 // Generate the override classes for web fonts.
-// Leelawadee
-// th
-@include language-override-system-fonts(th, $ms-font-stack-leelawadee);
+// Thai (Leelawadee)
+// tha
+@include language-override-system-fonts(tha, $ms-font-stack-leelawadee);
 
 // Arabic
-// ar
-@include language-override-system-fonts(ar, $ms-font-stack-arabic);
+// ara
+@include language-override-system-fonts(ara, $ms-font-stack-arabic);
 
 // Cyrillic
 // bg, ru, uk
-@include language-override-system-fonts(bg, $ms-font-stack-cyrillic);
-@include language-override-system-fonts(ru, $ms-font-stack-cyrillic);
-@include language-override-system-fonts(uk, $ms-font-stack-cyrillic);
+@include language-override-system-fonts(rus, $ms-font-stack-cyrillic);
 
 // East European
-// cs, et, hr, hu, lt, pl, lt, tr, sk, kk
-@include language-override-system-fonts(cs, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(et, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(hr, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(hu, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lt, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lv, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(pl, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lt, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(tr, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(sk, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(kk, $ms-font-stack-eastEuropean);
+// ces, et, hrv, hun, lit, pl, lat, tur, slk, kaz
+// ces - Czech
+// est - Estonian
+// hrv - Croatian
+
+@include language-override-system-fonts(ces, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(est, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(hrv, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(hun, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lit, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lav, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(pol, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(tur, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(slk, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(kaz, $ms-font-stack-eastEuropean);
 
 // Greek
-// el
-@include language-override-system-fonts(el, $ms-font-stack-greek);
+// ell
+@include language-override-system-fonts(ell, $ms-font-stack-greek);
 
 // Hebrew
-// he
-@include language-override-system-fonts(he, $ms-font-stack-hebrew);
+// heb
+@include language-override-system-fonts(heb, $ms-font-stack-hebrew);
 
 // Vietnamese
-// vi
-@include language-override-system-fonts(vi, $ms-font-stack-vietnamese);
+// vie
+@include language-override-system-fonts(vie, $ms-font-stack-vietnamese);

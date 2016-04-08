@@ -29,7 +29,8 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean";
 @mixin SegoeUILight($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
-    src: url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff2') format('woff2'),
+    src: local("Segoe UI Light"),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.ttf') format('truetype');
     font-weight: 100;
@@ -40,7 +41,8 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean";
 @mixin SegoeUISemilight($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
-    src: url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff2') format('woff2'),
+     src: local("Segoe UI Semilight"),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.ttf') format('truetype');
     font-weight: 200;
@@ -51,7 +53,8 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean";
 @mixin SegoeUIRegular($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
-    src: url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff2') format('woff2'),
+    src: local("Segoe UI"),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.ttf') format('truetype');
     font-weight: 400;
@@ -62,7 +65,8 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean";
 @mixin SegoeUISemibold($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
-    src: url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff2') format('woff2'),
+    src: local("Segoe UI Semibold"),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.ttf') format('truetype');
     font-weight: 600;

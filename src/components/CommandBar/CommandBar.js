@@ -58,6 +58,7 @@ fabric.CommandBar = function(context) {
   var breakpoint = "sm";
   var _elements = {};
   var activeCommand;
+  var searchBoxClass;
   
   function redrawCommands() {
     _updateCommands();
@@ -125,6 +126,7 @@ fabric.CommandBar = function(context) {
       searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
       searchBoxClose: document.querySelector(SEARCH_BOX_CLOSE)
     };
+    searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
   }
   
   function _createItemCollection() {
@@ -333,6 +335,7 @@ fabric.CommandBar = function(context) {
     _setWindowEvent();
     _setOverflowAction();
     _checkOverflow();
+    
   }
   
   _init();

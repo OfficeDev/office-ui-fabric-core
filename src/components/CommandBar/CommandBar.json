@@ -23,7 +23,16 @@
         "label": "Search",
         "icon": "search",
         "defaultValue": "",
-        "modifier": "commandBar"
+        "modifier": "commandBar",
+        "clearButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "x",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-close"
+          }
+        }
       }
     },
     "overflow": {

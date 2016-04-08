@@ -1,0 +1,21 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// White theme
+
+
+@import "../sass/Fabric.Color.Variables";
+
+$ms-color-themeDarker:     $ms-color-neutralDark;
+$ms-color-themeDark:       $ms-color-neutralPrimary;
+$ms-color-themeDarkAlt:    $ms-color-neutralSecondary;
+$ms-color-themePrimary:    $ms-color-neutralSecondaryAlt;
+$ms-color-themeSecondary:  $ms-color-neutralTertiary;
+$ms-color-themeTertiary:   $ms-color-neutralTertiaryAlt;
+$ms-color-themeLight:      $ms-color-neutralLight;
+$ms-color-themeLighter:    $ms-color-neutralLighter;
+$ms-color-themeLighterAlt: $ms-color-neutralLighterAlt;
+
+@import "./ThemeBase";

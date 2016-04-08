@@ -1,0 +1,53 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Black theme
+
+
+@import "../sass/Fabric.Color.Variables";
+
+$ms-color-themeDarker:     $ms-color-neutralDark;
+$ms-color-themeDark:       $ms-color-neutralPrimary;
+$ms-color-themeDarkAlt:    $ms-color-neutralSecondary;
+$ms-color-themePrimary:    $ms-color-neutralSecondaryAlt;
+$ms-color-themeSecondary:  $ms-color-neutralTertiary;
+$ms-color-themeTertiary:   $ms-color-neutralTertiaryAlt;
+$ms-color-themeLight:      $ms-color-neutralLight;
+$ms-color-themeLighter:    $ms-color-neutralLighter;
+$ms-color-themeLighterAlt: $ms-color-neutralLighterAlt;
+
+@import "./ThemeBase";
+
+.ms-font-su,
+.ms-font-xxl,
+.ms-font-xl,
+.ms-font-l,
+.ms-font-m-plus ,
+.ms-font-m,
+.ms-font-s-plus ,
+.ms-font-s,
+.ms-font-xs,
+.ms-font-mi {
+  color: $ms-color-neutralLighter;
+}
+
+.ms-fontColor-black, 
+.ms-fontColor-black--hover:hover {
+  color: $ms-color-white;
+}
+
+.ms-fontColor-white, 
+.ms-fontColor-white--hover:hover {
+  color: $ms-color-black;
+}
+.ms-bgColor-black, 
+.ms-bgColor-black--hover:hover {
+  background-color: $ms-color-white;
+}
+
+.ms-bgColor-white, 
+.ms-bgColor-white--hover:hover {
+  background-color: $ms-color-black;
+}

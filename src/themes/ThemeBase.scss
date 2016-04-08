@@ -212,12 +212,12 @@
   }
 
   &:hover {
-    background-color: $ms-color-themeDark;
-    border-color: $ms-color-themeDark;
+    background-color: $ms-color-themeDarkAlt;
+    border-color: $ms-color-themeDarkAlt;
   }
 
   &:focus {
-    background-color: $ms-color-themeDark;
+    background-color: $ms-color-themeDarkAlt;
     border-color: $ms-color-themeDarker;
   }
 
@@ -432,5 +432,20 @@
       background-color: transparent;
       color: $ms-color-neutralTertiary;
     }
+  }
+}
+
+
+// Link
+.ms-Link {
+  color: $ms-color-themePrimary;
+
+  &:hover,
+  &:focus {
+    color: $ms-color-themeDarker;
+  }
+
+  &:active {
+    color: $ms-color-themePrimary;
   }
 }

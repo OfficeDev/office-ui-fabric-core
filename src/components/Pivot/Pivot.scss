@@ -127,6 +127,16 @@
   }
 }
 
+//== Pivot content
+//
+.ms-Pivot-content {
+    display: none;
+}
+
+.ms-Pivot-content.is-selected {
+    display: block;
+}
+
 
 
 @media (min-width: $ms-screen-lg-min) {

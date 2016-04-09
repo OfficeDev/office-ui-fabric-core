@@ -25,11 +25,16 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 
 .ms-Persona {
-	@include ms-font-m;
-	@include ms-u-normalize;
-	display: table;
-	line-height: 1;
-	position: relative;
+  @include ms-font-m;
+  @include ms-u-normalize;
+  display: table;
+  line-height: 1;
+  position: relative;
+
+  // Persone can be selected.
+  &.is-selected {
+    background-color: $ms-color-themeLight;
+  }
 }
 
 .ms-Persona-imageArea {

@@ -132,6 +132,14 @@ $ms-color-initials-darkRed: 		#b91d47;
   left: 34px;
   bottom: -1px;
   border: 2px solid $ms-color-white;
+  text-align: center;
+}
+
+.ms-Persona-presenceIcon {
+  color: $ms-color-white;
+  font-size: 9px;
+  line-height: 12px;
+  vertical-align: top;
 }
 
 .ms-Persona-details {

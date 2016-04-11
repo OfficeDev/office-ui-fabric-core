@@ -1,3 +1,8 @@
+/**
+ * Created by williamdo on 4/10/16.
+ */
+
+
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
@@ -20,8 +25,16 @@ var fabric = fabric || {};
  * in the DOM.
  */
 fabric.Breadcrumb = function(container) {
-  this.container = container;
-  this.init();
+  this.breadcrumb = container;
+  this.breadcrumbList = container.querySelector('.ms-Breadcrumb-list');
+  this.listItems = container.querySelectorAll('.ms-Breadcrumb-listItem');
+  this.contextMenu = container.querySelector('.ms-ContextualMenu');
+  this.overflowButton = container.querySelector('.ms-Breadcrumb-overflowButton');
+  this.overflowMenu = container.querySelector('.ms-Breadcrumb-overflowMenu');
+  this.itemCollection = [];
+  this.currentMaxItems = 0;
+  this.init(this);
+
 };
 
 fabric.Breadcrumb.prototype = (function() {
@@ -29,34 +42,23 @@ fabric.Breadcrumb.prototype = (function() {
   //medium breakpoint
   var MEDIUM = 639;
 
-  //cached DOM elements
-  var _breadcrumb;
-  var _listItems;
-  var _contextMenu;
-  var _overflowButton;
-  var _overflowMenu;
-  var _breadcrumbList;
-
-  var _currentMaxItems = 0;
-  var _itemCollection = [];
-
   /**
    * create internal model of list items from DOM
    */
   var _createItemCollection = function() {
-    var length = _listItems.length;
+    var length = this.listItems.length;
     var i = 0;
     var item;
     var text;
-    var link; 
+    var link;
     var tabIndex;
 
-    for(i; i < length; i++) {
-      item = _listItems[i].querySelector('.ms-Breadcrumb-itemLink');
+    for (i; i < length; i++) {
+      item = this.listItems[i].querySelector('.ms-Breadcrumb-itemLink');
       text = item.textContent;
       link = item.getAttribute('href');
       tabIndex = parseInt(item.getAttribute('tabindex'), 10);
-      _itemCollection.push({text: text, link: link, tabIndex: tabIndex});
+      this.itemCollection.push({text: text, link: link, tabIndex: tabIndex});
     }
   };
 
@@ -65,37 +67,37 @@ fabric.Breadcrumb.prototype = (function() {
    *
    */
   var _onResize = function() {
-    _closeOverflow(null);
-    _renderList();
-  }; 
+    _closeOverflow.call(this, null);
+    _renderList.call(this);
+  };
 
   /**
    * render breadcrumbs and overflow menus
    */
   var _renderList = function() {
     var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
-
-    if(maxItems !== _currentMaxItems) {
-      if(_itemCollection.length > maxItems) {
-        _breadcrumb.className += ' is-overflow';
+    if (maxItems !== this.currentMaxItems) {
+      if (this.itemCollection.length > maxItems) {
+        this.breadcrumb.className += ' is-overflow';
       } else {
-        _removeClass(_breadcrumb, ' is-overflow');
+        _removeClass.call(this, this.breadcrumb, ' is-overflow');
       }
-      _addBreadcrumbItems(maxItems);
-      _addItemsToOverflow(maxItems);
+
+      _addBreadcrumbItems.call(this, maxItems);
+      _addItemsToOverflow.call(this, maxItems);
     }
 
-    _currentMaxItems = maxItems;
+    this.currentMaxItems = maxItems;
   };
 
   /**
    * creates the overflow menu
    */
   var _addItemsToOverflow = function(maxItems) {
-    _resetList(_contextMenu);
-    var end = _itemCollection.length - maxItems;
-    var overflowItems = _itemCollection.slice(0, end);
-
+    _resetList.call(this, this.contextMenu);
+    var end = this.itemCollection.length - maxItems;
+    var overflowItems = this.itemCollection.slice(0, end);
+    var contextMenu = this.contextMenu;
     overflowItems.forEach(function(item) {
       var li = document.createElement('li');
       li.className = 'ms-ContextualMenu-item';
@@ -109,7 +111,7 @@ fabric.Breadcrumb.prototype = (function() {
       }
       a.textContent = item.text;
       li.appendChild(a);
-      _contextMenu.appendChild(li);
+      contextMenu.appendChild(li);
     });
   };
 
@@ -117,28 +119,28 @@ fabric.Breadcrumb.prototype = (function() {
    * creates the breadcrumbs
    */
   var _addBreadcrumbItems = function(maxItems) {
-    _resetList(_breadcrumbList);
-    var i = _itemCollection.length - maxItems;
+    _resetList.call(this, this.breadcrumbList);
+    var i = this.itemCollection.length - maxItems;
     i = i < 0 ? 0 : i;
-    if(i >= 0) {
-      for(i; i < _itemCollection.length; i++) {
+    if (i >= 0) {
+      for (i; i < this.itemCollection.length; i++) {
         var listItem = document.createElement('li');
-        var item = _itemCollection[i];
+        var item = this.itemCollection[i];
         var a = document.createElement('a');
         var chevron = document.createElement('i');
         listItem.className = 'ms-Breadcrumb-listItem';
         a.className = 'ms-Breadcrumb-itemLink';
         if (item.link !== null) {
-            a.setAttribute('href', item.link);
+          a.setAttribute('href', item.link);
         }
-        if(!isNaN(item.tabIndex)) {
+        if (!isNaN(item.tabIndex)) {
           a.setAttribute('tabindex', item.tabIndex);
         }
         a.textContent = item.text;
         chevron.className = 'ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight';
         listItem.appendChild(a);
         listItem.appendChild(chevron);
-        _breadcrumbList.appendChild(listItem);
+        this.breadcrumbList.appendChild(listItem);
       }
     }
   };
@@ -156,17 +158,17 @@ fabric.Breadcrumb.prototype = (function() {
    * opens the overflow menu
    */
   var _openOverflow = function(event) {
-    if(_overflowMenu.className.indexOf(' is-open') === -1) {
-      _overflowMenu.className += ' is-open';
-      removeOutlinesOnClick(event);
+    if (this.overflowMenu.className.indexOf(' is-open') === -1) {
+      this.overflowMenu.className += ' is-open';
+      removeOutlinesOnClick.call(this, event);
       // force focus rect onto overflow button
-      _overflowButton.focus();
+      this.overflowButton.focus();
     }
   };
 
   var _overflowKeyPress = function(event) {
-    if(event.keyCode === 13) {
-      _openOverflow(event);
+    if (event.keyCode === 13) {
+      _openOverflow.call(this, event);
     }
   };
 
@@ -174,8 +176,8 @@ fabric.Breadcrumb.prototype = (function() {
    * closes the overflow menu
    */
   var _closeOverflow = function(event) {
-    if(!event || event.target !== _overflowButton) {
-      _removeClass(_overflowMenu, ' is-open');
+    if (!event || event.target !== this.overflowButton) {
+      _removeClass.call(this, this.overflowMenu, ' is-open');
     }
   };
 
@@ -184,32 +186,20 @@ fabric.Breadcrumb.prototype = (function() {
    */
   var _removeClass = function (element, value) {
     var index = element.className.indexOf(value);
-    if(index > -1) {
+    if (index > -1) {
       element.className = element.className.substring(0, index);
     }
-  };
-
-  /**
-   * caches elements and values of the component
-   */
-  var _cacheDOM = function(context) {
-    _breadcrumb = context.container;
-    _breadcrumbList = _breadcrumb.querySelector('.ms-Breadcrumb-list');
-    _listItems = _breadcrumb.querySelectorAll('.ms-Breadcrumb-listItem');
-    _contextMenu = _breadcrumb.querySelector('.ms-ContextualMenu');
-    _overflowButton = _breadcrumb.querySelector('.ms-Breadcrumb-overflowButton');
-    _overflowMenu = _breadcrumb.querySelector('.ms-Breadcrumb-overflowMenu');
   };
 
   /**
    * sets handlers for resize and button click events
    */
   var _setListeners = function() {
-    window.addEventListener('resize', _onResize);
-    _overflowButton.addEventListener('click', _openOverflow, false);
-    _overflowButton.addEventListener('keypress', _overflowKeyPress, false);
-    document.addEventListener('click', _closeOverflow, false);
-    _breadcrumbList.addEventListener('click', removeOutlinesOnClick, false);
+    window.addEventListener('resize', _onResize.bind(this), false);
+    document.addEventListener('click', _closeOverflow.bind(this), false);
+    this.overflowButton.addEventListener('click', _openOverflow.bind(this), false);
+    this.overflowButton.addEventListener('keypress', _overflowKeyPress.bind(this), false);
+    this.breadcrumbList.addEventListener('click', removeOutlinesOnClick.bind(this), false);
   };
 
   /**
@@ -222,15 +212,30 @@ fabric.Breadcrumb.prototype = (function() {
   /**
    * initializes component
    */
-  var init = function() {
-    _cacheDOM(this);
-    _setListeners();
-    _createItemCollection();
-    _onResize(null);
+  var init = function(context) {
+    _setListeners.call(this);
+    _createItemCollection.call(this);
+    _onResize.call(this, null);
+  };
+
+  /**
+   * adds a breadcrumb item to a breadcrumb
+   * @param item {Object} an object of properties and values that represent the breadcrumb item
+   * @param item.text {String} the item's text label
+   * @param item.href {String} the item's href link
+   * @param item.tabIndex {number} the item's tabIndex
+    */
+  var addItem = function(item) {
+    this.itemCollection.push(item);
+    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
+    _addBreadcrumbItems.call(this, maxItems);
+    _addItemsToOverflow.call(this, maxItems);
   };
 
   return {
-    init: init
+    init: init,
+    addItem: addItem
   };
 
 }());
+

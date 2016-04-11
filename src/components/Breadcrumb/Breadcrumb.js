@@ -222,7 +222,7 @@ fabric.Breadcrumb.prototype = (function() {
    * adds a breadcrumb item to a breadcrumb
    * @param item {Object} an object of properties and values that represent the breadcrumb item
    * @param item.text {String} the item's text label
-   * @param item.href {String} the item's href link
+   * @param item.link {String} the item's href link
    * @param item.tabIndex {number} the item's tabIndex
     */
   var addItem = function(item) {

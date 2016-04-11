@@ -23,26 +23,22 @@
 // ara
 @include language-override-system-fonts(ara, $ms-font-stack-arabic);
 
-// Cyrillic
-// bg, ru, uk
-@include language-override-system-fonts(rus, $ms-font-stack-cyrillic);
-
 // East European
 // ces, et, hrv, hun, lit, pl, lat, tur, slk, kaz
-// ces - Czech
-// est - Estonian
-// hrv - Croatian
-
 @include language-override-system-fonts(ces, $ms-font-stack-eastEuropean);
 @include language-override-system-fonts(est, $ms-font-stack-eastEuropean);
 @include language-override-system-fonts(hrv, $ms-font-stack-eastEuropean);
 @include language-override-system-fonts(hun, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lit, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lav, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(pol, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(tur, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(slk, $ms-font-stack-eastEuropean);
 @include language-override-system-fonts(kaz, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lav, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lit, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(pol, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(slk, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(tur, $ms-font-stack-eastEuropean);
+
+// Cyrillic
+// rus
+@include language-override-system-fonts(rus, $ms-font-stack-cyrillic);
 
 // Greek
 // ell

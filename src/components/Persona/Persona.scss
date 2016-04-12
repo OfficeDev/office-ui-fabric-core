@@ -567,6 +567,22 @@ $ms-color-initials-darkRed: 		#b91d47;
       left: 0;
     }
   }
+
+  &.ms-Persona--lg {
+    .ms-Persona-presence {
+      &:after {
+        top: 9px;
+      }
+    }
+  }
+
+  &.ms-Persona--xl {
+    .ms-Persona-presence {
+      &:after {
+        top: 13px;
+      }
+    } 
+  }
 }
 
 

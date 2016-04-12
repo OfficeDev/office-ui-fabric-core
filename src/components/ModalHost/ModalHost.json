@@ -1,0 +1,7 @@
+{
+  "name": "ModalHost",
+  "notes": "",
+  "description": "A overlay host for context menus and callouts",
+  "template": "ModalHost.html",
+  "class": "ms-ModalHost"
+}

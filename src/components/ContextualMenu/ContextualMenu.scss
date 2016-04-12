@@ -124,7 +124,6 @@
   pointer-events: none;
 }
 
-
 //== Modifier: Multi-select menu 
 //
 .ms-ContextualMenu.ms-ContextualMenu--multiselect {
@@ -156,15 +155,21 @@
   }
 }
 
-
-//== Modifier: Context menu item has icon
-.ms-ContextualMenu-item.ms-ContextualMenu-item--hasIcon {
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons,
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks {
+  .ms-ContextualMenu-link {
+    padding-left: 40px;
+  }
+  
   .ms-Icon {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    font-size: $ms-font-size-s;
+    width: 40px;
     text-align: center;
   }
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons {
+  width: 220px;
 }

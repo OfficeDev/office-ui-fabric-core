@@ -95,7 +95,7 @@ $CommandButton-height: 40px;
 .ms-CommandButton-icon {
   color: $ms-color-themePrimary;
   display: inline-block;
-  padding-right: 8px;
+  padding-right: 12px;
   position: relative;
   font-size: $ms-font-size-l;
   min-width: 17px;
@@ -113,7 +113,6 @@ $CommandButton-height: 40px;
   height: 100%;
   display: inline-block;
   vertical-align: top;
-  margin-left: -4px;
   
   &:hover {
     color: $ms-color-neutralDark; 
@@ -149,7 +148,6 @@ $CommandButton-height: 40px;
 
 // Modifier: Small button Modifier
 //
-
 .ms-CommandButton.ms-CommandButton--noLabel {
   .ms-CommandButton-icon {
     padding-right: 0;

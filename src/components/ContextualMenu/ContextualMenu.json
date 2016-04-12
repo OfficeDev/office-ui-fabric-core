@@ -9,6 +9,7 @@
     "ContextualMenu.SubMenu.html",
     "ContextualMenu.Dividers.html",
     "ContextualMenu.Multiselect.html",
+    "ContextualMenu.Checkmarks.html",
     "ContextualMenu.Icons.html"
   ],
   "props":  {
@@ -36,13 +37,15 @@
       }
     ]
   },
-  "propsIcons":  {
+  "propsCheckmarks":  {
     "state": "is-open",
+    "modifier": "hasChecks",
     "items": [
       {
         "title": "Animals",
         "state": "",
-        "icon": "check"
+        "icon": "check",
+        "iconSize": "s"
       },
       {
         "title": "Books",
@@ -59,10 +62,49 @@
       {
         "title": "Music",
         "state": "",
-        "icon": "check"
+        "icon": "check",
+        "iconSize": "s"
       },
       {
         "title": "Sports",
+        "state": "is-disabled"
+      }
+    ]
+  },
+  "propsIcons":  {
+    "state": "is-open",
+    "modifier": "hasIcons",
+    "items": [
+      {
+        "title": "Upload file for photo",
+        "state": "",
+        "icon": "upload",
+        "iconSize": "l"
+      },
+      {
+        "title": "Create folder",
+        "state": "",
+        "icon": "folder",
+        "iconSize": "l"
+      },
+       {
+        "modifier": "divider",
+        "title": ""
+      },
+      {
+        "title": "Reply",
+        "state": "is-selected",
+        "icon": "circleFill",
+        "iconSize": "l"
+      },
+      {
+        "title": "Forward",
+        "state": "",
+        "icon": "circleFill",
+        "iconSize": "l"
+      },
+      {
+        "title": "Archive",
         "state": "is-disabled"
       }
     ]

@@ -48,40 +48,40 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "New",
-          "icon": "star",
+          "label": "Command",
+          "icon": "circleFill",
           "tag": "button"
         }
       },
       {
         "component": "CommandButton",
         "props":  {
-          "label": "New",
-          "icon": "star",
+          "label": "Command",
+          "icon": "circleFill",
           "tag": "button"
         }
       },
       {
         "component": "CommandButton",
         "props":  {
-          "label": "New",
-          "icon": "star",
+          "label": "Command",
+          "icon": "circleFill",
           "tag": "button"
         }
       },
       {
         "component": "CommandButton",
         "props":  {
-          "label": "New",
-          "icon": "star",
+          "label": "Command",
+          "icon": "circleFill",
           "tag": "button"
         }
       },
       {
         "component": "CommandButton",
         "props":  {
-          "label": "New",
-          "icon": "star",
+          "label": "Command",
+          "icon": "circleFill",
           "tag": "button"
         }
       }
@@ -90,21 +90,23 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "New",
-          "icon": "star",
-          "tag": "button"
+          "icon": "circleFill",
+          "tag": "button",
+          "modifier": "noLabel"
         }
       }
     ],
     "contextualMenu": {
       "component": "ContextualMenu",
       "props": {
+        "modifier": "hasIcons",
         "state": "",
         "items": [
           {
             "title": "BLANK",
             "state": "",
-            "icon": "star"
+            "icon": "circleFill",
+            "iconSize": "l"
           }
         ]
       }

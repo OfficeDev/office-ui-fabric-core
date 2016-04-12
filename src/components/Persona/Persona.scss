@@ -450,6 +450,8 @@ $ms-color-initials-darkRed: 		#b91d47;
   .ms-Persona-presenceIcon {
     line-height: 28px;
     font-size: $ms-font-size-xl;
+    position: relative;
+    top: 1px;
   }
 
 	.ms-Persona-details {

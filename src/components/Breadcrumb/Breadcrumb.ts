@@ -139,6 +139,7 @@ namespace fabric {
       this._resetList(this._breadcrumbList);
       let i = this._itemCollection.length - maxItems;
 
+      i = i < 0 ? 0 : i;
       if (i >= 0) {
         for (i; i < this._itemCollection.length; i++) {
           let listItem = document.createElement("li");

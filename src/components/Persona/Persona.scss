@@ -553,8 +553,6 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--busy {
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-busy-average;
-		// Replace solid background with stripes on modern browsers.
-		background: repeating-linear-gradient( -45deg, $ms-color-presence-busy-stripe-light, $ms-color-presence-busy-stripe-light 1px, $ms-color-presence-busy-stripe-dark 0px, $ms-color-presence-busy-stripe-dark 2px );
 	}
 }
 
@@ -563,7 +561,6 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--busy.ms-Persona--square {
 	.ms-Persona-presence {
-		background-color: $ms-color-presence-busy-average;
 		// Replace solid background with stripes on modern browsers.
 		background: repeating-linear-gradient( -45deg, $ms-color-presence-busy-stripe-light, $ms-color-presence-busy-stripe-light 3px, $ms-color-presence-busy-stripe-dark 3px, $ms-color-presence-busy-stripe-dark 6px );
 	}
@@ -575,10 +572,18 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--dnd {
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-dnd-background;
-		// Use a gradient to include the stripe on modern browsers.
-		background-image: linear-gradient( to bottom, $ms-color-presence-dnd-background 0%, $ms-color-presence-dnd-background 48%, $ms-color-presence-dnd-line 48%, $ms-color-presence-dnd-line 52%, $ms-color-presence-dnd-background 52%, $ms-color-presence-dnd-background 100% );
 	}
 }
+
+//== Modifier: Square Persona with do not disturb presence
+//
+.ms-Persona.ms-Persona--dnd.ms-Persona--square {
+  .ms-Persona-presence {
+    // Use a gradient to include the stripe on modern browsers.
+    background-image: linear-gradient( to bottom, $ms-color-presence-dnd-background 0%, $ms-color-presence-dnd-background 48%, $ms-color-presence-dnd-line 48%, $ms-color-presence-dnd-line 52%, $ms-color-presence-dnd-background 52%, $ms-color-presence-dnd-background 100% );
+  }
+}
+
 
 
 //== Modifier: Persona with offline presence

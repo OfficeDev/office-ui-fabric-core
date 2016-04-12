@@ -1,8 +1,3 @@
-/**
- * Created by williamdo on 4/10/16.
- */
-
-
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
@@ -68,23 +63,16 @@ fabric.Breadcrumb.prototype = (function() {
    */
   var _onResize = function() {
     _closeOverflow.call(this, null);
-    _renderList.call(this);
+    _renderListOnResize.call(this);
   };
 
   /**
-   * render breadcrumbs and overflow menus
+   * render breadcrumbs and overflow menus on resize
    */
-  var _renderList = function() {
+  var _renderListOnResize = function() {
     var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
     if (maxItems !== this.currentMaxItems) {
-      if (this.itemCollection.length > maxItems) {
-        this.breadcrumb.className += ' is-overflow';
-      } else {
-        _removeClass.call(this, this.breadcrumb, ' is-overflow');
-      }
-
-      _addBreadcrumbItems.call(this, maxItems);
-      _addItemsToOverflow.call(this, maxItems);
+      _updateBreadcrumbs.call(this);
     }
 
     this.currentMaxItems = maxItems;
@@ -210,6 +198,21 @@ fabric.Breadcrumb.prototype = (function() {
   };
 
   /**
+   * updates the breadcrumbs and overflow menu
+   */
+  var _updateBreadcrumbs = function() {
+    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
+    if (this.itemCollection.length > maxItems) {
+      this.breadcrumb.className += ' is-overflow';
+    } else {
+      _removeClass.call(this, this.breadcrumb, ' is-overflow');
+    }
+
+    _addBreadcrumbItems.call(this, maxItems);
+    _addItemsToOverflow.call(this, maxItems);
+  };
+
+  /**
    * initializes component
    */
   var init = function(context) {
@@ -219,22 +222,40 @@ fabric.Breadcrumb.prototype = (function() {
   };
 
   /**
-   * adds a breadcrumb item to a breadcrumb
-   * @param item {Object} an object of properties and values that represent the breadcrumb item
-   * @param item.text {String} the item's text label
-   * @param item.link {String} the item's href link
-   * @param item.tabIndex {number} the item's tabIndex
-    */
-  var addItem = function(item) {
-    this.itemCollection.push(item);
-    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
-    _addBreadcrumbItems.call(this, maxItems);
-    _addItemsToOverflow.call(this, maxItems);
+   * Adds a breadcrumb item to a breadcrumb
+   * @param itemLabel {String} the item's text label
+   * @param itemLink {String} the item's href link
+   * @param tabIndex {number} the item's tabIndex
+   */
+  var addItem = function(itemLabel, itemLink, tabIndex) {
+    this.itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
+    _updateBreadcrumbs.call(this);
   };
 
+  /**
+   * Removes a breadcrumb item to a breadcrumb
+   * @param itemLabel {String} the item's text label
+   */
+  var removeItemByLabel = function(itemLabel) {
+    var i = this.itemCollection.length;
+    while(i--) {
+      if(this.itemCollection[i].text === itemLabel) {
+        this.itemCollection.splice(i, 1);
+      }
+    }
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
+   * adds a breadcrumb item to a breadcrumb
+   * @param itemLabel {String} the item's text label
+   * @param itemLink {String} the item's href link
+   * @param tabIndex {number} the item's tabIndex
+   */
   return {
     init: init,
-    addItem: addItem
+    addItem: addItem,
+    removeItemByLabel: removeItemByLabel
   };
 
 }());

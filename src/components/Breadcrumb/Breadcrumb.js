@@ -28,7 +28,7 @@ fabric.Breadcrumb = function(container) {
   this.overflowMenu = container.querySelector('.ms-Breadcrumb-overflowMenu');
   this.itemCollection = [];
   this.currentMaxItems = 0;
-  this.init(this);
+  this.init();
 
 };
 
@@ -215,7 +215,7 @@ fabric.Breadcrumb.prototype = (function() {
   /**
    * initializes component
    */
-  var init = function(context) {
+  var init = function() {
     _setListeners.call(this);
     _createItemCollection.call(this);
     _onResize.call(this, null);
@@ -233,13 +233,13 @@ fabric.Breadcrumb.prototype = (function() {
   };
 
   /**
-   * Removes a breadcrumb item to a breadcrumb
+   * Removes a breadcrumb item by item label in the breadcrumbs list
    * @param itemLabel {String} the item's text label
    */
   var removeItemByLabel = function(itemLabel) {
     var i = this.itemCollection.length;
-    while(i--) {
-      if(this.itemCollection[i].text === itemLabel) {
+    while (i--) {
+      if (this.itemCollection[i].text === itemLabel) {
         this.itemCollection.splice(i, 1);
       }
     }
@@ -247,15 +247,22 @@ fabric.Breadcrumb.prototype = (function() {
   };
 
   /**
-   * adds a breadcrumb item to a breadcrumb
+   * removes a breadcrumb item by position in the breadcrumbs list
+   * index starts at 0
    * @param itemLabel {String} the item's text label
    * @param itemLink {String} the item's href link
    * @param tabIndex {number} the item's tabIndex
    */
+  var removeItemByListPosition = function(value) {
+    this.itemCollection.splice(value, 1);
+    _updateBreadcrumbs.call(this);
+  };
+
   return {
     init: init,
     addItem: addItem,
-    removeItemByLabel: removeItemByLabel
+    removeItemByLabel: removeItemByLabel,
+    removeItemByListPosition: removeItemByListPosition
   };
 
 }());

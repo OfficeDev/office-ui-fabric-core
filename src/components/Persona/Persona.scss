@@ -23,6 +23,19 @@ $ms-color-initials-orange: 			#da532c;
 $ms-color-initials-red: 				#ee1111;
 $ms-color-initials-darkRed: 		#b91d47;
 
+// Persona sizes
+$tinyPersonaSize: 30px;
+$xsPersonaSize: 32px;
+$smPersonaSize: 40px;
+$mdPersonaSize: 48px;
+$lgPersonaSize: 72px;
+$xlPersonaSize: 100px;
+
+// Presence Sizes
+$mdPresenceSize: 12px;
+$lgPresenceSize: 20px;
+$xlPresenceSize: 28px;
+
 
 .ms-Persona {
 	@include ms-font-m;
@@ -37,8 +50,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 	display: block;
 	overflow: hidden;
 	text-align: center;
-	width: 48px;
-	height: 48px;
+	width: $mdPersonaSize;
+	height: $mdPersonaSize;
 	border-radius: 50%;
 	z-index: $ms-zIndex-back;
 }
@@ -59,7 +72,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 	color: $ms-color-white;
 	font-size: $ms-font-size-l;
 	font-family: $ms-font-family-light;
-	line-height: 48px;
+	line-height: $mdPersonaSize;
 
 	&.ms-Persona-initials--lightBlue {
 		background-color: $ms-color-initials-lightBlue;
@@ -114,8 +127,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 48px;
-	height: 48px;
+	width: $mdPersonaSize;
+	height: $mdPersonaSize;
 }
 
 .ms-Persona-image[src=""] {
@@ -125,8 +138,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona-presence {
   background-color: $ms-color-presence-available;
   position: absolute;
-  height: 12px;
-  width: 12px;
+  height: $mdPresenceSize;
+  width: $mdPresenceSize;
   border-radius: 50%;
   top: auto;
   left: 34px;
@@ -138,7 +151,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona-presenceIcon {
   color: $ms-color-white;
   font-size: 9px;
-  line-height: 12px;
+  line-height: $mdPresenceSize;
   vertical-align: top;
 }
 
@@ -201,7 +214,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 		left: 0;
 		bottom: auto;
 		right: auto;
-		height: 48px;
+		height: $mdPersonaSize;
 		width: 5px;
 		border-radius: 0;
 		border: 0;
@@ -212,7 +225,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //== Modifier: Tiny Persona
 //
 .ms-Persona.ms-Persona--tiny {
-	height: 30px;
+	height: $tinyPersonaSize;
 	display: inline-block;
 
 	.ms-Persona-imageArea {
@@ -262,8 +275,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--tiny {
 	.ms-Persona-presence {
-		height: 12px;
-		width: 12px;
+		height: $mdPresenceSize;
+		width: $mdPresenceSize;
 		top: 10px;
 	}
 }
@@ -274,8 +287,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--xs {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 32px;
-	  height: 32px;
+	  width: $xsPersonaSize;
+	  height: $xsPersonaSize;
 	}
 
 	.ms-Persona-placeholder {
@@ -285,7 +298,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-s;
-		line-height: 32px;
+		line-height: $xsPersonaSize;
 	}
 
 	.ms-Persona-presence {
@@ -311,7 +324,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xs {
 	.ms-Persona-presence {
-		height: 32px;
+		height: $xsPersonaSize;
 		width: 4px;
 		left: 0;
 	}
@@ -323,8 +336,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--sm {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 40px;
-	  height: 40px;
+	  width: $smPersonaSize;
+	  height: $smPersonaSize;
 	}
 
 	.ms-Persona-placeholder {
@@ -334,7 +347,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-m;
-		line-height: 40px;
+		line-height: $smPersonaSize;
 	}
 
 	.ms-Persona-presence {
@@ -360,7 +373,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--sm {
 	.ms-Persona-presence {
-		height: 40px;
+		height: $smPersonaSize;
 		width: 4px;
 		left: 0;
 	}
@@ -372,8 +385,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--lg {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 72px;
-	  height: 72px;
+	  width: $lgPersonaSize;
+	  height: $lgPersonaSize;
 	}
 
 	.ms-Persona-placeholder {
@@ -383,18 +396,18 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-xxl;
-		line-height: 72px;
+		line-height: $lgPersonaSize;
 	}
 
 	.ms-Persona-presence {
 		left: 49px;
-    height: 20px;
-    width: 20px;
+    height: $lgPresenceSize;
+    width: $lgPresenceSize;
     border-width: 3px;
 	}
 
   .ms-Persona-presenceIcon {
-    line-height: 20px;
+    line-height: $lgPresenceSize;
     font-size: $ms-font-size-m;
   }
 
@@ -416,7 +429,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--lg {
 	.ms-Persona-presence {
-		height: 72px;
+		height: $lgPersonaSize;
 		width: 7px;
 		left: 0;
 	}
@@ -428,8 +441,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--xl {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 100px;
-	  height: 100px;
+	  width: $xlPersonaSize;
+	  height: $xlPersonaSize;
 	}
 
 	.ms-Persona-placeholder {
@@ -439,18 +452,18 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-su;
-		line-height: 100px;
+		line-height: $xlPersonaSize;
 	}
 
 	.ms-Persona-presence {
-		height: 28px;
-		width: 28px;
+		height: $xlPresenceSize;
+		width: $xlPresenceSize;
 		left: 71px;
     border-width: 4px;
 	}
 
   .ms-Persona-presenceIcon {
-    line-height: 28px;
+    line-height: $xlPresenceSize;
     font-size: $ms-font-size-xl;
     position: relative;
     top: 1px;
@@ -482,7 +495,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xl {
 	.ms-Persona-presence {
-		height: 100px;
+		height: $xlPersonaSize;
 		width: 9px;
 		left: 0;
 	}
@@ -588,7 +601,6 @@ $ms-color-initials-darkRed: 		#b91d47;
 }
 
 
-
 //== Modifier: Square Persona with blocked presence
 //
 .ms-Persona.ms-Persona--blocked.ms-Persona--square {
@@ -640,7 +652,6 @@ $ms-color-initials-darkRed: 		#b91d47;
     background-image: linear-gradient( to bottom, $ms-color-presence-dnd-background 0%, $ms-color-presence-dnd-background 48%, $ms-color-presence-dnd-line 48%, $ms-color-presence-dnd-line 52%, $ms-color-presence-dnd-background 52%, $ms-color-presence-dnd-background 100% );
   }
 }
-
 
 
 //== Modifier: Persona with offline presence

@@ -253,7 +253,7 @@ fabric.Breadcrumb.prototype = (function() {
    * @param itemLink {String} the item's href link
    * @param tabIndex {number} the item's tabIndex
    */
-  var removeItemByListPosition = function(value) {
+  var removeItemByPosition = function(value) {
     this.itemCollection.splice(value, 1);
     _updateBreadcrumbs.call(this);
   };
@@ -262,7 +262,7 @@ fabric.Breadcrumb.prototype = (function() {
     init: init,
     addItem: addItem,
     removeItemByLabel: removeItemByLabel,
-    removeItemByListPosition: removeItemByListPosition
+    removeItemByPosition: removeItemByPosition
   };
 
 }());

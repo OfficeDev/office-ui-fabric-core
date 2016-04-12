@@ -9,6 +9,7 @@ var ErrorHandling = require('./gulp/modules/ErrorHandling');
 
 var watchTasks = [
     'Fabric', 
+    'ComponentJS',
     'FabricComponents', 
     'ComponentSamples', 
     'Samples',
@@ -17,6 +18,7 @@ var watchTasks = [
 
 var buildTasks = [
     'Fabric', 
+    'ComponentJS',
     'FabricComponents', 
     'ComponentSamples', 
     'Samples', 
@@ -50,22 +52,22 @@ gulp.task('FabricServer', function() {
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
-gulp.task('nuke', ['Fabric-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
+gulp.task('nuke', ['Fabric-nuke', 'ComponentJS-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
 
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
 
 // Watch Sass
-gulp.task('watch-build', ['ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-build', ['ComponentJS', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+        Plugins.runSequence(['Fabric', 'ComponentJS', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));
 });
 
 gulp.task('watch', ['watch-build']);
 
-gulp.task('watch-debug-build', ['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug-build', ['ComponentJS', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
     }));

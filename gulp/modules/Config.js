@@ -128,6 +128,15 @@ var Config = function() {
         var template = hbs.compile(that.paths.componentsPath + '/' + partial);
         return template(props);
       }.bind(this),
+      keepContext: function(props, context) {
+        // console.log(block());
+        //var blockz = block();
+        console.log(props, context);
+        var hbs = Plugins.handlebars.Handlebars;
+        // var thisProps = {props: props};
+        // var compiled = hbs.compile(block);
+        return template(thisProps);
+      },
       tokenReplace: function(string, replaceArray) {
         var newStr;
         if(replaceArray) {

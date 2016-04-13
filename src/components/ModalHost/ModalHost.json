@@ -3,5 +3,8 @@
   "notes": "",
   "description": "A overlay host for context menus and callouts",
   "template": "ModalHost.html",
-  "class": "ms-ModalHost"
+  "class": "ms-ModalHost",
+  "props":  {
+    "arrowPosition": "arrowLeft"
+  }
 }

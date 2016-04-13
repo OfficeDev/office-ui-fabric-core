@@ -1,0 +1,174 @@
+
+.ms-ModalHost {
+  z-index: $ms-zIndex-front;
+  margin: 16px auto;
+  position: relative;
+  width: 288px;
+}
+
+// Mixin for arrow size and color
+@mixin arrowBorders($ms-color-top, $ms-color-right, $ms-color-bottom, $ms-color-left) {
+  border-top: 10px solid $ms-color-top;
+  border-right: 10px solid $ms-color-right;
+  border-bottom: 10px solid $ms-color-bottom;
+  border-left: 10px solid $ms-color-left;
+}
+
+
+//= Modifier: Base styling for all ModalHost arrows
+//
+.ms-ModalHost.ms-ModalHost--arrowRight,
+.ms-ModalHost.ms-ModalHost--arrowLeft,
+.ms-ModalHost.ms-ModalHost--arrowBottom,
+.ms-ModalHost.ms-ModalHost--arrowTop {
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    transform: rotate(-45deg);
+    height: 0;
+    width: 0;
+  }
+
+  &:before {
+    z-index: $ms-zIndex-back;
+    outline: 1px solid transparent;
+    @include drop-shadow;
+  }
+
+  &:after {
+    z-index: $ms-zIndex-front;
+  }
+}
+
+
+//= Modifier: ModalHost with left and right arrows
+// 
+.ms-ModalHost.ms-ModalHost--arrowLeft,
+.ms-ModalHost.ms-ModalHost--arrowRight {
+  &:before,
+  &:after {
+    top: 40px;
+    display: none; // Hide left and right arrows on sm screens
+  }
+}
+
+.ms-ModalHost.ms-ModalHost--arrowLeft {
+  &:before,
+  &:after {
+    @include arrowBorders($ms-color-white, transparent, transparent, $ms-color-white);
+    left: -10px;
+  }
+}
+
+.ms-ModalHost.ms-ModalHost--arrowRight {
+  &:before,
+  &:after {
+    @include arrowBorders(transparent, $ms-color-white, $ms-color-white, transparent);
+    right: -10px;
+  }
+}
+
+
+//= Modifier: ModalHost with top and bottom arrows
+// 
+.ms-ModalHost.ms-ModalHost--arrowTop,
+.ms-ModalHost.ms-ModalHost--arrowBottom {
+  &:before,
+  &:after {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+  }
+}
+
+.ms-ModalHost.ms-ModalHost--arrowTop {
+  &:before,
+  &:after {
+    @include arrowBorders($ms-color-white, $ms-color-white, transparent, transparent);
+    top: -10px;
+  }
+}
+
+.ms-ModalHost.ms-ModalHost--arrowBottom {
+  &:before,
+  &:after {
+    @include arrowBorders(transparent, transparent, $ms-color-white, $ms-color-white);
+    bottom: -10px;
+  }
+}
+
+// The actual ModalHost element
+.ms-ModalHost-main {
+  position: relative;
+  background-color: $ms-color-white;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: $ms-zIndex-middle;
+  @include drop-shadow;
+  min-height: 80px;
+}
+
+.ms-ModalHost-close {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: $ms-font-size-m;
+  color: $ms-color-neutralSecondary;
+  z-index: $ms-zIndex-front;
+}
+
+
+//= Modifier: Close button ModalHost
+//
+.ms-ModalHost.ms-ModalHost--close {
+  .ms-ModalHost-title {
+    margin-right: 20px; // Avoid overlap with close button
+  }
+}
+
+.ms-ModalHost.ms-ModalHost--peek {
+  &.ms-ModalHost--arrowTop,
+  &.ms-ModalHost--arrowBottom {
+    &:before,
+    &:after {
+      left: 40px;
+      right: auto;
+    }
+  }
+
+  &.ms-ModalHost--arrowRight,
+  &.ms-ModalHost--arrowLeft {
+    &:before,
+    &:after {
+      top: calc('50% - 10px');
+    }
+  }
+}
+
+
+
+@media (min-width: $ms-screen-md-min) {
+  // Make width larger and remove centering on md+ screens
+  .ms-ModalHost {
+    width: 300px;
+    margin: 16px;
+  }
+
+  // Show arrows right and left
+  .ms-ModalHost.ms-ModalHost--arrowRight,
+  .ms-ModalHost.ms-ModalHost--arrowLeft {
+    &:before,
+    &:after {
+      display: block;
+    }
+  }
+}

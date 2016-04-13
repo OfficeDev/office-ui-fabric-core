@@ -13,6 +13,21 @@ $CommandButton-height: 40px;
   &.is-hidden {
     display: none;
   }
+  
+  &:disabled, 
+	&.is-disabled {
+    .ms-CommandButton-button {
+      cursor: default;
+
+      .ms-CommandButton-label {
+        color: $ms-color-neutralTertiary;
+      }
+      
+      .ms-CommandButton-icon {
+        color: $ms-color-neutralTertiary;
+      }
+    }
+	}
 }
 
 //== Mixins: Base button, focus, and icon alignments
@@ -74,17 +89,6 @@ $CommandButton-height: 40px;
 .ms-CommandButton-button {
   border: 0;
   margin: 0;
-  
-	&:disabled, 
-	&.is-disabled {
-		background-color: $ms-color-neutralLighter;
-		border-color: $ms-color-neutralLighter;
-		cursor: default;
-
-		.ms-CommandButton-label {
-			color: $ms-color-neutralTertiary;
-		}
-	}
 }
 
 // Add space between adjacent command buttons.
@@ -93,7 +97,6 @@ $CommandButton-height: 40px;
 }
 
 .ms-CommandButton-icon {
-  color: $ms-color-themePrimary;
   display: inline-block;
   padding-right: 12px;
   position: relative;
@@ -146,10 +149,18 @@ $CommandButton-height: 40px;
   }
 }
 
-// Modifier: Small button Modifier
+//= Modifier: No Label modifier
 //
 .ms-CommandButton.ms-CommandButton--noLabel {
   .ms-CommandButton-icon {
     padding-right: 0;
+  }
+}
+
+//= Modifier: Inline modifier
+//
+.ms-CommandButton.ms-CommandButton--inline {
+  .ms-CommandButton-button {
+    background: none;
   }
 }

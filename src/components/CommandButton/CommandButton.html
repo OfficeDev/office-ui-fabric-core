@@ -3,8 +3,9 @@
   {{props.customClasses}} ms-CommandButton 
   {{#if props.modifier}}ms-CommandButton--{{props.modifier}}{{/if}}
   {{props.state}}
+  {{#if props.disabled}}is-disabled{{/if}}
   ">
-  <{{props.tag}} class="ms-CommandButton-button">
+  <{{props.tag}} class="ms-CommandButton-button"  {{#if props.disabled}}tabIndex="-1"{{/if}}>
     {{#if props.icon}}
       <span class="ms-CommandButton-icon {{#if props.iconColor}}ms-fontColor-{{props.iconColor}}{{/if}}"><i class="ms-Icon ms-Icon--{{props.icon}}"></i></span>{{/if}}<span class="ms-CommandButton-label">{{props.label}}</span>{{#if props.dropdownIcon}}<span class="ms-CommandButton-dropdownIcon"><i class="ms-Icon ms-Icon--{{props.dropdownIcon}}"></i></span>
     {{/if}}

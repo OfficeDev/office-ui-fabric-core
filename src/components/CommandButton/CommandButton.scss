@@ -18,7 +18,11 @@ $CommandButton-height: 40px;
 	&.is-disabled {
     .ms-CommandButton-button {
       cursor: default;
-
+      
+      &:hover {
+        background-color: $ms-color-themeLighterAlt;
+      }
+      
       .ms-CommandButton-label {
         color: $ms-color-neutralTertiary;
       }
@@ -27,6 +31,8 @@ $CommandButton-height: 40px;
         color: $ms-color-neutralTertiary;
       }
     }
+    
+   
 	}
 }
 

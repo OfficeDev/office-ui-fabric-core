@@ -7,10 +7,12 @@
 
 
 @mixin ms-Link {
+  @include ms-font-m;
   color: $ms-color-themePrimary;
   text-decoration: none;
   cursor: pointer;
-
+  outline: none;
+  
   &:hover,
   &:focus {
     color: $ms-color-themeDarker;

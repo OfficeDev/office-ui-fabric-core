@@ -7,7 +7,8 @@
     "Button",
     "Label",
     "Link",
-    "ModalHost"
+    "ModalHost",
+    "CommandButton"
   ],
   "fileOrder": [
     "Callout.html",
@@ -42,21 +43,23 @@
     "modifier": "actionText",
     "actions": [
       {
-        "component": "Button",
+        "component": "CommandButton",
         "props": {
-          "label":  "Save",
+          "label": "Command",
           "icon": "check",
-          "modifier": "command",
-          "description": ""
+          "tag": "button",
+          "modifier": "inline",
+          "iconColor": "green"
         }
       },
       {
-        "component": "Button",
+        "component": "CommandButton",
         "props": {
-          "label": "Cancel",
+          "label": "Command",
           "icon": "x",
-          "modifier": "command",
-          "description": ""
+          "tag": "button",
+          "modifier": "inline",
+          "iconColor": "red"
         }
       }
     ],
@@ -94,16 +97,15 @@
         "component": "Button",
         "props": {
           "label": "More",
-          "description": "Description of the action this button takes",
-          "modifier": "ms-Button--primary"
+          "tag": "button",
+          "modifier": "primary"
         }
       },
       {
         "component": "Button",
         "props": {
           "label": "Got it",
-          "description": "Description of the action this button takes",
-          "modifier": "primary"
+          "tag": "button"
         }
       }
     ],
@@ -121,8 +123,8 @@
       {
         "component": "Button",
         "props": {
-          "label": "Learn More",
-          "description": "Description of the action this button takes"
+          "label": "Got it",
+          "tag": "button"
         }
       }
     ],

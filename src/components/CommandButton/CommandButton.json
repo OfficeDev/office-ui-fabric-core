@@ -116,6 +116,6 @@
     "icon": "circleFill",
     "tag": "button",
     "iconColor": "themePrimary",
-    "state": "is-disabled"
+    "disabled": true
   }
 }

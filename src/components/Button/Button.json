@@ -10,17 +10,10 @@
     "Button.Primary.html",
     "Button.Hero.html",
     "Button.Compound.html",
-    "Button.Command.html",
     "Button.Submenu.html"
   ],
   "props":  {
     "label": "Create Account",
-    "tag": "button"
-  },
-  "propsCommand": {
-    "label": "Create Account",
-    "icon": "plus",
-    "modifier": "command",
     "tag": "button"
   },
   "propsCompound": {

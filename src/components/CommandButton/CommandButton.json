@@ -6,7 +6,8 @@
   "class": "ms-CommandButon",
   "wrapBranches": true,
   "dependencies": [
-    "ContextualMenu"
+    "ContextualMenu",
+    "ModalHost"
   ],
   "fileOrder": [
     "CommandButton.html",
@@ -39,6 +40,7 @@
     "dropdown": {
       "component": "ContextualMenu",
       "props":  {
+        "state": "is-positioned is-opened",
         "items": [
           {
             "title": "Reply",
@@ -79,6 +81,7 @@
     "dropdown": {
       "component": "ContextualMenu",
       "props":  {
+        "state": "is-positioned",
         "items": [
           {
             "title": "Reply",

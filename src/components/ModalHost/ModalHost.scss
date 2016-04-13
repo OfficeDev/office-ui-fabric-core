@@ -3,7 +3,17 @@
   z-index: $ms-zIndex-front;
   margin: 16px auto;
   position: relative;
-  width: 288px;
+  min-width: 10px;
+  display: inline-block;
+  display: none;
+  
+  &.is-positioned {
+    position: absolute;
+  }
+  
+  &.is-open {
+    display: block;
+  }
 }
 
 // Mixin for arrow size and color
@@ -159,7 +169,6 @@
 @media (min-width: $ms-screen-md-min) {
   // Make width larger and remove centering on md+ screens
   .ms-ModalHost {
-    width: 300px;
     margin: 16px;
   }
 

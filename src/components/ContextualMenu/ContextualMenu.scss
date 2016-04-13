@@ -9,19 +9,11 @@
 .ms-ContextualMenu {
   @include ms-font-m;
   @include ms-u-normalize;
-  display: none;
-
-  // Hidden by default, then trigger this state to show it.
-  &.is-open {
-    @include drop-shadow;
-    background-color: $ms-color-white;
-    border: 1px solid $ms-color-neutralTertiaryAlt;
-    display: block;
-    list-style-type: none;
-    position: absolute;
-    width: 180px;
-    z-index: ($ms-zIndex-ContextualMenu + $ms-zIndex-middle);
-  }
+  display: block;
+  min-width: 180px;
+  list-style-type: none;
+  position: relative;
+  background-color: $ms-color-white;
 }
 
 .ms-ContextualMenu-item {

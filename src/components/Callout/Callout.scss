@@ -5,9 +5,11 @@
 // --------------------------------------------------
 // Callout styles
 
-$ms-Callout-commandButtonHeight: 17px;
+$ms-Callout-commandButtonHeight: 27px;
 
-.ms-Callout {}
+.ms-Callout {
+  width: 288px;
+}
 
 .ms-Callout-header {
   z-index: ($ms-zIndex-Callout + $ms-zIndex-middle);
@@ -113,7 +115,11 @@ $ms-Callout-commandButtonHeight: 17px;
 .ms-Callout.ms-Callout--actionText {
   .ms-Callout-actions {
     border-top: 1px solid $ms-color-neutralLight;
-    padding-top: 20px;
+    padding-top: 12px;
+  }
+  
+  .ms-Callout-inner {
+    padding-bottom: 12px;
   }
 }
 

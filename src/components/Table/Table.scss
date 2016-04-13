@@ -11,6 +11,10 @@
   border-collapse: collapse;
 }
 
+.ms-Table--fixed {
+  table-layout: fixed;
+}
+
 .ms-Table tr,
 .ms-Table-row {
   display: table-row;

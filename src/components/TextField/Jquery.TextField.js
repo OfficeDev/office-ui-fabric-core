@@ -21,6 +21,11 @@
         $(this).on('click', function () {
           $(this).find('.ms-Label').hide();
         });
+        
+        /** Hide the label on focus. */
+        $(this).find('.ms-TextField-field').on('focus', function () {
+          $(this).siblings('.ms-Label').hide();
+        });
 
         /** Show the label again when leaving the field. */
         $(this).find('.ms-TextField-field').on('blur', function () {

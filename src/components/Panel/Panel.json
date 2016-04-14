@@ -41,7 +41,7 @@
     },
     {
       "name": "Large Fixed",
-      "class": "ms-Panel--lgFixed"
+      "class": "ms-Panel--lg ms-Panel--fixed"
     },
     {
       "name": "Extra Large",

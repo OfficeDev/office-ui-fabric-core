@@ -230,9 +230,9 @@ $CommandButtonBlue: #2488D8;
   }
 }
 
-//== Modifier: Large panel (anchored right, fluid width)
+//== Modifier: Large fixed panel (anchored right, fixed width)
 //
-.ms-Panel.ms-Panel--lgFixed {
+.ms-Panel.ms-Panel--lg.ms-Panel--fixed {
   .ms-Panel-main {
     @media (min-width: $ms-screen-xxl-min) {
       left: auto;

@@ -8,6 +8,7 @@
 $Panel-width-lightDismiss: 272px;
 $Panel-width-sm: 340px;
 $Panel-width-md: 643px;
+$Panel-width-lg: 940px;
 $Panel-margin-md: 48px;
 $Panel-margin-lg: 428px;
 $Panel-margin-xl: 176px;
@@ -198,6 +199,7 @@ $CommandButtonBlue: #2488D8;
 //
 .ms-Panel.ms-Panel--md,
 .ms-Panel.ms-Panel--lg,
+.ms-Panel.ms-Panel--lgFixed, 
 .ms-Panel.ms-Panel--xl {
   .ms-Panel-main {
     @media (min-width: $ms-screen-lg-min) {
@@ -224,6 +226,17 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     @media (min-width: $ms-screen-xxl-min) {
       left: $Panel-margin-lg;
+    }
+  }
+}
+
+//== Modifier: Large panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--lgFixed {
+  .ms-Panel-main {
+    @media (min-width: $ms-screen-xxl-min) {
+      left: auto;
+      width: $Panel-width-lg;
     }
   }
 }

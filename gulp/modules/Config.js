@@ -1,5 +1,6 @@
 var path = require('path');
 var pkg = require('../../package.json');
+var Plugins = require('./Plugins');
 
 /**
  * Configuration class containing all properties to be used throughout the build          
@@ -24,7 +25,9 @@ var Config = function() {
 		srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		templatePath : srcPath + '/templates'
+		templatePath : srcPath + '/templates',
+    srcLibPath: 'lib',
+    distLibPath: distPath + '/lib'
 	};
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
@@ -33,8 +36,23 @@ var Config = function() {
         {
             'urlPath': '/css',
             'folderPath': '../css'
+        },
+        {
+            'urlPath': '/js',
+            'folderPath': '../js'
+        },
+        {
+            'urlPath': '/lib',
+            'folderPath': '../lib'
         }
     ];
+    this.typescriptConfig = {
+        module: 'commonjs',
+        declaration: true,
+        target: 'ES5',
+        noEmitOnError: true
+    };
+    this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",

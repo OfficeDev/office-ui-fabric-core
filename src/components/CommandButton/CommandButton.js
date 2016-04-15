@@ -19,8 +19,8 @@ var fabric = fabric || {};
 fabric.CommandButton = function(context) {
   
   var CONTEXT_CLASS = ".ms-ModalHost";
-  var CONTEXT_STATE_CLASS = "is-open";
   var CB_SPLIT_CLASS = ".ms-CommmandButton-splitIcon";
+  var MODAL_POSITION = "bottom";
   
   var _commandButton;
   var _splitButton;
@@ -34,20 +34,20 @@ fabric.CommandButton = function(context) {
   }
   
   function _createModalHostView() {
-    _modalHostView = new fabric["ModalHost"](_modalHost);
+    _modalHostView = new fabric["ModalHost"](_modalHost, MODAL_POSITION, _commandButton);
   }
   
   function _setClick() {
     if(_splitButton) {
-      _splitButton.addEventListener("click", _toggleMenu, false);
+      _splitButton.addEventListener("click", _createModalHostView.bind(this), false);
     } else {
-      _commandButton.addEventListener("click", _toggleMenu, false);
+      _commandButton.addEventListener("click", _createModalHostView.bind(this), false);
     }
   }
   
   function _checkForMenu() {
-    if(_contextualMenu) {
-      _createContextualMenu();
+    if(_modalHost) {
+      _createModalHostView();
       _setClick();
     }
   }

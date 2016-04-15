@@ -122,7 +122,7 @@ fabric.CommandBar = function(context) {
       sideCommandArea: document.querySelector(CB_SIDE_COMMAND_AREA),
       mainItems: [],
       overflowCommand: document.querySelector(CB_ITEM_OVERFLOW),
-      contextMenu: document.querySelector(CONTEXTUAL_MENU),
+      contextMenu: document.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU),
       searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
       searchBoxClose: document.querySelector(SEARCH_BOX_CLOSE)
     };
@@ -136,6 +136,9 @@ fabric.CommandBar = function(context) {
         splitClasses,
         icon,
         items = document.querySelectorAll(CB_MAIN_AREA + ' ' + COMMAND_BUTTON +':not('+ CB_ITEM_OVERFLOW +')');
+    
+    // Initiate teh overflow command
+    var overflowView = new fabric["CommandButton"](_elements.overflowCommand);
     
     for (var i = 0; i < items.length; i++) {
       item = items[i];
@@ -153,7 +156,8 @@ fabric.CommandBar = function(context) {
       itemCollection.push({
         item: item,
         label: label,
-        icon: icon
+        icon: icon,
+        commandButtonRef: new fabric["CommandButton"](item)
       });
     }
     return;
@@ -161,9 +165,9 @@ fabric.CommandBar = function(context) {
   
   function _createContextualRef() {
    contextualItemContainerRef = _elements.contextMenu.querySelector(CONTEXTUAL_MENU_ITEM).cloneNode(true);
-   contextualItemLink = contextualItemContainerRef.querySelector(CONTEXTUAL_MENU_LINK).cloneNode(false);
-   contextualItemIcon = contextualItemContainerRef.querySelector('.ms-Icon').cloneNode(false);
-   contextualItemContainerRef.innerHTML = '';
+   contextualItemLink = _elements.contextMenu.querySelector(CONTEXTUAL_MENU_LINK).cloneNode(false);
+   contextualItemIcon = _elements.contextMenu.querySelector('.ms-Icon').cloneNode(false);
+   _elements.contextMenu.innerHTML = '';
   }
 
   function _getElementWidth(element) {
@@ -281,22 +285,6 @@ fabric.CommandBar = function(context) {
     }
   }
   
-  function _toggleOverflowMenu() {
-    var left;
-
-    if(_hasClass(_elements.contextMenu, "is-open")) {
-      _elements.contextMenu.setAttribute("style", "");
-      _elements.contextMenu.classList.remove('is-open');
-    } else {
-      // Show contextual menu
-      activeCommand = _elements.overflowCommand;
-      left = activeCommand.getBoundingClientRect().left;
-      _elements.contextMenu.classList.add('is-open');
-      _redrawMenu();
-    }
-     
-  }
-  
   function _redrawMenu() {
     var left;
     
@@ -308,10 +296,6 @@ fabric.CommandBar = function(context) {
   
   function _drawOverflowMenu(left) {
     _elements.contextMenu.setAttribute("style", "left: " + left + "px; transform: translateX(-50%)");
-  }
-  
-  function _setOverflowAction() {
-    _elements.overflowCommand.addEventListener("click", _toggleOverflowMenu.bind(this));
   }
   
   function _doResize() {
@@ -334,7 +318,6 @@ fabric.CommandBar = function(context) {
     _updateCommands();
     _drawCommands();
     _setWindowEvent();
-    _setOverflowAction();
     _checkOverflow();
   }
   

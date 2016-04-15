@@ -19,6 +19,7 @@ var fabric = fabric || {};
 fabric.ModalHost = function(context, direction, targetElement) {
   
   var CONTEXT_STATE_CLASS = "is-open";
+  var MODAL_STATE_POSITIONED = "is-positioned";
   
   var _modalHost;
   var _modalisible;
@@ -30,13 +31,17 @@ fabric.ModalHost = function(context, direction, targetElement) {
   var _teWidth;
   
   function disposeModal() {
-    _cloneModal.parentNode.removeChild(_cloneModal);
+    _modalClone.parentNode.removeChild(_modalClone);
   }
   
   function _openModal() {
     _copyModalToBody();
+    _saveModalSize();
     _findAvailablePosition();
     _showModal();
+    
+    // Delay the click setting
+    setTimeout( function() { _setDismissClick(); }, 100);
   }
   
   function _findAvailablePosition() {
@@ -51,7 +56,7 @@ fabric.ModalHost = function(context, direction, targetElement) {
           _tryPosModalBottom,
           _tryPosModalTop
         );
-        _setPosition("left");
+        _setPosition(_posOk);
         break;
       case "right":
         _posOk = _positionOk(
@@ -60,21 +65,21 @@ fabric.ModalHost = function(context, direction, targetElement) {
           _tryPosModalBottom,
           _tryPosModalTop
         );
-        _setPosition("right");
+        _setPosition(_posOk);
         break;
       case "top":
         _posOk = _positionOk(
           _tryPosModalTop,
           _tryPosModalBottom
         );
-        _setPosition("top");
+        _setPosition(_posOk);
        break;
       case "bottom":
         _posOk = _positionOk(
           _tryPosModalBottom,
           _tryPosModalTop
         );
-        _setPosition("bottom");
+        _setPosition(_posOk);
        break;
       default:
        _setPosition();
@@ -101,68 +106,85 @@ fabric.ModalHost = function(context, direction, targetElement) {
   function _positionOk(pos1, pos2, pos3, pos4) {
     var _posOk;
     _posOk = pos1();
-    if(!_positionOk) {
-      _positionOk = _pos2();
-      if(!_positionOk && pos3) {
-        _positionOk = _pos3();
-        if(!_positionOk && pos4) {
-          _positionOk = pos4();
+    if(!_posOk) {
+      _posOk = pos2();
+      if(!_posOk && pos3) {
+        _posOk = pos3();
+        if(!_posOk && pos4) {
+          _posOk = pos4(); 
         }
       }
     }
     return _posOk;
   }
   
-  function _setPosition() {
-    var teLeft = targetElement.getBoundingClientRect().left;
-    var teRight = targetElement.getBoundingClientRect().right;
-    var teTop = targetElement.getBoundingClientRect().top;
-    var teBottom = targetElement.getBoundingClientRect.bottom;
+  function _calcLeft(mWidth, teWidth, teLeft) {
+    var mHalfWidth = mWidth / 2;
+    var teHalf = teWidth / 2;
+    var mHLeft = (teLeft + teHalf) - mHalfWidth;
+    mHLeft = (mHLeft < mHalfWidth) ? teLeft : mHLeft;
+    return mHLeft;
+  }
+  
+  function _calcTop(mHeight, teHeight, teTop) {
+    var mHalfWidth = mHeight / 2;
+    var teHalf = teHeight / 2;
+    var mHLeft = (teTop + teHalf) - mHalfWidth;
+    mHLeft = (mHLeft < mHalfWidth) ? teTop : mHLeft;
+    return mHLeft;
+  }
+  
+  function _setPosition(curDirection) {
+    var teBR = targetElement.getBoundingClientRect();
+    var teLeft = teBR.left;
+    var teRight = teBR.right;
+    var teTop = teBR.top;
+    var teBottom = teBR.bottom;
+    var teHeight = teBR.height;
     
-    var leftTopPos;
-    var leftLeftPos;
-    var rightTopPos;
-    var rightLeftPos;
-    var topLeftPos;
-    var topTopPos;
-    var bottomTopPos;
-    var bottomLeftPos;
+    var mHLeft;
+    var mHTop;
+    var mHalfWidth;
     
-     switch (direction) {
+     switch (curDirection) {
       case "left":
-        leftLeftPos = teLeft - _modalWidth;
-        leftTopPos = teTop + (_teHeight / 2);
-        _modalClone.setAttribute("style", "top: " + leftTopPos + "px; left: " + leftLeftPos);
+        mHLeft = teLeft - _modalWidth;
+        mHTop = _calcTop(_modalHeight, teHeight, teTop);
+        _modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+        _modalClone.classList.add(MODAL_STATE_POSITIONED);
       break;
       case "right":
-        rightTopPos = teTop + (_teHeight / 2);
-        rightLeftPos = teLeft + _modalWidth;
-        _modalClone.setAttribute("style", "top: " + rightLeftPos + "px; left: " + rightTopPos);
+        mHTop = _calcTop(_modalHeight, teHeight, teTop);
+        mHLeft = teRight;
+        _modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+        _modalClone.classList.add(MODAL_STATE_POSITIONED);
       break;
       case "top":
-        topLeftPos = teLeft + (_teWidth / 2);
-        topTopPos = teTop - _modalHeight;
-        _modalClone.setAttribute("style", "top: " + topLeftPos + "px; left: " + topLeftPos);
+        mHLeft = _calcLeft(_modalWidth, _teWidth, teLeft);
+        mHTop = teTop - _modalHeight;
+        _modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+        _modalClone.classList.add(MODAL_STATE_POSITIONED);
       break;
       case "bottom":
-        bottomLeftPos = teLeft + (_teWidth / 2);
-        bottomTopPos = teTop - _modalHeight;
-        _modalClone.setAttribute("style", "top: " + bottomLeftPos + "px; left: " + bottomLeftPos);
+        mHLeft = mHLeft = _calcLeft(_modalWidth, _teWidth, teLeft);
+        mHTop = teTop + teHeight;
+        _modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+        _modalClone.classList.add(MODAL_STATE_POSITIONED);
       break;
       default:
-        _modalClone.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); position: absolute;");
+        _modalClone.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");
      }
   }
   
   // Menu positioning
-  function _checkPositionLeft() {
+  function _tryPosModalLeft() {
 
     var teLeft = targetElement.getBoundingClientRect().left;
     
     if(teLeft < _modalWidth) {
       return false;
     } else {
-      return true;
+      return "left";
     }
   }
   
@@ -170,11 +192,13 @@ fabric.ModalHost = function(context, direction, targetElement) {
   function _tryPosModalRight() {
     
     var teRight = targetElement.getBoundingClientRect().right;
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     
-    if(teRight < _modalWidth) {
+    if((w - teRight) < _modalWidth) {
      return false;
     } else {
-     return true;
+     return "right";
     }
   }
   
@@ -186,7 +210,7 @@ fabric.ModalHost = function(context, direction, targetElement) {
     if(teBottom < _modalHeight) {
       return true;
     } else {
-      return false;
+      return "bottom";
     }
   }
   
@@ -198,7 +222,7 @@ fabric.ModalHost = function(context, direction, targetElement) {
     if(teTop < _modalHeight) {
       return false;
     } else {
-      return true;
+      return "top";
     }
   }
   
@@ -216,18 +240,22 @@ fabric.ModalHost = function(context, direction, targetElement) {
   
   function _saveModalSize() {
     var _modalStyles = window.getComputedStyle(_modalClone);
-    _modalClone.setAttribute("style", "opacity: 0; display: block; z-index: -1");
-    _modalWidth = _modalClone.getBoundingClientRect().width + _modalStyles.marginLeft + _modalStyles.marginRight;
-    _modalHeight = _modalClone.getBoundingClientRect().height + _modalStyles.marginTop + _modalStyles.marginBottom;
+    _modalClone.setAttribute("style", "opacity: 0; z-index: -1");
+    _modalClone.classList.add(MODAL_STATE_POSITIONED);
+    _modalClone.classList.add(CONTEXT_STATE_CLASS);
+    _modalWidth = _modalClone.getBoundingClientRect().width + (parseInt(_modalStyles.marginLeft) + parseInt(_modalStyles.marginRight));
+    _modalHeight = _modalClone.getBoundingClientRect().height + (parseInt(_modalStyles.marginTop) + parseInt(_modalStyles.marginBottom));
     _modalClone.setAttribute("style", "");
+    _modalClone.classList.remove(MODAL_STATE_POSITIONED);
+    _modalClone.classList.remove(CONTEXT_STATE_CLASS);
     _teWidth = targetElement.getBoundingClientRect().width;
     _teHeight = targetElement.getBoundingClientRect().height;
   }
   
   function _disMissAction(e) {
     // If the elemenet clicked is not INSIDE of searchbox then close seach
-    if(!_cloneModal.contains(e.target) && e.target !== _cloneModal) {
-      document.removeEventListener("click", _handleOutsideSearchClick, false);
+    if(!_modalClone.contains(e.target) && e.target !== _modalClone) {
+      document.removeEventListener("click", _disMissAction, false);
       disposeModal();
     }
   }
@@ -239,7 +267,6 @@ fabric.ModalHost = function(context, direction, targetElement) {
   function _init() {
    _saveDOMRefs(context);
    _cloneModal();
-   _saveModalSize();
    _openModal();
   }
   

@@ -14,7 +14,8 @@
     "Button",
     "Label",
     "SearchBox",
-    "CommandButton"
+    "CommandButton",
+    "ModalHost"
   ],
   "props": {
     "searchBox": {
@@ -41,7 +42,42 @@
         "icon": "ellipsis",
         "customClasses": "ms-CommandBar-overflowButton",
         "tag": "button",
-        "modifier": "noLabel"
+        "modifier": "noLabel",
+        "dropdown": {
+          "component": "ContextualMenu",
+          "props":  {
+            "state": "is-opened",
+            "modifier": "hasIcons",
+            "items": [
+              {
+                "title": "Folder",
+                "state": "",
+                "icon": "folder"
+              },
+              {
+                "modifier": "divider",
+                "title": ""
+              },
+              {
+                "title": "Plain Text Document",
+                "icon": "document"
+              },
+              {
+                "title": "A Dog",
+                "icon": "dogAlt"
+              },
+              {
+                "title": "The Sun",
+                "state": "",
+                "icon": "sun"
+              },
+              {
+                "title": "Money",
+                "icon": "money"
+              }
+            ]
+          }
+        }
       }
     },
     "commands": [
@@ -101,21 +137,6 @@
           "iconColor": "themePrimary"
         }
       }
-    ],
-    "contextualMenu": {
-      "component": "ContextualMenu",
-      "props": {
-        "modifier": "hasIcons",
-        "state": "",
-        "items": [
-          {
-            "title": "BLANK",
-            "state": "",
-            "icon": "circleFill",
-            "iconSize": "l"
-          }
-        ]
-      }
-    }
+    ]
   }
 }

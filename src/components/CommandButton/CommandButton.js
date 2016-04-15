@@ -19,22 +19,25 @@ var fabric = fabric || {};
 fabric.CommandButton = function(context) {
   
   var CONTEXT_CLASS = ".ms-ModalHost";
-  var CB_SPLIT_CLASS = ".ms-CommmandButton-splitIcon";
+  var CB_SPLIT_CLASS = ".ms-CommandButton-splitIcon";
+  var CB_BUTTON_CLASS = ".ms-CommandButton-button";
   var MODAL_POSITION = "bottom";
   
+  var _command;
   var _commandButton;
   var _splitButton;
   var _modalHost;
   var _modalHostView;
   
   function _setDOMRefs() {
-    _commandButton = context;
-    _splitButton = _commandButton.querySelector(CB_SPLIT_CLASS);
-    _modalHost = _commandButton.querySelector(CONTEXT_CLASS);
+    _command = context;
+    _commandButton = _command.querySelector(CB_BUTTON_CLASS);
+    _splitButton = _command.querySelector(CB_SPLIT_CLASS);
+    _modalHost = _command.querySelector(CONTEXT_CLASS);
   }
   
   function _createModalHostView() {
-    _modalHostView = new fabric["ModalHost"](_modalHost, MODAL_POSITION, _commandButton);
+    _modalHostView = new fabric["ModalHost"](_modalHost, MODAL_POSITION, _command);
   }
   
   function _setClick() {
@@ -47,7 +50,6 @@ fabric.CommandButton = function(context) {
   
   function _checkForMenu() {
     if(_modalHost) {
-      _createModalHostView();
       _setClick();
     }
   }

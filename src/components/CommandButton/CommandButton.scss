@@ -34,6 +34,10 @@ $CommandButton-height: 40px;
     
    
 	}
+  
+  .ms-ModalHost {
+    display: none;
+  }
 }
 
 //== Mixins: Base button, focus, and icon alignments

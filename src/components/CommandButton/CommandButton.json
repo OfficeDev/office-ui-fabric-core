@@ -25,11 +25,46 @@
     "iconColor": "themePrimary"
   },
   "propsDropdown": {
-    "label": "Command",
+    "label": "New",
     "icon": "circleFill",
     "tag": "button",
     "dropdownIcon": "chevronDown",
-    "iconColor": "themePrimary"
+    "iconColor": "themePrimary",
+    "dropdown": {
+      "component": "ContextualMenu",
+      "props":  {
+        "state": "is-opened",
+        "modifier": "hasIcons",
+        "items": [
+          {
+            "title": "Folder",
+            "state": "",
+            "icon": "folder"
+          },
+          {
+            "modifier": "divider",
+            "title": ""
+          },
+          {
+            "title": "Plain Text Document",
+            "icon": "document"
+          },
+          {
+            "title": "A Dog",
+            "icon": "dogAlt"
+          },
+          {
+            "title": "The Sun",
+            "state": "",
+            "icon": "sun"
+          },
+          {
+            "title": "Money",
+            "icon": "money"
+          }
+        ]
+      }
+    }
   },
   "propsSplit": {
     "label": "Reply",
@@ -40,7 +75,7 @@
     "dropdown": {
       "component": "ContextualMenu",
       "props":  {
-        "state": "is-positioned is-opened",
+        "state": "is-opened",
         "items": [
           {
             "title": "Reply",
@@ -81,7 +116,7 @@
     "dropdown": {
       "component": "ContextualMenu",
       "props":  {
-        "state": "is-positioned",
+        "state": "",
         "items": [
           {
             "title": "Reply",

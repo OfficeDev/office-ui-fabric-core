@@ -4,15 +4,15 @@
   margin: 16px auto;
   position: relative;
   min-width: 10px;
-  display: inline-block;
   display: none;
   
   &.is-positioned {
     position: absolute;
+    margin: 0;
   }
   
   &.is-open {
-    display: block;
+    display:  inline-block;
   }
 }
 
@@ -170,6 +170,9 @@
   // Make width larger and remove centering on md+ screens
   .ms-ModalHost {
     margin: 16px;
+    &.is-positioned {
+      margin: 0;
+    }
   }
 
   // Show arrows right and left

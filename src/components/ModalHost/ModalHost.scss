@@ -117,7 +117,7 @@
   outline: 1px solid transparent;
   z-index: $ms-zIndex-middle;
   @include drop-shadow;
-  min-height: 80px;
+  min-height: 10px;
 }
 
 .ms-ModalHost-close {

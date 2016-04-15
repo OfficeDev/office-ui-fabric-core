@@ -25,6 +25,7 @@ fabric.CommandBar = function(context) {
   var CB_MAIN_AREA = ".ms-CommandBar-mainArea";
   var CB_SIDE_COMMAND_AREA = ".ms-CommandBar-mainArea";
   var CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
+  var CB_NO_LABEL_CLASS = "ms-CommandButton--noLabel";
   var SEARCH_BOX_FIELD = ".ms-SearchBox-field";
   var SEARCH_BOX_CLOSE = ".ms-SearchBox-closeField";
   var COMMAND_BUTTON = ".ms-CommandButton";
@@ -135,7 +136,8 @@ fabric.CommandBar = function(context) {
         iconClasses,
         splitClasses,
         icon,
-        items = document.querySelectorAll(CB_MAIN_AREA + ' ' + COMMAND_BUTTON +':not('+ CB_ITEM_OVERFLOW +')');
+        items = document.querySelectorAll(CB_MAIN_AREA + ' ' + COMMAND_BUTTON +':not('+ CB_ITEM_OVERFLOW +')'),
+        isCollapsed = false;
     
     // Initiate teh overflow command
     var overflowView = new fabric["CommandButton"](_elements.overflowCommand);
@@ -152,11 +154,12 @@ fabric.CommandBar = function(context) {
           break;
        }
       }
-      
+     
       itemCollection.push({
         item: item,
         label: label,
         icon: icon,
+        isCollapsed: (item.classList.contains(CB_NO_LABEL_CLASS)) ? true : false,
         commandButtonRef: new fabric["CommandButton"](item)
       });
     }
@@ -249,27 +252,55 @@ fabric.CommandBar = function(context) {
   function _setWindowEvent() {
     window.onresize = _doResize;
   }
+  
+  function _processColapsedClasses(type) {
+    for (var i = 0; i < itemCollection.length; i++) {
+      var thisItem = itemCollection[i];
+      if(!thisItem.isCollapsed) {
+        if (type == "add") {
+          thisItem.item.classList.add(CB_NO_LABEL_CLASS);
+        } else {
+          thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
+        }
+      }
+    }
+  }
 
   function _setUIState() {
     switch(breakpoint) {
       case "sm":
         _elements.searchBox.classList.add('is-collapsed');
         searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
-        searchBoxClass.
+         _processColapsedClasses("add");
+         _redrawMenu();
+         redrawCommands();
         break;
       case "md":
         _elements.searchBox.classList.add('is-collapsed');
         searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
+        // Add collapsed classes to commands
+        _processColapsedClasses("add");
+        _redrawMenu();
+         redrawCommands();
         break;
       case "lg":
         _elements.searchBox.classList.add('is-collapsed');
         searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
+         _processColapsedClasses("remove");
+         _redrawMenu();
+         redrawCommands();
         break;
       case "xl":
         _elements.searchBox.classList.remove('is-collapsed');
+         _processColapsedClasses("remove");
+         _redrawMenu();
+         redrawCommands();
         break;
       default:
         _elements.searchBox.classList.remove('is-collapsed');
+         _processColapsedClasses("remove");
+         _redrawMenu();
+         redrawCommands();
         break;
     }
   }
@@ -311,8 +342,8 @@ fabric.CommandBar = function(context) {
   function _init() {
     _setElements();
     _setBreakpoint();
-    _setUIState();
     _createItemCollection();
+    _setUIState();
     _createContextualRef();
     _saveCommandWidths();
     _updateCommands();

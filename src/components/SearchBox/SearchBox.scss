@@ -36,7 +36,7 @@
   }
   
   &:hover {
-    background-color: transparentize($ms-color-themePrimary, 0.8);
+    background-color: $ms-color-themeLighter;
     border-color: $ms-color-themePrimary;
     
     .ms-SearchBox-label {
@@ -84,7 +84,7 @@
   &:focus {
     padding: 6px 32px 7px 10px;
     border-color: $ms-color-themePrimary;
-    background-color: transparentize($ms-color-themePrimary, 0.8);
+    background-color: $ms-color-themeLighter;
   }
   
   &::-ms-clear {
@@ -159,6 +159,7 @@
   .ms-SearchBox-close {
     @include ms-bgColor-themeLighter;
     color: $ms-color-themePrimary;
+    
     .ms-CommandButton-icon {
       color: $ms-color-themePrimary;
     }

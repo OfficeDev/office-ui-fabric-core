@@ -31,6 +31,8 @@ fabric.ModalHost = function(context, direction, targetElement) {
   var _teWidth;
   
   function disposeModal() {
+    window.removeEventListener("resize", _resizeAction, false);
+    document.removeEventListener("click", _disMissAction, false);
     _modalClone.parentNode.removeChild(_modalClone);
   }
   
@@ -176,7 +178,6 @@ fabric.ModalHost = function(context, direction, targetElement) {
      }
   }
   
-  // Menu positioning
   function _tryPosModalLeft() {
 
     var teLeft = targetElement.getBoundingClientRect().left;
@@ -188,7 +189,6 @@ fabric.ModalHost = function(context, direction, targetElement) {
     }
   }
   
-  // Menu positioning
   function _tryPosModalRight() {
     
     var teRight = targetElement.getBoundingClientRect().right;
@@ -202,7 +202,6 @@ fabric.ModalHost = function(context, direction, targetElement) {
     }
   }
   
-  // Menu positioning
   function _tryPosModalBottom() {
     
     var teBottom = targetElement.getBoundingClientRect().bottom;
@@ -214,7 +213,6 @@ fabric.ModalHost = function(context, direction, targetElement) {
     }
   }
   
-  // Menu positioning
   function _tryPosModalTop() {
     
     var teTop = targetElement.getBoundingClientRect().top;
@@ -255,7 +253,6 @@ fabric.ModalHost = function(context, direction, targetElement) {
   function _disMissAction(e) {
     // If the elemenet clicked is not INSIDE of searchbox then close seach
     if(!_modalClone.contains(e.target) && e.target !== _modalClone) {
-      document.removeEventListener("click", _disMissAction, false);
       disposeModal();
     }
   }
@@ -264,10 +261,19 @@ fabric.ModalHost = function(context, direction, targetElement) {
     document.addEventListener('click', _disMissAction, false);
   }
   
+  function _resizeAction() {
+    disposeModal();
+  }
+  
+  function _setResizeDisposal() {
+    window.addEventListener("resize", _resizeAction, false);
+  }
+  
   function _init() {
    _saveDOMRefs(context);
    _cloneModal();
    _openModal();
+   _setResizeDisposal();
   }
   
   _init();

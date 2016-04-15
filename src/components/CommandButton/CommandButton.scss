@@ -165,6 +165,10 @@ $CommandButton-height: 40px;
   .ms-CommandButton-icon {
     padding-right: 0;
   }
+  
+  .ms-CommandButton-label {
+    display: none;
+  }
 }
 
 //= Modifier: Inline modifier

@@ -35,7 +35,8 @@
       }
     ],
     "modalHostProps": {
-      "arrowPosition": "arrowLeft"
+      "arrowPosition": "arrowLeft",
+      "state": "is-open",
     }
   },
   "propsActionText": {
@@ -65,7 +66,8 @@
       }
     ],
     "modalHostProps": {
-      "arrowPosition": "arrowLeft"
+      "arrowPosition": "arrowLeft",
+       "state": "is-open"
     }
   },
   "propsClose": {
@@ -85,7 +87,8 @@
       }
     ],
     "modalHostProps": {
-      "arrowPosition": "arrowLeft"
+      "arrowPosition": "arrowLeft",
+      "state": "is-open"
     }
   },
   "propsOobe":  {
@@ -111,7 +114,8 @@
       }
     ],
     "modalHostProps": {
-      "arrowPosition": "arrowLeft"
+      "arrowPosition": "arrowLeft",
+      "state": "is-open"
     }
   },
   "propsPeek":  {
@@ -130,7 +134,8 @@
       }
     ],
     "modalHostProps": {
-      "arrowPosition": "arrowLeft"
+      "arrowPosition": "arrowLeft",
+      "state": "is-open"
     }
   }
 }

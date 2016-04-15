@@ -106,8 +106,7 @@ gulp.task('Bundles-buildData', function() {
             // We'll work with these to determine which files to include or exclude.
             srcFolders.forEach(function(dir) {
                 // Grab all SCSS and JSON files as fs.stats objects.
-                let entries = Plugins.walkSync.entries(Config.paths.srcPath + '\\' + dir,  { globs: ['**\*.scss',"!**\_Fabric.*.scss", '**\*.json'] });
-
+                let entries = Plugins.walkSync.entries(Config.paths.srcPath + '/' + dir,  { globs: ['**/*.scss',"!**/_Fabric.*.scss", '**/*.json'] });
                 // Cache Component manifests for includes and/or dependencies.
                 let cachedManifests = {};
 

@@ -1,5 +1,6 @@
 var path = require('path');
 var pkg = require('../../package.json');
+var Plugins = require('./Plugins');
 
 /**
  * Configuration class containing all properties to be used throughout the build          
@@ -23,43 +24,60 @@ var Config = function() {
     srcPath: srcPath,
     srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',
-    componentsPath: 'src/components',
-    templatePath: srcPath + '/templates'
-  };
-  this.port = process.env.PORT || 2020;
-  this.projectURL = "http://localhost";
-  this.projectDirectory = path.resolve(__dirname, '../../' + this.paths.distSamples);
-  this.servePaths = [
-    {
-      'urlPath': '/css',
-      'folderPath': '../css'
-    },
-    {
-      'urlPath': '/bundles',
-      'folderPath': '../bundles'
-    }
-  ];
-  this.nugetConfig = {
-    id: "OfficeUIFabric",
-    title: "Office UI Fabric",
-    version: pkg.version,
-    authors: "Microsoft Corporation",
-    owners: "Microsoft Corporation",
-    description: "Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office experience from scratch or adding new features to an existing one.",
-    summary: "The front-end framework for building experiences for Office and Office 365.",
-    language: "en-us",
-    projectUrl: "https://github.com/OfficeDev/Office-UI-Fabric",
-    licenseUrl: "https://github.com/OfficeDev/Office-UI-Fabric/blob/master/LICENSE",
-    copyright: "Copyright (c) Microsoft Corporation",
-    requireLicenseAcceptance: true,
-    tags: "Microsoft UI Fabric CSS",
-    outputDir: this.paths.distPackages
-  };
-  this.nugetPaths = [
-    { src: this.paths.distCSS, dest: "/content/Content/" },
-    { src: this.paths.distSass, dest: "/content/Content/sass/" },
-    { src: this.paths.distJS, dest: "/content/Scripts/" }
-  ];
+		componentsPath : 'src/components',
+		templatePath : srcPath + '/templates',
+    srcLibPath: 'lib',
+    distLibPath: distPath + '/lib'
+	};
+	this.port =  process.env.PORT || 2020;
+	this.projectURL =  "http://localhost";
+	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distSamples);
+	this.servePaths = [
+        {
+            'urlPath': '/css',
+            'folderPath': '../css'
+        },
+        {
+            'urlPath': '/js',
+            'folderPath': '../js'
+        },
+        {
+            'urlPath': '/lib',
+            'folderPath': '../lib'
+        },
+        {
+          'urlPath': '/bundles',
+          'folderPath': '../bundles'
+        }
+    ];
+    this.typescriptConfig = {
+        module: 'commonjs',
+        declaration: true,
+        target: 'ES5',
+        noEmitOnError: true
+    };
+    this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
+	this.nugetConfig = {
+		id: "OfficeUIFabric",
+		title: "Office UI Fabric",
+		version: pkg.version,
+		authors: "Microsoft Corporation",
+		owners: "Microsoft Corporation",
+		description: "Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office experience from scratch or adding new features to an existing one.",
+		summary: "The front-end framework for building experiences for Office and Office 365.",
+		language: "en-us",
+		projectUrl: "https://github.com/OfficeDev/Office-UI-Fabric",
+		licenseUrl: "https://github.com/OfficeDev/Office-UI-Fabric/blob/master/LICENSE",
+		copyright: "Copyright (c) Microsoft Corporation",
+		requireLicenseAcceptance: true,
+		tags: "Microsoft UI Fabric CSS",
+		outputDir: this.paths.distPackages
+	};
+	this.nugetPaths = [
+		{src: this.paths.distCSS, dest: "/content/Content/"},
+		{src: this.paths.distSass, dest: "/content/Content/sass/"},
+		{src: this.paths.distJS, dest: "/content/Scripts/"}
+	];
   this.componentSamplesUpdate = "Components Samples updated successfully! Yay!";
   this.componentSamplesFinished = ' Component Samples build was successful! Yay!';
   //JS Files to be ignored in the JS Linter for Components

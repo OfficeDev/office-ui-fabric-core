@@ -9,7 +9,8 @@
     "Label",
     "Overlay",
     "Persona",
-    "PersonaCard"
+    "PersonaCard",
+    "Spinner"
   ],
   "wrapBranches": true,
   "fileOrder": [

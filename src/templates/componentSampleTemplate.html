@@ -11,22 +11,11 @@
   <link rel="stylesheet" href="<%= componentName %>.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
- 
+  <script type="text/javascript" src="../../../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../../../lib/pickadate.js"></script>
+
   <script type="text/javascript">
     $(document).ready(function() {
-      // File Picker demo fixes
-      if ($('.ms-FilePicker').length > 0) {
-        $('.ms-FilePicker').css({
-          "position": "absolute !important"
-        });
-
-        $('.ms-Panel').FilePicker();
-      } else {
-        if ($.fn.<%= componentName %>) {
-          $('.ms-<%= componentName %>').<%= componentName %>();
-        }
-      }
-
        // Vanilla JS Components
       if (typeof fabric !== "undefined") {
         if ('<%= componentName %>' in fabric) {
@@ -42,8 +31,6 @@
     });
   </script>
   
-  <%= jsLinks %>
-
   <!-- Styles specifically for this page, not required for proper display on components  -->
   <style type="text/css">
     html, 

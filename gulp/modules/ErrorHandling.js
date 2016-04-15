@@ -140,9 +140,12 @@ var ErrorHandling = function() {
                 case 'gulp-sass':
                     this.emit('end');
                     break;
+                case 'gulp-tslint':
+                    this.emit('end');
+                    break;
                 default:
-                    that.generateBuildError(error[0]);
-                    that.addError(error[0]);
+                    that.generateBuildError(error);
+                    that.addError(error);
                     break;
             }
             return;

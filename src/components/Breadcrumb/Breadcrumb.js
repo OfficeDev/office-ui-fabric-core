@@ -38,6 +38,52 @@ fabric.Breadcrumb.prototype = (function() {
   var MEDIUM = 639;
 
   /**
+   * initializes component
+   */
+  var init = function() {
+    _setListeners.call(this);
+    _createItemCollection.call(this);
+    _onResize.call(this, null);
+  };
+
+  /**
+   * Adds a breadcrumb item to a breadcrumb
+   * @param itemLabel {String} the item's text label
+   * @param itemLink {String} the item's href link
+   * @param tabIndex {number} the item's tabIndex
+   */
+  var addItem = function(itemLabel, itemLink, tabIndex) {
+    this.itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
+   * Removes a breadcrumb item by item label in the breadcrumbs list
+   * @param itemLabel {String} the item's text label
+   */
+  var removeItemByLabel = function(itemLabel) {
+    var i = this.itemCollection.length;
+    while (i--) {
+      if (this.itemCollection[i].text === itemLabel) {
+        this.itemCollection.splice(i, 1);
+      }
+    }
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
+   * removes a breadcrumb item by position in the breadcrumbs list
+   * index starts at 0
+   * @param itemLabel {String} the item's text label
+   * @param itemLink {String} the item's href link
+   * @param tabIndex {number} the item's tabIndex
+   */
+  var removeItemByPosition = function(value) {
+    this.itemCollection.splice(value, 1);
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
    * create internal model of list items from DOM
    */
   var _createItemCollection = function() {
@@ -210,52 +256,6 @@ fabric.Breadcrumb.prototype = (function() {
 
     _addBreadcrumbItems.call(this, maxItems);
     _addItemsToOverflow.call(this, maxItems);
-  };
-
-  /**
-   * initializes component
-   */
-  var init = function() {
-    _setListeners.call(this);
-    _createItemCollection.call(this);
-    _onResize.call(this, null);
-  };
-
-  /**
-   * Adds a breadcrumb item to a breadcrumb
-   * @param itemLabel {String} the item's text label
-   * @param itemLink {String} the item's href link
-   * @param tabIndex {number} the item's tabIndex
-   */
-  var addItem = function(itemLabel, itemLink, tabIndex) {
-    this.itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
-    _updateBreadcrumbs.call(this);
-  };
-
-  /**
-   * Removes a breadcrumb item by item label in the breadcrumbs list
-   * @param itemLabel {String} the item's text label
-   */
-  var removeItemByLabel = function(itemLabel) {
-    var i = this.itemCollection.length;
-    while (i--) {
-      if (this.itemCollection[i].text === itemLabel) {
-        this.itemCollection.splice(i, 1);
-      }
-    }
-    _updateBreadcrumbs.call(this);
-  };
-
-  /**
-   * removes a breadcrumb item by position in the breadcrumbs list
-   * index starts at 0
-   * @param itemLabel {String} the item's text label
-   * @param itemLink {String} the item's href link
-   * @param tabIndex {number} the item's tabIndex
-   */
-  var removeItemByPosition = function(value) {
-    this.itemCollection.splice(value, 1);
-    _updateBreadcrumbs.call(this);
   };
 
   return {

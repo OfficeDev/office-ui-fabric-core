@@ -5,6 +5,24 @@
 // --------------------------------------------------
 // Dropdown styles
 
+// Mixin for high contrast mode link states
+@mixin highContrastListItemState {
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-contrastBlackSelected;
+    border-color: $ms-color-contrastBlackSelected;
+    color: $ms-color-black;
+
+    &:focus {
+      border-color: $ms-color-black;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-contrastWhiteSelected;
+    border-color: $ms-color-contrastWhiteSelected;
+    color: $ms-color-white;
+  }
+}
 
 .ms-Dropdown {
   @include ms-font-m;
@@ -34,6 +52,11 @@
       border-color: $ms-color-themePrimary;
     }
   }
+
+  .ms-Label {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
 }
 
 //== State: A disabled dropdown
@@ -43,10 +66,28 @@
     border-color: $ms-color-neutralLighter;
     color: $ms-color-neutralTertiary;
     cursor: default;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackDisabled;
+      color: $ms-color-contrastBlackDisabled;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteDisabled;
+      color: $ms-color-contrastWhiteDisabled;
+    }
   }
   
   .ms-Dropdown-caretDown {
     color: $ms-color-neutralTertiary;
+
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-contrastBlackDisabled;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-contrastWhiteDisabled;
+    }
   }
 }
 
@@ -97,6 +138,7 @@
   list-style-type: none;
   position: absolute;
   width: 100%;
+  max-height: 200px;
   max-width: 268px;
   z-index: ($ms-zIndex-Dropdown + $ms-zIndex-back);
   top: 0;
@@ -114,6 +156,14 @@
     bottom: 0;
     border: 1px solid $ms-color-neutralLight;
   }
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 1px solid $ms-color-white;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border: 1px solid $ms-color-black;
+  }
 }
 
 .ms-Dropdown-item {
@@ -127,6 +177,14 @@
   border: 1px solid transparent;
   white-space: nowrap;
 
+  @media screen and (-ms-high-contrast: active) {
+    border-color: $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-color: $ms-color-white;
+  }
+
   // Shorten the first and last items to maintain baseline alignment.
   &:first-child, 
   &:last-child {
@@ -136,7 +194,8 @@
   &:hover {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
-    outline: 1px solid transparent;
+
+    @include highContrastListItemState;
   }
 
   &:active {
@@ -165,8 +224,9 @@
   &:hover {
     background-color: $ms-color-themeLight;
   }
-}
 
+  @include highContrastListItemState;
+}
 
 @media (min-width: $ms-screen-md-min) {
   // On larger screens, display as a traditional dropdown.

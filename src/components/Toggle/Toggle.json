@@ -6,7 +6,8 @@
   "class": "ms-Toggle",
   "fileOrder": [
     "Toggle.html",
-    "Toggle.TextLeft.html"
+    "Toggle.TextLeft.html",
+    "Toggle.Disabled.html"
   ],
   "branches": [
       {

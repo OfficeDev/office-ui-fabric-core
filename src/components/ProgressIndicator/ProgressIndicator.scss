@@ -38,10 +38,19 @@ $ProgressIndicatorTextHeight: 18px;
   width: 100%;
   height: 2px;
   background-color: $ms-color-neutralLight;
+  outline: 1px solid transparent;
 }
 
 .ms-ProgressIndicator-progressBar {
   position: absolute;
   height: 2px;
   background-color: $ms-color-themePrimary;
+
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-white;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-black;
+  }
 }

@@ -100,7 +100,8 @@
     left: 0;
     background-color: $ms-color-themeDark;
     outline: 2px solid transparent;
-    transition: width 0.3s;
+    transition: width 0.167s;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
   }
 
   // Slider handle element
@@ -114,7 +115,8 @@
     height: 20px;
     background-color: $ms-color-neutralSecondaryAlt;
     outline: 2px solid transparent;
-    transition: left 0.3s, transform 0.3s;
+    transition: left 0.167s, transform 0.167s;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
 
     @media screen and (-ms-high-contrast: active) {
       border: 2.5px solid $ms-color-white;

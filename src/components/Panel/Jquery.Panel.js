@@ -77,6 +77,9 @@
           case 'is-md':
             $('.ms-Panel').removeClass().addClass('ms-Panel ms-Panel--md');
             break;
+          case 'is-lgFixed':
+            $('.ms-Panel').removeClass().addClass('ms-Panel ms-Panel--lg ms-Panel--fixed');
+            break;
           case 'is-lg':
             $('.ms-Panel').removeClass().addClass('ms-Panel ms-Panel--lg');
             break;

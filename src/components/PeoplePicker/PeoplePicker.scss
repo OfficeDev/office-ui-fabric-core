@@ -50,6 +50,7 @@ $personaItemHeight: 42px;
   display: inline-block;
   float: left;
   margin: 4px;
+  outline: 1px solid transparent;
 
   //TODO: Avoid styling child components like this.
   .ms-Persona {

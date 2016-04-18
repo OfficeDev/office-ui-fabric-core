@@ -5,6 +5,34 @@
 // --------------------------------------------------
 // Contextual Menu styles
 
+// Mixin for high contrast mode link states
+@mixin contextualMenuLinkState {
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-contrastBlackSelected;
+    border-color: $ms-color-contrastBlackSelected;
+    color: $ms-color-black;
+
+    &:focus {
+      border-color: $ms-color-black;
+    }
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-black;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-contrastWhiteSelected;
+    border-color: $ms-color-contrastWhiteSelected;
+    color: $ms-color-white;
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-white;
+    }
+  }
+}
 
 .ms-ContextualMenu {
   @include ms-font-m;
@@ -60,6 +88,14 @@
   padding: 0 18px;
   position: relative;
 
+  @media screen and (-ms-high-contrast: active) {
+    border-color: $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-color: $ms-color-white;
+  }
+
   // Shorten the first and last items to maintain baseline alignment.
   &:first-child, 
   &:last-child {
@@ -67,13 +103,31 @@
   }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
   }
 
+  &:hover {
+    @include contextualMenuLinkState;
+  }
+
   &:active {
     border: 1px solid $ms-color-themePrimary;
+  }
+
+  &:focus {
+    border-color: $ms-color-themePrimary;
+    outline: 0;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-white;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-black;
+    }
   }
 
   &.is-selected {
@@ -84,16 +138,34 @@
     &:hover {
       background-color: $ms-color-themeLight;
     }
+
+    @include contextualMenuLinkState;
   }
 
   &.is-disabled {
-    background-color: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
     pointer-events: none;
 
-    &:active { 
-      border-color: $ms-color-white; 
+    &:active,
+    &:focus { 
+      border-color: $ms-color-white;
+
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-black;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-white;
+      }
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-contrastBlackDisabled;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-contrastWhiteDisabled;
     }
   }
 }

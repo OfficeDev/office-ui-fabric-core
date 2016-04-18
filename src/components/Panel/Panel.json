@@ -40,6 +40,10 @@
       "class": "ms-Panel--lg"
     },
     {
+      "name": "Large Fixed",
+      "class": "ms-Panel--lg ms-Panel--fixed"
+    },
+    {
       "name": "Extra Large",
       "class": "ms-Panel--xl"
     }

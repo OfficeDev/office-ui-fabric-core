@@ -45,6 +45,10 @@
 
   .ms-Overlay {
     z-index: $ms-zIndex-back;
+
+      @media screen and (-ms-high-contrast: active) {
+        opacity: 0;
+      }
   }
 }
 
@@ -59,7 +63,7 @@
   width: 288px;
   position: relative;
   text-align: left;
-  outline: 1px solid transparent;
+  outline: 3px solid transparent;
 }
 
 // Close button, hidden by default

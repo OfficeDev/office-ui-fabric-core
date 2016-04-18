@@ -55,7 +55,7 @@
 
   &.hovering {
     border-color: $ms-color-themePrimary;
-    background-color: $ms-color-primaryTranslucent20;
+    background-color: $ms-color-themeLighter;
 
     & + .ms-SearchBox-label {
       color: $ms-color-black;
@@ -69,7 +69,7 @@
   &:focus {
     padding: 6px 32px 7px 10px;
     border-color: $ms-color-themePrimary;
-    background-color: $ms-color-primaryTranslucent20;
+    background-color: $ms-color-themeLighter;
   }
   
   &::-ms-clear {

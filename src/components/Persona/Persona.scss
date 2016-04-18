@@ -154,6 +154,12 @@ $xlPresenceSize: 28px;
   bottom: -1px;
   border: 2px solid $ms-color-white;
   text-align: center;
+
+  @media screen and (-ms-high-contrast: active) {
+    box-shadow: 0 0 0 1px $ms-color-contrastBlackSelected inset;
+    border-color: $ms-color-black;
+    background-color: $ms-color-white;
+  }
 }
 
 .ms-Persona-presenceIcon {
@@ -161,6 +167,10 @@ $xlPresenceSize: 28px;
   font-size: 9px;
   line-height: $mdPresenceSize;
   vertical-align: top;
+
+  @media screen and (-ms-high-contrast: active) {
+    color: $ms-color-black;
+  }
 }
 
 .ms-Persona-details {
@@ -256,15 +266,6 @@ $xlPresenceSize: 28px;
     top: 10px;
     left: 0;
     border: 0;
-
-    @media screen and (-ms-high-contrast: active) {
-      top: 9px;
-      border: 1px solid $ms-color-white;
-    }
-
-    @media screen and (-ms-high-contrast: black-on-white) {
-      border: 1px solid $ms-color-black;
-    }
   }
 
   .ms-Persona-details {
@@ -585,6 +586,14 @@ $xlPresenceSize: 28px;
 	.ms-Persona-presence {
 		background-color: $ms-color-white;
 
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-black;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-white;
+    }
+
     &:before {
       content: '';
       width: 100%;
@@ -594,6 +603,14 @@ $xlPresenceSize: 28px;
       left: 0px;
       box-shadow: 0px 0 0 2px $ms-color-presence-busy-average inset;
       border-radius: 50%;
+
+      @media screen and (-ms-high-contrast: active) {
+        box-shadow: 0 0 0 2px $ms-color-contrastBlackSelected inset;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        box-shadow: 0 0 0 2px $ms-color-contrastWhiteSelected inset;
+      }
     }
 
     &:after {
@@ -605,6 +622,14 @@ $xlPresenceSize: 28px;
       position: absolute;
       top: 5px;
       left: 0;
+
+      @media screen and (-ms-high-contrast: active) {
+        background-color: $ms-color-contrastBlackSelected;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        background-color: $ms-color-contrastWhiteSelected;
+      }
     }
   }
 
@@ -647,6 +672,14 @@ $xlPresenceSize: 28px;
 .ms-Persona.ms-Persona--busy {
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-busy-average;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-contrastWhiteSelected;
+    }
 	}
 }
 
@@ -666,6 +699,16 @@ $xlPresenceSize: 28px;
 .ms-Persona.ms-Persona--dnd {
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-dnd-background;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-contrastBlackSelected;
+      color: $ms-color-black;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-contrastWhiteSelected;
+      color: $ms-color-white;
+    }
 	}
 }
 
@@ -684,5 +727,15 @@ $xlPresenceSize: 28px;
 .ms-Persona.ms-Persona--offline {
   .ms-Persona-presence {
     background-color: $ms-color-presence-offline;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-black;
+      box-shadow: 0 0 0 1px $ms-color-white inset;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-white;
+      box-shadow: 0 0 0 1px $ms-color-black inset;
+    }
   }
 }

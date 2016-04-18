@@ -11,6 +11,11 @@
   border-collapse: collapse;
 }
 
+// makes the table cells not expand with the content, keeping the table cells at a fixed size
+.ms-Table--fixed {
+  table-layout: fixed;
+}
+
 .ms-Table tr,
 .ms-Table-row {
   display: table-row;

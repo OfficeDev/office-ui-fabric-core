@@ -160,6 +160,12 @@ $xlPresenceSize: 28px;
     border-color: $ms-color-black;
     background-color: $ms-color-white;
   }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    box-shadow: 0 0 0 1px $ms-color-contrastWhiteSelected inset;
+    border-color: $ms-color-white;
+    background-color: $ms-color-black;
+  }
 }
 
 .ms-Persona-presenceIcon {
@@ -237,12 +243,17 @@ $xlPresenceSize: 28px;
     border-radius: 0;
     border: 0;
 
-    @media screen and (-ms-high-contrast: active) {
-      border: 1px solid $ms-color-white;
-    }
+    .ms-Persona-presence {
+      @media screen and (-ms-high-contrast: active) {
+        box-shadow: 0;
+        border: 0;
+        background-color: $ms-color-white;
+      }
 
-    @media screen and (-ms-high-contrast: black-on-white) {
-      border: 1px solid $ms-color-black;
+      @media screen and (-ms-high-contrast: black-on-white) {
+        box-shadow: 0;
+        background-color: $ms-color-black;
+      }
     }
   }
 }

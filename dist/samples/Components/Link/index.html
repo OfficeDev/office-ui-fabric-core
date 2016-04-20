@@ -1,0 +1,111 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Link</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Link.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Link) {
+          $('.ms-Link').Link();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Link' in fabric) {
+          var elements = document.querySelectorAll('.ms-Link');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Link'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display on components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    h1 {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Link</h1>
+  <div id="componentWrapper">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<p class="ms-font-xxl">You can add <a class="ms-Link">links</a> to any text</p>
+<p class="ms-font-m">
+  Lorem ipsum dolor sit amet, <a class="ms-Link">consectetur adipiscing elit</a>. In condimentum nisl sed dolor consectetur, vitae hendrerit nulla ullamcorper. Sed quis massa mi. Etiam sed ullamcorper est. Phasellus sodales tempus sapien et tristique. Praesent non mauris sem. Aliquam leo elit, molestie sed eros ac, sodales mattis metus. Cras <a class="ms-Link">imperdiet</a> est vel quam faucibus posuere. Praesent quis felis mattis, dapibus nibh ut, porttitor dui. Curabitur in eleifend tortor, vel fermentum enim. Etiam blandit quam neque, quis pretium lorem finibus pharetra. Aliquam a placerat arcu. Sed at nibh et nulla ullamcorper pharetra ac ac tortor. Nullam arcu justo, vulputate et efficitur ut, finibus sit amet leo. Phasellus non sem id sapien <a class="ms-Link">gravida sodales</a> et at leo.
+</p>
+
+  </div>
+</body>
+</html>

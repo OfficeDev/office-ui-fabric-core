@@ -1,0 +1,26 @@
+{
+  "name": "OrgChart",
+  "notes": "",
+  "description": "A component embedded within the {0} PersonaCard {1} component that displays hierarchical information about an individual within an organization.",
+  "template": "OrgChart.html",
+  "class": "ms-OrgChart",
+  "wrapBranches": true,
+  "dependencies": [
+    "Persona"
+  ],
+  "fileOrder": [
+    "OrgChart.html",
+    "OrgChart.Square.html"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    },
+    {
+      "name": "Circles",
+      "notes": "Circle personas.",
+      "class": "ms-OrgChart--circles"
+    }
+  ]
+}

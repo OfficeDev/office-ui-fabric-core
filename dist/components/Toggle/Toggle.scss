@@ -1,0 +1,208 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Toggle styles
+
+
+@import '../Label/Label.scss';
+
+
+// Toggle
+.ms-Toggle {
+  @include ms-font-m;
+  @include ms-u-normalize;
+  position: relative;
+  display: block;
+  margin-bottom: 26px;
+
+  // Action label (on/off) on the right of the toggle
+  .ms-Label {
+    position: relative;
+    padding: 0 0 0 62px;
+    font-size: $ms-font-size-s;
+  }
+
+  &:hover {
+    .ms-Label {
+      color: $ms-color-black; 
+    }
+  }
+
+  &:active {
+    .ms-Label { 
+      color: $ms-color-neutralPrimary; 
+    }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    .ms-Label {
+     @include ms-Label-is-disabled;
+    }
+    .ms-Toggle-field {
+      background-color: $ms-color-white !important;
+      border-color: $ms-color-neutralTertiaryAlt !important;
+      pointer-events: none !important;
+      cursor: default !important;
+
+      &:before {
+        background-color: $ms-color-neutralTertiaryAlt !important;
+      }
+    }
+
+    .ms-Toggle-field,
+    .ms-Toggle-field:before {
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-contrastWhiteDisabled;
+      }
+    }
+  }
+}
+
+// Description text
+.ms-Toggle-description {
+  position: relative;
+  font-size: $ms-font-size-s;
+  vertical-align: top;
+  display: block;
+  margin-bottom: 8px;
+}
+
+// Toggle input field
+.ms-Toggle-field {
+  position: relative;
+  display: inline-block;
+  width: 57px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 2.5px $ms-color-neutralTertiaryAlt solid;
+  cursor: pointer;
+}
+
+// Slider mixin
+@mixin ms-Toggle-slider($direction) {
+  // Slider pseudo element
+  &:before {
+    position: absolute;
+    display: block;
+    box-sizing: content-box;
+    content: '';
+    top: -2.5px;
+    #{$direction}: -2.5px;
+    width: 12px;
+    height: 20px;
+    background-color: $ms-color-neutralSecondaryAlt;
+    outline: 2px solid transparent;
+
+    @media screen and (-ms-high-contrast: active) {
+      border: 2.5px solid $ms-color-white;
+      height: 15px;
+      outline: 0;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-black;
+    }
+  }
+
+  @if $direction == left {
+    &:before {
+      right: auto;
+      border-right: 2.5px solid $ms-color-white;
+    }
+  }
+
+  @if $direction == right {
+    &:before {
+      left: auto;
+      border-left: 2.5px solid $ms-color-white;
+    }
+  }
+
+  &:active { 
+    background-color: $ms-color-themePrimary; 
+  }
+}
+
+// On/Off slide states
+.ms-Toggle-input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+
+  // 'Off' state - slider on the left
+  & + .ms-Toggle-field {
+    background-color: $ms-color-neutralLighter;
+
+    @include ms-Toggle-slider(left);
+
+    // Show the off label / hide the on label
+    .ms-Label--off {
+      display: block;
+    }
+
+    .ms-Label--on {
+      display: none;
+    }
+  }
+
+  // 'On' state - slider on the right
+  &:checked + .ms-Toggle-field {
+    background-color: $ms-color-themePrimary;
+
+    @include ms-Toggle-slider(right);
+
+    // Show the on label / hide the off label
+    .ms-Label--off {
+      display: none;
+    }
+
+    .ms-Label--on {
+      display: block;
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-white;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-black;
+    }    
+  }
+
+  &:focus,
+  &:hover {
+    & + .ms-Toggle-field { 
+      background-color: $ms-color-neutralLight; 
+    }
+    
+    &:checked + .ms-Toggle-field {
+      background-color: $ms-color-themeDark; 
+    }
+  }
+}
+
+
+//== Modifier: Toggle with description text left
+//
+.ms-Toggle.ms-Toggle--textLeft {
+  width: 225px;
+  margin-bottom: 40px;
+
+  .ms-Toggle-description {
+    display: inline-block;
+    max-width: 150px;
+    top: -3px;
+    margin-bottom: 0;
+  }
+
+  .ms-Toggle-field {
+    float: right;
+  }
+}

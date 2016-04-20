@@ -1,0 +1,51 @@
+{
+  "name": "Panel",
+  "notes": "",
+  "description": "Containers used in experiences that do not require explicit context for heavy-weight creation/edit/management tasks such as settings, multi-field forms, and permissions. For containers used for complex tasks that requires context, use a separate Pane alongside the existing experience such as a List/Details layout.",
+  "template": "Panel.html",
+  "class": "ms-Panel",
+  "dependencies": [
+    "Button",
+    "CommandBar",
+    "Label",
+    "Overlay",
+    "Pivot"
+  ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "Panel.html"
+  ],
+  "branches": [
+    {
+      "name": "Small",
+      "default": true,
+      "class": "ms-Panel--sm",
+      "branches": [
+          {
+            "name": "Right",
+            "default": true
+          },
+          {
+            "name": "Left",
+            "class": "ms-Panel--left"
+          }
+      ]
+    },
+    {
+      "name": "Medium",
+      "class": "ms-Panel--md"
+    },
+    {
+      "name": "Large",
+      "class": "ms-Panel--lg"
+    },
+    {
+      "name": "Large Fixed",
+      "class": "ms-Panel--lg ms-Panel--fixed"
+    },
+    {
+      "name": "Extra Large",
+      "class": "ms-Panel--xl"
+    }
+  ]
+}

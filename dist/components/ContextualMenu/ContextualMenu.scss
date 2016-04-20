@@ -1,0 +1,226 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Contextual Menu styles
+
+// Mixin for high contrast mode link states
+@mixin contextualMenuLinkState {
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-contrastBlackSelected;
+    border-color: $ms-color-contrastBlackSelected;
+    color: $ms-color-black;
+
+    &:focus {
+      border-color: $ms-color-black;
+    }
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-black;
+    }
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-contrastWhiteSelected;
+    border-color: $ms-color-contrastWhiteSelected;
+    color: $ms-color-white;
+
+    + .ms-ContextualMenu-subMenuIcon,
+    + .ms-ContextualMenu-caretRight {
+      color: $ms-color-white;
+    }
+  }
+}
+
+.ms-ContextualMenu {
+  @include ms-font-m;
+  @include ms-u-normalize;
+  display: none;
+
+  // Hidden by default, then trigger this state to show it.
+  &.is-open {
+    @include drop-shadow;
+    background-color: $ms-color-white;
+    border: 1px solid $ms-color-neutralTertiaryAlt;
+    display: block;
+    list-style-type: none;
+    position: absolute;
+    width: 180px;
+    z-index: ($ms-zIndex-ContextualMenu + $ms-zIndex-middle);
+  }
+}
+
+.ms-ContextualMenu-item {
+  @include ms-u-borderBox;
+  position: relative;
+}
+
+// Modifier: Menu item Dividers
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider {
+  cursor: default;
+  display: block;
+  height: 1px;
+  margin: 4px 0;
+  background-color: $ms-color-neutralLight;
+  position: relative;
+}
+
+// Modifier: Menu item Headers
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  color: $ms-color-themePrimary;
+  font-size: $ms-font-size-s;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+}
+
+.ms-ContextualMenu-link {
+  text-decoration: none;
+  color: $ms-color-neutralPrimary;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+  position: relative;
+
+  @media screen and (-ms-high-contrast: active) {
+    border-color: $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-color: $ms-color-white;
+  }
+
+  // Shorten the first and last items to maintain baseline alignment.
+  &:first-child, 
+  &:last-child {
+    height: 39px;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $ms-color-neutralLight;
+    color: $ms-color-black;
+  }
+
+  &:hover {
+    @include contextualMenuLinkState;
+  }
+
+  &:active {
+    border: 1px solid $ms-color-themePrimary;
+  }
+
+  &:focus {
+    border-color: $ms-color-themePrimary;
+    outline: 0;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-white;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-black;
+    }
+  }
+
+  &.is-selected {
+    background-color: $ms-color-themeLight;
+    color: $ms-color-black;
+    font-family: $ms-font-family-semibold;
+
+    &:hover {
+      background-color: $ms-color-themeLight;
+    }
+
+    @include contextualMenuLinkState;
+  }
+
+  &.is-disabled {
+    color: $ms-color-neutralTertiary;
+    cursor: default;
+    pointer-events: none;
+
+    &:active,
+    &:focus { 
+      border-color: $ms-color-white;
+
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-black;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-white;
+      }
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-contrastBlackDisabled;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-contrastWhiteDisabled;
+    }
+  }
+}
+
+// Modifier: Contextual menu with submenu
+.ms-ContextualMenu-link.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  left: 178px; // Move the submenu to the left of the menu item that triggered it
+}
+
+// Right chevron.
+// Note: The .ms-ContextualMenu-caretRight class has been deprecated.
+// Please use .ms-ContextualMenu-subMenuIcon.
+.ms-ContextualMenu-subMenuIcon,
+.ms-ContextualMenu-caretRight {
+  color: $ms-color-neutralSecondary;
+  font-size: $ms-font-size-m-plus + 1;
+  height: 39px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 7px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+//== Modifier: Multi-select menu 
+//
+.ms-ContextualMenu.ms-ContextualMenu--multiselect {
+
+  // Align the header with the items
+  .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+    padding: 0 30px;
+  }
+
+  .ms-ContextualMenu-link {
+    padding: 0 30px;
+
+    // Multi-select checkmark
+    &.is-selected {
+      background-color: $ms-color-white;
+
+      // Checkmark
+      &:after {
+        @include ms-Icon;
+        color: $ms-color-neutralPrimary;
+        content: '\e041';
+        font-size: $ms-font-size-s;
+        height: 39px;
+        line-height: 40px;
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+}

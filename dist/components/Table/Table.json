@@ -1,0 +1,22 @@
+{
+  "name": "Table",
+  "notes": "",
+  "description": "The table component provides a div-based way to visualize data in columns and rows. Although the table is responsive by nature, we recommend keeping the number of columns small if the table is intended to be viewed on mobile devices.",
+  "template": "Table.html",
+  "wrapBranches": true,
+  "class": "ms-Table",
+  "fileOrder": [
+    "Table.html",
+    "Table.Fixed.html"
+  ],
+  "branches": [
+    {
+      "name": "Default",
+      "default": true
+    },
+    {
+      "name": "Fixed",
+      "class": "ms-Table--fixed"
+    }
+  ]
+}

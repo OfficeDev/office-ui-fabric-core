@@ -1,0 +1,32 @@
+{
+  "name": "ContextualMenu",
+  "notes": "",
+  "description": "A hidden menu containing actionable items pertaining to an object such as a link or piece of text that should be invoked by a click or hover event. This menu is used by other components including the {0} CommandBar {1}. Custom JavaScript will be needed to complete the functionality of this component.",
+  "template": "ContextualMenu.html",
+  "class": "ms-ContextualMenu",
+  "fileOrder": [
+    "ContextualMenu.html",
+    "ContextualMenu.SubMenu.html",
+    "ContextualMenu.Dividers.html",
+    "ContextualMenu.Multiselect.html"
+  ],
+  "branches": [
+      {
+        "name": "Standard",
+        "default": true
+      },
+      {
+        "name": "Sub menu",
+        "template": "contextualmenu.submenu.html"
+      },
+      {
+        "name": "Group",
+        "template": "contextualmenu.dividers.html"
+      },
+      {
+        "name": "Multi-select",
+        "template": "contextualmenu.multiselect.html",
+        "class": "ms-ContextualMenu--multiselect"
+      }
+  ]
+}

@@ -1,0 +1,396 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Command Bar styles
+
+$CommandBar-height: 40px;
+$CommandBar-mobileHeight: 48px;
+$CommandBar-iconSize: 18px;
+$CommandBar-smallLeft: 44px;
+$CommandBar-largeLeft: 48px;
+$CommandBar-xLargeLeft: 232px;
+$CommandBar-sideAreaWidthsm: 128px;
+$CommandBar-sideAreaWidthlg: 260px;
+$CommandBar-sideAreaWidthxlg: 345px;
+
+$CommandBarItem-height: $CommandBar-height;
+$CommandBarItem-marginTop: 13px;
+$CommandBarItem-textHeight: 16px;
+$CommandBarItem-iconWidth: 16px;
+$CommandBarItem-iconLabelMargin: 8px;
+$CommandBarItem-flippedLineHeight: 32px;
+
+
+$SearchBox-height: 40px;
+$SearchBox-widthLgCollapsed: 50px;
+$SearchBox-widthMdDownCollapsed: 36px;
+$SearchBox-widthXLarge: 208px;
+$SearchBox-iconSize: 17px;
+$SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
+$SearchBox-smallWidth: 36px;  
+$SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePadding * 2);
+
+@mixin highContrastBorder($color) {
+    border-left: 1px solid $color;
+    border-right: 1px solid $color;
+}
+
+.ms-CommandBar {
+  background-color: $ms-color-themeLighterAlt;
+  height: $CommandBar-height;
+  white-space: nowrap;
+  padding-left: 0;
+  border: 0;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ms-CommandBar-mainArea {
+  overflow-x: hidden;
+  display: block;
+  padding-left: $SearchBox-widthLgCollapsed + 8;
+  @media only screen and (min-width: $ms-screen-xl-min) {
+    padding-left: 24px;
+  }
+}
+
+.ms-CommandBar-sideCommands {
+  float: right;
+  text-align: right;
+  width: auto;
+  padding-right: 8px;
+
+  .ms-CommandBarItem:last-child {
+    margin-right: 0;
+  }
+
+  @media only screen and (min-width: $ms-screen-lg-min) {
+    min-width: $CommandBar-sideAreaWidthsm;
+  }
+
+  @media only screen and (min-width: $ms-screen-lg-min) {
+    padding-right: 12px;
+  }
+
+  @media only screen and (min-width: $ms-screen-xl-min) {
+    padding-right: 16px;
+  }
+}
+
+// Command Bar Item
+.ms-CommandBarItem {
+  display: inline-block;
+  color: $ms-color-themePrimary;
+  height: $CommandBarItem-height;
+  outline: none;
+  vertical-align: top;
+  margin-right: -4px;
+
+  .ms-CommandBarItem-chevronDown,
+  .ms-CommandBarItem-commandText {
+    display: none;
+  }
+
+  @media screen and (-ms-high-contrast: active) {
+    @include highContrastBorder($ms-color-black);
+    height: 38px;
+    outline: none;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    @include highContrastBorder($ms-color-white);
+    height: 38px;
+    outline: none;
+  }
+  
+  &:hover {
+    background-color: $ms-color-themeLight;
+    color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      @include highContrastBorder($ms-color-white);
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      @include highContrastBorder($ms-color-black);
+    }
+  }
+
+  // Hide labels and Chevrons SM-MD
+  @media only screen and (min-width: $ms-screen-lg-min) {
+    margin-right: 8px;
+    .ms-CommandBarItem-chevronDown,
+    .ms-CommandBarItem-commandText {
+      display: inline;
+    }
+  }
+
+}
+
+.ms-CommandBarItem.is-hidden {
+  width: 0;
+  overflow: hidden;
+}
+  
+//== Modifier: For commands with only an icon
+//
+.ms-CommandBarItem.icon-only,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly {
+  .ms-CommandBarItem-chevronDown,
+  .ms-CommandBarItem-commandText {
+    display: none;
+  }
+}
+
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly {
+  .ms-CommandBarItem-commandText,
+  .ms-CommandBarItem-chevronDown {
+    display: inline;
+  }
+}
+
+.ms-CommandBarItem-overflow {
+  display: none;
+
+  &.is-visible {
+    display: inline-block;
+  }
+
+  .ms-Icon {
+    font-size: $ms-font-size-m;
+    color: $ms-color-neutralSecondary; 
+  }
+}
+
+.ms-CommandBarItem-link {
+  line-height: $CommandBarItem-height - 1;
+  padding: 0 6px;
+  cursor: pointer;
+  height: $CommandBarItem-height;
+  min-width: 20px;
+  text-align: center;
+  position: relative;
+  padding: 0 8px;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.ms-CommandBarItem-link:focus {
+  outline: none;
+  &:before {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border: 1px solid $ms-color-neutralTertiary;
+    content: '';
+  }
+}
+
+.ms-CommandBarItem-icon {
+  font-size: $ms-font-size-l;
+  color: $ms-color-themePrimary;
+}
+
+.ms-CommandBarItem-chevronDown  {
+  vertical-align: middle;
+  padding-bottom: 3px;
+  margin-top: $CommandBarItem-marginTop;
+  font-size: 1.1em;
+  line-height: 1em;
+  color: $ms-color-neutralSecondary;
+
+  &:before {
+    height: 10px;
+    line-height: $CommandBarItem-textHeight;
+  }
+}
+
+.ms-CommandBarSearch {
+  float: left;
+  width: 208px;
+  max-width: 208px;
+  background-color: $ms-color-themeLighter;
+  color: $ms-color-neutralPrimary;
+  height: $SearchBox-height;
+  position: relative;
+  box-sizing: border-box;
+  border-color: transparent; // give a base state for animation
+
+
+  @media only screen and (max-width: $ms-screen-lg-max) {
+    overflow: hidden;
+    width: $SearchBox-widthLgCollapsed;
+    position: absolute;
+  }
+
+  transition: $ms-duration1 $ms-ease1;
+  transition-property: width, background-color;
+
+  @media screen and (-ms-high-contrast: active) {
+    border-right: 1px solid $ms-color-white;
+    z-index: 10;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-right: 1px solid $ms-color-black;
+  }
+
+  &:hover {
+    background-color: $ms-color-themeLight;
+    color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      @include highContrastBorder($ms-color-white);
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      @include highContrastBorder($ms-color-black);
+    }
+  }
+
+  .ms-Icon--search {
+    margin-left: 2px;
+    margin-top: 12px;
+    vertical-align: top;
+  }
+}
+
+.ms-CommandBarSearch-input {
+  height: $SearchBox-height;
+  // Due to a bug in IE9, we have to use a transparent left border instead of left padding
+  padding: $SearchBox-sidePadding $SearchBox-sidePadding $SearchBox-sidePadding 0;
+  border: none;
+  border-left: $SearchBox-height + 2 solid transparent;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  font-size: $ms-font-size-m;
+
+  @media screen and (-ms-high-contrast: active) {
+    border-left: $SearchBox-height solid $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-left: $SearchBox-height solid $ms-color-white;
+  }
+
+  // remove default iOS styles on input boxes
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+  // hide IE's X button for clearing the input (we have our own)
+  &::-ms-clear {
+    display: none;
+  } 
+
+  //Placeholder text styles
+  &::placeholder {
+    color: $ms-color-neutralPrimary;
+    opacity: 1;
+    font-size: $ms-font-size-m;
+  }
+
+  //Fixes older firefox issue.
+  &:placeholder {
+    color: $ms-color-neutralPrimary;
+    opacity: 1;
+    font-size: $ms-font-size-m;
+  }
+}
+
+// default styles for icons, show the search icon and hide X (and arrow) until focused
+.ms-CommandBarSearch-iconSearchWrapper {
+  display: block;
+  padding-left: 15px;
+}
+
+.ms-CommandBarSearch-iconArrowWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper,
+.ms-CommandBarSearch-iconArrowWrapper {
+  top: 0;
+  padding-left: 8px;
+  padding-right: 8px;  
+}
+
+.ms-CommandBarSearch-iconClearWrapper {
+  display: none;
+  top: 1px;
+  right: 0px;
+  z-index: $ms-zIndex-front;
+}
+
+
+//== State: Puts search in an active state
+//
+.ms-CommandBarSearch.is-active {
+  background-color: $ms-color-themeLight;
+  color: $ms-color-black;
+
+  @media only screen and (max-width: $ms-screen-lg-max) {
+    width: 100%;
+    position: absolute;
+    z-index: $ms-zIndex-front;
+    max-width: 100%;
+  }
+
+  &:hover {
+    background-color: $ms-color-themeLight;
+    color: $ms-color-black;
+  }
+  
+  .ms-CommandBarSearch-input {
+    cursor: text;
+    padding-right: $SearchBox-height; // leave room for the X
+    border-left-width: $SearchBox-sidePadding;
+  }
+
+  &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
+    border-left-width: $SearchBox-height; // leave room for arrow
+  }
+
+  // when focused, remove the search icon and possibly show arrow icon
+  & .ms-CommandBarSearch-iconSearchWrapper {
+    display: none;
+  }
+
+  &.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
+    display: block;
+  }
+
+  .ms-CommandBarSearch-input {
+    padding-right: $SearchBox-height;
+  }
+
+  .ms-CommandBarSearch-iconClearWrapper {
+    display: block;
+  }
+}
+
+.ms-CommandBarSearch-iconWrapper {
+  height: $SearchBox-height;
+  line-height: $SearchBox-height;
+  cursor: pointer;
+  padding: 0px $SearchBox-sidePadding;
+  position: absolute;
+  width: $SearchBox-iconWrapperWidth;
+  text-align: center;
+}
+
+.ms-CommandBarSearch .ms-Icon:before {
+  font-size: $SearchBox-iconSize;
+  color: $ms-color-themePrimary;
+}
+

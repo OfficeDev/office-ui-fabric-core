@@ -1,0 +1,108 @@
+{
+  "name": "TextField",
+  "notes": "",
+  "description": "The table component provides a div-based way to visualize data in columns and rows. Although the table is responsive by nature, we recommend keeping the number of columns small if the table is intended to be viewed on mobile devices.",
+  "template": "TextField.html",
+  "class": "ms-TextField",
+  "fileOrder": [
+    "TextField.html",
+    "TextField.Multiline.html",
+    "TextField.Placeholder.html",
+    "TextField.Underlined.html"
+  ],
+  "dependencies": [
+    "Label"
+  ],
+  "branches": [
+    {
+      "name": "Standard",
+      "default": true,
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        },
+        {
+          "name": "Required",
+          "class": "is-required"
+        }
+      ]
+    },
+    {
+      "name": "Placeholder",
+      "class": "ms-TextField--placeholder",
+      "template": "TextField.Placeholder.html",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        },
+        {
+          "name": "Required",
+          "class": "is-required"
+        }
+      ]
+    },
+    {
+      "name": "Underlined",
+      "class": "ms-TextField--underlined",
+      "template": "Textfield.Underlined.html",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        }
+      ]
+    },
+    {
+      "name": "Multiline",
+      "class": "ms-TextField--multiline",
+      "template": "Textfield.Multiline.html",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        },
+        {
+          "name": "Required",
+          "class": "is-required"
+        }
+      ]
+    },
+    {
+      "name": "Ml Placeholder",
+      "class": "ms-TextField--multiline ms-TextField--placeholder",
+      "template": "Textfield.Multiline.html",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        },
+        {
+          "name": "Required",
+          "class": "is-required"
+        }
+      ]
+    }
+  ]
+}

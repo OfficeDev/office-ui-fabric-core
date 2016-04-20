@@ -1,0 +1,34 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Video Portal Example App
+// --------------------------------------------------
+// Channels List page styles
+
+
+.ChannelsPage {
+  padding: 10px;
+}
+
+.ChannelGroup-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid $ms-color-neutralLight;
+}
+
+.ChannelGroup-channel {
+  padding: 10px 0 10px 10px;
+  border-width: 4px;
+  border-left-style: solid;
+  margin-bottom: 10px;
+  display: block;
+
+  &:hover {
+    color: $ms-color-black;
+  }
+}
+
+@media (min-width: $ms-screen-md-min) {
+  .ChannelsPage {
+    padding: 20px;
+  }
+}

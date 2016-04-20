@@ -1,0 +1,279 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Nav Bar styles
+
+
+// On small screens, the nav bar contains only the hamburger icon.
+.ms-NavBar {
+  @include ms-font-m;
+  @include ms-u-normalize;
+  background-color: $ms-color-neutralLighter;
+  height: 40px;
+  padding: 0 10px;
+  width: 100%;
+  outline: 1px solid transparent;
+
+  .ms-Overlay {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $ms-duration3 $ms-ease1;
+    z-index: $ms-zIndex-back;
+  }
+}
+
+// The button to open the menu on small screens.
+.ms-NavBar-openMenu {
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  right: 27px;
+  text-align: center;
+  width: 40px;
+  cursor: pointer;
+}
+
+// Hide the items by default.
+.ms-NavBar-items {
+  display: none;
+}
+
+// Individual item/button, with optional subitems.
+.ms-NavBar-item {
+  @include ms-u-borderBox;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-family: $ms-font-family-semilight;
+  font-size: $ms-font-size-l;
+  padding-left: 20px;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $ms-color-themeLighter;
+    color: $ms-color-black;
+
+    .ms-Icon {
+      color: $ms-color-neutralPrimary;
+    }
+  }
+
+  &:active {
+    color: $ms-color-themePrimary;
+  }
+
+  // The currently-selected item.
+  &.is-selected {
+    font-family: $ms-font-family-semibold;
+  }
+
+  // Items can be disabled.
+  &.is-disabled {
+    color: $ms-color-neutralTertiary;
+
+    &:hover {
+      cursor: default;
+      border: none;
+    }
+  }
+}
+
+.ms-NavBar-link {
+  color: $ms-color-neutralPrimary;
+  text-decoration: none;
+
+  &:active {
+    color: $ms-color-themePrimary;
+  }
+}
+
+
+// Items can contain subitems.
+.ms-NavBar-item.ms-NavBar-item--hasMenu {
+
+  // Hide submenus by default.
+  .ms-NavBar-items {
+    display: none;
+  }
+
+  &:hover {
+    &:after {
+      color: $ms-color-neutralDark;
+    }
+  }
+}
+
+// Add chevron icon.
+.ms-NavBar-chevronDown {
+  color: $ms-color-neutralSecondary;
+  font-size: 22px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+// Search.
+.ms-NavBar-item.ms-NavBar-item--search {
+  position: relative;
+  width: 30px;
+
+  // Search icon.
+  &:after {
+    @include ms-Icon;
+    color: $ms-color-neutralSecondary;
+    content: '\e039';
+    font-size: 21px;
+    line-height: 40px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+  }
+
+  // The search box is hidden by default.
+  .ms-TextField {
+    display: none;
+  }
+
+  // Opened state.
+  &.is-open {
+    width: 200px;
+    padding-right: 40px;
+    border: none;
+
+    .ms-TextField {
+      display: block;
+    }
+
+    .ms-TextField-field {
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+
+// Show the nav items menu only on small screens
+@media (max-width: $ms-screen-sm-max) {
+  // State: The navigation panel is open.
+  .ms-NavBar.is-open {
+    // Show the items.
+    .ms-NavBar-items {
+      @include drop-shadow;
+      background-color: $ms-color-white;
+      bottom: 0;
+      display: block;
+      left: 50px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      outline: 1px solid transparent;
+      z-index: $ms-zIndex-middle;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: relative;
+    }
+  }
+}
+
+// On small screens, override the contextual menu styles.
+@media (min-width: $ms-screen-sm-min) and (max-width: $ms-screen-sm-max) {
+
+  .ms-NavBar-item.ms-NavBar-item--hasMenu.is-selected {
+    height: inherit;
+    background-color: transparent;
+    font-family: $ms-font-family-semilight;
+
+    // Flip the chevron around.
+    .ms-NavBar-chevronDown {
+      transform: scaleY(-1);
+    }
+  }
+
+  .ms-NavBar-item .ms-ContextualMenu {
+    position: static;
+    border: none;
+    box-shadow: none;
+    width: auto;
+
+    .ms-ContextualMenu-link {
+      font-family: $ms-font-family-semilight;
+      font-size: $ms-font-size-l;
+    }
+  }
+
+  // When the navbar is opened, animate to full opacity
+  // and activate pointer events so can be clicked.
+  .ms-NavBar.is-open .ms-Overlay {
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// On medium screens and larger we display the menu items in the nav bar.
+@media (min-width: $ms-screen-md-min) {
+
+  // We don't need the button to open the menu.
+  .ms-NavBar-openMenu {
+    display: none;
+  }
+
+  // Show the items list.
+  .ms-NavBar-items {
+    display: block;
+    list-style: none;
+    margin: 0 7px 0 0;
+    padding: 0;
+  }
+  
+  .ms-NavBar-chevronDown {
+    top: 3px;
+    right: 0;
+    float: none;
+    position: relative;
+  }
+
+  // Position the items in a horizontal list.
+  .ms-NavBar-item {
+    float: left;
+    margin-right: 18px;
+    font-size: $ms-font-size-m;
+    padding: 0;
+
+    &:hover {
+      border-bottom: 2px solid $ms-color-themePrimary;
+      background-color: transparent;
+    }
+
+    // The currently-selected item.
+    &.is-selected {
+      font-family: $ms-font-family-semibold;
+      border-bottom: 2px solid $ms-color-themePrimary;
+    }
+  }
+
+  // Modifier: Items can contain subitems.
+  .ms-NavBar-item.ms-NavBar-item--hasMenu {
+    // Add chevron icon.
+    &:after {
+      position: relative;
+      top: 3px;
+      padding-top: 0;
+      right: auto;
+    }
+  }
+
+  // Modifier: Items can be positioned to the right on larger screens.
+  .ms-NavBar-item.ms-NavBar-item--right {
+    float: right;
+    margin: 0;
+  }
+}

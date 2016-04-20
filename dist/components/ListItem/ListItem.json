@@ -1,0 +1,46 @@
+{
+  "name": "ListItem",
+  "notes": "",
+  "description": "List item variants that are placed inside of the {0} List {1} component. List variants support several states including Selectable, Selected, Unseen, Picture, Picture, and Document.",
+  "template": "ListItem.html",
+  "class": "ms-ListItem",
+  "fileOrder": [
+    "ListItem.html",
+    "ListItem.Selectable.html",
+    "ListItem.Selected.html",
+    "ListItem.Unseen.html",
+    "ListItem.Unread.html",
+    "ListItem.Image.html",
+    "ListItem.Document.html"
+  ],
+  "dependencies": [
+    "List"
+  ],
+  "branches": [
+    {
+      "name": "Standard",
+      "default": true
+    },
+    {
+      "name": "With image",
+      "template": "ListItem.Image.html"
+    },
+    {
+      "name": "Unread",
+      "class": "is-unread"
+    },
+    {
+      "name": "Unseen",
+      "class": "is-unseen"
+    },
+    {
+      "name": "Selectable",
+      "class": "is-selectable"
+    },
+    {
+      "name": "Document",
+      "template": "ListItem.Document.html",
+      "class": "ms-ListItem--document"
+    }
+  ]
+}

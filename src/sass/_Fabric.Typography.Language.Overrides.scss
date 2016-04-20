@@ -5,9 +5,10 @@
 // --------------------------------------------------
 // Language override definitions
 
+
 // A mixin that overrides all of the font classes for languages that
 // use system fonts. A single font-family is used for all weights.
-@mixin language-override-system-fonts($ms-lang-code, $ms-font-family) {
+@mixin language-override-system-fonts($ms-lang-code, $ms-font-family-base) {
   *[lang="#{$ms-lang-code}"] {
     .ms-font-mi,
     .ms-font-xs,
@@ -27,7 +28,7 @@
     .ms-fontWeight-regular-hover:hover,
     .ms-fontWeight-semibold,
     .ms-fontWeight-semibold-hover:hover {
-      font-family: $ms-font-family;
+      font-family: $ms-font-family-base;
     }
   }
 }
@@ -40,10 +41,10 @@ $ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-sys
 $ms-font-stack-hindi: 'Nirmala UI', $ms-font-system-base;
 
 // Variables for each of the web font stacks.
-$ms-font-stack-arabic:        'Segoe UI Arabic', $ms-font-family;
-$ms-font-stack-cyrillic:      'Segoe UI Cyrillic', $ms-font-family;
-$ms-font-stack-eastEuropean:  'Segoe UI EastEuropean', $ms-font-family;
-$ms-font-stack-greek:         'Segoe UI Greek', $ms-font-family;
-$ms-font-stack-hebrew:        'Segoe UI Hebrew', $ms-font-family;
-$ms-font-stack-vietnamese:    'Segoe UI Vietnamese', $ms-font-family;
-$ms-font-stack-leelawadee:    'Leelawadee UI', 'Kmer UI', $ms-font-family;
+$ms-font-stack-arabic:        'Segoe UI Arabic', $ms-font-family-base;
+$ms-font-stack-cyrillic:      'Segoe UI Cyrillic', $ms-font-family-base;
+$ms-font-stack-eastEuropean:  'Segoe UI EastEuropean', $ms-font-family-base;
+$ms-font-stack-greek:         'Segoe UI Greek', $ms-font-family-base;
+$ms-font-stack-hebrew:        'Segoe UI Hebrew', $ms-font-family-base;
+$ms-font-stack-vietnamese:    'Segoe UI Vietnamese', $ms-font-family-base;
+$ms-font-stack-leelawadee:    'Leelawadee UI', 'Kmer UI', $ms-font-family-base;

@@ -1,6 +1,7 @@
 var path = require('path');
 var pkg = require('../../package.json');
 var Plugins = require('./Plugins');
+
 /**
  * Configuration class containing all properties to be used throughout the build          
  */
@@ -24,7 +25,9 @@ var Config = function() {
 		srcSamples: srcPath + '/samples',
     srcSass: srcPath + '/sass',
 		componentsPath : 'src/components',
-		templatePath : srcPath + '/templates'
+		templatePath : srcPath + '/templates',
+    srcLibPath: 'lib',
+    distLibPath: distPath + '/lib'
 	};
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
@@ -32,13 +35,24 @@ var Config = function() {
 	this.servePaths = [
         {
             'urlPath': '/css',
-            'folderPath': '../css',
+            'folderPath': '../css'
         },
         {
             'urlPath': '/js',
-            'folderPath': '../js',
+            'folderPath': '../js'
+        },
+        {
+            'urlPath': '/lib',
+            'folderPath': '../lib'
         }
     ];
+    this.typescriptConfig = {
+        module: 'commonjs',
+        declaration: true,
+        target: 'ES5',
+        noEmitOnError: true
+    };
+    this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",
@@ -104,53 +118,52 @@ var Config = function() {
           }
         }
       ]    
-	}
+	};
   this.handleBarsConfig = {
-    ignorePartials: true,
-    partials:  {
-      
-    },
-    batch: [],
-    helpers:  {
-      concat: function(item1, item2) {
-        return item1 + item2;
+      ignorePartials: true,
+      partials:  {
+        
       },
-      renderPartial: function(partial, props) {
-        var hbs = Plugins.handlebars.Handlebars;
-        var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
-        var template = hbs.compile(fileContents);
-        var thisProps = {props: props};
-        return new hbs.SafeString(template(thisProps));
-      }.bind(this),
-      renderInlinePartial: function(partial, propsString) {
-        var hbs = Plugins.handlebars.Handlebars;
-        var props = JSON.parse(propsString);
-        var template = hbs.compile(that.paths.componentsPath + '/' + partial);
-        return template(props);
-      }.bind(this),
-      keepContext: function(props, context) {
-        // console.log(block());
-        //var blockz = block();
-        console.log(props, context);
-        var hbs = Plugins.handlebars.Handlebars;
-        // var thisProps = {props: props};
-        // var compiled = hbs.compile(block);
-        return template(thisProps);
-      },
-      tokenReplace: function(string, replaceArray) {
-        var newStr;
-        if(replaceArray) {
-          for (var i = 0; i < replaceArray.length; i++) {
-            newStr = string.replace(new RegExp("\\{"+i+"\\}","g"), replaceArray[i]);
+      batch: [],
+      helpers:  {
+        concat: function(item1, item2) {
+          return item1 + item2;
+        },
+        renderPartial: function(partial, props) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
+          var template = hbs.compile(fileContents);
+          var thisProps = {props: props};
+          return new hbs.SafeString(template(thisProps));
+        }.bind(this),
+        renderInlinePartial: function(partial, propsString) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var props = JSON.parse(propsString);
+          var template = hbs.compile(that.paths.componentsPath + '/' + partial);
+          return template(props);
+        }.bind(this),
+        keepContext: function(props, context) {
+          // console.log(block());
+          //var blockz = block();
+          console.log(props, context);
+          var hbs = Plugins.handlebars.Handlebars;
+          // var thisProps = {props: props};
+          // var compiled = hbs.compile(block);
+          return template(thisProps);
+        },
+        tokenReplace: function(string, replaceArray) {
+          var newStr;
+          if(replaceArray) {
+            for (var i = 0; i < replaceArray.length; i++) {
+              newStr = string.replace(new RegExp("\\{"+i+"\\}","g"), replaceArray[i]);
+            }
+          } else {
+            newStr = string;
           }
-        } else {
-          newStr = string;
+          return newStr;
         }
-        return newStr;
       }
-    }
   };
- 
 };
 
 module.exports = new Config();

@@ -26,9 +26,29 @@ $ms-duration4: 0.467s;
     @include animationFillMode($ms-fillMode);
 }
 
+// slideRightIn10
+@mixin ms-u-slideRightIn10 {
+    @include animationMix((fadeIn, slideRightIn10), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn20
+@mixin ms-u-slideRightIn20 {
+    @include animationMix((fadeIn, slideRightIn20), $ms-duration3, $ms-ease1);
+}
+
 // slideRightIn40
 @mixin ms-u-slideRightIn40 {
     @include animationMix((fadeIn, slideRightIn40), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn10
+@mixin ms-u-slideLeftIn10 {
+    @include animationMix((fadeIn, slideLeftIn10), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn20
+@mixin ms-u-slideLeftIn20 {
+    @include animationMix((fadeIn, slideLeftIn20), $ms-duration3, $ms-ease1);
 }
 
 // slideLeftIn40

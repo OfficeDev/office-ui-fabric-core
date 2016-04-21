@@ -45,6 +45,8 @@ var Plugins = function() {
   this.sasslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');
   this.handlebars = require('gulp-compile-handlebars');
+	this.tsc = require('gulp-typescript');
+	this.tslint = require("gulp-tslint");
 };
 
 module.exports = new Plugins();

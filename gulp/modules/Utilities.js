@@ -43,6 +43,7 @@ var Utilities = function() {
      * @returns {object} Object Containing the manifest data in an object 
      */
 	this.parseManifest = function(jsonFileLocation) {
+        console.log(jsonFileLocation);
         var manifest = fs.readFileSync(jsonFileLocation);
         return JSON.parse(manifest.toString());
 	};

@@ -90,27 +90,21 @@ fabric.CommandBar = function(context) {
     
     switch(true) {
       case (screenSize <= ResponsiveVariables['sm-max']):
-        if(breakpoint !== "sm") { _saveCommandWidths(); }
         breakpoint = "sm";
         break;
       case (screenSize >= ResponsiveVariables['md-min'] && screenSize <= ResponsiveVariables['md-max']):
-        if(breakpoint !== "md") { _saveCommandWidths(); }
         breakpoint = "md";
         break;
       case (screenSize >= ResponsiveVariables['lg-min'] && screenSize <= ResponsiveVariables['lg-max']):
-        if(breakpoint !== "lg") { _saveCommandWidths(); }
         breakpoint = "lg";
         break;
       case (screenSize >= ResponsiveVariables['xl-min'] && screenSize <= ResponsiveVariables['xl-max']):
-        if(breakpoint !== "xl") { _saveCommandWidths(); }
         breakpoint = "xl";
         break;
       case (screenSize >= ResponsiveVariables['xxl-min'] && screenSize <= ResponsiveVariables['xxl-max']):
-        if(breakpoint !== "xxl") { _saveCommandWidths(); }
         breakpoint = "xxl";
         break;
       case (screenSize >= ResponsiveVariables['xxxl-min']):
-        if(breakpoint !== "xxxl") { _saveCommandWidths(); }
         breakpoint = "xxxl";
         break;
     }
@@ -119,13 +113,13 @@ fabric.CommandBar = function(context) {
   function _setElements() {
     _elements = {
       container: context.container,
-      mainArea: document.querySelector(CB_MAIN_AREA),
-      sideCommandArea: document.querySelector(CB_SIDE_COMMAND_AREA),
+      mainArea: context.querySelector(CB_MAIN_AREA),
+      sideCommandArea: context.querySelector(CB_SIDE_COMMAND_AREA),
       mainItems: [],
-      overflowCommand: document.querySelector(CB_ITEM_OVERFLOW),
-      contextMenu: document.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU),
-      searchBox:  document.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
-      searchBoxClose: document.querySelector(SEARCH_BOX_CLOSE)
+      overflowCommand: context.querySelector(CB_ITEM_OVERFLOW),
+      contextMenu: context.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU),
+      searchBox:  context.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
+      searchBoxClose: context.querySelector(SEARCH_BOX_CLOSE)
     };
     searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
   }
@@ -136,7 +130,7 @@ fabric.CommandBar = function(context) {
         iconClasses,
         splitClasses,
         icon,
-        items = document.querySelectorAll(CB_MAIN_AREA + ' ' + COMMAND_BUTTON +':not('+ CB_ITEM_OVERFLOW +')'),
+        items = context.querySelectorAll(CB_MAIN_AREA + ' ' + COMMAND_BUTTON +':not('+ CB_ITEM_OVERFLOW +')'),
         isCollapsed = false;
     
     // Initiate teh overflow command
@@ -250,7 +244,7 @@ fabric.CommandBar = function(context) {
   }
   
   function _setWindowEvent() {
-    window.onresize = _doResize;
+    window.addEventListener("resize", _doResize, false);
   }
   
   function _processColapsedClasses(type) {
@@ -271,6 +265,7 @@ fabric.CommandBar = function(context) {
       case "sm":
         _elements.searchBox.classList.add('is-collapsed');
         searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
+         _saveCommandWidths();
          _processColapsedClasses("add");
          _redrawMenu();
          redrawCommands();
@@ -278,6 +273,7 @@ fabric.CommandBar = function(context) {
       case "md":
         _elements.searchBox.classList.add('is-collapsed');
         searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
+         _saveCommandWidths();
         // Add collapsed classes to commands
         _processColapsedClasses("add");
         _redrawMenu();
@@ -286,6 +282,7 @@ fabric.CommandBar = function(context) {
       case "lg":
         _elements.searchBox.classList.add('is-collapsed');
         searchBoxClass = new fabric['SearchBox'](_elements.searchBox);
+         _saveCommandWidths();
          _processColapsedClasses("remove");
          _redrawMenu();
          redrawCommands();
@@ -342,9 +339,9 @@ fabric.CommandBar = function(context) {
   function _init() {
     _setElements();
     _setBreakpoint();
+    _createContextualRef();
     _createItemCollection();
     _setUIState();
-    _createContextualRef();
     _saveCommandWidths();
     _updateCommands();
     _drawCommands();

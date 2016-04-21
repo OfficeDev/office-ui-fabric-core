@@ -9,6 +9,7 @@
       "keyboard": "Use the TAB key to navigate between elements in the dialog. To exit, use ESC. Trap focus in the dialog until the user dismisses it. The user needs to return to the previous element on close."
     },
   "class": "ms-CommandBar",
+  "wrapBranches": true,
   "dependencies": [
     "ContextualMenu",
     "Button",
@@ -18,6 +19,128 @@
     "ModalHost"
   ],
   "props": {
+    "searchBox": {
+      "component": "SearchBox",
+      "props":  {
+        "label": "Search",
+        "icon": "search",
+        "defaultValue": "",
+        "modifier": "commandBar",
+        "clearButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "x",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-close"
+          }
+        }
+      }
+    },
+    "overflow": {
+      "component": "CommandButton",
+      "props":  {
+        "icon": "ellipsis",
+        "customClasses": "ms-CommandBar-overflowButton",
+        "tag": "button",
+        "modifier": "noLabel",
+        "dropdown": {
+          "component": "ContextualMenu",
+          "props":  {
+            "state": "is-opened",
+            "modifier": "hasIcons",
+            "items": [
+              {
+                "title": "Folder",
+                "state": "",
+                "icon": "folder"
+              },
+              {
+                "modifier": "divider",
+                "title": ""
+              },
+              {
+                "title": "Plain Text Document",
+                "icon": "document"
+              },
+              {
+                "title": "A Dog",
+                "icon": "dogAlt"
+              },
+              {
+                "title": "The Sun",
+                "state": "",
+                "icon": "sun"
+              },
+              {
+                "title": "Money",
+                "icon": "money"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "commands": [
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Command",
+          "icon": "circleFill",
+          "tag": "button",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Command",
+          "icon": "circleFill",
+          "tag": "button",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Command",
+          "icon": "circleFill",
+          "tag": "button",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Command",
+          "icon": "circleFill",
+          "tag": "button",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Command",
+          "icon": "circleFill",
+          "tag": "button",
+          "iconColor": "themePrimary"
+        }
+      }
+    ],
+    "sideCommands": [
+      {
+        "component": "CommandButton",
+        "props":  {
+          "icon": "circleFill",
+          "tag": "button",
+          "modifier": "noLabel",
+          "iconColor": "themePrimary"
+        }
+      }
+    ]
+  },
+  "propsDropdown": {
     "searchBox": {
       "component": "SearchBox",
       "props":  {

@@ -85,6 +85,8 @@ namespace fabric {
       this.responsiveSizes["lg-max"] = this.responsiveSizes["xl-min"] - 1;
       this.responsiveSizes["xl-max"] = this.responsiveSizes["xxl-min"] - 1;
       this.responsiveSizes["xxl-max"] = this.responsiveSizes["xxxl-min"] - 1;
+      
+      console.log("");
 
       this._init();
     }
@@ -272,7 +274,9 @@ namespace fabric {
     }
 
     private _setWindowEvent() {
-      window.addEventListener("resize", this._doResize, false);
+      window.addEventListener("resize", () => {
+        this._doResize();
+      }, false);
     }
 
     private _processColapsedClasses(type) {

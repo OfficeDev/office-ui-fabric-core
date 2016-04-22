@@ -32,18 +32,18 @@ namespace fabric {
     private _targetElement;
 
     constructor(container: HTMLElement, direction: string, targetElement: Element) {
+      this._targetElement = targetElement;
       this._saveDOMRefs(container);
       this._cloneModal();
       this._openModal();
       this. _setResizeDisposal();
       this._direction = direction;
       this._container = container;
-      this._targetElement = targetElement;
     }
 
     public disposeModal(): void {
-      window.removeEventListener("resize", this._resizeAction, false);
-      document.removeEventListener("click", this._disMissAction, false);
+      window.removeEventListener("resize",  (e) => { this._resizeAction(); }, false);
+      document.removeEventListener("click", (e) => { this._disMissAction(e) }, false);
       this._modalClone.parentNode.removeChild(this._modalClone);
     }
 
@@ -258,7 +258,7 @@ namespace fabric {
     }
 
     private _setDismissClick() {
-      document.addEventListener("click", this._disMissAction, false);
+      document.addEventListener("click", (e) => { this._disMissAction(e); }, false);
     }
 
     private _resizeAction() {
@@ -266,7 +266,7 @@ namespace fabric {
     }
 
     private _setResizeDisposal() {
-      window.addEventListener("resize", this._resizeAction, false);
+      window.addEventListener("resize", (e) => { this._resizeAction(); }, false);
     }
   }
 }

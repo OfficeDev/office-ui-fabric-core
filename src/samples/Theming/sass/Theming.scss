@@ -1,0 +1,69 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Theming sample page
+// --------------------------------------------------
+// Basic styles for 
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.Header {
+  // max-width: 640px;
+  // margin: 0 auto;
+  // text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  padding-bottom: 0;
+
+  .ms-Pivot {
+    white-space: normal;
+    overflow: visible;
+    height: auto;
+  }
+
+  .ms-Pivot-link {
+    margin-bottom: 2px;
+  }
+}
+
+.Container {
+  max-width: 320px;
+  box-sizing: border-box;
+  padding: 20px;
+  // margin: 0 auto;
+  // border: 1px solid #c8c8c8;
+}
+
+.ColorSquares {
+  margin-top: 20px;
+
+  &.ColorSquares--backgrounds {
+    margin: 20px -8px 0;
+
+    .ColorSquare {
+      color: #fff;
+      border-color: transparent;
+    }    
+  }
+
+  &.ColorSquares--borders  {
+    .ColorSquare {
+      margin-bottom: 2px;
+    }
+  }
+
+}
+
+.ColorSquare {
+  // float: left;
+  // width: 100px;
+  // height: 100px;
+  padding: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}

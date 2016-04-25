@@ -14,62 +14,21 @@
   <link rel="stylesheet" type="text/css" href="../../css/fabric.css">
   <link rel="stylesheet" type="text/css" href="../../css/fabric.components.css">
 
+  <!-- Page styles -->
+  <link rel="stylesheet" type="text/css" href="./css/Theming.css">
+
   <!-- Default theme CSS -->
   <link id="theme-style" rel="stylesheet" type="text/css" href="../../css/colorful.css">
-
-  <style>
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .Header {
-    max-width: 640px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .Container {
-    max-width: 480px;
-    box-sizing: border-box;
-    padding: 20px;
-    /*border: 1px solid #c8c8c8;*/
-    margin: 0 auto;
-  }
-
-  .ColorSquares {
-    margin-top: 20px;
-  }
-
-  .ColorSquares.ColorSquares--backgrounds .ColorSquare {
-    color: #fff;
-    border-color: transparent;
-  }
-  
-  .ColorSquares.ColorSquares--borders .ColorSquare {
-  }
-
-  .ColorSquare {
-    /*float: left;*/
-    /*width: 100px;*/
-    /*height: 100px;*/
-    padding: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-  }
-  </style>
 </head>
 <body>
   <header class="Header">
+    <h1 class="ms-font-xxl">Theming Samples</h1>
+
     <ul class="ms-Pivot ms-Pivot--tabs">
       <li class="ms-Pivot-link is-selected Theme-none">No theme</li>
-      <li class="ms-Pivot-link Theme-white">White</li>
-      <li class="ms-Pivot-link Theme-black">Black</li>
-      <li class="ms-Pivot-link Theme-darkGrey">Dark Grey</li>
-      <li class="ms-Pivot-link Theme-colorfulWord">Colorful (Word)</li>
-      <li class="ms-Pivot-link Theme-colorfulExcel">Colorful (Excel)</li>
+      <li class="ms-Pivot-link Theme-whiteWord">White/Colorful (Word)</li>
+      <li class="ms-Pivot-link Theme-whiteExcel">White/Colorful (Excel)</li>
+      <li class="ms-Pivot-link Theme-black">Black/Dark Grey</li>
     </ul>
   </header>
 
@@ -79,8 +38,8 @@
     <p class="ms-font-m">
       Body Text Segoe UI Regular 14px. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet.
     </p>
-  
-    <h3 class="ms-font-l">Subtitle Segoe UI Semilight 17px</h3>
+
+    <h3 class="ms-font-l">Components</h3>
 
     <div class="ComponentSamples">
       <a href="#" class="ms-Link">Link 14px</a>
@@ -101,22 +60,60 @@
         </button>
       </div>
     </div>
-  
-    <h2 class="ms-font-xl">Backgrounds</h2>
 
-    <div class="ColorSquares ColorSquares--backgrounds ms-u-clearfix">
-      <div class="ColorSquare ms-bgColor-themeDarker ms-font-s">themeDarker</div>
-      <div class="ColorSquare ms-bgColor-themeDark ms-font-s">themeDark</div>
-      <div class="ColorSquare ms-bgColor-themeDarkAlt ms-font-s">themeDarkAlt</div>
-      <div class="ColorSquare ms-bgColor-themePrimary ms-font-s">themePrimary</div>
-      <div class="ColorSquare ms-bgColor-themeSecondary ms-font-s">themeSecondary</div>
-      <div class="ColorSquare ms-bgColor-themeTertiary ms-font-s">themeTertiary</div>
-      <div class="ColorSquare ms-bgColor-themeLight ms-font-s">themeLight</div>
-      <div class="ColorSquare ms-bgColor-themeLighter ms-font-s">themeLighter</div>
-      <div class="ColorSquare ms-bgColor-themeLighterAlt ms-font-s">themeLighterAlt</div>
-    </div>  
+    <div class="ColorSquares ColorSquares--backgrounds ms-Grid">
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-font-m"><h3 class="ms-font-l">Text</h3></div>
+        <div class="ms-Grid-col ms-u-sm6 ms-font-s"><h3 class="ms-font-l">Backgrounds</h3></div>
+      </div>
 
-    <h2 class="ms-font-xl">Borders</h2>
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeDarker ms-font-m">ThemeDarker</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeDarker ms-font-m">ThemeDarker</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeDark ms-font-m">ThemeDark</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeDark ms-font-m">ThemeDark</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeDarkAlt ms-font-m">ThemeDarkAlt</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeDarkAlt ms-font-m">ThemeDarkAlt</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themePrimary ms-font-m">ThemePrimary</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themePrimary ms-font-m">ThemePrimary</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeSecondary ms-font-m">ThemeSecondary</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeSecondary ms-font-m">ThemeSecondary</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeTertiary ms-font-m">ThemeTertiary</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeTertiary ms-font-m">ThemeTertiary</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeLight ms-font-m">ThemeLight</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeLight ms-font-m">ThemeLight</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeLighter ms-font-m">ThemeLighter</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeLighter ms-font-m">ThemeLighter</div>
+      </div>
+
+      <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-fontColor-themeLighterAlt ms-font-m">ThemeLighterAlt</div>
+        <div class="ms-Grid-col ms-u-sm6 ColorSquare ms-bgColor-themeLighterAlt ms-font-m">ThemeLighterAlt</div>
+      </div>
+    </div>
+
+    <h3 class="ms-font-l">Borders</h3>
 
     <div class="ColorSquares ColorSquares--borders ms-u-clearfix">
       <div class="ColorSquare ms-borderColor-themeDarkAlt--hover ms-font-s">themeDarker</div>
@@ -129,9 +126,8 @@
       <div class="ColorSquare ms-borderColor-themeTertiary--hover ms-font-s">themeLighter</div>
       <div class="ColorSquare ms-borderColor-themeLight--hover ms-font-s">themeLighterAlt</div>
     </div>
-
   </main>
-  <!-- Fabric jQuery plugin for DatePicker component -->
+  <!-- Fabric jQuery plugin for Pivot component -->
   <script src="../../components/Pivot/Jquery.Pivot.js"></script>
   <script>
     $(document).ready(function() {
@@ -150,25 +146,18 @@
           themeCss.attr('href', urlPrefix + 'colorful' + urlSuffix);
         });
 
-        $('.Theme-white').on('click', function() {
-          themeCss.attr('href', urlPrefix + 'white' + urlSuffix);
+        $('.Theme-whiteWord').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'whitecolorful-word' + urlSuffix);
+        });
+
+        $('.Theme-whiteExcel').on('click', function() {
+          themeCss.attr('href', urlPrefix + 'whitecolorful-excel' + urlSuffix);
         });
 
         $('.Theme-black').on('click', function() {
           themeCss.attr('href', urlPrefix + 'black' + urlSuffix);
         });
 
-        $('.Theme-darkGrey').on('click', function() {
-          themeCss.attr('href', urlPrefix + 'darkgrey' + urlSuffix);
-        });
-
-        $('.Theme-colorfulWord').on('click', function() {
-          themeCss.attr('href', urlPrefix + 'colorful-word' + urlSuffix);
-        });
-
-        $('.Theme-colorfulExcel').on('click', function() {
-          themeCss.attr('href', urlPrefix + 'colorful-excel' + urlSuffix);
-        });
 
     });
   </script>

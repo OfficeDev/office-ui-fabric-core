@@ -1,0 +1,22 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// White theme with Word accents
+
+
+@import "../sass/Fabric.Color.Variables";
+
+$ms-color-themePrimary:    #2A5699;
+$ms-color-themeDarkAlt:    darken($ms-color-themePrimary, 5);
+$ms-color-themeDark:       darken($ms-color-themePrimary, 15);
+$ms-color-themeDarker:     darken($ms-color-themePrimary, 25);
+
+$ms-color-themeSecondary:  lighten($ms-color-themePrimary, 5);
+$ms-color-themeTertiary:   lighten($ms-color-themePrimary, 15);
+$ms-color-themeLight:      lighten($ms-color-themePrimary, 25);
+$ms-color-themeLighter:    lighten($ms-color-themePrimary, 35);
+$ms-color-themeLighterAlt: lighten($ms-color-themePrimary, 45);
+
+@import "./ThemeBase";

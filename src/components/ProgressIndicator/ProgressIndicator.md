@@ -1,5 +1,5 @@
 # Progress Indicator
-Displays the progress of an operation when the percentage complete is known. Unable to determine how much of the operation is complete? Use a Spinner instead.
+Displays the progress of an operation when the percentage complete can be determined. Unable to determine how much of the operation is complete? Use a Spinner instead.
 
 ## Variants
 

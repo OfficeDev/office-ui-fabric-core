@@ -1,5 +1,5 @@
 # Dialog
-Displays content that temporarily blocks interactions with the application.
+Displays content that temporarily blocks interactions with the application. It is primarily used for confirmation tasks, light-weight creation or edit tasks, and simple management tasks.
 
 ## Variants
 

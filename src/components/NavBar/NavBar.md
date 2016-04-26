@@ -1,5 +1,5 @@
 # Nav Bar
-Provides a means of navigating to different areas with an application.
+Provides a means of navigating to different areas within an application. On small screens, the navigation items are placed inside a hamburger menu.
 
 ## Variants
 

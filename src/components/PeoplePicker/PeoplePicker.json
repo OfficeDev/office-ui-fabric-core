@@ -7,7 +7,8 @@
   "dependencies": [
     "Label",
     "Persona",
-    "PersonaCard"
+    "PersonaCard",
+    "Spinner"
   ],
   "wrapBranches": true,
   "fileOrder": [

@@ -17,7 +17,7 @@ Includes buttons to take action.
 @@include('Callout.ActionText.html')
 
 ### OOBE (Out Of the Box Experience)
-Draws attention to one aspect of the application during a tour.
+Draws attention to one aspect of the application during a product tour.
 
 @@include('Callout.Oobe.html')
 

@@ -1,5 +1,5 @@
 # Facepile
-Displays several people, with the option to add additional people or view the details of a person.
+Displays several people with the option to add additional people or view the details of a person.
 
 ## Variants
 

@@ -1,5 +1,5 @@
 # Panel
-Presents content by sliding over the rest of the application, which is covered by a partially-transparent overlay.
+Presents content by sliding over the rest of the application, which is covered by a partially-transparent overlay. Best used for experiences that do not require explicit context for heavy-weight creation/edit/management tasks such as settings, multi-field forms, and permissions. For containers used for complex tasks that requires context, use a separate Pane alongside the existing experience such as a List/Details layout.
 
 ## Variants
 

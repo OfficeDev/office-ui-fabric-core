@@ -4,7 +4,7 @@ Allows selection from one or more options.
 ## Variants
 
 ### Checkbox
-Used to indicate a simple yes or no choice.
+Used to indicate a simple yes or no choice, typically as part of a form.
 
 @@include('ChoiceField.Checkbox.html')
 

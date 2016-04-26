@@ -1,5 +1,5 @@
 # Label
-Used to label form elements, such as TextField and Dropdown.
+Used to label form elements such as TextField and Dropdown.
 
 ## Variants
 

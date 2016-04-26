@@ -1,5 +1,5 @@
 # Text Field
-Allows for the input of text. Can be a single line or multiple lines.
+Allows for the input of text. Can be a single line or multiple lines. Typically used to accept user input within a form.
 
 ## Variants
 

@@ -81,7 +81,7 @@ State | Applied to | Result
 4. Verify that the component is working the same as in the sample above.
 
 ## Dependencies
-This component has no dependencies on other components.
+This component has no dependencies on other components. It does, however, require [pickadate.js](http://amsul.ca/pickadate.js/) which is included in `jquery.fabric.min.js`. 
 
 ## Accessibility
 More details will be added here.

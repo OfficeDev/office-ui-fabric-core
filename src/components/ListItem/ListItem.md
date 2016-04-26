@@ -1,5 +1,5 @@
 # List Item
-Suitable for presenting a summary of an item, with associated actions. Most often used within a List component.
+Suitable for presenting a summary of an item with associated actions. Most often used within a List component. It was designed to represent an email message on desktop computers and is not currently touch friendly.
 
 ## Variants
 

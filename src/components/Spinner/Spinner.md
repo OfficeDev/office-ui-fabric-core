@@ -1,5 +1,5 @@
 # Spinner
-Displays the progress of an operation when the percentage complete is unknown. Do you know how much of the operation is complete? Use a ProgressIndicator instead.
+Displays the progress of an operation when the percentage complete can not be determined. Do you know how much of the operation is complete? Use a ProgressIndicator instead.
 
 ## Variants
 

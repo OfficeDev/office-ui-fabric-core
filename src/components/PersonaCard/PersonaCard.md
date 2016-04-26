@@ -1,5 +1,5 @@
 # Persona Card
-Includes a Persona component with contact options.
+The visualization of details of an individual including Skype contact details, email, location information, and location within the hierarchy of an organization. Within Office 365, PersonaCards often appear when a user hovers, taps, or clicks on a Persona.
 
 ## Variants
 
@@ -34,4 +34,4 @@ Includes a Persona component with contact options.
 5. Replace the sample HTML content with your content.
 
 ## Dependencies
-This component uses a Persona component to present the person.
+This component uses a Persona component to present the person, an OrgChart to present the persona's position within the organization, and a Link for navigation.

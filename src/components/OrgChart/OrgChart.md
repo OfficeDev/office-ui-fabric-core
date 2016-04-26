@@ -1,5 +1,5 @@
 # Org Chart
-Displays multiple Persona components in groups with headers.
+Displays multiple Persona components in groups with headers in order to show the hierarchy of an organization or team.
 
 ## Variants
 
@@ -18,6 +18,6 @@ Displays multiple Persona components in groups with headers.
 3. Replace the Persona components with your own.
 
 ## Dependencies
-This component has dependencies on ContextualMenu and Overlay.
+This component has a dependenciy on the Persona component.
 
 

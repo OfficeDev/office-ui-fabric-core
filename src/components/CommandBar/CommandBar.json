@@ -19,7 +19,7 @@
     "ModalHost"
   ],
   "props": {
-    "searchBox": {
+    "transientComponent": {
       "component": "SearchBox",
       "props":  {
         "label": "Search",
@@ -141,22 +141,13 @@
     ]
   },
   "propsDropdown": {
-    "searchBox": {
-      "component": "SearchBox",
+    "transientComponent": {
+      "component": "CommandButton",
       "props":  {
-        "label": "Search",
-        "icon": "search",
-        "defaultValue": "",
-        "modifier": "commandBar",
-        "clearButton": {
-          "component": "CommandButton",
-          "props": {
-            "icon": "x",
-            "modifier": "noLabel",
-            "tag": "button",
-            "customClasses": "ms-SearchBox-close"
-          }
-        }
+        "icon": "menu",
+        "modifier": "actionButton",
+        "tag": "button",
+        "iconColor": "themePrimary"
       }
     },
     "overflow": {
@@ -205,12 +196,21 @@
     },
     "commands": [
       {
-        "component": "CommandButton",
+        "component": "SearchBox",
         "props":  {
-          "label": "Command",
-          "icon": "circleFill",
-          "tag": "button",
-          "iconColor": "themePrimary"
+          "label": "Search",
+          "icon": "search",
+          "defaultValue": "",
+          "modifier": "commandBar",
+          "clearButton": {
+            "component": "CommandButton",
+            "props": {
+              "icon": "x",
+              "modifier": "noLabel",
+              "tag": "button",
+              "customClasses": "ms-SearchBox-close"
+            }
+          }
         }
       },
       {

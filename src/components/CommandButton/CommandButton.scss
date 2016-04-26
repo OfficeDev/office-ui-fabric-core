@@ -31,8 +31,6 @@ $CommandButton-height: 40px;
         color: $ms-color-neutralTertiary;
       }
     }
-    
-   
 	}
   
   .ms-ModalHost {
@@ -176,5 +174,24 @@ $CommandButton-height: 40px;
 .ms-CommandButton.ms-CommandButton--inline {
   .ms-CommandButton-button {
     background: none;
+  }
+}
+
+//= Modifier: Inline modifier
+//
+.ms-CommandButton.ms-CommandButton--actionButton {
+  .ms-CommandButton-button {
+    width: 50px;
+    height: $CommandButton-height;
+  }
+  
+  .ms-CommandButton-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    padding-right: 0;
   }
 }

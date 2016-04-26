@@ -160,8 +160,8 @@ var ComponentSamplesTasks = [
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
     'ComponentJS',
-    'ComponentSamples-copyIgnoredFiles'
-    // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
+    'ComponentSamples-copyIgnoredFiles',
+    'ComponentSamples-styleHinting'
 ];
 
 //Build Fabric Component Samples

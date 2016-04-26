@@ -16,9 +16,10 @@
     "CommandButton.NoLabelSplit.html",
     "CommandButton.Dropdown.html",
     "CommandButton.Split.html",
-    "CommandButton.Inline.html"
+    "CommandButton.Inline.html",
+    "CommandButton.ActionButton.html"
   ],
-  "props": {
+  "props": { 
     "label": "Command",
     "icon": "circleFill",
     "tag": "button",
@@ -155,5 +156,11 @@
     "tag": "button",
     "iconColor": "themePrimary",
     "disabled": true
+  },
+  "propsActionButton": {
+    "icon": "circleFill",
+    "modifier": "actionButton",
+    "tag": "button",
+    "iconColor": "themePrimary"
   }
 }

@@ -7,8 +7,8 @@
     {{/each}}
   </div>
   <div class="ms-CommandBar-mainArea">
-    {{#if props.searchBox}}
-      {{renderPartial props.searchBox.component props.searchBox.props}}
+    {{#if props.transientComponent}}
+      {{renderPartial props.transientComponent.component props.transientComponent.props}}
     {{/if}}
     {{#each props.commands}}
       {{renderPartial component props}}

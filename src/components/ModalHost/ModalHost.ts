@@ -30,20 +30,22 @@ namespace fabric {
     private _direction;
     private _container;
     private _targetElement;
-
+    
     constructor(container: HTMLElement, direction: string, targetElement: Element) {
+      this._resizeAction = this._resizeAction.bind(this);
+      this._disMissAction = this._disMissAction.bind(this);
+      this._direction = direction;
+      this._container = container;
       this._targetElement = targetElement;
       this._saveDOMRefs(container);
       this._cloneModal();
       this._openModal();
-      this. _setResizeDisposal();
-      this._direction = direction;
-      this._container = container;
+      this._setResizeDisposal();
     }
 
     public disposeModal(): void {
-      window.removeEventListener("resize",  (e) => { this._resizeAction(); }, false);
-      document.removeEventListener("click", (e) => { this._disMissAction(e) }, false);
+      window.removeEventListener("resize", this._resizeAction, false);
+      document.removeEventListener("click", this._disMissAction, true);
       this._modalClone.parentNode.removeChild(this._modalClone);
     }
 
@@ -64,33 +66,33 @@ namespace fabric {
         case "left":
           // Try the right side
           _posOk = this._positionOk(
-            this._tryPosModalLeft,
-            this._tryPosModalRight,
-            this._tryPosModalBottom,
-            this._tryPosModalTop
+            this._tryPosModalLeft.bind(this),
+            this._tryPosModalRight.bind(this),
+            this._tryPosModalBottom.bind(this),
+            this._tryPosModalTop.bind(this)
           );
           this._setPosition(_posOk);
           break;
         case "right":
           _posOk = this._positionOk(
-            this._tryPosModalRight,
-            this._tryPosModalLeft,
-            this._tryPosModalBottom,
-            this._tryPosModalTop
+            this._tryPosModalRight.bind(this),
+            this._tryPosModalLeft.bind(this),
+            this._tryPosModalBottom.bind(this),
+            this._tryPosModalTop.bind(this)
           );
           this._setPosition(_posOk);
           break;
         case "top":
           _posOk = this._positionOk(
-            this._tryPosModalTop,
-            this._tryPosModalBottom
+            this._tryPosModalTop.bind(this),
+            this._tryPosModalBottom.bind(this)
           );
           this._setPosition(_posOk);
         break;
         case "bottom":
           _posOk = this._positionOk(
-            this._tryPosModalBottom,
-            this._tryPosModalTop
+            this._tryPosModalBottom.bind(this),
+            this._tryPosModalTop.bind(this)
           );
           this._setPosition(_posOk);
         break;
@@ -258,7 +260,7 @@ namespace fabric {
     }
 
     private _setDismissClick() {
-      document.addEventListener("click", (e) => { this._disMissAction(e); }, false);
+      document.addEventListener("click", this._disMissAction, true);
     }
 
     private _resizeAction() {
@@ -266,7 +268,7 @@ namespace fabric {
     }
 
     private _setResizeDisposal() {
-      window.addEventListener("resize", (e) => { this._resizeAction(); }, false);
+      window.addEventListener("resize", this._resizeAction, false);
     }
   }
 }

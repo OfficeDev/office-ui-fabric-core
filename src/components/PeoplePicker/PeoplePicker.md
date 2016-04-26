@@ -50,4 +50,4 @@ If the network is unavailable, you can present an error message in the search mo
 5. Replace the sample HTML content with your content.
 
 ## Dependencies
-This component uses Persona and PersonaCard to display people and Label for the Members List variant.
+This component uses Persona and PersonaCard to display people and Label for the Members List variant. It also uses a Spinner when searching for results.

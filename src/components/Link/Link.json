@@ -4,17 +4,10 @@
   "description": "A component containing styles for links including two variants.",
   "template": "Link.html",
   "class": "ms-Link",
-  "data": {
-    "linkText": "Example Link",
-    "hasHref": false,
+  "props": {
+    "label": "Example Link",
     "href": "",
     "title": "",
     "tabIndex": ""
-  },
-  "branches": [
-    {
-      "name": "Default",
-      "default": true
-    }
-  ]
+  }
 }

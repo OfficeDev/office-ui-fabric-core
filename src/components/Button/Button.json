@@ -31,7 +31,6 @@
   },
   "propsPrimary": {
     "label": "Create Account",
-    "icon": "circlePlus",
     "modifier": "primary",
     "tag": "button"
   }

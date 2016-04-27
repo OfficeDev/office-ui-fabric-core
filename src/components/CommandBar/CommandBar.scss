@@ -6,31 +6,9 @@
 // Command Bar styles
 
 $CommandBar-height: 40px;
-$CommandBar-mobileHeight: 48px;
 $CommandBar-iconSize: 18px;
-$CommandBar-smallLeft: 44px;
-$CommandBar-largeLeft: 48px;
-$CommandBar-xLargeLeft: 232px;
 $CommandBar-sideAreaWidthsm: 128px;
-$CommandBar-sideAreaWidthlg: 260px;
-$CommandBar-sideAreaWidthxlg: 345px;
-
 $CommandBarItem-height: $CommandBar-height;
-$CommandBarItem-marginTop: 13px;
-$CommandBarItem-textHeight: 16px;
-$CommandBarItem-iconWidth: 16px;
-$CommandBarItem-iconLabelMargin: 8px;
-$CommandBarItem-flippedLineHeight: 32px;
-
-
-$SearchBox-height: 40px;
-$SearchBox-widthLgCollapsed: 50px;
-$SearchBox-widthMdDownCollapsed: 36px;
-$SearchBox-widthXLarge: 208px;
-$SearchBox-iconSize: 17px;
-$SearchBox-sidePadding: 8px; // padding in input on left and right sides without icons
-$SearchBox-smallWidth: 36px;  
-$SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePadding * 2);
 
 @mixin highContrastBorder($color) {
     border-left: 1px solid $color;
@@ -132,4 +110,8 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   @media only screen and (min-width: $ms-screen-xl-min) {
     padding-right: 16px;
   }
+}
+
+.ms-CommandBar.ms-CommandBar--navBar {
+  background-color: $ms-color-neutralLighter;
 }

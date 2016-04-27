@@ -17,7 +17,8 @@
     "CommandButton.Dropdown.html",
     "CommandButton.Split.html",
     "CommandButton.Inline.html",
-    "CommandButton.ActionButton.html"
+    "CommandButton.ActionButton.html",
+    "CommandButton.TextOnly.html"
   ],
   "props": { 
     "label": "Command",
@@ -162,5 +163,10 @@
     "modifier": "actionButton",
     "tag": "button",
     "iconColor": "themePrimary"
+  },
+  "propsTextOnly": {
+    "modifier": "TextOnly",
+    "label": "Command",
+    "tag": "button"
   }
 }

@@ -327,5 +327,148 @@
         }
       }
     ]
+  },
+  "propsNavBar": {
+    "modifier": "navBar",
+    "transientComponent": {
+      "component": "SearchBox",
+      "props":  {
+        "label": "Search",
+        "icon": "search",
+        "defaultValue": "",
+        "modifier": "commandBar",
+        "clearButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "x",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-close"
+          }
+        }
+      }
+    },
+    "overflow": {
+      "component": "CommandButton",
+      "props":  {
+        "icon": "ellipsis",
+        "customClasses": "ms-CommandBar-overflowButton",
+        "tag": "button",
+        "modifier": "noLabel",
+        "dropdown": {
+          "component": "ContextualMenu",
+          "props":  {
+            "state": "is-opened",
+            "modifier": "hasIcons",
+            "items": [
+              {
+                "title": "Folder",
+                "state": "",
+                "icon": "folder"
+              },
+              {
+                "modifier": "divider",
+                "title": ""
+              },
+              {
+                "title": "Plain Text Document",
+                "icon": "document"
+              },
+              {
+                "title": "A Dog",
+                "icon": "dogAlt"
+              },
+              {
+                "title": "The Sun",
+                "state": "",
+                "icon": "sun"
+              },
+              {
+                "title": "Money",
+                "icon": "money"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "commands": [
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Home",
+          "tag": "button"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Channels",
+          "icon": "circleFill",
+          "tag": "button",
+          "dropdownIcon": "chevronDown",
+          "iconColor": "themePrimary",
+          "dropdown": {
+            "component": "ContextualMenu",
+            "props":  {
+              "state": "is-opened",
+              "modifier": "hasIcons",
+              "items": [
+                {
+                  "title": "Folder",
+                  "state": "",
+                  "icon": "folder"
+                },
+                {
+                  "modifier": "divider",
+                  "title": ""
+                },
+                {
+                  "title": "Plain Text Document",
+                  "icon": "document"
+                },
+                {
+                  "title": "A Dog",
+                  "icon": "dogAlt"
+                },
+                {
+                  "title": "The Sun",
+                  "state": "",
+                  "icon": "sun"
+                },
+                {
+                  "title": "Money",
+                  "icon": "money"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "My Videos",
+          "tag": "button"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "More",
+          "tag": "button"
+        }
+      }
+    ],
+    "sideCommands": [
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Upload",
+          "icon": "upload",
+          "tag": "button"
+        }
+      }
+    ]
   }
 }

@@ -56,13 +56,14 @@ $CommandButton-height: 40px;
   position: absolute;
   z-index: 10;
   content: '';
+  outline: none;
 }
 
 @mixin ms-CommandBarButton-buttonBase {
   @include ms-font-m;
 	@include ms-u-normalize;
-	background-color: $ms-color-themeLighterAlt;
-	border: 1px solid $ms-color-themeLighterAlt;
+	// background-color: $ms-color-themeLighterAlt;
+	// border: 1px solid $ms-color-themeLighterAlt;
 	cursor: pointer;
 	display: inline-block;
 	height: $CommandButton-height;
@@ -71,6 +72,7 @@ $CommandButton-height: 40px;
   padding: 0 8px;
   position: relative;
   vertical-align: top;
+  background: transparent;
   
   &:hover {
     background-color: $ms-color-themeLight;
@@ -150,6 +152,7 @@ $CommandButton-height: 40px;
   @include ms-font-l;
   margin-left: -4px;
   width: 21px;
+  border: 0;
   
   .ms-Icon {
     border-left: 1px solid $ms-color-neutralTertiaryAlt;
@@ -194,4 +197,10 @@ $CommandButton-height: 40px;
     height: 16px;
     padding-right: 0;
   }
+}
+
+//= Modifier: Action Button modifier
+//
+.ms-CommandButton.ms-CommandButton--textOnly {
+    
 }

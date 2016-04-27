@@ -191,8 +191,12 @@ namespace fabric {
       for (let i = 0; i < items.length; i++) {
         item = items[i];
         label = item.querySelector(COMMAND_BUTTON_LABEL).textContent;
-        iconClasses = item.querySelector(ICON).className;
-        splitClasses = iconClasses.split(" ");
+        let icon = item.querySelector(ICON);
+        
+        if(icon) {
+           iconClasses = icon.className;
+           splitClasses = iconClasses.split(" ");
+        }
 
         for (let o = 0; o < splitClasses.length; o++) {
           if (splitClasses[o].indexOf(ICON.replace(".", "") + "--") > -1) {

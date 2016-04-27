@@ -33,7 +33,6 @@ $CommandBarItem-height: $CommandBar-height;
   
   //== CommandBar -> ms-Button specific changes
   //
-  
   .ms-Button {
    height: 100%;
 
@@ -47,7 +46,6 @@ $CommandBarItem-height: $CommandBar-height;
       display: none;
     }
   }
-  
   
   .ms-SearchBox,
   .ms-SearchBox-field,
@@ -69,6 +67,11 @@ $CommandBarItem-height: $CommandBar-height;
     right: 0;
     z-index: $ms-zIndex-front;
   }
+  
+  .ms-CommandButton {
+    
+  }
+ 
   
   // Search is collapsed unless ativated and its only
   // collapsed < L break points

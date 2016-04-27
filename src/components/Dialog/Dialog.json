@@ -26,7 +26,7 @@
     "modifier": "sample",
     "closeIcon": "x",
     "title": "All emails together",
-    "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
+    "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
         "component": "ChoiceField",
@@ -75,7 +75,7 @@
     "modifier": "blocking",
     "closeIcon": "x",
     "title": "Unsaved changes",
-    "subtext": "Are you sure you want to discard these changes?.",
+    "subText": "Are you sure you want to discard these changes?.",
     "components": [
       {
         "component": "ChoiceField",
@@ -121,7 +121,7 @@
     ]
   },
   "propsClose": {
-    "modifier": "blocking",
+    "modifier": "close",
     "closeIcon": "x",
     "title": "All emails together",
     "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
@@ -170,10 +170,10 @@
     ]
   },
   "propslgHeader": {
-    "modifier": "blocking",
+    "modifier": "lgHeader",
     "closeIcon": "x",
     "title": "All emails together",
-    "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
+    "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "actions": [
       {
         "component": "Button",
@@ -193,7 +193,7 @@
     ]
   },
   "propsMultiline": {
-    "modifier": "Create account",
+    "modifier": "multiline",
     "title": "All emails together",
     "components": [
       {

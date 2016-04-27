@@ -330,6 +330,24 @@
   },
   "propsNavBar": {
     "modifier": "navBar",
+    "transientComponent": {
+      "component": "SearchBox",
+      "props":  {
+        "label": "Search photos",
+        "icon": "search",
+        "defaultValue": "",
+        "modifier": "commandBar",
+        "clearButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "x",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-close"
+          }
+        }
+      }
+    },
     "overflow": {
       "component": "CommandButton",
       "props":  {
@@ -378,16 +396,7 @@
       {
         "component": "CommandButton",
         "props":  {
-          "icon": "search",
-          "tag": "button",
-          "modifier": "actionButton"
-        }
-      },
-      {
-        "component": "CommandButton",
-        "props":  {
-          "label": "Home",
-          "icon": "home",
+          "label": "All Photos",
           "tag": "button",
           "dropdownIcon": "chevronDown",
           "iconColor": "themePrimary",
@@ -433,8 +442,7 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "Channels",
-          "icon": "listBullets",
+          "label": "Albums",
           "tag": "button",
           "modifier": "pivot",
           "iconColor": "themePrimary"
@@ -443,9 +451,26 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "Upload",
+          "label": "Tags",
           "tag": "button",
-          "icon": "upload",
+          "modifier": "pivot",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Places",
+          "tag": "button",
+          "modifier": "pivot",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "People",
+          "tag": "button",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -455,9 +480,56 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "Upload",
-          "icon": "upload",
-          "tag": "button"
+          "label": "Show photos from",
+          "icon": "gear",
+          "tag": "button",
+          "modifier": "dropdown",
+          "iconColor": "themePrimary",
+          "dropdownIcon": "chevronDown",
+          "dropdown": {
+            "component": "ContextualMenu",
+            "props":  {
+              "state": "is-opened",
+              "modifier": "hasIcons",
+              "items": [
+                {
+                  "title": "Folder",
+                  "state": "",
+                  "icon": "folder"
+                },
+                {
+                  "modifier": "divider",
+                  "title": ""
+                },
+                {
+                  "title": "Plain Text Document",
+                  "icon": "document"
+                },
+                {
+                  "title": "A Dog",
+                  "icon": "dogAlt"
+                },
+                {
+                  "title": "The Sun",
+                  "state": "",
+                  "icon": "sun"
+                },
+                {
+                  "title": "Money",
+                  "icon": "money"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "icon": "circleInfo",
+          "tag": "button",
+          "modifier": "noLabel",
+          "iconColor": "themePrimary"
         }
       }
     ]

@@ -68,11 +68,6 @@ $CommandBarItem-height: $CommandBar-height;
     z-index: $ms-zIndex-front;
   }
   
-  .ms-CommandButton {
-    
-  }
- 
-  
   // Search is collapsed unless ativated and its only
   // collapsed < L break points
   
@@ -113,8 +108,4 @@ $CommandBarItem-height: $CommandBar-height;
   @media only screen and (min-width: $ms-screen-xl-min) {
     padding-right: 16px;
   }
-}
-
-.ms-CommandBar.ms-CommandBar--navBar {
-  background-color: $ms-color-neutralLighter;
 }

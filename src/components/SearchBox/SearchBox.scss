@@ -21,6 +21,7 @@
   
   // State: Active searchbox
   &.is-active {
+    z-index: $ms-zIndex-front;
     .ms-SearchBox-label {
       display: none;
     }
@@ -92,13 +93,13 @@
   }
 }
 
-.ms-SearchBox-close {
+.ms-SearchBox-close.ms-CommandButton {
   position: absolute;
   right: 0;
   top: 0;
   height: 100%;
   display: none;
-  z-index: $ms-zIndex-front;
+  z-index: $ms-zIndex-front + 1;
   
   .ms-CommandButton-button {
     background-color: $ms-color-themePrimary;

@@ -201,20 +201,15 @@ $CommandButton-padding: 8px;
   }
 }
 
-//= Modifier: Action Button modifier
-//
-.ms-CommandButton.ms-CommandButton--textOnly {
-}
-
 @mixin ms-CommandButton-pivotLine {
   content: "";
   height: 2px;
   position: absolute;
-  left: $CommandButton-padding;
-  right: $CommandButton-padding;
+  left: 0;
+  right: 0;
   background-color: $ms-color-themePrimary;
   bottom: 0;
-  z-index: $ms-zIndex-front;
+  z-index: $ms-zIndex-middle;
 }
 
 //= Modifier: Pivot Button modifier
@@ -229,13 +224,12 @@ $CommandButton-padding: 8px;
     &::before {
       @include ms-CommandButton-pivotLine;
     }
-    .ms-CommandButton-button,
-    .ms-CommandButton-splitIcon {
-      background-color: transparent;
-      
-      .ms-CommandButton-label {
-        color: $ms-color-neutralDark;
-      }
-    }
 	}
+}
+
+.ms-CommandButton.ms-CommandButton--textOnly,
+.ms-CommandButton.ms-CommandButton--pivot {
+  .ms-CommandButton-label {
+    display: inline-block;
+  }
 }

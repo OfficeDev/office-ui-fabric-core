@@ -1,25 +1,23 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-{{#> ModalHost props=props.modalHostProps thisProps=props}}
-  <ul class="ms-ContextualMenu {{#if thisProps.state}} {{thisProps.state}}{{/if}} {{#if thisProps.modifier}}ms-ContextualMenu--{{thisProps.modifier}}{{/if}}">
-    {{#each thisProps.items}}
-      {{#if modifier}}
-        <li class="ms-ContextualMenu-item ms-ContextualMenu-item--{{modifier}}">{{title}}</li>
-      {{else}}
-        <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}}">
-          <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
-          {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
-        </li>
-        {{#if subMenuItems}}
-          <ul class="ms-ContextualMenu">
-            {{#each subMenuItems}}
-              <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}}">
-                <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
-                {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
-              </li>
-            {{/each}} 
-          </ul>  
-        {{/if}}
+<ul class="ms-ContextualMenu {{#if props.state}} {{props.state}}{{/if}} {{#if props.modifier}}ms-ContextualMenu--{{props.modifier}}{{/if}}">
+  {{#each props.items}}
+    {{#if modifier}}
+      <li class="ms-ContextualMenu-item ms-ContextualMenu-item--{{modifier}}">{{title}}</li>
+    {{else}}
+      <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}}">
+        <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
+        {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
+      </li>
+      {{#if subMenuItems}}
+        <ul class="ms-ContextualMenu">
+          {{#each subMenuItems}}
+            <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}}">
+              <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
+              {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
+            </li>
+          {{/each}} 
+        </ul>  
       {{/if}}
-    {{/each}}
-  </ul>
-{{/ModalHost}}
+    {{/if}}
+  {{/each}}
+</ul>

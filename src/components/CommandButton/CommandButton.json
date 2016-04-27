@@ -18,7 +18,8 @@
     "CommandButton.Split.html",
     "CommandButton.Inline.html",
     "CommandButton.ActionButton.html",
-    "CommandButton.TextOnly.html"
+    "CommandButton.TextOnly.html",
+    "CommandButton.Pivot.html"
   ],
   "props": { 
     "label": "Command",
@@ -168,5 +169,14 @@
     "modifier": "TextOnly",
     "label": "Command",
     "tag": "button"
+  },
+  "propsPivot": {
+    "label": "New",
+    "icon": "circleFill",
+    "tag": "button",
+    "dropdownIcon": "chevronDown",
+    "iconColor": "themePrimary",
+    "state": "is-active",
+    "modifier": "pivot"
   }
 }

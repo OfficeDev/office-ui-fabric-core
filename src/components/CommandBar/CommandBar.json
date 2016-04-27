@@ -330,24 +330,6 @@
   },
   "propsNavBar": {
     "modifier": "navBar",
-    "transientComponent": {
-      "component": "SearchBox",
-      "props":  {
-        "label": "Search",
-        "icon": "search",
-        "defaultValue": "",
-        "modifier": "commandBar",
-        "clearButton": {
-          "component": "CommandButton",
-          "props": {
-            "icon": "x",
-            "modifier": "noLabel",
-            "tag": "button",
-            "customClasses": "ms-SearchBox-close"
-          }
-        }
-      }
-    },
     "overflow": {
       "component": "CommandButton",
       "props":  {
@@ -396,18 +378,21 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "Home",
-          "tag": "button"
+          "icon": "search",
+          "tag": "button",
+          "modifier": "actionButton"
         }
       },
       {
         "component": "CommandButton",
         "props":  {
-          "label": "Channels",
-          "icon": "circleFill",
+          "label": "Home",
+          "icon": "home",
           "tag": "button",
           "dropdownIcon": "chevronDown",
           "iconColor": "themePrimary",
+          "modifier": "pivot",
+          "state": "is-active",
           "dropdown": {
             "component": "ContextualMenu",
             "props":  {
@@ -448,15 +433,21 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "My Videos",
-          "tag": "button"
+          "label": "Channels",
+          "icon": "listBullets",
+          "tag": "button",
+          "modifier": "pivot",
+          "iconColor": "themePrimary"
         }
       },
       {
         "component": "CommandButton",
         "props":  {
-          "label": "More",
-          "tag": "button"
+          "label": "Upload",
+          "tag": "button",
+          "icon": "upload",
+          "modifier": "pivot",
+          "iconColor": "themePrimary"
         }
       }
     ],

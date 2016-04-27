@@ -37,7 +37,10 @@
         "title": "Sports",
         "state": "is-disabled"
       }
-    ]
+    ],
+    "modalHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsCheckmarks":  {
     "state": "is-open",
@@ -71,7 +74,10 @@
         "title": "Sports",
         "state": "is-disabled"
       }
-    ]
+    ],
+    "modalHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsIcons":  {
     "state": "is-open",
@@ -109,7 +115,10 @@
         "title": "Archive",
         "state": "is-disabled"
       }
-    ]
+    ],
+    "modalHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsSubMenu":  {
     "state": "is-open",
@@ -156,7 +165,10 @@
         "title": "Sports",
         "state": "is-disabled"
       }
-    ]
+    ],
+    "modalHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsDividers":  {
     "state": "is-open",
@@ -220,7 +232,10 @@
         "title": "Verdana",
         "state": "is-disabled"
       }
-    ]
+    ],
+    "modalHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsMultiselect":  {
     "state": "is-open",
@@ -271,6 +286,9 @@
         "title": "Off",
         "state": ""
       }
-    ]
+    ],
+    "modalHostProps":  {
+      "state": "is-open"
+    }
   }
 }

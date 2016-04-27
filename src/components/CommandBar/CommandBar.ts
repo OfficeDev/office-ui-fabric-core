@@ -142,7 +142,29 @@ namespace fabric {
           break;
       }
     }
-
+    
+    private _createSearchInstance(): any {
+      if(this._elements.searchBox) {
+        return new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
+      } else {
+        return false;
+      }
+    }
+    
+    private _changeSearchState(state: string, action: string) {
+      if(this._elements.searchBox) {
+        switch (action) {
+          case "remove":
+            this._elements.searchBox.classList.remove(state);
+            break;
+          case "add":
+            this._elements.searchBox.classList.add(state);
+          default:
+           break;
+        } 
+      }
+    }
+    
     private _setElements() {
       this._elements = {
         mainArea: this._container.querySelector(CB_MAIN_AREA),
@@ -152,7 +174,7 @@ namespace fabric {
         searchBox:  this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
         searchBoxClose: this._container.querySelector(SEARCH_BOX_CLOSE)
       };
-      this.searchBoxInstance = new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
+      this.searchBoxInstance = this._createSearchInstance();
     }
 
     private _createItemCollection() {
@@ -295,16 +317,16 @@ namespace fabric {
     private _setUIState() {
       switch (this.breakpoint) {
         case "sm":
-          this._elements.searchBox.classList.add("is-collapsed");
-          this.searchBoxInstance = new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
+          this._changeSearchState("is-collapsed", "add");
+          this.searchBoxInstance = this._createSearchInstance();
           this._saveCommandWidths();
           this._processColapsedClasses("add");
           this._redrawMenu();
           this.redrawCommands();
           break;
         case "md":
-          this._elements.searchBox.classList.add("is-collapsed");
-          this.searchBoxInstance = new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
+          this._changeSearchState("is-collapsed", "add");
+          this.searchBoxInstance = this._createSearchInstance();
           this._saveCommandWidths();
           // Add collapsed classes to commands
           this._processColapsedClasses("add");
@@ -312,21 +334,21 @@ namespace fabric {
           this.redrawCommands();
           break;
         case "lg":
-          this._elements.searchBox.classList.add("is-collapsed");
-          this.searchBoxInstance = new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
+           this._changeSearchState("is-collapsed", "add");
+          this.searchBoxInstance = this._createSearchInstance();
           this._saveCommandWidths();
           this._processColapsedClasses("remove");
           this._redrawMenu();
           this.redrawCommands();
           break;
         case "xl":
-          this._elements.searchBox.classList.remove("is-collapsed");
+          this._changeSearchState("is-collapsed", "remove");
           this._processColapsedClasses("remove");
           this._redrawMenu();
           this.redrawCommands();
           break;
         default:
-          this._elements.searchBox.classList.remove("is-collapsed");
+          this._changeSearchState("is-collapsed", "remove");
           this._processColapsedClasses("remove");
           this._redrawMenu();
           this.redrawCommands();

@@ -94,10 +94,46 @@
       {
         "component": "CommandButton",
         "props":  {
-          "label": "Command",
+          "label": "New",
           "icon": "circleFill",
           "tag": "button",
-          "iconColor": "themePrimary"
+          "dropdownIcon": "chevronDown",
+          "iconColor": "themePrimary",
+          "dropdown": {
+            "component": "ContextualMenu",
+            "props":  {
+              "state": "is-opened",
+              "modifier": "hasIcons",
+              "items": [
+                {
+                  "title": "Folder",
+                  "state": "",
+                  "icon": "folder"
+                },
+                {
+                  "modifier": "divider",
+                  "title": ""
+                },
+                {
+                  "title": "Plain Text Document",
+                  "icon": "document"
+                },
+                {
+                  "title": "A Dog",
+                  "icon": "dogAlt"
+                },
+                {
+                  "title": "The Sun",
+                  "state": "",
+                  "icon": "sun"
+                },
+                {
+                  "title": "Money",
+                  "icon": "money"
+                }
+              ]
+            }
+          }
         }
       },
       {
@@ -196,39 +232,60 @@
     },
     "commands": [
       {
-        "component": "SearchBox",
+        "component": "CommandButton",
         "props":  {
-          "label": "Search",
+          "label": "Command",
           "icon": "search",
-          "defaultValue": "",
-          "modifier": "commandBar",
-          "clearButton": {
-            "component": "CommandButton",
-            "props": {
-              "icon": "x",
-              "modifier": "noLabel",
-              "tag": "button",
-              "customClasses": "ms-SearchBox-close"
+          "tag": "button",
+          "iconColor": "themePrimary",
+          "modifier": "noLabel"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Command",
+          "icon": "circleFill",
+          "tag": "button",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "label": "Reply",
+          "icon": "circleFill",
+          "splitIcon": "chevronDown",
+          "iconColor": "themePrimary",
+          "tag": "button",
+          "dropdown": {
+            "component": "ContextualMenu",
+            "props":  {
+              "state": "is-opened",
+              "items": [
+                {
+                  "title": "Reply",
+                  "state": ""
+                },
+                {
+                  "title": "Reply all",
+                  "state": ""
+                },
+                {
+                  "title": "Forward",
+                  "state": "is-selected"
+                },
+                {
+                  "title": "Flag",
+                  "state": ""
+                },
+                {
+                  "title": "Delete",
+                  "state": "is-disabled"
+                }
+              ]
             }
-          }
-        }
-      },
-      {
-        "component": "CommandButton",
-        "props":  {
-          "label": "Command",
-          "icon": "circleFill",
-          "tag": "button",
-          "iconColor": "themePrimary"
-        }
-      },
-      {
-        "component": "CommandButton",
-        "props":  {
-          "label": "Command",
-          "icon": "circleFill",
-          "tag": "button",
-          "iconColor": "themePrimary"
+          }  
         }
       },
       {
@@ -254,7 +311,16 @@
       {
         "component": "CommandButton",
         "props":  {
-          "icon": "circleFill",
+          "icon": "listBullets",
+          "tag": "button",
+          "modifier": "noLabel",
+          "iconColor": "themePrimary"
+        }
+      },
+      {
+        "component": "CommandButton",
+        "props":  {
+          "icon": "sortLines",
           "tag": "button",
           "modifier": "noLabel",
           "iconColor": "themePrimary"

@@ -30,23 +30,31 @@ gulp.task('ComponentJS-copyLib', function() {
 // Typescript tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('ComponentJS-typescript', function() {
-    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
-
-        // only process TS files that have changed since last compiled to /dist/Components
-        .pipe(Plugins.changed(Config.paths.distComponents, {extension: '.js'}))
+gulp.task('ComponentJS-lint', function (cb) {
+    return gulp.src(Config.paths.componentsPath + '/**/*.ts')
+        
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
         // tslint options set by tslint.json
         .pipe(Plugins.tslint())
-        .pipe(Plugins.tslint.report("verbose"))
+        .pipe(Plugins.tslint.report("verbose"));
+});
+
+gulp.task('ComponentJS-typescript', function() {
+    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
+        .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+            title: "Typescriptingz the file"
+        })))
+        // only process TS files that have changed since last compiled to /dist/Components
+        .pipe(Plugins.changed(Config.paths.distComponents, {extension: '.js'}))
+        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
         // Typescript project is set to give us both definitions and javascript
         .pipe(Plugins.tsc(Config.typescriptProject));
 
     return Plugins.mergeStream( [
 
-      // place .d.ts output in both the Samples folder and the Components folder
+      // place .d.ts outqput in both the Samples folder and the Components folder
       tscResult.dts.pipe(gulp.dest(Config.paths.distSamples + '/Components'))
                    .pipe(gulp.dest(Config.paths.distComponents))
                    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -90,7 +98,8 @@ gulp.task('ComponentJS-concatJS', ['ComponentJS-typescript'], function() {
 var ComponentJSTasks = [
     'ComponentJS-copyLib',
     'ComponentJS-typescript',
-    'ComponentJS-concatJS'
+    'ComponentJS-concatJS',
+    'ComponentJS-lint'
 ];
 
 //Build Fabric Component Samples

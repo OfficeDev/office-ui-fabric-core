@@ -49,6 +49,10 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     outline: none;
   }
   
+  .ms-CommandButton--actionButton {
+    border-right: 1px solid $ms-color-neutralLight;
+  }
+  
   //== CommandBar -> ms-Button specific changes
   //
   

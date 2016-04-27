@@ -4,6 +4,7 @@
  * ModalHost
  *
  * Hosts contextual menus and callouts
+ * NOTE: Position bottom only works if html, body is set to height 100%
  *
  */
 
@@ -202,10 +203,10 @@ namespace fabric {
 
     private _tryPosModalBottom(): boolean | string {
 
-      let teBottom = this._targetElement.getBoundingClientRect().bottom;
+      let teBottom = window.innerHeight - this._targetElement.getBoundingClientRect().bottom;
 
       if (teBottom < this._modalHeight) {
-        return true;
+        return false;
       } else {
         return "bottom";
       }

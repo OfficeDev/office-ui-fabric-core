@@ -109,13 +109,12 @@ gulp.task('ComponentSamples-build', function() {
        var srcFolderName = Config.paths.componentsPath + '/' + folderName;
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
+       hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.json');
        // Push to Handlebars config
        Config.handleBarsConfig.batch.push('./' + srcFolderName);
        
        if (hasFileChanged) {
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
-           
-           
            var filesArray = manifest.fileOrder;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
@@ -160,8 +159,8 @@ var ComponentSamplesTasks = [
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
     'ComponentJS',
-    'ComponentSamples-copyIgnoredFiles',
-    'ComponentSamples-styleHinting'
+    'ComponentSamples-copyIgnoredFiles'
+    // 'ComponentSamples-styleHinting'
 ];
 
 //Build Fabric Component Samples

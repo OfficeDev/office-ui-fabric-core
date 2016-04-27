@@ -22,46 +22,210 @@
     "ChoiceField",
     "Overlay"
   ],
-  "branches": [
-    {
-      "name": "Default",
-      "default": true,
-      "template": "Dialog.html",
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true
-        },
-        {
-          "name": "Close button",
-          "class": "ms-Dialog--close"
+  "props": {
+    "modifier": "sample",
+    "closeIcon": "x",
+    "title": "All emails together",
+    "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
+    "components": [
+      {
+        "component": "ChoiceField",
+        "props":  {
+          "label": "Option1",
+          "modifier": "",
+          "name": "checkboxa",
+          "id": "checkboxa",
+          "checked": false,
+          "disabled": false,
+          "type": "checkbox"
         }
-      ]
-    },
-    {
-      "name": "Multiline Button",
-      "class": "ms-Dialog--multiline",
-      "template": "Dialog.Multiline.html",
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true
-        },
-        {
-          "name": "Close button",
-          "class": "ms-Dialog--close"
+      },
+      {
+        "component": "ChoiceField",
+        "props":  {
+          "label": "Option2",
+          "modifier": "",
+          "name": "checkboxa",
+          "id": "checkboxa",
+          "checked": false,
+          "disabled": false,
+          "type": "checkbox"
         }
-      ]
-    },
-    {
-      "name": "Large Header",
-      "class": "ms-Dialog--lgHeader",
-      "template": "Dialog.LgHeader.html"
-    },
-    {
-      "name": "Blocking",
-      "class": "ms-Dialog--blocking",
-      "template": "Dialog.Blocking.html"
-    }
-  ]
+      }
+    ],
+    "actions": [
+      {
+        "component": "Button",
+        "props": {
+          "label": "Save",
+          "tag": "button",
+          "modifier": "primary"
+        }
+      },
+      {
+        "component": "Button",
+        "props": {
+          "label": "Cancel",
+          "tag": "button"
+        }
+      }
+    ]
+  },
+  "propsBlocking": {
+    "modifier": "blocking",
+    "closeIcon": "x",
+    "title": "Unsaved changes",
+    "subtext": "Are you sure you want to discard these changes?.",
+    "components": [
+      {
+        "component": "ChoiceField",
+        "props":  {
+          "label": "Option1",
+          "modifier": "",
+          "name": "checkboxa",
+          "id": "checkboxa",
+          "checked": false,
+          "disabled": false,
+          "type": "checkbox"
+        }
+      },
+      {
+        "component": "ChoiceField",
+        "props":  {
+          "label": "Option2",
+          "modifier": "",
+          "name": "checkboxa",
+          "id": "checkboxa",
+          "checked": false,
+          "disabled": false,
+          "type": "checkbox"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "component": "Button",
+        "props": {
+          "label": "Save",
+          "tag": "button",
+          "modifier": "primary"
+        }
+      },
+      {
+        "component": "Button",
+        "props": {
+          "label": "Cancel",
+          "tag": "button"
+        }
+      }
+    ]
+  },
+  "propsClose": {
+    "modifier": "blocking",
+    "closeIcon": "x",
+    "title": "All emails together",
+    "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
+    "components": [
+      {
+        "component": "ChoiceField",
+        "props":  {
+          "label": "Option1",
+          "modifier": "",
+          "name": "checkboxa",
+          "id": "checkboxa",
+          "checked": false,
+          "disabled": false,
+          "type": "checkbox"
+        }
+      },
+      {
+        "component": "ChoiceField",
+        "props":  {
+          "label": "Option2",
+          "modifier": "",
+          "name": "checkboxa",
+          "id": "checkboxa",
+          "checked": false,
+          "disabled": false,
+          "type": "checkbox"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "component": "Button",
+        "props": {
+          "label": "Save",
+          "tag": "button",
+          "modifier": "primary"
+        }
+      },
+      {
+        "component": "Button",
+        "props": {
+          "label": "Cancel",
+          "tag": "button"
+        }
+      }
+    ]
+  },
+  "propslgHeader": {
+    "modifier": "blocking",
+    "closeIcon": "x",
+    "title": "All emails together",
+    "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
+    "actions": [
+      {
+        "component": "Button",
+        "props": {
+          "label": "Save",
+          "tag": "button",
+          "modifier": "primary"
+        }
+      },
+      {
+        "component": "Button",
+        "props": {
+          "label": "Cancel",
+          "tag": "button"
+        }
+      }
+    ]
+  },
+  "propsMultiline": {
+    "modifier": "Create account",
+    "title": "All emails together",
+    "components": [
+      {
+        "component": "Button",
+        "props":  {
+          "label": "Create Account",
+          "description": "Description of this action this button takes",
+          "icon": "plus",
+          "modifier": "compound",
+          "tag": "button"
+        }
+      },
+       {
+        "component": "Button",
+        "props":  {
+          "label": "Create Account",
+          "description": "Description of this action this button takes",
+          "icon": "plus",
+          "modifier": "compound",
+          "tag": "button"
+        }
+      },
+       {
+        "component": "Button",
+        "props":  {
+          "label": "Create Account",
+          "description": "Description of this action this button takes",
+          "icon": "plus",
+          "modifier": "compound",
+          "tag": "button"
+        }
+      }
+    ]
+  }
 }

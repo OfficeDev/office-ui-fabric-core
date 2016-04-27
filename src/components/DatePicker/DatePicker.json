@@ -8,11 +8,6 @@
     "TextField",
     "Label",
     "Link"
-  ],
-  "branches": [
-    {
-      "name": "Default",
-      "default": true
-    }
   ]
+  
 }

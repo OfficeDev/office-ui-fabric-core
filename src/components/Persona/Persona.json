@@ -32,160 +32,307 @@
     "Persona.Presence.Square.Offline.html",
     "Persona.Initials.html"
   ],
-  "branches": [
-    {
-      "name": "Sizes",
-      "default": true,
-      "branches": [
-        {
-          "name": "Tiny/recipient",
-          "notes": "This one is usually used within a People Picker to represent a person in a minimal way.",
-          "class": "ms-Persona--tiny",
-          "branches": [
-            {
-              "name": "Editable",
-              "default": true
-            },
-            {
-              "name": "Read-only",
-              "class": "ms-Persona--readonly"
-            }
-          ]
-        },
-        {
-          "name": "Extra small",
-          "class": "ms-Persona--xs",
-          "branches": [
-            {
-              "name": "Regular",
-              "default": true
-            },
-            {
-              "name": "Dark text",
-              "class": "ms-Persona--darkText",
-              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
-            },
-            {
-              "name": "Selectable",
-              "class": "ms-Persona--selectable"
-            }
-          ]
-        },
-        {
-          "name": "Small",
-          "class": "ms-Persona--sm",
-          "notes": "This should be no smaller than...",
-          "branches": [
-            {
-              "name": "Regular",
-              "default": true
-            },
-            {
-              "name": "Dark text",
-              "class": "ms-Persona--darkText",
-              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
-            },
-            {
-              "name": "Selectable",
-              "class": "ms-Persona--selectable"
-            }
-          ]
-        },
-        {
-          "name": "Medium",
-          "default": true,
-          "branches": [
-            {
-              "name": "Regular",
-              "default": true
-            },
-            {
-              "name": "Dark text",
-              "class": "ms-Persona--darkText",
-              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
-            },
-            {
-              "name": "Selectable",
-              "class": "ms-Persona--selectable"
-            }
-          ]
-        },
-        {
-          "name": "Large",
-          "class": "ms-Persona--lg",
-          "branches": [
-            {
-              "name": "Regular",
-              "default": true
-            },
-            {
-              "name": "Dark text",
-              "class": "ms-Persona--darkText",
-              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
-            },
-            {
-              "name": "Selectable",
-              "class": "ms-Persona--selectable"
-            }
-          ]
-        },
-        {
-          "name": "Extra large",
-          "class": "ms-Persona--xl",
-          "branches": [
-            {
-              "name": "Regular",
-              "default": true
-            },
-            {
-              "name": "Dark text",
-              "class": "ms-Persona--darkText",
-              "notes": "Use this dark text variant when placing the component on a darker background color, such as on hover."
-            },
-            {
-              "name": "Selectable",
-              "class": "ms-Persona--selectable"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Presence",
-      "notes": "An extra large Persona is shown here to better see the presence indicator. The same options and appearance apply to all sizes.",
-      "class": "ms-Persona--xl",
-      "branches": [
-        {
-          "name": "Available",
-          "class": "ms-Persona--available",
-          "default": true
-        },
-        {
-          "name": "Away",
-          "class": "ms-Persona--away"
-        },
-        {
-          "name": "Blocked",
-          "class": "ms-Persona--blocked"
-        },
-        {
-          "name": "Busy",
-          "class": "ms-Persona--busy"
-        },
-        {
-          "name": "Do not disturb",
-          "class": "ms-Persona--dnd"
-        },
-        {
-          "name": "Offline",
-          "class": "ms-Persona--offline"
-        },
-        {
-          "name": "No presence",
-          "notes": "The presence indicator is not required.",
-          "template": "Persona.No-Presence.html"
-        }
-      ]
-    }
-  ]
+  "props": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant"
+  },
+  "propsExtraLarge": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "tertiaryText": "In a meeting",
+    "optionalText": "Available at 4:00pm",
+    "modifiers":  [
+      {
+        "name": "xl"
+      }
+    ]
+  },
+  "propsExtraSmall": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "xs"
+      }
+    ]
+  },
+  "propsSmall": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "sm"
+      }
+    ]
+  },
+  "propsSquare": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "square"
+      }
+    ]
+  },
+  "propsSquareExtraLarge": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "square"
+      },
+      {
+        "name": "xl"
+      }
+    ]
+  },
+  "propsSquareExtraSmall": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "square"
+      },
+      {
+        "name": "xs"
+      }
+    ]
+  },
+  "propsSquareLarge": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "square"
+      },
+      {
+        "name": "lg"
+      }
+    ]
+  },
+  "propsSquareSmall": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "square"
+      },
+      {
+        "name": "sm"
+      }
+    ]
+  },
+  "propsSquareTiny": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "square"
+      },
+      {
+        "name": "tiny"
+      }
+    ]
+  },
+  "propsTiny": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "modifiers":  [
+      {
+        "name": "tiny"
+      }
+    ]
+  },
+  "propsInitials": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "primaryText": "Alton Lafferty"
+  },
+  "propsPresenceAvailable": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "available"
+      }
+    ]
+  },
+  "propsPresenceAway": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "away"
+      }
+    ]
+  },
+  "propsPresenceBlocked": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "blocked"
+      }
+    ]
+  },
+  "propsPresenceBusy": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "blocked"
+      }
+    ]
+  },
+  "propsPresenceDnd": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "dnd"
+      }
+    ]
+  },
+  "propsPresenceOffline": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "offline"
+      }
+    ]
+  },
+  "propsPresenceSquareAvilable": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "offline"
+      },
+      {
+        "name": "square"
+      }
+    ]
+  },
+  "propsPresenceSquareAway": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "away"
+      },
+      {
+        "name": "square"
+      }
+    ]
+  },
+  "propsPresenceSquareBlocked": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "blocked"
+      },
+      {
+        "name": "square"
+      }
+    ]
+  },
+  "propsPresenceSquareBusy": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "busy"
+      },
+      {
+        "name": "square"
+      }
+    ]
+  },
+  "propsPresenceSquareOffline": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "offline"
+      },
+      {
+        "name": "square"
+      }
+    ]
+  },
+  "propsPresenceSquareDnd": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Accountant",
+    "modifiers":  [
+      {
+        "name": "dnd"
+      },
+      {
+        "name": "square"
+      }
+    ]
+  }
 }
+

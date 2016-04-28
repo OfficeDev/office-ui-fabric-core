@@ -1,0 +1,10 @@
+{
+  "name": "LayerHost",
+  "notes": "",
+  "description": "",
+  "template": "LayerHost.html",
+  "class": "ms-LayerHost",
+  "props":  {
+    "arrowPosition": "arrowLeft"
+  }
+}

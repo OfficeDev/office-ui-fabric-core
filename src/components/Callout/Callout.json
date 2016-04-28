@@ -8,7 +8,7 @@
     "Button",
     "Label",
     "Link",
-    "ModalHost",
+    "ContextualHost",
     "CommandButton"
   ],
   "fileOrder": [
@@ -34,7 +34,7 @@
         }
       }
     ],
-    "modalHostProps": {
+    "contextualHostProps": {
       "arrowPosition": "arrowLeft",
       "state": "is-open"
     }
@@ -65,7 +65,7 @@
         }
       }
     ],
-    "modalHostProps": {
+    "contextualHostProps": {
       "arrowPosition": "arrowLeft",
        "state": "is-open"
     }
@@ -86,7 +86,7 @@
         }
       }
     ],
-    "modalHostProps": {
+    "contextualHostProps": {
       "arrowPosition": "arrowLeft",
       "state": "is-open"
     }
@@ -113,7 +113,7 @@
         }
       }
     ],
-    "modalHostProps": {
+    "contextualHostProps": {
       "arrowPosition": "arrowLeft",
       "state": "is-open"
     }
@@ -133,7 +133,7 @@
         }
       }
     ],
-    "modalHostProps": {
+    "contextualHostProps": {
       "arrowPosition": "arrowLeft",
       "state": "is-open"
     }

@@ -16,7 +16,7 @@
     "Label",
     "SearchBox",
     "CommandButton",
-    "ModalHost"
+    "ContextualHost"
   ],
   "props": {
     "transientComponent": {

@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
- * ModalHost
+ * ContextualHost
  *
  * Hosts contextual menus and callouts
  * NOTE: Position bottom only works if html, body is set to height 100%
@@ -20,9 +20,9 @@ namespace fabric {
   const CONTEXT_STATE_CLASS = "is-open";
   const MODAL_STATE_POSITIONED = "is-positioned";
 
-  export class ModalHost {
+  export class ContextualHost {
 
-    private _modalHost;
+    private _contextualHost;
     private _modalClone;
     private _modalWidth;
     private _modalHeight;
@@ -228,11 +228,11 @@ namespace fabric {
     }
 
     private _cloneModal(): void {
-      this._modalClone = this._modalHost.cloneNode(true);
+      this._modalClone = this._contextualHost.cloneNode(true);
     }
 
     private _saveDOMRefs(context): void {
-      this._modalHost = context;
+      this._contextualHost = context;
     }
 
     private _saveModalSize(): void {

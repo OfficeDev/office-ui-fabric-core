@@ -7,7 +7,7 @@
   "wrapBranches": true,
   "dependencies": [
     "ContextualMenu",
-    "ModalHost"
+    "ContextualHost"
   ],
   "fileOrder": [
     "CommandButton.html",

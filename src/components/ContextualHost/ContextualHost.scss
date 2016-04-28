@@ -1,5 +1,5 @@
 
-.ms-ModalHost {
+.ms-ContextualHost {
   z-index: $ms-zIndex-front;
   margin: 16px auto;
   position: relative;
@@ -25,12 +25,12 @@
 }
 
 
-//= Modifier: Base styling for all ModalHost arrows
+//= Modifier: Base styling for all ContextualHost arrows
 //
-.ms-ModalHost.ms-ModalHost--arrowRight,
-.ms-ModalHost.ms-ModalHost--arrowLeft,
-.ms-ModalHost.ms-ModalHost--arrowBottom,
-.ms-ModalHost.ms-ModalHost--arrowTop {
+.ms-ContextualHost.ms-ContextualHost--arrowRight,
+.ms-ContextualHost.ms-ContextualHost--arrowLeft,
+.ms-ContextualHost.ms-ContextualHost--arrowBottom,
+.ms-ContextualHost.ms-ContextualHost--arrowTop {
   &:before,
   &:after {
     content: '';
@@ -52,10 +52,10 @@
 }
 
 
-//= Modifier: ModalHost with left and right arrows
+//= Modifier: ContextualHost with left and right arrows
 // 
-.ms-ModalHost.ms-ModalHost--arrowLeft,
-.ms-ModalHost.ms-ModalHost--arrowRight {
+.ms-ContextualHost.ms-ContextualHost--arrowLeft,
+.ms-ContextualHost.ms-ContextualHost--arrowRight {
   &:before,
   &:after {
     top: 40px;
@@ -63,7 +63,7 @@
   }
 }
 
-.ms-ModalHost.ms-ModalHost--arrowLeft {
+.ms-ContextualHost.ms-ContextualHost--arrowLeft {
   &:before,
   &:after {
     @include arrowBorders($ms-color-white, transparent, transparent, $ms-color-white);
@@ -71,7 +71,7 @@
   }
 }
 
-.ms-ModalHost.ms-ModalHost--arrowRight {
+.ms-ContextualHost.ms-ContextualHost--arrowRight {
   &:before,
   &:after {
     @include arrowBorders(transparent, $ms-color-white, $ms-color-white, transparent);
@@ -80,10 +80,10 @@
 }
 
 
-//= Modifier: ModalHost with top and bottom arrows
+//= Modifier: ContextualHost with top and bottom arrows
 // 
-.ms-ModalHost.ms-ModalHost--arrowTop,
-.ms-ModalHost.ms-ModalHost--arrowBottom {
+.ms-ContextualHost.ms-ContextualHost--arrowTop,
+.ms-ContextualHost.ms-ContextualHost--arrowBottom {
   &:before,
   &:after {
     left: 0;
@@ -93,7 +93,7 @@
   }
 }
 
-.ms-ModalHost.ms-ModalHost--arrowTop {
+.ms-ContextualHost.ms-ContextualHost--arrowTop {
   &:before,
   &:after {
     @include arrowBorders($ms-color-white, $ms-color-white, transparent, transparent);
@@ -101,7 +101,7 @@
   }
 }
 
-.ms-ModalHost.ms-ModalHost--arrowBottom {
+.ms-ContextualHost.ms-ContextualHost--arrowBottom {
   &:before,
   &:after {
     @include arrowBorders(transparent, transparent, $ms-color-white, $ms-color-white);
@@ -109,8 +109,8 @@
   }
 }
 
-// The actual ModalHost element
-.ms-ModalHost-main {
+// The actual ContextualHost element
+.ms-ContextualHost-main {
   position: relative;
   background-color: $ms-color-white;
   box-sizing: border-box;
@@ -120,7 +120,7 @@
   min-height: 10px;
 }
 
-.ms-ModalHost-close {
+.ms-ContextualHost-close {
   margin: 0;
   border: 0;
   background: none;
@@ -137,17 +137,17 @@
 }
 
 
-//= Modifier: Close button ModalHost
+//= Modifier: Close button ContextualHost
 //
-.ms-ModalHost.ms-ModalHost--close {
-  .ms-ModalHost-title {
+.ms-ContextualHost.ms-ContextualHost--close {
+  .ms-ContextualHost-title {
     margin-right: 20px; // Avoid overlap with close button
   }
 }
 
-.ms-ModalHost.ms-ModalHost--peek {
-  &.ms-ModalHost--arrowTop,
-  &.ms-ModalHost--arrowBottom {
+.ms-ContextualHost.ms-ContextualHost--peek {
+  &.ms-ContextualHost--arrowTop,
+  &.ms-ContextualHost--arrowBottom {
     &:before,
     &:after {
       left: 40px;
@@ -155,8 +155,8 @@
     }
   }
 
-  &.ms-ModalHost--arrowRight,
-  &.ms-ModalHost--arrowLeft {
+  &.ms-ContextualHost--arrowRight,
+  &.ms-ContextualHost--arrowLeft {
     &:before,
     &:after {
       top: calc('50% - 10px');
@@ -168,7 +168,7 @@
 
 @media (min-width: $ms-screen-md-min) {
   // Make width larger and remove centering on md+ screens
-  .ms-ModalHost {
+  .ms-ContextualHost {
     margin: 16px;
     &.is-positioned {
       margin: 0;
@@ -176,8 +176,8 @@
   }
 
   // Show arrows right and left
-  .ms-ModalHost.ms-ModalHost--arrowRight,
-  .ms-ModalHost.ms-ModalHost--arrowLeft {
+  .ms-ContextualHost.ms-ContextualHost--arrowRight,
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft {
     &:before,
     &:after {
       display: block;

@@ -1,9 +1,9 @@
 {
-  "name": "ModalHost",
+  "name": "ContextualHost",
   "notes": "",
   "description": "A overlay host for context menus and callouts",
-  "template": "ModalHost.html",
-  "class": "ms-ModalHost",
+  "template": "ContextualHost.html",
+  "class": "ms-ContextualHost",
   "props":  {
     "arrowPosition": "arrowLeft"
   }

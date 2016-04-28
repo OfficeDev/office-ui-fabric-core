@@ -15,7 +15,7 @@ namespace fabric {
    *
    * @constructor
    */
-  const CONTEXT_CLASS = ".ms-ModalHost";
+  const CONTEXT_CLASS = ".ms-ContextualHost";
   const CB_SPLIT_CLASS = ".ms-CommandButton-splitIcon";
   const CB_BUTTON_CLASS = ".ms-CommandButton-button";
   const MODAL_POSITION = "bottom";
@@ -43,7 +43,7 @@ namespace fabric {
     }
 
     private _createModalHostView() {
-      this._modalHostView = new fabric.ModalHost(this._modalHost, MODAL_POSITION, this._command);
+      this._modalHostView = new fabric.ContextualHost(this._modalHost, MODAL_POSITION, this._command);
     }
 
     private _setClick() {

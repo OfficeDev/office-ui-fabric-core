@@ -2,6 +2,7 @@
 
 /// <reference path="../SearchBox/SearchBox"/>
 /// <reference path="../CommandButton/CommandButton"/>
+/// <reference path="../ContextualHost/ContextualHost"/>
 
 /**
  * Responsive Variables
@@ -25,7 +26,7 @@ namespace fabric {
     mainArea: Element;
     sideCommandArea: Element;
     overflowCommand: Element;
-    contextMenu: Element;
+    contextMenu?: Element;
     searchBox:  Element;
     searchBoxClose: Element;
   }
@@ -85,23 +86,38 @@ namespace fabric {
       this.responsiveSizes["lg-max"] = this.responsiveSizes["xl-min"] - 1;
       this.responsiveSizes["xl-max"] = this.responsiveSizes["xxl-min"] - 1;
       this.responsiveSizes["xxl-max"] = this.responsiveSizes["xxxl-min"] - 1;
-      
-      console.log("");
 
-      this._init();
+      this._setElements();
+      this._setBreakpoint();
+      this._createContextualRef();
+      this._setUIState();
+      
+      // If the overflow exists then run the overflow resizing
+      if(this._elements.overflowCommand) {
+        this._initOverflow();
+      }
     }
 
-  public redrawCommands(): void {
-    this._updateCommands();
-    this._drawCommands();
-    this._checkOverflow();
-  }
+    public redrawCommands(): void {
+      this._updateCommands();
+      this._drawCommands();
+      this._checkOverflow();
+    }
+    
+    private _initOverflow() {
+      this._createItemCollection();
+      this._saveCommandWidths();
+      this._updateCommands();
+      this._drawCommands();
+      this._setWindowEvent();
+      this._checkOverflow();
+    }
 
-  private _hasClass(element, cls): boolean {
-    return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
-  }
+    private _hasClass(element, cls): boolean {
+      return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
+    }
 
-  private _getScreenSize(): WindowSize {
+    private _getScreenSize(): WindowSize {
       // First we need to set what the screen is doing, check screen size
       let w = window;
       let wSize = {
@@ -142,7 +158,7 @@ namespace fabric {
           break;
       }
     }
-    
+      
     private _createSearchInstance(): any {
       if(this._elements.searchBox) {
         return new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
@@ -160,20 +176,27 @@ namespace fabric {
           case "add":
             this._elements.searchBox.classList.add(state);
           default:
-           break;
+            break;
         } 
       }
     }
-    
+      
     private _setElements() {
       this._elements = {
         mainArea: this._container.querySelector(CB_MAIN_AREA),
-        sideCommandArea: this._container.querySelector(CB_SIDE_COMMAND_AREA),
-        overflowCommand: this._container.querySelector(CB_ITEM_OVERFLOW),
-        contextMenu: this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU),
-        searchBox:  this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
-        searchBoxClose: this._container.querySelector(SEARCH_BOX_CLOSE)
+        sideCommandArea: this._container.querySelector(CB_SIDE_COMMAND_AREA) || undefined,
+        overflowCommand: this._container.querySelector(CB_ITEM_OVERFLOW) || undefined
       };
+      
+      if(this._elements.overflowCommand) {
+        this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
+      }
+      
+      if(this._elements.searchBox) {
+         this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
+         this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE)
+      }
+      
       this.searchBoxInstance = this._createSearchInstance();
     }
 
@@ -194,8 +217,8 @@ namespace fabric {
         let icon = item.querySelector(ICON);
         
         if(icon) {
-           iconClasses = icon.className;
-           splitClasses = iconClasses.split(" ");
+            iconClasses = icon.className;
+            splitClasses = iconClasses.split(" ");
         }
 
         for (let o = 0; o < splitClasses.length; o++) {
@@ -338,7 +361,7 @@ namespace fabric {
           this.redrawCommands();
           break;
         case "lg":
-           this._changeSearchState("is-collapsed", "add");
+            this._changeSearchState("is-collapsed", "add");
           this.searchBoxInstance = this._createSearchInstance();
           this._saveCommandWidths();
           this._processColapsedClasses("remove");
@@ -389,22 +412,6 @@ namespace fabric {
       this._setUIState();
       this._redrawMenu();
       this.redrawCommands();
-    }
-
-    /**
-     * initializes component
-     */
-    private _init() {
-      this._setElements();
-      this._setBreakpoint();
-      this._createContextualRef();
-      this._createItemCollection();
-      this._setUIState();
-      this._saveCommandWidths();
-      this._updateCommands();
-      this._drawCommands();
-      this._setWindowEvent();
-      this._checkOverflow();
     }
   }
 }

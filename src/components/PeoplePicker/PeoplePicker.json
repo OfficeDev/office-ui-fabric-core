@@ -10,7 +10,8 @@
     "Overlay",
     "Persona",
     "PersonaCard",
-    "Spinner"
+    "Spinner",
+    "TextField"
   ],
   "wrapBranches": true,
   "fileOrder": [

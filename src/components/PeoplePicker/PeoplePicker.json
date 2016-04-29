@@ -11,7 +11,9 @@
     "Persona",
     "PersonaCard",
     "Spinner",
-    "TextField"
+    "TextField",
+    "ContextualHost",
+    "OrgChart"
   ],
   "wrapBranches": true,
   "fileOrder": [

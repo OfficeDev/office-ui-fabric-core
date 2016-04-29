@@ -31,10 +31,12 @@ namespace fabric {
     private _direction;
     private _container;
     private _targetElement;
+    private _matchTargetWidth;
     
-    constructor(container: HTMLElement, direction: string, targetElement: Element) {
+    constructor(container: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
       this._resizeAction = this._resizeAction.bind(this);
       this._disMissAction = this._disMissAction.bind(this);
+      this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
       this._container = container;
       this._targetElement = targetElement;
@@ -147,30 +149,35 @@ namespace fabric {
 
       let mHLeft;
       let mHTop;
+      let mWidth = "";
+      
+      if(this._matchTargetWidth) {
+        mWidth = "width: " + this._modalWidth + 'px;';
+      }
 
       switch (curDirection) {
         case "left":
           mHLeft = teLeft - this._modalWidth;
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._modalClone.classList.add(MODAL_STATE_POSITIONED);
         break;
         case "right":
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
           mHLeft = teRight;
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._modalClone.classList.add(MODAL_STATE_POSITIONED);
         break;
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
           mHTop = teTop - this._modalHeight;
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._modalClone.classList.add(MODAL_STATE_POSITIONED);
         break;
         case "bottom":
           mHLeft = mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
           mHTop = teTop + teHeight;
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;");
+          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._modalClone.classList.add(MODAL_STATE_POSITIONED);
         break;
         default:
@@ -240,13 +247,24 @@ namespace fabric {
       this._modalClone.setAttribute("style", "opacity: 0; z-index: -1");
       this._modalClone.classList.add(MODAL_STATE_POSITIONED);
       this._modalClone.classList.add(CONTEXT_STATE_CLASS);
-      this._modalWidth = this._modalClone.getBoundingClientRect().width
-        + (parseInt(_modalStyles.marginLeft, 10)
-        + parseInt(_modalStyles.marginRight, 10));
+      
+      if(this._matchTargetWidth) {
+        let teStyles = window.getComputedStyle(this._targetElement);
+        this._modalWidth = this._targetElement.getBoundingClientRect().width
+          + (parseInt(teStyles.marginLeft, 10)
+          + parseInt(teStyles.marginLeft, 10));
+        // Set the ContextualHost width
+       
+      } else {
+        this._modalWidth = this._modalClone.getBoundingClientRect().width
+          + (parseInt(_modalStyles.marginLeft, 10)
+          + parseInt(_modalStyles.marginRight, 10));
+         this._modalClone.setAttribute("style", "");
+      }
       this._modalHeight = this._modalClone.getBoundingClientRect().height
         + (parseInt(_modalStyles.marginTop, 10)
         + parseInt(_modalStyles.marginBottom, 10));
-      this._modalClone.setAttribute("style", "");
+     
       this._modalClone.classList.remove(MODAL_STATE_POSITIONED);
       this._modalClone.classList.remove(CONTEXT_STATE_CLASS);
       this._teWidth = this._targetElement.getBoundingClientRect().width;

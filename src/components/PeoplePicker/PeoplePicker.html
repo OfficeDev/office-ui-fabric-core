@@ -4,10 +4,10 @@
   <div class="ms-PeoplePicker-searchBox">
     {{> TextField props=props.textFieldProps}}
   </div>
-  {{#> ContextualHost props=props.contextualHostProps}}
+  {{#> ContextualHost props=props.contextualHostProps thisProps=props.orgchartProps}}
     <div class="ms-PeoplePicker-results">
         <div class="ms-PeoplePicker-resultGroups">
-          {{> OrgChart props=props.orgchartProps}}
+          {{> OrgChart props=thisProps}}
         </div>
     </div>
   {{/ContextualHost}}

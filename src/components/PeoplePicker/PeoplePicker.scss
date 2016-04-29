@@ -66,12 +66,9 @@ $personaItemHeight: 42px;
   @include drop-shadow();
   background-color: $ms-color-white;
   border: 1px solid $ms-color-neutralTertiaryAlt;
-  display: none;
   margin-bottom: -1px;
-  max-width: 340px;
   padding-top: 9px;
-  position: absolute;
-  z-index: ($ms-zIndex-PeoplePicker + $ms-zIndex-middle);
+  width: 100%;
 }
 
 // Show the results area when the people picker is active

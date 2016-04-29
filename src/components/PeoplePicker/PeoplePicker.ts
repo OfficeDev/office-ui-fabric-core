@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /// <reference path="../Overlay/Overlay.ts"/>
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
 
 namespace fabric {
   /**
@@ -16,8 +17,8 @@ namespace fabric {
   export class PeoplePicker {
     
     private _container: Element;
-    private _modalHostView: ContextualHost;
-    private _modalHost: Element;
+    private _contextualHostView: ContextualHost;
+    private _contextualHost: Element;
     
     /**
      *
@@ -27,19 +28,24 @@ namespace fabric {
     constructor(container: Element) {
       this._container = container;
       this._assignClicks();
-      this._modalHost = this._container.querySelector(CONTEXT_CLASS);
+      this._contextualHost = this._container.querySelector(CONTEXT_CLASS);
     }
     
     private _createModalHost() {
-      this._modalHostView = new fabric.ContextualHost(this._modalHost, MODAL_POSITION, this._container);
+      this._contextualHostView = new fabric.ContextualHost(
+        <HTMLElement>this._contextualHost, 
+        MODAL_POSITION, 
+        this._container,
+        true
+      );
     }
     
-    private _clickHandler() {
+    private _clickHandler(e) {
       this._createModalHost();
     }
     
     private _assignClicks() {
-      this._container.addEventListener("click", this._clickHandler, true);
+      this._container.addEventListener("click", this._clickHandler.bind(this), true);
     }
   }
 }

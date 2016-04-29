@@ -24,12 +24,16 @@ $ms-color-initials-red: 				#ee1111;
 $ms-color-initials-darkRed: 		#b91d47;
 
 // Sizes
+$ms-persona-sizeTiny: 30px;
 $ms-Persona-sizeXs: 32px;
 $ms-Persona-sizeSm: 40px;
 $ms-Persona-size: 48px;
 // $ms-Persona-sizeMd: '';
 $ms-Persona-sizeLg: 72px;
-$ms-Persona-sizeXl: '';
+$ms-Persona-sizeXl: 100px;
+
+$ms-Persona-imageDetailsLgSpace: 12px;
+$ms-Persona-imageDetailsSmSpace: 8px;
 
 
 .ms-Persona {
@@ -149,7 +153,7 @@ $ms-Persona-sizeXl: '';
 	vertical-align: middle;
 	overflow: hidden;
 	text-align: left;
-	padding-left: 
+	padding-left: $ms-Persona-size + $ms-Persona-imageDetailsSpace;
 }
 
 .ms-Persona-primaryText,
@@ -215,7 +219,7 @@ $ms-Persona-sizeXl: '';
 //== Modifier: Tiny Persona
 //
 .ms-Persona.ms-Persona--tiny {
-	height: 30px;
+	height: $ms-persona-sizeTiny;
 	display: inline-block;
 
 	.ms-Persona-imageArea {
@@ -286,7 +290,7 @@ $ms-Persona-sizeXl: '';
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-s;
-		line-height: 32px;
+		line-height: $ms-Persona-sizeXs;
 	}
 
 	.ms-Persona-presence {
@@ -294,7 +298,7 @@ $ms-Persona-sizeXl: '';
 	}
 
 	.ms-Persona-details {
-		padding-left: 8px;
+		padding-left: $ms-Persona-sizeXs + $ms-Persona-imageDetailsSmSpace;
 	}
 
 	.ms-Persona-primaryText {
@@ -312,7 +316,7 @@ $ms-Persona-sizeXl: '';
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xs {
 	.ms-Persona-presence {
-		height: 32px;
+		height: $ms-Persona-sizeXs;
 		width: 4px;
 		left: 0;
 	}
@@ -335,7 +339,7 @@ $ms-Persona-sizeXl: '';
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-m;
-		line-height: 40px;
+		line-height: $ms-Persona-sizeSm;
 	}
 
 	.ms-Persona-presence {
@@ -343,7 +347,7 @@ $ms-Persona-sizeXl: '';
 	}
 
 	.ms-Persona-details {
-		padding-left: 8px;
+		padding-left: $ms-Persona-sizeSm + $ms-Persona-imageDetailsSmSpace;
 	}
 
 	.ms-Persona-primaryText {
@@ -361,7 +365,7 @@ $ms-Persona-sizeXl: '';
 //
 .ms-Persona.ms-Persona--square.ms-Persona--sm {
 	.ms-Persona-presence {
-		height: 40px;
+		height: $ms-Persona-sizeSm;
 		width: 4px;
 		left: 0;
 	}
@@ -389,6 +393,10 @@ $ms-Persona-sizeXl: '';
 
 	.ms-Persona-presence {
 		left: 49px;
+	}
+	
+	.ms-Persona-details {
+		padding-left: $ms-Persona-sizeLg + $ms-Persona-imageDetailsSpace;
 	}
 
 	.ms-Persona-secondaryText {
@@ -421,8 +429,8 @@ $ms-Persona-sizeXl: '';
 .ms-Persona.ms-Persona--xl {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 100px;
-	  height: 100px;
+	  width: $ms-Persona-sizeXl;
+	  height: $ms-Persona-sizeXl;
 	}
 
 	.ms-Persona-placeholder {
@@ -432,7 +440,7 @@ $ms-Persona-sizeXl: '';
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-su;
-		line-height: 100px;
+		line-height: $ms-Persona-sizeXl;
 	}
 
 	.ms-Persona-presence {
@@ -442,7 +450,7 @@ $ms-Persona-sizeXl: '';
 	}
 
 	.ms-Persona-details {
-		padding-left: 20px;
+		padding-left: $ms-Persona-sizeXl + $ms-Persona-imageDetailsSpace;
 	}
 
 	.ms-Persona-primaryText {
@@ -467,7 +475,7 @@ $ms-Persona-sizeXl: '';
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xl {
 	.ms-Persona-presence {
-		height: 100px;
+		height: $ms-Persona-sizeXl;
 		width: 9px;
 		left: 0;
 	}

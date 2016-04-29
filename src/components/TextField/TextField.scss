@@ -5,10 +5,6 @@
 // --------------------------------------------------
 // Single line (input) and multiline (textarea) form field styles
 
-
-@import '../Label/Label.scss';
-
-
 .ms-TextField {
   @include ms-font-m;
   @include ms-u-normalize;

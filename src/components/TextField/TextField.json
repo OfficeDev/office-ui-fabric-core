@@ -15,7 +15,22 @@
   ],
   "props": {
     "label": "Name",
-    "type": "text",
+    "textfield": true,
     "description": "This should be your first and last name."
+  },
+  "propsMultiline": {
+    "label": "Name",
+    "multiline": true,
+    "modifier": "multiline"
+  },
+  "propsPlaceholder": {
+    "label": "Given name",
+    "textfield": true,
+    "modifier": "placeholder"
+  },
+  "propsUnderlined": {
+    "label": "Name",
+    "textfield": true,
+    "modifier": "underlined"
   }
 }

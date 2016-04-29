@@ -1,5 +1,4 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
 <div class="ms-CommandBar {{#if props.modifier}} ms-CommandBar--{{props.modifier}} {{/if}}">
  {{#if props.sideCommands}}
     <div class="ms-CommandBar-sideCommands">
@@ -15,8 +14,10 @@
     {{#each props.commands}}
       {{renderPartial component props}}
     {{/each}}
-    <!-- Overflow Command -->
-      {{renderPartial props.overflow.component props.overflow.props}}
-    <!-- End Overflow Command -->
+    {{#if props.overflow}}
+      <!-- Overflow Command -->
+        {{renderPartial props.overflow.component props.overflow.props}}
+      <!-- End Overflow Command -->
+    {{/if}}
   </div>
 </div>

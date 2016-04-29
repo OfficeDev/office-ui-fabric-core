@@ -5,43 +5,68 @@
   "template": "Panel.html",
   "class": "ms-Panel",
   "dependencies": [
-    "Button",
     "CommandBar",
     "Label",
     "Overlay",
-    "Pivot"
+    "Pivot",
+    "CommandButton",
+    "ContextualMenu",
+    "Button",
+    "SearchBox",
+    "ContextualHost",
+    "PanelHost" 
   ],
   "wrapBranches": true,
   "fileOrder": [
-    "Panel.html"
+    "Panel.html",
+    "Panel.Large.html",
+    "Panel.Medium.html",
+    "Panel.ExtraLarge.html"
   ],
-  "branches": [
-    {
-      "name": "Small",
-      "default": true,
-      "class": "ms-Panel--sm",
-      "branches": [
+  "props": {
+    "headerText": "Panel",
+    "content": "Content goes here",
+    "commandBarProps": {
+        "commands": [
           {
-            "name": "Right",
-            "default": true
+            "component": "CommandButton",
+            "props":  {
+              "label": "Save",
+              "icon": "save",
+              "tag": "button",
+              "iconColor": "themePrimary"
+            }
           },
           {
-            "name": "Left",
-            "class": "ms-Panel--left"
+            "component": "CommandButton",
+            "props":  {
+              "label": "Cancel",
+              "icon": "x",
+              "tag": "button",
+              "iconColor": "themePrimary"
+            }
           }
-      ]
-    },
-    {
-      "name": "Medium",
-      "class": "ms-Panel--md"
-    },
-    {
-      "name": "Large",
-      "class": "ms-Panel--lg"
-    },
-    {
-      "name": "Extra Large",
-      "class": "ms-Panel--xl"
+        ]
     }
-  ]
+  },
+  "propsMedium": {
+    "headerText": "Medium Panel",
+    "content": "Content goes here",
+    "modifier": "md"
+  },
+  "propsLarge": {
+    "headerText": "Large panel",
+    "content": "Content goes here",
+    "modifier": "lg"
+  },
+  "propsExtraLarge": {
+    "headerText": "Extra large panel",
+    "content": "Content goes here",
+    "modifier": "xl"
+  },
+   "propsXXL": {
+    "headerText": "XXL Panel",
+    "content": "Content goes here",
+    "modifier": "xxl"
+  }
 }

@@ -13,7 +13,7 @@ namespace fabric {
    * dropdown and creates a new "fake" dropdown that can more easily be styled across browsers.
    * 
    */
-  export class Dropdown {
+  export class DropdownT {
 
     /**
      *

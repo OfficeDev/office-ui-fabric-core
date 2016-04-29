@@ -95,23 +95,32 @@ gulp.task('ComponentSamples-buildStyles', function() {
    });
 });
 
+gulp.task('ComponentSamples-handlebars', function(cb) {
+   //Get components for Handlebar
+   Config.handleBarsConfig.batch = [];
+    for(var i=0; i < folderList.length; i++) {
+       var folderName = folderList[i];
+       var srcFolderName = Config.paths.componentsPath + '/' + folderName;
+       // Push to Handlebars config
+       Config.handleBarsConfig.batch.push('./' + srcFolderName);
+       
+    }
+    console.log(Config.handleBarsConfig.batch);
+    cb();
+});
+
 //
 // Sample Component Building
 // ----------------------------------------------------------------------------
-gulp.task('ComponentSamples-build', function() {
+gulp.task('ComponentSamples-build', ['ComponentSamples-handlebars'], function() {
    var streams = [];
-   
-   //Get components for Handlebar
-   Config.handleBarsConfig.batch = [];
-   
+  
    for(var i=0; i < folderList.length; i++) {
        var folderName = folderList[i];
        var srcFolderName = Config.paths.componentsPath + '/' + folderName;
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.json');
-       // Push to Handlebars config
-       Config.handleBarsConfig.batch.push('./' + srcFolderName);
        
        if (hasFileChanged) {
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
@@ -123,6 +132,9 @@ gulp.task('ComponentSamples-build', function() {
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
            .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
+           .on('error', function(err) {
+               console.log(err);
+           })
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(

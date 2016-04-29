@@ -3,8 +3,6 @@
 // "use strict";
 
 /// <reference path="../../../typings/jquery.d.ts"/>
-/// <reference path="../PeoplePicker/Jquery.PeoplePicker.ts"/>
-/// <reference path="../Panel/Jquery.Panel.ts"/>
 
 namespace fabric {
 
@@ -24,7 +22,7 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       new fabric.PeoplePicker(<HTMLElement>document.querySelector(".ms-PeoplePicker"));
-      new fabric.Panel(<HTMLElement>document.querySelector(".ms-Panel"));
+      // new fabric.Panel(<HTMLElement>document.querySelector(".ms-Panel"));
 
       let $Facepile = $(container);
       let $membersList = $(".ms-Facepile-members");

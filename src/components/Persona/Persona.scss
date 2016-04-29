@@ -23,24 +23,34 @@ $ms-color-initials-orange: 			#da532c;
 $ms-color-initials-red: 				#ee1111;
 $ms-color-initials-darkRed: 		#b91d47;
 
+// Sizes
+$ms-Persona-sizeXs: 32px;
+$ms-Persona-sizeSm: 40px;
+$ms-Persona-size: 48px;
+// $ms-Persona-sizeMd: '';
+$ms-Persona-sizeLg: 72px;
+$ms-Persona-sizeXl: '';
+
 
 .ms-Persona {
 	@include ms-font-m;
 	@include ms-u-normalize;
-	display: table;
+	display: block;
 	line-height: 1;
 	position: relative;
+	width: 100%;
 }
 
 .ms-Persona-imageArea {
-	position: relative;
-	display: block;
+	position: absolute;
 	overflow: hidden;
 	text-align: center;
-	width: 48px;
-	height: 48px;
+	width: $ms-Persona-size;
+	height: $ms-Persona-size;
 	border-radius: 50%;
 	z-index: $ms-zIndex-back;
+	top: 0;
+	left: 0;
 }
 
 //= Note: The doughboy placeholder is being deprecated.
@@ -53,6 +63,7 @@ $ms-color-initials-darkRed: 		#b91d47;
   left: 0;
   font-size: 47px;
   top: 9px;
+	z-index: $ms-zIndex-middle;
 }
 
 .ms-Persona-initials {
@@ -109,13 +120,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 }
 
 .ms-Persona-image {
-	display: table-cell;
-	margin-right: 10px;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 48px;
-	height: 48px;
+	width: $ms-Persona-size;
+	height: $ms-Persona-size;
+	z-index: $ms-zIndex-front;
 }
 
 .ms-Persona-image[src=""] {
@@ -135,10 +145,11 @@ $ms-color-initials-darkRed: 		#b91d47;
 }
 
 .ms-Persona-details {
-	display: table-cell;
 	padding: 0 12px;
 	vertical-align: middle;
 	overflow: hidden;
+	text-align: left;
+	padding-left: 
 }
 
 .ms-Persona-primaryText,
@@ -209,9 +220,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-imageArea {
 		overflow: visible;
-		background: transparent;
-		height: 0;
-		width: 0;
+		display: none;
 	}
 
 	.ms-Persona-presence {
@@ -266,8 +275,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--xs {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 32px;
-	  height: 32px;
+	  width: $ms-Persona-sizeXs;
+	  height: $ms-Persona-sizeXs;
 	}
 
 	.ms-Persona-placeholder {
@@ -315,8 +324,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--sm {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 40px;
-	  height: 40px;
+	  width: $ms-Persona-sizeSm;
+	  height: $ms-Persona-sizeSm;
 	}
 
 	.ms-Persona-placeholder {
@@ -364,8 +373,8 @@ $ms-color-initials-darkRed: 		#b91d47;
 .ms-Persona.ms-Persona--lg {
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 72px;
-	  height: 72px;
+	  width: $ms-Persona-sizeLg;
+	  height: $ms-Persona-sizeLg;
 	}
 
 	.ms-Persona-placeholder {
@@ -375,7 +384,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-xxl;
-		line-height: 72px;
+		line-height: $ms-Persona-sizeLg;
 	}
 
 	.ms-Persona-presence {
@@ -400,7 +409,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--lg {
 	.ms-Persona-presence {
-		height: 72px;
+		height: $ms-Persona-sizeLg;
 		width: 7px;
 		left: 0;
 	}

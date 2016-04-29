@@ -43,6 +43,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	line-height: 1;
 	position: relative;
 	width: 100%;
+	min-height: $ms-Persona-size;
 }
 
 .ms-Persona-imageArea {
@@ -153,7 +154,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	vertical-align: middle;
 	overflow: hidden;
 	text-align: left;
-	padding-left: $ms-Persona-size + $ms-Persona-imageDetailsSpace;
+	padding-left: $ms-Persona-size + $ms-Persona-imageDetailsSmSpace;
+	display: inline-block;
 }
 
 .ms-Persona-primaryText,
@@ -277,6 +279,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Extra Small Persona
 //
 .ms-Persona.ms-Persona--xs {
+	min-height: $ms-Persona-sizeXs;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
 	  width: $ms-Persona-sizeXs;
@@ -326,6 +330,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Small Persona
 //
 .ms-Persona.ms-Persona--sm {
+	min-height: $ms-Persona-sizeSm;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
 	  width: $ms-Persona-sizeSm;
@@ -375,6 +381,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Large Persona
 //
 .ms-Persona.ms-Persona--lg {
+	min-height: $ms-Persona-sizeLg;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
 	  width: $ms-Persona-sizeLg;
@@ -396,7 +404,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	}
 	
 	.ms-Persona-details {
-		padding-left: $ms-Persona-sizeLg + $ms-Persona-imageDetailsSpace;
+		padding-left: $ms-Persona-sizeLg + $ms-Persona-imageDetailsLgSpace;
 	}
 
 	.ms-Persona-secondaryText {
@@ -427,6 +435,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Extra Large Persona
 //
 .ms-Persona.ms-Persona--xl {
+	min-height: $ms-Persona-sizeXl;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
 	  width: $ms-Persona-sizeXl;
@@ -450,7 +460,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	}
 
 	.ms-Persona-details {
-		padding-left: $ms-Persona-sizeXl + $ms-Persona-imageDetailsSpace;
+		padding-left: $ms-Persona-sizeXl + $ms-Persona-imageDetailsLgSpace;
 	}
 
 	.ms-Persona-primaryText {

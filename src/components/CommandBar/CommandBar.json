@@ -130,7 +130,51 @@
           "iconColor": "themePrimary"
         }
       }
-    ]
+    ],
+    "overflow": {
+      "component": "CommandButton",
+      "props":  {
+        "icon": "ellipsis",
+        "customClasses": "ms-CommandBar-overflowButton",
+        "tag": "button",
+        "modifier": "noLabel",
+        "dropdown": {
+          "component": "ContextualMenu",
+          "props":  {
+            "state": "is-opened",
+            "modifier": "hasIcons",
+            "items": [
+              {
+                "title": "Folder",
+                "state": "",
+                "icon": "folder"
+              },
+              {
+                "modifier": "divider",
+                "title": ""
+              },
+              {
+                "title": "Plain Text Document",
+                "icon": "document"
+              },
+              {
+                "title": "A Dog",
+                "icon": "dogAlt"
+              },
+              {
+                "title": "The Sun",
+                "state": "",
+                "icon": "sun"
+              },
+              {
+                "title": "Money",
+                "icon": "money"
+              }
+            ]
+          }
+        }
+      }
+    }
   },
   "propsDropdown": {
     "transientComponent": {
@@ -399,7 +443,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "Albums",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -408,7 +452,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "Tags",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -417,7 +461,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "Places",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -426,7 +470,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "People",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }

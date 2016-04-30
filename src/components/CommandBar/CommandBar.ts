@@ -24,11 +24,11 @@ namespace fabric {
 
   interface CommandBarElements {
     mainArea: Element;
-    sideCommandArea: Element;
-    overflowCommand: Element;
+    sideCommandArea?: Element;
+    overflowCommand?: Element;
     contextMenu?: Element;
-    searchBox:  Element;
-    searchBoxClose: Element;
+    searchBox?:  Element;
+    searchBoxClose?: Element;
   }
 
   interface ItemCollection {
@@ -77,6 +77,8 @@ namespace fabric {
     private searchBoxInstance: SearchBox;
     private _container: Element;
     private _commandButtonInstance: CommandButton;
+    
+    private _uiStateEvents: Array<Function> = [];
 
     constructor(container: Element) {
 
@@ -89,22 +91,33 @@ namespace fabric {
 
       this._setElements();
       this._setBreakpoint();
-      this._createContextualRef();
-      this._setUIState();
       
       // If the overflow exists then run the overflow resizing
       if(this._elements.overflowCommand) {
         this._initOverflow();
       }
+      this._setUIState();
     }
-
-    public redrawCommands(): void {
-      this._updateCommands();
-      this._drawCommands();
-      this._checkOverflow();
+    
+    private _runsSearchBox(reInit: boolean = true, state: string = "add") {
+      this._changeSearchState("is-collapsed", state);
+      if(reInit) {
+        this.searchBoxInstance = this._createSearchInstance();
+      }
+    }
+    
+    private _runOverflow() {
+      if(this._elements.overflowCommand) {
+        this._saveCommandWidths();
+        this._redrawMenu();
+        this._updateCommands();
+        this._drawCommands();
+        this._checkOverflow();
+      }
     }
     
     private _initOverflow() {
+      this._createContextualRef();
       this._createItemCollection();
       this._saveCommandWidths();
       this._updateCommands();
@@ -183,21 +196,23 @@ namespace fabric {
       
     private _setElements() {
       this._elements = {
-        mainArea: this._container.querySelector(CB_MAIN_AREA),
-        sideCommandArea: this._container.querySelector(CB_SIDE_COMMAND_AREA) || undefined,
-        overflowCommand: this._container.querySelector(CB_ITEM_OVERFLOW) || undefined
+        mainArea: this._container.querySelector(CB_MAIN_AREA)
       };
       
-      if(this._elements.overflowCommand) {
+      if(this._container.querySelector(CB_SIDE_COMMAND_AREA)) {
+        this._elements.sideCommandArea = this._container.querySelector(CB_SIDE_COMMAND_AREA);
+      }
+      
+      if(this._container.querySelector(CB_ITEM_OVERFLOW)) {
+        this._elements.overflowCommand = this._container.querySelector(CB_ITEM_OVERFLOW);
         this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
       }
       
-      if(this._elements.searchBox) {
-         this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX),
-         this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE)
+      if(this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
+         this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
+         this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
+         this.searchBoxInstance = this._createSearchInstance();
       }
-      
-      this.searchBoxInstance = this._createSearchInstance();
     }
 
     private _createItemCollection() {
@@ -344,41 +359,30 @@ namespace fabric {
     private _setUIState() {
       switch (this.breakpoint) {
         case "sm":
-          this._changeSearchState("is-collapsed", "add");
-          this.searchBoxInstance = this._createSearchInstance();
-          this._saveCommandWidths();
+          this._runsSearchBox();
           this._processColapsedClasses("add");
-          this._redrawMenu();
-          this.redrawCommands();
+          this._runOverflow();
           break;
         case "md":
-          this._changeSearchState("is-collapsed", "add");
-          this.searchBoxInstance = this._createSearchInstance();
-          this._saveCommandWidths();
+          this._runsSearchBox();
           // Add collapsed classes to commands
           this._processColapsedClasses("add");
-          this._redrawMenu();
-          this.redrawCommands();
+          this._runOverflow();
           break;
         case "lg":
-            this._changeSearchState("is-collapsed", "add");
-          this.searchBoxInstance = this._createSearchInstance();
-          this._saveCommandWidths();
+          this._runsSearchBox();
           this._processColapsedClasses("remove");
-          this._redrawMenu();
-          this.redrawCommands();
+          this._runOverflow();
           break;
         case "xl":
-          this._changeSearchState("is-collapsed", "remove");
+          this._runsSearchBox(false, "remove");
           this._processColapsedClasses("remove");
-          this._redrawMenu();
-          this.redrawCommands();
+          this._runOverflow();
           break;
         default:
-          this._changeSearchState("is-collapsed", "remove");
+          this._runsSearchBox(false, "remove");
           this._processColapsedClasses("remove");
-          this._redrawMenu();
-          this.redrawCommands();
+          this._runOverflow();
           break;
       }
     }
@@ -410,8 +414,6 @@ namespace fabric {
     private _doResize() {
       this._setBreakpoint();
       this._setUIState();
-      this._redrawMenu();
-      this.redrawCommands();
     }
   }
 }

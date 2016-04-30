@@ -44,7 +44,7 @@ namespace fabric {
   const CONTEXTUAL_MENU_LINK = ".ms-ContextualMenu-link";
   const CB_SEARCH_BOX = ".ms-SearchBox";
   const CB_MAIN_AREA = ".ms-CommandBar-mainArea";
-  const CB_SIDE_COMMAND_AREA = ".ms-CommandBar-mainArea";
+  const CB_SIDE_COMMAND_AREA = ".ms-CommandBar-sideCommands";
   const CB_ITEM_OVERFLOW = ".ms-CommandBar-overflowButton";
   const CB_NO_LABEL_CLASS = "ms-CommandButton--noLabel";
   const SEARCH_BOX_CLOSE = ".ms-SearchBox-closeField";
@@ -68,6 +68,7 @@ namespace fabric {
     private commandWidths: Array<number> = [];
     private overflowCommands: Array<ItemCollection> = [];
     private itemCollection: Array<ItemCollection> = [];
+    private _sideAreaCollection: Array<ItemCollection> = [];
     private contextualItemContainerRef: Node;
     private contextualItemLink: Node;
     private contextualItemIcon: Node;
@@ -118,7 +119,8 @@ namespace fabric {
     
     private _initOverflow() {
       this._createContextualRef();
-      this._createItemCollection();
+      this._createItemCollection(this.itemCollection, CB_MAIN_AREA);
+      this._createItemCollection(this._sideAreaCollection, CB_SIDE_COMMAND_AREA);
       this._saveCommandWidths();
       this._updateCommands();
       this._drawCommands();
@@ -214,14 +216,14 @@ namespace fabric {
          this.searchBoxInstance = this._createSearchInstance();
       }
     }
-
-    private _createItemCollection() {
+    
+    private _createItemCollection(iCollection: Array<ItemCollection>, areaClass: string) {
       let item,
           label,
           iconClasses,
           splitClasses,
           icon,
-          items = this._container.querySelectorAll(CB_MAIN_AREA + " " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
+          items = this._container.querySelectorAll(areaClass + " " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
 
       // Initiate the overflow command
       this._commandButtonInstance = new fabric.CommandButton(<HTMLElement>this._elements.overflowCommand);
@@ -243,7 +245,7 @@ namespace fabric {
           }
         }
 
-        this.itemCollection.push({
+        iCollection.push({
           item: item,
           label: label,
           icon: icon,
@@ -346,6 +348,16 @@ namespace fabric {
     private _processColapsedClasses(type) {
       for (let i = 0; i < this.itemCollection.length; i++) {
         let thisItem = this.itemCollection[i];
+        if (!thisItem.isCollapsed) {
+          if (type === "add") {
+            thisItem.item.classList.add(CB_NO_LABEL_CLASS);
+          } else {
+            thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
+          }
+        }
+      }      
+      for (let i = 0; i < this._sideAreaCollection.length; i++) {
+        let thisItem = this._sideAreaCollection[i];
         if (!thisItem.isCollapsed) {
           if (type === "add") {
             thisItem.item.classList.add(CB_NO_LABEL_CLASS);

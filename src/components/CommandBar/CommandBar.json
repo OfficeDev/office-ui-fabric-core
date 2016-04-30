@@ -443,7 +443,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "Albums",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -452,7 +452,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "Tags",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -461,7 +461,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "Places",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }
@@ -470,7 +470,7 @@
         "component": "CommandButton",
         "props":  {
           "label": "People",
-          "tag": "button",
+          "tag": "a",
           "modifier": "pivot",
           "iconColor": "themePrimary"
         }

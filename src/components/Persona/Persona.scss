@@ -23,24 +23,39 @@ $ms-color-initials-orange: 			#da532c;
 $ms-color-initials-red: 				#ee1111;
 $ms-color-initials-darkRed: 		#b91d47;
 
+// Sizes
+$ms-persona-sizeTiny: 30px;
+$ms-Persona-sizeXs: 32px;
+$ms-Persona-sizeSm: 40px;
+$ms-Persona-size: 48px;
+// $ms-Persona-sizeMd: '';
+$ms-Persona-sizeLg: 72px;
+$ms-Persona-sizeXl: 100px;
+
+$ms-Persona-imageDetailsLgSpace: 12px;
+$ms-Persona-imageDetailsSmSpace: 8px;
+
 
 .ms-Persona {
 	@include ms-font-m;
 	@include ms-u-normalize;
-	display: table;
+	display: block;
 	line-height: 1;
 	position: relative;
+	width: 100%;
+	min-height: $ms-Persona-size;
 }
 
 .ms-Persona-imageArea {
-	position: relative;
-	display: block;
+	position: absolute;
 	overflow: hidden;
 	text-align: center;
-	width: 48px;
-	height: 48px;
+	width: $ms-Persona-size;
+	height: $ms-Persona-size;
 	border-radius: 50%;
 	z-index: $ms-zIndex-back;
+	top: 0;
+	left: 0;
 }
 
 //= Note: The doughboy placeholder is being deprecated.
@@ -53,6 +68,7 @@ $ms-color-initials-darkRed: 		#b91d47;
   left: 0;
   font-size: 47px;
   top: 9px;
+	z-index: $ms-zIndex-middle;
 }
 
 .ms-Persona-initials {
@@ -109,13 +125,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 }
 
 .ms-Persona-image {
-	display: table-cell;
-	margin-right: 10px;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 48px;
-	height: 48px;
+	width: $ms-Persona-size;
+	height: $ms-Persona-size;
+	z-index: $ms-zIndex-front;
 }
 
 .ms-Persona-image[src=""] {
@@ -135,10 +150,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 }
 
 .ms-Persona-details {
-	display: table-cell;
 	padding: 0 12px;
 	vertical-align: middle;
 	overflow: hidden;
+	text-align: left;
+	padding-left: $ms-Persona-size + $ms-Persona-imageDetailsSmSpace;
+	display: inline-block;
 }
 
 .ms-Persona-primaryText,
@@ -204,14 +221,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 //== Modifier: Tiny Persona
 //
 .ms-Persona.ms-Persona--tiny {
-	height: 30px;
+	height: $ms-persona-sizeTiny;
 	display: inline-block;
 
 	.ms-Persona-imageArea {
 		overflow: visible;
-		background: transparent;
-		height: 0;
-		width: 0;
+		display: none;
 	}
 
 	.ms-Persona-presence {
@@ -264,10 +279,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 //== Modifier: Extra Small Persona
 //
 .ms-Persona.ms-Persona--xs {
+	min-height: $ms-Persona-sizeXs;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 32px;
-	  height: 32px;
+	  width: $ms-Persona-sizeXs;
+	  height: $ms-Persona-sizeXs;
 	}
 
 	.ms-Persona-placeholder {
@@ -277,7 +294,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-s;
-		line-height: 32px;
+		line-height: $ms-Persona-sizeXs;
 	}
 
 	.ms-Persona-presence {
@@ -285,7 +302,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 	}
 
 	.ms-Persona-details {
-		padding-left: 8px;
+		padding-left: $ms-Persona-sizeXs + $ms-Persona-imageDetailsSmSpace;
 	}
 
 	.ms-Persona-primaryText {
@@ -303,7 +320,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xs {
 	.ms-Persona-presence {
-		height: 32px;
+		height: $ms-Persona-sizeXs;
 		width: 4px;
 		left: 0;
 	}
@@ -313,10 +330,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 //== Modifier: Small Persona
 //
 .ms-Persona.ms-Persona--sm {
+	min-height: $ms-Persona-sizeSm;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 40px;
-	  height: 40px;
+	  width: $ms-Persona-sizeSm;
+	  height: $ms-Persona-sizeSm;
 	}
 
 	.ms-Persona-placeholder {
@@ -326,7 +345,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-m;
-		line-height: 40px;
+		line-height: $ms-Persona-sizeSm;
 	}
 
 	.ms-Persona-presence {
@@ -334,7 +353,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 	}
 
 	.ms-Persona-details {
-		padding-left: 8px;
+		padding-left: $ms-Persona-sizeSm + $ms-Persona-imageDetailsSmSpace;
 	}
 
 	.ms-Persona-primaryText {
@@ -352,7 +371,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--sm {
 	.ms-Persona-presence {
-		height: 40px;
+		height: $ms-Persona-sizeSm;
 		width: 4px;
 		left: 0;
 	}
@@ -362,10 +381,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 //== Modifier: Large Persona
 //
 .ms-Persona.ms-Persona--lg {
+	min-height: $ms-Persona-sizeLg;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 72px;
-	  height: 72px;
+	  width: $ms-Persona-sizeLg;
+	  height: $ms-Persona-sizeLg;
 	}
 
 	.ms-Persona-placeholder {
@@ -375,11 +396,15 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-xxl;
-		line-height: 72px;
+		line-height: $ms-Persona-sizeLg;
 	}
 
 	.ms-Persona-presence {
 		left: 49px;
+	}
+	
+	.ms-Persona-details {
+		padding-left: $ms-Persona-sizeLg + $ms-Persona-imageDetailsLgSpace;
 	}
 
 	.ms-Persona-secondaryText {
@@ -400,7 +425,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--lg {
 	.ms-Persona-presence {
-		height: 72px;
+		height: $ms-Persona-sizeLg;
 		width: 7px;
 		left: 0;
 	}
@@ -410,10 +435,12 @@ $ms-color-initials-darkRed: 		#b91d47;
 //== Modifier: Extra Large Persona
 //
 .ms-Persona.ms-Persona--xl {
+	min-height: $ms-Persona-sizeXl;
+	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: 100px;
-	  height: 100px;
+	  width: $ms-Persona-sizeXl;
+	  height: $ms-Persona-sizeXl;
 	}
 
 	.ms-Persona-placeholder {
@@ -423,7 +450,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 
 	.ms-Persona-initials {
 		font-size: $ms-font-size-su;
-		line-height: 100px;
+		line-height: $ms-Persona-sizeXl;
 	}
 
 	.ms-Persona-presence {
@@ -433,7 +460,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 	}
 
 	.ms-Persona-details {
-		padding-left: 20px;
+		padding-left: $ms-Persona-sizeXl + $ms-Persona-imageDetailsLgSpace;
 	}
 
 	.ms-Persona-primaryText {
@@ -458,7 +485,7 @@ $ms-color-initials-darkRed: 		#b91d47;
 //
 .ms-Persona.ms-Persona--square.ms-Persona--xl {
 	.ms-Persona-presence {
-		height: 100px;
+		height: $ms-Persona-sizeXl;
 		width: 9px;
 		left: 0;
 	}

@@ -17,45 +17,15 @@ $personaItemHeight: 42px;
 
 // Box that contains the search field and selected people.
 .ms-PeoplePicker-searchBox {
-  @include ms-u-clearfix;
-  border: 1px solid $ms-color-neutralTertiaryAlt;
-  box-sizing: border-box;
-  min-height: 40px;
-  width: 100%;
-
-  &:hover {
-    border-color: $ms-color-neutralSecondaryAlt;
-  }
+ .ms-TextField-field {
+   min-height: 40px;
+ }
 }
 
 // Highlight the search box when the people picker is active
 .ms-PeoplePicker.is-active .ms-PeoplePicker-searchBox {
-  border-color: $ms-color-themePrimary;
-}
-
-// The search field.
-.ms-PeoplePicker-searchField {
-  border: 0;
-  box-sizing: border-box;
-  display: inline-block;
-  float: left;
-  height: 38px;
-  outline: none;
-  padding-left: 8px;
-  width: 100%;
-}
-
-// A selected persona, which appears within the search field.
-.ms-PeoplePicker-persona {
-  display: inline-block;
-  float: left;
-  margin: 4px;
-
-  //TODO: Avoid styling child components like this.
-  .ms-Persona {
-    background-color: $ms-color-neutralLighter;
-    float: left;
-    min-height: 30px;
+  .ms-TextField-field {
+    border-color: $ms-color-themePrimary;
   }
 }
 
@@ -96,12 +66,10 @@ $personaItemHeight: 42px;
   @include drop-shadow();
   background-color: $ms-color-white;
   border: 1px solid $ms-color-neutralTertiaryAlt;
-  display: none;
   margin-bottom: -1px;
-  max-width: 340px;
   padding-top: 9px;
-  position: absolute;
-  z-index: ($ms-zIndex-PeoplePicker + $ms-zIndex-middle);
+  width: 100%;
+  padding-left: 16px;
 }
 
 // Show the results area when the people picker is active

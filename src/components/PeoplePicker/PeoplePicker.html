@@ -2,13 +2,25 @@
 
 <div class="ms-PeoplePicker">
   <div class="ms-PeoplePicker-searchBox">
+    {{> TextField props=props.textFieldProps}}
   </div>
+  {{#> ContextualHost props=props.contextualHostProps thisProps=props.orgchartProps}}
+    <div class="ms-PeoplePicker-results">
+        <div class="ms-PeoplePicker-resultGroups">
+          {{> OrgChart props=thisProps}}
+        </div>
+    </div>
+  {{/ContextualHost}}
 </div>
+
+
+
 
 <div class="ms-PeoplePicker">
   <div class="ms-PeoplePicker-searchBox">
     <input class="ms-PeoplePicker-searchField" type="text">
   </div>
+  
   <div class="ms-PeoplePicker-results">
       <div class="ms-PeoplePicker-resultGroups">
           <div class="ms-PeoplePicker-resultGroup">

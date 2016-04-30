@@ -22,63 +22,6 @@ $Panel-width-lightDismiss: 272px;
 //    height: 100%;
 // }
 
-//== Modifier: Left anchored panel (anchored left, fixed width)
-// Note: This panel variant should only be used for left nav.
-.ms-PanelHost.ms-PanelHost--left {
-  right: auto;
-  left: 0;
-  border-left: 1px solid $ms-color-neutralLight;
-  border-right: 1px solid $ms-color-neutralLight;
-  width: $Panel-width-lightDismiss;
-  @include drop-shadow(-30px, 0px, 30px, 30px, .2);
-
-  // Commands and content inner are not displayed
-  // Note: Replace with a leftnav menu.
-  .ms-Panel-commands,
-  .ms-Panel-contentInner {
-    display: none;
-  }
-  
-  // Animations -- Default (anchored right)
-  &.ms-Panel-animateIn {
-    .ms-Panel-main {
-      @include ms-u-slideLeftIn40;
-    }
-
-    .ms-Overlay {
-      @include ms-u-fadeIn200;
-    }
-  }
-  
-  &.ms-Panel-animateOut {
-    .ms-Panel-main {
-      @include ms-u-slideRightOut40;
-    }
-    .ms-Overlay {
-      @include ms-u-fadeOut200;
-    }
-  }
-
-  // Animations - Left panel (anchored left)
-  &.ms-Panel-animateIn {
-    .ms-Panel-main {
-      @include ms-u-slideRightIn40;
-    }
-
-    .ms-Overlay {
-      @include ms-u-fadeIn200;
-    }
-  }
-
-  &.ms-Panel--left.ms-Panel-animateOut {
-    .ms-Panel-main {
-      @include ms-u-slideLeftOut40;
-    }
-    .ms-Overlay {
-      @include ms-u-fadeOut200;
-    }
-  }
-}
 
 //== State: When the panel is open.
 //

@@ -63,13 +63,12 @@ $personaItemHeight: 42px;
 
 // Results area, hidden by default
 .ms-PeoplePicker-results {
-  @include drop-shadow();
   background-color: $ms-color-white;
   border: 1px solid $ms-color-neutralTertiaryAlt;
   margin-bottom: -1px;
   padding-top: 9px;
   width: 100%;
-  padding-left: 16px;
+  padding-left: 0;
   box-sizing: border-box;
 }
 

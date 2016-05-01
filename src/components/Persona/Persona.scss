@@ -39,21 +39,24 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 .ms-Persona {
 	@include ms-font-m;
 	@include ms-u-normalize;
-	display: block;
 	line-height: 1;
 	position: relative;
 	width: 100%;
 	min-height: $ms-Persona-size;
+	display: table;
+	table-layout: fixed;
+	border-collapse: separate;
 }
 
 .ms-Persona-imageArea {
 	position: absolute;
 	overflow: hidden;
 	text-align: center;
-	width: $ms-Persona-size;
+	max-width: $ms-Persona-size;
 	height: $ms-Persona-size;
 	border-radius: 50%;
 	z-index: $ms-zIndex-back;
+	width: 100%;
 	top: 0;
 	left: 0;
 }
@@ -131,6 +134,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	width: $ms-Persona-size;
 	height: $ms-Persona-size;
 	z-index: $ms-zIndex-front;
+	width: 100%;
 }
 
 .ms-Persona-image[src=""] {
@@ -155,7 +159,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	overflow: hidden;
 	text-align: left;
 	padding-left: $ms-Persona-size + $ms-Persona-imageDetailsSmSpace;
-	display: inline-block;
+	display: table-cell;
+	width: 100%;
 }
 
 .ms-Persona-primaryText,
@@ -163,7 +168,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 .ms-Persona-tertiaryText,
 .ms-Persona-optionalText {
 	@include noWrap();
-	width: 190px;
+	width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -283,7 +288,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: $ms-Persona-sizeXs;
+	  max-width: $ms-Persona-sizeXs;
 	  height: $ms-Persona-sizeXs;
 	}
 
@@ -334,7 +339,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: $ms-Persona-sizeSm;
+	  max-width: $ms-Persona-sizeSm;
 	  height: $ms-Persona-sizeSm;
 	}
 
@@ -385,7 +390,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: $ms-Persona-sizeLg;
+	  max-width: $ms-Persona-sizeLg;
 	  height: $ms-Persona-sizeLg;
 	}
 
@@ -439,7 +444,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
-	  width: $ms-Persona-sizeXl;
+	  max-width: $ms-Persona-sizeXl;
 	  height: $ms-Persona-sizeXl;
 	}
 

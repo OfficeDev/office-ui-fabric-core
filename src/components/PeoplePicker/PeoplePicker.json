@@ -17,11 +17,7 @@
   ],
   "wrapBranches": true,
   "fileOrder": [
-    "PeoplePicker.html",
-    "PeoplePicker.Compact.html",
-    "PeoplePicker.Disconnected.html",
-    "PeoplePicker.MembersList.html",
-    "PeoplePicker.Facepile.html"
+    "PeoplePicker.html"
   ],
   "props": {
     "textFieldProps": {

@@ -5,15 +5,12 @@
 /// <reference path="../ContextualHost/ContextualHost"/>
 
 /**
- * Responsive Variables
+ * CommandBar
  *
- * All fabric breakpoints used in fabric
+ * Commanding and navigational surface
  *
  */
 
-/**
- * @namespace fabric
- */
 namespace fabric {
   "use strict";
 

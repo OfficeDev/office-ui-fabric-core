@@ -5,7 +5,7 @@
     {{#each props.modifiers}}
       ms-Persona--{{name}}
      {{/each}}
-  {{/if}}">
+  {{/if}}" tabindex="1">
   <div class="ms-Persona-imageArea">
     <div class="ms-Persona-initials ms-Persona-initials--{{props.initialsColor}}">{{props.initials}}</div>
     {{#if props.image }}
@@ -27,4 +27,9 @@
       <div class="ms-Persona-optionalText">{{props.optionalText}}</div>
     {{/if}}
   </div>
+  {{#if props.personaCardProps}}
+    {{#> ContextualHost props=props.contextualHostProps thisProps=props.personaCardProps}}
+      {{> PersonaCard props=thisProps}}
+    {{/ContextualHost}}
+  {{/if}}
 </div>

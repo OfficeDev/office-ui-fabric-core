@@ -11,19 +11,12 @@
   height: 32px;
   width: auto;
 
-  .ms-PersonaCard {
+  .ms-Facepile-personaCardHost {
     display: none;
-    position: absolute;
-    top: 40px;
-    height: 200px;
-
-    &.is-active {
-      display: block;
-    }
   }
 }
 
-.ms-Facepile-itemBtn {
+.ms-Facepile-addButton {
   @include button-reset();
   position: relative;
   height: 32px;
@@ -43,7 +36,7 @@
   }
 }
 
-.ms-Facepile-itemBtn.ms-Facepile-itemBtn--addPerson {
+.ms-Facepile-addButton.ms-Facepile-addButton--addPerson {
   background-color: $ms-color-themePrimary;
   color: $ms-color-white;
   font-size: $ms-font-size-l - 1;
@@ -62,7 +55,7 @@
   }
 }
 
-.ms-Facepile-itemBtn.ms-Facepile-itemBtn--overflow {
+.ms-Facepile-addButton.ms-Facepile-addButton--overflow {
   background-color: $ms-color-neutralLight;
   color: $ms-color-neutralSecondary;
   display: none;

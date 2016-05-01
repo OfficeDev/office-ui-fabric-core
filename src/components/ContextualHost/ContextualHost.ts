@@ -4,7 +4,7 @@
  * ContextualHost
  *
  * Hosts contextual menus and callouts
- * NOTE: Position bottom only works if html, body is set to height 100%
+ * NOTE: Position bottom only works if html is set to max-height 100%, overflow hidden and body is set to overflow scroll, body is set to height 100%
  *
  */
 
@@ -171,12 +171,16 @@ namespace fabric {
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
           mHTop = teTop - this._modalHeight;
+          // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
+          mHTop += window.scrollY ? window.scrollY : 0;
           this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._modalClone.classList.add(MODAL_STATE_POSITIONED);
         break;
         case "bottom":
           mHLeft = mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
           mHTop = teTop + teHeight;
+          // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
+          mHTop += window.scrollY ? window.scrollY : 0;
           this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._modalClone.classList.add(MODAL_STATE_POSITIONED);
         break;

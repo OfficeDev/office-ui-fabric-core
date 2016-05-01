@@ -4,6 +4,10 @@
   "description": "The persona component is used to represent a person. Circular framing of the user's avatar is currently the default along with circular presence indicators. A placeholder icon is included in every persona as a fallback for when there is no img src or the img hasn't been received yet from the server.",
   "template": "Persona.html",
   "class": "ms-Persona",
+  "dependencies": [
+    "PersonaCard",
+    "ContextualHost"
+  ],
   "wrapBranches": true,
   "fileOrder": [
     "Persona.Tiny.html",
@@ -30,7 +34,8 @@
     "Persona.Presence.Square.Busy.html",
     "Persona.Presence.Square.Dnd.html",
     "Persona.Presence.Square.Offline.html",
-    "Persona.Initials.html"
+    "Persona.Initials.html",
+    "Persona.FacePile.html"
   ],
   "props": {
     "initials": "AL",
@@ -350,6 +355,123 @@
         "name": "square"
       }
     ]
+  },
+  "propsFacepile": {
+    "initials": "AL",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "modifiers": [
+      {
+        "name": "facePile"
+      }
+    ],
+    "personaCardProps":  {
+      "personaProps": {
+        "initials": "AL",
+        "initialsColor": "blue",
+        "image": "Persona.Person2.png",
+        "primaryText": "Alton Lafferty",
+        "secondaryText": "Accountant",
+        "tertiaryText": "In a meeting",
+        "optionalText": "Available at 4:00pm",
+        "modifiers":  [
+          {
+            "name": "lg"
+          }
+        ]
+      },
+      "orgChartProps": {
+        "groups": [
+          {
+            "personas": [
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "Persona.Person2.png",
+                  "primaryText": "Russel Miller",
+                  "secondaryText": "Sales"
+                }
+              },
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "Persona.Person2.png",
+                  "primaryText": "Douglas Fielder",
+                  "secondaryText": "Public Relations"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Manager",
+            "personas": [
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "Persona.Person2.png",
+                  "primaryText": "Grant Steel",
+                  "secondaryText": "Sales"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Staff",
+            "personas": [
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "/Persona.Person2.png",
+                  "primaryText": "Harvey Wallin",
+                  "secondaryText": "Public Relations"
+                }
+              },
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "Persona.Person2.png",
+                  "primaryText": "Marcus Lauer",
+                  "secondaryText": "Technical Support"
+                }
+              },
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "Persona.Person2.png",
+                  "primaryText": "Marcel Groce",
+                  "secondaryText": "Delivery"
+                }
+              },
+              {
+                "component": "Persona",
+                "props": {
+                  "initials": "RM",
+                  "initialsColor": "blue",
+                  "image": "Persona.Person2.png",
+                  "primaryText": "Jessica Fischer",
+                  "secondaryText": "Marketing"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "contextualHostProps":  {
+      "state": "is-open"
+    }
   }
 }
 

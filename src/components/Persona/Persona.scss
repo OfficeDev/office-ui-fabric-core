@@ -28,7 +28,6 @@ $ms-persona-sizeTiny: 30px;
 $ms-Persona-sizeXs: 32px;
 $ms-Persona-sizeSm: 40px;
 $ms-Persona-size: 48px;
-// $ms-Persona-sizeMd: '';
 $ms-Persona-sizeLg: 72px;
 $ms-Persona-sizeXl: 100px;
 
@@ -46,6 +45,10 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	display: table;
 	table-layout: fixed;
 	border-collapse: separate;
+	
+	.ms-ContextualHost {
+		display: none;
+	}
 }
 
 .ms-Persona-imageArea {
@@ -283,7 +286,8 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 
 //== Modifier: Extra Small Persona
 //
-.ms-Persona.ms-Persona--xs {
+.ms-Persona.ms-Persona--xs,
+.ms-Persona.ms-Persona--facePile {
 	min-height: $ms-Persona-sizeXs;
 	
 	.ms-Persona-imageArea,
@@ -598,5 +602,34 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 .ms-Persona.ms-Persona--offline {
 	.ms-Persona-presence {
 		background-color: $ms-color-presence-offline;
+	}
+}
+
+//== Modifier: Facepile
+//
+.ms-Persona.ms-Persona--facePile {
+	display: inline-block;
+	width: auto;
+	
+	&:hover {
+		cursor: pointer;
+	}
+	
+	.ms-Persona-imageArea {
+		position: relative;
+		width: 100%;
+		min-width: $ms-Persona-sizeXs;
+	}
+	
+	.ms-Persona-initials {
+		position: relative;
+	}
+	
+	.ms-Persona-details {
+		display: none;
+	}
+	
+	.ms-Persona-presence {
+		display: none;
 	}
 }

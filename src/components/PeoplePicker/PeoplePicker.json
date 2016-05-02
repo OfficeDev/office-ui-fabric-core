@@ -23,93 +23,40 @@
     "textFieldProps": {
       "textfield": true
     },
-    "orgchartProps": {
-      "groups": [
+    "groups": [
         {
+          "title": "Contacts",
           "personas": [
             {
               "component": "Persona",
               "props": {
                 "initials": "RM",
                 "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
                 "primaryText": "Russel Miller",
-                "secondaryText": "Sales"
+                "secondaryText": "Sales",
+                 "modifiers":  [
+                  {
+                    "name": "xs"
+                  }
+                ]
               }
             },
             {
               "component": "Persona",
               "props": {
-                "initials": "RM",
-                "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
+                "initials": "DF",
+                "initialsColor": "purple",
                 "primaryText": "Douglas Fielder",
-                "secondaryText": "Public Relations"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Manager",
-          "personas": [
-            {
-              "component": "Persona",
-              "props": {
-                "initials": "RM",
-                "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
-                "primaryText": "Grant Steel",
-                "secondaryText": "Sales"
-              }
-            }
-          ]
-        },
-        {
-          "title": "Staff",
-          "personas": [
-            {
-              "component": "Persona",
-              "props": {
-                "initials": "RM",
-                "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
-                "primaryText": "Harvey Wallin",
-                "secondaryText": "Public Relations"
-              }
-            },
-            {
-              "component": "Persona",
-              "props": {
-                "initials": "RM",
-                "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
-                "primaryText": "Marcus Lauer",
-                "secondaryText": "Technical Support"
-              }
-            },
-            {
-              "component": "Persona",
-              "props": {
-                "initials": "RM",
-                "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
-                "primaryText": "Marcel Groce",
-                "secondaryText": "Delivery"
-              }
-            },
-            {
-              "component": "Persona",
-              "props": {
-                "initials": "RM",
-                "initialsColor": "blue",
-                "image": "../persona/Persona.Person2.png",
-                "primaryText": "Jessica Fischer",
-                "secondaryText": "Marketing"
+                "secondaryText": "Public Relations",
+                "modifiers":  [
+                  {
+                    "name": "xs"
+                  }
+                ]
               }
             }
           ]
         }
-      ]
-    }
+    ]
   }
 }

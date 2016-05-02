@@ -4,11 +4,20 @@
   <div class="ms-PeoplePicker-searchBox">
     {{> TextField props=props.textFieldProps}}
   </div>
-  {{#> ContextualHost props=props.contextualHostProps thisProps=props.orgchartProps}}
+  {{#> ContextualHost props=props.contextualHostProps thisProps=props}}
     <div class="ms-PeoplePicker-results">
-        <div class="ms-PeoplePicker-resultGroups">
-          {{> OrgChart props=thisProps}}
+      {{#each thisProps.groups}}
+        <div class="ms-PeoplePicker-resultGroup">
+          <div class="ms-PeoplePicker-resultGroupTitle">
+            {{title}}
+          </div>
+          {{#each personas}}
+            <div class="ms-PeoplePicker-result">
+              {{> Persona props=props}}
+            </div>
+          {{/each}}
         </div>
+      {{/each}}
     </div>
     <div class="ms-PeoplePicker-searchMore">
       <button class="ms-PeoplePicker-searchMoreBtn">

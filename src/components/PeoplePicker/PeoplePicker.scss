@@ -70,6 +70,7 @@ $personaItemHeight: 42px;
   width: 100%;
   padding-left: 0;
   box-sizing: border-box;
+  padding-left: 16px;
 }
 
 // Show the results area when the people picker is active
@@ -78,13 +79,6 @@ $personaItemHeight: 42px;
   opacity: 1;
 }
 
-
-// One or more groups of results (ms-PeoplePicker-resultGroup) are contained in this scrollable area.
-// This is limited to five results for both regular and compact sizes.
-.ms-PeoplePicker-resultGroups {
-    max-height: 309px;
-    overflow-y: scroll;
-}
 
 // A group of results
 .ms-PeoplePicker-resultGroup {
@@ -101,9 +95,9 @@ $personaItemHeight: 42px;
   color: $ms-color-themePrimary;
   font-family: $ms-font-family-semilight;
   font-size: $ms-font-size-s;
-  padding: 17px 0 0 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   text-transform: uppercase;
-  height: 40px;
 }
 
 // List of results
@@ -116,23 +110,15 @@ $personaItemHeight: 42px;
 // A single result in the result list
 .ms-PeoplePicker-result {
   position: relative;
-
-  .ms-Persona {
-    &:hover {
-      @extend .ms-Persona.ms-Persona--darkText;
-      cursor: pointer;
-    }
-
-    // TODO: Active style is being blocked by the inner content on IE
-    // http://stackoverflow.com/questions/5594102/active-css-selector-not-working-for-ie8-and-ie9?rq=1
-    &:active {
-      background-color: $ms-color-themeLight;
-    }
+  padding-top: 8px;
+  padding-bottom: 8px;
+  
+  &:hover {
+    
   }
-
-  // Ensure the width is 100%.
-  .ms-Persona-details {
-    width: 100%;
+  
+  &.is-selected {
+    background-color: $ms-color-themeLight;
   }
 }
 

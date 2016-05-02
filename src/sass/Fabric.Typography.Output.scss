@@ -196,6 +196,11 @@
   @include ms-fontColor-neutralPrimary;
 }
 
+.ms-fontColor-neutralPrimaryAlt, 
+.ms-fontColor-neutralPrimaryAlt--hover:hover {
+  @include ms-fontColor-neutralPrimaryAlt;
+}
+
 .ms-fontColor-neutralSecondary, 
 .ms-fontColor-neutralSecondary--hover:hover {
  @include ms-fontColor-neutralSecondary;

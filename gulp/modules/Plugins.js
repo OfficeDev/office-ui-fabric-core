@@ -44,6 +44,7 @@ var Plugins = function() {
   this.fs = require('fs');
   this.sasslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');
+  this.markdown = require('gulp-markdown');
 };
 
 module.exports = new Plugins();

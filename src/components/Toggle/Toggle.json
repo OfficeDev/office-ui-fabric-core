@@ -9,6 +9,9 @@
     "Toggle.TextLeft.html",
     "Toggle.Disabled.html"
   ],
+  "dependencies": [
+    "Label"
+  ],
   "branches": [
       {
         "name": "Text above",

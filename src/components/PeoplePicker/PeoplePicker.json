@@ -5,11 +5,10 @@
   "template": "PeoplePicker.html",
   "class": "ms-PeoplePicker",
   "dependencies": [
-    "Button",
     "Label",
-    "Overlay",
     "Persona",
-    "PersonaCard"
+    "PersonaCard",
+    "Spinner"
   ],
   "wrapBranches": true,
   "fileOrder": [

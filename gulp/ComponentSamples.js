@@ -122,26 +122,22 @@ gulp.task('ComponentSamples-build', function() {
        var folderName = folderList[i];
        var srcFolderName = Config.paths.componentsPath + '/' + folderName;
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
-       var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
+       var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md');
        
-       if (hasFileChanged) {    
-           
-           var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
-           
-           var filesArray = manifest.fileOrder;
+       if (hasFileChanged) {
            var componentPipe;
-           var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
+        
            var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
            var jsLinks = '';
            
            for (var x = 0; x < jsFiles.length; x++) {
                jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
            }
-           componentPipe = gulp.src(fileGlob)
+           componentPipe = gulp.src(Config.paths.componentsPath + '/' + folderName + '/' + folderName + '.md')
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-           .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
            .pipe(Plugins.fileinclude())
-           .pipe(Plugins.concat("index.html"))
+           .pipe(Plugins.markdown())
+           .pipe(Plugins.rename("index.html"))
            .pipe(Plugins.wrap(
                 {
                     src:  Config.paths.templatePath + '/componentSampleTemplate.html'  

@@ -41,7 +41,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	line-height: 1;
 	position: relative;
 	width: 100%;
-	min-height: $ms-Persona-size;
+	height: $ms-Persona-size;
 	display: table;
 	table-layout: fixed;
 	border-collapse: separate;
@@ -284,11 +284,13 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 }
 
 
-//== Modifier: Extra Small Persona
+//== Modifier: Extra Small Persona, Facepile and Token modifiers
 //
 .ms-Persona.ms-Persona--xs,
-.ms-Persona.ms-Persona--facePile {
-	min-height: $ms-Persona-sizeXs;
+.ms-Persona.ms-Persona--facePile,
+.ms-Persona.ms-Persona--token
+ {
+	height: $ms-Persona-sizeXs;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
@@ -339,7 +341,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Small Persona
 //
 .ms-Persona.ms-Persona--sm {
-	min-height: $ms-Persona-sizeSm;
+	height: $ms-Persona-sizeSm;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
@@ -390,7 +392,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Large Persona
 //
 .ms-Persona.ms-Persona--lg {
-	min-height: $ms-Persona-sizeLg;
+	height: $ms-Persona-sizeLg;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
@@ -444,7 +446,7 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 //== Modifier: Extra Large Persona
 //
 .ms-Persona.ms-Persona--xl {
-	min-height: $ms-Persona-sizeXl;
+	height: $ms-Persona-sizeXl;
 	
 	.ms-Persona-imageArea,
 	.ms-Persona-image {
@@ -631,5 +633,27 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	
 	.ms-Persona-presence {
 		display: none;
+	}
+}
+
+//== Modifier: Facepile
+//
+.ms-Persona.ms-Persona--token {
+	display: inline-block;
+	width: auto;
+	background-color: $ms-color-neutralLighter;
+	border-radius: 20px;
+	
+	&:hover {
+		cursor: pointer;
+	}
+	
+	.ms-Persona-imageArea {
+		width: 100%;
+		min-width: $ms-Persona-sizeXs;
+	}
+	
+	.ms-Persona-initials {
+		position: relative;
 	}
 }

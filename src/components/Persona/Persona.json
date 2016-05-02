@@ -35,7 +35,8 @@
     "Persona.Presence.Square.Dnd.html",
     "Persona.Presence.Square.Offline.html",
     "Persona.Initials.html",
-    "Persona.FacePile.html"
+    "Persona.FacePile.html",
+    "Persona.Token.html"
   ],
   "props": {
     "initials": "AL",
@@ -472,6 +473,17 @@
     "contextualHostProps":  {
       "state": "is-open"
     }
+  },
+  "propsToken": {
+    "initials": "GM",
+    "initialsColor": "blue",
+    "image": "Persona.Person2.png",
+    "primaryText": "Gerrad Matteu",
+    "modifiers": [
+      {
+        "name": "token"
+      }
+    ]
   }
 }
 

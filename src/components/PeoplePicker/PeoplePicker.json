@@ -21,7 +21,8 @@
   ],
   "props": {
     "textFieldProps": {
-      "textfield": true
+      "textfield": true,
+      "modifier": "textFieldUnderlined"
     },
     "groups": [
         {
@@ -39,7 +40,8 @@
                     "name": "xs"
                   }
                 ]
-              }
+              },
+              "state": "is-selected"
             },
             {
               "component": "Persona",

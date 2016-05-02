@@ -173,3 +173,50 @@
     overflow: auto;
   }
 }
+
+
+
+//== Modifier: Single line (default), underlined
+//
+.ms-TextField.ms-TextField--textFieldUnderlined {
+  border: 0;
+  border-bottom: 1px solid $ms-color-themePrimary;
+  display: table;
+  width: 100%;
+  min-width: 180px;
+
+  &:hover {
+    border-color: $ms-color-neutralSecondaryAlt;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $ms-color-themePrimary;
+  }
+  
+  .ms-TextField-field {
+    border: 0;
+    display: table-cell;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 2px;
+
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.is-disabled {
+    border-bottom-color: $ms-color-neutralLight;
+
+    .ms-Label {
+      @include ms-Label-is-disabled;
+    }
+
+    .ms-TextField-field {
+      background-color: transparent;
+      color: $ms-color-neutralTertiary;
+    }
+  }
+}

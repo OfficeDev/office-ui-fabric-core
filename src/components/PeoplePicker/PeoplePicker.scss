@@ -6,7 +6,7 @@
 // People Picker styles
 
 $personaItemHeight: 42px;
-
+$ms-Persona-leftPadding: 16px;
 
 .ms-PeoplePicker {
   @include ms-font-m;
@@ -17,9 +17,16 @@ $personaItemHeight: 42px;
 
 // Box that contains the search field and selected people.
 .ms-PeoplePicker-searchBox {
- .ms-TextField-field {
-   min-height: 40px;
- }
+  border-bottom: 2px solid $ms-color-themePrimary;
+  
+  .ms-TextField {
+    border: none;
+    
+    .ms-TextField-field {
+      min-height: 40px;
+      border: 0;
+    }
+  }
 }
 
 // Highlight the search box when the people picker is active
@@ -70,7 +77,6 @@ $personaItemHeight: 42px;
   width: 100%;
   padding-left: 0;
   box-sizing: border-box;
-  padding-left: 16px;
 }
 
 // Show the results area when the people picker is active
@@ -98,6 +104,7 @@ $personaItemHeight: 42px;
   padding-top: 8px;
   padding-bottom: 8px;
   text-transform: uppercase;
+  padding-left: $ms-Persona-leftPadding;
 }
 
 // List of results
@@ -110,15 +117,31 @@ $personaItemHeight: 42px;
 // A single result in the result list
 .ms-PeoplePicker-result {
   position: relative;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: $ms-Persona-leftPadding;
+  cursor: pointer;
   
   &:hover {
-    
+    background-color: $ms-color-neutralLight;
+  }
+  
+  .ms-PeoplePicker-resultAction {
+      &:hover {
+        background-color: $ms-color-neutralTertiaryAlt;
+        outline: 1px solid transparent;
+      }
   }
   
   &.is-selected {
     background-color: $ms-color-themeLight;
+    
+    .ms-PeoplePicker-resultAction {
+      
+      &:hover {
+        background-color: $ms-color-themeTertiary;
+      }
+    }
   }
 }
 
@@ -167,7 +190,7 @@ $personaItemHeight: 42px;
 .ms-PeoplePicker-resultAction {
   @include button-reset();
   display: block;
-  height: 34px;
+  height: 100%;
   transition: background-color 0.367s $ms-ease1;
   position: absolute;
   right: 0;
@@ -175,18 +198,9 @@ $personaItemHeight: 42px;
   width: 30px;
   text-align: center;
 
-  @media (min-width: $ms-screen-md-min) {
-    height: 48px;
-  }
-
   .ms-Icon {
     color: $ms-color-neutralSecondary;
     font-size: $ms-font-size-m-plus;
-  }
-
-  &:hover {
-    background-color: $ms-color-neutralTertiaryAlt;
-    outline: 1px solid transparent;
   }
 
   &:active {
@@ -371,7 +385,7 @@ $personaItemHeight: 42px;
   }
 
   .ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon {
-    background-size: 16px;
+    background-size: $ms-Persona-leftPadding;
   }
 
   .ms-PeoplePicker-searchMoreIcon {

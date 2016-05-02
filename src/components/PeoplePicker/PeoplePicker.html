@@ -12,8 +12,9 @@
             {{title}}
           </div>
           {{#each personas}}
-            <div class="ms-PeoplePicker-result">
+            <div class="ms-PeoplePicker-result {{state}}">
               {{> Persona props=props}}
+               <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--x"></i></button>
             </div>
           {{/each}}
         </div>

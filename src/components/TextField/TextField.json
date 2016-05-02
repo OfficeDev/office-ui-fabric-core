@@ -8,7 +8,8 @@
     "TextField.html",
     "TextField.Multiline.html",
     "TextField.Placeholder.html",
-    "TextField.Underlined.html"
+    "TextField.Underlined.html",
+    "TextField.TextfieldUnderline.html"
   ],
   "dependencies": [
     "Label"
@@ -32,5 +33,9 @@
     "label": "Name",
     "textfield": true,
     "modifier": "underlined"
+  },
+  "propsTextfieldUnderline": {
+    "textfield": true,
+    "modifier": "textFieldUnderlined"
   }
 }

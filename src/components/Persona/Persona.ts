@@ -1,5 +1,5 @@
 
-/// <reference path="../ContextualHost/ContextualHost"/>
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
 
   /**
    * Facepile

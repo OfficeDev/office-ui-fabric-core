@@ -70,12 +70,28 @@ namespace fabric {
     private _openalignment(): void {
       this._renderAlignment();
       
-      this._savealignmentSize();
+      // this._savealignmentSize();
       this._findAvailablePosition();
       this._showalignment();
 
       // Delay the click setting
       setTimeout( () => { this._setDismissClick(); }, 100);
+    }
+    
+    private _getAlignmentSize() {
+      switch(this._direction) {
+        case "left":
+          
+          break;
+        case "right":
+          break;
+        case "top":
+          break;
+        case "bottom":
+          break;
+        default:
+        this._setPosition();
+      }
     }
 
     private _findAvailablePosition(): void {
@@ -176,13 +192,13 @@ namespace fabric {
           mHLeft = teLeft - this._alignmentWidth;
           mHTop = this._calcTop(this._alignmentHeight, teHeight, teTop);
           this._alignmentClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._alignmentClone.classList.add(alignment_STATE_POSITIONED);
+          this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
         break;
         case "right":
           mHTop = this._calcTop(this._alignmentHeight, teHeight, teTop);
           mHLeft = teRight;
           this._alignmentClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._alignmentClone.classList.add(alignment_STATE_POSITIONED);
+          this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
         break;
         case "top":
           mHLeft = this._calcLeft(this._alignmentWidth, this._teWidth, teLeft);
@@ -190,7 +206,7 @@ namespace fabric {
           // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
           mHTop += window.scrollY ? window.scrollY : 0;
           this._alignmentClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._alignmentClone.classList.add(alignment_STATE_POSITIONED);
+          this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
         break;
         case "bottom":
           mHLeft = mHLeft = this._calcLeft(this._alignmentWidth, this._teWidth, teLeft);
@@ -198,7 +214,7 @@ namespace fabric {
           // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
           mHTop += window.scrollY ? window.scrollY : 0;
           this._alignmentClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._alignmentClone.classList.add(alignment_STATE_POSITIONED);
+          this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
         break;
         default:
           this._alignmentClone.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");
@@ -257,7 +273,7 @@ namespace fabric {
     private _savealignmentSize(): void {
       let _alignmentStyles = window.getComputedStyle(this._alignmentClone);
       this._alignmentClone.setAttribute("style", "opacity: 0; z-index: -1");
-      this._alignmentClone.classList.add(alignment_STATE_POSITIONED);
+      this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
       this._alignmentClone.classList.add(CONTEXT_STATE_CLASS);
       
       if(this._matchTargetWidth) {

@@ -27,6 +27,11 @@
       <div class="ms-Persona-optionalText">{{props.optionalText}}</div>
     {{/if}}
   </div>
+  {{#if props.actionIcon}}
+    <div class="ms-Persona-actionIcon">
+      <i class="ms-Icon ms-Icon--{{props.actionIcon}}"></i>
+    </div>
+  {{/if}}
   {{#if props.personaCardProps}}
     {{#> ContextualHost props=props.contextualHostProps thisProps=props.personaCardProps}}
       {{> PersonaCard props=thisProps}}

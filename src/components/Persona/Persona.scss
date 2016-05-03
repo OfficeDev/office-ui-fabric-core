@@ -643,14 +643,42 @@ $ms-Persona-imageDetailsSmSpace: 8px;
 	width: auto;
 	background-color: $ms-color-neutralLighter;
 	border-radius: 20px;
+	margin-bottom: 4px;
 	
 	&:hover {
 		cursor: pointer;
 	}
 	
+	.ms-Persona-actionIcon {
+		border-radius: 20px;
+		display: inline-block;
+		width: $ms-Persona-sizeXs;
+		height: $ms-Persona-sizeXs;
+		padding: 0;
+		line-height: 30px;
+		transition: background-color $ms-duration1 $ms-ease1;
+		text-align: center;
+		
+		&:hover {
+			background-color: $ms-color-neutralLight;
+		}
+	}
+	
 	.ms-Persona-imageArea {
 		width: 100%;
 		min-width: $ms-Persona-sizeXs;
+	}
+	
+	.ms-Persona-details {
+		height: 30px;
+		display: inline-block;
+		width: auto;
+		padding-right: 8px;
+	}
+	
+	.ms-Persona-primaryText {
+		padding-top: 0;
+		line-height: 30px;
 	}
 	
 	.ms-Persona-initials {

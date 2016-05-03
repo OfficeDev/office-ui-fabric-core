@@ -15,31 +15,39 @@
     </div>
   </div>
   <ul class="ms-PersonaCard-actions">
-    <li id="chat" class="ms-PersonaCard-action is-active"><i class="ms-Icon ms-Icon--chat"></i></li>
-    <li id="phone" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--phone"></i></li>
-    <li id="video" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--video"></i></li>
-    <li id="mail" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--mail"></i></li>
-    <li class="ms-PersonaCard-overflow" alt="View profile in Delve" title="View profile in Delve">View profile</li>
-    <li id="org" class="ms-PersonaCard-action ms-PersonaCard-orgChart"><i class="ms-Icon ms-Icon--org"></i></li>
+    <li class="ms-PersonaCard-action" data-detailsTargetName="phoneAction"><i class="ms-Icon ms-Icon--phone"></i></li>
+    <li class="ms-PersonaCard-action" data-detailsTargetName="chatAction"><i class="ms-Icon ms-Icon--chat"></i></li>
+    <li class="ms-PersonaCard-action is-active" data-detailsTargetName="videoAction"><i class="ms-Icon ms-Icon--video"></i></li>
+    <li class="ms-PersonaCard-action" data-detailsTargetName="mailAction"><i class="ms-Icon ms-Icon--mail"></i></li>
+    <li class="ms-PersonaCard-overflow" data-detailsTargetName="profileAction" data-actionUrl="http://dev.office.com/fabric" alt="View profile in Delve" title="View profile in Delve">View profile</li>
+    <li class="ms-PersonaCard-action ms-PersonaCard-orgChart" data-detailsTargetName="orgAction"><i class="ms-Icon ms-Icon--org"></i></li>
   </ul>
   <div class="ms-PersonaCard-actionDetailBox">
-    <ul id="detailList" class="ms-PersonaCard-detailChat">
-      <li id="chat" class="ms-PersonaCard-actionDetails detail-1">
+    <ul data-Name="chatAction" class="ms-PersonaCard-details">
+      <li  class="ms-PersonaCard-actionDetails">
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Lync:</span> <a class="ms-Link" href="#">Start Lync call</a></div>
       </li>
-      <li id="phone" class="ms-PersonaCard-actionDetails detail-2">
+   </ul>
+   <ul data-Name="phoneAction" class="ms-PersonaCard-details">
+      <li class="ms-PersonaCard-actionDetails">
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> 555.206.2443</div>
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> 555.929.8240</div>
       </li>
-      <li id="video" class="ms-PersonaCard-actionDetails detail-3">
+   </ul>
+   <ul data-Name="videoAction" class="ms-PersonaCard-details">
+      <li class="ms-PersonaCard-actionDetails">
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Skype:</span> <a class="ms-Link" href="#">Start Skype call</a></div>
       </li>
-      <li id="mail" class="ms-PersonaCard-actionDetails detail-4">
+   </ul>
+   <ul data-Name="mailAction" class="ms-PersonaCard-details">
+      <li class="ms-PersonaCard-actionDetails">
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">alton.lafferty@outlook.com</a></div>
         <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">altonlafferty@contoso.com</a></div>
       </li>
+   </ul>
       <!-- org chart -->
-      <li id="org" class="ms-PersonaCard-actionDetails detail-5">
+   <ul data-Name="orgAction" class="ms-PersonaCard-details ms-PersonaCard-detailsTall ">
+      <li class="ms-PersonaCard-actionDetails>
         <div class="ms-OrgChart">
           <div class="ms-OrgChart-group">
               <ul class="ms-OrgChart-list">

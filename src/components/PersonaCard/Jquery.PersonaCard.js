@@ -8,44 +8,54 @@
  * @param  {jQuery Object}  One or more .ms-PersonaCard components
  * @return {jQuery Object}  The same components (allows for chaining)
  */
-(function ($) {
-  $.fn.PersonaCard = function () {
+(function ($) {    
+    /* Show/Hide the appropriate details for the selected Action */
+    function toggleDetails(target, $personaCard){		
+        if('undefined' === typeof target){
+            var targetIds = [];
+            $('.ms-PersonaCard-action.is-active').each(function(){
+                target = $(this).attr('data-detailsTargetName');
+		        if('undefined' !== typeof target){
+                    targetIds.push(target);
+                }
+            });
+            targetIds.forEach(function(a){toggleDetails(a, $personaCard);});
+        }
+        else{
+            var actionUrl = $personaCard.find("li[data-detailsTargetName='" + target + "']").attr('data-actionUrl');
+            if("undefined" === typeof actionUrl){
+                var t = $personaCard.find("ul[data-Name='" + target + "']");
+                t.parent().children().removeClass('is-active').hide();
+		        t.addClass('is-active').show();
+            }
+            else{
+                document.location.href=actionUrl;
+            }
+        }
+	}    
+  
+    $.fn.PersonaCard = function () {
+    
 
-    /** Go through each file picker we've been given. */
+    /** Go through each PersonaCard  we've been given. */
     return this.each(function () {
 
       var $personaCard = $(this);
-
-      /** When selecting an action, show its details. */
-      $personaCard.on('click', '.ms-PersonaCard-action', function() {
+      toggleDetails(undefined, $personaCard);
+      /** Register action click handler */
+      $personaCard.on('click', '.ms-PersonaCard-action', handleActionClick);
+      $personaCard.on('click', '.ms-PersonaCard-overflow', handleActionClick);
+      
+      /** When clicking an action, show its details. */
+      function handleActionClick() {
 
         /** Select the correct tab. */
         $personaCard.find('.ms-PersonaCard-action').removeClass('is-active');
         $(this).addClass('is-active');
-
-        /** Function for switching selected item into view by adding a class to ul. */
-        var updateForItem = function(wrapper, item) {
-          var previousItem = wrapper.className + "";
-          var detail = item.charAt(0).toUpperCase() + item.slice(1);
-          var nextItem = "ms-PersonaCard-detail" + detail;
-          if (previousItem !== nextItem){
-            wrapper.classList.remove(previousItem);
-            wrapper.classList.add(nextItem);
-          }
-        };
-
-        /** Get id of selected item */
-        var el = $(this).attr('id');
-        /** Add detail class to ul to switch it into view. */
-        updateForItem($(this).parent().next().find('#detailList')[0], el);
-
-        /** Display the corresponding details. */
-        var requestedAction = $(this).attr('id');
-        $personaCard.find('.ms-PersonaCard-actionDetails').removeClass('is-active');
-        $personaCard.find('#' + requestedAction + '.ms-PersonaCard-actionDetails').addClass('is-active');
-
-      });
-
+        var target = $(this).attr('data-detailsTargetName');
+        toggleDetails(target, $personaCard);        
+      }
+      
       /** Toggle more details. */
       $personaCard.on('click', '.ms-PersonaCard-detailExpander', function() {
         $(this).parent('.ms-PersonaCard-actionDetails').toggleClass('is-collapsed');
@@ -53,5 +63,7 @@
 
     });
 
+      
+    
   };
 })(jQuery);

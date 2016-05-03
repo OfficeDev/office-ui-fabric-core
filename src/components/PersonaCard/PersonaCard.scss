@@ -158,73 +158,24 @@
 }
 
 // Active detail items
-.ms-PersonaCard-detailChat,
-.ms-PersonaCard-detailPhone,
-.ms-PersonaCard-detailVideo,
-.ms-PersonaCard-detailMail,
-.ms-PersonaCard-detailOrg {
+.ms-PersonaCard-details {
   overflow: hidden;
   width: 500%;
   padding: 0;
   margin: 0;
-}
-
-.ms-PersonaCard-detailOrg {
-  overflow-y: auto;
-}
-
-.ms-PersonaCard-detailChat {
-  margin-left: 0;
-}
-.ms-PersonaCard-detailPhone {
-  margin-left: -100%;
-}
-.ms-PersonaCard-detailVideo {
-  margin-left: -200%;
-}
-.ms-PersonaCard-detailMail {
-  margin-left: -300%;
-}
-.ms-PersonaCard-detailOrg {
-  margin-left: -400%;
-}
-
-.ms-PersonaCard-detailChat .detail-1,
-.ms-PersonaCard-detailPhone .detail-2,
-.ms-PersonaCard-detailVideo .detail-3,
-.ms-PersonaCard-detailMail .detail-4 {
   max-height: 78px;
   transition: max-height 0.25s ease;
 }
 
-.ms-PersonaCard-detailOrg .detail-5 {
+
+
+.ms-PersonaCard-detailsTall {
+  overflow-y: auto;
   max-height: 300px;
   transition: max-height 0.25s ease;
 }
 
-// Inactive Items
-.ms-PersonaCard-detailChat .detail-2,
-.ms-PersonaCard-detailChat .detail-3,
-.ms-PersonaCard-detailChat .detail-4,
-.ms-PersonaCard-detailChat .detail-5,
-.ms-PersonaCard-detailPhone .detail-1,
-.ms-PersonaCard-detailPhone .detail-3,
-.ms-PersonaCard-detailPhone .detail-4,
-.ms-PersonaCard-detailPhone .detail-5,
-.ms-PersonaCard-detailVideo .detail-1,
-.ms-PersonaCard-detailVideo .detail-2,
-.ms-PersonaCard-detailVideo .detail-4,
-.ms-PersonaCard-detailVideo .detail-5,
-.ms-PersonaCard-detailMail .detail-1,
-.ms-PersonaCard-detailMail .detail-2,
-.ms-PersonaCard-detailMail .detail-3,
-.ms-PersonaCard-detailMail .detail-5,
-.ms-PersonaCard-detailOrg .detail-1,
-.ms-PersonaCard-detailOrg .detail-2,
-.ms-PersonaCard-detailOrg .detail-3,
-.ms-PersonaCard-detailOrg .detail-4 {
-  max-height: 48px;
-}
+
 
 // Icon to expand a collapsed actionDetails section.
 .ms-PersonaCard-detailExpander {
@@ -262,7 +213,7 @@
 
 
 //== Modifier: Persona card with square personas
-//
+
 .ms-PersonaCard.ms-PersonaCard--square {
   .ms-PersonaCard-persona {
     .ms-Persona-imageArea,

@@ -43,15 +43,6 @@
   font-weight: normal;
 }
 
-// Medium Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-@mixin ms-font-m-plus {
-  color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
-  font-size: $ms-font-size-m-plus;
-  font-weight: normal;
-}
-
 // Medium Styles
 // Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-m {
@@ -124,10 +115,6 @@
 
 @mixin ms-fontSize-l {
   font-size: $ms-font-size-l;
-}
-
-@mixin ms-fontSize-mPlus {
-  font-size: $ms-font-size-m-plus;
 }
 
 @mixin ms-fontSize-m {

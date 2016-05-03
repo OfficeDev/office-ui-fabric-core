@@ -175,7 +175,7 @@
   &:hover:before {
     @include ms-Icon;
     content: '\e041';
-    font-size: $ms-font-size-m-plus;
+    font-size: 15px;
     color: $ms-color-neutralSecondaryAlt;
     position: absolute;
     top: 12px;

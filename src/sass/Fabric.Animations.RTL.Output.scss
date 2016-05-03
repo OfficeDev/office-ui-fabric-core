@@ -9,9 +9,29 @@
 @import "Fabric.Animations.Output";
 @import "Fabric.Animations.RTL";
 
+// slideRightIn10
+.ms-u-slideRightIn10 {
+    @include ms-u-slideRightIn10;
+}
+
+// slideRightIn20
+.ms-u-slideRightIn20 {
+    @include ms-u-slideRightIn20;
+}
+
 // slideRightIn40
 .ms-u-slideRightIn40 {
     @include ms-u-slideRightIn40;
+}
+
+// slideLeftIn10
+.ms-u-slideLeftIn10 {
+    @include ms-u-slideLeftIn10;
+}
+
+// slideLeftIn20
+.ms-u-slideLeftIn20 {
+    @include ms-u-slideLeftIn20;
 }
 
 // slideLeftIn40

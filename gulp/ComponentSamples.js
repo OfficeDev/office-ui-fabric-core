@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var fs = require('fs');
 var Utilities = require('./modules/Utilities');
+var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
 var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
@@ -49,24 +50,6 @@ gulp.task('ComponentSamples-copyAssets', function() {
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
         .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
-});
-
-gulp.task('ComponentSamples-moveJS', function() {
-    var paths;
-    var newPaths;
-    paths = Utilities.setIgnoreFlagOnFiles(Config.ignoreComponentJSLinting);
-    newPaths = paths.concat([Config.paths.componentsPath + '/**/*.js']);
-   
-    return gulp.src(newPaths)
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.jshint())
-            .pipe(ErrorHandling.JSHintErrors())
-            .pipe(Plugins.changed(Config.paths.distSamples + '/Components'))
-            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                title: "Copying Component Assets"
-            })))
-            .pipe(Plugins.fileinclude())
-            .pipe(gulp.dest(Config.paths.distSamples + '/Components'));
 });
 
 
@@ -131,12 +114,7 @@ gulp.task('ComponentSamples-build', function() {
            var filesArray = manifest.fileOrder;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
-           var jsFiles = Utilities.getFilesByExtension(srcFolderName, '.js');
-           var jsLinks = '';
-           
-           for (var x = 0; x < jsFiles.length; x++) {
-               jsLinks += '<script type="text/javascript" src="' + jsFiles[x] + '"></script>' + "\r\n";
-           }
+
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
@@ -148,9 +126,6 @@ gulp.task('ComponentSamples-build', function() {
                 },
                 {
                     componentName: folderName
-                },
-                {
-                    jsLinks: jsLinks
                 }
            ))
            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -178,7 +153,7 @@ var ComponentSamplesTasks = [
     'ComponentSamples-build', 
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
-    'ComponentSamples-moveJS',
+    'ComponentJS',
     'ComponentSamples-copyIgnoredFiles'
     // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
 ];

@@ -1,0 +1,116 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// MessageBar Styles
+
+/*
+  Base template file
+*/
+
+$MessageBar-padding: 8px;
+$ms-bgColor-alert:  #fed9cc;  // only here until we merge forward
+
+.ms-MessageBar {
+  padding: $MessageBar-padding;
+  display: table;
+
+  .ms-MessageBar-icon,
+  .ms-MessageBar-text {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .ms-MessageBar-icon {
+    padding-right: $MessageBar-padding;
+    font-size: 16px;
+  }
+
+  .ms-MessageBar-text {
+    @include ms-font-s;
+  }
+
+}
+
+.ms-MessageBar--info {
+  @include ms-bgColor-info;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-neutralSecondaryAlt;
+  }
+
+  .ms-Icon:before {
+    content: '\e00a';  // ms-Icon--infoCircle
+  }
+}
+
+.ms-MessageBar--success {
+  @include ms-bgColor-success;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-green;
+  }
+
+  .ms-Icon:before {
+    content: '\e21f';  // ms-Icon--checkboxCheck
+  }
+
+  .ms-Icon {
+    border-radius: 12px;
+    height: 12px;
+    width: 12px;
+    font-size: 12px;
+    border: 1px solid $ms-color-green;
+  }
+}
+
+.ms-MessageBar--alert {
+  //@include ms-bgColor-alert;
+  background: $ms-bgColor-alert;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-alert;
+  }
+
+  .ms-Icon:before {
+    content: '\e00b';  // ms-Icon--alert
+  }
+}
+
+.ms-MessageBar--error {
+  @include ms-bgColor-error;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-error;
+  }
+
+  .ms-Icon:before {
+    content: '\e00c';  // ms-Icon--xCircle
+  }
+}
+
+.ms-MessageBar--remove {
+  @include ms-bgColor-error;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-error;
+  }
+
+  .ms-Icon:before {
+    content: '\e005';  // ms-Icon--minus
+    font-size: 8px;
+    margin-left: 2px;
+  }
+  
+  .ms-Icon:after { 
+    content: '\e000'; // circle
+    position: relative;
+    top: 3px;
+    left: -16px;
+    margin-left: 4px;
+    margin-right: -14px;
+    display: inline;
+    font-size: 16px;
+  }
+}

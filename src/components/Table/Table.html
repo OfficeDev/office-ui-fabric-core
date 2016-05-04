@@ -3,41 +3,18 @@
 <table class="ms-Table">
   <thead>
     <tr>
-      <th class="ms-Table-rowCheck"></th>
-      <th>File name</th>
-      <th>Location</th>
-      <th>Modified</th>
-      <th>Type</th>
+      {{#each props.headers}}
+        <th class="{{#if rowModifier}} ms-Table-{{rowModifier}}{{/if}}">{{value}}</th>
+      {{/each}}
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td class="ms-Table-rowCheck"></td>
-      <td>File name</td>
-      <td>Location</td>
-      <td>Modified</td>
-      <td>Type</td>
-    </tr>
-    <tr>
-      <td class="ms-Table-rowCheck"></td>
-      <td>File name</td>
-      <td>Location</td>
-      <td>Modified</td>
-      <td>Type</td>
-    </tr>
-    <tr>
-      <td class="ms-Table-rowCheck"></td>
-      <td>File name</td>
-      <td>Location</td>
-      <td>Modified</td>
-      <td>Type</td>
-    </tr>
-    <tr>
-      <td class="ms-Table-rowCheck"></td>
-      <td>File name</td>
-      <td>Location</td>
-      <td>Modified</td>
-      <td>Type</td>
-    </tr>
+    {{#each props.rows}}
+      <tr>
+        {{#each columns}}
+          <td class="{{#if rowModifier}} ms-Table-{{rowModifier}}{{/if}}">{{value}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
   </tbody>
 </table>

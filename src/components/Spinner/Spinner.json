@@ -20,6 +20,10 @@
   "propsLabel": {
     "label": "Loading..."
   },
+  "propsLabelLarge": {
+    "modifier": "large",
+    "label": "Loading..."
+  },
   "branches": [
     {
       "name": "Standard",

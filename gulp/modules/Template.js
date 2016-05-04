@@ -146,7 +146,7 @@ var Template = function(directories, dist, src, callback) {
     }
   }
   
-  this.init();
+  // this.init();
 };
 
-module.exports = Template;
+// module.exports = Template;

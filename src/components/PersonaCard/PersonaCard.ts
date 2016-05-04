@@ -5,7 +5,6 @@ namespace fabric {
 
 
   /**
-   * Persona Card Plugin
    *
    * Adds basic demonstration functionality to .ms-PersonaCard components.
    *
@@ -13,6 +12,7 @@ namespace fabric {
   export class PersonaCard {
 
     private _container: HTMLElement;
+    private _actions: HTMLElement;
     private _activeAction: String;
 
     /**
@@ -22,19 +22,19 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       this._container = container;
-      const actions: HTMLElement = <HTMLElement>this._container.querySelector(".ms-PersonaCard-actions");
-      actions.addEventListener("click", this._onActionClick.bind(this), false);
-      this._activeAction = (<HTMLElement>this._container.querySelector(".ms-PersonaCard-action.is-active")).getAttribute("data-action-id");
+      this._actions = <HTMLElement>this._container.querySelector(".ms-PersonaCard-actions");
+      this._actions.addEventListener("click", this._onActionClick.bind(this), false);
+      this._activeAction = (<HTMLElement>this._container.querySelector(".ms-PersonaCard-action.is-active")).dataset["action-id"];
       this._setDetail();
     }
 
     public removeListeners(): void {
-      this._container.removeEventListener("click", this._onActionClick.bind(this));
+      this._actions.removeEventListener("click", this._onActionClick.bind(this));
     }
 
     private _onActionClick(event: Event): void {
       const target: HTMLElement = <HTMLElement>event.target;
-      const actionId: string = target.getAttribute("data-action-id");
+      const actionId: string = target.dataset["action-id"];
       if (target.className.indexOf("ms-PersonaCard-action") > -1 && this._activeAction !== actionId) {
         this._activeAction = actionId;
         this._setAction(target);
@@ -49,8 +49,9 @@ namespace fabric {
     }
 
     private _setDetail(): void {
+      const selector: string = ".ms-PersonaCard-details[data-detail-id='" + this._activeAction + "']";
       const lastDetail: HTMLElement = <HTMLElement>this._container.querySelector(".ms-PersonaCard-details.is-active");
-      const activeDetail: HTMLElement = <HTMLElement>this._container.querySelector(".ms-PersonaCard-details[data-detail-id='" + this._activeAction + "']");
+      const activeDetail: HTMLElement = <HTMLElement>this._container.querySelector(selector);
       if (lastDetail) {
         lastDetail.classList.remove("is-active");
       }

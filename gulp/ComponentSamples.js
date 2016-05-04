@@ -9,7 +9,7 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
-var Template = require('./modules/Template');
+// var Template = require('./modules/Template');
 
 //
 // Clean/Delete Tasks
@@ -176,7 +176,6 @@ var ComponentSamplesTasks = [
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
     'ComponentJS',
-    "ComponentSamples-template",
     'ComponentSamples-copyIgnoredFiles'
 ];
 

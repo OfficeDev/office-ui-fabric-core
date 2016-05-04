@@ -1,0 +1,211 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Link</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Link.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Link) {
+          $('.ms-Link').Link();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Link' in fabric) {
+          var elements = document.querySelectorAll('.ms-Link');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Link'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Link</h1>
+  <div id="componentWrapper">
+    <h1 id="link">Link</h1>
+<p>Used to create a hyperlink to another location.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<p class="ms-font-xxl">You can add <a class="ms-Link">links</a> to any text</p>
+<p class="ms-font-m">
+  Lorem ipsum dolor sit amet, <a class="ms-Link">consectetur adipiscing elit</a>. In condimentum nisl sed dolor consectetur, vitae hendrerit nulla ullamcorper. Sed quis massa mi. Etiam sed ullamcorper est. Phasellus sodales tempus sapien et tristique. Praesent non mauris sem. Aliquam leo elit, molestie sed eros ac, sodales mattis metus. Cras <a class="ms-Link">imperdiet</a> est vel quam faucibus posuere. Praesent quis felis mattis, dapibus nibh ut, porttitor dui. Curabitur in eleifend tortor, vel fermentum enim. Etiam blandit quam neque, quis pretium lorem finibus pharetra. Aliquam a placerat arcu. Sed at nibh et nulla ullamcorper pharetra ac ac tortor. Nullam arcu justo, vulputate et efficitur ut, finibus sit amet leo. Phasellus non sem id sapien <a class="ms-Link">gravida sodales</a> et at leo.
+</p>
+
+
+<h2 id="states">States</h2>
+<p>This component has only the default state.</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;div class=&quot;ms-font-m&quot;&gt;
+     &lt;a href=&quot;#&quot; class=&quot;ms-Link&quot;&gt;Link to a webpage&lt;/a&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Replace the sample text with the text of your link.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies on other components.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Use the <code>title</code> attribute to provide additional text describing the link, if the link text itself is not descriptive enough.</p>
+<h2 id="notes">Notes</h2>
+<p>The Link inherits the font family, size, and weight of its parent element. This is why we have placed it within <code>.ms-font-m</code> wrapper in the sample above.</p>
+
+  </div>
+</body>
+</html>

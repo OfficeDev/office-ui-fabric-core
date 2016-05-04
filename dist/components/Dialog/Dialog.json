@@ -1,0 +1,67 @@
+{
+  "name": "Dialog",
+  "notes": "",
+  "description": "A popup box component that animates in over an application. It is primarily used for confirmation tasks, light-weight creation/edit tasks, and simple management tasks. Dialog has several variants including closeable, large header, multiline button, and blocking. Blocking or modal dialogs do not allow for a light dismiss (clicking/tapping outside the dialog box) and should be used when a user's explicit answer is required for them to proceed such as confirming the deletion of data.",
+  "accessibilityNotes": 
+    {
+      "role": "Dialog",
+      "narration": "Read all the elements in the dialog on open.",
+      "keyboard": "Use the TAB key to navigate between elements in the dialog. To exit, use ESC. Trap focus in the dialog until the user dismisses it. The user needs to return to the previous element on close."
+    },
+  "class": "ms-Dialog",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Dialog.html",
+    "Dialog.Close.html",
+    "Dialog.LgHeader.html",
+    "Dialog.Multiline.html",
+    "Dialog.Blocking.html"
+  ],
+  "dependencies": [
+    "Button",
+    "ChoiceField",
+    "Overlay"
+  ],
+  "branches": [
+    {
+      "name": "Default",
+      "default": true,
+      "template": "Dialog.html",
+      "branches": [
+        {
+          "name": "Standard",
+          "default": true
+        },
+        {
+          "name": "Close button",
+          "class": "ms-Dialog--close"
+        }
+      ]
+    },
+    {
+      "name": "Multiline Button",
+      "class": "ms-Dialog--multiline",
+      "template": "Dialog.Multiline.html",
+      "branches": [
+        {
+          "name": "Standard",
+          "default": true
+        },
+        {
+          "name": "Close button",
+          "class": "ms-Dialog--close"
+        }
+      ]
+    },
+    {
+      "name": "Large Header",
+      "class": "ms-Dialog--lgHeader",
+      "template": "Dialog.LgHeader.html"
+    },
+    {
+      "name": "Blocking",
+      "class": "ms-Dialog--blocking",
+      "template": "Dialog.Blocking.html"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+/**
+ * Office UI Fabric 2.3.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// SCSS template for building a bundle of Fabric and Fabric Components CSS.
+
+@import '../../../src/sass/_Fabric.Common.scss';
+
+
+@import '../../../src/components/Breadcrumb/Breadcrumb.scss';
+@import '../../../src/components/Button/Button.scss';
+@import '../../../src/components/Callout/Callout.scss';
+@import '../../../src/components/ChoiceField/ChoiceField.scss';
+@import '../../../src/components/CommandBar/CommandBar.scss';
+@import '../../../src/components/ContextualMenu/ContextualMenu.scss';
+@import '../../../src/components/DatePicker/DatePicker.scss';
+@import '../../../src/components/Dialog/Dialog.scss';
+@import '../../../src/components/Dropdown/Dropdown.scss';
+@import '../../../src/components/Facepile/Facepile.scss';
+@import '../../../src/components/Label/Label.scss';
+@import '../../../src/components/Link/Link.scss';
+@import '../../../src/components/List/List.scss';
+@import '../../../src/components/ListItem/ListItem.scss';
+@import '../../../src/components/MessageBanner/MessageBanner.scss';
+@import '../../../src/components/NavBar/NavBar.scss';
+@import '../../../src/components/OrgChart/OrgChart.scss';
+@import '../../../src/components/Overlay/Overlay.scss';
+@import '../../../src/components/Panel/Panel.scss';
+@import '../../../src/components/PeoplePicker/PeoplePicker.scss';
+@import '../../../src/components/Persona/Persona.scss';
+@import '../../../src/components/PersonaCard/PersonaCard.scss';
+@import '../../../src/components/Pivot/Pivot.scss';
+@import '../../../src/components/ProgressIndicator/ProgressIndicator.scss';
+@import '../../../src/components/SearchBox/SearchBox.scss';
+@import '../../../src/components/Spinner/Spinner.scss';
+@import '../../../src/components/Table/Table.scss';
+@import '../../../src/components/TextField/TextField.scss';
+@import '../../../src/components/Toggle/Toggle.scss';
+@import '../../../src/sass/Fabric.Animations.Output.scss';
+@import '../../../src/sass/Fabric.Color.Mixins.Output.scss';
+@import '../../../src/sass/Fabric.Grid.Output.scss';
+@import '../../../src/sass/Fabric.Icons.Font.Output.scss';
+@import '../../../src/sass/Fabric.Icons.Output.scss';
+@import '../../../src/sass/Fabric.Responsive.Utilities.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Fonts.Extended.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Fonts.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Language.Overrides.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Output.scss';
+@import '../../../src/sass/Fabric.Utilities.Output.scss';

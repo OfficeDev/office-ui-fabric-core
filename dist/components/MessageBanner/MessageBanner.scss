@@ -1,0 +1,133 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// MessageBanner Styles
+
+$MessageBanner-height: 52px;
+$MessageBanner-iconSize: 40px;
+
+.ms-MessageBanner {
+  @include ms-font-s();
+  position: relative;
+  border-bottom: 1px solid $ms-color-neutralSecondaryAlt;
+  background-color: $ms-color-themeLighterAlt;
+  min-width: 320px;
+  width: 100%;
+  height: $MessageBanner-height;
+  text-align: center;
+  overflow: hidden;
+  @include ms-u-slideDownIn20();
+
+  .ms-Icon {
+    font-size: 16px;
+  }
+}
+
+.ms-MessageBanner {
+  &.hide {
+    @include ms-u-slideUpOut20();
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.ms-MessageBanner-expand,
+.ms-MessageBanner-close {
+  height: $MessageBanner-height;
+  width: $MessageBanner-iconSize;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: 1px solid transparent;
+  }
+}
+
+.ms-MessageBanner-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: $MessageBanner-height;
+  color: $ms-color-neutralSecondary;
+}
+
+.ms-MessageBanner-text {
+  display: inline-block;
+  padding: 18px 0;
+  margin-left: 0;
+  max-width: 770px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.ms-MessageBanner-expand {
+  display: none;
+  vertical-align: top;
+
+  &.is-visible {
+    display: inline-block;
+  }
+}
+
+.ms-MessageBanner-action {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-right: 36px;
+
+  .ms-Button {
+    color: $ms-color-white;
+  }
+}
+
+.ms-MessageBanner-clipper {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ms-MessageBanner.is-expanded {
+  height: auto;
+
+  .ms-MessageBanner-clipper {
+    white-space: normal;
+  }
+}
+
+
+@media screen and (max-width: 479px) {
+  .ms-MessageBanner-expand {
+    display: inline-block;
+  }
+
+  .ms-MessageBanner-action {
+    margin: 0;
+    display: block;
+    text-align: right;
+    padding: 0 10px 10px 0;
+  }
+
+  .ms-MessageBanner-text {
+    margin-left: -25px;
+    padding: 18px 0 10px 0;
+    min-width: 240px;
+  }
+
+  .ms-MessageBanner-expand {
+    padding: 0;
+    margin-left: -5px;
+    width: 20px;
+
+    .ms-Icon {
+      color: $ms-color-themePrimary;
+    }
+  }
+}

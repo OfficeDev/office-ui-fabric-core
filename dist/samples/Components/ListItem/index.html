@@ -1,0 +1,341 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component ListItem</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="ListItem.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.ListItem) {
+          $('.ms-ListItem').ListItem();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('ListItem' in fabric) {
+          var elements = document.querySelectorAll('.ms-ListItem');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['ListItem'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.ListItem.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">ListItem</h1>
+  <div id="componentWrapper">
+    <h1 id="list-item">List Item</h1>
+<p>Suitable for presenting a summary of an item with associated actions. Most often used within a List component. It was designed to represent an email message on desktop computers and is not currently touch friendly.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="ms-List">
+  <li class="ms-ListItem">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </li>
+</ul>
+
+
+<h3 id="image">Image</h3>
+<p>The same as the default variant, with a thumbnail image added.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<ul class="ms-List">
+  <li class="ms-ListItem ms-ListItem--image">
+    <div class="ms-ListItem-image" style="background-color: #767676;">&nbsp;</div>
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </li>
+</ul>
+
+
+<h3 id="document">Document</h3>
+<p>Showcases a document by providing a thumbnail, title, and some metadata.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<ul class="ms-List">
+  <li class="ms-ListItem ms-ListItem--document">
+    <div class="ms-ListItem-itemIcon ms-ListItem-itemIcon--ppt"></div>
+    <span class="ms-ListItem-primaryText">Perdivn Pitch.mp3</span>
+    <span class="ms-ListItem-secondaryText">08/11/14 12:32p</span>
+  </li>
+</ul>
+
+
+<h2 id="states">States</h2>
+<h3 id="selectable">Selectable</h3>
+<p>Apply the <code>is-selectable</code> class to make it possible to select the item.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<ul class="ms-List">
+  <li class="ms-ListItem is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </li>
+</ul>
+
+
+<h3 id="selected">Selected</h3>
+<p>When applied alongside the <code>is-selectable</code> class, <code>is-selected</code> will mark it as selected.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<ul class="ms-List">
+  <li class="ms-ListItem is-selected is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </li>
+</ul>
+
+
+<h3 id="unseen">Unseen</h3>
+<p>Use <code>is-unseen</code> to indicate that the item has not been seen.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<ul class="ms-List">
+  <li class="ms-ListItem is-unseen is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </li>
+</ul>
+
+
+<h3 id="unread">Unread</h3>
+<p>Use <code>is-unread</code> to indicate that the item has not been read.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<ul class="ms-List">
+  <li class="ms-ListItem is-unread is-selectable">
+    <span class="ms-ListItem-primaryText">Alton Lafferty</span>
+    <span class="ms-ListItem-secondaryText">Meeting notes</span>
+    <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
+    <span class="ms-ListItem-metaText">2:42p</span>
+    <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+    <div class="ms-ListItem-actions">
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+      <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+    </div>
+  </li>
+</ul>
+
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page.</li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Dialog components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.ListItem) {
+             $(&#39;.ms-ListItem&#39;).ListItem();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-ListItem-primaryText</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies on other components, although it is most often used within a List component.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+  </div>
+</body>
+</html>

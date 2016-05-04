@@ -1,0 +1,91 @@
+{
+  "name": "Button",
+  "template": "Button.html",
+  "class": "ms-Button",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Button.html",
+    "Button.Primary.html",
+    "Button.Hero.html",
+    "Button.Compound.html",
+    "Button.Command.html"
+  ],
+  "branches": [
+    {
+      "name": "Action",
+      "default": true,
+      "branches": [
+        {
+          "name": "Standard",
+          "default": true,
+          "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+          ]
+        },
+        {
+          "name": "Primary",
+          "class": "ms-Button--primary",
+          "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hero",
+      "class": "ms-Button--hero",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        }
+      ]
+    },
+    {
+      "name": "Compound",
+      "class": "ms-Button--compound",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        }
+      ]
+    },
+    {
+      "name": "Command",
+      "class": "ms-Button--command",
+      "branches": [
+        {
+          "name": "Enabled",
+          "default": true
+        },
+        {
+          "name": "Disabled",
+          "class": "is-disabled"
+        }
+      ]
+    }
+  ]
+}

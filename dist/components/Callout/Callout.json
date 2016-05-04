@@ -1,0 +1,138 @@
+{
+  "name": "Callout",
+  "class": "ms-Callout",
+  "dependencies": [
+    "Button",
+    "Label",
+    "Link"
+  ],
+  "fileOrder": [
+    "Callout.html",
+    "Callout.Close.html",
+    "Callout.ActionText.html",
+    "Callout.Oobe.html",
+    "Callout.Peek.html"
+  ],
+  "branches": [
+    {
+      "name": "Default",
+      "default": true,
+      "template": "Callout.Default.html",
+      "branches": [
+        {
+          "name": "Left Arrow",
+          "default": true,
+          "class": "ms-Callout--arrowLeft"
+        },
+        {
+          "name": "Right Arrow",
+          "class": "ms-Callout--arrowRight"
+        },
+        {
+          "name": "Top Arrow",
+          "class": "ms-Callout--arrowTop"
+        },
+        {
+          "name": "Bottom Arrow",
+          "class": "ms-Callout--arrowBottom"
+        }
+      ]
+    },
+    {
+      "name": "Close Button",
+      "class": "ms-Callout--close",
+      "template": "Callout.Close.html",
+      "branches": [
+        {
+          "name": "Left Arrow",
+          "default": true,
+          "class": "ms-Callout--arrowLeft"
+        },
+        {
+          "name": "Right Arrow",
+          "class": "ms-Callout--arrowRight"
+        },
+        {
+          "name": "Top Arrow",
+          "class": "ms-Callout--arrowTop"
+        },
+        {
+          "name": "Bottom Arrow",
+          "class": "ms-Callout--arrowBottom"
+        }
+      ]
+    },
+    {
+      "name": "ActionText",
+      "class": "ms-Callout--actionText",
+      "template": "Callout.ActionText.html",
+      "branches": [
+        {
+          "name": "Left Arrow",
+          "default": true,
+          "class": "ms-Callout--arrowLeft"
+        },
+        {
+          "name": "Right Arrow",
+          "class": "ms-Callout--arrowRight"
+        },
+        {
+          "name": "Top Arrow",
+          "class": "ms-Callout--arrowTop"
+        },
+        {
+          "name": "Bottom Arrow",
+          "class": "ms-Callout--arrowBottom"
+        }
+      ]
+    },
+    {
+      "name": "OOBE",
+      "class": "ms-Callout--OOBE",
+      "template": "Callout.Oobe.html",
+      "branches": [
+        {
+          "name": "Left Arrow",
+          "default": true,
+          "class": "ms-Callout--arrowLeft"
+        },
+        {
+          "name": "Right Arrow",
+          "class": "ms-Callout--arrowRight"
+        },
+        {
+          "name": "Top Arrow",
+          "class": "ms-Callout--arrowTop"
+        },
+        {
+          "name": "Bottom Arrow",
+          "class": "ms-Callout--arrowBottom"
+        }
+      ]
+    },
+    {
+      "name": "Peek",
+      "class": "ms-Callout--peek",
+      "template": "Callout.peek.html",
+      "branches": [
+        {
+          "name": "Left Arrow",
+          "default": true,
+          "class": "ms-Callout--arrowLeft"
+        },
+        {
+          "name": "Right Arrow",
+          "class": "ms-Callout--arrowRight"
+        },
+        {
+          "name": "Top Arrow",
+          "class": "ms-Callout--arrowTop"
+        },
+        {
+          "name": "Bottom Arrow",
+          "class": "ms-Callout--arrowBottom"
+        }
+      ]
+    }
+  ]
+}

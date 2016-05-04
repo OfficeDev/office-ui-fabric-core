@@ -1,0 +1,320 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component ContextualMenu</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="ContextualMenu.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.ContextualMenu) {
+          $('.ms-ContextualMenu').ContextualMenu();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('ContextualMenu' in fabric) {
+          var elements = document.querySelectorAll('.ms-ContextualMenu');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['ContextualMenu'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.ContextualMenu.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">ContextualMenu</h1>
+  <div id="componentWrapper">
+    <h1 id="contextual-menu">Contextual Menu</h1>
+<p>Presents options associated with an object. Often opened via a right-click or overflow button.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>A standard menu of commands. Should close when a command is invoked.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="ms-ContextualMenu is-open">
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Animals</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Books</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-selected" href="#">Education</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Music</a></li>
+  <li class="ms-ContextualMenu-item "><a class="ms-ContextualMenu-link is-disabled" href="#">Sports</a></li>
+</ul>
+
+
+<h3 id="multiselect">Multiselect</h3>
+<p>Allows for multiple options to be set. Remains opened until the user clicks or taps outside of the menu.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="ms-ContextualMenu ms-ContextualMenu--multiselect is-open">
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--header">SORT BY</li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Date</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Sender</a></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--header">ORDER</li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Newest on top</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Oldest on top</a></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--header">CONVERSATIONS</li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">On</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Off</a></li>
+</ul>
+
+
+<h2 id="optional-functionality">Optional functionality</h2>
+<h3 id="submenu">SubMenu</h3>
+<p>You can nest a ContextualMenu inside another ContextualMenu, resulting in a submenu.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="ms-ContextualMenu is-open">
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Animals</a></li>
+  <li class="ms-ContextualMenu-item">
+    <a class="ms-ContextualMenu-link ms-ContextualMenu-link--hasMenu" href="#">Books</a>
+    <i class="ms-ContextualMenu-subMenuIcon ms-Icon ms-Icon--chevronRight"></i>
+    <ul class="ms-ContextualMenu">
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Fiction</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Humor</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-selected" href="#">Magazines</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Non-fiction</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Textbooks</a></li>
+    </ul>
+
+<p>  </li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-selected" href="#">Education</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Music</a></li>
+  <li class="ms-ContextualMenu-item "><a class="ms-ContextualMenu-link is-disabled" href="#">Sports</a></li>
+</ul></p>
+<h3 id="dividers">Dividers</h3>
+<p>Dividers can be added to create distinct sections of options or commands.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="ms-ContextualMenu is-open">
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Delete</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Flag</a></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Important</a></li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Move</a></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+  <li class="ms-ContextualMenu-item">
+    <a class="ms-ContextualMenu-link ms-ContextualMenu-link--hasMenu" href="#">Move</a>
+    <i class="ms-ContextualMenu-subMenuIcon ms-Icon ms-Icon--chevronRight"></i>
+    <ul class="ms-ContextualMenu">
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Flag</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Important</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-selected" href="#">Label</a></li>
+      <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Snooze</a></li>
+    </ul>
+  </li>
+  <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link is-selected" href="#">Create Rule...</a></li>
+  <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+  <li class="ms-ContextualMenu-item "><a class="ms-ContextualMenu-link is-disabled" href="#">Verdana</a></li>
+</ul>
+
+
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-open</code></td>
+<td><code>.ms-ContextualMenu</code></td>
+<td>The ContextualMenu is hidden by default. Toggle this class to show or hide it.</td>
+</tr>
+<tr>
+<td><code>.is-selected</code></td>
+<td><code>.ms-ContextualMenu-link</code></td>
+<td>Marks that item as selected. Only available for the multiselect variant.</td>
+</tr>
+<tr>
+<td><code>.is-disabled</code></td>
+<td><code>.ms-ContextualMenu-link</code></td>
+<td>Disables that item in the menu.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;ul class=&quot;ms-ContextualMenu is-open&quot;&gt;
+     &lt;li class=&quot;ms-ContextualMenu-item&quot;&gt;&lt;a class=&quot;ms-ContextualMenu-link&quot; href=&quot;#&quot;&gt;Animals&lt;/a&gt;&lt;/li&gt;
+     &lt;li class=&quot;ms-ContextualMenu-item&quot;&gt;&lt;a class=&quot;ms-ContextualMenu-link&quot; href=&quot;#&quot;&gt;Books&lt;/a&gt;&lt;/li&gt;
+     &lt;li class=&quot;ms-ContextualMenu-item&quot;&gt;&lt;a class=&quot;ms-ContextualMenu-link is-selected&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;&lt;/li&gt;
+     &lt;li class=&quot;ms-ContextualMenu-item&quot;&gt;&lt;a class=&quot;ms-ContextualMenu-link&quot; href=&quot;#&quot;&gt;Music&lt;/a&gt;&lt;/li&gt;
+     &lt;li class=&quot;ms-ContextualMenu-item&quot;&gt;&lt;a class=&quot;ms-ContextualMenu-link is-disabled&quot; href=&quot;#&quot;&gt;Sports&lt;/a&gt;&lt;/li&gt;
+ &lt;/ul&gt;
+</code></pre></li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all ContextualMenu components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.ContextualMenu) {
+             $(&#39;.ms-ContextualMenu&#39;).ContextualMenu();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as the <code>.ms-ContextualMenu-link</code> elements) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,664 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Office UI Fabric 2.5.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+/*Sasssssssss*/
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+.ms-ContextualMenu {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  display: none;
+}
+
+.ms-ContextualMenu.is-open {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background-color: #ffffff;
+  border: 1px solid #c8c8c8;
+  display: block;
+  list-style-type: none;
+  position: absolute;
+  width: 180px;
+  z-index: 105;
+}
+
+.ms-ContextualMenu-item {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider {
+  cursor: default;
+  display: block;
+  height: 1px;
+  margin: 4px 0;
+  background-color: #eaeaea;
+  position: relative;
+}
+
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  color: #0078d7;
+  font-size: 12px;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+}
+
+.ms-ContextualMenu-link {
+  text-decoration: none;
+  color: #333333;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+  position: relative;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-ContextualMenu-link {
+    border-color: #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-ContextualMenu-link {
+    border-color: #ffffff;
+  }
+}
+
+.ms-ContextualMenu-link:first-child,
+.ms-ContextualMenu-link:last-child {
+  height: 39px;
+}
+
+.ms-ContextualMenu-link:hover,
+.ms-ContextualMenu-link:active,
+.ms-ContextualMenu-link:focus {
+  background-color: #eaeaea;
+  color: #000000;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-ContextualMenu-link:hover {
+    background-color: #1aebff;
+    border-color: #1aebff;
+    color: #000000;
+  }
+
+  .ms-ContextualMenu-link:hover:focus {
+    border-color: #000000;
+  }
+
+  .ms-ContextualMenu-link:hover + .ms-ContextualMenu-subMenuIcon,
+  .ms-ContextualMenu-link:hover + .ms-ContextualMenu-caretRight {
+    color: #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-ContextualMenu-link:hover {
+    background-color: #37006e;
+    border-color: #37006e;
+    color: #ffffff;
+  }
+
+  .ms-ContextualMenu-link:hover + .ms-ContextualMenu-subMenuIcon,
+  .ms-ContextualMenu-link:hover + .ms-ContextualMenu-caretRight {
+    color: #ffffff;
+  }
+}
+
+.ms-ContextualMenu-link:active {
+  border: 1px solid #0078d7;
+}
+
+.ms-ContextualMenu-link:focus {
+  border-color: #0078d7;
+  outline: 0;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-ContextualMenu-link:focus {
+    border-color: #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-ContextualMenu-link:focus {
+    border-color: #000000;
+  }
+}
+
+.ms-ContextualMenu-link.is-selected {
+  background-color: #c7e0f4;
+  color: #000000;
+  font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+.ms-ContextualMenu-link.is-selected:hover {
+  background-color: #c7e0f4;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-ContextualMenu-link.is-selected {
+    background-color: #1aebff;
+    border-color: #1aebff;
+    color: #000000;
+  }
+
+  .ms-ContextualMenu-link.is-selected:focus {
+    border-color: #000000;
+  }
+
+  .ms-ContextualMenu-link.is-selected + .ms-ContextualMenu-subMenuIcon,
+  .ms-ContextualMenu-link.is-selected + .ms-ContextualMenu-caretRight {
+    color: #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-ContextualMenu-link.is-selected {
+    background-color: #37006e;
+    border-color: #37006e;
+    color: #ffffff;
+  }
+
+  .ms-ContextualMenu-link.is-selected + .ms-ContextualMenu-subMenuIcon,
+  .ms-ContextualMenu-link.is-selected + .ms-ContextualMenu-caretRight {
+    color: #ffffff;
+  }
+}
+
+.ms-ContextualMenu-link.is-disabled {
+  color: #a6a6a6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.ms-ContextualMenu-link.is-disabled:active,
+.ms-ContextualMenu-link.is-disabled:focus {
+  border-color: #ffffff;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-ContextualMenu-link.is-disabled:active,
+  .ms-ContextualMenu-link.is-disabled:focus {
+    border-color: #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-ContextualMenu-link.is-disabled:active,
+  .ms-ContextualMenu-link.is-disabled:focus {
+    border-color: #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-ContextualMenu-link.is-disabled {
+    color: #00ff00;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-ContextualMenu-link.is-disabled {
+    color: #600000;
+  }
+}
+
+.ms-ContextualMenu-link.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  left: 178px;
+}
+
+.ms-ContextualMenu-subMenuIcon,
+.ms-ContextualMenu-caretRight {
+  color: #666666;
+  font-size: 16px;
+  height: 39px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 7px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  padding: 0 30px;
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link {
+  padding: 0 30px;
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected {
+  background-color: #ffffff;
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--multiselect .ms-ContextualMenu-link.is-selected:after {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'Office365Icons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  color: #333333;
+  content: '\e041';
+  font-size: 12px;
+  height: 39px;
+  line-height: 40px;
+  position: absolute;
+  left: 10px;
+}
+
+.ms-CommandBar {
+  background-color: #eff6fc;
+  height: 40px;
+  white-space: nowrap;
+  padding-left: 0;
+  border: 0;
+  position: relative;
+}
+
+.ms-CommandBar:focus {
+  outline: none;
+}
+
+.ms-CommandBar-mainArea {
+  overflow-x: hidden;
+  display: block;
+  padding-left: 58px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .ms-CommandBar-mainArea {
+    padding-left: 24px;
+  }
+}
+
+.ms-CommandBar-sideCommands {
+  float: right;
+  text-align: right;
+  width: auto;
+  padding-right: 8px;
+}
+
+.ms-CommandBar-sideCommands .ms-CommandBarItem:last-child {
+  margin-right: 0;
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBar-sideCommands {
+    min-width: 128px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBar-sideCommands {
+    padding-right: 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .ms-CommandBar-sideCommands {
+    padding-right: 16px;
+  }
+}
+
+.ms-CommandBarItem {
+  display: inline-block;
+  color: #0078d7;
+  height: 40px;
+  outline: none;
+  vertical-align: top;
+  margin-right: -4px;
+}
+
+.ms-CommandBarItem .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem .ms-CommandBarItem-commandText {
+  display: none;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    height: 38px;
+    outline: none;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    height: 38px;
+    outline: none;
+  }
+}
+
+.ms-CommandBarItem:hover {
+  background-color: #c7e0f4;
+  color: #0078d7;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarItem:hover {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarItem:hover {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .ms-CommandBarItem {
+    margin-right: 8px;
+  }
+
+  .ms-CommandBarItem .ms-CommandBarItem-chevronDown,
+  .ms-CommandBarItem .ms-CommandBarItem-commandText {
+    display: inline;
+  }
+}
+
+.ms-CommandBarItem.is-hidden {
+  width: 0;
+  overflow: hidden;
+}
+
+.ms-CommandBarItem.icon-only .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem.icon-only .ms-CommandBarItem-commandText,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly .ms-CommandBarItem-chevronDown,
+.ms-CommandBarItem.ms-CommandBarItem--iconOnly .ms-CommandBarItem-commandText {
+  display: none;
+}
+
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly .ms-CommandBarItem-commandText,
+.ms-CommandBarItem.ms-CommandBarItem--hasTextOnly .ms-CommandBarItem-chevronDown {
+  display: inline;
+}
+
+.ms-CommandBarItem-overflow {
+  display: none;
+}
+
+.ms-CommandBarItem-overflow.is-visible {
+  display: inline-block;
+}
+
+.ms-CommandBarItem-overflow .ms-Icon {
+  font-size: 14px;
+  color: #666666;
+}
+
+.ms-CommandBarItem-link {
+  line-height: 39px;
+  padding: 0 6px;
+  cursor: pointer;
+  height: 40px;
+  min-width: 20px;
+  text-align: center;
+  position: relative;
+  padding: 0 8px;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+
+.ms-CommandBarItem-link:focus {
+  outline: none;
+}
+
+.ms-CommandBarItem-link:focus:before {
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  border: 1px solid #a6a6a6;
+  content: '';
+}
+
+.ms-CommandBarItem-icon {
+  font-size: 17px;
+  color: #0078d7;
+}
+
+.ms-CommandBarItem-chevronDown {
+  vertical-align: middle;
+  padding-bottom: 3px;
+  margin-top: 13px;
+  font-size: 1.1em;
+  line-height: 1em;
+  color: #666666;
+}
+
+.ms-CommandBarItem-chevronDown:before {
+  height: 10px;
+  line-height: 16px;
+}
+
+.ms-CommandBarSearch {
+  float: left;
+  width: 208px;
+  max-width: 208px;
+  background-color: #deecf9;
+  color: #333333;
+  height: 40px;
+  position: relative;
+  box-sizing: border-box;
+  border-color: transparent;
+  transition: 0.167s cubic-bezier(0.1, 0.9, 0.2, 1);
+  transition-property: width, background-color;
+}
+
+@media only screen and (max-width: 1023px) {
+  .ms-CommandBarSearch {
+    overflow: hidden;
+    width: 50px;
+    position: absolute;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch {
+    border-right: 1px solid #ffffff;
+    z-index: 10;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch {
+    border-right: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarSearch:hover {
+  background-color: #c7e0f4;
+  color: #0078d7;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch:hover {
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch:hover {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+  }
+}
+
+.ms-CommandBarSearch .ms-Icon--search {
+  margin-left: 2px;
+  margin-top: 12px;
+  vertical-align: top;
+}
+
+.ms-CommandBarSearch-input {
+  height: 40px;
+  padding: 8px 8px 8px 0;
+  border: none;
+  border-left: 42px solid transparent;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-CommandBarSearch-input {
+    border-left: 40px solid #000000;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-CommandBarSearch-input {
+    border-left: 40px solid #ffffff;
+  }
+}
+
+.ms-CommandBarSearch-input::-ms-clear {
+  display: none;
+}
+
+.ms-CommandBarSearch-input::-webkit-input-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input::-moz-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input:-ms-input-placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input::placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-input:placeholder {
+  color: #333333;
+  opacity: 1;
+  font-size: 14px;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper {
+  display: block;
+  padding-left: 15px;
+}
+
+.ms-CommandBarSearch-iconArrowWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch-iconSearchWrapper,
+.ms-CommandBarSearch-iconArrowWrapper {
+  top: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.ms-CommandBarSearch-iconClearWrapper {
+  display: none;
+  top: 1px;
+  right: 0px;
+  z-index: 10;
+}
+
+.ms-CommandBarSearch.is-active {
+  background-color: #c7e0f4;
+  color: #000000;
+}
+
+@media only screen and (max-width: 1023px) {
+  .ms-CommandBarSearch.is-active {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    max-width: 100%;
+  }
+}
+
+.ms-CommandBarSearch.is-active:hover {
+  background-color: #c7e0f4;
+  color: #000000;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-input {
+  cursor: text;
+  padding-right: 40px;
+  border-left-width: 8px;
+}
+
+.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-input {
+  border-left-width: 40px;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-iconSearchWrapper {
+  display: none;
+}
+
+.ms-CommandBarSearch.is-active.ms-CommandBarSearch--hasBack .ms-CommandBarSearch-iconArrowWrapper {
+  display: block;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-input {
+  padding-right: 40px;
+}
+
+.ms-CommandBarSearch.is-active .ms-CommandBarSearch-iconClearWrapper {
+  display: block;
+}
+
+.ms-CommandBarSearch-iconWrapper {
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  padding: 0px 8px;
+  position: absolute;
+  width: 34px;
+  text-align: center;
+}
+
+.ms-CommandBarSearch .ms-Icon:before {
+  font-size: 17px;
+  color: #0078d7;
+}

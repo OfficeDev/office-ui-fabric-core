@@ -1,0 +1,238 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Table</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Table.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Table) {
+          $('.ms-Table').Table();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Table' in fabric) {
+          var elements = document.querySelectorAll('.ms-Table');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Table'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Table</h1>
+  <div id="componentWrapper">
+    <h1 id="table">Table</h1>
+<p>Presents tabular data with multiple rows and columns. The table&#39;s width is flexible, but it does not have any advanced responsive behaviors.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<table class="ms-Table">
+  <thead>
+    <tr>
+      <th class="ms-Table-rowCheck"></th>
+      <th>File name</th>
+      <th>Location</th>
+      <th>Modified</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ms-Table-rowCheck"></td>
+      <td>Cupcake ipsum dolor sit amet cake gummies bear claw cake. Chocolate chocolate bar donut.</td>
+      <td>Candy canes bear claw marzipan icing wafer.</td>
+      <td>Chocolate chocolate bar donut.</td>
+      <td>Candy canes cupcake macaroon toffee.</td>
+    </tr>
+    <tr>
+      <td class="ms-Table-rowCheck"></td>
+      <td>File name</td>
+      <td>Location</td>
+      <td>Modified</td>
+      <td>Type</td>
+    </tr>
+    <tr>
+      <td class="ms-Table-rowCheck"></td>
+      <td>File name</td>
+      <td>Location</td>
+      <td>Modified</td>
+      <td>Type</td>
+    </tr>
+    <tr>
+      <td class="ms-Table-rowCheck"></td>
+      <td>File name</td>
+      <td>Location</td>
+      <td>Modified</td>
+      <td>Type</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the sample above into your page.</li>
+<li>Replace the content with your own data. You can add more rows or columns.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependency on other components.</p>
+
+  </div>
+</body>
+</html>

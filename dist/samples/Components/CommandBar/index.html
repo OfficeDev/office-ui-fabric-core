@@ -1,0 +1,401 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component CommandBar</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="CommandBar.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.CommandBar) {
+          $('.ms-CommandBar').CommandBar();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('CommandBar' in fabric) {
+          var elements = document.querySelectorAll('.ms-CommandBar');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['CommandBar'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.CommandBar.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">CommandBar</h1>
+  <div id="componentWrapper">
+    <h1 id="command-bar">Command Bar</h1>
+<p>Commanding surface for panels, pages, and applications. Unlike the NavBar, this component should not navigate to other pages.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandBar">
+  <div class="ms-CommandBarSearch">
+    <input class="ms-CommandBarSearch-input" type="text" placeholder="Search" tabindex="1"/>
+    <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper">
+      <i class="ms-Icon ms-Icon--search"></i>
+    </div>
+    <div class="ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconClearWrapper ms-font-s">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </div>
+  </div><br>  <div class="ms-CommandBar-sideCommands">
+    <div class="ms-CommandBarItem">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--reactivate"></span>
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Undo</span>
+          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="ms-CommandBar-mainArea">
+    <div class="ms-CommandBarItem">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--star"></span>
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">New</span>
+          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+        </a>
+      </div>
+    </div>
+    <div class="ms-CommandBarItem">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Delete</span>
+        </a>
+      </div>
+    </div>
+    <div class="ms-CommandBarItem">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--flag"></span>
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Archive</span>
+        </a>
+      </div>
+    </div>
+    <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Junk</span>
+        </a>
+      </div>
+    </div>
+    <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Move To</span>
+          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+        </a>
+      </div>
+    </div>
+    <div class="ms-CommandBarItem ms-CommandBarItem--hasTextOnly">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="1">
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Categories</span>
+          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Overflow Command -->
+    <div class="ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow">
+      <div class="ms-CommandBarItem-linkWrapper">
+        <a class="ms-CommandBarItem-link" tabindex="2">
+          <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis"></span>
+          <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Ellipsis</span>
+          <i class="ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown"></i>
+        </a>
+      </div>
+      <ul class="ms-CommandBar-overflowMenu ms-ContextualMenu"></ul>
+    </div>
+    <!-- End Overflow Command -->
+  </div>
+</div>
+
+
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-hidden</code></td>
+<td><code>.ms-CommandBarItem</code></td>
+<td>Hides a Command Bar item from view.</td>
+</tr>
+<tr>
+<td><code>.is-active</code></td>
+<td><code>.ms-CommandBarSearch</code></td>
+<td>Expands the search field for use.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the sample above into your page. For example:<pre><code> &lt;div class=&quot;ms-CommandBar&quot;&gt;
+     &lt;div class=&quot;ms-CommandBarSearch&quot;&gt;
+         &lt;input class=&quot;ms-CommandBarSearch-input&quot; type=&quot;text&quot; placeholder=&quot;Search&quot; tabindex=&quot;1&quot;/&gt;
+         &lt;div class=&quot;ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconSearchWrapper&quot;&gt;
+         &lt;i class=&quot;ms-Icon ms-Icon--search&quot;&gt;&lt;/i&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-CommandBarSearch-iconWrapper ms-CommandBarSearch-iconClearWrapper ms-font-s&quot;&gt;
+         &lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;  
+     &lt;div class=&quot;ms-CommandBar-sideCommands&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-icon ms-Icon ms-Icon--reactivate&quot;&gt;&lt;/span&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Undo&lt;/span&gt;
+             &lt;i class=&quot;ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown&quot;&gt;&lt;/i&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;ms-CommandBar-mainArea&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-icon ms-Icon ms-Icon--star&quot;&gt;&lt;/span&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;New&lt;/span&gt;
+             &lt;i class=&quot;ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown&quot;&gt;&lt;/i&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-CommandBarItem&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-icon ms-Icon ms-Icon--save&quot;&gt;&lt;/span&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Delete&lt;/span&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-CommandBarItem&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-icon ms-Icon ms-Icon--flag&quot;&gt;&lt;/span&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Archive&lt;/span&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-CommandBarItem ms-CommandBarItem--hasTextOnly&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Junk&lt;/span&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-CommandBarItem ms-CommandBarItem--hasTextOnly&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Move To&lt;/span&gt;
+             &lt;i class=&quot;ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown&quot;&gt;&lt;/i&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-CommandBarItem ms-CommandBarItem--hasTextOnly&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;1&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Categories&lt;/span&gt;
+             &lt;i class=&quot;ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown&quot;&gt;&lt;/i&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;!-- Overflow Command --&gt;
+         &lt;div class=&quot;ms-CommandBarItem ms-CommandBarItem--iconOnly ms-CommandBarItem-overflow&quot;&gt;
+         &lt;div class=&quot;ms-CommandBarItem-linkWrapper&quot;&gt;
+             &lt;a class=&quot;ms-CommandBarItem-link&quot; tabindex=&quot;2&quot;&gt;
+             &lt;span class=&quot;ms-CommandBarItem-icon ms-Icon ms-Icon--ellipsis&quot;&gt;&lt;/span&gt;
+             &lt;span class=&quot;ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular&quot;&gt;Ellipsis&lt;/span&gt;
+             &lt;i class=&quot;ms-CommandBarItem-chevronDown ms-Icon ms-Icon--chevronDown&quot;&gt;&lt;/i&gt;
+             &lt;/a&gt;
+         &lt;/div&gt;
+         &lt;ul class=&quot;ms-CommandBar-overflowMenu ms-ContextualMenu&quot;&gt;&lt;/ul&gt;
+         &lt;/div&gt;
+         &lt;!-- End Overflow Command --&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page to instantiate all CommandBar components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.CommandBar) {
+             $(&#39;.ms-CommandBar&#39;).CommandBar();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as <code>.ms-CommandBarItem</code> elements) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Refer to the sample code to see how <code>tabindex</code> attributes should be set to support keyboard navigation.</p>
+
+  </div>
+</body>
+</html>

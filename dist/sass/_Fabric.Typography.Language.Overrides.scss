@@ -1,0 +1,118 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Language override definitions
+
+
+// A mixin that overrides all of the font classes for languages that
+// use system fonts. A single font-family is used for all weights.
+@mixin language-override-system-fonts($ms-lang-code, $ms-font-family) {
+  *[lang="#{$ms-lang-code}"] {
+    .ms-font-mi,
+    .ms-font-xs,
+    .ms-font-s,
+    .ms-font-s-plus,
+    .ms-font-m,
+    .ms-font-m-plus,
+    .ms-font-l,
+    .ms-font-xl,
+    .ms-font-xxl,
+    .ms-font-su,
+    .ms-fontWeight-light,
+    .ms-fontWeight-light-hover:hover,
+    .ms-fontWeight-semilight,
+    .ms-fontWeight-semilight-hover:hover,
+    .ms-fontWeight-regular,
+    .ms-fontWeight-regular-hover:hover,
+    .ms-fontWeight-semibold,
+    .ms-fontWeight-semibold-hover:hover {
+      font-family: $ms-font-family;
+    }
+  }
+}
+
+// Base font stack.
+$ms-font-system-base: 'Segoe UI', Tahoma, Arial, sans-serif;
+
+// Variables for each of the non-distributed (native) font stacks.
+$ms-font-stack-japanese: 'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-system-base;
+$ms-font-stack-korean: 'Malgun Gothic', Gulim, $ms-font-system-base;
+$ms-font-stack-chinese-simplified: 'Microsoft Yahei', Verdana, Simsun, $ms-font-system-base;
+$ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-system-base;
+$ms-font-stack-hindi: 'Nirmala UI', $ms-font-system-base;
+
+
+//== Web fonts
+// 
+// A mixin that overrides all of the font classes for languages that use
+// distributed web fonts. These reference different fonts for each weight.
+@mixin language-override-web-fonts($ms-lang-code, $ms-font-family-light, $ms-font-family-semilight, $ms-font-family-regular, $ms-font-family-semibold) {
+  *[lang="#{$ms-lang-code}"] {
+    .ms-font-xl,
+    .ms-font-xxl,
+    .ms-fontWeight-light,
+    .ms-fontWeight-light-hover:hover {
+      font-family: $ms-font-family-light;
+    }
+    .ms-font-l,
+    .ms-font-su,
+    .ms-fontWeight-semilight,
+    .ms-fontWeight-semilight-hover:hover {
+      font-family: $ms-font-family-semilight;
+    }
+    .ms-fontWeight-regular,
+    .ms-fontweight-regular-hover:hover {
+      font-family: $ms-font-family-regular;
+    }
+    .ms-font-mi,
+    .ms-fontWeight-semibold,
+    .ms-fontWeight-semibold-hover:hover {
+      font-family: $ms-font-family-semibold;
+    }
+  }
+}
+
+// Variables for each of the web font stacks.
+
+// East European
+$ms-font-family-light-eastEuropean:       'Segoe UI Light EastEuropean', $ms-font-family-light;
+$ms-font-family-semilight-eastEuropean:   'Segoe UI Semilight EastEuropean', $ms-font-family-semilight;
+$ms-font-family-regular-eastEuropean:     'Segoe UI Regular EastEuropean', $ms-font-family-regular;
+$ms-font-family-semibold-eastEuropean:    'Segoe UI Semibold EastEuropean', $ms-font-family-semibold;
+
+// Cyrillic
+$ms-font-family-light-cyrillic:           'Segoe UI Light Cyrillic', $ms-font-family-light;
+$ms-font-family-semilight-cyrillic:       'Segoe UI Semilight Cyrillic', $ms-font-family-semilight;
+$ms-font-family-regular-cyrillic:         'Segoe UI Regular Cyrillic', $ms-font-family-regular;
+$ms-font-family-semibold-cyrillic:        'Segoe UI Semibold Cyrillic', $ms-font-family-semibold;
+
+// Leelawadee
+$ms-font-family-semilight-leelawadee:     'Leelawadee UI Semilight', 'Kmer UI', $ms-font-family-semilight;
+$ms-font-family-regular-leelawadee:       'Leelawadee UI Regular', 'Kmer UI', $ms-font-family-regular;
+$ms-font-family-semibold-leelawadee:      'Leelawadee UI Bold', 'Kmer UI', $ms-font-family-semibold;
+
+// Arabic
+$ms-font-family-light-arabic:             'Segoe UI Light Arabic', $ms-font-family-light;
+$ms-font-family-semilight-arabic:         'Segoe UI Semilight Arabic', $ms-font-family-semilight;
+$ms-font-family-regular-arabic:           'Segoe UI Regular Arabic', $ms-font-family-regular;
+$ms-font-family-semibold-arabic:          'Segoe UI Semibold Arabic', $ms-font-family-semibold;
+
+// Greek
+$ms-font-family-light-greek:              'Segoe UI Light Greek', $ms-font-family-light;
+$ms-font-family-semilight-greek:          'Segoe UI Semilight Greek', $ms-font-family-semilight;
+$ms-font-family-regular-greek:            'Segoe UI Regular Greek', $ms-font-family-regular;
+$ms-font-family-semibold-greek:           'Segoe UI Semibold Greek', $ms-font-family-semibold;
+
+// Hebrew
+$ms-font-family-light-hebrew:             'Segoe UI Light Hebrew', $ms-font-family-light;
+$ms-font-family-semilight-hebrew:         'Segoe UI Semilight Hebrew', $ms-font-family-semilight;
+$ms-font-family-regular-hebrew:           'Segoe UI Regular Hebrew', $ms-font-family-regular;
+$ms-font-family-semibold-hebrew:          'Segoe UI Semibold Hebrew', $ms-font-family-semibold;
+
+// Vietnamese
+$ms-font-family-light-vietnamese:         'Segoe UI Light Vietnamese', $ms-font-family-light;
+$ms-font-family-semilight-vietnamese:     'Segoe UI Semilight Vietnamese', $ms-font-family-semilight;
+$ms-font-family-regular-vietnamese:       'Segoe UI Regular Vietnamese', $ms-font-family-regular;
+$ms-font-family-semibold-vietnamese:      'Segoe UI Semibold Vietnamese', $ms-font-family-semibold;

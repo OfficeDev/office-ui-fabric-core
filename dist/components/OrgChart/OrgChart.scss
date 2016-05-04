@@ -1,0 +1,43 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Org chart styles
+
+
+.ms-OrgChart {
+  @include ms-font-m;
+  @include ms-u-normalize;
+}
+
+.ms-OrgChart-groupTitle {
+  color: $ms-color-neutralSecondary;
+  line-height: 1;
+}
+
+.ms-OrgChart-list {
+  padding: 0;
+  margin: 12px 0 16px 0;
+}
+
+.ms-OrgChart-listItem {
+  height: 50px;
+  width: 100%;
+  position: relative;
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.ms-OrgChart-listItemBtn {
+  @include button-reset();
+  position: relative;
+  height: 50px;
+  width: 100%;
+  background: none;
+  border: 0;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  outline: transparent;
+}

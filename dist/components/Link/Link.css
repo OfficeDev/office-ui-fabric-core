@@ -1,0 +1,35 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Office UI Fabric 2.5.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+/*Sasssssssss*/
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+.ms-Link {
+  color: #0078d7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ms-Link:hover,
+.ms-Link:focus {
+  color: #004578;
+}
+
+.ms-Link:active {
+  color: #0078d7;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .ms-Link {
+    color: #8080ff;
+  }
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+  .ms-Link {
+    color: #00009f;
+  }
+}

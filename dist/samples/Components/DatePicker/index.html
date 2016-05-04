@@ -1,0 +1,324 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component DatePicker</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="DatePicker.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.DatePicker) {
+          $('.ms-DatePicker').DatePicker();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('DatePicker' in fabric) {
+          var elements = document.querySelectorAll('.ms-DatePicker');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['DatePicker'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.DatePicker.js"></script>
+<script type="text/javascript" src="PickaDate.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">DatePicker</h1>
+  <div id="componentWrapper">
+    <h1 id="date-picker">Date Picker</h1>
+<p>Allows for the selection of a date into a text field.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- This is a sample Date Picker that works for Gregorian calendars. It uses jQuery and pickadate.js for demonstration. -->
+<!-- For more information on this version of pickadate.js (3.5.3), go here: https://github.com/amsul/pickadate.js/tree/505e00b9208a81ffb169338042c0b9c781e76fb7 -->
+<div class="ms-DatePicker">
+  <div class="ms-TextField">
+    <label class="ms-Label">Start date</label>
+    <i class="ms-DatePicker-event ms-Icon ms-Icon--event"></i>
+    <input class="ms-TextField-field" type="text" placeholder="Select a date&hellip;">
+  </div>
+  <div class="ms-DatePicker-monthComponents">
+    <span class="ms-DatePicker-nextMonth js-nextMonth"><i class="ms-Icon ms-Icon--chevronRight"></i></span>
+    <span class="ms-DatePicker-prevMonth js-prevMonth"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>
+    <div class="ms-DatePicker-headerToggleView js-showMonthPicker"></div>
+  </div>
+  <span class="ms-DatePicker-goToday js-goToday">Go to today</span>
+  <div class="ms-DatePicker-monthPicker">
+    <div class="ms-DatePicker-header">
+      <div class="ms-DatePicker-yearComponents">
+        <span class="ms-DatePicker-nextYear js-nextYear"><i class="ms-Icon ms-Icon--chevronRight"></i></span>
+        <span class="ms-DatePicker-prevYear js-prevYear"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>
+      </div>
+      <div class="ms-DatePicker-currentYear js-showYearPicker"></div>
+    </div>
+    <div class="ms-DatePicker-optionGrid">
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="0">Jan</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="1">Feb</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="2">Mar</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="3">Apr</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="4">May</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="5">Jun</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="6">Jul</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="7">Aug</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="8">Sep</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="9">Oct</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="10">Nov</span>
+      <span class="ms-DatePicker-monthOption js-changeDate" data-month="11">Dec</span>
+    </div>
+  </div>
+  <div class="ms-DatePicker-yearPicker">
+    <div class="ms-DatePicker-decadeComponents">
+      <span class="ms-DatePicker-nextDecade js-nextDecade"><i class="ms-Icon ms-Icon--chevronRight"></i></span>
+      <span class="ms-DatePicker-prevDecade js-prevDecade"><i class="ms-Icon ms-Icon--chevronLeft"></i></span>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-highlighted</code></td>
+<td><code>.ms-DatePicker-monthOption</code>, <code>.ms-DatePicker-yearOption</code></td>
+<td>Marks a month or year as selected.</td>
+</tr>
+<tr>
+<td><code>.is-pickingYears</code></td>
+<td><code>.ms-DatePicker</code></td>
+<td>Displays a set of years to choose from.</td>
+</tr>
+<tr>
+<td><code>.is-pickingMonths</code></td>
+<td><code>.ms-DatePicker</code></td>
+<td>Displays a set of months to choose from.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;div class=&quot;ms-DatePicker&quot;&gt;
+     &lt;div class=&quot;ms-TextField&quot;&gt;
+         &lt;label class=&quot;ms-Label&quot;&gt;Start date&lt;/label&gt;
+         &lt;i class=&quot;ms-DatePicker-event ms-Icon ms-Icon--event&quot;&gt;&lt;/i&gt;
+         &lt;input class=&quot;ms-TextField-field&quot; type=&quot;text&quot; placeholder=&quot;Select a date&amp;hellip;&quot;&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;ms-DatePicker-monthComponents&quot;&gt;
+         &lt;span class=&quot;ms-DatePicker-nextMonth js-nextMonth&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-prevMonth js-prevMonth&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--chevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+         &lt;div class=&quot;ms-DatePicker-headerToggleView js-showMonthPicker&quot;&gt;&lt;/div&gt;
+     &lt;/div&gt;
+     &lt;span class=&quot;ms-DatePicker-goToday js-goToday&quot;&gt;Go to today&lt;/span&gt;
+     &lt;div class=&quot;ms-DatePicker-monthPicker&quot;&gt;
+         &lt;div class=&quot;ms-DatePicker-header&quot;&gt;
+         &lt;div class=&quot;ms-DatePicker-yearComponents&quot;&gt;
+             &lt;span class=&quot;ms-DatePicker-nextYear js-nextYear&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+             &lt;span class=&quot;ms-DatePicker-prevYear js-prevYear&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--chevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-DatePicker-currentYear js-showYearPicker&quot;&gt;&lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-DatePicker-optionGrid&quot;&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;0&quot;&gt;Jan&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;1&quot;&gt;Feb&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;2&quot;&gt;Mar&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;3&quot;&gt;Apr&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;4&quot;&gt;May&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;5&quot;&gt;Jun&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;6&quot;&gt;Jul&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;7&quot;&gt;Aug&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;8&quot;&gt;Sep&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;9&quot;&gt;Oct&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;10&quot;&gt;Nov&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-monthOption js-changeDate&quot; data-month=&quot;11&quot;&gt;Dec&lt;/span&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;ms-DatePicker-yearPicker&quot;&gt;
+         &lt;div class=&quot;ms-DatePicker-decadeComponents&quot;&gt;
+         &lt;span class=&quot;ms-DatePicker-nextDecade js-nextDecade&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+         &lt;span class=&quot;ms-DatePicker-prevDecade js-prevDecade&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--chevronLeft&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all DatePicker components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.DatePicker) {
+             $(&#39;.ms-DatePicker&#39;).DatePicker();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies on other components. It does, however, require <a href="http://amsul.ca/pickadate.js/">pickadate.js</a> which is included in <code>jquery.fabric.min.js</code>. </p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+  </div>
+</body>
+</html>

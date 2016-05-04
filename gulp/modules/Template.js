@@ -1,23 +1,51 @@
 var htmlparser = require("htmlparser2");
 var fs = require("fs");
 var path = require("path");
+var gulp = require("gulp");
+var Config = require('./Config');
+var Plugins = require('./Plugins');
+var Utilities = require('./Utilities');
 
 var Template = function(directories, dist, src, callback) {
   var _currentDirectory = 1; // Counter for current directory
   var _parserHolder = [];
   var _createString = "";
   var _loadDoms = [];
+  var _dirX = 0;
+  
+  this.continueParsing = function() {
+    if(_dirX < directories.length) {
+      var _file = directories[_dirX];
+      var _fileContents;
+      var _srcFolderName = Config.paths.componentsPath + '/' + _file;
+      var _manifest = Utilities.parseManifest(_srcFolderName + '/' + _file + '.json');
+       console.log("Hruuurr");
+      
+      gulp.src(src + '/' + _file + '/' + _file + '.html')
+      .pipe(Plugins.handlebars(_manifest, Config.handleBarsConfig))
+      .pipe(Plugins.tap(function(file, t) {
+         _fileContents = file.contents;
+        }.bind(this)
+      ))
+      .on('end', function() {
+        console.log("Finishsss");
+        // this.emit("end");
+        _parserHolder[_dirX] = new htmlparser.Parser(this.handler, {
+          onreset: function() {
+            _dirX++;
+            this.continueParsing();
+          }.bind(this)
+        });
+        _parserHolder[_dirX].write(_fileContents);
+        _parserHolder[_dirX].end();
+        _parserHolder[_dirX].reset();
+      }.bind(this));
+    }
+  };
   
   this.init = function() {
-    for (var x = 0; x < directories.length; x++) {
-      var _file = directories[x];
-      var _fileContents = fs.readFileSync(src + '/' + _file + '/' + _file + '.html');
-      _parserHolder[x] = new htmlparser.Parser(handler);
-      _parserHolder[x].write(_fileContents);
-      _parserHolder[x].end();
-      _parserHolder[x].reset();
-    }
-  }
+    this.continueParsing();
+  };
   
   this.parseElement = function(element, elementName, parentElement, parentElementName, isRoot) {
   
@@ -51,17 +79,17 @@ var Template = function(directories, dist, src, callback) {
         _createString += parentElementName + '.appendChild(' + elementName + ');'  + "\r\n";
       }
     }
-  }
+  };
 
   this.getDirectories = function(srcpath) {
     return fs.readdirSync(srcpath).filter(function(file) {
       return fs.statSync(path.join(srcpath, file)).isDirectory();
     });
-  }
+  };
 
   this.purifyClassName = function(className) {
     return className.replace("ms-", "");
-  }
+  };
 
   this.processDOM = function(dom) {
     
@@ -88,8 +116,9 @@ var Template = function(directories, dist, src, callback) {
   
     _createString += "return " + newName; 
     _createString += "}"
-    fs.writeFileSync(dist + '/' + rootName + '/' + rootName + '.js', _createString);
-  }
+      console.log("Creating file", dist + '/' + rootName + '/' + rootName + '.lib.js');
+    fs.writeFileSync(dist + '/' + rootName + '/' + rootName + '.lib.js', _createString);
+  };
 
   this.handler = new htmlparser.DomHandler(function (error, dom) {
       if (error) {
@@ -97,17 +126,23 @@ var Template = function(directories, dist, src, callback) {
       }
       
       _loadDoms.push(dom);
-
-      if (currentDirectory >= directories.length) {
+       console.log(_currentDirectory >= directories.length, _currentDirectory, directories.length);
+      if (_currentDirectory >= directories.length) {
         createComponents();
+        onsole.log("Creating Directory");
       } else {
-        currentDirectory++;
+        _currentDirectory++;
       }
   });
 
   this.createComponents = function() {
     for (var x = 0; x < _loadDoms.length; x++) {
       processDOM(_loadDoms[x]);
+    }
+    
+    //Completed
+    if(callback) {
+      callback();
     }
   }
   

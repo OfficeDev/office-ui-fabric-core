@@ -9,6 +9,7 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
+var Template = require('./modules/Template');
 
 //
 // Clean/Delete Tasks
@@ -109,6 +110,13 @@ gulp.task('ComponentSamples-handlebars', function(cb) {
     cb();
 });
 
+gulp.task('ComponentSamples-template', function(cb) {
+  var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
+    console.log("ayy callinb ack");
+    cb();
+  }.bind(this));
+});
+
 //
 // Sample Component Building
 // ----------------------------------------------------------------------------
@@ -132,9 +140,6 @@ gulp.task('ComponentSamples-build', ['ComponentSamples-handlebars'], function() 
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
            .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
-           .on('error', function(err) {
-               console.log(err);
-           })
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(
@@ -171,8 +176,8 @@ var ComponentSamplesTasks = [
     'ComponentSamples-copyAssets', 
     'ComponentSamples-buildStyles',
     'ComponentJS',
+    "ComponentSamples-template",
     'ComponentSamples-copyIgnoredFiles'
-    // 'ComponentSamples-styleHinting'
 ];
 
 //Build Fabric Component Samples

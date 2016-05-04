@@ -87,6 +87,17 @@
   &:active {
     color: $ms-color-themePrimary;
   }
+  
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
 
   // Currently-selected action
   &.is-active {
@@ -137,7 +148,6 @@
 
 .ms-PersonaCard-actionDetails {
   list-style: none;
-  width: 20%;
   float: left;
   min-height: 48px;
   color: $ms-color-neutralSecondary;

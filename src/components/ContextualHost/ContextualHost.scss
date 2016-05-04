@@ -1,0 +1,186 @@
+
+.ms-ContextualHost {
+  z-index: $ms-zIndex-front;
+  margin: 16px auto;
+  position: relative;
+  min-width: 10px;
+  display: none;
+  
+  &.is-positioned {
+    position: absolute;
+    margin: 0;
+  }
+  
+  &.is-open {
+    display:  inline-block;
+  }
+}
+
+// Mixin for arrow size and color
+@mixin arrowBorders($ms-color-top, $ms-color-right, $ms-color-bottom, $ms-color-left) {
+  border-top: 10px solid $ms-color-top;
+  border-right: 10px solid $ms-color-right;
+  border-bottom: 10px solid $ms-color-bottom;
+  border-left: 10px solid $ms-color-left;
+}
+
+
+//= Modifier: Base styling for all ContextualHost arrows
+//
+.ms-ContextualHost.ms-ContextualHost--arrowRight,
+.ms-ContextualHost.ms-ContextualHost--arrowLeft,
+.ms-ContextualHost.ms-ContextualHost--arrowBottom,
+.ms-ContextualHost.ms-ContextualHost--arrowTop {
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    transform: rotate(-45deg);
+    height: 0;
+    width: 0;
+  }
+
+  &:before {
+    z-index: $ms-zIndex-back;
+    outline: 1px solid transparent;
+    @include drop-shadow;
+  }
+
+  &:after {
+    z-index: $ms-zIndex-front;
+  }
+}
+
+
+//= Modifier: ContextualHost with left and right arrows
+// 
+.ms-ContextualHost.ms-ContextualHost--arrowLeft,
+.ms-ContextualHost.ms-ContextualHost--arrowRight {
+  &:before,
+  &:after {
+    top: 40px;
+    display: none; // Hide left and right arrows on sm screens
+  }
+}
+
+.ms-ContextualHost.ms-ContextualHost--arrowLeft {
+  &:before,
+  &:after {
+    @include arrowBorders($ms-color-white, transparent, transparent, $ms-color-white);
+    left: -10px;
+  }
+}
+
+.ms-ContextualHost.ms-ContextualHost--arrowRight {
+  &:before,
+  &:after {
+    @include arrowBorders(transparent, $ms-color-white, $ms-color-white, transparent);
+    right: -10px;
+  }
+}
+
+
+//= Modifier: ContextualHost with top and bottom arrows
+// 
+.ms-ContextualHost.ms-ContextualHost--arrowTop,
+.ms-ContextualHost.ms-ContextualHost--arrowBottom {
+  &:before,
+  &:after {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+  }
+}
+
+.ms-ContextualHost.ms-ContextualHost--arrowTop {
+  &:before,
+  &:after {
+    @include arrowBorders($ms-color-white, $ms-color-white, transparent, transparent);
+    top: -10px;
+  }
+}
+
+.ms-ContextualHost.ms-ContextualHost--arrowBottom {
+  &:before,
+  &:after {
+    @include arrowBorders(transparent, transparent, $ms-color-white, $ms-color-white);
+    bottom: -10px;
+  }
+}
+
+// The actual ContextualHost element
+.ms-ContextualHost-main {
+  position: relative;
+  background-color: $ms-color-white;
+  box-sizing: border-box;
+  outline: 1px solid transparent;
+  z-index: $ms-zIndex-middle;
+  @include drop-shadow;
+  min-height: 10px;
+}
+
+.ms-ContextualHost-close {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: $ms-font-size-m;
+  color: $ms-color-neutralSecondary;
+  z-index: $ms-zIndex-front;
+}
+
+
+//= Modifier: Close button ContextualHost
+//
+.ms-ContextualHost.ms-ContextualHost--close {
+  .ms-ContextualHost-title {
+    margin-right: 20px; // Avoid overlap with close button
+  }
+}
+
+.ms-ContextualHost.ms-ContextualHost--peek {
+  &.ms-ContextualHost--arrowTop,
+  &.ms-ContextualHost--arrowBottom {
+    &:before,
+    &:after {
+      left: 40px;
+      right: auto;
+    }
+  }
+
+  &.ms-ContextualHost--arrowRight,
+  &.ms-ContextualHost--arrowLeft {
+    &:before,
+    &:after {
+      top: calc('50% - 10px');
+    }
+  }
+}
+
+
+
+@media (min-width: $ms-screen-md-min) {
+  // Make width larger and remove centering on md+ screens
+  .ms-ContextualHost {
+    margin: 16px;
+    &.is-positioned {
+      margin: 0;
+    }
+  }
+
+  // Show arrows right and left
+  .ms-ContextualHost.ms-ContextualHost--arrowRight,
+  .ms-ContextualHost.ms-ContextualHost--arrowLeft {
+    &:before,
+    &:after {
+      display: block;
+    }
+  }
+}

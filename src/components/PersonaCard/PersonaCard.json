@@ -14,15 +14,216 @@
     "OrgChart",
     "Link"
   ],
-  "branches": [
-    {
-      "name": "Regular",
-      "default": true
+  "props": {
+    "personaProps": {
+      "initials": "AL",
+      "initialsColor": "blue",
+      "image": "../persona/Persona.Person2.png",
+      "primaryText": "Alton Lafferty",
+      "secondaryText": "Accountant",
+      "tertiaryText": "In a meeting",
+      "optionalText": "Available at 4:00pm",
+      "modifiers":  [
+        {
+          "name": "lg"
+        }
+      ]
     },
-    {
-      "name": "Circles",
-      "notes": "This persona card uses circle personas and has the org chart built in.",
-      "class": "ms-PersonaCard--circles"
+    "orgChartProps": {
+      "groups": [
+        {
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Russel Miller",
+                "secondaryText": "Sales"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Douglas Fielder",
+                "secondaryText": "Public Relations"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Manager",
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Grant Steel",
+                "secondaryText": "Sales"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Staff",
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Harvey Wallin",
+                "secondaryText": "Public Relations"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Marcus Lauer",
+                "secondaryText": "Technical Support"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Marcel Groce",
+                "secondaryText": "Delivery"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Jessica Fischer",
+                "secondaryText": "Marketing"
+              }
+            }
+          ]
+        }
+      ]
     }
-  ]
+  },
+  "propsSquare": {
+    "modifier": "square",
+    "personaProps": {
+      "initials": "AL",
+      "initialsColor": "blue",
+      "image": "../persona/Persona.Person2.png",
+      "primaryText": "Alton Lafferty",
+      "secondaryText": "Accountant",
+      "tertiaryText": "In a meeting",
+      "optionalText": "Available at 4:00pm",
+      "modifiers":  [
+        {
+          "name": "lg"
+        },
+        {
+          "name": "square"
+        }
+      ]
+    },
+    "orgChartProps": {
+      "groups": [
+        {
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Russel Miller",
+                "secondaryText": "Sales"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Douglas Fielder",
+                "secondaryText": "Public Relations"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Manager",
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Grant Steel",
+                "secondaryText": "Sales"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Staff",
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Harvey Wallin",
+                "secondaryText": "Public Relations"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Marcus Lauer",
+                "secondaryText": "Technical Support"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Marcel Groce",
+                "secondaryText": "Delivery"
+              }
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "image": "../persona/Persona.Person2.png",
+                "primaryText": "Jessica Fischer",
+                "secondaryText": "Marketing"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
 }

@@ -10,84 +10,28 @@
     "Button.Primary.html",
     "Button.Hero.html",
     "Button.Compound.html",
-    "Button.Command.html"
+    "Button.Submenu.html"
   ],
-  "branches": [
-    {
-      "name": "Action",
-      "default": true,
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true,
-          "branches": [
-            {
-              "name": "Enabled",
-              "default": true
-            },
-            {
-              "name": "Disabled",
-              "class": "is-disabled"
-            }
-          ]
-        },
-        {
-          "name": "Primary",
-          "class": "ms-Button--primary",
-          "branches": [
-            {
-              "name": "Enabled",
-              "default": true
-            },
-            {
-              "name": "Disabled",
-              "class": "is-disabled"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Hero",
-      "class": "ms-Button--hero",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        }
-      ]
-    },
-    {
-      "name": "Compound",
-      "class": "ms-Button--compound",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        }
-      ]
-    },
-    {
-      "name": "Command",
-      "class": "ms-Button--command",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        }
-      ]
-    }
-  ]
+  "props":  {
+    "label": "Create Account",
+    "tag": "button"
+  },
+  "propsCompound": {
+    "label": "Create Account",
+    "description": "Description of this action this button takes",
+    "icon": "plus",
+    "modifier": "compound",
+    "tag": "button"
+  },
+  "propsHero": {
+    "label": "Create Account",
+    "icon": "plus",
+    "modifier": "hero",
+    "tag": "button"
+  },
+  "propsPrimary": {
+    "label": "Create Account",
+    "modifier": "primary",
+    "tag": "button"
+  }
 }

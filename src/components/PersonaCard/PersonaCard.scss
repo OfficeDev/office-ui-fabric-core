@@ -21,42 +21,9 @@
 
 .ms-PersonaCard-persona {
   background-color: $ms-color-neutralLighter;
-}
-
-// Overrides for persona
-.ms-PersonaCard-persona .ms-Persona {
-  .ms-Persona-imageArea {
-    width: 80px;
-    height: 80px;
-    margin: 12px 0 12px 20px;
-  }
-
-  .ms-Persona-image {
-    width: 80px;
-    height: 80px;
-  }
-
-  .ms-Persona-placeholder {
-    font-size: 75px;
-    left: 1px;
-    top: 11px;
-  }
-
-  .ms-Persona-initials {
-    font-size: $ms-font-size-xxl;
-    line-height: 80px;
-  }
-
-  .ms-Persona-presence {
-    border-color: $ms-color-neutralLighter;
-    left: 77px;
-    bottom: 12px;
-  }
-
-  .ms-Persona-tertiaryText,
-  .ms-Persona-optionalText {
-    display: block; // Show tertiary and optional text
-  }
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
 }
 
 .ms-PersonaCard-actions {
@@ -236,7 +203,6 @@
 @media (min-width: $ms-screen-md-min) {
   // Undock the persona card and give it a shadow.
   .ms-PersonaCard {
-    @include drop-shadow();
     max-width: 360px;
     position: relative;
   }

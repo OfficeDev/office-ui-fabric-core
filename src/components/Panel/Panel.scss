@@ -6,8 +6,13 @@
 // Panel styles
 
 $Panel-width-lightDismiss: 272px;
-$Panel-width-sm: 340px;
-$Panel-width-md: 643px;
+
+$Panel-width-sm: 272px;
+$Panel-width-md: 340px;
+$Panel-width-lg: 644px;
+$Panel-width-xl: 940px;
+$Panel-width-xxl: 1192px;
+
 $Panel-margin-md: 48px;
 $Panel-margin-lg: 428px;
 $Panel-margin-xl: 176px;
@@ -17,148 +22,69 @@ $CommandButtonLighterBlue: #d7eaf9;
 $CommandButtonDarkBlue: #07288b;
 $CommandButtonBlue: #2488D8;
 
-// The panel covers the entire screen.
-.ms-Panel {
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: $ms-zIndex-Panel;
-  display: none;
-  pointer-events: none;
-
-  // Overlay used within panel
-  .ms-Overlay {
-    z-index: $ms-zIndex-back;
-    display: none;
-    pointer-events: none;
-    opacity: 1;
-    cursor: pointer;
-    transition: opacity $ms-duration3 $ms-ease1;
-  }
-}
-
 // The panel itself, where the content goes.
-.ms-Panel-main {
+.ms-Panel {
   background-color: $ms-color-white;
-  bottom: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  display: none;
-  z-index: $ms-zIndex-front;
   width: 100%;
-
-  // Medium screens and up - (anchored right, fixed width)
-  @media (min-width: $ms-screen-md-min) {
-    border-left: 1px solid $ms-color-neutralLight;
-    border-right: 1px solid $ms-color-neutralLight;
-    pointer-events: auto;
-    width: $Panel-width-sm;
-    @include drop-shadow(-30px, 0px, 30px, -30px, .2);
-    left: auto;
-  }
-
-  .ms-CommandBar {
-    outline: 1px solid transparent;
-
-    // The commandbar is not displayed by default on md+ screens
-    @media (min-width: $ms-screen-md-min) {
-      display: none;
-    }
-  }
-
-  .ms-CommandBarItem {
-    margin-left: 8px;
-
-    .ms-CommandBarItem-commandText {
-      display: inline-block;
-    }
-  }
-
-  .ms-CommandBar-mainArea {
-    padding-left: 0;
-    margin-left: -1px;
-    overflow: hidden;
-  }
-}
-
-//== Modifier: Light Dismiss on small screens (fixed width)
-// Note: This panel should only be used for dropdown menus on small screens.
-.ms-Panel.ms-Panel--lightDismiss {
-  .ms-Panel-main {
-    border-left: 1px solid $ms-color-neutralLight;
-    border-right: 1px solid $ms-color-neutralLight;
-    width: $Panel-width-lightDismiss;
-    @include drop-shadow(-30px, 0px, 30px, -30px, .2);
-  }
-
-  // Commands and content inner are not displayed
-  // Note: Replace with a dropdown contextual menu.
-  .ms-Panel-commands,
-  .ms-Panel-contentInner {
-    display: none;
-  }
-
+  max-width: $Panel-width-sm;
+  display: block;
+  position: relative;
+  @include drop-shadow(-30px, 0px, 30px, -30px, .2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $ms-color-white;
+  z-index: $ms-zIndex-front;
+  
   // Animations -- Default (anchored right)
-  &.ms-Panel-animateIn {
-    .ms-Panel-main {
-      @include ms-u-slideLeftIn40;
-    }
-
-    .ms-Overlay {
-      @include ms-u-fadeIn200;
-    }
+  &.animate-in {
+    @include ms-u-slideLeftIn40;
   }
   
-  &.ms-Panel-animateOut {
-    .ms-Panel-main {
-      @include ms-u-slideRightOut40;
-    }
-    .ms-Overlay {
-      @include ms-u-fadeOut200;
-    }
+  &.animate-out {
+    @include ms-u-slideRightOut40;
   }
+}
+
+//== Modifier: Medium panel (anchored right, fixed width)
+//
+.ms-Panel.ms-Panel--md {
+  max-width: $Panel-width-md;
+}
+
+//== Modifier: Large panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--lg {
+  max-width: $Panel-width-lg;
+}
+
+//== Modifier: XLarge panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--xl {
+  max-width: $Panel-width-xl;
+}
+
+//== Modifier: XLarge panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--xxl {
+  max-width: $Panel-width-xxl;
 }
 
 //== Modifier: Left anchored panel (anchored left, fixed width)
 // Note: This panel variant should only be used for left nav.
-.ms-Panel.ms-Panel--left {
-  .ms-Panel-main {
-    right: auto;
-    left: 0;
-    border-left: 1px solid $ms-color-neutralLight;
-    border-right: 1px solid $ms-color-neutralLight;
-    width: $Panel-width-lightDismiss;
-    @include drop-shadow(-30px, 0px, 30px, 30px, .2);
-  }
+.ms-PanelHost.ms-PanelHost--left {
+  right: auto;
+  left: 0;
+  border-left: 1px solid $ms-color-neutralLight;
+  border-right: 1px solid $ms-color-neutralLight;
+  @include drop-shadow(-30px, 0px, 30px, 30px, .2);
 
   // Commands and content inner are not displayed
   // Note: Replace with a leftnav menu.
   .ms-Panel-commands,
   .ms-Panel-contentInner {
     display: none;
-  }
-  
-  // Animations -- Default (anchored right)
-  &.ms-Panel-animateIn {
-    .ms-Panel-main {
-      @include ms-u-slideLeftIn40;
-    }
-
-    .ms-Overlay {
-      @include ms-u-fadeIn200;
-    }
-  }
-  
-  &.ms-Panel-animateOut {
-    .ms-Panel-main {
-      @include ms-u-slideRightOut40;
-    }
-    .ms-Overlay {
-      @include ms-u-fadeOut200;
-    }
   }
 
   // Animations - Left panel (anchored left)
@@ -178,159 +104,6 @@ $CommandButtonBlue: #2488D8;
     }
     .ms-Overlay {
       @include ms-u-fadeOut200;
-    }
-  }
-}
-
-//== Modifier: Small panel (anchored right, fixed width)
-//
-.ms-Panel.ms-Panel--sm {
-  .ms-Panel-main {
-    width: 100%;
-
-    @media (min-width: $ms-screen-md-min) {
-      width: $Panel-width-sm;
-    }
-  }
-}
-
-//== Modifier: Medium, Large, Extra Largs panels (anchored right, fluid width)
-//
-.ms-Panel.ms-Panel--md,
-.ms-Panel.ms-Panel--lg,
-.ms-Panel.ms-Panel--xl {
-  .ms-Panel-main {
-    @media (min-width: $ms-screen-lg-min) {
-      left: $Panel-margin-md;
-      width: auto;
-    }
-  }
-}
-
-//== Modifier: Medium panel (anchored right, fixed width)
-//
-.ms-Panel.ms-Panel--md {
-  .ms-Panel-main {
-    @media (min-width: $ms-screen-xl-min) {
-      left: auto;
-      width: $Panel-width-md;
-    }
-  }
-}
-
-//== Modifier: Large panel (anchored right, fluid width)
-//
-.ms-Panel.ms-Panel--lg {
-  .ms-Panel-main {
-    @media (min-width: $ms-screen-xxl-min) {
-      left: $Panel-margin-lg;
-    }
-  }
-}
-
-//== Modifier: XLarge panel (anchored right, fluid width)
-//
-.ms-Panel.ms-Panel--xl {
-  .ms-Panel-main {
-    @media (min-width: $ms-screen-xxl-min) {
-      left: $Panel-margin-xl;
-    }    
-  }
-}
-
-//== State: When the panel is open.
-//
-.ms-Panel.is-open {
-  display: block;
-
-  .ms-Panel-main {
-    opacity: 1;
-    pointer-events: auto;
-    display: block;
-  }
-
-  .ms-Overlay {
-    display: block;
-    pointer-events: auto;
-
-    @media screen and (-ms-high-contrast: active) {
-      opacity: 0;
-    }
-  }
-
-  &.ms-Panel-animateIn {
-    .ms-Panel-main {
-      @include ms-u-fadeIn100;
-    }
-  }
-
-  &.ms-Panel-animateOut {
-    .ms-Panel-main {
-      @include ms-u-fadeOut100;
-    }
-
-    .ms-Overlay {
-      display: none;
-    }
-  }
-
-  // Medium screens and up
-  @media (min-width: $ms-screen-md-min) {
-    // Animations -- Default (anchored right)
-    &.ms-Panel-animateIn {
-      .ms-Panel-main {
-        @include ms-u-slideLeftIn40;
-      }
-
-      .ms-Overlay {
-        @include ms-u-fadeIn200;
-      }
-    }
-    
-    &.ms-Panel-animateOut {
-      .ms-Panel-main {
-        @include ms-u-slideRightOut40;
-      }
-      .ms-Overlay {
-        @include ms-u-fadeOut200;
-      }
-    }
-
-    // Animations - Left panel (anchored left)
-    &.ms-Panel--left.ms-Panel-animateIn {
-      .ms-Panel-main {
-        @include ms-u-slideRightIn40;
-      }
-
-      .ms-Overlay {
-        @include ms-u-fadeIn200;
-      }
-    }
-
-    &.ms-Panel--left.ms-Panel-animateOut {
-      .ms-Panel-main {
-        @include ms-u-slideLeftOut40;
-      }
-      .ms-Overlay {
-        @include ms-u-fadeOut200;
-      }
-    }
-
-    // Animate overlay to full opacity, activate pointer events
-    .ms-Overlay {
-      cursor: pointer;
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    &.ms-Panel-animateIn,
-    &.ms-Panel--left.ms-Panel-animateIn {
-      .ms-Overlay {
-        @media screen and (-ms-high-contrast: active) {
-          opacity: 0;
-          animation-name: none;
-        }
-      }
     }
   }
 }
@@ -356,11 +129,7 @@ $CommandButtonBlue: #2488D8;
 
 // Scrollable content area
 .ms-Panel-contentInner {
-  position: absolute;
-  top: $CommandBarHeight;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: $CommandBarHeight;
   padding: 0 16px 20px;
   overflow-y: auto;
 

@@ -13,53 +13,8 @@
 }
 
 .ms-Dialog {
-  background-color: transparent;
-  position: fixed;
-  height: 100%;
-  width:  100%;
-  top:  0;
-  left: 0;
-  z-index: $ms-zIndex-Dialog;
-
-  // Fallback for IE9
-  display: block;
-  font-size: 0;
-  line-height: 100vh;
-  text-align: center;
-
-  // Flexbox for Modern Browsers
-	@include flexBox();
-	@include alignItems(center); 
-
-	&::before {
-  	@include dialogPositioningIE9Fallback();
-    content: "";
-    height: 100%;
-    width: 0;
-  }
-
-  .ms-Button.ms-Button--compound {
-    display: block;
-    margin-left: 0;
-  }
-
-  .ms-Overlay {
-    z-index: $ms-zIndex-back;
-  }
-}
-
-// The actual dialog element
-.ms-Dialog-main {
-  @include dialogPositioningIE9Fallback();
-  @include drop-shadow();
-  background-color: $ms-color-white;
-  box-sizing: border-box;
-  line-height: 1.35;
-  margin: auto;
-  width: 288px;
-  position: relative;
-  text-align: left;
-  outline: 1px solid transparent;
+  height: auto;
+  padding: 0 20px 20px;
 }
 
 // Close button, hidden by default
@@ -80,11 +35,6 @@
     color: $ms-color-neutralSecondary;
     font-size: $ms-font-size-m + 2;
   }
-}
-
-.ms-Dialog-inner {
-  height: 100%;
-  padding: 0 20px 20px;
 }
 
 .ms-Dialog-header {
@@ -194,7 +144,6 @@
     font-size: $ms-font-size-m;
   }
 }
-
 
 
 @media (min-width: $ms-screen-md-min) {

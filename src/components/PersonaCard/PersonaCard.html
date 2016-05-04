@@ -1,20 +1,8 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-<div class="ms-PersonaCard">
+<div class="ms-PersonaCard {{#if props.modifer}} ms-PersonaCard--{{props.modfier}}{{/if}}">
   <div class="ms-PersonaCard-persona">
-    <div class="ms-Persona ms-Persona--xl">
-      <div class="ms-Persona-imageArea">
-        <div class="ms-Persona-initials ms-Persona-initials--blue">AL</div>
-        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-      </div>
-      <div class="ms-Persona-presence"></div>
-      <div class="ms-Persona-details">
-        <div class="ms-Persona-primaryText" title="Alton Lafferty">Alton Lafferty</div>
-        <div class="ms-Persona-secondaryText">Interior Designer, Contoso</div>
-        <div class="ms-Persona-tertiaryText">Office: 7/1234</div>
-        <div class="ms-Persona-optionalText">Available - Video capable</div>
-      </div>
-    </div>
+    {{> Persona props=props.personaProps}}
   </div>
   <ul class="ms-PersonaCard-actions">
     <li data-action-id="chat" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--chat"></i></li>
@@ -50,130 +38,8 @@
       <!-- org chart -->
     <ul data-detail-id="org" class="ms-PersonaCard-details">
       <li class="ms-PersonaCard-actionDetails">
-        <div class="ms-OrgChart">
-          <div class="ms-OrgChart-group">
-              <ul class="ms-OrgChart-list">
-                  <li class="ms-OrgChart-listItem">
-                    <button class="ms-OrgChart-listItemBtn">
-                      <div class="ms-Persona">
-                        <div class="ms-Persona-imageArea">
-                          <div class="ms-Persona-initials ms-Persona-initials--darkBlue">RM</div>
-                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                        </div>
-                        <div class="ms-Persona-presence"></div>
-                        <div class="ms-Persona-details">
-                          <div class="ms-Persona-primaryText">Russel Miller</div>
-                          <div class="ms-Persona-secondaryText">Sales</div>
-                        </div>
-                      </div>
-                    </button>
-                  </li>
-                  <li class="ms-OrgChart-listItem">
-                    <button class="ms-OrgChart-listItemBtn">
-                      <div class="ms-Persona">
-                        <div class="ms-Persona-imageArea">
-                          <div class="ms-Persona-initials ms-Persona-initials--green">DF</div>
-                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                        </div>
-                        <div class="ms-Persona-presence"></div>
-                        <div class="ms-Persona-details">
-                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
-                          <div class="ms-Persona-secondaryText">Public Relations</div>
-                        </div>
-                      </div>
-                    </button>
-                  </li>
-              </ul>
-          </div>
-          <div class="ms-OrgChart-group">
-            <div class="ms-OrgChart-groupTitle">Manager</div>
-            <ul class="ms-OrgChart-list">
-                <li class="ms-OrgChart-listItem">
-                  <button class="ms-OrgChart-listItemBtn">
-                    <div class="ms-Persona">
-                      <div class="ms-Persona-imageArea">
-                        <div class="ms-Persona-initials ms-Persona-initials--red">GS</div>
-                        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                      </div>
-                      <div class="ms-Persona-presence"></div>
-                      <div class="ms-Persona-details">
-                        <div class="ms-Persona-primaryText">Grant Steel</div>
-                        <div class="ms-Persona-secondaryText">Sales</div>
-                      </div>
-                    </div>
-                  </button>
-                </li>
-              </ul>
-          </div>
-          <div class="ms-OrgChart-group">
-            <div class="ms-OrgChart-groupTitle">Staff</div>
-            <ul class="ms-OrgChart-list">
-              <li class="ms-OrgChart-listItem">
-                <button class="ms-OrgChart-listItemBtn">
-                  <div class="ms-Persona">
-                    <div class="ms-Persona-imageArea">
-                      <div class="ms-Persona-initials ms-Persona-initials--teal">HW</div>
-                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                    </div>
-                    <div class="ms-Persona-presence"></div>
-                    <div class="ms-Persona-details">
-                      <div class="ms-Persona-primaryText">Harvey Wallin</div>
-                      <div class="ms-Persona-secondaryText">Public Relations</div>
-                    </div>
-                  </div>
-                </button>
-              </li>
-              <li class="ms-OrgChart-listItem">
-                <button class="ms-OrgChart-listItemBtn">
-                  <div class="ms-Persona">
-                    <div class="ms-Persona-imageArea">
-                      <div class="ms-Persona-initials ms-Persona-initials--purple">ML</div>
-                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                    </div>
-                    <div class="ms-Persona-presence"></div>
-                    <div class="ms-Persona-details">
-                      <div class="ms-Persona-primaryText">Marcus Lauer</div>
-                      <div class="ms-Persona-secondaryText">Technical Support</div>
-                    </div>
-                  </div>
-                </button>
-              </li>
-              <li class="ms-OrgChart-listItem">
-                <button class="ms-OrgChart-listItemBtn">
-                  <div class="ms-Persona">
-                    <div class="ms-Persona-imageArea">
-                      <div class="ms-Persona-initials ms-Persona-initials--lightBlue">MG</div>
-                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                    </div>
-                    <div class="ms-Persona-presence"></div>
-                    <div class="ms-Persona-details">
-                      <div class="ms-Persona-primaryText">Marcel Groce</div>
-                      <div class="ms-Persona-secondaryText">Delivery</div>
-                    </div>
-                  </div>
-                </button>
-              </li>
-              <li class="ms-OrgChart-listItem">
-                <button class="ms-OrgChart-listItemBtn">
-                  <div class="ms-Persona">
-                    <div class="ms-Persona-imageArea">
-                      <div class="ms-Persona-initials ms-Persona-initials--green">JF</div>
-                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
-                    </div>
-                    <div class="ms-Persona-presence"></div>
-                    <div class="ms-Persona-details">
-                      <div class="ms-Persona-primaryText">Jessica Fischer</div>
-                      <div class="ms-Persona-secondaryText">Marketing</div>
-                    </div>
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
+        {{> OrgChart props=props.orgChartProps}}
       </li>
-    </ul>
-      <!-- /org chart -->
     </ul>
   </div>
 </div>

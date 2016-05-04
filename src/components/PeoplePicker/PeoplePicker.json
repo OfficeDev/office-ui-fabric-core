@@ -10,35 +10,55 @@
     "Overlay",
     "Persona",
     "PersonaCard",
-    "Spinner"
+    "Spinner",
+    "TextField",
+    "ContextualHost",
+    "OrgChart"
   ],
   "wrapBranches": true,
   "fileOrder": [
-    "PeoplePicker.html",
-    "PeoplePicker.Compact.html",
-    "PeoplePicker.Disconnected.html",
-    "PeoplePicker.MembersList.html",
-    "PeoplePicker.Facepile.html"
+    "PeoplePicker.html"
   ],
-  "branches": [
-    {
-      "name": "Regular",
-      "default": true
+  "props": {
+    "textFieldProps": {
+      "textfield": true,
+      "modifier": "textFieldUnderlined"
     },
-    {
-      "name": "Compact",
-      "template": "PeoplePicker.Compact.html",
-      "class": "ms-PeoplePicker--compact"
-    },
-    {
-      "name": "Disconnected",
-      "notes": "When the search can not be completed, an error message is shown.",
-      "template": "PeoplePicker.Disconnected.html"
-    },
-    {
-      "name": "Facepile",
-      "template": "PeoplePicker.Facepile.html",
-      "class": "ms-PeoplePicker--Facepile"
-    }
-  ]
+    "groups": [
+        {
+          "title": "Contacts",
+          "personas": [
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "RM",
+                "initialsColor": "blue",
+                "primaryText": "Russel Miller",
+                "secondaryText": "Sales",
+                 "modifiers":  [
+                  {
+                    "name": "xs"
+                  }
+                ]
+              },
+              "state": "is-selected"
+            },
+            {
+              "component": "Persona",
+              "props": {
+                "initials": "DF",
+                "initialsColor": "purple",
+                "primaryText": "Douglas Fielder",
+                "secondaryText": "Public Relations",
+                "modifiers":  [
+                  {
+                    "name": "xs"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+    ]
+  }
 }

@@ -1,13 +1,40 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-<div class="ms-Persona">
+<div class="ms-Persona
+  {{#if props.modifiers}}
+    {{#each props.modifiers}}
+      ms-Persona--{{name}}
+     {{/each}}
+  {{/if}}" tabindex="1">
   <div class="ms-Persona-imageArea">
-    <div class="ms-Persona-initials ms-Persona-initials--blue">AL</div>
-    <img class="ms-Persona-image" src="Persona.Person2.png">
+    <div class="ms-Persona-initials ms-Persona-initials--{{props.initialsColor}}">{{props.initials}}</div>
+    {{#if props.image}}
+      <img class="ms-Persona-image" src="{{props.image}}">
+    {{/if}}
   </div>
   <div class="ms-Persona-presence"></div>
   <div class="ms-Persona-details">
-    <div class="ms-Persona-primaryText">Alton Lafferty</div>
-    <div class="ms-Persona-secondaryText">Accountant</div>
+    {{#if props.primaryText}}
+      <div class="ms-Persona-primaryText">{{props.primaryText}}</div>
+    {{/if}}
+    {{#if props.secondaryText}}
+      <div class="ms-Persona-secondaryText">{{props.secondaryText}}</div>
+    {{/if}}
+    {{#if props.tertiaryText}}
+      <div class="ms-Persona-tertiaryText">{{props.tertiaryText}}</div>
+    {{/if}}
+    {{#if props.optionalText}}
+      <div class="ms-Persona-optionalText">{{props.optionalText}}</div>
+    {{/if}}
   </div>
+  {{#if props.actionIcon}}
+    <div class="ms-Persona-actionIcon">
+      <i class="ms-Icon ms-Icon--{{props.actionIcon}}"></i>
+    </div>
+  {{/if}}
+  {{#if props.personaCardProps}}
+    {{#> ContextualHost props=props.contextualHostProps thisProps=props.personaCardProps}}
+      {{> PersonaCard props=thisProps}}
+    {{/ContextualHost}}
+  {{/if}}
 </div>

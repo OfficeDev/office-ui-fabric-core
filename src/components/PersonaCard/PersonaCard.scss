@@ -113,15 +113,21 @@
   background-color: $ms-color-white;
 }
 
-.ms-PersonaCard-actionDetails {
-  list-style: none;
-  float: left;
+// Active detail items
+.ms-PersonaCard-details {
+  display: none;
+  width: 100%;
+  margin: 0;
+  max-height: 300px;
   min-height: 48px;
   color: $ms-color-neutralSecondary;
   padding: 9px 20px;
-  transition: max-height $ms-duration2 $ms-ease1 0.2s;
   box-sizing: border-box;
-
+  
+  &.is-active {
+    display: block;
+  }
+  
   // State: Contents are collapsed to a single line.
   &.is-collapsed {
     height: 30px;
@@ -134,17 +140,8 @@
   }
 }
 
-// Active detail items
-.ms-PersonaCard-details {
-  display: none;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  max-height: 78px;
-  
-  &.is-active {
-    display: block;
-  }
+.ms-PersonaCard-details[data-detail-id="org"] {
+  max-height: 300px;
 }
 
 // Icon to expand a collapsed actionDetails section.

@@ -10,11 +10,15 @@
     "PersonaCard.Square.html"
   ],
   "dependencies": [
+    "ContextualHost",
     "Persona",
     "OrgChart",
     "Link"
   ],
   "props": {
+    "contextualHostProps": {
+      "state": "is-open"
+    },
     "personaProps": {
       "initials": "AL",
       "initialsColor": "blue",
@@ -120,6 +124,9 @@
   },
   "propsSquare": {
     "modifier": "square",
+    "contextualHostProps": {
+      "state": "is-open"
+    },
     "personaProps": {
       "initials": "AL",
       "initialsColor": "blue",

@@ -54,6 +54,17 @@
   &:active {
     color: $ms-color-themePrimary;
   }
+  
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
 
   // Currently-selected action
   &.is-active {
@@ -102,16 +113,21 @@
   background-color: $ms-color-white;
 }
 
-.ms-PersonaCard-actionDetails {
-  list-style: none;
-  width: 20%;
-  float: left;
+// Active detail items
+.ms-PersonaCard-details {
+  display: none;
+  width: 100%;
+  margin: 0;
+  max-height: 300px;
   min-height: 48px;
   color: $ms-color-neutralSecondary;
   padding: 9px 20px;
-  transition: max-height $ms-duration2 $ms-ease1 0.2s;
   box-sizing: border-box;
-
+  
+  &.is-active {
+    display: block;
+  }
+  
   // State: Contents are collapsed to a single line.
   &.is-collapsed {
     height: 30px;
@@ -124,73 +140,8 @@
   }
 }
 
-// Active detail items
-.ms-PersonaCard-detailChat,
-.ms-PersonaCard-detailPhone,
-.ms-PersonaCard-detailVideo,
-.ms-PersonaCard-detailMail,
-.ms-PersonaCard-detailOrg {
-  overflow: hidden;
-  width: 500%;
-  padding: 0;
-  margin: 0;
-}
-
-.ms-PersonaCard-detailOrg {
-  overflow-y: auto;
-}
-
-.ms-PersonaCard-detailChat {
-  margin-left: 0;
-}
-.ms-PersonaCard-detailPhone {
-  margin-left: -100%;
-}
-.ms-PersonaCard-detailVideo {
-  margin-left: -200%;
-}
-.ms-PersonaCard-detailMail {
-  margin-left: -300%;
-}
-.ms-PersonaCard-detailOrg {
-  margin-left: -400%;
-}
-
-.ms-PersonaCard-detailChat .detail-1,
-.ms-PersonaCard-detailPhone .detail-2,
-.ms-PersonaCard-detailVideo .detail-3,
-.ms-PersonaCard-detailMail .detail-4 {
-  max-height: 78px;
-  transition: max-height 0.25s ease;
-}
-
-.ms-PersonaCard-detailOrg .detail-5 {
+.ms-PersonaCard-details[data-detail-id="org"] {
   max-height: 300px;
-  transition: max-height 0.25s ease;
-}
-
-// Inactive Items
-.ms-PersonaCard-detailChat .detail-2,
-.ms-PersonaCard-detailChat .detail-3,
-.ms-PersonaCard-detailChat .detail-4,
-.ms-PersonaCard-detailChat .detail-5,
-.ms-PersonaCard-detailPhone .detail-1,
-.ms-PersonaCard-detailPhone .detail-3,
-.ms-PersonaCard-detailPhone .detail-4,
-.ms-PersonaCard-detailPhone .detail-5,
-.ms-PersonaCard-detailVideo .detail-1,
-.ms-PersonaCard-detailVideo .detail-2,
-.ms-PersonaCard-detailVideo .detail-4,
-.ms-PersonaCard-detailVideo .detail-5,
-.ms-PersonaCard-detailMail .detail-1,
-.ms-PersonaCard-detailMail .detail-2,
-.ms-PersonaCard-detailMail .detail-3,
-.ms-PersonaCard-detailMail .detail-5,
-.ms-PersonaCard-detailOrg .detail-1,
-.ms-PersonaCard-detailOrg .detail-2,
-.ms-PersonaCard-detailOrg .detail-3,
-.ms-PersonaCard-detailOrg .detail-4 {
-  max-height: 48px;
 }
 
 // Icon to expand a collapsed actionDetails section.

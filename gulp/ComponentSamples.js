@@ -106,13 +106,11 @@ gulp.task('ComponentSamples-handlebars', function(cb) {
        Config.handleBarsConfig.batch.push('./' + srcFolderName);
        
     }
-    console.log(Config.handleBarsConfig.batch);
     cb();
 });
 
 gulp.task('ComponentSamples-template', function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
-    console.log("ayy callinb ack");
     cb();
   }.bind(this));
 });
@@ -173,7 +171,8 @@ gulp.task('ComponentSamples-build', ['ComponentSamples-handlebars'], function() 
 
 var ComponentSamplesTasks = [
     'ComponentSamples-build', 
-    'ComponentSamples-copyAssets', 
+    'ComponentSamples-copyAssets',
+    'ComponentSamples-styleHinting',
     'ComponentSamples-buildStyles',
     'ComponentJS',
     'ComponentSamples-copyIgnoredFiles'

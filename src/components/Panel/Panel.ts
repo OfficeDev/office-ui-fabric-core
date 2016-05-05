@@ -44,7 +44,6 @@ namespace fabric {
     
     private _animateInPanel(layer: Element) {
       layer.classList.add(ANIMATE_IN_STATE);
-      console.log(layer);
     }
     
     private _hideReferencePanel() {

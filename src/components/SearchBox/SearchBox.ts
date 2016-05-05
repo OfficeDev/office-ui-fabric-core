@@ -93,7 +93,6 @@ namespace fabric {
 
     private _setFocusAction(context) {
       this._searchBoxField.addEventListener("focus", () => {
-        console.log(document.activeElement);
         this._setHasText();
         this._searchBox.classList.add(SB_IS_ACTIVE);
       }, true);

@@ -10,7 +10,6 @@
 */
 
 $MessageBar-padding: 8px;
-$ms-bgColor-alert:  #fed9cc;  // only here until we merge forward
 
 .ms-MessageBar {
   padding: $MessageBar-padding;
@@ -65,16 +64,27 @@ $ms-bgColor-alert:  #fed9cc;  // only here until we merge forward
   }
 }
 
-.ms-MessageBar--alert {
-  //@include ms-bgColor-alert;
-  background: $ms-bgColor-alert;
+.ms-MessageBar--severeWarning {
+  @include ms-bgColor-severeWarning;
 
   .ms-MessageBar-icon {
-    @include ms-fontColor-alert;
+    @include ms-fontColor-severeWarning;
   }
 
   .ms-Icon:before {
     content: '\e00b';  // ms-Icon--alert
+  }
+}
+
+.ms-MessageBar--warning {
+  @include ms-bgColor-warning;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-warning;
+  }
+
+  .ms-Icon:before {
+    content: '\e00a';  // ms-Icon--info
   }
 }
 
@@ -102,15 +112,20 @@ $ms-bgColor-alert:  #fed9cc;  // only here until we merge forward
     font-size: 8px;
     margin-left: 2px;
   }
-  
-  .ms-Icon:after { 
+
+  .ms-Icon:after {
     content: '\e000'; // circle
     position: relative;
     top: 3px;
     left: -16px;
     margin-left: 4px;
-    margin-right: -14px;
     display: inline;
     font-size: 16px;
+  }
+
+  .ms-MessageBar-text {
+    position: relative;
+    left: -16px;
+    top: 3px;
   }
 }

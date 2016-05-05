@@ -10,7 +10,8 @@
   ],
   "fileOrder": [
     "MessageBar.html",
-    "MessageBar.Alert.html",
+    "MessageBar.Warning.html",
+    "MessageBar.SevereWarning.html",
     "MessageBar.Error.html",
     "MessageBar.Success.html",
     "MessageBar.Remove.html"
@@ -21,8 +22,8 @@
       "class": "ms-MessageBar--info"
     },
     {
-      "name": "Alert",
-      "class": "ms-MessageBar--alert"
+      "name": "SevereWarning",
+      "class": "ms-MessageBar--severeWarning"
     },
     {
       "name": "Error",

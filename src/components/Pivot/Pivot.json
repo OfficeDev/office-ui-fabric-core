@@ -11,35 +11,78 @@
     "Pivot.Tabs.html",
     "Pivot.Tabs.Large.html"
   ],
-  "branches": [
-    {
-      "name": "Pivots",
-      "default": true,
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true
-        },
-        {
-          "name": "Large",
-          "class": "ms-Pivot--large"
-        }
-      ]
-    },
-
-    {
-      "name": "Tabs",
-      "class": "ms-Pivot--tabs",
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true
-        },
-        {
-          "name": "Large",
-          "class": "ms-Pivot--large"
-        }
-      ]
-    }
-  ]
+  "props": {
+    "links": [
+      {
+        "text": "My files"
+      },
+      {
+        "text": "Recent"
+      },
+      {
+        "text": "Shared with me"
+      },
+      {
+        "ellipsisIcon": "ellipsis"
+      }
+    ]
+  },
+  "propsLarge": {
+    "modifiers": [
+      {"name": "large"}
+    ],
+    "links": [
+      {
+        "text": "My files"
+      },
+      {
+        "text": "Recent"
+      },
+      {
+        "text": "Shared with me"
+      },
+      {
+        "ellipsisIcon": "ellipsis"
+      }
+    ]
+  },
+  "propsTabs": {
+    "modifiers": [
+      {"name": "tabs"}
+    ],
+    "links": [
+      {
+        "text": "My files"
+      },
+      {
+        "text": "Recent"
+      },
+      {
+        "text": "Shared with me"
+      },
+      {
+        "ellipsisIcon": "ellipsis"
+      }
+    ]
+  },
+  "propsTabsLarge": {
+    "modifiers": [
+      {"name": "large"},
+      {"name": "tabs"}
+    ],
+    "links": [
+      {
+        "text": "My files"
+      },
+      {
+        "text": "Recent"
+      },
+      {
+        "text": "Shared with me"
+      },
+      {
+        "ellipsisIcon": "ellipsis"
+      }
+    ]
+  }
 }

@@ -12,6 +12,7 @@
   box-sizing: border-box;
 }
 
+// For setting the border base width
 @mixin ms-u-borderBase {
   border: 1px solid;
 }

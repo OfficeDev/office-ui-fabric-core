@@ -89,13 +89,10 @@
       processOverflow(overFlowCommands, $OverflowCommand, $OverflowMenu);
 
       // Set Search Behavior
-      if($(window).width() < 640) { 
 
-        $('.ms-CommandBarSearch-iconSearchWrapper').click(function() {
-          $(this).closest('.ms-CommandBarSearch').addClass('is-active');
-        });
-
-      }
+      $('.ms-CommandBarSearch-iconSearchWrapper').click(function() {
+        $(this).closest('.ms-CommandBarSearch').addClass('is-active');
+      });
 
       // Add resize event handler on commandBar
       $(window).resize(function() {

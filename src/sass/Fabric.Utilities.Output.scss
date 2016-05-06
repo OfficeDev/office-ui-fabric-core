@@ -12,6 +12,10 @@
   @include ms-u-borderBox;
 }
 
+.ms-u-borderBase {
+  @include ms-u-borderBase;
+}
+
 // Ensures the block expands to the full height to enclose its floated childen.
 .ms-u-clearfix {
   @include ms-u-clearfix;

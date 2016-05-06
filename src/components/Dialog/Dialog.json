@@ -20,7 +20,8 @@
   "dependencies": [
     "Button",
     "ChoiceField",
-    "Overlay"
+    "Overlay",
+    "ContextualHost"
   ],
   "props": {
     "modifier": "sample",
@@ -69,7 +70,10 @@
           "tag": "button"
         }
       }
-    ]
+    ],
+    "contextualHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsBlocking": {
     "modifier": "blocking",
@@ -118,7 +122,10 @@
           "tag": "button"
         }
       }
-    ]
+    ],
+    "contextualHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsClose": {
     "modifier": "close",
@@ -167,7 +174,10 @@
           "tag": "button"
         }
       }
-    ]
+    ],
+    "contextualHostProps":  {
+      "state": "is-open"
+    }
   },
   "propslgHeader": {
     "modifier": "lgHeader",
@@ -190,7 +200,10 @@
           "tag": "button"
         }
       }
-    ]
+    ],
+    "contextualHostProps":  {
+      "state": "is-open"
+    }
   },
   "propsMultiline": {
     "modifier": "multiline",
@@ -226,6 +239,9 @@
           "tag": "button"
         }
       }
-    ]
+    ],
+    "contextualHostProps":  {
+      "state": "is-open"
+    }
   }
 }

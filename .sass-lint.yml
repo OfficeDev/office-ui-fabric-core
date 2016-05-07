@@ -51,14 +51,23 @@ rules:
   -
       allow-single-line-rulesets: true
       
-  # Don't allow vendor prefixes, except for '-ms-*' so that we can target high contrast mode
+  # Need to enable these vendor prefixes so that it will allow -ms-high-contrast and -webkit-overflow-scrolling
+  # Would be best to find a way to exclude only those specific properties, not all prefixed properties
   no-vendor-prefixes:
   - 1
   -
     excluded-identifiers:
       - 'ms'
+      - 'webkit'
       
   # Enforce hex codes to full length
   hex-length:
   - 1
   - style: long
+  
+  # Allow properties that are unrecognized by the linter
+  no-misspelled-properties:
+  - 1
+  -
+    extra-properties:
+      - 'overflow-scrolling'

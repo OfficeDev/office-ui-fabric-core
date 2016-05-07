@@ -7,7 +7,6 @@ $Panel-width-lightDismiss: 272px;
   position: absolute;
   right: 0;
   top: 0;
-  z-index: $ms-zIndex-Panel;
   pointer-events: none;
   z-index: $ms-zIndex-front;
 }
@@ -29,7 +28,6 @@ $Panel-width-lightDismiss: 272px;
   display: block;
   opacity: 1;
   pointer-events: auto;
-  display: block;
 
   .ms-Overlay {
     display: block;
@@ -62,7 +60,7 @@ $Panel-width-lightDismiss: 272px;
         @include ms-u-fadeIn200;
       }
     }
-    
+
     &.ms-Panel-animateOut {
       @include ms-u-slideRightOut40;
 
@@ -82,7 +80,7 @@ $Panel-width-lightDismiss: 272px;
 
     &.ms-Panel--left.ms-Panel-animateOut {
       @include ms-u-slideLeftOut40;
-      
+
       .ms-Overlay {
         @include ms-u-fadeOut200;
       }

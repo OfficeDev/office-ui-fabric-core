@@ -55,3 +55,8 @@ rules:
   -
     excluded-identifiers:
       - 'ms'
+      
+  # Enforce hex codes to full length
+  hex-length:
+  - 1
+  - style: long

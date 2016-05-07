@@ -48,3 +48,10 @@ rules:
   - 1
   -
       allow-single-line-rulesets: true
+      
+  # Don't allow vendor prefixes, except for '-ms-*' so that we can target high contrast mode
+  no-vendor-prefixes:
+  - 1
+  -
+    excluded-identifiers:
+      - 'ms'

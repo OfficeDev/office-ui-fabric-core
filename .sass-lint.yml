@@ -13,12 +13,13 @@ rules:
   mixin-name-format: 0
   force-element-nesting: 0
   force-pseudo-nesting: 0
+  force-attribute-nesting: 0
   nesting-depth: 0
   clean-import-paths:
   - 0
   extends-before-mixins: 2
   extends-before-declarations: 2
-  placeholder-in-extend: 2
+  placeholder-in-extend: 1
   mixins-before-declarations:
     - 0
     -

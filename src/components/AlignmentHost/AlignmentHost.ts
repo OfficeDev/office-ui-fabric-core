@@ -4,7 +4,8 @@
  * ContextualHost
  *
  * Hosts contextual menus and callouts
- * NOTE: Position bottom only works if html is set to max-height 100%, overflow hidden and body is set to overflow scroll, body is set to height 100%
+ * NOTE: Position bottom only works if html is set to max-height 100%, overflow
+ * hidden and body is set to overflow scroll, body is set to height 100%
  *
  */
 
@@ -24,29 +25,27 @@ namespace fabric {
 
   export class AlignmentHost {
 
-    private _contextualHost;
     private _alignmentClone;
     private _alignmentWidth;
     private _alignmentHeight;
     private _teWidth;
-    private _teHeight;
     private _direction;
     private _container;
     private _targetElement;
     private _matchTargetWidth;
     private _children;
-    
+
     constructor(children: Element, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
       this._resizeAction = this._resizeAction.bind(this);
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-      
+
       this._children = children;
       this._container = this._createAlignmentContainer();
-      
+
       this._targetElement = targetElement;
-      
+
       this._openalignment();
       this._setResizeDisposal();
     }
@@ -56,7 +55,7 @@ namespace fabric {
       document.removeEventListener("click", this._disMissAction, true);
       this._alignmentClone.parentNode.removeChild(this._alignmentClone);
     }
-    
+
     private _createAlignmentContainer(): Element {
       let _aContainer = document.createElement("div");
       _aContainer.setAttribute("class", ALIGNMENT_CLASS);
@@ -69,7 +68,7 @@ namespace fabric {
 
     private _openalignment(): void {
       this._renderAlignment();
-      
+
       // this._savealignmentSize();
       this._findAvailablePosition();
       this._showalignment();
@@ -77,22 +76,22 @@ namespace fabric {
       // Delay the click setting
       setTimeout( () => { this._setDismissClick(); }, 100);
     }
-    
-    private _getAlignmentSize() {
-      switch(this._direction) {
-        case "left":
-          
-          break;
-        case "right":
-          break;
-        case "top":
-          break;
-        case "bottom":
-          break;
-        default:
-        this._setPosition();
-      }
-    }
+
+    // private _getAlignmentSize() {
+    //   switch (this._direction) {
+    //     case "left":
+
+    //       break;
+    //     case "right":
+    //       break;
+    //     case "top":
+    //       break;
+    //     case "bottom":
+    //       break;
+    //     default:
+    //     this._setPosition();
+    //   }
+    // }
 
     private _findAvailablePosition(): void {
       let _posOk;
@@ -182,9 +181,9 @@ namespace fabric {
       let mHLeft;
       let mHTop;
       let mWidth = "";
-      
-      if(this._matchTargetWidth) {
-        mWidth = "width: " + this._alignmentWidth + 'px;';
+
+      if (this._matchTargetWidth) {
+        mWidth = "width: " + this._alignmentWidth + "px;";
       }
 
       switch (curDirection) {
@@ -269,36 +268,36 @@ namespace fabric {
     private _renderAlignment(): void {
       document.body.appendChild(this._alignmentClone);
     }
-    
-    private _savealignmentSize(): void {
-      let _alignmentStyles = window.getComputedStyle(this._alignmentClone);
-      this._alignmentClone.setAttribute("style", "opacity: 0; z-index: -1");
-      this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
-      this._alignmentClone.classList.add(CONTEXT_STATE_CLASS);
-      
-      if(this._matchTargetWidth) {
-        let teStyles = window.getComputedStyle(this._targetElement);
-        this._alignmentWidth = this._targetElement.getBoundingClientRect().width
-          + (parseInt(teStyles.marginLeft, 10)
-          + parseInt(teStyles.marginLeft, 10));
-        // Set the ContextualHost width
-       
-      } else {
-        this._alignmentWidth = this._alignmentClone.getBoundingClientRect().width
-          + (parseInt(_alignmentStyles.marginLeft, 10)
-          + parseInt(_alignmentStyles.marginRight, 10));
-         this._alignmentClone.setAttribute("style", "");
-      }
-      
-      this._alignmentHeight = this._alignmentClone.getBoundingClientRect().height
-        + (parseInt(_alignmentStyles.marginTop, 10)
-        + parseInt(_alignmentStyles.marginBottom, 10));
-     
-      this._alignmentClone.classList.remove(ALIGNMENT_STATE_POSITIONED);
-      this._alignmentClone.classList.remove(CONTEXT_STATE_CLASS);
-      this._teWidth = this._targetElement.getBoundingClientRect().width;
-      this._teHeight = this._targetElement.getBoundingClientRect().height;
-    }
+
+    // private _savealignmentSize(): void {
+    //   let _alignmentStyles = window.getComputedStyle(this._alignmentClone);
+    //   this._alignmentClone.setAttribute("style", "opacity: 0; z-index: -1");
+    //   this._alignmentClone.classList.add(ALIGNMENT_STATE_POSITIONED);
+    //   this._alignmentClone.classList.add(CONTEXT_STATE_CLASS);
+
+    //   if (this._matchTargetWidth) {
+    //     let teStyles = window.getComputedStyle(this._targetElement);
+    //     this._alignmentWidth = this._targetElement.getBoundingClientRect().width
+    //       + (parseInt(teStyles.marginLeft, 10)
+    //       + parseInt(teStyles.marginLeft, 10));
+    //     // Set the ContextualHost width
+
+    //   } else {
+    //     this._alignmentWidth = this._alignmentClone.getBoundingClientRect().width
+    //       + (parseInt(_alignmentStyles.marginLeft, 10)
+    //       + parseInt(_alignmentStyles.marginRight, 10));
+    //      this._alignmentClone.setAttribute("style", "");
+    //   }
+
+    //   this._alignmentHeight = this._alignmentClone.getBoundingClientRect().height
+    //     + (parseInt(_alignmentStyles.marginTop, 10)
+    //     + parseInt(_alignmentStyles.marginBottom, 10));
+
+    //   this._alignmentClone.classList.remove(ALIGNMENT_STATE_POSITIONED);
+    //   this._alignmentClone.classList.remove(CONTEXT_STATE_CLASS);
+    //   this._teWidth = this._targetElement.getBoundingClientRect().width;
+    //   this._teHeight = this._targetElement.getBoundingClientRect().height;
+    // }
 
     private _disMissAction(e): void {
       // If the elemenet clicked is not INSIDE of searchbox then close seach

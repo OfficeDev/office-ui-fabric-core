@@ -9,18 +9,18 @@ namespace fabric {
    * A host for the panel control
    *
    */
-  const ANIMATE_IN_STATE = 'animate-in';
-  const ANIMATE_OUT_STATE = 'animate-out';
+  const ANIMATE_IN_STATE = "animate-in";
+  const ANIMATE_OUT_STATE = "animate-out";
   const ANIMATION_END = 400;
-  
+
   export class Panel {
-    
-    _panel: Element
-    _panelHost: PanelHost;
-    _panelHostReference: Element;
-    _direction: string;
-    _animateOverlay: boolean;
-    
+
+    private _panel: Element;
+    private _panelHost: PanelHost;
+    private _panelHostReference: Element;
+    private _direction: string;
+    private _animateOverlay: boolean;
+
     /**
      *
      * @param {HTMLElement} container - the target container for an instance of Panel
@@ -33,19 +33,19 @@ namespace fabric {
       this._panelHost = new fabric.PanelHost(this._panel.cloneNode(true), this._animateInPanel);
       this._hideReferencePanel();
     }
-    
-    public dismiss() { 
+
+    public dismiss() {
       this._panel.classList.add(ANIMATE_OUT_STATE);
       setTimeout(function() {
         document.removeChild(this._panelHost);
         this._panelHost.dismiss();
       }, ANIMATION_END);
     }
-    
+
     private _animateInPanel(layer: Element) {
       layer.classList.add(ANIMATE_IN_STATE);
     }
-    
+
     private _hideReferencePanel() {
       this._panel.setAttribute("style", "display: none");
     }

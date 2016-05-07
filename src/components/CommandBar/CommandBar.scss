@@ -20,17 +20,17 @@ $CommandBarItem-height: $CommandBar-height;
   height: $CommandBar-height;
   white-space: nowrap;
   padding-left: 0;
-  border: 0; 
+  border: 0;
   position: relative;
-  
+
   &:focus {
     outline: none;
   }
-  
+
   .ms-CommandButton--actionButton {
     border-right: 1px solid $ms-color-neutralLight;
   }
-  
+
   //== CommandBar -> ms-Button specific changes
   //
   .ms-Button {
@@ -41,25 +41,25 @@ $CommandBarItem-height: $CommandBar-height;
         padding-right: 0;
       }
     }
-    
+
     &.is-hidden {
       display: none;
     }
   }
-  
+
   .ms-SearchBox,
   .ms-SearchBox-field,
   .ms-SearchBox-label {
     height: 100%;
   }
-  
+
   .ms-SearchBox {
     margin-right: 8px;
     display: inline-block;
     vertical-align: top;
     transition: margin-right $ms-duration2;
   }
-  
+
   .ms-SearchBox.is-collapsed.is-active {
     width: 100%;
     position: absolute;
@@ -67,10 +67,10 @@ $CommandBarItem-height: $CommandBar-height;
     right: 0;
     z-index: $ms-zIndex-front;
   }
-  
+
   // Search is collapsed unless ativated and its only
   // collapsed < L break points
-  
+
   @media only screen and (min-width: $ms-screen-xl-min) {
     .ms-SearchBox {
       margin-right: 24px;

@@ -11,7 +11,7 @@ $ProgressIndicatorButtonsWidth: 218px;
 $ProgressIndicatorTextHeight: 18px;
 
 .ms-ProgressIndicator-itemName {
-  @include ms-font-m();
+  @include ms-font-m;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -20,7 +20,7 @@ $ProgressIndicatorTextHeight: 18px;
 }
 
 .ms-ProgressIndicator-itemDescription {
-  @include ms-font-m();
+  @include ms-font-m;
   color: $ms-color-neutralSecondaryAlt;
   font-size: 11px;
   line-height: $ProgressIndicatorTextHeight;

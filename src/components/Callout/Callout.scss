@@ -43,34 +43,34 @@ $ms-Callout-commandButtonHeight: 27px;
   margin-top: 20px;
   width: 100%;
   white-space: nowrap;
-  
+
   .ms-Link.ms-Link--hero {
     left: -8px; // Move link inline with body text
   }
-  
+
   .ms-CommandButton.ms-CommandButton--inline {
     height: $ms-Callout-commandButtonHeight;
     line-height: $ms-Callout-commandButtonHeight;
-    
+
     .ms-CommandButton-button {
       height: $ms-Callout-commandButtonHeight;
       line-height: $ms-Callout-commandButtonHeight;
     }
-    
+
     .ms-CommandButton-label {
       line-height: $ms-Callout-commandButtonHeight;
     }
-    
+
     .ms-CommandButton-icon {
       line-height: $ms-Callout-commandButtonHeight;
     }
-    
+
     &:hover .ms-Button,
     &:focus .ms-Button {
       color: $ms-color-themePrimary;
     }
   }
-  
+
   .ms-Callout-button {
     margin-right: 12px;
   }
@@ -117,7 +117,7 @@ $ms-Callout-commandButtonHeight: 27px;
     border-top: 1px solid $ms-color-neutralLight;
     padding-top: 12px;
   }
-  
+
   .ms-Callout-inner {
     padding-bottom: 12px;
   }

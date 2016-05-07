@@ -7,7 +7,7 @@
 
 
 .ms-Breadcrumb {
-  margin: 23px 0 1px 0;
+  margin: 23px 0 1px;
 
   &.is-overflow {
     .ms-Breadcrumb-overflow {
@@ -52,9 +52,9 @@
   .ms-Breadcrumb-overflowButton {
     font-size: $ms-font-size-s;
     display: inline-block;
-    color:$ms-color-themePrimary;
+    color: $ms-color-themePrimary;
     margin-right: -4px;
-    padding: 12px 8px 3px 8px;
+    padding: 12px 8px 3px;
     cursor: pointer;
   }
 }
@@ -82,11 +82,11 @@
     width: 16px;
     height: 16px;
     transform: rotate(45deg);
-    background-color: white;
+    background-color: $ms-color-white;
   }
 
   .ms-ContextualMenu {
-    border: none;
+    border: 0;
     box-shadow: none;
     position: relative;
     width: 190px;
@@ -119,7 +119,7 @@
 }
 
 .ms-Breadcrumb-itemLink {
-  @include ms-font-xl();
+  @include ms-font-xl;
   display: inline-block;
   padding: 0 4px;
   max-width: 160px;

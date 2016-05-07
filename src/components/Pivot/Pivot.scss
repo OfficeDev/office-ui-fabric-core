@@ -23,7 +23,7 @@
   line-height: 27px;
   margin-right: 15px;
 
-  &:hover, 
+  &:hover,
   &:focus {
     color: $ms-color-black;
     cursor: pointer;
@@ -48,9 +48,9 @@
     color: $ms-color-themePrimary;
   }
 
-  &:hover:not(.is-selected), 
-  &:focus:not(.is-selected) { 
-    color: $ms-color-neutralDark; 
+  &:hover:not(.is-selected),
+  &:focus:not(.is-selected) {
+    color: $ms-color-neutralDark;
   }
 
   &:active {
@@ -98,8 +98,8 @@
     padding: 0 10px;
 
     &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
-    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) { 
-      color: $ms-color-black; 
+    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
+      color: $ms-color-black;
     }
 
     &:active {
@@ -116,7 +116,7 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-    &:hover:not(.is-selected), 
+    &:hover:not(.is-selected),
     &:focus:not(.is-selected) {
       background-color: $ms-color-white;
     }

@@ -54,9 +54,9 @@
   &:active {
     color: $ms-color-themePrimary;
   }
-  
+
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -74,7 +74,7 @@
     &:after {
       @include ms-u-borderBox;
       @include rotate(45deg);
-      content: "";
+      content: '';
       width: 10px;
       height: 10px;
       border: 1px solid $ms-color-neutralTertiaryAlt;
@@ -123,11 +123,11 @@
   color: $ms-color-neutralSecondary;
   padding: 9px 20px;
   box-sizing: border-box;
-  
+
   &.is-active {
     display: block;
   }
-  
+
   // State: Contents are collapsed to a single line.
   &.is-collapsed {
     height: 30px;
@@ -140,7 +140,7 @@
   }
 }
 
-.ms-PersonaCard-details[data-detail-id="org"] {
+.ms-PersonaCard-details[data-detail-id='org'] {
   max-height: 300px;
 }
 

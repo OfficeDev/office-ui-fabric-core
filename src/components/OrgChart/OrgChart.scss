@@ -18,7 +18,7 @@
 
 .ms-OrgChart-list {
   padding: 0;
-  margin: 12px 0 16px 0;
+  margin: 12px 0 16px;
 }
 
 .ms-OrgChart-listItem {
@@ -30,7 +30,7 @@
 }
 
 .ms-OrgChart-listItemBtn {
-  @include button-reset();
+  @include button-reset;
   position: relative;
   height: 50px;
   width: 100%;

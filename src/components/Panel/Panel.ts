@@ -17,7 +17,6 @@ namespace fabric {
 
     private _panel: Element;
     private _panelHost: PanelHost;
-    private _panelHostReference: Element;
     private _direction: string;
     private _animateOverlay: boolean;
 

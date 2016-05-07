@@ -12,6 +12,7 @@ rules:
   variable-name-format: 0
   mixin-name-format: 0
   force-element-nesting: 0
+  force-pseudo-nesting: 0
   nesting-depth: 0
   clean-import-paths:
   - 0
@@ -28,7 +29,7 @@ rules:
   no-warn: 1
   no-debug: 1
   no-ids: 2
-  no-important: 2
+  no-important: 1
   hex-notation:
     - 2
     -

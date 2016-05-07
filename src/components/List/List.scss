@@ -20,12 +20,12 @@
 		.ms-ListItem {
 			@include ms-u-sm4;
 			float: left;
-			border-width: 0 1px 1px 0;
+			border-width: 0 1px 1px;
 		}
 
 		// Remove the border from the last column.
 		.ms-ListItem:nth-child(3n) {
-			border-width: 0 0 1px 0;
+			border-width: 0 0 1px;
 		}
 	}
 }

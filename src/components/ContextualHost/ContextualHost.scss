@@ -1,16 +1,15 @@
-
 .ms-ContextualHost {
   z-index: $ms-zIndex-front;
   margin: 16px auto;
   position: relative;
   min-width: 10px;
   display: none;
-  
+
   &.is-positioned {
     position: absolute;
     margin: 0;
   }
-  
+
   &.is-open {
     display:  inline-block;
   }
@@ -170,6 +169,7 @@
   // Make width larger and remove centering on md+ screens
   .ms-ContextualHost {
     margin: 16px;
+    
     &.is-positioned {
       margin: 0;
     }

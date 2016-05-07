@@ -12,14 +12,189 @@
   "dependencies": [
     "ListItem"
   ],
-  "branches": [
-    {
-      "name": "Basic",
-      "default": true
-    },
-    {
-      "name": "Grid",
-      "class": "ms-List--grid"
-    }
-  ]
+  "props":  {
+    "listItems": [
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      }
+    ]
+  },
+  "propsGrid":  {
+    "modifier": "grid",
+    "listItems": [
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      },
+      {
+        "name": "ListItem",
+        "props": {
+          "primaryText": "Alton Lafferty",
+          "secondaryText": "Meeting notes",
+          "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+          "metaText": "2:42p",
+          "state": "is-unread is-selectable",
+          "actions": [{}]
+        }
+      }
+    ]
+  }
 }

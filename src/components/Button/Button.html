@@ -1,7 +1,16 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
-
-<button class="ms-Button">
-  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
-  <span class="ms-Button-label">Create account</span>
-  <span class="ms-Button-description">Description of the action this button takes</span>
-</button>
+<{{props.tag}} 
+  class="{{props.customClasses}} ms-Button 
+    {{#if props.modifier}} ms-Button--{{props.modifier}} {{/if}} 
+    {{#if props.label}}{{else}}ms-Button--noLabel{{/if}}">
+  {{#if props.icon}}
+    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--{{props.icon}}"></i></span>
+  {{/if}}
+  <span class="ms-Button-label">{{props.label}}</span>
+  {{#if props.description}}
+    <span class="ms-Button-description">{{props.description}}</span>
+  {{/if}}
+  {{#if props.dropdownIcon}}
+    <span class="ms-Button-dropdownIcon"><i class="ms-Icon ms-Icon--{{props.dropdownIcon}}"></i></span>
+  {{/if}}
+</{{props.tag}}>

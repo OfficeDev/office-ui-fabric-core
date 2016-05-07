@@ -10,18 +10,15 @@
     "Label.Disabled.html",
     "Label.Required.html"
   ],
-  "branches": [
-    {
-      "name": "Standard",
-      "default": true
-    },
-    {
-      "name": "Disabled",
-      "class": "is-disabled"
-    },
-    {
-      "name": "Required",
-      "class": "is-required"
-    }
-  ]
+  "props": {
+    "label": "Name"
+  },
+  "propsDisabled":  {
+    "state": "is-disabled",
+    "label": "Name"
+  },
+  "propsRequired": {
+    "state": "is-required",
+    "label": "Name"
+  }
 }

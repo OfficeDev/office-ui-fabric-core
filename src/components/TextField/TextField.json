@@ -8,101 +8,34 @@
     "TextField.html",
     "TextField.Multiline.html",
     "TextField.Placeholder.html",
-    "TextField.Underlined.html"
+    "TextField.Underlined.html",
+    "TextField.TextfieldUnderline.html"
   ],
   "dependencies": [
     "Label"
   ],
-  "branches": [
-    {
-      "name": "Standard",
-      "default": true,
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        },
-        {
-          "name": "Required",
-          "class": "is-required"
-        }
-      ]
-    },
-    {
-      "name": "Placeholder",
-      "class": "ms-TextField--placeholder",
-      "template": "TextField.Placeholder.html",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        },
-        {
-          "name": "Required",
-          "class": "is-required"
-        }
-      ]
-    },
-    {
-      "name": "Underlined",
-      "class": "ms-TextField--underlined",
-      "template": "Textfield.Underlined.html",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        }
-      ]
-    },
-    {
-      "name": "Multiline",
-      "class": "ms-TextField--multiline",
-      "template": "Textfield.Multiline.html",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        },
-        {
-          "name": "Required",
-          "class": "is-required"
-        }
-      ]
-    },
-    {
-      "name": "Ml Placeholder",
-      "class": "ms-TextField--multiline ms-TextField--placeholder",
-      "template": "Textfield.Multiline.html",
-      "branches": [
-        {
-          "name": "Enabled",
-          "default": true
-        },
-        {
-          "name": "Disabled",
-          "class": "is-disabled"
-        },
-        {
-          "name": "Required",
-          "class": "is-required"
-        }
-      ]
-    }
-  ]
+  "props": {
+    "label": "Name",
+    "textfield": true,
+    "description": "This should be your first and last name."
+  },
+  "propsMultiline": {
+    "label": "Name",
+    "multiline": true,
+    "modifier": "multiline"
+  },
+  "propsPlaceholder": {
+    "label": "Given name",
+    "textfield": true,
+    "modifier": "placeholder"
+  },
+  "propsUnderlined": {
+    "label": "Name",
+    "textfield": true,
+    "modifier": "underlined"
+  },
+  "propsTextfieldUnderline": {
+    "textfield": true,
+    "modifier": "textFieldUnderlined"
+  }
 }

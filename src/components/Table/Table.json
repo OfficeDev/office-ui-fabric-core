@@ -4,6 +4,160 @@
   "description": "The table component provides a div-based way to visualize data in columns and rows. Although the table is responsive by nature, we recommend keeping the number of columns small if the table is intended to be viewed on mobile devices.",
   "template": "Table.html",
   "class": "ms-Table",
+  "props":  {
+    "headers": [
+      {
+        "rowModifier": "rowCheck"
+      },
+      {
+        "value": "Location"
+      },
+      {
+        "value": "Modified"
+      },
+      {
+        "value": "Type"
+      },
+      {
+        "value": "File Name"
+      }
+    ],
+    "rows": [
+      {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      },
+       {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      },
+       {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      },
+       {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      },
+       {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      },
+       {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      },
+       {
+        "columns": [
+          {
+            "rowModifier": "rowCheck"
+          },
+          {
+            "value": "Location"
+          },
+          {
+            "value": "Modified"
+          },
+          {
+            "value": "Type"
+          },
+          {
+            "value": "File Name"
+          }
+        ]
+      }
+    ]
+  },
   "branches": [
     {
       "name": "Default",

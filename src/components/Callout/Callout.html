@@ -1,17 +1,24 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-<div class="ms-Callout ms-Callout--arrowLeft">
-  <div class="ms-Callout-main">
-    <div class="ms-Callout-header">
-      <p class="ms-Callout-title">All of your favorite people</p>
+{{#> ContextualHost props=props.contextualHostProps thisProps=props}}
+  <div class="ms-Callout 
+      {{#if thisProps.arrowPosition}} ms-Callout--{{thisProps.arrowPosition}} {{/if}} 
+      {{#if thisProps.modifier}} ms-Callout--{{thisProps.modifier}} {{/if}}">
+    <div class="ms-Callout-main">
+      <div class="ms-Callout-header">
+        <p class="ms-Callout-title">{{{thisProps.title}}}</p>
+      </div>
+      <div class="ms-Callout-inner">
+        <div class="ms-Callout-content">
+          <p class="ms-Callout-subText {{#if thisProps.subText}} ms-Callout-subText--{{thisProps.subTextSize}} {{/if}}">{{thisProps.subText}}</p>
+        </div>
+        <div class="ms-Callout-actions">
+            {{#each thisProps.actions}}
+              {{renderPartial component props}}
+            {{/each}}
+        </div>
+      </div>    
     </div>
-    <div class="ms-Callout-inner">
-      <div class="ms-Callout-content">
-        <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
-      </div>
-      <div class="ms-Callout-actions">
-        <a href="#" class="ms-Callout-link ms-Link ms-Link--hero">Learn more</a>
-      </div>
-    </div>    
   </div>
-</div>
+{{/ContextualHost}}
+ 

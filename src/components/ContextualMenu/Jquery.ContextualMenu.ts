@@ -49,7 +49,6 @@ namespace fabric {
             // which can cause the menu to close.
             event.stopPropagation();
           }
-
         }
       });
     }

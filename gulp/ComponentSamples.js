@@ -9,6 +9,7 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
+// var Template = require('./modules/Template');
 
 //
 // Clean/Delete Tasks
@@ -95,29 +96,48 @@ gulp.task('ComponentSamples-buildStyles', function() {
    });
 });
 
+gulp.task('ComponentSamples-handlebars', function(cb) {
+   //Get components for Handlebar
+   Config.handleBarsConfig.batch = [];
+    for(var i=0; i < folderList.length; i++) {
+       var folderName = folderList[i];
+       var srcFolderName = Config.paths.componentsPath + '/' + folderName;
+       // Push to Handlebars config
+       Config.handleBarsConfig.batch.push('./' + srcFolderName);
+       
+    }
+    cb();
+});
+
+gulp.task('ComponentSamples-template', function(cb) {
+  var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
+    cb();
+  }.bind(this));
+});
+
 //
 // Sample Component Building
 // ----------------------------------------------------------------------------
-gulp.task('ComponentSamples-build', function() {
+gulp.task('ComponentSamples-build', ['ComponentSamples-handlebars'], function() {
    var streams = [];
-   
+  
    for(var i=0; i < folderList.length; i++) {
        var folderName = folderList[i];
        var srcFolderName = Config.paths.componentsPath + '/' + folderName;
        var distFolderName = Config.paths.distSampleComponents + '/' + folderName;
        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.html');
+       hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.json');
        
-       if (hasFileChanged) {    
-           
+       if (hasFileChanged) {
            var manifest = Utilities.parseManifest(srcFolderName + '/' + folderName + '.json');
-           
            var filesArray = manifest.fileOrder;
            var componentPipe;
            var fileGlob = Utilities.getManifestFileList(filesArray, Config.paths.componentsPath + '/' + folderName);
-
+           
            componentPipe = gulp.src(fileGlob)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
+           .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.concat("index.html"))
            .pipe(Plugins.wrap(
@@ -151,11 +171,11 @@ gulp.task('ComponentSamples-build', function() {
 
 var ComponentSamplesTasks = [
     'ComponentSamples-build', 
-    'ComponentSamples-copyAssets', 
+    'ComponentSamples-copyAssets',
+    'ComponentSamples-styleHinting',
     'ComponentSamples-buildStyles',
     'ComponentJS',
     'ComponentSamples-copyIgnoredFiles'
-    // 'ComponentSamples-styleHinting' Commented out until warnings are resolved
 ];
 
 //Build Fabric Component Samples

@@ -11,6 +11,19 @@
     "Spinner.Message.html",
     "Spinner.Message.Large.html"
   ],
+  "props": {
+    
+  },
+  "propsLarge": {
+    "modifier": "large"
+  },
+  "propsLabel": {
+    "label": "Loading..."
+  },
+  "propsLabelLarge": {
+    "modifier": "large",
+    "label": "Loading..."
+  },
   "branches": [
     {
       "name": "Standard",

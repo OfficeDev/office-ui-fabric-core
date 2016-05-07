@@ -4,14 +4,14 @@
   <div class="ms-MessageBanner-content">
     <div class="ms-MessageBanner-text">
       <div class="ms-MessageBanner-clipper">
-        You've reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
+        {{props.message}}
       </div>
     </div>
     <button class="ms-MessageBanner-expand">
       <i class="ms-Icon ms-Icon--chevronsDown"></i>
     </button>
     <div class="ms-MessageBanner-action">
-      <button class="ms-Button ms-Button--primary ms-fontColor-neutralLight">Get More Storage</button>
+      {{renderPartial props.button.name props.button.props}}
     </div>
   </div>
   <button class="ms-MessageBanner-close">

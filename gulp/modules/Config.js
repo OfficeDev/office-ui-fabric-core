@@ -118,7 +118,23 @@ var Config = function() {
           }
         }
       ]    
-	}
+	};
+  this.handleBarsConfig = {
+      ignorePartials: true,
+      partials:  {
+        
+      },
+      batch: [],
+      helpers:  {
+        renderPartial: function(partial, props) {
+          var hbs = Plugins.handlebars.Handlebars;
+          var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
+          var template = hbs.compile(fileContents);
+          var thisProps = {props: props};
+          return new hbs.SafeString(template(thisProps));
+        }.bind(this)
+      }
+  };
 };
 
 module.exports = new Config();

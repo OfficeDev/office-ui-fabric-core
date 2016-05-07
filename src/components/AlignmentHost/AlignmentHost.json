@@ -1,0 +1,10 @@
+{
+  "name": "AlignmentHost",
+  "notes": "",
+  "description": "",
+  "template": "AlignmentHost.html",
+  "class": "ms-AlignmentHost",
+  "props":  {
+    "arrowPosition": "arrowLeft"
+  }
+}

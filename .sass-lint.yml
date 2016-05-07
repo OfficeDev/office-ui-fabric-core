@@ -47,3 +47,10 @@ rules:
       properties:
         - margin
         - content
+
+	# Allow empty lines between blocks and single line rulesets
+	# https://github.com/sasstools/sass-lint/blob/master/docs/rules/empty-line-between-blocks.md
+	empty-line-between-blocks:
+    - 1
+    -
+      allow-single-line-rulesets: true

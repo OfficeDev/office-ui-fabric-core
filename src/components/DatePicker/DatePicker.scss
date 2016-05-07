@@ -10,8 +10,8 @@
   @include ms-u-normalize;
   margin-bottom: 17px;
   z-index: $ms-zIndex-DatePicker;
-  
-  .ms-TextField{ position: relative; }
+
+  .ms-TextField { position: relative; }
 }
 
 // Base wrapper for the date picker.
@@ -56,9 +56,9 @@
 }
 
 // When a picker opens, always open it in front of other closed pickers
-.ms-DatePicker-picker--opened { 
-  position: relative; 
-  z-index: $ms-zIndex-front; 
+.ms-DatePicker-picker--opened {
+  position: relative;
+  z-index: $ms-zIndex-front;
 }
 
 
@@ -67,6 +67,7 @@
 .ms-DatePicker-frame {
   padding: 1px;
 }
+
 .ms-DatePicker-wrap {
   margin: -1px;
   padding: 9px;
@@ -101,9 +102,11 @@
     cursor: pointer;
   }
 }
+
 .ms-DatePicker-month {
   margin-left: 15px;
 }
+
 .ms-DatePicker-year {
   margin-left: 5px;
 }
@@ -127,7 +130,8 @@
 
 
 // The days on the calendar.
-.ms-DatePicker-day, .ms-DatePicker-weekday {
+.ms-DatePicker-day,
+.ms-DatePicker-weekday {
   width: 40px;
   height: 40px;
   padding: 0;
@@ -198,11 +202,13 @@
   right: 9px;
   left: 9px;
 }
+
 .ms-DatePicker-yearComponents,
 .ms-DatePicker-decadeComponents {
   position: absolute;
   right: 10px;
 }
+
 .ms-DatePicker-prevMonth,
 .ms-DatePicker-nextMonth,
 .ms-DatePicker-prevYear,
@@ -216,7 +222,6 @@
   margin-left: 10px;
   text-align: center;
   line-height: 40px;
-  text-align: center;
   font-size: 21px;
   color: $ms-color-neutralSecondary;
   position: relative;
@@ -233,9 +238,9 @@
 // button is necessary to toggle the month view.
 .ms-DatePicker-headerToggleView {
   height: 40px;
-  left: 0px;
+  left: 0;
   position: absolute;
-  top: 0px;
+  top: 0;
   width: 140px;
   z-index: $ms-zIndex-middle;
   cursor: pointer;
@@ -355,6 +360,13 @@
   .ms-DatePicker-month,
   .ms-DatePicker-year {
     font-family: $ms-font-family-semilight;
+    font-size: 17px;
+    color: $ms-color-neutralPrimary;
+
+    &:hover {
+      color: $ms-color-neutralPrimary;
+      cursor: default;
+    }
   }
 
   .ms-DatePicker-header {
@@ -367,18 +379,13 @@
     @include ms-u-borderBox;
     border-right: 1px solid $ms-color-neutralLight;
     width: 220px;
+    margin: -10px 0;
+    padding: 10px 0;
   }
 
   // Show the month picker.
   .ms-DatePicker-monthPicker {
     display: block;
-  }
-
-
-  // Swap margin for padding so that the border extends the full height.
-  .ms-DatePicker-dayPicker {
-    margin: -10px 0;
-    padding: 10px 0;
   }
 
   // Style the the month and year pickers.
@@ -389,11 +396,10 @@
     position: absolute;
   }
 
-
   .ms-DatePicker-optionGrid {
     width: 200px;
     height: auto;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
   }
 
   // Size the month components to the day picker's new width
@@ -404,16 +410,6 @@
   // Size and position of the month and year labels.
   .ms-DatePicker-month {
     margin-left: 12px;
-  }
-  .ms-DatePicker-month,
-  .ms-DatePicker-year {
-    font-size: 17px;
-    color: $ms-color-neutralPrimary;
-
-    &:hover {
-      color: $ms-color-neutralPrimary;
-      cursor: default;
-    }
   }
 
 

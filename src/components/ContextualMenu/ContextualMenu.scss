@@ -19,7 +19,7 @@
 .ms-ContextualMenu-item {
   @include ms-u-borderBox;
   position: relative;
-   
+
   &:hover,
   &:active {
     background-color: $ms-color-neutralLight;
@@ -42,23 +42,23 @@
 
   &.is-disabled {
     background-color: $ms-color-white;
-    
-    &:active { 
-      border-color: $ms-color-white; 
+
+    &:active {
+      border-color: $ms-color-white;
     }
-    
+
     .ms-ContextualMenu-link {
       color: $ms-color-neutralTertiary;
       cursor: default;
       pointer-events: none;
     }
 
-    .ms-Icon { 
+    .ms-Icon {
       color: $ms-color-neutralTertiary;
       pointer-events: none;
       cursor: default;
     }
-  } 
+  }
 }
 
 // Modifier: Menu item Dividers
@@ -152,7 +152,7 @@
   .ms-ContextualMenu-link {
     padding-left: 40px;
   }
-  
+
   .ms-Icon {
     position: absolute;
     top: 50%;

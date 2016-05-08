@@ -9,15 +9,12 @@ Button labels must describe the action the button will perform and should includ
 Buttons should always include a noun if there is any room for interpretation about what the verb operates on. | Don’t use a button to navigate to another place, use a link instead. The exception is in a wizard where "Back" and "Next" buttons may be used.
 Consider the affect localization will have on the button and what will happen to components around it. | Don’t put too much text in a button - try to keep the length of your text to a minimum.
 If the button’s label content is dynamic, consider how the button will resize and what will happen to components around it. | Don't put anything other than text in a button.
-Use only a single line of text in the label of the button. |
+Use only a single line of text in the label of the button. | 
 Expose only one or two buttons to the user at a time, for example, "Accept" and "Cancel". If you need to expose more actions to the user, consider using checkboxes or radio buttons from which the user can select actions, with a single command button to trigger those actions. |
 Show only one primary button that inherits theme color at rest state. In the event there are more than two buttons with equal priority, all buttons should have neutral backgrounds. |
 "Submit", "OK", and "Apply" buttons should always be styled as primary buttons. When "Reset" or "Cancel" buttons appear alongside one of the above, they should be styled as secondary buttons. |
 Default buttons should always perform safe operations. For example, a default button should never delete. |
 Use task buttons to cause actions that complete a task or cause a transitional task. Do not use buttons to toggle other UX in the same context. For example, a button may be used to open an interface area but should not be used to open an additional set of components in the same interface. |
-
- |  Don't use Breadcrumbs as a primary way to navigate an app or site.  
-
 
 ## Variants
 

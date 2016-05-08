@@ -139,7 +139,8 @@ gulp.task('ComponentSamples-build', ['ComponentSamples-handlebars'], function() 
            .pipe(Plugins.gulpif(manifest.wrapBranches, Plugins.wrap('<div class="sample-wrapper"><%= contents %></div>')))
            .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
            .pipe(Plugins.fileinclude())
-           .pipe(Plugins.concat("index.html"))
+           .pipe(Plugins.markdown())
+           .pipe(Plugins.rename("index.html"))
            .pipe(Plugins.wrap(
                 {
                     src:  Config.paths.templatePath + '/componentSampleTemplate.html'  

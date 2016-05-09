@@ -31,22 +31,10 @@
   @include ms-font-l;
 }
 
-// Medium Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-.ms-font-m-plus {
-  @include ms-font-m-plus;
-}
-
 // Medium Styles
 // Allowed weights: SemiLight, Regular, Semibold
 .ms-font-m {
   @include ms-font-m;
-}
-
-// Small Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-.ms-font-s-plus {
-  @include ms-font-s-plus;
 }
 
 // Small Styles
@@ -109,16 +97,8 @@
   @include ms-fontSize-l;
 }
 
-.ms-fontSize-mPlus {
-  @include ms-fontSize-mPlus;
-}
-
 .ms-fontSize-m {
   @include ms-fontSize-m;
-}
-
-.ms-fontSize-sPlus {
-  @include ms-fontSize-sPlus;
 }
 
 .ms-fontSize-s {

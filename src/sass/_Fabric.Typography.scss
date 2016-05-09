@@ -43,30 +43,12 @@
   font-weight: normal;
 }
 
-// Medium Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-@mixin ms-font-m-plus {
-  color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
-  font-size: $ms-font-size-m-plus;
-  font-weight: normal;
-}
-
 // Medium Styles
 // Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-m {
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-regular;
   font-size: $ms-font-size-m;
-  font-weight: normal;
-}
-
-// Small Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-@mixin ms-font-s-plus {
-  color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
-  font-size: $ms-font-size-s-plus;
   font-weight: normal;
 }
 
@@ -135,16 +117,8 @@
   font-size: $ms-font-size-l;
 }
 
-@mixin ms-fontSize-mPlus {
-  font-size: $ms-font-size-m-plus;
-}
-
 @mixin ms-fontSize-m {
   font-size: $ms-font-size-m;
-}
-
-@mixin ms-fontSize-sPlus {
-  font-size: $ms-font-size-s-plus;
 }
 
 @mixin ms-fontSize-s {

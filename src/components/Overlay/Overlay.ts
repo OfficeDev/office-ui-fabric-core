@@ -8,11 +8,11 @@ namespace fabric {
    *
    */
   const OVERLAY_CLASS = "ms-Overlay";
-  
+
   export class Overlay {
-    overlayEl: Element;
-    _modifier: string;
-    
+    public overlayEl: Element;
+    private _modifier: string;
+
     /**
      *
      * @param {HTMLElement} container - the target container for an instance of Panel
@@ -22,8 +22,8 @@ namespace fabric {
       this._createElements();
       this._modifier = modifier || "";
     }
-    
-    _createElements() {
+
+    private _createElements() {
       this.overlayEl = document.createElement("div");
       this.overlayEl.classList.add(OVERLAY_CLASS);
       this.overlayEl.classList.add(this._modifier);

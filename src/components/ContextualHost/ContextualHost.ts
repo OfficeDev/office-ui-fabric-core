@@ -4,7 +4,8 @@
  * ContextualHost
  *
  * Hosts contextual menus and callouts
- * NOTE: Position bottom only works if html is set to max-height 100%, overflow hidden and body is set to overflow scroll, body is set to height 100%
+ * NOTE: Position bottom only works if html is set to max-height 100%, overflow hidden
+ * and body is set to overflow scroll, body is set to height 100%
  *
  */
 
@@ -32,7 +33,7 @@ namespace fabric {
     private _container;
     private _targetElement;
     private _matchTargetWidth;
-    
+
     constructor(container: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
       this._resizeAction = this._resizeAction.bind(this);
       this._disMissAction = this._disMissAction.bind(this);
@@ -150,9 +151,9 @@ namespace fabric {
       let mHLeft;
       let mHTop;
       let mWidth = "";
-      
-      if(this._matchTargetWidth) {
-        mWidth = "width: " + this._modalWidth + 'px;';
+
+      if (this._matchTargetWidth) {
+        mWidth = "width: " + this._modalWidth + "px;";
       }
 
       switch (curDirection) {
@@ -251,14 +252,14 @@ namespace fabric {
       this._modalClone.setAttribute("style", "opacity: 0; z-index: -1");
       this._modalClone.classList.add(MODAL_STATE_POSITIONED);
       this._modalClone.classList.add(CONTEXT_STATE_CLASS);
-      
-      if(this._matchTargetWidth) {
+
+      if (this._matchTargetWidth) {
         let teStyles = window.getComputedStyle(this._targetElement);
         this._modalWidth = this._targetElement.getBoundingClientRect().width
           + (parseInt(teStyles.marginLeft, 10)
           + parseInt(teStyles.marginLeft, 10));
         // Set the ContextualHost width
-       
+
       } else {
         this._modalWidth = this._modalClone.getBoundingClientRect().width
           + (parseInt(_modalStyles.marginLeft, 10)
@@ -268,7 +269,7 @@ namespace fabric {
       this._modalHeight = this._modalClone.getBoundingClientRect().height
         + (parseInt(_modalStyles.marginTop, 10)
         + parseInt(_modalStyles.marginBottom, 10));
-     
+
       this._modalClone.classList.remove(MODAL_STATE_POSITIONED);
       this._modalClone.classList.remove(CONTEXT_STATE_CLASS);
       this._teWidth = this._targetElement.getBoundingClientRect().width;

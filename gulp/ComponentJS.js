@@ -31,7 +31,7 @@ gulp.task('ComponentJS-copyLib', function() {
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentJS-lint', function (cb) {
-    return gulp.src(Config.paths.componentsPath + '/**/*.ts')
+    return gulp.src(Config.paths.srcPath + '/**/*.ts')
         
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
@@ -41,7 +41,7 @@ gulp.task('ComponentJS-lint', function (cb) {
 });
 
 gulp.task('ComponentJS-typescript', function() {
-    var tscResult = gulp.src(Config.paths.componentsPath + '/**/*.ts')
+    var tscResult = gulp.src(Config.paths.srcPath + '/**/*.ts')
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
         })))

@@ -34,3 +34,38 @@
   @include resetPadding;
   @include resetBoxShadow;
 }
+
+// To set various text alignment styles 
+// @param [variable list] $alignments
+@mixin ms-u-textAlign($alignments...) {
+  @each $align in $alignments {
+    .ms-u-textAlign-#{$align} {
+      text-align: $align;
+    }
+  }
+}
+
+// To hide content while still making it readable by screen readers (Accessibility)
+@mixin ms-u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// To add truncation with ellipsis
+@mixin ms-u-textTruncate {
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	word-wrap: normal; // Fix for IE 8/9 in case 'word-wrap: break-word' is set on parent nodes
+}
+
+// To disable text wrapping
+@mixin ms-u-noWrap {
+	white-space: nowrap; 
+}

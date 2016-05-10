@@ -21,3 +21,21 @@
 .ms-u-normalize {
   @include ms-u-normalize;
 }
+
+// Use to set left, center, right text alignment styles 
+@include ms-u-textAlign(left, center, right);
+
+// Use to hide content while still making it readable by screen reader (Accessibility)
+.ms-u-sr-only {
+  @include ms-u-sr-only
+}
+
+// Use to add truncation with ellipsis
+.ms-u-textTruncate {
+  @include ms-u-textTruncate
+}
+
+// Use to disable text wrapping
+.ms-u-noWrap{
+  @include ms-u-noWrap
+}

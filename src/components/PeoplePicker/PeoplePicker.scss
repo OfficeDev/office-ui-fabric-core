@@ -18,11 +18,11 @@ $ms-Persona-leftPadding: 16px;
 // Box that contains the search field and selected people.
 .ms-PeoplePicker-searchBox {
   border-bottom: 2px solid $ms-color-themePrimary;
-  
+
   .ms-TextField {
-    border: none;
+    border: 0;
     margin-bottom: 0;
-    
+
     .ms-TextField-field {
       min-height: 40px;
       border: 0;
@@ -46,11 +46,10 @@ $ms-Persona-leftPadding: 16px;
 
 // Button to remove a selected person.
 .ms-PeoplePicker-personaRemove {
-  @include button-reset();
+  @include button-reset;
   background-color: $ms-color-neutralLighter;
   color: $ms-color-neutralSecondary;
   display: inline-block;
-  float: left;
   text-align: center;
   height: 32px;
   width: 32px;
@@ -122,23 +121,22 @@ $ms-Persona-leftPadding: 16px;
   margin-bottom: 8px;
   padding-left: $ms-Persona-leftPadding;
   cursor: pointer;
-  
+
   &:hover {
     background-color: $ms-color-neutralLight;
   }
-  
+
   .ms-PeoplePicker-resultAction {
       &:hover {
         background-color: $ms-color-neutralTertiaryAlt;
         outline: 1px solid transparent;
       }
   }
-  
+
   &.is-selected {
     background-color: $ms-color-themeLight;
-    
+
     .ms-PeoplePicker-resultAction {
-      
       &:hover {
         background-color: $ms-color-themeTertiary;
       }
@@ -149,7 +147,7 @@ $ms-Persona-leftPadding: 16px;
 // Result buttons
 .ms-PeoplePicker-resultBtn,
 .ms-PeoplePicker-peopleListBtn {
-  @include button-reset();
+  @include button-reset;
   position: relative;
   box-sizing: border-box;
   height: 34px;
@@ -157,7 +155,7 @@ $ms-Persona-leftPadding: 16px;
   background: none;
   border: 0;
   text-align: left;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
   padding: 0 0 0 9px;
 
   @media (min-width: $ms-screen-md-min) {
@@ -189,10 +187,10 @@ $ms-Persona-leftPadding: 16px;
 
 // Actionable icon on a result
 .ms-PeoplePicker-resultAction {
-  @include button-reset();
+  @include button-reset;
   display: block;
   height: 100%;
-  transition: background-color 0.367s $ms-ease1;
+  transition: background-color .367s $ms-ease1;
   position: absolute;
   right: 0;
   top: 0;
@@ -275,7 +273,7 @@ $ms-Persona-leftPadding: 16px;
 }
 
 .ms-PeoplePicker-searchMoreBtn {
-  @include button-reset();
+  @include button-reset;
   position: relative;
   height: 69px;
   width: 100%;
@@ -514,10 +512,20 @@ $ms-Persona-leftPadding: 16px;
       height: $personaItemHeight;
     }
   }
-  
+
   .ms-PeoplePicker-resultAction {
     @media (min-width: $ms-screen-md-min) {
       height: $personaItemHeight;
+    }
+  }
+
+  .ms-PersonaCard {
+    display: none;
+    position: absolute;
+    height: 200px;
+
+    &.is-active {
+      display: block;
     }
   }
 
@@ -562,18 +570,6 @@ $ms-Persona-leftPadding: 16px;
     left: 14px;
     height: 20px;
     width: 20px;
-  }
-}
-
-.ms-PeoplePicker.ms-PeoplePicker--Facepile {
-  .ms-PersonaCard {
-    display: none;
-    position: absolute;
-    height: 200px;
-
-    &.is-active {
-      display: block;
-    }
   }
 }
 

@@ -35,7 +35,7 @@ namespace fabric {
       this._actions.removeEventListener("click", this._onActionClick.bind(this));
       this._expander.removeEventListener("click", this._onExpanderClick.bind(this));
     }
-    
+
     private _onExpanderClick(event: Event): void {
       const parent: HTMLElement = (<HTMLElement>event.target).parentElement;
       if (parent.classList.contains("is-collapsed")) {

@@ -17,9 +17,9 @@ $Panel-margin-md: 48px;
 $Panel-margin-lg: 428px;
 $Panel-margin-xl: 176px;
 $CommandBarHeight: 40px;
-$CommandButtonLightBlue: #b5d8f4;
-$CommandButtonLighterBlue: #d7eaf9;
-$CommandButtonDarkBlue: #07288b;
+$CommandButtonLightBlue: #B5D8F4;
+$CommandButtonLighterBlue: #D7EAF9;
+$CommandButtonDarkBlue: #07288B;
 $CommandButtonBlue: #2488D8;
 
 // The panel itself, where the content goes.
@@ -28,20 +28,18 @@ $CommandButtonBlue: #2488D8;
   width: 100%;
   max-width: $Panel-width-sm;
   display: block;
-  position: relative;
-  @include drop-shadow(-30px, 0px, 30px, -30px, .2);
+  @include drop-shadow(-30px, 0, 30px, -30px, .2);
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  background-color: $ms-color-white;
   z-index: $ms-zIndex-front;
-  
+
   // Animations -- Default (anchored right)
   &.animate-in {
     @include ms-u-slideLeftIn40;
   }
-  
+
   &.animate-out {
     @include ms-u-slideRightOut40;
   }
@@ -78,7 +76,7 @@ $CommandButtonBlue: #2488D8;
   left: 0;
   border-left: 1px solid $ms-color-neutralLight;
   border-right: 1px solid $ms-color-neutralLight;
-  @include drop-shadow(-30px, 0px, 30px, 30px, .2);
+  @include drop-shadow(-30px, 0, 30px, 30px, .2);
 
   // Commands and content inner are not displayed
   // Note: Replace with a leftnav menu.
@@ -102,6 +100,7 @@ $CommandButtonBlue: #2488D8;
     .ms-Panel-main {
       @include ms-u-slideLeftOut40;
     }
+
     .ms-Overlay {
       @include ms-u-fadeOut200;
     }
@@ -110,7 +109,7 @@ $CommandButtonBlue: #2488D8;
 
 // The close button in the top right (x)
 .ms-Panel-closeButton {
-  @include button-reset();
+  @include button-reset;
   position: absolute;
   right: 8px;
   top: 0;
@@ -155,7 +154,7 @@ $CommandButtonBlue: #2488D8;
 
   @media (min-width: $ms-screen-xl-min) {
     margin-top: 30px;
-  } 
+  }
 }
 
 //== Modifier: Deprecated Animated commandbar
@@ -164,7 +163,7 @@ $CommandButtonBlue: #2488D8;
   .ms-CommandBar {
     @media (min-width: $ms-screen-md-min) {
       display: block;
-    }    
+    }
   }
 
   .ms-CommandBarItem {
@@ -221,7 +220,7 @@ $CommandButtonBlue: #2488D8;
 
   &.is-open {
     .ms-CommandBar {
-      @include ms-u-slideDownIn20();
+      @include ms-u-slideDownIn20;
       animation-delay: 250ms;
     }
 

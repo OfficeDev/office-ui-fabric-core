@@ -26,13 +26,13 @@
 
   &:hover {
     .ms-Label {
-      color: $ms-color-black; 
+      color: $ms-color-black;
     }
   }
 
   &:active {
-    .ms-Label { 
-      color: $ms-color-neutralPrimary; 
+    .ms-Label {
+      color: $ms-color-neutralPrimary;
     }
   }
 
@@ -41,6 +41,7 @@
     .ms-Label {
      @include ms-Label-is-disabled;
     }
+
     .ms-Toggle-field {
       background-color: $ms-color-white !important;
       border-color: $ms-color-neutralTertiaryAlt !important;
@@ -104,8 +105,8 @@
     }
   }
 
-  &:active { 
-    background-color: $ms-color-themePrimary; 
+  &:active {
+    background-color: $ms-color-themePrimary;
   }
 }
 
@@ -149,12 +150,12 @@
 
   &:focus,
   &:hover {
-    & + .ms-Toggle-field { 
-      background-color: $ms-color-neutralLight; 
+    & + .ms-Toggle-field {
+      background-color: $ms-color-neutralLight;
     }
-    
+
     &:checked + .ms-Toggle-field {
-      background-color: $ms-color-themeDark; 
+      background-color: $ms-color-themeDark;
     }
   }
 }

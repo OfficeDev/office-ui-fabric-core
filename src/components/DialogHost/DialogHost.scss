@@ -1,5 +1,5 @@
 .ms-DialogHost {
-  @include drop-shadow();
+  @include drop-shadow;
   background-color: $ms-color-white;
   box-sizing: border-box;
   line-height: 1.35;

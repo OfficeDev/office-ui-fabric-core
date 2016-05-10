@@ -22,7 +22,6 @@
   display: none;
   position: absolute;
   margin:  0;
-  padding: 0;
   border: 0;
   background: none;
   cursor: pointer;
@@ -55,13 +54,13 @@
   width: 100%;
 
   // Add margin bottom between compound buttons
-  .ms-Button.ms-Button--compound:not(:last-child) { 
-    margin-bottom: 20px; 
+  .ms-Button.ms-Button--compound:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
 .ms-Dialog-subText {
-  margin: 0 0 20px 0;
+  margin: 0 0 20px;
   padding-top: 8px;
   font-family: $ms-font-family-semilight;
   color: $ms-color-neutralPrimary;
@@ -75,24 +74,24 @@
   line-height: 24px;
   margin: 20px 0 0;
   font-size: 0;
-  
-  .ms-Button { 
-    line-height: normal; 
+
+  .ms-Button {
+    line-height: normal;
   }
 }
 
 .ms-Dialog-actionsRight {
   text-align: right;
   font-size: 0;
-  
+
   // Reset spacing for first button
   .ms-Dialog-action:first-child {
-    margin: 0; 
+    margin: 0;
   }
-  
+
   // Spacing between bottom buttons
-  .ms-Dialog-action + .ms-Dialog-action { 
-    margin: 0 0 0 16px; 
+  .ms-Dialog-action + .ms-Dialog-action {
+    margin: 0 0 0 16px;
   }
 }
 
@@ -151,6 +150,6 @@
   .ms-Dialog-main {
     width: auto;
     min-width: 288px;
-    max-width: 340px; 
+    max-width: 340px;
   }
 }

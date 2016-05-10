@@ -29,7 +29,7 @@
 
 .ms-Spinner-label {
   position: relative;
-  @include ms-font-s();
+  @include ms-font-s;
   color: $ms-color-themePrimary;
   left: 28px;
   top: 2px;

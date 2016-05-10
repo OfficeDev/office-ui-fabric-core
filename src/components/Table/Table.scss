@@ -78,14 +78,16 @@
     border-bottom: 1px solid $ms-color-neutralLight;
   }
 
-  .ms-Table-rowCheck:after {
-    @include ms-Icon;
-    content: '\e041';
-    color: $ms-color-neutralTertiary;
-    font-size: 12px;
-    position: absolute;
-    left: 4px;
-    top: 9px;
+  .ms-Table-rowCheck {
+    &::after {
+      @include ms-Icon;
+      content: '\e041';
+      color: $ms-color-neutralTertiary;
+      font-size: 12px;
+      position: absolute;
+      left: 4px;
+      top: 9px;
+    }
   }
 }
 
@@ -117,6 +119,7 @@
       // A checkmark in a selected row.
       .ms-Table-rowCheck {
         background: none;
+
         // Show the checkbox.
         &:before {
           display: block;

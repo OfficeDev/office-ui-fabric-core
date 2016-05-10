@@ -357,6 +357,12 @@
 @mixin ms-Icon--pictureEdit { content: '\e288'; } // '' 
 @mixin ms-Icon--protectionCenter { content: '\e289'; } // '' 
 @mixin ms-Icon--alert2 { content: '\e28a'; } // '' 
+@mixin ms-Icon--skypeCircleCheck { content: '\e310'; } // '' 
+@mixin ms-Icon--skypeCircleClock { content: '\e311'; } // '' 
+@mixin ms-Icon--skypeCircleMinus { content: '\e312'; } // '' 
+@mixin ms-Icon--skypeCheck { content: '\e315'; } // '' 
+@mixin ms-Icon--skypeClock { content: '\e316'; } // '' 
+@mixin ms-Icon--skypeMinus { content: '\e317'; } // '' 
 
 
 @mixin ms-Icon--circle {

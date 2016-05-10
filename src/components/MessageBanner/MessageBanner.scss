@@ -9,7 +9,7 @@ $MessageBanner-height: 52px;
 $MessageBanner-iconSize: 40px;
 
 .ms-MessageBanner {
-  @include ms-font-s();
+  @include ms-font-s;
   position: relative;
   border-bottom: 1px solid $ms-color-neutralSecondaryAlt;
   background-color: $ms-color-themeLighterAlt;
@@ -18,16 +18,14 @@ $MessageBanner-iconSize: 40px;
   height: $MessageBanner-height;
   text-align: center;
   overflow: hidden;
-  @include ms-u-slideDownIn20();
+  @include ms-u-slideDownIn20;
 
   .ms-Icon {
     font-size: 16px;
   }
-}
 
-.ms-MessageBanner {
   &.hide {
-    @include ms-u-slideUpOut20();
+    @include ms-u-slideUpOut20;
   }
 
   &.is-hidden {
@@ -40,7 +38,7 @@ $MessageBanner-iconSize: 40px;
   height: $MessageBanner-height;
   width: $MessageBanner-iconSize;
   cursor: pointer;
-  border: none;
+  border: 0;
   background-color: transparent;
 
   &:focus {
@@ -104,10 +102,6 @@ $MessageBanner-iconSize: 40px;
 
 
 @media screen and (max-width: 479px) {
-  .ms-MessageBanner-expand {
-    display: inline-block;
-  }
-
   .ms-MessageBanner-action {
     margin: 0;
     display: block;
@@ -117,11 +111,12 @@ $MessageBanner-iconSize: 40px;
 
   .ms-MessageBanner-text {
     margin-left: -25px;
-    padding: 18px 0 10px 0;
+    padding: 18px 0 10px;
     min-width: 240px;
   }
 
   .ms-MessageBanner-expand {
+    display: inline-block;
     padding: 0;
     margin-left: -5px;
     width: 20px;

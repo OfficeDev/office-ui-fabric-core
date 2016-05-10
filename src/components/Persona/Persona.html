@@ -12,7 +12,11 @@
       <img class="ms-Persona-image" src="{{props.image}}">
     {{/if}}
   </div>
-  <div class="ms-Persona-presence"></div>
+  <div class="ms-Persona-presence">
+    {{#if props.icon}}
+      <i class="ms-Persona-presenceIcon ms-Icon ms-Icon--{{props.icon}}"></i>
+    {{/if}}
+  </div>
   <div class="ms-Persona-details">
     {{#if props.primaryText}}
       <div class="ms-Persona-primaryText">{{props.primaryText}}</div>

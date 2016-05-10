@@ -26,8 +26,8 @@
 @include ms-u-textAlign(left, center, right);
 
 // Use to hide content while still making it readable by screen reader (Accessibility)
-.ms-u-sr-only {
-  @include ms-u-sr-only
+.ms-u-screenReaderOnly {
+  @include ms-u-screenReaderOnly
 }
 
 // Use to add truncation with ellipsis

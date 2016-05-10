@@ -39,14 +39,14 @@
 // @param [variable list] $alignments
 @mixin ms-u-textAlign($alignments...) {
   @each $align in $alignments {
-    .ms-u-textAlign-#{$align} {
+    $alignStr: inspect($align);
+    .ms-u-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
       text-align: $align;
     }
   }
 }
 
 // To hide content while still making it readable by screen readers (Accessibility)
-@mixin ms-u-sr-only {
   position: absolute;
   width: 1px;
   height: 1px;

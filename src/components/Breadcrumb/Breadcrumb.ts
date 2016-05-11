@@ -127,7 +127,7 @@ namespace fabric {
      * render breadcrumbs and overflow menus
      */
     private _renderList(): void {
-      let maxItems: number = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
+      const maxItems: number = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
 
       if (maxItems !== this._currentMaxItems) {
         this._updateBreadcrumbs();

@@ -96,9 +96,8 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
   box-sizing: border-box;
   padding: 0 8px;
   color: $ms-color-neutralTertiary;
-  border: none;
+  border: 0;
   background: none;
-  border: none;
   line-height: inherit;
   margin: 0;
   font-size: inherit;
@@ -272,15 +271,12 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
   box-sizing: border-box;
   vertical-align: top;
   background: none;
-  border: none;
+  border: 0;
+  visibility: hidden;
 
   &:focus {
    outline: transparent;
   }
-}
-
-.ms-DetailsRow-check {
-  visibility: hidden;
 }
 
 .ms-Fabric.is-stationary .ms-DetailsRow:hover .ms-DetailsRow-check,

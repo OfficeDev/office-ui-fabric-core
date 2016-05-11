@@ -18,9 +18,11 @@
     .ms-SearchBox-label {
       @include ms-Label-is-disabled;
     }
+
     .ms-SearchBox-icon {
       color: $ms-color-neutralTertiaryAlt;
     }
+
     .ms-SearchBox-field {
       background-color: $ms-color-neutralLighter;
       border-color: $ms-color-neutralLighter;
@@ -55,7 +57,7 @@
 
   &.hovering {
     border-color: $ms-color-themePrimary;
-    background-color: transparentize($ms-color-themePrimary, 0.8);
+    background-color: transparentize($ms-color-themePrimary, .8);
 
     & + .ms-SearchBox-label {
       color: $ms-color-black;
@@ -69,16 +71,16 @@
   &:focus {
     padding: 6px 32px 7px 10px;
     border-color: $ms-color-themePrimary;
-    background-color: transparentize($ms-color-themePrimary, 0.8);
+    background-color: transparentize($ms-color-themePrimary, .8);
   }
-  
+
   &::-ms-clear {
     display: none;
   }
 }
 
 .ms-SearchBox-closeButton {
-  border: none;
+  border: 0;
   cursor: pointer;
   position: absolute;
   right: 0;

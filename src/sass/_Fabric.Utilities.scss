@@ -12,6 +12,11 @@
   box-sizing: border-box;
 }
 
+// For setting the border base width
+@mixin ms-u-borderBase {
+  border: 1px solid;
+}
+
 // Ensures the block expands to the full height to enclose its floated childen.
 
 @mixin ms-u-clearfix {

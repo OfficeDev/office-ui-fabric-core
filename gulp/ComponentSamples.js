@@ -9,7 +9,7 @@ var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
-// var Template = require('./modules/Template');
+var Template = require('./modules/Template');
 
 //
 // Clean/Delete Tasks
@@ -109,10 +109,12 @@ gulp.task('ComponentSamples-handlebars', function(cb) {
     cb();
 });
 
-gulp.task('ComponentSamples-template', function(cb) {
+gulp.task('ComponentSamples-template', ["ComponentSamples-handlebars"], function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
+    console.log("Ayyy lmaoo");
     cb();
   }.bind(this));
+  _template.init();
 });
 
 //

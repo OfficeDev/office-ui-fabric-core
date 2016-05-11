@@ -13,7 +13,6 @@ var folderList = Utilities.getFolders(Config.paths.componentsPath);
 
 // gulp.task('ComponentSamples-build', ['ComponentSamples-handlebars'], function(cb) {
   
-  
 //    var streams = [];
   
 //    for(var i=0; i < folderList.length; i++) {

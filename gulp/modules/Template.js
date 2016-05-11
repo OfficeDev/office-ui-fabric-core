@@ -11,9 +11,9 @@ var Template = function(directories, dist, src, callback) {
   var _parserHolder = [];
   var _createString = "";
   var _loadDoms = [];
-  var _dirX = 0;
+  var _dirX = 1;
   
-  this.continueParsing = function() {
+  function continueParsing() {
     if(_dirX < directories.length) {
       var _file = directories[_dirX];
       var _fileContents;
@@ -24,30 +24,30 @@ var Template = function(directories, dist, src, callback) {
       gulp.src(src + '/' + _file + '/' + _file + '.html')
       .pipe(Plugins.handlebars(_manifest, Config.handleBarsConfig))
       .pipe(Plugins.tap(function(file, t) {
-         _fileContents = file.contents;
+         _fileContents = file.contents.toString();
         }.bind(this)
       ))
       .on('end', function() {
-        console.log("Finishsss");
+        // console.log("Finishsss", _fileContents);
         // this.emit("end");
-        _parserHolder[_dirX] = new htmlparser.Parser(this.handler, {
-          onreset: function() {
-            _dirX++;
-            this.continueParsing();
-          }.bind(this)
-        });
+        // console.log(_fileContents);
+        _parserHolder[_dirX] = new htmlparser.Parser(this.handler);
         _parserHolder[_dirX].write(_fileContents);
-        _parserHolder[_dirX].end();
+        _parserHolder[_dirX].done();
+        // console.log(_parserHolder.length);
         _parserHolder[_dirX].reset();
+        console.log(_dirX);
+        _dirX++;
+        continueParsing();
       }.bind(this));
     }
   };
   
   this.init = function() {
-    this.continueParsing();
+    continueParsing();
   };
   
-  this.parseElement = function(element, elementName, parentElement, parentElementName, isRoot) {
+  function parseElement(element, elementName, parentElement, parentElementName, isRoot) {
   
     if(element.type == "text") {
       var someText = element.data.replace(/(\r\n|\n|\r)/gm,"");
@@ -81,17 +81,17 @@ var Template = function(directories, dist, src, callback) {
     }
   };
 
-  this.getDirectories = function(srcpath) {
+  function getDirectories(srcpath) {
     return fs.readdirSync(srcpath).filter(function(file) {
       return fs.statSync(path.join(srcpath, file)).isDirectory();
     });
   };
 
-  this.purifyClassName = function(className) {
+  function purifyClassName(className) {
     return className.replace("ms-", "");
   };
 
-  this.processDOM = function(dom) {
+  function processDOM(dom) {
     
     if (dom.length > 1) {
       // Add a root element
@@ -121,21 +121,25 @@ var Template = function(directories, dist, src, callback) {
   };
 
   this.handler = new htmlparser.DomHandler(function (error, dom) {
+      console.log("lkasdjflak;sdjf;salkdfj");
       if (error) {
         console.log(error);
       }
-      
+      console.log("Ayyy");
       _loadDoms.push(dom);
-       console.log(_currentDirectory >= directories.length, _currentDirectory, directories.length);
-      if (_currentDirectory >= directories.length) {
+      console.log(_dirX >= directories.length, _dirX, directories.length);
+     
+      if (_dirX >= directories.length) {
         createComponents();
-        onsole.log("Creating Directory");
+        // console.log("Creating Directory");
       } else {
-        _currentDirectory++;
+        _dirX++;
       }
-  });
+  }.bind(this));
 
-  this.createComponents = function() {
+  function createComponents() {
+    console.log("Create components");
+    
     for (var x = 0; x < _loadDoms.length; x++) {
       processDOM(_loadDoms[x]);
     }
@@ -145,8 +149,7 @@ var Template = function(directories, dist, src, callback) {
       callback();
     }
   }
-  
   // this.init();
 };
 
-// module.exports = Template;
+module.exports = Template;

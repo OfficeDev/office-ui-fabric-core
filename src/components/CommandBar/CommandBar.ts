@@ -75,8 +75,6 @@ namespace fabric {
     private searchBoxInstance: SearchBox;
     private _container: Element;
     private _commandButtonInstance: CommandButton;
-    
-    private _uiStateEvents: Array<Function> = [];
 
     constructor(container: Element) {
 
@@ -89,23 +87,23 @@ namespace fabric {
 
       this._setElements();
       this._setBreakpoint();
-      
+
       // If the overflow exists then run the overflow resizing
-      if(this._elements.overflowCommand) {
+      if (this._elements.overflowCommand) {
         this._initOverflow();
       }
       this._setUIState();
     }
-    
+
     private _runsSearchBox(reInit: boolean = true, state: string = "add") {
       this._changeSearchState("is-collapsed", state);
-      if(reInit) {
+      if (reInit) {
         this.searchBoxInstance = this._createSearchInstance();
       }
     }
-    
+
     private _runOverflow() {
-      if(this._elements.overflowCommand) {
+      if (this._elements.overflowCommand) {
         this._saveCommandWidths();
         this._redrawMenu();
         this._updateCommands();
@@ -113,7 +111,7 @@ namespace fabric {
         this._checkOverflow();
       }
     }
-    
+
     private _initOverflow() {
       this._createContextualRef();
       this._createItemCollection(this.itemCollection, CB_MAIN_AREA);
@@ -170,56 +168,56 @@ namespace fabric {
           break;
       }
     }
-      
+
     private _createSearchInstance(): any {
-      if(this._elements.searchBox) {
+      if (this._elements.searchBox) {
         return new fabric.SearchBox(<HTMLElement>this._elements.searchBox);
       } else {
         return false;
       }
     }
-    
+
     private _changeSearchState(state: string, action: string) {
-      if(this._elements.searchBox) {
+      if (this._elements.searchBox) {
         switch (action) {
           case "remove":
             this._elements.searchBox.classList.remove(state);
             break;
           case "add":
             this._elements.searchBox.classList.add(state);
+            break;
           default:
             break;
-        } 
+        }
       }
     }
-      
+
     private _setElements() {
       this._elements = {
         mainArea: this._container.querySelector(CB_MAIN_AREA)
       };
-      
-      if(this._container.querySelector(CB_SIDE_COMMAND_AREA)) {
+
+      if (this._container.querySelector(CB_SIDE_COMMAND_AREA)) {
         this._elements.sideCommandArea = this._container.querySelector(CB_SIDE_COMMAND_AREA);
       }
-      
-      if(this._container.querySelector(CB_ITEM_OVERFLOW)) {
+
+      if (this._container.querySelector(CB_ITEM_OVERFLOW)) {
         this._elements.overflowCommand = this._container.querySelector(CB_ITEM_OVERFLOW);
         this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
       }
-      
-      if(this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
+
+      if (this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
          this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
          this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
          this.searchBoxInstance = this._createSearchInstance();
       }
     }
-    
+
     private _createItemCollection(iCollection: Array<ItemCollection>, areaClass: string) {
       let item,
           label,
           iconClasses,
           splitClasses,
-          icon,
           items = this._container.querySelectorAll(areaClass + " " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
 
       // Initiate the overflow command
@@ -229,8 +227,8 @@ namespace fabric {
         item = items[i];
         label = item.querySelector(COMMAND_BUTTON_LABEL).textContent;
         let icon = item.querySelector(ICON);
-        
-        if(icon) {
+
+        if (icon) {
             iconClasses = icon.className;
             splitClasses = iconClasses.split(" ");
         }
@@ -352,7 +350,7 @@ namespace fabric {
             thisItem.item.classList.remove(CB_NO_LABEL_CLASS);
           }
         }
-      }      
+      }
       for (let i = 0; i < this._sideAreaCollection.length; i++) {
         let thisItem = this._sideAreaCollection[i];
         if (!thisItem.isCollapsed) {

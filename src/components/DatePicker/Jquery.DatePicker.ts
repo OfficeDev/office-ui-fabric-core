@@ -68,8 +68,8 @@ namespace fabric {
           highlighted: "ms-DatePicker-day--highlighted",
           now: "ms-DatePicker-day--today",
           infocus: "ms-DatePicker-day--infocus",
-          outfocus: "ms-DatePicker-day--outfocus",
-        },
+          outfocus: "ms-DatePicker-day--outfocus"
+        }
       }, options || {}));
       let $picker = $dateField.pickadate("picker");
 
@@ -80,7 +80,7 @@ namespace fabric {
         },
         open: () => {
           this.scrollUp($datePicker);
-        },
+        }
       });
     }
 
@@ -279,7 +279,7 @@ namespace fabric {
     /** Scroll the page up so that the field the date picker is attached to is at the top. */
     public scrollUp($datePicker) {
       $("html, body").animate({
-        scrollTop: $datePicker.offset().top,
+        scrollTop: $datePicker.offset().top
       }, 367);
     }
   }

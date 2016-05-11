@@ -1,0 +1,13 @@
+{
+  "name": "DetailsList",
+  "notes": "",
+  "description": "DetailsList is a derivative of List and provides a sortable, filterable, justified table for rendering large sets of items.",
+  "template": "DetailsList.html",
+  "class": "ms-DetailsList",
+  "branches": [
+    {
+      "name": "Default",
+      "default": true
+    }
+  ]
+}

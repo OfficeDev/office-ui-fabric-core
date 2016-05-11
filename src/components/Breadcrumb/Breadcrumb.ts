@@ -48,6 +48,41 @@ namespace fabric {
     public removeOutlinesOnClick(): void {
       this._breadcrumbList.blur();
     }
+    
+    /**
+     * Adds a breadcrumb item to a breadcrumb
+     * @param itemLabel {String} the item's text label
+     * @param itemLink {String} the item's href link
+     * @param tabIndex {number} the item's tabIndex
+     */
+    public addItem(itemLabel: string, itemLink: string, tabIndex: number): void {
+      this._itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
+      this._updateBreadcrumbs();
+    }
+    
+    /**
+     * Removes a breadcrumb item by item label in the breadcrumbs list
+     * @param itemLabel {String} the item's text label
+     */
+    public removeItemByLabel(itemLabel: string ): void {
+      var i = this._itemCollection.length;
+      while (i--) {
+        if (this._itemCollection[i].text === itemLabel) {
+          this._itemCollection.splice(i, 1);
+        }
+      }
+      this._updateBreadcrumbs();
+    };
+
+    /**
+     * removes a breadcrumb item by position in the breadcrumbs list
+     * index starts at 0
+     * @param value {String} the item's index
+     */
+    public removeItemByPosition(value: number): void {
+      this._itemCollection.splice(value, 1);
+      this._updateBreadcrumbs();
+    }
 
     /**
      * initializes component
@@ -95,17 +130,26 @@ namespace fabric {
       let maxItems = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
 
       if (maxItems !== this._currentMaxItems) {
-        if (this._itemCollection.length > maxItems) {
-          this._breadcrumb.className += " is-overflow";
-        } else {
-          this._removeClass(this._breadcrumb, " is-overflow");
-        }
-        this._addBreadcrumbItems(maxItems);
-        this._addItemsToOverflow(maxItems);
+        this._updateBreadcrumbs();
       }
 
       this._currentMaxItems = maxItems;
     }
+    
+    /**
+     * updates the breadcrumbs and overflow menu
+     */
+    private _updateBreadcrumbs() {
+      var maxItems = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
+      if (this._itemCollection.length > maxItems) {
+        this._breadcrumb.className += ' is-overflow';
+      } else {
+        this._removeClass(this._breadcrumb, ' is-overflow');
+      }
+
+      this._addBreadcrumbItems(maxItems);
+      this._addItemsToOverflow(maxItems);
+    };
 
     /**
      * creates the overflow menu

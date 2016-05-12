@@ -210,6 +210,10 @@
   color: $ms-color-neutralPrimary;
 }
 
+@mixin ms-fontColor-neutralPrimaryAlt {
+  color: $ms-color-neutralPrimaryAlt;
+}
+
 @mixin ms-fontColor-neutralSecondary {
  color: $ms-color-neutralSecondary;
 }

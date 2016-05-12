@@ -263,7 +263,7 @@ Go ahead and open up `dist/components/List/List.html` from your extracted Fabric
        <span class="ms-ListItem-secondaryText">Meeting notes</span>
        <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
        <span class="ms-ListItem-metaText">2:42p</span>
-       <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+       <div class="ms-ListItem-selectionTarget"></div>
        <div class="ms-ListItem-actions">
          <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--attachment"></i></div>
          <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
@@ -277,7 +277,7 @@ Go ahead and open up `dist/components/List/List.html` from your extracted Fabric
        <span class="ms-ListItem-secondaryText">Meeting notes</span>
        <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
        <span class="ms-ListItem-metaText">2:42p</span>
-       <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+       <div class="ms-ListItem-selectionTarget"></div>
        <div class="ms-ListItem-actions">
          <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--attachment"></i></div>
          <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
@@ -363,7 +363,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -376,7 +376,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -389,7 +389,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -402,7 +402,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -415,7 +415,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -428,7 +428,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -441,7 +441,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -454,7 +454,7 @@ body {
                 <span class="ms-ListItem-secondaryText">Meeting notes</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
                 <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
@@ -518,7 +518,7 @@ Inside of the first `.ms-ListItem` remove the elements` <div class="ms-ListItem-
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                     <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                     <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -567,7 +567,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -577,7 +577,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -587,7 +587,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -597,7 +597,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -607,7 +607,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -617,7 +617,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -627,7 +627,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -637,7 +637,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -647,7 +647,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -657,7 +657,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>
@@ -667,7 +667,7 @@ Now let's copy this new list item code and paste it at least 10 times inside of 
                 <span class="ms-ListItem-primaryText">Alton Lafferty</span>
                 <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span>
                 <span class="ms-ListItem-metaText">2:42p</span>
-                <div class="ms-ListItem-selectionTarget js-toggleSelection"></div>
+                <div class="ms-ListItem-selectionTarget"></div>
                 <div class="ms-ListItem-actions">
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--x"></i></div>
                    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--check"></i></div>

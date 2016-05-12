@@ -21,7 +21,7 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       this._container = container;
-      this._toggleElement = <HTMLElement>this._container.querySelector(".js-toggleSelection");
+      this._toggleElement = <HTMLElement>this._container.querySelector(".ms-ListItem-selectionTarget");
       this._addListeners();
     }
 

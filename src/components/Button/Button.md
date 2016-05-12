@@ -4,17 +4,12 @@ Allows users to take action, such as submitting a form or dismissing a message.
 ## Variants
 
 ### Default
-@@include('Button.html')
+{{> Button props=propsPrimary}}
 
 ### Primary
 Where multiple buttons are presented together, this is the default action when submitting the form.
 
 @@include('Button.Primary.html')
-
-### Command
-Includes an icon.
-
-@@include('Button.Command.html')
 
 ### Compound
 Provides a second line of text to explain the action the button takes.

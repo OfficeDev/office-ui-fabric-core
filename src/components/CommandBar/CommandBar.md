@@ -6,6 +6,16 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 ### Default
 @@include('CommandBar.html')
 
+### Dropdowns
+@@include('CommandBar.Dropdowns.html')
+
+### NavBar
+Provides a means of navigating to different areas within an application. On small screens, the navigation items are placed inside a hamburger menu.
+
+@@include('CommandBar.NavBar.html')
+
+
+
 ## States
 State | Applied to | Result
  --- | --- | ---

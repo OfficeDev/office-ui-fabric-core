@@ -8,11 +8,6 @@ Used to indicate a simple yes or no choice, typically as part of a form.
 
 @@include('ChoiceField.Checkbox.html')
 
-### Radio button group
-Used to indicate a single choice from multiple options.
-
-@@include('ChoiceField.ChoiceFieldGroup.html')
-
 ## States
 State | Applied to | Result
  --- | --- | ---

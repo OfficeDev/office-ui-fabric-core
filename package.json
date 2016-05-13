@@ -62,6 +62,7 @@
     "jshint": "^2.8.0",
     "map-stream": "0.0.6",
     "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "node-sass-import-once": "^1.2.0",
     "pretty-hrtime": "0.2.2",
     "require-dir": "^0.3.0",

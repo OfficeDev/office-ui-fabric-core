@@ -111,7 +111,6 @@ gulp.task('ComponentSamples-handlebars', function(cb) {
 
 gulp.task('ComponentSamples-template', ["ComponentSamples-handlebars"], function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
-    console.log("Ayyy lmaoo");
     cb();
   }.bind(this));
   _template.init();

@@ -8,6 +8,9 @@ var gulp = require("gulp");
 var Config = require('./Config');
 var Plugins = require('./Plugins');
 var Utilities = require('./Utilities');
+var mkdirp = require('mkdirp');
+var gutil = require('gulp-util');
+var ErrorHandling = require('./ErrorHandling');
 
 
 // Prep handlebars
@@ -19,15 +22,15 @@ var Template = function(directories, dist, src, callback) {
   var _createString = "";
   var _loadDoms = [];
   var _dirX = 0;
+  var _errorNoRoot = "error! There must be no more than two root elements, all components must have ONE root element";
+  var _errorNoElements = "error! You must have atleast one element in the component that is not a comment!";
   
   var _handler = new htmlparser.DomHandler(function (error, dom) {
-    //console.log(dom);
     if (error) {
       console.log(error);
     }
     
     _loadDoms.push(dom);
-    console.log(_dirX >= directories.length, _dirX, directories.length);
     
     if (_dirX >= directories.length - 1) {
       createComponents();
@@ -57,7 +60,6 @@ var Template = function(directories, dist, src, callback) {
   function startParsing() {
 
     for (var x = 0; x < directories.length; x++) {
-      console.log("yo ", x);
       var _file = directories[x];
       var _srcFolderName = Config.paths.componentsPath + '/' + _file;
       var _manifest = Utilities.parseManifest(_srcFolderName + '/' + _file + '.json');
@@ -65,7 +67,6 @@ var Template = function(directories, dist, src, callback) {
       
       var _hbsTemplate = Handlebars.compile(_openFile);
       var _hbsCompiled = _hbsTemplate(_manifest);
-     
       
       _parserHolder[x] = new htmlparser.Parser(_handler);
       
@@ -83,7 +84,7 @@ var Template = function(directories, dist, src, callback) {
   
   function parseElement(element, elementName, parentElement, parentElementName, isRoot) {
     if(element.type == "comment") {
-      console.log("Removing comment");
+        // DO nothing
     } else if(element.type == "text") {
       var someText = element.data.replace(/(\r\n|\n|\r)/gm,"");
       _createString += parentElementName + '.innerHTML += "' + someText + '";' + "\r\n";
@@ -97,7 +98,7 @@ var Template = function(directories, dist, src, callback) {
       
       for(var x = 0; x < keys.length; x++) {
         var attribName = keys[x];
-        var attribValue = element.attribs[attribName];
+        var attribValue = element.attribs[attribName].replace(/(\r\n|\n|\r)/gm,"");
         _createString += elementName + '.setAttribute("' + attribName + '", "' + attribValue + '");'  + "\r\n";
       }
       
@@ -132,26 +133,25 @@ var Template = function(directories, dist, src, callback) {
     // Go through and remove any comment tags
     for (var i = 0; i < dom.length; i++) {
       if(dom[i].type != "comment" && dom[i].type != "text") {
-        console.log(dom[i].type);
         _newDom.push(dom[i]);
       }
     }
-    
-    // console.log(_newDom);
-    
+
     if(_newDom.length > 1) {
-      console.log("error! There must be a root element");
+      ErrorHandling.generatePluginError("Fabric Super Templating Engine 9000", _errorNoRoot);
+      ErrorHandling.generateBuildError(JSON.stringify(dom));
     } else if(_newDom.length < 1) {
-      console.log("error! You must have atleast one element in the component");
+      ErrorHandling.generatePluginError("Fabric Super Templating Engine 9000", _errorNoElements);
+      ErrorHandling.generateBuildError(JSON.stringify(dom));
     } else {
+      
       var _thisDom = _newDom[0];
-      var cAttr = _newDom[0].attribs.class.split(" ")[0].replace(/(\r\n|\n|\r)/gm,"");;
+      var cAttr = _newDom[0].attribs.class.split(" ")[0].replace(/(\r\n|\n|\r)/gm,"");
       var rootName = purifyClassName(cAttr); // This would be passed in by folder
       var newName = rootName + "0";
       _createString += "function " + rootName + "() {";
       _createString += 'var ' + newName + ' = document.createElement("' + _thisDom.name + '");';
       
-      console.log(cAttr, "PARENT BEFORE ------------------------------------------------------------------------------");
       parseElement(_thisDom, newName, {
         children: [],
         attribs:  {class: "document"}
@@ -159,18 +159,19 @@ var Template = function(directories, dist, src, callback) {
 
       _createString += "return " + newName; 
       _createString += "}"
-      console.log("Creating file", dist + '/' + rootName + '/' + rootName + '.lib.js');
     }
   }
 
   function createComponents() {
-    console.log("Create components");
     
     for (var x = 0; x < _loadDoms.length; x++) {
       processDOM(_loadDoms[x]);
     }
     
+    mkdirp.sync(dist);
     fs.writeFileSync(dist + '/' + 'fabric.templates' + '.js', _createString);
+    
+    gutil.log("");
     
     //Completed
     if(callback) {

@@ -1,4 +1,7 @@
+"use strict";
+
 var htmlparser = require("htmlparser2");
+var Handlebars = require('handlebars');
 var fs = require("fs");
 var path = require("path");
 var gulp = require("gulp");
@@ -6,50 +9,82 @@ var Config = require('./Config');
 var Plugins = require('./Plugins');
 var Utilities = require('./Utilities');
 
+
+// Prep handlebars
+  // Register all helper
+  
 var Template = function(directories, dist, src, callback) {
   var _currentDirectory = 1; // Counter for current directory
   var _parserHolder = [];
   var _createString = "";
   var _loadDoms = [];
-  var _dirX = 1;
+  var _dirX = 0;
   
-  function continueParsing() {
-    if(_dirX < directories.length) {
-      var _file = directories[_dirX];
-      var _fileContents;
+  var _handler = new htmlparser.DomHandler(function (error, dom) {
+    //console.log(dom);
+    if (error) {
+      console.log(error);
+    }
+    
+    _loadDoms.push(dom);
+    console.log(_dirX >= directories.length, _dirX, directories.length);
+    
+    if (_dirX >= directories.length - 1) {
+      createComponents();
+    } else {
+      _dirX++;
+    }
+  });
+  
+  function configHandlebars() {
+    var _file;
+    var _openFile;
+  
+    Handlebars.registerHelper("renderPartial",  function(partial, props) {
+      var fileContents = Plugins.fs.readFileSync(Config.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
+      var template = Handlebars.compile(fileContents);
+      var thisProps = {props: props};
+      return new Handlebars.SafeString(template(thisProps));
+    });
+    
+    for (var i = 0; i < directories.length; i++) {
+      _file = directories[i];
+      _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.html', "utf8");
+      Handlebars.registerPartial(_file, _openFile);
+    }
+  }
+  
+  function startParsing() {
+
+    for (var x = 0; x < directories.length; x++) {
+      console.log("yo ", x);
+      var _file = directories[x];
       var _srcFolderName = Config.paths.componentsPath + '/' + _file;
       var _manifest = Utilities.parseManifest(_srcFolderName + '/' + _file + '.json');
-       console.log("Hruuurr");
+      var _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.html', "utf8");
       
-      gulp.src(src + '/' + _file + '/' + _file + '.html')
-      .pipe(Plugins.handlebars(_manifest, Config.handleBarsConfig))
-      .pipe(Plugins.tap(function(file, t) {
-         _fileContents = file.contents.toString();
-        }.bind(this)
-      ))
-      .on('end', function() {
-        // console.log("Finishsss", _fileContents);
-        // this.emit("end");
-        // console.log(_fileContents);
-        _parserHolder[_dirX] = new htmlparser.Parser(this.handler);
-        _parserHolder[_dirX].write(_fileContents);
-        _parserHolder[_dirX].done();
-        // console.log(_parserHolder.length);
-        _parserHolder[_dirX].reset();
-        console.log(_dirX);
-        _dirX++;
-        continueParsing();
-      }.bind(this));
+      var _hbsTemplate = Handlebars.compile(_openFile);
+      var _hbsCompiled = _hbsTemplate(_manifest);
+     
+      
+      _parserHolder[x] = new htmlparser.Parser(_handler);
+      
+      _parserHolder[x].write(_hbsCompiled);
+      _parserHolder[x].end();
+      _parserHolder[x].reset();
     }
-  };
+  }
   
   this.init = function() {
-    continueParsing();
+    configHandlebars();
+    startParsing();
+    
   };
   
   function parseElement(element, elementName, parentElement, parentElementName, isRoot) {
-  
-    if(element.type == "text") {
+    if(element.type == "comment") {
+      console.log("Removing comment");
+    } else if(element.type == "text") {
       var someText = element.data.replace(/(\r\n|\n|\r)/gm,"");
       _createString += parentElementName + '.innerHTML += "' + someText + '";' + "\r\n";
     } else {
@@ -79,63 +114,51 @@ var Template = function(directories, dist, src, callback) {
         _createString += parentElementName + '.appendChild(' + elementName + ');'  + "\r\n";
       }
     }
-  };
+  }
 
   function getDirectories(srcpath) {
     return fs.readdirSync(srcpath).filter(function(file) {
       return fs.statSync(path.join(srcpath, file)).isDirectory();
     });
-  };
+  }
 
   function purifyClassName(className) {
     return className.replace("ms-", "");
-  };
+  }
 
   function processDOM(dom) {
+    var _newDom = [];
     
-    if (dom.length > 1) {
-      // Add a root element
-      console.log("error! There must be a root element");
-    } else {
-      var cAttr = dom[0].attribs.class;
-      rootName = purifyClassName(cAttr); // This would be passed in by folder
+    // Go through and remove any comment tags
+    for (var i = 0; i < dom.length; i++) {
+      if(dom[i].type != "comment") {
+        _newDom.push(dom[i]);
+      }
     }
     
-    var children = dom.children;  
-    _createString += "function " + rootName + "() {";
-    
-    for (var i = 0; i < dom.length; i++) {
-      var newName = rootName + i;
-      _createString += 'var ' + newName + ' = document.createElement("' + dom[i].name + '");';
+    if(_newDom.length > 1) {
+      console.log("error! There must be a root element");
+    } else if(_newDom.length < 1) {
+      console.log("error! You must have atleast one element in the component");
+    } else {
+      var _thisDom = _newDom[0];
+      var cAttr = _newDom[0].attribs.class.split(" ")[0];
+      var rootName = purifyClassName(cAttr); // This would be passed in by folder
+      var newName = rootName + "0";
+      _createString += "function " + rootName + "() {";
+      _createString += 'var ' + newName + ' = document.createElement("' + _thisDom.name + '");';
       
-      parseElement(dom[i], newName, {
+      console.log(cAttr, "PARENT BEFORE ------------------------------------------------------------------------------");
+      parseElement(_thisDom, newName, {
         children: [],
         attribs:  {class: "document"}
       }, "document", true);
-    }
-  
-    _createString += "return " + newName; 
-    _createString += "}"
-      console.log("Creating file", dist + '/' + rootName + '/' + rootName + '.lib.js');
-    fs.writeFileSync(dist + '/' + rootName + '/' + rootName + '.lib.js', _createString);
-  };
 
-  this.handler = new htmlparser.DomHandler(function (error, dom) {
-      console.log("lkasdjflak;sdjf;salkdfj");
-      if (error) {
-        console.log(error);
-      }
-      console.log("Ayyy");
-      _loadDoms.push(dom);
-      console.log(_dirX >= directories.length, _dirX, directories.length);
-     
-      if (_dirX >= directories.length) {
-        createComponents();
-        // console.log("Creating Directory");
-      } else {
-        _dirX++;
-      }
-  }.bind(this));
+      _createString += "return " + newName; 
+      _createString += "}"
+      console.log("Creating file", dist + '/' + rootName + '/' + rootName + '.lib.js');
+    }
+  }
 
   function createComponents() {
     console.log("Create components");
@@ -144,6 +167,8 @@ var Template = function(directories, dist, src, callback) {
       processDOM(_loadDoms[x]);
     }
     
+    fs.writeFileSync(dist + '/' + 'fabric.templates' + '.js', _createString);
+    
     //Completed
     if(callback) {
       callback();
@@ -151,5 +176,15 @@ var Template = function(directories, dist, src, callback) {
   }
   // this.init();
 };
+
+
+function cmd_exec(cmd, args, cb_stdout, cb_end) {
+  var spawn = require('child_process').spawn,
+    child = spawn(cmd, args),
+    me = this;
+  me.exit = 0;  // Send a cb to set 1 when cmd exits
+  child.stdout.on('data', function (data) { cb_stdout(me, data) });
+  child.stdout.on('end', function () { cb_end(me) });
+}
 
 module.exports = Template;

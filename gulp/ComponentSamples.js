@@ -176,7 +176,8 @@ var ComponentSamplesTasks = [
     'ComponentSamples-styleHinting',
     'ComponentSamples-buildStyles',
     'ComponentJS',
-    'ComponentSamples-copyIgnoredFiles'
+    'ComponentSamples-copyIgnoredFiles',
+    "ComponentSamples-template"
 ];
 
 //Build Fabric Component Samples

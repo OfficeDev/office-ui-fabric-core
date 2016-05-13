@@ -131,10 +131,13 @@ var Template = function(directories, dist, src, callback) {
     
     // Go through and remove any comment tags
     for (var i = 0; i < dom.length; i++) {
-      if(dom[i].type != "comment") {
+      if(dom[i].type != "comment" && dom[i].type != "text") {
+        console.log(dom[i].type);
         _newDom.push(dom[i]);
       }
     }
+    
+    // console.log(_newDom);
     
     if(_newDom.length > 1) {
       console.log("error! There must be a root element");
@@ -142,7 +145,7 @@ var Template = function(directories, dist, src, callback) {
       console.log("error! You must have atleast one element in the component");
     } else {
       var _thisDom = _newDom[0];
-      var cAttr = _newDom[0].attribs.class.split(" ")[0];
+      var cAttr = _newDom[0].attribs.class.split(" ")[0].replace(/(\r\n|\n|\r)/gm,"");;
       var rootName = purifyClassName(cAttr); // This would be passed in by folder
       var newName = rootName + "0";
       _createString += "function " + rootName + "() {";
@@ -176,15 +179,5 @@ var Template = function(directories, dist, src, callback) {
   }
   // this.init();
 };
-
-
-function cmd_exec(cmd, args, cb_stdout, cb_end) {
-  var spawn = require('child_process').spawn,
-    child = spawn(cmd, args),
-    me = this;
-  me.exit = 0;  // Send a cb to set 1 when cmd exits
-  child.stdout.on('data', function (data) { cb_stdout(me, data) });
-  child.stdout.on('end', function () { cb_end(me) });
-}
 
 module.exports = Template;

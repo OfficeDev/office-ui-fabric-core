@@ -3,8 +3,8 @@
 <div class="ms-Toggle {{#if props.modifier}} ms-Toggle--{{props.modifier}}{{/if}}">
   <span class="ms-Toggle-description">{{props.description}}</span>
   <input type="checkbox" id="{{props.demoID}}" class="ms-Toggle-input" />
-  <label for="demo-toggle-3" class="ms-Toggle-field">
-    <span class="ms-Label ms-Label--off">{{props.onText}}</span>
-    <span class="ms-Label ms-Label--on">{{props.offText}}</span>
+  <label for="{{props.demoID}}" class="ms-Toggle-field">
+    <span class="ms-Label ms-Label--off">{{props.offText}}</span>
+    <span class="ms-Label ms-Label--on">{{props.onText}}</span>
   </label>
 </div>

@@ -54,7 +54,7 @@
   padding: 6px 10px 8px;
   width: 100%;
   min-width: 180px;
-  outline: 1px solid transparent;
+  outline: 0;
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
@@ -66,7 +66,13 @@
 
   &:hover,
   &:focus {
-    outline: 1px solid transparent;
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   @include input-placeholder {
@@ -113,6 +119,14 @@
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   &:active,
@@ -141,7 +155,8 @@
     padding-bottom: 2px;
 
     &:active,
-    &:focus {
+    &:focus,
+    &:hover {
       outline: 0;
     }
   }
@@ -156,6 +171,18 @@
     .ms-TextField-field {
       background-color: transparent;
       color: $ms-color-neutralTertiary;
+    }
+  }
+
+  &.is-active {
+    border-color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
     }
   }
 }

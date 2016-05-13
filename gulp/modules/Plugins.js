@@ -47,6 +47,7 @@ var Plugins = function() {
   this.handlebars = require('gulp-compile-handlebars');
 	this.tsc = require('gulp-typescript');
 	this.tslint = require("gulp-tslint");
+  this.markdown = require('gulp-markdown');
 };
 
 module.exports = new Plugins();

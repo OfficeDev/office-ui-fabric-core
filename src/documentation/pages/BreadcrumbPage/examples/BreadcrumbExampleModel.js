@@ -1,4 +1,5 @@
 var BreadcrumbModel = {
+  baseClass: "ms-Breadcrumb",
   breadcrumbs: [
     {
       "name": "Files"

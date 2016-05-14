@@ -106,7 +106,7 @@ gulp.task('Documentation-handlebars', function(cb) {
    Config.handleBarsConfig.batch = [];
    
    // Get all components partials first
-   for (var i=0; i < folderList.length; i++) {
+   for (var i = 0; i < folderList.length; i++) {
     _folderName = folderList[i];
     _srcFolderName = Config.paths.componentsPath + '/' + _folderName;
     // Push to Handlebars config
@@ -114,7 +114,7 @@ gulp.task('Documentation-handlebars', function(cb) {
    }
     
    // Next get all example partials inside of the pages folders
-   for (var i=0; i < demoPagesList.length; i++) {
+   for (var i = 0; i < demoPagesList.length; i++) {
     _folderName = demoPagesList[i];
     _srcFolderName = Config.paths.srcDocsPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
     
@@ -145,14 +145,28 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        filesArray,
        componentPipe,
        markdown;
+       
+   var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
   
    for (var i=0; i < demoPagesList.length; i++) {
        
        pageName = demoPagesList[i];
+       
        srcFolderName = Config.paths.srcDocsPages + '/' + pageName;
        distFolderName = Config.paths.distDocumentation + '/' + pageName;
+       
+       // Get models
+       var demoModels = fs.readdirSync(Config.paths.srcDocsPages);
+       
+       
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md');
-       // hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.json');
+       
+       
+       
+       //Go through each page
+        // For each page
+            // Load all examples models
+            // Build markdown and pass in example Models
        
        // if (hasFileChanged) {
            manifest = Utilities.parseManifest(srcFolderName + '/' + pageName + '.json');

@@ -35,3 +35,12 @@ The visualization of details of an individual including Skype contact details, e
 
 ## Dependencies
 This component uses a Persona component to present the person, an OrgChart to present the persona's position within the organization, and a Link for navigation.
+
+<!--
+ Demo page specific Code
+-->
+
+<!---
+your comment goes here
+and here
+-->

@@ -9,6 +9,9 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 ### Label on left
 @@include('Toggle.TextLeft.html')
 
+### Disabled
+@@include('Toggle.Disabled.html')
+
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
     ```

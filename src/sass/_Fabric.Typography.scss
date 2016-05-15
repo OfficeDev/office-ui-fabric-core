@@ -7,94 +7,83 @@
 @import 'Fabric.Typography.Variables';
 
 // Super Styles (LIMITED USE)
-// Weights: Light
 @mixin ms-font-su {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-light;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-su;
-  font-weight: normal;
+  font-weight: $ms-font-weight-light;
 }
-// No touch class for Super
 
 // Extra-Extra-Large
-// Allowed weights: Light, SemiLight
 @mixin ms-font-xxl {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-light;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-xxl;
-  font-weight: normal;
+  font-weight: $ms-font-weight-light;
 }
 
 // Extra-Large Styles
-// Allowed weights: Light, SemiLight
 @mixin ms-font-xl {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-light;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-xl;
-  font-weight: normal;
+  font-weight: $ms-font-weight-light;
 }
 
 // Large Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-l {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-semilight;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-l;
-  font-weight: normal;
+  font-weight: $ms-font-weight-semilight;
 }
 
 // Medium Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-m-plus {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m-plus;
-  font-weight: normal;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Medium Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-m {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
-  font-weight: normal;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Small Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-s-plus {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s-plus;
-  font-weight: normal;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Small Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-s {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s;
-  font-weight: normal;
+  font-weight: $ms-font-weight-regular;
 }
 
 // XS Styles
-// Allowed weights: SemiLight, Regular, Semibold
 @mixin ms-font-xs {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
+    font-family: $ms-font-family-base;
   font-size: $ms-font-size-xs;
-  font-weight: normal;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Micro Styles (LIMITED USE)
-// Weights: Semibold
 @mixin ms-font-mi {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-semibold;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-mi;
-  font-weight: normal;
+  font-weight: $ms-font-weight-semibold;
 }
 
 //== Helper classes & mixins
@@ -102,20 +91,20 @@
 // Helper mixins to override default type values
 
 // Font weights
-@mixin ms-fontWeight-light{
-  font-family: $ms-font-family-light;
+@mixin ms-fontWeight-light {
+  font-weight: $ms-font-weight-light;
 }
 
-@mixin ms-fontWeight-semilight{
-  font-family: $ms-font-family-semilight;
+@mixin ms-fontWeight-semilight {
+  font-weight: $ms-font-weight-semilight;
 }
 
 @mixin ms-fontWeight-regular {
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
 }
 
 @mixin ms-fontWeight-semibold {
-  font-family: $ms-font-family-semibold;
+  font-weight: $ms-font-weight-semibold;
 }
 
 // Font sizes

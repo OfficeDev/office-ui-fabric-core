@@ -18,7 +18,6 @@
 }
 
 // Ensures the block expands to the full height to enclose its floated childen.
-
 @mixin ms-u-clearfix {
   *zoom: 1;
   &:before,

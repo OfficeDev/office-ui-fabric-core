@@ -7,6 +7,9 @@ var Server = require('./gulp/modules/Server');
 var Utilites = require('./gulp/modules/Utilities');
 var ErrorHandling = require('./gulp/modules/ErrorHandling');
 
+// Require Typescript
+require("typescript-require");
+
 var watchTasks = [
     'Fabric', 
     'ComponentJS',

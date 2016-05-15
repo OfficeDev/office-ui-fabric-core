@@ -11,6 +11,9 @@ var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
 var Template = require('./modules/Template');
+require("typescript-require")({
+    exitOnError: true
+});
 
 //
 // Clean/Delete Tasks
@@ -152,49 +155,71 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        
        pageName = demoPagesList[i];
        
+       // Current Page path name
        srcFolderName = Config.paths.srcDocsPages + '/' + pageName;
+       
+       // Current Page example folder path name
+       exampleFolderName = srcFolderName + '/' + Config.paths.srcDocsPagesExamples;
+       
+       // Dist folder name for page
        distFolderName = Config.paths.distDocumentation + '/' + pageName;
        
-       // Get models
-       var demoModels = fs.readdirSync(Config.paths.srcDocsPages);
+       // Get Handlebars file foreach handlebars file we must have a model
+       var exampleFiles = Utilities.getFilesByExtension(exampleFolderName, '.hbs');
        
+       console.log(exampleFolderName, exampleFiles.length);
        
-       hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md');
+       if(exampleFiles.length > 0) {
+           for(var x = 0; x < exampleFiles.length; x++) {
+               var file = exampleFiles[i];
+               var modelFile = require('../' + exampleFolderName + '/' + pageName + 'Model.ts');
+               // console.log(modelFile.toString());
+               // modelFile = eval(modelFile.toString());
+               var de = new modelFile.default();
+               //var breadCrumb = 
+               // modelFile = JSON.parse(modelFile);
+               console.log(JSON.stringify(modelFile));
+               // conso
+               // console.log(modelFile.default.BreadcrumbModel());
+           }
+       }
        
-       
-       
+       //hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md');
+
        //Go through each page
         // For each page
             // Load all examples models
             // Build markdown and pass in example Models
        
        // if (hasFileChanged) {
-           manifest = Utilities.parseManifest(srcFolderName + '/' + pageName + '.json');
-           filesArray = manifest.fileOrder;
-           componentPipe;
-           markdown = srcFolderName + '/' + pageName + '.md';
            
-           componentPipe = gulp.src(markdown)
-           .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-           .pipe(Plugins.markdown())
-           .pipe(Plugins.fileinclude())
-           .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
-           .pipe(Plugins.rename("index.html"))
-           .pipe(Plugins.wrap(
-                {
-                    src:  Config.paths.srcTemplatePath + '/componentDemo.html'  
-                },
-                {
-                    componentName: folderName
-                }
-           ))
-           .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Sample Component " + folderName
-                })))
-           .pipe(gulp.dest(Config.paths.distDocumentation +  folderName));
+        //    // Get Manifest
+        //    manifest = Utilities.parseManifest(srcFolderName + '/' + pageName + '.json');
            
-           // Add stream
-           streams.push(componentPipe);
+        //    // Get markdown File
+        //    markdown = srcFolderName + '/' + pageName + '.md';
+           
+        //    componentPipe = gulp.src(markdown)
+        //    .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+        //    .pipe(Plugins.markdown())
+        //    .pipe(Plugins.fileinclude())
+        //    .pipe(Plugins.handlebars(manifest, Config.handleBarsConfig))
+        //    .pipe(Plugins.rename("index.html"))
+        //    .pipe(Plugins.wrap(
+        //         {
+        //             src:  Config.paths.srcTemplatePath + '/componentDemo.html'  
+        //         },
+        //         {
+        //             componentName: folderName
+        //         }
+        //    ))
+        //    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+        //             title: "Building Sample Component " + folderName
+        //         })))
+        //    .pipe(gulp.dest(Config.paths.distDocumentation +  folderName));
+           
+        //    // Add stream
+        //    streams.push(componentPipe);
       // }
    }
    

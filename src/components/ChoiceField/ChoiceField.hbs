@@ -5,8 +5,6 @@
     id="{{props.id}}" 
     class="ms-ChoiceField-input"
     type="{{props.type}}"
-    name="{{props.name}}"
-    {{#if props.disabled}} disabled {{/if}}
-    {{#if props.checked}} checked {{/if}}>
+    name="{{props.name}}" {{#if props.disabled}} disabled {{/if}} {{#if props.checked}} checked {{/if}} />
   <label for="{{props.id}}" class="ms-ChoiceField-field"><span class="ms-Label">{{props.label}}</span></label>
 </div> 

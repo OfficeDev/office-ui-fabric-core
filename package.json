@@ -42,8 +42,10 @@
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^2.0.0",
     "gulp-markdown": "^1.2.0",
+    "gulp-marked": "^1.0.0",
     "gulp-minify-css": "^1.2.0",
     "gulp-nuget-pack": "0.0.6",
+    "gulp-pandoc": "^0.2.2",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
@@ -58,10 +60,12 @@
     "gulp-util": "^3.0.1",
     "gulp-wrap": "^0.11.0",
     "gulp-zip": "^3.0.2",
+    "handlebars": "^4.0.5",
     "htmlparser2": "^3.9.0",
     "jshint": "^2.8.0",
     "map-stream": "0.0.6",
     "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "node-sass-import-once": "^1.2.0",
     "pretty-hrtime": "0.2.2",
     "require-dir": "^0.3.0",
@@ -70,6 +74,10 @@
     "through2": "^2.0.0",
     "tslint": "^3.3.0",
     "typescript": "^1.7.5",
+    "typescript-require": "^0.2.9-1",
     "walk-sync": "^0.2.6"
+  },
+  "dependencies": {
+    "marked": "^0.3.5"
   }
 }

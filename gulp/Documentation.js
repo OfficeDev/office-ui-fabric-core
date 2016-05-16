@@ -12,6 +12,7 @@ var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
 var Template = require('./modules/Template');
 var pandoc = require('gulp-pandoc');
+var marked = require('gulp-marked');
 
 require("typescript-require")({
     exitOnError: true
@@ -123,8 +124,9 @@ gulp.task('Documentation-handlebars', function(cb) {
     _folderName = demoPagesList[i];
     _srcFolderName = Config.paths.srcDocsPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
     
-    // Push to Handlebars config
-    Config.handleBarsConfig.batch.push('./' + _srcFolderName);
+    if (fs.existsSync(_srcFolderName)) {
+        Config.handleBarsConfig.batch.push('./' + _srcFolderName);
+    }
    }
    
    cb();
@@ -150,7 +152,8 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        filesArray,
        componentPipe,
        markdown,
-       templateData;
+       templateData,
+       exampleModels;
        
    var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
   
@@ -158,6 +161,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        
        templateData = {};
        pageName = demoPagesList[i];
+       var exampleModels = [];
        
        // Current Page Folder path
        srcFolderName = Config.paths.srcDocsPages + '/' + pageName;
@@ -167,48 +171,38 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        
        // Dist folder name for page
        distFolderName = Config.paths.distDocumentation + '/' + pageName;
-       
-       // Load all available example models into templateData
-       var exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
-       
      
+       try {
+        fs.statSync(exampleFolderName);
+        exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
+       } catch (err) {}
+       
+       
        // Go through and find the view model for each example handlebars file and store in context
-       if(exampleModels.length > 0) {
-           console.log(exampleModels);
-           for(var x = 0; x < exampleModels.length; x++) {
-               console.log("ayy lmao"); 
-               var file = exampleModels[x];
-               var modelName = file.replace('.js', ' ');
-               var modelFile = require('../' + exampleFolderName + '/' + file);
-               templateData[modelName] = modelFile;
-           }
-       }
-       
-       console.log(templateData);
-       
+        if(exampleModels.length > 0) {
+            for(var x = 0; x < exampleModels.length; x++) {
+                var file = exampleModels[x];
+                var modelName = file.replace('.js', '');
+                modelName = modelName.replace(" ", '');
+                var modelFile = require('../' + exampleFolderName + '/' + file);
+                templateData[modelName] = modelFile;
+            }
+        }
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
-
-       //Go through each page
-        // For each page
-            // Load all examples models
-            // Build markdown and pass in example Models
        
-       if (hasFileChanged) {
-           
-           // Get Manifest
-           // manifest = Utilities.parseManifest(srcFolderName + '/' + pageName + '.json');
+        // if (hasFileChanged) {
            
            // Get markdown File
            markdown = srcFolderName + '/' + pageName + '.md';
-           
            componentPipe = gulp.src(markdown)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-           .pipe(pandoc({
-                from: 'markdown',
-                to: 'html5',
-                ext: '.html',
-                args: ['--smart']
-            }))
+           .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+                title: "Building documentation page " + pageName
+            })))
+           .pipe(marked())
+            .on('error', function(err) {
+              console.log(err);  
+            })
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.replace("<!---", ""))
            .pipe(Plugins.replace("--->", ""))
@@ -223,15 +217,11 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 }
            ))
            // Replace Comments to hide code
-           
-           .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building documentation page " + pageName
-                })))
            .pipe(gulp.dest(Config.paths.distDocsComponents + '/' + pageName));
            
            // Add stream
            streams.push(componentPipe);
-      }
+      //}
    }
    
    if (streams.length > 0) {

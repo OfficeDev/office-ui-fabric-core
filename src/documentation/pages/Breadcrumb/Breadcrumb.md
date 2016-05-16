@@ -5,7 +5,7 @@ Shows the current location in a hierarchy and provides a means of navigating upw
 
 ### Default
 <!---
-{{> BreadcrumbExample }}
+{{> BreadcrumbExample props=BreadcrumbExampleModel }}
 --->
 
 ## States

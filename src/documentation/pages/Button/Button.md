@@ -3,31 +3,30 @@ Allows users to take action, such as submitting a form or dismissing a message.
 
 ## Variants
 
-### Defaultaklsdjflk;asdjf;lkasdjfl;kasdjf;laksdfjal;sdfkj
+### Default
 <!---
-{{> Button props=context.ButtonExampleModel}}
-{{ButtonExampleModel}}
--->
+{{> Button props=ButtonExampleModel}}
+--->
 ### Primary
 Where multiple buttons are presented together, this is the default action when submitting the form.
 
 <!---
 {{> Button props=ButtonExamplePrimaryModel}}
--->
+--->
 
 ### Compound
 Provides a second line of text to explain the action the button takes.
 
 <!---
 {{> Button props=ButtonExampleCompoundModel}}
--->
+--->
 
 ### Hero
 Similar to the Command variant, but with a larger size to draw attention to important actions.
 
 <!---
 {{> Button props=ButtonExampleHeroModel}}
--->
+--->
 
 ## States
 

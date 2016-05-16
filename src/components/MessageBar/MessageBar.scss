@@ -14,37 +14,36 @@ $MessageBar-padding: 8px;
 .ms-MessageBar {
   padding: $MessageBar-padding;
   display: table;
-
-  .ms-MessageBar-icon,
-  .ms-MessageBar-text {
-    display: table-cell;
-    vertical-align: top;
-  }
-
-  .ms-MessageBar-icon {
-    padding-right: $MessageBar-padding;
-    font-size: 16px;
-  }
-
-  .ms-MessageBar-text {
-    @include ms-font-s;
-  }
-
-}
-
-.ms-MessageBar--info {
   @include ms-bgColor-info;
-
-  .ms-MessageBar-icon {
-    @include ms-fontColor-neutralSecondaryAlt;
-  }
-
-  .ms-Icon:before {
-    content: '\e00a';  // ms-Icon--infoCircle
-  }
 }
 
-.ms-MessageBar--success {
+.ms-MessageBar-icon,
+.ms-MessageBar-text {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.ms-MessageBar-icon {
+  padding-right: $MessageBar-padding;
+  font-size: 16px;
+  @include ms-fontColor-neutralSecondaryAlt;
+}
+
+.ms-MessageBar-text {
+  @include ms-font-s;
+}
+
+
+//== Modifier: Warning message
+//
+.ms-MessageBar.ms-MessageBar--warning {
+  @include ms-bgColor-warning;
+}
+
+
+//== Modifier: Success message
+//
+.ms-MessageBar.ms-MessageBar--success {
   @include ms-bgColor-success;
 
   .ms-MessageBar-icon {
@@ -64,68 +63,40 @@ $MessageBar-padding: 8px;
   }
 }
 
-.ms-MessageBar--severeWarning {
+
+//== Modifier: Severe Warning message
+//
+.ms-MessageBar.ms-MessageBar--severeWarning {
   @include ms-bgColor-severeWarning;
 
   .ms-MessageBar-icon {
     @include ms-fontColor-severeWarning;
   }
-
-  .ms-Icon:before {
-    content: '\e00b';  // ms-Icon--alert
-  }
 }
 
-.ms-MessageBar--warning {
-  @include ms-bgColor-warning;
+
+//== Modifier: Error message
+//
+.ms-MessageBar.ms-MessageBar--error {
+  @include ms-bgColor-error;
 
   .ms-MessageBar-icon {
-    @include ms-fontColor-warning;
-  }
-
-  .ms-Icon:before {
-    content: '\e00a';  // ms-Icon--info
+    @include ms-fontColor-error;
   }
 }
 
-.ms-MessageBar--error {
+
+//== Modifier: Remove message
+//
+.ms-MessageBar.ms-MessageBar--remove {
   @include ms-bgColor-error;
 
   .ms-MessageBar-icon {
     @include ms-fontColor-error;
   }
 
-  .ms-Icon:before {
-    content: '\e00c';  // ms-Icon--xCircle
-  }
-}
-
-.ms-MessageBar--remove {
-  @include ms-bgColor-error;
-
-  .ms-MessageBar-icon {
-    @include ms-fontColor-error;
-  }
-
-  .ms-Icon:before {
-    content: '\e005';  // ms-Icon--minus
+  .ms-Icon {
     font-size: 8px;
-    margin-left: 2px;
-  }
-
-  .ms-Icon:after {
-    content: '\e000'; // circle
-    position: relative;
-    top: 3px;
-    left: -16px;
-    margin-left: 4px;
-    display: inline;
-    font-size: 16px;
-  }
-
-  .ms-MessageBar-text {
-    position: relative;
-    left: -16px;
-    top: 3px;
+    margin-left: 3px;
   }
 }

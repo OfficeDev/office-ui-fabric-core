@@ -25,6 +25,14 @@
   border-radius: 100px;
   background-color: $ms-color-themePrimary;
   opacity: 0;
+
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-white;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-black;
+  }
 }
 
 .ms-Spinner-label {

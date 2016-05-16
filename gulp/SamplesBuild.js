@@ -64,7 +64,7 @@ gulp.task('Samples-buildStyles',  function () {
 
 
 // Roll up for samples
-gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles']);
+gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles', 'Bundles-buildAll']);
 
 //
 // Fabric Messages

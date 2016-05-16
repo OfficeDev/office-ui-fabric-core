@@ -24,6 +24,7 @@ $ms-color-themeLighterAlt: #eff6fc;
 $ms-color-black:               #000000;
 $ms-color-neutralDark:         #212121;
 $ms-color-neutralPrimary:      #333333;
+$ms-color-neutralPrimaryAlt:   #3C3C3C;
 $ms-color-neutralSecondary:    #666666;
 $ms-color-neutralSecondaryAlt: #767676;
 $ms-color-neutralTertiary:     #a6a6a6;
@@ -74,6 +75,16 @@ $ms-color-infoBackground:    $ms-color-neutralLighter;
 $ms-color-success:           $ms-color-green;
 $ms-color-successBackground: #dff6dd;
 $ms-color-alert:             $ms-color-orange;
-$ms-color-alertBackground:   $ms-color-neutralLighter;
+$ms-color-alertBackground:   #fed9cc;
 $ms-color-error:             $ms-color-redDark;
 $ms-color-errorBackground:   #fde7e9;
+
+
+//== High contrast colors
+//
+$ms-color-contrastBlackDisabled: #00ff00;
+$ms-color-contrastWhiteDisabled: #600000;
+$ms-color-contrastBlackSelected: #1AEBFF;
+$ms-color-contrastWhiteSelected: #37006E;
+$ms-color-contrastBlackLink: #8080ff;
+$ms-color-contrastWhiteLink: #00009F;

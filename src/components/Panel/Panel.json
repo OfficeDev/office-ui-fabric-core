@@ -52,21 +52,49 @@
   "propsMedium": {
     "headerText": "Medium Panel",
     "content": "Content goes here",
-    "modifier": "md"
+    "modifier": [
+      {
+        "name": "md"
+      }
+    ]
   },
   "propsLarge": {
     "headerText": "Large panel",
     "content": "Content goes here",
-    "modifier": "lg"
+    "modifier": [
+      {
+        "name": "lg"
+      }
+    ]
   },
   "propsExtraLarge": {
     "headerText": "Extra large panel",
     "content": "Content goes here",
-    "modifier": "xl"
+    "modifier": [
+      {
+        "name": "xl"
+      }
+    ]
   },
    "propsXXL": {
     "headerText": "XXL Panel",
     "content": "Content goes here",
-    "modifier": "xxl"
+    "modifier": [
+      {
+        "name": "xxl"
+      }
+    ]
+  },
+  "propsLargeFixed": {
+    "headerText": "Large panel",
+    "content": "Content goes here",
+    "modifier": [
+      {
+        "name": "lg"
+      },
+      {
+        "name": "fixed"
+      }
+    ]
   }
 }

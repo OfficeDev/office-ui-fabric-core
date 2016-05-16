@@ -54,7 +54,7 @@
   }
 
   &:active {
-    color: $ms-color-themePrimary !important;
+    color: $ms-color-themePrimary;
   }
 }
 
@@ -103,7 +103,7 @@
     }
 
     &:active {
-      color: $ms-color-white !important;
+      color: $ms-color-white;
       background-color: $ms-color-themePrimary;
     }
 
@@ -122,7 +122,7 @@
     }
 
     &:active {
-      background-color: $ms-color-themePrimary !important;
+      background-color: $ms-color-themePrimary;
     }
   }
 }

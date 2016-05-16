@@ -42,6 +42,7 @@
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^2.0.0",
     "gulp-markdown": "^1.2.0",
+    "gulp-marked": "^1.0.0",
     "gulp-minify-css": "^1.2.0",
     "gulp-nuget-pack": "0.0.6",
     "gulp-pandoc": "^0.2.2",

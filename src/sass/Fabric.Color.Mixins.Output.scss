@@ -71,7 +71,12 @@
   @include ms-bgColor-neutralPrimary;
 }
 
-.ms-bgColor-neutralSecondary,
+.ms-bgColor-neutralPrimaryAlt, 
+.ms-bgColor-neutralPrimaryAlt--hover:hover {
+  @include ms-bgColor-neutralPrimaryAlt;
+}
+
+.ms-bgColor-neutralSecondary, 
 .ms-bgColor-neutralSecondary--hover:hover {
   @include ms-bgColor-neutralSecondary;
 }
@@ -293,7 +298,12 @@
   @include ms-borderColor-neutralPrimary;
 }
 
-.ms-borderColor-neutralSecondary,
+.ms-borderColor-neutralPrimaryAlt, 
+.ms-borderColor-neutralPrimaryAlt--hover:hover {
+  @include ms-borderColor-neutralPrimaryAlt;
+}
+
+.ms-borderColor-neutralSecondary, 
 .ms-borderColor-neutralSecondary--hover:hover {
   @include ms-borderColor-neutralSecondary;
 }

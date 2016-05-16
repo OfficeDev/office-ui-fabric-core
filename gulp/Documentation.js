@@ -11,6 +11,8 @@ var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
 var Template = require('./modules/Template');
+var pandoc = require('gulp-pandoc');
+
 require("typescript-require")({
     exitOnError: true
 });
@@ -148,12 +150,13 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        filesArray,
        componentPipe,
        markdown,
-       context = {};
+       templateData;
        
    var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
   
    for (var i=0; i < demoPagesList.length; i++) {
        
+       templateData = {};
        pageName = demoPagesList[i];
        
        // Current Page Folder path
@@ -165,18 +168,23 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
        // Dist folder name for page
        distFolderName = Config.paths.distDocumentation + '/' + pageName;
        
-       // Get Handlebars file foreach handlebars file we must have a model
-       var exampleFiles = Utilities.getFilesByExtension(exampleFolderName, '.hbs');
+       // Load all available example models into templateData
+       var exampleModels = Utilities.getFilesByExtension(exampleFolderName, '.js');
        
+     
        // Go through and find the view model for each example handlebars file and store in context
-       if(exampleFiles.length > 0) {
-           for(var x = 0; x < exampleFiles.length; x++) {
-               var file = exampleFiles[i];
-               var modelName = pageName + 'ExampleModel';
-               var modelFile = require('../' + exampleFolderName + '/' + modelName + '.js');
-               context[modelName];
+       if(exampleModels.length > 0) {
+           console.log(exampleModels);
+           for(var x = 0; x < exampleModels.length; x++) {
+               console.log("ayy lmao"); 
+               var file = exampleModels[x];
+               var modelName = file.replace('.js', ' ');
+               var modelFile = require('../' + exampleFolderName + '/' + file);
+               templateData[modelName] = modelFile;
            }
        }
+       
+       console.log(templateData);
        
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
 
@@ -195,11 +203,16 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            
            componentPipe = gulp.src(markdown)
            .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-           .pipe(Plugins.markdown())
+           .pipe(pandoc({
+                from: 'markdown',
+                to: 'html5',
+                ext: '.html',
+                args: ['--smart']
+            }))
            .pipe(Plugins.fileinclude())
            .pipe(Plugins.replace("<!---", ""))
            .pipe(Plugins.replace("--->", ""))
-           .pipe(Plugins.handlebars(context, Config.handleBarsConfig))
+           .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
            .pipe(Plugins.rename("index.html"))
            .pipe(Plugins.wrap(
                 {

@@ -23,8 +23,6 @@ gulp.task('DocumentationViewer', ['Fabric', 'FabricComponents', 'Documentation',
             "subSections":  subSections
         });
     }
-    
-    console.log(sections);
 
     return gulp.src(Config.paths.srcTemplate + '/'+ 'samples-index.html')
         .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))

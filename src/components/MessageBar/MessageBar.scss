@@ -41,29 +41,6 @@ $MessageBar-padding: 8px;
 }
 
 
-//== Modifier: Success message
-//
-.ms-MessageBar.ms-MessageBar--success {
-  @include ms-bgColor-success;
-
-  .ms-MessageBar-icon {
-    @include ms-fontColor-green;
-  }
-
-  .ms-Icon:before {
-    content: '\e21f';  // ms-Icon--checkboxCheck
-  }
-
-  .ms-Icon {
-    border-radius: 12px;
-    height: 12px;
-    width: 12px;
-    font-size: 12px;
-    border: 1px solid $ms-color-green;
-  }
-}
-
-
 //== Modifier: Severe Warning message
 //
 .ms-MessageBar.ms-MessageBar--severeWarning {
@@ -98,5 +75,31 @@ $MessageBar-padding: 8px;
   .ms-Icon {
     font-size: 8px;
     margin-left: 3px;
+  }
+}
+
+
+//== Modifier: Success message
+//
+.ms-MessageBar.ms-MessageBar--success {
+  @include ms-bgColor-success;
+
+  .ms-MessageBar-icon {
+    @include ms-fontColor-green;
+  }
+
+  .ms-Icon {
+    font-size: $ms-font-size-s;
+    top: 3px;
+    
+    &:before {
+      margin-left: 1px;
+    }
+
+    &:after {
+      font-size: 8px;
+      margin-left: 3px;
+      top: 1px;
+    }
   }
 }

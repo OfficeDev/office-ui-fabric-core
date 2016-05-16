@@ -18,8 +18,7 @@
   ],
   "branches": [
     {
-      "name": "Info",
-      "class": "ms-MessageBar--info"
+      "name": "Info"
     },
     {
       "name": "SevereWarning",

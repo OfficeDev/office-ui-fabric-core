@@ -344,6 +344,10 @@
   color: $ms-color-success;
 }
 
+@mixin ms-fontColor-alert { // Deprecated: Use ms-fontColor-severeWarning
+  color: $ms-color-alert;
+}
+
 @mixin ms-fontColor-warning {
   color: $ms-color-warning;
 }

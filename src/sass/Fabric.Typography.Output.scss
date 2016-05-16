@@ -363,6 +363,11 @@
   @include ms-fontColor-success;
 }
 
+.ms-fontColor-alert, 
+.ms-fontColor-alert--hover:hover {   // Deprecated: Use ms-fontColor-severeWarning
+   @include ms-fontColor-alert;
+}
+
 .ms-fontColor-warning,
 .ms-fontColor-warning--hover:hover {
   @include ms-fontColor-warning;

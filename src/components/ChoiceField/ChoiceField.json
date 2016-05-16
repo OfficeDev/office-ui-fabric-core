@@ -35,8 +35,8 @@
   "propsCheckboxDisabled": {
     "label": "Checkbox Disabled",
     "modifier": "",
-    "name": "checkboxa",
-    "id": "checkboxa",
+    "name": "checkboxb",
+    "id": "checkboxb",
     "checked": false,
     "disabled": true,
     "type": "checkbox"
@@ -44,8 +44,8 @@
   "propsCheckboxSelected": {
     "label": "Checkbox selected",
     "modifier": "",
-    "name": "checkboxa",
-    "id": "checkboxa",
+    "name": "checkboxc",
+    "id": "checkboxc",
     "checked": true,
     "disabled": false,
     "type": "checkbox"
@@ -53,8 +53,8 @@
   "propsSelected": {
     "label": "Radio Selected",
     "modifier": "",
-    "name": "checkboxa",
-    "id": "checkboxa",
+    "name": "checkboxd",
+    "id": "checkboxd",
     "checked": true,
     "disabled": false,
     "type": "radio"
@@ -62,8 +62,8 @@
   "propsDisabled": {
     "label": "Radio disabled",
     "modifier": "",
-    "name": "checkboxa",
-    "id": "checkboxa",
+    "name": "checkboxe",
+    "id": "checkboxe",
     "checked": false,
     "disabled": true,
     "type": "radio"

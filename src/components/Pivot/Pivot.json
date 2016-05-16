@@ -14,7 +14,8 @@
   "props": {
     "links": [
       {
-        "text": "My files"
+        "text": "My files",
+        "state": "is-selected"
       },
       {
         "text": "Recent"
@@ -36,7 +37,8 @@
         "text": "My files"
       },
       {
-        "text": "Recent"
+        "text": "Recent",
+        "state": "is-selected"
       },
       {
         "text": "Shared with me"
@@ -58,7 +60,8 @@
         "text": "Recent"
       },
       {
-        "text": "Shared with me"
+        "text": "Shared with me",
+        "state": "is-selected"
       },
       {
         "ellipsisIcon": "ellipsis"

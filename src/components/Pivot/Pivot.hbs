@@ -2,10 +2,10 @@
 
 <ul class="ms-Pivot {{#each props.modifiers}} ms-Pivot--{{name}}{{/each}}">
   {{#each props.links}}
-    <li class="ms-Pivot-link is-selected">
+    <li class="ms-Pivot-link {{state}}">
       {{text}}
-      {{#if props.ellipsisIcon}}
-        <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--{{props.ellipsisIcon}}"></i>
+      {{#if ellipsisIcon}}
+        <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--{{ellipsisIcon}}"></i>
       {{/if}}
     </li>
   {{/each}}

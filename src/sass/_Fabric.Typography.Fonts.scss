@@ -7,10 +7,7 @@
 
 
 // Font weights.
-$ms-light:     "Segoe UI Light";
-$ms-regular:   "Segoe UI Regular";
-$ms-semibold:  "Segoe UI Semibold";
-$ms-semilight: "Segoe UI Semilight";
+$ms-font-name: "Segoe UI";
 
 
 // Font paths.
@@ -31,48 +28,48 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean";
 // Mixins to generate @font-face rules for unique languages.
 @mixin SegoeUILight($ms-font-language, $ms-font-path) {
   @font-face {
-    font-family: "#{$ms-light} #{$ms-font-language}";
+    font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI Light"),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-}
-
-@mixin SegoeUIRegular($ms-font-language, $ms-font-path) {
-  @font-face {
-    font-family: "#{$ms-regular} #{$ms-font-language}";
-    src: local("Segoe UI"),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 100;
     font-style: normal;
   }
 }
 
 @mixin SegoeUISemilight($ms-font-language, $ms-font-path) {
   @font-face {
-    font-family: "#{$ms-semilight} #{$ms-font-language}";
+    font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI Semilight"),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 200;
+    font-style: normal;
+  }
+}
+
+@mixin SegoeUIRegular($ms-font-language, $ms-font-path) {
+  @font-face {
+    font-family: "#{$ms-font-name} #{$ms-font-language}";
+    src: local("Segoe UI"),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
   }
 }
 
 @mixin SegoeUISemibold($ms-font-language, $ms-font-path) {
   @font-face {
-    font-family: "#{$ms-semibold} #{$ms-font-language}";
+    font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI Semibold"),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff2') format('woff2'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff') format('woff'),
          url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 600;
     font-style: normal;
   }
 }

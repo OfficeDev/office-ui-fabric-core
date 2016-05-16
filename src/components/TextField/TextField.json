@@ -1,41 +1,5 @@
 {
   "name": "TextField",
-  "notes": "",
-  "description": "The table component provides a div-based way to visualize data in columns and rows. Although the table is responsive by nature, we recommend keeping the number of columns small if the table is intended to be viewed on mobile devices.",
   "template": "TextField.html",
-  "class": "ms-TextField",
-  "fileOrder": [
-    "TextField.html",
-    "TextField.Multiline.html",
-    "TextField.Placeholder.html",
-    "TextField.Underlined.html",
-    "TextField.TextfieldUnderline.html"
-  ],
-  "dependencies": [
-    "Label"
-  ],
-  "props": {
-    "label": "Name",
-    "textfield": true,
-    "description": "This should be your first and last name."
-  },
-  "propsMultiline": {
-    "label": "Name",
-    "multiline": true,
-    "modifier": "multiline"
-  },
-  "propsPlaceholder": {
-    "label": "Given name",
-    "textfield": true,
-    "modifier": "placeholder"
-  },
-  "propsUnderlined": {
-    "label": "Name",
-    "textfield": true,
-    "modifier": "underlined"
-  },
-  "propsTextfieldUnderline": {
-    "textfield": true,
-    "modifier": "textFieldUnderlined"
-  }
+  "class": "ms-TextField"
 }

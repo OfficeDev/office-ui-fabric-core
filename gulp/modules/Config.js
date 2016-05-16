@@ -27,6 +27,9 @@ var Config = function() {
   this.paths.distJS = this.paths.dist + '/js';
   this.paths.distPackages = this.paths.dist + '/packages';
   this.paths.distDocumentation = this.paths.dist + '/documentation';
+  this.paths.distDocsComponents = this.paths.distDocumentation + '/Components';
+  this.paths.distDocsSamples = this.paths.distDocumentation + '/Samples';
+  this.paths.distDocsStyles = this.paths.distDocumentation + '/Styles';
   this.paths.bundlePath = this.paths.dist + '/bundles';
   this.paths.distLibPath = this.paths.dist + '/lib';
   
@@ -35,11 +38,11 @@ var Config = function() {
   this.paths.srcDocs = this.paths.src + '/documentation';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
   this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
-  this.paths.srcTemplatePath = this.paths.srcDocs + '/templates';
+  this.paths.srcTemplate = this.paths.srcDocs + '/templates';
   
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
-	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distSamples);
+	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distDocumentation);
 	this.servePaths = [
         {
             'urlPath': '/css',

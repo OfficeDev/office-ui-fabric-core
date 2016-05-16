@@ -1,6 +1,4 @@
-///<reference path='../../../../components/Breadcrumb/IBreadcrumbModel.ts'/>
-
-export var BreadcrumbModel: IBreadCrumbModel = {
+var BreadcrumbModel = {
   baseClass: "ms-Breadcrumb",
   items: [
       {
@@ -29,3 +27,5 @@ export var BreadcrumbModel: IBreadCrumbModel = {
       }
   ]
 }
+
+module.exports = BreadcrumbModel;

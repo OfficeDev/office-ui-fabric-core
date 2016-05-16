@@ -44,7 +44,7 @@ var Template = function(directories, dist, src, callback) {
     var _openFile;
   
     Handlebars.registerHelper("renderPartial",  function(partial, props) {
-      var fileContents = Plugins.fs.readFileSync(Config.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
+      var fileContents = Plugins.fs.readFileSync(Config.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
       var template = Handlebars.compile(fileContents);
       var thisProps = {props: props};
       return new Handlebars.SafeString(template(thisProps));
@@ -52,7 +52,7 @@ var Template = function(directories, dist, src, callback) {
     
     for (var i = 0; i < directories.length; i++) {
       _file = directories[i];
-      _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.html', "utf8");
+      _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.hbs', "utf8");
       Handlebars.registerPartial(_file, _openFile);
     }
   }
@@ -63,7 +63,7 @@ var Template = function(directories, dist, src, callback) {
       var _file = directories[x];
       var _srcFolderName = Config.paths.componentsPath + '/' + _file;
       var _manifest = Utilities.parseManifest(_srcFolderName + '/' + _file + '.json');
-      var _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.html', "utf8");
+      var _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.hbs', "utf8");
       
       var _hbsTemplate = Handlebars.compile(_openFile);
       var _hbsCompiled = _hbsTemplate(_manifest);

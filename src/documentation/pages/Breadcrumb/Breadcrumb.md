@@ -4,7 +4,9 @@ Shows the current location in a hierarchy and provides a means of navigating upw
 ## Variants
 
 ### Default
+<!---
 {{> BreadcrumbExample }}
+--->
 
 ## States
 
@@ -64,18 +66,8 @@ State | Applied to | Result
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Breadcrumbs on the page:
     ```
     <script>
-        $(document).ready(function() {
-            if (typeof fabric !== "undefined") {
-                if ('Breadcrumb' in fabric) {
-                    var elements = document.querySelectorAll('.ms-Breadcrumb');
-                    var i = elements.length;
-                    var component;
-                    while(i--) {
-                        component = new fabric['Breadcrumb'](elements[i]);
-                    }
-                }
-            }
-        });
+        var BreadCrumbHTML = document.querySelector('.ms-BreadCrumb');
+        var BreadCrumb = new fabric['.ms-BreadCrumb'](BreadCrumbHTML);
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
@@ -86,3 +78,4 @@ This component uses a **Contextual Menu** for the overflow menu.
 
 ## Accessibility
 The component's JavaScript will apply the correct `tabindex` values to ensure keyboard accessibility.
+ 

@@ -14,13 +14,6 @@
     "label": "Create Account",
     "tag": "button"
   },
-  "propsCompound": {
-    "label": "Create Account",
-    "description": "Description of this action this button takes",
-    "icon": "plus",
-    "modifier": "compound",
-    "tag": "button"
-  },
   "propsHero": {
     "label": "Create Account",
     "icon": "plus",

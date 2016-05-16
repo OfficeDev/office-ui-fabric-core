@@ -1,55 +1,91 @@
+"use strict";
+
 var htmlparser = require("htmlparser2");
+var Handlebars = require('handlebars');
 var fs = require("fs");
 var path = require("path");
 var gulp = require("gulp");
 var Config = require('./Config');
 var Plugins = require('./Plugins');
 var Utilities = require('./Utilities');
+var mkdirp = require('mkdirp');
+var gutil = require('gulp-util');
+var ErrorHandling = require('./ErrorHandling');
 
+
+// Prep handlebars
+  // Register all helper
+  
 var Template = function(directories, dist, src, callback) {
   var _currentDirectory = 1; // Counter for current directory
   var _parserHolder = [];
   var _createString = "";
   var _loadDoms = [];
   var _dirX = 0;
+  var _errorNoRoot = "error! There must be no more than two root elements, all components must have ONE root element";
+  var _errorNoElements = "error! You must have atleast one element in the component that is not a comment!";
   
-  this.continueParsing = function() {
-    if(_dirX < directories.length) {
-      var _file = directories[_dirX];
-      var _fileContents;
+  var _handler = new htmlparser.DomHandler(function (error, dom) {
+    if (error) {
+      console.log(error);
+    }
+    
+    _loadDoms.push(dom);
+    
+    if (_dirX >= directories.length - 1) {
+      createComponents();
+    } else {
+      _dirX++;
+    }
+  });
+  
+  function configHandlebars() {
+    var _file;
+    var _openFile;
+  
+    Handlebars.registerHelper("renderPartial",  function(partial, props) {
+      var fileContents = Plugins.fs.readFileSync(Config.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
+      var template = Handlebars.compile(fileContents);
+      var thisProps = {props: props};
+      return new Handlebars.SafeString(template(thisProps));
+    });
+    
+    for (var i = 0; i < directories.length; i++) {
+      _file = directories[i];
+      _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.hbs', "utf8");
+      Handlebars.registerPartial(_file, _openFile);
+    }
+  }
+  
+  function startParsing() {
+
+    for (var x = 0; x < directories.length; x++) {
+      var _file = directories[x];
       var _srcFolderName = Config.paths.componentsPath + '/' + _file;
       var _manifest = Utilities.parseManifest(_srcFolderName + '/' + _file + '.json');
-       console.log("Hruuurr");
+      var _openFile = fs.readFileSync(src + '/' + _file + '/' + _file + '.hbs', "utf8");
       
-      gulp.src(src + '/' + _file + '/' + _file + '.html')
-      .pipe(Plugins.handlebars(_manifest, Config.handleBarsConfig))
-      .pipe(Plugins.tap(function(file, t) {
-         _fileContents = file.contents;
-        }.bind(this)
-      ))
-      .on('end', function() {
-        console.log("Finishsss");
-        // this.emit("end");
-        _parserHolder[_dirX] = new htmlparser.Parser(this.handler, {
-          onreset: function() {
-            _dirX++;
-            this.continueParsing();
-          }.bind(this)
-        });
-        _parserHolder[_dirX].write(_fileContents);
-        _parserHolder[_dirX].end();
-        _parserHolder[_dirX].reset();
-      }.bind(this));
+      var _hbsTemplate = Handlebars.compile(_openFile);
+      var _hbsCompiled = _hbsTemplate(_manifest);
+      
+      _parserHolder[x] = new htmlparser.Parser(_handler);
+      
+      _parserHolder[x].write(_hbsCompiled);
+      _parserHolder[x].end();
+      _parserHolder[x].reset();
     }
-  };
+  }
   
   this.init = function() {
-    this.continueParsing();
+    configHandlebars();
+    startParsing();
+    
   };
   
-  this.parseElement = function(element, elementName, parentElement, parentElementName, isRoot) {
-  
-    if(element.type == "text") {
+  function parseElement(element, elementName, parentElement, parentElementName, isRoot) {
+    if(element.type == "comment") {
+        // DO nothing
+    } else if(element.type == "text") {
       var someText = element.data.replace(/(\r\n|\n|\r)/gm,"");
       _createString += parentElementName + '.innerHTML += "' + someText + '";' + "\r\n";
     } else {
@@ -62,7 +98,7 @@ var Template = function(directories, dist, src, callback) {
       
       for(var x = 0; x < keys.length; x++) {
         var attribName = keys[x];
-        var attribValue = element.attribs[attribName];
+        var attribValue = element.attribs[attribName].replace(/(\r\n|\n|\r)/gm,"");
         _createString += elementName + '.setAttribute("' + attribName + '", "' + attribValue + '");'  + "\r\n";
       }
       
@@ -79,74 +115,70 @@ var Template = function(directories, dist, src, callback) {
         _createString += parentElementName + '.appendChild(' + elementName + ');'  + "\r\n";
       }
     }
-  };
+  }
 
-  this.getDirectories = function(srcpath) {
+  function getDirectories(srcpath) {
     return fs.readdirSync(srcpath).filter(function(file) {
       return fs.statSync(path.join(srcpath, file)).isDirectory();
     });
-  };
+  }
 
-  this.purifyClassName = function(className) {
+  function purifyClassName(className) {
     return className.replace("ms-", "");
-  };
+  }
 
-  this.processDOM = function(dom) {
+  function processDOM(dom) {
+    var _newDom = [];
     
-    if (dom.length > 1) {
-      // Add a root element
-      console.log("error! There must be a root element");
-    } else {
-      var cAttr = dom[0].attribs.class;
-      rootName = purifyClassName(cAttr); // This would be passed in by folder
-    }
-    
-    var children = dom.children;  
-    _createString += "function " + rootName + "() {";
-    
+    // Go through and remove any comment tags
     for (var i = 0; i < dom.length; i++) {
-      var newName = rootName + i;
-      _createString += 'var ' + newName + ' = document.createElement("' + dom[i].name + '");';
+      if(dom[i].type != "comment" && dom[i].type != "text") {
+        _newDom.push(dom[i]);
+      }
+    }
+
+    if(_newDom.length > 1) {
+      ErrorHandling.generatePluginError("Fabric Super Templating Engine 9000", _errorNoRoot);
+      ErrorHandling.generateBuildError(JSON.stringify(dom));
+    } else if(_newDom.length < 1) {
+      ErrorHandling.generatePluginError("Fabric Super Templating Engine 9000", _errorNoElements);
+      ErrorHandling.generateBuildError(JSON.stringify(dom));
+    } else {
       
-      parseElement(dom[i], newName, {
+      var _thisDom = _newDom[0];
+      var cAttr = _newDom[0].attribs.class.split(" ")[0].replace(/(\r\n|\n|\r)/gm,"");
+      var rootName = purifyClassName(cAttr); // This would be passed in by folder
+      var newName = rootName + "0";
+      _createString += "function " + rootName + "() {";
+      _createString += 'var ' + newName + ' = document.createElement("' + _thisDom.name + '");';
+      
+      parseElement(_thisDom, newName, {
         children: [],
         attribs:  {class: "document"}
       }, "document", true);
+
+      _createString += "return " + newName; 
+      _createString += "}"
     }
-  
-    _createString += "return " + newName; 
-    _createString += "}"
-      console.log("Creating file", dist + '/' + rootName + '/' + rootName + '.lib.js');
-    fs.writeFileSync(dist + '/' + rootName + '/' + rootName + '.lib.js', _createString);
-  };
+  }
 
-  this.handler = new htmlparser.DomHandler(function (error, dom) {
-      if (error) {
-        console.log(error);
-      }
-      
-      _loadDoms.push(dom);
-       console.log(_currentDirectory >= directories.length, _currentDirectory, directories.length);
-      if (_currentDirectory >= directories.length) {
-        createComponents();
-        onsole.log("Creating Directory");
-      } else {
-        _currentDirectory++;
-      }
-  });
-
-  this.createComponents = function() {
+  function createComponents() {
+    
     for (var x = 0; x < _loadDoms.length; x++) {
       processDOM(_loadDoms[x]);
     }
+    
+    mkdirp.sync(dist);
+    fs.writeFileSync(dist + '/' + 'fabric.templates' + '.js', _createString);
+    
+    gutil.log("");
     
     //Completed
     if(callback) {
       callback();
     }
   }
-  
   // this.init();
 };
 
-// module.exports = Template;
+module.exports = Template;

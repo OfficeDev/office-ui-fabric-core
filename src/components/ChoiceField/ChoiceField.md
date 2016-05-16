@@ -7,6 +7,12 @@ Allows selection from one or more options.
 Used to indicate a simple yes or no choice, typically as part of a form.
 
 @@include('ChoiceField.Checkbox.html')
+@@include('ChoiceField.Checkbox.Disabled.html')
+@@include('ChoiceField.Checkbox.Selected.html')
+
+### Radio button
+@@include('ChoiceField.Disabled.html')
+@@include('ChoiceField.Selected.html')
 
 ## States
 State | Applied to | Result

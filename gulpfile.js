@@ -7,22 +7,25 @@ var Server = require('./gulp/modules/Server');
 var Utilites = require('./gulp/modules/Utilities');
 var ErrorHandling = require('./gulp/modules/ErrorHandling');
 
+// Require Typescript
+require("typescript-require");
+
 var watchTasks = [
     'Fabric', 
     'ComponentJS',
     'FabricComponents', 
-    'ComponentSamples', 
+    'Documentation', 
     'Samples',
-    'FabricDemoPage'
+    'DocumentationViewer'
 ];
 
 var buildTasks = [
     'Fabric', 
     'ComponentJS',
     'FabricComponents', 
-    'ComponentSamples', 
+    'Documentation', 
     'Samples', 
-    'FabricDemoPage'
+    'DocumentationViewer'
 ];
 
 //////////////////////////
@@ -52,24 +55,24 @@ gulp.task('FabricServer', function() {
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
-gulp.task('nuke', ['Fabric-nuke', 'ComponentJS-nuke', 'FabricComponents-nuke', 'ComponentSamples-nuke', 'Samples-nuke']);
+gulp.task('nuke', ['Fabric-nuke', 'ComponentJS-nuke', 'FabricComponents-nuke', 'Documentation-nuke', 'Samples-nuke']);
 
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
 
 // Watch Sass
-gulp.task('watch-build', ['ComponentJS', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-build', ['ComponentJS', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'ComponentJS', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+        Plugins.runSequence(['Fabric', 'ComponentJS', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-updated'], done);
     }));
 });
 
 gulp.task('watch', ['watch-build']);
 
-gulp.task('watch-debug-build', ['ComponentJS', 'Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug-build', ['ComponentJS', 'Fabric', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-server'], function () {
     gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'FabricComponents', 'ComponentSamples', 'Samples', 'FabricDemoPage', 'FabricServer', 'All-updated'], done);
+        Plugins.runSequence(['Fabric', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-updated'], done);
     }));
 });
 

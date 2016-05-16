@@ -218,7 +218,7 @@
  color: $ms-color-neutralSecondary;
 }
 
-@mixin ms-fontColor-neutralSecondaryAlt { 
+@mixin ms-fontColor-neutralSecondaryAlt {
   color: $ms-color-neutralSecondaryAlt;
 }
 
@@ -226,7 +226,7 @@
   color: $ms-color-neutralTertiary;
 }
 
-@mixin ms-fontColor-neutralTertiaryAlt { 
+@mixin ms-fontColor-neutralTertiaryAlt {
   color: $ms-color-neutralTertiaryAlt;
 }
 
@@ -348,8 +348,16 @@
   color: $ms-color-success;
 }
 
-@mixin ms-fontColor-alert {
+@mixin ms-fontColor-alert { // Deprecated: Use ms-fontColor-severeWarning
   color: $ms-color-alert;
+}
+
+@mixin ms-fontColor-warning {
+  color: $ms-color-warning;
+}
+
+@mixin ms-fontColor-severeWarning {
+  color: $ms-color-severeWarning;
 }
 
 @mixin ms-fontColor-error {

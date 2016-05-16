@@ -72,22 +72,22 @@
 // Helper mixins to override default type values
 
 // Font weights
-.ms-fontWeight-light, 
+.ms-fontWeight-light,
 .ms-fontWeight-light--hover:hover {
   @include ms-fontWeight-light;
 }
 
-.ms-fontWeight-semilight, 
+.ms-fontWeight-semilight,
 .ms-fontWeight-semilight--hover:hover {
   @include ms-fontWeight-semilight;
 }
 
-.ms-fontWeight-regular, 
+.ms-fontWeight-regular,
 .ms-fontWeight-regular--hover:hover {
   @include ms-fontWeight-regular;
 }
 
-.ms-fontWeight-semibold, 
+.ms-fontWeight-semibold,
 .ms-fontWeight-semibold--hover:hover {
   @include ms-fontWeight-semibold;
 }
@@ -139,59 +139,59 @@
   @include ms-fontColor-themeDarker;
 }
 
-.ms-fontColor-themeDark, 
+.ms-fontColor-themeDark,
 .ms-fontColor-themeDark--hover:hover {
   @include ms-fontColor-themeDark;
 }
 
-.ms-fontColor-themeDarkAlt, 
+.ms-fontColor-themeDarkAlt,
 .ms-fontColor-themeDarkAlt--hover:hover {
   @include ms-fontColor-themeDarkAlt;
 }
 
-.ms-fontColor-themePrimary, 
+.ms-fontColor-themePrimary,
 .ms-fontColor-themePrimary--hover:hover {
   @include ms-fontColor-themePrimary;
 }
 
-.ms-fontColor-themeSecondary, 
+.ms-fontColor-themeSecondary,
 .ms-fontColor-themeSecondary--hover:hover {
   @include ms-fontColor-themeSecondary;
 }
 
-.ms-fontColor-themeTertiary, 
+.ms-fontColor-themeTertiary,
 .ms-fontColor-themeTertiary--hover:hover {
   @include ms-fontColor-themeTertiary;
 }
 
-.ms-fontColor-themeLight, 
+.ms-fontColor-themeLight,
 .ms-fontColor-themeLight--hover:hover {
   @include ms-fontColor-themeLight;
 }
 
-.ms-fontColor-themeLighter, 
+.ms-fontColor-themeLighter,
 .ms-fontColor-themeLighter--hover:hover {
   @include ms-fontColor-themeLighter;
 }
 
-.ms-fontColor-themeLighterAlt, 
+.ms-fontColor-themeLighterAlt,
 .ms-fontColor-themeLighterAlt--hover:hover {
   @include ms-fontColor-themeLighterAlt;
 }
 
 
 // Neutral colors
-.ms-fontColor-black, 
+.ms-fontColor-black,
 .ms-fontColor-black--hover:hover {
   @include ms-fontColor-black;
 }
 
-.ms-fontColor-neutralDark, 
+.ms-fontColor-neutralDark,
 .ms-fontColor-neutralDark--hover:hover {
   @include ms-fontColor-neutralDark;
 }
 
-.ms-fontColor-neutralPrimary, 
+.ms-fontColor-neutralPrimary,
 .ms-fontColor-neutralPrimary--hover:hover {
   @include ms-fontColor-neutralPrimary;
 }
@@ -206,58 +206,58 @@
  @include ms-fontColor-neutralSecondary;
 }
 
-.ms-fontColor-neutralSecondaryAlt, 
-.ms-fontColor-neutralSecondaryAlt--hover:hover { 
+.ms-fontColor-neutralSecondaryAlt,
+.ms-fontColor-neutralSecondaryAlt--hover:hover {
   @include ms-fontColor-neutralSecondaryAlt;
 }
 
-.ms-fontColor-neutralTertiary, 
+.ms-fontColor-neutralTertiary,
 .ms-fontColor-neutralTertiary--hover:hover {
   @include ms-fontColor-neutralTertiary;
 }
 
-.ms-fontColor-neutralTertiaryAlt, 
-.ms-fontColor-neutralTertiaryAlt--hover:hover { 
+.ms-fontColor-neutralTertiaryAlt,
+.ms-fontColor-neutralTertiaryAlt--hover:hover {
   @include ms-fontColor-neutralTertiaryAlt;
 }
 
-.ms-fontColor-neutralLight, 
+.ms-fontColor-neutralLight,
 .ms-fontColor-neutralLight--hover:hover {
   @include ms-fontColor-neutralLight;
 }
 
-.ms-fontColor-neutralLighter, 
+.ms-fontColor-neutralLighter,
 .ms-fontColor-neutralLighter--hover:hover {
   @include ms-fontColor-neutralLighter;
 }
 
-.ms-fontColor-neutralLighterAlt, 
+.ms-fontColor-neutralLighterAlt,
 .ms-fontColor-neutralLighterAlt--hover:hover {
   @include ms-fontColor-neutralLighterAlt;
 }
 
-.ms-fontColor-white, 
+.ms-fontColor-white,
 .ms-fontColor-white--hover:hover {
   @include ms-fontColor-white;
 }
 
 // Brand and accent colors
-.ms-fontColor-yellow, 
+.ms-fontColor-yellow,
 .ms-fontColor-yellow--hover:hover {
   @include ms-fontColor-yellow;
 }
 
-.ms-fontColor-yellowLight, 
+.ms-fontColor-yellowLight,
 .ms-fontColor-yellowLight--hover:hover {
   @include ms-fontColor-yellowLight;
 }
 
-.ms-fontColor-orange, 
+.ms-fontColor-orange,
 .ms-fontColor-orange--hover:hover {
   @include ms-fontColor-orange;
 }
 
-.ms-fontColor-orangeLight, 
+.ms-fontColor-orangeLight,
 .ms-fontColor-orangeLight--hover:hover {
   @include ms-fontColor-orangeLight;
 }
@@ -267,113 +267,123 @@
   @include ms-fontColor-orangeLighter;
 }
 
-.ms-fontColor-redDark, 
+.ms-fontColor-redDark,
 .ms-fontColor-redDark--hover:hover {
   @include ms-fontColor-redDark;
 }
 
-.ms-fontColor-red, 
+.ms-fontColor-red,
 .ms-fontColor-red--hover:hover {
   @include ms-fontColor-red;
 }
 
-.ms-fontColor-magentaDark, 
+.ms-fontColor-magentaDark,
 .ms-fontColor-magentaDark--hover:hover {
   @include ms-fontColor-magentaDark;
 }
 
-.ms-fontColor-magenta, 
+.ms-fontColor-magenta,
 .ms-fontColor-magenta--hover:hover {
   @include ms-fontColor-magenta;
 }
 
-.ms-fontColor-magentaLight, 
+.ms-fontColor-magentaLight,
 .ms-fontColor-magentaLight--hover:hover {
   @include ms-fontColor-magentaLight;
 }
 
-.ms-fontColor-purpleDark, 
+.ms-fontColor-purpleDark,
 .ms-fontColor-purpleDark--hover:hover {
   @include ms-fontColor-purpleDark;
 }
 
-.ms-fontColor-purple, 
+.ms-fontColor-purple,
 .ms-fontColor-purple--hover:hover {
   @include ms-fontColor-purple;
 }
 
-.ms-fontColor-purpleLight, 
+.ms-fontColor-purpleLight,
 .ms-fontColor-purpleLight--hover:hover {
   @include ms-fontColor-purpleLight;
 }
 
-.ms-fontColor-blueDark, 
+.ms-fontColor-blueDark,
 .ms-fontColor-blueDark--hover:hover {
   @include ms-fontColor-blueDark;
 }
 
-.ms-fontColor-blueMid, 
+.ms-fontColor-blueMid,
 .ms-fontColor-blueMid--hover:hover {
   @include ms-fontColor-blueMid;
 }
 
-.ms-fontColor-blue, 
+.ms-fontColor-blue,
 .ms-fontColor-blue--hover:hover {
   @include ms-fontColor-blue;
 }
 
-.ms-fontColor-blueLight, 
+.ms-fontColor-blueLight,
 .ms-fontColor-blueLight--hover:hover {
   @include ms-fontColor-blueLight;
 }
 
-.ms-fontColor-tealDark, 
+.ms-fontColor-tealDark,
 .ms-fontColor-tealDark--hover:hover {
   @include ms-fontColor-tealDark;
 }
 
-.ms-fontColor-teal, 
+.ms-fontColor-teal,
 .ms-fontColor-teal--hover:hover {
   @include ms-fontColor-teal;
 }
 
-.ms-fontColor-tealLight, 
+.ms-fontColor-tealLight,
 .ms-fontColor-tealLight--hover:hover {
   @include ms-fontColor-tealLight;
 }
 
-.ms-fontColor-greenDark, 
+.ms-fontColor-greenDark,
 .ms-fontColor-greenDark--hover:hover {
   @include ms-fontColor-greenDark;
 }
 
-.ms-fontColor-green, 
+.ms-fontColor-green,
 .ms-fontColor-green--hover:hover {
   @include ms-fontColor-green;
 }
 
-.ms-fontColor-greenLight, 
+.ms-fontColor-greenLight,
 .ms-fontColor-greenLight--hover:hover {
   @include ms-fontColor-greenLight;
 }
 
 // Message colors
-.ms-fontColor-info, 
+.ms-fontColor-info,
 .ms-fontColor-info--hover:hover {
   @include ms-fontColor-info;
 }
 
-.ms-fontColor-success, 
+.ms-fontColor-success,
 .ms-fontColor-success--hover:hover {
   @include ms-fontColor-success;
 }
 
 .ms-fontColor-alert, 
-.ms-fontColor-alert--hover:hover {
-  @include ms-fontColor-alert;
+.ms-fontColor-alert--hover:hover {   // Deprecated: Use ms-fontColor-severeWarning
+   @include ms-fontColor-alert;
 }
 
-.ms-fontColor-error, 
+.ms-fontColor-warning,
+.ms-fontColor-warning--hover:hover {
+  @include ms-fontColor-warning;
+}
+
+.ms-fontColor-severeWarning,
+.ms-fontColor-severeWarning--hover:hover {
+  @include ms-fontColor-severeWarning;
+}
+
+.ms-fontColor-error,
 .ms-fontColor-error--hover:hover {
   @include ms-fontColor-error;
 }

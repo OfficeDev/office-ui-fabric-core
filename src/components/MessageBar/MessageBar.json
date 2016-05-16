@@ -1,0 +1,40 @@
+{
+  "name": "MessageBar",
+  "notes": "",
+  "description:": "A component for displaying information, alerts, and errors to a user via a small message surface.",
+  "template": "MessageBar.html",
+  "wrapBranches": true,
+  "class": "ms-MessageBar",
+  "dependencies": [
+    "Link"
+  ],
+  "fileOrder": [
+    "MessageBar.html",
+    "MessageBar.Warning.html",
+    "MessageBar.SevereWarning.html",
+    "MessageBar.Error.html",
+    "MessageBar.Success.html",
+    "MessageBar.Remove.html"
+  ],
+  "branches": [
+    {
+      "name": "Info"
+    },
+    {
+      "name": "SevereWarning",
+      "class": "ms-MessageBar--severeWarning"
+    },
+    {
+      "name": "Error",
+      "class": "ms-MessageBar--error"
+    },
+    {
+      "name": "Success",
+      "class": "ms-MessageBar--success"
+    },
+    {
+      "name": "Remove",
+      "class": "ms-MessageBar--remove"
+    }
+  ]
+}

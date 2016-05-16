@@ -10,17 +10,17 @@ Displays the progress of an operation when the percentage complete can not be de
 
 ### Large
 <!---
-{{> SpinnerLargeExample props=SpinnerLargeModel}}
+{{> SpinnerLargeExample props=SpinnerLargeExampleModel}}
 --->
 
 ### Default with label
 <!---
-{{> SpinnerWithLabelExample props=SpinnerWithLabelModel}}
+{{> SpinnerWithLabelExample props=SpinnerWithLabelExampleModel}}
 --->
 
 ### Large with label
 <!---
-{{> SpinnerLargeWithLabelExample props=SpinnerLargeWithLabelModel}}
+{{> SpinnerLargeWithLabelExample props=SpinnerLargeWithLabelExampleModel}}
 --->
 
 ## Using this component

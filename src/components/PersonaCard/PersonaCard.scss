@@ -36,7 +36,8 @@
   height: 48px;
 }
 
-.ms-PersonaCard-action {
+.ms-PersonaCard-action,
+.ms-PersonaCard-overflow {
   display: inline-block;
   cursor: pointer;
   font-size: $ms-font-size-l;
@@ -89,7 +90,6 @@
 }
 
 .ms-PersonaCard-overflow {
-  @extend .ms-PersonaCard-action;
   font-size: $ms-font-size-m;
   color: $ms-color-neutralPrimary;
   float: right;

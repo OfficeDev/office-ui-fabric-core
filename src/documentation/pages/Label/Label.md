@@ -5,17 +5,17 @@ Used to label form elements such as TextField and Dropdown.
 
 ### Default
 <!---
-{{> LabelExample props=LabelExampleModel }}
+{{> LabelExample props=LabelExampleModel.props }}
 --->
 
 ### Required
 <!---
-{{> LabelExampleRequired props=LabelExampleRequiredModel }}
+{{> LabelExampleRequired props=LabelExampleModel.propsRequired }}
 --->
 
 ### Disabled
 <!---
-{{> LabelExampleDisabled props=LabelExampleDisabledModel }}
+{{> LabelExampleDisabled props=LabelExampleModel.propsDisabled }}
 --->
 
 

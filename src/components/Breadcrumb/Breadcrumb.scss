@@ -17,10 +17,10 @@
 }
 
 .ms-Breadcrumb-chevron {
-  font-size: $ms-font-size-l;
+  font-size: $ms-font-size-s;
   color: $ms-color-neutralSecondary;
   vertical-align: top;
-  margin: 10px 0;
+  margin: 11px 5px;
 }
 
 .ms-Breadcrumb-list {
@@ -50,11 +50,10 @@
   margin-right: -4px;
 
   .ms-Breadcrumb-overflowButton {
-    font-size: $ms-font-size-s;
+    font-size: $ms-font-size-l;
     display: inline-block;
-    color: $ms-color-themePrimary;
     margin-right: -4px;
-    padding: 12px 8px 3px;
+    padding: 8px 12px;
     cursor: pointer;
   }
 }
@@ -139,14 +138,13 @@
   }
 
   .ms-Breadcrumb-chevron {
-    font-size: $ms-font-size-m;
-    margin-top: 7px;
+    font-size: 8px;
+    margin: 10px 4px;
   }
 
   .ms-Breadcrumb-overflow {
     .ms-Breadcrumb-overflowButton {
-      padding-top: 8px;
-      padding-bottom: 3px;
+      padding: 5px 10px;
     }
   }
 }
@@ -156,15 +154,14 @@
     font-size: $ms-font-size-m;
     max-width: 116px;
   }
-
+  
   .ms-Breadcrumb-chevron {
-    margin-top: 4px;
+    margin: 8px 4px;
   }
 
   .ms-Breadcrumb-overflow {
     .ms-Breadcrumb-overflowButton {
-      padding-top: 5px;
-      padding-bottom: 3px;
+      padding: 3px 10px;
     }
   }
 }

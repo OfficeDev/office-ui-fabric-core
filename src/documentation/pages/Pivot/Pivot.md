@@ -5,22 +5,22 @@ A layout component that allows a user to switch between different sets of conten
 
 ### Default
 <!---
-{{> PivotExample props=PivotExampleModel}}
+{{> Pivot props=PivotExampleProps.default}}
 --->
 
 ### Large
 <!---
-{{> PivotLargeExample props=PivotLargeExampleModel}}
+{{> Pivot props=PivotExampleProps.large}}
 --->
 
 ### Tabs
 <!---
-{{> PivotTabsExample props=PivotTabsExampleModel}}
+{{> Pivot props=PivotExampleProps.tabs}}
 --->
 
 ### Large tabs
 <!---
-{{> PivotLargeTabsExample props=PivotLargeTabsExampleModel}}
+{{> Pivot props=PivotExampleProps.largeTabs}}
 --->
 
 ## Using this component
@@ -49,3 +49,7 @@ A layout component that allows a user to switch between different sets of conten
 
 ## Dependencies
 This component has no dependency on other components.
+
+<!---
+{{> PivotExampleJS}}
+--->

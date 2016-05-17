@@ -11,6 +11,8 @@ var Utilities = require('./Utilities');
 var mkdirp = require('mkdirp');
 var gutil = require('gulp-util');
 var ErrorHandling = require('./ErrorHandling');
+var sys = require('sys')
+var exec = require('child_process').exec;
 
 
 // Prep handlebars
@@ -19,11 +21,12 @@ var ErrorHandling = require('./ErrorHandling');
 var Template = function(directories, dist, src, callback) {
   var _currentDirectory = 1; // Counter for current directory
   var _parserHolder = [];
-  var _createString = "";
+  var _createString = "class FabricTemplateLibrary {";
   var _loadDoms = [];
   var _dirX = 0;
   var _errorNoRoot = "error! There must be no more than two root elements, all components must have ONE root element";
   var _errorNoElements = "error! You must have atleast one element in the component that is not a comment!";
+  var _existingElements = [];
   
   var _handler = new htmlparser.DomHandler(function (error, dom) {
     if (error) {
@@ -76,45 +79,40 @@ var Template = function(directories, dist, src, callback) {
     }
   }
   
-  this.init = function() {
-    configHandlebars();
-    startParsing();
-    
-  };
-  
   function parseElement(element, elementName, parentElement, parentElementName, isRoot) {
-    if(element.type == "comment") {
-        // DO nothing
-    } else if(element.type == "text") {
-      var someText = element.data.replace(/(\r\n|\n|\r)/gm,"");
-      _createString += parentElementName + '.innerHTML += "' + someText + '";' + "\r\n";
-    } else {
-      
-      _createString += 'var ' + elementName + ' = document.createElement("' + element.name + '");'  + "\r\n";
-      var attributes = element.attribs || {};
-      
-      //Set Attribute
-      var keys = Object.keys(element.attribs);
-      
-      for(var x = 0; x < keys.length; x++) {
-        var attribName = keys[x];
-        var attribValue = element.attribs[attribName].replace(/(\r\n|\n|\r)/gm,"");
-        _createString += elementName + '.setAttribute("' + attribName + '", "' + attribValue + '");'  + "\r\n";
-      }
-      
-      for(var i = 0; i < element.children.length; i++) {
-        var newName = elementName + "c" + i;
-        var child = element.children[i];
-        parseElement(child, newName, element, elementName);
-      }
-      
-      if(isRoot) {
-        // Dont do anything
+    
+      if(element.type == "comment") {
+          // DO nothing
+      } else if(element.type == "text") {
+        var someText = element.data.replace(/(\r\n|\n|\r)/gm, "");
+        _createString += parentElementName + '.innerHTML += "' + someText + '";' + "\r\n";
       } else {
-        // Append this element to the parent element
-        _createString += parentElementName + '.appendChild(' + elementName + ');'  + "\r\n";
+        
+        _createString += 'var ' + elementName + ' = document.createElement("' + element.name + '");'  + "\r\n";
+        var attributes = element.attribs || {};
+        
+        //Set Attribute
+        var keys = Object.keys(element.attribs);
+        
+        for(var x = 0; x < keys.length; x++) {
+          var attribName = keys[x];
+          var attribValue = element.attribs[attribName].replace(/(\r\n|\n|\r)/gm,"");
+          _createString += elementName + '.setAttribute("' + attribName + '", "' + attribValue + '");'  + "\r\n";
+        }
+        
+        for(var i = 0; i < element.children.length; i++) {
+          var newName = elementName + "c" + i;
+          var child = element.children[i];
+          parseElement(child, newName, element, elementName);
+        }
+        
+        if(isRoot) {
+          // Dont do anything
+        } else {
+          // Append this element to the parent element
+          _createString += parentElementName + '.appendChild(' + elementName + ');'  + "\r\n";
+        }
       }
-    }
   }
 
   function getDirectories(srcpath) {
@@ -136,7 +134,6 @@ var Template = function(directories, dist, src, callback) {
         _newDom.push(dom[i]);
       }
     }
-
     if(_newDom.length > 1) {
       ErrorHandling.generatePluginError("Fabric Super Templating Engine 9000", _errorNoRoot);
       ErrorHandling.generateBuildError(JSON.stringify(dom));
@@ -149,36 +146,54 @@ var Template = function(directories, dist, src, callback) {
       var cAttr = _newDom[0].attribs.class.split(" ")[0].replace(/(\r\n|\n|\r)/gm,"");
       var rootName = purifyClassName(cAttr); // This would be passed in by folder
       var newName = rootName + "0";
-      _createString += "function " + rootName + "() {";
-      _createString += 'var ' + newName + ' = document.createElement("' + _thisDom.name + '");';
       
-      parseElement(_thisDom, newName, {
-        children: [],
-        attribs:  {class: "document"}
-      }, "document", true);
+      if(!(rootName in _existingElements)) {
+        _existingElements.push(rootName);
+        
+        _createString += "public " + rootName + "() {";
+        _createString += 'var ' + newName + ' = document.createElement("' + _thisDom.name + '");';
+        
+        parseElement(_thisDom, newName, {
+          children: [],
+          attribs:  {class: "document"}
+        }, "document", true);
 
-      _createString += "return " + newName; 
-      _createString += "}"
+        _createString += " return " + newName; 
+        _createString += "}";
+        
+      }
     }
   }
 
   function createComponents() {
-    
+    var _jsPath = dist + '/' + 'fabric.templates' + '.ts';
     for (var x = 0; x < _loadDoms.length; x++) {
       processDOM(_loadDoms[x]);
     }
+    _createString += "}"
     
     mkdirp.sync(dist);
-    fs.writeFileSync(dist + '/' + 'fabric.templates' + '.js', _createString);
+    fs.writeFileSync(_jsPath, _createString);
     
-    gutil.log("");
+    exec("dtsmake -s ./" + _jsPath, function (error, stdout, stderr) {
+      sys.print('stdout: ' + stdout);
+      sys.print('stderr: ' + stderr);
+      if (error !== null) {
+        console.log('exec error: ' + error);
+      }
+    });
     
     //Completed
     if(callback) {
       callback();
     }
   }
-  // this.init();
+  
+  this.init = function() {
+    configHandlebars();
+    startParsing();
+  };
+  
 };
 
 module.exports = Template;

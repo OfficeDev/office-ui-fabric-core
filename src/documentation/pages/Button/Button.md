@@ -7,6 +7,7 @@ Allows users to take action, such as submitting a form or dismissing a message.
 <!---
 {{> Button props=ButtonExampleModel}}
 --->
+
 ### Primary
 Where multiple buttons are presented together, this is the default action when submitting the form.
 

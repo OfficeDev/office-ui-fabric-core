@@ -11,7 +11,7 @@ var PersonaExampleProps = {
     "secondaryText": "Accountant",
     "tertiaryText": "In a meeting",
     "icon": "skypeCheck",
-    "modifiers":  [
+    "modifiers": [
       {
         "name": "lg"
       }

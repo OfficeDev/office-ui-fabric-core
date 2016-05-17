@@ -5,19 +5,27 @@ A form input that allows for the choice of one or more people.
 
 ### Default
 Uses the standard sized Persona component.
-@@include('PeoplePicker.html')
+<!---
+{{> PeoplePicker props=PeoplePickerExampleProps.default}}
+--->
 
 ### Compact
 Use the extra small Persona component to fit more results.
-@@include('PeoplePicker.Compact.html')
+<!---
+{{> PeoplePicker props=PeoplePickerExampleProps.compact}}
+--->
 
-### Members List
+### Members list
 Has a smaller search field.
-@@include('PeoplePicker.MembersList.html')
+<!---
+{{> PeoplePicker props=PeoplePickerExampleProps.membersList}}
+--->
 
-### Facepile
+### Face pile
 Presents the selected people in a list below the search field, rather than inline.
-@@include('PeoplePicker.Facepile.html')
+<!---
+{{> PeoplePicker props=PeoplePickerExampleProps.facePile}}
+--->
 
 ## More options
 
@@ -51,3 +59,7 @@ If the network is unavailable, you can present an error message in the search mo
 
 ## Dependencies
 This component uses Persona and PersonaCard to display people and Label for the Members List variant. It also uses a Spinner when searching for results.
+
+<!---
+{{> PeoplePickerExampleJS}}
+--->

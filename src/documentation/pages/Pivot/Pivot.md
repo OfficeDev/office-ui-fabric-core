@@ -4,16 +4,24 @@ A layout component that allows a user to switch between different sets of conten
 ## Variants
 
 ### Default
-@@include('Pivot.html')
+<!---
+{{> PivotExample props=PivotExampleModel}}
+--->
 
 ### Large
-@@include('Pivot.Large.html')
+<!---
+{{> PivotLargeExample props=PivotLargeExampleModel}}
+--->
 
 ### Tabs
-@@include('Pivot.Tabs.html')
+<!---
+{{> PivotTabsExample props=PivotTabsExampleModel}}
+--->
 
 ### Large tabs
-@@include('Pivot.Tabs.Large.html')
+<!---
+{{> PivotLargeTabsExample props=PivotLargeTabsExampleModel}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:

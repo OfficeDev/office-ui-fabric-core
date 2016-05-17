@@ -4,7 +4,19 @@ A special form field that allows for the input of search text.
 ## Variants
 
 ### Default
-@@include('SearchBox.html')
+<!---
+{{> SearchBox props=SearchBoxExampleProps.default}}
+--->
+
+### Collapsed
+<!---
+{{> SearchBox props=SearchBoxExampleProps.collapsed}}
+--->
+
+### Command bar
+<!---
+{{> SearchBox props=SearchBoxExampleProps.commandBar}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
@@ -31,3 +43,7 @@ A special form field that allows for the input of search text.
 
 ## Dependencies
 This component has a dependency on the Label component.
+
+<!---
+{{> SearchBoxExampleJS}}
+--->

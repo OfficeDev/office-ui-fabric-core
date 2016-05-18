@@ -67,7 +67,7 @@ State | Applied to | Result
     ```
     <script>
         var BreadCrumbHTML = document.querySelector('.ms-BreadCrumb');
-        var BreadCrumb = new fabric['.ms-BreadCrumb'](BreadCrumbHTML);
+        var BreadCrumb = new fabric['BreadCrumb'](BreadCrumbHTML);
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.

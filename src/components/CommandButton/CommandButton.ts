@@ -1,7 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /// <reference path="../../../dist/js/fabric.templates.ts"/>
-/// <reference path="../ContextualMenu/ContextualMenu.ts"/>
 
 /**
  * CommandButton
@@ -10,6 +9,15 @@
  *
  */
 
+export interface IContextualMenuItem {
+  title: string,
+  state: string
+}
+
+export interface IContextualMenu {
+  items: Array<IContextualMenuItem>;
+  state?: string;
+}
 
 /**
  * @namespace fabric
@@ -65,11 +73,10 @@ namespace fabric {
        let item = this._dropdown.items[i];
        let text = item.title;
        let state = item.state;
-       let newItem = this._contextualMenuItem.cloneNode(true);
-      //  newItem.innerText = text;
-      //  newItem.style
-       
-       this._contextualHost.appendChild(this._contextualMenuItem);
+       let newItem = <Element>this._contextualMenuItem.cloneNode(true);
+       this._contextualHost.appendChild(newItem);
+       newItem.innerText = text;
+       newItem.style;
       }
     }
     

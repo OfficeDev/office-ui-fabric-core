@@ -4,7 +4,10 @@ Displays multiple Persona components in groups with headers in order to show the
 ## Variants
 
 ### Default
-@@include('OrgChart.html')
+
+<!---
+{{> OrgChartElem props=OrgChartModels.basic }}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:

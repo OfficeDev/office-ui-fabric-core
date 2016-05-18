@@ -4,7 +4,9 @@ Displays several people with the option to add additional people or view the det
 ## Variants
 
 ### Default
-@@include('Facepile.html')
+<!---
+{{> FacepileElem props=FacepileModels.basic }}
+--->
 
 ## States
 State | Applied to | Result
@@ -41,3 +43,7 @@ This component has dependencies on Overlay, Link, Panel, PeoplePicker, Persona, 
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> FacepileJS }}
+--->

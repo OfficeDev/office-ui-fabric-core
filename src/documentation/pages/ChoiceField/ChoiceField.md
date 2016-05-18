@@ -6,7 +6,20 @@ Allows selection from one or more options.
 ### Checkbox
 Used to indicate a simple yes or no choice, typically as part of a form.
 
-@@include('ChoiceField.Checkbox.html')
+<!---
+{{> ChoiceFieldElem props=ChoiceFieldModels.checkbox }}
+{{> ChoiceFieldElem props=ChoiceFieldModels.checkboxDisabled }}
+{{> ChoiceFieldElem props=ChoiceFieldModels.checkboxSelected }}
+--->
+
+### Radio button
+
+<!---
+{{> ChoiceFieldElem props=ChoiceFieldModels.basic }}
+{{> ChoiceFieldElem props=ChoiceFieldModels.disabled }}
+{{> ChoiceFieldElem props=ChoiceFieldModels.selected }}
+--->
+
 
 ## States
 State | Applied to | Result
@@ -38,3 +51,8 @@ This component uses a **Label** to label each checkbox, radio button, and group.
 
 ## Accessibility
 Focus styles are included for these fields. Ensure that you use descriptive labels.
+
+<!---
+{{> ChoiceFieldJS }}
+--->
+

@@ -2,6 +2,6 @@
 
 <ul class="ms-List {{#if props.modifier}} ms-List--{{props.modifier}} {{/if}}">
   {{#each props.listItems}}
-    {{renderPartial name props}}
+    {{> (lookup . 'name') props=props}}
   {{/each}}
 </ul>

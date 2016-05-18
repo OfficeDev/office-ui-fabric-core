@@ -4,10 +4,19 @@ Partially obscures the page to create a modal experience and focus the user's at
 ## Variants
 
 ### Default
-@@include('Overlay.html')
+<!---
+{{> OverlayElem props=OverlayModels.basic }}
+--->
 
 ### Dark
-@@include('Overlay.Dark.html')
+<!---
+{{> OverlayElem props=OverlayModels.dark }}
+--->
+
+### None
+<!---
+{{> OverlayElem props=OverlayModels.none }}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
@@ -22,3 +31,7 @@ Partially obscures the page to create a modal experience and focus the user's at
 
 ## Dependencies
 This component has no dependencies.
+
+<!---
+{{> OverlayJS }}
+--->

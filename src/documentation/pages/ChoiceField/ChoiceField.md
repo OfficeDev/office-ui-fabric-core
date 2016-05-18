@@ -52,7 +52,7 @@ This component uses a **Label** to label each checkbox, radio button, and group.
 ## Accessibility
 Focus styles are included for these fields. Ensure that you use descriptive labels.
 
-<!--- Init components
+<!---
 {{> ChoiceFieldJS }}
 --->
 

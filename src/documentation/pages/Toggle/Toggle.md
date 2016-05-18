@@ -4,13 +4,19 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 ## Variants
 
 ### Label above (default)
-@@include('Toggle.html')
+<!---
+{{> ToggleElem props=ToggleModels.basic }}
+--->
 
 ### Label on left
-@@include('Toggle.TextLeft.html')
+<!---
+{{> ToggleElem props=ToggleModels.textLeft }}
+--->
 
 ### Disabled
-@@include('Toggle.Disabled.html')
+<!---
+{{> ToggleElem props=ToggleModels.disabled }}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
@@ -25,3 +31,7 @@ Allows for turning on or off a setting. This is best suited for simple, singular
 
 ## Dependencies
 This component has a dependency on the Label component.
+
+<!---
+{{> ToggleJS }}
+--->

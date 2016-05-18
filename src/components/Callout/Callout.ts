@@ -39,9 +39,7 @@ namespace fabric {
         } else {
           _container = this._ftl.Button();
         }
-        
-        // Update button
-        
+
       }
     }
   }

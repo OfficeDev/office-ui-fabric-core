@@ -8,8 +8,8 @@
 
 // A mixin that overrides all of the font classes for languages that
 // use system fonts. A single font-family is used for all weights.
-@mixin language-override-system-fonts($ms-lang-code, $ms-font-family-base) {
-  *[lang="#{$ms-lang-code}"] {
+@mixin language-override-system-fonts($lang-code, $font-family) {
+  *[lang="#{$lang-code}"] {
     .ms-font-mi,
     .ms-font-xs,
     .ms-font-s,
@@ -28,7 +28,7 @@
     .ms-fontWeight-regular-hover:hover,
     .ms-fontWeight-semibold,
     .ms-fontWeight-semibold-hover:hover {
-      font-family: $ms-font-family-base;
+      font-family: $font-family;
     }
   }
 }

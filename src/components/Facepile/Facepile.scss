@@ -10,6 +10,7 @@
   position: relative;
   height: 32px;
   width: auto;
+  font-family: $ms-font-family-base;
 
   .ms-Facepile-personaCardHost {
     display: none;
@@ -93,7 +94,7 @@
   }
 
   .ms-PeoplePicker-selectedHeader {
-    font-family: $ms-font-family-light;
+    font-weight: $ms-font-weight-light;
     font-size: $ms-font-size-xl;
     color: $ms-color-neutralPrimary;
     line-height: 82px;

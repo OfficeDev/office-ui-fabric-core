@@ -40,7 +40,14 @@ gulp.task('ComponentJS-lint', function (cb) {
         .pipe(Plugins.tslint.report("verbose"));
 });
 
-gulp.task('ComponentJS-typescript', function() {
+gulp.task('ComponentJS-templateLibrary', ['Documentation-template'], function() {
+    return  gulp.src(Config.paths.distJS + "/fabric.templates.ts")
+            .pipe(Plugins.header(Banners.getJSCopyRight()))
+            .pipe(Plugins.tsc(Config.typescriptProject))
+            .js.pipe(gulp.dest(Config.paths.distJS));
+})
+
+gulp.task('ComponentJS-typescript', ['ComponentJS-templateLibrary'], function() {
     var tscResult = gulp.src(Config.paths.src + '/**/*.ts')
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
@@ -50,14 +57,13 @@ gulp.task('ComponentJS-typescript', function() {
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
         // Typescript project is set to give us both definitions and javascript
-        .pipe(Plugins.tsc(Config.typescriptProject));
+        .pipe(Plugins.tsc(Config.typescriptProjectTwo));
 
     return Plugins.mergeStream([
 
       // place .d.ts outqput in both the Samples folder and the Components folder
       tscResult.dts.pipe(Plugins.concat("fabric.d.ts"))
                    .pipe(Plugins.header(Banners.getJSCopyRight()))
-                   .pipe(gulp.dest(Config.paths.distJS))
                    .pipe(gulp.dest(Config.paths.distJS))
                    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                      title: "Output Fabric Component .d.ts built from TypeScript"

@@ -4,27 +4,37 @@ Notification area that provides a detailed description or set of actions on an o
 ## Variants
 
 ### Default
-@@include('Callout.html')
+<!---
+{{> CalloutExample props=CalloutExampleModel }}
+--->
 
 ### Close
 Includes an icon to dismiss the callout.
 
-@@include('Callout.Close.html')
+<!---
+{{> CalloutExample props=CalloutExampleCloseModel }}
+--->
 
 ### Action text
 Includes buttons to take action.
 
-@@include('Callout.ActionText.html')
+<!---
+{{> CalloutExampleActionText props=CalloutExampleActionTextModel }}
+--->
 
 ### OOBE (Out Of the Box Experience)
 Draws attention to one aspect of the application during a product tour.
 
-@@include('Callout.Oobe.html')
+<!---
+{{> CalloutExample props=CalloutExampleOOBETextModel }}
+--->
 
 ### Peek
 A smaller callout with an action.
 
-@@include('Callout.Peek.html')
+<!---
+{{> CalloutExample props=CalloutExamplePeekTextModel }}
+--->
 
 ## States
 This component has only the default state.
@@ -53,7 +63,7 @@ This component has only the default state.
                 </div>
             </div>    
         </div>
-    </div>
+    </div> 
     ```
 3. Replace the sample HTML content (such as the content of `.ms-Callout-title`) with your content.
 

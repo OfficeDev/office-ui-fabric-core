@@ -103,7 +103,13 @@ gulp.task('Documentation-handlebars', function(cb) {
 
 gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
-    cb();
+    gulp.src(Config.paths.distJS + "/fabric.templates.ts")
+    .pipe(Plugins.header(Banners.getJSCopyRight()))
+    .pipe(Plugins.tsc(Config.typescriptProject))
+    .js.pipe(gulp.dest(Config.paths.distJS))
+    .on('end', function() {
+      cb();
+    });
   }.bind(this));
   _template.init();
 });
@@ -169,7 +175,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 title: "Building documentation page " + pageName
             })))
            .pipe(marked())
-            .on('error', function(err) {
+           .on('error', function(err) {
               console.log(err);  
             })
            .pipe(Plugins.fileinclude())

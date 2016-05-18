@@ -1,24 +1,21 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-{{#> ContextualHost props=props.contextualHostProps thisProps=props}}
-  <div class="ms-Callout 
-      {{#if thisProps.arrowPosition}} ms-Callout--{{thisProps.arrowPosition}} {{/if}} 
-      {{#if thisProps.modifier}} ms-Callout--{{thisProps.modifier}} {{/if}}">
-    <div class="ms-Callout-main">
-      <div class="ms-Callout-header">
-        <p class="ms-Callout-title">{{{thisProps.title}}}</p>
-      </div>
-      <div class="ms-Callout-inner">
-        <div class="ms-Callout-content">
-          <p class="ms-Callout-subText {{#if thisProps.subText}} ms-Callout-subText--{{thisProps.subTextSize}} {{/if}}">{{thisProps.subText}}</p>
-        </div>
-        <div class="ms-Callout-actions">
-            {{#each thisProps.actions}}
-              {{renderPartial component props}}
-            {{/each}}
-        </div>
-      </div>    
+<div class="ms-Callout 
+    {{#if props.arrowPosition}} ms-Callout--{{props.arrowPosition}} {{/if}} 
+    {{#if props.modifier}} ms-Callout--{{props.modifier}} {{/if}}">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">{{{props.title}}}</p>
     </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText {{#if props.subText}} ms-Callout-subText--{{props.subTextSize}} {{/if}}">{{props.subText}}</p>
+      </div>
+      <div class="ms-Callout-actions">
+          {{#each props.actions}}
+            {{renderPartial component props}}
+          {{/each}}
+      </div>
+    </div>     
   </div>
-{{/ContextualHost}}
- 
+</div>

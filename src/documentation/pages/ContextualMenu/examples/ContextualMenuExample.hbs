@@ -1,0 +1,8 @@
+{{> ContextualMenu props=props}}
+
+<script type="text/javascript">
+    var ContextualMenuElements = document.querySelectorAll(".ms-ContextualMenu");
+    for(var i = 0; i < ContextualMenuElements.length; i++) {
+        new fabric['ContextualMenu'](ContextualMenuElements[i]);
+    }
+</script>

@@ -38,11 +38,10 @@ State | Applied to | Result
 3. Add the following `<script>` tag to your page to instantiate all Dropdown components on the page:
     ```
     <script>
-        $(document).ready(function() {
-            if ($.fn.Dropdown) {
-                $('.ms-Dropdown').Dropdown();
-            }
-        });
+        var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
+        for (var i = 0; i < DropdownHTMLElements.length; ++i) {
+            var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
+        }
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.

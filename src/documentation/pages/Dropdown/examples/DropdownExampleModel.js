@@ -3,7 +3,7 @@ var DropdownExampleModel = {
     "label": "Dropdown label",
     "items": [
       {
-        "name": "Choose a sound&hellip"  
+        "name": "Choose a sound&hellip;"  
       },
       {
         "name": "Dog barking"
@@ -24,7 +24,7 @@ var DropdownExampleModel = {
     "state": "is-disabled",
     "items": [
       {
-        "name": "Choose a sound&hellip"  
+        "name": "Choose a sound&hellip;"  
       },
       {
         "name": "Dog barking"

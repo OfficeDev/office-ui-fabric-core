@@ -4,16 +4,34 @@ Presents content by sliding over the rest of the application, which is covered b
 ## Variants
 
 ### Default
-@@include('Panel.html')
+<!---
+{{> Panel props=PanelExampleProps.default}}
+--->
 
 ### Medium
-@@include('Panel.Medium.html')
+<!---
+{{> Panel props=PanelExampleProps.medium}}
+--->
 
 ### Large
-@@include('Panel.Large.html')
+<!---
+{{> Panel props=PanelExampleProps.large}}
+--->
+
+### Large, fixed
+<!---
+{{> Panel props=PanelExampleProps.largeFixed}}
+--->
 
 ### Extra Large
-@@include('Panel.ExtraLarge.html')
+<!---
+{{> Panel props=PanelExampleProps.extraLarge}}
+--->
+
+### Extra extra large
+<!---
+{{> Panel props=PanelExampleProps.extraExtraLarge}}
+--->
 
 ## States
 State | Applied to | Result
@@ -43,3 +61,7 @@ State | Applied to | Result
     ```
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content with your content.
+
+<!---
+{{> PeoplePickerExampleJS}}
+--->

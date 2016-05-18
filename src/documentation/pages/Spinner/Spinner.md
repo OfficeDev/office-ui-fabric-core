@@ -4,7 +4,24 @@ Displays the progress of an operation when the percentage complete can not be de
 ## Variants
 
 ### Default
-@@include('Spinner.html')
+<!---
+{{> SpinnerExample props=SpinnerExampleModel}}
+--->
+
+### Large
+<!---
+{{> SpinnerLargeExample props=SpinnerLargeExampleModel}}
+--->
+
+### Default with label
+<!---
+{{> SpinnerWithLabelExample props=SpinnerWithLabelExampleModel}}
+--->
+
+### Large with label
+<!---
+{{> SpinnerLargeWithLabelExample props=SpinnerLargeWithLabelExampleModel}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:

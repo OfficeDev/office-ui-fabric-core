@@ -4,10 +4,14 @@ The visualization of details of an individual including Skype contact details, e
 ## Variants
 
 ### Default
-@@include('PersonaCard.html')
+<!---
+{{> PersonaCard props=PersonaCardExampleProps.default}}
+--->
 
 ### Square
-@@include('PersonaCard.Square.html')
+<!---
+{{> PersonaCard props=PersonaCardExampleProps.square}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
@@ -36,11 +40,6 @@ The visualization of details of an individual including Skype contact details, e
 ## Dependencies
 This component uses a Persona component to present the person, an OrgChart to present the persona's position within the organization, and a Link for navigation.
 
-<!--
- Demo page specific Code
--->
-
 <!---
-your comment goes here
-and here
--->
+{{> PersonaCardExampleJS}}
+--->

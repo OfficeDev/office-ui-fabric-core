@@ -4,7 +4,16 @@ Presents tabular data with multiple rows and columns. The table's width is flexi
 ## Variants
 
 ### Default
-@@include('Table.html')
+The column widths are determined by the content.
+<!---
+{{> Table props=TableExampleModel}}
+--->
+
+### Fixed
+The columns are split evenly, regardless of their content.
+<!---
+{{> Table props=TableFixedExampleModel}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:

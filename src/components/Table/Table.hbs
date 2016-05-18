@@ -1,6 +1,6 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
 
-<table class="ms-Table">
+<table class="ms-Table {{#if props.modifier}} ms-Table--{{props.modifier}}{{/if}}">
   <thead>
     <tr>
       {{#each props.headers}}

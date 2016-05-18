@@ -4,16 +4,29 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 ## Variants
 
 ### Default
-@@include('TextField.html')
+<!---
+{{> TextField props=TextFieldExampleModel}}
+--->
 
 ### Multiline
-@@include('TextField.Multiline.html')
+<!---
+{{> TextField props=TextFieldMultilineExampleModel}}
+--->
 
 ### Placeholder text
-@@include('TextField.Placeholder.html')
+<!---
+{{> TextFieldPlaceholderExample props=TextFieldPlaceholderExampleModel}}
+--->
+
+### Underlined (@TODO: deprecated?)
+<!---
+{{> TextField props=TextFieldUnderlinedExampleModel}}
+--->
 
 ### Underlined
-@@include('TextField.Underlined.html')
+<!---
+{{> TextField props=TextFieldTextFieldUnderlinedExampleModel}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:

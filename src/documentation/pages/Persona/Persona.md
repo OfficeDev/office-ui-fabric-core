@@ -3,54 +3,58 @@ Represents a person, complete with a profile image and additional details. Where
 
 ## Variants
 
-### Profile image shape
+### Circle (default)
+Six sizes are available: tiny, extraSmall, small, default, large, and extraLarge
+<!---
+{{> Persona props=PersonaExampleProps.tiny}}
+{{> Persona props=PersonaExampleProps.extraSmall}}
+{{> Persona props=PersonaExampleProps.small}}
+{{> Persona props=PersonaExampleProps.default}}
+{{> Persona props=PersonaExampleProps.large}}
+{{> Persona props=PersonaExampleProps.extraLarge}}
+--->
 
-#### Circle (default)
-@@include('Persona.Tiny.html')
-@@include('Persona.ExtraSmall.html')
-@@include('Persona.Small.html')
-@@include('Persona.html')
-@@include('Persona.Large.html')
-@@include('Persona.ExtraLarge.html')
-
-#### Square
-Apply the `.ms-Persona--square` class to any persona to change it to a square.
-@@include('Persona.Square.Tiny.html')
-@@include('Persona.Square.ExtraSmall.html')
-@@include('Persona.Square.Small.html')
-@@include('Persona.Square.html')
-@@include('Persona.Square.Large.html')
-@@include('Persona.Square.ExtraLarge.html')
+### Square
+For every size, you can apply the `.ms-Persona--square` class to change it to a square.
+<!---
+{{> Persona props=PersonaExampleProps.squareTiny}}
+{{> Persona props=PersonaExampleProps.squareExtraSmall}}
+{{> Persona props=PersonaExampleProps.squareSmall}}
+{{> Persona props=PersonaExampleProps.squareDefault}}
+{{> Persona props=PersonaExampleProps.squareLarge}}
+{{> Persona props=PersonaExampleProps.squareExtraLarge}}
+--->
 
 ### Initials
-Where no profile image is available, you can use the person's initials.
-@@include('Persona.Initials.html')
+Don't have a profile image for the user? Provide the person's initials as an alternative.
+<!---
+{{> Persona props=PersonaExampleProps.initials}}
+--->
 
 ### Presence indicators
+A persona can have one of seven presences: available, away, blocked, busy, do not disturb, and offline.
+<!---
+{{> Persona props=PersonaExampleProps.presenceAvailable}}
+{{> Persona props=PersonaExampleProps.presenceAway}}
+{{> Persona props=PersonaExampleProps.presenceBlocked}}
+{{> Persona props=PersonaExampleProps.presenceBusy}}
+{{> Persona props=PersonaExampleProps.presenceDND}}
+{{> Persona props=PersonaExampleProps.presenceOffline}}
+--->
 
-#### Available
-@@include('Persona.Presence.Square.Available.html')
-@@include('Persona.Presence.Available.html')
+### Token
+<!---
+{{> Persona props=PersonaExampleProps.token}}
+{{> Persona props=PersonaExampleProps.token}}
+{{> Persona props=PersonaExampleProps.token}}
+--->
 
-#### Away
-@@include('Persona.Presence.Square.Away.html')
-@@include('Persona.Presence.Away.html')
-
-#### Blocked
-@@include('Persona.Presence.Square.Blocked.html')
-@@include('Persona.Presence.Blocked.html')
-
-#### Busy
-@@include('Persona.Presence.Square.Busy.html')
-@@include('Persona.Presence.Busy.html')
-
-#### Do not disturb
-@@include('Persona.Presence.Square.Dnd.html')
-@@include('Persona.Presence.Dnd.html')
-
-#### Offline
-@@include('Persona.Presence.Square.Offline.html')
-@@include('Persona.Presence.Offline.html')
+### Facepile
+<!---
+{{> Persona props=PersonaExampleProps.facePile}}
+{{> Persona props=PersonaExampleProps.facePile}}
+{{> Persona props=PersonaExampleProps.facePile}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
@@ -66,6 +70,6 @@ Where no profile image is available, you can use the person's initials.
 ## Dependencies
 This component has no dependencies.
 
-
-
-
+<!---
+{{> PersonaExampleJS}}
+--->

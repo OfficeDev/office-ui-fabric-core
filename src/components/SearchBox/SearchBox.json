@@ -1,61 +1,11 @@
 {
   "name": "SearchBox",
-  "notes": "",
-  "wrapBranches": true,
-  "description": "A basic Office 365 search field that includes a standard selection state and cancel button.",
   "template": "SearchBox.html",
   "class": "ms-SearchBox",
-  "dependencies": [
-    "Label",
-    "CommandButton"
-  ],
-  "branches": [
-      {
-        "name": "Enabled",
-        "default": true
-      },
-      {
-        "name": "Disabled",
-        "class": "is-disabled"
-      }
-  ],
   "props": {
     "label": "Search",
     "defaultValue": "",
     "icon": "search",
-    "clearButton": {
-      "component": "CommandButton",
-      "props": {
-        "icon": "x",
-        "modifier": "noLabel",
-        "tag": "button",
-        "customClasses": "ms-SearchBox-close"
-      }
-    }
-  },
-  "propsCommandBar": {
-    "label": "Search",
-    "defaultValue": "",
-    "icon": "search",
-    "closeIcon": "x",
-    "modifier": "commandBar",
-    "clearButton": {
-      "component": "CommandButton",
-      "props": {
-        "icon": "x",
-        "modifier": "noLabel",
-        "tag": "button",
-        "customClasses": "ms-SearchBox-close"
-      }
-    }
-  },
-  "propsCollapsed": {
-    "label": "Search",
-    "defaultValue": "",
-    "icon": "search",
-    "closeIcon": "x",
-    "modifier": "commandBar",
-    "state": "is-collapsed",
     "clearButton": {
       "component": "CommandButton",
       "props": {

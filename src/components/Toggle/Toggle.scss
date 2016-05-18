@@ -112,14 +112,19 @@
     &:focus,
     &:hover {
       background-color: $ms-color-neutralLight;
+      outline: 0;
     }
 
-    &.is-selected:hover {
-      background-color: $ms-color-themeDark;
+    &.is-selected {
+      &:focus,
+      &:hover {
+        background-color: $ms-color-themeDark;
+      }
     }
 
     .ms-Label {
       color: $ms-color-black;
+      user-select: none;
     }
 
     &:active {
@@ -132,7 +137,7 @@
   // Disabled state
   &.is-disabled {
     .ms-Label {
-     @include ms-Label-is-disabled;
+      @include ms-Label-is-disabled;
     }
 
     .ms-Toggle-field {
@@ -181,9 +186,7 @@
 
 // On/Off slide states
 .ms-Toggle-input {
-  position: absolute;
-  opacity: 0;
-  top: 0;
+  display: none;
 }
 
 //== Modifier: Toggle with description text left

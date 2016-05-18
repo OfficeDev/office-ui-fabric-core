@@ -43,7 +43,6 @@ namespace fabric {
       } else {
         parent.classList.add("is-collapsed");
       }
-      // $(this).parent(".ms-PersonaCard-actionDetails").toggleClass("is-collapsed");
     }
 
     private _onActionClick(event: Event): void {

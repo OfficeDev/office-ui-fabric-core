@@ -23,6 +23,22 @@ $ms-color-initials-orange:      #DA532C;
 $ms-color-initials-red:         #EE1111;
 $ms-color-initials-darkRed:     #B91D47;
 
+// Skype presence colors
+$ms-color-presence-available:          #7FBA00;
+$ms-color-presence-away:               #FCD116;
+$ms-color-presence-busy:               #E81123;
+$ms-color-presence-dnd-background:     #E81123;
+$ms-color-presence-dnd-line:           #FFFFFF;
+$ms-color-presence-offline:            #93ABBD;
+$ms-color-presence-out-of-office:      $ms-color-magenta;
+
+// Other presence colors
+$ms-color-presence-blocked-background: #DEDEDE;
+$ms-color-presence-blocked-line:       #C72D25;
+$ms-color-presence-busy-stripe-light:  #E57A79;
+$ms-color-presence-busy-stripe-dark:   #D00E0D;
+$ms-color-presence-busy-average:       #D93B3B;
+
 // Persona Sizes
 $ms-Persona-sizeTiny: 30px;
 $ms-Persona-sizeXs:   32px;

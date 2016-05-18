@@ -4,7 +4,9 @@ Allows for the selection of a date into a text field.
 ## Variants
 
 ### Default
-@@include('DatePicker.html')
+<!---
+{{> DatePicker}}
+--->
 
 ## States
 State | Applied to | Result
@@ -85,3 +87,7 @@ This component has no dependencies on other components. It does, however, requir
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> DatePickerExampleJS}}
+--->

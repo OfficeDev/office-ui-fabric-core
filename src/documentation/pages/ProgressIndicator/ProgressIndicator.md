@@ -4,7 +4,9 @@ Displays the progress of an operation when the percentage complete can be determ
 ## Variants
 
 ### Default
-@@include('ProgressIndicator.html')
+<!---
+{{> ProgressIndicator}}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
@@ -38,3 +40,7 @@ Displays the progress of an operation when the percentage complete can be determ
 
 ## Dependencies
 This component has no dependency on other components.
+
+<!---
+{{> ProgressIndicatorExampleJS}}
+--->

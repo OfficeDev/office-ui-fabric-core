@@ -4,33 +4,48 @@ Suitable for presenting a summary of an item with associated actions. Most often
 ## Variants
 
 ### Default
-@@include('ListItem.html')
+<!---
+{{> ListItemElem props=ListItemModels.basic }}
+--->
 
 ### Image
 The same as the default variant, with a thumbnail image added.
-@@include('ListItem.Image.html')
+
+<!---
+{{> ListItemElem props=ListItemModels.image }}
+--->
 
 ### Document
 Showcases a document by providing a thumbnail, title, and some metadata.
-@@include('ListItem.Document.html')
+<!---
+{{> ListItemElem props=ListItemModels.document }}
+--->
 
 ## States
 
 ### Selectable
 Apply the `is-selectable` class to make it possible to select the item.
-@@include('ListItem.Selectable.html')
+<!---
+{{> ListItemElem props=ListItemModels.selectable }}
+--->
 
 ### Selected
 When applied alongside the `is-selectable` class, `is-selected` will mark it as selected.
-@@include('ListItem.Selected.html')
+<!---
+{{> ListItemElem props=ListItemModels.selected }}
+--->
 
 ### Unseen
 Use `is-unseen` to indicate that the item has not been seen.
-@@include('ListItem.Unseen.html')
+<!---
+{{> ListItemElem props=ListItemModels.unseen }}
+--->
 
 ### Unread
 Use `is-unread` to indicate that the item has not been read.
-@@include('ListItem.Unread.html')
+<!---
+{{> ListItemElem props=ListItemModels.unread }}
+--->
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
@@ -61,3 +76,7 @@ This component has no dependencies on other components, although it is most ofte
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> ListItemJS }}
+--->

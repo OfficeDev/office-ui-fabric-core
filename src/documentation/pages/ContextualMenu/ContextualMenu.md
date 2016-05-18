@@ -6,24 +6,32 @@ Presents options associated with an object. Often opened via a right-click or ov
 ### Default
 A standard menu of commands. Should close when a command is invoked.
 
-@@include('ContextualMenu.html')
+<!---
+{{> ContextualMenuElem props=ContextualMenuModels.basic }}
+--->
 
 ### Multiselect
 Allows for multiple options to be set. Remains opened until the user clicks or taps outside of the menu.
 
-@@include('ContextualMenu.Multiselect.html')
+<!---
+{{> ContextualMenuElem props=ContextualMenuModels.multiSelect }}
+--->
 
 ## Optional functionality
 
 ### SubMenu
 You can nest a ContextualMenu inside another ContextualMenu, resulting in a submenu.
 
-@@include('ContextualMenu.SubMenu.html')
+<!---
+{{> ContextualMenuElem props=ContextualMenuModels.subMenu }}
+--->
 
 ### Dividers
 Dividers can be added to create distinct sections of options or commands.
 
-@@include('ContextualMenu.Dividers.html')
+<!---
+{{> ContextualMenuElem props=ContextualMenuModels.dividers }}
+--->
 
 ## States
 
@@ -71,3 +79,7 @@ This component has no dependencies.
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> ContextualMenuJS }}
+--->

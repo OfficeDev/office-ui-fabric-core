@@ -46,10 +46,10 @@ gulp.task('Documentation-copyIgnoredFiles', function() {
 
 gulp.task('Documentation-copyAssets', function() {
     var paths = [
-        Config.paths.componentsPath + '/**/*.jpg', 
-        Config.paths.componentsPath + '/**/*.png',
-        Config.paths.componentsPath + '/**/*.gif',
-        Config.paths.componentsPath + '/**/*.svg'
+        Config.paths.srcDocsPages + '/**/*.jpg', 
+        Config.paths.srcDocsPages + '/**/*.png',
+        Config.paths.srcDocsPages + '/**/*.gif',
+        Config.paths.srcDocsPages + '/**/*.svg'
     ];
 
     return gulp.src(paths)
@@ -71,37 +71,6 @@ gulp.task('Documentation-styleHinting',  function() {
      .pipe(Plugins.sasslint())
      .pipe(ErrorHandling.SASSlintErrors());
  });
-
-//
-// Styles tasks
-// ----------------------------------------------------------------------------
-
-// gulp.task('Documentation-buildStyles', function() {
-//    return folderList.map(function(componentName) {
-//         var srcTemplate = Config.paths.templatePath + '/'+ BuildConfig.template;
-//         var destFolder = Config.paths.distSampleComponents + '/' + componentName;
-//         var srcFolderName = Config.paths.componentsPath + '/' + componentName;
-//         var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
-//         var deps = manifest.dependencies || [];
-//         var distFolderName = Config.paths.distSampleComponents + '/' + componentName;
-//         var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.' + BuildConfig.fileExtension, '.css');
-        
-//         if (hasFileChanged) {
-//             return ComponentHelper.buildComponentStyles(
-//                         destFolder, 
-//                         srcTemplate, 
-//                         componentName, 
-//                         deps,
-//                         BuildConfig.processorPlugin,
-//                         BuildConfig.processorName,
-//                         BuildConfig.compileErrorHandler
-//                     );
-//         } else {
-//             return;
-//         }
-
-//    });
-// });
 
 gulp.task('Documentation-handlebars', function(cb) {
    var _folderName;
@@ -245,7 +214,6 @@ var DocumentationTasks = [
     'Documentation-build', 
     'Documentation-copyAssets',
     'Documentation-styleHinting',
-    // 'Documentation-buildStyles',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
     "Documentation-template"

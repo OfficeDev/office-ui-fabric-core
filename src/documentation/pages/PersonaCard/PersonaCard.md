@@ -5,12 +5,12 @@ The visualization of details of an individual including Skype contact details, e
 
 ### Default
 <!---
-{{> PersonaCard props=PersonaCardExampleProps.default}}
+{{> PersonaCard props=PersonaCardExampleModel.default}}
 --->
 
 ### Square
 <!---
-{{> PersonaCard props=PersonaCardExampleProps.square}}
+{{> PersonaCard props=PersonaCardExampleModel.square}}
 --->
 
 ## Using this component

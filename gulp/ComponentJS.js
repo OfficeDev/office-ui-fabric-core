@@ -31,7 +31,7 @@ gulp.task('ComponentJS-copyLib', function() {
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentJS-lint', function (cb) {
-    return gulp.src(Config.paths.srcPath + '/**/*.ts')
+    return gulp.src(Config.paths.src + '/**/*.ts')
         
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
@@ -41,7 +41,7 @@ gulp.task('ComponentJS-lint', function (cb) {
 });
 
 gulp.task('ComponentJS-typescript', function() {
-    var tscResult = gulp.src(Config.paths.srcPath + '/**/*.ts')
+    var tscResult = gulp.src(Config.paths.src + '/**/*.ts')
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
         })))
@@ -50,7 +50,10 @@ gulp.task('ComponentJS-typescript', function() {
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
         // Typescript project is set to give us both definitions and javascript
-        .pipe(Plugins.tsc(Config.typescriptProject));
+        .pipe(Plugins.tsc(Config.typescriptProject))
+        .on('error', function(err) {
+            console.log(err);
+        });
 
     return Plugins.mergeStream([
 

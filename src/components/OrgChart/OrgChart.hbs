@@ -8,7 +8,7 @@
         {{#each personas}}
           <li class="ms-OrgChart-listItem">
             <button class="ms-OrgChart-listItemBtn">
-              {{> (lookup . 'component') props}}
+              {{renderPartial component props}}
             </button>
           </li>
         {{/each}}

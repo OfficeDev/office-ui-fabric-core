@@ -6,7 +6,7 @@ Displays multiple Persona components in groups with headers in order to show the
 ### Default
 
 <!---
-{{> OrgChartElem props=OrgChartModels.basic }}
+{{> OrgChart props=OrgChartModels.basic}}
 --->
 
 ## Using this component
@@ -21,6 +21,6 @@ Displays multiple Persona components in groups with headers in order to show the
 3. Replace the Persona components with your own.
 
 ## Dependencies
-This component has a dependenciy on the Persona component.
+This component has a dependency on the Persona component.
 
 

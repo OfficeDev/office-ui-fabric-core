@@ -63,7 +63,7 @@ gulp.task('nuke', ['Fabric-nuke', 'ComponentJS-nuke', 'FabricComponents-nuke', '
 
 // Watch Sass
 gulp.task('watch-build', ['ComponentJS', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-server'], function () {
-    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+    gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'ComponentJS', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-updated'], done);
     }));
 });
@@ -71,7 +71,7 @@ gulp.task('watch-build', ['ComponentJS', 'Documentation', 'Samples', 'Documentat
 gulp.task('watch', ['watch-build']);
 
 gulp.task('watch-debug-build', ['ComponentJS', 'Fabric', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-server'], function () {
-    gulp.watch(Config.paths.srcPath + '/**/*', Plugins.batch(function (events, done) {
+    gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
         Plugins.runSequence(['Fabric', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-updated'], done);
     }));
 });

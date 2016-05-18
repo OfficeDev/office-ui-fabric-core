@@ -4,17 +4,20 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 ## Variants
 
 ### Default
-@@include('CommandBar.html')
+<!---
+{{> CommandBar props=CommandBarExampleModel.props}}
+--->
 
 ### Dropdowns
-@@include('CommandBar.Dropdowns.html')
+<!---
+{{> CommandBar props=CommandBarExampleModel.propsDropdown}}
+--->
 
 ### NavBar
 Provides a means of navigating to different areas within an application. On small screens, the navigation items are placed inside a hamburger menu.
-
-@@include('CommandBar.NavBar.html')
-
-
+<!---
+{{> CommandBar props=CommandBarExampleModel.propsDropdown}}
+--->
 
 ## States
 State | Applied to | Result
@@ -121,12 +124,11 @@ State | Applied to | Result
     ```
 3. Add the following `<script>` tag to your page to instantiate all CommandBar components on the page:
     ```
-    <script>
-        $(document).ready(function() {
-            if ($.fn.CommandBar) {
-                $('.ms-CommandBar').CommandBar();
-            }
-        });
+    <script type="text/javascript">
+        var CommandBarElements = document.querySelectorAll(".ms-CommandBar");
+        for(var i = 0; i < CommandBarElements.length; i++) {
+            new fabric['CommandBar'](CommandBarElements[i]);
+        }
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
@@ -137,3 +139,7 @@ This component has no dependencies.
 
 ## Accessibility
 Refer to the sample code to see how `tabindex` attributes should be set to support keyboard navigation.
+
+<!---
+{{> CommandBarExampleJS }}
+--->

@@ -31,7 +31,7 @@ gulp.task('ComponentJS-copyLib', function() {
 // ----------------------------------------------------------------------------
 
 gulp.task('ComponentJS-lint', function (cb) {
-    return gulp.src(Config.paths.srcPath + '/**/*.ts')
+    return gulp.src(Config.paths.src + '/**/*.ts')
         
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
@@ -41,7 +41,7 @@ gulp.task('ComponentJS-lint', function (cb) {
 });
 
 gulp.task('ComponentJS-typescript', function() {
-    var tscResult = gulp.src(Config.paths.srcPath + '/**/*.ts')
+    var tscResult = gulp.src(Config.paths.src + '/**/*.ts')
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
         })))
@@ -75,27 +75,6 @@ gulp.task('ComponentJS-typescript', function() {
                     })))
     ]);
 });
-
-// //
-// // Concat and minify the output files into a single fabric.js file
-// gulp.task('ComponentJS-concatJS', ['ComponentJS-typescript'], function() {
-
-//     return gulp.src(Config.paths.distComponents + '/**/*.js')
-//         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-//         .pipe(Plugins.concat('fabric.js'))
-//         .pipe(Plugins.header(Banners.getJSCopyRight()))
-//         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-//                 title: "Concat Fabric Component JS"
-//         })))
-//         .pipe(gulp.dest(Config.paths.distJS))
-//         .pipe(Plugins.rename('fabric.min.js'))
-//         .pipe(Plugins.uglify())
-//         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-//                 title: "Minify Fabric Component JS"
-//         })))
-//         .pipe(gulp.dest(Config.paths.distJS));
-// });
-
 
 //
 // Rolled up Build tasks

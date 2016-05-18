@@ -1,5 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+/// <reference path="../../../dist/js/fabric.templates.ts"/>
+
 /**
  * ContextualHost
  *
@@ -33,15 +35,23 @@ namespace fabric {
     private _container;
     private _targetElement;
     private _matchTargetWidth;
+    private _ftl = new FabricTemplateLibrary();
+    private _contextualHostMain: Element;
 
-    constructor(container: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
+    constructor(content: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
       this._resizeAction = this._resizeAction.bind(this);
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-      this._container = container;
+      
+      this._container = this._ftl.ContextualHost();
+      this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
+      this._contextualHostMain.appendChild(content);
+      
+      // this.contextualHostMain = this._contextualHost.querySelector(this._ftl.ContextualHost().ContextualHostMain);
+      // this._container = container;
+      
       this._targetElement = targetElement;
-      this._saveDOMRefs(container);
       this._cloneModal();
       this._openModal();
       this._setResizeDisposal();
@@ -241,10 +251,6 @@ namespace fabric {
 
     private _cloneModal(): void {
       this._modalClone = this._contextualHost.cloneNode(true);
-    }
-
-    private _saveDOMRefs(context): void {
-      this._contextualHost = context;
     }
 
     private _saveModalSize(): void {

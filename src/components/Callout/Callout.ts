@@ -33,13 +33,22 @@ namespace fabric {
 
       for (let i = 0; i < actions.length; i++) {
         _action = actions[i];
-
+        
+        
         if (_action.container) {
           _container = _action.container;
         } else {
           _container = this._ftl.Button();
+          // _container.querySelector(this._ftl.Button.BUTTON_LABEL).html("text");
+          // body.appendChild(_container);
         }
-
+        
+        //  var button = new fabric.Button(_container, { 
+        //    "clickHandler": function(e) {
+           
+        //    }
+        //   }
+        //  );
       }
     }
   }

@@ -6,27 +6,37 @@ Displays content that temporarily blocks interactions with the application. It i
 ### Default
 Includes a content area and two buttons.
 
-@@include('Dialog.html')
+<!-- 
+{{> Dialog props=DialogExampleModel.props }}
+--->
 
 ### Multiline
 Includes multiple large buttons, each with a title and description.
 
-@@include('Dialog.Multiline.html')
+<!-- 
+{{> Dialog props=DialogExampleModel.propsMultiline }}
+--->
 
 ### Large Header
 Provides a large, styled header followed by a content area and two buttons.
 
-@@include('Dialog.LgHeader.html')
+<!-- 
+{{> Dialog props=DialogExampleModel.propslgHeader }}
+--->
 
 ### Blocking
 The overlay for this variant does not dismiss the Dialog.
 
-@@include('Dialog.Blocking.html')
+<!-- 
+{{> Dialog props=DialogExampleModel.propsBlocking }}
+--->
 
 ### Close
 Includes a close button at the top right, as an additional way to dismiss the dialog.
 
-@@include('Dialog.Close.html')
+<!-- 
+{{> Dialog props=DialogExampleModel.propsClose }}
+--->
 
 ## States
 This component has only the default state.

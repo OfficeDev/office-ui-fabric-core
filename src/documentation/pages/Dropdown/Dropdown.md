@@ -4,7 +4,14 @@ Allows for the selection of one option from a list.
 ## Variants
 
 ### Default
-@@include('Dropdown.html')
+<!---
+{{> Dropdown props=DropdownExampleModel.props}}
+---->
+
+### Disabled
+<!---
+{{> Dropdown props=DropdownExampleModel.propsDisabled}}
+--->
 
 ## States
 State | Applied to | Result
@@ -53,3 +60,7 @@ This component has no dependencies.
 
 ## Accessibility
 More details will be added here.
+
+<!---
+{{> DropdownExampleJS }}
+--->

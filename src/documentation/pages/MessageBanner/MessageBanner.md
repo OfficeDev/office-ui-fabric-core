@@ -4,7 +4,9 @@ Presents a message to the user, with an optional call to action. The message is 
 ## Variants
 
 ### Default
-@@include('MessageBanner.html')
+<!---
+{{> MessageBannerExample props=MessageBannerExampleModel.props }}
+--->
 
 ## States
 This component has only the default state.

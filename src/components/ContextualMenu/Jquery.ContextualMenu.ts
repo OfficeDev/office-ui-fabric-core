@@ -19,7 +19,7 @@ namespace fabric {
     constructor(container: HTMLElement) {
       let $contextualMenu = $(container);
       // Set selected states.
-      $contextualMenu.on("click", ".ms-ContextualMenu-link:not(.is-disabled)", function(event) {
+      $contextualMenu.on("click", ".ms-ContextualMenu-item:not(.is-disabled)", function(event) {
         event.preventDefault();
 
         // Check if multiselect - set selected states
@@ -33,7 +33,7 @@ namespace fabric {
           }
         } else { // All other contextual menu variants
           // Deselect all of the items and close any menus.
-          $(".ms-ContextualMenu-link")
+          $(".ms-ContextualMenu-item")
               .removeClass("is-selected")
               .siblings(".ms-ContextualMenu")
               .removeClass("is-open");
@@ -42,7 +42,7 @@ namespace fabric {
           $(this).addClass("is-selected");
 
           // If this item has a menu, open it.
-          if ($(this).hasClass("ms-ContextualMenu-link--hasMenu")) {
+          if ($(this).hasClass("ms-ContextualMenu-item--hasMenu")) {
             $(this).siblings(".ms-ContextualMenu:first").addClass("is-open");
 
             // Open the menu without bubbling up the click event,

@@ -19,6 +19,7 @@
 .ms-ContextualMenu-item {
   @include ms-u-borderBox;
   position: relative;
+  border: 1px solid transparent;
 
   &:hover,
   &:active {

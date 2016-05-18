@@ -7,14 +7,14 @@ Presents options associated with an object. Often opened via a right-click or ov
 A standard menu of commands. Should close when a command is invoked.
 
 <!---
-{{> ContextualMenuElem props=ContextualMenuModels.basic }}
+{{> ContextualMenuExample props=ContextualMenuExampleModel.basic }}
 --->
 
 ### Multiselect
 Allows for multiple options to be set. Remains opened until the user clicks or taps outside of the menu.
 
 <!---
-{{> ContextualMenuElem props=ContextualMenuModels.multiSelect }}
+{{> ContextualMenuExample props=ContextualMenuExampleModel.multiselect }}
 --->
 
 ## Optional functionality
@@ -23,14 +23,14 @@ Allows for multiple options to be set. Remains opened until the user clicks or t
 You can nest a ContextualMenu inside another ContextualMenu, resulting in a submenu.
 
 <!---
-{{> ContextualMenuElem props=ContextualMenuModels.subMenu }}
+{{> ContextualMenuExample props=ContextualMenuExampleModel.subMenu }}
 --->
 
 ### Dividers
 Dividers can be added to create distinct sections of options or commands.
 
 <!---
-{{> ContextualMenuElem props=ContextualMenuModels.dividers }}
+{{> ContextualMenuExample props=ContextualMenuExampleModel.dividers }}
 --->
 
 ## States
@@ -64,11 +64,8 @@ State | Applied to | Result
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all ContextualMenu components on the page:
     ```
     <script>
-        $(document).ready(function() {
-            if ($.fn.ContextualMenu) {
-                $('.ms-ContextualMenu').ContextualMenu();
-            }
-        });
+        var ContextualMenuElements = document.querySelectorAll(".ms-ContextualMenu");
+        var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElements[i]);
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
@@ -79,7 +76,3 @@ This component has no dependencies.
 
 ## Accessibility
 More details will be added here.
-
-<!---
-{{> ContextualMenuJS }}
---->

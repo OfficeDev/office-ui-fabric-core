@@ -10,27 +10,27 @@
 
 namespace fabric {
   "use strict";
-  
+
   export class Button {
-    
+
     private _container: Element;
     private _clickHandler: EventListener;
-    
+
     constructor(container: Element, clickHandler?: EventListener) {
       this._container = container;
-      
-      if(clickHandler) {
+
+      if (clickHandler) {
         this._clickHandler = clickHandler;
         this._setClick();
       }
     }
     
     public disposeEvents() {
-      this._container.removeEventListener('click', this._clickHandler, false);
+      this._container.removeEventListener("click", this._clickHandler, false);
     }
-    
+
     private _setClick() {
-      this._container.addEventListener('click', this._clickHandler, false);
+      this._container.addEventListener("click", this._clickHandler, false);
     }
   }
 }

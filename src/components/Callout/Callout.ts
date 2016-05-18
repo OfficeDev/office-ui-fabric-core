@@ -2,7 +2,7 @@
 
 /// <reference path="../Button/Button.ts"/>
 /// <reference path="../Button/IButton.ts"/>
-/// <reference path="../../../dist/js/fabric.templates.d.ts"/>
+/// <reference path="../../../dist/js/fabric.templates.ts"/>
 
 /**
  * Callout
@@ -13,44 +13,36 @@
 
 namespace fabric {
   "use strict";
-  
+
   export class Callout {
-    
+
     private _container: Element;
-    private _clickHandler: EventListener;
     private _ftl = new FabricTemplateLibrary();
-    
+
     constructor(container: Element, actions?: Array<IButton>) {
       this._container = container;
-      
+
       if (actions) {
         this._processActions(actions);
       }
     }
-    
+
     private _processActions(actions: Array<IButton>) {
       let _action;
       let _container;
-      for(let i = 0; i < actions.length; i++) {
+
+      for (let i = 0; i < actions.length; i++) {
         _action = actions[i];
-        
-        if(_action.container) {
+
+        if (_action.container) {
           _container = _action.container;
         } else {
-          _container = this._ftl.publicMethods.Button();
+          _container = this._ftl.Button();
         }
+        
+        // Update button
+        
       }
-    }
-    
-    
-    
-    
-    public disposeEvents() {
-      this._container.removeEventListener('click', this._clickHandler, false);
-    }
-    
-    private _setClick() {
-      this._container.addEventListener('click', this._clickHandler, false);
     }
   }
 }

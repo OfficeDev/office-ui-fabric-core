@@ -88,7 +88,7 @@ var Template = function(directories, dist, src, callback) {
         _createString += parentElementName + '.innerHTML += "' + someText + '";' + "\r\n";
       } else {
         
-        _createString += 'var ' + elementName + ' = document.createElement("' + element.name + '");'  + "\r\n";
+        _createString += 'let ' + elementName + ' = document.createElement("' + element.name + '");'  + "\r\n";
         var attributes = element.attribs || {};
         
         //Set Attribute
@@ -134,6 +134,7 @@ var Template = function(directories, dist, src, callback) {
         _newDom.push(dom[i]);
       }
     }
+    
     if(_newDom.length > 1) {
       ErrorHandling.generatePluginError("Fabric Super Templating Engine 9000", _errorNoRoot);
       ErrorHandling.generateBuildError(JSON.stringify(dom));
@@ -151,7 +152,7 @@ var Template = function(directories, dist, src, callback) {
         _existingElements.push(rootName);
         
         _createString += "public " + rootName + "() {";
-        _createString += 'var ' + newName + ' = document.createElement("' + _thisDom.name + '");';
+        // _createString += 'let ' + newName + ' = document.createElement("' + _thisDom.name + '");';
         
         parseElement(_thisDom, newName, {
           children: [],
@@ -175,13 +176,13 @@ var Template = function(directories, dist, src, callback) {
     mkdirp.sync(dist);
     fs.writeFileSync(_jsPath, _createString);
     
-    exec("dtsmake -s ./" + _jsPath, function (error, stdout, stderr) {
-      sys.print('stdout: ' + stdout);
-      sys.print('stderr: ' + stderr);
-      if (error !== null) {
-        console.log('exec error: ' + error);
-      }
-    });
+    // exec("dtsmake -s ./" + _jsPath, function (error, stdout, stderr) {
+    //   sys.print('stdout: ' + stdout);
+    //   sys.print('stderr: ' + stderr);
+    //   if (error !== null) {
+    //     console.log('exec error: ' + error);
+    //   }
+    // });
     
     //Completed
     if(callback) {

@@ -41,6 +41,7 @@ This component uses a Persona component to present the person, an OrgChart to pr
 -->
 
 <!---
-your comment goes here
-and here
+    your comment goes here
+    and here
+    
 -->

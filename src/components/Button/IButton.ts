@@ -1,5 +1,5 @@
 interface IButton {
-    container?: Element
+    container?: Element;
     label?: string;
     icon?: string;
     modifier?: string;

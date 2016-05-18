@@ -58,7 +58,6 @@ gulp.task('ComponentJS-typescript', function() {
       tscResult.dts.pipe(Plugins.concat("fabric.d.ts"))
                    .pipe(Plugins.header(Banners.getJSCopyRight()))
                    .pipe(gulp.dest(Config.paths.distJS))
-                   .pipe(gulp.dest(Config.paths.distJS))
                    .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                      title: "Output Fabric Component .d.ts built from TypeScript"
                    }))),

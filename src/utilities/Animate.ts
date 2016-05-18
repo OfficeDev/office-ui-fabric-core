@@ -4,7 +4,7 @@
 namespace fabric {
 
   const SCROLL_FRAME_RATE: number = 33;
-  
+
   interface ITransitionObj {
     element: HTMLElement;
     props: any;
@@ -14,10 +14,10 @@ namespace fabric {
     delay?: number;
     ease?: string;
     onEnd?: () => {};
-    onEndArgs?: Array<any>
+    onEndArgs?: Array<any>;
   }
-  
-  interface IAnimationObj { 
+
+  interface IAnimationObj {
     element: HTMLElement;
     keyframes: string;
     props: any;
@@ -26,9 +26,9 @@ namespace fabric {
     ease?: string;
     delay?: number;
     onEnd?: () => {};
-    onEndArgs?: Array<any>
+    onEndArgs?: Array<any>;
   }
-  
+
   interface IScrollObj {
     element: HTMLElement;
     props: any;
@@ -36,39 +36,39 @@ namespace fabric {
     beginTop?: number;
     change?: number;
     onEnd?: () => {};
-    onEndArgs?: Array<any>
+    onEndArgs?: Array<any>;
   }
-  
+
   export class Animate {
-    
+
     private static _transformProps: Array<string> = [
-      "x", 
-      "y", 
-      "z", 
-      "scaleX", 
-      "scaleY", 
-      "scaleZ", 
-      "rotate", 
-      "rotateX", 
-      "rotateY", 
-      "rotateZ", 
-      "skewX", 
+      "x",
+      "y",
+      "z",
+      "scaleX",
+      "scaleY",
+      "scaleZ",
+      "rotate",
+      "rotateX",
+      "rotateY",
+      "rotateZ",
+      "skewX",
       "skewY"
     ];
-	  private static _filters: Array<string> = [
-      "blur", 
-      "brightness", 
-      "contrast", 
-      "dropShadow", 
-      "grayscale", 
-      "hueRotate", 
-      "invert", 
-      "saturate", 
+    private static _filters: Array<string> = [
+      "blur",
+      "brightness",
+      "contrast",
+      "dropShadow",
+      "grayscale",
+      "hueRotate",
+      "invert",
+      "saturate",
       "sepia"
     ];
-	  private static _timeProps: Array<string> = ["duration", "ease", "delay"];
-	  private static _callbackProps: Array<string> = ["onEnd", "onEndArgs"];
-	  private static _animationObjects: Array<any> = [];
+    private static _timeProps: Array<string> = ["duration", "ease", "delay"];
+    private static _callbackProps: Array<string> = ["onEnd", "onEndArgs"];
+    private static _animationObjects: Array<any> = [];
 
    /**
     * @param {HTMLElement} element
@@ -81,7 +81,7 @@ namespace fabric {
     * @param {number} props.x props.y props.left, props.opacity etc... CSS values to transition to
 	 */
     public static transition(element: HTMLElement, props: any ): void {
-      var obj: ITransitionObj = { element: element, props: props, transformations: {} };
+      let obj: ITransitionObj = { element: element, props: props, transformations: {} };
       Animate._animationObjects.push(obj);
       Animate._parseProperties(obj);
       Animate._createTransition(obj);
@@ -167,7 +167,7 @@ namespace fabric {
       const delay: number = obj.delay || 0;
       obj.element.style.transitionProperty = Animate._getTransitionProperties(obj.tweenObj);
       obj.element.style.transitionDuration = duration.toString() + "s";
-      obj.element.style.transitionTimingFunction = obj.ease || "linear";;
+      obj.element.style.transitionTimingFunction = obj.ease || "linear";
       obj.element.style.transitionDelay = delay.toString() + "s";
     }
 
@@ -191,8 +191,7 @@ namespace fabric {
           hasTransform = true;
         } else if (Animate._contains(Animate._filters, key)) {
           hasFilter = true;
-        }
-        else {
+        } else {
           properties.push(Animate._camelCaseToDash(key));
         }
       }
@@ -225,7 +224,7 @@ namespace fabric {
 
     private static _setRegularValues(obj: ITransitionObj, key: string): void {
       let value: string = obj.tweenObj[key];
-      if(value.toString().indexOf("%") === -1) {
+      if (value.toString().indexOf("%") === -1) {
         value += (key !== "opacity") && (key !== "backgroundColor") && (key !== "boxShadow") ? "px" : "";
       }
       obj.element.style[key] = value;
@@ -244,7 +243,7 @@ namespace fabric {
     }
 
     private static _setTransformValues(obj: ITransitionObj, key: string): void {
-      if(/x|y|z|scaleX|scaleY|scaleZ|rotate|rotateX|rotateY|rotateZ|skewX|skewY/.test(key)) {
+      if (/x|y|z|scaleX|scaleY|scaleZ|rotate|rotateX|rotateY|rotateZ|skewX|skewY/.test(key)) {
         obj.transformations[key] = obj.tweenObj[key];
       }
     }
@@ -321,7 +320,7 @@ namespace fabric {
     }
 
     private static _camelCaseToDash(value: string): string {
-      return value.replace(/\W+/g, '-').replace(/([a-z\d])([A-Z])/g, '$1-$2').toLowerCase();
+      return value.replace(/\W+/g, "-").replace(/([a-z\d])([A-Z])/g, "$1-$2").toLowerCase();
     }
 
     private static _easeOutExpo(time: number, begin: number, change: number, duration: number): number {

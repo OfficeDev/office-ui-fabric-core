@@ -24,7 +24,7 @@ namespace fabric {
         this._setClick();
       }
     }
-    
+
     public disposeEvents() {
       this._container.removeEventListener("click", this._clickHandler, false);
     }

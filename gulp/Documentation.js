@@ -101,7 +101,7 @@ gulp.task('Documentation-handlebars', function(cb) {
    cb();
 });
 
-gulp.task('Documentation-template', ["Documentation-handlebars", "ComponentJS-typescript"], function(cb) {
+gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
     gulp.src(Config.paths.distJS + "/fabric.templates.ts")
     .pipe(Plugins.header(Banners.getJSCopyRight()))

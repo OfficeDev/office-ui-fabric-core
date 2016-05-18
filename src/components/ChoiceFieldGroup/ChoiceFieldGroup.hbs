@@ -4,6 +4,6 @@
     <label class="ms-Label {{#if props.required}} is-required {{/if}}">{{props.title}}</label>
   </div>
   {{#each props.fields}}
-    {{renderPartial component props}}
+    {{> (lookup . 'component') props=props}}
   {{/each}}
 </div> 

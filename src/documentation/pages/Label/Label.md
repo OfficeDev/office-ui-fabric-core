@@ -4,7 +4,20 @@ Used to label form elements such as TextField and Dropdown.
 ## Variants
 
 ### Default
-@@include('Label.html')
+<!---
+{{> LabelExample props=LabelExampleModel.props }}
+--->
+
+### Required
+<!---
+{{> LabelExampleRequired props=LabelExampleModel.propsRequired }}
+--->
+
+### Disabled
+<!---
+{{> LabelExampleDisabled props=LabelExampleModel.propsDisabled }}
+--->
+
 
 ## States
 State | Applied to | Result

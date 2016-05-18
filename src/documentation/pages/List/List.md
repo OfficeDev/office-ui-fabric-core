@@ -6,12 +6,16 @@ Presents a number of related items, either as a vertical list or in a grid.
 ### Default
 A standard vertical list of items.
 
-@@include('List.html')
+<!---
+{{> ListElem props=ListModels.basic }}
+--->
 
 ### Grid
 Places the list items in a grid, with the number of columns adjusting based on the screen size.
 
-@@include('List.Grid.html')
+<!---
+{{> ListElem props=ListModels.grid }}
+--->
 
 ## States
 This component has only the default state.
@@ -32,3 +36,7 @@ This component has no dependencies on other components, although it does often c
 
 ## Accessibility
 You can use a `ul` element if your content is unordered, or `ol` if the order of the content is important.
+
+<!---
+{{> ListJS }}
+--->

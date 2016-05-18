@@ -4,7 +4,9 @@ Used to create a hyperlink to another location.
 ## Variants
 
 ### Default
-@@include('Link.html')
+<!---
+{{> Link props=LinkModels.basic }}
+--->
 
 ## States
 This component has only the default state.

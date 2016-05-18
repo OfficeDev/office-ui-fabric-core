@@ -41,8 +41,31 @@ namespace fabric {
   
   export class Animate {
     
-    private static _transformProps: Array<string> = ["x", "y", "z", "scaleX", "scaleY", "scaleZ", "rotate", "rotateX", "rotateY", "rotateZ", "skewX", "skewY"];
-	  private static _filters: Array<string> = ["blur", "brightness", "contrast", "dropShadow", "grayscale", "hueRotate", "invert", "saturate", "sepia"];
+    private static _transformProps: Array<string> = [
+      "x", 
+      "y", 
+      "z", 
+      "scaleX", 
+      "scaleY", 
+      "scaleZ", 
+      "rotate", 
+      "rotateX", 
+      "rotateY", 
+      "rotateZ", 
+      "skewX", 
+      "skewY"
+    ];
+	  private static _filters: Array<string> = [
+      "blur", 
+      "brightness", 
+      "contrast", 
+      "dropShadow", 
+      "grayscale", 
+      "hueRotate", 
+      "invert", 
+      "saturate", 
+      "sepia"
+    ];
 	  private static _timeProps: Array<string> = ["duration", "ease", "delay"];
 	  private static _callbackProps: Array<string> = ["onEnd", "onEndArgs"];
 	  private static _animationObjects: Array<any> = [];

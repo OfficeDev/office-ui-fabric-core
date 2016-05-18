@@ -108,24 +108,24 @@
     }
   }
 
-  &:focus,
-  &:hover {
-    & .ms-Toggle-field {
+  .ms-Toggle-field {
+    &:focus,
+    &:hover {
       background-color: $ms-color-neutralLight;
     }
 
-    & .ms-Toggle-field.is-selected {
+    &.is-selected {
       background-color: $ms-color-themeDark;
     }
 
     .ms-Label {
       color: $ms-color-black;
     }
-  }
 
-  &:active {
-    .ms-Label {
-      color: $ms-color-neutralPrimary;
+    &:active {
+      .ms-Label {
+        color: $ms-color-neutralPrimary;
+      }
     }
   }
 

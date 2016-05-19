@@ -28,32 +28,26 @@ namespace fabric {
     private _command;
     private _commandButton;
     private _splitButton;
-    private _modalHost;
     private _modalHostView;
     private _container: HTMLElement;
-    private _ftl = new FabricTemplateLibrary();
-    private _dropdown: any;
     private _contextualMenu: HTMLElement;
-    private _contextualMenuItem: Node;
-    private _dropdownCollection: Array<Node>;
 
     constructor(container: HTMLElement, contextMenu?: HTMLElement) {
       this._container = container;
       this._command = this._container;
       this._commandButton = this._command.querySelector(CB_BUTTON_CLASS);
       this._splitButton = this._command.querySelector(CB_SPLIT_CLASS);
-      
-      if(contextMenu) {
+
+      if (contextMenu) {
         this._contextualMenu = contextMenu;
       } else {
         this._contextualMenu = <HTMLElement>this._container.querySelector(CONTEXT_CLASS);
       }
-      
+
       this._checkForMenu();
     }
-    
+
     private _createModalHostView() {
-      //Create Contextual menu
       this._modalHostView = new fabric.ContextualHost(this._contextualMenu, MODAL_POSITION, this._command);
     }
 

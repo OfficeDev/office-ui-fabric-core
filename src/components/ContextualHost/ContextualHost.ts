@@ -48,7 +48,7 @@ namespace fabric {
       this._contextualHost = this._container;
       this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
       this._contextualHostMain.appendChild(content);
-      
+
       this._targetElement = targetElement;
       this._openModal();
       this._setResizeDisposal();
@@ -59,14 +59,14 @@ namespace fabric {
       document.removeEventListener("click", this._disMissAction, true);
       this._container.parentNode.removeChild(this._container);
     }
-    
+
     public setChildren(value: ContextualHost): void {
       if (!this._children) {
         this._children = [];
       }
       this._children.push(value);
     }
-    
+
     public contains(value: HTMLElement): boolean {
       return this._container.contains(value);
     }
@@ -256,7 +256,7 @@ namespace fabric {
     private _copyModalToBody(): void {
       document.body.appendChild(this._container);
     }
-    
+
     private _saveModalSize(): void {
       let _modalStyles = window.getComputedStyle(this._container);
       this._container.setAttribute("style", "opacity: 0; z-index: -1");

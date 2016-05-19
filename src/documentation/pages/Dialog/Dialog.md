@@ -68,13 +68,13 @@ This component has only the default state.
     ```
 2. Copy the HTML from one of the samples above into your page. For example:
     ```
-    <button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--sample">
+    <button class="ms-Button js-DialogAction--open">
         <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
         <span class="ms-Button-label">Open Dialog</span>
         <span class="ms-Button-description">Opens the Sample Dialog</span>
     </button>
 
-    <div class="ms-Dialog ms-Dialog--sample">
+    <div class="ms-Dialog">
         <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
         <div class="ms-Dialog-main">
             <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">

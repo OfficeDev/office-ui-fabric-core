@@ -9,15 +9,6 @@
  *
  */
 
-export interface IContextualMenuItem {
-  title: string,
-  state: string
-}
-
-export interface IContextualMenu {
-  items: Array<IContextualMenuItem>;
-  state?: string;
-}
 
 /**
  * @namespace fabric
@@ -42,11 +33,11 @@ namespace fabric {
     private _container: HTMLElement;
     private _contextualHost: Element;
     private _ftl = new FabricTemplateLibrary();
-    private _dropdown: IContextualMenu;
+    private _dropdown: any;
     private _contextualMenu: Element;
     private _contextualMenuItem: Node;
 
-    constructor(container: HTMLElement, dropdown?: IContextualMenu) {
+    constructor(container: HTMLElement, dropdown?: any) {
       this._container = container;
       this._checkForMenu();
       this._command = this._container;
@@ -66,7 +57,6 @@ namespace fabric {
       
       // Clear contextual menu
       this._contextualMenu.innerHTML = "";
-      
        
       // Construct the menu
       for (let i = 0; i < this._dropdown.items.length; i++) {
@@ -75,8 +65,8 @@ namespace fabric {
        let state = item.state;
        let newItem = <Element>this._contextualMenuItem.cloneNode(true);
        this._contextualHost.appendChild(newItem);
-       newItem.innerText = text;
-       newItem.style;
+       newItem.innerHTML = text;
+       newItem.classList.add(state);
       }
     }
     

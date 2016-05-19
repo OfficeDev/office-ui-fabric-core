@@ -10,13 +10,13 @@
 
 namespace fabric {
 
-  const CONTEXTUAL_HOST_CLASS = ".ms-ContextualHost";
+  // const CONTEXTUAL_HOST_CLASS = ".ms-ContextualHost";
   const MODAL_POSITION = "top";
 
   export class Persona {
 
     private _persona: Element;
-    private _contextualHost: Element;
+    private _personaCard: Element;
     private _contextualHostInstance: ContextualHost;
 
     /**
@@ -27,15 +27,22 @@ namespace fabric {
     constructor(container: Element) {
       this._persona = container;
       // If Persona Card and Contextual host exist continue
-      this._contextualHost = this._persona.querySelector(CONTEXTUAL_HOST_CLASS);
+      // this._contextualHost = this._persona.querySelector(CONTEXTUAL_HOST_CLASS);
+      this._personaCard = this._persona.querySelector(".ms-PersonaCard");
 
-      if (this._contextualHost) {
+      if (this._personaCard) {
         this._assignEvents();
+        this._personaCard.setAttribute("style", "display: none;");
       }
     }
 
     private _createContextualHostInstance() {
-      this._contextualHostInstance = new fabric.ContextualHost(<HTMLElement>this._contextualHost, MODAL_POSITION, this._persona);
+      this._personaCard.setAttribute("style", "display: block;");
+      this._contextualHostInstance = new fabric.ContextualHost(
+        <HTMLElement>this._personaCard, 
+        MODAL_POSITION, 
+        this._persona
+      );
     }
 
     private _personaEventHandler() {

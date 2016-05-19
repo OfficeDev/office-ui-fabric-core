@@ -66,11 +66,6 @@
   }
 }
 
-// Add space between adjacent buttons.
-.ms-Button + .ms-Button {
-  margin-left: 6px;
-}
-
 .ms-Button-label {
   color: $ms-color-neutralPrimary;
   font-weight: $ms-font-weight-semibold;
@@ -198,9 +193,10 @@
 //== Modifier: Compound button
 //
 .ms-Button.ms-Button--compound {
+  display: block;
   height: auto;
-  min-height: 72px;
   max-width: 280px;
+  min-height: 72px;
   padding: 20px;
 
   .ms-Button-label {

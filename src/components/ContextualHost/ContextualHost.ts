@@ -43,7 +43,6 @@ namespace fabric {
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-
       this._container = this._ftl.ContextualHost();
       this._contextualHost = this._container;
       this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
@@ -307,6 +306,7 @@ namespace fabric {
 
     private _setDismissClick() {
       document.addEventListener("click", this._disMissAction, true);
+      document.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode === 32 || e.keyCode === 27) ? this._disMissAction(e) : null, true);
     }
 
     private _resizeAction() {

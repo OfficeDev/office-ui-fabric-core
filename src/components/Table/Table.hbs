@@ -3,16 +3,22 @@
 <table class="ms-Table {{#if props.modifier}} ms-Table--{{props.modifier}}{{/if}}">
   <thead>
     <tr>
+      {{#if props.isSelectable}}
+        <th class="ms-Table-rowCheck"></th>
+      {{/if}}
       {{#each props.headers}}
-        <th class="{{#if rowModifier}} ms-Table-{{rowModifier}}{{/if}}">{{value}}</th>
+        <th>{{value}}</th>
       {{/each}}
     </tr>
   </thead>
   <tbody>
     {{#each props.rows}}
       <tr>
+        {{#if ../props.isSelectable}}
+          <td class="ms-Table-rowCheck"></td>
+        {{/if}}
         {{#each columns}}
-          <td class="{{#if rowModifier}} ms-Table-{{rowModifier}}{{/if}}">{{value}}</td>
+          <td>{{value}}</td>
         {{/each}}
       </tr>
     {{/each}}

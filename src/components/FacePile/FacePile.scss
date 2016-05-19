@@ -3,20 +3,20 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// Facepile styles
+// FacePile styles
 
-
-.ms-Facepile {
+.ms-FacePile {
   position: relative;
   height: 32px;
   width: auto;
+  font-family: $ms-font-family-base;
 
-  .ms-Facepile-personaCardHost {
+  .ms-FacePile-personaCardHost {
     display: none;
   }
 }
 
-.ms-Facepile-addButton {
+.ms-FacePile-addButton {
   @include button-reset;
   position: relative;
   height: 32px;
@@ -36,7 +36,7 @@
   }
 }
 
-.ms-Facepile-addButton.ms-Facepile-addButton--addPerson {
+.ms-FacePile-addButton.ms-FacePile-addButton--addPerson {
   background-color: $ms-color-themePrimary;
   color: $ms-color-white;
   font-size: $ms-font-size-l - 1;
@@ -55,7 +55,7 @@
   }
 }
 
-.ms-Facepile-addButton.ms-Facepile-addButton--overflow {
+.ms-FacePile-addButton.ms-FacePile-addButton--overflow {
   background-color: $ms-color-neutralLight;
   color: $ms-color-neutralSecondary;
   display: none;
@@ -73,18 +73,18 @@
   }
 }
 
-.ms-Facepile-addPersonIcon {
+.ms-FacePile-addPersonIcon {
   position: relative;
   top: -1px;
 }
 
-.ms-Facepile-overflowText {
+.ms-FacePile-overflowText {
   font-size: $ms-font-size-m;
 }
 
 //== Panels
 // Overflow panel - only show member list
-.ms-Facepile-panel.ms-Facepile-panel--overflow {
+.ms-FacePile-panel.ms-FacePile-panel--overflow {
   .ms-Panel-headerText,
   .ms-PeoplePicker-searchBox,
   .ms-PeoplePicker-results,
@@ -93,7 +93,7 @@
   }
 
   .ms-PeoplePicker-selectedHeader {
-    font-family: $ms-font-family-light;
+    font-weight: $ms-font-weight-light;
     font-size: $ms-font-size-xl;
     color: $ms-color-neutralPrimary;
     line-height: 82px;

@@ -7,8 +7,11 @@
 
 
 .ms-ContextualMenu {
-  @include ms-font-m;
   @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   display: block;
   min-width: 180px;
   list-style-type: none;
@@ -38,7 +41,7 @@
   &.is-selected {
     background-color: $ms-color-themeLight;
     color: $ms-color-black;
-    font-family: $ms-font-family-semibold;
+    font-weight: $ms-font-weight-semibold;
 
     &:hover {
       background-color: $ms-color-themeLight;

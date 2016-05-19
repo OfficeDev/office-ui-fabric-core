@@ -49,7 +49,7 @@ A persona can have one of seven presences: available, away, blocked, busy, do no
 {{> Persona props=PersonaExampleProps.token}}
 --->
 
-### Facepile
+### FacePile
 <!---
 {{> Persona props=PersonaExampleProps.facePile}}
 {{> Persona props=PersonaExampleProps.facePile}}

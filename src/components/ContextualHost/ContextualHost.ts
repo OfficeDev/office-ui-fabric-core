@@ -43,13 +43,11 @@ namespace fabric {
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-      
+
       this._container = this._ftl.ContextualHost();
-      this._contextualHostMain = this._container.querySelector(".ms-ContextualHost-main");
+      this._contextualHost = this._container;
+      this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
       this._contextualHostMain.appendChild(content);
-      
-      // this.contextualHostMain = this._contextualHost.querySelector(this._ftl.ContextualHost().ContextualHostMain);
-      // this._container = container;
       
       this._targetElement = targetElement;
       this._cloneModal();

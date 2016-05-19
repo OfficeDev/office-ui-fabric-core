@@ -1,18 +1,18 @@
-# Facepile
+# FacePile
 Displays several people with the option to add additional people or view the details of a person.
 
 ## Variants
 
 ### Default
 <!---
-{{> FacepileElem props=FacepileModels.basic }}
+{{> FacePileElem props=FacePileModels.basic }}
 --->
 
 ## States
 State | Applied to | Result
  --- | --- | ---
 `.is-active` | `.ms-PersonaCard` | Makes the PersonaCard for a person visible.
-`.is-active` | `.ms-Facepile-itemBtn--overflow` | Makes the overflow item for additional people visible.
+`.is-active` | `.ms-FacePile-itemBtn--overflow` | Makes the overflow item for additional people visible.
 
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
@@ -29,8 +29,8 @@ State | Applied to | Result
     ```
     <script>
         $(document).ready(function() {
-            if ($.fn.Facepile) {
-                $('.ms-Facepile').Facepile();
+            if ($.fn.FacePile) {
+                $('.ms-FacePile').FacePile();
             }
         });
     </script>
@@ -45,5 +45,5 @@ This component has dependencies on Overlay, Link, Panel, PeoplePicker, Persona, 
 More details will be added here.
 
 <!---
-{{> FacepileJS }}
+{{> FacePileJS }}
 --->

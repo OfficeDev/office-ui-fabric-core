@@ -33,7 +33,7 @@ namespace fabric {
     label: string;
     icon: string;
     isCollapsed: boolean;
-    commandButtonRef: CommandButton;
+    commandButtonRef: fabric.CommandButton;
   }
 
   const CONTEXTUAL_MENU = ".ms-ContextualMenu";

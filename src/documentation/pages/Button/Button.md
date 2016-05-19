@@ -56,3 +56,7 @@ This component has no dependencies.
 
 ## Accessibility
 Focus styles are included for keyboard navigation.
+
+<!---
+{{> ButtonExampleJS }}
+--->

@@ -55,8 +55,11 @@
 
 // Toggle
 .ms-Toggle {
-  @include ms-font-m;
   @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   position: relative;
   display: block;
   margin-bottom: 26px;
@@ -108,31 +111,36 @@
     }
   }
 
-  &:focus,
-  &:hover {
-    & .ms-Toggle-field {
+  .ms-Toggle-field {
+    &:focus,
+    &:hover {
       background-color: $ms-color-neutralLight;
+      outline: 0;
     }
 
-    & .ms-Toggle-field.is-selected {
-      background-color: $ms-color-themeDark;
+    &.is-selected {
+      &:focus,
+      &:hover {
+        background-color: $ms-color-themeDark;
+      }
     }
 
     .ms-Label {
       color: $ms-color-black;
+      user-select: none;
     }
-  }
 
-  &:active {
-    .ms-Label {
-      color: $ms-color-neutralPrimary;
+    &:active {
+      .ms-Label {
+        color: $ms-color-neutralPrimary;
+      }
     }
   }
 
   // Disabled state
   &.is-disabled {
     .ms-Label {
-     @include ms-Label-is-disabled;
+      @include ms-Label-is-disabled;
     }
 
     .ms-Toggle-field {
@@ -181,9 +189,7 @@
 
 // On/Off slide states
 .ms-Toggle-input {
-  position: absolute;
-  opacity: 0;
-  top: 0;
+  display: none;
 }
 
 //== Modifier: Toggle with description text left

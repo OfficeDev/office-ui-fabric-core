@@ -24,12 +24,6 @@
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
 
-  &:hover {
-    background-color: $ms-color-neutralLighter;
-    cursor: pointer;
-    outline: 1px solid transparent;
-  }
-
   // Rows can be selected.
   &.is-selected {
     background-color: $ms-color-themeLight;
@@ -113,6 +107,16 @@
     position: absolute;
     top: 6px;
     width: 14px;
+  }
+}
+
+// A table with selectable rows
+.ms-Table--selectable {
+  tr:hover,
+  .ms-Table-row:hover {
+    background-color: $ms-color-neutralLighter;
+    cursor: pointer;
+    outline: 1px solid transparent;
   }
 }
 

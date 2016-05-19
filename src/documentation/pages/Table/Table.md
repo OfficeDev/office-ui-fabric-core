@@ -15,6 +15,12 @@ The columns are split evenly, regardless of their content.
 {{> Table props=TableFixedExampleModel}}
 --->
 
+### Selectable
+Rows can be selected.
+<!---
+{{> Table props=TableSelectableExampleModel}}
+--->
+
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
     ```
@@ -28,3 +34,7 @@ The columns are split evenly, regardless of their content.
 
 ## Dependencies
 This component has no dependency on other components.
+
+<!---
+{{> TableExampleJS }}
+--->

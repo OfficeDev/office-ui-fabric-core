@@ -1,5 +1,6 @@
-var TableFixedExampleModel = {
-  "modifier": "fixed",
+var TableSelectableExampleModel = {
+  "modifier": "selectable",
+  isSelectable: true,
   "headers": [
     {
       "value": "Location"
@@ -130,4 +131,4 @@ var TableFixedExampleModel = {
   ]
 }
 
-module.exports = TableFixedExampleModel;
+module.exports = TableSelectableExampleModel;

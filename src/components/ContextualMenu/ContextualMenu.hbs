@@ -4,13 +4,13 @@
     {{#if modifier}}
       <li class="ms-ContextualMenu-item ms-ContextualMenu-item--{{modifier}}">{{title}}</li>
     {{else}}
-      <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}}">
+      <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}} {{#if subMenuItems}}ms-ContextualMenu-item--hasMenu{{/if}}">
         <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
         {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
-      </li>
-      {{#if subMenuItems}}
-        <ul class="ms-ContextualMenu">
-          {{#each subMenuItems}}
+        {{#if subMenuItems}}
+          <i class="ms-ContextualMenu-subMenuIcon ms-Icon ms-Icon--chevronRight"></i>
+          <ul class="ms-ContextualMenu is-hidden">
+            {{#each subMenuItems}}
             <li class="ms-ContextualMenu-item {{#if state}} {{state}} {{/if}}">
               <a class="ms-ContextualMenu-link" {{#if href}} href="" {{/if}}>{{title}}</a>
               {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
@@ -18,6 +18,7 @@
           {{/each}} 
         </ul>  
       {{/if}}
+      </li>
     {{/if}}
   {{/each}}
 </ul>

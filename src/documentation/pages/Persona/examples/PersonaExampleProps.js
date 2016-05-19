@@ -64,7 +64,6 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeCheck",
     "modifiers":  [
       {
         "name": "square"
@@ -76,7 +75,6 @@ var PersonaExampleProps = {
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
     "tertiaryText": "In a meeting",
-    "icon": "skypeCheck",
     "modifiers":  [
       {
         "name": "lg"
@@ -92,7 +90,6 @@ var PersonaExampleProps = {
     "secondaryText": "Accountant",
     "tertiaryText": "In a meeting",
     "optionalText": "Available at 4:00pm",
-    "icon": "skypeCheck",
     "modifiers":  [
       {
         "name": "xl"
@@ -106,7 +103,6 @@ var PersonaExampleProps = {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
     "secondaryText": "Accountant",
-    "icon": "skypeCheck",
     "modifiers":  [
       {
         "name": "sm"
@@ -119,7 +115,6 @@ var PersonaExampleProps = {
   "squareExtraSmall": {
     "image": "Persona.Person2.png",
     "primaryText": "Alton Lafferty",
-    "icon": "skypeCheck",
     "modifiers":  [
       {
         "name": "xs"
@@ -131,7 +126,6 @@ var PersonaExampleProps = {
   },
   "squareTiny": {
     "primaryText": "Alton Lafferty",
-    "icon": "skypeCheck",
     "modifiers":  [
       {
         "name": "tiny"

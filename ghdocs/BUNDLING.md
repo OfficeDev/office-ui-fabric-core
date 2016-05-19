@@ -39,7 +39,7 @@ This will produce the following:
 @import '../../../src/components/Breadcrumb/Breadcrumb.scss';
 @import '../../../src/components/Button/Button.scss';
 @import '../../../src/components/Callout/Callout.scss';
-@import '../../../src/components/ChoiceField/ChoiceField.scss';
+@import '../../../src/components/CheckBox/CheckBox.scss';
 @import '../../../src/components/CommandBar/CommandBar.scss';
 @import '../../../src/components/ContextualMenu/ContextualMenu.scss';
 @import '../../../src/components/DatePicker/DatePicker.scss';

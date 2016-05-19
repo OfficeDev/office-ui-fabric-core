@@ -35,6 +35,7 @@ $CommandButtonBlue: #2488D8;
   right: 0;
   z-index: $ms-zIndex-front;
   font-family: $ms-font-family-base;
+  display: none;
 
   // Animations -- Default (anchored right)
   &.animate-in {
@@ -43,6 +44,10 @@ $CommandButtonBlue: #2488D8;
 
   &.animate-out {
     @include ms-u-slideRightOut40;
+  }
+  
+  &.is-open {
+    display: block;
   }
 }
 

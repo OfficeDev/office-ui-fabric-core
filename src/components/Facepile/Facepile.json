@@ -1,8 +1,8 @@
 {
-  "name": "Facepile",
+  "name": "FacePile",
   "notes": "",
-  "template": "Facepile.html",
-  "class": "ms-Facepile",
+  "template": "FacePile.html",
+  "class": "ms-FacePile",
   "dependencies": [
     "Overlay",
     "Link",

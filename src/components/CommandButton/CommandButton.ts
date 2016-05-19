@@ -36,6 +36,7 @@ namespace fabric {
     private _dropdown: any;
     private _contextualMenu: Element;
     private _contextualMenuItem: Node;
+    private _dropdownCollection: Array<Node>;
 
     constructor(container: HTMLElement, dropdown?: any) {
       this._container = container;
@@ -72,7 +73,7 @@ namespace fabric {
     
     private _createModalHostView() {
       //Create Contextual menu
-      this._modalHostView = new fabric.ContextualHost(this._modalHost, MODAL_POSITION, this._command);
+      this._modalHostView = new fabric.ContextualHost(this._contextualMenu, MODAL_POSITION, this._command);
     }
 
     private _setClick() {

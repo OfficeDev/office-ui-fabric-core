@@ -9,6 +9,7 @@
   display: table;
   width: 100%;
   border-collapse: collapse;
+  font-family: $ms-font-family-base;
 }
 
 // makes the table cells not expand with the content, keeping the table cells at a fixed size
@@ -20,7 +21,7 @@
 .ms-Table-row {
   display: table-row;
   line-height: 30px;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
 
@@ -61,7 +62,7 @@
 // Style the first row as a header.
 .ms-Table thead th,
 .ms-Table-head {
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
 }

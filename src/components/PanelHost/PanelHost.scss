@@ -9,18 +9,8 @@ $Panel-width-lightDismiss: 272px;
   top: 0;
   pointer-events: none;
   z-index: $ms-zIndex-front;
+  font-family: $ms-font-family-base;
 }
-
-// .ms-PanelHost-inner {
-//    right: 0;
-//    top: 0;
-//    bottom: 0;
-//    width: auto;
-//    position: absolute;
-//    background-color: $ms-color-white;
-//    height: 100%;
-// }
-
 
 //== State: When the panel is open.
 //

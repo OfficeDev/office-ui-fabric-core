@@ -22,6 +22,7 @@ $CommandBarItem-height: $CommandBar-height;
   padding-left: 0;
   border: 0;
   position: relative;
+  font-family: $ms-font-family-base;
 
   &:focus {
     outline: none;

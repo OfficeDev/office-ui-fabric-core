@@ -13,16 +13,19 @@
 }
 
 .ms-Dialog {
-  // @TODO: Temporary, remove this and use a ContextualHost either
-  //        inside of ms-Dialog or to contain the whole dialog.
   max-width: 340px;
   @include drop-shadow(0, 0, 5px, 0, .4);
   position: relative;
-  // End temporary lines.
-
+  display: none;
   height: auto;
   padding: 0 20px 20px;
   font-family: $ms-font-family-base;
+  background-color: $ms-color-white;
+}
+
+.ms-Dialog.is-open {
+  display: block;
+  position: fixed;
 }
 
 // Close button, hidden by default

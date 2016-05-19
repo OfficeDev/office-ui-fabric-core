@@ -6,36 +6,51 @@ Displays content that temporarily blocks interactions with the application. It i
 ### Default
 Includes a content area and two buttons.
 
-<!-- 
-{{> Dialog props=DialogExampleModel.props }}
+<!---
+<div class="docs-DialogExample">
+  {{> Dialog props=DialogExampleModel.props }}
+  <button class="ms-Button docs-DialogExample-button">Open Dialog</button>
+</div>
 --->
 
 ### Multiline
 Includes multiple large buttons, each with a title and description.
 
-<!-- 
-{{> Dialog props=DialogExampleModel.propsMultiline }}
+<!---
+<div class="docs-DialogExample">
+  {{> Dialog props=DialogExampleModel.propsMultiline }}
+  <button class="ms-Button docs-DialogExample-button">Open Dialog</button>
+</div>
 --->
 
 ### Large Header
 Provides a large, styled header followed by a content area and two buttons.
 
-<!-- 
-{{> Dialog props=DialogExampleModel.propslgHeader }}
+<!---
+<div class="docs-DialogExample">
+  {{> Dialog props=DialogExampleModel.propslgHeader }}
+  <button class="ms-Button docs-DialogExample-button">Open Dialog</button>
+</div>
 --->
 
 ### Blocking
 The overlay for this variant does not dismiss the Dialog.
 
-<!-- 
-{{> Dialog props=DialogExampleModel.propsBlocking }}
+<!---
+<div class="docs-DialogExample">
+  {{> Dialog props=DialogExampleModel.propsBlocking }}
+  <button class="ms-Button docs-DialogExample-button">Open Dialog</button>
+</div>
 --->
 
 ### Close
 Includes a close button at the top right, as an additional way to dismiss the dialog.
 
-<!-- 
-{{> Dialog props=DialogExampleModel.propsClose }}
+<!---
+<div class="docs-DialogExample">
+  {{> Dialog props=DialogExampleModel.propsClose }}
+  <button class="ms-Button docs-DialogExample-button">Open Dialog</button>
+</div>
 --->
 
 ## States
@@ -112,3 +127,7 @@ This component has no dependencies on other components.
 
 ## Accessibility
 More details will be added here.
+
+<!--- 
+{{> DialogExampleJS }}
+--->

@@ -6,6 +6,7 @@
 // Choice fields (radio buttons and checkboxes) styles
 
 
+
 // Unselected, radio button (default)
 .ms-ChoiceField {
 	@include ms-font-m;
@@ -45,8 +46,12 @@
 // The original unstyled input element
 .ms-ChoiceField-input {
 	position: absolute;
-	opacity: 0;
-	top: 8px;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 // The choicefield radio button or checkbox

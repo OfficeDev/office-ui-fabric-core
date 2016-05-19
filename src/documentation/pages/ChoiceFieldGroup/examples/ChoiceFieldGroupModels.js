@@ -2,6 +2,7 @@ var ChoiceFieldGroupModels = {
   "props": {
    "title": "Unselected",
    "required": true,
+   "id": "choicefieldgroup",
    "fields": [
      {
        "component": "ChoiceField",
@@ -35,7 +36,7 @@ var ChoiceFieldGroupModels = {
           "name": "choicefieldgroup",
           "id": "option3",
           "checked": false,
-          "disabled": false,
+          "disabled": true,
           "type": "radio"
         }
      },

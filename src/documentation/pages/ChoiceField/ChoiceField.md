@@ -12,14 +12,6 @@ Used to indicate a simple yes or no choice, typically as part of a form.
 {{> ChoiceFieldElem props=ChoiceFieldModels.checkboxSelected }}
 --->
 
-### Radio button
-
-<!---
-{{> ChoiceFieldElem props=ChoiceFieldModels.basic }}
-{{> ChoiceFieldElem props=ChoiceFieldModels.disabled }}
-{{> ChoiceFieldElem props=ChoiceFieldModels.selected }}
---->
-
 
 ## States
 State | Applied to | Result

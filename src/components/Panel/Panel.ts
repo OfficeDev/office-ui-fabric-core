@@ -29,23 +29,21 @@ namespace fabric {
       this._panel = panel;
       this._direction = direction || "right";
       this._animateOverlay = animateOverlay || true;
-      this._panelHost = new fabric.PanelHost(this._panel.cloneNode(true), this._animateInPanel);
-      this._hideReferencePanel();
+      this._panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
     }
 
-    public dismiss() {
+    public dismiss(callBack?: Function) {
       this._panel.classList.add(ANIMATE_OUT_STATE);
       setTimeout(() => {
         this._panelHost.dismiss();
+        if (callBack) {
+          callBack();
+        }
       }, ANIMATION_END);
     }
 
     private _animateInPanel(layer: Element) {
       layer.classList.add(ANIMATE_IN_STATE);
-    }
-
-    private _hideReferencePanel() {
-      this._panel.setAttribute("style", "display: none");
     }
   }
 }

@@ -156,11 +156,7 @@
   position: absolute;
   width: 100%;
   max-height: 200px;
-  // max-width: 268px;
   z-index: ($ms-zIndex-Dropdown + $ms-zIndex-back);
-  // top: 0;
-  // right: 0;
-  // bottom: 0;
   overflow-y: scroll;
 
   top: auto;
@@ -250,30 +246,3 @@
 
   @include highContrastListItemState;
 }
-
-// @media (max-width: $ms-screen-sm-max) {
-//   .ms-Dropdown-items {
-//     box-shadow: none;
-//     overflow-y: auto;
-
-//     &:before {
-//       content: none;
-//       border: 0;
-//     }
-//   }
-// }
-
-// @media (min-width: $ms-screen-md-min) {
-//   // On larger screens, display as a traditional dropdown.
-//   .ms-Dropdown-items {
-//     top: auto;
-//     right: auto;
-//     bottom: auto;
-//     left: auto;
-//     max-width: 100%;
-//   }
-
-//   .ms-Dropdown.is-open .ms-Dropdown-items {
-//     position: absolute;
-//   }
-// }

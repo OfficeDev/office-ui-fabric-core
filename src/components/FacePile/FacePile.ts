@@ -4,9 +4,9 @@
 
 namespace fabric {
   /**
-   * Facepile
+   * FacePile
    *
-   * A host for Facepile
+   * A host for FacePile
    *
    */
   const PERSONA_CLASS = ".ms-Persona";
@@ -24,14 +24,14 @@ namespace fabric {
     personaInstance: Persona;
   }
 
-  export class Facepile {
+  export class FacePile {
 
     private _personaCollection: Array<PersonaCollection> = [];
     private _facePile: Element;
 
     /**
      *
-     * @param {HTMLElement} container - the target container for an instance of Facepile
+     * @param {HTMLElement} container - the target container for an instance of FacePile
      * @constructor
      */
     constructor(container: Element) {

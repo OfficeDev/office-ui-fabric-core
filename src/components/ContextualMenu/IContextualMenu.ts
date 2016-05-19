@@ -1,7 +1,7 @@
 
 export interface IContextualMenuItem {
-  title: string,
-  state: string
+  title: string;
+  state: string;
 }
 
 export interface IContextualMenu {

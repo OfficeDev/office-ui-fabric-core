@@ -22,7 +22,7 @@ namespace fabric {
   const CB_SPLIT_CLASS = ".ms-CommandButton-splitIcon";
   const CB_BUTTON_CLASS = ".ms-CommandButton-button";
   const MODAL_POSITION = "bottom";
-  
+
   export class CommandButton {
 
     private _command;
@@ -51,25 +51,6 @@ namespace fabric {
       
       this._checkForMenu();
     }
-
-    // private _createContextualMenu() {
-    //   this._contextualMenu = <HTMLElement>this._ftl.ContextualHost();
-    //   this._contextualMenuItem = <HTMLElement>this._contextualMenu.querySelector(".ms-ContextualMenu-item").cloneNode(true);
-      
-    //   // Clear contextual menu
-    //   this._contextualMenu.innerHTML = "";
-       
-    //   // Construct the menu
-    //   for (let i = 0; i < this._dropdown.items.length; i++) {
-    //    let item = this._dropdown.items[i];
-    //    let text = item.title;
-    //    let state = item.state;
-    //    let newItem = <Element>this._contextualMenuItem.cloneNode(true);
-    //    this._contextualHost.appendChild(newItem);
-    //    newItem.innerHTML = text;
-    //    newItem.classList.add(state);
-    //   }
-    // }
     
     private _createModalHostView() {
       //Create Contextual menu

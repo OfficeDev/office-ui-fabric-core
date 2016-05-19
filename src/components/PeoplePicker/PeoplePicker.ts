@@ -10,14 +10,13 @@ namespace fabric {
    * People picker control
    *
    */
-  const CONTEXT_CLASS = ".ms-ContextualHost";
   const MODAL_POSITION = "bottom";
 
   export class PeoplePicker {
 
     private _container: Element;
     private _contextualHostView: ContextualHost;
-    private _contextualHost: Element;
+    private _peoplePickerMenu: Element;
 
     /**
      *
@@ -27,12 +26,17 @@ namespace fabric {
     constructor(container: Element) {
       this._container = container;
       this._assignClicks();
-      this._contextualHost = this._container.querySelector(CONTEXT_CLASS);
+      this._peoplePickerMenu = this._container.querySelector(".ms-PeoplePicker-results");
+
+      if (this._peoplePickerMenu) {
+        this._peoplePickerMenu.setAttribute("style", "display: none;");
+      }
     }
 
     private _createModalHost() {
+      this._peoplePickerMenu.setAttribute("style", "display: block;");
       this._contextualHostView = new fabric.ContextualHost(
-        <HTMLElement>this._contextualHost,
+        <HTMLElement>this._peoplePickerMenu,
         MODAL_POSITION,
         this._container,
         true
@@ -45,6 +49,10 @@ namespace fabric {
 
     private _assignClicks() {
       this._container.addEventListener("click", this._clickHandler.bind(this), true);
+      this._container.addEventListener("focus", this._clickHandler.bind(this), true);
+      // if (!this._contextualHostView) {
+      //   this._container.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode != 27) ? this._clickHandler(e) : null, true);
+      // }
     }
   }
 }

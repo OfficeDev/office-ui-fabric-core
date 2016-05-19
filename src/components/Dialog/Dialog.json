@@ -19,7 +19,7 @@
   ],
   "dependencies": [
     "Button",
-    "ChoiceField",
+    "CheckBox",
     "Overlay",
     "ContextualHost"
   ],
@@ -30,7 +30,7 @@
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -42,7 +42,7 @@
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -82,7 +82,7 @@
     "subText": "Are you sure you want to discard these changes?.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -94,7 +94,7 @@
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -134,7 +134,7 @@
     "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -146,7 +146,7 @@
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",

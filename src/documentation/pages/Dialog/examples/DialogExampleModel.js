@@ -6,7 +6,7 @@ var DialogExampleModel = {
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -18,7 +18,7 @@ var DialogExampleModel = {
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -58,7 +58,7 @@ var DialogExampleModel = {
     "subText": "Are you sure you want to discard these changes?.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -70,7 +70,7 @@ var DialogExampleModel = {
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -110,7 +110,7 @@ var DialogExampleModel = {
     "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -122,7 +122,7 @@ var DialogExampleModel = {
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",

@@ -1,5 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-/// <reference path="../ChoiceField/ChoiceField.ts"/>
+/// <reference path="../RadioButton/RadioButton.ts"/>
 "use strict";
 
 namespace fabric {
@@ -12,7 +12,7 @@ namespace fabric {
   export class ChoiceFieldGroup {
 
     private _choiceFieldGroup: HTMLElement;
-    private _choiceFieldComponents: ChoiceField[];
+    private _choiceFieldComponents: RadioButton[];
 
     /**
      *
@@ -31,9 +31,9 @@ namespace fabric {
     }
 
     private _initalSetup(): void {
-        let choiceFieldElements: NodeListOf<Element> = this._choiceFieldGroup.querySelectorAll(".ms-ChoiceField");
+        let choiceFieldElements: NodeListOf<Element> = this._choiceFieldGroup.querySelectorAll(".ms-RadioButton");
         for (let i: number = 0; i < choiceFieldElements.length; i++) {
-            this._choiceFieldComponents[i] =  new fabric.ChoiceField(<HTMLElement>choiceFieldElements[i]);
+            this._choiceFieldComponents[i] =  new fabric.RadioButton(<HTMLElement>choiceFieldElements[i]);
         }
     }
 
@@ -43,12 +43,12 @@ namespace fabric {
 
     private _ChoiceFieldHandler(event: CustomEvent): void {
         let name: string = event.detail.name;
-        let selectedChoice: ChoiceField = <ChoiceField>event.detail.item;
+        let selectedChoice: RadioButton = <RadioButton>event.detail.item;
         if ( this._choiceFieldGroup.id === name) {
             for (let i: number = 0; i < this._choiceFieldComponents.length; i++) {
-                this._choiceFieldComponents[i].choiceFieldUnCheck();
+                this._choiceFieldComponents[i].unCheck();
             }
-            selectedChoice.choiceFieldCheck();
+            selectedChoice.check();
         }
     }
   }

@@ -3,9 +3,10 @@ var ChoiceFieldGroupModels = {
    "title": "Unselected",
    "required": true,
    "id": "choicefieldgroup",
+   "groupType": "radiogroup",
    "fields": [
      {
-       "component": "ChoiceField",
+       "component": "RadioButton",
        "props": {
         "label": "Option 1",
         "modifier": "",
@@ -17,7 +18,7 @@ var ChoiceFieldGroupModels = {
        }
      },
      {
-       "component": "ChoiceField",
+       "component": "RadioButton",
        "props": {
           "label": "Option 2",
           "modifier": "",
@@ -29,7 +30,7 @@ var ChoiceFieldGroupModels = {
         }
      },
      {
-       "component": "ChoiceField",
+       "component": "RadioButton",
        "props": {
           "label": "Option 3",
           "modifier": "",
@@ -41,7 +42,7 @@ var ChoiceFieldGroupModels = {
         }
      },
      {
-       "component": "ChoiceField",
+       "component": "RadioButton",
        "props": {
           "label": "Option 4",
           "modifier": "",

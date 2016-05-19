@@ -3,11 +3,11 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// Choice fields (radio buttons and checkboxes) styles
+// RadioButton styles
 
 
 // Unselected, radio button (default)
-.ms-ChoiceField {
+.ms-RadioButton {
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-base;
@@ -22,7 +22,7 @@
   }
 
   // disabled
-  & .ms-ChoiceField-field.is-disabled {
+  & .ms-Choice-type--radio.is-disabled {
     pointer-events: none;
     cursor: default;
 
@@ -40,18 +40,18 @@
     }
   }
 
-  & .ms-ChoiceField-field.in-focus:after {
+  & .ms-Choice-type--radio.in-focus:after {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-  // The choicefield radio button or checkbox
-  .ms-ChoiceField-field {
+  // The RadioButton radio button or checkbox
+  .ms-Choice-type--radio {
     display: inline-block;
     cursor: pointer;
     margin-top: 8px;
     position: relative;
 
-    // The actual styled choicefield element - radio button by default
+    // The actual styled RadioButton element - radio button by default
     &:after {
       content: '';
       display: inline-block;
@@ -73,25 +73,6 @@
 
       .ms-Label {
         color: $ms-color-black;
-      }
-    }
-
-    &.ms-ChoiceField-type--checkbox {
-      &:after {
-        border-radius: 0;
-      }
-
-      &.is-checked {
-        &:hover:before,
-        &:before {
-          @include ms-Icon;
-          content: '\e041';
-          background-color: transparent;
-          border-radius: 0;
-          font-size: $ms-font-size-s-plus;
-          top: 3px;
-          left: 3px;
-        }
       }
     }
 

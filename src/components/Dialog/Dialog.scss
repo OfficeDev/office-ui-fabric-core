@@ -15,6 +15,7 @@
 .ms-Dialog {
   height: auto;
   padding: 0 20px 20px;
+  font-family: $ms-font-family-base;
 }
 
 // Close button, hidden by default
@@ -45,7 +46,7 @@
 
 .ms-Dialog-title {
   margin: 0;
-  font-family: $ms-font-family-light;
+  font-weight: $ms-font-weight-light;
   font-size: $ms-font-size-xl;
 }
 
@@ -62,7 +63,7 @@
 .ms-Dialog-subText {
   margin: 0 0 20px;
   padding-top: 8px;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   color: $ms-color-neutralPrimary;
   font-size: $ms-font-size-s;
 }
@@ -135,7 +136,7 @@
 
   .ms-Dialog-title {
     font-size: $ms-font-size-xxl;
-    font-family: $ms-font-family-light;
+    font-weight: $ms-font-weight-light;
     color: $ms-color-white;
   }
 

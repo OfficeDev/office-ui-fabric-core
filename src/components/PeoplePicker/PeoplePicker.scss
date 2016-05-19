@@ -9,8 +9,10 @@ $personaItemHeight: 42px;
 $ms-Persona-leftPadding: 16px;
 
 .ms-PeoplePicker {
-  @include ms-font-m;
   @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
   background-color: $ms-color-white;
   margin-bottom: 10px;
 }
@@ -99,7 +101,7 @@ $ms-Persona-leftPadding: 16px;
 // Title for a group of results (optional)
 .ms-PeoplePicker-resultGroupTitle {
   color: $ms-color-themePrimary;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -320,12 +322,12 @@ $ms-Persona-leftPadding: 16px;
 // Primary text
 .ms-PeoplePicker-searchMorePrimary {
   padding-top: 2px;
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
 }
 
 // Secondary text
 .ms-PeoplePicker-searchMoreSecondary {
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
 }
@@ -347,7 +349,7 @@ $ms-Persona-leftPadding: 16px;
   // Primary text
   .ms-PeoplePicker-searchMorePrimary {
     color: $ms-color-neutralSecondary;
-    font-family: $ms-font-family-semilight;
+    font-weight: $ms-font-weight-semilight;
     font-size: $ms-font-size-xs;
     line-height: 20px;
     position: relative;
@@ -577,7 +579,7 @@ $ms-Persona-leftPadding: 16px;
 .ms-PeoplePicker-peopleListHeader {
   color: $ms-color-themePrimary;
   font-size: $ms-font-size-s;
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
   height: 50px;
   line-height: 50px;
 }

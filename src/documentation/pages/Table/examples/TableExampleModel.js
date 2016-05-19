@@ -1,9 +1,6 @@
 var TableExampleModel = {
   "headers": [
     {
-      "rowModifier": "rowCheck"
-    },
-    {
       "value": "Location"
     },
     {
@@ -20,8 +17,21 @@ var TableExampleModel = {
     {
       "columns": [
         {
-          "rowModifier": "rowCheck"
+          "value": "Location"
         },
+        {
+          "value": "Modified"
+        },
+        {
+          "value": "Type"
+        },
+        {
+          "value": "File Name"
+        }
+      ]
+    },
+      {
+      "columns": [
         {
           "value": "Location"
         },
@@ -39,8 +49,21 @@ var TableExampleModel = {
       {
       "columns": [
         {
-          "rowModifier": "rowCheck"
+          "value": "Location"
         },
+        {
+          "value": "Modified"
+        },
+        {
+          "value": "Type"
+        },
+        {
+          "value": "File Name"
+        }
+      ]
+    },
+      {
+      "columns": [
         {
           "value": "Location"
         },
@@ -58,9 +81,6 @@ var TableExampleModel = {
       {
       "columns": [
         {
-          "rowModifier": "rowCheck"
-        },
-        {
           "value": "Location"
         },
         {
@@ -77,9 +97,6 @@ var TableExampleModel = {
       {
       "columns": [
         {
-          "rowModifier": "rowCheck"
-        },
-        {
           "value": "Location"
         },
         {
@@ -95,47 +112,6 @@ var TableExampleModel = {
     },
       {
       "columns": [
-        {
-          "rowModifier": "rowCheck"
-        },
-        {
-          "value": "Location"
-        },
-        {
-          "value": "Modified"
-        },
-        {
-          "value": "Type"
-        },
-        {
-          "value": "File Name"
-        }
-      ]
-    },
-      {
-      "columns": [
-        {
-          "rowModifier": "rowCheck"
-        },
-        {
-          "value": "Location"
-        },
-        {
-          "value": "Modified"
-        },
-        {
-          "value": "Type"
-        },
-        {
-          "value": "File Name"
-        }
-      ]
-    },
-      {
-      "columns": [
-        {
-          "rowModifier": "rowCheck"
-        },
         {
           "value": "Location"
         },

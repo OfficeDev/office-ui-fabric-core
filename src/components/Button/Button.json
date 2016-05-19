@@ -13,16 +13,5 @@
   "props":  {
     "label": "Create Account",
     "tag": "button"
-  },
-  "propsHero": {
-    "label": "Create Account",
-    "icon": "plus",
-    "modifier": "hero",
-    "tag": "button"
-  },
-  "propsPrimary": {
-    "label": "Create Account",
-    "modifier": "primary",
-    "tag": "button"
   }
 }

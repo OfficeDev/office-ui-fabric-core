@@ -36,7 +36,7 @@ namespace fabric {
       }
     }
 
-    private _createContextualHostInstance() {
+    private _createContextualHostInstance(): void {
       this._personaCard.setAttribute("style", "display: block;");
       this._contextualHostInstance = new fabric.ContextualHost(
         <HTMLElement>this._personaCard, 
@@ -45,12 +45,13 @@ namespace fabric {
       );
     }
 
-    private _personaEventHandler() {
+    private _personaEventHandler(): void {
       this._createContextualHostInstance();
     }
 
-    private _assignEvents() {
+    private _assignEvents(): void {
       this._persona.addEventListener("click", this._personaEventHandler.bind(this), false);
+      this._persona.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode === 32) ? this._personaEventHandler() : null, false);
     }
   }
 }

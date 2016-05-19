@@ -121,9 +121,15 @@ $ms-Persona-leftPadding: 16px;
   margin-bottom: 8px;
   padding-left: $ms-Persona-leftPadding;
   cursor: pointer;
+  outline: 0;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $ms-color-neutralLight;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px $ms-color-themePrimary inset;
   }
 
   .ms-PeoplePicker-resultAction {

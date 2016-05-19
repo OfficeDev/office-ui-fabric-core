@@ -14,7 +14,7 @@ A standard menu of commands. Should close when a command is invoked.
 Allows for multiple options to be set. Remains opened until the user clicks or taps outside of the menu.
 
 <!---
-{{> ContextualMenuExample props=ContextualMenuExampleModel.multiselect }}
+{{> ContextualMenuMultiselectExample props=ContextualMenuExampleModel.multiselect }}
 --->
 
 ## Optional functionality
@@ -23,15 +23,12 @@ Allows for multiple options to be set. Remains opened until the user clicks or t
 You can nest a ContextualMenu inside another ContextualMenu, resulting in a submenu.
 
 <!---
-{{> ContextualMenuExample props=ContextualMenuExampleModel.subMenu }}
+{{> ContextualMenuSubmenuExample props=ContextualMenuExampleModel.submenu }}
 --->
+
 
 ### Dividers
 Dividers can be added to create distinct sections of options or commands.
-
-<!---
-{{> ContextualMenuExample props=ContextualMenuExampleModel.dividers }}
---->
 
 ## States
 

@@ -34,11 +34,11 @@ namespace fabric {
     private _container: HTMLElement;
     private _contextualHost: Element;
     private _ftl = new FabricTemplateLibrary();
-    private _dropdown: IContextualMenu;
+    private _dropdown: any;
     private _contextualMenu: Element;
     private _contextualMenuItem: Node;
 
-    constructor(container: HTMLElement, dropdown?: IContextualMenu) {
+    constructor(container: HTMLElement, dropdown?: any) {
       this._container = container;
       this._checkForMenu();
       this._command = this._container;

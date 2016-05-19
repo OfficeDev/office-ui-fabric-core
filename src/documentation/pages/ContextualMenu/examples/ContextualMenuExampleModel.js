@@ -1,6 +1,11 @@
-var ContexualMenuExampleModel = {  
+var ContexualMenuExampleModel = {
   "basic":  {
-    "state": "is-open",
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
     "items": [
       {
         "title": "Animals",
@@ -105,8 +110,13 @@ var ContexualMenuExampleModel = {
       "state": "is-open"
     }
   },
-  "subMenu":  {
-    "state": "is-open",
+  "submenu":  {
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
     "items": [
       {
         "title": "Animals",
@@ -222,7 +232,13 @@ var ContexualMenuExampleModel = {
     }
   },
   "multiselect":  {
-    "state": "is-open",
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
+    "modifier": "multiselect",
     "items": [
       {
         "title": "SORT BY",

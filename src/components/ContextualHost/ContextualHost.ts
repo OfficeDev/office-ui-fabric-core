@@ -45,7 +45,7 @@ namespace fabric {
       this._direction = direction;
       
       this._container = this._ftl.ContextualHost();
-      this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
+      this._contextualHostMain = this._container.querySelector(".ms-ContextualHost-main");
       this._contextualHostMain.appendChild(content);
       
       // this.contextualHostMain = this._contextualHost.querySelector(this._ftl.ContextualHost().ContextualHostMain);
@@ -250,7 +250,7 @@ namespace fabric {
     }
 
     private _cloneModal(): void {
-      this._modalClone = this._contextualHost.cloneNode(true);
+      this._modalClone = this._container.cloneNode(true);
     }
 
     private _saveModalSize(): void {

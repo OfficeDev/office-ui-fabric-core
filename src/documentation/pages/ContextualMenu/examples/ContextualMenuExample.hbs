@@ -1,8 +1,12 @@
-{{> ContextualMenu props=props}}
+<div class="ms-ContextualMenu-basic">
+    {{> Button props=props.button}}
+    {{> ContextualMenu props=props}}
+</div>
 
 <script type="text/javascript">
-    var ContextualMenuElements = document.querySelectorAll(".ms-ContextualMenu");
-    for(var i = 0; i < ContextualMenuElements.length; i++) {
-        new fabric['ContextualMenu'](ContextualMenuElements[i]);
-    }
+    var ButtonElement = document.querySelector(".ms-ContextualMenu-basic .ms-Button");
+    var ContextualMenuElement = document.querySelector(".ms-ContextualMenu-basic .ms-ContextualMenu");
+    
+    var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
+    
 </script>

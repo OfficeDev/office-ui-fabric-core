@@ -31,7 +31,7 @@ namespace fabric {
     }
 
     public dismiss() {
-       document.removeChild(this.panelHost);
+       document.body.removeChild(this.panelHost);
     }
 
     public update(layer: Node, callBack?: Function) {

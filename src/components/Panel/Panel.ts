@@ -49,7 +49,7 @@ namespace fabric {
       this._panelHost._overlay.overlayEl.addEventListener("click", () => {
         this.dismiss();
       });
-      
+
       let closeButton = this._panel.querySelector(".ms-PanelAction-close");
       if (closeButton !== null) {
         closeButton.addEventListener("click", () => {

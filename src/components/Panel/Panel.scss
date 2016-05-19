@@ -27,7 +27,6 @@ $CommandButtonBlue: #2488D8;
   background-color: $ms-color-white;
   width: 100%;
   max-width: $Panel-width-sm;
-  display: block;
   @include drop-shadow(-30px, 0, 30px, -30px, .2);
   position: absolute;
   top: 0;
@@ -45,7 +44,7 @@ $CommandButtonBlue: #2488D8;
   &.animate-out {
     @include ms-u-slideRightOut40;
   }
-  
+
   &.is-open {
     display: block;
   }

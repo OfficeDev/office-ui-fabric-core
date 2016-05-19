@@ -2,9 +2,9 @@
 /// <reference path="../ContextualHost/ContextualHost.ts"/>
 
   /**
-   * Facepile
+   * FacePile
    *
-   * A host for Facepile
+   * A host for FacePile
    *
    */
 
@@ -21,7 +21,7 @@ namespace fabric {
 
     /**
      *
-     * @param {HTMLElement} container - the target container for an instance of Facepile
+     * @param {HTMLElement} container - the target container for an instance of FacePile
      * @constructor
      */
     constructor(container: Element) {

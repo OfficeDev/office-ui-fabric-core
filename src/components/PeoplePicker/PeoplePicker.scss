@@ -412,9 +412,9 @@ $ms-Persona-leftPadding: 16px;
 }
 
 
-//== Modifier: Facepile and Members list
+//== Modifier: FacePile and Members list
 //
-.ms-PeoplePicker.ms-PeoplePicker--Facepile,
+.ms-PeoplePicker.ms-PeoplePicker--FacePile,
 .ms-PeoplePicker.ms-PeoplePicker--membersList {
   .ms-PeoplePicker-searchBox {
     height: 30px;
@@ -439,7 +439,7 @@ $ms-Persona-leftPadding: 16px;
   }
 }
 
-.ms-PeoplePicker.ms-PeoplePicker--Facepile {
+.ms-PeoplePicker.ms-PeoplePicker--FacePile {
   //= State: Searching in peoplepicker search field
   &.is-searching {
     .ms-PeoplePicker-results {

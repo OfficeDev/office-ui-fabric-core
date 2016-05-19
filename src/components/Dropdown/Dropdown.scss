@@ -25,8 +25,11 @@
 }
 
 .ms-Dropdown {
-  @include ms-font-m;
   @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   margin-bottom: 10px;
   position: relative;
   outline: 0;

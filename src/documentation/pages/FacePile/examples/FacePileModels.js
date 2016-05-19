@@ -1,4 +1,4 @@
-var FacepileModels = {  
+var FacePileModels = {  
  "basic": {
     "members": [
       {
@@ -359,4 +359,4 @@ var FacepileModels = {
   }
 }
 
-module.exports = FacepileModels;
+module.exports = FacePileModels;

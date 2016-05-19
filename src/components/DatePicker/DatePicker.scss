@@ -9,6 +9,7 @@
 .ms-DatePicker {
   @include ms-u-normalize;
   margin-bottom: 17px;
+  font-family: $ms-font-family-base;
   z-index: $ms-zIndex-DatePicker;
 
   .ms-TextField { position: relative; }
@@ -92,7 +93,7 @@
 .ms-DatePicker-month,
 .ms-DatePicker-year {
   display: inline-block;
-  font-family: $ms-font-family-light;
+  font-weight: $ms-font-weight-light;
   font-size: 21px;
   color: $ms-color-themePrimary;
   margin-top: -1px;
@@ -136,9 +137,8 @@
   height: 40px;
   padding: 0;
   line-height: 40px;
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
   font-size: 15px;
-  font-weight: normal;
   color: $ms-color-neutralPrimary;
 }
 
@@ -159,7 +159,7 @@
 // Out of focus days.
 .ms-DatePicker-day--outfocus {
   color: $ms-color-neutralTertiary;
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
 }
 
 
@@ -251,8 +251,7 @@
 .ms-DatePicker-currentYear,
 .ms-DatePicker-currentDecade {
   display: block;
-  font-weight: normal;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: 21px;
   height: 40px;
   line-height: 42px;
@@ -289,8 +288,7 @@
   cursor: pointer;
   float: left;
   margin: 0 10px 10px 0;
-  font-weight: normal;
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
   font-size: 13px;
   color: $ms-color-neutralPrimary;
   text-align: center;
@@ -312,7 +310,7 @@
   bottom: 9px;
   color: $ms-color-themePrimary;
   cursor: pointer;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: 13px;
   height: 30px;
   line-height: 30px;
@@ -359,7 +357,7 @@
   // Update header text styles.
   .ms-DatePicker-month,
   .ms-DatePicker-year {
-    font-family: $ms-font-family-semilight;
+    font-weight: $ms-font-weight-semilight;
     font-size: 17px;
     color: $ms-color-neutralPrimary;
 
@@ -419,7 +417,7 @@
     width: 30px;
     height: 30px;
     line-height: 30px;
-    font-family: $ms-font-family-semibold;
+    font-weight: $ms-font-weight-semibold;
     font-size: 12px;
   }
 

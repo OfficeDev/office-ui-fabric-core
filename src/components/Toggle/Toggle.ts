@@ -31,6 +31,7 @@ namespace fabric {
 
     private _addListeners(): void {
       this._toggleField.addEventListener("click", this._toggleHandler.bind(this), false);
+      this._toggleField.addEventListener("keyup", (e) => (e.keyCode === 32) ? this._toggleHandler() : null, false);
     }
 
     private _toggleHandler(): void {

@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../SearchBox/SearchBox"/>
-/// <reference path="../CommandButton/CommandButton"/>
-/// <reference path="../ContextualHost/ContextualHost"/>
+/// <reference path="../SearchBox/SearchBox.ts"/>
+/// <reference path="../CommandButton/CommandButton.ts"/>
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
 
 /**
  * CommandBar

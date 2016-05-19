@@ -34,6 +34,7 @@ $CommandButtonBlue: #2488D8;
   bottom: 0;
   right: 0;
   z-index: $ms-zIndex-front;
+  font-family: $ms-font-family-base;
 
   // Animations -- Default (anchored right)
   &.animate-in {
@@ -143,7 +144,7 @@ $CommandButtonBlue: #2488D8;
 
 // Header text at the top of the panel.
 .ms-Panel-headerText {
-  font-family: $ms-font-family-light;
+  font-weight: $ms-font-weight-light;
   font-size: $ms-font-size-xl;
   color: $ms-color-neutralPrimary;
   margin: 10px 0;

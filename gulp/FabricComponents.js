@@ -45,7 +45,7 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
         .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
         .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
-        .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+        // .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building Fabric Components " + BuildConfig.processorName + " into One Files"
         })))
@@ -78,40 +78,13 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
      
 });
 
-gulp.task('FabricComponents-buildStyles', function () {
-    return folderList.map(function(componentName) {
-       
-        var srcTemplate = Config.paths.templatePath + '/'+ BuildConfig.template;
-        var destFolder = Config.paths.distComponents + '/' + componentName;
-        var srcFolderName = Config.paths.componentsPath + '/' + componentName;
-        var manifest = Utilities.parseManifest(srcFolderName + '/' + componentName + '.json');
-        var deps = manifest.dependencies || [];
-        var hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, destFolder, '.' + BuildConfig.fileExtension, '.css');
-        
-        if(hasFileChanged) {
-            return ComponentHelper.buildComponentStyles(
-                        destFolder, 
-                        srcTemplate, 
-                        componentName, 
-                        deps, 
-                        BuildConfig.processorPlugin,
-                        BuildConfig.processorName,
-                        BuildConfig.compileErrorHandler
-                   );
-        } else {
-            return;
-        }
-    });
-});
-
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
 // Build for Fabric component demos
 gulp.task('FabricComponents', [
-    'FabricComponents-buildAndCombineStyles', 
-    'FabricComponents-buildStyles', 
+    'FabricComponents-buildAndCombineStyles',
     'FabricComponents-copyAssets', 
     'ComponentJS'
     ]

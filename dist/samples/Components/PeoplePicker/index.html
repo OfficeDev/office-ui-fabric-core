@@ -1,0 +1,1185 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component PeoplePicker</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="PeoplePicker.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.PeoplePicker) {
+          $('.ms-PeoplePicker').PeoplePicker();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('PeoplePicker' in fabric) {
+          var elements = document.querySelectorAll('.ms-PeoplePicker');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['PeoplePicker'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.PeoplePicker.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">PeoplePicker</h1>
+  <div id="componentWrapper">
+    <h1 id="people-picker">People Picker</h1>
+<p>A form input that allows for the choice of one or more people.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>Uses the standard sized Persona component.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<div class="ms-PeoplePicker">
+  <div class="ms-PeoplePicker-searchBox">
+    <input class="ms-PeoplePicker-searchField" type="text">
+  </div>
+  <div class="ms-PeoplePicker-results">
+      <div class="ms-PeoplePicker-resultGroups">
+          <div class="ms-PeoplePicker-resultGroup">
+              <div class="ms-PeoplePicker-resultGroupTitle">Top results</div>
+              <ul class="ms-PeoplePicker-resultList">
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+          <div class="ms-PeoplePicker-resultGroup">
+              <div class="ms-PeoplePicker-resultGroupTitle">Other results</div>
+              <ul class="ms-PeoplePicker-resultList">
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Grant Steel</div>
+                          <div class="ms-Persona-secondaryText">Technical Support</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultExpand"><i class="ms-Icon ms-Icon--chevronsDown"></i></button>
+                    </div>
+                      <div class="ms-PeoplePicker-resultAdditionalContent">
+                          <ul class="ms-PeoplePicker-resultList">
+                              <li class="ms-PeoplePicker-result">
+                                <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                                  <div class="ms-Persona ms-Persona--square">
+                                    <div class="ms-Persona-imageArea">
+                                      <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                                    </div>
+                                    <div class="ms-Persona-presence"></div>
+                                    <div class="ms-Persona-details">
+                                      <div class="ms-Persona-primaryText">Jessica Fischer</div>
+                                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                                    </div>
+                                  </div>
+                                  <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                                </div>
+                              </li>
+                              <li class="ms-PeoplePicker-result">
+                                <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                                  <div class="ms-Persona ms-Persona--square">
+                                    <div class="ms-Persona-imageArea">
+                                      <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png"><br>                                    </div>
+                                    <div class="ms-Persona-presence"></div>
+                                    <div class="ms-Persona-details">
+                                      <div class="ms-Persona-primaryText">Grant Steel (bask)</div>
+                                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                                    </div>
+                                  </div>
+                                  <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                                </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Harvey Wallin</div>
+                          <div class="ms-Persona-secondaryText">Delivery</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Marcus Lauer</div>
+                          <div class="ms-Persona-secondaryText">Marketing</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="ms-PeoplePicker-searchMore js-searchMore">
+        <button class="ms-PeoplePicker-searchMoreBtn">
+          <div class="ms-PeoplePicker-searchMoreIcon">
+            <i class="ms-Icon ms-Icon--search"></i>
+          </div>
+          <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+          <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+        </button>
+      </div>
+  </div>
+</div>
+
+
+<h3 id="compact">Compact</h3>
+<p>Use the extra small Persona component to fit more results.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<div class="ms-PeoplePicker ms-PeoplePicker--compact">
+  <div class="ms-PeoplePicker-searchBox">
+    <input class="ms-PeoplePicker-searchField" type="text">
+  </div>
+  <div class="ms-PeoplePicker-results">
+      <div class="ms-PeoplePicker-resultGroups">
+          <div class="ms-PeoplePicker-resultGroup">
+              <div class="ms-PeoplePicker-resultGroupTitle">Top results</div>
+              <ul class="ms-PeoplePicker-resultList">
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+          <div class="ms-PeoplePicker-resultGroup">
+              <div class="ms-PeoplePicker-resultGroupTitle">Other results</div>
+              <ul class="ms-PeoplePicker-resultList">
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Grant Steel</div>
+                          <div class="ms-Persona-secondaryText">Technical Support</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultExpand"><i class="ms-Icon ms-Icon--chevronsDown"></i></button>
+                    </div>
+                      <div class="ms-PeoplePicker-resultAdditionalContent">
+                          <ul class="ms-PeoplePicker-resultList">
+                              <li class="ms-PeoplePicker-result">
+                                <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                                  <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                                    <div class="ms-Persona-imageArea">
+                                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png"><br>                                    </div>
+                                    <div class="ms-Persona-presence"></div>
+                                    <div class="ms-Persona-details">
+                                      <div class="ms-Persona-primaryText">Jessica Fischer</div>
+                                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                                    </div>
+                                  </div>
+                                  <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                                </div>
+                              </li>
+                              <li class="ms-PeoplePicker-result">
+                                <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                                  <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                                    <div class="ms-Persona-imageArea">
+                                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png"> 
+                                    </div>
+                                    <div class="ms-Persona-presence"></div>
+                                    <div class="ms-Persona-details">
+                                      <div class="ms-Persona-primaryText">Grant Steel (bask)</div>
+                                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                                    </div>
+                                  </div>
+                                  <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                                </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Harvey Wallin</div>
+                          <div class="ms-Persona-secondaryText">Delivery</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn ms-PeoplePicker-resultBtn--compact">
+                      <div class="ms-Persona ms-Persona--xs ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Marcus Lauer</div>
+                          <div class="ms-Persona-secondaryText">Marketing</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="ms-PeoplePicker-searchMore js-searchMore">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-searchMoreBtn ms-PeoplePicker-searchMoreBtn--compact">
+          <div class="ms-PeoplePicker-searchMoreIcon">
+            <i class="ms-Icon ms-Icon--search"></i>
+          </div>
+          <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+          <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<h3 id="members-list">Members List</h3>
+<p>Has a smaller search field.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<div class="ms-PeoplePicker ms-PeoplePicker--membersList">
+  <label class="ms-Label">People picker</label>
+  <div class="ms-PeoplePicker-searchBox">
+    <input class="ms-PeoplePicker-searchField" type="text">
+  </div>
+  <div class="ms-PeoplePicker-results">
+    <div class="ms-PeoplePicker-resultGroups">
+      <div class="ms-PeoplePicker-resultGroup">
+        <ul class="ms-PeoplePicker-resultList">
+          <li class="ms-PeoplePicker-result">
+            <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+              <div class="ms-Persona">
+                <div class="ms-Persona-imageArea">
+                  <div class="ms-Persona-initials ms-Persona-initials--darkBlue">RM</div>
+                  <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                </div>
+                <div class="ms-Persona-presence"></div>
+                <div class="ms-Persona-details">
+                  <div class="ms-Persona-primaryText">Russel Miller</div>
+                  <div class="ms-Persona-secondaryText">Sales</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-PeoplePicker-result">
+            <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+              <div class="ms-Persona">
+                <div class="ms-Persona-imageArea">
+                  <div class="ms-Persona-initials ms-Persona-initials--green">DF</div>
+                  <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                </div>
+                <div class="ms-Persona-presence"></div>
+                <div class="ms-Persona-details">
+                  <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                  <div class="ms-Persona-secondaryText">Public Relations</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-PeoplePicker-result">
+            <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+              <div class="ms-Persona">
+                <div class="ms-Persona-imageArea">
+                  <div class="ms-Persona-initials ms-Persona-initials--blue">JF</div>
+                  <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                </div>
+                <div class="ms-Persona-presence"></div>
+                <div class="ms-Persona-details">
+                  <div class="ms-Persona-primaryText">Jessica Fischer</div>
+                  <div class="ms-Persona-secondaryText">Public Relations</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-PeoplePicker-result">
+            <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+              <div class="ms-Persona">
+                <div class="ms-Persona-imageArea">
+                  <div class="ms-Persona-initials ms-Persona-initials--black">GS</div>
+                  <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                </div>
+                <div class="ms-Persona-presence"></div>
+                <div class="ms-Persona-details">
+                  <div class="ms-Persona-primaryText">Grant Steel (bask)</div>
+                  <div class="ms-Persona-secondaryText">Public Relations</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-PeoplePicker-result">
+            <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+              <div class="ms-Persona">
+                <div class="ms-Persona-imageArea">
+                  <div class="ms-Persona-initials ms-Persona-initials--teal">HW</div>
+                  <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                </div>
+                <div class="ms-Persona-presence"></div>
+                <div class="ms-Persona-details">
+                  <div class="ms-Persona-primaryText">Harvey Wallin</div>
+                  <div class="ms-Persona-secondaryText">Delivery</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="ms-PeoplePicker-result">
+            <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+              <div class="ms-Persona">
+                <div class="ms-Persona-imageArea">
+                  <div class="ms-Persona-initials ms-Persona-initials--purple">ML</div>
+                  <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                </div>
+                <div class="ms-Persona-presence"></div>
+                <div class="ms-Persona-details">
+                  <div class="ms-Persona-primaryText">Marcus Lauer</div>
+                  <div class="ms-Persona-secondaryText">Marketing</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="ms-PeoplePicker-selected">
+    <div class="ms-PeoplePicker-selectedHeader">
+      <span class="ms-PeoplePicker-selectedCount"></span> newly added member<span>s</span>
+    </div>
+    <ul class="ms-PeoplePicker-selectedPeople"></ul>
+  </div>
+</div>
+
+<h3 id="facepile">Facepile</h3>
+<p>Presents the selected people in a list below the search field, rather than inline.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<div class="ms-PeoplePicker ms-PeoplePicker--Facepile">
+  <div class="ms-PeoplePicker-searchBox">
+    <input class="ms-PeoplePicker-searchField" type="text" placeholder="Add members">
+  </div>
+  <!-- Suggested list -->
+  <div class="ms-PeoplePicker-results">
+    <div class="ms-PeoplePicker-peopleListHeader">
+      <span>Suggested contacts</span>
+    </div>
+    <ul class="ms-PeoplePicker-peopleList">
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--darkBlue">RM</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Russel Miller</div>
+              <div class="ms-Persona-secondaryText">Sales</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--green">DF</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Douglas Fielder</div>
+              <div class="ms-Persona-secondaryText">Public Relations</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--blue">JF</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Jessica Fischer</div>
+              <div class="ms-Persona-secondaryText">Public Relations</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--lightGreen">MG</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Marcel Groce</div>
+              <div class="ms-Persona-secondaryText">Marketing</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--black">GS</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Grant Steel</div>
+              <div class="ms-Persona-secondaryText">Public Relations</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--teal">HW</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Harvey Wallin</div>
+              <div class="ms-Persona-secondaryText">Delivery</div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="ms-PeoplePicker-peopleListItem ms-PeoplePicker-result">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-peopleListBtn">
+          <div class="ms-Persona ms-Persona--selectable ms-Persona--sm">
+            <div class="ms-Persona-imageArea">
+              <div class="ms-Persona-initials ms-Persona-initials--purple">ML</div>
+            </div>
+            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Marcus Lauer</div>
+              <div class="ms-Persona-secondaryText">Marketing</div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="ms-PeoplePicker-searchMore js-searchMore">
+      <div tabindex="0" role="button" class="ms-PeoplePicker-searchMoreBtn">
+        <div class="ms-PeoplePicker-searchMoreIcon">
+          <i class="ms-Icon ms-Icon--search"></i>
+        </div>
+        <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+      </div>
+    </div>
+  </div>
+  <!-- Members list -->
+  <div class="ms-PeoplePicker-selected is-active">
+    <div class="ms-PeoplePicker-selectedHeader">
+      <span class="ms-PeoplePicker-selectedCount">3</span> member<span>s</span>
+    </div>
+    <ul class="ms-PeoplePicker-selectedPeople">
+      <li class="ms-PeoplePicker-selectedPerson">
+        <div class="ms-Persona ms-Persona--sm">
+          <div class="ms-Persona-imageArea">
+            <div class="ms-Persona-initials ms-Persona-initials--blue">AL</div>
+            <img class="ms-Persona-image" src="../persona/Persona.Person2.png" alt="Persona image">
+          </div>
+          <div class="ms-Persona-presence"></div>
+          <div class="ms-Persona-details">
+            <div class="ms-Persona-primaryText">Alton Lafferty</div>
+            <div class="ms-Persona-secondaryText">Accountant</div>
+          </div>
+        </div>
+        <button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+      </li>
+      <li class="ms-PeoplePicker-selectedPerson">
+        <div class="ms-Persona ms-Persona--sm">
+          <div class="ms-Persona-imageArea">
+            <div class="ms-Persona-initials ms-Persona-initials--green">DF</div>
+          </div>
+          <div class="ms-Persona-presence"></div>
+          <div class="ms-Persona-details">
+            <div class="ms-Persona-primaryText">Douglas Fielder</div>
+            <div class="ms-Persona-secondaryText">Public Relations</div>
+          </div>
+        </div>
+        <button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+      </li>
+      <li class="ms-PeoplePicker-selectedPerson">
+        <div class="ms-Persona ms-Persona--sm">
+          <div class="ms-Persona-imageArea">
+            <div class="ms-Persona-initials ms-Persona-initials--purple">ML</div>
+          </div>
+          <div class="ms-Persona-presence"></div>
+          <div class="ms-Persona-details">
+            <div class="ms-Persona-primaryText">Marcus Lauer</div>
+            <div class="ms-Persona-secondaryText">Technical Support</div>
+          </div>
+        </div>
+        <button class="ms-PeoplePicker-resultAction js-selectedRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+      </li>
+    </ul>
+  </div>
+  <div class="ms-PeoplePicker-personaCard">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-PersonaCard">
+  <div class="ms-PersonaCard-persona">
+    <div class="ms-Persona ms-Persona--xl">
+      <div class="ms-Persona-imageArea">
+        <div class="ms-Persona-initials ms-Persona-initials--blue">AL</div>
+        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+      </div>
+      <div class="ms-Persona-presence"></div>
+      <div class="ms-Persona-details">
+        <div class="ms-Persona-primaryText" title="Alton Lafferty">Alton Lafferty</div>
+        <div class="ms-Persona-secondaryText">Interior Designer, Contoso</div>
+        <div class="ms-Persona-tertiaryText">Office: 7/1234</div>
+        <div class="ms-Persona-optionalText">Available - Video capable</div>
+      </div>
+    </div>
+  </div>
+  <ul class="ms-PersonaCard-actions">
+    <li id="chat" class="ms-PersonaCard-action is-active"><i class="ms-Icon ms-Icon--chat"></i></li>
+    <li id="phone" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--phone"></i></li>
+    <li id="video" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--video"></i></li>
+    <li id="mail" class="ms-PersonaCard-action"><i class="ms-Icon ms-Icon--mail"></i></li>
+    <li class="ms-PersonaCard-overflow" alt="View profile in Delve" title="View profile in Delve">View profile</li>
+    <li id="org" class="ms-PersonaCard-action ms-PersonaCard-orgChart"><i class="ms-Icon ms-Icon--org"></i></li>
+  </ul>
+  <div class="ms-PersonaCard-actionDetailBox">
+    <ul id="detailList" class="ms-PersonaCard-detailChat">
+      <li id="chat" class="ms-PersonaCard-actionDetails detail-1">
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Lync:</span> <a class="ms-Link" href="#">Start Lync call</a></div>
+      </li>
+      <li id="phone" class="ms-PersonaCard-actionDetails detail-2">
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> 555.206.2443</div>
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> 555.929.8240</div>
+      </li>
+      <li id="video" class="ms-PersonaCard-actionDetails detail-3">
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Skype:</span> <a class="ms-Link" href="#">Start Skype call</a></div>
+      </li>
+      <li id="mail" class="ms-PersonaCard-actionDetails detail-4">
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">alton.lafferty@outlook.com</a></div>
+        <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">altonlafferty@contoso.com</a></div>
+      </li>
+      <!-- org chart -->
+      <li id="org" class="ms-PersonaCard-actionDetails detail-5">
+        <div class="ms-OrgChart">
+          <div class="ms-OrgChart-group">
+              <ul class="ms-OrgChart-list">
+                  <li class="ms-OrgChart-listItem">
+                    <button class="ms-OrgChart-listItemBtn">
+                      <div class="ms-Persona">
+                        <div class="ms-Persona-imageArea">
+                          <div class="ms-Persona-initials ms-Persona-initials--darkBlue">RM</div>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                    </button>
+                  </li>
+                  <li class="ms-OrgChart-listItem">
+                    <button class="ms-OrgChart-listItemBtn">
+                      <div class="ms-Persona">
+                        <div class="ms-Persona-imageArea">
+                          <div class="ms-Persona-initials ms-Persona-initials--green">DF</div>
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                    </button>
+                  </li>
+              </ul>
+          </div>
+          <div class="ms-OrgChart-group">
+            <div class="ms-OrgChart-groupTitle">Manager</div>
+            <ul class="ms-OrgChart-list">
+                <li class="ms-OrgChart-listItem">
+                  <button class="ms-OrgChart-listItemBtn">
+                    <div class="ms-Persona">
+                      <div class="ms-Persona-imageArea">
+                        <div class="ms-Persona-initials ms-Persona-initials--red">GS</div>
+                        <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                      </div>
+                      <div class="ms-Persona-presence"></div>
+                      <div class="ms-Persona-details">
+                        <div class="ms-Persona-primaryText">Grant Steel</div>
+                        <div class="ms-Persona-secondaryText">Sales</div>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+          </div>
+          <div class="ms-OrgChart-group">
+            <div class="ms-OrgChart-groupTitle">Staff</div>
+            <ul class="ms-OrgChart-list">
+              <li class="ms-OrgChart-listItem">
+                <button class="ms-OrgChart-listItemBtn">
+                  <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                      <div class="ms-Persona-initials ms-Persona-initials--teal">HW</div>
+                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                    </div>
+                    <div class="ms-Persona-presence"></div>
+                    <div class="ms-Persona-details">
+                      <div class="ms-Persona-primaryText">Harvey Wallin</div>
+                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <li class="ms-OrgChart-listItem">
+                <button class="ms-OrgChart-listItemBtn">
+                  <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                      <div class="ms-Persona-initials ms-Persona-initials--purple">ML</div>
+                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                    </div>
+                    <div class="ms-Persona-presence"></div>
+                    <div class="ms-Persona-details">
+                      <div class="ms-Persona-primaryText">Marcus Lauer</div>
+                      <div class="ms-Persona-secondaryText">Technical Support</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <li class="ms-OrgChart-listItem">
+                <button class="ms-OrgChart-listItemBtn">
+                  <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                      <div class="ms-Persona-initials ms-Persona-initials--lightBlue">MG</div>
+                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                    </div>
+                    <div class="ms-Persona-presence"></div>
+                    <div class="ms-Persona-details">
+                      <div class="ms-Persona-primaryText">Marcel Groce</div>
+                      <div class="ms-Persona-secondaryText">Delivery</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+              <li class="ms-OrgChart-listItem">
+                <button class="ms-OrgChart-listItemBtn">
+                  <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                      <div class="ms-Persona-initials ms-Persona-initials--green">JF</div>
+                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                    </div>
+                    <div class="ms-Persona-presence"></div>
+                    <div class="ms-Persona-details">
+                      <div class="ms-Persona-primaryText">Jessica Fischer</div>
+                      <div class="ms-Persona-secondaryText">Marketing</div>
+                    </div>
+                  </div>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <!-- /org chart -->
+    </ul>
+  </div>
+</div>
+
+<p>  </div>
+</div></p>
+<h2 id="more-options">More options</h2>
+<h3 id="disconnected">Disconnected</h3>
+<p>If the network is unavailable, you can present an error message in the search more area.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<div class="ms-PeoplePicker">
+  <div class="ms-PeoplePicker-searchBox">
+    <input class="ms-PeoplePicker-searchField" type="text">
+  </div>
+  <div class="ms-PeoplePicker-results">
+      <div class="ms-PeoplePicker-resultGroups">
+          <div class="ms-PeoplePicker-resultGroup">
+              <div class="ms-PeoplePicker-resultGroupTitle">Top results</div>
+              <ul class="ms-PeoplePicker-resultList">
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+          <div class="ms-PeoplePicker-resultGroup">
+              <div class="ms-PeoplePicker-resultGroupTitle">Other results</div>
+              <ul class="ms-PeoplePicker-resultList">
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Russel Miller</div>
+                          <div class="ms-Persona-secondaryText">Sales</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                          <div class="ms-Persona-secondaryText">Public Relations</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Grant Steel</div>
+                          <div class="ms-Persona-secondaryText">Technical Support</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultExpand"><i class="ms-Icon ms-Icon--chevronsDown"></i></button>
+                    </div>
+                      <div class="ms-PeoplePicker-resultAdditionalContent">
+                          <ul class="ms-PeoplePicker-resultList">
+                              <li class="ms-PeoplePicker-result">
+                                <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                                  <div class="ms-Persona ms-Persona--square">
+                                    <div class="ms-Persona-imageArea">
+                                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png"> 
+                                    </div>
+                                    <div class="ms-Persona-presence"></div>
+                                    <div class="ms-Persona-details">
+                                      <div class="ms-Persona-primaryText">Jessica Fischer</div>
+                                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                                    </div>
+                                  </div>
+                                  <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                                </div>
+                              </li>
+                              <li class="ms-PeoplePicker-result">
+                                <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                                  <div class="ms-Persona ms-Persona--square">
+                                    <div class="ms-Persona-imageArea">
+                                      <img class="ms-Persona-image" src="../persona/Persona.Person2.png"><br>                                    </div>
+                                    <div class="ms-Persona-presence"></div>
+                                    <div class="ms-Persona-details">
+                                      <div class="ms-Persona-primaryText">Grant Steel (bask)</div>
+                                      <div class="ms-Persona-secondaryText">Public Relations</div>
+                                    </div>
+                                  </div>
+                                  <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                                </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Harvey Wallin</div>
+                          <div class="ms-Persona-secondaryText">Delivery</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+                  <li class="ms-PeoplePicker-result">
+                    <div tabindex="0" role="button" class="ms-PeoplePicker-resultBtn">
+                      <div class="ms-Persona ms-Persona--square">
+                        <div class="ms-Persona-imageArea">
+                          <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+                        </div>
+                        <div class="ms-Persona-presence"></div>
+                        <div class="ms-Persona-details">
+                          <div class="ms-Persona-primaryText">Marcus Lauer</div>
+                          <div class="ms-Persona-secondaryText">Marketing</div>
+                        </div>
+                      </div>
+                      <button class="ms-PeoplePicker-resultAction js-resultRemove"><i class="ms-Icon ms-Icon--x"></i></button>
+                    </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="ms-PeoplePicker-searchMore ms-PeoplePicker-searchMore--disconnected">
+        <div tabindex="0" role="button" class="ms-PeoplePicker-searchMoreBtn">
+          <div class="ms-PeoplePicker-searchMoreIcon">
+            <i class="ms-Icon ms-Icon--alert"></i>
+          </div>
+          <div class="ms-PeoplePicker-searchMorePrimary">We are having trouble connecting to the server.<br>Please try again in a few minutes.</div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page.</li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Dialog components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.PeoplePicker) {
+             $(&#39;.ms-PeoplePicker&#39;).PeoplePicker();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component uses Persona and PersonaCard to display people and Label for the Members List variant. It also uses a Spinner when searching for results.</p>
+
+  </div>
+</body>
+</html>

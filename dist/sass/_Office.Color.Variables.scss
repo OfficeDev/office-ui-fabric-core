@@ -1,0 +1,34 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Office Core Color Variables
+
+
+//== Theme/Accent colors
+//
+// Colors used in Office 15 color pickers
+// These are deprecated as of Fabric 0.6
+
+$ms-color-officeAccent1:  #FFFFFF;
+$ms-color-officeAccent2:  #000000;
+$ms-color-officeAccent3:  #E7E6E5;
+$ms-color-officeAccent4:  #44546A;
+$ms-color-officeAccent5:  #5B9BD5;
+$ms-color-officeAccent6:  #ED7D31;
+$ms-color-officeAccent7:  #A5A5A5;
+$ms-color-officeAccent8:  #FFC001;
+$ms-color-officeAccent9:  #4472C4;
+$ms-color-officeAccent10: #70AD47;
+
+$ms-color-presence-available:          #5dd255;
+$ms-color-presence-away:               #ffd200;
+$ms-color-presence-blocked-background: #dedede;
+$ms-color-presence-blocked-line:       #c72d25;
+$ms-color-presence-busy-stripe-light:  #e57a79;
+$ms-color-presence-busy-stripe-dark:   #d00e0d;
+$ms-color-presence-busy-average:       #d93b3b;
+$ms-color-presence-dnd-background:     #c72d25;
+$ms-color-presence-dnd-line:           #ffffff;
+$ms-color-presence-offline:            #b6cfd8;

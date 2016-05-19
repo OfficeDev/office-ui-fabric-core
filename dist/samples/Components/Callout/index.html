@@ -1,0 +1,327 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Callout</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Callout.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Callout) {
+          $('.ms-Callout').Callout();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Callout' in fabric) {
+          var elements = document.querySelectorAll('.ms-Callout');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Callout'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Callout</h1>
+  <div id="componentWrapper">
+    <h1 id="callout">Callout</h1>
+<p>Notification area that provides a detailed description or set of actions on an object.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Callout ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <a href="#" class="ms-Callout-link ms-Link">Learn more</a>
+      </div>
+    </div><br>  </div>
+</div>
+
+
+<h3 id="close">Close</h3>
+<p>Includes an icon to dismiss the callout.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Callout ms-Callout--close ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <button class="ms-Callout-close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <a href="#" class="ms-Callout-link ms-Link">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="action-text">Action text</h3>
+<p>Includes buttons to take action.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Callout ms-Callout--actionText ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText ms-Callout-subText--s">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Callout-actionText ms-Button-icon"><i class="ms-Icon ms-Icon--check"></i></span>
+          <span class="ms-Button-label">Save</span>
+        </button>
+        <button class="ms-Callout-action ms-Button ms-Button--command">
+          <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--x"></i></span>
+          <span class="ms-Callout-actionText ms-Button-label">Cancel</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="oobe-out-of-the-box-experience-">OOBE (Out Of the Box Experience)</h3>
+<p>Draws attention to one aspect of the application during a product tour.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Callout ms-Callout--OOBE ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText">People automatically puts together all of the people you care most about in one place.</p>
+      </div>
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-button ms-Button ms-Button--primary">
+          <span class="ms-Button-label">More</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+        <button class="ms-Callout-button ms-Button">
+          <span class="ms-Button-label">Got it</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="peek">Peek</h3>
+<p>A smaller callout with an action.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Callout ms-Callout--peek ms-Callout--arrowLeft">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">Uploaded 2 items to <span class="ms-Link">Alton&#39;s OneDrive</span></p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-actions">
+        <button class="ms-Callout-button ms-Button">
+          <span class="ms-Button-label">More</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 id="states">States</h2>
+<p>This component has only the default state.</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;div class=&quot;ms-Callout ms-Callout--arrowLeft&quot;&gt;
+     &lt;div class=&quot;ms-Callout-main&quot;&gt;
+         &lt;div class=&quot;ms-Callout-header&quot;&gt;
+             &lt;p class=&quot;ms-Callout-title&quot;&gt;All of your favorite people&lt;/p&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-Callout-inner&quot;&gt;
+             &lt;div class=&quot;ms-Callout-content&quot;&gt;
+                 &lt;p class=&quot;ms-Callout-subText&quot;&gt;Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.&lt;/p&gt;
+             &lt;/div&gt;
+             &lt;div class=&quot;ms-Callout-actions&quot;&gt;
+                 &lt;a href=&quot;#&quot; class=&quot;ms-Callout-link ms-Link ms-Link--hero&quot;&gt;Learn more&lt;/a&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;    
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-Callout-title</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for all of the actions (links and buttons) included within a Callout.</p>
+
+  </div>
+</body>
+</html>

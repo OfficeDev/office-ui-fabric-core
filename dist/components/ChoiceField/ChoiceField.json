@@ -1,0 +1,94 @@
+{
+  "name": "ChoiceField",
+  "class": "ms-ChoiceField",
+  "dependencies": [
+    "Label"
+  ],
+  "fileOrder": [
+    "ChoiceField.html",
+    "ChoiceField.Selected.html",
+    "ChoiceField.Disabled.html",
+    "ChoiceField.Checkbox.html",
+    "ChoiceField.Checkbox.Selected.html",
+    "ChoiceField.Checkbox.Disabled.html",
+    "ChoiceField.ChoiceFieldGroup.html"
+  ],
+  "branches": [
+    {
+      "name": "Radio button",
+      "default": true,
+      "branches": [
+        {
+          "name": "Unselected",
+          "default": true,
+          "template": "ChoiceField.Radio.Unselected.html",
+          "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+          ]
+        },
+        {
+          "name": "Selected",
+          "class": "ms-TextField--underlined",
+          "template": "ChoiceField.Radio.Selected.html",
+          "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Checkbox",
+      "branches": [
+        {
+          "name": "Unselected",
+          "default": true,
+          "template": "ChoiceField.Checkbox.Unselected.html",
+          "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+          ]
+        },
+        {
+          "name": "Selected",
+          "template": "ChoiceField.Checkbox.Selected.html",
+          "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Group",
+      "notes": "Wrap individual ChoiceField components in a ChoiceFieldGroup to create a list.",
+      "template": "Choicefield.ChoiceFieldGroup.html",
+      "class": "ms-ChoiceFieldGroup"
+    }
+  ]
+}

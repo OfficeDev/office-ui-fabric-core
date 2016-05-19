@@ -1,0 +1,203 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Video Portal Example App
+// --------------------------------------------------
+// Video Player page styles
+
+
+.PlayerPage-theater { 
+  background-color: $ms-color-neutralDark; 
+}
+
+.VideoPlayer-player {
+  max-width: 100%;
+  position: relative;
+  padding-bottom: 56.25%; // Necessary to maintain 16:9 aspect ratio
+  height: 0;
+  overflow: hidden;
+  
+  iframe, 
+  video,
+  .VideoPlayer-iframe {
+    background-color: $ms-color-neutralSecondary;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    min-width: 100%;
+    *width: 100%;    
+    height: 100%;
+    min-height: 100%;
+    cursor: pointer;
+
+    // "Play" arrow button
+    &:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 60px solid transparent;
+      border-bottom: 60px solid transparent;
+      border-left: 90px solid rgba(0,0,0,.4);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: $ms-duration1 border-color $ms-ease2;
+    }
+
+    &:hover:after {
+      border-left-color: rgba(0,0,0,.75);
+    }
+  }
+}
+
+.PlayerPage-content { 
+  padding: 0 10px; 
+}
+
+.PlayerPage-info { 
+  margin-bottom: 20px; 
+  padding-right: 32px; 
+}
+
+.PlayerPage-header { 
+  margin-bottom: 20px; 
+}
+
+.PlayerPage-titleArea { 
+  margin-top: 17px; 
+  margin-bottom: 8px; 
+}
+
+.PlayerPage-title { 
+  margin-bottom: 5px;
+  margin-top: 0;
+  display: inline-block; 
+}
+
+.PlayerPage-titleSeparator {
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+  bottom: 2px;
+}
+
+.PlayerPage-channelLink {
+  font-size: $ms-font-size-l;
+  padding-left: 10px;
+  border-width: 4px;
+  border-left-style: solid;
+
+  &:hover {
+    color: $ms-color-black;
+  }
+}
+
+.PlayerPage-channelText {
+  position: relative;
+  bottom: 2px;
+}
+
+.PlayerPage-metaData { 
+  margin-bottom: 10px;
+}
+
+.PlayerPage-descriptionArea { 
+  margin-bottom: 10px; 
+}
+
+.PlayerPage-description { 
+  display: inline;
+  word-wrap: break-word;
+}
+
+.PlayerPage-descriptionField  {
+  position: relative;
+  margin-top: 17px;
+}
+
+.PlayerPage-viewCountText { 
+  margin-right: 5px; 
+}
+
+.SampleVideo-content {
+  background-color: $ms-color-neutralPrimary;
+  height: 120px;
+}
+
+
+@media (min-width: $ms-screen-sm-min) {
+  .PlayerPage-content { 
+    padding: 0 10px 0 16px; 
+  }
+
+  .PlayerPage-grid { 
+    padding: 0; 
+  }
+}
+
+@media (min-width: $ms-screen-md-min) {
+  .PlayerPage-relatedList {
+    .VideoList-title {
+      font-size: $ms-font-size-m-plus;
+      margin-bottom: 5px;
+    }
+
+    .VideoList-channel,
+    .VideoList-viewCount {
+      font-size: $ms-font-size-m;
+    }
+  }
+}
+
+@media (min-width: $ms-screen-lg-min) {
+  .PlayerPage-header { 
+    margin-bottom: 25px; 
+  }
+
+  .PlayerPage-titleArea { 
+    margin-top: 35px; 
+  }
+
+  .PlayerPage-description {
+    font-size: $ms-font-size-m; 
+  }
+
+  .PlayerPage-title { 
+    font-size: $ms-font-size-xxl; 
+  }
+
+  .PlayerPage-metaData { 
+    font-size: $ms-font-size-l; 
+  }
+
+  .PlayerPage-channelLink { 
+    font-size: $ms-font-size-xl; 
+  }
+}
+
+@media (min-width: $ms-screen-xl-min) {
+  .PlayerPage-content { 
+    padding: 0;
+  }
+
+  .PlayerPage-relatedTitle { 
+    margin-top: 42px; 
+  }
+
+  .PlayerPage-relatedList {
+    .VideoList-text { 
+      padding-top: 0; 
+    }
+
+    .VideoList-title { 
+      margin-bottom: 5px; 
+      line-height: 1.2em;
+      max-height: 3.6em;
+      overflow: hidden; 
+      white-space: normal; 
+    }
+  }
+}

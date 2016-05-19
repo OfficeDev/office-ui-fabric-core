@@ -1,0 +1,222 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Callout</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="callout">Callout</h1>
+<p>Notification area that provides a detailed description or set of actions on an object.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout 
+     
+    ">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText  ms-Callout-subText-- ">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+      </div>
+      <div class="ms-Callout-actions">
+            <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<a class="ms-Link   ms-Link--ms-Link--hero " 
+   
+  title="" 
+  tabindex="0">Learn more</a>
+
+
+      </div>
+    </div>     
+  </div>
+</div>
+
+<script type="text/javascript">
+  var CalloutHTML = document.querySelector('.ms-Callout');
+  var Callout = new fabric['Callout'](CalloutHTML);
+</script>
+<h3 id="close">Close</h3>
+<p>Includes an icon to dismiss the callout.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout 
+     ms-Callout--arrowLeft  
+     ms-Callout--close ">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title">All of your favorite people</p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText "></p>
+      </div>
+      <div class="ms-Callout-actions">
+            <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<a class="ms-Link  " 
+   
+  title="Learn More" 
+  tabindex="0">Learn More</a>
+
+
+      </div>
+    </div>     
+  </div>
+</div>
+
+<script type="text/javascript">
+  var CalloutHTML = document.querySelector('.ms-Callout');
+  var Callout = new fabric['Callout'](CalloutHTML);
+</script>
+<h3 id="action-text">Action text</h3>
+<p>Includes buttons to take action.</p>
+
+<div class="ms-CalloutExample--actionText">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  
+  <div class="ms-Callout 
+       
+       ms-Callout--actionText ">
+    <div class="ms-Callout-main">
+      <div class="ms-Callout-header">
+        <p class="ms-Callout-title">All of your favorite people</p>
+      </div>
+      <div class="ms-Callout-inner">
+        <div class="ms-Callout-content">
+          <p class="ms-Callout-subText  ms-Callout-subText-- ">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
+        </div>
+        <div class="ms-Callout-actions">
+              <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-CommandButton 
+    ms-CommandButton--inline
+    
+    
+    ">
+    <button class="ms-CommandButton-button"  >
+        <span class="ms-CommandButton-icon ms-fontColor-green"><i class="ms-Icon ms-Icon--check"></i></span><span class="ms-CommandButton-label">Command</span>  </button>
+  </div>
+              <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-CommandButton 
+    ms-CommandButton--inline
+    
+    
+    ">
+    <button class="ms-CommandButton-button"  >
+        <span class="ms-CommandButton-icon ms-fontColor-red"><i class="ms-Icon ms-Icon--x"></i></span><span class="ms-CommandButton-label">Command</span>  </button>
+  </div>
+        </div>
+      </div>     
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var CalloutHTML = document.querySelector('.ms-CalloutExample--actionText .ms-Callout');
+  var Callout = new fabric['Callout'](CalloutHTML, [{
+    "label": "Close THis"
+  }]);
+  console.log("Registering callout");
+</script>
+<h3 id="oobe-out-of-the-box-experience-">OOBE (Out Of the Box Experience)</h3>
+<p>Draws attention to one aspect of the application during a product tour.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout 
+     
+    ">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title"></p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText "></p>
+      </div>
+      <div class="ms-Callout-actions">
+      </div>
+    </div>     
+  </div>
+</div>
+
+<script type="text/javascript">
+  var CalloutHTML = document.querySelector('.ms-Callout');
+  var Callout = new fabric['Callout'](CalloutHTML);
+</script>
+<h3 id="peek">Peek</h3>
+<p>A smaller callout with an action.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Callout 
+     
+    ">
+  <div class="ms-Callout-main">
+    <div class="ms-Callout-header">
+      <p class="ms-Callout-title"></p>
+    </div>
+    <div class="ms-Callout-inner">
+      <div class="ms-Callout-content">
+        <p class="ms-Callout-subText "></p>
+      </div>
+      <div class="ms-Callout-actions">
+      </div>
+    </div>     
+  </div>
+</div>
+
+<script type="text/javascript">
+  var CalloutHTML = document.querySelector('.ms-Callout');
+  var Callout = new fabric['Callout'](CalloutHTML);
+</script>
+<h2 id="states">States</h2>
+<p>This component has only the default state.</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;div class=&quot;ms-Callout ms-Callout--arrowLeft&quot;&gt;
+     &lt;div class=&quot;ms-Callout-main&quot;&gt;
+         &lt;div class=&quot;ms-Callout-header&quot;&gt;
+             &lt;p class=&quot;ms-Callout-title&quot;&gt;All of your favorite people&lt;/p&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-Callout-inner&quot;&gt;
+             &lt;div class=&quot;ms-Callout-content&quot;&gt;
+                 &lt;p class=&quot;ms-Callout-subText&quot;&gt;Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.&lt;/p&gt;
+             &lt;/div&gt;
+             &lt;div class=&quot;ms-Callout-actions&quot;&gt;
+                 &lt;a href=&quot;#&quot; class=&quot;ms-Callout-link ms-Link ms-Link--hero&quot;&gt;Learn more&lt;/a&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;    
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-Callout-title</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for all of the actions (links and buttons) included within a Callout.</p>
+
+</body>
+</html>

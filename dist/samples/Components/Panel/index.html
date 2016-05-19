@@ -1,0 +1,429 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Panel</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Panel.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Panel) {
+          $('.ms-Panel').Panel();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Panel' in fabric) {
+          var elements = document.querySelectorAll('.ms-Panel');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Panel'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Jquery.Panel.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Panel</h1>
+  <div id="componentWrapper">
+    <h1 id="panel">Panel</h1>
+<p>Presents content by sliding over the rest of the application, which is covered by a partially-transparent overlay. Best used for experiences that do not require explicit context for heavy-weight creation/edit/management tasks such as settings, multi-field forms, and permissions. For containers used for complex tasks that requires context, use a separate Pane alongside the existing experience such as a List/Details layout.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="panelVariant-list ms-Pivot ms-Pivot--tabs" style="margin-bottom: 30px">
+    <li class="panelVariant-item ms-Pivot-link is-selected">
+        <span class="is-default">Small, right-aligned, fixed</span>
+    </li>
+    <li class="panelVariant-item ms-Pivot-link">
+        <span class="is-left">Small, left-aligned, fixed</span>
+    </li>
+    <li class="panelVariant-item ms-Pivot-link">
+        <span class="is-lightDismiss">Small, light dismiss, fixed</span>
+    </li>
+    <li class="panelVariant-item ms-Pivot-link">
+        <span class="is-md">Medium, fixed</span>
+    </li>
+    <li class="panelVariant-item ms-Pivot-link">
+        <span class="is-lgFixed">Large, fixed</span>
+    </li>
+    <li class="panelVariant-item ms-Pivot-link">
+        <span class="is-lg">Large, fluid</span>
+    </li>
+    <li class="panelVariant-item ms-Pivot-link">
+        <span class="is-xl">Extra Large, fluid</span>
+    </li>
+</ul>
+
+<button class="ms-Button ms-PanelAction-open">
+  <span class="ms-Button-label">Open panel</span>
+</button>
+
+<div class="ms-Panel">
+  <div class="ms-Overlay ms-PanelAction-close"></div>
+  <div class="ms-Panel-main">
+        <div class="ms-Panel-commands">
+            <div class="ms-CommandBar">
+                <div class="ms-CommandBar-sideCommands">
+                </div>
+                <div class="ms-CommandBar-mainArea">
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="ms-Panel-closeButton ms-PanelAction-close">
+                <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+            </button>
+        </div>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Panel</p>
+          <div class="ms-Panel-content">
+            <span class="ms-font-m">Content goes here.</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<h3 id="medium">Medium</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-PanelAction-open">
+  <span class="ms-Button-label">Open panel</span>
+</button>
+
+<div class="ms-Panel ms-Panel--md">
+  <div class="ms-Overlay ms-PanelAction-close"></div>
+  <div class="ms-Panel-main">
+        <div class="ms-Panel-commands">
+            <div class="ms-CommandBar">
+                <div class="ms-CommandBar-sideCommands">
+                </div>
+                <div class="ms-CommandBar-mainArea">
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="ms-Panel-closeButton ms-PanelAction-close">
+                <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+            </button>
+        </div>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Panel</p>
+          <div class="ms-Panel-content">
+            <span class="ms-font-m">Content goes here.</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<h3 id="large">Large</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-PanelAction-open">
+  <span class="ms-Button-label">Open panel</span>
+</button>
+
+<div class="ms-Panel ms-Panel--lg">
+  <div class="ms-Overlay ms-PanelAction-close"></div>
+  <div class="ms-Panel-main">
+        <div class="ms-Panel-commands">
+            <div class="ms-CommandBar">
+                <div class="ms-CommandBar-sideCommands">
+                </div>
+                <div class="ms-CommandBar-mainArea">
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="ms-Panel-closeButton ms-PanelAction-close">
+                <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+            </button>
+        </div>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Panel</p>
+          <div class="ms-Panel-content">
+            <span class="ms-font-m">Content goes here.</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<h3 id="extra-large">Extra Large</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-PanelAction-open">
+  <span class="ms-Button-label">Open panel</span>
+</button>
+
+<div class="ms-Panel ms-Panel--xl">
+  <div class="ms-Overlay ms-PanelAction-close"></div>
+  <div class="ms-Panel-main">
+        <div class="ms-Panel-commands">
+            <div class="ms-CommandBar">
+                <div class="ms-CommandBar-sideCommands">
+                </div>
+                <div class="ms-CommandBar-mainArea">
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--save"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-CommandBarItem ms-PanelAction-close">
+                        <div class="ms-CommandBarItem-linkWrapper">
+                            <div class="ms-CommandBarItem-link">
+                                <span class="ms-CommandBarItem-icon ms-Icon ms-Icon--x"></span>
+                                <span class="ms-CommandBarItem-commandText ms-font-m ms-font-weight-regular">Cancel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="ms-Panel-closeButton ms-PanelAction-close">
+                <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+            </button>
+        </div>
+        <div class="ms-Panel-contentInner">
+          <p class="ms-Panel-headerText">Panel</p>
+          <div class="ms-Panel-content">
+            <span class="ms-font-m">Content goes here.</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-open</code></td>
+<td><code>.ms-Panel</code></td>
+<td>The panel is closed by default. Apply this class to open it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the sample above into your page.</li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Dialog components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.Panel) {
+             $(&#39;.ms-Panel&#39;).Panel();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content with your content.</li>
+</ol>
+
+  </div>
+</body>
+</html>

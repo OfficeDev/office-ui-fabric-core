@@ -1,0 +1,46 @@
+{
+  "name": "Toggle",
+  "notes": "",
+  "description":"A boolean visualization that allows for users to select between two states, typically on and off. In Office 365, on/true is signified by a blue state while off/false is shown in grey. Also see {0} ChoiceField - checkbox {1} for a boolean visualization that is better suited to a long list of individual choices for the user.",
+  "template": "Toggle.html",
+  "class": "ms-Toggle",
+  "fileOrder": [
+    "Toggle.html",
+    "Toggle.TextLeft.html",
+    "Toggle.Disabled.html"
+  ],
+  "dependencies": [
+    "Label"
+  ],
+  "branches": [
+      {
+        "name": "Text above",
+        "class": "ms-Toggle--textAbove",
+        "default": true,
+        "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+        ]
+      },
+      {
+        "name": "Text left",
+        "class": "ms-Toggle--textLeft",
+        "branches": [
+            {
+              "name": "Enabled",
+              "default": true
+            },
+            {
+              "name": "Disabled",
+              "class": "is-disabled"
+            }
+        ]
+      }
+  ]
+}

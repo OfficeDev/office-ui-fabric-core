@@ -1,0 +1,42 @@
+{
+  "name": "PeoplePicker",
+  "notes": "",
+  "description": "A component used for searching for and picking a person (or people). There are several variants and modifications to the dropdown list of {0} Personas {1} that allow for removing selected people, compact visualizations, a disconnected state, and a 'tokenized' list of selected users.",
+  "template": "PeoplePicker.html",
+  "class": "ms-PeoplePicker",
+  "dependencies": [
+    "Label",
+    "Persona",
+    "PersonaCard",
+    "Spinner"
+  ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "PeoplePicker.html",
+    "PeoplePicker.Compact.html",
+    "PeoplePicker.Disconnected.html",
+    "PeoplePicker.MembersList.html",
+    "PeoplePicker.Facepile.html"
+  ],
+  "branches": [
+    {
+      "name": "Regular",
+      "default": true
+    },
+    {
+      "name": "Compact",
+      "template": "PeoplePicker.Compact.html",
+      "class": "ms-PeoplePicker--compact"
+    },
+    {
+      "name": "Disconnected",
+      "notes": "When the search can not be completed, an error message is shown.",
+      "template": "PeoplePicker.Disconnected.html"
+    },
+    {
+      "name": "Facepile",
+      "template": "PeoplePicker.Facepile.html",
+      "class": "ms-PeoplePicker--Facepile"
+    }
+  ]
+}

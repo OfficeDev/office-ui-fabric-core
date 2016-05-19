@@ -1,0 +1,113 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SearchBox</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="search-box">Search Box</h1>
+<p>A special form field that allows for the input of search text.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-SearchBox  ">
+  <input class="ms-SearchBox-field" type="text" value="">
+  <label class="ms-SearchBox-label">
+    <i class="ms-SearchBox-icon ms-Icon ms-Icon--search"></i>
+    <span class="ms-SearchBox-text">Search</span>
+  </label>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton ms-SearchBox-close
+  ms-CommandButton--noLabel
+  
+  
+  ">
+  <button class="ms-CommandButton-button"  >
+      <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--x"></i></span><span class="ms-CommandButton-label"></span>  </button>
+</div>
+</div>
+<h3 id="collapsed">Collapsed</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-SearchBox  ms-SearchBox--commandBar  is-collapsed">
+  <input class="ms-SearchBox-field" type="text" value="">
+  <label class="ms-SearchBox-label">
+    <i class="ms-SearchBox-icon ms-Icon ms-Icon--search"></i>
+    <span class="ms-SearchBox-text">Search</span>
+  </label>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton ms-SearchBox-close
+  ms-CommandButton--noLabel
+  
+  
+  ">
+  <button class="ms-CommandButton-button"  >
+      <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--x"></i></span><span class="ms-CommandButton-label"></span>  </button>
+</div>
+</div>
+<h3 id="command-bar">Command bar</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-SearchBox  ms-SearchBox--commandBar  ">
+  <input class="ms-SearchBox-field" type="text" value="">
+  <label class="ms-SearchBox-label">
+    <i class="ms-SearchBox-icon ms-Icon ms-Icon--search"></i>
+    <span class="ms-SearchBox-text">Search</span>
+  </label>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton ms-SearchBox-close
+  ms-CommandButton--noLabel
+  
+  
+  ">
+  <button class="ms-CommandButton-button"  >
+      <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--x"></i></span><span class="ms-CommandButton-label"></span>  </button>
+</div>
+</div>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page.</li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all SearchBox components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.SearchBox) {
+             $(&#39;.ms-SearchBox&#39;).SearchBox();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on the Label component.</p>
+
+<script type="text/javascript">
+  var SearchBoxElements = document.querySelectorAll(".ms-SearchBox");
+  for(var i = 0; i < SearchBoxElements.length; i++) {
+    new fabric['SearchBox'](SearchBoxElements[i]);
+  }
+</script>
+
+
+</body>
+</html>

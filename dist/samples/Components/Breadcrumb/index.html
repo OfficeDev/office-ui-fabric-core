@@ -1,0 +1,326 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Breadcrumb</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Breadcrumb.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Breadcrumb) {
+          $('.ms-Breadcrumb').Breadcrumb();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Breadcrumb' in fabric) {
+          var elements = document.querySelectorAll('.ms-Breadcrumb');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Breadcrumb'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="Breadcrumb.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Breadcrumb</h1>
+  <div id="componentWrapper">
+    <h1 id="breadcrumb">Breadcrumb</h1>
+<p>Breadcrumbs should be used as a navigational aid in your app or site. They indicate the current page’s location within a hierarchy and help the user understand where they are in relation to the rest of that hierarchy. They also afford one-click access to higher levels of that hierarchy. Breadcrumbs are typically placed, in horizontal form, under the masthead or navigation of an experience, above the primary content area.</p>
+<h3 id="best-practices">Best Practices</h3>
+<table>
+<thead>
+<tr>
+<th>Do</th>
+<th>Don&#39;t</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Place Breadcrumbs at the top of a page, above a list of items, or above the main content of a page.</td>
+<td>Don&#39;t use Breadcrumbs as a primary way to navigate an app or site.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Breadcrumb">
+  <div class="ms-Breadcrumb-overflow">
+    <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--ellipsis" tabindex="1"></div>
+    <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    <div class="ms-Breadcrumb-overflowMenu">
+      <ul class="ms-ContextualMenu is-open"></ul>
+    </div>
+  </div>
+  <ul class="ms-Breadcrumb-list">
+    <li class="ms-Breadcrumb-listItem">
+      <a class="ms-Breadcrumb-itemLink" tabindex="2">Files</a>
+      <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    </li>
+    <li class="ms-Breadcrumb-listItem">
+      <a class="ms-Breadcrumb-itemLink" tabindex="3">Folder 1</a>
+      <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    </li>
+    <li class="ms-Breadcrumb-listItem">
+      <a class="ms-Breadcrumb-itemLink" tabindex="4">Folder 2</a>
+      <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    </li>
+    <li class="ms-Breadcrumb-listItem">
+      <a class="ms-Breadcrumb-itemLink" tabindex="5">Folder 3</a>
+      <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    </li>
+    <li class="ms-Breadcrumb-listItem">
+      <a class="ms-Breadcrumb-itemLink" tabindex="6">Folder 4</a>
+      <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    </li>
+    <li class="ms-Breadcrumb-listItem">
+      <a class="ms-Breadcrumb-itemLink" tabindex="7">Folder 5</a>
+      <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+    </li>
+  </ul>
+</div>
+
+
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-overflow</code></td>
+<td><code>.ms-Breadcrumb</code></td>
+<td>Use this class to show an ellipsis, which opens a Contextual Menu of additional breadcrumbs. Without this class items that do not fit will be unavailable.</td>
+</tr>
+<tr>
+<td><code>.is-open</code></td>
+<td><code>.ms-Breadcrumb-overflowMenu</code></td>
+<td>Displays the overflow menu.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the sample above into your page. For example:<pre><code> &lt;div class=&quot;ms-Breadcrumb&quot;&gt;
+     &lt;div class=&quot;ms-Breadcrumb-overflow&quot;&gt;
+         &lt;div class=&quot;ms-Breadcrumb-overflowButton ms-Icon ms-Icon--ellipsis&quot; tabindex=&quot;1&quot;&gt;&lt;/div&gt;
+         &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;div class=&quot;ms-Breadcrumb-overflowMenu&quot;&gt;
+             &lt;ul class=&quot;ms-ContextualMenu is-open&quot;&gt;&lt;/ul&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+     &lt;ul class=&quot;ms-Breadcrumb-list&quot;&gt;
+         &lt;li class=&quot;ms-Breadcrumb-listItem&quot;&gt;
+             &lt;a class=&quot;ms-Breadcrumb-itemLink&quot; href=&quot;#&quot; tabindex=&quot;2&quot;&gt;Files&lt;/a&gt;
+             &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;ms-Breadcrumb-listItem&quot;&gt;
+             &lt;a class=&quot;ms-Breadcrumb-itemLink&quot; href=&quot;#&quot; tabindex=&quot;3&quot;&gt;Folder 1&lt;/a&gt;
+             &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;ms-Breadcrumb-listItem&quot;&gt;
+             &lt;a class=&quot;ms-Breadcrumb-itemLink&quot; href=&quot;#&quot; tabindex=&quot;4&quot;&gt;Folder 2&lt;/a&gt;
+             &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;ms-Breadcrumb-listItem&quot;&gt;
+             &lt;a class=&quot;ms-Breadcrumb-itemLink&quot; href=&quot;#&quot; tabindex=&quot;5&quot;&gt;Folder 3&lt;/a&gt;
+             &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;ms-Breadcrumb-listItem&quot;&gt;
+             &lt;a class=&quot;ms-Breadcrumb-itemLink&quot; href=&quot;#&quot; tabindex=&quot;6&quot;&gt;Folder 4&lt;/a&gt;
+             &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;/li&gt;
+         &lt;li class=&quot;ms-Breadcrumb-listItem&quot;&gt;
+             &lt;a class=&quot;ms-Breadcrumb-itemLink&quot; href=&quot;#&quot; tabindex=&quot;7&quot;&gt;Folder 5&lt;/a&gt;
+             &lt;i class=&quot;ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight&quot;&gt;&lt;/i&gt;
+         &lt;/li&gt;
+     &lt;/ul&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Breadcrumbs on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if (typeof fabric !== &quot;undefined&quot;) {
+             if (&#39;Breadcrumb&#39; in fabric) {
+                 var elements = document.querySelectorAll(&#39;.ms-Breadcrumb&#39;);
+                 var i = elements.length;
+                 var component;
+                 while(i--) {
+                     component = new fabric[&#39;Breadcrumb&#39;](elements[i]);
+                 }
+             }
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as the <code>.ms-Breadcrumb-listItem</code> elements) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component uses a <strong>Contextual Menu</strong> for the overflow menu.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>The component&#39;s JavaScript will apply the correct <code>tabindex</code> values to ensure keyboard accessibility.</p>
+
+  </div>
+</body>
+</html>

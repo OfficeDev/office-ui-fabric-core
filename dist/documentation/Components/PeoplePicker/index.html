@@ -1,0 +1,177 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PeoplePicker</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="people-picker">People Picker</h1>
+<p>A form input that allows for the choice of one or more people.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>Uses the standard sized Persona component.
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-PeoplePicker
+">
+  <div class="ms-PeoplePicker-searchBox">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    
+    <div class="ms-TextField  ms-TextField--textFieldUnderlined">
+      
+      <input class="ms-TextField-field" type="text" value="" placeholder="">
+      
+      
+    </div>
+  </div>
+  <div class="ms-PeoplePicker-results">
+  </div>
+  <div class="ms-PeoplePicker-searchMore">
+    <button class="ms-PeoplePicker-searchMoreBtn">
+      <div class="ms-PeoplePicker-searchMoreIcon">
+        <i class="ms-Icon ms-Icon--search"></i>
+      </div>
+      <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+      <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+    </button>
+  </div>
+</div></p>
+<h3 id="compact">Compact</h3>
+<p>Use the extra small Persona component to fit more results.
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-PeoplePicker
+      ms-PeoplePicker--compact
+  ">
+  <div class="ms-PeoplePicker-searchBox">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    
+    <div class="ms-TextField  ms-TextField--textFieldUnderlined">
+      
+      <input class="ms-TextField-field" type="text" value="" placeholder="">
+      
+      
+    </div>
+  </div>
+  <div class="ms-PeoplePicker-results">
+  </div>
+  <div class="ms-PeoplePicker-searchMore">
+    <button class="ms-PeoplePicker-searchMoreBtn">
+      <div class="ms-PeoplePicker-searchMoreIcon">
+        <i class="ms-Icon ms-Icon--search"></i>
+      </div>
+      <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+      <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+    </button>
+  </div>
+</div></p>
+<h3 id="members-list">Members list</h3>
+<p>Has a smaller search field.
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-PeoplePicker
+      ms-PeoplePicker--membersList
+  ">
+  <div class="ms-PeoplePicker-searchBox">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    
+    <div class="ms-TextField  ms-TextField--textFieldUnderlined">
+      
+      <input class="ms-TextField-field" type="text" value="" placeholder="">
+      
+      
+    </div>
+  </div>
+  <div class="ms-PeoplePicker-results">
+  </div>
+  <div class="ms-PeoplePicker-searchMore">
+    <button class="ms-PeoplePicker-searchMoreBtn">
+      <div class="ms-PeoplePicker-searchMoreIcon">
+        <i class="ms-Icon ms-Icon--search"></i>
+      </div>
+      <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+      <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+    </button>
+  </div>
+</div></p>
+<h3 id="face-pile">Face pile</h3>
+<p>Presents the selected people in a list below the search field, rather than inline.
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-PeoplePicker
+      ms-PeoplePicker--facePile
+  ">
+  <div class="ms-PeoplePicker-searchBox">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    
+    <div class="ms-TextField  ms-TextField--textFieldUnderlined">
+      
+      <input class="ms-TextField-field" type="text" value="" placeholder="">
+      
+      
+    </div>
+  </div>
+  <div class="ms-PeoplePicker-results">
+  </div>
+  <div class="ms-PeoplePicker-searchMore">
+    <button class="ms-PeoplePicker-searchMoreBtn">
+      <div class="ms-PeoplePicker-searchMoreIcon">
+        <i class="ms-Icon ms-Icon--search"></i>
+      </div>
+      <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+      <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+    </button>
+  </div>
+</div></p>
+<h2 id="more-options">More options</h2>
+<h3 id="disconnected">Disconnected</h3>
+<p>If the network is unavailable, you can present an error message in the search more area.
+@@include(&#39;PeoplePicker.Disconnected.html&#39;)</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page.</li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Dialog components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.PeoplePicker) {
+             $(&#39;.ms-PeoplePicker&#39;).PeoplePicker();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component uses Persona and PersonaCard to display people and Label for the Members List variant. It also uses a Spinner when searching for results.</p>
+
+<script type="text/javascript">
+  var PeoplePickerElements = document.querySelectorAll(".ms-PeoplePicker");
+  for(var i = 0; i < PeoplePickerElements.length; i++) {
+    new fabric['PeoplePicker'](PeoplePickerElements[i]);
+  }
+</script>
+
+
+</body>
+</html>

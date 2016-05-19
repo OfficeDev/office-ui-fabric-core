@@ -1,0 +1,27 @@
+{
+  "name": "Dropdown",
+  "notes": "",
+  "description": "The styling for a dropdown component and its disabled variant. This dropdown takes current items in a real HTML dropdown and creates a shimmed version that can be styled and selected.",
+  "template": "Dropdown.html",
+  "class": "ms-Dropdown",
+  "dependencies": [
+    "Label"
+  ],
+  "fileOrder": [
+    "Dropdown.html",
+    "Dropdown.Disabled.html"
+  ],
+  "dependencies": [
+    "Label"
+  ],
+  "branches": [
+    {
+      "name": "Enabled",
+      "default": true
+    },
+    {
+      "name": "Disabled",
+      "class": "is-disabled"
+    }
+  ]
+}

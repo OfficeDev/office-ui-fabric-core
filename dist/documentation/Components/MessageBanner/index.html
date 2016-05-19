@@ -1,0 +1,88 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MessageBanner</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="message-banner">Message Banner</h1>
+<p>Presents a message to the user, with an optional call to action. The message is typically an error, update, or alert.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBanner">
+  <div class="ms-MessageBanner-content">
+    <div class="ms-MessageBanner-text">
+      <div class="ms-MessageBanner-clipper">
+        You&#x27;ve reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
+      </div>
+    </div>
+    <button class="ms-MessageBanner-expand">
+      <i class="ms-Icon ms-Icon--chevronsDown"></i>
+    </button>
+    <div class="ms-MessageBanner-action">
+      <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button 
+  class="ms-Button 
+    ms-Button--primary  
+    ">
+  <span class="ms-Button-label">Get More Storage</span>
+</button>
+    </div>
+  </div>
+  <button class="ms-MessageBanner-close">
+    <i class="ms-Icon ms-Icon--x"></i>
+  </button>
+</div>
+
+<script type="text/javascript">
+  var MessageBannerHTML = document.querySelector('.ms-MessageBanner');
+  var MessageBanner = new fabric['MessageBanner'](MessageBannerHTML);
+</script>
+<h2 id="states">States</h2>
+<p>This component has only the default state.</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the sample above into your page.</li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Breadcrumbs on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if (typeof fabric !== &quot;undefined&quot;) {
+             if (&#39;MessageBanner&#39; in fabric) {
+                 var elements = document.querySelectorAll(&#39;.ms-MessageBanner&#39;);
+                 var i = elements.length;
+                 var component;
+                 while(i--) {
+                     component = new fabric[&#39;MessageBanner&#39;](elements[i]);
+                 }
+             }
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as the text in <code>.ms-MessageBanner-action</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on Button.</p>
+
+</body>
+</html>

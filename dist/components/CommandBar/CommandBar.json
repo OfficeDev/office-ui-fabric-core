@@ -1,0 +1,30 @@
+{
+  "name": "CommandBar",
+  "accessibilityNotes": 
+    {
+      "role": "CommandBar",
+      "narration": "Read all the elements in the dialog on open.",
+      "keyboard": "Use the TAB key to navigate between elements in the dialog. To exit, use ESC. Trap focus in the dialog until the user dismisses it. The user needs to return to the previous element on close."
+    },
+  "class": "ms-CommandBar",
+  "dependencies": [
+    "ContextualMenu"
+  ],
+  "branches": [
+    {
+      "name": "Default",
+      "default": true,
+      "template": "CommandBar.html",
+      "branches": [
+        {
+          "name": "Standard",
+          "default": true
+        },
+        {
+          "name": "Close button",
+          "class": "ms-Dialog--close"
+        }
+      ]
+    }
+  ]
+}

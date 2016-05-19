@@ -1,0 +1,312 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component OrgChart</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="OrgChart.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.OrgChart) {
+          $('.ms-OrgChart').OrgChart();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('OrgChart' in fabric) {
+          var elements = document.querySelectorAll('.ms-OrgChart');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['OrgChart'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">OrgChart</h1>
+  <div id="componentWrapper">
+    <h1 id="org-chart">Org Chart</h1>
+<p>Displays multiple Persona components in groups with headers in order to show the hierarchy of an organization or team.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-OrgChart">
+  <div class="ms-OrgChart-group">
+    <ul class="ms-OrgChart-list">
+        <li class="ms-OrgChart-listItem">
+          <button class="ms-OrgChart-listItemBtn">
+            <div class="ms-Persona">
+              <div class="ms-Persona-imageArea">
+                <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+              </div>
+              <div class="ms-Persona-presence"></div>
+              <div class="ms-Persona-details">
+                <div class="ms-Persona-primaryText">Russel Miller</div>
+                <div class="ms-Persona-secondaryText">Sales</div>
+              </div>
+            </div>
+          </button>
+        </li>
+        <li class="ms-OrgChart-listItem">
+          <button class="ms-OrgChart-listItemBtn">
+            <div class="ms-Persona">
+              <div class="ms-Persona-imageArea">
+                <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+              </div><br>              <div class="ms-Persona-presence"></div>
+              <div class="ms-Persona-details">
+                <div class="ms-Persona-primaryText">Douglas Fielder</div>
+                <div class="ms-Persona-secondaryText">Public Relations</div>
+              </div>
+            </div>
+          </button>
+        </li>
+    </ul>
+  </div>
+  <div class="ms-OrgChart-group">
+    <div class="ms-OrgChart-groupTitle">Manager</div>
+    <ul class="ms-OrgChart-list">
+        <li class="ms-OrgChart-listItem">
+          <button class="ms-OrgChart-listItemBtn">
+            <div class="ms-Persona">
+              <div class="ms-Persona-imageArea">
+                <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+                <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+              </div><br>              <div class="ms-Persona-presence"></div>
+              <div class="ms-Persona-details">
+                <div class="ms-Persona-primaryText">Grant Steel</div>
+                <div class="ms-Persona-secondaryText">Sales</div>
+              </div>
+            </div>
+          </button>
+        </li>
+      </ul>
+  </div>
+  <div class="ms-OrgChart-group">
+    <div class="ms-OrgChart-groupTitle">Staff</div>
+    <ul class="ms-OrgChart-list">
+      <li class="ms-OrgChart-listItem">
+        <button class="ms-OrgChart-listItemBtn">
+          <div class="ms-Persona">
+            <div class="ms-Persona-imageArea">
+              <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+              <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+            </div><br>            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Harvey Wallin</div>
+              <div class="ms-Persona-secondaryText">Public Relations</div>
+            </div>
+          </div>
+        </button>
+      </li>
+      <li class="ms-OrgChart-listItem">
+        <button class="ms-OrgChart-listItemBtn">
+          <div class="ms-Persona">
+            <div class="ms-Persona-imageArea">
+              <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+              <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+            </div><br>            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Marcus Lauer</div>
+              <div class="ms-Persona-secondaryText">Technical Support</div>
+            </div>
+          </div>
+        </button>
+      </li>
+      <li class="ms-OrgChart-listItem">
+        <button class="ms-OrgChart-listItemBtn">
+          <div class="ms-Persona">
+            <div class="ms-Persona-imageArea">
+              <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+              <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+            </div><br>            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Marcel Groce</div>
+              <div class="ms-Persona-secondaryText">Delivery</div>
+            </div>
+          </div>
+        </button>
+      </li>
+      <li class="ms-OrgChart-listItem">
+        <button class="ms-OrgChart-listItemBtn">
+          <div class="ms-Persona">
+            <div class="ms-Persona-imageArea">
+              <i class="ms-Persona-placeholder ms-Icon ms-Icon--person"></i>
+              <img class="ms-Persona-image" src="../persona/Persona.Person2.png">
+            </div><br>            <div class="ms-Persona-presence"></div>
+            <div class="ms-Persona-details">
+              <div class="ms-Persona-primaryText">Jessica Fischer</div>
+              <div class="ms-Persona-secondaryText">Marketing</div>
+            </div>
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the samples above into your page.</li>
+<li>Replace the Persona components with your own.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on the Persona component.</p>
+
+  </div>
+</body>
+</html>

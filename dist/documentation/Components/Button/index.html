@@ -1,0 +1,107 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Button</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="button">Button</h1>
+<p>Allows users to take action, such as submitting a form or dismissing a message.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button 
+  class="ms-Button 
+    
+    ">
+  <span class="ms-Button-label">Create Account</span>
+</button>
+<h3 id="primary">Primary</h3>
+<p>Where multiple buttons are presented together, this is the default action when submitting the form.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button 
+  class="ms-Button 
+    ms-Button--primary  
+    ">
+  <span class="ms-Button-label">Create Account</span>
+</button>
+<h3 id="compound">Compound</h3>
+<p>Provides a second line of text to explain the action the button takes.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button 
+  class="ms-Button 
+    ms-Button--compound  
+    ">
+    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create Account</span>
+    <span class="ms-Button-description">Description of this action this button takes</span>
+</button>
+<h3 id="hero">Hero</h3>
+<p>Similar to the Command variant, but with a larger size to draw attention to important actions.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button 
+  class="ms-Button 
+    ms-Button--hero  
+    ">
+    <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create Account</span>
+</button>
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-disabled</code></td>
+<td><code>.ms-Button</code></td>
+<td>When using an <code>&lt;a&gt;</code> element, apply this class to disable the button. When using a <code>&lt;button&gt;</code>, the <code>disabled</code> attribute can be used instead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;button class=&quot;ms-Button&quot;&gt;
+     &lt;span class=&quot;ms-Button-label&quot;&gt;Create account&lt;/span&gt;
+ &lt;/button&gt;
+</code></pre></li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-Button-label</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for keyboard navigation.</p>
+
+<script type="text/javascript">
+    var ButtonElements = document.querySelectorAll(".ms-Button");
+    for(var i = 0; i < ButtonElements.length; i++) {
+        new fabric['Button'](ButtonElements[i]);
+    }
+</script>
+
+
+</body>
+</html>

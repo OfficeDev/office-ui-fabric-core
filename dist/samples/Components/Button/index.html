@@ -1,0 +1,320 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Button</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Button.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Button) {
+          $('.ms-Button').Button();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Button' in fabric) {
+          var elements = document.querySelectorAll('.ms-Button');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Button'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Button</h1>
+  <div id="componentWrapper">
+    <h1 id="button">Button</h1>
+<p>Buttons are best used to enable a user to commit a change or complete steps in a task. They are typically found inside forms, dialogs, panels or pages. An example of their usage is confirming the deletion of a file in a confirmation dialog. When considering their place in a layout, contemplate the order in which a user will flow through the UI. As an example, in a form, the individual will need to read and interact with the form fields before submiting the form. Therefore, as a general rule, the button should be placed at the bottom of the UI container (a dialog, panel, or page) which holds the related UI elements. While buttons can technically be used to navigate a user to another part of the experience, this is not recommended - unless that navigation is part of an action or their flow.</p>
+<h3 id="best-practices">Best Practices</h3>
+<table>
+<thead>
+<tr>
+<th>Do</th>
+<th>Don&#39;t  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make sure the label conveys a clear purpose of the button to the user.</td>
+<td>Don&#39;t use generic labels like &quot;Ok,&quot; especially in the case of an error; errors are never &quot;Ok.&quot;</td>
+</tr>
+<tr>
+<td>Button labels must describe the action the button will perform and should include a verb. Use concise, specific, self-explanatory labels, usually a single word.</td>
+<td>Don’t place the default focus on a button that destroys data. Instead, place the default focus on the button that performs the &quot;safe act&quot; and retains the content (i.e. &quot;Save&quot;) or cancels the action (i.e. &quot;Cancel&quot;).</td>
+</tr>
+<tr>
+<td>Buttons should always include a noun if there is any room for interpretation about what the verb operates on.</td>
+<td>Don’t use a button to navigate to another place, use a link instead. The exception is in a wizard where &quot;Back&quot; and &quot;Next&quot; buttons may be used.</td>
+</tr>
+<tr>
+<td>Consider the affect localization will have on the button and what will happen to components around it.</td>
+<td>Don’t put too much text in a button - try to keep the length of your text to a minimum.</td>
+</tr>
+<tr>
+<td>If the button’s label content is dynamic, consider how the button will resize and what will happen to components around it.</td>
+<td>Don&#39;t put anything other than text in a button.</td>
+</tr>
+<tr>
+<td>Use only a single line of text in the label of the button.</td>
+<td></td>
+</tr>
+<tr>
+<td>Expose only one or two buttons to the user at a time, for example, &quot;Accept&quot; and &quot;Cancel&quot;. If you need to expose more actions to the user, consider using checkboxes or radio buttons from which the user can select actions, with a single command button to trigger those actions.</td>
+<td></td>
+</tr>
+<tr>
+<td>Show only one primary button that inherits theme color at rest state. In the event there are more than two buttons with equal priority, all buttons should have neutral backgrounds.</td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;Submit&quot;, &quot;OK&quot;, and &quot;Apply&quot; buttons should always be styled as primary buttons. When &quot;Reset&quot; or &quot;Cancel&quot; buttons appear alongside one of the above, they should be styled as secondary buttons.</td>
+<td></td>
+</tr>
+<tr>
+<td>Default buttons should always perform safe operations. For example, a default button should never delete.</td>
+<td></td>
+</tr>
+<tr>
+<td>Use task buttons to cause actions that complete a task or cause a transitional task. Do not use buttons to toggle other UX in the same context. For example, a button may be used to open an interface area but should not be used to open an additional set of components in the same interface.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create account</span>
+  <span class="ms-Button-description">Description of the action this button takes</span>
+</button>
+
+
+<h3 id="primary">Primary</h3>
+<p>Where multiple buttons are presented together, this is the default action when submitting the form.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-Button--primary">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create account</span>
+  <span class="ms-Button-description">Description of the action this button takes</span>
+</button>
+
+
+<h3 id="command">Command</h3>
+<p>Includes an icon.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-Button--command">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create account</span>
+  <span class="ms-Button-description">Description of the action this button takes</span>
+</button>
+
+
+<h3 id="compound">Compound</h3>
+<p>Provides a second line of text to explain the action the button takes.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-Button--compound">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create account</span>
+  <span class="ms-Button-description">Description of the action this button takes</span>
+</button>
+
+
+<h3 id="hero">Hero</h3>
+<p>Similar to the Command variant, but with a larger size to draw attention to important actions.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button ms-Button--hero">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Create account</span>
+  <span class="ms-Button-description">Description of the action this button takes</span>
+</button>
+
+
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-disabled</code></td>
+<td><code>.ms-Button</code></td>
+<td>When using an <code>&lt;a&gt;</code> element, apply this class to disable the button. When using a <code>&lt;button&gt;</code>, the <code>disabled</code> attribute can be used instead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;button class=&quot;ms-Button&quot;&gt;
+     &lt;span class=&quot;ms-Button-label&quot;&gt;Create account&lt;/span&gt;
+ &lt;/button&gt;
+</code></pre></li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-Button-label</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>Focus styles are included for keyboard navigation.</p>
+
+  </div>
+</body>
+</html>

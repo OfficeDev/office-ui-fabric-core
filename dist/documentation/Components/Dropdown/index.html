@@ -1,0 +1,114 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dropdown</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="dropdown">Dropdown</h1>
+<p>Allows for the selection of one option from a list.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Dropdown  " tabindex="0">
+  <label class="ms-Label">Dropdown label</label>
+  <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--caretDown"></i>
+  <select class="ms-Dropdown-select">
+      <option>Choose a sound&amp;hellip</option>
+      <option>Dog barking</option>
+      <option>Wind blowing</option>
+      <option>Duck quacking</option>
+      <option>Cow mooing</option>
+  </select>
+</div>-
+<h3 id="disabled">Disabled</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Dropdown  is-disabled" tabindex="0">
+  <label class="ms-Label">Dropdown label</label>
+  <i class="ms-Dropdown-caretDown ms-Icon ms-Icon--caretDown"></i>
+  <select class="ms-Dropdown-select">
+      <option>Choose a sound&amp;hellip</option>
+      <option>Dog barking</option>
+      <option>Wind blowing</option>
+      <option>Duck quacking</option>
+      <option>Cow mooing</option>
+  </select>
+</div>
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-disabled</code></td>
+<td><code>.ms-Dropdown</code></td>
+<td>Disables the dropdown.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the sample above into your page. For example:<pre><code> &lt;div class=&quot;ms-Dropdown&quot; tabindex=&quot;0&quot;&gt;
+     &lt;label class=&quot;ms-Label&quot;&gt;Dropdown label&lt;/label&gt;
+     &lt;i class=&quot;ms-Dropdown-caretDown ms-Icon ms-Icon--caretDown&quot;&gt;&lt;/i&gt;
+     &lt;select class=&quot;ms-Dropdown-select&quot;&gt;
+         &lt;option&gt;Choose a sound&amp;hellip;&lt;/option&gt;
+         &lt;option&gt;Dog barking&lt;/option&gt;
+         &lt;option&gt;Wind blowing&lt;/option&gt;
+         &lt;option&gt;Duck quacking&lt;/option&gt;
+         &lt;option&gt;Cow mooing&lt;/option&gt;
+     &lt;/select&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page to instantiate all Dropdown components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.Dropdown) {
+             $(&#39;.ms-Dropdown&#39;).Dropdown();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as the options within <code>.ms-Dropdown-select</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      if ($.fn.Dropdown) {
+          $('.ms-Dropdown').Dropdown();
+      }
+  });
+</script>
+
+</body>
+</html>

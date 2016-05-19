@@ -1,0 +1,97 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TextField</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="text-field">Text Field</h1>
+<p>Allows for the input of text. Can be a single line or multiple lines. Typically used to accept user input within a form.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-TextField ">
+  <label class="ms-Label">Name</label>
+  <input class="ms-TextField-field" type="text" value="" placeholder="">
+  
+  
+</div>
+
+<h3 id="multiline">Multiline</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-TextField  ms-TextField--multiline">
+  <label class="ms-Label">Name</label>
+  
+  <textarea class="ms-TextField-field"></textarea>
+  
+</div>
+
+<h3 id="placeholder-text">Placeholder text</h3>
+
+<div class="docs-TextFieldPlaceholderExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  
+  <div class="ms-TextField  ms-TextField--placeholder">
+    <label class="ms-Label">Given name</label>
+    <input class="ms-TextField-field" type="text" value="" placeholder="">
+    
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+  var TextFieldHTML = document.querySelector('.docs-TextFieldPlaceholderExample .ms-TextField');
+  var TextField = new fabric['TextField'](TextFieldHTML);
+</script>
+
+<h3 id="underlined-todo-deprecated-">Underlined (@TODO: deprecated?)</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-TextField  ms-TextField--underlined">
+  <label class="ms-Label">Name</label>
+  <input class="ms-TextField-field" type="text" value="" placeholder="">
+  
+  
+</div>
+
+<h3 id="underlined">Underlined</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-TextField  ms-TextField--textFieldUnderlined">
+  <label class="ms-Label">Name</label>
+  <input class="ms-TextField-field" type="text" value="" placeholder="">
+  
+  
+</div>
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page.</li>
+<li>Update the <code>.ms-Label</code> to contain your label text.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on the Label component.</p>
+
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component Dialog</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="Dialog.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.Dialog) {
+          $('.ms-Dialog').Dialog();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('Dialog' in fabric) {
+          var elements = document.querySelectorAll('.ms-Dialog');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['Dialog'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  <script type="text/javascript" src="jquery.Dialog.js"></script>
+
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Dialog</h1>
+  <div id="componentWrapper">
+    <h1 id="dialog">Dialog</h1>
+<p>Displays content that temporarily blocks interactions with the application. It is primarily used for confirmation tasks, light-weight creation or edit tasks, and simple management tasks.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>Includes a content area and two buttons.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--sample">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
+<div class="ms-Dialog ms-Dialog--sample">
+  <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
+  <div class="ms-Dialog-main">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Dialog-header">
+      <p class="ms-Dialog-title">All emails together</p>
+    </div>
+    <div class="ms-Dialog-inner">
+      <div class="ms-Dialog-content">
+        <p class="ms-Dialog-subText">Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.</p>
+        <div class="ms-ChoiceField">
+          <input id="demo-checkbox-unselected1" class="ms-ChoiceField-input" type="checkbox">
+          <label for="demo-checkbox-unselected1" class="ms-ChoiceField-field"><span class="ms-Label">Option1</span></label>
+        </div>
+        <div class="ms-ChoiceField">
+          <input id="demo-checkbox-unselected2" class="ms-ChoiceField-input" type="checkbox">
+          <label for="demo-checkbox-unselected2" class="ms-ChoiceField-field"><span class="ms-Label">Option2</span></label>
+        </div>
+      </div>
+      <div class="ms-Dialog-actions">
+        <div class="ms-Dialog-actionsRight">
+          <button class="ms-Dialog-action ms-Button ms-Button--primary">
+            <span class="ms-Button-label">Save</span>
+          </button>
+          <button class="ms-Dialog-action ms-Button">
+            <span class="ms-Button-label">Cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="multiline">Multiline</h3>
+<p>Includes multiple large buttons, each with a title and description.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--multiline">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog - Multiline</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
+<div class="ms-Dialog ms-Dialog--multiline">
+  <div class="ms-Overlay ms-Overlay--dark ms-DialogAction--close js-DialogAction--close"></div>
+  <div class="ms-Dialog-main">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Dialog-header">
+      <p class="ms-Dialog-title">Create account</p>
+    </div>
+    <div class="ms-Dialog-inner">
+      <div class="ms-Dialog-content">
+        <button class="ms-Button ms-Button--compound">
+          <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+          <span class="ms-Button-label">Create account</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+        <button class="ms-Button ms-Button--compound">
+          <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+          <span class="ms-Button-label">Create account</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+        <button class="ms-Button ms-Button--compound">
+          <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+          <span class="ms-Button-label">Create account</span>
+          <span class="ms-Button-description">Description of the action this button takes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="large-header">Large Header</h3>
+<p>Provides a large, styled header followed by a content area and two buttons.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--lgHeader">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog - Large Header</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
+<div class="ms-Dialog ms-Dialog--lgHeader">
+  <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
+  <div class="ms-Dialog-main">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Dialog-header">
+      <p class="ms-Dialog-title">All emails together now</p>
+    </div>
+    <div class="ms-Dialog-inner">
+      <div class="ms-Dialog-content">
+        <p class="ms-Dialog-subText">Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.</p>
+      </div>
+      <div class="ms-Dialog-actions">
+        <div class="ms-Dialog-actionsRight">
+          <button class="ms-Dialog-action ms-Button ms-Button--primary">
+            <span class="ms-Button-label">More</span>
+          </button>
+          <button class="ms-Dialog-action ms-Button">
+            <span class="ms-Button-label">Got it</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="blocking">Blocking</h3>
+<p>The overlay for this variant does not dismiss the Dialog.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--blocking">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog - Blocking</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
+<div class="ms-Dialog ms-Dialog--blocking">
+  <div class="ms-Overlay"></div>
+  <div class="ms-Dialog-main">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Dialog-header">
+      <p class="ms-Dialog-title">Unsaved changes</p>
+    </div>
+    <div class="ms-Dialog-inner">
+      <div class="ms-Dialog-content">
+        <p class="ms-Dialog-subText">Are you sure you want to discard these changes?</p>
+      </div>
+      <div class="ms-Dialog-actions">
+        <div class="ms-Dialog-actionsRight">
+          <button class="ms-Dialog-action ms-Button">
+            <span class="ms-Button-label">Yes</span>
+          </button>
+          <button class="ms-Dialog-action ms-Button ms-Button--primary">
+            <span class="ms-Button-label">No</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="close">Close</h3>
+<p>Includes a close button at the top right, as an additional way to dismiss the dialog.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<button class="ms-Button js-DialogAction--open" data-target=".ms-Dialog--close">
+  <span class="ms-Button-icon"><i class="ms-Icon ms-Icon--plus"></i></span>
+  <span class="ms-Button-label">Open Dialog - Close</span>
+  <span class="ms-Button-description">Opens the Sample Dialog</span>
+</button>
+
+<div class="ms-Dialog ms-Dialog--close">
+  <div class="ms-Overlay ms-Overlay--dark js-DialogAction--close"></div>
+  <div class="ms-Dialog-main">
+    <button class="ms-Dialog-button ms-Dialog-button--close js-DialogAction--close">
+      <i class="ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Dialog-header">
+      <p class="ms-Dialog-title">All emails together</p>
+    </div>
+    <div class="ms-Dialog-inner">
+      <div class="ms-Dialog-content">
+        <p class="ms-Dialog-subText">Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.</p>
+        <div class="ms-ChoiceField">
+          <input id="demo-checkbox-unselected1" class="ms-ChoiceField-input" type="checkbox">
+          <label for="demo-checkbox-unselected1" class="ms-ChoiceField-field"><span class="ms-Label">Option1</span></label>
+        </div>
+        <div class="ms-ChoiceField">
+          <input id="demo-checkbox-unselected2" class="ms-ChoiceField-input" type="checkbox">
+          <label for="demo-checkbox-unselected2" class="ms-ChoiceField-field"><span class="ms-Label">Option2</span></label>
+        </div>
+      </div>
+      <div class="ms-Dialog-actions">
+        <div class="ms-Dialog-actionsRight">
+          <button class="ms-Dialog-action ms-Button ms-Button--primary">
+            <span class="ms-Button-label">Save</span>
+          </button>
+          <button class="ms-Dialog-action ms-Button">
+            <span class="ms-Button-label">Cancel</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h2 id="states">States</h2>
+<p>This component has only the default state.</p>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li><p>Copy the HTML from one of the samples above into your page. For example:</p>
+<pre><code> &lt;button class=&quot;ms-Button js-DialogAction--open&quot; data-target=&quot;.ms-Dialog--sample&quot;&gt;
+     &lt;span class=&quot;ms-Button-icon&quot;&gt;&lt;i class=&quot;ms-Icon ms-Icon--plus&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+     &lt;span class=&quot;ms-Button-label&quot;&gt;Open Dialog&lt;/span&gt;
+     &lt;span class=&quot;ms-Button-description&quot;&gt;Opens the Sample Dialog&lt;/span&gt;
+ &lt;/button&gt;
+
+ &lt;div class=&quot;ms-Dialog ms-Dialog--sample&quot;&gt;
+     &lt;div class=&quot;ms-Overlay ms-Overlay--dark js-DialogAction--close&quot;&gt;&lt;/div&gt;
+     &lt;div class=&quot;ms-Dialog-main&quot;&gt;
+         &lt;button class=&quot;ms-Dialog-button ms-Dialog-button--close js-DialogAction--close&quot;&gt;
+         &lt;i class=&quot;ms-Icon ms-Icon--x&quot;&gt;&lt;/i&gt;
+         &lt;/button&gt;
+         &lt;div class=&quot;ms-Dialog-header&quot;&gt;
+         &lt;p class=&quot;ms-Dialog-title&quot;&gt;All emails together&lt;/p&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-Dialog-inner&quot;&gt;
+         &lt;div class=&quot;ms-Dialog-content&quot;&gt;
+             &lt;p class=&quot;ms-Dialog-subText&quot;&gt;Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.&lt;/p&gt;
+             &lt;div class=&quot;ms-ChoiceField&quot;&gt;
+                 &lt;input id=&quot;demo-checkbox-unselected1&quot; class=&quot;ms-ChoiceField-input&quot; type=&quot;checkbox&quot;&gt;
+                 &lt;label for=&quot;demo-checkbox-unselected1&quot; class=&quot;ms-ChoiceField-field&quot;&gt;&lt;span class=&quot;ms-Label&quot;&gt;Option1&lt;/span&gt;&lt;/label&gt;
+             &lt;/div&gt;
+             &lt;div class=&quot;ms-ChoiceField&quot;&gt;
+                 &lt;input id=&quot;demo-checkbox-unselected2&quot; class=&quot;ms-ChoiceField-input&quot; type=&quot;checkbox&quot;&gt;
+                 &lt;label for=&quot;demo-checkbox-unselected2&quot; class=&quot;ms-ChoiceField-field&quot;&gt;&lt;span class=&quot;ms-Label&quot;&gt;Option2&lt;/span&gt;&lt;/label&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div class=&quot;ms-Dialog-actions&quot;&gt;
+             &lt;div class=&quot;ms-Dialog-actionsRight&quot;&gt;
+             &lt;button class=&quot;ms-Dialog-action ms-Button ms-Button--primary&quot;&gt;
+                 &lt;span class=&quot;ms-Button-label&quot;&gt;Save&lt;/span&gt;
+             &lt;/button&gt;
+             &lt;button class=&quot;ms-Dialog-action ms-Button&quot;&gt;
+                 &lt;span class=&quot;ms-Button-label&quot;&gt;Cancel&lt;/span&gt;
+             &lt;/button&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;/div&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+</code></pre></li>
+<li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Dialog components on the page:<pre><code> &lt;script&gt;
+     $(document).ready(function() {
+         if ($.fn.Dialog) {
+             $(&#39;.ms-Dialog&#39;).Dialog();
+         }
+     });
+ &lt;/script&gt;
+</code></pre></li>
+<li>Verify that the component is working the same as in the sample above.</li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-Dialog-content</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies on other components.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>More details will be added here.</p>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Label</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="label">Label</h1>
+<p>Used to label form elements such as TextField and Dropdown.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<label class="ms-Label  ">Name</label>
+
+<script type="text/javascript">
+  var LabelHTML = document.querySelector('.ms-Label');
+</script>
+<h3 id="required">Required</h3>
+
+<div class="ms-Label--required"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<label class="ms-Label is-required ">Name</label>
+</div>
+
+<script type="text/javascript">
+  var LabelExampleRequiredHTML = document.querySelector('.ms-Label--required');
+  var LabelExampleRequired = new fabric['.ms-Label'](LabelExampleRequiredHTML);
+</script>
+<h3 id="disabled">Disabled</h3>
+
+<div class="ms-Label--disabled"><!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<label class="ms-Label is-disabled ">Name</label>
+</div>
+
+<script type="text/javascript">
+  var LabelExampleDisabledHTML = document.querySelector('.ms-Label--disabled .ms-Label');
+  var LabelExampleDisabled = new fabric['.ms-Label'](LabelExampleDisabledHTML);
+</script>
+<h2 id="states">States</h2>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Applied to</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.is-required</code></td>
+<td><code>.ms-Label</code></td>
+<td>Marks the form element as required.</td>
+</tr>
+<tr>
+<td><code>.is-disabled</code></td>
+<td><code>.ms-Label</code></td>
+<td>Marks the form element as disabled.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from one of the samples above into your page. For example:<pre><code> &lt;label class=&quot;ms-Label&quot;&gt;
+     Name
+ &lt;/label&gt;
+</code></pre></li>
+<li>Replace the sample HTML content (such as the content of <code>.ms-Label</code>) with your content.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has no dependencies on other components.</p>
+<h2 id="accessibility">Accessibility</h2>
+<p>When used with a form element, add a <code>for</code> attribute that matches the <code>id</code> attribute of the field.</p>
+
+</body>
+</html>

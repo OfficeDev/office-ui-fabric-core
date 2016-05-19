@@ -1,0 +1,290 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Component MessageBar</title>
+
+  <link rel="stylesheet" href="../../../css/fabric.css">
+  <link rel="stylesheet" href="MessageBar.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // File Picker demo fixes
+      if ($('.ms-FilePicker').length > 0) {
+        $('.ms-FilePicker').css({
+          "position": "absolute !important"
+        });
+
+        $('.ms-Panel').FilePicker();
+      } else {
+        if ($.fn.MessageBar) {
+          $('.ms-MessageBar').MessageBar();
+        }
+      }
+
+       // Vanilla JS Components
+      if (typeof fabric !== "undefined") {
+        if ('MessageBar' in fabric) {
+          var elements = document.querySelectorAll('.ms-MessageBar');
+          var i = elements.length;
+          var component;
+          while(i--) {
+            component = new fabric['MessageBar'](elements[i]);
+          }
+        }
+      }
+
+    });
+  </script>
+  
+  
+
+  <!-- Styles specifically for this page, not required for proper display of components  -->
+  <style type="text/css">
+    html, 
+    body {
+        margin: 0;
+        padding: 0;
+    }    
+
+    /* Begin Markdown styles */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-weight: normal;
+        line-height: 1.2;
+        margin: 40px 0 8px 0;
+    }
+
+    h1
+    {
+        font-family: 'Segoe UI Light WestEuropean', 'Segoe UI Light', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 42px;
+        color: #666;
+    }
+
+    h2 {
+        font-family: 'Segoe UI Semilight WestEuropean', 'Segoe UI Semilight', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 28px;
+        color: #333;
+    }
+
+    h3 {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 21px;
+        color: #212121 !important;
+    }
+
+    h4 {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    p {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p strong {
+        font-family: 'Segoe UI Semibold WestEuropean', 'Segoe UI Semibold', 'Segoe UI', Tahoma, Arial, sans-serif;
+        font-weight: normal;
+    }
+    
+    table {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    
+    th {
+        text-align: left;
+    }
+    
+    th, td {
+        padding-bottom: 16px;
+    }
+    
+    ul, ol {
+        font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        list-style-position: inside;
+    }
+    
+    li {
+        margin-bottom: 8px;
+    }
+    
+    
+    /* End Markdown styles */
+
+    .docs-ComponentName {
+        margin: 0;
+        padding: 10px;
+        margin-bottom: 20px;
+        padding-left: 25px;
+    }
+
+    #componentWrapper {
+      width: calc(100% - 56px);
+      height: 100%;
+      padding: 0 28px;
+    }
+
+    .sample-wrapper {
+      margin: 28px 0;
+    }
+
+    .sample-wrapper .ms-OrgChart {
+      float: left;
+      margin-right: 30px;
+    }
+
+    .sample-wrapper > .ms-Overlay {
+      display: block;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.3); // For visibility of lighter variant
+    }
+
+    .ms-ContextualMenu.is-open  {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .ms-NavBar-item .ms-ContextualMenu {
+      position: absolute;
+    }
+
+    .ms-CommandBar .ms-ContextualMenu {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">MessageBar</h1>
+  <div id="componentWrapper">
+    <h1 id="message-bar">Message Bar</h1>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>Lowest level of caution. Use when you want to present timely, concise information that accelerates a workflow, or to provide key information or actions that avoid a dead end in the experience.
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. --></p>
+<div class="ms-MessageBar">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--infoCircle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Info - lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="warning">Warning</h3>
+<p>Use in exceptional situations where the use should be mindful of some sort of temporary condition.  Notably, yellow is the most visible color to the human eye.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-MessageBar ms-MessageBar--warning">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--infoCircle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Warning - lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="severe-warning">Severe Warning</h3>
+<p>Use for a situation that is not harmful or destructive yet but could easily turn into one. (e.g. You&#39;re about to run out of storage space).</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-MessageBar ms-MessageBar--severeWarning">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--alert"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Severe Warning - lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="error">Error</h3>
+<p>Use when a serious failure or error has occured and information may have been lost or some actions are impossible.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-MessageBar ms-MessageBar--error">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--xCircle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Error - lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="remove">Remove</h3>
+<p>Use when the user is explicitly forbidden from a particular action not because of an error, but because of security restrictions or policy enforcements.</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-MessageBar ms-MessageBar--remove">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--minus ms-Icon--circle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Remove - lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="success">Success</h3>
+<p>Use sparingly when there&#39;s an exceptional need to tell the use that something went right. The preferred way to show success is to show, not tell (e.g. by navigating to show the result of the user action and letting users continue working on it or elsewhere).</p>
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-MessageBar ms-MessageBar--success">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--checkboxCheck ms-Icon--circle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Success - lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.<br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+
+
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+<li>Confirm that you have references to Fabric&#39;s CSS on your page:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+ &lt;/head&gt;
+</code></pre></li>
+<li>Copy the HTML from the samples above into your page.</li>
+<li>Replace the text in <code>&lt;div class=&quot;ms-MessageBar-text&quot;&gt;</code> with your own.</li>
+</ol>
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on the Link component.</p>
+
+  </div>
+</body>
+</html>

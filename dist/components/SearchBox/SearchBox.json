@@ -1,0 +1,20 @@
+{
+  "name": "SearchBox",
+  "notes": "",
+  "description": "A basic Office 365 search field that includes a standard selection state and cancel button.",
+  "template": "SearchBox.html",
+  "class": "ms-SearchBox",
+  "dependencies": [
+    "Label"
+  ],
+  "branches": [
+      {
+        "name": "Enabled",
+        "default": true
+      },
+      {
+        "name": "Disabled",
+        "class": "is-disabled"
+      }
+  ]
+}

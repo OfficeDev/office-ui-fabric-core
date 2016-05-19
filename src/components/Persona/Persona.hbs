@@ -39,8 +39,6 @@
     </div>
   {{/if}}
   {{#if props.personaCardProps}}
-    {{#> ContextualHost props=props.contextualHostProps thisProps=props.personaCardProps}}
-      {{> PersonaCard props=thisProps}}
-    {{/ContextualHost}}
+    {{> PersonaCard props=props}}
   {{/if}}
 </div>

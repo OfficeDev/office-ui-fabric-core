@@ -1,5 +1,9 @@
+/// <reference path="../../../dist/js/fabric.templates.ts"/>
+/// <reference path="../Panel/Panel.ts"/>
+
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 "use strict";
+let tomTest = true;
 
 namespace fabric {
 
@@ -22,6 +26,9 @@ namespace fabric {
     private _newDropdownLabel: HTMLSpanElement;
     private _newDropdown: HTMLUListElement;
     private _dropdownItems: Array<DropdownItems>;
+    private _ftl = new FabricTemplateLibrary();
+    private _panelContainer: HTMLElement;
+    private _panel: fabric.Panel;
 
     /**
      *
@@ -67,9 +74,24 @@ namespace fabric {
         });
       }
 
-      // Add the new replace dropdown
+      // Add the new replacement dropdown
       container.appendChild(this._newDropdownLabel);
-      container.appendChild(this._newDropdown);
+      container.appendChild(this._newDropdown); // temp disabled, to test in panel
+
+      if (tomTest) {
+        // @TODO - we are only going to use this on small breakpoints
+        // this._panelContainer = this._ftl.Panel();
+        this._panelContainer = document.createElement("div");
+        this._panelContainer.classList.add("ms-Panel");
+        this._panelContainer.classList.add("ms-Dropdown");
+        this._panelContainer.classList.add("animate-in");
+
+        this._panelContainer.appendChild(this._newDropdown);
+
+        // Assign the script to the new panel, which creates a panel host and attaches it to the DOM
+        this._panel = new fabric.Panel(this._panelContainer);
+        // this._panel.dismiss();
+      }
 
       /** Toggle open/closed state of the dropdown when clicking its title. */
       this._newDropdownLabel.addEventListener("click", this._onOpenDropdown );
@@ -81,13 +103,6 @@ namespace fabric {
       if (!isDisabled && !isOpen) {
         /** Stop the click event from propagating, which would just close the dropdown immediately. */
         evt.stopPropagation();
-
-        /** Before opening, size the items list to match the dropdown. */
-        let dropdownWidth = this._container.clientWidth;
-        for (let i = 0; i < this._dropdownItems.length; ++i) {
-          let item = this._dropdownItems[i].newItem;
-          item.style.width = dropdownWidth + "px";
-        }
 
         /** Go ahead and open that dropdown. */
         this._container.classList.add("is-open");
@@ -104,7 +119,6 @@ namespace fabric {
 
     private _onItemSelection(evt: any) {
       let item = <HTMLLIElement>evt.srcElement;
-      console.log(item.textContent);
       let isDropdownDisabled = this._container.classList.contains("is-disabled");
       let isOptionDisabled = item.classList.contains("is-disabled");
       if (!isDropdownDisabled && !isOptionDisabled) {

@@ -166,7 +166,12 @@ var ContexualMenuExampleModel = {
     }
   },
   "dividers":  {
-    "state": "is-open",
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
     "items": [
       {
         "title": "Delete",

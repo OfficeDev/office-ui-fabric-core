@@ -26,9 +26,13 @@ You can nest a ContextualMenu inside another ContextualMenu, resulting in a subm
 {{> ContextualMenuSubmenuExample props=ContextualMenuExampleModel.submenu }}
 --->
 
-
 ### Dividers
 Dividers can be added to create distinct sections of options or commands.
+
+<!---
+{{> ContextualMenuDividersExample props=ContextualMenuExampleModel.dividers }}
+--->
+
 
 ## States
 

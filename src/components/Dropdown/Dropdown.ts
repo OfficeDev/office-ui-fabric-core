@@ -1,9 +1,7 @@
-/// <reference path="../../../dist/js/fabric.templates.ts"/>
 /// <reference path="../Panel/Panel.ts"/>
 
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 "use strict";
-let tomTest = true;
 
 namespace fabric {
 
@@ -12,12 +10,19 @@ namespace fabric {
     public newItem: HTMLLIElement;
   }
 
+  interface WindowSize {
+    x: number;
+    y: number;
+  }
+
+  const smMax: number = 479;
+
   /**
    * Dropdown Plugin
-   * 
+   *
    * Given .ms-Dropdown containers with generic <select> elements inside, this plugin hides the original
    * dropdown and creates a new "fake" dropdown that can more easily be styled across browsers.
-   * 
+   *
    */
   export class Dropdown {
 
@@ -26,7 +31,6 @@ namespace fabric {
     private _newDropdownLabel: HTMLSpanElement;
     private _newDropdown: HTMLUListElement;
     private _dropdownItems: Array<DropdownItems>;
-    private _ftl = new FabricTemplateLibrary();
     private _panelContainer: HTMLElement;
     private _panel: fabric.Panel;
 
@@ -76,25 +80,82 @@ namespace fabric {
 
       // Add the new replacement dropdown
       container.appendChild(this._newDropdownLabel);
-      container.appendChild(this._newDropdown); // temp disabled, to test in panel
+      container.appendChild(this._newDropdown);
 
-      if (tomTest) {
-        // @TODO - we are only going to use this on small breakpoints
-        // this._panelContainer = this._ftl.Panel();
+      /** Toggle open/closed state of the dropdown when clicking its title. */
+      this._newDropdownLabel.addEventListener("click", this._onOpenDropdown );
+
+      this._setWindowEvent();
+    }
+
+    private _setWindowEvent() {
+      window.addEventListener("resize", () => {
+        this._doResize();
+      }, false);
+    }
+
+    private _getScreenSize(): WindowSize {
+      // First we need to set what the screen is doing, check screen size
+      let w = window;
+      let wSize = {
+        x: 0,
+        y: 0
+      };
+      let d = document,
+          e = d.documentElement,
+          g = d.getElementsByTagName("body")[0];
+
+      wSize.x = w.innerWidth || e.clientWidth || g.clientWidth;
+      wSize.y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+      return wSize;
+    }
+
+    private _doResize() {
+      console.log("do resize");
+      let isOpen = this._container.classList.contains("is-open");
+      if (!isOpen) {
+        return;
+      }
+
+      let screenSize = this._getScreenSize().x;
+      if (screenSize <= smMax) {
+        this._openDropdownAsPanel();
+      } else {
+        this._removeDropdownAsPanel();
+      }
+    }
+
+    private _openDropdownAsPanel() {
+      if (this._panel === undefined) {
         this._panelContainer = document.createElement("div");
         this._panelContainer.classList.add("ms-Panel");
         this._panelContainer.classList.add("ms-Dropdown");
+        this._panelContainer.classList.add("is-open");
         this._panelContainer.classList.add("animate-in");
 
         this._panelContainer.appendChild(this._newDropdown);
 
-        // Assign the script to the new panel, which creates a panel host and attaches it to the DOM
+        // Assign the script to the new panel, which creates a panel host, overlay, and attaches it to the DOM
         this._panel = new fabric.Panel(this._panelContainer);
-        // this._panel.dismiss();
-      }
 
-      /** Toggle open/closed state of the dropdown when clicking its title. */
-      this._newDropdownLabel.addEventListener("click", this._onOpenDropdown );
+        // @TODO, the panel needs to close itself and this dropdown whenever the overlay is clicked
+        // @TODO, clicking on a dropdown item needs to close everything as well
+      }
+    }
+    private _removeDropdownAsPanel() {
+      if (this._panel !== undefined) {
+          // move dropdown back to outside the panel
+          // @TODO, the panel tries to animate out, we should probably wait for that before moving this element
+          this._container.appendChild(this._newDropdown);
+
+          // destroy panel
+          // @TODO dismiss has a bug
+          this._panel.dismiss();
+
+          // @TODO how to actually destroy panel
+          this._panel = undefined;
+        }
     }
 
     private _onOpenDropdown(evt: any) {
@@ -109,10 +170,16 @@ namespace fabric {
 
         /** Temporarily bind an event to the document that will close this dropdown when clicking anywhere. */
         document.addEventListener("click", this._onCloseDropdown);
+
+        let screenSize = this._getScreenSize().x;
+        if (screenSize <= smMax) {
+          this._openDropdownAsPanel();
+        }
       }
     }
 
     private _onCloseDropdown() {
+      this._removeDropdownAsPanel();
       this._container.classList.remove("is-open");
       document.removeEventListener("click", this._onCloseDropdown);
     }

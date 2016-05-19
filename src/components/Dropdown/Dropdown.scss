@@ -95,12 +95,12 @@
 }
 
 // When the dropdown is opened
-.ms-Panel .ms-Dropdown-items,
 .ms-Dropdown.is-open .ms-Dropdown-items {
   display: block;
   position: absolute;
 }
 
+// Adjustments for when the dropdown is open as a panel on small screens
 .ms-Panel .ms-Dropdown-items {
   box-shadow: none;
   overflow-y: auto;

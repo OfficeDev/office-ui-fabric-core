@@ -35,8 +35,7 @@ namespace fabric {
 
     public dismiss() {
       this._panel.classList.add(ANIMATE_OUT_STATE);
-      setTimeout(function() {
-        document.removeChild(this._panelHost);
+      setTimeout(() => {
         this._panelHost.dismiss();
       }, ANIMATION_END);
     }

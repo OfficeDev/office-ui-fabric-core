@@ -1,5 +1,6 @@
 {
   "name": "Dialog",
+  "template": "Dialog.html",
   "notes": "",
   "description": "A popup box component that animates in over an application. It is primarily used for confirmation tasks, light-weight creation/edit tasks, and simple management tasks. Dialog has several variants including closeable, large header, multiline button, and blocking. Blocking or modal dialogs do not allow for a light dismiss (clicking/tapping outside the dialog box) and should be used when a user's explicit answer is required for them to proceed such as confirming the deletion of data.",
   "accessibilityNotes": 

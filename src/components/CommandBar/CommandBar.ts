@@ -23,7 +23,7 @@ namespace fabric {
     mainArea: Element;
     sideCommandArea?: Element;
     overflowCommand?: Element;
-    contextMenu?: Element;
+    contextMenu?: HTMLElement;
     searchBox?:  Element;
     searchBoxClose?: Element;
   }
@@ -33,7 +33,7 @@ namespace fabric {
     label: string;
     icon: string;
     isCollapsed: boolean;
-    commandButtonRef: CommandButton;
+    commandButtonRef: fabric.CommandButton;
   }
 
   const CONTEXTUAL_MENU = ".ms-ContextualMenu";
@@ -203,7 +203,7 @@ namespace fabric {
 
       if (this._container.querySelector(CB_ITEM_OVERFLOW)) {
         this._elements.overflowCommand = this._container.querySelector(CB_ITEM_OVERFLOW);
-        this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
+        this._elements.contextMenu = <HTMLElement>this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
       }
 
       if (this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {

@@ -1,7 +1,5 @@
 var DialogExampleModel = {
   "props": {
-    "modifier": "sample",
-    "closeIcon": "x",
     "title": "All emails together",
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
@@ -53,7 +51,6 @@ var DialogExampleModel = {
   },
   "propsBlocking": {
     "modifier": "blocking",
-    "closeIcon": "x",
     "title": "Unsaved changes",
     "subText": "Are you sure you want to discard these changes?.",
     "components": [
@@ -157,7 +154,6 @@ var DialogExampleModel = {
   },
   "propslgHeader": {
     "modifier": "lgHeader",
-    "closeIcon": "x",
     "title": "All emails together",
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "actions": [

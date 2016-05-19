@@ -6,7 +6,7 @@ Allows for the selection of one option from a list.
 ### Default
 <!---
 {{> Dropdown props=DropdownExampleModel.props}}
----->
+--->
 
 ### Disabled
 <!---
@@ -56,7 +56,7 @@ State | Applied to | Result
 5. Replace the sample HTML content (such as the options within `.ms-Dropdown-select`) with your content.
 
 ## Dependencies
-This component has no dependencies.
+This component depends on Panel for when it is rendered on mobile.
 
 ## Accessibility
 More details will be added here.

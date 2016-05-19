@@ -5,28 +5,22 @@
           <i class="ms-Icon ms-Icon--{{props.closeIcon}}"></i>
         </button>
     {{/if}}
-    <div class="ms-Dialog-header">
-      <p class="ms-Dialog-title">{{props.title}}</p>
-    </div>
-    <div class="ms-Dialog-inner">
-      <div class="ms-Dialog-content">
-        {{#if props.subText}}
-          <p class="ms-Dialog-subText">{{props.subText}}</p>
-        {{/if}}
-        {{#if props.components}}
-          {{#each props.components}}
-            {{renderPartial component props}}
-          {{/each}}
-        {{/if}}
-      </div>
-      {{#if props.actions}}
-        <div class="ms-Dialog-actions">
-          <div class="ms-Dialog-actionsRight">
-          {{#each props.actions}}
-            {{renderPartial component props}}
-          {{/each}}
-          </div>
-        </div>
+    <div class="ms-Dialog-title">{{props.title}}</div>
+    <div class="ms-Dialog-content">
+      {{#if props.subText}}
+        <p class="ms-Dialog-subText">{{props.subText}}</p>
+      {{/if}}
+      {{#if props.components}}
+        {{#each props.components}}
+          {{renderPartial component props}}
+        {{/each}}
       {{/if}}
     </div>
+    {{#if props.actions}}
+      <div class="ms-Dialog-actions">
+        {{#each props.actions}}
+          {{renderPartial component props}}
+        {{/each}}
+      </div>
+    {{/if}}
 </div>

@@ -43,14 +43,11 @@ namespace fabric {
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-
       this._container = this._ftl.ContextualHost();
+      this._contextualHost = this._container;
       this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
       this._contextualHostMain.appendChild(content);
-
-      // this.contextualHostMain = this._contextualHost.querySelector(this._ftl.ContextualHost().ContextualHostMain);
-      // this._container = container;
-
+      
       this._targetElement = targetElement;
       this._cloneModal();
       this._openModal();
@@ -283,7 +280,7 @@ namespace fabric {
     }
 
     private _disMissAction(e): void {
-      // If the elemenet clicked is not INSIDE of searchbox then close seach
+      // If the element clicked is not INSIDE of searchbox then close seach
       if (!this._modalClone.contains(e.target) && e.target !== this._modalClone) {
         this.disposeModal();
       }
@@ -291,6 +288,7 @@ namespace fabric {
 
     private _setDismissClick() {
       document.addEventListener("click", this._disMissAction, true);
+      document.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode === 32 || e.keyCode === 27) ? this._disMissAction(e) : null, true);
     }
 
     private _resizeAction() {

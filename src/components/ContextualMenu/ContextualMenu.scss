@@ -17,11 +17,16 @@
   list-style-type: none;
   position: relative;
   background-color: $ms-color-white;
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .ms-ContextualMenu-item {
   @include ms-u-borderBox;
   position: relative;
+  border: 1px solid transparent;
 
   &:hover,
   &:active {
@@ -97,7 +102,7 @@
 }
 
 // Modifier: Contextual menu with submenu
-.ms-ContextualMenu-link.ms-ContextualMenu-link--hasMenu ~ .ms-ContextualMenu {
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu {
   position: absolute;
   top: -1px;
   left: 178px; // Move the submenu to the left of the menu item that triggered it

@@ -152,7 +152,6 @@ var Template = function(directories, dist, src, callback) {
         _existingElements.push(rootName);
         
         _createString += "public " + rootName + "() {";
-        // _createString += 'let ' + newName + ' = document.createElement("' + _thisDom.name + '");';
         
         parseElement(_thisDom, newName, {
           children: [],

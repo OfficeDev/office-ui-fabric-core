@@ -60,7 +60,7 @@ namespace fabric {
 
     private _createModalHostView(container: HTMLElement, position: string, hostTarget: HTMLElement) {
       container.classList.remove("is-hidden");
-      this._host = new fabric.ContextualHost(container, position, hostTarget);
+      this._host = new fabric.ContextualHost(container, position, hostTarget, false);
       container.dispatchEvent(new Event("hostAdded"));
     }
   }

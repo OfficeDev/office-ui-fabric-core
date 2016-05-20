@@ -5,7 +5,7 @@ Displays the progress of an operation when the percentage complete can be determ
 
 ### Default
 <!---
-{{> ProgressIndicator}}
+{{> ProgressIndicator props=ProgressIndicatorExampleProps.default }}
 --->
 
 ## Using this component
@@ -42,5 +42,5 @@ Displays the progress of an operation when the percentage complete can be determ
 This component has no dependency on other components.
 
 <!---
-{{> ProgressIndicatorExampleJS}}
+{{> ProgressIndicatorExampleJS }}
 --->

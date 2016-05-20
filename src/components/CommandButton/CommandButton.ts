@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /// <reference path="../../../dist/js/fabric.templates.ts"/>
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
 
 /**
  * CommandButton
@@ -48,7 +49,7 @@ namespace fabric {
     }
 
     private _createModalHostView() {
-      this._modalHostView = new fabric.ContextualHost(this._contextualMenu, MODAL_POSITION, this._command);
+      this._modalHostView = new fabric.ContextualHost(this._contextualMenu, MODAL_POSITION, this._command, false);
     }
 
     private _setClick() {

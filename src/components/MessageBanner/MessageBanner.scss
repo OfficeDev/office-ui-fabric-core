@@ -43,10 +43,6 @@ $MessageBanner-iconSize: 40px;
   cursor: pointer;
   border: 0;
   background-color: transparent;
-
-  &:focus {
-    outline: 1px solid transparent;
-  }
 }
 
 .ms-MessageBanner-close {

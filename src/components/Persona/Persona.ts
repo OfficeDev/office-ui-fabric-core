@@ -39,8 +39,8 @@ namespace fabric {
     private _createContextualHostInstance(): void {
       this._personaCard.setAttribute("style", "display: block;");
       this._contextualHostInstance = new fabric.ContextualHost(
-        <HTMLElement>this._personaCard, 
-        MODAL_POSITION, 
+        <HTMLElement>this._personaCard,
+        MODAL_POSITION,
         this._persona
       );
     }

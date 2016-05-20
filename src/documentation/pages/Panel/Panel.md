@@ -5,32 +5,32 @@ Presents content by sliding over the rest of the application, which is covered b
 
 ### Default
 <!---
-{{> Panel props=PanelExampleProps.default}}
+{{> PanelDefaultExample}}
 --->
 
 ### Medium
 <!---
-{{> Panel props=PanelExampleProps.medium}}
+{{> PanelMediumExample}}
 --->
 
 ### Large
 <!---
-{{> Panel props=PanelExampleProps.large}}
+{{> PanelLargeExample}}
 --->
 
 ### Large, fixed
 <!---
-{{> Panel props=PanelExampleProps.largeFixed}}
+{{> PanelLargeFixedExample}}
 --->
 
 ### Extra Large
 <!---
-{{> Panel props=PanelExampleProps.extraLarge}}
+{{> PanelExtraLargeExample}}
 --->
 
 ### Extra extra large
 <!---
-{{> Panel props=PanelExampleProps.extraExtraLarge}}
+{{> PanelExtraExtraLargeExample}}
 --->
 
 ## States
@@ -52,16 +52,11 @@ State | Applied to | Result
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Dialog components on the page:
     ```
     <script>
-        $(document).ready(function() {
-            if ($.fn.Panel) {
-                $('.ms-Panel').Panel();
-            }
-        });
+        var PanelElements = document.querySelectorAll(".ms-Panel");
+        for(var i = 0; i < PanelElements.length; i++) {
+            new fabric['Panel'](PanelElements[i]);
+        }
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content with your content.
-
-<!---
-{{> PeoplePickerExampleJS}}
---->

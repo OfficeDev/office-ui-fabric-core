@@ -2,6 +2,6 @@
 
 <a class="ms-Link {{props.customClasses}} {{#if props.modifierClass}} ms-Link--{{props.modifierClass}} {{/if}}" 
   {{#if props.href}} href="{{props.href}}" {{/if}} 
-  title="{{props.title}}" 
-  tabindex="{{props.tabIndex}}">{{props.label}}</a>
+  {{#if props.title}} title="{{props.title}}" {{/if}} 
+  {{#if props.tabIndex}} tabindex="{{props.tabIndex}}" {{/if}}>{{props.label}}</a>
 

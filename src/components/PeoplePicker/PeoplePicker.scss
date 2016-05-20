@@ -19,9 +19,13 @@ $ms-Persona-leftPadding: 16px;
 
 // Box that contains the search field and selected people.
 .ms-PeoplePicker-searchBox {
-  .ms-TextField {
+  border-bottom: 1px solid $ms-color-themePrimary;
+
+  .ms-TextField.ms-TextField--textFieldUnderlined {
     border: 0;
     margin-bottom: 0;
+    display: inline-block;
+    width: auto;
 
     .ms-TextField-field {
       min-height: 40px;

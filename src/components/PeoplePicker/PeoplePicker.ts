@@ -57,10 +57,12 @@ namespace fabric {
 
     private _selectResult(e) {
       let currentResult = this._findPersona(e.target);
-      let tokenResult: Element = <Element>currentResult.cloneNode(true);
+      let tokenResult = this._findPersona(e.target);
+      // let tokenResult: Element = <Element>currentResult.cloneNode(true);
       let searchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
+      let textField = searchBox.querySelector(".ms-TextField");
       tokenResult.classList.add("ms-Persona--token");
-      searchBox.appendChild(tokenResult);
+      searchBox.insertBefore(tokenResult, textField);
     }
 
     private _findPersona(childObj: Element) {

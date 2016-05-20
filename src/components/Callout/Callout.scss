@@ -10,6 +10,10 @@ $ms-Callout-commandButtonHeight: 27px;
 .ms-Callout {
   width: 288px;
   font-family: $ms-font-family-base;
+  
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .ms-Callout-header {

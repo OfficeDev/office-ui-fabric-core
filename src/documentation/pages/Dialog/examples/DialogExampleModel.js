@@ -1,12 +1,10 @@
 var DialogExampleModel = {
   "props": {
-    "modifier": "sample",
-    "closeIcon": "x",
     "title": "All emails together",
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -18,7 +16,7 @@ var DialogExampleModel = {
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -53,12 +51,11 @@ var DialogExampleModel = {
   },
   "propsBlocking": {
     "modifier": "blocking",
-    "closeIcon": "x",
     "title": "Unsaved changes",
     "subText": "Are you sure you want to discard these changes?.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -70,7 +67,7 @@ var DialogExampleModel = {
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -110,7 +107,7 @@ var DialogExampleModel = {
     "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option1",
           "modifier": "",
@@ -122,7 +119,7 @@ var DialogExampleModel = {
         }
       },
       {
-        "component": "ChoiceField",
+        "component": "CheckBox",
         "props":  {
           "label": "Option2",
           "modifier": "",
@@ -157,7 +154,6 @@ var DialogExampleModel = {
   },
   "propslgHeader": {
     "modifier": "lgHeader",
-    "closeIcon": "x",
     "title": "All emails together",
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "actions": [

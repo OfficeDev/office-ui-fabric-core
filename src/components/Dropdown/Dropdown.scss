@@ -95,12 +95,26 @@
 }
 
 // When the dropdown is opened
-// Note: .ms-Dropdown--open is deprecated and will be removed in a future version. 
-// Use .is-open for an open dropdown.
-.ms-Dropdown.ms-Dropdown--open .ms-Dropdown-items,
 .ms-Dropdown.is-open .ms-Dropdown-items {
   display: block;
-  position: fixed;
+  position: absolute;
+}
+
+// Adjustments for when the dropdown is open as a panel on small screens
+.ms-Panel .ms-Dropdown-items {
+  box-shadow: none;
+  overflow-y: auto;
+  padding-top: 4px;
+  max-height: 100%;
+
+  .ms-Dropdown-item {
+    padding: 0 16px;
+  }
+
+  &:before {
+    content: none;
+    border: 0;
+  }
 }
 
 // Hide the original dropdown
@@ -142,12 +156,14 @@
   position: absolute;
   width: 100%;
   max-height: 200px;
-  max-width: 268px;
   z-index: ($ms-zIndex-Dropdown + $ms-zIndex-back);
-  top: 0;
-  right: 0;
-  bottom: 0;
   overflow-y: scroll;
+
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  max-width: 100%;
 
   &:before {
     content: '';
@@ -229,20 +245,4 @@
   }
 
   @include highContrastListItemState;
-}
-
-@media (min-width: $ms-screen-md-min) {
-  // On larger screens, display as a traditional dropdown.
-  .ms-Dropdown-items {
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-    max-width: 100%;
-  }
-
-  .ms-Dropdown.ms-Dropdown--open .ms-Dropdown-items,
-  .ms-Dropdown.is-open .ms-Dropdown-items {
-    position: absolute;
-  }
 }

@@ -48,7 +48,6 @@ namespace fabric {
     }
 
     private _createModalHostView() {
-      // Create Contextual menu
       this._modalHostView = new fabric.ContextualHost(this._contextualMenu, MODAL_POSITION, this._command);
     }
 

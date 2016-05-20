@@ -1,6 +1,11 @@
-var ContexualMenuModels = {  
+var ContexualMenuExampleModel = {
   "basic":  {
-    "state": "is-open",
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
     "items": [
       {
         "title": "Animals",
@@ -105,8 +110,13 @@ var ContexualMenuModels = {
       "state": "is-open"
     }
   },
-  "subMenu":  {
-    "state": "is-open",
+  "submenu":  {
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
     "items": [
       {
         "title": "Animals",
@@ -156,7 +166,12 @@ var ContexualMenuModels = {
     }
   },
   "dividers":  {
-    "state": "is-open",
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
     "items": [
       {
         "title": "Delete",
@@ -212,7 +227,6 @@ var ContexualMenuModels = {
         "title": "Create Rule...",
         "state": "is-selected"
       },
-      {},
       {
         "title": "Verdana",
         "state": "is-disabled"
@@ -223,7 +237,13 @@ var ContexualMenuModels = {
     }
   },
   "multiselect":  {
-    "state": "is-open",
+    "button": {
+      "label": "Open Example",
+      "modifier": "primary",
+      "tag": "button"
+    },
+    "state": "is-hidden",
+    "modifier": "multiselect",
     "items": [
       {
         "title": "SORT BY",
@@ -278,4 +298,4 @@ var ContexualMenuModels = {
   }
 }
 
-module.exports = ContexualMenuModels;
+module.exports = ContexualMenuExampleModel;

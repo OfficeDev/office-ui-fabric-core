@@ -133,10 +133,10 @@ $ms-Persona-leftPadding: 16px;
   }
 
   .ms-PeoplePicker-resultAction {
-      &:hover {
-        background-color: $ms-color-neutralTertiaryAlt;
-        outline: 1px solid transparent;
-      }
+    &:hover {
+      background-color: $ms-color-neutralTertiaryAlt;
+      outline: 1px solid transparent;
+    }
   }
 
   &.is-selected {

@@ -47,9 +47,14 @@ namespace fabric {
       this._createModalHost();
     }
 
+    private _focusResults() {
+      
+    }
+
     private _assignClicks() {
       this._container.addEventListener("click", this._clickHandler.bind(this), true);
       this._container.addEventListener("focus", this._clickHandler.bind(this), true);
+      this._container.addEventListener("keyup", this._clickHandler.bind(this), true);
       // if (!this._contextualHostView) {
       //   this._container.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode != 27) ? this._clickHandler(e) : null, true);
       // }

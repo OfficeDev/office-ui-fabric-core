@@ -2,7 +2,8 @@ var PersonaExampleProps = {
   "default": {
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
     "groups": [
       {
@@ -49,7 +50,8 @@ var PersonaExampleProps = {
     ],
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
     "groups": [
       {
@@ -96,7 +98,8 @@ var PersonaExampleProps = {
     ],
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
     "groups": [
       {
@@ -143,7 +146,8 @@ var PersonaExampleProps = {
     ],
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
     "groups": [
       {

@@ -39,13 +39,19 @@
   padding: 0 18px;
   position: relative;
 
+  &:focus {
+    outline: transparent;
+  }
+  
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
   }
 
-  &:active {
+  &:active,
+  &:focus {
     border: 1px solid $ms-color-themePrimary;
   }
 

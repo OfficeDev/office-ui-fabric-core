@@ -23,10 +23,19 @@
   &:hover {
     background-color: $ms-color-neutralLight;
     border-color: $ms-color-neutralLight;
-    outline: 1px solid transparent;
 
     .ms-Button-label {
       color: $ms-color-black;
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+      color: $ms-color-contrastBlackSelected;
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      color: $ms-color-contrastWhiteSelected;
+      border-color: $ms-color-contrastWhiteSelected;
     }
   }
 

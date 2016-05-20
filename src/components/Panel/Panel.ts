@@ -30,11 +30,14 @@ namespace fabric {
       this._direction = direction || "right";
       this._animateOverlay = animateOverlay || true;
       this._panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
+      this._setEvents();
     }
 
     public dismiss(callBack?: Function) {
       this._panel.classList.add(ANIMATE_OUT_STATE);
       setTimeout(() => {
+        this._panel.classList.remove(ANIMATE_OUT_STATE);
+        this._panel.classList.remove("is-open");
         this._panelHost.dismiss();
         if (callBack) {
           callBack();
@@ -42,8 +45,25 @@ namespace fabric {
       }, ANIMATION_END);
     }
 
+    private _setEvents() {
+      this._panelHost._overlay.overlayEl.addEventListener("click", () => {
+        this.dismiss();
+      });
+
+      let closeButton = this._panel.querySelector(".ms-PanelAction-close");
+      if (closeButton !== null) {
+        closeButton.addEventListener("click", () => {
+          this.dismiss();
+        });
+      }
+    }
+
     private _animateInPanel(layer: Element) {
       layer.classList.add(ANIMATE_IN_STATE);
+      layer.classList.add("is-open");
+      setTimeout(() => {
+        layer.classList.remove(ANIMATE_IN_STATE);
+      }, ANIMATION_END);
     }
   }
 }

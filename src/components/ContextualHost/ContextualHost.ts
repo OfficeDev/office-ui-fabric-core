@@ -306,7 +306,11 @@ namespace fabric {
 
     private _setDismissClick() {
       document.addEventListener("click", this._disMissAction, true);
-      document.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode === 32 || e.keyCode === 27) ? this._disMissAction(e) : null, true);
+      document.addEventListener("keyup", (e: KeyboardEvent) => {
+        if (e.keyCode === 32 || e.keyCode === 27) {
+          this._disMissAction(e);
+        }
+      }, true);
     }
 
     private _resizeAction() {

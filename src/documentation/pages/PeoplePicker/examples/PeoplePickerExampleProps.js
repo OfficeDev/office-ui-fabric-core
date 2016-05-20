@@ -21,8 +21,7 @@ var PersonaExampleProps = {
                   "name": "xs"
                 }
               ]
-            },
-            "state": "is-selected"
+            }
           },
           {
             "component": "Persona",

@@ -11,12 +11,14 @@ namespace fabric {
    *
    */
   const MODAL_POSITION = "bottom";
+  // const TOKEN_CLASS = "ms-Persona--token";
 
   export class PeoplePicker {
 
     private _container: Element;
     private _contextualHostView: ContextualHost;
     private _peoplePickerMenu: Element;
+    private _peoplePickerResults: NodeListOf<Element>;
 
     /**
      *
@@ -45,19 +47,47 @@ namespace fabric {
 
     private _clickHandler(e) {
       this._createModalHost();
+
+      this._peoplePickerResults = this._peoplePickerMenu.querySelectorAll(".ms-PeoplePicker-result");
+
+      for (var i = 0; i < this._peoplePickerResults.length; i++) {
+        this._peoplePickerResults[i].addEventListener("click", this._selectResult.bind(this), true);
+      }
     }
 
-    private _focusResults() {
-      
+    private _selectResult(e) {
+      let results = [];
+      let currentResult = this._findPersona(e.target);
+      let tokenResult: Element = <Element>currentResult.cloneNode(true);
+      let token: Element = <Element>this._createToken(tokenResult);
+      return this._addTokenToSearchBox(token);
+    }
+
+    private _findPersona(childObj: Element) {
+        let currentElement: Element = <Element>childObj.parentNode;
+
+        while (!currentElement.classList.contains("ms-Persona")) {
+            currentElement = <Element>currentElement.parentNode;
+        }
+        return currentElement;
+    }
+
+    private _createToken(result: Element): Element {
+      const TOKEN_CLASS = "ms-Persona--token";
+      let token: Element = <Element>result.classList.add(TOKEN_CLASS);
+      return token;
+    }
+
+    private _addTokenToSearchBox(token: Element): void {
+      let searchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
+
+      searchBox.appendChild(token);
     }
 
     private _assignClicks() {
       this._container.addEventListener("click", this._clickHandler.bind(this), true);
       this._container.addEventListener("focus", this._clickHandler.bind(this), true);
       this._container.addEventListener("keyup", this._clickHandler.bind(this), true);
-      // if (!this._contextualHostView) {
-      //   this._container.addEventListener("keyup", (e: KeyboardEvent) => (e.keyCode != 27) ? this._clickHandler(e) : null, true);
-      // }
     }
   }
 }

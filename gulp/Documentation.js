@@ -13,10 +13,9 @@ var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
 var Template = require('./modules/Template');
 var pandoc = require('gulp-pandoc');
 var marked = require('gulp-marked');
+var path = require('path');
+var reload = require('require-reload')(require);
 
-require("typescript-require")({
-    exitOnError: true
-});
 
 //
 // Clean/Delete Tasks
@@ -159,10 +158,12 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 var file = exampleModels[x];
                 var modelName = file.replace('.js', '');
                 modelName = modelName.replace(" ", '');
-                var modelFile = require('../' + exampleFolderName + '/' + file);
+                var modelFile = reload('../' + exampleFolderName + '/' + file);
                 templateData[modelName] = modelFile;
+               
             }
         }
+
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
        
         // if (hasFileChanged) {
@@ -196,7 +197,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            
            // Add stream
            streams.push(componentPipe);
-      //}
+      // }
    }
    
    if (streams.length > 0) {

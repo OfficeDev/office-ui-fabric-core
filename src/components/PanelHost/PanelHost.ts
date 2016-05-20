@@ -14,7 +14,7 @@ namespace fabric {
   export class PanelHost {
 
     public panelHost: Element;
-    private _overlay: Overlay;
+    public _overlay: Overlay;
     private _layer: Node;
     private _callBack: Function;
 

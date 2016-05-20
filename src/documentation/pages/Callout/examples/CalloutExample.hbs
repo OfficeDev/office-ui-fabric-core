@@ -1,6 +1,6 @@
-{{> Callout props=props}}
-
-<script type="text/javascript">
-  var CalloutHTML = document.querySelector('.ms-Callout');
-  var Callout = new fabric['Callout'](CalloutHTML);
-</script>
+<div class="ms-CalloutExample">  
+  {{> Callout props=props}}
+  <div class="ms-CalloutExample-button">
+    {{> Button props=props.button}}
+  </div>
+</div>

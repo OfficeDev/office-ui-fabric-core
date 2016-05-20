@@ -15,20 +15,5 @@
     "Callout.ActionText.html",
     "Callout.Oobe.html",
     "Callout.Peek.html"
-  ],
-  "props":  {
-
-  },
-  "propsActionText": {
-    
-  },
-  "propsClose": {
-    
-  },
-  "propsOobe":  {
-    
-  },
-  "propsPeek":  {
-    
-  }
+  ]
 }

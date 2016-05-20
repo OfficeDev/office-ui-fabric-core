@@ -68,7 +68,6 @@ var Config = function() {
         noEmitOnError: true
     };
   this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
-  this.typescriptProjectTwo = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",
@@ -135,6 +134,12 @@ var Config = function() {
         }
       ]
 	};
+  this.templateLibraryConfig = {
+    "components": [
+      "ContextualHost",
+      "Button"
+    ]
+  };
   this.handleBarsConfig = {
       ignorePartials: true,
       partials:  {

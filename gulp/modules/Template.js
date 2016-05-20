@@ -176,14 +176,6 @@ var Template = function(directories, dist, src, callback) {
     mkdirp.sync(dist);
     fs.writeFileSync(_jsPath, _createString);
     
-    // exec("dtsmake -s ./" + _jsPath, function (error, stdout, stderr) {
-    //   sys.print('stdout: ' + stdout);
-    //   sys.print('stderr: ' + stderr);
-    //   if (error !== null) {
-    //     console.log('exec error: ' + error);
-    //   }
-    // });
-    
     //Completed
     if(callback) {
       callback();

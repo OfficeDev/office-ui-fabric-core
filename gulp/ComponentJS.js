@@ -40,15 +40,8 @@ gulp.task('ComponentJS-lint', function (cb) {
         .pipe(Plugins.tslint.report("verbose"));
 });
 
-gulp.task('ComponentJS-templateLibrary', ['Documentation-template'], function() {
-    return  gulp.src(Config.paths.distJS + "/fabric.templates.ts")
-            .pipe(Plugins.header(Banners.getJSCopyRight()))
-            .pipe(Plugins.tsc(Config.typescriptProject))
-            .js.pipe(gulp.dest(Config.paths.distJS));
-})
-
-gulp.task('ComponentJS-typescript', ['ComponentJS-templateLibrary'], function() {
-    var tscResult = gulp.src(Config.paths.src + '/**/*.ts')
+gulp.task('ComponentJS-typescript', function() {
+    var tscResult = gulp.src([Config.paths.src + '/**/*.ts', Config.paths.distJS + "/fabric.templates.ts"])
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
         })))

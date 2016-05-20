@@ -135,6 +135,12 @@ var Config = function() {
         }
       ]
 	};
+  this.templateLibraryConfig = {
+    "components": [
+      "ContextualHost",
+      "Button"
+    ]
+  };
   this.handleBarsConfig = {
       ignorePartials: true,
       partials:  {

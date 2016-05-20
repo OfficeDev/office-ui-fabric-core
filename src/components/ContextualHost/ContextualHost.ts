@@ -48,7 +48,7 @@ namespace fabric {
       this._contextualHost = this._container;
       this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
       this._contextualHostMain.appendChild(content);
-      
+
       this._targetElement = targetElement;
       this._cloneModal();
       this._openModal();

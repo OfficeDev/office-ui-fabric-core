@@ -22,6 +22,10 @@ namespace fabric {
     constructor(container: HTMLElement) {
       this._container = container;
       this._addListeners();
+
+      // Show the first pivot's content
+      let firstContent = <HTMLElement>this._container.querySelector(".ms-Pivot-content");
+      firstContent.style.display = "block";
     }
 
     public removeListeners(): void {
@@ -45,6 +49,17 @@ namespace fabric {
         }
         // Select the clicked tab
         selectedTab.classList.add("is-selected");
+
+        // Hide all of the content
+        let containers = this._container.querySelectorAll(".ms-Pivot-content");
+        Array.prototype.forEach.call(containers, function(el, i){
+          el.style.display = "none";
+        });
+
+        // Show the content that corresponds to the selected tab
+        let selectedContentName = selectedTab.getAttribute("data-content");
+        let selectedContent = <HTMLElement>this._container.querySelector(".ms-Pivot-content[data-content='" + selectedContentName + "']");
+        selectedContent.style.display = "block";
       }
     }
   }

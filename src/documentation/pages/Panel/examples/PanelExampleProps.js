@@ -1,5 +1,9 @@
   var PanelExampleProps = {
   "default": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
     "headerText": "Panel",
     "content": "Content goes here",
     "commandBarProps": {
@@ -26,6 +30,10 @@
     }
   },
   "medium": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
     "headerText": "Medium Panel",
     "content": "Content goes here",
     "modifier": [
@@ -35,6 +43,10 @@
     ]
   },
   "large": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
     "headerText": "Large panel",
     "content": "Content goes here",
     "modifier": [
@@ -44,6 +56,10 @@
     ]
   },
   "largeFixed": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
     "headerText": "Large panel",
     "content": "Content goes here",
     "modifier": [
@@ -56,6 +72,10 @@
     ]
   },
   "extraLarge": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
     "headerText": "Extra large panel",
     "content": "Content goes here",
     "modifier": [
@@ -65,6 +85,10 @@
     ]
   },
   "extraExtraLarge": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
     "headerText": "Extra extra large panel",
     "content": "Content goes here",
     "modifier": [

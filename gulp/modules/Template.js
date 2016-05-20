@@ -174,7 +174,7 @@ var Template = function(directories, dist, src, callback) {
     
     mkdirp.sync(dist);
     fs.writeFileSync(_jsPath, _createString);
-
+    
     //Completed
     if(callback) {
       callback();

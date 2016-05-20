@@ -18,7 +18,10 @@ $ms-Callout-commandButtonHeight: 27px;
 
 .ms-Callout-header {
   z-index: ($ms-zIndex-Callout + $ms-zIndex-middle);
-  padding: 18px 24px 12px;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .ms-Callout-title {
@@ -34,13 +37,32 @@ $ms-Callout-commandButtonHeight: 27px;
   font-size: $ms-font-size-s;
 }
 
+.ms-Callout-close {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: $ms-color-neutralSecondary;
+  z-index: 110;
+}
+
 .ms-Callout-link {
   font-size: $ms-font-size-m;
 }
 
 .ms-Callout-inner {
   height: 100%;
-  padding: 0 24px 20px;
+  padding-top: 0;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .ms-Callout-actions {

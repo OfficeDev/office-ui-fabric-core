@@ -22,6 +22,10 @@ namespace fabric {
 
   const CONTEXT_STATE_CLASS = "is-open";
   const MODAL_STATE_POSITIONED = "is-positioned";
+  const ARROW_LEFT_CLASS = "ms-ContextualHost--arrowLeft";
+  const ARROW_TOP_CLASS = "ms-ContextualHost--arrowTop";
+  const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
+  const ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
 
   export class ContextualHost {
 
@@ -177,14 +181,18 @@ namespace fabric {
         case "left":
           mHLeft = teLeft - this._modalWidth;
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
+          mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
+          this._container.classList.add(ARROW_RIGHT_CLASS);
         break;
         case "right":
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
+          mHTop += window.scrollY ? window.scrollY : 0;
           mHLeft = teRight;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
+          this._container.classList.add(ARROW_LEFT_CLASS);
         break;
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
@@ -193,6 +201,7 @@ namespace fabric {
           mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
+          this._container.classList.add(ARROW_BOTTOM_CLASS);
         break;
         case "bottom":
           mHLeft = mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
@@ -201,6 +210,7 @@ namespace fabric {
           mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
+          this._container.classList.add(ARROW_TOP_CLASS);
         break;
         default:
           this._container.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");

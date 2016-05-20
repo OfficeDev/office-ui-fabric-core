@@ -1,8 +1,8 @@
 var LinkModels = {  
   "basic": {
     "label": "Example Link",
-    "href": "",
-    "title": "",
+    "href": "#",
+    "title": "More info about Example Link",
     "tabIndex": ""
   }
 }

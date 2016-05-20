@@ -40,7 +40,7 @@ gulp.task('ComponentJS-lint', function (cb) {
         .pipe(Plugins.tslint.report("verbose"));
 });
 
-gulp.task('ComponentJS-typescript', function() {
+gulp.task('ComponentJS-typescript', ['Documentation-template'], function() {
     var tscResult = gulp.src([Config.paths.src + '/**/*.ts', Config.paths.distJS + "/fabric.templates.ts"])
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"

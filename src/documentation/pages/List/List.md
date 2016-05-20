@@ -10,13 +10,6 @@ A standard vertical list of items.
 {{> ListElem props=ListModels.basic }}
 --->
 
-### Grid
-Places the list items in a grid, with the number of columns adjusting based on the screen size.
-
-<!---
-{{> ListElem props=ListModels.grid }}
---->
-
 ## States
 This component has only the default state.
 

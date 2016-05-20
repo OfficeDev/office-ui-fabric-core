@@ -3,7 +3,7 @@
 <div class="ms-Pivot {{#each props.modifiers}} ms-Pivot--{{name}}{{/each}}">
   <ul class="ms-Pivot-links">
     {{#each props.links}}
-      <li class="ms-Pivot-link {{state}}" data-content="{{name}}">
+      <li class="ms-Pivot-link {{state}}" data-content="{{name}}" tabindex="1">
         {{text}}
         {{#if ellipsisIcon}}
           <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--{{ellipsisIcon}}"></i>

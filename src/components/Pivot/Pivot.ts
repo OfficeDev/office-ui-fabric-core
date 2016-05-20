@@ -33,12 +33,15 @@ namespace fabric {
     }
 
     private _addListeners(): void {
-      this._container.addEventListener("click", this._selectTab.bind(this), false);
+      this._container.addEventListener("click", this._selectTabMouse.bind(this), false);
+      this._container.addEventListener("keyup", (event: KeyboardEvent) => {
+        if (event.keyCode === 13) {
+          this._selectTabKeyboard(event);
+        }
+      }, true);
     }
 
-    private _selectTab(event: MouseEvent): void {
-      event.preventDefault();
-      let selectedTab = <HTMLElement>event.target;
+    private _selectTab(selectedTab: HTMLElement): void {
       // Only if its a pivot link and if it doesn't have ellipsis
       if (selectedTab.classList.contains("ms-Pivot-link") && !selectedTab.querySelector(".ms-Pivot-ellipsis")) {
         // Iterate over siblings and un-select them
@@ -61,6 +64,18 @@ namespace fabric {
         let selectedContent = <HTMLElement>this._container.querySelector(".ms-Pivot-content[data-content='" + selectedContentName + "']");
         selectedContent.style.display = "block";
       }
+    }
+
+    private _selectTabMouse(event: MouseEvent): void {
+      event.preventDefault();
+      let selectedTab = <HTMLElement>event.target;
+      this._selectTab(selectedTab);
+    }
+
+    private _selectTabKeyboard(event: KeyboardEvent): void {
+      event.preventDefault();
+      let selectedTab = <HTMLElement>event.target;
+      this._selectTab(selectedTab);
     }
   }
 }

@@ -72,7 +72,7 @@
 }
 
 // Close button, hidden by default
-.ms-Dialog-button--close {
+.ms-Dialog-buttonClose {
   background: none;
   border: 0;
   cursor: pointer;
@@ -119,7 +119,7 @@
   }
 
   // Show the close button  
-  .ms-Dialog-button.ms-Dialog-button--close {
+  .ms-Dialog-button.ms-Dialog-buttonClose {
     display: block;
   }
 }

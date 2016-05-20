@@ -6,10 +6,19 @@ namespace fabric {
   export class Dialog {
 
     public dialog: HTMLElement;
+    private _closeButtonElement: HTMLButtonElement;
+    private _actionButtonElements: NodeListOf<Element>;
 
     constructor(dialog: HTMLElement) {
       this.dialog = dialog;
-      this.dialog.addEventListener("click", this._closeDialog.bind(this), false);
+      this._closeButtonElement = <HTMLButtonElement>this.dialog.querySelector(".ms-Dialog-buttonClose");
+      this._actionButtonElements = this.dialog.querySelectorAll(".ms-Dialog-action");
+      if (this._closeButtonElement) {
+        this._closeButtonElement.addEventListener("click", this._closeDialog.bind(this), false);
+      }
+      for (let i: number = 0; i < this._actionButtonElements.length; i++) {
+        this._actionButtonElements[i].addEventListener("click", this._closeDialog.bind(this), false);
+      }
     }
 
     private _closeDialog(event): void {

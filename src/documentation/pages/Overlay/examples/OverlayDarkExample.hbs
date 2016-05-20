@@ -1,0 +1,15 @@
+<div class="docs-OverlayDarkExample">
+  {{> OverlayElem props=OverlayModels.dark }}
+  <button class="ms-Button docs-OverlayDarkExample-button">Show the dark overlay</button>
+</div>
+
+<script type="text/javascript">
+  var OverlayExample = document.querySelector('.docs-OverlayDarkExample');
+  var Overlay = new fabric['Overlay'](OverlayExample.querySelector('.ms-Overlay'));
+  var OverlayButton = OverlayExample.querySelector('.docs-OverlayDarkExample-button');
+  
+  // When clicking the button, open the MessageBanner
+  OverlayButton.onclick = function() {
+    Overlay.show();
+  };
+</script>

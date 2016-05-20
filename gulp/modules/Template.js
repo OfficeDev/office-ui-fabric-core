@@ -152,7 +152,6 @@ var Template = function(directories, dist, src, callback) {
         _existingElements.push(rootName);
         
         _createString += "public " + rootName + "() {";
-        // _createString += 'let ' + newName + ' = document.createElement("' + _thisDom.name + '");';
         
         parseElement(_thisDom, newName, {
           children: [],
@@ -175,15 +174,7 @@ var Template = function(directories, dist, src, callback) {
     
     mkdirp.sync(dist);
     fs.writeFileSync(_jsPath, _createString);
-    
-    // exec("dtsmake -s ./" + _jsPath, function (error, stdout, stderr) {
-    //   sys.print('stdout: ' + stdout);
-    //   sys.print('stderr: ' + stderr);
-    //   if (error !== null) {
-    //     console.log('exec error: ' + error);
-    //   }
-    // });
-    
+
     //Completed
     if(callback) {
       callback();

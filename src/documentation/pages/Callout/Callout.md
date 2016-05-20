@@ -26,7 +26,7 @@ Includes buttons to take action.
 Draws attention to one aspect of the application during a product tour.
 
 <!---
-{{> CalloutExampleOOBE props=CalloutExampleModel.propsOobe }}
+{{> CalloutExample props=CalloutExampleModel.propsOobe }}
 --->
 
 ### Peek

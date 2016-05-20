@@ -22,10 +22,15 @@ namespace fabric {
 
   const CONTEXT_STATE_CLASS = "is-open";
   const MODAL_STATE_POSITIONED = "is-positioned";
+  const CONTEXT_HOST_MAIN_CLASS = ".ms-ContextualHost-main";
+  const CONTEXT_HOST_BEAK_CLASS = ".ms-ContextualHost-beak";
   const ARROW_LEFT_CLASS = "ms-ContextualHost--arrowLeft";
   const ARROW_TOP_CLASS = "ms-ContextualHost--arrowTop";
   const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
   const ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
+  const MODIFIER_BASE = "ms-ContextualHost--";
+  const ARROW_SIZE = 28;
+  const ARROW_OFFSET = 8;
 
   export class ContextualHost {
 
@@ -41,20 +46,37 @@ namespace fabric {
     private _ftl = new FabricTemplateLibrary();
     private _contextualHostMain: Element;
     private _children: Array<ContextualHost>;
+    private _hasArrow: boolean;
+    private _arrow: Element;
 
-    constructor(content: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
+    constructor(
+        content: HTMLElement,
+        direction: string,
+        targetElement: Element,
+        hasArrow: boolean = true,
+        modifiers?: Array<string>,
+        matchTargetWidth?: boolean
+      ) {
       this._resizeAction = this._resizeAction.bind(this);
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
       this._container = this._ftl.ContextualHost();
       this._contextualHost = this._container;
-      this._contextualHostMain = this._contextualHost.querySelector(".ms-ContextualHost-main");
+      this._contextualHostMain = this._contextualHost.querySelector(CONTEXT_HOST_MAIN_CLASS);
       this._contextualHostMain.appendChild(content);
+      this._hasArrow = hasArrow;
+      this._arrow = this._container.querySelector(CONTEXT_HOST_BEAK_CLASS);
 
       this._targetElement = targetElement;
       this._openModal();
       this._setResizeDisposal();
+
+      if (modifiers) {
+        for (let i = 0; i < modifiers.length; i++) {
+          this._container.classList.add(MODIFIER_BASE + modifiers[i]);
+        }
+      }
     }
 
     public disposeModal(): void {
@@ -168,10 +190,12 @@ namespace fabric {
       let teRight = teBR.right;
       let teTop = teBR.top;
       let teHeight = teBR.height;
-
       let mHLeft;
       let mHTop;
       let mWidth = "";
+      let arrowTop;
+      let windowY = window.scrollY ? window.scrollY : 0;
+      let arrowSpace = (this._hasArrow) ? ARROW_SIZE : 0;
 
       if (this._matchTargetWidth) {
         mWidth = "width: " + this._modalWidth + "px;";
@@ -179,38 +203,52 @@ namespace fabric {
 
       switch (curDirection) {
         case "left":
-          mHLeft = teLeft - this._modalWidth;
+          mHLeft = (teLeft - this._modalWidth) + arrowSpace;
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
           mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
-          this._container.classList.add(ARROW_RIGHT_CLASS);
+
+          if (this._hasArrow) {
+            this._container.classList.add(ARROW_RIGHT_CLASS);
+            arrowTop = ((teTop + windowY) - mHTop) + ARROW_OFFSET;
+            this._arrow.setAttribute("style", "top: " + arrowTop + "px;");
+          }
         break;
         case "right":
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
-          mHTop += window.scrollY ? window.scrollY : 0;
-          mHLeft = teRight;
+          mHTop += windowY;
+          mHLeft = teRight + arrowSpace;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
-          this._container.classList.add(ARROW_LEFT_CLASS);
+
+          if (this._hasArrow) {
+            arrowTop = ((windowY + teTop) - mHTop) + ARROW_OFFSET;
+            this._arrow.setAttribute("style", "top: " + arrowTop + "px;");
+            this._container.classList.add(ARROW_LEFT_CLASS);
+          }
         break;
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
-          mHTop = teTop - this._modalHeight;
-          // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
-          mHTop += window.scrollY ? window.scrollY : 0;
+          mHTop = (teTop - this._modalHeight) + arrowSpace;
+          mHTop += windowY;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
-          this._container.classList.add(ARROW_BOTTOM_CLASS);
+
+          if (this._hasArrow) {
+            this._container.classList.add(ARROW_BOTTOM_CLASS);
+          }
         break;
         case "bottom":
           mHLeft = mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
-          mHTop = teTop + teHeight;
-          // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
+          mHTop = teTop + teHeight + arrowSpace;
           mHTop += window.scrollY ? window.scrollY : 0;
           this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
           this._container.classList.add(MODAL_STATE_POSITIONED);
-          this._container.classList.add(ARROW_TOP_CLASS);
+
+          if (this._hasArrow) {
+            this._container.classList.add(ARROW_TOP_CLASS);
+          }
         break;
         default:
           this._container.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");

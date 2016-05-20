@@ -68,7 +68,6 @@ var Config = function() {
         noEmitOnError: true
     };
   this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
-  this.typescriptProjectTwo = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",

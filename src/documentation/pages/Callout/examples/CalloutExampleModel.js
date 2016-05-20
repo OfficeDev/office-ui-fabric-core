@@ -84,7 +84,7 @@ var CalloutExampleModel = {
       "tag": "button"
     }
   },
-  "propsOobe":  {
+  "propsOobe": {
     "state": "is-hidden",
     "title": "All of your favorite people",
     "subText": "Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.",

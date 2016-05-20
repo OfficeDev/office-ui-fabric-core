@@ -269,11 +269,11 @@ var ContexualMenuExampleModel = {
       },
       {
         "title": "Newest on top",
-        "state": "is-disabled"
+        "state": ""
       },
       {
         "title": "Oldest on top",
-        "state": "is-disabled"
+        "state": ""
       },
       {
         "modifier": "divider",

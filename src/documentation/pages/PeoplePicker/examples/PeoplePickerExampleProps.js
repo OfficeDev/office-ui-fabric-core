@@ -128,6 +128,13 @@ var PersonaExampleProps = {
       "modifier": "textFieldUnderlined",
       "placeholder": "Select or enter an option"
     },
+    "resultsProps": {
+      "modifiers": [
+        {
+          "name": "facePile"
+        }
+      ]
+    },
     "groups": [
       {
         "title": "Contacts",
@@ -141,11 +148,10 @@ var PersonaExampleProps = {
               "secondaryText": "Sales",
                 "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
-            },
-            "state": "is-selected"
+            }
           },
           {
             "component": "Persona",
@@ -156,7 +162,7 @@ var PersonaExampleProps = {
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
             }

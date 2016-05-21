@@ -9,7 +9,13 @@
   <div class="ms-PeoplePicker-searchBox">
     {{> TextField props=props.textFieldProps}}
   </div>
-  <div class="ms-PeoplePicker-results">
+  <div class="ms-PeoplePicker-results
+    {{#if props.resultsProps}}
+      {{#each props.resultsProps.modifiers}}
+        ms-PeoplePicker-results--{{name}}
+       {{/each}}
+    {{/if}}
+  ">
     {{#each props.groups}}
       <div class="ms-PeoplePicker-resultGroup">
         <div class="ms-PeoplePicker-resultGroupTitle">

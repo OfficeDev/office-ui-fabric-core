@@ -23,6 +23,10 @@ namespace fabric {
       this._modifier = modifier || "";
     }
 
+    public remove() {
+      this.overlayEl.parentElement.removeChild(this.overlayEl);
+    }
+
     private _createElements() {
       this.overlayEl = document.createElement("div");
       this.overlayEl.classList.add(OVERLAY_CLASS);

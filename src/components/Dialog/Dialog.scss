@@ -15,6 +15,7 @@
   max-width: 340px;
   padding: 28px 24px;
   position: relative;
+  z-index: $ms-zIndex-front;
 }
 
 .ms-Dialog.is-open {

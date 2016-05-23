@@ -15,7 +15,11 @@ gulp.task('Linting-spacesTabs', function (cb) {
           trailingspaces: true,
           indentation: 'spaces',
 	        spaces: 2,
-          newlineMaximum: 2
+          newlineMaximum: 2,
+          ignores: [
+            'js-comments',
+            "\/\/\/[\w\s\']*"
+          ]
         }))
         .pipe(ErrorHandling.TabLintingErrors());
 });

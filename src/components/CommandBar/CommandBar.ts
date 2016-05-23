@@ -207,9 +207,9 @@ namespace fabric {
       }
 
       if (this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
-         this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
-         this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
-         this.searchBoxInstance = this._createSearchInstance();
+        this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
+        this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
+        this.searchBoxInstance = this._createSearchInstance();
       }
     }
 

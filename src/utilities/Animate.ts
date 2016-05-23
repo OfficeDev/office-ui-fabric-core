@@ -70,7 +70,7 @@ namespace fabric {
     private static _callbackProps: Array<string> = ["onEnd", "onEndArgs"];
     private static _animationObjects: Array<any> = [];
 
-   /**
+    /**
     * @param {HTMLElement} element
     * @param {object} props Transition properties
     * @param {number} props.duration The duration of the transition in seconds

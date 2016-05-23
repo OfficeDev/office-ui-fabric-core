@@ -1,32 +1,32 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+/// <reference path="../../../dist/js/fabric.templates.ts"/>
+
 namespace fabric {
-  /**
-   * Panel Host
-   *
-   * A host for Panel
-   *
-   */
-  const OVERLAY_CLASS = "ms-Overlay";
 
   export class Overlay {
-    public overlayEl: Element;
-    private _modifier: string;
+    public overlayElement: HTMLElement;
+    private _ftl = new FabricTemplateLibrary();
 
-    /**
-     *
-     * @param {HTMLElement} container - the target container for an instance of Panel
-     * @constructor
-     */
-    constructor(modifier?: string) {
-      this._createElements();
-      this._modifier = modifier || "";
+    constructor(overlayElement?: HTMLElement) {
+      if (overlayElement) {
+        this.overlayElement = overlayElement;
+      } else {
+        this.overlayElement = this._ftl.Overlay();
+      }
+      this.overlayElement.addEventListener("click", this.hide.bind(this), false);
     }
 
-    private _createElements() {
-      this.overlayEl = document.createElement("div");
-      this.overlayEl.classList.add(OVERLAY_CLASS);
-      this.overlayEl.classList.add(this._modifier);
+    public remove() {
+      this.overlayElement.parentElement.removeChild(this.overlayElement);
+    }
+
+    public show(): void {
+      this.overlayElement.classList.add("is-visible");
+    }
+
+    public hide(): void {
+      this.overlayElement.classList.remove("is-visible");
     }
   }
 }

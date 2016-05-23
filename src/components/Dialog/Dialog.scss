@@ -14,12 +14,15 @@
   min-width: 220px;
   max-width: 340px;
   padding: 28px 24px;
-  position: relative;
+  z-index: $ms-zIndex-front;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
 
 .ms-Dialog.is-open {
   display: block;
-  position: fixed;
 }
 
 .ms-Dialog-title {
@@ -68,7 +71,7 @@
 }
 
 // Close button, hidden by default
-.ms-Dialog-button--close {
+.ms-Dialog-buttonClose {
   background: none;
   border: 0;
   cursor: pointer;
@@ -98,8 +101,8 @@
     margin-right: 20px;
   }
 
-  // Show the close button
-  .ms-Dialog-button.ms-Dialog-button--close {
+  // Show the close button  
+  .ms-Dialog-button.ms-Dialog-buttonClose {
     display: block;
   }
 }

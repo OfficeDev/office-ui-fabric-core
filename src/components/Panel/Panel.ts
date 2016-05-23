@@ -46,7 +46,7 @@ namespace fabric {
     }
 
     private _setEvents() {
-      this._panelHost._overlay.overlayEl.addEventListener("click", () => {
+      this._panelHost._overlay.overlayElement.addEventListener("click", () => {
         this.dismiss();
       });
 

@@ -15,19 +15,15 @@
   top: 0;
   z-index: $ms-zIndex-back;
   font-family: $ms-font-family-base;
+  display: none;
 }
 
+.ms-Overlay.is-visible {
+  display: block;
+}
 
 //== Modifier: Dark overlay
 //
-.ms-Overlay.ms-Overlay--dark {
+.ms-Overlay--dark {
   background-color: $ms-color-blackTranslucent40;
 }
-
-
-//== Modifier: Hidden overlay
-//
-&.ms-Overlay--none {
-  visibility: hidden;
-}
-

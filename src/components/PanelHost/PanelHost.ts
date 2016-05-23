@@ -17,6 +17,7 @@ namespace fabric {
     public _overlay: Overlay;
     private _layer: Node;
     private _callBack: Function;
+    private _overlayContainer: HTMLElement;
 
     /**
      *
@@ -53,10 +54,11 @@ namespace fabric {
       this.panelHost = document.createElement("div");
       this.panelHost.classList.add(PANEL_HOST_CLASS);
       this.panelHost.appendChild(this._layer);
-      this._overlay = new fabric.Overlay();
+      this.panelHost.appendChild(this._overlayContainer);
+      this._overlay = new fabric.Overlay(this._overlayContainer);
 
       // Append Elements
-      this.panelHost.appendChild(this._overlay.overlayEl);
+      this.panelHost.appendChild(this._overlay.overlayElement);
     }
   }
 }

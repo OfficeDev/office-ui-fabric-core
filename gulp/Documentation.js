@@ -11,9 +11,6 @@ var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
 var Template = require('./modules/Template');
-var pandoc = require('gulp-pandoc');
-var marked = require('gulp-marked');
-var path = require('path');
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
 
@@ -164,7 +161,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building documentation page " + pageName
             })))
-           .pipe(marked())
+           .pipe(Plugins.marked())
            .on('error', function(err) {
               console.log(err);  
             })

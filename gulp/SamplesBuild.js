@@ -64,6 +64,6 @@ gulp.task('Samples-buildStyles',  function () {
 
 
 // Roll up for samples
-gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles', 'Bundles-buildAll']);
+gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles']);
 BuildConfig.buildTasks.push('Samples');
 BuildConfig.nukeTasks.push('Samples-nuke');

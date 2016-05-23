@@ -34,5 +34,4 @@ gulp.task('DocumentationViewer', ['Fabric', 'FabricComponents', 'Documentation',
         .pipe(gulp.dest(Config.paths.distDocumentation));
 });
 
-
 BuildConfig.buildTasks.push('DocumentationViewer');

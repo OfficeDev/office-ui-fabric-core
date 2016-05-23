@@ -8,9 +8,6 @@ var Utilites = require('./gulp/modules/Utilities');
 var ErrorHandling = require('./gulp/modules/ErrorHandling');
 var BuildConfig = require('./gulp/modules/BuildConfig');
 
-// Require Typescript
-require("typescript-require");
-
 //////////////////////////
 // INCLUDE FABRIC TASKS
 //////////////////////////
@@ -30,7 +27,6 @@ Server.configServer(
 // Config Paths
 Server.serveSpecificPaths(Config.servePaths);
 
-
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
@@ -45,7 +41,7 @@ gulp.task('watch-build', BuildConfig.buildTasks, function () {
         Plugins.runSequence('watch-build-tasks', done);
     }));
 });
-gulp.task('watch', ['watch-build', 'BuildMessages-server']);
+gulp.task('watch', ['watch-build', 'Server', 'BuildMessages-server']);
 
 // Debug Tasks
 gulp.task('watch-debug-build-tasks', BuildConfig.buildTasks);
@@ -54,7 +50,7 @@ gulp.task('watch-debug-build', BuildConfig.buildTasks, function () {
         Plugins.runSequence('watch-debug-build-tasks', 'BuildMessages-updated', done);
     }));
 });
-gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'watch-debug-build', 'BuildMessages-server']);
+gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'Server', 'watch-debug-build', 'BuildMessages-server']);
 
 //
 // Check For errors
@@ -101,7 +97,6 @@ var rebuildWithMessages = BuildConfig.buildTasks.concat(['BuildMessages-finished
 gulp.task('re-build', rebuildWithMessages);
 
 gulp.task('default', ['build']);
-
 
 //
 // Packaging tasks

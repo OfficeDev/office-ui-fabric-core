@@ -3,11 +3,6 @@ var BuildConfig = require('./modules/BuildConfig');
 var Server = require('./modules/Server');
 var running = false;
 
-gulp.task('FabricServer', function() {
-  if(!running) {
-    running = true;
-    return Server.start();
-  }
+gulp.task('Server', function(cb) {
+    return Server.start(); 
 });
-
-BuildConfig.buildTasks.push('FabricServer');

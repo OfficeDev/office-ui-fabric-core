@@ -1,5 +1,5 @@
 var DialogExampleModel = {
-  "props": {
+  "default": {
     "title": "All emails together",
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [
@@ -34,14 +34,16 @@ var DialogExampleModel = {
         "props": {
           "label": "Save",
           "tag": "button",
-          "modifier": "primary"
+          "modifier": "primary",
+          "customClasses": "ms-Dialog-action"
         }
       },
       {
         "component": "Button",
         "props": {
           "label": "Cancel",
-          "tag": "button"
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       }
     ],
@@ -49,7 +51,7 @@ var DialogExampleModel = {
       "state": "is-open"
     }
   },
-  "propsBlocking": {
+  "blocking": {
     "modifier": "blocking",
     "title": "Unsaved changes",
     "subText": "Are you sure you want to discard these changes?.",
@@ -85,14 +87,16 @@ var DialogExampleModel = {
         "props": {
           "label": "Save",
           "tag": "button",
-          "modifier": "primary"
+          "modifier": "primary",
+          "customClasses": "ms-Dialog-action"
         }
       },
       {
         "component": "Button",
         "props": {
-          "label": "Cancel",
-          "tag": "button"
+          "label": "Delete",
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       }
     ],
@@ -100,7 +104,7 @@ var DialogExampleModel = {
       "state": "is-open"
     }
   },
-  "propsClose": {
+  "close": {
     "modifier": "close",
     "closeIcon": "x",
     "title": "All emails together",
@@ -137,14 +141,16 @@ var DialogExampleModel = {
         "props": {
           "label": "Save",
           "tag": "button",
-          "modifier": "primary"
+          "modifier": "primary",
+          "customClasses": "ms-Dialog-action"
         }
       },
       {
         "component": "Button",
         "props": {
           "label": "Cancel",
-          "tag": "button"
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       }
     ],
@@ -152,7 +158,7 @@ var DialogExampleModel = {
       "state": "is-open"
     }
   },
-  "propslgHeader": {
+  "lgHeader": {
     "modifier": "lgHeader",
     "title": "All emails together",
     "subText": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
@@ -162,14 +168,16 @@ var DialogExampleModel = {
         "props": {
           "label": "Save",
           "tag": "button",
-          "modifier": "primary"
+          "modifier": "primary",
+          "customClasses": "ms-Dialog-action"
         }
       },
       {
         "component": "Button",
         "props": {
           "label": "Cancel",
-          "tag": "button"
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       }
     ],
@@ -177,7 +185,7 @@ var DialogExampleModel = {
       "state": "is-open"
     }
   },
-  "propsMultiline": {
+  "multiline": {
     "modifier": "multiline",
     "title": "All emails together",
     "components": [
@@ -188,27 +196,30 @@ var DialogExampleModel = {
           "description": "Description of this action this button takes",
           "icon": "plus",
           "modifier": "compound",
-          "tag": "button"
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       },
        {
         "component": "Button",
         "props":  {
-          "label": "Create Account",
+          "label": "Sign in",
           "description": "Description of this action this button takes",
           "icon": "plus",
           "modifier": "compound",
-          "tag": "button"
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       },
        {
         "component": "Button",
         "props":  {
-          "label": "Create Account",
+          "label": "Settings",
           "description": "Description of this action this button takes",
           "icon": "plus",
           "modifier": "compound",
-          "tag": "button"
+          "tag": "button",
+          "customClasses": "ms-Dialog-action"
         }
       }
     ],

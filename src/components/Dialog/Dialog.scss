@@ -14,12 +14,15 @@
   min-width: 220px;
   max-width: 340px;
   padding: 28px 24px;
-  position: relative;
+  z-index: $ms-zIndex-front;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
 }
 
 .ms-Dialog.is-open {
   display: block;
-  position: fixed;
 }
 
 .ms-Dialog-title {
@@ -44,8 +47,6 @@
   text-align: right;
 }
 
-
-
 //= Modifier: Multiline button dialog
 //
 .ms-Dialog--multiline {
@@ -53,8 +54,6 @@
     font-size: $ms-font-size-xxl;
   }
 }
-
-
 
 //= Modifier: Large header dialog
 //
@@ -72,7 +71,7 @@
 }
 
 // Close button, hidden by default
-.ms-Dialog-button--close {
+.ms-Dialog-buttonClose {
   background: none;
   border: 0;
   cursor: pointer;
@@ -89,22 +88,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-// Not reviewed below here
-
-
-
-
-
 // Add margin bottom between compound buttons
 .ms-Button.ms-Button--compound:not(:last-child) {
   margin-bottom: 20px;
@@ -119,16 +102,10 @@
   }
 
   // Show the close button  
-  .ms-Dialog-button.ms-Dialog-button--close {
+  .ms-Dialog-button.ms-Dialog-buttonClose {
     display: block;
   }
 }
-
-
-
-
-
-
 
 @media (min-width: $ms-screen-md-min) {
   // Allow wider dialog on larger screens

@@ -22,16 +22,12 @@
     };
     
   function actionHandler(event) {
-    label.innerText = this.innerText.trim() + " clicked" ;;
+    label.innerText = this.innerText.trim() + " clicked" ;
   }
   
   function openDialog(dialog) {
     // Open the dialog
     dialogComponent.open();
-
-    // Center the dialog
-    dialog.style.top = (window.innerHeight - dialog.offsetHeight) / 2 + 'px';
-    dialog.style.left = (window.innerWidth - dialog.offsetWidth) / 2 + 'px';
   }
 }());
 </script>

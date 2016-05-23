@@ -39,28 +39,27 @@ gulp.task('nuke', BuildConfig.nukeTasks);
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
-
-// Watch Sass
+gulp.task('watch-build-tasks', BuildConfig.buildTasks);
 gulp.task('watch-build', BuildConfig.buildTasks, function () {
-    gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(BuildConfig.buildTasks, done);
+    return gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence('watch-build-tasks', done);
     }));
 });
+gulp.task('watch', ['watch-build', 'BuildMessages-server']);
 
-gulp.task('watch', ['watch-build']);
-
+// Debug Tasks
+gulp.task('watch-debug-build-tasks', BuildConfig.buildTasks);
 gulp.task('watch-debug-build', BuildConfig.buildTasks, function () {
-    gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(BuildConfig.buildTasks, done);
+    return gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
+        Plugins.runSequence('watch-debug-build-tasks', 'BuildMessages-updated', done);
     }));
 });
-
-gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'watch-debug-build']);
+gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'watch-debug-build', 'BuildMessages-server']);
 
 //
 // Check For errors
 //
-gulp.task('Errors-checkAllErrors', buildTasks,  function() {
+gulp.task('Errors-checkAllErrors', BuildConfig.buildTasks,  function() {
     var returnFailedBuild = false;
      if (ErrorHandling.numberOfErrors() > 0) {
          ErrorHandling.generateError("------------------------------------------");
@@ -95,15 +94,13 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
 // Default Build
 // ----------------------------------------------------------------------------
 
-var buildWithMessages = BuildConfig.buildTasks.concat(['Errors-checkAllErrors', 'All-finished']);
+var buildWithMessages = BuildConfig.buildTasks.concat(['Errors-checkAllErrors', 'BuildMessages-finished']);
 gulp.task('build', buildWithMessages);
 
-var rebuildWithMessages = BuildConfig.buildTasks.concat(['All-updated']);
+var rebuildWithMessages = BuildConfig.buildTasks.concat(['BuildMessages-finished']);
 gulp.task('re-build', rebuildWithMessages);
 
 gulp.task('default', ['build']);
-
-
 
 
 //

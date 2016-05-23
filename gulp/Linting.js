@@ -1,5 +1,8 @@
 var gulp = require('gulp');
+var Config = require('./modules/Config');
+var Plugins = require('./modules/Plugins');
 var BuildConfig = require('./modules/BuildConfig');
+var ErrorHandling = require('./modules/ErrorHandling');
 
 gulp.task('Linting-spacesTabs', function (cb) {
     return gulp.src([
@@ -8,20 +11,20 @@ gulp.task('Linting-spacesTabs', function (cb) {
             Config.paths.componentsPath + '/**/*.html'
         ])
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(lintspaces({
+        .pipe(Plugins.lintspaces({
           trailingspaces: true,
           indentation: 'spaces',
 	        spaces: 2,
           newlineMaximum: 2
         }))
-        .pipe(lintspaces.reporter());
+        .pipe(ErrorHandling.TabLintingErrors());
 });
 
 gulp.task('Linting-typescript', function (cb) {
     return gulp.src(Config.paths.src + '/**/*.ts')
         .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
         .pipe(Plugins.tslint())
-        .pipe(Plugins.tslint.report("verbose"));
+        .pipe(ErrorHandling.TypescriptLinting());
 });
 
 gulp.task('Linting-componentStyles',  function() {

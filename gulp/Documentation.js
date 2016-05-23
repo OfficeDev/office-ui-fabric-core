@@ -203,7 +203,6 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 var DocumentationTasks = [
     'Documentation-build', 
     'Documentation-copyAssets',
-    'Documentation-styleHinting',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
     "Documentation-template"

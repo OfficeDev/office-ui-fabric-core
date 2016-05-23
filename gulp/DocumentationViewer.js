@@ -4,6 +4,7 @@ var Config = require('./modules/Config');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
+var BuildConfig = require('./modules/BuildConfig');
 
 //
 // Sample Index Page Build

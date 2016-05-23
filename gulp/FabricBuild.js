@@ -7,7 +7,6 @@ var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
-var BuildConfig = require('./modules/BuildConfig');
 
 //
 // Clean/Delete Tasks

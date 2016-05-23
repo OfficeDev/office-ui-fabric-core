@@ -48,6 +48,7 @@ var Plugins = function() {
 	this.tsc = require('gulp-typescript');
 	this.tslint = require("gulp-tslint");
   this.markdown = require('gulp-markdown');
+	this.lintspaces = require('gulp-lintspaces');
 };
 
 module.exports = new Plugins();

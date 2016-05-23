@@ -7,7 +7,6 @@
  * Mostly just a click handler
  *
  */
-
 namespace fabric {
   "use strict";
 

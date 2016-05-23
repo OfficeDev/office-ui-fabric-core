@@ -18,7 +18,7 @@ var PersonaExampleProps = {
               "secondaryText": "Sales",
                 "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
             }
@@ -32,7 +32,7 @@ var PersonaExampleProps = {
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
             }
@@ -40,13 +40,13 @@ var PersonaExampleProps = {
           {
             "component": "Persona",
             "props": {
-              "initials": "RM",
-              "initialsColor": "blue",
-              "primaryText": "Russel Miller",
+              "initials": "GS",
+              "initialsColor": "black",
+              "primaryText": "Grant Steel",
               "secondaryText": "Sales",
                 "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
             }
@@ -54,13 +54,13 @@ var PersonaExampleProps = {
           {
             "component": "Persona",
             "props": {
-              "initials": "DF",
-              "initialsColor": "purple",
-              "primaryText": "Douglas Fielder",
+              "initials": "HW",
+              "initialsColor": "green",
+              "primaryText": "Harvey Wallin",
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
             }
@@ -96,8 +96,7 @@ var PersonaExampleProps = {
                   "name": "xs"
                 }
               ]
-            },
-            "state": "is-selected"
+            }
           },
           {
             "component": "Persona",
@@ -105,6 +104,34 @@ var PersonaExampleProps = {
               "initials": "DF",
               "initialsColor": "purple",
               "primaryText": "Douglas Fielder",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "xs"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "GS",
+              "initialsColor": "black",
+              "primaryText": "Grant Steel",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "xs"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "HW",
+              "initialsColor": "green",
+              "primaryText": "Harvey Wallin",
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
@@ -159,6 +186,34 @@ var PersonaExampleProps = {
               "initials": "DF",
               "initialsColor": "purple",
               "primaryText": "Douglas Fielder",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "GS",
+              "initialsColor": "black",
+              "primaryText": "Grant Steel",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "HW",
+              "initialsColor": "green",
+              "primaryText": "Harvey Wallin",
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {

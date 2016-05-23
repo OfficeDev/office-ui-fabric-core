@@ -66,9 +66,11 @@
   }
 
   &.is-disabled {
+    color: $ms-color-neutralTertiary;
     background-color: $ms-color-white;
 
-    &:active {
+    &:active,
+    &:focus {
       border-color: $ms-color-white;
     }
 

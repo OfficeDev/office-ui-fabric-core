@@ -48,6 +48,7 @@
   line-height: 48px;
   padding: 0 10px;
   color: $ms-color-neutralSecondary;
+  outline: transparent;
   position: relative;
   @include ms-u-borderBox;
 
@@ -181,29 +182,17 @@
   }
 }
 
-
-//== Modifier: Persona card with square personas
-//
-.ms-PersonaCard.ms-PersonaCard--square {
-  .ms-PersonaCard-persona {
-    .ms-Persona-imageArea,
-    .ms-Persona-image {
-      width: 100px;
-      height: 100px;
-      margin: 0;
-    }
-
-    .ms-Persona-presence {
-      left: 0;
-    }
-  }
-}
-
-
 @media (min-width: $ms-screen-md-min) {
   // Undock the persona card and give it a shadow.
   .ms-PersonaCard {
+    @include drop-shadow;
     max-width: 360px;
     position: relative;
+  }
+
+  .ms-ContextualHost {
+    .ms-PersonaCard {
+      box-shadow: none;
+    }
   }
 }

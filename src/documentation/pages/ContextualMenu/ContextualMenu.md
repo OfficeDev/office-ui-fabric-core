@@ -48,8 +48,6 @@ State | Applied to | Result
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page. For example:

@@ -7,7 +7,7 @@ var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
-
+var BuildConfig = require('./modules/BuildConfig');
 
 //
 // Clean/Delete Tasks
@@ -98,26 +98,5 @@ gulp.task('Fabric-buildStyles', function () {
 // ----------------------------------------------------------------------------
 
 gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
-
-//
-// Fabric Messages
-// ----------------------------------------------------------------------------
-
-gulp.task('Fabric-finished', ['Fabric'], function () {
-    console.log(ConsoleHelper.generateSuccess('Fabric core-build complete, you may now celebrate and dance!', true));
-});
-
-gulp.task('Fabric-updated', ['Fabric'], function () {
-    console.log(ConsoleHelper.generateSuccess(' Fabric updated successfully', false));
-});
-
-//
-// Watch Tasks
-// ----------------------------------------------------------------------------
-
-// Watch and build Fabric when sources change.
-gulp.task('Fabric-watch', ['Fabric', 'Fabric-finished'], function () {
-    return gulp.watch(Config.paths.sassPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence('Fabric', 'Fabric-updated', done);
-    }));
-});
+BuildConfig.buildTasks.push('Fabric');
+BuildConfig.nukeTasks.push('Fabric-nuke');

@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-
 var Utilites = require('./modules/Utilities');
 var Config = require('./modules/Config');
 var ConsoleHelper = require('./modules/ConsoleHelper');
@@ -33,3 +32,6 @@ gulp.task('DocumentationViewer', ['Fabric', 'FabricComponents', 'Documentation',
         .pipe(Plugins.rename('index.html'))
         .pipe(gulp.dest(Config.paths.distDocumentation));
 });
+
+
+BuildConfig.buildTasks.push('DocumentationViewer');

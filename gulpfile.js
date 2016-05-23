@@ -6,27 +6,10 @@ var ConsoleHelper = require('./gulp/modules/ConsoleHelper');
 var Server = require('./gulp/modules/Server');
 var Utilites = require('./gulp/modules/Utilities');
 var ErrorHandling = require('./gulp/modules/ErrorHandling');
+var BuildConfig = require('./gulp/modules/BuildConfig');
 
 // Require Typescript
 require("typescript-require");
-
-var watchTasks = [
-    'Fabric', 
-    'ComponentJS',
-    'FabricComponents', 
-    'Documentation', 
-    'Samples',
-    'DocumentationViewer'
-];
-
-var buildTasks = [
-    'Fabric', 
-    'ComponentJS',
-    'FabricComponents', 
-    'Documentation', 
-    'Samples', 
-    'DocumentationViewer'
-];
 
 //////////////////////////
 // INCLUDE FABRIC TASKS
@@ -47,37 +30,32 @@ Server.configServer(
 // Config Paths
 Server.serveSpecificPaths(Config.servePaths);
 
-gulp.task('FabricServer', function() {
-    return Server.start();
-});
-
 
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
-gulp.task('nuke', ['Fabric-nuke', 'ComponentJS-nuke', 'FabricComponents-nuke', 'Documentation-nuke', 'Samples-nuke']);
+gulp.task('nuke', BuildConfig.nukeTasks);
 
 //
 // Watch Tasks
 // ----------------------------------------------------------------------------
 
 // Watch Sass
-gulp.task('watch-build', ['ComponentJS', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-build', BuildConfig.buildTasks, function () {
     gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'ComponentJS', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-updated'], done);
+        Plugins.runSequence(BuildConfig.buildTasks, done);
     }));
 });
 
 gulp.task('watch', ['watch-build']);
 
-gulp.task('watch-debug-build', ['ComponentJS', 'Fabric', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-server'], function () {
+gulp.task('watch-debug-build', BuildConfig.buildTasks, function () {
     gulp.watch(Config.paths.src + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence(['Fabric', 'FabricComponents', 'Documentation', 'Samples', 'DocumentationViewer', 'FabricServer', 'All-updated'], done);
+        Plugins.runSequence(BuildConfig.buildTasks, done);
     }));
 });
 
 gulp.task('watch-debug', ['ConfigureEnvironment-setDebugMode', 'watch-debug-build']);
-
 
 //
 // Check For errors
@@ -117,31 +95,15 @@ gulp.task('Errors-checkAllErrors', buildTasks,  function() {
 // Default Build
 // ----------------------------------------------------------------------------
 
-var buildWithMessages = buildTasks.concat(['Errors-checkAllErrors', 'All-finished']);
+var buildWithMessages = BuildConfig.buildTasks.concat(['Errors-checkAllErrors', 'All-finished']);
 gulp.task('build', buildWithMessages);
 
-var rebuildWithMessages = buildTasks.concat(['All-updated']);
+var rebuildWithMessages = BuildConfig.buildTasks.concat(['All-updated']);
 gulp.task('re-build', rebuildWithMessages);
 
 gulp.task('default', ['build']);
 
 
-//
-// Fabric Messages
-// ----------------------------------------------------------------------------
-
-var allFinishedtasks = watchTasks.concat(['Errors-checkAllErrors']);
-gulp.task('All-finished', allFinishedtasks, function () {
-    console.log(ConsoleHelper.generateSuccess('All Fabric built successfully, you may now celebrate and dance!', true));
-});
-
-gulp.task('All-server', watchTasks, function () {
-    console.log(ConsoleHelper.generateSuccess('Fabric built successfully! ' + "\r\n" + 'Fabric samples located at ' + Config.projectURL + ':' + Config.port, false));
-});
-
-gulp.task('All-updated', watchTasks, function () {
-    console.log(ConsoleHelper.generateSuccess('UPDATE COMPLETE: All Fabric parts updated successfully! Yay!', false));
-});
 
 
 //

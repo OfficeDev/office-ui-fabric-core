@@ -27,16 +27,17 @@ namespace fabric {
     public close(): void {
       this._overlay.remove();
       this._dialog.classList.remove("is-open");
-      this._overlay.overlayEl.removeEventListener("click", this.close.bind(this));
+      this._overlay.overlayElement.removeEventListener("click", this.close.bind(this));
     }
 
     public open(): void {
       this._dialog.classList.add("is-open");
       this._overlay = new fabric.Overlay();
       if (!this._dialog.classList.contains("ms-Dialog--blocking")) {
-        this._overlay.overlayEl.addEventListener("click", this.close.bind(this), false);
+        this._overlay.overlayElement.addEventListener("click", this.close.bind(this), false);
+        this._overlay.show();
       }
-      this._dialog.parentElement.appendChild(this._overlay.overlayEl);
+      this._dialog.parentElement.appendChild(this._overlay.overlayElement);
     }
   }
 }

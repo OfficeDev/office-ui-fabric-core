@@ -51,8 +51,16 @@ namespace fabric {
     private _clickHandler(e) {
       this._createModalHost(e);
 
+      // Select all results and remove event listeners by cloning
+      let peoplePickerResults = this._peoplePickerMenu.querySelector(".ms-PeoplePicker-result");
+      let resultsParent = peoplePickerResults.parentNode;
+      let resultsClone = resultsParent.cloneNode(true);
+      resultsParent.parentNode.replaceChild(resultsClone, resultsParent);
+
+      // Get all results
       this._peoplePickerResults = this._peoplePickerMenu.querySelectorAll(".ms-PeoplePicker-result");
 
+      // Add _selectResult listeners to each result
       for (let i = 0; i < this._peoplePickerResults.length; i++) {
         this._peoplePickerResults[i].addEventListener("click", this._selectResult.bind(this), true);
       }
@@ -62,7 +70,6 @@ namespace fabric {
       e.stopPropagation();
 
       let currentResult = this._findPersona(e.target);
-      // let tokenResult = this._findPersona(e.target);
       let tokenResult: Element = <Element>currentResult.cloneNode(true);
       let searchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
       let textField = searchBox.querySelector(".ms-TextField");
@@ -74,6 +81,8 @@ namespace fabric {
         tokenResult.classList.remove("ms-Persona--sm");
         tokenResult.classList.add("ms-Persona--xs");
       }
+
+      tokenResult.querySelector(".ms-Persona-actionIcon").addEventListener("click", this._removeToken.bind(this), true);
       searchBox.insertBefore(tokenResult, textField);
     }
 
@@ -98,15 +107,15 @@ namespace fabric {
       return persona.appendChild(actionBtn);
     }
 
+    private _removeToken(e) {
+      let currentToken = this._findPersona(e.target);
+      currentToken.remove();
+    }
+
     private _assignClicks() {
       this._container.addEventListener("click", this._clickHandler.bind(this), true);
       this._container.addEventListener("focus", this._clickHandler.bind(this), true);
       this._container.addEventListener("keyup", this._clickHandler.bind(this), true);
-
-      // for (let i = 0; i < this._peoplePickerResults.length; i++) {
-      //   this._peoplePickerResults[i].addEventListener("click", this._selectResult.bind(this), true);
-      // }
-
     }
   }
 }

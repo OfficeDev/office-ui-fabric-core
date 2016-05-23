@@ -218,13 +218,13 @@
 }
 
 .ms-SearchBox.ms-SearchBox--commandBar.is-active {
-   @include ms-bgColor-themeLight;
+  @include ms-bgColor-themeLight;
 
-   .ms-SearchBox-close {
+  .ms-SearchBox-close {
     .ms-CommandButton-button {
       @include ms-bgColor-themeLight;
     }
-   }
+  }
 
   .ms-SearchBox-label {
     display: block;

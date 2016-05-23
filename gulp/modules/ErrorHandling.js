@@ -200,8 +200,6 @@ var ErrorHandling = function() {
                 var warningCount = Object.keys(lintingData).length;
                 
                   warningLines.forEach(function (warningLine) {
-                    var line = '  line ' + lintingData[warningLine][0].line + '\t\t  ' + lintingData[warningLine][0].message;
-                    lines.push(line);
                     errorString = that.createLineErrorMessage(
                         gulputil.colors.yellow("Warning") + ' ' + lintingData[warningLine][0].message,
                         file.path,
@@ -210,10 +208,9 @@ var ErrorHandling = function() {
                         ' ',
                         ' '
                     );
+                    gulputil.log(errorString);
+                    that.addWarning(errorString);
                 });
-                
-                gulputil.log(errorString);
-                that.addWarning(errorString);
             }
             return cb(null, file); 
         });

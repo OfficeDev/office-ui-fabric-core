@@ -44,8 +44,6 @@
   text-align: right;
 }
 
-
-
 //= Modifier: Multiline button dialog
 //
 .ms-Dialog--multiline {
@@ -53,8 +51,6 @@
     font-size: $ms-font-size-xxl;
   }
 }
-
-
 
 //= Modifier: Large header dialog
 //
@@ -89,22 +85,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-// Not reviewed below here
-
-
-
-
-
 // Add margin bottom between compound buttons
 .ms-Button.ms-Button--compound:not(:last-child) {
   margin-bottom: 20px;
@@ -113,22 +93,16 @@
 //= Modifier: Dialog with close button
 //
 .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) {
-  // Push the right side over so the icon doesn't overlap the text 
+  // Push the right side over so the icon doesn't overlap the text
   .ms-Dialog-title {
     margin-right: 20px;
   }
 
-  // Show the close button  
+  // Show the close button
   .ms-Dialog-button.ms-Dialog-button--close {
     display: block;
   }
 }
-
-
-
-
-
-
 
 @media (min-width: $ms-screen-md-min) {
   // Allow wider dialog on larger screens

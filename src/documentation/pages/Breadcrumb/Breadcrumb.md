@@ -7,7 +7,7 @@ Shows the current location in a hierarchy and provides a means of navigating upw
 <!---
 {{> BreadcrumbExample props=BreadcrumbExampleModel }}
 --->
-
+ 
 ## States
 
 State | Applied to | Result
@@ -18,7 +18,7 @@ State | Applied to | Result
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
     ```
-    <head>
+    <head> 
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
         <script src="jquery-2.2.1.min.js"></script>
@@ -72,7 +72,7 @@ State | Applied to | Result
     ```
 4. Verify that the component is working the same as in the sample above.
 5. Replace the sample HTML content (such as the `.ms-Breadcrumb-listItem` elements) with your content.
-
+ 
 ## Dependencies
 This component uses a **Contextual Menu** for the overflow menu.
 

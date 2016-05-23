@@ -65,26 +65,5 @@ gulp.task('Samples-buildStyles',  function () {
 
 // Roll up for samples
 gulp.task('Samples', ['Samples-copyAssets', 'Samples-buildStyles', 'Bundles-buildAll']);
-
-//
-// Fabric Messages
-// ----------------------------------------------------------------------------
-
-gulp.task('Samples-finished', ['Samples'], function () {
-    console.log(ConsoleHelper.generateSuccess('Samples done, experience fabric by sample!', true));
-});
-
-gulp.task('Samples-updated', ['Samples'], function () {
-    console.log(ConsoleHelper.generateSuccess(' Samples done updating', false));
-});
-
-//
-// Watch Tasks
-// ----------------------------------------------------------------------------
-
-// Watch and build Fabric when sources change.
-gulp.task('Samples-watch', ['Samples', 'Samples-finished'], function () {
-    return gulp.watch(Config.paths.srcSamples + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence('Samples', 'Samples-updated', done);
-    }));
-});
+BuildConfig.buildTasks.push('Samples');
+BuildConfig.nukeTasks.push('Samples-nuke');

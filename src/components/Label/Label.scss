@@ -6,16 +6,15 @@
 // Form field label styles
 
 @mixin ms-Label-is-disabled {
-     color: $ms-color-neutralTertiary;
+  color: $ms-color-neutralTertiary;
 }
 
 @mixin ms-Label-is-required {
-     &:after {
-        content: ' *';
-        color: $ms-color-error;
-    }
+  &:after {
+    content: ' *';
+    color: $ms-color-error;
+  }
 }
-
 
 .ms-Label {
   @include ms-u-normalize;
@@ -32,6 +31,6 @@
   }
 
   &.is-disabled {
-     @include ms-Label-is-disabled;
+    @include ms-Label-is-disabled;
   }
 }

@@ -10,7 +10,6 @@
  *
  */
 
-
 /**
  * @namespace fabric
  */

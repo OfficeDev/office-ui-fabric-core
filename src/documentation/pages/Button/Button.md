@@ -14,7 +14,7 @@ Where multiple buttons are presented together, this is the default action when s
 <!---
 {{> Button props=ButtonExamplePrimaryModel}}
 --->
-
+ 
 ### Compound
 Provides a second line of text to explain the action the button takes.
 

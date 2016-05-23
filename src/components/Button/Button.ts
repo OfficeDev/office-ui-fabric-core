@@ -1,13 +1,11 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-
 /**
  * Button
  *
  * Mostly just a click handler
  *
  */
-
 namespace fabric {
   "use strict";
 

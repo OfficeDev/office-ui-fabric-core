@@ -39,11 +39,11 @@
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   z-index: $ms-zIndex-back;
-   outline: 1px solid transparent;
+  outline: 1px solid transparent;
 }
 
 //= Modifier: ContextualHost with left and right arrows
-// 
+//
 .ms-ContextualHost.ms-ContextualHost--arrowLeft,
 .ms-ContextualHost.ms-ContextualHost--arrowRight {
   .ms-ContextualHost-beak {
@@ -59,7 +59,7 @@
 }
 
 .ms-ContextualHost.ms-ContextualHost--arrowRight {
- .ms-ContextualHost-beak {
+  .ms-ContextualHost-beak {
     right: -10px;
   }
 }

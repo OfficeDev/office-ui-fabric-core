@@ -99,7 +99,7 @@ $CommandButton-padding: 8px;
 
 .ms-CommandButton-button,
 .ms-CommandButton-splitIcon {
-   @include ms-CommandBarButton-buttonBase;
+  @include ms-CommandBarButton-buttonBase;
 }
 
 .ms-CommandButton-button {
@@ -121,7 +121,7 @@ $CommandButton-padding: 8px;
   height: 100%;
 
   .ms-Icon {
-   @include ms-CommandButton-iconBase;
+    @include ms-CommandButton-iconBase;
   }
 }
 
@@ -151,11 +151,11 @@ $CommandButton-padding: 8px;
   height: 100%;
 
   .ms-Icon {
-   @include ms-CommandButton-iconBase;
+    @include ms-CommandButton-iconBase;
   }
 
   &:focus::before {
-   @include ms-CommandBar-focusRectangle;
+    @include ms-CommandBar-focusRectangle;
   }
 }
 

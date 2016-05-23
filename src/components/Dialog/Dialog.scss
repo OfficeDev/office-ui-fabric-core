@@ -96,12 +96,12 @@
 //= Modifier: Dialog with close button
 //
 .ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) {
-  // Push the right side over so the icon doesn't overlap the text 
+  // Push the right side over so the icon doesn't overlap the text
   .ms-Dialog-title {
     margin-right: 20px;
   }
 
-  // Show the close button  
+  // Show the close button
   .ms-Dialog-button.ms-Dialog-buttonClose {
     display: block;
   }

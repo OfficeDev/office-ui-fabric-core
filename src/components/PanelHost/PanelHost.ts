@@ -32,7 +32,7 @@ namespace fabric {
     }
 
     public dismiss() {
-       document.body.removeChild(this.panelHost);
+      document.body.removeChild(this.panelHost);
     }
 
     public update(layer: Node, callBack?: Function) {

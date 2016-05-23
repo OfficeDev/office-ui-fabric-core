@@ -321,7 +321,7 @@ namespace fabric {
         this._modalWidth = this._container.getBoundingClientRect().width
           + (parseInt(_modalStyles.marginLeft, 10)
           + parseInt(_modalStyles.marginRight, 10));
-         this._container.setAttribute("style", "");
+        this._container.setAttribute("style", "");
       }
       this._modalHeight = this._container.getBoundingClientRect().height
         + (parseInt(_modalStyles.marginTop, 10)

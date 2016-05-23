@@ -8,7 +8,7 @@ namespace fabric {
    *
    * Adds basic demonstration functionality to .ms-ChoiceFieldGroup components.
    *
-   */
+  */
   export class ChoiceFieldGroup {
 
     private _choiceFieldGroup: HTMLElement;

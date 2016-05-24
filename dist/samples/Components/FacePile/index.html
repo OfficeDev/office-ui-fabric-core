@@ -5,10 +5,10 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Component FacePile</title>
+  <title>Component Facepile</title>
 
   <link rel="stylesheet" href="../../../css/fabric.css">
-  <link rel="stylesheet" href="FacePile.css">
+  <link rel="stylesheet" href="Facepile.css">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
  
@@ -22,19 +22,19 @@
 
         $('.ms-Panel').FilePicker();
       } else {
-        if ($.fn.FacePile) {
-          $('.ms-FacePile').FacePile();
+        if ($.fn.Facepile) {
+          $('.ms-Facepile').Facepile();
         }
       }
 
        // Vanilla JS Components
       if (typeof fabric !== "undefined") {
-        if ('FacePile' in fabric) {
-          var elements = document.querySelectorAll('.ms-FacePile');
+        if ('Facepile' in fabric) {
+          var elements = document.querySelectorAll('.ms-Facepile');
           var i = elements.length;
           var component;
           while(i--) {
-            component = new fabric['FacePile'](elements[i]);
+            component = new fabric['Facepile'](elements[i]);
           }
         }
       }
@@ -172,7 +172,7 @@
 </head>
 
 <body>
-  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">FacePile</h1>
+  <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker docs-ComponentName">Facepile</h1>
   <div id="componentWrapper">
     <h1 id="facepile">Facepile</h1>
 <p>Displays several people with the option to add additional people or view the details of a person.</p>

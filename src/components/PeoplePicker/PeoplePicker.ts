@@ -72,28 +72,15 @@ namespace fabric {
       e.stopPropagation();
 
       let currentResult = this._findPersona(e.target);
-      let tokenResult: Element = <Element>currentResult.cloneNode(true);
-      let searchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
-      let textField = searchBox.querySelector(".ms-TextField");
+      let clonedResult: Element = <Element>currentResult.cloneNode(true);
       let openHost = document.querySelector(".ms-ContextualHost.is-open");
 
-      // Add token classes to persona
-      tokenResult.classList.add("ms-Persona--token", "ms-PeoplePicker-persona");
-
-      // Add the remove button to the token
-      this._addRemoveBtn(tokenResult);
-
-      // Use persona xs variant for token
-      if (tokenResult.classList.contains("ms-Persona--sm")) {
-        tokenResult.classList.remove("ms-Persona--sm");
-        tokenResult.classList.add("ms-Persona--xs");
+      // if facePile - add to members list / else tokenize
+      if (this._container.classList.contains("ms-PeoplePicker--facePile")) {
+        this._addResultToMembers(clonedResult);
+      } else {
+        this._tokenizeResult(clonedResult);
       }
-
-      // Add removeToken event to actionIcon
-      tokenResult.querySelector(".ms-Persona-actionIcon").addEventListener("click", this._removeToken.bind(this), true);
-
-      // Prepend the token before the search field
-      searchBox.insertBefore(tokenResult, textField);
 
       // Close the open contextual host
       openHost.classList.remove("is-open");
@@ -108,11 +95,18 @@ namespace fabric {
       return currentElement;
     }
 
-    private _addRemoveBtn(persona: Element) {
-      let actionBtn = document.createElement("div");
+    private _addRemoveBtn(persona: Element, token?: Boolean) {
+      let actionBtn;
       let actionIcon = document.createElement("i");
 
-      actionBtn.classList.add("ms-Persona-actionIcon");
+      if (token) {
+        actionBtn = document.createElement("div");
+        actionBtn.classList.add("ms-Persona-actionIcon");
+      } else {
+        actionBtn = document.createElement("button");
+        actionBtn.classList.add("ms-PeoplePicker-resultAction");
+      }
+
       actionIcon.classList.add("ms-Icon", "ms-Icon--x");
 
       actionBtn.appendChild(actionIcon);
@@ -123,6 +117,50 @@ namespace fabric {
     private _removeToken(e) {
       let currentToken = this._findPersona(e.target);
       currentToken.remove();
+    }
+
+    private _tokenizeResult(tokenResult: Element) {
+      let searchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
+      let textField = searchBox.querySelector(".ms-TextField");
+
+      // Add token classes to persona
+      tokenResult.classList.add("ms-Persona--token", "ms-PeoplePicker-persona");
+
+      // Add the remove button to the token
+      this._addRemoveBtn(tokenResult, true);
+
+      // Use persona xs variant for token
+      if (tokenResult.classList.contains("ms-Persona--sm")) {
+        tokenResult.classList.remove("ms-Persona--sm");
+        tokenResult.classList.add("ms-Persona--xs");
+      }
+
+      // Add removeToken event to actionIcon
+      tokenResult.querySelector(".ms-Persona-actionIcon").addEventListener("click", this._removeToken.bind(this), true);
+
+      // Prepend the token before the search field
+      searchBox.insertBefore(tokenResult, textField);
+    }
+
+    private _addResultToMembers(persona: Element) {
+      let membersList = this._container.querySelector(".ms-PeoplePicker-selectedPeople");
+      let firstMember = membersList.querySelector(".ms-PeoplePicker-selectedPerson");
+      let selectedItem = document.createElement("li");
+
+      // Create the selectedPerson list item
+      selectedItem.classList.add("ms-PeoplePicker-selectedPerson");
+      selectedItem.tabIndex = 1;
+
+      // Append the result persona to list item
+      selectedItem.appendChild(persona);
+
+      // Add the remove button to the persona
+      this._addRemoveBtn(selectedItem, false);
+
+      // Add removeToken event to resultAction
+      selectedItem.querySelector(".ms-PeoplePicker-resultAction").addEventListener("click", this._removeToken.bind(this), true);
+
+      membersList.insertBefore(selectedItem, firstMember);
     }
 
     private _assignClicks() {

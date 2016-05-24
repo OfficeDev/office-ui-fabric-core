@@ -162,6 +162,42 @@ var PersonaExampleProps = {
         }
       ]
     },
+    "members": [
+      {
+        "title": "Members",
+        "count": "2",
+        "personas": [
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "RM",
+              "initialsColor": "blue",
+              "primaryText": "Russel Miller",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "DF",
+              "initialsColor": "purple",
+              "primaryText": "Douglas Fielder",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
     "groups": [
       {
         "title": "Contacts",

@@ -39,4 +39,19 @@
       </button>
     </div>
   </div>
+  {{#each props.members}}
+    <div class="ms-PeoplePicker-selected is-active">
+      <div class="ms-PeoplePicker-selectedHeader">
+        <span class="ms-PeoplePicker-selectedCount">{{count}}</span> member<span>s</span>
+      </div>
+      <ul class="ms-PeoplePicker-selectedPeople">
+        {{#each personas}}
+        <li class="ms-PeoplePicker-selectedPerson {{state}}" tabindex="1">
+          {{> Persona props=props}}
+            <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--x"></i></button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
 </div>

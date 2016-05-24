@@ -8,9 +8,12 @@
 // Single line (input) and multiline (textarea) form field styles
 
 .ms-TextField {
-  @include ms-font-m;
   @include ms-u-normalize;
-  margin-bottom: 10px;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  margin-bottom: 8px;
 }
 
 //= State: A disabled textfield
@@ -47,14 +50,14 @@
   @include ms-u-normalize;
   border: 1px solid $ms-color-neutralTertiaryAlt;
   border-radius: 0;
-  font-family: $ms-font-family-semilight;
-  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-semilight;
+  font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
   height: 36px;
   padding: 6px 10px;
   width: 100%;
   min-width: 180px;
-  outline: 1px solid transparent;
+  outline: 0;
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
@@ -66,7 +69,13 @@
 
   &:hover,
   &:focus {
-    outline: 1px solid transparent;
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   @include input-placeholder {
@@ -89,8 +98,13 @@
 
   .ms-Label {
     position: absolute;
+<<<<<<< HEAD
     font-family: $ms-font-family-semilight;
     font-size: $ms-font-size-m;
+=======
+    font-weight: $ms-font-weight-semilight;
+    font-size: $ms-font-size-s;
+>>>>>>> beta/3.0.0
     color: $ms-color-neutralSecondary;
     padding: 8px 0 8px 10px;
   }
@@ -115,6 +129,14 @@
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   &:active,
@@ -143,7 +165,8 @@
     padding-bottom: 2px;
 
     &:active,
-    &:focus {
+    &:focus,
+    &:hover {
       outline: 0;
     }
   }
@@ -160,6 +183,18 @@
       color: $ms-color-neutralTertiary;
     }
   }
+
+  &.is-active {
+    border-color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
+  }
 }
 
 
@@ -167,7 +202,14 @@
 //
 .ms-TextField.ms-TextField--multiline {
   .ms-TextField-field {
+<<<<<<< HEAD
     @include ms-font-m;
+=======
+    color: $ms-color-neutralPrimary;
+    font-family: $ms-font-family-base;
+    font-size: $ms-font-size-s;
+    font-weight: $ms-font-weight-regular;
+>>>>>>> beta/3.0.0
     line-height: 17px;
     min-height: 60px;
     min-width: 260px;

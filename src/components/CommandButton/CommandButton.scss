@@ -11,13 +11,14 @@ $CommandButton-padding: 8px;
 .ms-CommandButton {
   display: inline-block;
   position: relative;
+  font-family: $ms-font-family-base;
 
   &.is-hidden {
     display: none;
   }
 
   &:disabled,
-	&.is-disabled {
+  &.is-disabled {
     .ms-CommandButton-button {
       cursor: default;
 
@@ -35,7 +36,7 @@ $CommandButton-padding: 8px;
     }
   }
 
-  .ms-ContextualHost {
+  .ms-ContextualMenu {
     display: none;
   }
 }
@@ -62,13 +63,16 @@ $CommandButton-padding: 8px;
 }
 
 @mixin ms-CommandBarButton-buttonBase {
-  @include ms-font-m;
-	@include ms-u-normalize;
-	// background-color: $ms-color-themeLighterAlt;
-	// border: 1px solid $ms-color-themeLighterAlt;
-	cursor: pointer;
-	display: inline-block;
-	height: $CommandButton-height;
+  @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  // background-color: $ms-color-themeLighterAlt;
+  // border: 1px solid $ms-color-themeLighterAlt;
+  cursor: pointer;
+  display: inline-block;
+  height: $CommandButton-height;
   line-height: $CommandButton-height;
   outline: 1px solid transparent;
   padding: 0 $CommandButton-padding;
@@ -80,13 +84,13 @@ $CommandButton-padding: 8px;
     background-color: $ms-color-themeLight;
 
     .ms-CommandButton-label {
-			color: $ms-color-neutralDark;
-		}
-	}
+      color: $ms-color-neutralDark;
+    }
+  }
 
-	&:focus::before {
-		@include  ms-CommandBar-focusRectangle;
-	}
+  &:focus::before {
+    @include  ms-CommandBar-focusRectangle;
+  }
 
   &:focus {
     outline: 0;
@@ -95,7 +99,7 @@ $CommandButton-padding: 8px;
 
 .ms-CommandButton-button,
 .ms-CommandButton-splitIcon {
-   @include ms-CommandBarButton-buttonBase;
+  @include ms-CommandBarButton-buttonBase;
 }
 
 .ms-CommandButton-button {
@@ -105,7 +109,7 @@ $CommandButton-padding: 8px;
 
 // Add space between adjacent command buttons.
 .ms-CommandButton + .ms-CommandButton {
-	margin-left: 8px;
+  margin-left: 8px;
 }
 
 .ms-CommandButton-icon {
@@ -117,12 +121,14 @@ $CommandButton-padding: 8px;
   height: 100%;
 
   .ms-Icon {
-   @include ms-CommandButton-iconBase;
+    @include ms-CommandButton-iconBase;
   }
 }
 
 .ms-CommandButton-label {
-  @include ms-font-m;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   color: $ms-color-neutralPrimary;
   line-height: $CommandButton-height;
   height: 100%;
@@ -137,21 +143,27 @@ $CommandButton-padding: 8px;
 .ms-CommandButton-dropdownIcon {
   display: inline-block;
   position: relative;
-  @include ms-font-l;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-l;
+  font-weight: $ms-font-weight-semilight;
   min-width: 17px;
   height: 100%;
 
   .ms-Icon {
-   @include ms-CommandButton-iconBase;
+    @include ms-CommandButton-iconBase;
   }
 
   &:focus::before {
-   @include ms-CommandBar-focusRectangle;
+    @include ms-CommandBar-focusRectangle;
   }
 }
 
 .ms-CommandButton-splitIcon {
-  @include ms-font-l;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-l;
+  font-weight: $ms-font-weight-semilight;
   margin-left: -4px;
   width: 21px;
   border: 0;
@@ -224,7 +236,7 @@ $CommandButton-padding: 8px;
     &::before {
       @include ms-CommandButton-pivotLine;
     }
-	}
+  }
 }
 
 .ms-CommandButton.ms-CommandButton--textOnly,

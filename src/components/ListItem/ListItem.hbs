@@ -1,0 +1,19 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<li class="ms-ListItem {{#if props.modifier}} ms-ListItem--{{props.modifier}} {{/if}} {{props.state}}" tabindex="0">
+  {{#if props.image}}<div class="ms-ListItem-image"></div>{{/if}}
+  {{#if props.primaryText}}<span class="ms-ListItem-primaryText">{{props.primaryText}}</span>{{/if}}
+  {{#if props.secondaryText}}<span class="ms-ListItem-secondaryText">{{props.secondaryText}}</span>{{/if}}
+  {{#if props.tertiaryText}}<span class="ms-ListItem-tertiaryText">{{props.tertiaryText}}</span>{{/if}}
+  {{#if props.metaText}}<span class="ms-ListItem-metaText">{{props.metaText}}</span>{{/if}}
+  {{#if props.listIcon}}<div class="ms-ListItem-itemIcon ms-ListItem-itemIcon--{{props.listIcon}}"></div>{{/if}}
+  <div class="ms-ListItem-selectionTarget"></div>
+  <div class="ms-ListItem-actions">
+    {{#each props.actions}}{{/each}}
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--mail"></i></div>
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--trash"></i></div>
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--flag"></i></div>
+    <div class="ms-ListItem-action"><i class="ms-Icon ms-Icon--pinLeft"></i></div>
+  </div>
+</li>
+

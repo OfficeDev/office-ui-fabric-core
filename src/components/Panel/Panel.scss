@@ -27,13 +27,14 @@ $CommandButtonBlue: #2488D8;
   background-color: $ms-color-white;
   width: 100%;
   max-width: $Panel-width-sm;
-  display: block;
   @include drop-shadow(-30px, 0, 30px, -30px, .2);
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   z-index: $ms-zIndex-front;
+  font-family: $ms-font-family-base;
+  display: none;
 
   // Animations -- Default (anchored right)
   &.animate-in {
@@ -42,6 +43,10 @@ $CommandButtonBlue: #2488D8;
 
   &.animate-out {
     @include ms-u-slideRightOut40;
+  }
+
+  &.is-open {
+    display: block;
   }
 }
 
@@ -143,7 +148,7 @@ $CommandButtonBlue: #2488D8;
 
 // Header text at the top of the panel.
 .ms-Panel-headerText {
-  font-family: $ms-font-family-light;
+  font-weight: $ms-font-weight-light;
   font-size: $ms-font-size-xl;
   color: $ms-color-neutralPrimary;
   margin: 10px 0;

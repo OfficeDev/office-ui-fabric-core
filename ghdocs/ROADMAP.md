@@ -14,6 +14,7 @@
 - **Code snippets for Visual Studio.** This would be nice to have but is not a priority for us at this time. See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/233) for details.
 - **Custom HTML elements for components,** using something like [Polymer](https://www.polymer-project.org/). See the [original request](https://github.com/OfficeDev/Office-UI-Fabric/issues/223).
 - **Single components file with both left-to-right and right-to-left.** We've had [one request](https://github.com/OfficeDev/Office-UI-Fabric/issues/210) for this so far and it's something we could consider adding if more people show interest. Right now it seems that most teams are okay with swapping out the CSS file depending on whether the page is being displayed as LTR or RTL.
+- **Typeahead / Autocomplete component.** We've had a [request for this component](https://github.com/OfficeDev/Office-UI-Fabric/issues/504) and are currently investigating the styling for it. No timeframe at the moment, though.
 - **Increment/decrement component.** We've had a [request for this component](https://github.com/OfficeDev/Office-UI-Fabric/issues/196) but have no need for it in product at this time. If anyone wants to build it and submit a pull request we can review the design and implementation and consider adding it.
 - **File upload component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/134) and is something we can see the value in, but do not have designs for at this time.
 - **Input masks**. We've had a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/133) but do not have any plans to build it at this time.
@@ -23,6 +24,8 @@
  - [Pint](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
  - [Beer](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
  - [Tea](https://github.com/OfficeDev/Office-UI-Fabric/issues/113)
+ - [Question mark inside of circle](https://github.com/OfficeDev/Office-UI-Fabric/issues/494)
 - **App launcher component.** This was [requested](https://github.com/OfficeDev/Office-UI-Fabric/issues/81) and may be included in a future release of Fabric.
 - **Slider component.** See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/360).
 - **Generic ListItem styles.** Our current ListItem component is for an email item, and contains many icons and pieces of text that developers are unlikely to need. We want to replace this with a small set of generic list items that can be used for most scenarios. We might also add list items specific to content, such as for showing a file.
+- **Hosting JavaScript on CDN** See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/496).

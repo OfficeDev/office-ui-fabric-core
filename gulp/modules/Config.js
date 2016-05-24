@@ -3,35 +3,46 @@ var pkg = require('../../package.json');
 var Plugins = require('./Plugins');
 
 /**
- * Configuration class containing all properties to be used throughout the build          
+ * Configuration class containing all properties to be used throughout the build
  */
 var Config = function() {
   this.debugMode = false;
   this.sassExtension = "scss";
   this.buildSass = false;
   this.copyRightMessage = "Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.";
-	var distPath = 'dist';
-	var srcPath = 'src';
-	this.paths = {
-		distComponents: distPath + '/components',
-    distSass: distPath + '/sass',
-		distCSS: distPath + '/css',
-		distSamples: distPath + '/samples',
-		distSampleComponents: distPath + '/samples/' +  '/Components',
-		distJS: distPath + '/js',
-		distPackages: distPath + '/packages',
-		bundlePath: distPath + '/bundles',
-		srcPath: srcPath,
-		srcSamples: srcPath + '/samples',
-    srcSass: srcPath + '/sass',
+  
+  this.paths = {
+    dist: 'dist',
+    src: 'src',
+    srcDocsPagesExamples: 'examples',
 		componentsPath : 'src/components',
-		templatePath : srcPath + '/templates',
     srcLibPath: 'lib',
-    distLibPath: distPath + '/lib'
 	};
+  
+  this.paths.distComponents = this.paths.dist + '/components';
+  this.paths.distSass = this.paths.dist + '/sass';
+  this.paths.distCSS = this.paths.dist + '/css';
+  this.paths.distSamples = this.paths.dist + '/samples';
+  this.paths.distSampleComponents = this.paths.dist + '/samples/' + '/Components';
+  this.paths.distJS = this.paths.dist + '/js';
+  this.paths.distPackages = this.paths.dist + '/packages';
+  this.paths.distDocumentation = this.paths.dist + '/documentation';
+  this.paths.distDocsComponents = this.paths.distDocumentation + '/Components';
+  this.paths.distDocsSamples = this.paths.distDocumentation + '/Samples';
+  this.paths.distDocsStyles = this.paths.distDocumentation + '/Styles';
+  this.paths.bundlePath = this.paths.dist + '/bundles';
+  this.paths.distLibPath = this.paths.dist + '/lib';
+  
+  this.paths.srcSamples = this.paths.src + '/samples';
+  this.paths.srcSass = this.paths.src + '/sass';
+  this.paths.srcDocs = this.paths.src + '/documentation';
+  this.paths.srcDocsPages = this.paths.srcDocs + '/pages';
+  this.paths.srcDocsComponents = this.paths.srcDocs + '/components';
+  this.paths.srcTemplate = this.paths.srcDocs + '/templates';
+  
 	this.port =  process.env.PORT || 2020;
 	this.projectURL =  "http://localhost";
-	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distSamples);
+	this.projectDirectory =  path.resolve(__dirname, '../../' + this.paths.distDocumentation);
 	this.servePaths = [
         {
             'urlPath': '/css',
@@ -44,6 +55,10 @@ var Config = function() {
         {
             'urlPath': '/lib',
             'folderPath': '../lib'
+        },
+        {
+          'urlPath': '/bundles',
+          'folderPath': '../bundles'
         }
     ];
     this.typescriptConfig = {
@@ -52,7 +67,7 @@ var Config = function() {
         target: 'ES5',
         noEmitOnError: true
     };
-    this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
+  this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
 		id: "OfficeUIFabric",
 		title: "Office UI Fabric",
@@ -79,56 +94,62 @@ var Config = function() {
   //JS Files to be ignored in the JS Linter for Components
   //NOTE: Only use this for third party files, do not add any Fabric JS files to this.
   this.ignoreComponentJSLinting = [{
-        src: this.paths.componentsPath + '/DatePicker/PickaDate.js',
-        dist: this.paths.distSampleComponents + '/DatePicker/'
+    src: this.paths.componentsPath + '/DatePicker/PickaDate.js',
+    dist: this.paths.distSampleComponents + '/DatePicker/'
   }];
   //Errors
   this.genericBuildError = "Hmm, something went wrong in the build... Here is the error dump";
-	this.bundlesConfig = {
+  this.bundlesConfig = {
     "bundles": [
-        {
-          "name": "fabric-full",
-          "description": "A bundle containing all of Fabric's core and Component CSS.",
-          "excludes": [],
-          "options": {
-            // Log helpful messages about the bundles being built. 
-            "verbose": true,
+      {
+        "name": "fabric-full",
+        "description": "A bundle containing all of Fabric's core and Component CSS.",
+        "excludes": [],
+        "options": {
+          // Log helpful messages about the bundles being built.
+          "verbose": true,
 
-            // Log warnings about the bundles being built. 
-            "logWarnings": false
-          }
-        },
-        {
-          "name": "custom-bundle",
-          "description": "A custom bundle including a handful of modules.",
-          "includes": [
-            "_Fabric.Color.Variables",
-            "_Fabric.Color.Mixins",
-            "_Fabric.Typography.Variables",
-            "_Fabric.Typography",
-            "_Fabric.Typography.Fonts",
-            "_Fabric.Typography.Languageoverrides",
-            "_Fabric.Utilities",
-            "Button",
-            "PersonaCard"
-          ],
-          "options": {
-            "verbose": true,
-            "logWarnings": false
+          // Log warnings about the bundles being built.
+          "logWarnings": false
+        }
+      },
+      {
+        "name": "custom-bundle",
+        "description": "A custom bundle including a handful of modules.",
+        "includes": [
+          "_Fabric.Color.Variables",
+          "_Fabric.Color.Mixins",
+          "_Fabric.Typography.Variables",
+          "_Fabric.Typography",
+          "_Fabric.Typography.Fonts",
+          "_Fabric.Typography.Languageoverrides",
+          "_Fabric.Utilities",
+          "Button",
+          "PersonaCard"
+        ],
+        "options": {
+          "verbose": true,
+          "logWarnings": false
           }
         }
-      ]    
+      ]
 	};
+  this.templateLibraryConfig = {
+    "components": [
+      "ContextualHost",
+      "Button"
+    ]
+  };
   this.handleBarsConfig = {
       ignorePartials: true,
       partials:  {
-        
+
       },
       batch: [],
       helpers:  {
         renderPartial: function(partial, props) {
           var hbs = Plugins.handlebars.Handlebars;
-          var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.html',  "utf8");
+          var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           return new hbs.SafeString(template(thisProps));

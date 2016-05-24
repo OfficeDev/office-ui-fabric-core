@@ -1,0 +1,11 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-ChoiceFieldGroup" id="{{props.id}}" role="{{props.groupType}}">
+  <div class="ms-ChoiceFieldGroup-title">
+    <label class="ms-Label {{#if props.required}} is-required {{/if}}">{{props.title}}</label>
+  </div>
+  <ul class="ms-ChoiceFieldGroup-list">
+  {{#each props.fields}}
+    {{renderPartial component props}}
+  {{/each}}
+  </ul>
+</div> 

@@ -14,9 +14,10 @@ namespace fabric {
   export class PanelHost {
 
     public panelHost: Element;
-    private _overlay: Overlay;
+    public _overlay: Overlay;
     private _layer: Node;
     private _callBack: Function;
+    private _overlayContainer: HTMLElement;
 
     /**
      *
@@ -31,7 +32,7 @@ namespace fabric {
     }
 
     public dismiss() {
-       document.removeChild(this.panelHost);
+      document.body.removeChild(this.panelHost);
     }
 
     public update(layer: Node, callBack?: Function) {
@@ -53,10 +54,11 @@ namespace fabric {
       this.panelHost = document.createElement("div");
       this.panelHost.classList.add(PANEL_HOST_CLASS);
       this.panelHost.appendChild(this._layer);
-      this._overlay = new fabric.Overlay();
+      this._overlay = new fabric.Overlay(this._overlayContainer);
+      this._overlay.show();
 
       // Append Elements
-      this.panelHost.appendChild(this._overlay.overlayEl);
+      this.panelHost.appendChild(this._overlay.overlayElement);
     }
   }
 }

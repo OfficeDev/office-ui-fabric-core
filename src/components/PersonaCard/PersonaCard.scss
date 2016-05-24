@@ -10,8 +10,11 @@
 //
 // The persona card docks to the bottom of the viewport.
 .ms-PersonaCard {
-  @include ms-font-m;
   @include ms-u-slideUpIn10;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -36,7 +39,8 @@
   height: 48px;
 }
 
-.ms-PersonaCard-action {
+.ms-PersonaCard-action,
+.ms-PersonaCard-overflow {
   display: inline-block;
   cursor: pointer;
   font-size: $ms-font-size-l;
@@ -44,6 +48,7 @@
   line-height: 48px;
   padding: 0 10px;
   color: $ms-color-neutralSecondary;
+  outline: transparent;
   position: relative;
   @include ms-u-borderBox;
 
@@ -89,7 +94,6 @@
 }
 
 .ms-PersonaCard-overflow {
-  @extend .ms-PersonaCard-action;
   font-size: $ms-font-size-m;
   color: $ms-color-neutralPrimary;
   float: right;
@@ -178,29 +182,17 @@
   }
 }
 
-
-//== Modifier: Persona card with square personas
-//
-.ms-PersonaCard.ms-PersonaCard--square {
-  .ms-PersonaCard-persona {
-    .ms-Persona-imageArea,
-    .ms-Persona-image {
-      width: 100px;
-      height: 100px;
-      margin: 0;
-    }
-
-    .ms-Persona-presence {
-      left: 0;
-    }
-  }
-}
-
-
 @media (min-width: $ms-screen-md-min) {
   // Undock the persona card and give it a shadow.
   .ms-PersonaCard {
+    @include drop-shadow;
     max-width: 360px;
     position: relative;
+  }
+
+  .ms-ContextualHost {
+    .ms-PersonaCard {
+      box-shadow: none;
+    }
   }
 }

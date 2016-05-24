@@ -1,0 +1,10 @@
+<div class="ms-ContextualMenu-multiselect">
+    {{> Button props=props.button}}
+    {{> ContextualMenu props=props}}
+</div>
+
+<script type="text/javascript">
+    var ButtonMultiselectElement = document.querySelector(".ms-ContextualMenu-multiselect .ms-Button");
+    var ContextualMenuMultiselect = document.querySelector(".ms-ContextualMenu-multiselect .ms-ContextualMenu");
+    var contextualMenu = new fabric['ContextualMenu'](ContextualMenuMultiselect, ButtonMultiselectElement);
+</script>

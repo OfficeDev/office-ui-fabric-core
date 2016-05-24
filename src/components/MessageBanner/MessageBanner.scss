@@ -9,7 +9,10 @@ $MessageBanner-height: 52px;
 $MessageBanner-iconSize: 40px;
 
 .ms-MessageBanner {
-  @include ms-font-s;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-s;
+  font-weight: $ms-font-weight-regular;
   position: relative;
   border-bottom: 1px solid $ms-color-neutralSecondaryAlt;
   background-color: $ms-color-themeLighterAlt;
@@ -40,10 +43,6 @@ $MessageBanner-iconSize: 40px;
   cursor: pointer;
   border: 0;
   background-color: transparent;
-
-  &:focus {
-    outline: 1px solid transparent;
-  }
 }
 
 .ms-MessageBanner-close {

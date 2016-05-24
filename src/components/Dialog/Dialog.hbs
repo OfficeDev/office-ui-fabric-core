@@ -1,0 +1,26 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Dialog {{#if props.modifier}} ms-Dialog--{{props.modifier}} {{/if}}">
+    {{#if props.closeIcon}}
+        <button class="ms-Dialog-button ms-Dialog-buttonClose">
+          <i class="ms-Icon ms-Icon--{{props.closeIcon}}"></i>
+        </button>
+    {{/if}}
+    <div class="ms-Dialog-title">{{props.title}}</div>
+    <div class="ms-Dialog-content">
+      {{#if props.subText}}
+        <p class="ms-Dialog-subText">{{props.subText}}</p>
+      {{/if}}
+      {{#if props.components}}
+        {{#each props.components}}
+          {{renderPartial component props}}
+        {{/each}}
+      {{/if}}
+    </div>
+    {{#if props.actions}}
+      <div class="ms-Dialog-actions">
+        {{#each props.actions}}
+          {{renderPartial component props}}
+        {{/each}}
+      </div>
+    {{/if}}
+</div>

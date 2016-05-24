@@ -71,6 +71,11 @@
   @include ms-bgColor-neutralPrimary;
 }
 
+.ms-bgColor-neutralPrimaryAlt, 
+.ms-bgColor-neutralPrimaryAlt--hover:hover {
+  @include ms-bgColor-neutralPrimaryAlt;
+}
+
 .ms-bgColor-neutralSecondary, 
 .ms-bgColor-neutralSecondary--hover:hover {
   @include ms-bgColor-neutralSecondary;
@@ -287,6 +292,11 @@
 .ms-borderColor-neutralPrimary, 
 .ms-borderColor-neutralPrimary--hover:hover {
   @include ms-borderColor-neutralPrimary;
+}
+
+.ms-borderColor-neutralPrimaryAlt, 
+.ms-borderColor-neutralPrimaryAlt--hover:hover {
+  @include ms-borderColor-neutralPrimaryAlt;
 }
 
 .ms-borderColor-neutralSecondary, 

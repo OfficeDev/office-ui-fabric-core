@@ -9,24 +9,48 @@ $ms-Callout-commandButtonHeight: 27px;
 
 .ms-Callout {
   width: 288px;
+  font-family: $ms-font-family-base;
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .ms-Callout-header {
   z-index: ($ms-zIndex-Callout + $ms-zIndex-middle);
-  padding: 18px 24px 12px;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .ms-Callout-title {
   margin: 0;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xl;
 }
 
 .ms-Callout-subText {
   margin: 0;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   color: $ms-color-neutralPrimary;
   font-size: $ms-font-size-s;
+}
+
+.ms-Callout-close {
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  color: $ms-color-neutralSecondary;
+  z-index: 110;
 }
 
 .ms-Callout-link {
@@ -35,7 +59,10 @@ $ms-Callout-commandButtonHeight: 27px;
 
 .ms-Callout-inner {
   height: 100%;
-  padding: 0 24px 20px;
+  padding-top: 0;
+  padding-bottom: 12px;
+  padding-left: 28px;
+  padding-right: 28px;
 }
 
 .ms-Callout-actions {
@@ -79,15 +106,6 @@ $ms-Callout-commandButtonHeight: 27px;
 //= Modifier: OOBE (Out of box experience) callout
 //
 .ms-Callout.ms-Callout--OOBE {
-  &.ms-Callout--arrowRight,
-  &.ms-Callout--arrowLeft,
-  &.ms-Callout--arrowTop {
-    &:before,
-    &:after {
-      border-color: $ms-color-themePrimary;
-      background-color: transparent;
-    }
-  }
 
   .ms-Callout-header {
     padding: 28px 24px;
@@ -95,7 +113,7 @@ $ms-Callout-commandButtonHeight: 27px;
   }
 
   .ms-Callout-title {
-    font-family: $ms-font-family-light;
+    font-weight: $ms-font-weight-light;
     font-size: $ms-font-size-xxl;
     color: $ms-color-white;
   }

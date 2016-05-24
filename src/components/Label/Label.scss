@@ -6,29 +6,31 @@
 // Form field label styles
 
 @mixin ms-Label-is-disabled {
-     color: $ms-color-neutralPrimary;
+  color: $ms-color-neutralTertiary;
 }
 
 @mixin ms-Label-is-required {
-     &:after {
-        content: ' *';
-        color: $ms-color-error;
-    }
+  &:after {
+    content: ' *';
+    color: $ms-color-error;
+  }
 }
 
-
 .ms-Label {
-	@include ms-font-m;
-	@include ms-u-normalize;
-	box-sizing: border-box;
-	display: block;
-	padding: 5px 0;
+  @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-s;
+  font-weight: $ms-font-weight-regular;
+  box-sizing: border-box;
+  display: block;
+  padding: 5px 0;
 
-	&.is-required {
-		@include ms-Label-is-required;
-	}
+  &.is-required {
+    @include ms-Label-is-required;
+  }
 
-	&.is-disabled {
-		 @include ms-Label-is-disabled;
-	}
+  &.is-disabled {
+    @include ms-Label-is-disabled;
+  }
 }

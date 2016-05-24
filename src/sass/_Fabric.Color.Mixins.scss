@@ -58,6 +58,10 @@
   background-color: $ms-color-neutralPrimary;
 }
 
+@mixin ms-bgColor-neutralPrimaryAlt {
+  background-color: $ms-color-neutralPrimaryAlt;
+}
+
 @mixin ms-bgColor-neutralSecondary {
   background-color: $ms-color-neutralSecondary;
 }
@@ -254,6 +258,10 @@
 
 @mixin ms-borderColor-neutralPrimary {
   border-color: $ms-color-neutralPrimary;
+}
+
+@mixin ms-borderColor-neutralPrimaryAlt {
+  border-color: $ms-color-neutralPrimaryAlt;
 }
 
 @mixin ms-borderColor-neutralSecondary {

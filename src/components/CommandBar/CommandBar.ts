@@ -1,8 +1,8 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/// <reference path="../SearchBox/SearchBox"/>
-/// <reference path="../CommandButton/CommandButton"/>
-/// <reference path="../ContextualHost/ContextualHost"/>
+/// <reference path="../SearchBox/SearchBox.ts"/>
+/// <reference path="../CommandButton/CommandButton.ts"/>
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
 
 /**
  * CommandBar
@@ -23,7 +23,7 @@ namespace fabric {
     mainArea: Element;
     sideCommandArea?: Element;
     overflowCommand?: Element;
-    contextMenu?: Element;
+    contextMenu?: HTMLElement;
     searchBox?:  Element;
     searchBoxClose?: Element;
   }
@@ -33,7 +33,7 @@ namespace fabric {
     label: string;
     icon: string;
     isCollapsed: boolean;
-    commandButtonRef: CommandButton;
+    commandButtonRef: fabric.CommandButton;
   }
 
   const CONTEXTUAL_MENU = ".ms-ContextualMenu";
@@ -203,13 +203,13 @@ namespace fabric {
 
       if (this._container.querySelector(CB_ITEM_OVERFLOW)) {
         this._elements.overflowCommand = this._container.querySelector(CB_ITEM_OVERFLOW);
-        this._elements.contextMenu = this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
+        this._elements.contextMenu = <HTMLElement>this._container.querySelector(CB_ITEM_OVERFLOW).querySelector(CONTEXTUAL_MENU);
       }
 
       if (this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX)) {
-         this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
-         this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
-         this.searchBoxInstance = this._createSearchInstance();
+        this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
+        this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
+        this.searchBoxInstance = this._createSearchInstance();
       }
     }
 

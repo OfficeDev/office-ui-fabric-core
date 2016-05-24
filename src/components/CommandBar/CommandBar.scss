@@ -43,6 +43,7 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
   padding-left: 0;
   border: 0;
   position: relative;
+  font-family: $ms-font-family-base;
 
   &:focus {
     outline: none;
@@ -76,36 +77,10 @@ $SearchBox-iconWrapperWidth: $SearchBox-widthLgCollapsed - ($SearchBox-sidePaddi
     padding-right: 12px;
   }
 
-  @media only screen and (min-width: $ms-screen-xl-min) {
-    padding-right: 16px;
-  }
-}
-
-// Command Bar Item
-.ms-CommandBarItem {
-  display: inline-block;
-  color: $ms-color-themePrimary;
-  height: $CommandBarItem-height;
-  outline: none;
-  vertical-align: top;
-  margin-right: -4px;
-
-  .ms-CommandBarItem-chevronDown,
-  .ms-CommandBarItem-commandText {
-    display: none;
-  }
-
-  @media screen and (-ms-high-contrast: active) {
-    @include highContrastBorder($ms-color-black);
-    height: 38px;
-    outline: none;
-  }
-
-  @media screen and (-ms-high-contrast: black-on-white) {
-    @include highContrastBorder($ms-color-white);
-    height: 38px;
-    outline: none;
-  }
+  //== CommandBar -> ms-Button specific changes
+  //
+  .ms-Button {
+    height: 100%;
 
   &:hover {
     background-color: $ms-color-themeLight;

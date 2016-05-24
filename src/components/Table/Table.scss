@@ -9,21 +9,21 @@
   display: table;
   width: 100%;
   border-collapse: collapse;
+  font-family: $ms-font-family-base;
+}
+
+// makes the table cells not expand with the content, keeping the table cells at a fixed size
+.ms-Table--fixed {
+  table-layout: fixed;
 }
 
 .ms-Table tr,
 .ms-Table-row {
   display: table-row;
   line-height: 30px;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
-
-  &:hover {
-    background-color: $ms-color-neutralLighter;
-    cursor: pointer;
-    outline: 1px solid transparent;
-  }
 
   // Rows can be selected.
   &.is-selected {
@@ -62,7 +62,7 @@
 // Style the first row as a header.
 .ms-Table thead th,
 .ms-Table-head {
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
 }
@@ -108,6 +108,16 @@
     position: absolute;
     top: 6px;
     width: 14px;
+  }
+}
+
+// A table with selectable rows
+.ms-Table--selectable {
+  tr:hover,
+  .ms-Table-row:hover {
+    background-color: $ms-color-neutralLighter;
+    cursor: pointer;
+    outline: 1px solid transparent;
   }
 }
 

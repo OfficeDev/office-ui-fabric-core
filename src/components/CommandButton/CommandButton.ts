@@ -1,5 +1,8 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+/// <reference path="../../../dist/js/fabric.templates.ts"/>
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
+
 /**
  * CommandButton
  *
@@ -15,7 +18,7 @@ namespace fabric {
    *
    * @constructor
    */
-  const CONTEXT_CLASS = ".ms-ContextualHost";
+  const CONTEXT_CLASS = ".ms-ContextualMenu";
   const CB_SPLIT_CLASS = ".ms-CommandButton-splitIcon";
   const CB_BUTTON_CLASS = ".ms-CommandButton-button";
   const MODAL_POSITION = "bottom";
@@ -25,25 +28,27 @@ namespace fabric {
     private _command;
     private _commandButton;
     private _splitButton;
-    private _modalHost;
     private _modalHostView;
     private _container: HTMLElement;
+    private _contextualMenu: HTMLElement;
 
-    constructor(container: HTMLElement) {
+    constructor(container: HTMLElement, contextMenu?: HTMLElement) {
       this._container = container;
-      this._setDOMRefs();
-      this._checkForMenu();
-    }
-
-    private _setDOMRefs() {
       this._command = this._container;
       this._commandButton = this._command.querySelector(CB_BUTTON_CLASS);
       this._splitButton = this._command.querySelector(CB_SPLIT_CLASS);
-      this._modalHost = this._command.querySelector(CONTEXT_CLASS);
+
+      if (contextMenu) {
+        this._contextualMenu = contextMenu;
+      } else {
+        this._contextualMenu = <HTMLElement>this._container.querySelector(CONTEXT_CLASS);
+      }
+
+      this._checkForMenu();
     }
 
     private _createModalHostView() {
-      this._modalHostView = new fabric.ContextualHost(this._modalHost, MODAL_POSITION, this._command);
+      this._modalHostView = new fabric.ContextualHost(this._contextualMenu, MODAL_POSITION, this._command, false);
     }
 
     private _setClick() {
@@ -55,7 +60,7 @@ namespace fabric {
     }
 
     private _checkForMenu() {
-      if (this._modalHost) {
+      if (this._contextualMenu) {
         this._setClick();
       }
     }

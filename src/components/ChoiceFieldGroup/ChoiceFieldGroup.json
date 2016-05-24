@@ -5,14 +5,14 @@
   "class": "ms-ChoiceField",
   "dependencies": [
     "Label",
-    "ChoiceField"
+    "CheckBox"
   ],
   "props": {
    "title": "Unselected",
    "required": true,
    "fields": [
      {
-       "component": "ChoiceField",
+       "component": "CheckBox",
        "props": {
         "label": "Option 1",
         "modifier": "",
@@ -24,7 +24,7 @@
        }
      },
      {
-       "component": "ChoiceField",
+       "component": "CheckBox",
        "props": {
           "label": "Option 2",
           "modifier": "",
@@ -36,7 +36,7 @@
         }
      },
      {
-       "component": "ChoiceField",
+       "component": "CheckBox",
        "props": {
           "label": "Option 3",
           "modifier": "",
@@ -48,7 +48,7 @@
         }
      },
      {
-       "component": "ChoiceField",
+       "component": "CheckBox",
        "props": {
           "label": "Option 4",
           "modifier": "",

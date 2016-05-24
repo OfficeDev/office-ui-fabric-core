@@ -7,6 +7,7 @@
 
 
 .ms-Breadcrumb {
+  font-family: $ms-font-family-base;
   margin: 23px 0 1px;
 
   &.is-overflow {
@@ -55,6 +56,7 @@
     margin-right: -4px;
     padding: 8px 12px;
     cursor: pointer;
+    vertical-align: top;
   }
 }
 
@@ -118,7 +120,9 @@
 }
 
 .ms-Breadcrumb-itemLink {
-  @include ms-font-xl;
+  font-weight: $ms-font-weight-light;
+  font-size: $ms-font-size-xl;
+  color: $ms-color-neutralPrimary;
   display: inline-block;
   padding: 0 4px;
   max-width: 160px;

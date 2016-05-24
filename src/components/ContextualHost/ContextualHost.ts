@@ -1,5 +1,7 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+/// <reference path="../../../dist/js/fabric.templates.ts"/>
+
 /**
  * ContextualHost
  *
@@ -20,11 +22,19 @@ namespace fabric {
 
   const CONTEXT_STATE_CLASS = "is-open";
   const MODAL_STATE_POSITIONED = "is-positioned";
+  const CONTEXT_HOST_MAIN_CLASS = ".ms-ContextualHost-main";
+  const CONTEXT_HOST_BEAK_CLASS = ".ms-ContextualHost-beak";
+  const ARROW_LEFT_CLASS = "ms-ContextualHost--arrowLeft";
+  const ARROW_TOP_CLASS = "ms-ContextualHost--arrowTop";
+  const ARROW_BOTTOM_CLASS = "ms-ContextualHost--arrowBottom";
+  const ARROW_RIGHT_CLASS = "ms-ContextualHost--arrowRight";
+  const MODIFIER_BASE = "ms-ContextualHost--";
+  const ARROW_SIZE = 28;
+  const ARROW_OFFSET = 8;
 
   export class ContextualHost {
 
     private _contextualHost;
-    private _modalClone;
     private _modalWidth;
     private _modalHeight;
     private _teWidth;
@@ -33,24 +43,57 @@ namespace fabric {
     private _container;
     private _targetElement;
     private _matchTargetWidth;
+    private _ftl = new FabricTemplateLibrary();
+    private _contextualHostMain: Element;
+    private _children: Array<ContextualHost>;
+    private _hasArrow: boolean;
+    private _arrow: Element;
 
-    constructor(container: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
+    constructor(
+        content: HTMLElement,
+        direction: string,
+        targetElement: Element,
+        hasArrow: boolean = true,
+        modifiers?: Array<string>,
+        matchTargetWidth?: boolean
+      ) {
       this._resizeAction = this._resizeAction.bind(this);
       this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
-      this._container = container;
+      this._container = this._ftl.ContextualHost();
+      this._contextualHost = this._container;
+      this._contextualHostMain = this._contextualHost.querySelector(CONTEXT_HOST_MAIN_CLASS);
+      this._contextualHostMain.appendChild(content);
+      this._hasArrow = hasArrow;
+      this._arrow = this._container.querySelector(CONTEXT_HOST_BEAK_CLASS);
+
       this._targetElement = targetElement;
-      this._saveDOMRefs(container);
-      this._cloneModal();
       this._openModal();
       this._setResizeDisposal();
+
+      if (modifiers) {
+        for (let i = 0; i < modifiers.length; i++) {
+          this._container.classList.add(MODIFIER_BASE + modifiers[i]);
+        }
+      }
     }
 
     public disposeModal(): void {
       window.removeEventListener("resize", this._resizeAction, false);
       document.removeEventListener("click", this._disMissAction, true);
-      this._modalClone.parentNode.removeChild(this._modalClone);
+      this._container.parentNode.removeChild(this._container);
+    }
+
+    public setChildren(value: ContextualHost): void {
+      if (!this._children) {
+        this._children = [];
+      }
+      this._children.push(value);
+    }
+
+    public contains(value: HTMLElement): boolean {
+      return this._container.contains(value);
     }
 
     private _openModal(): void {
@@ -106,7 +149,7 @@ namespace fabric {
     }
 
     private _showModal(): void {
-      this._modalClone.classList.add(CONTEXT_STATE_CLASS);
+      this._container.classList.add(CONTEXT_STATE_CLASS);
     }
 
     private _positionOk(pos1, pos2, pos3?, pos4?) {
@@ -147,10 +190,12 @@ namespace fabric {
       let teRight = teBR.right;
       let teTop = teBR.top;
       let teHeight = teBR.height;
-
       let mHLeft;
       let mHTop;
       let mWidth = "";
+      let arrowTop;
+      let windowY = window.scrollY ? window.scrollY : 0;
+      let arrowSpace = (this._hasArrow) ? ARROW_SIZE : 0;
 
       if (this._matchTargetWidth) {
         mWidth = "width: " + this._modalWidth + "px;";
@@ -158,35 +203,55 @@ namespace fabric {
 
       switch (curDirection) {
         case "left":
-          mHLeft = teLeft - this._modalWidth;
+          mHLeft = (teLeft - this._modalWidth) + arrowSpace;
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._modalClone.classList.add(MODAL_STATE_POSITIONED);
+          mHTop += window.scrollY ? window.scrollY : 0;
+          this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+          this._container.classList.add(MODAL_STATE_POSITIONED);
+
+          if (this._hasArrow) {
+            this._container.classList.add(ARROW_RIGHT_CLASS);
+            arrowTop = ((teTop + windowY) - mHTop) + ARROW_OFFSET;
+            this._arrow.setAttribute("style", "top: " + arrowTop + "px;");
+          }
         break;
         case "right":
           mHTop = this._calcTop(this._modalHeight, teHeight, teTop);
-          mHLeft = teRight;
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._modalClone.classList.add(MODAL_STATE_POSITIONED);
+          mHTop += windowY;
+          mHLeft = teRight + arrowSpace;
+          this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+          this._container.classList.add(MODAL_STATE_POSITIONED);
+
+          if (this._hasArrow) {
+            arrowTop = ((windowY + teTop) - mHTop) + ARROW_OFFSET;
+            this._arrow.setAttribute("style", "top: " + arrowTop + "px;");
+            this._container.classList.add(ARROW_LEFT_CLASS);
+          }
         break;
         case "top":
           mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
-          mHTop = teTop - this._modalHeight;
-          // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
-          mHTop += window.scrollY ? window.scrollY : 0;
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._modalClone.classList.add(MODAL_STATE_POSITIONED);
+          mHTop = (teTop - this._modalHeight) + arrowSpace;
+          mHTop += windowY;
+          this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+          this._container.classList.add(MODAL_STATE_POSITIONED);
+
+          if (this._hasArrow) {
+            this._container.classList.add(ARROW_BOTTOM_CLASS);
+          }
         break;
         case "bottom":
           mHLeft = mHLeft = this._calcLeft(this._modalWidth, this._teWidth, teLeft);
-          mHTop = teTop + teHeight;
-          // mHTop += this._targetElement.offsetParent ? this._targetElement.offsetParent.scrollTop : 0;
+          mHTop = teTop + teHeight + arrowSpace;
           mHTop += window.scrollY ? window.scrollY : 0;
-          this._modalClone.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
-          this._modalClone.classList.add(MODAL_STATE_POSITIONED);
+          this._container.setAttribute("style", "top: " + mHTop + "px; left: " + mHLeft + "px;" + mWidth);
+          this._container.classList.add(MODAL_STATE_POSITIONED);
+
+          if (this._hasArrow) {
+            this._container.classList.add(ARROW_TOP_CLASS);
+          }
         break;
         default:
-          this._modalClone.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");
+          this._container.setAttribute("style", "top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);");
       }
     }
 
@@ -236,22 +301,14 @@ namespace fabric {
     }
 
     private _copyModalToBody(): void {
-      document.body.appendChild(this._modalClone);
-    }
-
-    private _cloneModal(): void {
-      this._modalClone = this._contextualHost.cloneNode(true);
-    }
-
-    private _saveDOMRefs(context): void {
-      this._contextualHost = context;
+      document.body.appendChild(this._container);
     }
 
     private _saveModalSize(): void {
-      let _modalStyles = window.getComputedStyle(this._modalClone);
-      this._modalClone.setAttribute("style", "opacity: 0; z-index: -1");
-      this._modalClone.classList.add(MODAL_STATE_POSITIONED);
-      this._modalClone.classList.add(CONTEXT_STATE_CLASS);
+      let _modalStyles = window.getComputedStyle(this._container);
+      this._container.setAttribute("style", "opacity: 0; z-index: -1");
+      this._container.classList.add(MODAL_STATE_POSITIONED);
+      this._container.classList.add(CONTEXT_STATE_CLASS);
 
       if (this._matchTargetWidth) {
         let teStyles = window.getComputedStyle(this._targetElement);
@@ -261,30 +318,47 @@ namespace fabric {
         // Set the ContextualHost width
 
       } else {
-        this._modalWidth = this._modalClone.getBoundingClientRect().width
+        this._modalWidth = this._container.getBoundingClientRect().width
           + (parseInt(_modalStyles.marginLeft, 10)
           + parseInt(_modalStyles.marginRight, 10));
-         this._modalClone.setAttribute("style", "");
+        this._container.setAttribute("style", "");
       }
-      this._modalHeight = this._modalClone.getBoundingClientRect().height
+      this._modalHeight = this._container.getBoundingClientRect().height
         + (parseInt(_modalStyles.marginTop, 10)
         + parseInt(_modalStyles.marginBottom, 10));
 
-      this._modalClone.classList.remove(MODAL_STATE_POSITIONED);
-      this._modalClone.classList.remove(CONTEXT_STATE_CLASS);
+      this._container.classList.remove(MODAL_STATE_POSITIONED);
+      this._container.classList.remove(CONTEXT_STATE_CLASS);
       this._teWidth = this._targetElement.getBoundingClientRect().width;
       this._teHeight = this._targetElement.getBoundingClientRect().height;
     }
 
     private _disMissAction(e): void {
       // If the elemenet clicked is not INSIDE of searchbox then close seach
-      if (!this._modalClone.contains(e.target) && e.target !== this._modalClone) {
-        this.disposeModal();
+      if (!this._container.contains(e.target) && e.target !== this._container) {
+        if (this._children !== undefined) {
+          let isChild: boolean = false;
+          this._children.map((child: ContextualHost) => {
+            if (child !== undefined) {
+              isChild = child.contains(e.target);
+            }
+          });
+          if (!isChild) {
+            this.disposeModal();
+          }
+        } else {
+          this.disposeModal();
+        }
       }
     }
 
     private _setDismissClick() {
       document.addEventListener("click", this._disMissAction, true);
+      document.addEventListener("keyup", (e: KeyboardEvent) => {
+        if (e.keyCode === 32 || e.keyCode === 27) {
+          this._disMissAction(e);
+        }
+      }, true);
     }
 
     private _resizeAction() {

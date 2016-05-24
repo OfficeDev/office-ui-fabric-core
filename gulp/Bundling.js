@@ -96,7 +96,7 @@ gulp.task('Bundles-buildData', function() {
             }();
 
             // Walk the SASS and components folders.
-            let srcFolders = Utilities.getFolders(Config.paths.srcPath).filter((folderName) => {
+            let srcFolders = Utilities.getFolders(Config.paths.src).filter((folderName) => {
                 let foldersToSearch = ['sass', 'components']
 
                 return foldersToSearch.indexOf(folderName) !== -1;
@@ -106,8 +106,7 @@ gulp.task('Bundles-buildData', function() {
             // We'll work with these to determine which files to include or exclude.
             srcFolders.forEach(function(dir) {
                 // Grab all SCSS and JSON files as fs.stats objects.
-                let entries = Plugins.walkSync.entries(Config.paths.srcPath + '\\' + dir,  { globs: ['**/*.scss',"!**/_Fabric.*.scss", '**/*.json'] });
-
+                let entries = Plugins.walkSync.entries(Config.paths.src + '/' + dir,  { globs: ['**/*.scss',"!**/_Fabric.*.scss", '**/*.json'] });
                 // Cache Component manifests for includes and/or dependencies.
                 let cachedManifests = {};
 
@@ -301,8 +300,11 @@ gulp.task('Bundles-resetData', function() {
     bundleFilePaths = [];
 });
 
-gulp.task('Bundles-buildAll', function() {
-  Plugins.runSequence('Bundles-nuke','Bundles-buildData', 'Bundles-build');
-});
+var tasks = [
+    'Bundles-nuke',
+    'Bundles-buildData', 
+    'Bundles-build'
+];
 
-gulp.task('Bundles', ['Bundles-buildAll']);
+gulp.task('Bundles', tasks);
+BuildConfig.buildTasks.push('Bundles');

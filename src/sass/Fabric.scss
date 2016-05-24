@@ -19,7 +19,6 @@
 @import './Fabric.Typography.Variables';
 @import './Fabric.Typography.Output';
 @import './Fabric.Typography.Fonts.Output';
-@import './Fabric.Typography.Language.Overrides.Output';
 
 // Icons
 @import './Fabric.Icons.Font.Output';
@@ -35,6 +34,3 @@
 
 // Grid
 @import './Fabric.Grid.Output';
-
-// Office colors
-@import './Office.Color.Variables';

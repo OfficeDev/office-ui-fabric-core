@@ -7,9 +7,12 @@
 
 
 .ms-ListItem {
-  @include ms-font-m;
   @include ms-u-normalize;
   @include ms-u-clearfix;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   padding: 9px 28px 3px;
   position: relative;
   display: block;
@@ -24,7 +27,7 @@
 
 .ms-ListItem-primaryText {
   color: $ms-color-neutralDark;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xl;
   padding-right: 80px; // Prevent overlap with up to three actions.
   position: relative;
@@ -33,7 +36,7 @@
 
 .ms-ListItem-secondaryText {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-regular;
+  font-weight: $ms-font-weight-regular;
   font-size: $ms-font-size-m;
   line-height: 25px;
   position: relative;
@@ -43,7 +46,7 @@
 
 .ms-ListItem-tertiaryText {
   color: $ms-color-neutralSecondaryAlt;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-m;
   position: relative;
   top: -9px;
@@ -53,7 +56,7 @@
 
 .ms-ListItem-metaText {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xs;
   position: absolute;
   right: 30px;
@@ -112,7 +115,7 @@
   .ms-ListItem-secondaryText,
   .ms-ListItem-metaText {
     color: $ms-color-themePrimary;
-    font-family: $ms-font-family-semibold;
+    font-weight: $ms-font-weight-semibold;
   }
 }
 
@@ -225,7 +228,7 @@
   .ms-ListItem-secondaryText {
     @include noWrap;
     color: $ms-color-neutralSecondary;
-    font-family: $ms-font-family-regular;
+    font-weight: $ms-font-weight-regular;
     font-size: $ms-font-size-xs;
     padding-top: 6px;
   }

@@ -7,7 +7,7 @@ For example, if your web app or add-in uses only Fabric's Typography styles and 
 ## Usage
 Bundling is a build process that depends on Fabric's gulp build tools to work, so first, make sure you've followed the [instructions for Building Fabric](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md#building-fabric) to set up a local clone of Fabric that is ready for compiling.
 
-Then, configure your bundle in `gulp/Config.js` in the `bundlesConfig` property. A bundle is simply a JavaScript object with a name, description, and list of file names to include or exclude from the final output. 
+Then, configure your bundle in `gulp/modules/Config.js` in the `bundlesConfig` property. A bundle is simply a JavaScript object with a name, description, and list of file names to include or exclude from the final output. 
 
 ### Exclude vs include
 #### `excludes`
@@ -39,7 +39,7 @@ This will produce the following:
 @import '../../../src/components/Breadcrumb/Breadcrumb.scss';
 @import '../../../src/components/Button/Button.scss';
 @import '../../../src/components/Callout/Callout.scss';
-@import '../../../src/components/ChoiceField/ChoiceField.scss';
+@import '../../../src/components/CheckBox/CheckBox.scss';
 @import '../../../src/components/CommandBar/CommandBar.scss';
 @import '../../../src/components/ContextualMenu/ContextualMenu.scss';
 @import '../../../src/components/DatePicker/DatePicker.scss';

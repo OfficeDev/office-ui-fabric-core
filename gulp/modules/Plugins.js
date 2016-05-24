@@ -50,6 +50,7 @@ var Plugins = function() {
   this.markdown = require('gulp-markdown');
 	this.lintspaces = require('gulp-lintspaces');
 	this.marked = require('gulp-marked');
+	this.prettify = require('gulp-html-prettify');
 };
 
 module.exports = new Plugins();

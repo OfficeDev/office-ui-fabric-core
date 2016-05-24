@@ -76,9 +76,8 @@
   content: ' ';
   width: 16px;
   height: 16px;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   background-color: white;
 }
 
@@ -490,9 +489,8 @@
 .ms-Callout.ms-Callout--arrowTop:after {
   content: '';
   position: absolute;
-  -webkit-transform: rotate(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
   height: 0;
   width: 0;
 }
@@ -1637,16 +1635,13 @@
 }
 
 .ms-DatePicker-picker.ms-DatePicker-picker--opened .ms-DatePicker-holder {
-  -webkit-animation-name: fadeIn, slideDownIn10;
-          animation-name: fadeIn, slideDownIn10;
+  animation-name: fadeIn, slideDownIn10;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
   box-sizing: border-box;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid #eaeaea;
@@ -2068,11 +2063,9 @@
   line-height: 100vh;
   text-align: center;
   display: -ms-flexbox;
-  display: -webkit-flex;
-  display:         flex;
+  display: flex;
   -ms-flex-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
 }
 
 .ms-Dialog::before {
@@ -2954,16 +2947,13 @@
   height: 52px;
   text-align: center;
   overflow: hidden;
-  -webkit-animation-name: fadeIn, slideDownIn20;
-          animation-name: fadeIn, slideDownIn20;
+  animation-name: fadeIn, slideDownIn20;
   -webkit-animation-duration: 0.367s;
      -moz-animation-duration: 0.367s;
       -ms-animation-duration: 0.367s;
        -o-animation-duration: 0.367s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
 }
 
 .ms-MessageBanner .ms-Icon {
@@ -2971,16 +2961,13 @@
 }
 
 .ms-MessageBanner.hide {
-  -webkit-animation-name: fadeOut, slideUpOut20;
-          animation-name: fadeOut, slideUpOut20;
+  animation-name: fadeOut, slideUpOut20;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
 }
 
 .ms-MessageBanner.is-hidden {
@@ -3082,6 +3069,90 @@
   .ms-MessageBanner-expand .ms-Icon {
     color: #0078d7;
   }
+}
+
+/*
+  Base template file
+*/
+.ms-MessageBar {
+  padding: 8px;
+  display: table;
+  background-color: #f4f4f4;
+}
+
+.ms-MessageBar-icon,
+.ms-MessageBar-text {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.ms-MessageBar-icon {
+  padding-right: 8px;
+  font-size: 16px;
+  color: #767676;
+}
+
+.ms-MessageBar-text {
+  color: #333333;
+  font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.ms-MessageBar.ms-MessageBar--warning {
+  background-color: #fff4ce;
+}
+
+.ms-MessageBar.ms-MessageBar--severeWarning {
+  background-color: #fed9cc;
+}
+
+.ms-MessageBar.ms-MessageBar--severeWarning .ms-MessageBar-icon {
+  color: #d83b01;
+}
+
+.ms-MessageBar.ms-MessageBar--error {
+  background-color: #fde7e9;
+}
+
+.ms-MessageBar.ms-MessageBar--error .ms-MessageBar-icon {
+  color: #a80000;
+}
+
+.ms-MessageBar.ms-MessageBar--remove {
+  background-color: #fde7e9;
+}
+
+.ms-MessageBar.ms-MessageBar--remove .ms-MessageBar-icon {
+  color: #a80000;
+}
+
+.ms-MessageBar.ms-MessageBar--remove .ms-Icon {
+  font-size: 8px;
+  margin-left: 3px;
+}
+
+.ms-MessageBar.ms-MessageBar--success {
+  background-color: #dff6dd;
+}
+
+.ms-MessageBar.ms-MessageBar--success .ms-MessageBar-icon {
+  color: #107c10;
+}
+
+.ms-MessageBar.ms-MessageBar--success .ms-Icon {
+  font-size: 12px;
+  top: 3px;
+}
+
+.ms-MessageBar.ms-MessageBar--success .ms-Icon:before {
+  margin-left: 1px;
+}
+
+.ms-MessageBar.ms-MessageBar--success .ms-Icon:after {
+  font-size: 8px;
+  margin-left: 3px;
+  top: 1px;
 }
 
 .ms-NavBar {
@@ -3257,9 +3328,8 @@
   }
 
   .ms-NavBar-item.ms-NavBar-item--hasMenu.is-selected .ms-NavBar-chevronDown {
-    -webkit-transform: scaleY(-1);
-        -ms-transform: scaleY(-1);
-            transform: scaleY(-1);
+    -ms-transform: scaleY(-1);
+        transform: scaleY(-1);
   }
 
   .ms-NavBar-item .ms-ContextualMenu {
@@ -3472,56 +3542,42 @@
 }
 
 .ms-Panel.ms-Panel--lightDismiss.ms-Panel-animateIn .ms-Panel-main {
-  -webkit-animation-name: fadeIn, slideLeftIn40;
-          animation-name: fadeIn, slideLeftIn40;
+  animation-name: fadeIn, slideLeftIn40;
   -webkit-animation-duration: 0.367s;
      -moz-animation-duration: 0.367s;
       -ms-animation-duration: 0.367s;
        -o-animation-duration: 0.367s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
 }
 
 .ms-Panel.ms-Panel--lightDismiss.ms-Panel-animateIn .ms-Overlay {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeIn;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.267s;
           animation-duration: 0.267s;
 }
 
 .ms-Panel.ms-Panel--lightDismiss.ms-Panel-animateOut .ms-Panel-main {
-  -webkit-animation-name: fadeOut, slideRightOut40;
-          animation-name: fadeOut, slideRightOut40;
+  animation-name: fadeOut, slideRightOut40;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
 }
 
 .ms-Panel.ms-Panel--lightDismiss.ms-Panel-animateOut .ms-Overlay {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
           animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.167s;
           animation-duration: 0.167s;
 }
 
@@ -3540,110 +3596,82 @@
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel-animateIn .ms-Panel-main {
-  -webkit-animation-name: fadeIn, slideLeftIn40;
-          animation-name: fadeIn, slideLeftIn40;
+  animation-name: fadeIn, slideLeftIn40;
   -webkit-animation-duration: 0.367s;
      -moz-animation-duration: 0.367s;
       -ms-animation-duration: 0.367s;
        -o-animation-duration: 0.367s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel-animateIn .ms-Overlay {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeIn;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.267s;
           animation-duration: 0.267s;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel-animateOut .ms-Panel-main {
-  -webkit-animation-name: fadeOut, slideRightOut40;
-          animation-name: fadeOut, slideRightOut40;
+  animation-name: fadeOut, slideRightOut40;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel-animateOut .ms-Overlay {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
           animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.167s;
           animation-duration: 0.167s;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel-animateIn .ms-Panel-main {
-  -webkit-animation-name: fadeIn, slideRightIn40;
-          animation-name: fadeIn, slideRightIn40;
+  animation-name: fadeIn, slideRightIn40;
   -webkit-animation-duration: 0.367s;
      -moz-animation-duration: 0.367s;
       -ms-animation-duration: 0.367s;
        -o-animation-duration: 0.367s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel-animateIn .ms-Overlay {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeIn;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.267s;
           animation-duration: 0.267s;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel--left.ms-Panel-animateOut .ms-Panel-main {
-  -webkit-animation-name: fadeOut, slideLeftOut40;
-          animation-name: fadeOut, slideLeftOut40;
+  animation-name: fadeOut, slideLeftOut40;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
 }
 
 .ms-Panel.ms-Panel--left.ms-Panel--left.ms-Panel-animateOut .ms-Overlay {
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
           animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.167s;
           animation-duration: 0.167s;
 }
 
@@ -3717,13 +3745,9 @@
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeIn;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.167s;
           animation-duration: 0.167s;
 }
 
@@ -3731,13 +3755,9 @@
   -webkit-animation-duration: 0.367s;
   -webkit-animation-name: fadeOut;
   -webkit-animation-fill-mode: both;
-  -webkit-animation-duration: 0.367s;
           animation-duration: 0.367s;
-  -webkit-animation-name: fadeOut;
           animation-name: fadeOut;
-  -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-  -webkit-animation-duration: 0.1s;
           animation-duration: 0.1s;
 }
 
@@ -3747,110 +3767,82 @@
 
 @media (min-width: 480px) {
   .ms-Panel.is-open.ms-Panel-animateIn .ms-Panel-main {
-    -webkit-animation-name: fadeIn, slideLeftIn40;
-            animation-name: fadeIn, slideLeftIn40;
+    animation-name: fadeIn, slideLeftIn40;
     -webkit-animation-duration: 0.367s;
        -moz-animation-duration: 0.367s;
         -ms-animation-duration: 0.367s;
          -o-animation-duration: 0.367s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel-animateIn .ms-Overlay {
     -webkit-animation-duration: 0.367s;
     -webkit-animation-name: fadeIn;
     -webkit-animation-fill-mode: both;
-    -webkit-animation-duration: 0.367s;
             animation-duration: 0.367s;
-    -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
-    -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
-    -webkit-animation-duration: 0.267s;
             animation-duration: 0.267s;
   }
 
   .ms-Panel.is-open.ms-Panel-animateOut .ms-Panel-main {
-    -webkit-animation-name: fadeOut, slideRightOut40;
-            animation-name: fadeOut, slideRightOut40;
+    animation-name: fadeOut, slideRightOut40;
     -webkit-animation-duration: 0.167s;
        -moz-animation-duration: 0.167s;
         -ms-animation-duration: 0.167s;
          -o-animation-duration: 0.167s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel-animateOut .ms-Overlay {
     -webkit-animation-duration: 0.367s;
     -webkit-animation-name: fadeOut;
     -webkit-animation-fill-mode: both;
-    -webkit-animation-duration: 0.367s;
             animation-duration: 0.367s;
-    -webkit-animation-name: fadeOut;
             animation-name: fadeOut;
-    -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
-    -webkit-animation-duration: 0.167s;
             animation-duration: 0.167s;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Panel-main {
-    -webkit-animation-name: fadeIn, slideRightIn40;
-            animation-name: fadeIn, slideRightIn40;
+    animation-name: fadeIn, slideRightIn40;
     -webkit-animation-duration: 0.367s;
        -moz-animation-duration: 0.367s;
         -ms-animation-duration: 0.367s;
          -o-animation-duration: 0.367s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Overlay {
     -webkit-animation-duration: 0.367s;
     -webkit-animation-name: fadeIn;
     -webkit-animation-fill-mode: both;
-    -webkit-animation-duration: 0.367s;
             animation-duration: 0.367s;
-    -webkit-animation-name: fadeIn;
             animation-name: fadeIn;
-    -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
-    -webkit-animation-duration: 0.267s;
             animation-duration: 0.267s;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut .ms-Panel-main {
-    -webkit-animation-name: fadeOut, slideLeftOut40;
-            animation-name: fadeOut, slideLeftOut40;
+    animation-name: fadeOut, slideLeftOut40;
     -webkit-animation-duration: 0.167s;
        -moz-animation-duration: 0.167s;
         -ms-animation-duration: 0.167s;
          -o-animation-duration: 0.167s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    animation-fill-mode: both;
   }
 
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateOut .ms-Overlay {
     -webkit-animation-duration: 0.367s;
     -webkit-animation-name: fadeOut;
     -webkit-animation-fill-mode: both;
-    -webkit-animation-duration: 0.367s;
             animation-duration: 0.367s;
-    -webkit-animation-name: fadeOut;
             animation-name: fadeOut;
-    -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
-    -webkit-animation-duration: 0.167s;
             animation-duration: 0.167s;
   }
 
@@ -3865,8 +3857,7 @@
   .ms-Panel.is-open.ms-Panel-animateIn .ms-Overlay,
   .ms-Panel.is-open.ms-Panel--left.ms-Panel-animateIn .ms-Overlay {
     opacity: 0;
-    -webkit-animation-name: none;
-            animation-name: none;
+    animation-name: none;
   }
 }
 
@@ -3991,24 +3982,19 @@
 }
 
 .ms-Panel.ms-Panel--animatedCommands.is-open .ms-CommandBar {
-  -webkit-animation-name: fadeIn, slideDownIn20;
-          animation-name: fadeIn, slideDownIn20;
+  animation-name: fadeIn, slideDownIn20;
   -webkit-animation-duration: 0.367s;
      -moz-animation-duration: 0.367s;
       -ms-animation-duration: 0.367s;
        -o-animation-duration: 0.367s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-          animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+  animation-delay: 250ms;
 }
 
 @media (min-width: 480px) {
   .ms-Panel.ms-Panel--animatedCommands.is-open .ms-CommandBar {
-    -webkit-animation-delay: 500ms;
-            animation-delay: 500ms;
+    animation-delay: 500ms;
   }
 }
 
@@ -4262,9 +4248,8 @@
 }
 
 .ms-PeoplePicker-result.is-expanded .ms-PeoplePicker-resultAction .ms-Icon {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
 }
 
 .ms-PeoplePicker-result.is-expanded .ms-PeoplePicker-resultAdditionalContent {
@@ -5120,16 +5105,13 @@
   font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
-  -webkit-animation-name: fadeIn, slideUpIn10;
-          animation-name: fadeIn, slideUpIn10;
+  animation-name: fadeIn, slideUpIn10;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -5215,9 +5197,8 @@
 .ms-PersonaCard-action.is-active:after,
 .is-active.ms-PersonaCard-overflow:after {
   box-sizing: border-box;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   content: '';
   width: 10px;
   height: 10px;

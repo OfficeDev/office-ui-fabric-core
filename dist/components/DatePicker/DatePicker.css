@@ -1,6 +1,6 @@
 /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
 /**
- * Office UI Fabric 2.6.0
+ * Office UI Fabric 2.6.1
  * The front-end framework for building experiences for Office 365.
  **/
 /*Sasssssssss*/
@@ -412,16 +412,13 @@
 }
 
 .ms-DatePicker-picker.ms-DatePicker-picker--opened .ms-DatePicker-holder {
-  -webkit-animation-name: fadeIn, slideDownIn10;
-          animation-name: fadeIn, slideDownIn10;
+  animation-name: fadeIn, slideDownIn10;
   -webkit-animation-duration: 0.167s;
      -moz-animation-duration: 0.167s;
       -ms-animation-duration: 0.167s;
        -o-animation-duration: 0.167s;
-  -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-          animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
   box-sizing: border-box;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   border: 1px solid #eaeaea;

@@ -16,7 +16,7 @@ Commanding surface for panels, pages, and applications. Unlike the NavBar, this 
 ### NavBar
 Provides a means of navigating to different areas within an application. On small screens, the navigation items are placed inside a hamburger menu.
 <!---
-{{> CommandBar props=CommandBarExampleModel.propsDropdown}}
+{{> CommandBar props=CommandBarExampleModel.propsNavBar}}
 --->
 
 ## States

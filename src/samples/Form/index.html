@@ -231,23 +231,20 @@
     </div>
   </main>
   <!-- Fabric jQuery plugin for DatePicker component -->
-  <script src="../../components/DatePicker/Jquery.DatePicker.js"></script>
-  <script src="../../components/DatePicker/PickaDate.js"></script>
-  <script src="../../components/Dropdown/Jquery.Dropdown.js"></script>
+  <script src="../../js/fabric.js"></script>
+  <script src="../../lib/PickaDate.js"></script>
   <script>
-    $(document).ready(function() {
-        // Check to make sure the DatePicker plugin is available. Then, find 
-        // the element you wish to run DatePicker on, and run the plugin on it.
-        if ($.fn.DatePicker) {
-          $('.ms-DatePicker').DatePicker();
-        }
-        
-        // Check to make sure the Dropdown plugin is available. Then, find 
-        // the element you wish to run Dropdown on, and run the plugin on it.
-        if ($.fn.Dropdown) {
-          $('.ms-Dropdown').Dropdown();
-        }
-    });
+    // Check to make sure the DatePicker plugin is available. Then, find 
+    // the element you wish to run DatePicker on, and run the plugin on it.
+    var DatePickerElements = document.querySelectorAll(".ms-DatePicker");
+    for(var i = 0; i < DatePickerElements.length; i++) {
+      new fabric['DatePicker'](DatePickerElements[i]);
+    }
+      
+    var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
+    for (var i = 0; i < DropdownHTMLElements.length; ++i) {
+      var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
+    }
   </script>
 </body>
 </html>

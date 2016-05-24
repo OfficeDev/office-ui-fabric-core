@@ -141,18 +141,15 @@ $ms-Persona-leftPadding: 16px;
     box-shadow: 0 0 0 1px $ms-color-themePrimary inset;
   }
 
-  .ms-PeoplePicker-resultAction {
-    &:hover {
-      background-color: $ms-color-neutralTertiaryAlt;
-      outline: 1px solid transparent;
-    }
-  }
-
   &.is-selected {
     background-color: $ms-color-themeLight;
 
     .ms-PeoplePicker-resultAction {
       &:hover {
+        background-color: $ms-color-themeTertiary;
+      }
+
+      &:active {
         background-color: $ms-color-themeTertiary;
       }
     }
@@ -217,8 +214,13 @@ $ms-Persona-leftPadding: 16px;
     font-size: $ms-font-size-m-plus;
   }
 
+  &:hover {
+    background-color: $ms-color-neutralTertiaryAlt;
+    outline: 1px solid transparent;
+  }
+
   &:active {
-    background-color: $ms-color-themeTertiary;
+    background-color: $ms-color-neutralTertiary;
   }
 }
 

@@ -50,6 +50,41 @@ namespace fabric {
     }
 
     /**
+     * Adds a breadcrumb item to a breadcrumb
+     * @param itemLabel {String} the item's text label
+     * @param itemLink {String} the item's href link
+     * @param tabIndex {number} the item's tabIndex
+     */
+    public addItem(itemLabel: string, itemLink: string, tabIndex: number): void {
+      this._itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
+      this._updateBreadcrumbs();
+    }
+
+    /**
+     * Removes a breadcrumb item by item label in the breadcrumbs list
+     * @param itemLabel {String} the item's text label
+     */
+    public removeItemByLabel(itemLabel: string ): void {
+      let i: number = this._itemCollection.length;
+      while (i--) {
+        if (this._itemCollection[i].text === itemLabel) {
+          this._itemCollection.splice(i, 1);
+        }
+      }
+      this._updateBreadcrumbs();
+    };
+
+    /**
+     * removes a breadcrumb item by position in the breadcrumbs list
+     * index starts at 0
+     * @param value {String} the item's index
+     */
+    public removeItemByPosition(value: number): void {
+      this._itemCollection.splice(value, 1);
+      this._updateBreadcrumbs();
+    }
+
+    /**
      * initializes component
      */
     public init(): void {
@@ -63,12 +98,12 @@ namespace fabric {
      * create internal model of list items from DOM
      */
     private _createItemCollection(): void {
-      let length = this._listItems.length;
-      let i = 0;
-      let item;
-      let text;
-      let link;
-      let tabIndex;
+      const length: number = this._listItems.length;
+      let i: number = 0;
+      let item: any;
+      let text: string;
+      let link: string;
+      let tabIndex: number;
 
       for (i; i < length; i++) {
         item = this._listItems[i].querySelector(".ms-Breadcrumb-itemLink");
@@ -92,36 +127,45 @@ namespace fabric {
      * render breadcrumbs and overflow menus
      */
     private _renderList(): void {
-      let maxItems = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
+      const maxItems: number = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
 
       if (maxItems !== this._currentMaxItems) {
-        if (this._itemCollection.length > maxItems) {
-          this._breadcrumb.className += " is-overflow";
-        } else {
-          this._removeClass(this._breadcrumb, " is-overflow");
-        }
-        this._addBreadcrumbItems(maxItems);
-        this._addItemsToOverflow(maxItems);
+        this._updateBreadcrumbs();
       }
 
       this._currentMaxItems = maxItems;
     }
 
     /**
+     * updates the breadcrumbs and overflow menu
+     */
+    private _updateBreadcrumbs() {
+      const maxItems: number = window.innerWidth > Breadcrumb.MEDIUM ? 4 : 2;
+      if (this._itemCollection.length > maxItems) {
+        this._breadcrumb.classList.add("is-overflow");
+      } else {
+        this._breadcrumb.classList.remove("is-overflow");
+      }
+
+      this._addBreadcrumbItems(maxItems);
+      this._addItemsToOverflow(maxItems);
+    };
+
+    /**
      * creates the overflow menu
      */
     private _addItemsToOverflow(maxItems: number): void {
       this._resetList(this._contextMenu);
-      let end = this._itemCollection.length - maxItems;
-      let overflowItems = this._itemCollection.slice(0, end);
+      const end: number = this._itemCollection.length - maxItems;
+      const overflowItems: Array<any> = this._itemCollection.slice(0, end);
 
       overflowItems.forEach( (item) => {
-        let li = document.createElement("li");
+        const li: HTMLLIElement = document.createElement("li");
         li.className = "ms-ContextualMenu-item";
         if (!isNaN(item.tabIndex)) {
           li.setAttribute("tabindex", item.tabIndex);
         }
-        let a = document.createElement("a");
+        const a: HTMLAnchorElement = document.createElement("a");
         a.className = "ms-ContextualMenu-link";
         if (item.link !== null) {
           a.setAttribute("href", item.link);
@@ -137,15 +181,15 @@ namespace fabric {
      */
     private _addBreadcrumbItems(maxItems: number): void {
       this._resetList(this._breadcrumbList);
-      let i = this._itemCollection.length - maxItems;
+      let i: number  = this._itemCollection.length - maxItems;
 
       i = i < 0 ? 0 : i;
       if (i >= 0) {
         for (i; i < this._itemCollection.length; i++) {
-          let listItem = document.createElement("li");
-          let item = this._itemCollection[i];
-          let a = document.createElement("a");
-          let chevron = document.createElement("i");
+          const listItem: HTMLLIElement = document.createElement("li");
+          const item: any = this._itemCollection[i];
+          const a: HTMLAnchorElement = document.createElement("a");
+          const chevron: HTMLPhraseElement = document.createElement("i");
           listItem.className = "ms-Breadcrumb-listItem";
           a.className = "ms-Breadcrumb-itemLink";
           if (item.link !== null) {
@@ -177,7 +221,7 @@ namespace fabric {
      */
     private _openOverflow(event: KeyboardEvent): void {
       if (this._overflowMenu.className.indexOf(" is-open") === -1) {
-        this._overflowMenu.className += " is-open";
+        this._overflowMenu.classList.add("is-open");
         this.removeOutlinesOnClick();
         // force focus rect onto overflow button
         this._overflowButton.focus();
@@ -195,17 +239,7 @@ namespace fabric {
      */
     private _closeOverflow(event: Event): void {
       if (!event || event.target !== this._overflowButton) {
-        this._removeClass(this._overflowMenu, " is-open");
-      }
-    }
-
-    /**
-     * utility that removes a class from an element
-     */
-    private _removeClass(element: HTMLElement, value: string): void {
-      let index = element.className.indexOf(value);
-      if (index > -1) {
-        element.className = element.className.substring(0, index);
+        this._overflowMenu.classList.remove("is-open");
       }
     }
 

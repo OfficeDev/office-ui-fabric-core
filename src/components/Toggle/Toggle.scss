@@ -32,7 +32,7 @@
 
   &:active {
     .ms-Label { 
-      color: $ms-color-neutralPrimary; 
+      color: $ms-color-neutralPrimary;
     }
   }
 
@@ -42,12 +42,15 @@
      @include ms-Label-is-disabled;
     }
     .ms-Toggle-field {
-      background-color: $ms-color-white !important;
       border-color: $ms-color-neutralTertiaryAlt !important;
       pointer-events: none !important;
       cursor: default !important;
 
       &:before {
+        background-color: $ms-color-white !important;
+      }
+
+      &:after {
         background-color: $ms-color-neutralTertiaryAlt !important;
       }
     }
@@ -87,22 +90,37 @@
 
 // Slider mixin
 @mixin ms-Toggle-slider($direction) {
-  // Slider pseudo element
+  // Slider background element
   &:before {
+    content: '';
+    width: 0;
+    position: absolute;
+    height: 16px;
+    top: 0;
+    left: 0;
+    background-color: $ms-color-themeDark;
+    outline: 2px solid transparent;
+    transition: width 0.167s;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  // Slider handle element
+  &:after {
     position: absolute;
     display: block;
     box-sizing: content-box;
     content: '';
     top: -2.5px;
-    #{$direction}: -2.5px;
     width: 12px;
     height: 20px;
     background-color: $ms-color-neutralSecondaryAlt;
     outline: 2px solid transparent;
+    transition: left 0.167s, transform 0.167s;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
 
     @media screen and (-ms-high-contrast: active) {
       border: 2.5px solid $ms-color-white;
-      height: 15px;
+      height: 16px;
       outline: 0;
     }
 
@@ -113,20 +131,30 @@
 
   @if $direction == left {
     &:before {
-      right: auto;
+      width: 0;
+    }
+
+    &:after {
+      left: 0;
+      transform: translateX(-2px);
       border-right: 2.5px solid $ms-color-white;
     }
   }
 
   @if $direction == right {
     &:before {
-      left: auto;
+      width: 100%;
+    }
+
+    &:after {
+      left: 100%;
+      transform: translateX(-12px);
       border-left: 2.5px solid $ms-color-white;
     }
   }
 
-  &:active { 
-    background-color: $ms-color-themePrimary; 
+  &:active {
+    background-color: $ms-color-themePrimary;
   }
 }
 
@@ -154,8 +182,6 @@
 
   // 'On' state - slider on the right
   &:checked + .ms-Toggle-field {
-    background-color: $ms-color-themePrimary;
-
     @include ms-Toggle-slider(right);
 
     // Show the on label / hide the off label
@@ -180,10 +206,6 @@
   &:hover {
     & + .ms-Toggle-field { 
       background-color: $ms-color-neutralLight; 
-    }
-    
-    &:checked + .ms-Toggle-field {
-      background-color: $ms-color-themeDark; 
     }
   }
 }

@@ -209,7 +209,7 @@ $ms-Persona-leftPadding: 16px;
   position: absolute;
   right: 0;
   top: 0;
-  width: 30px;
+  width: 40px;
   text-align: center;
 
   .ms-Icon {
@@ -335,6 +335,8 @@ $ms-Persona-leftPadding: 16px;
 // Primary text
 .ms-PeoplePicker-searchMorePrimary {
   padding-top: 2px;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
 }
 
@@ -370,20 +372,17 @@ $ms-Persona-leftPadding: 16px;
   }
 }
 
-// Compact size
-.ms-PeoplePicker.ms-PeoplePicker--compact {
 
-  // Limit to 5 results before scrolling.
-  .ms-PeoplePicker-resultGroups {
-    max-height: 209px;
-  }
-
+//== Modifier: People Picker Compact 
+//
+.ms-PeoplePicker-results.ms-PeoplePicker-results--compact {
   .ms-PeoplePicker-resultAction {
     height: 32px;
+    width: 32px;
+  }
 
-    .ms-Icon {
-      margin-top: -8px;
-    }
+  .ms-PeoplePicker-resultGroups {
+    max-height: 209px;
   }
 
   .ms-PeoplePicker-searchMore {
@@ -395,7 +394,10 @@ $ms-Persona-leftPadding: 16px;
       top: 12px;
       left: 12px;
     }
+  }
 
+  .ms-PeoplePicker-searchMoreBtn {
+    height: 100%;
   }
 
   .ms-PeoplePicker-searchMore.is-searching .ms-PeoplePicker-searchMoreIcon {

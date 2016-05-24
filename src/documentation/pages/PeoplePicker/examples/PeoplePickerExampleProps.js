@@ -80,6 +80,13 @@ var PersonaExampleProps = {
       "modifier": "textFieldUnderlined",
       "placeholder": "Select or enter an option"
     },
+    "resultsProps": {
+      "modifiers": [
+        {
+          "name": "compact"
+        }
+      ]
+    },
     "groups": [
       {
         "title": "Contacts",

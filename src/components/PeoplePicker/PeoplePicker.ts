@@ -19,6 +19,7 @@ namespace fabric {
     private _contextualHostView: ContextualHost;
     private _peoplePickerMenu: Element;
     private _peoplePickerSearch: Element;
+    private _peoplePickerSearchBox: Element;
     private _peoplePickerResults: NodeListOf<Element>;
 
     /**
@@ -30,7 +31,8 @@ namespace fabric {
       this._container = container;
       this._peoplePickerMenu = this._container.querySelector(".ms-PeoplePicker-results");
       this._peoplePickerSearch = this._container.querySelector(".ms-TextField-field");
-      this._peoplePickerResults = this._peoplePickerMenu.querySelectorAll(".ms-PeoplePicker-searchBox");
+      this._peoplePickerSearchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
+      this._peoplePickerResults = this._peoplePickerMenu.querySelectorAll(".ms-PeoplePicker-results");
       this._assignClicks();
 
       if (this._peoplePickerMenu) {
@@ -45,7 +47,7 @@ namespace fabric {
       this._contextualHostView = new fabric.ContextualHost(
         <HTMLElement>this._peoplePickerMenu,
         MODAL_POSITION,
-        this._container,
+        this._peoplePickerSearchBox,
         true
       );
     }

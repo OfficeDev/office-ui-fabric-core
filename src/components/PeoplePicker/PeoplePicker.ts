@@ -32,7 +32,6 @@ namespace fabric {
       this._peoplePickerMenu = this._container.querySelector(".ms-PeoplePicker-results");
       this._peoplePickerSearch = this._container.querySelector(".ms-TextField-field");
       this._peoplePickerSearchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
-      this._peoplePickerResults = this._peoplePickerMenu.querySelectorAll(".ms-PeoplePicker-results");
       this._assignClicks();
 
       if (this._peoplePickerMenu) {

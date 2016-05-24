@@ -54,8 +54,8 @@ namespace fabric {
       this.panelHost = document.createElement("div");
       this.panelHost.classList.add(PANEL_HOST_CLASS);
       this.panelHost.appendChild(this._layer);
-      this.panelHost.appendChild(this._overlayContainer);
       this._overlay = new fabric.Overlay(this._overlayContainer);
+      this._overlay.show();
 
       // Append Elements
       this.panelHost.appendChild(this._overlay.overlayElement);

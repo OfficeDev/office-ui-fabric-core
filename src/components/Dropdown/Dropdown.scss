@@ -123,11 +123,11 @@
 }
 
 .ms-Dropdown-caretDown {
-  color: $ms-color-neutralDark;
-  font-size: $ms-font-size-xs;
+  color: $ms-color-neutralSecondary;
+  font-size: $ms-font-size-l;
   position: absolute;
-  right: 12px;
-  bottom: 10px;
+  right: 9px;
+  bottom: 5px;
   z-index: 1;
   pointer-events: none;
 }
@@ -139,9 +139,9 @@
   border: 1px solid $ms-color-neutralTertiaryAlt;
   cursor: pointer;
   display: block;
-  height: 36px;
-  line-height: 36px;
-  padding: 0 36px 0 10px;
+  height: 32px;
+  line-height: 30px;
+  padding: 0 32px 0 10px;
   position: relative;
   overflow: hidden;
 }
@@ -155,7 +155,8 @@
   list-style-type: none;
   position: absolute;
   width: 100%;
-  max-height: 200px; $ms-zIndex-back);
+  max-height: 200px;
+  z-index: ($ms-zIndex-Dropdown + $ms-zIndex-back);
   overflow-y: scroll;
 
   top: auto;
@@ -188,12 +189,26 @@
   box-sizing: border-box;
   cursor: pointer;
   display: block;
-  height: 36px;
-  line-height: 36px;
+  height: 40px;
+  line-height: 38px;
   padding: 0 10px;
   position: relative;
   border: 1px solid transparent;
   white-space: nowrap;
+
+  @media screen and (-ms-high-contrast: active) {
+    border-color: $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    border-color: $ms-color-white;
+  }
+
+  // Shorten the first and last items to maintain baseline alignment.
+  &:first-child,
+  &:last-child {
+    height: 39px;
+  }
 
   &:hover {
     background-color: $ms-color-neutralLight;
@@ -212,13 +227,18 @@
     background: $ms-color-white;
     color: $ms-color-neutralTertiary;
     cursor: default;
+    line-height: 40px;
   }
 }
 
 //== State: A selected dropdown item
-.ms-Dropdown-item.is-selected {
+// Note: .ms-Dropdown-item--selected is deprecated and will be removed in a future version.
+// Use .is-selected instead.
+.ms-Dropdown-item.is-selected,
+.ms-Dropdown-item.ms-Dropdown-item--selected {
   background-color: $ms-color-themeLight;
   color: $ms-color-black;
+  line-height: 40px;
 
   &:hover {
     background-color: $ms-color-themeLight;

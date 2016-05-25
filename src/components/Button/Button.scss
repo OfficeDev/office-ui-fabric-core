@@ -86,7 +86,6 @@
   display: none;
 }
 
-
 //== Modifier: Primary action button
 //
 .ms-Button.ms-Button--primary {
@@ -136,9 +135,8 @@
     color: $ms-color-themePrimary;
     display: inline-block;
     font-size: $ms-font-size-s;
-    margin-right: 2px;
     position: relative;
-    top: -7px;
+    top: -8px;
     text-align: center;
 
     .ms-Icon {
@@ -274,64 +272,4 @@
       }
     }
   }
-}
-
-
-//== Modifier: Command button
-//
-.ms-Button.ms-Button--command {
-	background-color: transparent;
-	border: 0;
-	height: 36px;
-	line-height: 36px;
-	min-width: 0;
-	padding: 0 8px;
-	text-align: left;
-	font-size: $ms-font-size-m;
-
-	.ms-Button-icon {
-		color: $ms-color-neutralSecondary;
-		display: inline-block;
-		margin-right: 4px;
-		position: relative;
-		bottom: -1px;
-	}
-
-	.ms-Button-label {
-		font-family: $ms-font-family-regular;
-	}
-
-	&:hover,
-	&:focus {
-		.ms-Button-icon {
-			color: $ms-color-neutralDark;
-		}
-
-		.ms-Button-label {
-			color: $ms-color-black;
-		}
-	}
-
-	&:active {
-		.ms-Button-icon,
-		.ms-Button-label {
-			color: $ms-color-themePrimary;
-		}
-	}
-
-	&:disabled,
-	&.is-disabled {
-		.ms-Button-icon {
-			color: $ms-color-neutralTertiaryAlt;
-		}
-
-		.ms-Button-label {
-			color: $ms-color-neutralTertiary;
-		}
-	}
-}
-
-// Add space between adjacent command buttons.
-.ms-Button.ms-Button--command + .ms-Button.ms-Button--command {
-	margin-left: 14px;
 }

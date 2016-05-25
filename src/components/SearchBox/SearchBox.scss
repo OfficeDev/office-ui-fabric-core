@@ -198,6 +198,10 @@
     .ms-SearchBox-text {
       display: none;
     }
+
+    .ms-SearchBox-field {
+      cursor: pointer;
+    }
   }
 
   &.is-collapsed.is-active {
@@ -205,6 +209,7 @@
 
     .ms-SearchBox-field {
       display: block;
+      cursor: text;
     }
 
     .ms-SearchBox-text {

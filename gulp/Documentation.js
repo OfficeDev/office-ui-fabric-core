@@ -169,6 +169,8 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            .pipe(Plugins.replace("<!---", ""))
            .pipe(Plugins.replace("--->", ""))
            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+           .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+           .pipe(Plugins.prettify({indent_char: ' ', indent_size: 2}))
            .pipe(Plugins.rename("index.html"))
            .pipe(Plugins.wrap(
                 {

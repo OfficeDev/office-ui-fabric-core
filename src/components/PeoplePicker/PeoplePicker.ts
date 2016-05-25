@@ -11,7 +11,7 @@ namespace fabric {
    *
    */
   const MODAL_POSITION = "bottom";
-  // const TOKEN_CLASS = "ms-Persona--token";
+  const TOKEN_CLASS = "ms-Persona--token";
 
   export class PeoplePicker {
 
@@ -41,7 +41,7 @@ namespace fabric {
 
     private _createModalHost(e) {
       e.stopPropagation();
-
+      // this._peoplePickerSearchBox.classList.add("is-active");
       this._peoplePickerMenu.setAttribute("style", "display: block;");
       this._contextualHostView = new fabric.ContextualHost(
         <HTMLElement>this._peoplePickerMenu,
@@ -125,7 +125,7 @@ namespace fabric {
       let textField = searchBox.querySelector(".ms-TextField");
 
       // Add token classes to persona
-      tokenResult.classList.add("ms-Persona--token", "ms-PeoplePicker-persona");
+      tokenResult.classList.add(TOKEN_CLASS, "ms-PeoplePicker-persona");
 
       // Add the remove button to the token
       this._addRemoveBtn(tokenResult, true);
@@ -167,7 +167,6 @@ namespace fabric {
     private _assignClicks() {
       this._peoplePickerSearch.addEventListener("click", this._clickHandler.bind(this), true);
       this._peoplePickerSearch.addEventListener("focus", this._clickHandler.bind(this), true);
-      this._peoplePickerSearch.addEventListener("keyup", this._clickHandler.bind(this), true);
     }
   }
 }

@@ -19,8 +19,32 @@ $ms-Persona-leftPadding: 16px;
 
 // Box that contains the search field and selected people.
 .ms-PeoplePicker-searchBox {
-  border-bottom: 1px solid $ms-color-themePrimary;
+  border-bottom: 1px solid $ms-color-neutralTertiaryAlt;
   cursor: text;
+
+  &:hover {
+    border-color: $ms-color-neutralSecondaryAlt;
+  }
+  
+  &.is-active,
+  &:focus {
+    border-color: $ms-color-themePrimary;
+  }
+
+  &:hover,
+  &:focus {
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
+  }
+
+  @include input-placeholder {
+    color: $ms-color-neutralSecondary;
+  }
 
   .ms-TextField.ms-TextField--textFieldUnderlined {
     border: 0;

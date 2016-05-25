@@ -22,6 +22,7 @@ namespace fabric {
     private _peoplePickerSearchBox: Element;
     private _peoplePickerResults: NodeListOf<Element>;
     private _isContextualMenuOpen: Boolean;
+    private _selectedPeople: NodeListOf<Element>;
 
     /**
      *
@@ -33,8 +34,8 @@ namespace fabric {
       this._peoplePickerMenu = this._container.querySelector(".ms-PeoplePicker-results");
       this._peoplePickerSearch = this._container.querySelector(".ms-TextField-field");
       this._peoplePickerSearchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
+      this._selectedPeople = this._container.querySelectorAll(".ms-PeoplePicker-selectedPeople");
       this._assignClicks();
-      // this._isContextualMenuOpen = false;
 
       if (this._peoplePickerMenu) {
         this._peoplePickerMenu.setAttribute("style", "display: none;");
@@ -76,7 +77,7 @@ namespace fabric {
     private _selectResult(e) {
       e.stopPropagation();
 
-      let currentResult = this._findPersona(e.target);
+      let currentResult = this._findElement(e.target, "ms-Persona");
       let clonedResult: Element = <Element>currentResult.cloneNode(true);
       let openHost = document.querySelector(".ms-ContextualHost.is-open");
 
@@ -91,10 +92,10 @@ namespace fabric {
       openHost.classList.remove("is-open");
     }
 
-    private _findPersona(childObj: Element) {
+    private _findElement(childObj: Element, className: string ) {
       let currentElement: Element = <Element>childObj.parentNode;
 
-      while (!currentElement.classList.contains("ms-Persona")) {
+      while (!currentElement.classList.contains(className)) {
           currentElement = <Element>currentElement.parentNode;
       }
       return currentElement;
@@ -107,21 +108,28 @@ namespace fabric {
       if (token) {
         actionBtn = document.createElement("div");
         actionBtn.classList.add("ms-Persona-actionIcon");
+        actionBtn.addEventListener("click", this._removeToken.bind(this), true);
       } else {
         actionBtn = document.createElement("button");
         actionBtn.classList.add("ms-PeoplePicker-resultAction");
+        actionBtn.addEventListener("click", this._removeResult.bind(this), true);
       }
 
       actionIcon.classList.add("ms-Icon", "ms-Icon--x");
 
       actionBtn.appendChild(actionIcon);
 
-      return persona.appendChild(actionBtn);
+      persona.appendChild(actionBtn);
     }
 
     private _removeToken(e) {
-      let currentToken = this._findPersona(e.target);
+      let currentToken = this._findElement(e.target, "ms-Persona");
       currentToken.remove();
+    }
+
+    private _removeResult(e) {
+      let currentResult = this._findElement(e.target, "ms-PeoplePicker-selectedPerson");
+      currentResult.remove();
     }
 
     private _tokenizeResult(tokenResult: Element) {
@@ -139,9 +147,6 @@ namespace fabric {
         tokenResult.classList.remove("ms-Persona--sm");
         tokenResult.classList.add("ms-Persona--xs");
       }
-
-      // Add removeToken event to actionIcon
-      tokenResult.querySelector(".ms-Persona-actionIcon").addEventListener("click", this._removeToken.bind(this), true);
 
       // Prepend the token before the search field
       searchBox.insertBefore(tokenResult, textField);
@@ -162,8 +167,8 @@ namespace fabric {
       // Add the remove button to the persona
       this._addRemoveBtn(selectedItem, false);
 
-      // Add removeToken event to resultAction
-      selectedItem.querySelector(".ms-PeoplePicker-resultAction").addEventListener("click", this._removeToken.bind(this), true);
+      // Add removeResult event to resultAction
+      selectedItem.querySelector(".ms-PeoplePicker-resultAction").addEventListener("click", this._removeResult.bind(this), true);
 
       membersList.insertBefore(selectedItem, firstMember);
     }

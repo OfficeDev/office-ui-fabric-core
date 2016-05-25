@@ -70,7 +70,7 @@ namespace fabric {
     private static _callbackProps: Array<string> = ["onEnd", "onEndArgs"];
     private static _animationObjects: Array<any> = [];
 
-   /**
+    /**
     * @param {HTMLElement} element
     * @param {object} props Transition properties
     * @param {number} props.duration The duration of the transition in seconds
@@ -98,7 +98,7 @@ namespace fabric {
      * @param {string} props.ease An easing equation applied to the animation
      * @param {function} props.onEnd A function that is called when the animation ends
      * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
-     */
+    */
     public static animation(element: HTMLElement, keyframes: string, props: any): void {
       let obj: IAnimationObj = { element: element, keyframes: keyframes, props: props };
       Animate._animationObjects.push(obj);
@@ -115,7 +115,7 @@ namespace fabric {
      * @param {number} props.delay A delay in seconds that occurs before the scroll starts
      * @param {function} props.onEnd A function that is called when the scrolling animation ends
      * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
-     */
+    */
     public static scrollTo(element: HTMLElement, props: any): void {
       let obj: IScrollObj = { element: element, props: props, step: 0 };
       Animate._setScrollProperties(obj);

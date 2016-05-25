@@ -1,6 +1,15 @@
-{{> MessageBanner props=props}}
+<div class="docs-MessageBannerExample">
+  {{> MessageBanner props=props }}
+  <button class="ms-Button docs-MessageBannerExample-button">Show the banner</button>
+</div>
 
 <script type="text/javascript">
-  var MessageBannerHTML = document.querySelector('.ms-MessageBanner');
-  var MessageBanner = new fabric['MessageBanner'](MessageBannerHTML);
+  var MessageBannerExample = document.querySelector('.docs-MessageBannerExample');
+  var MessageBanner = new fabric['MessageBanner'](MessageBannerExample.querySelector('.ms-MessageBanner'));
+  var MessageBannerButton = MessageBannerExample.querySelector('.docs-MessageBannerExample-button');
+  
+  // When clicking the button, open the MessageBanner
+  MessageBannerButton.onclick = function() {
+    MessageBanner.showBanner();
+  };
 </script>

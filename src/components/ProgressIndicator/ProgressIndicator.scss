@@ -10,11 +10,14 @@ $ProgressIndicatorMarginBetweenText: 8px;
 $ProgressIndicatorButtonsWidth: 218px;
 $ProgressIndicatorTextHeight: 18px;
 
+.ms-ProgressIndicator {
+  font-family: $ms-font-family-base;
+  font-weight: $ms-font-weight-regular;
+}
+
 .ms-ProgressIndicator-itemName {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
-  font-weight: $ms-font-weight-regular;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -23,8 +26,6 @@ $ProgressIndicatorTextHeight: 18px;
 }
 
 .ms-ProgressIndicator-itemDescription {
-  font-family: $ms-font-family-base;
-  font-weight: $ms-font-weight-regular;
   color: $ms-color-neutralSecondaryAlt;
   font-size: $ms-font-size-xs;
   line-height: $ProgressIndicatorTextHeight;
@@ -46,9 +47,11 @@ $ProgressIndicatorTextHeight: 18px;
 }
 
 .ms-ProgressIndicator-progressBar {
-  position: absolute;
-  height: 2px;
   background-color: $ms-color-themePrimary;
+  height: 2px;
+  position: absolute;
+  transition: width .3s ease;
+  width: 0;
 
   @media screen and (-ms-high-contrast: active) {
     background-color: $ms-color-white;

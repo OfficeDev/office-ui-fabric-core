@@ -24,17 +24,34 @@
 }
 
 .ms-ContextualMenu-item {
-  @include ms-u-borderBox;
   position: relative;
+}
+
+.ms-ContextualMenu-link {
+  @include ms-u-borderBox;
+  text-decoration: none;
+  color: $ms-color-neutralPrimary;
   border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+  position: relative;
+
+  &:focus {
+    outline: transparent;
+  }
 
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     background-color: $ms-color-neutralLight;
     color: $ms-color-black;
   }
 
-  &:active {
+  &:active,
+  &:focus {
     border: 1px solid $ms-color-themePrimary;
   }
 
@@ -49,16 +66,12 @@
   }
 
   &.is-disabled {
+    color: $ms-color-neutralTertiary;
     background-color: $ms-color-white;
 
-    &:active {
+    &:active,
+    &:focus {
       border-color: $ms-color-white;
-    }
-
-    .ms-ContextualMenu-link {
-      color: $ms-color-neutralTertiary;
-      cursor: default;
-      pointer-events: none;
     }
 
     .ms-Icon {
@@ -89,18 +102,6 @@
   padding: 0 18px;
 }
 
-.ms-ContextualMenu-link {
-  text-decoration: none;
-  color: $ms-color-neutralPrimary;
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: block;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 18px;
-  position: relative;
-}
-
 // Modifier: Contextual menu with submenu
 .ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu {
   position: absolute;
@@ -124,7 +125,7 @@
   pointer-events: none;
 }
 
-//== Modifier: Multi-select menu 
+//== Modifier: Multi-select menu
 //
 .ms-ContextualMenu.ms-ContextualMenu--multiselect {
 

@@ -84,32 +84,11 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
 
 // Build for Fabric component demos
 gulp.task('FabricComponents', [
-    'FabricComponents-buildAndCombineStyles',
-    'FabricComponents-copyAssets', 
-    'ComponentJS'
+        'FabricComponents-buildAndCombineStyles',
+        'FabricComponents-copyAssets', 
+        'ComponentJS'
     ]
 );
 
-//
-// Fabric Messages
-// ----------------------------------------------------------------------------
-
-gulp.task('FabricComponents-finished', ['FabricComponents'], function () {
-    console.log(ConsoleHelper.generateSuccess(' Components build was successful! Yay!', true));
-});
-
-gulp.task('FabricComponents-updated', ['FabricComponents'], function () {
-    console.log(ConsoleHelper.generateSuccess(' Components updated successfully! Yay!'));
-});
-
-
-//
-// Watch Tasks
-// ----------------------------------------------------------------------------
-
-// Watches all src fabric components and builds fabric.components.
-gulp.task('FabricComponents-watch', ['FabricComponents', 'FabricComponents-finished'], function () {
-    return gulp.watch(Config.paths.componentsPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence('FabricComponents', 'FabricComponents-updated', done);
-    }));
-});
+BuildConfig.buildTasks.push('FabricComponents');
+BuildConfig.nukeTasks.push('FabricComponents-nuke');

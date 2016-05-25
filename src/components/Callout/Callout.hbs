@@ -2,8 +2,13 @@
 
 <div class="ms-Callout 
     {{#if props.arrowPosition}} ms-Callout--{{props.arrowPosition}} {{/if}} 
-    {{#if props.modifier}} ms-Callout--{{props.modifier}} {{/if}}">
+    {{#if props.modifier}} ms-Callout--{{props.modifier}}{{/if}} {{props.state}}">
   <div class="ms-Callout-main">
+    {{#if props.closeIcon}}
+      <button class="ms-Callout-close">
+        <i class="ms-Icon ms-Icon--{{props.closeIcon}}"></i>
+      </button>
+    {{/if}}
     <div class="ms-Callout-header">
       <p class="ms-Callout-title">{{{props.title}}}</p>
     </div>

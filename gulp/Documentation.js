@@ -11,12 +11,8 @@ var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
 var Template = require('./modules/Template');
-var pandoc = require('gulp-pandoc');
-var marked = require('gulp-marked');
-
-require("typescript-require")({
-    exitOnError: true
-});
+var reload = require('require-reload')(require);
+var BuildConfig = require('./modules/BuildConfig');
 
 //
 // Clean/Delete Tasks
@@ -60,17 +56,6 @@ gulp.task('Documentation-copyAssets', function() {
         .pipe(Plugins.changed(Config.paths.distDocsComponents))
         .pipe(gulp.dest(Config.paths.distDocsComponents));
 });
-
-
-gulp.task('Documentation-styleHinting',  function() {
-   return gulp.src(Config.paths.componentsPath + '/**/*.scss')
-      .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-      .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-          title: "Checking SASS Compile errors and linting"
-      })))
-     .pipe(Plugins.sasslint())
-     .pipe(ErrorHandling.SASSlintErrors());
- });
 
 gulp.task('Documentation-handlebars', function(cb) {
    var _folderName;
@@ -159,10 +144,12 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
                 var file = exampleModels[x];
                 var modelName = file.replace('.js', '');
                 modelName = modelName.replace(" ", '');
-                var modelFile = require('../' + exampleFolderName + '/' + file);
+                var modelFile = reload('../' + exampleFolderName + '/' + file);
                 templateData[modelName] = modelFile;
+               
             }
         }
+
        hasFileChanged = Utilities.hasFileChangedInFolder(srcFolderName, distFolderName, '.md', '.html');
        
         // if (hasFileChanged) {
@@ -174,7 +161,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                 title: "Building documentation page " + pageName
             })))
-           .pipe(marked())
+           .pipe(Plugins.marked())
            .on('error', function(err) {
               console.log(err);  
             })
@@ -182,6 +169,8 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            .pipe(Plugins.replace("<!---", ""))
            .pipe(Plugins.replace("--->", ""))
            .pipe(Plugins.handlebars(templateData, Config.handleBarsConfig))
+           .pipe(Plugins.replace(Banners.getHTMLCopyRight(), ""))
+           .pipe(Plugins.prettify({indent_char: ' ', indent_size: 2}))
            .pipe(Plugins.rename("index.html"))
            .pipe(Plugins.wrap(
                 {
@@ -196,7 +185,7 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
            
            // Add stream
            streams.push(componentPipe);
-      //}
+      // }
    }
    
    if (streams.length > 0) {
@@ -213,7 +202,6 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 var DocumentationTasks = [
     'Documentation-build', 
     'Documentation-copyAssets',
-    'Documentation-styleHinting',
     'ComponentJS',
     'Documentation-copyIgnoredFiles',
     "Documentation-template"
@@ -221,25 +209,5 @@ var DocumentationTasks = [
 
 //Build Fabric Component Samples
 gulp.task('Documentation', DocumentationTasks);
-
-//
-// Fabric Messages
-// ----------------------------------------------------------------------------
-gulp.task('Documentation-finished', DocumentationTasks, function () {
-    console.log(ConsoleHelper.generateSuccess(Config.DocumentationFinished, true));
-});
-
-gulp.task('Documentation-updated', DocumentationTasks, function () {
-    console.log(ConsoleHelper.generateSuccess(Config.DocumentationUpdate));
-});
-
-//
-// Watch Tasks
-// ----------------------------------------------------------------------------
-
-// Watches all src fabric components but, builds the samples only
-gulp.task('Documentation-watch', ['Documentation'], function () {
-    return gulp.watch(Config.paths.componentsPath + '/**/*', Plugins.batch(function (events, done) {
-        Plugins.runSequence('Documentation', 'Documentation-updated', done);
-    }));
-});
+BuildConfig.buildTasks.push('Documentation');
+BuildConfig.nukeTasks.push('Documentation-nuke');

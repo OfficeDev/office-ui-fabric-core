@@ -3,6 +3,7 @@ var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
+var BuildConfig = require('./modules/BuildConfig');
 
 //
 // Clean/Delete Tasks
@@ -26,29 +27,10 @@ gulp.task('ComponentJS-copyLib', function() {
         .pipe(gulp.dest(Config.paths.distLibPath));
 });
 
-//
-// Typescript tasks
-// ----------------------------------------------------------------------------
 
-gulp.task('ComponentJS-lint', function (cb) {
-    return gulp.src(Config.paths.src + '/**/*.ts')
-        
-        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
 
-        // tslint options set by tslint.json
-        .pipe(Plugins.tslint())
-        .pipe(Plugins.tslint.report("verbose"));
-});
-
-gulp.task('ComponentJS-templateLibrary', ['Documentation-template'], function() {
-    return  gulp.src(Config.paths.distJS + "/fabric.templates.ts")
-            .pipe(Plugins.header(Banners.getJSCopyRight()))
-            .pipe(Plugins.tsc(Config.typescriptProject))
-            .js.pipe(gulp.dest(Config.paths.distJS));
-})
-
-gulp.task('ComponentJS-typescript', ['ComponentJS-templateLibrary'], function() {
-    var tscResult = gulp.src(Config.paths.src + '/**/*.ts')
+gulp.task('ComponentJS-typescript', ['Documentation-template'], function() {
+    var tscResult = gulp.src([Config.paths.src + '/**/*.ts', Config.paths.distJS + "/fabric.templates.ts"])
         .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
             title: "Typescriptingz the file"
         })))
@@ -89,8 +71,9 @@ gulp.task('ComponentJS-typescript', ['ComponentJS-templateLibrary'], function() 
 var ComponentJSTasks = [
     'ComponentJS-copyLib',
     'ComponentJS-typescript',
-    'ComponentJS-lint'
 ];
 
 //Build Fabric Component Samples
 gulp.task('ComponentJS', ComponentJSTasks);
+BuildConfig.buildTasks.push('ComponentJS');
+BuildConfig.nukeTasks.push('ComponentJS-nuke');

@@ -29,7 +29,7 @@ $Panel-width-lightDismiss: 272px;
   }
 
   &.ms-Panel-animateIn {
-     @include ms-u-fadeIn100;
+    @include ms-u-fadeIn100;
   }
 
   &.ms-Panel-animateOut {

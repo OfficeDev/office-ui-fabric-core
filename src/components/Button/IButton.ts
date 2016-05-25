@@ -1,7 +1,7 @@
 interface IButton {
-    container?: Element;
-    label?: string;
-    icon?: string;
-    modifier?: string;
-    tag?: string;
- }
+  container?: Element;
+  label?: string;
+  icon?: string;
+  modifier?: string;
+  tag?: string;
+}

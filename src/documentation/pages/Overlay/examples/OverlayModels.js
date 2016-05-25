@@ -1,12 +1,9 @@
-var ToggleModels = {
-  "basic": {
+var OverlayModels = {
+  "default": {
   },
   "dark": {
     "modifier": "dark"
-  },
-  "none": {
-    "modifier": "none"
   }
 }
 
-module.exports = ToggleModels;
+module.exports = OverlayModels;

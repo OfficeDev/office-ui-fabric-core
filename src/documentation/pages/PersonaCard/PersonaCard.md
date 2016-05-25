@@ -5,12 +5,7 @@ The visualization of details of an individual including Skype contact details, e
 
 ### Default
 <!---
-{{> PersonaCard props=PersonaCardExampleModel.default}}
---->
-
-### Square
-<!---
-{{> PersonaCard props=PersonaCardExampleModel.square}}
+{{> PersonaCardExample props=PersonaCardExampleModel.default}}
 --->
 
 ## Using this component
@@ -19,19 +14,14 @@ The visualization of details of an individual including Skype contact details, e
     <head>
         <link rel="stylesheet" href="fabric.min.css">
         <link rel="stylesheet" href="fabric.components.min.css">
-        <script src="jquery-2.2.1.min.js"></script>
-        <script src="jquery.fabric.min.js"></script>
     </head>
     ```
 2. Copy the HTML from one of the samples above into your page.
 3. Add the following `<script>` tag to your page, below the references to jQuery and Fabric's JS, to instantiate all Persona Card components on the page:
     ```
     <script>
-        $(document).ready(function() {
-            if ($.fn.PersonaCard) {
-                $('.ms-PersonaCard').PersonaCard();
-            }
-        });
+            var PersonaCardElement = document.querySelector(".ms-PersonaCard");
+            new fabric['PersonaCard'](PersonaCardElement, ButtonElement);
     </script>
     ```
 4. Verify that the component is working the same as in the sample above.
@@ -40,6 +30,3 @@ The visualization of details of an individual including Skype contact details, e
 ## Dependencies
 This component uses a Persona component to present the person, an OrgChart to present the persona's position within the organization, and a Link for navigation.
 
-<!---
-{{> PersonaCardExampleJS}}
---->

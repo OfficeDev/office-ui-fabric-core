@@ -43,7 +43,7 @@
   &:hover,
   &:active {
     .ms-Dropdown-title {
-      border-color: $ms-color-neutralSecondaryAlt; 
+      border-color: $ms-color-neutralSecondaryAlt;
     }
   }
 
@@ -77,7 +77,7 @@
       color: $ms-color-contrastWhiteDisabled;
     }
   }
-  
+
   .ms-Dropdown-caretDown {
     color: $ms-color-neutralTertiary;
 
@@ -92,12 +92,11 @@
 }
 
 // When the dropdown is opened
-// Note: .ms-Dropdown--open is deprecated and will be removed in a future version. 
+// Note: .ms-Dropdown--open is deprecated and will be removed in a future version.
 // Use .is-open for an open dropdown.
 .ms-Dropdown.ms-Dropdown--open .ms-Dropdown-items,
 .ms-Dropdown.is-open .ms-Dropdown-items {
   display: block;
-  position: fixed;
 }
 
 // Hide the original dropdown
@@ -139,11 +138,7 @@
   position: absolute;
   width: 100%;
   max-height: 200px;
-  max-width: 268px;
   z-index: ($ms-zIndex-Dropdown + $ms-zIndex-back);
-  top: 0;
-  right: 0;
-  bottom: 0;
   overflow-y: scroll;
 
   &:before {
@@ -186,7 +181,7 @@
   }
 
   // Shorten the first and last items to maintain baseline alignment.
-  &:first-child, 
+  &:first-child,
   &:last-child {
     height: 39px;
   }

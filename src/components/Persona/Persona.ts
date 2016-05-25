@@ -38,7 +38,7 @@ namespace fabric {
         this._createPersonaCard();
       }
     }
-    
+
     private _createPersonaCard() {
       this._personaCardInstance = new fabric.PersonaCard(this._personaCard);
     }

@@ -31,7 +31,7 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
 
 
 //== DetailsHeader
-// 
+//
 .ms-DetailsHeader {
   display: inline-block;
   min-width: 100%;
@@ -275,7 +275,7 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
   visibility: hidden;
 
   &:focus {
-   outline: transparent;
+    outline: transparent;
   }
 }
 
@@ -305,7 +305,7 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
 }
 
 //== Check
-// 
+//
 .ms-Check {
   display: inline-block;
   cursor: default;

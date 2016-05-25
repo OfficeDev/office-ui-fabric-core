@@ -53,8 +53,8 @@
   font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
-  height: 36px;
-  padding: 6px 10px;
+  height: 32px;
+  padding: 6px 10px 8px;
   width: 100%;
   min-width: 180px;
   outline: 0;
@@ -85,9 +85,7 @@
 
 .ms-TextField-description {
   color: $ms-color-neutralSecondaryAlt;
-  font-size: $ms-font-size-s;
-  display: inline-block;
-  margin-top: 4px;
+  font-size: $ms-font-size-xs;
 }
 
 
@@ -98,15 +96,10 @@
 
   .ms-Label {
     position: absolute;
-<<<<<<< HEAD
-    font-family: $ms-font-family-semilight;
-    font-size: $ms-font-size-m;
-=======
     font-weight: $ms-font-weight-semilight;
     font-size: $ms-font-size-s;
->>>>>>> beta/3.0.0
     color: $ms-color-neutralSecondary;
-    padding: 8px 0 8px 10px;
+    padding: 7px 0 7px 10px;
   }
 
   &.is-disabled {
@@ -145,13 +138,13 @@
   }
 
   .ms-Label {
-    font-size: $ms-font-size-m;
+    font-size: $ms-font-size-s;
     margin-right: 8px;
     display: table-cell;
     vertical-align: bottom;
     padding-left: 12px;
     padding-bottom: 5px;
-    height: 36px;
+    height: 32px;
     width: 1%;
     white-space: nowrap;
   }
@@ -202,14 +195,10 @@
 //
 .ms-TextField.ms-TextField--multiline {
   .ms-TextField-field {
-<<<<<<< HEAD
-    @include ms-font-m;
-=======
     color: $ms-color-neutralPrimary;
     font-family: $ms-font-family-base;
     font-size: $ms-font-size-s;
     font-weight: $ms-font-weight-regular;
->>>>>>> beta/3.0.0
     line-height: 17px;
     min-height: 60px;
     min-width: 260px;

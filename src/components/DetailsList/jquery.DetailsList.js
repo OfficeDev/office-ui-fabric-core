@@ -8,20 +8,20 @@
  * @param  {jQuery Object}  One or more .ms-DetailsList components
  * @return {jQuery Object}  The same components (allows for chaining)
  */
-(function ($) {
-  $.fn.DetailsList = function () {
+// (function ($) {
+//   $.fn.DetailsList = function () {
 
-    /** Go through each panel we've been given. */
-    return this.each(function () {
+//     /** Go through each panel we've been given. */
+//     return this.each(function () {
 
-      var $DetailsList = $(this);
+//       var $DetailsList = $(this);
 
-      /** Detect clicks on selectable list items. */
-      $DetailsList.on('click', '.js-toggleSelection', function() {
-        $(this).parents('.ms-DetailsList').toggleClass('is-selected');
-      });
+//       /** Detect clicks on selectable list items. */
+//       $DetailsList.on('click', '.js-toggleSelection', function() {
+//         $(this).parents('.ms-DetailsList').toggleClass('is-selected');
+//       });
 
-    });
+//     });
 
-  };
-})(jQuery);
+//   };
+// })(jQuery);

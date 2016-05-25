@@ -21,6 +21,7 @@ namespace fabric {
     private _peoplePickerSearch: Element;
     private _peoplePickerSearchBox: Element;
     private _peoplePickerResults: NodeListOf<Element>;
+    private _isContextualMenuOpen: Boolean;
 
     /**
      *
@@ -33,6 +34,7 @@ namespace fabric {
       this._peoplePickerSearch = this._container.querySelector(".ms-TextField-field");
       this._peoplePickerSearchBox = this._container.querySelector(".ms-PeoplePicker-searchBox");
       this._assignClicks();
+      // this._isContextualMenuOpen = false;
 
       if (this._peoplePickerMenu) {
         this._peoplePickerMenu.setAttribute("style", "display: none;");
@@ -41,14 +43,16 @@ namespace fabric {
 
     private _createModalHost(e) {
       e.stopPropagation();
-      // this._peoplePickerSearchBox.classList.add("is-active");
       this._peoplePickerMenu.setAttribute("style", "display: block;");
       this._contextualHostView = new fabric.ContextualHost(
         <HTMLElement>this._peoplePickerMenu,
         MODAL_POSITION,
         this._peoplePickerSearchBox,
-        true
+        true,
+        this._contextHostCallBack.bind(this)
       );
+      this._peoplePickerSearchBox.classList.add("is-active");
+      this._isContextualMenuOpen = true;
     }
 
     private _clickHandler(e) {
@@ -166,7 +170,15 @@ namespace fabric {
 
     private _assignClicks() {
       this._peoplePickerSearch.addEventListener("click", this._clickHandler.bind(this), true);
-      this._peoplePickerSearch.addEventListener("focus", this._clickHandler.bind(this), true);
+      this._peoplePickerSearch.addEventListener("keyup", (e: KeyboardEvent) => {
+        if (e.keyCode !== 27 && !this._isContextualMenuOpen) {
+          this._clickHandler(e);
+        }}, true);
+    }
+
+    private _contextHostCallBack() {
+      this._peoplePickerSearchBox.classList.remove("is-active");
+      this._isContextualMenuOpen = false;
     }
   }
 }

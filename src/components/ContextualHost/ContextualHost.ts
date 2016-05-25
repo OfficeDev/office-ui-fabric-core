@@ -32,13 +32,15 @@ namespace fabric {
     private _teHeight;
     private _direction;
     private _container;
+    private _disposalCallback: Function;
     private _targetElement;
     private _matchTargetWidth;
     private _ftl = new FabricTemplateLibrary();
     private _contextualHostMain: Element;
     private _children: Array<ContextualHost>;
 
-    constructor(content: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean) {
+    constructor(content: HTMLElement, direction: string, targetElement: Element, matchTargetWidth?: boolean,
+      disposalCallback?: Function) {
       this._resizeAction = this._resizeAction.bind(this);
       this._dismissAction = this._dismissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
@@ -51,12 +53,19 @@ namespace fabric {
       this._targetElement = targetElement;
       this._openModal();
       this._setResizeDisposal();
+
+      if(disposalCallback) {
+        this._disposalCallback = disposalCallback;
+      }
     }
 
     public disposeModal(): void {
       window.removeEventListener("resize", this._resizeAction, false);
       document.removeEventListener("click", this._dismissAction, true);
       this._container.parentNode.removeChild(this._container);
+      if(this._disposalCallback) {
+        this._disposalCallback();
+      }
     }
 
     public setChildren(value: ContextualHost): void {

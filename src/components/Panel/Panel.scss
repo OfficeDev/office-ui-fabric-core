@@ -95,13 +95,6 @@ $CommandButtonBlue: #2488D8;
     @include drop-shadow(-30px, 0px, 30px, -30px, .2);
   }
 
-  // Commands and content inner are not displayed
-  // Note: Replace with a dropdown contextual menu.
-  .ms-Panel-commands,
-  .ms-Panel-contentInner {
-    display: none;
-  }
-
   // Animations -- Default (anchored right)
   &.ms-Panel-animateIn {
     .ms-Panel-main {
@@ -112,7 +105,7 @@ $CommandButtonBlue: #2488D8;
       @include ms-u-fadeIn200;
     }
   }
-  
+
   &.ms-Panel-animateOut {
     .ms-Panel-main {
       @include ms-u-slideRightOut40;
@@ -135,13 +128,6 @@ $CommandButtonBlue: #2488D8;
     @include drop-shadow(-30px, 0px, 30px, 30px, .2);
   }
 
-  // Commands and content inner are not displayed
-  // Note: Replace with a leftnav menu.
-  .ms-Panel-commands,
-  .ms-Panel-contentInner {
-    display: none;
-  }
-  
   // Animations -- Default (anchored right)
   &.ms-Panel-animateIn {
     .ms-Panel-main {
@@ -152,7 +138,7 @@ $CommandButtonBlue: #2488D8;
       @include ms-u-fadeIn200;
     }
   }
-  
+
   &.ms-Panel-animateOut {
     .ms-Panel-main {
       @include ms-u-slideRightOut40;
@@ -246,7 +232,7 @@ $CommandButtonBlue: #2488D8;
   .ms-Panel-main {
     @media (min-width: $ms-screen-xxl-min) {
       left: $Panel-margin-xl;
-    }    
+    }
   }
 }
 
@@ -298,7 +284,7 @@ $CommandButtonBlue: #2488D8;
         @include ms-u-fadeIn200;
       }
     }
-    
+
     &.ms-Panel-animateOut {
       .ms-Panel-main {
         @include ms-u-slideRightOut40;
@@ -398,7 +384,7 @@ $CommandButtonBlue: #2488D8;
 
   @media (min-width: $ms-screen-xl-min) {
     margin-top: 30px;
-  } 
+  }
 }
 
 //== Modifier: Deprecated Animated commandbar
@@ -407,7 +393,7 @@ $CommandButtonBlue: #2488D8;
   .ms-CommandBar {
     @media (min-width: $ms-screen-md-min) {
       display: block;
-    }    
+    }
   }
 
   .ms-CommandBarItem {

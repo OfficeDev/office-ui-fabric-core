@@ -199,7 +199,7 @@ namespace fabric {
             a.setAttribute("tabindex", item.tabIndex);
           }
           a.textContent = item.text;
-          chevron.className = "ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight";
+          chevron.className = "ms-Breadcrumb-chevron ms-Icon ms-Icon--ChevronRight";
           listItem.appendChild(a);
           listItem.appendChild(chevron);
           this._breadcrumbList.appendChild(listItem);

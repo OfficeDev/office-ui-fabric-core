@@ -1,6 +1,6 @@
 var ButtonExampleHeroModel =  {
   "label": "Create Account",
-  "icon": "plus",
+  "icon": "Add",
   "modifier": "hero",
   "tag": "button"
 }

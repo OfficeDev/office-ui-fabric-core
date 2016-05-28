@@ -16,11 +16,9 @@ var PivotExampleProps = {
         "text": "Shared with me",
         "name": "shared",
         "content": "This is the shared with me tab."
-      },
-      {
-        "ellipsisIcon": "ellipsis"
       }
-    ]
+    ],
+    "hasEllipsis": true
   },
   "large": {
     "modifiers": [
@@ -44,11 +42,9 @@ var PivotExampleProps = {
         "text": "Shared with me",
         "name": "shared",
         "content": "This is the shared with me tab."
-      },
-      {
-        "ellipsisIcon": "ellipsis"
       }
-    ]
+    ],
+    "hasEllipsis": true
   },
   "tabs": {
     "modifiers": [
@@ -72,11 +68,9 @@ var PivotExampleProps = {
         "text": "Shared with me",
         "name": "shared",
         "content": "This is the shared with me tab."
-      },
-      {
-        "ellipsisIcon": "ellipsis"
       }
-    ]
+    ],
+    "hasEllipsis": true
   },
   "largeTabs": {
     "modifiers": [
@@ -103,11 +97,9 @@ var PivotExampleProps = {
         "text": "Shared with me",
         "name": "shared",
         "content": "This is the shared with me tab."
-      },
-      {
-        "ellipsisIcon": "ellipsis"
       }
-    ]
+    ],
+    "hasEllipsis": true
   }
 }
 

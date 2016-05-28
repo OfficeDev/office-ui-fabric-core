@@ -12,35 +12,48 @@
 }
 
 .ms-Pivot-links {
+  font-size: 0; // Bring inline-block children together
   height: 40px;
   list-style-type: none;
-  white-space: nowrap;
   padding: 0;
-  font-size: 0; // Bring inline-block children together
+  white-space: nowrap;
 }
 
 .ms-Pivot-link {
   color: $ms-color-neutralPrimary;
   display: inline-block;
-  font-weight: $ms-font-weight-regular;
   font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   line-height: 40px;
   margin-right: 8px;
   padding: 0 8px;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 8px;
-    right: 8px;
-    height: 2px;
+  // Underline, not yet visible
+  &::before {
     background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 8px;
+    position: absolute;
+    right: 8px;
     transition: background-color $ms-duration2 $ms-ease2;
+  }
+
+  // Make room for the heavier text of the selected state
+  &::after {
+    color: transparent;
+    content: attr(title);
+    display: block;
+    font-weight: bold;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
   }
 
   //== State: Selected
@@ -48,7 +61,8 @@
     font-weight: $ms-font-weight-semibold;
     position: relative;
 
-    &::after {
+    // Show the underline
+    &::before {
       background-color: $ms-color-themePrimary;
     }
   }

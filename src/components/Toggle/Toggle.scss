@@ -141,6 +141,7 @@
       &:focus,
       &:hover {
         background-color: $ms-color-themeDarkAlt;
+        border-color: $ms-color-themeDarkAlt;
       }
     }
 
@@ -214,6 +215,7 @@
   transition-property: background, left;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+  outline: 0;
 
   &:hover,
   &:focus {

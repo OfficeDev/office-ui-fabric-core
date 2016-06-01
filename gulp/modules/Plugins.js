@@ -44,7 +44,13 @@ var Plugins = function() {
   this.fs = require('fs');
   this.sasslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');
+  this.handlebars = require('gulp-compile-handlebars');
+	this.tsc = require('gulp-typescript');
+	this.tslint = require("gulp-tslint");
   this.markdown = require('gulp-markdown');
+	this.lintspaces = require('gulp-lintspaces');
+	this.marked = require('gulp-marked');
+	this.prettify = require('gulp-html-prettify');
 };
 
 module.exports = new Plugins();

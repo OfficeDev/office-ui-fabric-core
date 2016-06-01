@@ -5,22 +5,6 @@
 // --------------------------------------------------
 // Fabric NavBar override styles
 
-
-.ms-NavBar.is-open {
-  .ms-NavBar-items {
-    z-index: 1;
-  }
-}
-
-.ms-NavBar-link {
-  color: $ms-color-neutralPrimary;
-  text-decoration: none;
-}
-
-@media (min-width: $ms-screen-md-min) {
-  .ms-NavBar-item {
-    &.is-selected {
-      font-size: inherit;
-    }
-  }
+.ms-CommandBar--navBar {
+  background-color: $ms-color-neutralLighter;
 }

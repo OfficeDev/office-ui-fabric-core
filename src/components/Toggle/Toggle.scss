@@ -8,83 +8,6 @@
 
 @import '../Label/Label.scss';
 
-
-// Toggle
-.ms-Toggle {
-  @include ms-font-m;
-  @include ms-u-normalize;
-  position: relative;
-  display: block;
-  margin-bottom: 26px;
-
-  // Action label (on/off) on the right of the toggle
-  .ms-Label {
-    position: relative;
-    padding: 0 0 0 62px;
-    font-size: $ms-font-size-s;
-  }
-
-  &:hover {
-    .ms-Label {
-      color: $ms-color-black; 
-    }
-  }
-
-  &:active {
-    .ms-Label { 
-      color: $ms-color-neutralPrimary; 
-    }
-  }
-
-  // Disabled state
-  &.is-disabled {
-    .ms-Label {
-     @include ms-Label-is-disabled;
-    }
-    .ms-Toggle-field {
-      background-color: $ms-color-white !important;
-      border-color: $ms-color-neutralTertiaryAlt !important;
-      pointer-events: none !important;
-      cursor: default !important;
-
-      &:before {
-        background-color: $ms-color-neutralTertiaryAlt !important;
-      }
-    }
-
-    .ms-Toggle-field,
-    .ms-Toggle-field:before {
-      @media screen and (-ms-high-contrast: active) {
-        border-color: $ms-color-contrastBlackDisabled;
-      }
-
-      @media screen and (-ms-high-contrast: black-on-white) {
-        border-color: $ms-color-contrastWhiteDisabled;
-      }
-    }
-  }
-}
-
-// Description text
-.ms-Toggle-description {
-  position: relative;
-  font-size: $ms-font-size-s;
-  vertical-align: top;
-  display: block;
-  margin-bottom: 8px;
-}
-
-// Toggle input field
-.ms-Toggle-field {
-  position: relative;
-  display: inline-block;
-  width: 57px;
-  height: 20px;
-  box-sizing: border-box;
-  border: 2.5px $ms-color-neutralTertiaryAlt solid;
-  cursor: pointer;
-}
-
 // Slider mixin
 @mixin ms-Toggle-slider($direction) {
   // Slider pseudo element
@@ -125,19 +48,31 @@
     }
   }
 
-  &:active { 
-    background-color: $ms-color-themePrimary; 
+  &:active {
+    background-color: $ms-color-themePrimary;
   }
 }
 
-// On/Off slide states
-.ms-Toggle-input {
-  position: absolute;
-  opacity: 0;
-  top: 0;
+// Toggle
+.ms-Toggle {
+  @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  position: relative;
+  display: block;
+  margin-bottom: 26px;
+
+  // Action label (on/off) on the right of the toggle
+  .ms-Label {
+    position: relative;
+    padding: 0 0 0 62px;
+    font-size: $ms-font-size-s;
+  }
 
   // 'Off' state - slider on the left
-  & + .ms-Toggle-field {
+  & .ms-Toggle-field {
     background-color: $ms-color-neutralLighter;
 
     @include ms-Toggle-slider(left);
@@ -153,7 +88,7 @@
   }
 
   // 'On' state - slider on the right
-  &:checked + .ms-Toggle-field {
+  & .ms-Toggle-field.is-selected {
     background-color: $ms-color-themePrimary;
 
     @include ms-Toggle-slider(right);
@@ -173,21 +108,89 @@
 
     @media screen and (-ms-high-contrast: black-on-white) {
       background-color: $ms-color-black;
-    }    
+    }
   }
 
-  &:focus,
-  &:hover {
-    & + .ms-Toggle-field { 
-      background-color: $ms-color-neutralLight; 
+  .ms-Toggle-field {
+    &:focus,
+    &:hover {
+      background-color: $ms-color-neutralLight;
+      outline: 0;
     }
-    
-    &:checked + .ms-Toggle-field {
-      background-color: $ms-color-themeDark; 
+
+    &.is-selected {
+      &:focus,
+      &:hover {
+        background-color: $ms-color-themeDark;
+      }
+    }
+
+    .ms-Label {
+      color: $ms-color-black;
+      user-select: none;
+    }
+
+    &:active {
+      .ms-Label {
+        color: $ms-color-neutralPrimary;
+      }
+    }
+  }
+
+  // Disabled state
+  &.is-disabled {
+    .ms-Label {
+      @include ms-Label-is-disabled;
+    }
+
+    .ms-Toggle-field {
+      background-color: $ms-color-white;
+      border-color: $ms-color-neutralTertiaryAlt;
+      pointer-events: none;
+      cursor: default;
+
+      &:before {
+        background-color: $ms-color-neutralTertiaryAlt;
+      }
+    }
+
+    .ms-Toggle-field,
+    .ms-Toggle-field:before {
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-contrastWhiteDisabled;
+      }
     }
   }
 }
 
+// Description text
+.ms-Toggle-description {
+  position: relative;
+  font-size: $ms-font-size-s;
+  vertical-align: top;
+  display: block;
+  margin-bottom: 8px;
+}
+
+// Toggle input field
+.ms-Toggle-field {
+  position: relative;
+  display: inline-block;
+  width: 57px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 2.5px $ms-color-neutralTertiaryAlt solid;
+  cursor: pointer;
+}
+
+// On/Off slide states
+.ms-Toggle-input {
+  display: none;
+}
 
 //== Modifier: Toggle with description text left
 //

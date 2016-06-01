@@ -10,23 +10,20 @@
   background-color: $ms-color-whiteTranslucent40;
   position: absolute;
   bottom: 0;
-  left:   0;
-  right:  0;
-  top:    0;
-  z-index: $ms-zIndex-Overlay;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: $ms-zIndex-back;
+  font-family: $ms-font-family-base;
+  display: none;
 }
 
+.ms-Overlay.is-visible {
+  display: block;
+}
 
 //== Modifier: Dark overlay
 //
-.ms-Overlay.ms-Overlay--dark {
+.ms-Overlay--dark {
   background-color: $ms-color-blackTranslucent40;
 }
-
-
-//== Modifier: Hidden overlay
-//
-&.ms-Overlay--none {
-  visibility: hidden;
-}
-

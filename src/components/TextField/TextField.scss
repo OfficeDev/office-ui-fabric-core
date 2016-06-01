@@ -1,17 +1,18 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+@import '../Label/Label';
+
 //
 // Office UI Fabric
 // --------------------------------------------------
 // Single line (input) and multiline (textarea) form field styles
 
-
-@import '../Label/Label.scss';
-
-
 .ms-TextField {
-  @include ms-font-m;
   @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   margin-bottom: 8px;
 }
 
@@ -49,7 +50,7 @@
   @include ms-u-normalize;
   border: 1px solid $ms-color-neutralTertiaryAlt;
   border-radius: 0;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
   height: 32px;
@@ -95,7 +96,7 @@
 
   .ms-Label {
     position: absolute;
-    font-family: $ms-font-family-semilight;
+    font-weight: $ms-font-weight-semilight;
     font-size: $ms-font-size-s;
     color: $ms-color-neutralSecondary;
     padding: 7px 0 7px 10px;
@@ -194,11 +195,61 @@
 //
 .ms-TextField.ms-TextField--multiline {
   .ms-TextField-field {
-    @include ms-font-s;
+    color: $ms-color-neutralPrimary;
+    font-family: $ms-font-family-base;
+    font-size: $ms-font-size-s;
+    font-weight: $ms-font-weight-regular;
     line-height: 17px;
     min-height: 60px;
     min-width: 260px;
     padding-top: 6px;
     overflow: auto;
+  }
+}
+
+
+
+//== Modifier: Single line (default), underlined
+//
+.ms-TextField.ms-TextField--textFieldUnderlined {
+  border: 0;
+  border-bottom: 1px solid $ms-color-themePrimary;
+  display: table;
+  width: 100%;
+  min-width: 180px;
+
+  &:hover {
+    border-color: $ms-color-neutralSecondaryAlt;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $ms-color-themePrimary;
+  }
+
+  .ms-TextField-field {
+    border: 0;
+    display: table-cell;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 2px;
+
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &.is-disabled {
+    border-bottom-color: $ms-color-neutralLight;
+
+    .ms-Label {
+      @include ms-Label-is-disabled;
+    }
+
+    .ms-TextField-field {
+      background-color: transparent;
+      color: $ms-color-neutralTertiary;
+    }
   }
 }

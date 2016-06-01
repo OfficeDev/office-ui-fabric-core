@@ -8,35 +8,13 @@
     "Label",
     "Persona",
     "PersonaCard",
-    "Spinner"
+    "Spinner",
+    "TextField",
+    "ContextualHost",
+    "OrgChart"
   ],
   "wrapBranches": true,
   "fileOrder": [
-    "PeoplePicker.html",
-    "PeoplePicker.Compact.html",
-    "PeoplePicker.Disconnected.html",
-    "PeoplePicker.MembersList.html",
-    "PeoplePicker.Facepile.html"
-  ],
-  "branches": [
-    {
-      "name": "Regular",
-      "default": true
-    },
-    {
-      "name": "Compact",
-      "template": "PeoplePicker.Compact.html",
-      "class": "ms-PeoplePicker--compact"
-    },
-    {
-      "name": "Disconnected",
-      "notes": "When the search can not be completed, an error message is shown.",
-      "template": "PeoplePicker.Disconnected.html"
-    },
-    {
-      "name": "Facepile",
-      "template": "PeoplePicker.Facepile.html",
-      "class": "ms-PeoplePicker--Facepile"
-    }
+    "PeoplePicker.html"
   ]
 }

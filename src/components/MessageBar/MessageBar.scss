@@ -5,10 +5,6 @@
 // --------------------------------------------------
 // MessageBar Styles
 
-/*
-  Base template file
-*/
-
 $MessageBar-padding: 8px;
 
 .ms-MessageBar {
@@ -91,7 +87,7 @@ $MessageBar-padding: 8px;
   .ms-Icon {
     font-size: $ms-font-size-s;
     top: 3px;
-    
+
     &:before {
       margin-left: 1px;
     }

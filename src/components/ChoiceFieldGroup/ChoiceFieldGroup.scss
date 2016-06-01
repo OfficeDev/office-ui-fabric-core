@@ -1,0 +1,12 @@
+//== Component: Choicefield group
+//
+// Choice field groups contain multiple radio buttons or checkboxes
+.ms-ChoiceFieldGroup {
+  margin-bottom: 4px;
+  font-family: $ms-font-family-base;
+
+  .ms-ChoiceFieldGroup-list {
+    padding: 0;
+    margin: 0;
+  }
+}

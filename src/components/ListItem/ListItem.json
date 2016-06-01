@@ -16,31 +16,60 @@
   "dependencies": [
     "List"
   ],
-  "branches": [
-    {
-      "name": "Standard",
-      "default": true
-    },
-    {
-      "name": "With image",
-      "template": "ListItem.Image.html"
-    },
-    {
-      "name": "Unread",
-      "class": "is-unread"
-    },
-    {
-      "name": "Unseen",
-      "class": "is-unseen"
-    },
-    {
-      "name": "Selectable",
-      "class": "is-selectable"
-    },
-    {
-      "name": "Document",
-      "template": "ListItem.Document.html",
-      "class": "ms-ListItem--document"
-    }
-  ]
+  "props":  {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+    "metaText": "2:42p",
+    "actions": [{}]
+  },
+  "propsDocument":  {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "metaText": "2:42p",
+    "modifier": "document",
+    "listIcon": "ppt",
+    "actions": [{}]
+  },
+  "propsImage":  {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+    "metaText": "2:42p",
+    "image": true,
+    "modifier": "image",
+    "actions": [{}]
+  },
+  "propsSelectable": {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+    "metaText": "2:42p",
+    "state": "is-selectable",
+    "actions": [{}]
+  },
+  "propsSelected": {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+    "metaText": "2:42p",
+    "state": "is-selected is-selectable",
+    "actions": [{}]
+  },
+  "propsUnread": {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+    "metaText": "2:42p",
+    "state": "is-unread is-selectable",
+    "actions": [{}]
+  },
+  "propsUnseen": {
+    "primaryText": "Alton Lafferty",
+    "secondaryText": "Meeting notes",
+    "tertiaryText": "Today we discussed the importance of a, b, and c in regards to d.",
+    "metaText": "2:42p",
+    "state": "is-unseen is-selectable",
+    "actions": [{}]
+  }
 }

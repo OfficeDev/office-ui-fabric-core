@@ -212,7 +212,7 @@
   border: 2px solid $ms-color-neutralTertiary;
   border-radius: 20px;
   cursor: pointer;
-  transition-property: background, left;
+  transition-property: background, left, border-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(.4, 0, .23, 1);
   outline: 0;

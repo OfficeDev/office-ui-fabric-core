@@ -293,6 +293,16 @@
   }
 }
 
+@mixin transform-translateX($distance) {
+  @include LTR {
+    transform: translateX($distance);
+  }
+
+  @include RTL {
+    transform: translateX(-$distance);
+  }
+}
+
 // Transitions. Only supported when ONLY left/right are declared
 @mixin transition-property($direction) {
   @if $direction == left {

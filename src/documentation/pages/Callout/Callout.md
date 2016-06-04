@@ -59,7 +59,7 @@ This component has only the default state.
                     <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
                 </div>
                 <div class="ms-Callout-actions">
-                    <a href="#" class="ms-Callout-link ms-Link ms-Link--hero">Learn more</a>
+                    <a href="#" class="ms-Callout-link">Learn more</a>
                 </div>
             </div>    
         </div>

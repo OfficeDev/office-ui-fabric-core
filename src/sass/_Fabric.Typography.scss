@@ -38,27 +38,11 @@
   font-weight: $ms-font-weight-semilight;
 }
 
-// Medium Plus Styles
-@mixin ms-font-m-plus {
-  color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
-  font-size: $ms-font-size-m-plus;
-  font-weight: $ms-font-weight-regular;
-}
-
 // Medium Styles
 @mixin ms-font-m {
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
-  font-weight: $ms-font-weight-regular;
-}
-
-// Small Plus Styles
-@mixin ms-font-s-plus {
-  color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
-  font-size: $ms-font-size-s-plus;
   font-weight: $ms-font-weight-regular;
 }
 

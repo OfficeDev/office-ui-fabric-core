@@ -5,6 +5,7 @@
 // --------------------------------------------------
 // Typographic mixins arranged with appropriate size and family combinations.
 @import 'Fabric.Typography.Variables';
+@import 'Fabric.Typography.Mixins';
 
 // Super Styles (LIMITED USE)
 @mixin ms-font-su {

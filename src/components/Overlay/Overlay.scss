@@ -7,6 +7,7 @@
 
 
 .ms-Overlay {
+  @include ms-baseFont;
   background-color: $ms-color-whiteTranslucent40;
   position: absolute;
   bottom: 0;
@@ -14,7 +15,6 @@
   right: 0;
   top: 0;
   z-index: $ms-zIndex-back;
-  font-family: $ms-font-family-base;
   display: none;
 }
 

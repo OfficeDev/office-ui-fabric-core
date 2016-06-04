@@ -7,7 +7,7 @@
 
 
 .ms-Breadcrumb {
-  font-family: $ms-font-family-base;
+  @include ms-baseFont;
   margin: 23px 0 1px;
 
   &.is-overflow {

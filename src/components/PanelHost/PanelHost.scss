@@ -2,6 +2,7 @@ $Panel-width-lightDismiss: 272px;
 
 // The panel covers the entire screen.
 .ms-PanelHost {
+  @include ms-baseFont;
   bottom: 0;
   left: 0;
   position: absolute;
@@ -9,7 +10,6 @@ $Panel-width-lightDismiss: 272px;
   top: 0;
   pointer-events: none;
   z-index: $ms-zIndex-front;
-  font-family: $ms-font-family-base;
 }
 
 //== State: When the panel is open.

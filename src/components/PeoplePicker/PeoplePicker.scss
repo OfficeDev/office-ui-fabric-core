@@ -9,9 +9,9 @@ $personaItemHeight: 42px;
 $ms-Persona-leftPadding: 16px;
 
 .ms-PeoplePicker {
+  @include ms-baseFont;
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   background-color: $ms-color-white;
   margin-bottom: 10px;

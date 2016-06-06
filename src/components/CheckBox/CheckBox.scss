@@ -21,7 +21,7 @@
     padding: 0 0 0 26px;
   }
 
-  // disabled
+  // Disabled
   & .ms-Choice-field.is-disabled {
     pointer-events: none;
     cursor: default;
@@ -50,24 +50,26 @@
     cursor: pointer;
     margin-top: 8px;
     position: relative;
+    outline: 0;
 
-    // The actual styled CheckBox element - radio button by default
-    &:after {
+    &:before {
       content: '';
       display: inline-block;
-      border: 1px $ms-color-neutralTertiaryAlt solid;
-      width: 19px;
-      height: 19px;
+      border: 2px solid $ms-color-neutralTertiary;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
       font-weight: normal;
       left: -1px;
       top: -1px;
-      border-radius: 50%;
       position: absolute;
+      box-sizing: border-box;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
     }
 
-    &:hover {
-      &:after {
+    &:hover,
+    &:focus {
+      &:before {
         border-color: $ms-color-neutralSecondaryAlt;
       }
 
@@ -76,21 +78,46 @@
       }
     }
 
+    //== Modifier: A radio button
+    // 
+    &.ms-Choice-type--radio {
+      &:before {
+        border-radius: 50%;
+      }
+    }
+
+    //== Modifier: A checkbox
+    // 
     &.ms-Choice-type--checkbox {
-      &:after {
+      &:before {
         border-radius: 0;
       }
 
       &.is-checked {
-        &:hover:before,
         &:before {
+          border: 10px solid $ms-color-themePrimary;
+          background-color: $ms-color-themePrimary;
+        }
+
+        &:hover:before,
+        &:focus:before {
+          border-color: $ms-color-themeDarkAlt;
+        }
+
+        &:hover:after,
+        &:after {
           @include ms-Icon;
-          content: '\e041';
+          content: '\e73e';
+          font-weight: 900;
           background-color: transparent;
           border-radius: 0;
           font-size: $ms-font-size-s-plus;
           top: 3px;
           left: 3px;
+          width: 10px;
+          height: 10px;
+          border: 0;
+          color: $ms-color-white;
         }
       }
     }
@@ -98,21 +125,17 @@
     // Radio button by default
     &.is-checked {
       // Circle indicating a checked radio button
-      &:before {
-        background-color: $ms-color-neutralSecondary;
-        border-color: $ms-color-neutralSecondary;
-        color: $ms-color-neutralSecondary;
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
         border-radius: 50%;
-        content: '\00a0';
-        display: inline-block;
         position: absolute;
-        top: 4px;
-        right: 0;
+        top: 8px;
         bottom: 0;
-        left: 4px;
-        width: 11px;
-        height: 11px;
-        box-sizing: border-box;
+        right: 0;
+        left: 8px;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
       }
 
       &:hover:before {

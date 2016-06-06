@@ -40,7 +40,7 @@
     }
   }
 
-  & .ms-Choice-type--radio.in-focus:after {
+  & .ms-Choice-type--radio.in-focus:before {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
@@ -50,24 +50,42 @@
     cursor: pointer;
     margin-top: 8px;
     position: relative;
+    outline: 0;
 
     // The actual styled RadioButton element - radio button by default
-    &:after {
+    &:before {
       content: '';
       display: inline-block;
-      border: 1px $ms-color-neutralTertiaryAlt solid;
-      width: 19px;
-      height: 19px;
+      border: 2px solid $ms-color-neutralTertiary;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
       font-weight: normal;
       left: -1px;
       top: -1px;
       border-radius: 50%;
       position: absolute;
+      box-sizing: border-box;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
     }
 
-    &:hover {
-      &:after {
+    // Circle indicating a checked radio button
+    &:after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      position: absolute;
+      top: 8px;
+      bottom: 0;
+      right: 0;
+      left: 8px;
+      transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
         border-color: $ms-color-neutralSecondaryAlt;
       }
 
@@ -78,11 +96,14 @@
 
     // Radio button by default
     &.is-checked {
-      // Circle indicating a checked radio button
       &:before {
-        background-color: $ms-color-neutralSecondary;
-        border-color: $ms-color-neutralSecondary;
-        color: $ms-color-neutralSecondary;
+        border-color: $ms-color-themePrimary;
+      }
+      
+      // Circle indicating a checked radio button
+      &:after {
+        background-color: $ms-color-themePrimary;
+        color: $ms-color-white;
         border-radius: 50%;
         content: '\00a0';
         display: inline-block;
@@ -91,14 +112,9 @@
         right: 0;
         bottom: 0;
         left: 4px;
-        width: 11px;
-        height: 11px;
+        width: 10px;
+        height: 10px;
         box-sizing: border-box;
-      }
-
-      &:hover:before {
-        background-color: $ms-color-neutralDark;
-        color: $ms-color-neutralDark;
       }
     }
   }

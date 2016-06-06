@@ -16,7 +16,7 @@ namespace fabric {
   const PERSONA_IMAGE = ".ms-Persona-image";
   const PERSONA_PRIMARY_CLASS = ".ms-Persona-primaryText";
   const PERSONA_SECONDARY_CLASS = ".ms-Persona-secondaryText";
-  const PANEL_CLASS = ".ms-Persona--facePile";
+  const PANEL_CLASS = ".ms-Panel";
 
   interface PersonaCollection {
     item: Element;
@@ -44,7 +44,7 @@ namespace fabric {
       this._facePile = container;
       this._createPersonaCollection();
       this._addButton = this._facePile.querySelector(FACEPILE_ADD_BUTTON_CLASS);
-      this._panel = <Node>this._facePile.querySelector(PANEL_CLASS);
+      this._panel = this._facePile.querySelector(PANEL_CLASS);
       this._setOpenPanelClick();
     }
 
@@ -52,7 +52,8 @@ namespace fabric {
       // var PanelDefaultExamplePanel = document.querySelector(".ms-PanelDefaultExample .ms-Panel");
       this._addButton.addEventListener("click", function() {
         this._panel = new fabric['Panel'](this._panel);
-      }, false);
+        // console.log(this._panel);
+      }.bind(this), false);
     }
 
     private _createPersonaCollection() {

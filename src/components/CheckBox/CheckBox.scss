@@ -53,6 +53,7 @@
     position: relative;
     outline: 0;
 
+    // The checkbox square container
     &:before {
       content: '';
       display: inline-block;
@@ -96,7 +97,8 @@
         &:focus:before {
           border-color: $ms-color-themeDarkAlt;
         }
-
+        
+        // The checkbox check mark
         &:after {
           @include ms-Icon;
           position: absolute;

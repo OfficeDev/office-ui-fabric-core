@@ -44,7 +44,7 @@
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-  // The RadioButton radio button or checkbox
+  // The actual radio button element
   .ms-Choice-type--radio {
     display: inline-block;
     cursor: pointer;
@@ -52,7 +52,7 @@
     position: relative;
     outline: 0;
 
-    // The actual styled RadioButton element - radio button by default
+    // The radio button circle container
     &:before {
       content: '';
       display: inline-block;
@@ -63,10 +63,10 @@
       font-weight: normal;
       left: -1px;
       top: -1px;
-      border-radius: 50%;
       position: absolute;
       box-sizing: border-box;
       transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+      border-radius: 50%;
     }
 
     // Circle indicating a checked radio button

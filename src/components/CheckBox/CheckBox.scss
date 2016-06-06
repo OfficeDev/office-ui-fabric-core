@@ -21,7 +21,8 @@
     padding: 0 0 0 26px;
   }
 
-  // Disabled
+  //== State: A disabled checkbox
+  //
   & .ms-Choice-field.is-disabled {
     pointer-events: none;
     cursor: default;
@@ -44,7 +45,7 @@
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
-  // The CheckBox radio button or checkbox
+  // The actual checkbox element
   .ms-Choice-field {
     display: inline-block;
     cursor: pointer;
@@ -78,14 +79,6 @@
       }
     }
 
-    //== Modifier: A radio button
-    // 
-    &.ms-Choice-type--radio {
-      &:before {
-        border-radius: 50%;
-      }
-    }
-
     //== Modifier: A checkbox
     // 
     &.ms-Choice-type--checkbox {
@@ -104,9 +97,9 @@
           border-color: $ms-color-themeDarkAlt;
         }
 
-        &:hover:after,
         &:after {
           @include ms-Icon;
+          position: absolute;
           content: '\e73e';
           font-weight: 900;
           background-color: transparent;
@@ -119,28 +112,6 @@
           border: 0;
           color: $ms-color-white;
         }
-      }
-    }
-
-    // Radio button by default
-    &.is-checked {
-      // Circle indicating a checked radio button
-      &:after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        position: absolute;
-        top: 8px;
-        bottom: 0;
-        right: 0;
-        left: 8px;
-        transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
-      }
-
-      &:hover:before {
-        background-color: $ms-color-neutralDark;
-        color: $ms-color-neutralDark;
       }
     }
   }

@@ -21,12 +21,9 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       this._container = container;
-      this._choiceFieldLI = <HTMLLIElement>this._container.querySelector(".ms-Choice-field");
+      this._choiceFieldLI = <HTMLLIElement>this._container.querySelector(".ms-CheckBox-field");
       if (this._choiceFieldLI.getAttribute("aria-checked") === "true") {
           this._choiceFieldLI.classList.add("is-checked");
-      }
-      if (this._choiceFieldLI.getAttribute("role") === "checkbox") {
-          this._choiceFieldLI.classList.add("ms-Choice-type--checkbox");
       }
       this._addListeners();
     }

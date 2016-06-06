@@ -19,6 +19,7 @@
   .ms-Label {
     font-size: $ms-font-size-m;
     padding: 0 0 0 26px;
+    cursor: pointer;
   }
 
   //== State: A disabled checkbox
@@ -52,6 +53,7 @@
     margin-top: 8px;
     position: relative;
     outline: 0;
+    cursor: pointer;
 
     // The checkbox square container
     &:before {

@@ -9,7 +9,10 @@ namespace fabric {
    * Adds basic demonstration functionality to .ms-RadioButton components.
    *
    */
-  export class RadioButton extends CheckBox {
+  export class RadioButton {
+
+    protected _choiceField: HTMLElement;
+    private _container: HTMLElement;
 
     /**
      *
@@ -17,22 +20,48 @@ namespace fabric {
      * @constructor
      */
     constructor(container: HTMLElement) {
-      super(container);
-      if (this._choiceFieldLI.getAttribute("role") === "radio") {
-          this._choiceFieldLI.classList.add("ms-Choice-type--radio");
+      this._container = container;
+      this._choiceField = <HTMLElement>this._container.querySelector(".ms-RadioButton-field");
+      if (this._choiceField.getAttribute("aria-checked") === "true") {
+          this._choiceField.classList.add("is-checked");
       }
+      this._addListeners();
+    }
+
+    public getValue(): boolean {
+      return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
+    }
+
+    public toggle(): void {
+        if (this.getValue()) {
+          this.unCheck();
+        } else {
+          this.check();
+        }
+    }
+
+    public check(): void {
+      this._choiceField.setAttribute("aria-checked", "true");
+      this._choiceField.classList.add("is-checked");
+    }
+
+    public unCheck(): void {
+      this._choiceField.setAttribute("aria-checked", "false");
+      this._choiceField.classList.remove("is-checked");
     }
 
     public removeListeners(): void {
-      super.removeListeners();
-      this._choiceFieldLI.removeEventListener("click", this._RadioClickHandler.bind(this));
-      this._choiceFieldLI.addEventListener("keydown", this._RadioKeydownHandler.bind(this));
+      this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
+      this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
+      this._choiceField.removeEventListener("click", this._RadioClickHandler.bind(this));
+      this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this));
     }
 
     protected _addListeners(): void {
-      super._addListeners({ignore: ["keydown", "click"]});
-      this._choiceFieldLI.addEventListener("click", this._RadioClickHandler.bind(this), false);
-      this._choiceFieldLI.addEventListener("keydown", this._RadioKeydownHandler.bind(this), false);
+      this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
+      this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
+      this._choiceField.addEventListener("click", this._RadioClickHandler.bind(this), false);
+      this._choiceField.addEventListener("keydown", this._RadioKeydownHandler.bind(this), false);
     }
 
     private _RadioClickHandler(event: MouseEvent): void {
@@ -46,21 +75,29 @@ namespace fabric {
         bubbles : true,
         cancelable : true,
         detail : {
-          name: this._choiceFieldLI.getAttribute("name"),
+          name: this._choiceField.getAttribute("name"),
           item: this
         }
       };
-      this._choiceFieldLI.dispatchEvent(new CustomEvent("msChoicefield", objDict));
+      this._choiceField.dispatchEvent(new CustomEvent("msChoicefield", objDict));
     }
 
     private _RadioKeydownHandler(event: KeyboardEvent): void {
       if (event.keyCode === 32) {
         event.stopPropagation();
         event.preventDefault();
-        if (!this._choiceFieldLI.classList.contains("is-disabled")) {
+        if (!this._choiceField.classList.contains("is-disabled")) {
             this._dispatchSelectEvent();
         }
       }
+    }
+
+    private _FocusHandler(): void {
+      this._choiceField.classList.add("in-focus");
+    }
+
+    private _BlurHandler(): void {
+      this._choiceField.classList.remove("in-focus");
     }
   }
 }

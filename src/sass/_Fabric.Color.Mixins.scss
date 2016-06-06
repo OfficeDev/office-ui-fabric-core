@@ -197,8 +197,12 @@
   background-color: $ms-color-successBackground;
 }
 
-@mixin ms-bgColor-alert {
-  background-color: $ms-color-alertBackground;
+@mixin ms-bgColor-severeWarning {
+  background-color: $ms-color-severeWarningBackground;
+}
+
+@mixin ms-bgColor-warning {
+  background-color: $ms-color-warningBackground;
 }
 
 @mixin ms-bgColor-error {
@@ -292,8 +296,8 @@
   border-color: $ms-color-neutralLighterAlt;
 }
 
-@mixin ms-borderColor-white { 
-  border-color: $ms-color-white; 
+@mixin ms-borderColor-white {
+  border-color: $ms-color-white;
 }
 
 // Brand and accent colors

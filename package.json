@@ -40,6 +40,7 @@
     "gulp-folders": "^1.1.0",
     "gulp-foreach": "^0.1.0",
     "gulp-header": "^1.2.2",
+    "gulp-html-prettify": "0.0.1",
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^2.0.0",
     "gulp-lintspaces": "^0.4.1",

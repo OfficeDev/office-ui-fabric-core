@@ -6,7 +6,6 @@
 // CheckBox styles
 
 
-// Unselected, radio button (default)
 .ms-CheckBox {
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
@@ -63,7 +62,6 @@
   margin-top: 8px;
   position: relative;
   outline: 0;
-  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -90,7 +88,7 @@
         border-color: $ms-color-themeDarkAlt;
       }
     }
-    
+
     .ms-CheckBox-fieldIcon {
       display: block;
     }
@@ -112,7 +110,7 @@
       color: $ms-color-neutralTertiary;
     }
   }
-  
+
   //== State: A checkbox in focus
   //
   &.in-focus {

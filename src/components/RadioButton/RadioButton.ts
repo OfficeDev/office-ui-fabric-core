@@ -33,11 +33,11 @@ namespace fabric {
     }
 
     public toggle(): void {
-        if (this.getValue()) {
-          this.unCheck();
-        } else {
-          this.check();
-        }
+      if (this.getValue()) {
+        this.unCheck();
+      } else {
+        this.check();
+      }
     }
 
     public check(): void {

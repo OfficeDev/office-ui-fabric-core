@@ -35,7 +35,7 @@
   position: absolute;
   box-sizing: border-box;
   transition-property: border-color;
-  transition-duration: 250ms;
+  transition-duration: 150ms;
   transition-timing-function: cubic-bezier(.4, 0, .23, 1);
   border-radius: 50%;
 }
@@ -50,7 +50,8 @@
   left: 8px;
   bottom: 0;
   right: 0;
-  transition-duration: 250ms;
+  transition-property: top, left, width, height;
+  transition-duration: 150ms;
   transition-timing-function: cubic-bezier(.4, 0, .23, 1);
   box-sizing: border-box;
 }

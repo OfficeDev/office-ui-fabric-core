@@ -125,6 +125,7 @@
 //== Modifier: Hero button
 //
 .ms-Button.ms-Button--hero {
+  align-items: center;
   background-color: transparent;
   border: 0;
   display: flex;
@@ -139,10 +140,10 @@
     .ms-Icon {
       border-radius: 18px;
       border: 1px solid $ms-color-themePrimary;
+      font-size: $ms-font-size-s;
       height: 18px;
       line-height: 18px;
       width: 18px;
-      font-size: $ms-font-size-s;
     }
   }
 
@@ -150,7 +151,6 @@
     color: $ms-color-themePrimary;
     font-size: $ms-font-size-xl;
     font-weight: $ms-font-weight-light;
-    line-height: 19px;
     position: relative;
     text-decoration: none;
   }

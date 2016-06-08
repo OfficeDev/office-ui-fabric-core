@@ -4,13 +4,13 @@ var CommandBarExampleModel = {
       "component": "SearchBox",
       "props":  {
         "label": "Search",
-        "icon": "search",
+        "icon": "Search",
         "defaultValue": "",
         "modifier": "commandBar",
         "clearButton": {
           "component": "CommandButton",
           "props": {
-            "icon": "x",
+            "icon": "Cancel",
             "modifier": "noLabel",
             "tag": "button",
             "customClasses": "ms-SearchBox-close"
@@ -23,7 +23,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -32,9 +32,9 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "New",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
-          "dropdownIcon": "chevronDown",
+          "dropdownIcon": "ChevronDown",
           "iconColor": "themePrimary",
           "dropdown": {
             "component": "ContextualMenu",
@@ -45,7 +45,7 @@ var CommandBarExampleModel = {
                 {
                   "title": "Folder",
                   "state": "",
-                  "icon": "folder"
+                  "icon": "Folder"
                 },
                 {
                   "modifier": "divider",
@@ -53,20 +53,20 @@ var CommandBarExampleModel = {
                 },
                 {
                   "title": "Plain Text Document",
-                  "icon": "document"
+                  "icon": "Page"
                 },
                 {
-                  "title": "A Dog",
-                  "icon": "dogAlt"
+                  "title": "A Cat",
+                  "icon": "Cat"
                 },
                 {
                   "title": "The Sun",
                   "state": "",
-                  "icon": "sun"
+                  "icon": "Sunny"
                 },
                 {
                   "title": "Money",
-                  "icon": "money"
+                  "icon": "Money"
                 }
               ]
             }
@@ -77,7 +77,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -86,7 +86,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -95,7 +95,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -105,7 +105,7 @@ var CommandBarExampleModel = {
       {
         "component": "CommandButton",
         "props":  {
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "modifier": "noLabel",
           "iconColor": "themePrimary"
@@ -115,7 +115,7 @@ var CommandBarExampleModel = {
     "overflow": {
       "component": "CommandButton",
       "props":  {
-        "icon": "ellipsis",
+        "icon": "More",
         "customClasses": "ms-CommandBar-overflowButton",
         "tag": "button",
         "modifier": "noLabel",
@@ -128,7 +128,7 @@ var CommandBarExampleModel = {
               {
                 "title": "Folder",
                 "state": "",
-                "icon": "folder"
+                "icon": "Folder"
               },
               {
                 "modifier": "divider",
@@ -136,20 +136,20 @@ var CommandBarExampleModel = {
               },
               {
                 "title": "Plain Text Document",
-                "icon": "document"
+                "icon": "Page"
               },
               {
-                "title": "A Dog",
-                "icon": "dogAlt"
+                "title": "A Cat",
+                "icon": "Cat"
               },
               {
                 "title": "The Sun",
                 "state": "",
-                "icon": "sun"
+                "icon": "Sunny"
               },
               {
                 "title": "Money",
-                "icon": "money"
+                "icon": "Money"
               }
             ]
           }
@@ -161,7 +161,7 @@ var CommandBarExampleModel = {
     "transientComponent": {
       "component": "CommandButton",
       "props":  {
-        "icon": "menu",
+        "icon": "GlobalNavButton",
         "modifier": "actionButton",
         "tag": "button",
         "iconColor": "themePrimary"
@@ -170,7 +170,7 @@ var CommandBarExampleModel = {
     "overflow": {
       "component": "CommandButton",
       "props":  {
-        "icon": "ellipsis",
+        "icon": "More",
         "customClasses": "ms-CommandBar-overflowButton",
         "tag": "button",
         "modifier": "noLabel",
@@ -216,7 +216,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "search",
+          "icon": "Search",
           "tag": "button",
           "iconColor": "themePrimary",
           "modifier": "noLabel"
@@ -226,7 +226,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -235,8 +235,8 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Reply",
-          "icon": "circleFill",
-          "splitIcon": "chevronDown",
+          "icon": "CircleRing",
+          "splitIcon": "ChevronDown",
           "iconColor": "themePrimary",
           "tag": "button",
           "dropdown": {
@@ -273,7 +273,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -282,7 +282,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Command",
-          "icon": "circleFill",
+          "icon": "CircleRing",
           "tag": "button",
           "iconColor": "themePrimary"
         }
@@ -315,13 +315,13 @@ var CommandBarExampleModel = {
       "component": "SearchBox",
       "props":  {
         "label": "Search photos",
-        "icon": "search",
+        "icon": "Search",
         "defaultValue": "",
         "modifier": "commandBar",
         "clearButton": {
           "component": "CommandButton",
           "props": {
-            "icon": "x",
+            "icon": "Cancel",
             "modifier": "noLabel",
             "tag": "button",
             "customClasses": "ms-SearchBox-close"
@@ -332,7 +332,7 @@ var CommandBarExampleModel = {
     "overflow": {
       "component": "CommandButton",
       "props":  {
-        "icon": "ellipsis",
+        "icon": "More",
         "customClasses": "ms-CommandBar-overflowButton",
         "tag": "button",
         "modifier": "noLabel",
@@ -379,7 +379,7 @@ var CommandBarExampleModel = {
         "props":  {
           "label": "All Photos",
           "tag": "button",
-          "dropdownIcon": "chevronDown",
+          "dropdownIcon": "ChevronDown",
           "iconColor": "themePrimary",
           "modifier": "pivot",
           "state": "is-active",
@@ -466,7 +466,7 @@ var CommandBarExampleModel = {
           "tag": "button",
           "modifier": "dropdown",
           "iconColor": "themePrimary",
-          "dropdownIcon": "chevronDown",
+          "dropdownIcon": "ChevronDown",
           "dropdown": {
             "component": "ContextualMenu",
             "props":  {
@@ -507,7 +507,7 @@ var CommandBarExampleModel = {
       {
         "component": "CommandButton",
         "props":  {
-          "icon": "circleInfo",
+          "icon": "Info",
           "tag": "button",
           "modifier": "noLabel",
           "iconColor": "themePrimary"

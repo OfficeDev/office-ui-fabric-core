@@ -19,7 +19,14 @@
     font-size: $ms-font-size-m;
     padding: 0 0 0 26px;
     cursor: pointer;
+    display: inline-block;
   }
+}
+
+// The hidden input
+.ms-CheckBox-input {
+  position: absolute;
+  opacity: 0;
 }
 
 // The checkbox square container
@@ -62,6 +69,7 @@
   margin-top: 8px;
   position: relative;
   outline: 0;
+  vertical-align: top;
 
   &:hover,
   &:focus {
@@ -76,6 +84,7 @@
 
   //== State: When the checkbox is checked
   //
+  .ms-CheckBox-input:checked,
   &.is-checked {
     .ms-CheckBox-fieldBox {
       border: 10px solid $ms-color-themePrimary;

@@ -12,6 +12,7 @@ namespace fabric {
   export class RadioButton {
 
     protected _choiceField: HTMLElement;
+    protected _choiceInput: HTMLInputElement;
     private _container: HTMLElement;
 
     /**
@@ -22,6 +23,7 @@ namespace fabric {
     constructor(container: HTMLElement) {
       this._container = container;
       this._choiceField = <HTMLElement>this._container.querySelector(".ms-RadioButton-field");
+      this._choiceInput = <HTMLInputElement>this._container.querySelector(".ms-RadioButton-input");
       if (this._choiceField.getAttribute("aria-checked") === "true") {
           this._choiceField.classList.add("is-checked");
       }
@@ -43,11 +45,13 @@ namespace fabric {
     public check(): void {
       this._choiceField.setAttribute("aria-checked", "true");
       this._choiceField.classList.add("is-checked");
+      this._choiceInput.checked = true;
     }
 
     public unCheck(): void {
       this._choiceField.setAttribute("aria-checked", "false");
       this._choiceField.classList.remove("is-checked");
+      this._choiceInput.checked = false;
     }
 
     public removeListeners(): void {

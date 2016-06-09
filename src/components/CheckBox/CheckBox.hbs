@@ -1,13 +1,12 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
 <div class="ms-CheckBox"> 
-  <div role="{{props.type}}"
-      class="ms-CheckBox-field {{#if props.disabled}} is-disabled {{/if}}"
-      tabindex="0"
-      aria-checked="{{props.checked}}"
-      name="{{props.name}}">
-      <input type="checkbox" class="ms-CheckBox-input">
-      <div class="ms-CheckBox-fieldBox"></div>
-      <i class="ms-CheckBox-fieldIcon ms-Icon ms-Icon--CheckMark"></i>
-      <label class="ms-Label">{{props.label}}</label>
-  </div>
-</div> 
+    <input tabindex="-1" type="checkbox" class="ms-CheckBox-input">
+    <label role="{{props.type}}"
+        class="ms-CheckBox-field {{#if props.disabled}} is-disabled {{/if}}"
+        tabindex="0"
+        aria-checked="{{props.checked}}"
+        name="{{props.name}}">
+        <span class="ms-Label">{{props.label}}</span>
+    </label>
+</div>

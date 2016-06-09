@@ -19,29 +19,36 @@
     font-size: $ms-font-size-m;
     padding: 0 0 0 26px;
     cursor: pointer;
+    display: inline-block;
   }
 }
 
+// The hidden input
+.ms-RadioButton-input {
+  position: absolute;
+  opacity: 0;
+}
+
 // The radio button circle container
-.ms-RadioButton-fieldCircle {
+.ms-RadioButton-field:before {
+  content: '';
   display: inline-block;
   border: 2px solid $ms-color-neutralTertiary;
   width: 20px;
   height: 20px;
   cursor: pointer;
   font-weight: normal;
-  left: -1px;
-  top: -1px;
   position: absolute;
   box-sizing: border-box;
   transition-property: border-color;
-  transition-duration: 150ms;
+  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(.4, 0, .23, 1);
   border-radius: 50%;
 }
 
 // The inner circle indicating a checked radio button
-.ms-RadioButton-fieldCircleIndicator {
+.ms-RadioButton-field:after {
+  content: '';
   width: 0;
   height: 0;
   border-radius: 50%;
@@ -63,32 +70,16 @@
   margin-top: 8px;
   position: relative;
   outline: 0;
+  vertical-align: top;
 
   &:hover,
   &:focus {
-    .ms-RadioButton-fieldCircle {
+    &:before {
       border-color: $ms-color-neutralSecondaryAlt;
     }
 
     .ms-Label {
       color: $ms-color-black;
-    }
-  }
-
-  //== State: When the radio button is selected (checked)
-  //
-  &.is-checked {
-    .ms-RadioButton-fieldCircle {
-      border-color: $ms-color-themePrimary;
-    }
-
-    // Circle indicating a checked radio button
-    .ms-RadioButton-fieldCircleIndicator {
-      background-color: $ms-color-themePrimary;
-      top: 3px;
-      left: 3px;
-      width: 10px;
-      height: 10px;
     }
   }
 
@@ -98,7 +89,7 @@
     pointer-events: none;
     cursor: default;
 
-    .ms-RadioButton-fieldCircle {
+    &:before {
       background-color: $ms-color-neutralTertiaryAlt;
       border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
@@ -112,11 +103,40 @@
   //== State: A radio button in focus
   //
   &.in-focus {
-    .ms-RadioButton-fieldCircle {
+    &:before {
       border-color: $ms-color-neutralSecondaryAlt;
     }
+  }
+}
 
-    &.is-checked .ms-RadioButton-fieldCircle {
+//== State: When the radio button is selected (checked)
+//
+.ms-RadioButton-input:checked,
+.ms-RadioButton-field.is-checked {
+  &:before {
+    border: 2px solid $ms-color-themePrimary;
+    background-color: transparent;
+  }
+
+  &:after {
+    background-color: $ms-color-themePrimary;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      border-color: $ms-color-themePrimary;
+    }
+  }
+
+  //== State: A radio button in focus
+  //
+  &.in-focus {
+    &:before {
       border-color: $ms-color-themePrimary;
     }
   }

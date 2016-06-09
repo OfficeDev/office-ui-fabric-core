@@ -1,13 +1,12 @@
 <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
 <div class="ms-RadioButton"> 
-  <div role="{{props.type}}"
-      class="ms-RadioButton-field {{#if props.disabled}} is-disabled {{/if}}"
-      tabindex="0"
-      aria-checked="{{props.checked}}"
-      name="{{props.name}}">
-      <div class="ms-RadioButton-fieldCircle">
-        <div class="ms-RadioButton-fieldCircleIndicator"></div>
-      </div>
-      <label class="ms-Label">{{props.label}}</label>
-  </div>
+    <input tabindex="-1" type="radio" class="ms-RadioButton-input">
+    <label role="{{props.type}}"
+        class="ms-RadioButton-field {{#if props.disabled}} is-disabled {{/if}}"
+        tabindex="0"
+        aria-checked="{{props.checked}}"
+        name="{{props.name}}">
+        <span class="ms-Label">{{props.label}}</span>
+    </label>
 </div> 

@@ -4,11 +4,11 @@
   <button class="ms-FacePile-addButton ms-FacePile-addButton--addPerson js-addPerson">
     <i class="ms-FacePile-addPersonIcon ms-Icon ms-Icon--personAdd"></i>
   </button>
-  
+
   {{#each props.members}}
-      {{> (lookup . 'component') props}}
+      {{> (lookup . 'component') props=props}}
   {{/each}}
-  
+
   <button class="ms-FacePile-addButton ms-FacePile-addButton--overflow js-overflowPanel">
     <span class="ms-FacePile-overflowText">+3</span>
   </button>

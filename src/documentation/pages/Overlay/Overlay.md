@@ -5,17 +5,12 @@ Partially obscures the page to create a modal experience and focus the user's at
 
 ### Default
 <!---
-{{> OverlayElem props=OverlayModels.basic }}
+{{> OverlayExample }}
 --->
 
 ### Dark
 <!---
-{{> OverlayElem props=OverlayModels.dark }}
---->
-
-### None
-<!---
-{{> OverlayElem props=OverlayModels.none }}
+{{> OverlayDarkExample }}
 --->
 
 ## Using this component
@@ -31,7 +26,3 @@ Partially obscures the page to create a modal experience and focus the user's at
 
 ## Dependencies
 This component has no dependencies.
-
-<!---
-{{> OverlayJS }}
---->

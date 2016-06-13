@@ -300,8 +300,11 @@ gulp.task('Bundles-resetData', function() {
     bundleFilePaths = [];
 });
 
-gulp.task('Bundles-buildAll', function() {
-  Plugins.runSequence('Bundles-nuke','Bundles-buildData', 'Bundles-build');
-});
+var tasks = [
+    'Bundles-nuke',
+    'Bundles-buildData', 
+    'Bundles-build'
+];
 
-gulp.task('Bundles', ['Bundles-buildAll']);
+gulp.task('Bundles', tasks);
+BuildConfig.buildTasks.push('Bundles');

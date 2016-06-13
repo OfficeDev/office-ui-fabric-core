@@ -5,35 +5,35 @@ Notification area that provides a detailed description or set of actions on an o
 
 ### Default
 <!---
-{{> CalloutExample props=CalloutExampleModel }}
+{{> CalloutExample props=CalloutExampleModel.props }}
 --->
 
 ### Close
 Includes an icon to dismiss the callout.
 
 <!---
-{{> CalloutExample props=CalloutExampleCloseModel }}
+{{> CalloutExample props=CalloutExampleModel.propsClose }}
 --->
 
 ### Action text
 Includes buttons to take action.
 
 <!---
-{{> CalloutExampleActionText props=CalloutExampleActionTextModel }}
+{{> CalloutExample props=CalloutExampleModel.propsActionText }}
 --->
 
 ### OOBE (Out Of the Box Experience)
 Draws attention to one aspect of the application during a product tour.
 
 <!---
-{{> CalloutExample props=CalloutExampleOOBETextModel }}
+{{> CalloutExample props=CalloutExampleModel.propsOobe }}
 --->
 
 ### Peek
 A smaller callout with an action.
 
 <!---
-{{> CalloutExample props=CalloutExamplePeekTextModel }}
+{{> CalloutExample props=CalloutExampleModel.propsPeek }}
 --->
 
 ## States
@@ -59,7 +59,7 @@ This component has only the default state.
                     <p class="ms-Callout-subText">Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.</p>
                 </div>
                 <div class="ms-Callout-actions">
-                    <a href="#" class="ms-Callout-link ms-Link ms-Link--hero">Learn more</a>
+                    <a href="#" class="ms-Callout-link">Learn more</a>
                 </div>
             </div>    
         </div>
@@ -72,3 +72,7 @@ This component has no dependencies.
 
 ## Accessibility
 Focus styles are included for all of the actions (links and buttons) included within a Callout.
+
+<!---
+{{> CalloutExampleJS }}
+--->

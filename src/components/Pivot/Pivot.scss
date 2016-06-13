@@ -8,14 +8,17 @@
 
 .ms-Pivot {
   @include ms-u-normalize;
-  color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
+}
+
+.ms-Pivot-links {
+  color: $ms-color-neutralPrimary;
   height: 30px;
   list-style-type: none;
-  overflow-x: hidden;
   white-space: nowrap;
+  padding: 0;
 }
 
 .ms-Pivot-link {
@@ -68,6 +71,11 @@
   top: 0;
 }
 
+// Pivot content, hidden by default
+.ms-Pivot-content {
+  display: none;
+}
+
 
 //== Modifier: Large Pivots
 //
@@ -91,7 +99,6 @@
 //== Modifier: Tabs
 //
 .ms-Pivot.ms-Pivot--tabs {
-  height: 40px;
 
   .ms-Pivot-link {
     height: 40px;

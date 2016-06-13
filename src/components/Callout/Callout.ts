@@ -11,44 +11,65 @@
  *
  */
 
+/// <reference path="../ContextualHost/ContextualHost.ts"/>
+const STATE_HIDDEN = "is-hidden";
+const CLOSE_BUTTON_CLASS = ".ms-Callout-close";
+const MODIFIER_OOBE_CLASS = "ms-Callout--OOBE";
+
 namespace fabric {
   "use strict";
 
   export class Callout {
 
     private _container: Element;
-    private _ftl = new FabricTemplateLibrary();
+    private _addTarget: Element;
+    private _closeButton: Element;
+    private _position: string;
+    private _contextualHost: ContextualHost;
 
-    constructor(container: Element, actions?: Array<IButton>) {
+    constructor(container: Element, addTarget: Element, position: string) {
       this._container = container;
+      this._addTarget = addTarget;
+      this._position = position;
+      this._closeButton = document.querySelector(CLOSE_BUTTON_CLASS);
+      this._setOpener();
+    }
 
-      if (actions) {
-        this._processActions(actions);
+    private _setOpener() {
+      this._addTarget.addEventListener("click", this._clickHandler.bind(this), true);
+    }
+
+    private _openContextMenu() {
+
+      let modifiers = [];
+      if (this._hasModifier(MODIFIER_OOBE_CLASS)) {
+        modifiers.push("primaryArrow");
+      }
+
+      this._container.classList.remove(STATE_HIDDEN);
+      this._contextualHost = new fabric.ContextualHost(
+        <HTMLElement>this._container,
+        this._position,
+        this._addTarget,
+        true,
+        modifiers
+      );
+
+      if (this._closeButton) {
+        this._closeButton.addEventListener("click", this._closeHandler.bind(this), false);
       }
     }
 
-    private _processActions(actions: Array<IButton>) {
-      let _action;
-      let _container;
+    private _hasModifier(modifierClass) {
+      return this._container.classList.contains(modifierClass);
+    }
 
-      for (let i = 0; i < actions.length; i++) {
-        _action = actions[i];
+    private _closeHandler(e) {
+      this._contextualHost.disposeModal();
+    }
 
-        if (_action.container) {
-          _container = _action.container;
-        } else {
-          _container = this._ftl.Button();
-          // _container.querySelector(this._ftl.Button.BUTTON_LABEL).html("text");
-          // body.appendChild(_container);
-        }
-
-        //  var button = new fabric.Button(_container, { 
-        //    "clickHandler": function(e) {
-
-        //    }
-        //   }
-        //  );
-      }
+    private _clickHandler(e) {
+      this._openContextMenu();
     }
   }
 }

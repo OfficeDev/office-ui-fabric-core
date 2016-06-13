@@ -25,7 +25,7 @@ $ms-Persona-leftPadding: 16px;
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
   }
-  
+
   &.is-active,
   &:focus {
     border-color: $ms-color-themePrimary;
@@ -399,7 +399,7 @@ $ms-Persona-leftPadding: 16px;
 }
 
 
-//== Modifier: People Picker Compact 
+//== Modifier: People Picker Compact
 //
 .ms-PeoplePicker-results.ms-PeoplePicker-results--compact {
   .ms-PeoplePicker-resultAction {

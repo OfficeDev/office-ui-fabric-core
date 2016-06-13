@@ -156,32 +156,60 @@ var ErrorHandling = function() {
         return;
     };
     /**
-     * JsHint error handler
+     * TypescriptLinting error handler
      * @param {object} file     Data containing file information
      * @param {function} cb     Callback data with error or no arguments
      */
-    this.JSHintErrors = function(file, cb) {
+    this.TypescriptLinting = function(file, cb) {
         return map(function (file, cb) {
-            if (!file.jshint.success) {
-                file.jshint.results.forEach(function (err) {
-                    if (err) {
-                        var error = err.error;
+            
+            if(file.tslint.output) {
+                var failures = JSON.parse(file.tslint.output);
+                
+                if (failures.length > 0) {
+                    failures.forEach(function (err) {
+
                         var errorString = that.createLineErrorMessage(
-                            'Error occurred in JSHint ', 
+                            gulputil.colors.red("Error ") + 'Typescript Linting ', 
                             file.path,
-                            error.line,
-                            error.character,
-                            error.code,
-                            error.reason
+                            (err.startPosition.line + 1),
+                            err.startPosition.character + 1,
+                            err.ruleName,
+                            " "
                         );
-                            
-                        if (error.id == "(error)") {
-                            that.generatePluginError('jsHint', errorString);
-                        } else {
-                            gulputil.log(errorString);
-                            that.addError(errorString);
-                        }
-                    }
+                        gulputil.log(errorString);
+                        that.addError(errorString);
+                    });
+                }
+            }
+            return cb(null, file); 
+        });
+    };
+    /**
+     * TabLinting error handler
+     * @param {object} file     Data containing file information
+     * @param {function} cb     Callback data with error or no arguments
+     */
+    this.TabLintingErrors = function(file, cb) {
+        return map(function (file, cb) {
+            // console.log(file.lintspaces);
+            var lintingData = file.lintspaces;
+            if (lintingData && Object.keys(lintingData).length) {
+               	var lines = [];
+                var warningLines = Object.keys(lintingData);
+                var warningCount = Object.keys(lintingData).length;
+                
+                  warningLines.forEach(function (warningLine) {
+                    errorString = that.createLineErrorMessage(
+                        gulputil.colors.yellow("Warning") + ' ' + lintingData[warningLine][0].message,
+                        file.path,
+                        lintingData[warningLine][0].line,
+                        ' ',
+                        ' ',
+                        ' '
+                    );
+                    gulputil.log(errorString);
+                    that.addWarning(errorString);
                 });
             }
             return cb(null, file); 

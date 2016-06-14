@@ -666,7 +666,7 @@ $ms-Persona-presenceSizeXl: 28px;
   width: auto;
   background-color: $ms-color-neutralLighter;
   border-radius: 20px;
-  margin-bottom: 4px;
+  margin: 4px;
 
   &:hover {
     cursor: pointer;
@@ -701,7 +701,7 @@ $ms-Persona-presenceSizeXl: 28px;
 
   .ms-Persona-primaryText {
     padding-top: 0;
-    line-height: 30px;
+    line-height: 34px;
   }
 
   .ms-Persona-initials {

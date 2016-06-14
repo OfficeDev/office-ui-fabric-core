@@ -9,7 +9,7 @@ namespace fabric {
    * A host for FacePile
    *
    */
-  const PERSONA_CLASS = ".ms-Persona";
+  const PERSONA_CLASS = ".ms-Persona--facePile";
   const PERSONA_INITIALS = ".ms-Persona-initials";
   const PERSONA_IMAGE = ".ms-Persona-image";
   const PERSONA_PRIMARY_CLASS = ".ms-Persona-primaryText";

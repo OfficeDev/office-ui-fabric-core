@@ -16,6 +16,7 @@
     "browser-sync": "^2.8.2",
     "colors": "^1.1.0",
     "del": "^1.2.1",
+    "dialog": "^0.1.8",
     "dtsmake": "0.0.7",
     "event-stream": "^3.3.1",
     "express": "^4.10.4",

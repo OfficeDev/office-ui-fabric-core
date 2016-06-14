@@ -7,6 +7,7 @@ var Server = require('./gulp/modules/Server');
 var Utilites = require('./gulp/modules/Utilities');
 var ErrorHandling = require('./gulp/modules/ErrorHandling');
 var BuildConfig = require('./gulp/modules/BuildConfig');
+var Dialog = require("dialog");
 
 //////////////////////////
 // INCLUDE FABRIC TASKS
@@ -31,6 +32,7 @@ Server.serveSpecificPaths(Config.servePaths);
 // Nuke Tasks
 // ---------------------------------------------------------------------------
 gulp.task('nuke', BuildConfig.nukeTasks);
+
 
 //
 // Watch Tasks
@@ -103,4 +105,12 @@ gulp.task('default', ['build']);
 // ----------------------------------------------------------------------------
 gulp.task('nuget-pack', function(callback) {
     Plugins.nugetpack(Config.nugetConfig, Config.nugetPaths, callback);
+});
+
+
+//
+// -- CINNAMON TOAST WHEATONS
+//
+gulp.task('mike-wheaton', function() {
+ Dialog.info("Fabric build complete");
 });

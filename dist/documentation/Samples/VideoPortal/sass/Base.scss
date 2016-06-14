@@ -1,0 +1,42 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Video Portal Example App
+// --------------------------------------------------
+// Base styles
+
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  @include ms-font-m;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  @include ms-Link;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+.VideoPortal-content {
+  position: relative;
+}
+
+.VideoPortal-navBar {
+  display: block;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+  height: 40px;
+}
+
+.VideoPortal-page {
+  overflow: visible;
+  position: relative;
+  padding-bottom: 50px;
+}

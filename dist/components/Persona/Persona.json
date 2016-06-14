@@ -1,0 +1,8 @@
+{
+  "name": "Persona",
+  "class": "ms-Persona",
+  "dependencies": [
+    "PersonaCard",
+    "ContextualHost"
+  ]
+}

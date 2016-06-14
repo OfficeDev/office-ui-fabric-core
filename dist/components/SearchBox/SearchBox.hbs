@@ -1,0 +1,10 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-SearchBox {{#if props.modifier}} ms-SearchBox--{{props.modifier}} {{/if}} {{#if props.state}}{{props.state}}{{/if}}">
+  <input class="ms-SearchBox-field" type="text" value="{{props.defaultValue}}">
+  <label class="ms-SearchBox-label">
+    {{#if props.icon}}<i class="ms-SearchBox-icon ms-Icon ms-Icon--{{props.icon}}"></i>{{/if}}
+    <span class="ms-SearchBox-text">{{props.label}}</span>
+  </label>
+  {{renderPartial props.clearButton.component props.clearButton.props}}
+</div>

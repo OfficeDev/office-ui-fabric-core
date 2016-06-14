@@ -1,0 +1,80 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// RTL overrides for Fabric Animations
+
+
+@import "Fabric.Animations.Output";
+@import "Fabric.Animations.RTL";
+
+// slideRightIn10
+.ms-u-slideRightIn10 {
+    @include ms-u-slideRightIn10;
+}
+
+// slideRightIn20
+.ms-u-slideRightIn20 {
+    @include ms-u-slideRightIn20;
+}
+
+// slideRightIn40
+.ms-u-slideRightIn40 {
+    @include ms-u-slideRightIn40;
+}
+
+// slideLeftIn10
+.ms-u-slideLeftIn10 {
+    @include ms-u-slideLeftIn10;
+}
+
+// slideLeftIn20
+.ms-u-slideLeftIn20 {
+    @include ms-u-slideLeftIn20;
+}
+
+// slideLeftIn40
+.ms-u-slideLeftIn40 {
+    @include ms-u-slideLeftIn40;
+}
+
+// slideRightIn400
+.ms-u-slideRightIn400 {
+    @include ms-u-slideRightIn400;
+}
+
+// slideLeftIn400
+.ms-u-slideLeftIn400 {
+    @include ms-u-slideLeftIn400;
+}
+
+// slideRightOut40
+.ms-u-slideRightOut40 {
+    @include ms-u-slideRightOut40;
+}
+
+// slideLeftOut40
+.ms-u-slideLeftOut40 {
+    @include ms-u-slideLeftOut40;
+}
+
+// slideRightOut400
+.ms-u-slideRightOut400 {
+    @include ms-u-slideRightOut400;
+}
+
+// slideLeftOut400
+.ms-u-slideLeftOut400 {
+    @include ms-u-slideLeftOut400;
+}
+
+// rotate90deg
+.ms-u-rotate90deg {
+    @include ms-u-rotate90deg;
+}
+
+// rotateN90deg
+.ms-u-rotateN90deg {
+    @include ms-u-rotateN90deg;
+}

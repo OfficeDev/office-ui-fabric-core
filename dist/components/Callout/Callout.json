@@ -1,0 +1,19 @@
+{
+  "name": "Callout",
+  "class": "ms-Callout",
+  "wrapBranches": true,
+  "dependencies": [
+    "Button",
+    "Label",
+    "Link",
+    "ContextualHost",
+    "CommandButton"
+  ],
+  "fileOrder": [
+    "Callout.html",
+    "Callout.Close.html",
+    "Callout.ActionText.html",
+    "Callout.Oobe.html",
+    "Callout.Peek.html"
+  ]
+}

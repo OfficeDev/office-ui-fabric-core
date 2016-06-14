@@ -1,0 +1,237 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Fabric Animations
+
+
+// Note that all animation classes should begin with the "ms-u" utility prefix.
+// The original class names are deprecated and will be removed in a future release.
+
+// Variables
+$ms-ease1:     cubic-bezier(0.1,0.9,0.2,1);
+$ms-ease2:     cubic-bezier(0.1,0.25,0.75,0.9);
+$ms-duration1: 0.167s;
+$ms-duration2: 0.267s;
+$ms-duration3: 0.367s;
+$ms-duration4: 0.467s;
+
+
+// Animation mixin
+@mixin animationMix($ms-name, $ms-duration, $ms-ease: $ms-ease1, $ms-fillMode: both) {
+    @include animationName($ms-name);
+    @include animationDuration($ms-duration);
+    @include animationTiming($ms-ease);
+    @include animationFillMode($ms-fillMode);
+}
+
+// slideRightIn10
+@mixin ms-u-slideRightIn10 {
+    @include animationMix((fadeIn, slideRightIn10), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn20
+@mixin ms-u-slideRightIn20 {
+    @include animationMix((fadeIn, slideRightIn20), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn40
+@mixin ms-u-slideRightIn40 {
+    @include animationMix((fadeIn, slideRightIn40), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn10
+@mixin ms-u-slideLeftIn10 {
+    @include animationMix((fadeIn, slideLeftIn10), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn20
+@mixin ms-u-slideLeftIn20 {
+    @include animationMix((fadeIn, slideLeftIn20), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn40
+@mixin ms-u-slideLeftIn40 {
+    @include animationMix((fadeIn, slideLeftIn40), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn400
+@mixin ms-u-slideRightIn400 {
+    @include animationMix((fadeIn, slideRightIn400), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn400
+@mixin ms-u-slideLeftIn400 {
+    @include animationMix((fadeIn, slideLeft400), $ms-duration3, $ms-ease1);
+}
+
+// slideUpIn20
+@mixin ms-u-slideUpIn20 {
+    @include animationMix((fadeIn, slideUpIn20), $ms-duration3, $ms-ease1);
+}
+
+// slideUpIn10
+@mixin ms-u-slideUpIn10 {
+    @include animationMix((fadeIn, slideUpIn10), $ms-duration1, $ms-ease2);
+}
+
+// slideDownIn20
+@mixin ms-u-slideDownIn20 {
+    @include animationMix((fadeIn, slideDownIn20), $ms-duration3, $ms-ease1);
+}
+
+// slideDownIn10
+@mixin ms-u-slideDownIn10 {
+    @include animationMix((fadeIn, slideDownIn10), $ms-duration1, $ms-ease2);
+}
+
+// slideRightOut40
+@mixin ms-u-slideRightOut40 {
+    @include animationMix((fadeOut, slideRightOut40), $ms-duration1, $ms-ease2);
+}
+
+// slideLeftOut40
+@mixin ms-u-slideLeftOut40 {
+    @include animationMix((fadeOut, slideLeftOut40), $ms-duration1, $ms-ease2);
+}
+
+// slideRightOut400
+@mixin ms-u-slideRightOut400 {
+    @include animationMix((fadeOut, slideRightOut400), $ms-duration1, $ms-ease2);
+}
+
+// slideLeftOut400
+@mixin ms-u-slideLeftOut400 {
+    @include animationMix((fadeOut, slideLeftOut400), $ms-duration1, $ms-ease2);
+}
+
+// slideUpOut20
+@mixin ms-u-slideUpOut20 {
+    @include animationMix((fadeOut, slideUpOut20), $ms-duration1, $ms-ease2);
+}
+
+// slideUpOut10
+@mixin ms-u-slideUpOut10 {
+    @include animationMix((fadeOut, slideUpOut10), $ms-duration1, $ms-ease2);
+}
+
+// slideDownOut20
+@mixin ms-u-slideDownOut20 {
+    @include animationMix((fadeOut, slideDownOut20), $ms-duration1, $ms-ease2);
+}
+
+// slideDownOut10
+@mixin ms-u-slideDownOut10 {
+    @include animationMix((fadeOut, slideDownOut10), $ms-duration1, $ms-ease2);
+}
+
+// scaleUpIn100
+@mixin ms-u-scaleUpIn100 {
+    @include animationMix((fadeIn, scaleUp100), $ms-duration3, $ms-ease1);
+}
+
+// scaleDownIn100
+@mixin ms-u-scaleDownIn100 {
+    @include animationMix((fadeIn, scaleDown100), $ms-duration3, $ms-ease1);
+}
+
+// scaleUpOut103
+@mixin ms-u-scaleUpOut103 {
+    @include animationMix((fadeOut, scaleUp103), $ms-duration1, $ms-ease2);
+}
+
+// scaleDownOut98
+@mixin ms-u-scaleDownOut98 {
+    @include animationMix((fadeOut, scaleDown98), $ms-duration1, $ms-ease2);
+}
+
+// fadeIn
+@mixin ms-u-fadeIn400 {
+    -webkit-animation-duration: $ms-duration3;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-fill-mode: both;
+    animation-duration: $ms-duration3;
+    animation-name: fadeIn;
+    animation-fill-mode: both;
+}
+@mixin ms-u-fadeIn100 {
+    @include ms-u-fadeIn400;
+    -webkit-animation-duration: $ms-duration1;
+    animation-duration: $ms-duration1;
+}
+@mixin ms-u-fadeIn200 {
+    @include ms-u-fadeIn400;
+    -webkit-animation-duration: $ms-duration2;
+    animation-duration: $ms-duration2;
+}
+@mixin ms-u-fadeIn500 {
+    @include ms-u-fadeIn400;
+    -webkit-animation-duration: $ms-duration4;
+    animation-duration: $ms-duration4;
+}
+
+// fadeOut
+@mixin ms-u-fadeOut400 {
+    -webkit-animation-duration: $ms-duration3;
+    -webkit-animation-name: fadeOut;
+    -webkit-animation-fill-mode: both;
+    animation-duration: $ms-duration3;
+    animation-name: fadeOut;
+    animation-fill-mode: both;
+}
+@mixin ms-u-fadeOut100 {
+    @include ms-u-fadeOut400;
+    -webkit-animation-duration: 0.1s;
+    animation-duration: 0.1s;
+}
+@mixin ms-u-fadeOut200 {
+    @include ms-u-fadeOut400;
+    -webkit-animation-duration: $ms-duration1;
+    animation-duration: $ms-duration1;
+}
+@mixin ms-u-fadeOut500 {
+    @include ms-u-fadeOut400;
+    -webkit-animation-duration: $ms-duration4;
+    animation-duration: $ms-duration4;
+}
+
+// rotate90deg
+@mixin ms-u-rotate90deg {
+    @include animationMix(rotate90, 0.1s, $ms-ease2);
+}
+
+// rotateN90deg
+@mixin ms-u-rotateN90deg {
+    @include animationMix(rotateN90, 0.1s, $ms-ease2);
+}
+
+// expandCollapse400
+@mixin ms-u-expandCollapse400 {
+    -webkit-transition: height $ms-duration3 $ms-ease2;
+    transition: height $ms-duration3 $ms-ease2;
+}
+
+// expandCollapse200
+@mixin ms-u-expandCollapse200 {
+    -webkit-transition: height $ms-duration1 $ms-ease2;
+    transition: height $ms-duration1 $ms-ease2;
+}
+
+// expandCollapse100
+@mixin ms-u-expandCollapse100 {
+    -webkit-transition: height 0.1s $ms-ease2;
+    transition: height 0.1s $ms-ease2;
+}
+
+// delay100
+@mixin ms-u-delay100 {
+    -webkit-animation-delay: $ms-duration1;
+    animation-delay: $ms-duration1;
+}
+
+// delay200
+@mixin ms-u-delay200 {
+    -webkit-animation-delay: 0.267s;
+    animation-delay: 0.267s;
+}

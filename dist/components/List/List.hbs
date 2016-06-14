@@ -1,0 +1,7 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<ul class="ms-List {{#if props.modifier}} ms-List--{{props.modifier}} {{/if}}">
+  {{#each props.listItems}}
+    {{> (lookup . 'name') props=props}}
+  {{/each}}
+</ul>

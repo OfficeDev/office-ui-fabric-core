@@ -1,0 +1,26 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<table class="ms-Table {{#if props.modifier}} ms-Table--{{props.modifier}}{{/if}}">
+  <thead>
+    <tr>
+      {{#if props.isSelectable}}
+        <th class="ms-Table-rowCheck"></th>
+      {{/if}}
+      {{#each props.headers}}
+        <th>{{value}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody>
+    {{#each props.rows}}
+      <tr>
+        {{#if ../props.isSelectable}}
+          <td class="ms-Table-rowCheck"></td>
+        {{/if}}
+        {{#each columns}}
+          <td>{{value}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

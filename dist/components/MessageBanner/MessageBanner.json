@@ -1,0 +1,21 @@
+{
+  "name": "MessageBanner",
+  "notes": "A component for displaying errors",
+  "description:": "A component for displaying errors to a user via a top-of-the-screen message surface.",
+  "template": "MessageBanner.html",
+  "class": "ms-MessageBanner",
+  "dependencies": [
+    "Button"
+  ],
+  "props": {
+    "message": "You've reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.",
+    "button":  {
+      "name": "Button",
+      "props":  {
+        "label": "Get More Storage",
+        "modifier": "primary",
+        "tag": "button"
+      }
+    }
+  }
+}

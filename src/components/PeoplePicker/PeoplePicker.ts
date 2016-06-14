@@ -49,6 +49,8 @@ namespace fabric {
         <HTMLElement>this._peoplePickerMenu,
         MODAL_POSITION,
         this._peoplePickerSearchBox,
+        false,
+        [""],
         true,
         this._contextHostCallBack.bind(this)
       );

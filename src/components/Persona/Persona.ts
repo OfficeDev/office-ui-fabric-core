@@ -1,5 +1,6 @@
 
 /// <reference path="../ContextualHost/ContextualHost.ts"/>
+/// <reference path="../PersonaCard/PersonaCard.ts"/>
 
   /**
    * FacePile
@@ -18,6 +19,7 @@ namespace fabric {
     private _persona: Element;
     private _personaCard: Element;
     private _contextualHostInstance: ContextualHost;
+    private _personaCardInstance: PersonaCard;
 
     /**
      *
@@ -33,7 +35,12 @@ namespace fabric {
       if (this._personaCard) {
         this._assignEvents();
         this._personaCard.setAttribute("style", "display: none;");
+        this._createPersonaCard();
       }
+    }
+
+    private _createPersonaCard() {
+      this._personaCardInstance = new fabric.PersonaCard(this._personaCard);
     }
 
     private _createContextualHostInstance(): void {

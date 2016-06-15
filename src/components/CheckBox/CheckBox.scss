@@ -5,6 +5,10 @@
 // --------------------------------------------------
 // CheckBox styles
 
+$ms-checkbox-field-size: 20px;
+$ms-checkbox-transition-duration: 200ms;
+$ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
+
 
 .ms-CheckBox {
   @include ms-u-normalize;
@@ -34,15 +38,15 @@
   content: '';
   display: inline-block;
   border: 2px solid $ms-color-neutralTertiary;
-  width: 20px;
-  height: 20px;
+  width: $ms-checkbox-field-size;
+  height: $ms-checkbox-field-size;
   cursor: pointer;
   font-weight: normal;
   position: absolute;
   box-sizing: border-box;
   transition-property: background, border, border-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+  transition-duration: $ms-checkbox-transition-duration;
+  transition-timing-function: $ms-checkbox-transition-timing;
 }
 
 // The check mark icon
@@ -55,12 +59,13 @@
   background-color: transparent;
   border-radius: 0;
   font-size: $ms-font-size-s-plus;
-  top: 4px;
-  left: 4px;
-  width: 10px;
-  height: 10px;
+  top: 0;
   border: 0;
   color: $ms-color-white;
+  white-space: nowrap;
+  line-height: $ms-checkbox-field-size;
+  width: $ms-checkbox-field-size;
+  text-align: center;
 }
 
 // The checkbox field

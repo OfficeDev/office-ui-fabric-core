@@ -99,8 +99,8 @@ namespace fabric {
     private _runsSearchBox(reInit: boolean = true, state: string = "add") {
       this._changeSearchState("is-collapsed", state);
       if (reInit) {
-        console.log('!!!!! createSearchInstance');
-        this.searchBoxInstance = this._createSearchInstance();
+        
+        //this.searchBoxInstance = this._createSearchInstance();
       }
     }
 

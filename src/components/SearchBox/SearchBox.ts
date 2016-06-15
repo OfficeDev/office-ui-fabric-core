@@ -38,6 +38,7 @@ namespace fabric {
     private _boundClearSearchBox;
     private _boundHandleBlur;
     private _boundExistSearchBox;
+    private _clearOnly: boolean;
 
     constructor(container: HTMLElement) {
       this._container = container;
@@ -54,6 +55,7 @@ namespace fabric {
       this._setClearButtonAction();
       this._setBlurAction();
       this._checkState();
+      this._clearOnly = false;
     }
 
     public setCollapsedListeners(): void {
@@ -88,8 +90,6 @@ namespace fabric {
       this._searchBox.removeEventListener("keyup", this._boundEnableClose);
       this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
       document.removeEventListener("click", this._boundHandleOutsideSearchClick);
-      this._searchBoxField.removeEventListener("blur", this._boundHandleBlur);
-      this._searchBoxClearButton.removeEventListener("blur", this._boundHandleBlur);
     }
 
     private _handleOutsideSearchClick(e): void {
@@ -105,7 +105,7 @@ namespace fabric {
     private _exitSearchBox(event): void {
       event.stopPropagation();
       this._collapseSearchBox();
-      this._handleBlur();
+      this._handleBlur(event);
       document.removeEventListener("click", this._boundHandleOutsideSearchClick);
       this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
       this.setCollapsedListeners();
@@ -113,7 +113,6 @@ namespace fabric {
 
     private _collapseSearchBox(): void {
       this._searchBox.classList.remove("is-active");
-      console.log('dispatchEvent');
       this._searchBoxField.dispatchEvent(new Event("searchCollapse"));
     }
 
@@ -122,7 +121,9 @@ namespace fabric {
       this._searchBox.classList.add("is-active");
       this._searchBoxField.focus();
       this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
-      document.addEventListener("click", this._boundHandleOutsideSearchClick, false);
+      window.addEventListener("click", () => {
+        console.log('document click');
+      }, false);
       this._searchBoxExitButton.addEventListener("click", this._boundExistSearchBox, false);
     }
 
@@ -146,9 +147,13 @@ namespace fabric {
       }, true);
     }
 
-    private _clearSearchBox(): void {
+    private _clearSearchBox(event?: any): void {
+      this._clearOnly = true;
       this._searchBoxField.value = "";
       this._setHasText();
+      setTimeout( () => {
+        this._clearOnly = false;
+      }, 10);
     }
 
     private _setClearButtonAction() {
@@ -156,18 +161,24 @@ namespace fabric {
       this._searchBoxClearButton.addEventListener("keydown", (e) => {
         let keyCode = e.keyCode;
         if (keyCode === 13) {
-          this._clearSearchBox();
+          this._clearSearchBox(e);
         }
       }, false);
     }
 
-    private _handleBlur(): void {
-      this._searchBox.removeEventListener("keyup", () => { this._enableClose(); });
-      setTimeout(() => {
-        if (!this._searchBox.contains(document.activeElement)) {
-          this._clearSearchBox();
-        }
-      }, 10);
+    private _handleBlur(event): void {
+      if (!this._clearOnly) {
+        this._searchBox.removeEventListener("keyup", () => { this._enableClose(); });
+        setTimeout(() => {
+          if (!this._searchBox.contains(document.activeElement)) {
+            this._clearSearchBox();
+            this._collapseSearchBox();
+          }
+        }, 10);
+      } else {
+        this._searchBoxField.focus();
+      }
+      this._clearOnly = false;
     }
 
     private _setBlurAction(): void {

@@ -98,10 +98,6 @@ namespace fabric {
 
     private _runsSearchBox(reInit: boolean = true, state: string = "add") {
       this._changeSearchState("is-collapsed", state);
-      if (reInit) {
-        
-        //this.searchBoxInstance = this._createSearchInstance();
-      }
     }
 
     private _runOverflow() {
@@ -302,14 +298,15 @@ namespace fabric {
 
     private _updateCommands() {
       let searchCommandWidth = 0;
-      let mainCommandSurfaceAreaWidth = this._elements.mainArea.getBoundingClientRect().width;
+      let mainAreaWidth = this._elements.mainArea.getBoundingClientRect().width;
 
       if (this._elements.searchBox && !this._elements.searchBox.classList.contains("is-active")) {
         searchCommandWidth =  this._getElementWidth(this._elements.searchBox);
       }
 
-      const totalAreaWidth = mainCommandSurfaceAreaWidth - (searchCommandWidth + OVERFLOW_WIDTH + OVERFLOW_LEFT_RIGHT_PADDING); // Start with searchbox width
-      
+      const offset: number = searchCommandWidth + OVERFLOW_WIDTH + OVERFLOW_LEFT_RIGHT_PADDING;
+      const totalAreaWidth: number = mainAreaWidth - offset; // Start with searchbox width
+
       // Reset overflow and visible
       this.visibleCommands = [];
       this.overflowCommands = [];

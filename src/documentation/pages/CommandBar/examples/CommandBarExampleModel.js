@@ -13,7 +13,25 @@ var CommandBarExampleModel = {
             "icon": "Cancel",
             "modifier": "noLabel",
             "tag": "button",
-            "customClasses": "ms-SearchBox-close"
+            "customClasses": "ms-SearchBox-clear"
+          }
+        },
+        "filterButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "Filter",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-filter"
+          }
+        },
+        "exitButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "ChromeBack",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-exit"
           }
         }
       }
@@ -56,13 +74,13 @@ var CommandBarExampleModel = {
                   "icon": "Page"
                 },
                 {
-                  "title": "A Cat",
-                  "icon": "Cat"
+                  "title": "A Coffee",
+                  "icon": "Coffee"
                 },
                 {
-                  "title": "The Sun",
+                  "title": "Picture",
                   "state": "",
-                  "icon": "Sunny"
+                  "icon": "Picture"
                 },
                 {
                   "title": "Money",
@@ -139,13 +157,13 @@ var CommandBarExampleModel = {
                 "icon": "Page"
               },
               {
-                "title": "A Cat",
-                "icon": "Cat"
+                "title": "A Coffee",
+                "icon": "Coffee"
               },
               {
-                "title": "The Sun",
+                "title": "Picture",
                 "state": "",
-                "icon": "Sunny"
+                "icon": "Picture"
               },
               {
                 "title": "Money",
@@ -198,13 +216,13 @@ var CommandBarExampleModel = {
                 "icon": "dogAlt"
               },
               {
-                "title": "The Sun",
+                "title": "Picture",
                 "state": "",
                 "icon": "sun"
               },
               {
                 "title": "Money",
-                "icon": "money"
+                "icon": "Money"
               }
             ]
           }
@@ -287,26 +305,6 @@ var CommandBarExampleModel = {
           "iconColor": "themePrimary"
         }
       }
-    ],
-    "sideCommands": [
-      {
-        "component": "CommandButton",
-        "props":  {
-          "icon": "listBullets",
-          "tag": "button",
-          "modifier": "noLabel",
-          "iconColor": "themePrimary"
-        }
-      },
-      {
-        "component": "CommandButton",
-        "props":  {
-          "icon": "sortLines",
-          "tag": "button",
-          "modifier": "noLabel",
-          "iconColor": "themePrimary"
-        }
-      }
     ]
   },
   "propsNavBar": {
@@ -324,7 +322,25 @@ var CommandBarExampleModel = {
             "icon": "Cancel",
             "modifier": "noLabel",
             "tag": "button",
-            "customClasses": "ms-SearchBox-close"
+            "customClasses": "ms-SearchBox-clear"
+          }
+        },
+        "filterButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "Filter",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-filter"
+          }
+        },
+        "exitButton": {
+          "component": "CommandButton",
+          "props": {
+            "icon": "ChromeBack",
+            "modifier": "noLabel",
+            "tag": "button",
+            "customClasses": "ms-SearchBox-exit"
           }
         }
       }
@@ -340,12 +356,11 @@ var CommandBarExampleModel = {
           "component": "ContextualMenu",
           "props":  {
             "state": "is-opened",
-            "modifier": "hasIcons",
             "items": [
               {
                 "title": "Folder",
                 "state": "",
-                "icon": "folder"
+                "icon": "Folder"
               },
               {
                 "modifier": "divider",
@@ -353,20 +368,20 @@ var CommandBarExampleModel = {
               },
               {
                 "title": "Plain Text Document",
-                "icon": "document"
+                "icon": "Document"
               },
               {
-                "title": "A Dog",
-                "icon": "dogAlt"
+                "title": "A Coffee",
+                "icon": "Coffee"
               },
               {
-                "title": "The Sun",
+                "title": "Picture",
                 "state": "",
-                "icon": "sun"
+                "icon": "Picture"
               },
               {
                 "title": "Money",
-                "icon": "money"
+                "icon": "Money"
               }
             ]
           }
@@ -392,7 +407,7 @@ var CommandBarExampleModel = {
                 {
                   "title": "Folder",
                   "state": "",
-                  "icon": "folder"
+                  "icon": "Folder"
                 },
                 {
                   "modifier": "divider",
@@ -400,20 +415,20 @@ var CommandBarExampleModel = {
                 },
                 {
                   "title": "Plain Text Document",
-                  "icon": "document"
+                  "icon": "Document"
                 },
                 {
-                  "title": "A Dog",
-                  "icon": "dogAlt"
+                  "title": "Coffee",
+                  "icon": "Coffee"
                 },
                 {
-                  "title": "The Sun",
+                  "title": "Picture",
                   "state": "",
-                  "icon": "sun"
+                  "icon": "Picture"
                 },
                 {
                   "title": "Money",
-                  "icon": "money"
+                  "icon": "Money"
                 }
               ]
             }
@@ -462,7 +477,7 @@ var CommandBarExampleModel = {
         "component": "CommandButton",
         "props":  {
           "label": "Show photos from",
-          "icon": "gear",
+          "icon": "Settings",
           "tag": "button",
           "modifier": "dropdown",
           "iconColor": "themePrimary",
@@ -476,7 +491,7 @@ var CommandBarExampleModel = {
                 {
                   "title": "Folder",
                   "state": "",
-                  "icon": "folder"
+                  "icon": "Folder"
                 },
                 {
                   "modifier": "divider",
@@ -484,16 +499,16 @@ var CommandBarExampleModel = {
                 },
                 {
                   "title": "Plain Text Document",
-                  "icon": "document"
+                  "icon": "Document"
                 },
                 {
-                  "title": "A Dog",
-                  "icon": "dogAlt"
+                  "title": "A Coffee",
+                  "icon": "Coffee"
                 },
                 {
-                  "title": "The Sun",
+                  "title": "Picture",
                   "state": "",
-                  "icon": "sun"
+                  "icon": "Picture"
                 },
                 {
                   "title": "Money",

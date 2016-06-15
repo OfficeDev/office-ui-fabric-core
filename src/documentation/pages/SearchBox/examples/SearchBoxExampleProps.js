@@ -6,10 +6,19 @@ var SearchBoxExampleProps = {
     "clearButton": {
       "component": "CommandButton",
       "props": {
-        "icon": "x",
+        "icon": "Clear",
         "modifier": "noLabel",
         "tag": "button",
-        "customClasses": "ms-SearchBox-close"
+        "customClasses": "ms-SearchBox-clear"
+      }
+    },
+    "filterButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "Filter",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-filter"
       }
     }
   },
@@ -28,6 +37,15 @@ var SearchBoxExampleProps = {
         "tag": "button",
         "customClasses": "ms-SearchBox-close"
       }
+    },
+    "filterButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "Filter",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-filter"
+      }
     }
   },
   "commandBar": {
@@ -43,6 +61,15 @@ var SearchBoxExampleProps = {
         "modifier": "noLabel",
         "tag": "button",
         "customClasses": "ms-SearchBox-close"
+      }
+    },
+    "filterButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "Filter",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-filter"
       }
     }
   },

@@ -48,7 +48,8 @@ namespace fabric {
   const COMMAND_BUTTON = ".ms-CommandButton";
   const COMMAND_BUTTON_LABEL = ".ms-CommandButton-label";
   const ICON = ".ms-Icon";
-  const OVERFLOW_WIDTH = 41.5;
+  const OVERFLOW_WIDTH = 40;
+  const OVERFLOW_LEFT_RIGHT_PADDING = 30;
 
   export class CommandBar {
 
@@ -98,6 +99,7 @@ namespace fabric {
     private _runsSearchBox(reInit: boolean = true, state: string = "add") {
       this._changeSearchState("is-collapsed", state);
       if (reInit) {
+        console.log('!!!!! createSearchInstance');
         this.searchBoxInstance = this._createSearchInstance();
       }
     }
@@ -125,6 +127,20 @@ namespace fabric {
 
     private _hasClass(element, cls): boolean {
       return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
+    }
+
+    private _onSearchExpand(): void {
+      if (this.breakpoint === "lg") {
+        this._container.classList.add("search-expanded");
+        this._doResize();
+      }
+    }
+
+    private _onSearchCollapse(): void {
+      if (this.breakpoint === "lg") {
+        this._container.classList.remove("search-expanded");
+        this._doResize();
+      }
     }
 
     private _getScreenSize(): WindowSize {
@@ -210,6 +226,8 @@ namespace fabric {
         this._elements.searchBox = this._container.querySelector(CB_MAIN_AREA + " " + CB_SEARCH_BOX);
         this._elements.searchBoxClose = this._container.querySelector(SEARCH_BOX_CLOSE);
         this.searchBoxInstance = this._createSearchInstance();
+        this.searchBoxInstance.getInputField().addEventListener("focus", () => { this._onSearchExpand(); }, false);
+        this.searchBoxInstance.getInputField().addEventListener("searchCollapse", () => { this._onSearchCollapse(); }, false);
       }
     }
 
@@ -218,7 +236,7 @@ namespace fabric {
           label,
           iconClasses,
           splitClasses,
-          items = this._container.querySelectorAll(areaClass + " " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
+          items = this._container.querySelectorAll(areaClass + " > " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
 
       // Initiate the overflow command
       this._commandButtonInstance = new fabric.CommandButton(<HTMLElement>this._elements.overflowCommand);
@@ -229,14 +247,14 @@ namespace fabric {
         let icon = item.querySelector(ICON);
 
         if (icon) {
-            iconClasses = icon.className;
-            splitClasses = iconClasses.split(" ");
-        }
+          iconClasses = icon.className;
+          splitClasses = iconClasses.split(" ");
 
-        for (let o = 0; o < splitClasses.length; o++) {
-          if (splitClasses[o].indexOf(ICON.replace(".", "") + "--") > -1) {
+          for (let o = 0; o < splitClasses.length; o++) {
+            if (splitClasses[o].indexOf(ICON.replace(".", "") + "--") > -1) {
               icon =  splitClasses[o];
               break;
+            }
           }
         }
 
@@ -285,22 +303,22 @@ namespace fabric {
     private _updateCommands() {
       let searchCommandWidth = 0;
       let mainCommandSurfaceAreaWidth = this._elements.mainArea.getBoundingClientRect().width;
-      let totalAreaWidth = mainCommandSurfaceAreaWidth;
 
-      if (this._elements.searchBox) {
+      if (this._elements.searchBox && !this._elements.searchBox.classList.contains("is-active")) {
         searchCommandWidth =  this._getElementWidth(this._elements.searchBox);
       }
 
-      let totalCommandWidth = searchCommandWidth + OVERFLOW_WIDTH; // Start with searchbox width
-
+      const totalAreaWidth = mainCommandSurfaceAreaWidth - (searchCommandWidth + OVERFLOW_WIDTH + OVERFLOW_LEFT_RIGHT_PADDING); // Start with searchbox width
+      
       // Reset overflow and visible
       this.visibleCommands = [];
       this.overflowCommands = [];
 
+      let totalWidths: number = 0;
       for (let i = 0; i < this.itemCollection.length; i++) {
-        totalCommandWidth += this.commandWidths[i];
+        totalWidths += this.commandWidths[i];
 
-        if (totalCommandWidth < totalAreaWidth) {
+        if (totalWidths < totalAreaWidth) {
           this.visibleCommands.push(this.itemCollection[i]);
         } else {
           this.overflowCommands.push(this.itemCollection[i]);
@@ -316,15 +334,18 @@ namespace fabric {
 
         this.overflowCommands[i].item.classList.add("is-hidden");
         // Add all items to contextual menu.
-        let newCItem: HTMLElement = <HTMLElement>this.contextualItemContainerRef.cloneNode(false);
-        let newClink: HTMLElement = <HTMLElement>this.contextualItemLink.cloneNode(false);
-        let newIcon: HTMLElement = <HTMLElement>this.contextualItemIcon.cloneNode(false);
-        let iconClass =  this.overflowCommands[i].icon;
-
+        const newCItem: HTMLElement = <HTMLElement>this.contextualItemContainerRef.cloneNode(false);
+        const newClink: HTMLElement = <HTMLElement>this.contextualItemLink.cloneNode(false);
+        const iconClass =  this.overflowCommands[i].icon;
         newClink.innerText = this.overflowCommands[i].label;
         newCItem.appendChild(newClink);
-        newIcon.className = ICON.replace(".", "") + " " + iconClass;
-        newCItem.appendChild(newIcon);
+
+        if (iconClass) {
+          let newIcon: HTMLElement = <HTMLElement>this.contextualItemIcon.cloneNode(false);
+          newIcon.className = ICON.replace(".", "") + " " + iconClass;
+          newCItem.appendChild(newIcon);
+        }
+
         this._elements.contextMenu.appendChild(newCItem);
       }
 
@@ -340,7 +361,7 @@ namespace fabric {
       }, false);
     }
 
-    private _processColapsedClasses(type) {
+    private _processCollapsedClasses(type) {
       for (let i = 0; i < this.itemCollection.length; i++) {
         let thisItem = this.itemCollection[i];
         if (!thisItem.isCollapsed) {
@@ -367,28 +388,28 @@ namespace fabric {
       switch (this.breakpoint) {
         case "sm":
           this._runsSearchBox();
-          this._processColapsedClasses("add");
+          this._processCollapsedClasses("add");
           this._runOverflow();
           break;
         case "md":
           this._runsSearchBox();
           // Add collapsed classes to commands
-          this._processColapsedClasses("add");
+          this._processCollapsedClasses("add");
           this._runOverflow();
           break;
         case "lg":
           this._runsSearchBox();
-          this._processColapsedClasses("remove");
+          this._processCollapsedClasses("remove");
           this._runOverflow();
           break;
         case "xl":
           this._runsSearchBox(false, "remove");
-          this._processColapsedClasses("remove");
+          this._processCollapsedClasses("remove");
           this._runOverflow();
           break;
         default:
           this._runsSearchBox(false, "remove");
-          this._processColapsedClasses("remove");
+          this._processCollapsedClasses("remove");
           this._runOverflow();
           break;
       }

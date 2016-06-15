@@ -19,7 +19,8 @@ namespace fabric {
    */
 
   const SB_FIELD = ".ms-SearchBox-field";
-  const SB_CLOSE_BUTTON = ".ms-CommandButton";
+  const SB_CLEAR_BUTTON = ".ms-SearchBox-clear";
+  const SB_EXIT_BUTTON = ".ms-SearchBox-exit";
   const SB_HAS_TEXT = "has-text";
   const SB_IS_ACTIVE = "is-active";
 
@@ -27,60 +28,106 @@ namespace fabric {
 
     private _searchBoxField;
     private _searchBox;
-    private _searchBoxCloseButton;
+    private _searchBoxClearButton;
+    private _searchBoxExitButton;
     private _container: HTMLElement;
-    private _cancel = false;
+    private _boundHandleOutsideSearchClick;
+    private _boundExpandSearchHandler;
+    private _boundEnableClose;
+    private _boundCollapseSearchBox;
+    private _boundClearSearchBox;
+    private _boundHandleBlur;
+    private _boundExistSearchBox;
 
     constructor(container: HTMLElement) {
       this._container = container;
       this._saveDOMRefs(this._container);
+      this._boundHandleOutsideSearchClick = this._handleOutsideSearchClick.bind(this);
+      this._boundExpandSearchHandler = this._expandSearchHandler.bind(this);
+      this._boundEnableClose = this._enableClose.bind(this);
+      this._boundCollapseSearchBox = this._collapseSearchBox.bind(this);
+      this._boundClearSearchBox = this._clearSearchBox.bind(this);
+      this._boundHandleBlur = this._handleBlur.bind(this);
+      this._boundExistSearchBox = this._exitSearchBox.bind(this);
       this._setHasText();
       this._setFocusAction(this._container);
-      this._setCloseButtonAction();
+      this._setClearButtonAction();
       this._setBlurAction();
       this._checkState();
     }
 
-    public setCollapsedListeners() {
+    public setCollapsedListeners(): void {
       this._disposeListeners();
-      this. _searchBox.addEventListener("click", () => { this._expandSearchHandler(); }, false);
-      this._searchBoxField.addEventListener("focus",  () => { this._expandSearchHandler(); }, true);
+      this._searchBox.addEventListener("click", this._boundExpandSearchHandler, false);
+      this._searchBoxField.addEventListener("focus", this._boundExpandSearchHandler, true);
     }
 
-    private _saveDOMRefs(context) {
+    public getInputField(): Element {
+      return this._searchBoxField;
+    }
+
+    public dispose(): void {
+      console.log('disposing...');
+      this._disposeListeners();
+    }
+
+    private _saveDOMRefs(context): void {
       this._searchBox = context;
       this._searchBoxField = this._searchBox.querySelector(SB_FIELD);
-      this._searchBoxCloseButton = this._searchBox.querySelector(SB_CLOSE_BUTTON);
+      this._searchBoxClearButton = this._searchBox.querySelector(SB_CLEAR_BUTTON);
+      this._searchBoxExitButton = this._searchBox.querySelector(SB_EXIT_BUTTON);
     }
 
-    private _hasClass(element, cls) {
+    private _hasClass(element, cls): boolean {
       return (" " + element.className + " ").indexOf(" " + cls + " ") > -1;
     }
 
-    private _disposeListeners() {
-      this._searchBox.removeEventListener("click", () => {  this._expandSearchHandler(); }, false);
-      this._searchBoxField.removeEventListener("focus", () => {  this._expandSearchHandler(); }, true);
+    private _disposeListeners(): void {
+      this._searchBox.removeEventListener("click", this._boundExpandSearchHandler);
+      this._searchBoxField.removeEventListener("focus", this._boundExpandSearchHandler);
+      this._searchBox.removeEventListener("keyup", this._boundEnableClose);
+      this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
+      document.removeEventListener("click", this._boundHandleOutsideSearchClick);
+      this._searchBoxField.removeEventListener("blur", this._boundHandleBlur);
+      this._searchBoxClearButton.removeEventListener("blur", this._boundHandleBlur);
     }
 
-    private _handleOutsideSearchClick(e) {
+    private _handleOutsideSearchClick(e): void {
       // If the elemenet clicked is not INSIDE of searchbox then close seach
       if (!this._searchBox.contains(e.target) && e.target !== this._searchBox) {
         this._collapseSearchBox();
-        document.removeEventListener("click", (ev) => {  this._handleOutsideSearchClick(ev); }, false);
+        document.removeEventListener("click", this._boundHandleOutsideSearchClick);
+        this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
         this.setCollapsedListeners();
       }
     }
 
-    private _collapseSearchBox() {
-      this._searchBox.classList.remove("is-active");
+    private _exitSearchBox(event): void {
+      event.stopPropagation();
+      this._collapseSearchBox();
+      this._handleBlur();
+      document.removeEventListener("click", this._boundHandleOutsideSearchClick);
+      this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
+      this.setCollapsedListeners();
     }
 
-    private _expandSearchHandler() {
+    private _collapseSearchBox(): void {
+      this._searchBox.classList.remove("is-active");
+      console.log('dispatchEvent');
+      this._searchBoxField.dispatchEvent(new Event("searchCollapse"));
+    }
+
+    private _expandSearchHandler(): void {
       this._disposeListeners();
       this._searchBox.classList.add("is-active");
       this._searchBoxField.focus();
-      this._searchBoxCloseButton.addEventListener("click", () => { this._collapseSearchBox(); }, false);
-      document.addEventListener("click", (ev) => { this. _handleOutsideSearchClick(ev); }, false);
+      this._searchBoxExitButton.removeEventListener("click", this._boundExistSearchBox);
+      document.addEventListener("click", this._boundHandleOutsideSearchClick, false);
+      this._searchBoxExitButton.addEventListener("click", this._boundExistSearchBox, false);
+    }
+
+    private _enableClose(): void {
+      this._setHasText();
     }
 
     private _setHasText() {
@@ -91,25 +138,22 @@ namespace fabric {
       }
     }
 
-    private _setFocusAction(context) {
+    private _setFocusAction(context): void {
       this._searchBoxField.addEventListener("focus", () => {
         this._setHasText();
+        this._searchBox.addEventListener("keyup", this._boundEnableClose, false);
         this._searchBox.classList.add(SB_IS_ACTIVE);
       }, true);
     }
 
-    private _clearSearchBox() {
+    private _clearSearchBox(): void {
       this._searchBoxField.value = "";
-      this._searchBox.classList.remove(SB_IS_ACTIVE);
       this._setHasText();
-      this._cancel = false;
     }
 
-    private _setCloseButtonAction() {
-      this._searchBoxCloseButton.addEventListener("mousedown", () => {
-        this._clearSearchBox();
-      }, false);
-      this._searchBoxCloseButton.addEventListener("keydown", (e) => {
+    private _setClearButtonAction() {
+      this._searchBoxClearButton.addEventListener("mousedown", this._boundClearSearchBox, false);
+      this._searchBoxClearButton.addEventListener("keydown", (e) => {
         let keyCode = e.keyCode;
         if (keyCode === 13) {
           this._clearSearchBox();
@@ -117,7 +161,8 @@ namespace fabric {
       }, false);
     }
 
-    private _handleBlur() {
+    private _handleBlur(): void {
+      this._searchBox.removeEventListener("keyup", () => { this._enableClose(); });
       setTimeout(() => {
         if (!this._searchBox.contains(document.activeElement)) {
           this._clearSearchBox();
@@ -125,12 +170,12 @@ namespace fabric {
       }, 10);
     }
 
-    private _setBlurAction() {
-      this._searchBoxField.addEventListener("blur", () => { this._handleBlur(); }, true);
-      this._searchBoxCloseButton.addEventListener("blur", () => { this._handleBlur(); }, true);
+    private _setBlurAction(): void {
+      this._searchBoxField.addEventListener("blur", this._boundHandleBlur, true);
+      this._searchBoxClearButton.addEventListener("blur", this._boundHandleBlur, true);
     }
 
-    private _checkState() {
+    private _checkState(): void {
       if (this._hasClass(this._searchBox, "is-collapsed")) {
         this.setCollapsedListeners();
       }

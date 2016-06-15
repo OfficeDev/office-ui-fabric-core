@@ -6,8 +6,10 @@
 // Command Bar styles
 
 $CommandBar-height: 40px;
+$CommandBar-md-height: 44px;
 $CommandBar-iconSize: 18px;
 $CommandBar-sideAreaWidthsm: 128px;
+$SearchBox-width: 220px;
 $CommandBarItem-height: $CommandBar-height;
 
 @mixin highContrastBorder($color) {
@@ -16,7 +18,7 @@ $CommandBarItem-height: $CommandBar-height;
 }
 
 .ms-CommandBar {
-  background-color: $ms-color-themeLighterAlt;
+  background-color: $ms-color-neutralLighter;
   height: $CommandBar-height;
   white-space: nowrap;
   padding-left: 0;
@@ -55,7 +57,6 @@ $CommandBarItem-height: $CommandBar-height;
   }
 
   .ms-SearchBox {
-    margin-right: 8px;
     display: inline-block;
     vertical-align: top;
     transition: margin-right $ms-duration2;
@@ -69,7 +70,14 @@ $CommandBarItem-height: $CommandBar-height;
     z-index: $ms-zIndex-front;
   }
 
-  // Search is collapsed unless ativated and its only
+  .ms-CommandBar-overflowButton {
+    .ms-CommandButton-button {
+      font-size: 18px;
+      padding: 0 11px;
+    }
+  }
+
+  // Search is collapsed unless activated and its only
   // collapsed < L break points
 
   @media only screen and (min-width: $ms-screen-xl-min) {
@@ -77,12 +85,21 @@ $CommandBarItem-height: $CommandBar-height;
       margin-right: 24px;
     }
   }
+
+  @media only screen and (max-width: $ms-screen-sm-max) {
+    height: $CommandBar-md-height;
+  }
+
+  @media only screen and (max-width: $ms-screen-lg-max) {
+    &.search-expanded {
+      padding-left: $SearchBox-width;
+    }
+  }
 }
 
 .ms-CommandBar-mainArea {
   overflow-x: hidden;
   display: block;
-  // padding-left: $SearchBox-widthLgCollapsed + 8;
   height: 100%;
   overflow: hidden;
 }
@@ -91,7 +108,7 @@ $CommandBarItem-height: $CommandBar-height;
   float: right;
   text-align: right;
   width: auto;
-  padding-right: 8px;
+  padding-right: 4px;
   height: 100%;
 
   .ms-Button:last-child {
@@ -102,11 +119,7 @@ $CommandBarItem-height: $CommandBar-height;
     min-width: $CommandBar-sideAreaWidthsm;
   }
 
-  @media only screen and (min-width: $ms-screen-lg-min) {
-    padding-right: 12px;
-  }
-
   @media only screen and (min-width: $ms-screen-xl-min) {
-    padding-right: 16px;
+    padding-right: 20px;
   }
 }

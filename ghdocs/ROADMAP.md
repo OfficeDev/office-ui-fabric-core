@@ -6,6 +6,7 @@
 - **Searchable dropdown component.** See [this issue](https://github.com/OfficeDev/Office-UI-Fabric/issues/130) for the original request.
 - **Improved component documentation.** Our website will be updated with more details on what each component should be used for, and how to make it work in your project.
 - **Simple pagination component.** As requested in [this issue](https://github.com/OfficeDev/Office-UI-Fabric/issues/131).
+- **Details list.** This component is similar to the table and will be based on the file list in OneDrive. It will include functionality such as multi-select, sorting of columns, and may also have resizable columns.
 
 ## Possible Future Improvements
 - **Provide standard layouts for building full-page apps.** We've received a [request for this feature](https://github.com/OfficeDev/Office-UI-Fabric/issues/284) and it's something we'd like to add once we have a more clearly-defined set of UI patterns. For now, please send us screenshots of your full-page apps so that we can understand what common layouts we could provide.

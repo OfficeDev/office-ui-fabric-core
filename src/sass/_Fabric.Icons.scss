@@ -407,14 +407,14 @@ $ms-Icon-12: 12px;
 $ms-Icon-16: 16px;
 $ms-Icon-20: 20px;
 
-.ms-Icon-12 {
-  font-size: 12px;
+.ms-Icon--12 {
+  font-size: $ms-Icon-12;
 }
 
-.ms-Icon-16 {
-  font-size: 16px;
+.ms-Icon--16 {
+  font-size: $ms-Icon-16;
 }
 
-.ms-Icon-20 {
-  font-size: 20px;
+.ms-Icon--20 {
+  font-size: $ms-Icon-20;
 }

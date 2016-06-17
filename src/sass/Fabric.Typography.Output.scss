@@ -31,22 +31,10 @@
   @include ms-font-l;
 }
 
-// Medium Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-.ms-font-m-plus {
-  @include ms-font-m-plus;
-}
-
 // Medium Styles
 // Allowed weights: SemiLight, Regular, Semibold
 .ms-font-m {
   @include ms-font-m;
-}
-
-// Small Plus Styles
-// Allowed weights: SemiLight, Regular, Semibold
-.ms-font-s-plus {
-  @include ms-font-s-plus;
 }
 
 // Small Styles

@@ -151,7 +151,7 @@
 
 
 // Disabled day.
-.ms-DatePicker-day--disabled:before {
+.ms-DatePicker-day--disabled::before {
     border-top-color: $ms-color-neutralTertiary;
 }
 

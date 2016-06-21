@@ -111,7 +111,7 @@
     padding: 0 16px;
   }
 
-  &:before {
+  &::before {
     content: none;
     border: 0;
   }
@@ -165,7 +165,7 @@
   left: auto;
   max-width: 100%;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     z-index: -1;

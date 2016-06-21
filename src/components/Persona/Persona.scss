@@ -563,7 +563,7 @@ $ms-Persona-presenceSizeXl: 28px;
   .ms-Persona-presence {
     background-color: $ms-color-white;
 
-    &:before {
+    &::before {
       content: '';
       width: 100%;
       height: 100%;
@@ -574,7 +574,7 @@ $ms-Persona-presenceSizeXl: 28px;
       border-radius: 50%;
     }
 
-    &:after {
+    &::after {
       content: '';
       width: 100%;
       height: 2px;
@@ -588,7 +588,7 @@ $ms-Persona-presenceSizeXl: 28px;
 
   &.ms-Persona--lg {
     .ms-Persona-presence {
-      &:after {
+      &::after {
         top: 9px;
       }
     }
@@ -596,7 +596,7 @@ $ms-Persona-presenceSizeXl: 28px;
 
   &.ms-Persona--xl {
     .ms-Persona-presence {
-      &:after {
+      &::after {
         top: 13px;
       }
     }

@@ -74,7 +74,7 @@
     z-index: ($ms-zIndex-ContextualMenu + $ms-zIndex-middle);
   }
 
-  &:before {
+  &::before {
     position: absolute;
     @include drop-shadow;
     top: -6px;

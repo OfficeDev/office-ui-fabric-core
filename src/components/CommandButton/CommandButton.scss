@@ -228,7 +228,7 @@ $CommandButton-padding: 8px;
 //
 .ms-CommandButton.ms-CommandButton--pivot {
 
-  &.is-active:before {
+  &.is-active::before {
     @include ms-CommandButton-pivotLine;
   }
 

@@ -11,7 +11,7 @@
 // Slider mixin
 @mixin ms-Toggle-slider($direction) {
   // Slider pseudo element
-  &:before {
+  &::before {
     position: absolute;
     display: block;
     box-sizing: content-box;
@@ -35,14 +35,14 @@
   }
 
   @if $direction == left {
-    &:before {
+    &::before {
       right: auto;
       border-right: 2.5px solid $ms-color-white;
     }
   }
 
   @if $direction == right {
-    &:before {
+    &::before {
       left: auto;
       border-left: 2.5px solid $ms-color-white;
     }
@@ -149,13 +149,13 @@
       pointer-events: none;
       cursor: default;
 
-      &:before {
+      &::before {
         background-color: $ms-color-neutralTertiaryAlt;
       }
     }
 
     .ms-Toggle-field,
-    .ms-Toggle-field:before {
+    .ms-Toggle-field::before {
       @media screen and (-ms-high-contrast: active) {
         border-color: $ms-color-contrastBlackDisabled;
       }

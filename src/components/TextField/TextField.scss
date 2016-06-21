@@ -93,6 +93,13 @@
 //
 .ms-TextField.ms-TextField--placeholder {
   position: relative;
+  background-color: $ms-color-white;
+
+  .ms-TextField-field {
+    position: relative;
+    background-color: transparent;
+    z-index: $ms-zIndex-middle;
+  }
 
   .ms-Label {
     position: absolute;
@@ -100,6 +107,7 @@
     font-size: $ms-font-size-s;
     color: $ms-color-neutralSecondary;
     padding: 7px 0 7px 10px;
+    z-index: $ms-zIndex-back;
   }
 
   &.is-disabled {

@@ -5,6 +5,10 @@
 // --------------------------------------------------
 // RadioButton styles
 
+$ms-radiobutton-field-size: 20px;
+$ms-radiobutton-transition-duration: 200ms;
+$ms-radiobutton-transition-duration-inner: 150ms;
+$ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
 .ms-RadioButton {
   @include ms-u-normalize;
@@ -34,15 +38,15 @@
   content: '';
   display: inline-block;
   border: 2px solid $ms-color-neutralTertiary;
-  width: 20px;
-  height: 20px;
+  width: $ms-radiobutton-field-size;
+  height: $ms-radiobutton-field-size;
   cursor: pointer;
   font-weight: normal;
   position: absolute;
   box-sizing: border-box;
   transition-property: border-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+  transition-duration: $ms-radiobutton-transition-duration;
+  transition-timing-function: $ms-radiobutton-transition-timing;
   border-radius: 50%;
 }
 
@@ -58,8 +62,8 @@
   bottom: 0;
   right: 0;
   transition-property: top, left, width, height;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+  transition-duration: $ms-radiobutton-transition-duration-inner;
+  transition-timing-function: $ms-radiobutton-transition-timing;
   box-sizing: border-box;
 }
 

@@ -109,7 +109,7 @@ namespace fabric {
 
       /** dispatch click on document so anything listening can be notified */
       $picker.on("open", function(e) {
-        let evt = document.createEvent('MouseEvents');
+        let evt = document.createEvent("MouseEvents");
         evt.initEvent("click", true, true);
         document.dispatchEvent(evt);
       });

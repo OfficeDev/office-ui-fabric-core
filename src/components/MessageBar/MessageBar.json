@@ -1,0 +1,16 @@
+{
+  "name": "MessageBar",
+  "template": "MessageBar.html",
+  "class": "ms-MessageBar",
+  "dependencies": [
+    "Link"
+  ],
+  "fileOrder": [
+    "MessageBar.html",
+    "MessageBar.Warning.html",
+    "MessageBar.SevereWarning.html",
+    "MessageBar.Error.html",
+    "MessageBar.Success.html",
+    "MessageBar.Remove.html"
+  ]
+}

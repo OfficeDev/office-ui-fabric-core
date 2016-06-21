@@ -23,30 +23,61 @@
     <!-- Host for NavBar component -->
       <div class="VideoPortal-navBar">
         <!-- Fabric NavBar component -->
-        <div class="ms-NavBar">
-          <div class="ms-NavBar-openMenu js-openMenu">
-            <i class="ms-Icon ms-Icon--menu"></i>
-          </div>
-          <ul class="ms-NavBar-items">
-            <li class="ms-NavBar-item ms-NavBar-item--search ms-u-hiddenSm">
-              <div class="ms-TextField">
-                <input class="ms-TextField-field">
-              </div>
-            </li>
-            <li class="ms-NavBar-item"><a class="ms-NavBar-link" href="index.html">Home</a></li>
-            <li class="ms-NavBar-item"><a class="ms-NavBar-link" href="channels.html">All Channels</a></li>
-            <li class="ms-NavBar-item ms-NavBar-item--hasMenu">
-              <a class="ms-NavBar-link" href="#">My Channels</a>
-              <i class="ms-NavBar-chevronDown ms-Icon ms-Icon--chevronDown"></i>
-              <ul class="ms-ContextualMenu">
-                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Employee interviews</a></li>
-                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Executive Briefings</a></li>
-                <li class="ms-ContextualMenu-item"><a class="ms-ContextualMenu-link" href="#">Web Tech Talks</a></li>
+        <!-- CommandBar -->
+       <div class="ms-CommandBar  ms-CommandBar--navBar ">
+          <div class="ms-CommandBar-sideCommands"></div>
+          <div class="ms-CommandBar-mainArea">
+           <div class="ms-CommandButton ms-CommandButton--pivot">
+              <a class="ms-CommandButton-button" href="index.html">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--home"></i></span>
+                <span class="ms-CommandButton-label">Home</span> 
+              </a>
+            </div>
+            <div class="ms-CommandButton ms-CommandButton--pivot">
+              <a class="ms-CommandButton-button" href="channels.html">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--listBullets"></i></span>
+                <span class="ms-CommandButton-label">Channels</span> 
+              </a>
+            </div>
+            <div class="ms-CommandButton ms-CommandButton--pivot">
+              <a class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon ms-fontColor-themePrimary"><i class="ms-Icon ms-Icon--upload"></i></span>
+                <span class="ms-CommandButton-label">Upload</span> 
+              </a>
+            </div>
+            <!-- Overflow Command -->
+            <div class="ms-CommandButton ms-CommandBar-overflowButton ms-CommandButton--noLabel  ">
+              <button class="ms-CommandButton-button">
+                <span class="ms-CommandButton-icon "><i class="ms-Icon ms-Icon--ellipsis"></i></span><span class="ms-CommandButton-label"></span> 
+              </button>
+              <ul class="ms-ContextualMenu  is-opened ms-ContextualMenu--hasIcons">
+                <li class="ms-ContextualMenu-item ">
+                  <a class="ms-ContextualMenu-link " tabindex="1">Folder</a>
+                  <i class="ms-Icon ms-Icon--folder "></i>
+                </li>
+                <li class="ms-ContextualMenu-item ms-ContextualMenu-item--divider"></li>
+                <li class="ms-ContextualMenu-item ">
+                  <a class="ms-ContextualMenu-link " tabindex="1">Plain Text Document</a>
+                  <i class="ms-Icon ms-Icon--document "></i>
+                </li>
+                <li class="ms-ContextualMenu-item ">
+                  <a class="ms-ContextualMenu-link " tabindex="1">A Dog</a>
+                  <i class="ms-Icon ms-Icon--dogAlt "></i>
+                </li>
+                <li class="ms-ContextualMenu-item ">
+                  <a class="ms-ContextualMenu-link " tabindex="1">The Sun</a>
+                  <i class="ms-Icon ms-Icon--sun "></i>
+                </li>
+                <li class="ms-ContextualMenu-item ">
+                  <a class="ms-ContextualMenu-link " tabindex="1">Money</a>
+                  <i class="ms-Icon ms-Icon--money "></i>
+                </li>
               </ul>
-            </li>
-            <li class="ms-NavBar-item ms-NavBar-item--right"><i class="ms-Icon ms-Icon--upload"></i> Upload</li>
-          </ul>
+            </div>
+            <!-- End Overflow Command -->
+          </div>
         </div>
+        <!-- End CommandBar -->
       </div>
       <div class="VideoPortal-page PlayerPage">
         <!-- Video player container -->
@@ -174,15 +205,12 @@
       </div>
     </div>
   </div>
-  <!-- Fabric jQuery plugin for NavBar component -->
-  <script src="../../components/NavBar/Jquery.Navbar.js"></script>
+  <script src="../../js/fabric.js"></script>
   <script>
-    $(document).ready(function() {
-        // Invoke the NavBar jQuery plugin if it's available
-        if ($.fn.NavBar) {
-          $('.ms-NavBar').NavBar();
-        }
-    });
+    var CommandBarElements = document.querySelectorAll(".ms-CommandBar");
+     for(var i = 0; i < CommandBarElements.length; i++) {
+         new fabric['CommandBar'](CommandBarElements[i]);
+     }
   </script>
 </body>
 </html>

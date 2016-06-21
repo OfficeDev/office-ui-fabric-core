@@ -225,15 +225,22 @@ var PersonaExampleProps = {
       }
     ],
     "personaCardProps":  {
+      "button": {
+        "label": "Open Example",
+        "modifier": "primary",
+        "tag": "button"
+      },
+      "contextualHostProps": {
+        "state": "is-open"
+      },
       "personaProps": {
         "initials": "AL",
         "initialsColor": "blue",
-        "image": "Persona.Person2.png",
+        "image": "../persona/Persona.Person2.png",
         "primaryText": "Alton Lafferty",
         "secondaryText": "Accountant",
         "tertiaryText": "In a meeting",
         "optionalText": "Available at 4:00pm",
-        "icon": "skypeCheck",
         "modifiers":  [
           {
             "name": "lg"
@@ -249,7 +256,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Russel Miller",
                   "secondaryText": "Sales"
                 }
@@ -259,7 +266,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Douglas Fielder",
                   "secondaryText": "Public Relations"
                 }
@@ -274,7 +281,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Grant Steel",
                   "secondaryText": "Sales"
                 }
@@ -289,7 +296,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "/Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Harvey Wallin",
                   "secondaryText": "Public Relations"
                 }
@@ -299,7 +306,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Marcus Lauer",
                   "secondaryText": "Technical Support"
                 }
@@ -309,7 +316,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Marcel Groce",
                   "secondaryText": "Delivery"
                 }
@@ -319,7 +326,7 @@ var PersonaExampleProps = {
                 "props": {
                   "initials": "RM",
                   "initialsColor": "blue",
-                  "image": "Persona.Person2.png",
+                  "image": "../persona/Persona.Person2.png",
                   "primaryText": "Jessica Fischer",
                   "secondaryText": "Marketing"
                 }
@@ -328,9 +335,6 @@ var PersonaExampleProps = {
           }
         ]
       }
-    },
-    "contextualHostProps":  {
-      "state": "is-open"
     }
   }
 }

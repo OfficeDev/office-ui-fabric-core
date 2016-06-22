@@ -28,6 +28,13 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 {{> TextField props=TextFieldTextFieldUnderlinedExampleModel}}
 --->
 
+## States
+
+### Disabled
+<!---
+{{> TextField props=TextFieldDisabledExampleModel}}
+--->
+
 ## Using this component
 1. Confirm that you have references to Fabric's CSS on your page:
     ```

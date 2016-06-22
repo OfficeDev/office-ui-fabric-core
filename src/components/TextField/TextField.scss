@@ -78,6 +78,13 @@
     }
   }
 
+  &[disabled] {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralLighter;
+    pointer-events: none;
+    cursor: default;
+  }
+
   @include input-placeholder {
     color: $ms-color-neutralSecondary;
   }

@@ -31,12 +31,21 @@
 
 .ms-PersonaCard-actions {
   @include ms-u-borderBox;
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0 10px;
-  border-bottom: 1px solid $ms-color-neutralTertiaryAlt;
   background-color: $ms-color-white;
   height: 48px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $ms-color-neutralTertiaryAlt;
+  }
 }
 
 .ms-PersonaCard-action,
@@ -107,7 +116,7 @@
 .ms-PersonaCard-orgChart {
   position: absolute;
   right: 12px;
-  top: 0;
+  top: -95px;
 }
 
 .ms-PersonaCard-actionDetailBox {

@@ -10,7 +10,7 @@
 }
 
 @mixin ms-Label-is-required {
-  &:after {
+  &::after {
     content: ' *';
     color: $ms-color-error;
   }

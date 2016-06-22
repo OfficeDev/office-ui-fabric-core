@@ -2,7 +2,8 @@ var PersonaExampleProps = {
   "default": {
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
     "groups": [
       {
@@ -17,11 +18,10 @@ var PersonaExampleProps = {
               "secondaryText": "Sales",
                 "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
-            },
-            "state": "is-selected"
+            }
           },
           {
             "component": "Persona",
@@ -32,7 +32,35 @@ var PersonaExampleProps = {
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "GS",
+              "initialsColor": "black",
+              "primaryText": "Grant Steel",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "HW",
+              "initialsColor": "green",
+              "primaryText": "Harvey Wallin",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "sm"
                 }
               ]
             }
@@ -49,7 +77,15 @@ var PersonaExampleProps = {
     ],
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
+    },
+    "resultsProps": {
+      "modifiers": [
+        {
+          "name": "compact"
+        }
+      ]
     },
     "groups": [
       {
@@ -67,8 +103,7 @@ var PersonaExampleProps = {
                   "name": "xs"
                 }
               ]
-            },
-            "state": "is-selected"
+            }
           },
           {
             "component": "Persona",
@@ -76,6 +111,34 @@ var PersonaExampleProps = {
               "initials": "DF",
               "initialsColor": "purple",
               "primaryText": "Douglas Fielder",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "xs"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "GS",
+              "initialsColor": "black",
+              "primaryText": "Grant Steel",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "xs"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "HW",
+              "initialsColor": "green",
+              "primaryText": "Harvey Wallin",
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
@@ -96,8 +159,52 @@ var PersonaExampleProps = {
     ],
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
+    "resultsProps": {
+      "modifiers": [
+        {
+          "name": "facePile"
+        }
+      ]
+    },
+    "members": [
+      {
+        "title": "Members",
+        "count": "2",
+        "personas": [
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "RM",
+              "initialsColor": "blue",
+              "primaryText": "Russel Miller",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "DF",
+              "initialsColor": "purple",
+              "primaryText": "Douglas Fielder",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
     "groups": [
       {
         "title": "Contacts",
@@ -111,11 +218,10 @@ var PersonaExampleProps = {
               "secondaryText": "Sales",
                 "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
                 }
               ]
-            },
-            "state": "is-selected"
+            }
           },
           {
             "component": "Persona",
@@ -126,7 +232,35 @@ var PersonaExampleProps = {
               "secondaryText": "Public Relations",
               "modifiers":  [
                 {
-                  "name": "xs"
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "GS",
+              "initialsColor": "black",
+              "primaryText": "Grant Steel",
+              "secondaryText": "Sales",
+                "modifiers":  [
+                {
+                  "name": "sm"
+                }
+              ]
+            }
+          },
+          {
+            "component": "Persona",
+            "props": {
+              "initials": "HW",
+              "initialsColor": "green",
+              "primaryText": "Harvey Wallin",
+              "secondaryText": "Public Relations",
+              "modifiers":  [
+                {
+                  "name": "sm"
                 }
               ]
             }
@@ -143,7 +277,8 @@ var PersonaExampleProps = {
     ],
     "textFieldProps": {
       "textfield": true,
-      "modifier": "textFieldUnderlined"
+      "modifier": "textFieldUnderlined",
+      "placeholder": "Select or enter an option"
     },
     "groups": [
       {

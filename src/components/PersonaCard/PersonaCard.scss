@@ -60,7 +60,7 @@
     color: $ms-color-themePrimary;
   }
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -76,7 +76,7 @@
     color: $ms-color-themePrimary;
 
     // Arrow
-    &:after {
+    &::after {
       @include ms-u-borderBox;
       @include rotate(45deg);
       content: '';
@@ -138,7 +138,7 @@
     overflow: hidden;
 
     // Show the expander icon.
-    .ms-PersonaCard-detailExpander:after {
+    .ms-PersonaCard-detailExpander::after {
       content: '\e088';
     }
   }
@@ -161,7 +161,7 @@
   text-align: center;
   width: 30px;
 
-  &:after {
+  &::after {
     @include ms-Icon;
     content: '\e087';
   }
@@ -177,7 +177,7 @@
 }
 
 .ms-PersonaCard-action.ms-PersonaCard-orgChart {
-  &:after {
+  &::after {
     display: none; // Hide arrow for orgchart action
   }
 }

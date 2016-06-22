@@ -11,8 +11,7 @@ var CalloutExampleModel = {
           "linkText": "Learn More",
           "customClassses": "ms-Callout-link",
           "tabIndex": 0,
-          "hasHref": false,
-          "modifierClass": "ms-Link--hero"
+          "hasHref": false
         }
       }
     ],

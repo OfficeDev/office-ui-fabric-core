@@ -89,11 +89,11 @@ $MessageBar-padding: 8px;
     font-size: $ms-font-size-s;
     top: 3px;
 
-    &:before {
+    &::before {
       margin-left: 1px;
     }
 
-    &:after {
+    &::after {
       font-size: 8px;
       margin-left: 3px;
       top: 1px;

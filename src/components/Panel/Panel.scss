@@ -5,29 +5,24 @@
 // --------------------------------------------------
 // Panel styles
 
-$Panel-width-lightDismiss: 272px;
+$ms-panel-width-sm: 272px;
+$ms-panel-width-md: 340px;
+$ms-panel-width-lg: 644px;
+$ms-panel-width-xl: 940px;
+$ms-panel-width-xxl: 1192px;
 
-$Panel-width-sm: 272px;
-$Panel-width-md: 340px;
-$Panel-width-lg: 644px;
-$Panel-width-xl: 940px;
-$Panel-width-xxl: 1192px;
+$ms-panel-margin-md: 48px;
+$ms-panel-margin-lg: 428px;
+$ms-panel-margin-xl: 176px;
 
-$Panel-margin-md: 48px;
-$Panel-margin-lg: 428px;
-$Panel-margin-xl: 176px;
-$CommandBarHeight: 40px;
-$CommandButtonLightBlue: #B5D8F4;
-$CommandButtonLighterBlue: #D7EAF9;
-$CommandButtonDarkBlue: #07288B;
-$CommandButtonBlue: #2488D8;
+$ms-panel-close-button-height: 40px;
 
 // The panel itself, where the content goes.
 .ms-Panel {
   @include ms-baseFont;
   background-color: $ms-color-white;
   width: 100%;
-  max-width: $Panel-width-sm;
+  max-width: $ms-panel-width-sm;
   @include drop-shadow(-30px, 0, 30px, -30px, .2);
   position: absolute;
   top: 0;
@@ -53,62 +48,40 @@ $CommandButtonBlue: #2488D8;
 //== Modifier: Medium panel (anchored right, fixed width)
 //
 .ms-Panel.ms-Panel--md {
-  max-width: $Panel-width-md;
+  max-width: $ms-panel-width-md;
 }
 
 //== Modifier: Large panel (anchored right, fluid width)
 //
 .ms-Panel.ms-Panel--lg {
-  max-width: $Panel-width-lg;
+  max-width: $ms-panel-width-lg;
 }
 
 //== Modifier: XLarge panel (anchored right, fluid width)
 //
 .ms-Panel.ms-Panel--xl {
-  max-width: $Panel-width-xl;
+  max-width: $ms-panel-width-xl;
 }
 
 //== Modifier: XLarge panel (anchored right, fluid width)
 //
 .ms-Panel.ms-Panel--xxl {
-  max-width: $Panel-width-xxl;
+  max-width: $ms-panel-width-xxl;
 }
 
 //== Modifier: Left anchored panel (anchored left, fixed width)
 // Note: This panel variant should only be used for left nav.
-.ms-PanelHost.ms-PanelHost--left {
-  right: auto;
-  left: 0;
-  border-left: 1px solid $ms-color-neutralLight;
-  border-right: 1px solid $ms-color-neutralLight;
+.ms-Panel--left {
   @include drop-shadow(-30px, 0, 30px, 30px, .2);
+  left: 0;
+  right: auto;
 
-  // Commands and content inner are not displayed
-  // Note: Replace with a leftnav menu.
-  .ms-Panel-commands,
-  .ms-Panel-contentInner {
-    display: none;
+  &.animate-in {
+    @include ms-u-slideRightIn40;
   }
 
-  // Animations - Left panel (anchored left)
-  &.ms-Panel-animateIn {
-    .ms-Panel-main {
-      @include ms-u-slideRightIn40;
-    }
-
-    .ms-Overlay {
-      @include ms-u-fadeIn200;
-    }
-  }
-
-  &.ms-Panel--left.ms-Panel-animateOut {
-    .ms-Panel-main {
-      @include ms-u-slideLeftOut40;
-    }
-
-    .ms-Overlay {
-      @include ms-u-fadeOut200;
-    }
+  &.animate-out {
+    @include ms-u-slideLeftOut40;
   }
 }
 
@@ -118,9 +91,9 @@ $CommandButtonBlue: #2488D8;
   position: absolute;
   right: 8px;
   top: 0;
-  height: $CommandBarHeight;
-  width: $CommandBarHeight;
-  line-height: $CommandBarHeight;
+  height: $ms-panel-close-button-height;
+  width: $ms-panel-close-button-height;
+  line-height: $ms-panel-close-button-height;
   outline: 0;
   padding: 0;
   color: $ms-color-neutralSecondary;
@@ -133,7 +106,7 @@ $CommandButtonBlue: #2488D8;
 
 // Scrollable content area
 .ms-Panel-contentInner {
-  margin-top: $CommandBarHeight;
+  margin-top: $ms-panel-close-button-height;
   padding: 0 16px 20px;
   overflow-y: auto;
 
@@ -159,81 +132,5 @@ $CommandButtonBlue: #2488D8;
 
   @media (min-width: $ms-screen-xl-min) {
     margin-top: 30px;
-  }
-}
-
-//== Modifier: Deprecated Animated commandbar
-//
-.ms-Panel.ms-Panel--animatedCommands {
-  .ms-CommandBar {
-    @media (min-width: $ms-screen-md-min) {
-      display: block;
-    }
-  }
-
-  .ms-CommandBarItem {
-    user-select: none;
-
-    &:hover {
-      background-color: $CommandButtonLighterBlue;
-    }
-
-    &:active {
-      background-color: $CommandButtonLightBlue;
-
-      .ms-CommandBarItem-icon {
-        color: $CommandButtonDarkBlue;;
-      }
-
-      .ms-CommandBarItem-commandText {
-        color: $ms-color-black;
-      }
-    }
-  }
-
-  .ms-CommandBarItem:first-child {
-    background-color: $ms-color-themePrimary;
-    box-shadow: inset 0 1px 0 0 $CommandButtonBlue;
-
-    .ms-CommandBarItem-icon {
-      color: $ms-color-white;
-    }
-
-    .ms-CommandBarItem-commandText {
-      color: $ms-color-white;
-    }
-
-    .ms-CommandBarItem-linkWrapper {
-      padding-left: 12px;
-      padding-right: 12px;
-      cursor: pointer;
-    }
-
-    &:hover {
-      background-color: $ms-color-themeDark;
-      box-shadow: none;
-
-      .ms-CommandBarItem-icon {
-        color: $ms-color-white;
-      }
-
-      .ms-CommandBarItem-commandText {
-        color: $ms-color-white;
-      }
-    }
-  }
-
-  &.is-open {
-    .ms-CommandBar {
-      @include ms-u-slideDownIn20;
-      animation-delay: 250ms;
-    }
-
-    @media (min-width: $ms-screen-md-min) {
-      // Animate CommandBar in
-      .ms-CommandBar {
-        animation-delay: 500ms;
-      }
-    }
   }
 }

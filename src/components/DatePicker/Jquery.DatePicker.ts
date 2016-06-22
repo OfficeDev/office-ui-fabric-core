@@ -107,6 +107,13 @@ namespace fabric {
       /** Update the custom view. */
       this.updateCustomView($datePicker);
 
+      /** dispatch click on document so anything listening can be notified */
+      $picker.on("open", function(e) {
+        let evt = document.createEvent("MouseEvents");
+        evt.initEvent("click", true, true);
+        document.dispatchEvent(evt);
+      });
+
       /** Move back one month. */
       $monthControls.on("click", ".js-prevMonth", (event) => {
         event.preventDefault();

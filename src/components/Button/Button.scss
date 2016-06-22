@@ -15,7 +15,6 @@
   background-color: $ms-color-neutralLighter;
   border: 1px solid $ms-color-neutralLighter;
   cursor: pointer;
-  display: inline-block;
   height: 32px;
   min-width: 80px;
   padding: 4px 20px 6px;
@@ -126,36 +125,33 @@
 //== Modifier: Hero button
 //
 .ms-Button.ms-Button--hero {
+  align-items: center;
   background-color: transparent;
   border: 0;
-  vertical-align: top;
-  line-height: normal;
+  display: flex;
+  padding: 0;
 
   .ms-Button-icon {
     color: $ms-color-themePrimary;
-    display: inline-block;
-    font-size: $ms-font-size-s;
-    position: relative;
-    top: -8px;
+    display: block;
+    margin-right: 4px;
     text-align: center;
 
     .ms-Icon {
       border-radius: 18px;
       border: 1px solid $ms-color-themePrimary;
+      font-size: $ms-font-size-s;
       height: 18px;
       line-height: 18px;
       width: 18px;
-      font-size: $ms-font-size-s;
-      margin: 0;
     }
   }
 
   .ms-Button-label {
     color: $ms-color-themePrimary;
-    font-weight: $ms-font-weight-light;
     font-size: $ms-font-size-xl;
+    font-weight: $ms-font-weight-light;
     position: relative;
-    top: -5px;
     text-decoration: none;
   }
 

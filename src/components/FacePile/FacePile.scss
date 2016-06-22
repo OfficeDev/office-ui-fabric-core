@@ -6,10 +6,10 @@
 // FacePile styles
 
 .ms-FacePile {
+  @include ms-baseFont;
   position: relative;
   height: 32px;
   width: auto;
-  font-family: $ms-font-family-base;
 
   .ms-FacePile-personaCardHost {
     display: none;

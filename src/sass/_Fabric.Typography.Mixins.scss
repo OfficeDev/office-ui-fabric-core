@@ -3,13 +3,9 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// List styles
+// Fabric Core Typography mixins
 
-.ms-List {
-  @include ms-baseFont;
-  @include ms-u-normalize;
-  color: $ms-color-neutralPrimary;
-  font-size: $ms-font-size-m;
-  font-weight: $ms-font-weight-regular;
-  list-style-type: none;
+@mixin ms-baseFont() {
+  font-family: $ms-font-family-base;
+  -webkit-font-smoothing: antialiased;
 }

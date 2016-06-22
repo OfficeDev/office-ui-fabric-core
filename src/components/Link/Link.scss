@@ -7,7 +7,7 @@
 
 
 @mixin ms-Link {
-  font-family: $ms-font-family-base;
+  @include ms-baseFont;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   color: $ms-color-themePrimary;

@@ -6,10 +6,10 @@
 // Data table styles
 
 .ms-Table {
+  @include ms-baseFont;
   display: table;
   width: 100%;
   border-collapse: collapse;
-  font-family: $ms-font-family-base;
 }
 
 // makes the table cells not expand with the content, keeping the table cells at a fixed size

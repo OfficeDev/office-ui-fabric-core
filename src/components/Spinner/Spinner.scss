@@ -7,9 +7,9 @@
 
 
 .ms-Spinner {
+  @include ms-baseFont;
   position: relative;
   height: 20px;
-  font-family: $ms-font-family-base;
 
   &.ms-Spinner--large {
     height: 28px;
@@ -37,8 +37,8 @@
 }
 
 .ms-Spinner-label {
+  @include ms-baseFont;
   position: relative;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s;
   font-weight: $ms-font-weight-regular;
   color: $ms-color-themePrimary;

@@ -9,9 +9,9 @@ $CommandButton-height: 40px;
 $CommandButton-padding: 8px;
 
 .ms-CommandButton {
+  @include ms-baseFont;
   display: inline-block;
   position: relative;
-  font-family: $ms-font-family-base;
 
   &.is-hidden {
     display: none;
@@ -65,7 +65,6 @@ $CommandButton-padding: 8px;
 @mixin ms-CommandBarButton-buttonBase {
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   // background-color: $ms-color-themeLighterAlt;
@@ -126,7 +125,6 @@ $CommandButton-padding: 8px;
 }
 
 .ms-CommandButton-label {
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   color: $ms-color-neutralPrimary;
@@ -144,7 +142,6 @@ $CommandButton-padding: 8px;
   display: inline-block;
   position: relative;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-l;
   font-weight: $ms-font-weight-semilight;
   min-width: 17px;
@@ -161,7 +158,6 @@ $CommandButton-padding: 8px;
 
 .ms-CommandButton-splitIcon {
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-l;
   font-weight: $ms-font-weight-semilight;
   margin-left: -4px;

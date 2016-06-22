@@ -5,83 +5,84 @@
 // --------------------------------------------------
 // Typographic mixins arranged with appropriate size and family combinations.
 @import 'Fabric.Typography.Variables';
+@import 'Fabric.Typography.Mixins';
 
 // Super Styles (LIMITED USE)
 @mixin ms-font-su {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-su;
   font-weight: $ms-font-weight-light;
 }
 
 // Extra-Extra-Large
 @mixin ms-font-xxl {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-xxl;
   font-weight: $ms-font-weight-light;
 }
 
 // Extra-Large Styles
 @mixin ms-font-xl {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-xl;
   font-weight: $ms-font-weight-light;
 }
 
 // Large Styles
 @mixin ms-font-l {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-l;
   font-weight: $ms-font-weight-semilight;
 }
 
 // Medium Plus Styles
 @mixin ms-font-m-plus {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m-plus;
   font-weight: $ms-font-weight-regular;
 }
 
 // Medium Styles
 @mixin ms-font-m {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
 }
 
 // Small Plus Styles
 @mixin ms-font-s-plus {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s-plus;
   font-weight: $ms-font-weight-regular;
 }
 
 // Small Styles
 @mixin ms-font-s {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s;
   font-weight: $ms-font-weight-regular;
 }
 
 // XS Styles
 @mixin ms-font-xs {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-    font-family: $ms-font-family-base;
   font-size: $ms-font-size-xs;
   font-weight: $ms-font-weight-regular;
 }
 
 // Micro Styles (LIMITED USE)
 @mixin ms-font-mi {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-mi;
   font-weight: $ms-font-weight-semibold;
 }

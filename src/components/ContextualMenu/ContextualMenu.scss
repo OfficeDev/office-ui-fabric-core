@@ -7,9 +7,9 @@
 
 
 .ms-ContextualMenu {
+  @include ms-baseFont;
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   display: block;
@@ -142,7 +142,7 @@
       background-color: $ms-color-white;
 
       // Checkmark
-      &:after {
+      &::after {
         @include ms-Icon;
         color: $ms-color-neutralPrimary;
         content: '\e041';

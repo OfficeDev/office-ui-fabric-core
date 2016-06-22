@@ -70,12 +70,16 @@ $ms-color-greenLight:    #bad80a;
 
 //== Message colors
 //
-$ms-color-info:              $ms-color-green;
+$ms-color-info:              $ms-color-neutralSecondaryAlt;
 $ms-color-infoBackground:    $ms-color-neutralLighter;
 $ms-color-success:           $ms-color-green;
 $ms-color-successBackground: #dff6dd;
-$ms-color-alert:             $ms-color-orange;
-$ms-color-alertBackground:   #fed9cc;
+$ms-color-severeWarning:     $ms-color-orange;
+$ms-color-severeWarningBackground: #fed9cc;
+$ms-color-alert:             $ms-color-severeWarning;   // Deprecated: Use $ms-color-severeWarning
+$ms-color-alertBackground:   $ms-color-severeWarningBackground; // Deprecated: Use $ms-color-severeWarningBackground
+$ms-color-warning:           $ms-color-neutralSecondaryAlt;
+$ms-color-warningBackground: #fff4ce;
 $ms-color-error:             $ms-color-redDark;
 $ms-color-errorBackground:   #fde7e9;
 

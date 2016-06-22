@@ -15,12 +15,6 @@ Use the extra small Persona component to fit more results.
 {{> PeoplePicker props=PeoplePickerExampleProps.compact}}
 --->
 
-### Members list
-Has a smaller search field.
-<!---
-{{> PeoplePicker props=PeoplePickerExampleProps.membersList}}
---->
-
 ### Face pile
 Presents the selected people in a list below the search field, rather than inline.
 <!---

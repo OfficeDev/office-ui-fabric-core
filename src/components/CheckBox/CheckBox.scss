@@ -8,9 +8,9 @@
 
 // Unselected, radio button (default)
 .ms-CheckBox {
+  @include ms-baseFont;
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   min-height: 36px;
@@ -26,12 +26,12 @@
     pointer-events: none;
     cursor: default;
 
-    &:before {
+    &::before {
       background-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
     }
 
-    &:after {
+    &::after {
       border-color: $ms-color-neutralLight;
     }
 
@@ -40,7 +40,7 @@
     }
   }
 
-  & .ms-CheckBox-field.in-focus:after {
+  & .ms-CheckBox-field.in-focus::after {
     border-color: $ms-color-neutralSecondaryAlt;
   }
 
@@ -52,7 +52,7 @@
     position: relative;
 
     // The actual styled CheckBox element - radio button by default
-    &:after {
+    &::after {
       content: '';
       display: inline-block;
       border: 1px $ms-color-neutralTertiaryAlt solid;
@@ -67,7 +67,7 @@
     }
 
     &:hover {
-      &:after {
+      &::after {
         border-color: $ms-color-neutralSecondaryAlt;
       }
 
@@ -77,13 +77,13 @@
     }
 
     &.ms-Choice-type--checkbox {
-      &:after {
+      &::after {
         border-radius: 0;
       }
 
       &.is-checked {
-        &:hover:before,
-        &:before {
+        &:hover::before,
+        &::before {
           @include ms-Icon;
           content: '\e041';
           background-color: transparent;
@@ -98,7 +98,7 @@
     // Radio button by default
     &.is-checked {
       // Circle indicating a checked radio button
-      &:before {
+      &::before {
         background-color: $ms-color-neutralSecondary;
         border-color: $ms-color-neutralSecondary;
         color: $ms-color-neutralSecondary;
@@ -115,7 +115,7 @@
         box-sizing: border-box;
       }
 
-      &:hover:before {
+      &:hover::before {
         background-color: $ms-color-neutralDark;
         color: $ms-color-neutralDark;
       }

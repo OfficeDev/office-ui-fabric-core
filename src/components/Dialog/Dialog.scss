@@ -6,10 +6,10 @@
 // Dialog styles
 
 .ms-Dialog {
+  @include ms-baseFont;
   @include drop-shadow(0, 0, 5px, 0, .4);
   background-color: $ms-color-white;
   display: none;
-  font-family: $ms-font-family-base;
   height: auto;
   min-width: 220px;
   max-width: 340px;

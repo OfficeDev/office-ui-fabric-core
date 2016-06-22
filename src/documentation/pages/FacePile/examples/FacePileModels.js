@@ -242,7 +242,7 @@ var FacePileModels = {
         "props": {
           "initials": "DF",
           "initialsColor": "green",
-          "primaryText": "Alton Lafferty",
+          "primaryText": "Douglas Fielder",
           "secondaryText": "Accountant",
           "modifiers": [
             {
@@ -251,10 +251,9 @@ var FacePileModels = {
           ],
           "personaCardProps":  {
             "personaProps": {
-              "initials": "AL",
-              "initialsColor": "blue",
-              "image": "../persona/Persona.Person2.png",
-              "primaryText": "Alton Lafferty",
+              "initials": "DF",
+              "initialsColor": "green",
+              "primaryText": "Douglas Fielder",
               "secondaryText": "Accountant",
               "tertiaryText": "In a meeting",
               "optionalText": "Available at 4:00pm",

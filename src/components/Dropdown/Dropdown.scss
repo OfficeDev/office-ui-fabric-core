@@ -25,9 +25,10 @@
 }
 
 .ms-Dropdown {
+  @include ms-baseFont;
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
+
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   margin-bottom: 10px;
@@ -111,7 +112,7 @@
     padding: 0 16px;
   }
 
-  &:before {
+  &::before {
     content: none;
     border: 0;
   }
@@ -165,7 +166,7 @@
   left: auto;
   max-width: 100%;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     z-index: -1;

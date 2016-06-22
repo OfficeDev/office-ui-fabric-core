@@ -8,8 +8,8 @@
 $ms-Callout-commandButtonHeight: 27px;
 
 .ms-Callout {
+  @include ms-baseFont;
   width: 288px;
-  font-family: $ms-font-family-base;
 
   &.is-hidden {
     display: none;
@@ -70,10 +70,6 @@ $ms-Callout-commandButtonHeight: 27px;
   margin-top: 20px;
   width: 100%;
   white-space: nowrap;
-
-  .ms-Link.ms-Link--hero {
-    left: -8px; // Move link inline with body text
-  }
 
   .ms-CommandButton.ms-CommandButton--inline {
     height: $ms-Callout-commandButtonHeight;

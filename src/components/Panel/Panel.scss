@@ -24,6 +24,7 @@ $CommandButtonBlue: #2488D8;
 
 // The panel itself, where the content goes.
 .ms-Panel {
+  @include ms-baseFont;
   background-color: $ms-color-white;
   width: 100%;
   max-width: $Panel-width-sm;
@@ -33,7 +34,6 @@ $CommandButtonBlue: #2488D8;
   bottom: 0;
   right: 0;
   z-index: $ms-zIndex-front;
-  font-family: $ms-font-family-base;
   display: none;
 
   // Animations -- Default (anchored right)

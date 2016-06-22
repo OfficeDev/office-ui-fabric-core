@@ -10,16 +10,16 @@
 }
 
 @mixin ms-Label-is-required {
-  &:after {
+  &::after {
     content: ' *';
     color: $ms-color-error;
   }
 }
 
 .ms-Label {
+  @include ms-baseFont;
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s;
   font-weight: $ms-font-weight-regular;
   box-sizing: border-box;

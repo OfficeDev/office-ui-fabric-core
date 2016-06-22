@@ -7,10 +7,10 @@
 
 
 .ms-ListItem {
+  @include ms-baseFont;
   @include ms-u-normalize;
   @include ms-u-clearfix;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   padding: 9px 28px 3px;
@@ -123,7 +123,7 @@
 //== State: Unseen list item
 //
 .ms-ListItem.is-unseen {
-  &:after {
+  &::after {
     border-right: 10px solid transparent;
     border-top: 10px solid $ms-color-themePrimary;
     left: 0;
@@ -155,7 +155,7 @@
     outline: 1px solid transparent;
 
     // Insert the empty box.
-    &:before {
+    &::before {
       @include ms-Icon;
       position: absolute;
       top: 12px;
@@ -172,12 +172,12 @@
 //
 .ms-ListItem.is-selected {
   // Insert the checkmark.
-  &:before {
+  &::before {
     border: 1px solid transparent;
   }
 
-  &:before,
-  &:hover:before {
+  &::before,
+  &:hover::before {
     @include ms-Icon;
     content: '\e041';
     font-size: $ms-font-size-m-plus;

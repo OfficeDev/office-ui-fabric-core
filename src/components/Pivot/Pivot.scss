@@ -7,8 +7,10 @@
 
 
 .ms-Pivot {
+  @include ms-baseFont;
   @include ms-u-normalize;
-  font-family: $ms-font-family-base;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
 }
 
 .ms-Pivot-links {
@@ -123,7 +125,7 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-    &:after {
+    &::after {
       font-size: $ms-font-size-l;
     }
   }
@@ -170,7 +172,6 @@
     }
   }
 }
-
 
 // @TODO: Confirm that there this component is not responsive.
 //

@@ -55,7 +55,7 @@ namespace fabric {
           this._textFieldLabel.style.display = "none";
         });
         this._textField.addEventListener("blur", (event: MouseEvent) => {
-          // Hide only if no value in the text field
+          // Show only if no value in the text field
           if (this._textField.value.length === 0) {
             this._textFieldLabel.style.display = "block";
           }

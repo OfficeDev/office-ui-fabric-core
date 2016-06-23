@@ -349,18 +349,23 @@
 }
 
 // Fabric Core Icon variables
-$ms-Icon-12: 12px;
-$ms-Icon-16: 16px;
-$ms-Icon-20: 20px;
+$ms-icon-xs: 10px;
+$ms-icon-s: 12px;
+$ms-icon-m: 16px;
+$ms-icon-l: 20px;
 
-.ms-Icon--12 {
-  font-size: $ms-Icon-12;
+.ms-icon-xs {
+  font-size: $ms-icon-xs;
 }
 
-.ms-Icon--16 {
-  font-size: $ms-Icon-16;
+.ms-icon-s {
+  font-size: $ms-icon-s;
 }
 
-.ms-Icon--20 {
-  font-size: $ms-Icon-20;
+.ms-icon-m {
+  font-size: $ms-icon-m;
+}
+
+.ms-icon-l {
+  font-size: $ms-icon-l;
 }

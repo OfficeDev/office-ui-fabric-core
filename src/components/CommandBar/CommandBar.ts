@@ -97,9 +97,6 @@ namespace fabric {
 
     private _runsSearchBox(reInit: boolean = true, state: string = "add") {
       this._changeSearchState("is-collapsed", state);
-      if (reInit) {
-        this.searchBoxInstance = this._createSearchInstance();
-      }
     }
 
     private _runOverflow() {
@@ -218,7 +215,7 @@ namespace fabric {
           label,
           iconClasses,
           splitClasses,
-          items = this._container.querySelectorAll(areaClass + " " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
+          items = this._container.querySelectorAll(areaClass + " > " + COMMAND_BUTTON + ":not(" + CB_ITEM_OVERFLOW + ")");
 
       // Initiate the overflow command
       this._commandButtonInstance = new fabric.CommandButton(<HTMLElement>this._elements.overflowCommand);

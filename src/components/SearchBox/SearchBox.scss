@@ -37,6 +37,15 @@ $SearchBox-field-padding-left: 45px;
   }
 }
 
+.ms-SearchBox-clear,
+.ms-SearchBox-filter,
+.ms-SearchBox-exit {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: $ms-zIndex-front;
+}
+
 .ms-SearchBox-field {
   position: relative;
   @include ms-u-normalize;
@@ -122,10 +131,6 @@ $SearchBox-field-padding-left: 45px;
   .ms-SearchBox-clear,
   .ms-SearchBox-filter,
   .ms-SearchBox-exit {
-    display: none;
-    position: absolute;
-    top: 0;
-    z-index: $ms-zIndex-front;
 
     .ms-CommandButton-button {
       &:hover {
@@ -167,7 +172,7 @@ $SearchBox-field-padding-left: 45px;
       cursor: pointer;
     }
 
-    &:before {
+    &::before {
       visibility: hidden;
     }
   }
@@ -188,7 +193,7 @@ $SearchBox-field-padding-left: 45px;
       width: 100%;
     }
 
-    &:before {
+    &::before {
       visibility: visible;
     }
   }
@@ -207,7 +212,7 @@ $SearchBox-field-padding-left: 45px;
     }
   }
 
-  &:before {
+  &::before {
     position: absolute;
     width: calc(100% - 20px);
     height: calc(100% - 1px);
@@ -251,7 +256,7 @@ $SearchBox-field-padding-left: 45px;
       right: 8px;
   }
 
-  &:before {
+  &::before {
     visibility: visible;
   }
 

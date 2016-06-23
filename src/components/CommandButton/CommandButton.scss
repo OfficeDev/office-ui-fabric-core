@@ -197,7 +197,7 @@ $CommandButtonIcon-md-size: 20px;
     position: relative;
     padding-top: 16px;
 
-    &:after {
+    &::after {
       position: absolute;
       content: ' ';
       width: 1px;
@@ -267,7 +267,7 @@ $CommandButtonIcon-md-size: 20px;
 //
 .ms-CommandButton.ms-CommandButton--pivot {
 
-  &.is-active:before {
+  &.is-active::before {
     @include ms-CommandButton-pivotLine;
   }
 

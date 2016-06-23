@@ -89,7 +89,7 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-    &:after {
+    &::after {
       font-size: $ms-font-size-l;
     }
   }
@@ -145,7 +145,7 @@
   }
 
   .ms-Pivot-link.ms-Pivot-link--overflow {
-    &:after {
+    &::after {
       font-size: $ms-font-size-m;
     }
   }

@@ -7,9 +7,11 @@
 
 $SearchBox-width: 208px;
 $SearchBox-field-padding-left: 45px;
+$SearchBox-height: 40px;
 
 .ms-SearchBox {
   @include ms-u-normalize;
+  height: $SearchBox-height;
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-base;
   font-size: 16px;
@@ -17,6 +19,51 @@ $SearchBox-field-padding-left: 45px;
   position: relative;
   margin-bottom: 10px;
   display: inline-block;
+  background-color: $ms-color-white;
+
+  &::before {
+    position: absolute;
+    content: ' ';
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 8px;
+    border-bottom: 1px solid $ms-color-neutralLight;
+  }
+
+  // State: Active searchbox
+  &.is-active {
+    z-index: $ms-zIndex-front;
+
+    .ms-SearchBox-label {
+      display: none;
+    }
+
+    .ms-CommandButton {
+      .ms-SearchBox-exit,
+      .ms-SearchBox-filter {
+        display: block;
+      }
+    }
+  }
+
+  &.has-text {
+    .ms-SearchBox-text {
+      display: none;
+    }
+
+    .ms-SearchBox-clear {
+      display: inline-block;
+
+      .ms-CommandButton-icon {
+        color: $ms-color-neutralTertiary;
+
+        &:active {
+          color: $ms-color-themePrimary;
+        }
+      }
+    }
+  }
 
   // State: Disabled searchbox
   &.is-disabled {
@@ -44,22 +91,45 @@ $SearchBox-field-padding-left: 45px;
   position: absolute;
   top: 0;
   z-index: $ms-zIndex-front;
+
+  .ms-CommandButton-button {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.ms-SearchBox-clear {
+  right: 8px;
+}
+
+.ms-SearchBox-icon {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  margin-left: 16px;
+  margin-right: 8px;
+  color: $ms-color-themePrimary;
+  vertical-align: top;
 }
 
 .ms-SearchBox-field {
   position: relative;
   @include ms-u-normalize;
-  border: 1px solid $ms-color-themeTertiary;
   outline: transparent 1px solid;
-  border-radius: 0;
+  border: 0;
   font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-m;
   color: $ms-color-black;
-  height: 32px;
-  padding: 6px 3px 7px 10px;
+  height: $SearchBox-height;
+  padding: 6px 3px 7px $SearchBox-field-padding-left;
   width: 170px;
-  background-color: transparent;
   z-index: $ms-zIndex-middle;
+  background-color: transparent;
 
   &.hovering {
     border-color: $ms-color-themePrimary;
@@ -74,12 +144,6 @@ $SearchBox-field-padding-left: 45px;
     }
   }
 
-  &:focus {
-    padding: 6px 10px 7px;
-    border-color: $ms-color-themePrimary;
-    background-color: transparentize($ms-color-themePrimary, .8);
-  }
-
   &::-ms-clear {
     display: none;
   }
@@ -89,8 +153,8 @@ $SearchBox-field-padding-left: 45px;
   position: absolute;
   top: 0;
   left: 0;
-  padding-left: 8px;
-  line-height: 32px;
+  height: $SearchBox-height;
+  line-height: $SearchBox-height;
   color: $ms-color-neutralSecondary;
 }
 
@@ -101,17 +165,11 @@ $SearchBox-field-padding-left: 45px;
   width: $SearchBox-width;
 
   .ms-SearchBox-field {
-    border: 0;
     height: 40px;
-    background: transparent;
-    padding-left: $SearchBox-field-padding-left;
   }
 
   .ms-SearchBox-label {
     display: block;
-    line-height: 40px;
-    height: 40px;
-    padding-left: 0;
   }
 
   .ms-SearchBox-icon {
@@ -126,17 +184,6 @@ $SearchBox-field-padding-left: 45px;
     margin-right: 8px;
     color: $ms-color-themePrimary;
     vertical-align: top;
-  }
-
-  .ms-SearchBox-clear,
-  .ms-SearchBox-filter,
-  .ms-SearchBox-exit {
-
-    .ms-CommandButton-button {
-      &:hover {
-        background-color: transparent;
-      }
-    }
   }
 
   .ms-SearchBox-filter {
@@ -196,30 +243,12 @@ $SearchBox-field-padding-left: 45px;
     &::before {
       visibility: visible;
     }
-  }
 
-  &.has-text {
-    .ms-SearchBox-clear {
-      display: inline-block;
-
-      .ms-CommandButton-icon {
-        color: $ms-color-neutralTertiary;
-
-        &:active {
-          color: $ms-color-themePrimary;
-        }
+    &.has-text {
+      .ms-SearchBox-clear {
+        display: inline-block;
       }
     }
-  }
-
-  &::before {
-    position: absolute;
-    width: calc(100% - 20px);
-    height: calc(100% - 1px);
-    content: ' ';
-    left: 50%;
-    transform: translateX(-50%);
-    border-bottom: 1px solid $ms-color-neutralLight;
   }
 
   @media only screen and (min-width: $ms-screen-xl-min) {
@@ -250,10 +279,6 @@ $SearchBox-field-padding-left: 45px;
     .ms-SearchBox-text {
       display: none;
     }
-  }
-
-  .ms-SearchBox-clear {
-      right: 8px;
   }
 
   &::before {
@@ -288,7 +313,6 @@ $SearchBox-field-padding-left: 45px;
 
     &.has-text {
       .ms-SearchBox-filter {
-
         .ms-CommandButton-icon {
           color: $ms-color-neutralTertiary;
         }

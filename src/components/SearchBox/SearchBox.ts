@@ -118,6 +118,7 @@ namespace fabric {
         this._searchBox.addEventListener("keyup", this._boundEnableClose, false);
         this._searchBox.classList.add(SB_IS_ACTIVE);
         this._searchBox.classList.add(SB_IS_ACTIVE);
+        console.log("is-active");
       }, true);
     }
 

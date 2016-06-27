@@ -18,14 +18,9 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 {{> TextFieldPlaceholderExample props=TextFieldPlaceholderExampleModel}}
 --->
 
-### Underlined (@TODO: deprecated?)
-<!---
-{{> TextField props=TextFieldUnderlinedExampleModel}}
---->
-
 ### Underlined
 <!---
-{{> TextField props=TextFieldTextFieldUnderlinedExampleModel}}
+{{> TextField props=TextFieldUnderlinedExampleModel}}
 --->
 
 ## States

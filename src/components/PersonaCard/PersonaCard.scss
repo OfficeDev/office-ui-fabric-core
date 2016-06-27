@@ -38,7 +38,7 @@
   background-color: $ms-color-white;
   height: 48px;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: 47px;

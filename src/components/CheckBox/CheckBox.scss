@@ -50,7 +50,7 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
 }
 
 // The check mark icon
-.ms-CheckBox-field:after {
+.ms-CheckBox-field::after {
   content: '\E73E';
   font-family: 'FabricMDL2Icons';
   display: none;

@@ -110,6 +110,10 @@ $CommandButtonIcon-md-size: 20px;
     .ms-CommandButton-icon {
       font-size: $CommandButtonIcon-md-size;
     }
+
+    .ms-CommandButton-label {
+      line-height: $CommandButton-md-height;
+    }
   }
 }
 

@@ -512,7 +512,7 @@ var CommandBarExampleModel = {
                 },
                 {
                   "title": "Money",
-                  "icon": "money"
+                  "icon": "Money"
                 }
               ]
             }

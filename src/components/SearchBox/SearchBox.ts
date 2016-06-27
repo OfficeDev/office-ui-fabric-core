@@ -23,6 +23,7 @@ namespace fabric {
   const SB_EXIT_BUTTON = ".ms-SearchBox-exit";
   const SB_HAS_TEXT = "has-text";
   const SB_IS_ACTIVE = "is-active";
+  const SB_IS_ANIMATED = "is-animated";
 
   export class SearchBox {
 
@@ -53,7 +54,10 @@ namespace fabric {
       this._setClearButtonAction();
       this._setBlurAction();
       this._clearOnly = false;
-      setTimeout(() => { this._checkState(); }, 10);
+      setTimeout(() => {
+        this._checkState();
+        this._addAnimation();
+      }, 10);
     }
 
     public setCollapsedListeners(): void {
@@ -169,6 +173,10 @@ namespace fabric {
       if (this._searchBox.classList.contains("is-collapsed")) {
         this.setCollapsedListeners();
       }
+    }
+
+    private _addAnimation(): void {
+      this._container.classList.add(SB_IS_ANIMATED);
     }
   }
 }

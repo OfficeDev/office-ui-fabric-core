@@ -9,7 +9,7 @@ $SearchBox-width: 208px;
 $SearchBox-field-padding-left: 45px;
 $SearchBox-height: 36px;
 $SearchBox-commandbarHeight: 40px;
-$SearchBox-commandbar-smHeight: 44px;
+$SearchBox-commandbar-md-height: 44px;
 $disabled-color: #F4F4F4;
 $SearchBox-command-color: #F4F4F4;
 
@@ -243,13 +243,7 @@ $SearchBox-command-color: #F4F4F4;
     width: 50px;
     min-height: 40px;
     z-index: $ms-zIndex-back;
-    transition: width $ms-duration1 $ms-ease1;
     background-color: $SearchBox-command-color;
-
-    .ms-SearchBox-clear {
-      display: none;
-      right: 58px;
-    }
 
     .ms-SearchBox-text {
       display: none;
@@ -273,13 +267,25 @@ $SearchBox-command-color: #F4F4F4;
       cursor: text;
     }
 
-    .ms-SearchBox-text,
-    .ms-SearchBox-filter {
+    .ms-SearchBox-text {
       display: inline-block;
     }
 
     @media only screen and (max-width: $ms-screen-md-max) {
       width: 100%;
+
+      .ms-SearchBox-clear {
+        display: inline-block;
+        right: 58px;
+      }
+
+      .ms-SearchBox-filter {
+        display: inline-block;
+      }
+
+      &.is-animated {
+        transition: width $ms-duration1 $ms-ease1;
+      }
     }
 
     &::before {
@@ -307,14 +313,14 @@ $SearchBox-command-color: #F4F4F4;
   }
 
   @media only screen and (max-width: $ms-screen-md-max) {
-    height: $SearchBox-commandbar-smHeight;
+    height: $SearchBox-commandbar-md-height;
 
     .ms-SearchBox-icon,
     .ms-SearchBox-exit,
     .ms-SearchBox-field,
     .ms-SearchBox-label  {
-      height: $SearchBox-commandbar-smHeight;
-      line-height: $SearchBox-commandbar-smHeight;
+      height: $SearchBox-commandbar-md-height;
+      line-height: $SearchBox-commandbar-md-height;
     }
 
     .ms-SearchBox-icon,
@@ -324,7 +330,7 @@ $SearchBox-command-color: #F4F4F4;
       font-size: 20px;
 
       .ms-CommandButton-button {
-        height: $SearchBox-commandbar-smHeight;
+        height: $SearchBox-commandbar-md-height;
       }
     }
 

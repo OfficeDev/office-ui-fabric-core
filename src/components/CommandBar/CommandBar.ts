@@ -96,7 +96,7 @@ namespace fabric {
       this._setUIState();
     }
 
-    private _runsSearchBox(reInit: boolean = true, state: string = "add") {
+    private _runsSearchBox(state: string = "add") {
       this._changeSearchState("is-collapsed", state);
     }
 
@@ -400,12 +400,12 @@ namespace fabric {
           this._runOverflow();
           break;
         case "xl":
-          this._runsSearchBox(false, "remove");
+          this._runsSearchBox( "remove");
           this._processCollapsedClasses("remove");
           this._runOverflow();
           break;
         default:
-          this._runsSearchBox(false, "remove");
+          this._runsSearchBox("remove");
           this._processCollapsedClasses("remove");
           this._runOverflow();
           break;

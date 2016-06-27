@@ -1,0 +1,5 @@
+{
+  "name": "DatePicker",
+  "template": "DatePicker.html",
+  "class": "ms-DatePicker"
+}

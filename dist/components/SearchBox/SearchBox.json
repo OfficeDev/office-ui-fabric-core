@@ -1,0 +1,19 @@
+{
+  "name": "SearchBox",
+  "template": "SearchBox.html",
+  "class": "ms-SearchBox",
+  "props": {
+    "label": "Search",
+    "defaultValue": "",
+    "icon": "search",
+    "clearButton": {
+      "component": "CommandButton",
+      "props": {
+        "icon": "x",
+        "modifier": "noLabel",
+        "tag": "button",
+        "customClasses": "ms-SearchBox-close"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "TextField",
+  "template": "TextField.html",
+  "class": "ms-TextField"
+}

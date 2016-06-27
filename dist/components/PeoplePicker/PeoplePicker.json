@@ -1,0 +1,20 @@
+{
+  "name": "PeoplePicker",
+  "notes": "",
+  "description": "A component used for searching for and picking a person (or people). There are several variants and modifications to the dropdown list of {0} Personas {1} that allow for removing selected people, compact visualizations, a disconnected state, and a 'tokenized' list of selected users.",
+  "template": "PeoplePicker.html",
+  "class": "ms-PeoplePicker",
+  "dependencies": [
+    "Label",
+    "Persona",
+    "PersonaCard",
+    "Spinner",
+    "TextField",
+    "ContextualHost",
+    "OrgChart"
+  ],
+  "wrapBranches": true,
+  "fileOrder": [
+    "PeoplePicker.html"
+  ]
+}

@@ -1,0 +1,16 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandButton {{props.customClasses}} {{#if props.modifier}}ms-CommandButton--{{props.modifier}}{{/if}} {{props.state}} {{#if props.disabled}}is-disabled{{/if}}">
+  <{{props.tag}} class="ms-CommandButton-button"  {{#if props.disabled}}tabIndex="-1"{{/if}}>
+    {{#if props.icon}}
+      <span class="ms-CommandButton-icon {{#if props.iconColor}}ms-fontColor-{{props.iconColor}}{{/if}}"><i class="ms-Icon ms-Icon--{{props.icon}}"></i></span>{{/if}}<span class="ms-CommandButton-label">{{props.label}}</span>{{#if props.dropdownIcon}}<span class="ms-CommandButton-dropdownIcon"><i class="ms-Icon ms-Icon--{{props.dropdownIcon}}"></i></span>
+    {{/if}}
+  </{{props.tag}}>
+  {{#if props.splitIcon}}
+    <{{props.tag}}  class="ms-CommandButton-splitIcon">
+      <i class="ms-Icon ms-Icon--{{props.splitIcon}}"></i>
+    </{{props.tag}}>
+  {{/if}}
+  {{#if props.dropdown}}
+    {{renderPartial props.dropdown.component props.dropdown.props}}
+  {{/if}}
+</div>

@@ -1,0 +1,57 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-PeoplePicker
+  {{#if props.modifiers}}
+    {{#each props.modifiers}}
+      ms-PeoplePicker--{{name}}
+     {{/each}}
+  {{/if}}">
+  <div class="ms-PeoplePicker-searchBox">
+    {{> TextField props=props.textFieldProps}}
+  </div>
+  <div class="ms-PeoplePicker-results
+    {{#if props.resultsProps}}
+      {{#each props.resultsProps.modifiers}}
+        ms-PeoplePicker-results--{{name}}
+       {{/each}}
+    {{/if}}
+  ">
+    {{#each props.groups}}
+      <div class="ms-PeoplePicker-resultGroup">
+        <div class="ms-PeoplePicker-resultGroupTitle">
+          {{title}}
+        </div>
+        {{#each personas}}
+          <div class="ms-PeoplePicker-result {{state}}" tabindex="1">
+            {{> Persona props=props}}
+              <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--x"></i></button>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+    <div class="ms-PeoplePicker-searchMore">
+      <button class="ms-PeoplePicker-searchMoreBtn">
+        <div class="ms-PeoplePicker-searchMoreIcon">
+          <i class="ms-Icon ms-Icon--search"></i>
+        </div>
+        <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
+        <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+      </button>
+    </div>
+  </div>
+  {{#each props.members}}
+    <div class="ms-PeoplePicker-selected is-active">
+      <div class="ms-PeoplePicker-selectedHeader">
+        <span class="ms-PeoplePicker-selectedCount">{{count}}</span> member<span>s</span>
+      </div>
+      <ul class="ms-PeoplePicker-selectedPeople">
+        {{#each personas}}
+        <li class="ms-PeoplePicker-selectedPerson {{state}}" tabindex="1">
+          {{> Persona props=props}}
+            <button class="ms-PeoplePicker-resultAction"><i class="ms-Icon ms-Icon--x"></i></button>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</div>

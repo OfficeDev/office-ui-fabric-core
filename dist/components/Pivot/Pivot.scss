@@ -1,0 +1,199 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Pivot and tab styles
+
+
+.ms-Pivot {
+  @include ms-baseFont;
+  @include ms-u-normalize;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+}
+
+.ms-Pivot-links {
+  font-size: 0; // Bring inline-block children together
+  height: 40px;
+  list-style-type: none;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.ms-Pivot-link {
+  color: $ms-color-neutralPrimary;
+  display: inline-block;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  line-height: 40px;
+  margin-right: 8px;
+  padding: 0 8px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // Underline, not yet visible
+  &::before {
+    background-color: transparent;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 8px;
+    position: absolute;
+    right: 8px;
+    transition: background-color $ms-duration2 $ms-ease2;
+  }
+
+  // Make room for the heavier text of the selected state
+  &::after {
+    color: transparent;
+    content: attr(title);
+    display: block;
+    font-weight: bold;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  //== State: Selected
+  &.is-selected {
+    font-weight: $ms-font-weight-semibold;
+    position: relative;
+
+    // Show the underline
+    &::before {
+      background-color: $ms-color-themePrimary;
+    }
+  }
+
+  //== State: Disabled
+  &.is-disabled {
+    color: $ms-color-neutralTertiary;
+  }
+}
+
+
+
+
+// @TODO: Determine if any of the styles below this are necessary anymore.
+
+
+// Overflow (ellipsis)
+.ms-Pivot-link.ms-Pivot-link--overflow {
+  color: $ms-color-neutralSecondary;
+
+  &.is-selected {
+    color: $ms-color-themePrimary;
+  }
+
+  &:hover:not(.is-selected),
+  &:focus:not(.is-selected) {
+    color: $ms-color-neutralDark;
+  }
+
+  &:active {
+    color: $ms-color-themePrimary;
+  }
+}
+
+// Ellipsis icon
+.ms-Pivot-ellipsis {
+  font-size: $ms-font-size-m-plus;
+  position: relative;
+  top: 0;
+}
+
+// Pivot content, hidden by default
+.ms-Pivot-content {
+  display: none;
+  margin-top: 20px;
+}
+
+
+//== Modifier: Large Pivots
+//
+.ms-Pivot.ms-Pivot--large {
+  .ms-Pivot-link {
+    font-size: $ms-font-size-l;
+
+    &.is-selected {
+      font-weight: $ms-font-weight-semilight;
+    }
+  }
+
+  .ms-Pivot-link.ms-Pivot-link--overflow {
+    &::after {
+      font-size: $ms-font-size-l;
+    }
+  }
+}
+
+
+//== Modifier: Tabs
+//
+.ms-Pivot.ms-Pivot--tabs {
+
+  .ms-Pivot-link {
+    height: 40px;
+    background-color: $ms-color-neutralLighter;
+    line-height: 40px;
+    margin-right: -2px; // Remove space next to inline-block element
+    padding: 0 10px;
+
+    &:hover:not(.is-selected):not(.ms-Pivot-link--overflow),
+    &:focus:not(.is-selected):not(.ms-Pivot-link--overflow) {
+      color: $ms-color-black;
+    }
+
+    &:active {
+      color: $ms-color-white;
+      background-color: $ms-color-themePrimary;
+    }
+
+    //== State: Selected
+    &.is-selected {
+      background-color: $ms-color-themePrimary;
+      color: $ms-color-white;
+      font-weight: $ms-font-weight-semilight;
+    }
+  }
+
+  .ms-Pivot-link.ms-Pivot-link--overflow {
+    &:hover:not(.is-selected),
+    &:focus:not(.is-selected) {
+      background-color: $ms-color-white;
+    }
+
+    &:active {
+      background-color: $ms-color-themePrimary;
+    }
+  }
+}
+
+// @TODO: Confirm that there this component is not responsive.
+//
+// @media (min-width: $ms-screen-lg-min) {
+//   .ms-Pivot-link {
+//     font-size: $ms-font-size-m;
+//   }
+
+//   .ms-Pivot-link.ms-Pivot-link--overflow {
+//     &:after {
+//       font-size: $ms-font-size-m;
+//     }
+//   }
+// }
+
+// All high contrast styling rules
+@media screen and (-ms-high-contrast: active) {
+  .ms-Pivot.ms-Pivot--tabs {
+    .ms-Pivot-link {
+      &.is-selected {
+        font-weight: $ms-font-weight-semibold;
+      }
+    }
+  }
+}

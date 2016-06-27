@@ -1,0 +1,24 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<ul class="ms-ContextualMenu {{#if props.state}} {{props.state}}{{/if}} {{#if props.modifier}}ms-ContextualMenu--{{props.modifier}}{{/if}}">
+  {{#each props.items}}
+    {{#if modifier}}
+      <li class="ms-ContextualMenu-item ms-ContextualMenu-item--{{modifier}}">{{title}}</li>
+    {{else}}
+      <li class="ms-ContextualMenu-item {{#if subMenuItems}}ms-ContextualMenu-item--hasMenu{{/if}}">
+        <a class="ms-ContextualMenu-link {{#if state}} {{state}} {{/if}}" tabindex="1" {{#if href}} href="" {{/if}}>{{title}}</a>
+        {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
+        {{#if subMenuItems}}
+          <i class="ms-ContextualMenu-subMenuIcon ms-Icon ms-Icon--chevronRight"></i>
+          <ul class="ms-ContextualMenu is-hidden">
+            {{#each subMenuItems}}
+            <li class="ms-ContextualMenu-item">
+              <a class="ms-ContextualMenu-link {{#if state}} {{state}} {{/if}}" tabindex="1" {{#if href}} href="" {{/if}}>{{title}}</a>
+              {{#if icon}}<i class="ms-Icon ms-Icon--{{icon}} {{#if iconSize}}ms-fontSize-{{iconSize}}{{/if}}"></i>{{/if}}
+            </li>
+          {{/each}} 
+        </ul>  
+      {{/if}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

@@ -1,0 +1,136 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Panel styles
+
+$ms-panel-width-sm: 272px;
+$ms-panel-width-md: 340px;
+$ms-panel-width-lg: 644px;
+$ms-panel-width-xl: 940px;
+$ms-panel-width-xxl: 1192px;
+
+$ms-panel-margin-md: 48px;
+$ms-panel-margin-lg: 428px;
+$ms-panel-margin-xl: 176px;
+
+$ms-panel-close-button-height: 40px;
+
+// The panel itself, where the content goes.
+.ms-Panel {
+  @include ms-baseFont;
+  background-color: $ms-color-white;
+  width: 100%;
+  max-width: $ms-panel-width-sm;
+  @include drop-shadow(-30px, 0, 30px, -30px, .2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: $ms-zIndex-front;
+  display: none;
+
+  // Animations -- Default (anchored right)
+  &.animate-in {
+    @include ms-u-slideLeftIn40;
+  }
+
+  &.animate-out {
+    @include ms-u-slideRightOut40;
+  }
+
+  &.is-open {
+    display: block;
+  }
+}
+
+//== Modifier: Medium panel (anchored right, fixed width)
+//
+.ms-Panel.ms-Panel--md {
+  max-width: $ms-panel-width-md;
+}
+
+//== Modifier: Large panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--lg {
+  max-width: $ms-panel-width-lg;
+}
+
+//== Modifier: XLarge panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--xl {
+  max-width: $ms-panel-width-xl;
+}
+
+//== Modifier: XLarge panel (anchored right, fluid width)
+//
+.ms-Panel.ms-Panel--xxl {
+  max-width: $ms-panel-width-xxl;
+}
+
+//== Modifier: Left anchored panel (anchored left, fixed width)
+// Note: This panel variant should only be used for left nav.
+.ms-Panel--left {
+  @include drop-shadow(-30px, 0, 30px, 30px, .2);
+  left: 0;
+  right: auto;
+
+  &.animate-in {
+    @include ms-u-slideRightIn40;
+  }
+
+  &.animate-out {
+    @include ms-u-slideLeftOut40;
+  }
+}
+
+// The close button in the top right (x)
+.ms-Panel-closeButton {
+  @include button-reset;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  height: $ms-panel-close-button-height;
+  width: $ms-panel-close-button-height;
+  line-height: $ms-panel-close-button-height;
+  outline: 0;
+  padding: 0;
+  color: $ms-color-neutralSecondary;
+  font-size: $ms-font-size-m;
+
+  &:hover {
+    color: $ms-color-neutralPrimary;
+  }
+}
+
+// Scrollable content area
+.ms-Panel-contentInner {
+  margin-top: $ms-panel-close-button-height;
+  padding: 0 16px 20px;
+  overflow-y: auto;
+
+  @media (min-width: $ms-screen-lg-min) {
+    padding: 0 32px 20px;
+  }
+
+  @media (min-width: $ms-screen-xxl-min) {
+    padding: 0 40px 20px;
+  }
+}
+
+// Header text at the top of the panel.
+.ms-Panel-headerText {
+  font-weight: $ms-font-weight-light;
+  font-size: $ms-font-size-xl;
+  color: $ms-color-neutralPrimary;
+  margin: 10px 0;
+  padding: 4px 0;
+  line-height: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @media (min-width: $ms-screen-xl-min) {
+    margin-top: 30px;
+  }
+}

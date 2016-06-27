@@ -1,0 +1,12 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Panel {{#if props.modifier}}{{#each props.modifier}} ms-Panel--{{name}}{{/each}}{{/if}}">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+        <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+        <p class="ms-Panel-headerText">{{props.headerText}}</p>
+        <div class="ms-Panel-content">
+            <span class="ms-font-m">{{props.content}}</span>
+        </div>
+    </div>
+</div>

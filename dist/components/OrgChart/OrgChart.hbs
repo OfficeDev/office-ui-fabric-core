@@ -1,0 +1,18 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-OrgChart {{#if props.modifier}} ms-OrgChart--{{props.modifier}} {{/if}}">
+  {{#each props.groups}}
+    <div class="ms-OrgChart-group">
+      {{#if title}}<div class="ms-OrgChart-groupTitle">{{title}}</div>{{/if}}
+      <ul class="ms-OrgChart-list">
+        {{#each personas}}
+          <li class="ms-OrgChart-listItem">
+            <button class="ms-OrgChart-listItemBtn" tabindex="1">
+              {{renderPartial component props}}
+            </button>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</div>

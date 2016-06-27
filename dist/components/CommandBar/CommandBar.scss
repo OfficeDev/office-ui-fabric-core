@@ -1,0 +1,112 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Command Bar styles
+
+$CommandBar-height: 40px;
+$CommandBar-iconSize: 18px;
+$CommandBar-sideAreaWidthsm: 128px;
+$CommandBarItem-height: $CommandBar-height;
+
+@mixin highContrastBorder($color) {
+    border-left: 1px solid $color;
+    border-right: 1px solid $color;
+}
+
+.ms-CommandBar {
+  @include ms-baseFont;
+  background-color: $ms-color-themeLighterAlt;
+  height: $CommandBar-height;
+  white-space: nowrap;
+  padding-left: 0;
+  border: 0;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  .ms-CommandButton--actionButton {
+    border-right: 1px solid $ms-color-neutralLight;
+  }
+
+  //== CommandBar -> ms-Button specific changes
+  //
+  .ms-Button {
+    height: 100%;
+
+    &.ms-Button--noLabel {
+      .ms-Button-icon {
+        padding-right: 0;
+      }
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  .ms-SearchBox,
+  .ms-SearchBox-field,
+  .ms-SearchBox-label {
+    height: 100%;
+  }
+
+  .ms-SearchBox {
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: top;
+    transition: margin-right $ms-duration2;
+  }
+
+  .ms-SearchBox.is-collapsed.is-active {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: $ms-zIndex-front;
+  }
+
+  // Search is collapsed unless ativated and its only
+  // collapsed < L break points
+
+  @media only screen and (min-width: $ms-screen-xl-min) {
+    .ms-SearchBox {
+      margin-right: 24px;
+    }
+  }
+}
+
+.ms-CommandBar-mainArea {
+  overflow-x: hidden;
+  display: block;
+  // padding-left: $SearchBox-widthLgCollapsed + 8;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ms-CommandBar-sideCommands {
+  float: right;
+  text-align: right;
+  width: auto;
+  padding-right: 8px;
+  height: 100%;
+
+  .ms-Button:last-child {
+    margin-right: 0;
+  }
+
+  @media only screen and (min-width: $ms-screen-lg-min) {
+    min-width: $CommandBar-sideAreaWidthsm;
+  }
+
+  @media only screen and (min-width: $ms-screen-lg-min) {
+    padding-right: 12px;
+  }
+
+  @media only screen and (min-width: $ms-screen-xl-min) {
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Dropdown",
+  "notes": "",
+  "description": "The styling for a dropdown component and its disabled variant. This dropdown takes current items in a real HTML dropdown and creates a shimmed version that can be styled and selected.",
+  "template": "Dropdown.html",
+  "class": "ms-Dropdown",
+  "dependencies": [
+    "Label"
+  ],
+  "fileOrder": [
+    "Dropdown.html",
+    "Dropdown.Disabled.html"
+  ],
+  "props":  {
+    "label": "Dropdown label",
+    "items": [
+      {
+        "name": "Choose a sound&hellip;"  
+      },
+      {
+        "name": "Dog barking"
+      },
+      {
+        "name": "Wind blowing"
+      }, 
+      {
+        "name": "Duck quacking"
+      },
+      {
+        "name": "Cow mooing"
+      }
+    ]
+  },
+  "propsDisabled":  {
+    "label": "Dropdown label",
+    "state": "is-disabled",
+    "items": [
+      {
+        "name": "Choose a sound&hellip;"  
+      },
+      {
+        "name": "Dog barking"
+      },
+      {
+        "name": "Wind blowing"
+      }, 
+      {
+        "name": "Duck quacking"
+      },
+      {
+        "name": "Cow mooing"
+      }
+    ]
+  }
+}

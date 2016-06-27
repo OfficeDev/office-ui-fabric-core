@@ -1,0 +1,65 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChoiceFieldGroup</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="choice-field">Choice Field</h1>
+<p>Allows selection from one or more options.</p>
+<h3 id="radio-button-group">Radio button group</h3>
+<p>Used to indicate a single choice from multiple options.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-ChoiceFieldGroup" id="choicefieldgroup" role="radiogroup">
+  <div class="ms-ChoiceFieldGroup-title">
+    <label class="ms-Label  is-required ">Unselected</label>
+  </div>
+  <ul class="ms-ChoiceFieldGroup-list">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    <div class="ms-RadioButton">
+      <li role="radio" class="ms-Choice-field " tabindex="0" aria-checked="false" name="choicefieldgroup">
+        <span class="ms-Label">Option 1</span>
+      </li>
+    </div>
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    <div class="ms-RadioButton">
+      <li role="radio" class="ms-Choice-field " tabindex="0" aria-checked="false" name="choicefieldgroup">
+        <span class="ms-Label">Option 2</span>
+      </li>
+    </div>
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    <div class="ms-RadioButton">
+      <li role="radio" class="ms-Choice-field  is-disabled " tabindex="0" aria-checked="false" name="choicefieldgroup">
+        <span class="ms-Label">Option 3</span>
+      </li>
+    </div>
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    <div class="ms-RadioButton">
+      <li role="radio" class="ms-Choice-field " tabindex="0" aria-checked="false" name="choicefieldgroup">
+        <span class="ms-Label">Option 4</span>
+      </li>
+    </div>
+  </ul>
+</div>
+
+<script type="text/javascript">
+  var ChoiceFieldGroupElements = document.querySelectorAll(".ms-ChoiceFieldGroup");
+    for(var i = 0; i < ChoiceFieldGroupElements.length; i++) {
+        new fabric['ChoiceFieldGroup'](ChoiceFieldGroupElements[i]);
+    }
+</script>
+</body>
+</html>

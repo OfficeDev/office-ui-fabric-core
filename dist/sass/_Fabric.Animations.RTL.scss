@@ -1,0 +1,79 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// RTL overrides for Fabric Animations
+
+
+@import 'Fabric.Animations';
+
+// slideRightIn10
+@mixin ms-u-slideRightIn10 {
+    @include animationMix((fadeIn, slideLeft10), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn20
+@mixin ms-u-slideRightIn20 {
+    @include animationMix((fadeIn, slideLeft20), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn40
+@mixin ms-u-slideRightIn40 {
+    @include animationMix((fadeIn, slideLeft40), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn10
+@mixin ms-u-slideLeftIn10 {
+    @include animationMix((fadeIn, slideRight10), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn20
+@mixin ms-u-slideLeftIn20 {
+    @include animationMix((fadeIn, slideRight20), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn40
+@mixin ms-u-slideLeftIn40 {
+    @include animationMix((fadeIn, slideRight40), $ms-duration3, $ms-ease1);
+}
+
+// slideRightIn400
+@mixin ms-u-slideRightIn400 {
+    @include animationMix((fadeIn, slideLeft400), $ms-duration3, $ms-ease1);
+}
+
+// slideLeftIn400
+@mixin ms-u-slideLeftIn400 {
+    @include animationMix((fadeIn, slideRight400), $ms-duration3, $ms-ease1);
+}
+
+// slideRightOut40
+@mixin ms-u-slideRightOut40 {
+    @include animationMix((fadeOut, slideLeftOut40), $ms-duration1, $ms-ease2);
+}
+
+// slideLeftOut40
+@mixin ms-u-slideLeftOut40 {
+    @include animationMix((fadeOut, slideRightOut40), $ms-duration1, $ms-ease2);
+}
+
+// slideRightOut400
+@mixin ms-u-slideRightOut400 {
+    @include animationMix((fadeOut, slideLeftOut400), $ms-duration1, $ms-ease2);
+}
+
+// slideLeftOut400
+@mixin ms-u-slideLeftOut400 {
+    @include animationMix((fadeOut, slideRightOut400), $ms-duration1, $ms-ease2);
+}
+
+// rotate90deg
+@mixin ms-u-rotate90deg {
+    @include animationMix(rotateN90, 0.1s, $ms-ease2);
+}
+
+// rotateN90deg
+@mixin ms-u-rotateN90deg {
+    @include animationMix(rotate90, 0.1s, $ms-ease2);
+}

@@ -1,0 +1,10 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Toggle {{#if props.modifier}} ms-Toggle--{{props.modifier}}{{/if}} {{#if props.disabled}} is-disabled {{/if}}">
+  <span class="ms-Toggle-description">{{props.description}}</span>
+  <input type="checkbox" id="{{props.demoID}}" class="ms-Toggle-input" />
+  <label for="{{props.demoID}}" class="ms-Toggle-field" {{#unless props.disabled}} tabindex="0" {{/unless}}>
+    <span class="ms-Label ms-Label--off">{{props.offText}}</span>
+    <span class="ms-Label ms-Label--on">{{props.onText}}</span>
+  </label>
+</div>

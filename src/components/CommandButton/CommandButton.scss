@@ -104,8 +104,12 @@ $CommandButtonIcon-md-size: 20px;
     outline: 0;
   }
 
-  @media only screen and (max-width: $ms-screen-sm-max) {
+  @media only screen and (max-width: $ms-screen-md-max) {
     height: $CommandButton-md-height;
+
+    .ms-CommandButton-icon {
+      font-size: $CommandButtonIcon-md-size;
+    }
   }
 }
 
@@ -138,10 +142,6 @@ $CommandButtonIcon-md-size: 20px;
 
   .ms-Icon {
     @include ms-CommandButton-iconBase;
-  }
-
-  @media only screen and (max-width: $ms-screen-sm-max) {
-    font-size: $CommandButtonIcon-md-size;
   }
 }
 

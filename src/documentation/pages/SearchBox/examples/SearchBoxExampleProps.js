@@ -11,24 +11,6 @@ var SearchBoxExampleProps = {
         "tag": "button",
         "customClasses": "ms-SearchBox-clear"
       }
-    },
-    "filterButton": {
-      "component": "CommandButton",
-      "props": {
-        "icon": "Filter",
-        "modifier": "noLabel",
-        "tag": "button",
-        "customClasses": "ms-SearchBox-filter"
-      }
-    },
-    "exitButton": {
-      "component": "CommandButton",
-      "props": {
-        "icon": "ChromeBack",
-        "modifier": "noLabel",
-        "tag": "button",
-        "customClasses": "ms-SearchBox-exit"
-      }
     }
   },
   "collapsed": {

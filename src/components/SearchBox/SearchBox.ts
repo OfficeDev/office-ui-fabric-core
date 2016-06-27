@@ -118,7 +118,6 @@ namespace fabric {
         this._searchBox.addEventListener("keyup", this._boundEnableClose, false);
         this._searchBox.classList.add(SB_IS_ACTIVE);
         this._searchBox.classList.add(SB_IS_ACTIVE);
-        console.log("is-active");
       }, true);
     }
 
@@ -132,8 +131,11 @@ namespace fabric {
     }
 
     private _setClearButtonAction() {
+      if (this._searchBoxExitButton) {
+        this._searchBoxExitButton.addEventListener("click", this._boundExitSearchBox, false);
+      }
+
       this._searchBoxClearButton.addEventListener("mousedown", this._boundClearSearchBox, false);
-      this._searchBoxExitButton.addEventListener("click", this._boundExitSearchBox, false);
       this._searchBoxClearButton.addEventListener("keydown", (e) => {
         let keyCode = e.keyCode;
         if (keyCode === 13) {

@@ -300,7 +300,7 @@ namespace fabric {
       let searchCommandWidth = 0;
       let mainAreaWidth = this._elements.mainArea.getBoundingClientRect().width;
 
-      if (this._elements.searchBox && !this._elements.searchBox.classList.contains("is-active")) {
+      if (this._elements.searchBox) {
         searchCommandWidth =  this._getElementWidth(this._elements.searchBox);
       }
 

@@ -11,6 +11,7 @@ $CommandBar-iconSize: 18px;
 $CommandBar-sideAreaWidthsm: 128px;
 $SearchBox-width: 220px;
 $CommandBarItem-height: $CommandBar-height;
+$red: #FF0000;
 
 @mixin highContrastBorder($color) {
     border-left: 1px solid $color;
@@ -62,12 +63,16 @@ $CommandBarItem-height: $CommandBar-height;
     transition: margin-right $ms-duration2;
   }
 
-  .ms-SearchBox.is-collapsed.is-active {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: $ms-zIndex-front;
+  .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed.is-active {
+    width: $SearchBox-width;
+
+    @media only screen and (max-width: $ms-screen-md-max) {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: $ms-zIndex-front;
+    }
   }
 
   .ms-CommandBar-overflowButton {
@@ -86,13 +91,24 @@ $CommandBarItem-height: $CommandBar-height;
     }
   }
 
-  @media only screen and (max-width: $ms-screen-sm-max) {
+  @media only screen and (max-width: $ms-screen-md-max) {
     height: $CommandBar-md-height;
+
+    .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed {
+      transition: width $ms-duration1 $ms-ease1;
+    }
   }
 
-  @media only screen and (max-width: $ms-screen-lg-max) {
+  @media only screen and (min-width: $ms-screen-lg-min) {
+
     &.search-expanded {
-      padding-left: $SearchBox-width;
+      .ms-SearchBox {
+        margin-right: 8px;
+      }
+    }
+
+    .ms-SearchBox.ms-SearchBox--commandBar.is-collapsed {
+      transition: none;
     }
   }
 }

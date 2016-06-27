@@ -34,7 +34,7 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
 }
 
 // The checkbox square container
-.ms-CheckBox-field:before {
+.ms-CheckBox-field::before {
   content: '';
   display: inline-block;
   border: 2px solid $ms-color-neutralTertiary;
@@ -79,7 +79,7 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
   &:hover,
   &:focus {
-    &:before {
+    &::before {
       border-color: $ms-color-neutralSecondaryAlt;
     }
 
@@ -94,7 +94,7 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
     pointer-events: none;
     cursor: default;
 
-    &:before {
+    &::before {
       background-color: $ms-color-neutralTertiaryAlt;
       border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
@@ -108,15 +108,15 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
   //== State: A checkbox in focus
   //
   &.in-focus {
-    &:before {
+    &::before {
       border-color: $ms-color-neutralSecondaryAlt;
     }
 
-    &.is-disabled:before {
+    &.is-disabled::before {
       border-color: $ms-color-neutralTertiaryAlt;
     }
 
-    &.is-checked:before {
+    &.is-checked::before {
       border-color: $ms-color-themeDarkAlt;
     }
   }
@@ -124,20 +124,19 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
 //== State: When the checkbox is checked
 //
-.ms-CheckBox-input:checked + .ms-CheckBox-field,
 .ms-CheckBox-field.is-checked {
-  &:before {
+  &::before {
     border: 10px solid $ms-color-themePrimary;
     background-color: $ms-color-themePrimary;
   }
 
-  &:after {
+  &::after {
     display: block;
   }
 
   &:hover,
   &:focus {
-    &:before {
+    &::before {
       border-color: $ms-color-themeDarkAlt;
     }
   }

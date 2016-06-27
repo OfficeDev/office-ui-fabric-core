@@ -34,7 +34,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 }
 
 // The radio button circle container
-.ms-RadioButton-field:before {
+.ms-RadioButton-field::before {
   content: '';
   display: inline-block;
   border: 2px solid $ms-color-neutralTertiary;
@@ -51,7 +51,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 }
 
 // The inner circle indicating a checked radio button
-.ms-RadioButton-field:after {
+.ms-RadioButton-field::after {
   content: '';
   width: 0;
   height: 0;
@@ -78,7 +78,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
   &:hover,
   &:focus {
-    &:before {
+    &::before {
       border-color: $ms-color-neutralSecondaryAlt;
     }
 
@@ -93,7 +93,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
     pointer-events: none;
     cursor: default;
 
-    &:before {
+    &::before {
       background-color: $ms-color-neutralTertiaryAlt;
       border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
@@ -107,7 +107,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
   //== State: A radio button in focus
   //
   &.in-focus {
-    &:before {
+    &::before {
       border-color: $ms-color-neutralSecondaryAlt;
     }
   }
@@ -115,14 +115,13 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
 //== State: When the radio button is selected (checked)
 //
-.ms-RadioButton-input:checked,
 .ms-RadioButton-field.is-checked {
-  &:before {
+  &::before {
     border: 2px solid $ms-color-themePrimary;
     background-color: transparent;
   }
 
-  &:after {
+  &::after {
     background-color: $ms-color-themePrimary;
     top: 5px;
     left: 5px;
@@ -132,7 +131,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
   &:hover,
   &:focus {
-    &:before {
+    &::before {
       border-color: $ms-color-themePrimary;
     }
   }
@@ -140,7 +139,7 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
   //== State: A radio button in focus
   //
   &.in-focus {
-    &:before {
+    &::before {
       border-color: $ms-color-themePrimary;
     }
   }

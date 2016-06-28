@@ -140,7 +140,7 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
     }
   }
 
-  &.is-filter:before {
+  &.is-filter::before {
     content: '';
     position: absolute;
     border-left: 1px solid $ms-color-neutralTertiary;
@@ -168,8 +168,8 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
   }
 }
 
-.ms-DetailsHeader-cell.is-resizing.is-sizer:after,
-.ms-DetailsHeader-cell.is-sizer:hover:after {
+.ms-DetailsHeader-cell.is-resizing.is-sizer::after,
+.ms-DetailsHeader-cell.is-sizer:hover::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -180,9 +180,9 @@ $unselectedHoverColor: $ms-color-themeLighterAlt;
   border: 1px solid $ms-color-white;
 }
 
-.ms-Fabric.is-focusVisible .ms-DetailsHeader-cell:focus:before,
+.ms-Fabric.is-focusVisible .ms-DetailsHeader-cell:focus::before,
 // TODO: Scope this state to *not* apply when wrapped in ms-Fabric
-.ms-DetailsHeader-cell:focus:before {
+.ms-DetailsHeader-cell:focus::before {
   content: '';
   pointer-events: none;
   position: absolute;

@@ -34,12 +34,12 @@
       background-color: $ms-color-themePrimary;
 
       // Hide the checkbox.
-      &:before {
+      &::before {
         display: none;
       }
 
       // But show the mark.
-      &:after {
+      &::after {
         @include ms-Icon;
         content: '\e041';
         color: $ms-color-white;
@@ -99,7 +99,7 @@
   padding: 0;
 
   // Empty checkbox.
-  &:before {
+  &::before {
     border: 1px solid $ms-color-neutralTertiary;
     content: '';
     display: block;
@@ -131,7 +131,7 @@
         background: none;
 
         // Show the checkbox.
-        &:before {
+        &::before {
           display: block;
         }
       }

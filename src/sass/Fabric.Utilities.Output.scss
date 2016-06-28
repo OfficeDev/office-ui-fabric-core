@@ -8,7 +8,7 @@
 @import "Fabric.Utilities";
 
 // The best box is a border box.
-.ms-u-borderBox, .ms-u-borderBox:before, .ms-u-borderBox:after {
+.ms-u-borderBox, .ms-u-borderBox::before, .ms-u-borderBox::after {
   @include ms-u-borderBox;
 }
 

@@ -1,26 +1,26 @@
 var MessageBarExampleProps = {
   "default": {
-    "iconModifiers": "ms-Icon--infoCircle"
+    "iconModifiers": "ms-Icon--Info"
   },
   "success": {
     "modifier": "ms-MessageBar--success",
-    "iconModifiers": "ms-Icon--checkboxCheck ms-Icon--circle"
+    "iconModifiers": "ms-Icon--Completed"
   },
   "error": {
     "modifier": "ms-MessageBar--error",
-    "iconModifiers": "ms-Icon--xCircle"
+    "iconModifiers": "ms-Icon--ErrorBadge"
   },
-  "remove": {
-    "modifier": "ms-MessageBar--remove",
-    "iconModifiers": "ms-Icon--minus ms-Icon--circle"
+  "blocked": {
+    "modifier": "ms-MessageBar--blocked",
+    "iconModifiers": "ms-Icon--Blocked2"
   },
   "warning": {
     "modifier": "ms-MessageBar--warning",
-    "iconModifiers": "ms-Icon--infoCircle"
+    "iconModifiers": "ms-Icon--Info"
   },
   "severeWarning": {
     "modifier": "ms-MessageBar--severeWarning",
-    "iconModifiers": "ms-Icon--alert"
+    "iconModifiers": "ms-Icon--Warning"
   }
 }
 

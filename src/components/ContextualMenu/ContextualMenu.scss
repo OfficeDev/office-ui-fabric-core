@@ -142,7 +142,7 @@
       background-color: $ms-color-white;
 
       // Checkmark
-      &:after {
+      &::after {
         @include ms-Icon;
         color: $ms-color-neutralPrimary;
         content: '\e041';

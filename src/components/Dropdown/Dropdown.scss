@@ -108,7 +108,7 @@
   max-height: 100%;
 
   .ms-Dropdown-item {
-    padding: 0 16px;
+    padding: 7px 16px;
   }
 
   &::before {
@@ -140,8 +140,7 @@
   cursor: pointer;
   display: block;
   height: 32px;
-  line-height: 30px;
-  padding: 0 32px 0 10px;
+  padding: 5px 32px 0 10px;
   position: relative;
   overflow: hidden;
 }
@@ -190,8 +189,7 @@
   cursor: pointer;
   display: block;
   height: 36px;
-  line-height: 36px;
-  padding: 0 10px;
+  padding: 7px 10px;
   position: relative;
   border: 1px solid transparent;
   white-space: nowrap;

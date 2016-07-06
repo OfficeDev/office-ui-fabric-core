@@ -63,6 +63,14 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
   line-height: $ms-checkbox-field-size;
   width: $ms-checkbox-field-size;
   text-align: center;
+
+  @media screen and (-ms-high-contrast: active) {
+    color: $ms-color-black;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    color: $ms-color-white;
+  }
 }
 
 // The checkbox field
@@ -95,10 +103,26 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
       background-color: $ms-color-neutralTertiaryAlt;
       border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
+      
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-contrastWhiteDisabled;
+      }
     }
 
     .ms-Label {
       color: $ms-color-neutralTertiary;
+
+      @media screen and (-ms-high-contrast: active) {
+        color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        color: $ms-color-contrastWhiteDisabled;
+      }
     }
   }
 
@@ -125,6 +149,14 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
   &::before {
     border: 10px solid $ms-color-themePrimary;
     background-color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   &::after {

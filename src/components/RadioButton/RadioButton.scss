@@ -65,6 +65,14 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
   transition-duration: $ms-radiobutton-transition-duration-inner;
   transition-timing-function: $ms-radiobutton-transition-timing;
   box-sizing: border-box;
+
+  @media screen and (-ms-high-contrast: active) {
+    color: $ms-color-contrastBlackDisabled;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    color: $ms-color-contrastWhiteDisabled;
+  }
 }
 
 // The radio button field
@@ -97,10 +105,26 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
       background-color: $ms-color-neutralTertiaryAlt;
       border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
+
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-contrastWhiteDisabled;
+      }
     }
 
     .ms-Label {
       color: $ms-color-neutralTertiary;
+
+      @media screen and (-ms-high-contrast: active) {
+        color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        color: $ms-color-contrastWhiteDisabled;
+      }
     }
   }
 
@@ -119,6 +143,14 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
   &::before {
     border: 2px solid $ms-color-themePrimary;
     background-color: transparent;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   &::after {
@@ -127,6 +159,14 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
     left: 5px;
     width: 10px;
     height: 10px;
+
+    @media screen and (-ms-high-contrast: active) {
+      background-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      background-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
   &:hover,

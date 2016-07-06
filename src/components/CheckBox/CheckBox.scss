@@ -103,7 +103,7 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
       background-color: $ms-color-neutralTertiaryAlt;
       border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
-      
+
       @media screen and (-ms-high-contrast: active) {
         border-color: $ms-color-contrastBlackDisabled;
       }

@@ -96,7 +96,6 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
   //== State: A disabled checkbox
   //
   &.is-disabled {
-    pointer-events: none;
     cursor: default;
 
     &::before {

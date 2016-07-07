@@ -6,7 +6,10 @@
         class="ms-CheckBox-field {{#if props.disabled}} is-disabled {{/if}}"
         tabindex="0"
         aria-checked="{{props.checked}}"
-        name="{{props.name}}">
+        name="{{props.name}}"
+        {{#if props.disabled}}
+        aria-disabled="true"
+        {{/if}}>
         <span class="ms-Label">{{props.label}}</span>
     </label>
 </div>

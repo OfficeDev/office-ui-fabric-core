@@ -88,7 +88,9 @@ namespace fabric {
     private _ClickHandler(event: MouseEvent): void {
       event.stopPropagation();
       event.preventDefault();
-      this.toggle();
+      if (!this._choiceField.classList.contains("is-disabled")) {
+          this.toggle();
+      }
     }
 
     private _KeydownHandler(event: KeyboardEvent): void {

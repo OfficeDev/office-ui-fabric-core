@@ -25,7 +25,7 @@ namespace fabric {
       this._choiceField = <HTMLElement>this._container.querySelector(".ms-RadioButton-field");
       this._choiceInput = <HTMLInputElement>this._container.querySelector(".ms-RadioButton-input");
       if (this._choiceField.getAttribute("aria-checked") === "true") {
-          this._choiceField.classList.add("is-checked");
+        this._choiceField.classList.add("is-checked");
       }
       this._addListeners();
     }
@@ -71,7 +71,9 @@ namespace fabric {
     private _RadioClickHandler(event: MouseEvent): void {
       event.stopPropagation();
       event.preventDefault();
-      this._dispatchSelectEvent();
+      if (!this._choiceField.classList.contains("is-disabled")) {
+        this._dispatchSelectEvent();
+      }
     }
 
     private _dispatchSelectEvent(): void {
@@ -91,7 +93,7 @@ namespace fabric {
         event.stopPropagation();
         event.preventDefault();
         if (!this._choiceField.classList.contains("is-disabled")) {
-            this._dispatchSelectEvent();
+          this._dispatchSelectEvent();
         }
       }
     }

@@ -98,7 +98,6 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
   //== State: A disabled radio button
   //
   &.is-disabled {
-    pointer-events: none;
     cursor: default;
 
     &::before {
@@ -124,6 +123,13 @@ $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
       @media screen and (-ms-high-contrast: black-on-white) {
         color: $ms-color-contrastWhiteDisabled;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        border-color: $ms-color-neutralTertiaryAlt;
       }
     }
   }

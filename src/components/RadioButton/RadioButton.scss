@@ -11,7 +11,7 @@ $ms-radiobutton-transition-duration-inner: 150ms;
 $ms-radiobutton-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
 .ms-RadioButton {
-  @include ms-u-normalize;
+  box-sizing: border-box;
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;

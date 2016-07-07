@@ -11,7 +11,8 @@ namespace fabric {
    */
   export class CheckBox {
 
-    protected _choiceFieldLI: HTMLLIElement;
+    protected _choiceField: HTMLElement;
+    protected _choiceInput: HTMLInputElement;
     private _container: HTMLElement;
 
     /**
@@ -21,18 +22,16 @@ namespace fabric {
      */
     constructor(container: HTMLElement) {
       this._container = container;
-      this._choiceFieldLI = <HTMLLIElement>this._container.querySelector(".ms-Choice-field");
-      if (this._choiceFieldLI.getAttribute("aria-checked") === "true") {
-          this._choiceFieldLI.classList.add("is-checked");
-      }
-      if (this._choiceFieldLI.getAttribute("role") === "checkbox") {
-          this._choiceFieldLI.classList.add("ms-Choice-type--checkbox");
+      this._choiceField = <HTMLElement>this._container.querySelector(".ms-CheckBox-field");
+      this._choiceInput = <HTMLInputElement>this._container.querySelector(".ms-CheckBox-input");
+      if (this._choiceField.getAttribute("aria-checked") === "true") {
+          this._choiceField.classList.add("is-checked");
       }
       this._addListeners();
     }
 
     public getValue(): boolean {
-      return this._choiceFieldLI.getAttribute("aria-checked") === "true" ? true : false;
+      return this._choiceField.getAttribute("aria-checked") === "true" ? true : false;
     }
 
     public toggle(): void {
@@ -44,57 +43,61 @@ namespace fabric {
     }
 
     public check(): void {
-      this._choiceFieldLI.setAttribute("aria-checked", "true");
-      this._choiceFieldLI.classList.add("is-checked");
+      this._choiceField.setAttribute("aria-checked", "true");
+      this._choiceField.classList.add("is-checked");
+      this._choiceInput.checked = true;
     }
 
     public unCheck(): void {
-      this._choiceFieldLI.setAttribute("aria-checked", "false");
-      this._choiceFieldLI.classList.remove("is-checked");
+      this._choiceField.setAttribute("aria-checked", "false");
+      this._choiceField.classList.remove("is-checked");
+      this._choiceInput.checked = false;
     }
 
     public removeListeners(): void {
-      this._choiceFieldLI.removeEventListener("focus", this._FocusHandler.bind(this));
-      this._choiceFieldLI.removeEventListener("blur", this._BlurHandler.bind(this));
-      this._choiceFieldLI.removeEventListener("click", this._ClickHandler.bind(this));
-      this._choiceFieldLI.addEventListener("keydown", this._KeydownHandler.bind(this));
+      this._choiceField.removeEventListener("focus", this._FocusHandler.bind(this));
+      this._choiceField.removeEventListener("blur", this._BlurHandler.bind(this));
+      this._choiceField.removeEventListener("click", this._ClickHandler.bind(this));
+      this._choiceField.addEventListener("keydown", this._KeydownHandler.bind(this));
     }
 
     protected _addListeners(events?): void {
       let ignore: string[] = events && events.ignore;
       if (!ignore || !(ignore.indexOf("focus") > -1)) {
-        this._choiceFieldLI.addEventListener("focus", this._FocusHandler.bind(this), false);
+        this._choiceField.addEventListener("focus", this._FocusHandler.bind(this), false);
       }
       if (!ignore || !(ignore.indexOf("blur") > -1)) {
-        this._choiceFieldLI.addEventListener("blur", this._BlurHandler.bind(this), false);
+        this._choiceField.addEventListener("blur", this._BlurHandler.bind(this), false);
       }
       if (!ignore || !(ignore.indexOf("click") > -1)) {
-        this._choiceFieldLI.addEventListener("click", this._ClickHandler.bind(this), false);
+        this._choiceField.addEventListener("click", this._ClickHandler.bind(this), false);
       }
       if (!ignore || !(ignore.indexOf("keydown") > -1)) {
-        this._choiceFieldLI.addEventListener("keydown", this._KeydownHandler.bind(this), false);
+        this._choiceField.addEventListener("keydown", this._KeydownHandler.bind(this), false);
       }
     }
 
     private _FocusHandler(): void {
-      this._choiceFieldLI.classList.add("in-focus");
+      this._choiceField.classList.add("in-focus");
     }
 
     private _BlurHandler(): void {
-      this._choiceFieldLI.classList.remove("in-focus");
+      this._choiceField.classList.remove("in-focus");
     }
 
     private _ClickHandler(event: MouseEvent): void {
       event.stopPropagation();
       event.preventDefault();
-      this.toggle();
+      if (!this._choiceField.classList.contains("is-disabled")) {
+          this.toggle();
+      }
     }
 
     private _KeydownHandler(event: KeyboardEvent): void {
       if (event.keyCode === 32) {
         event.stopPropagation();
         event.preventDefault();
-        if (!this._choiceFieldLI.classList.contains("is-disabled")) {
+        if (!this._choiceField.classList.contains("is-disabled")) {
             this.toggle();
         }
       }

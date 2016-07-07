@@ -30,14 +30,15 @@ gulp.task('Linting-typescript', function (cb) {
         .pipe(ErrorHandling.TypescriptLinting());
 });
 
-gulp.task('Linting-componentStyles',  function() {
-   return gulp.src(Config.paths.componentsPath + '/**/*.scss')
+gulp.task('Linting-componentStyles',  function(cb) {
+   gulp.src(Config.paths.componentsPath + '/**/*.scss')
       .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
       .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
           title: "Checking SASS Compile errors and linting"
       })))
      .pipe(Plugins.sasslint())
      .pipe(ErrorHandling.SASSlintErrors());
+   cb();
  });
 
 var tasks = [

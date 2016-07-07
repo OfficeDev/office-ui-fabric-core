@@ -51,7 +51,7 @@ $ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
 // The check mark icon
 .ms-CheckBox-field::after {
-  content: '\E73E';
+  @include ms-Icon--CheckMark;
   font-family: 'FabricMDL2Icons';
   display: none;
   position: absolute;

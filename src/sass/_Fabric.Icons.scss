@@ -347,3 +347,25 @@
     z-index: $ms-zIndex-back;
   }
 }
+
+// Fabric Core Icon variables
+$ms-icon-xs: 10px;
+$ms-icon-s: 12px;
+$ms-icon-m: 16px;
+$ms-icon-l: 20px;
+
+.ms-Icon--xs {
+  font-size: $ms-icon-xs;
+}
+
+.ms-Icon--s {
+  font-size: $ms-icon-s;
+}
+
+.ms-Icon--m {
+  font-size: $ms-icon-m;
+}
+
+.ms-Icon--l {
+  font-size: $ms-icon-l;
+}

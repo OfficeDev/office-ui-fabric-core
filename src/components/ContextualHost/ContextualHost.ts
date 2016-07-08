@@ -43,6 +43,7 @@ namespace fabric {
     private _teHeight;
     private _direction;
     private _container;
+    private _disposalCallback: Function;
     private _targetElement;
     private _matchTargetWidth;
     private _ftl = new FabricTemplateLibrary();
@@ -57,10 +58,11 @@ namespace fabric {
         targetElement: Element,
         hasArrow: boolean = true,
         modifiers?: Array<string>,
-        matchTargetWidth?: boolean
+        matchTargetWidth?: boolean,
+        disposalCallback?: Function
       ) {
       this._resizeAction = this._resizeAction.bind(this);
-      this._disMissAction = this._disMissAction.bind(this);
+      this._dismissAction = this._dismissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
       this._container = this._ftl.ContextualHost();
@@ -73,6 +75,10 @@ namespace fabric {
       this._targetElement = targetElement;
       this._openModal();
       this._setResizeDisposal();
+
+      if (disposalCallback) {
+        this._disposalCallback = disposalCallback;
+      }
 
       if (modifiers) {
         for (let i = 0; i < modifiers.length; i++) {
@@ -90,8 +96,11 @@ namespace fabric {
     public disposeModal(): void {
       if (ContextualHost.hosts.length > 0) {
         window.removeEventListener("resize", this._resizeAction, false);
-        document.removeEventListener("click", this._disMissAction, true);
+        document.removeEventListener("click", this._dismissAction, true);
         this._container.parentNode.removeChild(this._container);
+        if (this._disposalCallback) {
+          this._disposalCallback();
+        }
 
         // Dispose of all ContextualHosts
         let index: number = ContextualHost.hosts.indexOf(this);
@@ -353,8 +362,8 @@ namespace fabric {
       this._teHeight = this._targetElement.getBoundingClientRect().height;
     }
 
-    private _disMissAction(e): void {
-      // If the elemenet clicked is not INSIDE of searchbox then close seach
+    private _dismissAction(e): void {
+      // If the element clicked is not INSIDE of contextualHost then close contextualHost
       if (!this._container.contains(e.target) && e.target !== this._container) {
         if (this._children !== undefined) {
           let isChild: boolean = false;
@@ -377,10 +386,11 @@ namespace fabric {
     }
 
     private _setDismissClick() {
-      document.addEventListener("click", this._disMissAction, true);
+      document.addEventListener("click", this._dismissAction, true);
+      document.addEventListener("focus", this._dismissAction, true);
       document.addEventListener("keyup", (e: KeyboardEvent) => {
         if (e.keyCode === 32 || e.keyCode === 27) {
-          this._disMissAction(e);
+          this._dismissAction(e);
         }
       }, true);
     }

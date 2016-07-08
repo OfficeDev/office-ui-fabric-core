@@ -5,8 +5,6 @@
 // --------------------------------------------------
 // Contextual Menu styles
 
-$selected-color: #DADADA;
-
 .ms-ContextualMenu {
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
@@ -57,7 +55,7 @@ $selected-color: #DADADA;
   }
 
   &.is-selected {
-    background-color: $selected-color;
+    background-color: $ms-color-neutralQuarternary;
     color: $ms-color-black;
     font-weight: $ms-font-weight-semibold;
 
@@ -66,7 +64,7 @@ $selected-color: #DADADA;
     }
 
     &:hover {
-      background-color: $ms-color-neutralLighter;
+      background-color: $ms-color-neutralQuarternaryAlt;
     }
   }
 
@@ -175,7 +173,7 @@ $selected-color: #DADADA;
 
       &:active {
         color: $ms-color-black;
-        background-color: $selected-color;
+        background-color: $ms-color-neutralQuarternary;
 
         &::after {
           color: $ms-color-black;

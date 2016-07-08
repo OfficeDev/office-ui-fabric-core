@@ -34,6 +34,8 @@ namespace fabric {
 
   export class ContextualHost {
 
+    public static hosts: Array<ContextualHost>;
+
     private _contextualHost;
     private _modalWidth;
     private _modalHeight;
@@ -41,7 +43,6 @@ namespace fabric {
     private _teHeight;
     private _direction;
     private _container;
-    private _disposalCallback: Function;
     private _targetElement;
     private _matchTargetWidth;
     private _ftl = new FabricTemplateLibrary();
@@ -56,11 +57,10 @@ namespace fabric {
         targetElement: Element,
         hasArrow: boolean = true,
         modifiers?: Array<string>,
-        matchTargetWidth?: boolean,
-        disposalCallback?: Function
+        matchTargetWidth?: boolean
       ) {
       this._resizeAction = this._resizeAction.bind(this);
-      this._dismissAction = this._dismissAction.bind(this);
+      this._disMissAction = this._disMissAction.bind(this);
       this._matchTargetWidth = matchTargetWidth || false;
       this._direction = direction;
       this._container = this._ftl.ContextualHost();
@@ -74,23 +74,34 @@ namespace fabric {
       this._openModal();
       this._setResizeDisposal();
 
-      if (disposalCallback) {
-        this._disposalCallback = disposalCallback;
-      }
-
       if (modifiers) {
         for (let i = 0; i < modifiers.length; i++) {
           this._container.classList.add(MODIFIER_BASE + modifiers[i]);
         }
       }
+
+      if (!ContextualHost.hosts) {
+        ContextualHost.hosts = [];
+      }
+
+      ContextualHost.hosts.push(this);
     }
 
     public disposeModal(): void {
-      window.removeEventListener("resize", this._resizeAction, false);
-      document.removeEventListener("click", this._dismissAction, true);
-      this._container.parentNode.removeChild(this._container);
-      if (this._disposalCallback) {
-        this._disposalCallback();
+      if (ContextualHost.hosts.length > 0) {
+        window.removeEventListener("resize", this._resizeAction, false);
+        document.removeEventListener("click", this._disMissAction, true);
+        this._container.parentNode.removeChild(this._container);
+
+        // Dispose of all ContextualHosts
+        let index: number = ContextualHost.hosts.indexOf(this);
+        ContextualHost.hosts.splice(index, 1);
+
+        let i: number = ContextualHost.hosts.length;
+        while (i--) {
+          ContextualHost.hosts[i].disposeModal();
+          ContextualHost.hosts.splice(i, 1);
+        }
       }
     }
 
@@ -342,8 +353,8 @@ namespace fabric {
       this._teHeight = this._targetElement.getBoundingClientRect().height;
     }
 
-    private _dismissAction(e): void {
-      // If the element clicked is not INSIDE of contextualHost then close contextualHost
+    private _disMissAction(e): void {
+      // If the elemenet clicked is not INSIDE of searchbox then close seach
       if (!this._container.contains(e.target) && e.target !== this._container) {
         if (this._children !== undefined) {
           let isChild: boolean = false;
@@ -358,15 +369,18 @@ namespace fabric {
         } else {
           this.disposeModal();
         }
+      } else {
+        if (!e.target.parentElement.classList.contains("ms-ContextualMenu-item--hasMenu")) {
+          this.disposeModal();
+        }
       }
     }
 
     private _setDismissClick() {
-      document.addEventListener("click", this._dismissAction, true);
-      document.addEventListener("focus", this._dismissAction, true);
+      document.addEventListener("click", this._disMissAction, true);
       document.addEventListener("keyup", (e: KeyboardEvent) => {
         if (e.keyCode === 32 || e.keyCode === 27) {
-          this._dismissAction(e);
+          this._disMissAction(e);
         }
       }, true);
     }

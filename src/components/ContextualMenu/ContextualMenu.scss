@@ -55,7 +55,7 @@
   }
 
   &.is-selected {
-    background-color: $ms-color-neutralQuarternary;
+    background-color: $ms-color-neutralQuaternaryAlt;
     color: $ms-color-black;
     font-weight: $ms-font-weight-semibold;
 
@@ -64,7 +64,7 @@
     }
 
     &:hover {
-      background-color: $ms-color-neutralQuarternaryAlt;
+      background-color: $ms-color-neutralQuaternary;
     }
   }
 

@@ -1,10 +1,3 @@
 {
-  "name": "DialogHost",
-  "notes": "",
-  "description": "A overlay host for context menus and callouts",
-  "template": "DialogHost.html",
-  "class": "ms-DialogHost",
-  "props":  {
-    "arrowPosition": "arrowLeft"
-  }
+  "name": "DialogHost"
 }

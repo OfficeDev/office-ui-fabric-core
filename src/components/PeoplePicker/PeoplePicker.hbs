@@ -29,15 +29,16 @@
         {{/each}}
       </div>
     {{/each}}
-    <div class="ms-PeoplePicker-searchMore">
-      <button class="ms-PeoplePicker-searchMoreBtn">
+    {{#if props.searchMoreText}}
+      <button class="ms-PeoplePicker-searchMore">
         <div class="ms-PeoplePicker-searchMoreIcon">
           <i class="ms-Icon ms-Icon--search"></i>
         </div>
-        <div class="ms-PeoplePicker-searchMoreSecondary">Showing top 5 results</div>
-        <div class="ms-PeoplePicker-searchMorePrimary">Search Contacts &amp; Directory</div>
+        <div class="ms-PeoplePicker-searchMoreText">
+          {{props.searchMoreText}}
+        </div>
       </button>
-    </div>
+    {{/if}}
   </div>
   {{#each props.members}}
     <div class="ms-PeoplePicker-selected is-active">

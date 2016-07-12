@@ -59,7 +59,7 @@
   font-size: $ms-font-size-m;
   color: $ms-color-neutralPrimary;
   height: 36px;
-  padding: 6px 10px 8px;
+  padding: 6px 12px 7px;
   width: 100%;
   min-width: 180px;
   outline: 0;
@@ -146,10 +146,10 @@
     font-size: $ms-font-size-m;
     margin-right: 8px;
     display: table-cell;
-    vertical-align: bottom;
+    vertical-align: top;
     padding-left: 12px;
-    padding-bottom: 6px;
-    height: 32px;
+    padding-top: 10px;
+    height: 36px;
     width: 1%;
     white-space: nowrap;
   }

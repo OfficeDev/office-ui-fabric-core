@@ -44,7 +44,7 @@ gulp.task('Fabric-buildStyles', function () {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Core Fabric " + BuildConfig.fileExtension + " File"
+              title: "Building Core Fabric " + BuildConfig.fileExtension + " File"
             })))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
@@ -52,8 +52,8 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
@@ -68,7 +68,7 @@ gulp.task('Fabric-buildStyles', function () {
     var fabricRtl = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.Rtl.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building RTL Fabric " + BuildConfig.processorName + " " + BuildConfig.fileExtension + " File"
+              title: "Building RTL Fabric " + BuildConfig.processorName + " " + BuildConfig.fileExtension + " File"
             })))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
@@ -76,15 +76,17 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.rename('fabric.rtl.css'))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric.rtl.min.css'))
-            .pipe(Plugins.cssMinify())
+            .pipe(Plugins.cssMinify({
+              safe: true
+            }))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));

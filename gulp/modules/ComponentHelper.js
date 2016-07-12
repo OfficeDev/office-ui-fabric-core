@@ -24,11 +24,11 @@ var ComponentSamplesHelper = function() {
     this.buildComponentStyles = function(destFolder, srcTemplate, componentName, deps, processorPlugin, name, errorHandler, showSize, outputSass) {
         return gulp.src(srcTemplate)
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Component Styles"
-                })))
+              title: "Building Component Styles"
+            })))
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.data(function () {
-                return { "componentName": componentName, "dependencies": deps };
+              return { "componentName": componentName, "dependencies": deps };
             }))
             .pipe(Plugins.template())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
@@ -36,25 +36,27 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.gulpif(outputSass, gulp.dest(destFolder)))
             .pipe(processorPlugin().on('error', errorHandler))
             .pipe(Plugins.autoprefixer({
-                browsers: ['last 2 versions', 'ie >= 9'],
-                cascade: false
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
             }))
             .pipe(Plugins.rename(componentName + '.css'))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Building Component Styles " + componentName + " - " + name
-                })))
+              title: "Building Component Styles " + componentName + " - " + name
+            })))
             .pipe(gulp.dest(destFolder))
             .pipe(Plugins.rename(componentName + '.min.css'))
-            .pipe(Plugins.cssMinify())
+            .pipe(Plugins.cssMinify({
+              safe: true
+            }))
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-                    title: "Minifying Component Sample " + name
+              title: "Minifying Component Sample " + name
             })))
             .pipe(Plugins.gulpif(showSize, Plugins.size({
-                'showFiles': true
+              'showFiles': true
             })))
             .pipe(gulp.dest(destFolder));
     }

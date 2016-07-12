@@ -21,12 +21,6 @@ Presents the selected people in a list below the search field, rather than inlin
 {{> PeoplePicker props=PeoplePickerExampleProps.facePile}}
 --->
 
-## More options
-
-### Disconnected
-If the network is unavailable, you can present an error message in the search more area.
-@@include('PeoplePicker.Disconnected.html')
-
 ## Using this component
 1. Confirm that you have references to Fabric's CSS and JavaScript on your page, as well as jQuery:
     ```

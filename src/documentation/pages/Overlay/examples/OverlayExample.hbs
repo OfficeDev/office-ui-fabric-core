@@ -1,0 +1,15 @@
+<div class="docs-OverlayExample">
+  {{> Overlay props=OverlayModels.default }}
+  <button class="ms-Button docs-OverlayExample-button">Show the overlay</button>
+</div>
+
+<script type="text/javascript">
+  var OverlayExample = document.querySelector('.docs-OverlayExample');
+  var Overlay = new fabric['Overlay'](OverlayExample.querySelector('.ms-Overlay'));
+  var OverlayButton = OverlayExample.querySelector('.docs-OverlayExample-button');
+  
+  // When clicking the button, open the MessageBanner
+  OverlayButton.onclick = function() {
+    Overlay.show();
+  };
+</script>

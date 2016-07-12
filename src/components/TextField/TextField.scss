@@ -1,17 +1,18 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+@import '../Label/Label';
+
 //
 // Office UI Fabric
 // --------------------------------------------------
 // Single line (input) and multiline (textarea) form field styles
 
-
-@import '../Label/Label.scss';
-
-
 .ms-TextField {
-  @include ms-font-m;
+  @include ms-baseFont;
   @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   margin-bottom: 8px;
 }
 
@@ -49,14 +50,14 @@
   @include ms-u-normalize;
   border: 1px solid $ms-color-neutralTertiaryAlt;
   border-radius: 0;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
   height: 32px;
   padding: 6px 10px 8px;
   width: 100%;
   min-width: 180px;
-  outline: 1px solid transparent;
+  outline: 0;
 
   &:hover {
     border-color: $ms-color-neutralSecondaryAlt;
@@ -68,7 +69,20 @@
 
   &:hover,
   &:focus {
-    outline: 1px solid transparent;
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
+  }
+
+  &[disabled] {
+    background-color: $ms-color-neutralLighter;
+    border-color: $ms-color-neutralLighter;
+    pointer-events: none;
+    cursor: default;
   }
 
   @include input-placeholder {
@@ -86,13 +100,21 @@
 //
 .ms-TextField.ms-TextField--placeholder {
   position: relative;
+  background-color: $ms-color-white;
+
+  .ms-TextField-field {
+    position: relative;
+    background-color: transparent;
+    z-index: $ms-zIndex-middle;
+  }
 
   .ms-Label {
     position: absolute;
-    font-family: $ms-font-family-semilight;
+    font-weight: $ms-font-weight-semilight;
     font-size: $ms-font-size-s;
     color: $ms-color-neutralSecondary;
     padding: 7px 0 7px 10px;
+    z-index: $ms-zIndex-back;
   }
 
   &.is-disabled {
@@ -105,10 +127,30 @@
 }
 
 
+
+//== Modifier: Multiline textfield
+//
+.ms-TextField.ms-TextField--multiline {
+  .ms-TextField-field {
+    @include ms-baseFont;
+    color: $ms-color-neutralPrimary;
+    font-size: $ms-font-size-s;
+    font-weight: $ms-font-weight-semilight;
+    line-height: 17px;
+    min-height: 60px;
+    min-width: 260px;
+    padding-top: 6px;
+    overflow: auto;
+  }
+}
+
+
+
 //== Modifier: Single line (default), underlined
 //
 .ms-TextField.ms-TextField--underlined {
-  border-bottom: 1px solid $ms-color-neutralTertiaryAlt;
+  border: 0;
+  border-bottom: 1px solid $ms-color-themePrimary;
   display: table;
   width: 100%;
   min-width: 180px;
@@ -122,25 +164,13 @@
     border-color: $ms-color-themePrimary;
   }
 
-  .ms-Label {
-    font-size: $ms-font-size-s;
-    margin-right: 8px;
-    display: table-cell;
-    vertical-align: bottom;
-    padding-left: 12px;
-    padding-bottom: 5px;
-    height: 32px;
-    width: 1%;
-    white-space: nowrap;
-  }
-
   .ms-TextField-field {
     border: 0;
-    float: left;
     display: table-cell;
     text-align: left;
     padding-top: 8px;
     padding-bottom: 2px;
+    padding-left: 0;
 
     &:active,
     &:focus {
@@ -159,19 +189,5 @@
       background-color: transparent;
       color: $ms-color-neutralTertiary;
     }
-  }
-}
-
-
-//== Modifier: Multiline textfield
-//
-.ms-TextField.ms-TextField--multiline {
-  .ms-TextField-field {
-    @include ms-font-s;
-    line-height: 17px;
-    min-height: 60px;
-    min-width: 260px;
-    padding-top: 6px;
-    overflow: auto;
   }
 }

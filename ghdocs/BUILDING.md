@@ -1,6 +1,6 @@
-#Building Fabric, gulp tasks, and the starter template
+#Building Fabric, gulp tasks, bundling, and the starter template
 
-Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its LESS, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
+Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styling, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
 
 ##Contents
 
@@ -10,7 +10,7 @@ Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its LESS, build and 
 
 ##Building Fabric
 
-Before you get started, make sure you have [node.js](https://nodejs.org/) and [git](https://git-scm.com/) installed. To build Fabric:
+Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), and [git](https://git-scm.com/) installed. To build Fabric:
 
 1. Clone the repo.
 2. Navigate to the folder that contains the gulpfile.js file (Fabric's root).
@@ -42,6 +42,10 @@ Builds and watches everything but builds only Sass versions of our core library 
 ###gulp watch-sass-debug
 
 Builds and watches everything but uses the Sass versions of the files and gives a readout of files in the pipe.
+
+###gulp Bundles
+
+Builds all bundles specified in `gulp/modules/Config.js`. View more details in the [Bundling](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUNDLING.md)
 
 
 ##Starter template

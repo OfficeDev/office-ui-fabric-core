@@ -1,0 +1,13 @@
+<script type="text/javascript">
+  var CalloutExamples = document.querySelectorAll(".ms-CalloutExample");
+  for(var i = 0; i < CalloutExamples.length; i++) {
+    var Example = CalloutExamples[i];
+    var ExampleButtonElement = Example.querySelector(".ms-CalloutExample-button .ms-Button");
+    var CalloutElement = Example.querySelector(".ms-Callout");
+    new fabric['Callout'](
+          CalloutElement, 
+          ExampleButtonElement,
+          "right"
+    );
+  }
+</script>

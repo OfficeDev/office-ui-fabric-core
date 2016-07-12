@@ -10,8 +10,11 @@
 //
 // The persona card docks to the bottom of the viewport.
 .ms-PersonaCard {
-  @include ms-font-m;
+  @include ms-baseFont;
   @include ms-u-slideUpIn10;
+  color: $ms-color-neutralPrimary;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -21,55 +24,32 @@
 
 .ms-PersonaCard-persona {
   background-color: $ms-color-neutralLighter;
-}
-
-// Overrides for persona
-.ms-PersonaCard-persona .ms-Persona {
-  .ms-Persona-imageArea {
-    width: 80px;
-    height: 80px;
-    margin: 12px 0 12px 20px;
-  }
-
-  .ms-Persona-image {
-    width: 80px;
-    height: 80px;
-  }
-
-  .ms-Persona-placeholder {
-    font-size: 75px;
-    left: 1px;
-    top: 11px;
-  }
-
-  .ms-Persona-initials {
-    font-size: $ms-font-size-xxl;
-    line-height: 80px;
-  }
-
-  .ms-Persona-presence {
-    border-color: $ms-color-neutralLighter;
-    left: 77px;
-    bottom: 12px;
-  }
-
-  .ms-Persona-tertiaryText,
-  .ms-Persona-optionalText {
-    display: block; // Show tertiary and optional text
-  }
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
 }
 
 .ms-PersonaCard-actions {
   @include ms-u-borderBox;
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0 10px;
-  border-bottom: 1px solid $ms-color-neutralTertiaryAlt;
   background-color: $ms-color-white;
   height: 48px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $ms-color-neutralTertiaryAlt;
+  }
 }
 
-.ms-PersonaCard-action {
+.ms-PersonaCard-action,
+.ms-PersonaCard-overflow {
   display: inline-block;
   cursor: pointer;
   font-size: $ms-font-size-l;
@@ -77,6 +57,7 @@
   line-height: 48px;
   padding: 0 10px;
   color: $ms-color-neutralSecondary;
+  outline: transparent;
   position: relative;
   @include ms-u-borderBox;
 
@@ -88,15 +69,26 @@
     color: $ms-color-themePrimary;
   }
 
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
   // Currently-selected action
   &.is-active {
     color: $ms-color-themePrimary;
 
     // Arrow
-    &:after {
+    &::after {
       @include ms-u-borderBox;
       @include rotate(45deg);
-      content: "";
+      content: '';
       width: 10px;
       height: 10px;
       border: 1px solid $ms-color-neutralTertiaryAlt;
@@ -111,7 +103,6 @@
 }
 
 .ms-PersonaCard-overflow {
-  @extend .ms-PersonaCard-action;
   font-size: $ms-font-size-m;
   color: $ms-color-neutralPrimary;
   float: right;
@@ -125,7 +116,7 @@
 .ms-PersonaCard-orgChart {
   position: absolute;
   right: 12px;
-  top: 0;
+  top: -95px;
 }
 
 .ms-PersonaCard-actionDetailBox {
@@ -135,15 +126,20 @@
   background-color: $ms-color-white;
 }
 
-.ms-PersonaCard-actionDetails {
-  list-style: none;
-  width: 20%;
-  float: left;
+// Active detail items
+.ms-PersonaCard-details {
+  display: none;
+  width: 100%;
+  margin: 0;
+  max-height: 300px;
   min-height: 48px;
   color: $ms-color-neutralSecondary;
   padding: 9px 20px;
-  transition: max-height $ms-duration2 $ms-ease1 0.2s;
   box-sizing: border-box;
+
+  &.is-active {
+    display: block;
+  }
 
   // State: Contents are collapsed to a single line.
   &.is-collapsed {
@@ -151,79 +147,14 @@
     overflow: hidden;
 
     // Show the expander icon.
-    .ms-PersonaCard-detailExpander:after {
+    .ms-PersonaCard-detailExpander::after {
       content: '\e088';
     }
   }
 }
 
-// Active detail items
-.ms-PersonaCard-detailChat,
-.ms-PersonaCard-detailPhone,
-.ms-PersonaCard-detailVideo,
-.ms-PersonaCard-detailMail,
-.ms-PersonaCard-detailOrg {
-  overflow: hidden;
-  width: 500%;
-  padding: 0;
-  margin: 0;
-}
-
-.ms-PersonaCard-detailOrg {
-  overflow-y: auto;
-}
-
-.ms-PersonaCard-detailChat {
-  margin-left: 0;
-}
-.ms-PersonaCard-detailPhone {
-  margin-left: -100%;
-}
-.ms-PersonaCard-detailVideo {
-  margin-left: -200%;
-}
-.ms-PersonaCard-detailMail {
-  margin-left: -300%;
-}
-.ms-PersonaCard-detailOrg {
-  margin-left: -400%;
-}
-
-.ms-PersonaCard-detailChat .detail-1,
-.ms-PersonaCard-detailPhone .detail-2,
-.ms-PersonaCard-detailVideo .detail-3,
-.ms-PersonaCard-detailMail .detail-4 {
-  max-height: 78px;
-  transition: max-height 0.25s ease;
-}
-
-.ms-PersonaCard-detailOrg .detail-5 {
+.ms-PersonaCard-details[data-detail-id='org'] {
   max-height: 300px;
-  transition: max-height 0.25s ease;
-}
-
-// Inactive Items
-.ms-PersonaCard-detailChat .detail-2,
-.ms-PersonaCard-detailChat .detail-3,
-.ms-PersonaCard-detailChat .detail-4,
-.ms-PersonaCard-detailChat .detail-5,
-.ms-PersonaCard-detailPhone .detail-1,
-.ms-PersonaCard-detailPhone .detail-3,
-.ms-PersonaCard-detailPhone .detail-4,
-.ms-PersonaCard-detailPhone .detail-5,
-.ms-PersonaCard-detailVideo .detail-1,
-.ms-PersonaCard-detailVideo .detail-2,
-.ms-PersonaCard-detailVideo .detail-4,
-.ms-PersonaCard-detailVideo .detail-5,
-.ms-PersonaCard-detailMail .detail-1,
-.ms-PersonaCard-detailMail .detail-2,
-.ms-PersonaCard-detailMail .detail-3,
-.ms-PersonaCard-detailMail .detail-5,
-.ms-PersonaCard-detailOrg .detail-1,
-.ms-PersonaCard-detailOrg .detail-2,
-.ms-PersonaCard-detailOrg .detail-3,
-.ms-PersonaCard-detailOrg .detail-4 {
-  max-height: 48px;
 }
 
 // Icon to expand a collapsed actionDetails section.
@@ -239,7 +170,7 @@
   text-align: center;
   width: 30px;
 
-  &:after {
+  &::after {
     @include ms-Icon;
     content: '\e087';
   }
@@ -255,35 +186,22 @@
 }
 
 .ms-PersonaCard-action.ms-PersonaCard-orgChart {
-  &:after {
+  &::after {
     display: none; // Hide arrow for orgchart action
   }
 }
 
-
-//== Modifier: Persona card with square personas
-//
-.ms-PersonaCard.ms-PersonaCard--square {
-  .ms-PersonaCard-persona {
-    .ms-Persona-imageArea,
-    .ms-Persona-image {
-      width: 100px;
-      height: 100px;
-      margin: 0;
-    }
-
-    .ms-Persona-presence {
-      left: 0;
-    }
-  }
-}
-
-
 @media (min-width: $ms-screen-md-min) {
   // Undock the persona card and give it a shadow.
   .ms-PersonaCard {
-    @include drop-shadow();
+    @include drop-shadow;
     max-width: 360px;
     position: relative;
+  }
+
+  .ms-ContextualHost {
+    .ms-PersonaCard {
+      box-shadow: none;
+    }
   }
 }

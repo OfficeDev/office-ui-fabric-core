@@ -1,0 +1,12 @@
+<script type="text/javascript">
+  var ProgressIndicatorElements = document.querySelectorAll(".ms-ProgressIndicator");
+  for(var i = 0; i < ProgressIndicatorElements.length; i++) {
+    let ProgressIndicator = new fabric['ProgressIndicator'](ProgressIndicatorElements[i]);
+
+    setTimeout(
+      function() {
+        ProgressIndicator.setProgressPercent(1);
+      },
+      2000);
+  }
+</script>

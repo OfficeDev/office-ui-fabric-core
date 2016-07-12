@@ -5,25 +5,25 @@
 // --------------------------------------------------
 // Data table styles
 
-
 .ms-Table {
+  @include ms-baseFont;
   display: table;
   width: 100%;
+  border-collapse: collapse;
 }
 
+// makes the table cells not expand with the content, keeping the table cells at a fixed size
+.ms-Table--fixed {
+  table-layout: fixed;
+}
+
+.ms-Table tr,
 .ms-Table-row {
   display: table-row;
-  height: 30px;
   line-height: 30px;
-  font-family: $ms-font-family-semilight;
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-s;
   color: $ms-color-neutralPrimary;
-
-  &:hover {
-    background-color: $ms-color-neutralLighter;
-    cursor: pointer;
-    outline: 1px solid transparent;
-  }
 
   // Rows can be selected.
   &.is-selected {
@@ -34,12 +34,12 @@
       background-color: $ms-color-themePrimary;
 
       // Hide the checkbox.
-      &:before {
+      &::before {
         display: none;
       }
 
       // But show the mark.
-      &:after {
+      &::after {
         @include ms-Icon;
         content: '\e041';
         color: $ms-color-white;
@@ -52,29 +52,42 @@
   }
 }
 
+.ms-Table th,
+.ms-Table td,
 .ms-Table-cell {
   display: table-cell;
   padding: 0 10px;
 }
 
 // Style the first row as a header.
-.ms-Table-row:first-child {
-  font-family: $ms-font-family-semilight;
+.ms-Table thead th,
+.ms-Table-head {
+  font-weight: $ms-font-weight-semilight;
   font-size: $ms-font-size-xs;
   color: $ms-color-neutralSecondary;
+}
 
-  .ms-Table-cell, .ms-Table-rowCheck {
+.ms-Table thead,
+.ms-Table-head {
+  td,
+  th,
+  .ms-Table-cell,
+  .ms-Table-rowCheck {
+    font-weight: normal;
+    text-align: left;
     border-bottom: 1px solid $ms-color-neutralLight;
   }
 
-  .ms-Table-rowCheck:after {
-    @include ms-Icon;
-    content: '\e041';
-    color: $ms-color-neutralTertiary;
-    font-size: 12px;
-    position: absolute;
-    left: 4px;
-    top: 9px;
+  .ms-Table-rowCheck {
+    &::after {
+      @include ms-Icon;
+      content: '\e041';
+      color: $ms-color-neutralTertiary;
+      font-size: 12px;
+      position: absolute;
+      left: 4px;
+      top: 9px;
+    }
   }
 }
 
@@ -83,9 +96,10 @@
   display: table-cell;
   width: 20px;
   position: relative;
+  padding: 0;
 
   // Empty checkbox.
-  &:before {
+  &::before {
     border: 1px solid $ms-color-neutralTertiary;
     content: '';
     display: block;
@@ -97,6 +111,16 @@
   }
 }
 
+// A table with selectable rows
+.ms-Table--selectable {
+  tr:hover,
+  .ms-Table-row:hover {
+    background-color: $ms-color-neutralLighter;
+    cursor: pointer;
+    outline: 1px solid transparent;
+  }
+}
+
 // All high contrast styling rules
 @media screen and (-ms-high-contrast: active) {
   .ms-Table-row {
@@ -105,8 +129,9 @@
       // A checkmark in a selected row.
       .ms-Table-rowCheck {
         background: none;
+
         // Show the checkbox.
-        &:before {
+        &::before {
           display: block;
         }
       }

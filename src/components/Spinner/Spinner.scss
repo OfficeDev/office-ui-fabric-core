@@ -7,6 +7,7 @@
 
 
 .ms-Spinner {
+  @include ms-baseFont;
   position: relative;
   height: 20px;
 
@@ -25,11 +26,21 @@
   border-radius: 100px;
   background-color: $ms-color-themePrimary;
   opacity: 0;
+
+  @media screen and (-ms-high-contrast: active) {
+    background-color: $ms-color-white;
+  }
+
+  @media screen and (-ms-high-contrast: black-on-white) {
+    background-color: $ms-color-black;
+  }
 }
 
 .ms-Spinner-label {
+  @include ms-baseFont;
   position: relative;
-  @include ms-font-s();
+  font-size: $ms-font-size-s;
+  font-weight: $ms-font-weight-regular;
   color: $ms-color-themePrimary;
   left: 28px;
   top: 2px;

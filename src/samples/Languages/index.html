@@ -1,0 +1,283 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fabric's Language Override Test Page</title>
+
+  <!-- Fabric core and Components CSS -->
+  <link rel="stylesheet" type="text/css" href="../../../css/fabric.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/fabric.components.css">
+
+  <style type="text/css">
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 10px;
+      margin-bottom: 20px;
+      padding-left: 25px;
+    }
+
+    .Card {
+      min-height: 10em;
+      margin-bottom: 2em;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Language Overrides Sample</h1>
+  </header>
+  <main class="ms-Grid">
+    <div class="ms-Grid-row">
+      <div class="ms-Grid-col ms-u-sm10 ms-u-smPush1 ms-u-smPull1">
+
+        <p class="ms-font-l">Chinese Simplified, Chinese Traditional, Korean, and Japanese use local desktop fonts instead of web fonts due to
+          file size, so we only provide font stacks for these character sets.</p>
+
+        <aside>
+
+          <p class="ms-font-l">
+            Add a <code>lang</code> attribute matching one of the language codes from our overrides
+          </p>
+
+          <p class="ms-font-l">Example:</p>
+
+          <code>
+            &lt;div lang="pl-pl"&gt;<br>
+              &nbsp;&nbsp;&lt;p class="ms-font-m"&gt;This would render using Segoe UI East European&lt;/p&gt;<br>
+            &lt;/div&gt;
+          </code>
+
+          <p class="ms-font-l">The examples below show Fabric's font stack in the supported language sets.</p>
+        </aside>
+      </div>
+    </div>
+
+    <section class="ms-Grid-row">
+      <div lang="cmn" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Chinese Simplified</div>
+        <div class="ms-font-l">
+          <p>使用 Office 365 管理中心从任意位置管理用户帐户、存储和设置。 此外，OneDrive for Business 提供混合选项，通过云利用你的本地解决方案。</p>
+
+          <p>作为业界的云安全先锋，我们密切关注你的文件。 我们使用当前最先进的加密方法来确保你的文件在传输过程中和存储时都经过加密。 我们还确保我们的服务满足严格的合规性标准。</p>
+
+          <p>我们严守安全、合规性和隐私的相关指导原则。 经过检验，我们符合 ISO 27001、数据处理协议、欧盟示范条款、HIPAA、FISMA、FERPA、SSAE 16 等全球合规性标准。</p>
+        </div>
+      </div>
+
+      <div lang="yue" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Chinese Traditional</div>
+        <div class="ms-font-l">
+          <p>使用 Office 365 系統管理中心，可以隨時隨地管理使用者帳戶、儲存空間及設定。此外，商務用 OneDrive 提供混合式選項，能夠搭配雲端充分運用您的內部部署解決方案。 安全
+          </p>
+
+          <p>作為雲端安全性的業界領導者，保護您的檔案就是我們的責任。 我們會確保您的檔案透過加密傳輸，並使用最先進的加密方式儲存。 我們會確保服務符合最嚴格的規範標準。 受信任
+          </p>
+
+          <p>我們依循安全性、法規遵循及隱私權的指導原則。 我們通過國際規範標準認證，包含 ISO 27001、Data Processing Agreements、EU Model Clauses、HIPAA、FISMA、FERPA、SSAE
+            16 等等。</p>
+        </div>
+      </div>
+
+      <div lang="ell" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Greek</div>
+        <div class="ms-font-l">
+          <p>Χρησιμοποιήστε το κέντρο διαχείρισης Office 365 για τη διαχείριση των λογαριασμών χρηστών, του χώρου αποθήκευσης
+            και των ρυθμίσεων από οποιοδήποτε σημείο. Επίσης, το OneDrive για επιχειρήσεις παρέχει επιλογές υβριδικής ανάπτυξης,
+            για να χρησιμοποιήσετε τις λύσεις εσωτερικής εγκατάστασής σας με το cloud. Ασφαλές
+          </p>
+
+          <p>Ως ηγέτιδα δύναμη στον κλάδο όσον αφορά την ασφάλεια στο cloud, ενδιαφερόμαστε ιδιαίτερα για την προστασία των
+            αρχείων σας. Εξασφαλίζουμε ότι τα αρχεία σας κρυπτογραφούνται κατά τη μεταφορά και την αποθήκευση, με χρήση των
+            πιο εξελιγμένων μεθόδων κρυπτογράφησης που υπάρχουν. Εξασφαλίζουμε επίσης ότι η υπηρεσία μας πληροί πολύ αυστηρά
+            πρότυπα συμμόρφωσης. Αξιόπιστο
+          </p>
+
+          <p>Βασιζόμαστε στις κατευθυντήριες αρχές της ασφάλειας, της συμμόρφωσης και της προστασίας των προσωπικών δεδομένων.
+            Διαθέτουμε πιστοποιήσεις ότι πληρούμε παγκόσμια πρότυπα συμμόρφωσης όπως ISO 27001, Συμβάσεις επεξεργασίας δεδομένων,
+            πρότυπες ρήτρες της ΕΕ, HIPAA, FISMA, FERPA, SSAE 16 και άλλα.</p>
+        </div>
+      </div>
+
+      <div lang="vie" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Vietnamese</div>
+        <div class="ms-font-l">
+          <p>Sử dụng trung tâm quản trị Office 365 để quản lý tài khoản người dùng, dung lượng lưu trữ và thiết đặt từ mọi nơi.
+            Đồng thời, OneDrive for Business còn cung cấp các tùy chọn kết hợp giúp sử dụng các giải pháp tại chỗ của bạn
+            với đám mây.</p>
+
+          <p>Dẫn đầu trong lĩnh vực bảo mật đám mây, chúng tôi quan tâm sâu sắc đến tệp của bạn. Chúng tôi đảm bảo rằng tệp
+            của bạn được mã hóa trong khi truyền và lưu bằng cách sử dụng các phương pháp mã hóa tiên tiến nhất hiện có.
+            Chúng tôi cũng đảm bảo rằng dịch vụ của chúng tôi đáp ứng các tiêu chuẩn tuân thủ nghiêm ngặt.</p>
+
+          <p>Chúng tôi dựa trên các nguyên tắc hướng dẫn về bảo mật, tuân thủ và quyền riêng tư. Chúng tôi được xác nhận đáp
+            ứng các tiêu chuẩn tuân thủ toàn cầu như ISO 27001, Thỏa thuận Xử lý Dữ liệu, Điều khoản Mô hình EU, HIPAA, FISMA,
+            FERPA, SSAE 16 và các tiêu chuẩn khác.</p>
+        </div>
+      </div>
+
+      <div lang="tha" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Thai</div>
+        <div class="ms-font-l">
+          <p>เรียบง่าย</p>
+
+          <p>ใช้ศูนย์การจัดการ Office 365 เพื่อจัดการกับบัญชีผู้ใช้ ที่เก็บข้อมูล และการตั้งค่าจากที่ใดก็ได้ นอกจากนี้ OneDrive
+            for Business มีข้อเสนอตัวเลือกแบบไฮบริดเพื่อใช้ประโยชน์จากโซลูชันภายในองค์กรร่วมกับระบบคลาวด์</p>
+
+          <p>ปลอดภัย</p>
+
+          <p>ในฐานะผู้นำด้านความปลอดภัยใน Cloud ของอุตสาหกรรมนี้ เราใส่ใจในไฟล์ของคุณเป็นอย่างยิ่ง เราทำให้คุณแน่ใจได้ว่าไฟล์ของคุณมีการเข้ารหัสลับในการส่งและพักไว้โดยใช้วิธีการเข้ารหัสลับในระดับขั้นสูงที่สุดที่มีอยู่
+            นอกจากนี้ เรายังทำให้คุณแน่ใจได้ว่าบริการของเราตรงตามมาตรฐานการปฏิบัติตามกฎระเบียบที่เข้มงวด</p>
+
+          <p>เชื่อถือได้</p>
+
+          <p>เราสร้างจากข้อแนะนำหลักการของความปลอดภัย การปฏิบัติตามกฎระเบียบ และความเป็นส่วนตัว เราได้รับการรับรองว่าได้มาตรฐานการปฏิบัติตามกฎระเบียบสากล อาทิเช่น ISO 27001, Data Processing Agreements, EU Model Clauses, HIPAA, FISMA, FERPA, SSAE 16 และอื่นๆ</p>
+        </div>
+      </div>
+
+      <div lang="kor" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Korean</div>
+        <div class="ms-font-l">
+          <p>단순성</p>
+
+          <p>Office 365 관리 센터를 사용하여 어디에서나 사용자 계정, 저장소 및 설정을 관리할 수 있습니다. 또한 비즈니스용 OneDrive를 사용하면 클라우드와 온-프레미스 솔루션을 함께 활용할 수 있는
+            하이브리드 옵션이 제공됩니다.</p>
+
+          <p>안전성</p>
+
+          <p>클라우드 보안의 업계 선도자로서, 주의 깊게 파일을 관리합니다. 파일은 암호화 상태로 전송되며, 전송 후에는 최고 수준의 암호화 방식을 통해 보관됩니다. 또한 까다로운 규정 준수 기준을 충족시키고 있습니다.</p>
+
+          <p>신뢰성</p>
+
+          <p>보안, 규정 준수, 개인 정보 보호의 가이드 라인을 원칙으로 하여 설계되었습니다. ISO 27001, 데이터 처리 계약, EU 모범 조항, HIPAA, FISMA, FERPA, SSAE 16 등의 세계적인규정 준수 기준 충족을 인증받았습니다.</p>
+        </div>
+      </div>
+
+      <div lang="rus" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Russian</div>
+        <div class="ms-font-l">
+          <p>Простота</p>
+
+          <p>С помощью Центра администрирования Office 365 вы можете управлять учетными записями пользователей, ресурсами хранения
+            и настройками из любого места. Кроме того, в OneDrive для бизнеса имеются возможности для создания гибридной
+            среды и, соответственно, использования локальных решений в облаке.</p>
+
+          <p>Надежность</p>
+
+          <p>Занимая лидирующие в отрасли позиции по обеспечению безопасности в облачной среде, мы заботимся о сохранности ваших
+            файлов. Мы обеспечиваем их шифрование во время пересылки и при хранении, используя самые передовые методы криптографической
+            защиты. Также мы гарантируем, что наши услуги удовлетворяют жестким стандартам нормативного соответствия.</p>
+
+          <p>Безопасность</p>
+
+          <p>Основополагающие принципы нашей работы — это обеспечение безопасности, неразглашения и нормативного соответствия.
+            Мы прошли проверку нормативного соответствия по глобальным стандартам, в частности ISO 27001, соглашениям об
+            обработке данных, типовым нормам ЕС, HIPAA, FISMA, FERPA, SSAE 16 и другим.</p>
+        </div>
+      </div>
+
+      <div lang="slk" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Slovak (rendering the East European variant of Segoe)</div>
+        <div class="ms-font-l">
+          <p>Prehľadné riešenie</p>
+
+          <p>Pomocou Centra spravovania služieb Office 365 môžete z ľubovoľného miesta spravovať používateľské kontá, ukladací
+            priestor a nastavenia. OneDrive for Business poskytuje tiež hybridné možnosti na súčasné použitie lokálnych riešení
+            aj cloudu.</p>
+
+          <p>Bezpečnosť</p>
+
+          <p>Sme lídrom v oblasti zabezpečenia cloudu a na vašich súboroch nám skutočne záleží. Prenášané súbory aj súbory v
+            ukladacom priestore vždy šifrujeme pomocou najpokročilejších dostupných šifrovacích metód. Zároveň neustále dbáme
+            o to, aby naša služba spĺňala prísne štandardy v oblasti dodržiavania súladu s normami.</p>
+
+          <p>Dôveryhodnosť</p>
+
+          <p>Naše riešenie staviame na základných princípoch, ktorými sú zabezpečenie, súlad s normami a ochrana osobných údajov.
+            Spĺňame globálne normy, ako sú napríklad ISO 27001, Zmluvy o spracovaní údajov, Vzorové doložky EÚ, zákony HIPAA,
+            FISMA, FERPA, SSAE 16 a ďalšie.</p>
+        </div>
+      </div>
+
+
+      <div lang="jpn" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Japanese</div>
+        <div class="ms-font-l">
+          <p>シンプル</p>
+
+          <p>Office 365 の管理センターを使用すると、場所を問わずにユーザー アカウント、ストレージ、設定を管理できます。また OneDrive for Business には、オンプレミス ソリューションとクラウドを連携させるためのハイブリッド
+            オプションも用意されています。
+          </p>
+
+          <p>セキュア</p>
+
+          <p>クラウド セキュリティの業界リーダーとして、ファイルに十分に注意を払います。転送中および保存中のファイルは、利用可能な最先端の暗号化方式により暗号化されていることを保証します。また、サービスが厳しいコンプライアンス基準を満たしていることも保証します。</p>
+
+          <p>信頼性</p>
+
+          <p>セキュリティ、コンプライアンス、プライバシーの指針に基づいて構築されています。ISO 27001、データ処理契約、EU モデル契約条項、HIPAA、FISMA、FERPA、SSAE 16 などのようなグローバルなコンプライアンス基準を満たすことが確認されています。</p>
+        </div>
+      </div>
+
+      <div lang="ara" dir="rtl" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Arabic</div>
+        <div class="ms-font-l">
+          <p>
+            بسيط
+          </p>
+          <p>
+            استخدم مركز إدارة Office 365 لإدارة حسابات المستخدمين ومساحات التخزين والإعدادات من أي مكان. يوفر لك OneDrive for Business
+            أيضاً خيارات مختلطة لاستخدام الحلول المحلية مع السحابة.
+          </p>
+          <p>
+            كشركة رائدة في مجال أمان السحابة، فإننا نهتم كل الاهتمام بملفاتك. فنحن نضمن تشفير ملفاتك عند نقلها باستخدام طرق التشفير المتاحة
+            الأكثر تقدماً. كما نضمن لك أن تلبي خدماتنا الامتثال للمعايير الصارمة.
+          </p>
+          <p>
+            موثنحن نستند بشكل أساسي إلى المبادئ التوجيهية للأمان والامتثال والخصوصية. وقد تم التحقق من تلبيتنا لمعايير الامتثال العالمية
+            مثل ISO 27001 واتفاقيات معالجة البيانات وشروط نموذج الاتحاد الأوروبي وHIPAA وFISMA وFERPA وSSAE 16 وغيرها.
+          </p>
+        </div>
+      </div>
+
+      <div lang="heb" dir="rtl" class="ms-bgColor-neutralLighterAlt Card ms-Grid-col ms-u-lgPush1 ms-u-lgPull1 ms-u-lg10">
+        <div class="ms-font-xl">Hebrew</div>
+        <div class="ms-font-l">
+          <p>
+            פשוט
+          </p>
+          <p>
+            השתמש במרכז הניהול של Office 365 כדי לנהל חשבונות משתמשים, אחסון והגדרות מכל מקום. כמו כן, OneDrive for Business מציע אפשרויות
+            היברידיות לשימוש בפתרונות המקומיים שלך עם הענן.
+          </p>
+          <p>
+            כחברה מובילה בתחום האבטחה בענן, הקבצים שלך חשובים לנו ביותר. אנו מוודאים שהקבצים שלך מוצפנים בתנועה ובמנוחה באמצעות שיטות
+            ההצפנה הזמינות המתקדמות ביותר. אנו גם מוודאים שהשירות שלנו עומד בתקני התאימות המחמירים ביותר.
+          </p>
+          <p>
+            אנו מתבססים על העקרונות המנחים של אבטחה, תאימות ופרטיות. כפי שהוכח, אנו עומדים בתקני תאימות גלובליים כגון ISO 27001, הסכמי
+            עיבוד נתונים, סעיפי מודל האיחוד האירופי, HIPAA,‏ FISMA,‏ FERPA,‏ SSAE 16 ואחרים.
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+</html>

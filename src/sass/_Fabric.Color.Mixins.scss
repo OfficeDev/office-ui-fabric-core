@@ -58,6 +58,10 @@
   background-color: $ms-color-neutralPrimary;
 }
 
+@mixin ms-bgColor-neutralPrimaryAlt {
+  background-color: $ms-color-neutralPrimaryAlt;
+}
+
 @mixin ms-bgColor-neutralSecondary {
   background-color: $ms-color-neutralSecondary;
 }
@@ -106,6 +110,10 @@
 
 @mixin ms-bgColor-orangeLight {
   background-color: $ms-color-orangeLight;
+}
+
+@mixin ms-bgColor-orangeLighter {
+  background-color: $ms-color-orangeLighter;
 }
 
 @mixin ms-bgColor-redDark {
@@ -180,15 +188,7 @@
   background-color: $ms-color-greenLight;
 }
 
-// Others
-@mixin ms-bgColor-error {
-  background-color: $ms-color-errorBackground;
-}
-
-@mixin ms-bgColor-alert {
-  background-color: $ms-color-alertBackground;
-}
-
+// Message colors
 @mixin ms-bgColor-info {
   background-color: $ms-color-infoBackground;
 }
@@ -197,8 +197,16 @@
   background-color: $ms-color-successBackground;
 }
 
-@mixin ms-bgColor-orangeLighter {
-  background-color: $ms-color-orangeLighter;
+@mixin ms-bgColor-severeWarning {
+  background-color: $ms-color-severeWarningBackground;
+}
+
+@mixin ms-bgColor-warning {
+  background-color: $ms-color-warningBackground;
+}
+
+@mixin ms-bgColor-error {
+  background-color: $ms-color-errorBackground;
 }
 
 
@@ -256,6 +264,10 @@
   border-color: $ms-color-neutralPrimary;
 }
 
+@mixin ms-borderColor-neutralPrimaryAlt {
+  border-color: $ms-color-neutralPrimaryAlt;
+}
+
 @mixin ms-borderColor-neutralSecondary {
   border-color: $ms-color-neutralSecondary;
 }
@@ -284,8 +296,8 @@
   border-color: $ms-color-neutralLighterAlt;
 }
 
-@mixin ms-borderColor-white { 
-  border-color: $ms-color-white; 
+@mixin ms-borderColor-white {
+  border-color: $ms-color-white;
 }
 
 // Brand and accent colors
@@ -303,6 +315,10 @@
 
 @mixin ms-borderColor-orangeLight {
   border-color: $ms-color-orangeLight;
+}
+
+@mixin ms-borderColor-orangeLighter {
+  border-color: $ms-color-orangeLighter;
 }
 
 @mixin ms-borderColor-redDark {
@@ -377,27 +393,24 @@
   border-color: $ms-color-greenLight;
 }
 
-// Status colors
-@mixin ms-borderColor-error {
-  border-color: $ms-color-error;
+
+// Message colors
+@mixin ms-borderColor-info {
+  border-color: $ms-color-info;
 }
 
 @mixin ms-borderColor-success {
   border-color: $ms-color-success;
 }
 
-@mixin ms-borderColor-info {
-  border-color: $ms-color-info;
-}
-
 @mixin ms-borderColor-alert {
   border-color: $ms-color-alert;
 }
 
-// Others
-@mixin ms-borderColor-orangeLighter {
-  border-color: $ms-color-orangeLighter;
+@mixin ms-borderColor-error {
+  border-color: $ms-color-error;
 }
+
 
 // Individual borders, by request
 @mixin ms-borderColorTop-themePrimary {

@@ -1,0 +1,12 @@
+<div class="ms-ContextualMenu-dividers">
+    {{> Button props=props.button}}
+    {{> ContextualMenu props=props}}
+</div>
+
+<script type="text/javascript">
+    var ButtonElement = document.querySelector(".ms-ContextualMenu-dividers .ms-Button");
+    var ContextualMenuElement = document.querySelector(".ms-ContextualMenu-dividers .ms-ContextualMenu");
+    
+    var contextualMenu = new fabric['ContextualMenu'](ContextualMenuElement, ButtonElement);
+    
+</script>

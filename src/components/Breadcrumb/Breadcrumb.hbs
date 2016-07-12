@@ -1,0 +1,17 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-Breadcrumb {{#if props.customClasses}} {{props.customClasses}}{{/if}}">
+  <div class="ms-Breadcrumb-overflow">
+    <div class="ms-Breadcrumb-overflowButton ms-Icon ms-Icon--ellipsis" tabindex="1"></div>
+    <div class="ms-Breadcrumb-overflowMenu">
+      <ul class="ms-ContextualMenu is-open"></ul>
+    </div>
+  </div>
+  <ul class="ms-Breadcrumb-list">
+    {{#each props.items}}
+      <li class="ms-Breadcrumb-listItem">
+        <a class="ms-Breadcrumb-itemLink" tabindex="0">{{name}}</a>
+        <i class="ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight"></i>
+      </li>
+    {{/each}}
+  </ul>
+</div>

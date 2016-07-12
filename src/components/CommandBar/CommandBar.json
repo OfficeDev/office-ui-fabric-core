@@ -1,7 +1,5 @@
 {
   "name": "CommandBar",
-  "notes": "",
-  "description": "A commanding surface for panels, pages, and applications. Unlike the {0} NavBar {1}, this component is intended for action and not navigation.",
   "accessibilityNotes": 
     {
       "role": "CommandBar",
@@ -9,24 +7,13 @@
       "keyboard": "Use the TAB key to navigate between elements in the dialog. To exit, use ESC. Trap focus in the dialog until the user dismisses it. The user needs to return to the previous element on close."
     },
   "class": "ms-CommandBar",
+  "wrapBranches": true,
   "dependencies": [
-    "ContextualMenu"
-  ],
-  "branches": [
-    {
-      "name": "Default",
-      "default": true,
-      "template": "CommandBar.html",
-      "branches": [
-        {
-          "name": "Standard",
-          "default": true
-        },
-        {
-          "name": "Close button",
-          "class": "ms-Dialog--close"
-        }
-      ]
-    }
+    "ContextualMenu",
+    "Button",
+    "Label",
+    "SearchBox",
+    "CommandButton",
+    "ContextualHost"
   ]
 }

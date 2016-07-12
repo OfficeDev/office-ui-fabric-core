@@ -1,0 +1,36 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-PersonaCard {{#if props.modifer}} ms-PersonaCard--{{props.modfier}}{{/if}}">
+  <div class="ms-PersonaCard-persona">
+    {{> Persona props=props.personaProps}}
+  </div>
+  <ul class="ms-PersonaCard-actions">
+    <li data-action-id="chat" class="ms-PersonaCard-action" tabindex="1"><i class="ms-Icon ms-Icon--chat"></i></li>
+    <li data-action-id="phone" class="ms-PersonaCard-action is-active" tabindex="2"><i class="ms-Icon ms-Icon--phone"></i></li>
+    <li data-action-id="video" class="ms-PersonaCard-action" tabindex="3"><i class="ms-Icon ms-Icon--video"></i></li>
+    <li data-action-id="mail" class="ms-PersonaCard-action" tabindex="4"><i class="ms-Icon ms-Icon--mail"></i></li>
+    <li class="ms-PersonaCard-overflow" alt="View profile in Delve" title="View profile in Delve" >View profile</li>
+    <li data-action-id="org" class="ms-PersonaCard-action ms-PersonaCard-orgChart" tabindex="5"><i class="ms-Icon ms-Icon--org"></i></li>
+  </ul>
+  <div class="ms-PersonaCard-actionDetailBox">
+    <div data-detail-id="mail" class="ms-PersonaCard-details">
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">alton.lafferty@outlook.com</a></div>
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> <a class="ms-Link" href="mailto:alton.lafferty@outlook.com">altonlafferty@contoso.com</a></div>
+    </div>
+    <div data-detail-id="chat" class="ms-PersonaCard-details">
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Lync:</span> <a class="ms-Link" href="#">Start Lync call</a></div>
+    </div>
+    <div data-detail-id="phone" class="ms-PersonaCard-details">
+      <div class="ms-PersonaCard-detailExpander"></div>
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Details</div>
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Personal:</span> 555.206.2443</div>
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Work:</span> 555.929.8240</div>
+    </div>
+    <div data-detail-id="video" class="ms-PersonaCard-details">
+      <div class="ms-PersonaCard-detailLine"><span class="ms-PersonaCard-detailLabel">Skype:</span> <a class="ms-Link" href="#">Start Skype call</a></div>
+    </div>
+      <!-- org chart -->
+    <div data-detail-id="org" class="ms-PersonaCard-details">
+      {{> OrgChart props=props.orgChartProps}}
+    </div>
+  </div>
+</div>

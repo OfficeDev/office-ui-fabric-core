@@ -9,6 +9,7 @@
 @import './Fabric.Utilities.Output';
 @import './Fabric.ZIndex.Variables';
 @import './Fabric.Mixins';
+@import './Fabric.Mixins.RTL';
 
 // Colors
 @import './Fabric.Color.Variables';
@@ -33,6 +34,3 @@
 
 // Grid
 @import './Fabric.Grid.Output';
-
-// Office colors
-@import './Office.Color.Variables';

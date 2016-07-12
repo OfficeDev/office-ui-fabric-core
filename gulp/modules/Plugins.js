@@ -5,7 +5,7 @@
 var Plugins = function() {
 	this.del = require('del');
 	this.batch = require('gulp-batch');
-	this.cssMinify = require('gulp-minify-css');
+	this.cssMinify = require('gulp-cssnano');
 	this.csscomb = require('gulp-csscomb');
 	this.cssbeautify = require('gulp-cssbeautify');
 	this.file = require('gulp-file');
@@ -14,7 +14,6 @@ var Plugins = function() {
 	this.mergeStream = require('merge-stream');
 	this.rename = require('gulp-rename');
 	this.es = require('event-stream');
-	this._ = require('lodash');
 	this.pkg = require('../../package.json');
 	this.header = require('gulp-header');
 	this.zip = require('gulp-zip');
@@ -39,8 +38,19 @@ var Plugins = function() {
   this.sass = require('gulp-sass');
   this.jshint = require('gulp-jshint');
   this.plumber = require('gulp-plumber');
+  this.replace = require('gulp-replace');
+  this.walkSync = require('walk-sync');
+  this.size = require('gulp-size');
+  this.fs = require('fs');
   this.sasslint = require('gulp-sass-lint');
   this.fileinclude = require('gulp-file-include');
+  this.handlebars = require('gulp-compile-handlebars');
+	this.tsc = require('gulp-typescript');
+	this.tslint = require("gulp-tslint");
+  this.markdown = require('gulp-markdown');
+	this.lintspaces = require('gulp-lintspaces');
+	this.marked = require('gulp-marked');
+	this.prettify = require('gulp-html-prettify');
 };
 
 module.exports = new Plugins();

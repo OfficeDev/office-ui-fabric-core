@@ -6,37 +6,23 @@
   "class": "ms-Toggle",
   "fileOrder": [
     "Toggle.html",
-    "Toggle.TextLeft.html"
+    "Toggle.TextLeft.html",
+    "Toggle.Disabled.html"
   ],
-  "branches": [
-      {
-        "name": "Text above",
-        "class": "ms-Toggle--textAbove",
-        "default": true,
-        "branches": [
-            {
-              "name": "Enabled",
-              "default": true
-            },
-            {
-              "name": "Disabled",
-              "class": "is-disabled"
-            }
-        ]
-      },
-      {
-        "name": "Text left",
-        "class": "ms-Toggle--textLeft",
-        "branches": [
-            {
-              "name": "Enabled",
-              "default": true
-            },
-            {
-              "name": "Disabled",
-              "class": "is-disabled"
-            }
-        ]
-      }
-  ]
+  "dependencies": [
+    "Label"
+  ],
+  "props": {
+    "description": "Let apps use my location",
+    "onText": "On",
+    "offText": "Off",
+    "demoID": "demo-toggle-3"
+  },
+  "propsTextLeft": {
+    "modifier": "textLeft",
+    "description": "Let apps use my location",
+    "onText": "On",
+    "offText": "Off",
+    "demoID": "demo-toggle-1"
+  }
 }

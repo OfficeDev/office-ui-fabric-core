@@ -45,4 +45,4 @@ Use sparingly when there's an exceptional need to tell the use that something we
 --->
 
 ## Dependencies
-This component has a dependency on the Link component.
+Link

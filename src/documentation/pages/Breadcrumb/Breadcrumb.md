@@ -12,7 +12,14 @@ Place Breadcrumbs at the top of a page, above a list of items, or above the main
 <!---
 {{> BreadcrumbExample props=BreadcrumbExampleModel }}
 --->
- 
+<!---
+<pre>
+  <code>
+    {{renderPartialPre "Breadcrumb" "BreadcrumbExample" BreadcrumbExampleModel false}}
+  </code>
+</pre>
+--->
+
 ## States
 
 State | Applied to | Result

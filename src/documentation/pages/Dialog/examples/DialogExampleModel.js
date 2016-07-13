@@ -106,7 +106,7 @@ var DialogExampleModel = {
   },
   "close": {
     "modifier": "close",
-    "closeIcon": "x",
+    "closeIcon": "Cancel",
     "title": "All emails together",
     "subtext": "Your Inbox has changed. No longer does it include favorites, it is a singular destination for your emails.",
     "components": [

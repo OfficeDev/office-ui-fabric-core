@@ -67,7 +67,8 @@ var PersonaExampleProps = {
           }
         ]
       }
-    ]
+    ],
+    "searchMoreText": "Search my groups"
   },
   "compact": {
     "modifiers": [
@@ -149,7 +150,8 @@ var PersonaExampleProps = {
           }
         ]
       }
-    ]
+    ],
+    "searchMoreText": "Search my groups"
   },
   "facePile": {
     "modifiers": [
@@ -267,7 +269,8 @@ var PersonaExampleProps = {
           }
         ]
       }
-    ]
+    ],
+    "searchMoreText": "Search my groups"
   },
   "membersList": {
     "modifiers": [
@@ -315,7 +318,8 @@ var PersonaExampleProps = {
           }
         ]
       }
-    ]
+    ],
+    "searchMoreText": "Search my groups"
   }
 }
 

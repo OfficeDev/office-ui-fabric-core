@@ -104,7 +104,8 @@
     font-weight: $ms-font-weight-semilight;
     font-size: $ms-font-size-m;
     color: $ms-color-neutralSecondary;
-    padding: 7px 0 7px 10px;
+    padding: 7px 0 7px 12px;
+    pointer-events: none;
   }
 
   &.is-disabled {

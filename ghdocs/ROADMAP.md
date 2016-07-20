@@ -36,3 +36,4 @@
 - **Split view (vertical menu)** See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/405).
 - **Make the components AMD compliant** for compatibility with [RequireJS](http://www.requirejs.org/). See [the request](https://github.com/OfficeDev/Office-UI-Fabric/issues/120).
 - **Generate d.ts files for TypeScript components** See [the request](https://github.com/OfficeDev/office-ui-fabric/issues/699).
+- **Support for RTL layouts for components**. See [the request](https://github.com/OfficeDev/office-ui-fabric/issues/733).

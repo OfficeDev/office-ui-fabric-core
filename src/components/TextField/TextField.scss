@@ -14,6 +14,11 @@
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   margin-bottom: 8px;
+
+  .ms-Label {
+    font-size: $ms-font-size-m;
+    font-weight: $ms-font-weight-semibold;
+  }
 }
 
 //= State: A disabled textfield
@@ -51,10 +56,10 @@
   border: 1px solid $ms-color-neutralTertiaryAlt;
   border-radius: 0;
   font-weight: $ms-font-weight-semilight;
-  font-size: $ms-font-size-s;
+  font-size: $ms-font-size-m;
   color: $ms-color-neutralPrimary;
   height: 32px;
-  padding: 6px 10px 8px;
+  padding: 6px 12px 7px;
   width: 100%;
   min-width: 180px;
   outline: 0;
@@ -97,9 +102,10 @@
   .ms-Label {
     position: absolute;
     font-weight: $ms-font-weight-semilight;
-    font-size: $ms-font-size-s;
+    font-size: $ms-font-size-m;
     color: $ms-color-neutralSecondary;
-    padding: 7px 0 7px 10px;
+    padding: 6px 12px 7px;
+    pointer-events: none;
   }
 
   &.is-disabled {
@@ -138,12 +144,12 @@
   }
 
   .ms-Label {
-    font-size: $ms-font-size-s;
+    font-size: $ms-font-size-m;
     margin-right: 8px;
     display: table-cell;
-    vertical-align: bottom;
+    vertical-align: top;
     padding-left: 12px;
-    padding-bottom: 5px;
+    padding-top: 9px;
     height: 32px;
     width: 1%;
     white-space: nowrap;
@@ -155,7 +161,7 @@
     display: table-cell;
     text-align: left;
     padding-top: 8px;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
 
     &:active,
     &:focus,
@@ -195,9 +201,9 @@
 //
 .ms-TextField.ms-TextField--multiline {
   .ms-TextField-field {
-    color: $ms-color-neutralPrimary;
+    color: $ms-color-neutralSecondary;
     font-family: $ms-font-family-base;
-    font-size: $ms-font-size-s;
+    font-size: $ms-font-size-m;
     font-weight: $ms-font-weight-regular;
     line-height: 17px;
     min-height: 60px;

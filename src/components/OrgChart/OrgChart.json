@@ -1,8 +1,5 @@
 {
   "name": "OrgChart",
-  "template": "OrgChart.html",
-  "class": "ms-OrgChart",
-  "wrapBranches": true,
   "dependencies": [
     "Persona"
   ]

@@ -1,5 +1,3 @@
 {
-  "name": "Spinner",
-  "template": "Spinner.html",
-  "class": "ms-Spinner"
+  "name": "Spinner"
 }

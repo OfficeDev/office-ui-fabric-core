@@ -1,7 +1,5 @@
 {
   "name": "SearchBox",
-  "template": "SearchBox.html",
-  "class": "ms-SearchBox",
   "props": {
     "label": "Search",
     "defaultValue": "",

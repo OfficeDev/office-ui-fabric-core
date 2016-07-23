@@ -25,7 +25,7 @@ $MessageBar-padding: 8px;
 
 .ms-MessageBar-icon {
   padding-right: $MessageBar-padding;
-  font-size: $ms-icon-m;
+  font-size: $ms-icon-size-m;
   @include ms-fontColor-neutralSecondaryAlt;
 }
 

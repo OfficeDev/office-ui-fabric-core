@@ -20,13 +20,13 @@
 // Ensures the block expands to the full height to enclose its floated childen.
 @mixin ms-u-clearfix {
   *zoom: 1;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     display: table;
     content: "";
     line-height: 0;
   }
-  &:after {
+  &::after {
     clear: both;
   }
 }

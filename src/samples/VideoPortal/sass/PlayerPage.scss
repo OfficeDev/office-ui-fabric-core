@@ -32,7 +32,7 @@
     cursor: pointer;
 
     // "Play" arrow button
-    &:after {
+    &::after {
       position: absolute;
       content: '';
       display: block;
@@ -47,7 +47,7 @@
       transition: $ms-duration1 border-color $ms-ease2;
     }
 
-    &:hover:after {
+    &:hover::after {
       border-left-color: rgba(0,0,0,.75);
     }
   }

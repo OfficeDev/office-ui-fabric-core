@@ -52,6 +52,7 @@
 @mixin ms-Icon--Share { content: "\E72D"; }
 @mixin ms-Icon--Lock { content: "\E72E"; }
 @mixin ms-Icon--Blocked { content: "\E733"; }
+@mixin ms-Icon--Blocked2 { content: "\ECE4"; }
 @mixin ms-Icon--FavoriteStar { content: "\E734"; }
 @mixin ms-Icon--FavoriteStarFill { content: "\E735"; }
 @mixin ms-Icon--ReadingMode { content: "\E736"; }
@@ -322,12 +323,12 @@
   text-align: left;
   -webkit-font-smoothing: antialiased;
 
-  &:before, &:after {
+  &::before, &::after {
     line-height: 1;
     font-size: inherit;
   }
 
-  &:before {
+  &::before {
     display: block;
     width:  100%;
     height: 100%;
@@ -337,7 +338,7 @@
     position: absolute;
   }
 
-  &:after {
+  &::after {
     content: '\e000';
     position: absolute;
     top:  0;

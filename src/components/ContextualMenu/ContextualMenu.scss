@@ -68,6 +68,7 @@
   &.is-disabled {
     color: $ms-color-neutralTertiary;
     background-color: $ms-color-white;
+    pointer-events: none;
 
     &:active,
     &:focus {

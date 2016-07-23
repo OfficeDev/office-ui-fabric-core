@@ -34,6 +34,8 @@ namespace fabric {
 
   export class ContextualHost {
 
+    public static hosts: Array<ContextualHost>;
+
     private _contextualHost;
     private _modalWidth;
     private _modalHeight;
@@ -83,14 +85,32 @@ namespace fabric {
           this._container.classList.add(MODIFIER_BASE + modifiers[i]);
         }
       }
+
+      if (!ContextualHost.hosts) {
+        ContextualHost.hosts = [];
+      }
+
+      ContextualHost.hosts.push(this);
     }
 
     public disposeModal(): void {
-      window.removeEventListener("resize", this._resizeAction, false);
-      document.removeEventListener("click", this._dismissAction, true);
-      this._container.parentNode.removeChild(this._container);
-      if (this._disposalCallback) {
-        this._disposalCallback();
+      if (ContextualHost.hosts.length > 0) {
+        window.removeEventListener("resize", this._resizeAction, false);
+        document.removeEventListener("click", this._dismissAction, true);
+        this._container.parentNode.removeChild(this._container);
+        if (this._disposalCallback) {
+          this._disposalCallback();
+        }
+
+        // Dispose of all ContextualHosts
+        let index: number = ContextualHost.hosts.indexOf(this);
+        ContextualHost.hosts.splice(index, 1);
+
+        let i: number = ContextualHost.hosts.length;
+        while (i--) {
+          ContextualHost.hosts[i].disposeModal();
+          ContextualHost.hosts.splice(i, 1);
+        }
       }
     }
 
@@ -356,6 +376,10 @@ namespace fabric {
             this.disposeModal();
           }
         } else {
+          this.disposeModal();
+        }
+      } else {
+        if (!e.target.parentElement.classList.contains("ms-ContextualMenu-item--hasMenu")) {
           this.disposeModal();
         }
       }

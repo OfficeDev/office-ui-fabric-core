@@ -109,7 +109,7 @@
   max-height: 100%;
 
   .ms-Dropdown-item {
-    padding: 0 16px;
+    padding: 7px 16px;
   }
 
   &::before {
@@ -124,11 +124,11 @@
 }
 
 .ms-Dropdown-caretDown {
-  color: $ms-color-neutralSecondary;
-  font-size: $ms-font-size-l;
+  color: $ms-color-neutralDark;
+  font-size: $ms-icon-size-s;
   position: absolute;
-  right: 9px;
-  bottom: 5px;
+  right: 13px;
+  bottom: 9px;
   z-index: 1;
   pointer-events: none;
 }
@@ -141,8 +141,7 @@
   cursor: pointer;
   display: block;
   height: 32px;
-  line-height: 30px;
-  padding: 0 32px 0 10px;
+  padding: 5px 32px 0 10px;
   position: relative;
   overflow: hidden;
 }
@@ -190,9 +189,8 @@
   box-sizing: border-box;
   cursor: pointer;
   display: block;
-  height: 40px;
-  line-height: 38px;
-  padding: 0 10px;
+  height: 36px;
+  padding: 7px 10px;
   position: relative;
   border: 1px solid transparent;
   white-space: nowrap;
@@ -203,12 +201,6 @@
 
   @media screen and (-ms-high-contrast: black-on-white) {
     border-color: $ms-color-white;
-  }
-
-  // Shorten the first and last items to maintain baseline alignment.
-  &:first-child,
-  &:last-child {
-    height: 39px;
   }
 
   &:hover {

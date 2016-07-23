@@ -12,6 +12,10 @@ $MessageBar-padding: 8px;
   padding: $MessageBar-padding;
   display: table;
   @include ms-bgColor-info;
+
+  .ms-Link {
+    font-size: $ms-font-size-s;
+  }
 }
 
 .ms-MessageBar-icon,
@@ -22,7 +26,7 @@ $MessageBar-padding: 8px;
 
 .ms-MessageBar-icon {
   padding-right: $MessageBar-padding;
-  font-size: 16px;
+  font-size: $ms-icon-size-m;
   @include ms-fontColor-neutralSecondaryAlt;
 }
 
@@ -60,18 +64,13 @@ $MessageBar-padding: 8px;
 }
 
 
-//== Modifier: Remove message
+//== Modifier: Blocked message
 //
-.ms-MessageBar.ms-MessageBar--remove {
+.ms-MessageBar.ms-MessageBar--blocked {
   @include ms-bgColor-error;
 
   .ms-MessageBar-icon {
     @include ms-fontColor-error;
-  }
-
-  .ms-Icon {
-    font-size: 8px;
-    margin-left: 3px;
   }
 }
 
@@ -83,20 +82,5 @@ $MessageBar-padding: 8px;
 
   .ms-MessageBar-icon {
     @include ms-fontColor-green;
-  }
-
-  .ms-Icon {
-    font-size: $ms-font-size-s;
-    top: 3px;
-
-    &::before {
-      margin-left: 1px;
-    }
-
-    &::after {
-      font-size: 8px;
-      margin-left: 3px;
-      top: 1px;
-    }
   }
 }

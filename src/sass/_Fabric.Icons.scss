@@ -3,13 +3,15 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// Icon definitions
+// Icon mixin definitions
 
+
+// Base icon definition
 @mixin ms-Icon {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'Office365Icons';
+  font-family: 'FabricMDL2Icons';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -17,354 +19,299 @@
 }
 
 // Modifiers: Each of the icons.
-@mixin ms-Icon--circleEmpty { content: '\e000'; } // '' 
-@mixin ms-Icon--circleFill { content: '\e001'; } // '' 
-@mixin ms-Icon--placeholder { content: '\e002'; } // '' 
-@mixin ms-Icon--star { content: '\e003'; } // '' 
-@mixin ms-Icon--plus { content: '\e004'; } // '' 
-@mixin ms-Icon--minus { content: '\e005'; } // '' 
-@mixin ms-Icon--question { content: '\e006'; } // '' 
-@mixin ms-Icon--exclamation { content: '\e007'; } // '' 
-@mixin ms-Icon--person { content: '\e008'; } // '' 
-@mixin ms-Icon--mail { content: '\e009'; } // '' 
-@mixin ms-Icon--infoCircle { content: '\e00a'; } // '' 
-@mixin ms-Icon--alert { content: '\e00b'; } // '' 
-@mixin ms-Icon--xCircle { content: '\e00c'; } // '' 
-@mixin ms-Icon--mailOpen { content: '\e00d'; } // '' 
-@mixin ms-Icon--people { content: '\e00e'; } // '' 
-@mixin ms-Icon--bell { content: '\e010'; } // '' 
-@mixin ms-Icon--calendar { content: '\e011'; } // '' 
-@mixin ms-Icon--scheduling { content: '\e012'; } // '' 
-@mixin ms-Icon--event { content: '\e013'; } // '' 
-@mixin ms-Icon--folder { content: '\e014'; } // '' 
-@mixin ms-Icon--documents { content: '\e015'; } // '' 
-@mixin ms-Icon--onedrive { content: '\e016'; } // '' 
-@mixin ms-Icon--chat { content: '\e017'; } // '' 
-@mixin ms-Icon--sites { content: '\e018'; } // '' 
-@mixin ms-Icon--listBullets { content: '\e019'; } // '' 
-@mixin ms-Icon--calendarWeek { content: '\e01a'; } // '' 
-@mixin ms-Icon--calendarWorkWeek { content: '\e01b'; } // '' 
-@mixin ms-Icon--calendarDay { content: '\e01c'; } // '' 
-@mixin ms-Icon--folderMove { content: '\e01d'; } // '' 
-@mixin ms-Icon--panel { content: '\e01e'; } // '' 
-@mixin ms-Icon--popout { content: '\e01f'; } // '' 
-@mixin ms-Icon--menu { content: '\e020'; } // '' 
-@mixin ms-Icon--home { content: '\e021'; } // '' 
-@mixin ms-Icon--favorites { content: '\e022'; } // '' 
-@mixin ms-Icon--phone { content: '\e023'; } // '' 
-@mixin ms-Icon--mailSend { content: '\e024'; } // '' 
-@mixin ms-Icon--save { content: '\e025'; } // '' 
-@mixin ms-Icon--trash { content: '\e026'; } // '' 
-@mixin ms-Icon--pencil { content: '\e027'; } // '' 
-@mixin ms-Icon--flag { content: '\e028'; } // '' 
-@mixin ms-Icon--reply { content: '\e029'; } // '' 
-@mixin ms-Icon--miniatures { content: '\e02a'; } // '' 
-@mixin ms-Icon--voicemail { content: '\e02b'; } // '' 
-@mixin ms-Icon--play { content: '\e02c'; } // '' 
-@mixin ms-Icon--pause { content: '\e02d'; } // '' 
-@mixin ms-Icon--onlineAdd { content: '\e02e'; } // '' 
-@mixin ms-Icon--onlineJoin { content: '\e02f'; } // '' 
-@mixin ms-Icon--replyAll { content: '\e030'; } // '' 
-@mixin ms-Icon--attachment { content: '\e031'; } // '' 
-@mixin ms-Icon--drm { content: '\e032'; } // '' 
-@mixin ms-Icon--pinDown { content: '\e033'; } // '' 
-@mixin ms-Icon--refresh { content: '\e034'; } // '' 
-@mixin ms-Icon--gear { content: '\e035'; } // '' 
-@mixin ms-Icon--smiley { content: '\e036'; } // '' 
-@mixin ms-Icon--info { content: '\e037'; } // '' 
-@mixin ms-Icon--lock { content: '\e038'; } // '' 
-@mixin ms-Icon--search { content: '\e039'; } // '' 
-@mixin ms-Icon--questionReverse { content: '\e03a'; } // '' 
-@mixin ms-Icon--notRecurring { content: '\e03b'; } // '' 
-@mixin ms-Icon--tasks { content: '\e040'; } // '' 
-@mixin ms-Icon--check { content: '\e041'; } // '' 
-@mixin ms-Icon--x { content: '\e042'; } // '' 
-@mixin ms-Icon--ellipsis { content: '\e045'; } // '' 
-@mixin ms-Icon--dot { content: '\e046'; } // '' 
-@mixin ms-Icon--arrowUp { content: '\e047'; } // '' 
-@mixin ms-Icon--arrowDown { content: '\e048'; } // '' 
-@mixin ms-Icon--arrowLeft { content: '\e049'; } // '' 
-@mixin ms-Icon--arrowRight { content: '\e04a'; } // '' 
-@mixin ms-Icon--download { content: '\e04b'; } // '' 
-@mixin ms-Icon--directions { content: '\e04c'; } // '' 
-@mixin ms-Icon--microphone { content: '\e04f'; } // '' 
-@mixin ms-Icon--caretUp { content: '\e051'; } // '' 
-@mixin ms-Icon--caretDown { content: '\e052'; } // '' 
-@mixin ms-Icon--caretLeft { content: '\e053'; } // '' 
-@mixin ms-Icon--caretRight { content: '\e054'; } // '' 
-@mixin ms-Icon--caretUpLeft { content: '\e05a'; } // '' 
-@mixin ms-Icon--caretUpRight { content: '\e05b'; } // '' 
-@mixin ms-Icon--caretDownRight { content: '\e05c'; } // '' 
-@mixin ms-Icon--caretDownLeft { content: '\e05d'; } // '' 
-@mixin ms-Icon--note { content: '\e06a'; } // '' 
-@mixin ms-Icon--noteReply { content: '\e06b'; } // '' 
-@mixin ms-Icon--noteForward { content: '\e06c'; } // '' 
-@mixin ms-Icon--key { content: '\e06f'; } // '' 
-@mixin ms-Icon--tile { content: '\e070'; } // '' 
-@mixin ms-Icon--taskRecurring { content: '\e071'; } // '' 
-@mixin ms-Icon--starEmpty { content: '\e073'; } // '' 
-@mixin ms-Icon--upload { content: '\e076'; } // '' 
-@mixin ms-Icon--wrench { content: '\e077'; } // '' 
-@mixin ms-Icon--share { content: '\e078'; } // '' 
-@mixin ms-Icon--documentReply { content: '\e079'; } // '' 
-@mixin ms-Icon--documentForward { content: '\e07a'; } // '' 
-@mixin ms-Icon--partner { content: '\e080'; } // '' 
-@mixin ms-Icon--reactivate { content: '\e084'; } // '' 
-@mixin ms-Icon--sort { content: '\e085'; } // '' 
-@mixin ms-Icon--personAdd { content: '\e086'; } // '' 
-@mixin ms-Icon--chevronUp { content: '\e087'; } // '' 
-@mixin ms-Icon--chevronDown { content: '\e088'; } // '' 
-@mixin ms-Icon--chevronLeft { content: '\e089'; } // '' 
-@mixin ms-Icon--chevronRight { content: '\e08a'; } // '' 
-@mixin ms-Icon--peopleAdd { content: '\e08c'; } // '' 
-@mixin ms-Icon--newsfeed { content: '\e08d'; } // '' 
-@mixin ms-Icon--notebook { content: '\e08e'; } // '' 
-@mixin ms-Icon--link { content: '\e08f'; } // '' 
-@mixin ms-Icon--chevronsUp { content: '\e090'; } // '' 
-@mixin ms-Icon--chevronsDown { content: '\e091'; } // '' 
-@mixin ms-Icon--chevronsLeft { content: '\e092'; } // '' 
-@mixin ms-Icon--chevronsRight { content: '\e093'; } // '' 
-@mixin ms-Icon--clutter { content: '\e09a'; } // '' 
-@mixin ms-Icon--subscribe { content: '\e09c'; } // '' 
-@mixin ms-Icon--unsubscribe { content: '\e09d'; } // '' 
-@mixin ms-Icon--personRemove { content: '\e09e'; } // '' 
-@mixin ms-Icon--receiptForward { content: '\e0a0'; } // '' 
-@mixin ms-Icon--receiptReply { content: '\e0a1'; } // '' 
-@mixin ms-Icon--receiptCheck { content: '\e0a2'; } // '' 
-@mixin ms-Icon--peopleRemove { content: '\e0a3'; } // '' 
-@mixin ms-Icon--merge { content: '\e0a4'; } // '' 
-@mixin ms-Icon--split { content: '\e0a5'; } // '' 
-@mixin ms-Icon--eventCancel { content: '\e0a6'; } // '' 
-@mixin ms-Icon--eventShare { content: '\e0a7'; } // '' 
-@mixin ms-Icon--today { content: '\e0a9'; } // '' 
-@mixin ms-Icon--oofReply { content: '\e0aa'; } // '' 
-@mixin ms-Icon--voicemailReply { content: '\e0ac'; } // '' 
-@mixin ms-Icon--voicemailForward { content: '\e0ad'; } // '' 
-@mixin ms-Icon--ribbon { content: '\e0af'; } // '' 
-@mixin ms-Icon--contact { content: '\e0b0'; } // '' 
-@mixin ms-Icon--eye { content: '\e0b1'; } // '' 
-@mixin ms-Icon--glasses { content: '\e0b2'; } // '' 
-@mixin ms-Icon--print { content: '\e100'; } // '' 
-@mixin ms-Icon--room { content: '\e101'; } // '' 
-@mixin ms-Icon--post { content: '\e102'; } // '' 
-@mixin ms-Icon--toggle { content: '\e103'; } // '' 
-@mixin ms-Icon--touch { content: '\e104'; } // '' 
-@mixin ms-Icon--clock { content: '\e105'; } // '' 
-@mixin ms-Icon--fax { content: '\e106'; } // '' 
-@mixin ms-Icon--lightning { content: '\e110'; } // '' 
-@mixin ms-Icon--dialpad { content: '\e111'; } // '' 
-@mixin ms-Icon--phoneTransfer { content: '\e112'; } // '' 
-@mixin ms-Icon--phoneAdd { content: '\e113'; } // '' 
-@mixin ms-Icon--late { content: '\e114'; } // '' 
-@mixin ms-Icon--chatAdd { content: '\e115'; } // '' 
-@mixin ms-Icon--conflict { content: '\e116'; } // '' 
-@mixin ms-Icon--navigate { content: '\e117'; } // '' 
-@mixin ms-Icon--camera { content: '\e119'; } // '' 
-@mixin ms-Icon--filter { content: '\e11a'; } // '' 
-@mixin ms-Icon--fullscreen { content: '\e11b'; } // '' 
-@mixin ms-Icon--new { content: '\e11c'; } // '' 
-@mixin ms-Icon--mailEmpty { content: '\e11d'; } // '' 
-@mixin ms-Icon--editBox { content: '\e11e'; } // '' 
-@mixin ms-Icon--waffle { content: '\e11f'; } // '' 
-@mixin ms-Icon--work { content: '\e120'; } // '' 
-@mixin ms-Icon--eventRecurring { content: '\e121'; } // '' 
-@mixin ms-Icon--cart { content: '\e122'; } // '' 
-@mixin ms-Icon--socialListening { content: '\e123'; } // '' 
-@mixin ms-Icon--mapMarker { content: '\e124'; } // '' 
-@mixin ms-Icon--org { content: '\e125'; } // '' 
-@mixin ms-Icon--replyAlt { content: '\e150'; } // '' 
-@mixin ms-Icon--replyAllAlt { content: '\e152'; } // '' 
-@mixin ms-Icon--eventInfo { content: '\e154'; } // '' 
-@mixin ms-Icon--group { content: '\e155'; } // '' 
-@mixin ms-Icon--money { content: '\e161'; } // '' 
-@mixin ms-Icon--graph { content: '\e162'; } // '' 
-@mixin ms-Icon--noteEdit { content: '\e163'; } // '' 
-@mixin ms-Icon--dashboard { content: '\e164'; } // '' 
-@mixin ms-Icon--mailEdit { content: '\e165'; } // '' 
-@mixin ms-Icon--pinLeft { content: '\e167'; } // '' 
-@mixin ms-Icon--heart { content: '\e16a'; } // '' 
-@mixin ms-Icon--heartEmpty { content: '\e16b'; } // '' 
-@mixin ms-Icon--picture { content: '\e16c'; } // '' 
-@mixin ms-Icon--cake { content: '\e16d'; } // '' 
-@mixin ms-Icon--books { content: '\e16e'; } // '' 
-@mixin ms-Icon--chart { content: '\e16f'; } // '' 
-@mixin ms-Icon--video { content: '\e170'; } // '' 
-@mixin ms-Icon--soccer { content: '\e171'; } // '' 
-@mixin ms-Icon--meal { content: '\e172'; } // '' 
-@mixin ms-Icon--balloon { content: '\e173'; } // '' 
-@mixin ms-Icon--cat { content: '\e174'; } // '' 
-@mixin ms-Icon--dog { content: '\e175'; } // '' 
-@mixin ms-Icon--bag { content: '\e176'; } // '' 
-@mixin ms-Icon--music { content: '\e177'; } // '' 
-@mixin ms-Icon--stopwatch { content: '\e178'; } // '' 
-@mixin ms-Icon--coffee { content: '\e179'; } // '' 
-@mixin ms-Icon--briefcase { content: '\e17a'; } // '' 
-@mixin ms-Icon--pill { content: '\e17b'; } // '' 
-@mixin ms-Icon--trophy { content: '\e17c'; } // '' 
-@mixin ms-Icon--firstAid { content: '\e17d'; } // '' 
-@mixin ms-Icon--plane { content: '\e17e'; } // '' 
-@mixin ms-Icon--page { content: '\e17f'; } // '' 
-@mixin ms-Icon--car { content: '\e180'; } // '' 
-@mixin ms-Icon--dogAlt { content: '\e181'; } // '' 
-@mixin ms-Icon--document { content: '\e182'; } // '' 
-@mixin ms-Icon--metadata { content: '\e183'; } // '' 
-@mixin ms-Icon--pointItem { content: '\e184'; } // '' 
-@mixin ms-Icon--text { content: '\e185'; } // '' 
-@mixin ms-Icon--fieldText { content: '\e186'; } // '' 
-@mixin ms-Icon--fieldNumber { content: '\e187'; } // '' 
-@mixin ms-Icon--dropdown { content: '\e188'; } // '' 
-@mixin ms-Icon--radioButton { content: '\e189'; } // '' 
-@mixin ms-Icon--checkbox { content: '\e18a'; } // '' 
-@mixin ms-Icon--story { content: '\e18b'; } // '' 
-@mixin ms-Icon--bold { content: '\e18c'; } // '' 
-@mixin ms-Icon--italic { content: '\e18d'; } // '' 
-@mixin ms-Icon--underline { content: '\e18e'; } // '' 
-@mixin ms-Icon--quote { content: '\e18f'; } // '' 
-@mixin ms-Icon--styleRemove { content: '\e190'; } // '' 
-@mixin ms-Icon--pictureAdd { content: '\e191'; } // '' 
-@mixin ms-Icon--pictureRemove { content: '\e192'; } // '' 
-@mixin ms-Icon--desktop { content: '\e193'; } // '' 
-@mixin ms-Icon--tablet { content: '\e194'; } // '' 
-@mixin ms-Icon--mobile { content: '\e195'; } // '' 
-@mixin ms-Icon--table { content: '\e196'; } // '' 
-@mixin ms-Icon--hide { content: '\e197'; } // '' 
-@mixin ms-Icon--shield { content: '\e198'; } // '' 
-@mixin ms-Icon--header { content: '\e19a'; } // '' 
-@mixin ms-Icon--paint { content: '\e19b'; } // '' 
-@mixin ms-Icon--support { content: '\e19c'; } // '' 
-@mixin ms-Icon--settings { content: '\e19d'; } // '' 
-@mixin ms-Icon--creditCard { content: '\e19e'; } // '' 
-@mixin ms-Icon--reload { content: '\e19f'; } // '' 
-@mixin ms-Icon--peopleSecurity { content: '\e200'; } // '' 
-@mixin ms-Icon--fieldTextBox { content: '\e203'; } // '' 
-@mixin ms-Icon--multiChoice { content: '\e204'; } // '' 
-@mixin ms-Icon--fieldMail { content: '\e205'; } // '' 
-@mixin ms-Icon--contactForm { content: '\e206'; } // '' 
-@mixin ms-Icon--circleHalfFilled { content: '\e207'; } // '' 
-@mixin ms-Icon--documentPDF { content: '\e208'; } // '' 
-@mixin ms-Icon--bookmark { content: '\e209'; } // '' 
-@mixin ms-Icon--circleUnfilled { content: '\e20b'; } // '' 
-@mixin ms-Icon--circleFilled { content: '\e20c'; } // '' 
-@mixin ms-Icon--textBox { content: '\e20e'; } // '' 
-@mixin ms-Icon--drop { content: '\e20f'; } // '' 
-@mixin ms-Icon--sun { content: '\e210'; } // '' 
-@mixin ms-Icon--lifesaver { content: '\e211'; } // '' 
-@mixin ms-Icon--lifesaverLock { content: '\e212'; } // '' 
-@mixin ms-Icon--mailUnread { content: '\e213'; } // '' 
-@mixin ms-Icon--mailRead { content: '\e214'; } // '' 
-@mixin ms-Icon--inboxCheck { content: '\e215'; } // '' 
-@mixin ms-Icon--folderSearch { content: '\e216'; } // '' 
-@mixin ms-Icon--collapse { content: '\e217'; } // '' 
-@mixin ms-Icon--expand { content: '\e218'; } // '' 
-@mixin ms-Icon--ascending { content: '\e219'; } // '' 
-@mixin ms-Icon--descending { content: '\e21a'; } // '' 
-@mixin ms-Icon--filterClear { content: '\e21b'; } // '' 
-@mixin ms-Icon--checkboxEmpty { content: '\e21c'; } // '' 
-@mixin ms-Icon--checkboxMixed { content: '\e21d'; } // '' 
-@mixin ms-Icon--boards { content: '\e21e'; } // '' 
-@mixin ms-Icon--checkboxCheck { content: '\e21f'; } // '' 
-@mixin ms-Icon--frowny { content: '\e220'; } // '' 
-@mixin ms-Icon--lightBulb { content: '\e221'; } // '' 
-@mixin ms-Icon--globe { content: '\e222'; } // '' 
-@mixin ms-Icon--deviceWipe { content: '\e223'; } // '' 
-@mixin ms-Icon--listCheck { content: '\e226'; } // '' 
-@mixin ms-Icon--listGroup { content: '\e227'; } // '' 
-@mixin ms-Icon--timeline { content: '\e228'; } // '' 
-@mixin ms-Icon--fontIncrease { content: '\e229'; } // '' 
-@mixin ms-Icon--fontDecrease { content: '\e22a'; } // '' 
-@mixin ms-Icon--fontColor { content: '\e22b'; } // '' 
-@mixin ms-Icon--mailCheck { content: '\e22c'; } // '' 
-@mixin ms-Icon--mailDown { content: '\e22d'; } // '' 
-@mixin ms-Icon--listCheckbox { content: '\e22e'; } // '' 
-@mixin ms-Icon--sunAdd { content: '\e22f'; } // '' 
-@mixin ms-Icon--sunQuestion { content: '\e230'; } // '' 
-@mixin ms-Icon--chevronThinUp { content: '\e231'; } // '' 
-@mixin ms-Icon--chevronThinDown { content: '\e232'; } // '' 
-@mixin ms-Icon--chevronThinLeft { content: '\e233'; } // '' 
-@mixin ms-Icon--chevronThinRight { content: '\e234'; } // '' 
-@mixin ms-Icon--chevronThickUp { content: '\e235'; } // '' 
-@mixin ms-Icon--chevronThickDown { content: '\e236'; } // '' 
-@mixin ms-Icon--chevronThickLeft { content: '\e237'; } // '' 
-@mixin ms-Icon--chevronThickRight { content: '\e238'; } // '' 
-@mixin ms-Icon--linkRemove { content: '\e239'; } // '' 
-@mixin ms-Icon--alertOutline { content: '\e23b'; } // '' 
-@mixin ms-Icon--documentLandscape { content: '\e23c'; } // '' 
-@mixin ms-Icon--documentAdd { content: '\e23d'; } // '' 
-@mixin ms-Icon--toggleMiddle { content: '\e23e'; } // '' 
-@mixin ms-Icon--embed { content: '\e23f'; } // '' 
-@mixin ms-Icon--listNumbered { content: '\e240'; } // '' 
-@mixin ms-Icon--peopleCheck { content: '\e242'; } // '' 
-@mixin ms-Icon--caretUpOutline { content: '\e243'; } // '' 
-@mixin ms-Icon--caretDownOutline { content: '\e244'; } // '' 
-@mixin ms-Icon--caretLeftOutline { content: '\e245'; } // '' 
-@mixin ms-Icon--caretRightOutline { content: '\e246'; } // '' 
-@mixin ms-Icon--mailSync { content: '\e248'; } // '' 
-@mixin ms-Icon--mailError { content: '\e249'; } // '' 
-@mixin ms-Icon--mailPause { content: '\e24a'; } // '' 
-@mixin ms-Icon--peopleSync { content: '\e24b'; } // '' 
-@mixin ms-Icon--peopleError { content: '\e24c'; } // '' 
-@mixin ms-Icon--peoplePause { content: '\e24d'; } // '' 
-@mixin ms-Icon--circleBall { content: '\e24e'; } // '' 
-@mixin ms-Icon--circleBalloons { content: '\e24f'; } // '' 
-@mixin ms-Icon--circleCar { content: '\e250'; } // '' 
-@mixin ms-Icon--circleCat { content: '\e251'; } // '' 
-@mixin ms-Icon--circleCoffee { content: '\e252'; } // '' 
-@mixin ms-Icon--circleDog { content: '\e253'; } // '' 
-@mixin ms-Icon--circleLightning { content: '\e254'; } // '' 
-@mixin ms-Icon--circlePill { content: '\e255'; } // '' 
-@mixin ms-Icon--circlePlane { content: '\e256'; } // '' 
-@mixin ms-Icon--circlePoodle { content: '\e257'; } // '' 
-@mixin ms-Icon--checkPeople { content: '\e259'; } // '' 
-@mixin ms-Icon--documentSearch { content: '\e25a'; } // '' 
-@mixin ms-Icon--sortLines { content: '\e25c'; } // '' 
-@mixin ms-Icon--calendarPublic { content: '\e25d'; } // '' 
-@mixin ms-Icon--contactPublic { content: '\e25e'; } // '' 
-@mixin ms-Icon--classNotebook { content: '\e25f'; } // '' 
-@mixin ms-Icon--triangleUp { content: '\e260'; } // '' 
-@mixin ms-Icon--triangleRight { content: '\e261'; } // '' 
-@mixin ms-Icon--triangleDown { content: '\e262'; } // '' 
-@mixin ms-Icon--triangleLeft { content: '\e263'; } // '' 
-@mixin ms-Icon--triangleEmptyUp { content: '\e264'; } // '' 
-@mixin ms-Icon--triangleEmptyRight { content: '\e265'; } // '' 
-@mixin ms-Icon--triangleEmptyDown { content: '\e266'; } // '' 
-@mixin ms-Icon--triangleEmptyLeft { content: '\e267'; } // '' 
-@mixin ms-Icon--filePDF { content: '\e268'; } // '' 
-@mixin ms-Icon--fileImage { content: '\e26c'; } // '' 
-@mixin ms-Icon--fileDocument { content: '\e26d'; } // '' 
-@mixin ms-Icon--listGroup2 { content: '\e26e'; } // '' 
-@mixin ms-Icon--copy { content: '\e26f'; } // '' 
-@mixin ms-Icon--creditCardOutline { content: '\e270'; } // '' 
-@mixin ms-Icon--mailPublic { content: '\e272'; } // '' 
-@mixin ms-Icon--folderPublic { content: '\e273'; } // '' 
-@mixin ms-Icon--teamwork { content: '\e274'; } // '' 
-@mixin ms-Icon--move { content: '\e275'; } // '' 
-@mixin ms-Icon--classroom { content: '\e276'; } // '' 
-@mixin ms-Icon--menu2 { content: '\e277'; } // '' 
-@mixin ms-Icon--plus2 { content: '\e278'; } // '' 
-@mixin ms-Icon--tag { content: '\e279'; } // '' 
-@mixin ms-Icon--arrowUp2 { content: '\e27a'; } // '' 
-@mixin ms-Icon--arrowDown2 { content: '\e27b'; } // '' 
-@mixin ms-Icon--circlePlus { content: '\e27c'; } // '' 
-@mixin ms-Icon--circleInfo { content: '\e27d'; } // '' 
-@mixin ms-Icon--section { content: '\e27e'; } // '' 
-@mixin ms-Icon--sections { content: '\e27f'; } // '' 
-@mixin ms-Icon--at { content: '\e282'; } // '' 
-@mixin ms-Icon--arrowUpRight { content: '\e283'; } // '' 
-@mixin ms-Icon--arrowDownRight { content: '\e284'; } // '' 
-@mixin ms-Icon--arrowDownLeft { content: '\e285'; } // '' 
-@mixin ms-Icon--arrowUpLeft { content: '\e286'; } // '' 
-@mixin ms-Icon--bundle { content: '\e287'; } // '' 
-@mixin ms-Icon--pictureEdit { content: '\e288'; } // '' 
-@mixin ms-Icon--protectionCenter { content: '\e289'; } // '' 
-@mixin ms-Icon--alert2 { content: '\e28a'; } // '' 
-@mixin ms-Icon--skypeCircleCheck { content: '\e310'; } // '' 
-@mixin ms-Icon--skypeCircleClock { content: '\e311'; } // '' 
-@mixin ms-Icon--skypeCircleMinus { content: '\e312'; } // '' 
-@mixin ms-Icon--skypeCheck { content: '\e315'; } // '' 
-@mixin ms-Icon--skypeClock { content: '\e316'; } // '' 
-@mixin ms-Icon--skypeMinus { content: '\e317'; } // '' 
+@mixin ms-Icon--GlobalNavButton { content: "\E700"; }
+@mixin ms-Icon--MapPin { content: "\E707"; }
+@mixin ms-Icon--Airplane { content: "\E709"; }
+@mixin ms-Icon--Tablet { content: "\E70A"; }
+@mixin ms-Icon--QuickNote { content: "\E70B"; }
+@mixin ms-Icon--ChevronDown { content: "\E70D"; }
+@mixin ms-Icon--ChevronUp { content: "\E70E"; }
+@mixin ms-Icon--Edit { content: "\E70F"; }
+@mixin ms-Icon--Add { content: "\E710"; }
+@mixin ms-Icon--Cancel { content: "\E711"; }
+@mixin ms-Icon--More { content: "\E712"; }
+@mixin ms-Icon--Settings { content: "\E713"; }
+@mixin ms-Icon--Video { content: "\E714"; }
+@mixin ms-Icon--Mail { content: "\E715"; }
+@mixin ms-Icon--People { content: "\E716"; }
+@mixin ms-Icon--Phone { content: "\E717"; }
+@mixin ms-Icon--Pin { content: "\E718"; }
+@mixin ms-Icon--Shop { content: "\E719"; }
+@mixin ms-Icon--Link { content: "\E71B"; }
+@mixin ms-Icon--Filter { content: "\E71C"; }
+@mixin ms-Icon--Zoom { content: "\E71E"; }
+@mixin ms-Icon--Microphone { content: "\E720"; }
+@mixin ms-Icon--Search { content: "\E721"; }
+@mixin ms-Icon--Camera { content: "\E722"; }
+@mixin ms-Icon--Attach { content: "\E723"; }
+@mixin ms-Icon--Send { content: "\E724"; }
+@mixin ms-Icon--PageFill { content: "\E729"; }
+@mixin ms-Icon--Forward { content: "\E72A"; }
+@mixin ms-Icon--Back { content: "\E72B"; }
+@mixin ms-Icon--Refresh { content: "\E72C"; }
+@mixin ms-Icon--Share { content: "\E72D"; }
+@mixin ms-Icon--Lock { content: "\E72E"; }
+@mixin ms-Icon--Blocked { content: "\E733"; }
+@mixin ms-Icon--Blocked2 { content: "\ECE4"; }
+@mixin ms-Icon--FavoriteStar { content: "\E734"; }
+@mixin ms-Icon--FavoriteStarFill { content: "\E735"; }
+@mixin ms-Icon--ReadingMode { content: "\E736"; }
+@mixin ms-Icon--Remove { content: "\E738"; }
+@mixin ms-Icon--Checkbox { content: "\E739"; }
+@mixin ms-Icon--CheckboxComposite { content: "\E73A"; }
+@mixin ms-Icon--CheckboxIndeterminate { content: "\E73C"; }
+@mixin ms-Icon--CheckMark { content: "\E73E"; }
+@mixin ms-Icon--BackToWindow { content: "\E73F"; }
+@mixin ms-Icon--FullScreen { content: "\E740"; }
+@mixin ms-Icon--Print { content: "\E749"; }
+@mixin ms-Icon--Up { content: "\E74A"; }
+@mixin ms-Icon--Down { content: "\E74B"; }
+@mixin ms-Icon--Delete { content: "\E74D"; }
+@mixin ms-Icon--Save { content: "\E74E"; }
+@mixin ms-Icon--Sad { content: "\E757"; }
+@mixin ms-Icon--SIPMove { content: "\E759"; }
+@mixin ms-Icon--EraseTool { content: "\E75C"; }
+@mixin ms-Icon--GripperTool { content: "\E75E"; }
+@mixin ms-Icon--Dialpad { content: "\E75F"; }
+@mixin ms-Icon--PageLeft { content: "\E760"; }
+@mixin ms-Icon--PageRight { content: "\E761"; }
+@mixin ms-Icon--MultiSelect { content: "\E762"; }
+@mixin ms-Icon--Play { content: "\E768"; }
+@mixin ms-Icon--Pause { content: "\E769"; }
+@mixin ms-Icon--ChevronLeft { content: "\E76B"; }
+@mixin ms-Icon--ChevronRight { content: "\E76C"; }
+@mixin ms-Icon--Emoji2 { content: "\E76E"; }
+@mixin ms-Icon--System { content: "\E770"; }
+@mixin ms-Icon--Globe { content: "\E774"; }
+@mixin ms-Icon--ContactInfo { content: "\E779"; }
+@mixin ms-Icon--Unpin { content: "\E77A"; }
+@mixin ms-Icon--Contact { content: "\E77B"; }
+@mixin ms-Icon--Memo { content: "\E77C"; }
+@mixin ms-Icon--Unlock { content: "\E785"; }
+@mixin ms-Icon--Calendar { content: "\E787"; }
+@mixin ms-Icon--SaveAs { content: "\E792"; }
+@mixin ms-Icon--Filters { content: "\E795"; }
+@mixin ms-Icon--Contrast { content: "\E7A1"; }
+@mixin ms-Icon--Rotate { content: "\E7AD"; }
+@mixin ms-Icon--PanoIndicator { content: "\E7B0"; }
+@mixin ms-Icon--Warning { content: "\E7BA"; }
+@mixin ms-Icon--Financial { content: "\E7BB"; }
+@mixin ms-Icon--ShoppingCart { content: "\E7BF"; }
+@mixin ms-Icon--Flag { content: "\E7C1"; }
+@mixin ms-Icon--Move { content: "\E7C2"; }
+@mixin ms-Icon--Page { content: "\E7C3"; }
+@mixin ms-Icon--TouchPointer { content: "\E7C9"; }
+@mixin ms-Icon--Merge { content: "\E7D5"; }
+@mixin ms-Icon--Admin { content: "\E7EF"; }
+@mixin ms-Icon--TVMonitor { content: "\E7F4"; }
+@mixin ms-Icon--Car { content: "\E804"; }
+@mixin ms-Icon--EatDrink { content: "\E807"; }
+@mixin ms-Icon--LocationCircle { content: "\E80E"; }
+@mixin ms-Icon--Home { content: "\E80F"; }
+@mixin ms-Icon--SwitcherStartEnd { content: "\E810"; }
+@mixin ms-Icon--IncidentTriangle { content: "\E814"; }
+@mixin ms-Icon--MapDirections { content: "\E816"; }
+@mixin ms-Icon--Location { content: "\E81D"; }
+@mixin ms-Icon--Work { content: "\E821"; }
+@mixin ms-Icon--Recent { content: "\E823"; }
+@mixin ms-Icon--LocationDot { content: "\E827"; }
+@mixin ms-Icon--News { content: "\E900"; }
+@mixin ms-Icon--Chat { content: "\E901"; }
+@mixin ms-Icon--Group { content: "\E902"; }
+@mixin ms-Icon--View { content: "\E890"; }
+@mixin ms-Icon--Clear { content: "\E894"; }
+@mixin ms-Icon--Sync { content: "\E895"; }
+@mixin ms-Icon--Download { content: "\E896"; }
+@mixin ms-Icon--Help { content: "\E897"; }
+@mixin ms-Icon--Upload { content: "\E898"; }
+@mixin ms-Icon--Emoji { content: "\E899"; }
+@mixin ms-Icon--ClosePane { content: "\E89F"; }
+@mixin ms-Icon--OpenPane { content: "\E8A0"; }
+@mixin ms-Icon--PreviewLink { content: "\E8A1"; }
+@mixin ms-Icon--Bookmarks { content: "\E8A4"; }
+@mixin ms-Icon--Document { content: "\E8A5"; }
+@mixin ms-Icon--ProtectedDocument { content: "\E8A6"; }
+@mixin ms-Icon--OpenInNewWindow { content: "\E8A7"; }
+@mixin ms-Icon--MailFill { content: "\E8A8"; }
+@mixin ms-Icon--Rename { content: "\E8AC"; }
+@mixin ms-Icon--Folder { content: "\E8B7"; }
+@mixin ms-Icon--Picture { content: "\E8B9"; }
+@mixin ms-Icon--ShowResults { content: "\E8BC"; }
+@mixin ms-Icon--Message { content: "\E8BD"; }
+@mixin ms-Icon--CalendarDay { content: "\E8BF"; }
+@mixin ms-Icon--CalendarWeek { content: "\E8C0"; }
+@mixin ms-Icon--MailReplyAll { content: "\E8C2"; }
+@mixin ms-Icon--Read { content: "\E8C3"; }
+@mixin ms-Icon--PaymentCard { content: "\E8C7"; }
+@mixin ms-Icon--Copy { content: "\E8C8"; }
+@mixin ms-Icon--Important { content: "\E8C9"; }
+@mixin ms-Icon--MailReply { content: "\E8CA"; }
+@mixin ms-Icon--Sort { content: "\E8CB"; }
+@mixin ms-Icon--GotoToday { content: "\E8D1"; }
+@mixin ms-Icon--Font { content: "\E8D2"; }
+@mixin ms-Icon--FontColor { content: "\E8D3"; }
+@mixin ms-Icon--FolderFill { content: "\E8D5"; }
+@mixin ms-Icon--Permissions { content: "\E8D7"; }
+@mixin ms-Icon--DisableUpdates { content: "\E8D8"; }
+@mixin ms-Icon--Italic { content: "\E8DB"; }
+@mixin ms-Icon--Underline { content: "\E8DC"; }
+@mixin ms-Icon--Bold { content: "\E8DD"; }
+@mixin ms-Icon--MoveToFolder { content: "\E8DE"; }
+@mixin ms-Icon--OpenFile { content: "\E8E5"; }
+@mixin ms-Icon--FontDecrease { content: "\E8E7"; }
+@mixin ms-Icon--FontIncrease { content: "\E8E8"; }
+@mixin ms-Icon--CellPhone { content: "\E8EA"; }
+@mixin ms-Icon--Tag { content: "\E8EC"; }
+@mixin ms-Icon--Library { content: "\E8F1"; }
+@mixin ms-Icon--PostUpdate { content: "\E8F3"; }
+@mixin ms-Icon--NewFolder { content: "\E8F4"; }
+@mixin ms-Icon--UnsyncFolder { content: "\E8F6"; }
+@mixin ms-Icon--SyncFolder { content: "\E8F7"; }
+@mixin ms-Icon--BlockContact { content: "\E8F8"; }
+@mixin ms-Icon--AddFriend { content: "\E8FA"; }
+@mixin ms-Icon--BulletedList { content: "\E8FD"; }
+@mixin ms-Icon--Preview { content: "\E8FF"; }
+@mixin ms-Icon--DockLeft { content: "\E90C"; }
+@mixin ms-Icon--DockRight { content: "\E90D"; }
+@mixin ms-Icon--Repair { content: "\E90F"; }
+@mixin ms-Icon--RadioBullet { content: "\E915"; }
+@mixin ms-Icon--Stopwatch { content: "\E916"; }
+@mixin ms-Icon--Clock { content: "\E917"; }
+@mixin ms-Icon--AlarmClock { content: "\E919"; }
+@mixin ms-Icon--Hospital { content: "\E91D"; }
+@mixin ms-Icon--Timer { content: "\E91E"; }
+@mixin ms-Icon--FullCircleMask { content: "\E91F"; }
+@mixin ms-Icon--LocationFill { content: "\E920"; }
+@mixin ms-Icon--ChromeMinimize { content: "\E921"; }
+@mixin ms-Icon--ChromeClose { content: "\E8BB"; }
+@mixin ms-Icon--Accept { content: "\E8FB"; }
+@mixin ms-Icon--Handwriting { content: "\E929"; }
+@mixin ms-Icon--StackIndicator { content: "\E7FF"; }
+@mixin ms-Icon--Completed { content: "\E930"; }
+@mixin ms-Icon--Label { content: "\E932"; }
+@mixin ms-Icon--FlickDown { content: "\E935"; }
+@mixin ms-Icon--FlickUp { content: "\E936"; }
+@mixin ms-Icon--FlickLeft { content: "\E937"; }
+@mixin ms-Icon--FlickRight { content: "\E938"; }
+@mixin ms-Icon--LightningBolt { content: "\E945"; }
+@mixin ms-Icon--Info { content: "\E946"; }
+@mixin ms-Icon--CalculatorAddition { content: "\E948"; }
+@mixin ms-Icon--CalculatorSubtract { content: "\E949"; }
+@mixin ms-Icon--PrintfaxPrinterFile { content: "\E956"; }
+@mixin ms-Icon--ChevronUpSmall { content: "\E96D"; }
+@mixin ms-Icon--ChevronDownSmall { content: "\E96E"; }
+@mixin ms-Icon--ChevronLeftSmall { content: "\E96F"; }
+@mixin ms-Icon--ChevronRightSmall { content: "\E970"; }
+@mixin ms-Icon--ChevronUpMed { content: "\E971"; }
+@mixin ms-Icon--ChevronDownMed { content: "\E972"; }
+@mixin ms-Icon--ChevronLeftMed { content: "\E973"; }
+@mixin ms-Icon--ChevronRightMed { content: "\E974"; }
+@mixin ms-Icon--ChromeBack { content: "\E830"; }
+@mixin ms-Icon--PC1 { content: "\E977"; }
+@mixin ms-Icon--PresenceChickletVideo { content: "\E979"; }
+@mixin ms-Icon--Reply { content: "\E97A"; }
+@mixin ms-Icon--DoubleChevronDown { content: "\E98B"; }
+@mixin ms-Icon--DoubleChevronLeftMed { content: "\E991"; }
+@mixin ms-Icon--CaretHollow { content: "\E817"; }
+@mixin ms-Icon--CaretSolid { content: "\E818"; }
+@mixin ms-Icon--Pinned { content: "\E840"; }
+@mixin ms-Icon--PinnedFill { content: "\E842"; }
+@mixin ms-Icon--Chart { content: "\E999"; }
+@mixin ms-Icon--RevToggleKey { content: "\E845"; }
+@mixin ms-Icon--RightDoubleQuote { content: "\E9B1"; }
+@mixin ms-Icon--Sunny { content: "\E9BD"; }
+@mixin ms-Icon--Ringer { content: "\EA8F"; }
+@mixin ms-Icon--PDF { content: "\EA90"; }
+@mixin ms-Icon--SortLines { content: "\E9D0"; }
+@mixin ms-Icon--Ribbon { content: "\E9D1"; }
+@mixin ms-Icon--Info2 { content: "\EA1F"; }
+@mixin ms-Icon--MultiSelectMirrored { content: "\EA98"; }
+@mixin ms-Icon--Broom { content: "\EA99"; }
+@mixin ms-Icon--MusicInCollectionFill { content: "\EA36"; }
+@mixin ms-Icon--List { content: "\EA37"; }
+@mixin ms-Icon--Asterisk { content: "\EA38"; }
+@mixin ms-Icon--ErrorBadge { content: "\EA39"; }
+@mixin ms-Icon--CircleRing { content: "\EA3A"; }
+@mixin ms-Icon--CircleFill { content: "\EA3B"; }
+@mixin ms-Icon--BookmarksMirrored { content: "\EA41"; }
+@mixin ms-Icon--BulletedListMirrored { content: "\EA42"; }
+@mixin ms-Icon--CaretHollowMirrored { content: "\EA45"; }
+@mixin ms-Icon--CaretSolidMirrored { content: "\EA46"; }
+@mixin ms-Icon--ChromeBackMirrored { content: "\EA47"; }
+@mixin ms-Icon--ClosePaneMirrored { content: "\EA49"; }
+@mixin ms-Icon--DockLeftMirrored { content: "\EA4C"; }
+@mixin ms-Icon--DoubleChevronLeftMedMirrored { content: "\EA4D"; }
+@mixin ms-Icon--HelpMirrored { content: "\EA51"; }
+@mixin ms-Icon--ListMirrored { content: "\EA55"; }
+@mixin ms-Icon--MailReplyMirrored { content: "\EA57"; }
+@mixin ms-Icon--MailReplyAllMirrored { content: "\EA58"; }
+@mixin ms-Icon--OpenPaneMirrored { content: "\EA5B"; }
+@mixin ms-Icon--ShowResultsMirrored { content: "\EA65"; }
+@mixin ms-Icon--Lightbulb { content: "\EA80"; }
+@mixin ms-Icon--StatusTriangle { content: "\EA82"; }
+@mixin ms-Icon--EmojiNeutral { content: "\EA87"; }
+@mixin ms-Icon--EmojiDisappointed { content: "\EA88"; }
+@mixin ms-Icon--HomeSolid { content: "\EA8A"; }
+@mixin ms-Icon--Articles { content: "\EAC1"; }
+@mixin ms-Icon--DietPlanNotebook { content: "\EAC8"; }
+@mixin ms-Icon--DrugLookUp { content: "\EACB"; }
+@mixin ms-Icon--Running { content: "\EADA"; }
+@mixin ms-Icon--CirclePlus { content: "\EAEE"; }
+@mixin ms-Icon--Coffee { content: "\EAEF"; }
+@mixin ms-Icon--Money { content: "\EAFD"; }
+@mixin ms-Icon--StockDown { content: "\EB0F"; }
+@mixin ms-Icon--StockUp { content: "\EB11"; }
+@mixin ms-Icon--Soccer { content: "\EB21"; }
+@mixin ms-Icon--AutoRacing { content: "\EB24"; }
+@mixin ms-Icon--Drop { content: "\EB42"; }
+@mixin ms-Icon--Heart { content: "\EB51"; }
+@mixin ms-Icon--HeartFill { content: "\EB52"; }
+@mixin ms-Icon--Door { content: "\EB75"; }
+@mixin ms-Icon--DoubleBookmark { content: "\EB8F"; }
+@mixin ms-Icon--Certificate { content: "\EB95"; }
+@mixin ms-Icon--Photo2 { content: "\EB9F"; }
+@mixin ms-Icon--CloudDownload { content: "\EBD3"; }
+@mixin ms-Icon--WindDirection { content: "\EBE6"; }
+@mixin ms-Icon--CSS { content: "\EBEF"; }
+@mixin ms-Icon--JS { content: "\EBF0"; }
+@mixin ms-Icon--Section { content: "\EC0C"; }
+@mixin ms-Icon--ToggleFilled { content: "\EC11"; }
+@mixin ms-Icon--ToggleBorder { content: "\EC12"; }
+@mixin ms-Icon--SliderThumb { content: "\EC13"; }
+@mixin ms-Icon--ToggleThumb { content: "\EC14"; }
+@mixin ms-Icon--Documentation { content: "\EC17"; }
+@mixin ms-Icon--Badge { content: "\EC1B"; }
+@mixin ms-Icon--AlbumRemove { content: "\EC62"; }
+@mixin ms-Icon--MessageFill { content: "\EC70"; }
+@mixin ms-Icon--TabletSelected { content: "\EC74"; }
+@mixin ms-Icon--MobileSelected { content: "\EC75"; }
+@mixin ms-Icon--LaptopSelected { content: "\EC76"; }
+@mixin ms-Icon--TVMonitorSelected { content: "\EC77"; }
+@mixin ms-Icon--DeveloperTools { content: "\EC7A"; }
+@mixin ms-Icon--InsertTextBox { content: "\EC7D"; }
+@mixin ms-Icon--Event { content: "\ECA3"; }
+@mixin ms-Icon--Cake { content: "\ECA4"; }
+@mixin ms-Icon--Tiles { content: "\ECA5"; }
+@mixin ms-Icon--Org { content: "\ECA6"; }
+@mixin ms-Icon--PartyLeader { content: "\ECA7"; }
+@mixin ms-Icon--DRM { content: "\ECA8"; }
+@mixin ms-Icon--CloudAdd { content: "\ECA9"; }
+@mixin ms-Icon--AppIconDefault { content: "\ECAA"; }
+@mixin ms-Icon--Photo2Add { content: "\ECAB"; }
+@mixin ms-Icon--Photo2Remove { content: "\ECAC"; }
+@mixin ms-Icon--Embed { content: "\ECCE"; }
+@mixin ms-Icon--Teamwork { content: "\EA12"; }
+@mixin ms-Icon--PeopleAdd { content: "\EA15"; }
+@mixin ms-Icon--Glasses { content: "\EA16"; }
+@mixin ms-Icon--DateTime2 { content: "\EA17"; }
+@mixin ms-Icon--Shield { content: "\EA18"; }
+@mixin ms-Icon--Header { content: "\EA19"; }
+@mixin ms-Icon--PageAdd { content: "\EA1A"; }
+@mixin ms-Icon--NumberedList { content: "\EA1C"; }
+@mixin ms-Icon--Glimmer { content: "\ECF4"; }
 
 
+// Modifier: Place the icon in a circle.
 @mixin ms-Icon--circle {
   position: relative;
   display: inline-block;
@@ -376,12 +323,12 @@
   text-align: left;
   -webkit-font-smoothing: antialiased;
 
-  &:before, &:after {
+  &::before, &::after {
     line-height: 1;
     font-size: inherit;
   }
 
-  &:before {
+  &::before {
     display: block;
     width:  100%;
     height: 100%;
@@ -391,7 +338,7 @@
     position: absolute;
   }
 
-  &:after {
+  &::after {
     content: '\e000';
     position: absolute;
     top:  0;
@@ -400,4 +347,26 @@
     transform-origin: 50% 50%;
     z-index: $ms-zIndex-back;
   }
+}
+
+// Fabric Core Icon variables
+$ms-icon-size-xs: 10px;
+$ms-icon-size-s: 12px;
+$ms-icon-size-m: 16px;
+$ms-icon-size-l: 20px;
+
+.ms-Icon--xs {
+  font-size: $ms-icon-size-xs;
+}
+
+.ms-Icon--s {
+  font-size: $ms-icon-size-s;
+}
+
+.ms-Icon--m {
+  font-size: $ms-icon-size-m;
+}
+
+.ms-Icon--l {
+  font-size: $ms-icon-size-l;
 }

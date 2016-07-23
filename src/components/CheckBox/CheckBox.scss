@@ -5,12 +5,15 @@
 // --------------------------------------------------
 // CheckBox styles
 
+$ms-checkbox-field-size: 20px;
+$ms-checkbox-transition-duration: 200ms;
+$ms-checkbox-transition-timing: cubic-bezier(.4, 0, .23, 1);
 
-// Unselected, radio button (default)
+
 .ms-CheckBox {
-  @include ms-baseFont;
-  @include ms-u-normalize;
+  box-sizing: border-box;
   color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   min-height: 36px;
@@ -19,106 +22,150 @@
   .ms-Label {
     font-size: $ms-font-size-m;
     padding: 0 0 0 26px;
+    cursor: pointer;
+    display: inline-block;
+  }
+}
+
+// The hidden input
+.ms-CheckBox-input {
+  position: absolute;
+  opacity: 0;
+}
+
+// The checkbox square container
+.ms-CheckBox-field::before {
+  content: '';
+  display: inline-block;
+  border: 2px solid $ms-color-neutralTertiary;
+  width: $ms-checkbox-field-size;
+  height: $ms-checkbox-field-size;
+  cursor: pointer;
+  font-weight: normal;
+  position: absolute;
+  box-sizing: border-box;
+  transition-property: background, border, border-color;
+  transition-duration: $ms-checkbox-transition-duration;
+  transition-timing-function: $ms-checkbox-transition-timing;
+}
+
+// The check mark icon
+.ms-CheckBox-field::after {
+  @include ms-Icon--CheckMark;
+  font-family: 'FabricMDL2Icons';
+  display: none;
+  position: absolute;
+  font-weight: 900;
+  background-color: transparent;
+  font-size: $ms-font-size-s-plus;
+  top: 0;
+  color: $ms-color-white;
+  line-height: $ms-checkbox-field-size;
+  width: $ms-checkbox-field-size;
+  text-align: center;
+
+  @media screen and (-ms-high-contrast: active) {
+    color: $ms-color-black;
   }
 
-  // disabled
-  & .ms-Choice-field.is-disabled {
-    pointer-events: none;
+  @media screen and (-ms-high-contrast: black-on-white) {
+    color: $ms-color-white;
+  }
+}
+
+// The checkbox field
+.ms-CheckBox-field {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 8px;
+  position: relative;
+  outline: 0;
+  vertical-align: top;
+
+  &:hover,
+  &:focus {
+    &::before {
+      border-color: $ms-color-neutralSecondaryAlt;
+    }
+
+    .ms-Label {
+      color: $ms-color-black;
+    }
+  }
+
+  //== State: A disabled checkbox
+  //
+  &.is-disabled {
     cursor: default;
 
     &::before {
       background-color: $ms-color-neutralTertiaryAlt;
+      border-color: $ms-color-neutralTertiaryAlt;
       color: $ms-color-neutralTertiaryAlt;
-    }
 
-    &::after {
-      border-color: $ms-color-neutralLight;
+      @media screen and (-ms-high-contrast: active) {
+        border-color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        border-color: $ms-color-contrastWhiteDisabled;
+      }
     }
 
     .ms-Label {
       color: $ms-color-neutralTertiary;
+
+      @media screen and (-ms-high-contrast: active) {
+        color: $ms-color-contrastBlackDisabled;
+      }
+
+      @media screen and (-ms-high-contrast: black-on-white) {
+        color: $ms-color-contrastWhiteDisabled;
+      }
     }
   }
 
-  & .ms-CheckBox-field.in-focus::after {
-    border-color: $ms-color-neutralSecondaryAlt;
+  //== State: A checkbox in focus
+  //
+  &.in-focus {
+    &::before {
+      border-color: $ms-color-neutralSecondaryAlt;
+    }
+
+    &.is-disabled::before {
+      border-color: $ms-color-neutralTertiaryAlt;
+    }
+
+    &.is-checked::before {
+      border-color: $ms-color-themeDarkAlt;
+    }
+  }
+}
+
+//== State: When the checkbox is checked
+//
+.ms-CheckBox-field.is-checked {
+  &::before {
+    border: 10px solid $ms-color-themePrimary;
+    background-color: $ms-color-themePrimary;
+
+    @media screen and (-ms-high-contrast: active) {
+      border-color: $ms-color-contrastBlackSelected;
+    }
+
+    @media screen and (-ms-high-contrast: black-on-white) {
+      border-color: $ms-color-contrastWhiteSelected;
+    }
   }
 
-  // The CheckBox radio button or checkbox
-  .ms-Choice-field {
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 8px;
-    position: relative;
+  &::after {
+    display: block;
+  }
 
-    // The actual styled CheckBox element - radio button by default
-    &::after {
-      content: '';
-      display: inline-block;
-      border: 1px $ms-color-neutralTertiaryAlt solid;
-      width: 19px;
-      height: 19px;
-      cursor: pointer;
-      font-weight: normal;
-      left: -1px;
-      top: -1px;
-      border-radius: 50%;
-      position: absolute;
-    }
-
-    &:hover {
-      &::after {
-        border-color: $ms-color-neutralSecondaryAlt;
-      }
-
-      .ms-Label {
-        color: $ms-color-black;
-      }
-    }
-
-    &.ms-Choice-type--checkbox {
-      &::after {
-        border-radius: 0;
-      }
-
-      &.is-checked {
-        &:hover::before,
-        &::before {
-          @include ms-Icon;
-          content: '\e041';
-          background-color: transparent;
-          border-radius: 0;
-          font-size: $ms-font-size-s-plus;
-          top: 3px;
-          left: 3px;
-        }
-      }
-    }
-
-    // Radio button by default
-    &.is-checked {
-      // Circle indicating a checked radio button
-      &::before {
-        background-color: $ms-color-neutralSecondary;
-        border-color: $ms-color-neutralSecondary;
-        color: $ms-color-neutralSecondary;
-        border-radius: 50%;
-        content: '\00a0';
-        display: inline-block;
-        position: absolute;
-        top: 4px;
-        right: 0;
-        bottom: 0;
-        left: 4px;
-        width: 11px;
-        height: 11px;
-        box-sizing: border-box;
-      }
-
-      &:hover::before {
-        background-color: $ms-color-neutralDark;
-        color: $ms-color-neutralDark;
-      }
+  &:hover,
+  &:focus {
+    &::before {
+      border-color: $ms-color-themeDarkAlt;
     }
   }
 }

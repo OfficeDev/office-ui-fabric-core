@@ -7,4 +7,6 @@
     <span class="ms-SearchBox-text">{{props.label}}</span>
   </label>
   {{renderPartial props.clearButton.component props.clearButton.props}}
+  {{#if props.exitButton}}{{renderPartial props.exitButton.component props.exitButton.props}}{{/if}}
+  {{#if props.filterButton}}{{renderPartial props.filterButton.component props.filterButton.props}}{{/if}}
 </div>

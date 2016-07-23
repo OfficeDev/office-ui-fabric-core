@@ -13,15 +13,17 @@
   // Slider pseudo element
   &::before {
     position: absolute;
-    display: block;
-    box-sizing: content-box;
+    top: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
     content: '';
-    top: -2.5px;
-    #{$direction}: -2.5px;
-    width: 12px;
-    height: 20px;
-    background-color: $ms-color-neutralSecondaryAlt;
-    outline: 2px solid transparent;
+    #{$direction}: 4px;
+    background-color: $ms-color-neutralSecondary;
+    outline: 1px solid transparent;
+    transition-property: background, left;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(.4, 0, .23, 1);
 
     @media screen and (-ms-high-contrast: active) {
       border: 2.5px solid $ms-color-white;
@@ -37,29 +39,22 @@
   @if $direction == left {
     &::before {
       right: auto;
-      border-right: 2.5px solid $ms-color-white;
     }
   }
 
   @if $direction == right {
     &::before {
-      left: auto;
-      border-left: 2.5px solid $ms-color-white;
+      background-color: $ms-color-white;
+      left: 28px;
     }
-  }
-
-  &:active {
-    background-color: $ms-color-themePrimary;
   }
 }
 
 // Toggle
 .ms-Toggle {
   @include ms-baseFont;
+  @include ms-font-m;
   @include ms-u-normalize;
-  color: $ms-color-neutralPrimary;
-  font-size: $ms-font-size-m;
-  font-weight: $ms-font-weight-regular;
   position: relative;
   display: block;
   margin-bottom: 26px;
@@ -67,14 +62,12 @@
   // Action label (on/off) on the right of the toggle
   .ms-Label {
     position: relative;
-    padding: 0 0 0 62px;
-    font-size: $ms-font-size-s;
+    top: -2px;
+    padding: 0 0 0 50px;
   }
 
   // 'Off' state - slider on the left
   & .ms-Toggle-field {
-    background-color: $ms-color-neutralLighter;
-
     @include ms-Toggle-slider(left);
 
     // Show the off label / hide the on label
@@ -90,6 +83,7 @@
   // 'On' state - slider on the right
   & .ms-Toggle-field.is-selected {
     background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
 
     @include ms-Toggle-slider(right);
 
@@ -111,23 +105,56 @@
     }
   }
 
+  &:focus,
+  &:hover {
+    & + .ms-Toggle-field {
+      border-color: $ms-color-neutralSecondary;
+    }
+
+    & + .ms-Toggle-field::before {
+      background-color: $ms-color-neutralPrimary;
+    }
+
+    &:checked + .ms-Toggle-field {
+      background-color: $ms-color-themeDarkAlt;
+      border-color: $ms-color-themeDarkAlt;
+    }
+
+    &:checked + .ms-Toggle-field::before {
+      background-color: $ms-color-white;
+    }
+  }
+
+  &:active {
+    &:checked + .ms-Toggle-field {
+      background-color: $ms-color-themeDark;
+      border-color: $ms-color-themeDark;
+    }
+  }
+
   .ms-Toggle-field {
     &:focus,
     &:hover {
-      background-color: $ms-color-neutralLight;
-      outline: 0;
+      border-color: $ms-color-neutralPrimary;
     }
 
     &.is-selected {
       &:focus,
       &:hover {
-        background-color: $ms-color-themeDark;
+        background-color: $ms-color-themeDarkAlt;
+        border-color: $ms-color-themeDarkAlt;
       }
     }
 
     .ms-Label {
       color: $ms-color-black;
       user-select: none;
+    }
+
+    &:hover {
+      .ms-Label {
+        color: $ms-color-black;
+      }
     }
 
     &:active {
@@ -170,7 +197,7 @@
 // Description text
 .ms-Toggle-description {
   position: relative;
-  font-size: $ms-font-size-s;
+  font-size: $ms-font-size-m;
   vertical-align: top;
   display: block;
   margin-bottom: 8px;
@@ -180,11 +207,21 @@
 .ms-Toggle-field {
   position: relative;
   display: inline-block;
-  width: 57px;
+  width: 45px;
   height: 20px;
   box-sizing: border-box;
-  border: 2.5px $ms-color-neutralTertiaryAlt solid;
+  border: 2px solid $ms-color-neutralTertiary;
+  border-radius: 20px;
   cursor: pointer;
+  transition-property: background, left, border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(.4, 0, .23, 1);
+  outline: 0;
+
+  &:hover,
+  &:focus {
+    border-color: $ms-color-neutralSecondary;
+  }
 }
 
 // On/Off slide states

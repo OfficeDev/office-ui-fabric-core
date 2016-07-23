@@ -6,12 +6,16 @@
 // Button styles
 
 $CommandButton-height: 40px;
+$CommandButton-md-height: 44px;
 $CommandButton-padding: 8px;
+$CommandButtonIcon-size: 16px;
+$CommandButtonIcon-md-size: 20px;
 
 .ms-CommandButton {
   @include ms-baseFont;
   display: inline-block;
   position: relative;
+  vertical-align: top;
 
   &.is-hidden {
     display: none;
@@ -46,8 +50,8 @@ $CommandButton-padding: 8px;
 @mixin ms-CommandButton-iconBase {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @mixin ms-CommandBar-focusRectangle {
@@ -80,19 +84,35 @@ $CommandButton-padding: 8px;
   background: transparent;
 
   &:hover {
-    background-color: $ms-color-themeLight;
+    background-color: $ms-color-neutralLight;
 
     .ms-CommandButton-label {
       color: $ms-color-neutralDark;
     }
   }
 
+  &:active {
+    background-color: $ms-color-neutralLight;
+  }
+
   &:focus::before {
-    @include  ms-CommandBar-focusRectangle;
+    @include ms-CommandBar-focusRectangle;
   }
 
   &:focus {
     outline: 0;
+  }
+
+  @media only screen and (max-width: $ms-screen-md-max) {
+    height: $CommandButton-md-height;
+
+    .ms-CommandButton-icon {
+      font-size: $CommandButtonIcon-md-size;
+    }
+
+    .ms-CommandButton-label {
+      line-height: $CommandButton-md-height;
+    }
   }
 }
 
@@ -109,14 +129,18 @@ $CommandButton-padding: 8px;
 // Add space between adjacent command buttons.
 .ms-CommandButton + .ms-CommandButton {
   margin-left: 8px;
+
+  @media only screen and (max-width: $ms-screen-md-max) {
+    margin-left: 4px;
+  }
 }
 
 .ms-CommandButton-icon {
   display: inline-block;
-  padding-right: 12px;
+  margin-right: $CommandButton-padding;
   position: relative;
-  font-size: $ms-font-size-l;
-  min-width: 17px;
+  font-size: $CommandButtonIcon-size;
+  min-width: 16px;
   height: 100%;
 
   .ms-Icon {
@@ -138,35 +162,51 @@ $CommandButton-padding: 8px;
   }
 }
 
-.ms-CommandButton-dropdownIcon {
+.ms-CommandButton-dropdownIcon,
+.ms-CommandButton-splitIcon {
   display: inline-block;
   position: relative;
   color: $ms-color-neutralPrimary;
-  font-size: $ms-font-size-l;
+  font-size: $ms-font-size-s;
   font-weight: $ms-font-weight-semilight;
-  min-width: 17px;
+  min-width: 12px;
   height: 100%;
+  vertical-align: top;
+  margin-left: 8px;
 
   .ms-Icon {
-    @include ms-CommandButton-iconBase;
+    line-height: normal;
+    padding-top: $CommandButton-padding * 2;
   }
 
   &:focus::before {
     @include ms-CommandBar-focusRectangle;
   }
+
+  @media only screen and (max-width: $ms-screen-md-max) {
+    display: none;
+  }
 }
 
 .ms-CommandButton-splitIcon {
-  color: $ms-color-neutralPrimary;
-  font-size: $ms-font-size-l;
-  font-weight: $ms-font-weight-semilight;
-  margin-left: -4px;
-  width: 21px;
+  margin-left: -2px;
+  width: 27px;
   border: 0;
 
   .ms-Icon {
-    border-left: 1px solid $ms-color-neutralTertiaryAlt;
-    @include ms-CommandButton-iconBase;
+    margin-left: -1px;
+    position: relative;
+    padding-top: 16px;
+
+    &::after {
+      position: absolute;
+      content: ' ';
+      width: 1px;
+      height: 16px;
+      top: 12px;
+      left: -8px;
+      border-left: 1px solid $ms-color-neutralTertiaryAlt;
+    }
   }
 }
 
@@ -174,11 +214,15 @@ $CommandButton-padding: 8px;
 //
 .ms-CommandButton.ms-CommandButton--noLabel {
   .ms-CommandButton-icon {
-    padding-right: 0;
+    margin-right: 0;
   }
 
   .ms-CommandButton-label {
     display: none;
+  }
+
+  .ms-CommandButton-button {
+    padding: 0 12px;
   }
 }
 
@@ -237,7 +281,12 @@ $CommandButton-padding: 8px;
 
 .ms-CommandButton.ms-CommandButton--textOnly,
 .ms-CommandButton.ms-CommandButton--pivot {
+
   .ms-CommandButton-label {
     display: inline-block;
+
+    @media only screen and (max-width: $ms-screen-sm-max) {
+      font-size: 16px;
+    }
   }
 }

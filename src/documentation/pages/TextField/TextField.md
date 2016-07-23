@@ -20,7 +20,7 @@ Allows for the input of text. Can be a single line or multiple lines. Typically 
 
 ### Underlined
 <!---
-{{> TextField props=TextFieldUnderlinedExampleModel}}
+{{> TextFieldUnderlinedExample props=TextFieldUnderlinedExampleModel}}
 --->
 
 ## States

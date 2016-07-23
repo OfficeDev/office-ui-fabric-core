@@ -199,7 +199,6 @@ var ContexualMenuExampleModel = {
       },
       {
         "title": "Move",
-        "state": "is-disabled",
         "subMenuItems": [
           {
             "title": "Fiction",

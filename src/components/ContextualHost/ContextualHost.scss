@@ -1,10 +1,10 @@
 .ms-ContextualHost {
+  @include ms-baseFont;
   z-index: $ms-zIndex-front;
   margin: 16px auto;
   position: relative;
   min-width: 10px;
   display: none;
-  font-family: $ms-font-family-base;
   background-color: $ms-color-white;
   @include drop-shadow;
 

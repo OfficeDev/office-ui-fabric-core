@@ -1,6 +1,9 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 // "use strict";
 
+/// <reference path="../../utilities/Animate.ts"/>
+/// <reference path="../../utilities/Ease.ts"/>
+
 namespace fabric {
 
   /**
@@ -13,6 +16,10 @@ namespace fabric {
     private _container: Element;
     private _actions: Element;
     private _expander: Element;
+    private _actionDetailBox: HTMLElement;
+    private _boundOnActionClick;
+    private _boundOnExpanderClick;
+    private _boundOnTab;
 
     /**
      *
@@ -25,19 +32,24 @@ namespace fabric {
       const activeId = activeElement.getAttribute("data-action-id");
       this._actions = <Element>this._container.querySelector(".ms-PersonaCard-actions");
       this._expander = <Element>this._container.querySelector(".ms-PersonaCard-detailExpander");
-      this._addListeners();
+      this._actionDetailBox = <HTMLElement>this._container.querySelector(".ms-PersonaCard-actionDetailBox");
       this._setDetail(activeId);
+      this._boundOnActionClick = this._onActionClick.bind(this);
+      this._boundOnExpanderClick = this._onExpanderClick.bind(this);
+      this._boundOnTab = this._onTab.bind(this);
+      this._addListeners();
     }
 
     public removeListeners(): void {
-      this._actions.removeEventListener("click", this._onActionClick.bind(this));
-      this._expander.removeEventListener("click", this._onExpanderClick.bind(this));
+      this._actions.removeEventListener("click", this._boundOnActionClick);
+      this._expander.removeEventListener("click", this._boundOnExpanderClick);
+      this._container.removeEventListener("keydown", this._boundOnTab);
     }
 
     private _addListeners(): void {
-      this._actions.addEventListener("click", this._onActionClick.bind(this), false);
-      this._expander.addEventListener("click", this._onExpanderClick.bind(this), false);
-      this._container.addEventListener("keydown", this._onTab.bind(this), false);
+      this._actions.addEventListener("click", this._boundOnActionClick, false);
+      this._expander.addEventListener("click", this._boundOnExpanderClick, false);
+      this._container.addEventListener("keydown", this._boundOnTab, false);
     }
 
     private _onTab(event: KeyboardEvent): void {
@@ -54,6 +66,8 @@ namespace fabric {
       } else {
         parent.classList.add("is-collapsed");
       }
+      const parentHeight: number = parent.clientHeight;
+      this._animateDetail(parentHeight);
     }
 
     private _onActionClick(event: Event): void {
@@ -75,10 +89,26 @@ namespace fabric {
       const selector: string = ".ms-PersonaCard-details[data-detail-id='" + activeId + "']";
       const lastDetail: Element = <Element>this._container.querySelector(".ms-PersonaCard-details.is-active");
       const activeDetail: Element = <Element>this._container.querySelector(selector);
+
       if (lastDetail) {
         lastDetail.classList.remove("is-active");
       }
+
       activeDetail.classList.add("is-active");
+      const detailHeight: number = activeDetail.clientHeight;
+      this._animateDetail(detailHeight);
+    }
+
+    private _animateDetail(height: number): void {
+      this._actionDetailBox.style.overflowY = "hidden";
+      fabric.Animate.transition(this._actionDetailBox, {
+        height: height,
+        duration: 0.25,
+        ease: Ease.SINE_EASE_OUT,
+        onEnd: () => {
+            this._actionDetailBox.style.overflowY = "auto";
+          }
+        });
     }
   }
 }

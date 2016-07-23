@@ -6,6 +6,24 @@ var path = require('path');
  * Helpful assortment of Utilites used throughout the build
  */
 var Utilities = function() {
+  this.htmlEscape = function(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+  }
+
+  // I needed the opposite function today, so adding here too:
+  this.htmlUnescape = function(value) {
+      return String(value)
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&amp;/g, '&');
+  }
 	/**
      * Retrieves all months
      * @returns {array} An array with the month names as strings

@@ -1,96 +1,14 @@
-$Panel-width-lightDismiss: 272px;
-
 // The panel covers the entire screen.
 .ms-PanelHost {
+  @include ms-baseFont;
   bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  pointer-events: none;
   z-index: $ms-zIndex-front;
-  font-family: $ms-font-family-base;
 }
 
-//== State: When the panel is open.
-//
-.ms-Panel.is-open {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-
-  .ms-Overlay {
-    display: block;
-    pointer-events: auto;
-
-    @media screen and (-ms-high-contrast: active) {
-      opacity: 0;
-    }
-  }
-
-  &.ms-Panel-animateIn {
-    @include ms-u-fadeIn100;
-  }
-
-  &.ms-Panel-animateOut {
-    @include ms-u-fadeOut100;
-
-    .ms-Overlay {
-      display: none;
-    }
-  }
-
-  // Medium screens and up
-  @media (min-width: $ms-screen-md-min) {
-    // Animations -- Default (anchored right)
-    &.ms-Panel-animateIn {
-      @include ms-u-slideLeftIn40;
-
-      .ms-Overlay {
-        @include ms-u-fadeIn200;
-      }
-    }
-
-    &.ms-Panel-animateOut {
-      @include ms-u-slideRightOut40;
-
-      .ms-Overlay {
-        @include ms-u-fadeOut200;
-      }
-    }
-
-    // Animations - Left panel (anchored left)
-    &.ms-Panel--left.ms-Panel-animateIn {
-      @include ms-u-slideRightIn40;
-
-      .ms-Overlay {
-        @include ms-u-fadeIn200;
-      }
-    }
-
-    &.ms-Panel--left.ms-Panel-animateOut {
-      @include ms-u-slideLeftOut40;
-
-      .ms-Overlay {
-        @include ms-u-fadeOut200;
-      }
-    }
-
-    // Animate overlay to full opacity, activate pointer events
-    .ms-Overlay {
-      cursor: pointer;
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    &.ms-Panel-animateIn,
-    &.ms-Panel--left.ms-Panel-animateIn {
-      .ms-Overlay {
-        @media screen and (-ms-high-contrast: active) {
-          opacity: 0;
-          animation-name: none;
-        }
-      }
-    }
-  }
+.ms-PanelHost .ms-Overlay {
+  cursor: pointer;
 }

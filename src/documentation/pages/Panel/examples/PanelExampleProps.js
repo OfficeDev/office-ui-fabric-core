@@ -5,29 +5,7 @@
       "tag": "button"
     },
     "headerText": "Panel",
-    "content": "Content goes here",
-    "commandBarProps": {
-      "commands": [
-        {
-          "component": "CommandButton",
-          "props":  {
-            "label": "Save",
-            "icon": "save",
-            "tag": "button",
-            "iconColor": "themePrimary"
-          }
-        },
-        {
-          "component": "CommandButton",
-          "props":  {
-            "label": "Cancel",
-            "icon": "x",
-            "tag": "button",
-            "iconColor": "themePrimary"
-          }
-        }
-      ]
-    }
+    "content": "Content goes here"
   },
   "medium": {
     "button": {
@@ -96,7 +74,20 @@
         "name": "xxl"
       }
     ]
-  }
+  },
+  "left": {
+    "button": {
+      "label": "Open Panel",
+      "tag": "button"
+    },
+    "headerText": "Left Panel",
+    "content": "Content goes here",
+    "modifier": [
+      {
+        "name": "left"
+      }
+    ]
+  },
 }
 
 module.exports = PanelExampleProps;

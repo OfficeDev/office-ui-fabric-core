@@ -2,8 +2,8 @@
 //
 // Choice field groups contain multiple radio buttons or checkboxes
 .ms-ChoiceFieldGroup {
+  @include ms-baseFont;
   margin-bottom: 4px;
-  font-family: $ms-font-family-base;
 
   .ms-ChoiceFieldGroup-list {
     padding: 0;

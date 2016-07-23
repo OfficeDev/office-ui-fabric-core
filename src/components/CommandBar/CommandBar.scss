@@ -19,13 +19,13 @@ $red: #FF0000;
 }
 
 .ms-CommandBar {
+  @include ms-baseFont;
   background-color: $ms-color-neutralLighter;
   height: $CommandBar-height;
   white-space: nowrap;
   padding-left: 0;
   border: 0;
   position: relative;
-  font-family: $ms-font-family-base;
 
   &:focus {
     outline: none;

@@ -7,9 +7,9 @@
 
 
 .ms-DatePicker {
+  @include ms-baseFont;
   @include ms-u-normalize;
   margin-bottom: 17px;
-  font-family: $ms-font-family-base;
   z-index: $ms-zIndex-DatePicker;
 
   .ms-TextField { position: relative; }

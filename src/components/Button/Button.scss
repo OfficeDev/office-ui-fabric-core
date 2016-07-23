@@ -8,8 +8,8 @@
 
 .ms-Button {
   @include ms-u-normalize;
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   background-color: $ms-color-neutralLighter;
@@ -126,10 +126,11 @@
 //== Modifier: Hero button
 //
 .ms-Button.ms-Button--hero {
+  align-items: center;
   background-color: transparent;
   border: 0;
-  vertical-align: top;
-  line-height: normal;
+  display: flex;
+  padding: 0;
 
   .ms-Button-icon {
     color: $ms-color-themePrimary;
@@ -143,20 +144,18 @@
     .ms-Icon {
       border-radius: 18px;
       border: 1px solid $ms-color-themePrimary;
+      font-size: $ms-font-size-s;
       height: 18px;
       line-height: 18px;
       width: 18px;
-      font-size: $ms-font-size-s;
-      margin: 0;
     }
   }
 
   .ms-Button-label {
     color: $ms-color-themePrimary;
-    font-weight: $ms-font-weight-light;
     font-size: $ms-font-size-xl;
+    font-weight: $ms-font-weight-light;
     position: relative;
-    top: -5px;
     text-decoration: none;
   }
 

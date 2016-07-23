@@ -9,8 +9,8 @@ $MessageBanner-height: 52px;
 $MessageBanner-iconSize: 40px;
 
 .ms-MessageBanner {
+  @include ms-baseFont;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-s;
   font-weight: $ms-font-weight-regular;
   position: relative;

@@ -59,9 +59,9 @@ $ms-Persona-presenceSizeXl: 28px;
 
 
 .ms-Persona {
+  @include ms-baseFont;
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   line-height: 1;
@@ -260,35 +260,6 @@ $ms-Persona-presenceSizeXl: 28px;
 }
 
 
-//== Modifier: Persona with square images
-//
-.ms-Persona.ms-Persona--square {
-  .ms-Persona-imageArea {
-    background-color: $ms-color-neutralTertiary;
-    border-radius: 0;
-  }
-
-  .ms-Persona-presence {
-    top: 0;
-    left: 0;
-    bottom: auto;
-    right: auto;
-    height: 48px;
-    width: 5px;
-    border-radius: 0;
-    border: 0;
-
-    @media screen and (-ms-high-contrast: active) {
-      border: 1px solid $ms-color-white;
-    }
-
-    @media screen and (-ms-high-contrast: black-on-white) {
-      border: 1px solid $ms-color-black;
-    }
-  }
-}
-
-
 //== Modifier: Tiny Persona
 //
 .ms-Persona.ms-Persona--tiny {
@@ -347,17 +318,6 @@ $ms-Persona-presenceSizeXl: 28px;
 }
 
 
-//== Modifier: Tiny Square Persona
-//
-.ms-Persona.ms-Persona--square.ms-Persona--tiny {
-  .ms-Persona-presence {
-    height: $ms-Persona-presenceSizeMd;
-    width: $ms-Persona-presenceSizeMd;
-    top: 10px;
-  }
-}
-
-
 //== Modifier: Extra Small Persona, FacePile and Token modifiers
 //
 .ms-Persona.ms-Persona--xs,
@@ -400,17 +360,6 @@ $ms-Persona-presenceSizeXl: 28px;
 }
 
 
-//== Modifier: Extra Small Square Persona
-//
-.ms-Persona.ms-Persona--square.ms-Persona--xs {
-  .ms-Persona-presence {
-    height: $ms-Persona-sizeXs;
-    width: 4px;
-    left: 0;
-  }
-}
-
-
 //== Modifier: Small Persona
 //
 .ms-Persona.ms-Persona--sm {
@@ -447,17 +396,6 @@ $ms-Persona-presenceSizeXl: 28px;
   .ms-Persona-primaryText,
   .ms-Persona-secondaryText {
     padding-top: 1px;
-  }
-}
-
-
-//== Modifier: Small Square Persona
-//
-.ms-Persona.ms-Persona--square.ms-Persona--sm {
-  .ms-Persona-presence {
-    height: $ms-Persona-sizeSm;
-    width: 4px;
-    left: 0;
   }
 }
 
@@ -506,17 +444,6 @@ $ms-Persona-presenceSizeXl: 28px;
   .ms-Persona-tertiaryText {
     padding-top: 5px;
     display: block; // Show tertiary text
-  }
-}
-
-
-//== Modifier: Large Square Persona
-//
-.ms-Persona.ms-Persona--square.ms-Persona--lg {
-  .ms-Persona-presence {
-    height: $ms-Persona-sizeLg;
-    width: 7px;
-    left: 0;
   }
 }
 
@@ -574,17 +501,6 @@ $ms-Persona-presenceSizeXl: 28px;
   .ms-Persona-optionalText {
     padding-top: 5px;
     display: block; // Show tertiary and optional text
-  }
-}
-
-
-//== Modifier: Extra Large Square Persona
-//
-.ms-Persona.ms-Persona--square.ms-Persona--xl {
-  .ms-Persona-presence {
-    height: $ms-Persona-sizeXl;
-    width: 9px;
-    left: 0;
   }
 }
 
@@ -687,21 +603,6 @@ $ms-Persona-presenceSizeXl: 28px;
   }
 }
 
-//== Modifier: Square Persona with blocked presence
-//
-.ms-Persona.ms-Persona--blocked.ms-Persona--square {
-  .ms-Persona-presence {
-    background-color: $ms-color-presence-blocked-background;
-    // Use a gradient to include the stripe on modern browsers.
-    background-image: linear-gradient(to bottom, $ms-color-presence-blocked-background 0%, $ms-color-presence-blocked-background 48%, $ms-color-presence-blocked-line 40%, $ms-color-presence-blocked-line 58%, $ms-color-presence-blocked-background 52%, $ms-color-presence-blocked-background 100%);
-
-    &::before,
-    &::after {
-      display: none;
-    }
-  }
-}
-
 
 //== Modifier: Persona with busy presence
 //
@@ -711,30 +612,12 @@ $ms-Persona-presenceSizeXl: 28px;
   }
 }
 
-//== Modifier: Square Persona with busy presence
-//
-.ms-Persona.ms-Persona--busy.ms-Persona--square {
-  .ms-Persona-presence {
-    // Replace solid background with stripes on modern browsers.
-    background: repeating-linear-gradient(-45deg, $ms-color-presence-busy-stripe-light, $ms-color-presence-busy-stripe-light 3px, $ms-color-presence-busy-stripe-dark 3px, $ms-color-presence-busy-stripe-dark 6px);
-  }
-}
-
 
 //== Modifier: Persona with do not disturb presence
 //
 .ms-Persona.ms-Persona--dnd {
   .ms-Persona-presence {
     background-color: $ms-color-presence-dnd-background;
-  }
-}
-
-//== Modifier: Square Persona with do not disturb presence
-//
-.ms-Persona.ms-Persona--dnd.ms-Persona--square {
-  .ms-Persona-presence {
-    // Use a gradient to include the stripe on modern browsers.
-    background-image: linear-gradient(to bottom, $ms-color-presence-dnd-background 0%, $ms-color-presence-dnd-background 48%, $ms-color-presence-dnd-line 48%, $ms-color-presence-dnd-line 52%, $ms-color-presence-dnd-background 52%, $ms-color-presence-dnd-background 100%);
   }
 }
 
@@ -783,7 +666,7 @@ $ms-Persona-presenceSizeXl: 28px;
   width: auto;
   background-color: $ms-color-neutralLighter;
   border-radius: 20px;
-  margin-bottom: 4px;
+  margin: 4px;
 
   &:hover {
     cursor: pointer;
@@ -818,7 +701,7 @@ $ms-Persona-presenceSizeXl: 28px;
 
   .ms-Persona-primaryText {
     padding-top: 0;
-    line-height: 30px;
+    line-height: 34px;
   }
 
   .ms-Persona-initials {

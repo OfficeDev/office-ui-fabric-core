@@ -8,6 +8,7 @@
 $MessageBar-padding: 8px;
 
 .ms-MessageBar {
+  @include ms-baseFont;
   padding: $MessageBar-padding;
   display: table;
   @include ms-bgColor-info;

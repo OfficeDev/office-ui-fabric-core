@@ -93,7 +93,7 @@ gulp.task('Bundles-buildData', function() {
                 }
 
                 return _mode;
-            }();
+            };
 
             // Walk the SASS and components folders.
             let srcFolders = Utilities.getFolders(Config.paths.src).filter((folderName) => {

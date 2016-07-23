@@ -31,6 +31,9 @@ namespace fabric {
       this._animateOverlay = animateOverlay || true;
       this._panelHost = new fabric.PanelHost(this._panel, this._animateInPanel);
       this._setEvents();
+
+      // Set body height to 100% and overflow hidden while panel is open
+      document.body.setAttribute("style", "height: 100%; overflow: hidden;");
     }
 
     public dismiss(callBack?: Function) {
@@ -42,6 +45,9 @@ namespace fabric {
         if (callBack) {
           callBack();
         }
+
+        // Remove temporary body styles
+        document.body.setAttribute("style", "");
       }, ANIMATION_END);
     }
 

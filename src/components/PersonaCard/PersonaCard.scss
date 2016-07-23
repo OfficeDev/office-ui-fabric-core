@@ -10,9 +10,9 @@
 //
 // The persona card docks to the bottom of the viewport.
 .ms-PersonaCard {
+  @include ms-baseFont;
   @include ms-u-slideUpIn10;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-family-base;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
   bottom: 0;
@@ -31,12 +31,21 @@
 
 .ms-PersonaCard-actions {
   @include ms-u-borderBox;
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0 10px;
-  border-bottom: 1px solid $ms-color-neutralTertiaryAlt;
   background-color: $ms-color-white;
   height: 48px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $ms-color-neutralTertiaryAlt;
+  }
 }
 
 .ms-PersonaCard-action,
@@ -107,7 +116,7 @@
 .ms-PersonaCard-orgChart {
   position: absolute;
   right: 12px;
-  top: 0;
+  top: -95px;
 }
 
 .ms-PersonaCard-actionDetailBox {

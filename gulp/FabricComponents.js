@@ -60,7 +60,9 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
         .pipe(Plugins.csscomb())
         .pipe(gulp.dest(Config.paths.distCSS))
         .pipe(Plugins.rename('fabric.components.min.css'))
-        .pipe(Plugins.cssMinify())
+        .pipe(Plugins.cssMinify({
+            safe: true
+        }))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
         .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
         .pipe(gulp.dest(Config.paths.distCSS))
@@ -69,7 +71,9 @@ gulp.task('FabricComponents-buildAndCombineStyles', function () {
         .pipe(Plugins.csscomb())
         .pipe(Plugins.rename('fabric.components.rtl.css'))
         .pipe(gulp.dest(Config.paths.distCSS))
-        .pipe(Plugins.cssMinify())
+        .pipe(Plugins.cssMinify({
+            safe: true
+        }))
         .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
         .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
         .pipe(Plugins.rename('fabric.components.rtl.min.css'))

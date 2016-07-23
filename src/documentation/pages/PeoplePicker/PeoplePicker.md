@@ -21,12 +21,6 @@ Presents the selected people in a list below the search field, rather than inlin
 {{> PeoplePicker props=PeoplePickerExampleProps.facePile}}
 --->
 
-## More options
-
-### Disconnected
-If the network is unavailable, you can present an error message in the search more area.
-@@include('PeoplePicker.Disconnected.html')
-
 ## Dependencies
 Label, Persona, PersonaCard, Spinner, TextField, ContextualHost, OrgChart
 

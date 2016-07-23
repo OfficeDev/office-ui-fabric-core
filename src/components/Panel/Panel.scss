@@ -30,6 +30,7 @@ $ms-panel-close-button-height: 40px;
   right: 0;
   z-index: $ms-zIndex-front;
   display: none;
+  height: 100%;
 
   // Animations -- Default (anchored right)
   &.animate-in {
@@ -109,6 +110,7 @@ $ms-panel-close-button-height: 40px;
   margin-top: $ms-panel-close-button-height;
   padding: 0 16px 20px;
   overflow-y: auto;
+  height: 100%;
 
   @media (min-width: $ms-screen-lg-min) {
     padding: 0 32px 20px;

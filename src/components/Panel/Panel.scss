@@ -17,6 +17,7 @@ $Panel-margin-md: 48px;
 $Panel-margin-lg: 428px;
 $Panel-margin-xl: 176px;
 $CommandBarHeight: 40px;
+$CommandBarMdHeight: 44px;
 $CommandButtonLightBlue: #B5D8F4;
 $CommandButtonLighterBlue: #D7EAF9;
 $CommandButtonDarkBlue: #07288B;
@@ -116,18 +117,24 @@ $CommandButtonBlue: #2488D8;
 .ms-Panel-closeButton {
   @include button-reset;
   position: absolute;
-  right: 8px;
+  right: 6px;
   top: 0;
   height: $CommandBarHeight;
   width: $CommandBarHeight;
-  line-height: $CommandBarHeight;
   outline: 0;
   padding: 0;
   color: $ms-color-neutralSecondary;
-  font-size: $ms-font-size-m;
+  font-size: $ms-icon-size-m;
 
   &:hover {
     color: $ms-color-neutralPrimary;
+  }
+
+  @media (max-width: $ms-screen-md-max) {
+    height: $CommandBarMdHeight;
+    width: $CommandBarMdHeight;
+    font-size: $ms-icon-size-l;
+    right: 4px;
   }
 }
 

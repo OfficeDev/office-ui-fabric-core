@@ -21,7 +21,7 @@
           "component": "CommandButton",
           "props":  {
             "label": "Cancel",
-            "icon": "x",
+            "icon": "Cancel",
             "tag": "button",
             "iconColor": "themePrimary"
           }

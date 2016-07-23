@@ -5,7 +5,6 @@
 // --------------------------------------------------
 // Contextual Menu styles
 
-
 .ms-ContextualMenu {
   @include ms-u-normalize;
   color: $ms-color-neutralPrimary;
@@ -34,40 +33,45 @@
   border: 1px solid transparent;
   cursor: pointer;
   display: block;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 18px;
+  height: 36px;
+  line-height: 34px;
+  padding: 0 16px 0 25px;
   position: relative;
-
-  &:focus {
-    outline: transparent;
-  }
 
   &:hover,
   &:active,
   &:focus {
-    background-color: $ms-color-neutralLight;
-    color: $ms-color-black;
+    background-color: $ms-color-neutralLighter;
+    color: $ms-color-neutralDark;
+
+    .ms-ContextualMenu-subMenuIcon {
+      color: $ms-color-neutralDark;
+    }
   }
 
-  &:active,
   &:focus {
-    border: 1px solid $ms-color-themePrimary;
+    outline: transparent;
+    border: 1px solid $ms-color-neutralSecondary;
   }
 
   &.is-selected {
-    background-color: $ms-color-themeLight;
+    background-color: $ms-color-neutralQuaternaryAlt;
     color: $ms-color-black;
     font-weight: $ms-font-weight-semibold;
 
+    ~.ms-ContextualMenu-subMenuIcon {
+      color: $ms-color-black;
+    }
+
     &:hover {
-      background-color: $ms-color-themeLight;
+      background-color: $ms-color-neutralQuaternary;
     }
   }
 
   &.is-disabled {
     color: $ms-color-neutralTertiary;
     background-color: $ms-color-white;
+    pointer-events: none;
 
     &:active,
     &:focus {
@@ -87,7 +91,6 @@
   cursor: default;
   display: block;
   height: 1px;
-  margin: 4px 0;
   background-color: $ms-color-neutralLight;
   position: relative;
 }
@@ -97,8 +100,8 @@
   color: $ms-color-themePrimary;
   font-size: $ms-font-size-s;
   text-transform: uppercase;
-  height: 40px;
-  line-height: 40px;
+  height: 36px;
+  line-height: 36px;
   padding: 0 18px;
 }
 
@@ -114,13 +117,16 @@
 // Please use .ms-ContextualMenu-subMenuIcon.
 .ms-ContextualMenu-subMenuIcon,
 .ms-ContextualMenu-caretRight {
-  color: $ms-color-neutralSecondary;
-  font-size: $ms-font-size-m-plus + 1;
-  height: 39px;
-  line-height: 40px;
+  color: $ms-color-neutralPrimary;
+  font-size: 8px;
+  font-weight: 600;
+  width: 24px;
+  height: 36px;
+  line-height: 36px;
   position: absolute;
+  text-align: center;
   top: 0;
-  right: 7px;
+  right: 0;
   z-index: 1;
   pointer-events: none;
 }
@@ -131,26 +137,47 @@
 
   // Align the header with the items
   .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
-    padding: 0 30px;
+    padding: 0 16px 0 26px;
   }
 
   .ms-ContextualMenu-link {
-    padding: 0 30px;
 
     // Multi-select checkmark
     &.is-selected {
       background-color: $ms-color-white;
+      font-weight: $ms-font-weight-semibold;
+      color: $ms-color-neutralPrimary;
 
       // Checkmark
       &::after {
         @include ms-Icon;
         color: $ms-color-neutralPrimary;
-        content: '\e041';
-        font-size: $ms-font-size-s;
-        height: 39px;
-        line-height: 40px;
+        content: '\E73E';
+        font-size: $ms-icon-xs;
+        font-weight: 800;
+        height: 36px;
+        line-height: 36px;
         position: absolute;
-        left: 10px;
+        left: 7px;
+      }
+
+      &:hover,
+      &:focus {
+        color: $ms-color-neutralDark;
+        background-color: $ms-color-neutralLighter;
+
+        &::after {
+          color: $ms-color-neutralDark;
+        }
+      }
+
+      &:active {
+        color: $ms-color-black;
+        background-color: $ms-color-neutralQuaternary;
+
+        &::after {
+          color: $ms-color-black;
+        }
       }
     }
   }

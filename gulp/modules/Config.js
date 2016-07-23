@@ -1,6 +1,7 @@
 var path = require('path');
 var pkg = require('../../package.json');
 var Plugins = require('./Plugins');
+var Utilities = require('./Utilities');
 
 /**
  * Configuration class containing all properties to be used throughout the build
@@ -153,6 +154,21 @@ var Config = function() {
           var template = hbs.compile(fileContents);
           var thisProps = {props: props};
           return new hbs.SafeString(template(thisProps));
+        }.bind(this),
+
+        renderPartialPre: function(partial, examplePartial, props, isComponent) {
+          var hbs = Plugins.handlebars.Handlebars;
+
+          if (isComponent) {
+            var fileContents = Plugins.fs.readFileSync(this.paths.componentsPath + '/' + partial + '/' + partial +'.hbs',  "utf8");
+          } else {
+            var fileContents = Plugins.fs.readFileSync(this.paths.srcDocsPages + '/' + partial + '/examples/' + examplePartial +'.hbs',  "utf8");
+          }
+          
+          var template = hbs.compile(fileContents);
+          var thisProps = {props: props};
+          var templateString = new hbs.SafeString(template(thisProps));
+          return ' ' + templateString;
         }.bind(this)
       }
   };

@@ -1,7 +1,9 @@
-# Choice Field
+# Choice Field Group
 Allows selection from one or more options.
 
-### Radio button group
+## Variants
+
+### Default
 Used to indicate a single choice from multiple options.
 
 <!---
@@ -11,3 +13,6 @@ Used to indicate a single choice from multiple options.
 <!---
 {{> ChoiceFieldGroupJS }}
 --->
+
+## Dependencies
+Label, CheckBox

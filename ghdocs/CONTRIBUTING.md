@@ -34,7 +34,7 @@ We track community issues via GitHub's [issue tracker](https://github.com/Office
  - `build-system` - Issues and PRs related to the build process.
  - `documentation` - Issues and PRs that pertain to the documentation included with the repository.
  - `enhancement` - Issues or PRs that address potential improvements to components.
- - `feature-request` - Issues or PRs that address ask for or add a major piece of functionality.
+ - `feature-request` - Issues or PRs that address, ask for, or add a major piece of functionality.
  - `needs-design` - Issues or PRs that need Design guidance.
  - `needs-discussion` - Issues or PRs that need discussion among the Fabric team.
  - `question` - Issues that don't necessarily require code and usually consist of clarifications.

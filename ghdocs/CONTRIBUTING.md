@@ -29,14 +29,15 @@ This needs to only be done once for any Microsoft open source project.
 
 We track community issues via GitHub's [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric/issues). To help us keep track of the different areas, please use the following labels:
 
-- `question` - Feel free to ask questions via the question tag.
-- `browser` - Issues that pertain to a specific browser. Screenshots and details are much appreciated!
-- `docs` - Issues pertaining to our documentation.
-- `feature` - Issues requesting a new feature to be added or extended from an existing feature.
-- `gulp` - Issues related to our gulp build process.
-- `js` - Issues that result from the example JavaScript referenced or included.
-- `meta` - issues with the overall project or the Github repository.
-- `components` - Issues specific to our CSS components.
-- `grid` - Issues pertaining to the responsive grid.
-- `type` - Issues pertaining to our typography and related classes.
-- `icons` - Issues pertaining to our iconography and icon related classes.
+ - `accessibility` - Issues or PRs that pertain to keyboard support, high contrast mode, screen reader support, etc.
+ - `bug` - Issues or PRs that address unexpected behavior or broken components.
+ - `build-system` - Issues and PRs related to the build process.
+ - `documentation` - Issues and PRs that pertain to the documentation included with the repository.
+ - `enhancement` - Issues or PRs that address potential improvements to components.
+ - `feature-request` - Issues or PRs that address, ask for, or add a major piece of functionality.
+ - `needs-design` - Issues or PRs that need Design guidance.
+ - `needs-discussion` - Issues or PRs that need discussion among the Fabric team.
+ - `question` - Issues that don't necessarily require code and usually consist of clarifications.
+ - `waiting-for-author` - Issues or PRs that are awaiting a repsonse from the original author.
+ - `waiting-for-details` - Issues or PRs that need more details before they can be acted upon.
+ - `waiting-to-merge` - PRs that are close to being merged in but are stalled.

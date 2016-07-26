@@ -12,7 +12,7 @@
           "component": "CommandButton",
           "props":  {
             "label": "Save",
-            "icon": "save",
+            "icon": "Save",
             "tag": "button",
             "iconColor": "themePrimary"
           }

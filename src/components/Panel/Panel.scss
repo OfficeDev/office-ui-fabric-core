@@ -49,6 +49,11 @@ $CommandButtonBlue: #2488D8;
   &.is-open {
     display: block;
   }
+
+  .ms-CommandBar {
+    padding-right: 0;
+    padding-left: 8px;
+  }
 }
 
 //== Modifier: Medium panel (anchored right, fixed width)
@@ -128,6 +133,10 @@ $CommandButtonBlue: #2488D8;
 
   &:hover {
     color: $ms-color-neutralPrimary;
+  }
+
+  .ms-Icon--Cancel {
+    margin-top: 2px;
   }
 
   @media (max-width: $ms-screen-md-max) {

@@ -79,7 +79,7 @@
     "tslint": "^3.3.0",
     "typescript": "^1.8.10",
     "typescript-require": "^0.2.9-1",
-    "walk-sync": "^0.2.6"
+    "walk-sync": "^0.3.0"
   },
   "dependencies": {
     "marked": "^0.3.5"

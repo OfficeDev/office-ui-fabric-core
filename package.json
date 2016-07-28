@@ -28,7 +28,7 @@
     "gulp-changed": "^1.3.0",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-concat": "^2.5.2",
-    "gulp-connect": "^4.2.0",
+    "gulp-connect": "^5.0.0",
     "gulp-css-flipper": "^1.0.2",
     "gulp-cssbeautify": "^0.1.3",
     "gulp-csscomb": "^3.0.6",

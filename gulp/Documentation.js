@@ -57,36 +57,7 @@ gulp.task('Documentation-copyAssets', function() {
         .pipe(gulp.dest(Config.paths.distDocsComponents));
 });
 
-gulp.task('Documentation-handlebars', function(cb) {
-   var _folderName;
-   var _srcFolderName;
-   var _demoPageComponents;
-   
-   // Reset current batch
-   Config.handleBarsConfig.batch = [];
-   
-   // Get all components partials first
-   for (var i = 0; i < folderList.length; i++) {
-    _folderName = folderList[i];
-    _srcFolderName = Config.paths.componentsPath + '/' + _folderName;
-    // Push to Handlebars config
-    Config.handleBarsConfig.batch.push('./' + _srcFolderName);
-   }
-    
-   // Next get all example partials inside of the pages folders
-   for (var i = 0; i < demoPagesList.length; i++) {
-    _folderName = demoPagesList[i];
-    _srcFolderName = Config.paths.srcDocsPages + '/' + _folderName + '/' + Config.paths.srcDocsPagesExamples;
-    
-    if (fs.existsSync(_srcFolderName)) {
-        Config.handleBarsConfig.batch.push('./' + _srcFolderName);
-    }
-   }
-   
-   cb();
-});
-
-gulp.task('Documentation-template', ["Documentation-handlebars"], function(cb) {
+gulp.task('Documentation-template', function(cb) {
   var _template = new Template(folderList, Config.paths.distJS, Config.paths.componentsPath, function() {
     gulp.src(Config.paths.distJS + "/fabric.templates.ts")
     .pipe(Plugins.header(Banners.getJSCopyRight()))

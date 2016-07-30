@@ -10,7 +10,6 @@ var Plugins = require('./modules/Plugins');
 var ComponentHelper = require('./modules/ComponentHelper');
 var folderList = Utilities.getFolders(Config.paths.componentsPath);
 var demoPagesList = Utilities.getFolders(Config.paths.srcDocsPages);
-var Template = require('./modules/Template');
 var reload = require('require-reload')(require);
 var BuildConfig = require('./modules/BuildConfig');
 
@@ -73,7 +72,7 @@ gulp.task('Documentation-template', function(cb) {
 //
 // Sample Component Building
 // ----------------------------------------------------------------------------
-gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
+gulp.task('Documentation-build', function() {
    var streams = [],
        pageName,
        srcFolderName,
@@ -171,11 +170,8 @@ gulp.task('Documentation-build', ['Documentation-handlebars'], function() {
 // ----------------------------------------------------------------------------
 
 var DocumentationTasks = [
-    'Documentation-build', 
     'Documentation-copyAssets',
-    'ComponentJS',
-    'Documentation-copyIgnoredFiles',
-    "Documentation-template"
+    'Documentation-copyIgnoredFiles'
 ];
 
 //Build Fabric Component Samples

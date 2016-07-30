@@ -10,7 +10,7 @@ var BuildConfig = require('./modules/BuildConfig');
 // Sample Index Page Build
 // ----------------------------------------------------------------------------
 
-gulp.task('DocumentationViewer', ['Fabric', 'FabricComponents', 'Documentation', 'Samples'], function() {
+gulp.task('DocumentationViewer', ['Fabric', 'Documentation', 'Samples'], function() {
     var sections = [];
     var getDocsFolders = Utilites.getFolders(Config.paths.distDocumentation);
     

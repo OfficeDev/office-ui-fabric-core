@@ -1,7 +1,0 @@
-{
-  "name": "Button",
-  "props": {
-    "label": "Create Account",
-    "tag": "button"
-  }
-}

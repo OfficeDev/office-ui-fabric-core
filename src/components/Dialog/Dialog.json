@@ -1,9 +1,0 @@
-{
-  "name": "Dialog",
-  "dependencies": [
-    "Button",
-    "CheckBox",
-    "Overlay",
-    "ContextualHost"
-  ]
-}

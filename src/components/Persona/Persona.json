@@ -1,7 +1,0 @@
-{
-  "name": "Persona",
-  "dependencies": [
-    "PersonaCard",
-    "ContextualHost"
-  ]
-}

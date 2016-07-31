@@ -1,10 +1,10 @@
-#[Office UI Fabric](http://dev.office.com/fabric)
+#[Office UI Fabric Core](http://dev.office.com/fabric)
 
 #####The front-end framework for building experiences for Office and Office 365.
 
 Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
-**Please note:** We are currently moving the components into their own repo as [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js). If you have any issues related to components or would like to submit a pull request, please do so there.
+**Please note:** We are currently moving the components into their own repo as [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js). If you have any issues related to components or would like to submit a pull request, please do so there. This repository contains the core styles used across all aspects of Fabric including icons, type, fonts, colors, the grid, etc.
 
 ##Contents
 
@@ -23,7 +23,7 @@ Want to customize Fabric for your project? See [Building Fabric](https://github.
 
 ##Learn more
 
-New to Fabric? Start with [What is Office UI Fabric?](http://dev.office.com/fabric/what-is-fabric) to understand its purpose, and then explore the full set of [styles](http://dev.office.com/fabric/styles) and [components](http://dev.office.com/fabric/components) to get a feel for what you can build.
+New to Fabric? Start with [What is Office UI Fabric?](http://dev.office.com/fabric/what-is-fabric) to understand its purpose, and then explore the full set of [styles](http://dev.office.com/fabric/styles) and [components](http://dev.office.com/fabric/components) to get a feel for what you can build. Components come in two flavors provided by the Fabric team: [JavaScript (Office UI Fabric JS)](https://github.com/OfficeDev/office-ui-fabric-js) and [React (Office UI Fabric React)](https://github.com/OfficeDev/office-ui-fabric-react).
 
 When you're ready to create a simple app or Office Add-in with Fabric, follow along with the [Fabric Tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md) or [Use Office UI Fabric with Office Add-ins on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
 

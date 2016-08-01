@@ -6,7 +6,7 @@ Fabric is a responsive, mobile-first collection of styles and tools designed to 
 
 **Please note:** We are currently moving the components into their own repo as [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js). If you have any issues related to components or would like to submit a pull request, please do so there. This repository contains the core styles used across all aspects of Fabric including icons, type, fonts, colors, the grid, etc.
 
-##Contents
+##Contents+
 
 - [Get started](#get-started)
 - [Learn more](#learn-more)

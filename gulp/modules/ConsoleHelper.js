@@ -14,9 +14,6 @@ var ConsoleHelper = function() {
 		var spacing = "\r\n";
 		var tipsMessage = "";
 		var spaceDashes = colors.rainbow("---------------------------------------------------");
-		if (showTip === true) {
-			tipsMessage = colors.gray("TIP: To test changes to Fabric source, check under /samples for demo HTML files of each Component.") + spacing;
-		}
 		var consoleText = colors.green("Fabric Message: ") + colors.cyan(message);
 		var completeMessage = spaceDashes + spacing + spacing + consoleText + spacing + tipsMessage + spacing + spaceDashes;
 		return completeMessage;

@@ -23,27 +23,7 @@ gulp.task('Linting-spacesTabs', function (cb) {
         .pipe(ErrorHandling.TabLintingErrors());
 });
 
-gulp.task('Linting-typescript', function (cb) {
-    return gulp.src(Config.paths.src + '/**/*.ts')
-        .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-        .pipe(Plugins.tslint())
-        .pipe(ErrorHandling.TypescriptLinting());
-});
-
-gulp.task('Linting-componentStyles',  function(cb) {
-   gulp.src(Config.paths.componentsPath + '/**/*.scss')
-      .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-      .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
-          title: "Checking SASS Compile errors and linting"
-      })))
-     .pipe(Plugins.sasslint())
-     .pipe(ErrorHandling.SASSlintErrors());
-   cb();
- });
-
 var tasks = [
-    'Linting-typescript',
-    'Linting-componentStyles',
     'Linting-spacesTabs'
 ];
 

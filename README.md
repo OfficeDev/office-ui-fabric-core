@@ -1,5 +1,7 @@
 #[Office UI Fabric Core](http://dev.office.com/fabric)
 
+[![Join the chat at https://gitter.im/OfficeDev/Office-UI-Fabric](https://badges.gitter.im/OfficeDev/Office-UI-Fabric.svg)](https://gitter.im/OfficeDev/Office-UI-Fabric?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 #####The front-end framework for building experiences for Office and Office 365.
 
 Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.

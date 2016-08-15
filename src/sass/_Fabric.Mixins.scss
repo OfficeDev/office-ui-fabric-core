@@ -228,10 +228,12 @@
 
 // Input placehoder
 @mixin input-placeholder {
-    &::-webkit-input-placeholder  {@content}
-    &::-moz-placeholder           {@content}
-    &:-moz-placeholder            {@content}
-    &:-ms-input-placeholder       {@content}
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-moz-placeholder,
+    &:-ms-input-placeholder {
+        @content;
+    }
 }
 
 // Animations

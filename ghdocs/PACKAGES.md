@@ -7,17 +7,17 @@ Fabric is also available from a variety of package managers, including [Bower](h
 ###Install with Bower
 To install Fabric using Bower, run the following command:
 ```
-$ bower install office-ui-fabric
+$ bower install office-ui-fabric-core
 ```
 
-###Install with npm
-To install Fabric using npm, run the following command:
+###Install with NPM
+To install [Fabric Core's NPM package](https://www.npmjs.com/package/office-ui-fabric-core), run the following command:
 ```
-$ npm install office-ui-fabric
+$ npm install office-ui-fabric-core
 ```
 
 ###Install with NuGet Package Manager
-To install Fabric's NuGet package, run the following command in the [package manager console](http://docs.nuget.org/consume/package-manager-console):
+To install [Fabric Core's NuGet package](https://www.nuget.org/packages/OfficeUIFabricCore/), run the following command in the [package manager console](http://docs.nuget.org/consume/package-manager-console):
 ```
-PM> Install-Package OfficeUIFabric
+PM> Install-Package OfficeUIFabricCore
 ```

@@ -23,7 +23,7 @@ Want to customize Fabric for your project? See [Building Fabric](https://github.
 
 ##Learn more
 
-New to Fabric? Start with [What is Office UI Fabric?](http://dev.office.com/fabric/what-is-fabric) to understand its purpose, and then explore the full set of [styles](http://dev.office.com/fabric/styles) and [components](http://dev.office.com/fabric/components) to get a feel for what you can build. Components come in two flavors provided by the Fabric team: [JavaScript (Office UI Fabric JS)](https://github.com/OfficeDev/office-ui-fabric-js) and [React (Office UI Fabric React)](https://github.com/OfficeDev/office-ui-fabric-react).
+New to Fabric? Start with [the project's site](http://dev.office.com/fabric) to understand its purpose, and then explore the full set of [styles](http://dev.office.com/fabric/styles) and [components](http://dev.office.com/fabric/components) to get a feel for what you can build. Components come in two flavors provided by the Fabric team: [JavaScript (Office UI Fabric JS)](https://github.com/OfficeDev/office-ui-fabric-js) and [React (Office UI Fabric React)](https://github.com/OfficeDev/office-ui-fabric-react).
 
 When you're ready to create a simple app or Office Add-in with Fabric, follow along with the [Fabric Tutorial](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/TUTORIAL.md) or [Use Office UI Fabric with Office Add-ins on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx).
 

@@ -36,35 +36,6 @@ This will produce the following:
 
 @import '../../../src/sass/_Fabric.Common.scss';
 
-@import '../../../src/components/Breadcrumb/Breadcrumb.scss';
-@import '../../../src/components/Button/Button.scss';
-@import '../../../src/components/Callout/Callout.scss';
-@import '../../../src/components/CheckBox/CheckBox.scss';
-@import '../../../src/components/CommandBar/CommandBar.scss';
-@import '../../../src/components/ContextualMenu/ContextualMenu.scss';
-@import '../../../src/components/DatePicker/DatePicker.scss';
-@import '../../../src/components/Dialog/Dialog.scss';
-@import '../../../src/components/Dropdown/Dropdown.scss';
-@import '../../../src/components/Facepile/Facepile.scss';
-@import '../../../src/components/Label/Label.scss';
-@import '../../../src/components/Link/Link.scss';
-@import '../../../src/components/List/List.scss';
-@import '../../../src/components/ListItem/ListItem.scss';
-@import '../../../src/components/MessageBanner/MessageBanner.scss';
-@import '../../../src/components/NavBar/NavBar.scss';
-@import '../../../src/components/OrgChart/OrgChart.scss';
-@import '../../../src/components/Overlay/Overlay.scss';
-@import '../../../src/components/Panel/Panel.scss';
-@import '../../../src/components/PeoplePicker/PeoplePicker.scss';
-@import '../../../src/components/Persona/Persona.scss';
-@import '../../../src/components/PersonaCard/PersonaCard.scss';
-@import '../../../src/components/Pivot/Pivot.scss';
-@import '../../../src/components/ProgressIndicator/ProgressIndicator.scss';
-@import '../../../src/components/SearchBox/SearchBox.scss';
-@import '../../../src/components/Spinner/Spinner.scss';
-@import '../../../src/components/Table/Table.scss';
-@import '../../../src/components/TextField/TextField.scss';
-@import '../../../src/components/Toggle/Toggle.scss';
 @import '../../../src/sass/Fabric.Animations.Output.scss';
 @import '../../../src/sass/Fabric.Color.Mixins.Output.scss';
 @import '../../../src/sass/Fabric.Grid.Output.scss';
@@ -78,17 +49,17 @@ This will produce the following:
 ```
 
 #### `includes`
-If instead you use "includes", the bundle will include only the files specified. If the file is a component that has dependencies, like mentioned above, those will also be included. If you aren't sure what a component's dependencies are, look for the "dependencies" property in that component's JSON file in `src/{ComponentName}/{ComponentName}.json`. Note that the build looks for dependencies two children deep, or in other words, dependencies of dependencies. Also, as noted in `exludes` above, partial .scss files beginning with '_' will not be included in bundles, even if they are explicitly listed.
+If instead you use "includes", the bundle will include only the files specified. 
 
-Here's an example "include" bundle that includes only the Button and PersonaCard components:
+Here's an example "include" bundle that includes only the Typography and Animation modules:
 ```javascript
 "bundles": [
   {
     "name": "includes-bundle", // Becomes includes-bundle.css/.min.css
     "description": "A custom bundle including a handful of modules.",
     "includes": [
-      "Button",
-      "PersonaCard" // Will also include Link, OrgChart, and Persona components as dependencies
+      "Typography",
+      "Animations"
     ]
   } 
 ]
@@ -104,11 +75,11 @@ This will produce the following:
 
 @import '../../../src/sass/_Fabric.Common.scss';
 
-@import '../../../src/components/Button/Button.scss';
-@import '../../../src/components/Link/Link.scss';
-@import '../../../src/components/OrgChart/OrgChart.scss';
-@import '../../../src/components/Persona/Persona.scss';
-@import '../../../src/components/PersonaCard/PersonaCard.scss';
+@import '../../../src/sass/Fabric.Animations.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Fonts.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Language.Overrides.Output.scss';
+@import '../../../src/sass/Fabric.Typography.Output.scss';
+
 ```
 
 #### Neither excludes nor includes

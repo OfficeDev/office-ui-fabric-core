@@ -304,6 +304,9 @@
 .ms-Icon--PageAdd::before { @include ms-Icon--PageAdd }
 .ms-Icon--NumberedList::before { @include ms-Icon--NumberedList }
 .ms-Icon--Glimmer::before { @include ms-Icon--Glimmer }
+.ms-Icon--SkypeCheck::before { @include ms-Icon--SkypeCheck; }
+.ms-Icon--SkypeClock::before { @include ms-Icon--SkypeClock; }
+.ms-Icon--SkypeMinus::before { @include ms-Icon--SkypeMinus; }
 
 // Modifier: Place the icon in a circle.
 .ms-Icon--circle {

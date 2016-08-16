@@ -70,16 +70,16 @@ var Config = function() {
     };
   this.typescriptProject = Plugins.tsc.createProject(this.typescriptConfig);
 	this.nugetConfig = {
-		id: "OfficeUIFabric",
-		title: "Office UI Fabric",
+		id: "OfficeUIFabricCore",
+		title: "Office UI Fabric Core",
 		version: pkg.version,
 		authors: "Microsoft Corporation",
 		owners: "Microsoft Corporation",
 		description: "Fabric is a responsive, mobile-first, front-end framework, designed to make it quick and simple for you to create web experiences using the Office Design Language. It’s easy to get up and running with Fabric—whether you’re creating a new Office experience from scratch or adding new features to an existing one.",
 		summary: "The front-end framework for building experiences for Office and Office 365.",
 		language: "en-us",
-		projectUrl: "https://github.com/OfficeDev/Office-UI-Fabric",
-		licenseUrl: "https://github.com/OfficeDev/Office-UI-Fabric/blob/master/LICENSE",
+		projectUrl: "https://github.com/OfficeDev/Office-UI-Fabric-Core",
+		licenseUrl: "https://github.com/OfficeDev/Office-UI-Fabric-Core/blob/master/LICENSE",
 		copyright: "Copyright (c) Microsoft Corporation",
 		requireLicenseAcceptance: true,
 		tags: "Microsoft UI Fabric CSS",

@@ -17,7 +17,7 @@ Fabric is a responsive, mobile-first collection of styles and tools designed to 
 ##What's included
 This repository contains the core styles used across all aspects of Fabric including icons, type, fonts, colors, the grid, etc. If you have any issues or pull requests related to the JS components, please do so in the [Office UI Fabric JS repository](https://github.com/OfficeDev/office-ui-fabric-js). For more information about the React components, check out the [Office UI Fabrc React repository](https://github.com/OfficeDev/office-ui-fabric-react).
 
-For documentation on Fabric's last stable version that included components, check out the [Fabric 2.6.1 get started guide](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/BUILDING.md) for more info.
+For documentation on Fabric's last stable version that included components, check out the [Fabric 2.6.1 get started guide](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md) for more info.
 
 
 ##Get started
@@ -37,7 +37,7 @@ When you're ready to create an Office Add-in with Fabric, take a look at the [Us
 
 ##Contribute to Fabric
 
-Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric/issues). For details on our contribution process and how we label issues, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md) page.
+Bug reports, feature requests, and questions are posted on the [issue tracker](https://github.com/OfficeDev/Office-UI-Fabric-core/issues). For details on our contribution process and how we label issues, see our [contributing](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/CONTRIBUTING.md) page.
 
 
 ##Licenses

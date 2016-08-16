@@ -13,7 +13,6 @@
   @include ms-Icon();
 }
 
-
 // Modifiers: Each of the icons.
 .ms-Icon--GlobalNavButton::before { @include ms-Icon--GlobalNavButton }
 .ms-Icon--MapPin::before { @include ms-Icon--MapPin }
@@ -311,4 +310,22 @@
 // Modifier: Place the icon in a circle.
 .ms-Icon--circle {
   @include ms-Icon--circle;
+}
+
+// Icon size classes
+
+.ms-Icon--xs {
+  @include ms-Icon--xs;
+}
+
+.ms-Icon--s {
+  @include ms-Icon--s;
+}
+
+.ms-Icon--m {
+  @include ms-Icon--m;
+}
+
+.ms-Icon--l {
+  @include ms-Icon--l;
 }

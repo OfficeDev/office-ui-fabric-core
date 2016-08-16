@@ -17,7 +17,7 @@ Fabric is a responsive, mobile-first collection of styles and tools designed to 
 ##What's included
 This repository contains the core styles used across all aspects of Fabric including icons, type, fonts, colors, the grid, etc. If you have any issues or pull requests related to the JS components, please do so in the [Office UI Fabric JS repository](https://github.com/OfficeDev/office-ui-fabric-js). For more information about the React components, check out the [Office UI Fabric React repository](https://github.com/OfficeDev/office-ui-fabric-react).
 
-For documentation on Fabric's last stable version that included components, check out the [Fabric 2.6.1 get started guide](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md) for more info.
+For documentation on Fabric's last stable version that included components, check out the [Fabric 2.6.1 get started guide](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/V2GETSTARTED.md).
 
 
 ##Get started

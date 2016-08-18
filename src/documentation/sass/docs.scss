@@ -92,25 +92,6 @@ $high-contrast-green: #3ff23f;
 @import './_RightNav.scss';
 @import './_ParagraphStyles.scss';
 
-#Header {
-    position: fixed;
-    top: 0;
-    height: 50px;
-    left: 0;
-    right: 0;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 20px;
-    background: #005a9e;
-    overflow: hidden;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    z-index: 10;
-}
-
 .full-width-container {
     margin-top: 0 !important;
     padding-top: 0;
@@ -203,10 +184,6 @@ $high-contrast-green: #3ff23f;
     to { transform:translate3d(80px, 0px, 0px); }
 }
 
-#banner-image {
-  display: none;
-}
-
 #header-container.homePage {
     height: auto;
 }
@@ -218,145 +195,6 @@ $high-contrast-green: #3ff23f;
     .fabric-ie #layout-navigation {top: 0; }
 }
 
-#stage_8
-{
-    position: absolute !important;
-    z-index: 0;
-    top: -156px;
-    left: 50%;
-
-    width: 869px;
-    height: 570px;
-
-    -webkit-transform: translateX(-50.6%) scale(.4);
-        -ms-transform: translateX(-50.6%) scale(.4);
-            transform: translateX(-50.6%) scale(.4);
-
-    backface-visiblity: hidden;
-}
-
-@media (min-width: 480px)
-{
-    #stage_8
-    {
-        z-index: 0;
-        top: -132px;
-
-        -webkit-transform: translateX(-50%) scale(.6);
-            -ms-transform: translateX(-50%) scale(.6);
-                transform: translateX(-50%) scale(.6);
-    }
-}
-
-@media (min-width: 1024px)
-{
-    #stage_8
-    {
-        top: -42px;
-        left: auto;
-        right: -207px;
-
-        -webkit-transform: scale(.78);
-            -ms-transform: scale(.78);
-                transform: scale(.78);
-
-        backface-visiblity: hidden;
-    }
-}
-
-#stage_5
-{
-    position: absolute !important;
-    z-index: 0;
-    top: -157px;
-    left: 50%;
-    width: 869px;
-    height: 570px;
-
-    -webkit-transform: translateX(-50%) scale(.4);
-        -ms-transform: translateX(-50%) scale(.4);
-            transform: translateX(-50%) scale(.4);
-
-    backface-visiblity: hidden;
-}
-
-@media (min-width: 480px)
-{
-    #stage_5
-    {
-        position: absolute !important;
-        z-index: 0;
-        top: -132px;
-        left: 50%;
-
-        width: 869px;
-        height: 570px;
-
-        -webkit-transform: translateX(-49%) scale(.5);
-            -ms-transform: translateX(-49%) scale(.5);
-                transform: translateX(-49%) scale(.5);
-
-        backface-visiblity: hidden;
-    }
-}
-
-@media (min-width: 1024px)
-{
-    #stage_5
-    {
-        position: absolute !important;
-        z-index: 0;
-        top: -42px;
-        left: auto;
-        right: -230px;
-        width: 869px;
-        height: 570px;
-
-        -webkit-transform: translateX(0) scale(.78);
-            -ms-transform: translateX(0) scale(.78);
-                transform: translateX(0) scale(.78);
-
-        backface-visiblity: hidden;
-    }
-}
-
-#stage_2
-{
-    position: absolute !important;
-    z-index: 0;
-    top: -54px;
-    left: 50%;
-
-    width: 869px;
-    height: 570px;
-
-    -webkit-transform: translateX(-50%) scale(.63);
-        -ms-transform: translateX(-50%) scale(.63);
-            transform: translateX(-50%) scale(.63);
-
-    backface-visiblity: hidden;
-}
-
-@media (min-width: 1024px)
-{
-    #stage_2
-    {
-        position: absolute !important;
-        z-index: 0;
-        top: 47px;
-        left: auto;
-        right: -57px;
-
-        width: 869px;
-        height: 570px;
-
-        -webkit-transform: scale(.9);
-            -ms-transform: scale(.9);
-                transform: scale(.9);
-
-        backface-visiblity: hidden;
-    }
-}
 
 #branding {
     #logo-link {

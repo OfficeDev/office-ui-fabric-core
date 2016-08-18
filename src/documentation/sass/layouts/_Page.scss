@@ -1,10 +1,10 @@
-$docs-sideNavWidths: 180px;
+$docs-sideNavWidths: 300px;
 
 .docs-Page {
-  margin: $HeaderHeight auto 100px auto;
+  margin: $HeaderHeight auto 50px auto;
   padding: 0 20px;
   position: relative;
-  min-height: 1148px; // @todo: This is a hacky way to make sure there's room for the list of components
+  overflow: hidden;
 }
 
 .docs-Page--home {
@@ -23,12 +23,14 @@ $docs-sideNavWidths: 180px;
     position: fixed;
     top: $HeaderHeight; // Brings the top roughly in line with the first header on the page
     width: $docs-sideNavWidths;
+    height: 100%;
+    border-right: 1px solid #eeeeee;
 }
 
 // On larger screens, show and position the navs
 @media (min-width: $ms-screen-xl-min) {
     .docs-Page.has-leftNav {
-        padding-left: $docs-sideNavWidths;
+        padding-left: $docs-sideNavWidths + 30px;
         
         .docs-Page-leftNav {
             left: 0;

@@ -48,37 +48,21 @@
 
     a.LeftNav-link {
         display: block;
-
-
-            height: 40px;
-            font-family: "Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif;
-            font-size: 12px;
-            line-height: 40px;
-            margin: 5px 0;
-            padding: 0 40px;
-            border: none;
-            border-bottom: 1px solid #eaeaea;
-            text-transform: uppercase;
-            cursor: pointer;
-            color: #333333;
-            background: #ffffff;
-            outline: transparent;
-
-        // text-overflow: ellipsis;
-        // white-space: nowrap;
-        // text-decoration: none;
-        // line-height: 30px;
-        // height: 30px;
-        // overflow: hidden;
-        // padding-left: 10px;
-        // @include ms-font-m;
-        // overflow: visible;
-        // text-overflow: unset;  
+        height: 40px;
+        font-family: "Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 40px;
+        padding: 0 40px;
+        border: none;
+        cursor: pointer;
+        color: #333;
+        background: #ffffff;
+        outline: transparent;
 
         // States
-        &:hover { color: $ms-color-neutralDark; }
-        &:visited, &:active {
-            color: $ms-color-neutralDark;
+        &:hover {
+            background: #f8f8f8;
+            cursor: pointer;
         }
 
         &:focus {
@@ -98,17 +82,23 @@
         }
         
         &.LeftNav-link--active {
-          color: $ms-color-themePrimary;
-          &:visited, &:active {
-              color: $ms-color-themePrimary;
-          }
-        }
-        
-        &:before {
-            right: -10px;
-            left: 0;
-            bottom: 0;
-            top: 0;
+            color: $ms-color-themePrimary;
+            @include ms-bgColor-info;
+            position: relative;
+            color: #333;
+
+            &:after {
+                content: '';
+                position: absolute;
+                border-left: 2px solid black;
+                top: 0; 
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+             &:visited, &:active {
+                color: $ms-color-themePrimary;
+            }
         }
     }
 

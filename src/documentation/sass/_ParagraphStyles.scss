@@ -2,60 +2,6 @@
 // -- All styles that affect fonts and images inside of the body content
 
 #body-content {
-
-  .docs-Image {
-      height: auto;
-      width: 100%;
-      margin-bottom: 40px;
-      margin-top: 28px;
-
-        @media(min-width: $ms-screen-xl-min) {
-            margin-top: 40px;
-        }
-
-      img {
-          width: 100%;
-      }
-  }
-
-
-
-
-  .docs-calloutSpacer {
-      margin-bottom: 24px;
-        @include ms-baseFont;
-        font-weight: $ms-font-weight-semilight;
-
-        @media(min-width: $ms-screen-xl-min) {
-             margin-top: 24px;
-        }
-  }
-
-  .docs-calloutSpacer.docs-calloutSpacer--noMarginBottom {
-      margin-bottom: 0;
-  }
-
-    .docs-mediumSpacer {
-  }
-
-  .ms-font-xxl {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        font-size: $ms-font-size-xl;
-        margin-bottom: 12px;
-        @include ms-baseFont;
-        font-weight: $ms-font-weight-semilight;
-        line-height: 40px;
-        font-size: $ms-font-size-xxl;
-        margin-top: 16px;
-
-        @media(min-width: $ms-screen-xl-min) {
-            margin-top: 20px;
-        }
-
-    }
-
     .ms-font-xxl:first-child {
         margin-top: 0;
     }
@@ -71,66 +17,10 @@
     .ms-font-s {
         line-height: 20px;
     }
-        
-
-    .docs-mediumHeading {
-        margin-top: 24px;
-    }
-
-    .docs-bulletedList {
-        li {
-            line-height: 20px;
-            margin-bottom: 10px;
-            @media (min-width: $ms-screen-lg-min) {
-                font-size: $ms-font-size-m;
-                line-height: 20px;
-                margin-bottom: 10px;
-            }
-        }
-    }
-
-    .docs-numberedList {
-        li {
-            line-height: 20px;
-            margin-bottom: 10px;
-            @media (min-width: $ms-screen-lg-min) {
-                font-size: $ms-font-size-m;
-                line-height: 20px;
-                margin-bottom: 10px;
-            }
-        }
-    }
-
-    .docs-bulletedList.no-calloutMargin {
-        margin-bottom: 17px;
-        @media (min-width: $ms-screen-lg-min) {
-            margin-bottom: 20px;
-        }
-    }
-
-    p.no-calloutMargin {
-        margin-bottom: 17px;
-        @media (min-width: $ms-screen-lg-min) {
-            margin-bottom: 20px;
-        }
-    }
 
     a {
-        color: $ms-color-themePrimary;
         text-decoration: none;
         cursor: pointer;
-
-        &:hover,
-        &:focus {
-            color: $ms-color-themeDarker;
-        }
-
-        &:active {
-            color: $ms-color-themePrimary;
-        }
-    }
-
-    h2.ms-font-xxl:first-child {
     }
 
     pre {
@@ -142,5 +32,4 @@
             padding: 14px;
         }
     }
-
 }

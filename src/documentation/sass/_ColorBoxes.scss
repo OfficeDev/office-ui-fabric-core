@@ -15,6 +15,7 @@ $ms-InfoBarHeight: 30px;
   p {
     line-height: 20px;
     font-size: $ms-font-size-s;
+    margin: 0;
   }
   .mobileText {
     @include ms-baseFont;
@@ -120,8 +121,8 @@ $ms-InfoBarHeight: 30px;
   position:absolute;
   width:290px;
   height: inherit;
-  margin-left: -145px;
-  left: 50%;
+  right: -14%;
+  top: 100%;
   z-index:($ms-zIndex-Callout + $ms-zIndex-front);
   display: none;
   pointer-events: none;

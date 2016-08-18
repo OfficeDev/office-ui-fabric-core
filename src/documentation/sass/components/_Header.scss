@@ -1,3 +1,21 @@
+#Header {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    left: 0;
+    right: 0;
+    line-height: 50px;
+    padding: 0 20px;
+    background: #005a9e;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 10;
+}
+
 .docs-Header {
 	width: 100%;
     height: $docs-smBannerHeight + $docs-pagesMarginTop;
@@ -10,70 +28,7 @@
     }
 
     @media(min-width: $docs-mobileNavBreakpoint) {
-    	margin-top: $docs-pagesMarginTop;
     	border-top: none;
-    	height: $docs-lgBannerHeight;
-    }
-
-	.docs-centerContent {
-		transition: all 0.5s $ms-ease1;
-	}
-	
-    // @todo: This shouldn't have to be an ID to be
-    //        more specific than '#body-content a'
-	a#docs-PagesBannerLogo {
-		color: $ms-color-white;
-		top: 54px;
-		float: left;
-		position: relative;
-		left: 50%;
-    transform: translateX(-50%);
-    font-size: 36px;
-
-		@media (min-width: $ms-screen-xl-min) {
-      transition: all 1s $ms-ease1;
-			font-size: 44px;
-			transform: translateX(0);
-      left: 0;
-		}
-        
-    &:hover {
-        color: $ms-color-neutralLight;
-    }
-
-		&:focus {
-			&:before {
-				border: 1px solid $ms-color-white;
-			}
-		}
-	}
-}
-
-
-// Fabric sub pages banner
-
-.docs-subPageCenter {
-	position: relative;
-    display: block;
-    max-width: $docs-pageMaxWidth;
-    margin: 0 auto;
-    height: $docs-smBannerHeight;
-    @media (min-width: $ms-screen-xl-min) {
-    	height: $docs-lgBannerHeight;
-    }
-}
-
-
-.docs-subPagePosition {
-	height: $docs-smBannerHeight;
-    position: relative;
-    
-	@media (min-width: 967px) {
-		margin: 0 auto;
-	    height: 173px;
-	    max-width: $docs-InnerWidth;
-	}
-	@media (min-width: $ms-screen-xl-min) {
     	height: $docs-lgBannerHeight;
     }
 }

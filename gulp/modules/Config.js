@@ -15,7 +15,6 @@ var Config = function() {
   this.paths = {
     dist: 'dist',
     src: 'src',
-    srcDocsPagesExamples: 'examples',
 		componentsPath : 'src/components',
     srcLibPath: 'lib',
 	};
@@ -34,7 +33,6 @@ var Config = function() {
   this.paths.distDocsSamples = this.paths.distDocumentation + '/Samples';
   this.paths.distDocsStyles = this.paths.distDocumentation + '/Styles';
   this.paths.bundlePath = this.paths.dist + '/bundles';
-  this.paths.distLibPath = this.paths.distDocumentation + '/lib';
   
   this.paths.srcSamples = this.paths.src + '/samples';
   this.paths.srcSass = this.paths.src + '/sass';

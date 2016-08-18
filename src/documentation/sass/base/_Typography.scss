@@ -52,15 +52,10 @@ p {
 
 #body-content {
     a {
-        color: $ms-color-themePrimary;
         text-decoration: none;
         cursor: pointer;
         position: relative;
         white-space: nowrap;
-
-        &:hover {
-            color: $ms-color-themeDarker;
-        }
 
         &:focus {
             outline: none !important;

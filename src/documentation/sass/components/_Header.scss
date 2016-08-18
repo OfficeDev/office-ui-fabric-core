@@ -1,4 +1,4 @@
-#Header {
+.docs-Header {
     position: fixed;
     top: 0;
     height: 50px;
@@ -9,28 +9,12 @@
     background: #005a9e;
     overflow: hidden;
     white-space: nowrap;
+    z-index: 10;
+	width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    z-index: 10;
-}
-
-.docs-Header {
-	width: 100%;
-    height: $docs-smBannerHeight + $docs-pagesMarginTop;
-    background-color: #0078d7;
-    position: relative;
-    border-top: $docs-pagesMarginTop solid $ms-color-black;
-    
-    @media (min-width: $ms-screen-xl-min) {
-    	height: $docs-lgBannerHeight + $docs-pagesMarginTop;
-    }
-
-    @media(min-width: $docs-mobileNavBreakpoint) {
-    	border-top: none;
-    	height: $docs-lgBannerHeight;
-    }
 }
 
 .docs-bannerButtons {

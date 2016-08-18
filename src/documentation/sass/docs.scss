@@ -55,18 +55,13 @@ $high-contrast-green: #3ff23f;
 
 
 // Base styles
-@import './base/_Lists.scss';
 @import './base/_Typography.scss';
 
 // Import documentation component and layout styles
 // @todo: Remove the #body-content wrapper once specificity issues with dev.office.com are fixed
 
 #body-content {
-    @import './components/_BlogPost.scss';
-    @import './components/_Carousel.scss';
-    @import './components/_CarouselButtons.scss';
     @import './components/_Header.scss';
-    @import './components/_MobileNav.scss';
     @import './components/_Nav.scss';
     @import './components/_Styles.scss';
     @import './components/_Table.scss';
@@ -75,47 +70,20 @@ $high-contrast-green: #3ff23f;
 
 // Import Pages
 @import './_AnimationsSection.scss';
-@import './_ChangelogPage.scss';
+@import './_ColorBoxes.scss';
 @import './_ColorSection.scss';
-@import './_ComponentsPage.scss';
 @import './_FabricApp.scss';
 @import './_IconsSection.scss';
 @import './_LeftNav.scss';
 @import './_MastHead.scss';
 @import './_NavBar.scss';
-@import './_OverviewPage.scss';
+@import './_ParagraphStyles.scss';
 @import './_ResponsiveGridSection.scss';
 @import './_TypographySection.scss';
-@import './_OFficeDevOverrides.scss';
-@import './_ComponentPicker.scss';
-@import './_ColorBoxes.scss';
-@import './_RightNav.scss';
-@import './_ParagraphStyles.scss';
 
 .full-width-container {
     margin-top: 0 !important;
     padding-top: 0;
-}
-
-.docs-MastHead-buttonText.ms-font-s {
-    color: #ffffff;
-}
-
-#header-container {
-    width: 100%;
-    float: left;
-    position: relative;
-    z-index: 10;
-    min-height: 80px;
-    pointer-events: none;
-
-    @media (min-width: $ms-screen-lg-min) {
-        height: 214px;
-    }
-
-    @media (min-width: 967px) {
-        height: 260px;
-    }
 }
 
 // slideRightIn80
@@ -184,26 +152,9 @@ $high-contrast-green: #3ff23f;
     to { transform:translate3d(80px, 0px, 0px); }
 }
 
-#header-container.homePage {
-    height: auto;
-}
-
 .fabric-ie #layout-navigation {top: 56px; }
 .fabric-ie div.docs-showNavigation .tier-1 {margin-top: 57px; }
 .widget-FabricStyleOverrides {display: none;}
 @media (max-width: 700px) {
     .fabric-ie #layout-navigation {top: 0; }
-}
-
-
-#branding {
-    #logo-link {
-       & > .logo {
-           color: $ms-color-black;
-       }
-    }
-    
-    #logo-link:before {
-       //  display: none;
-    }
 }

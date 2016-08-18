@@ -32,11 +32,11 @@
         font-size: 0;
     }
 
-    i.ms-Icon--check::before {
-        font-size: $ms-font-size-m;
+    i.ms-Icon--CheckMark::before {
+        font-size: $ms-font-size-l;
     }
     
-    i.ms-Icon--x::before {
+    i.ms-Icon--Cancel::before {
         font-size: $ms-font-size-m;
     }
 }

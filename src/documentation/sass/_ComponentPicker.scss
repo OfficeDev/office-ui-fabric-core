@@ -1,0 +1,207 @@
+$componentPreview-stageHeight: 300px;
+
+#body-content {
+
+	.componentPreview {
+		width: 100%;
+		box-sizing: border-box;
+		div {
+			box-sizing: border-box;
+		}
+		&:first-child {
+			.componentPreview-title.ms-font-xxl {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.componentPreview-title.ms-font-xxl:first-child {
+		margin-top: 30px;
+	}
+
+	.componentPreview-title.ms-font-xxl {
+		margin-bottom: 10px;
+	    margin-top: 40px;
+	}
+
+	.componentPreview-actions {
+		width: 100%;
+		height: auto;
+	}
+	.componentPreview-ActionsLeft {
+		display: none;
+		i {
+			font-size: 20px;
+		}
+		@media(min-width: $ms-screen-lg-min) {
+			width: 49.2%;
+			display: inline-block;
+			text-align: left;
+		}
+		@media(min-width: $ms-screen-xxl-min) {
+			width: 49.2%;
+		}
+	}
+	.componentPreview-ActionsRight {
+		width: 100%;
+		display: inline-block;
+		text-align: left;
+		transform: translateX(4px);
+		@media(min-width: $ms-screen-lg-min) {
+			width: 50%;
+			display: inline-block;
+			text-align: right;
+			margin-left: -2px;
+			transform: translateX(0);
+		}
+
+		.ms-Button {
+			margin-left: -3px;
+			margin-top: 0;
+			display: inline-block;
+		}
+
+		.componentPreview-viewJSButton {
+			display: none;
+		}
+
+		.componentPreview-viewJSButton {
+			display: none;
+		}
+	}
+
+	.componentPreview-viewPortButton {
+		display: inline-block;
+		width: 33px;
+		height: 28px;
+		opacity: 0.4;
+		text-align: center;
+		transition: opacity $ms-ease1 $ms-duration3;
+
+		&:first-child {
+			margin-left: -9px;
+		}
+
+		img {
+			vertical-align: middle;
+			display: inline-block;
+		}
+	}
+
+	.componentPreview-viewPortButton.is-disabled {
+		opacity: 0.1;
+	}
+
+	.componentPreview-viewPortButton.is-active {
+		opacity: 0.6;
+	}
+
+	.componentPreview-viewPortButton:hover {
+		cursor: pointer;
+	}
+
+	.componentPreview-stage {
+		width: 100%;
+		border: 2px solid $ms-color-neutralLighter;
+		height: 300px;
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: width $ms-ease1 $ms-duration3;
+	}
+
+	.componentPreview-innerStage {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
+	.componentPreview-part-example {
+		height: 100%;
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+			overflow: hidden;
+			min-height: $componentPreview-stageHeight;
+		}
+	}
+
+	.componentPreview-iframe {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	.componentPreview-part-html {
+		pre {
+			border: 0;
+			padding: 0;
+			margin: 0;
+			border-radius: 0;
+			min-height: $componentPreview-stageHeight;
+		}
+
+		code {
+			margin-top: -18px;
+			border: 0;
+			margin: 0;
+			min-height: $componentPreview-stageHeight;
+		}
+	}
+
+
+	.componentPreview-part-js {
+		display: none;
+		pre {
+			border: 0;
+			padding: 0;
+			margin: 0;
+			border-radius: 0;
+			min-height: $componentPreview-stageHeight;
+		}
+
+		code {
+			margin-top: -18px;
+			border: 0;
+			margin: 0;
+			min-height: $componentPreview-stageHeight;
+		}
+	}
+
+	.componentPreview-part-example {
+		display: none;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+	    width: 100%;
+	    overflow: hidden;
+	    min-height: $componentPreview-stageHeight;
+	}
+
+	.componentPreview-part-html,
+	.componentPreview-part-js {
+		display: none;
+		height: 0;
+		opacity: 0;
+		position: absolute;
+	    width: 100%;
+	    overflow-y: scroll;
+	    height: 100%;
+	    min-height: $componentPreview-stageHeight;
+	}
+
+	.componentPreview-part-html.is-active,
+	.componentPreview-part-example.is-active,
+	.componentPreview-part-js.is-active {
+		display: block;
+		opacity: 1;
+	}
+
+
+	.componentPreview-part-css {
+		display: none;
+	}
+
+
+}

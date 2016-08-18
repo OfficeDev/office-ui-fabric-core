@@ -1,0 +1,126 @@
+
+#body-content {
+    .LeftNav { 
+        width: $LeftNavWidth;
+        text-align: right;
+        margin-top: 42px;
+        display: none;
+
+        @media (min-width: 967px) {
+            display: block;
+        }
+
+        // States
+        &.is-sticky {
+            top: 62px;
+            position: fixed;
+            margin-top: 0;
+        }
+    }
+
+    .LeftNav-links {
+        margin: 0;
+    }
+
+    .LeftNav-title {
+        text-transform: uppercase;
+        margin-top: 0;
+    }
+
+    .LeftNav-linkGroup {
+        padding-bottom: 20px;
+    }
+
+    .LeftNav-chevron {
+        position: absolute;
+        height: 30px;
+        width: 16px;
+        left: 17px;
+        line-height: 30px;
+        transition: transform $ms-duration1 $ms-ease1;
+    }
+
+    .LeftNav-item {
+        display: block;
+        text-align: left;
+        margin: 0;
+    }
+
+    a.LeftNav-link {
+        display: block;
+
+
+            height: 40px;
+            font-family: "Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif;
+            font-size: 12px;
+            line-height: 40px;
+            margin: 5px 0;
+            padding: 0 40px;
+            border: none;
+            border-bottom: 1px solid #eaeaea;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #333333;
+            background: #ffffff;
+            outline: transparent;
+
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        // text-decoration: none;
+        // line-height: 30px;
+        // height: 30px;
+        // overflow: hidden;
+        // padding-left: 10px;
+        // @include ms-font-m;
+        // overflow: visible;
+        // text-overflow: unset;  
+
+        // States
+        &:hover { color: $ms-color-neutralDark; }
+        &:visited, &:active {
+            color: $ms-color-neutralDark;
+        }
+
+        &:focus {
+            color: $ms-color-neutralDark;
+             outline: none !important;
+             outline-style:none;
+            box-shadow:none;
+            border-color:transparent;
+        }
+
+        &.is-selected {
+            @include ms-baseFont;
+            font-weight: $ms-font-weight-semibold;
+            color: $ms-color-black;
+            border-left-width: 2px;
+            border-left-style: solid;
+        }
+        
+        &.LeftNav-link--active {
+          color: $ms-color-themePrimary;
+          &:visited, &:active {
+              color: $ms-color-themePrimary;
+          }
+        }
+        
+        &:before {
+            right: -10px;
+            left: 0;
+            bottom: 0;
+            top: 0;
+        }
+    }
+
+    a:hover.LeftNav-link {
+        color: $ms-color-themePrimary;
+    }
+    
+    // @todo: Can LeftNav and RightNav be the same component?
+    .LeftNav-links.is-stuck,
+    .RightNav-links.is-stuck {
+        position: fixed;
+        top: 80px;
+    }
+
+}

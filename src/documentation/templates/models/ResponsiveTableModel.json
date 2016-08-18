@@ -1,0 +1,80 @@
+{
+  "items": [
+    {
+      "class": "ms-u-hiddenSm",
+      "SM": true
+    },
+    {
+      "class": "ms-u-hiddenMd",
+      "MD": true
+    },
+    {
+      "class": "ms-u-hiddenMdDown",
+      "SM": true,
+      "MD": true
+    },
+    {
+      "class": "ms-u-hiddenMdUp",
+      "MD": true,
+      "LG": true,
+      "XL": true,
+      "XXL": true,
+      "XXXL": true
+    },
+    {
+      "class": "ms-u-hiddenLg",
+      "LG": true
+    },
+    {
+      "class": "ms-u-hiddenLgDown",
+      "SM": true,
+      "MD": true,
+      "LG": true
+    },
+    {
+      "class": "ms-u-hiddenLgUp",
+      "LG": true,
+      "XL": true,
+      "XXL": true,
+      "XXXL": true
+    },
+    {
+      "class": "ms-u-hiddenXl",
+      "XL": true
+    },
+    {
+      "class": "ms-u-hiddenXlDown",
+      "SM": true,
+      "MD": true,
+      "LG": true,
+      "XL": true
+    },
+    {
+      "class": "ms-u-hiddenXlUp",
+      "XL": true,
+      "XXL": true,
+      "XXXL": true
+    },
+    {
+      "class": "ms-u-hiddenXxl",
+      "XXL": true
+    },
+    {
+      "class": "ms-u-hiddenXxlDown",
+      "SM": true,
+      "MD": true,
+      "LG": true,
+      "XL": true,
+      "XXL": true
+    },
+    {
+      "class": "ms-u-hiddenXxlUp",
+      "XXL": true,
+      "XXXL": true
+    },
+    {
+      "class": "ms-u-hiddenXxxl",
+      "XXXL": true
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+@@include('../../templates/modules/components/DocumentationPageHeader.html')
+<div class="docs-Styles-section" id="color">
+  <h2>Color</h2>
+  <p>Fabric includes 9 theme colors and 11 neutral colors. Each has helper classes for text, border, background, and hover states. These color classes act as hooks into the suite-wide theming system. When the theming system is enabled and your app or add-in is consuming the suite navigation, these classes pick up the user's chosen theme.</p>
+
+  <h3>Theme colors</h3>
+  <p>Use theme colors in wayfinding, navigation, and key interactions like primary actions and current or selected indicators.</p>   
+  
+  <div class="docs-colorContainer" role="grid">
+    {{#each ThemeColorsModel.items}}
+      {{> Color this }}
+    {{/each}}
+  </div>
+
+  <h4>Neutral Colors</h4>
+  <p>Neutral colors include black, gray, and white. Use darker shades of gray for primary content, such as text and titles. Use black sparingly for high-impact strings (labels, names) and hover states. Use lighter shades of gray for supporting graphic elements and page areas.</p>
+  
+  <div class="docs-colorContainer" role="grid">
+    {{#each NeutralColorsModel.items}}
+      {{> Color this }}
+    {{/each}}
+  </div>
+
+  <h4>Accent Colors</h4>
+  <p>Fabric also includes accent colors from the Microsoft color palette.</p>
+ 
+  <div class="docs-colorContainer" role="grid">
+    {{#each AccentColorsModel.items}}
+      {{> Color this }}
+    {{/each}}
+  </div>
+
+  <h4>Message Colors</h4>
+  <p>Use these colors when you need to communicate the system's status, such as in a notification or error message.</p>
+  
+  <div class="docs-colorContainer" role="grid">
+    {{#each MessageColorsModel.items}}
+      {{> MessageColor this }}
+    {{/each}}
+  </div>
+</div>
+@@include('../../templates/modules/components/DocumentationPageFooter.html')

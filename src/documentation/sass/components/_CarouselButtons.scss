@@ -1,0 +1,84 @@
+.docs-CarouselButtons {
+    margin-top: 20px;
+}
+
+// Inherits from .ms-Button default styles
+.docs-CarouselButtons-button {
+    background: none;
+    color: $ms-color-white;
+    margin-right: 24px;
+    text-align: center;
+    width: 200px;
+    transition: all 0.3s;
+    margin-left: 0;
+    margin-bottom: 8px;
+    
+    @media (min-width: $ms-screen-lg-min) {
+      margin-left: 8px;
+      margin-bottom: 0;
+    }
+    
+    .ms-Button-icon {
+        display: inline-block; // Display the icon, which is hidden by default for this button type.
+        margin-right: 8px;
+        
+        img {
+            margin-top: -2px;
+        }
+    }
+    
+    .ms-Button-label {
+        color: $ms-color-white;
+        transition: all 0.3s;
+    }
+    
+    &:hover,
+    &:focus {
+        background: rgba(255,255,255,0.9);
+        color: $ms-color-neutralPrimary;
+        
+        .ms-Button-label {
+            color: $ms-color-neutralPrimary;
+        }
+    }
+    
+    &:focus {
+        background: rgba(255,255,255,0.9);
+        color: $ms-color-neutralPrimary;
+        
+        &::before {
+            display: none;
+        }
+        
+        .ms-Button-label {
+            color: $ms-color-neutralPrimary;
+        }
+    }
+}
+
+@media (min-width: $ms-screen-xl-min) {
+  .docs-CarouselButtons {
+    margin-top: 50px;
+  }
+}
+
+.docs-CarouselButtons-button {
+    
+    @include high-contrast {
+        border: 1px solid $high-contrast-yellow;
+        
+        .ms-Button-label,
+        .ms-Button-icon {
+            color: $high-contrast-yellow;
+        }
+    }
+    
+    @include high-contrast-black-on-white  {
+        border: 1px solid $high-contrast-blueBG;
+        
+        .ms-Button-label,
+        .ms-Button-icon {
+            color: $high-contrast-blueBG;
+        }
+    }
+}

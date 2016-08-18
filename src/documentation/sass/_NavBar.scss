@@ -1,0 +1,243 @@
+
+#body-content {
+  .docs-Navigation {
+    margin: 0 auto;
+    position: relative;
+    max-width: $docs-pageMaxWidth;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .docs-InnerNavigation {
+    @media (min-width: $docs-mobileNavBreakpoint) {
+      margin: 0 auto;
+      margin-left: $docs-viewLeftMargin;
+      width: calc(100% - 214px);
+      max-width: $docs-InnerWidth;
+      padding: 0;
+      margin-top: 4px;
+    }
+  }
+}
+
+.docs-MainContainer {
+  
+  .navbar-default .navbar-nav>li:first-of-type, 
+  .navbar-default .navbar-nav>li {
+    padding-left: 40px;
+    margin-right: 0;
+    @media (min-width: 967px) { 
+      padding-left: 0;
+      margin-right: 18px;
+    }
+  }
+
+  .navbar-nav {
+      margin-bottom: 54px;
+      list-style-type: none;
+      background-color: $ms-color-white;
+      padding-left: 30px;
+
+      @media (min-width: 967px) { 
+        padding-left: 0;
+      }
+
+      & > li {
+          padding: 0;
+          margin: 0;
+          margin-right: 18px;
+          float: left;
+          display: block;
+          max-height: 40px;
+          border-top: 0;
+          padding-left: 40px;
+          width: 100%;
+          text-align: left;
+
+          @media (min-width: 967px) { 
+            padding-left: 0;
+            width: auto;
+            margin-right: 20px;
+          }
+
+          & > a {
+              @include ms-font-m;
+              padding: 0;
+              padding-top: 12px;
+              padding-bottom: 12px;
+              color: $ms-color-black;
+              text-align: left;
+              @media (min-width: 967px) { 
+                text-align: center;
+              }
+          }
+
+          & > a:hover {
+              color: $ms-color-black;
+          }
+
+          & > a:visited {
+              color: $ms-color-black;
+          }
+
+      }
+
+      & > li.current {
+        background-color: $ms-color-themeLighter;
+
+        @media (min-width: 967px) { 
+          background: none;
+          & > a {
+            color: $ms-color-black;
+            border-bottom: 2px solid $ms-color-themePrimary;
+          }
+        }
+
+      }
+  }
+}
+
+
+.zone.zone-before-content {
+  
+  .widget-before-content {
+
+    //Panel Container
+    &.widget-FabricPagesNavigation {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: $ms-zIndex-Panel;
+      display: none;
+      float: none;
+
+      &.is-open {
+        display: block;
+
+        .navbar-collapse {
+          @include drop-shadow(-30px, 0px, 30px, -30px, .2);
+          left: auto;
+          @include ms-u-slideRightIn40;
+          display: block;
+        }
+
+        .navbar-header  {
+          display: block;
+        }
+      }
+
+      @media (min-width: 967px) {
+        top: auto;
+        position: absolute;
+        bottom: 0;
+        padding-top: 8px;
+        display: none;
+        background-color: $ms-color-white;
+        display: block;
+        height: auto;
+
+      }
+
+      // Panel overlay
+      .navbar {
+        
+        background-color: $ms-color-whiteTranslucent40;
+        position: absolute;
+        bottom: 0;
+        left:   0;
+        right:  0;
+        top:    0;
+        z-index: $ms-zIndex-Overlay;
+        transition: opacity $ms-duration3 $ms-ease1;
+        
+        &.is-open {
+          cursor: pointer;
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        @media (min-width: 967px) {
+          position: relative;
+          display: block;
+          max-width: $docs-pageMaxWidth;
+          margin: 0 auto;
+          float: none;
+        }
+
+      }
+
+      // Panel Main
+      .navbar-collapse {
+        background-color: $ms-color-white;
+        bottom: 0;
+        position: fixed;
+        top: 0;
+        display: none; //prevent the panel from briefly showing up when the page loads
+        z-index: $ms-zIndex-front;
+        max-height: 100%;
+        padding-top: 47px;
+        padding-right: 0;
+        opacity: 1;
+        border-left: 1px solid $ms-color-neutralLight;
+        border-right: 1px solid $ms-color-neutralLight;
+        left: -40px;
+        pointer-events: auto;
+        width: 270px; // Add a pixel due to border-box.
+        padding-left: 0;
+        
+
+        @media (min-width: 967px) {
+          position: relative;
+          margin: 0 auto;
+          margin-left: 232px;
+          width: auto;
+          width: calc("100% - 232px");
+          float: none;
+          padding-top: 0;
+          border-left: 0;
+          box-shadow: none;
+          left: 0;
+        }
+
+      }
+
+      // Navbar Click Area
+      .navbar-header {
+        display: none;
+        opacity: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        z-index: $ms-zIndex-front - 1;
+
+        .navbar-header * {
+          display: none;
+        }
+
+        @media (min-width: 967px) {
+          display: none;
+        }
+
+      }
+
+
+      .navbar-nav {
+        padding-left: 0;
+        width: 100%;
+        margin-right: 0;
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+    }
+
+  }
+}
+
+.zone.zone-before-content.nav-is-open {
+  z-index: 11;
+}

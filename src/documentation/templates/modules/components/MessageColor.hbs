@@ -1,0 +1,27 @@
+<!-- Start Color -->
+<div class="ms-Grid-row" aria-label="First row of the color example for {{titleOne}} and {{titleTwo}}, this row of the color example shows an example for background color, border color, and font color"> 
+    <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-info {{bgClass}}" aria-label="Example for {{titleOne}}">
+        <p class="ms-font-size-m ms-fontColor-black">{{titleOne}}<br />
+        {{colorOne}}</p>
+    </div>
+    <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBoxBG {{#if secondBgClass}}{{secondBgClass}}{{else}}docs-colorBox-hasBg{{/if}}" aria-label="Example for {{titleTwo}}">
+        <p class="ms-font-size-m {{fontClass}}">{{titleTwo}}<br />
+        {{colorTwo}}</p>
+    </div>
+    <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox {{#if thirdBgClass}}{{thirdBgClass}}{{else}}docs-colorBox-hasBg{{/if}} docs-colorBoxBorder {{borderClass}}" aria-label="Example for {{borderClass}}">
+        <!-- Nothing its a border -->
+    </div>
+</div>
+
+<div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example {{titleOne}} and {{titleTwo}}, this row has the specific class names listed for background color, border color, and font color"> 
+    <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class {{bgClass}}">
+        <p class="ms-font-size-m"><span class="mobileText">Background<br /></span> {{bgClass}}</p>
+    </div>
+    <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class {{fontClass}}">
+        <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> {{fontClass}}</p>
+    </div>
+    <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class {{borderClass}}">
+        <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> {{borderClass}}</p>
+    </div>
+</div>
+<!-- End Color -->

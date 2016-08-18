@@ -1,0 +1,59 @@
+<tr>
+  <td scope="row">{{os}}</td>
+  <td {{#if chrome}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if chrome}}
+    <i class="ms-Icon ms-Icon--{{chromeIcon}} ms-fontColor-{{chromeColor}}" aria-hidden="true"></i>
+    Chrome (latest stable) {{chrome}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+  <td {{#if firefox}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if firefox}}
+    <i class="ms-Icon ms-Icon--{{firefoxIcon}} ms-fontColor-{{firefoxColor}}" aria-hidden="true"></i>
+    Firefox (last two versions) {{firefox}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+  <td {{#if safari}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if safari}}
+    <i class="ms-Icon ms-Icon--{{safariIcon}} ms-fontColor-{{safariColor}}" aria-hidden="true"></i>
+    Safari {{safari}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+  <td {{#if ie8}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if ie8}} 
+    <i class="ms-Icon ms-Icon--{{ie8Icon}} ms-fontColor-{{ie8Color}}" aria-hidden="true"></i>
+    IE8 {{ie8}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+  <td {{#if ie9}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if ie9}}
+    <i class="ms-Icon ms-Icon--{{ie9Icon}} ms-fontColor-{{ie9Color}}" aria-hidden="true"></i>
+    IE9 {{ie9}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+  <td {{#if ie10}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if ie10}}
+    <i class="ms-Icon ms-Icon--{{ie10Icon}} ms-fontColor-{{ie10Color}}" aria-hidden="true"></i>
+    IE10+ {{ie10}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+  <td {{#if edge}}class="docs-Table-visibleForScreenReaders"{{/if}}>
+    {{#if edge}}
+    <i class="ms-Icon ms-Icon--{{edgeIcon}} ms-fontColor-{{edgeColor}}" aria-hidden="true"></i>
+    Edge (latest) {{edge}} on {{os}}
+    {{else}}
+    N/A
+    {{/if}}
+  </td>
+</tr>

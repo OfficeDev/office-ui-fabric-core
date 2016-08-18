@@ -1,0 +1,61 @@
+<div class="docs-MobileNav">
+    <!-- TODO: Remove inline styles in next release -->
+    <a class="docs-MobileNav-menuButton js-openMobileNav" aria-label="Mobile navigation buttonopen menu with enter, touch, or click" style="font-size: 0;" tabindex="0" href="#" role="button">
+        <i class="ms-Icon ms-Icon--menu" aria-hidden="true" style="font-size: 22px"></i>
+        Menu
+    </a>
+    <script type="text/javascript">
+    // TODO: Remove for next release, temporary fix
+    jQuery(document).ready(function() {
+        setTimeout(function() {
+            function openMobileNav(setFocus) {
+                $('.ms-Panel').addClass('is-open');
+                $('.ms-Panel-main').attr('style', ''); // Trying to override Fabric Panel styles
+
+                // Add class to Office Dev navigation to allow the Panel to go on top
+                $('#layout-navigation').addClass('showing-fabric-nav');
+                $('#layout-header').addClass('showing-fabric-nav');
+                $('#layout-navigation').addClass('showing-fabric-nav');
+
+                if(setFocus) {
+                    document.querySelector('.docs-MobileNav-item a').focus();
+                }
+            }
+
+            function openMobileNavHandler(e, isKeypress) {
+                if(isKeypress) {
+                    if(e.keyCode == 13) {
+                        openMobileNav(true);
+                    }
+                } else {
+                    openMobileNav(false);
+                }
+            }
+
+            $('.js-openMobileNav').replaceWith($('.js-openMobileNav').clone());
+
+            // Setup hamburger button
+            $('.js-openMobileNav').click(function(e) {
+                openMobileNavHandler(e, false);
+                return false;
+            }.bind(this));
+
+            document.querySelector(".js-openMobileNav").addEventListener('keyup', function(e) {
+                openMobileNavHandler(e, true);
+                return false;
+            }.bind(this), false);
+            
+        }, 100);
+    });
+        
+    </script>
+
+    <div class="ms-Panel ms-Panel--small ms-Panel--left" id="ms-Panel">
+        <div class="ms-Overlay ms-Overlay--dark js-togglePanel"></div>
+        <div class="ms-Panel-main">
+            <div class="docs-MobileNav-items" role="navigation" aria-label="Fabric Menu">
+                @@include('../content/NavLinks.html')
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,331 @@
+$animationExample-height: 90px;
+
+.docs-animationsTable-header {
+    display: none;
+    .docs-animationExampleColumn {
+        display: none;
+    }
+
+    @media(min-width: $ms-screen-md-min) {
+        display: block;
+        .docs-animationExampleColumn {
+            display: block;
+        }
+    }
+
+}
+
+.docs-animationsTable-body,
+.docs-animationsTable-header {
+    .docs-animationTimingColumn {
+        display: none;
+    }
+    .docs-animationCubicColumn {
+        display: none;
+    }
+    .docs-animationTimingColumn {
+        display: none;
+    }
+    .docs-animationDescriptionColumn {
+        margin-bottom: 12px;
+    }
+    .docs-animationClassColumn {
+        margin-bottom: 12px;
+    }
+    .docs-animationExampleColumn {
+        margin-bottom: 14px;
+    }
+
+    @media(min-width: $ms-screen-lg-min) {
+        .docs-animationDescriptionColumn {
+            margin-bottom: 0;
+        }
+        .docs-animationClassColumn {
+            amrgin-bottom: 0;
+        }
+        .docs-animationExampleColumn {
+            margin-bottom: 0;
+        }
+    }
+
+    @media(min-width: $ms-screen-xl-min) {
+        
+        .docs-animationCubicColumn {
+            display: block;
+        }
+        .docs-animationTimingColumn {
+            display: block;
+        }
+
+    }
+
+}
+
+.docs-animationsTable-body.ms-Grid-row {
+    margin-top: 12px;
+
+    .ms-Grid-col {
+        
+        line-height: 32px;
+        min-height: 30px;
+
+        .mobileText {
+            @include ms-baseFont;
+            font-weight: $ms-font-weight-semibold;
+        }
+
+        @media(min-width: $ms-screen-md-min) {
+            line-height: 18px;
+            vertical-align: middle;
+            .mobileText {
+                display: none;
+            }
+        }
+
+        @media(min-width: $ms-screen-xl-min) {
+             min-height: $animationExample-height;
+            line-height: $animationExample-height;
+        }
+    }
+}
+
+.AnimationExample {
+    position:relative;
+    width: 100%;
+    height: 90px;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+}
+.AnimationExample-content {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #666;
+    padding: 10px;
+
+    hr {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}
+.AnimationExample-panel {
+    position:absolute;
+    top:0;
+    width:60px;
+    height: 100%;
+    opacity: 0;
+    background-color: $ms-color-themePrimary;
+}
+.AnimationExample-note {
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+}
+
+.AnimationExample {
+    .ms-u-slideLeftIn40 {
+        .AnimationExample-panel {
+            right: 0;
+        }
+    }
+    .ms-u-slideUpIn20, .ms-u-slideDownIn20 {
+        .AnimationExample-panel {
+            top: 60px;
+            height: 30px;
+            width: 100%;
+        }
+    }
+    .ms-u-slideUpIn10, .ms-u-slideDownIn10 {
+        .AnimationExample-panel {
+            top: 60px;
+            height: 20px;
+            width: 60px;
+            right: 10px;
+        }
+    }
+    .ms-u-slideDownIn20 {
+        .AnimationExample-panel {
+            top: 0;
+        }
+    }
+    .ms-u-slideDownIn10 {
+        .AnimationExample-panel {
+            top: 10px;
+        }
+    }
+}
+
+.docs-animationsTable-body { // override for demo purposes
+    .ms-u-slideRightOut40, .ms-u-slideLeftOut40, .ms-u-slideUpOut20, .ms-u-slideUpOut10, 
+    .ms-u-slideDownOut20, .ms-u-slideDownOut10, .ms-u-scaleUpOut103, .ms-u-scaleDownOut98,
+    .ms-u-fadeOut100, .ms-u-fadeOut200, .ms-u-fadeOut400, .ms-u-fadeOut500 {
+        -webkit-animation-play-state: paused;
+        animation-play-state: paused;
+        .AnimationExample-panel {
+            -webkit-animation-play-state: running;
+            animation-play-state: running;
+            opacity: 1;
+        }
+    }
+
+    .ms-u-slideRightOut40, .ms-u-slideLeftOut40 {
+        .AnimationExample-panel {
+            right: 0;
+        }
+    }
+    .ms-u-slideLeftOut40 {
+        .AnimationExample-panel {
+            left: 0;
+        }
+    }
+    .ms-u-slideUpOut20, .ms-u-slideUpOut10, .ms-u-slideDownOut20, .ms-u-slideDownOut10 {
+        .AnimationExample-panel {
+            width: 100%;
+            height: 30px;
+            top: 0;
+        }
+    }
+    .ms-u-slideUpOut10, .ms-u-slideDownOut10 {
+        .AnimationExample-panel {
+            width: 60px;
+            top: 10px;
+            right: 10px;
+            height: 20px;
+        }
+    }
+    .ms-u-slideDownOut10, .ms-u-slideDownOut20 {
+        .AnimationExample-panel {
+            top: 60px;
+        }
+    }
+    .ms-u-scaleUpIn100, 
+    .ms-u-scaleDownIn100, 
+    .ms-u-scaleUpOut103, 
+    .ms-u-scaleDownOut98 {
+        overflow: visible;
+        .AnimationExample-panel {
+            height: 100%;
+            width: 100%;
+            top: 0;
+        }
+        @-webkit-keyframes scaleUp100 {
+            from {
+                -webkit-transform: scale3d(0.70, 0.70, 1);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes scaleUp100 {
+            from {
+                transform: scale3d(0.70, 0.70, 1);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        @-webkit-keyframes scaleDown100 {
+            from {
+                -webkit-transform: scale3d(1.30, 1.30, 1);
+            }
+
+            to {
+                -webkit-transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes scaleDown100 {
+            from {
+                transform: scale3d(1.30, 1.30, 1);
+            }
+
+            to {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        @-webkit-keyframes scaleUp103 {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+            }
+
+            to {
+                -webkit-transform: scale3d(1.15, 1.15, 1);
+            }
+        }
+        @keyframes scaleUp103 {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            to {
+                transform: scale3d(1.15, 1.15, 1);
+            }
+        }
+        @-webkit-keyframes scaleDown98 {
+            from {
+                -webkit-transform: scale3d(1, 1, 1);
+            }
+
+            to {
+                -webkit-transform: scale3d(0.85, 0.85, 1);
+            }
+        }
+
+        @keyframes scaleDown98 {
+            from {
+                transform: scale3d(1, 1, 1);
+            }
+
+            to {
+                transform: scale3d(0.85, 0.85, 1);
+            }
+        }
+    }
+
+    .ms-u-fadeIn100, .ms-u-fadeIn200, .ms-u-fadeIn400, .ms-u-fadeIn500 {
+        .AnimationExample-panel {
+            height: 100%;
+            width: 100%;
+            top: 0;
+        }
+    }
+
+    .ms-u-fadeOut100, .ms-u-fadeOut200, .ms-u-fadeOut400, .ms-u-fadeOut500 {
+        .AnimationExample-panel {
+            height: 100%;
+            width: 100%;
+            top: 0;
+        }
+    }
+}
+
+.AnimationUsage {
+    position:relative;
+    width: 150px;
+    height: $animationExample-height;
+    overflow: hidden;
+    float: left;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.AnimationUsage-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+.AnimationUsage-panel {
+    position:absolute;
+    top:0;
+    width:60px;
+    height: 100%;
+}
+.AnimationUsage-button {
+    margin: 30px 10px;
+    float: left;
+    display: inline-block;
+}

@@ -1,0 +1,143 @@
+// OfficeDev Overrides
+
+#layout-navigation {
+	display: block;
+	height: 48px;
+	width: 100%;
+	@media(min-width: 700px) {
+		display: none;
+		position: absolute;
+    	z-index: 100;
+    	height: 52px;
+	}
+	.navbar-toggle {
+		display: none;
+	}
+	.menu-text {
+		display: none;
+	}
+	.dev-office-search-form {
+		.search-form-block {
+			width: 229px;
+		    height: 45px;
+		    margin-top: 6px;
+		}
+	}
+}
+
+.dropdown-menu.tier-1 {
+	top: 52px;
+}
+
+#layout-header {
+	display: none;
+	@media(min-width: 700px) {
+		display: block;
+	}
+}
+
+#layout-navigation.docs-showNavigation {
+	display: block;
+}
+
+#layout-navigation.showing-fabric-nav,
+#layout-header.showing-fabric-nav {
+	z-index: 6;
+}
+
+.zone.zone-content {
+
+	width: 100%;
+	float: left;
+	position: relative;
+	z-index: 10;
+
+	.page.content-item {
+		
+		width: 100%;
+		float: left;
+		position: relative;
+
+		.full-width-container {
+			width: 100%;
+			float: left;
+			position: relative;
+			margin-bottom: 20px;
+
+			.container-fluid {
+				width: 100%;
+				float: left;
+				position: relative;
+				max-width: 100%;
+				padding: 0;
+
+				#body-content {
+					float: left;
+					position: relative;
+					width: 100%;
+
+				}
+
+			}
+		}
+
+	}
+
+}
+
+.zone.zone-before-content {
+
+	width: 100%;
+	float: left;
+	position: relative;
+	z-index: 8;
+
+	.widget-before-content {	
+		width: 100%;
+		float: left;
+		position: relative;
+		margin-bottom: 0;
+
+		.full-width-container {
+			width: 100%;
+			float: left;
+			position: relative;
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			.container-fluid {
+				width: 100%;
+				float: left;
+				position: relative;
+				max-width: 100%;
+				padding: 0;
+
+				#body-content {
+					float: left;
+					position: relative;
+					width: 100%;
+
+				}
+
+			}
+
+		}
+
+		.navbar-nav {
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+#layout-footer {
+	z-index: 9;
+	position: relative;
+	.zone.zone-footer {
+	}
+}
+
+.zone.zone-before-content.in-back  {
+	z-index: auto;
+}

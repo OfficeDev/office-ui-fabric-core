@@ -1,0 +1,164 @@
+{
+  "items": [
+    {
+      "name": "Theme Darker",
+      "hex": "#004578",
+      "fontClass": "ms-fontColor-themeDarker",
+      "bgClass": "ms-bgColor-themeDarker",
+      "borderClass": "ms-borderColor-themeDarker",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-neutralLight",
+          "ratio": "7:6:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLighter",
+          "ratio": "8:3:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLightAlt",
+          "ratio": "8:6:1"
+        },
+        {
+          "class": "ms-bgColor-themeLight",
+          "ratio": "6:7:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighter",
+          "ratio": "7:6:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighterAlt",
+          "ratio": "8:4:1"
+        },
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "9:1:1"
+        }
+      ]
+    },
+    {
+      "name": "Theme Dark",
+      "hex": "#005A9E",
+      "fontClass": "ms-fontColor-themeDark",
+      "bgClass": "ms-bgColor-themeDark",
+      "borderClass": "ms-borderColor-themeDark",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-neutralLight",
+          "ratio": "5:2:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLighter",
+          "ratio": "5:7:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLightAlt",
+          "ratio": "5:9:1"
+        },
+        {
+          "class": "ms-bgColor-themeLight",
+          "ratio": "4:6:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighter",
+          "ratio": "5:2:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighterAlt",
+          "ratio": "5:7:1"
+        },
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "6:3:1"
+        }
+      ]
+    },
+    {
+      "name": "Theme Dark Alt",
+      "hex": "#106EBE",
+      "fontClass": "ms-fontColor-themeDarkAlt",
+      "bgClass": "ms-bgColor-themeDarkAlt",
+      "borderClass": "ms-borderColor-themeDarkAlt",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-neutralLighter",
+          "ratio": "4:8:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLightAlt",
+          "ratio": "5:0:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighter",
+          "ratio": "5:2:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighterAlt",
+          "ratio": "4:8:1"
+        },
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "5:6:1"
+        }
+      ]
+    },
+    {
+      "name": "Theme Primary",
+      "hex": "#0078D7",
+      "fontClass": "ms-fontColor-themePrimary",
+      "bgClass": "ms-bgColor-themePrimary",
+      "borderClass": "ms-borderColor-themePrimary",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "5:0:1"
+        }
+      ]
+    },
+    {
+      "name": "Theme Secondary",
+      "hex": "#2b88D8",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-themeSecondary",
+      "bgClass": "ms-bgColor-themeSecondary",
+      "borderClass": "ms-borderColor-themeSecondary"
+    },
+    {
+      "name": "Theme Tertiary",
+      "hex": "#71AFE5",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-themeTertiary",
+      "bgClass": "ms-bgColor-themeTertiary",
+      "borderClass": "ms-borderColor-themeTertiary",
+      "secondBgClass": "ms-bgColor-themeDarker"
+    },
+    {
+      "name": "Theme Light",
+      "hex": "#C7E0F4",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-themeLight",
+      "bgClass": "ms-bgColor-themeLight",
+      "borderClass": "ms-borderColor-themeLight",
+      "secondBgClass": "ms-bgColor-themeDarker"
+    },
+    {
+      "name": "Theme Lighter",
+      "hex": "#DEECF9",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-themeLighter",
+      "bgClass": "ms-bgColor-themeLighter",
+      "borderClass": "ms-borderColor-themeLighter",
+      "secondBgClass": "ms-bgColor-themeDarker"
+    },
+    {
+      "name": "Theme Lighter Alt",
+      "hex": "#EFF6FC",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-themeLighterAlt",
+      "bgClass": "ms-bgColor-themeLighterAlt",
+      "borderClass": "ms-borderColor-themeLighterAlt",
+      "secondBgClass": "ms-bgColor-themeDarker"
+    }
+  ]
+}

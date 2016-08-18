@@ -1,0 +1,129 @@
+
+
+$initialColor: #0078d7;
+$docs-MastHead-buttonHeight: 32px;
+$docs-MastHead-width: 955px;
+$docs-MastHead-height: 446px;
+
+// MastHead
+.docs-MastHead {
+  background-color: $initialColor;
+  padding-top: 76px;
+}
+
+.docs-MastHead-content {
+  margin: 0 auto;
+  position: relative;
+  max-width: $docs-MastHead-width;
+  padding: 20px;
+  display: block;
+  height: $docs-MastHead-height;
+}
+
+.docs-MastHead-logoArea {
+  position: relative;
+  margin-bottom: 15px;
+  max-width: 190px;
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  transform: translatex(-50%);
+  left: 50%;
+}
+
+.docs-MastHead-logo { 
+  height: 80px;
+  width: 177px; 
+  display: inline-block;
+  margin-right: 15px;
+  outline: none;
+  font-size: 44px;
+  transition: all $ms-duration2 $ms-ease1;
+}
+
+.docs-MastHead-logoArea,
+.docs-MastHead-title,
+.docs-MastHead-tagline {
+  transition: all $ms-duration2 $ms-ease1;
+}
+
+.docs-MastHead-title {
+  font-size: 36px;
+  font-weight: normal;
+  display: inline-block;
+  position: relative;
+  bottom: 20px;
+  margin: 0;
+}
+
+.docs-MastHead-tagline {
+  color: $ms-color-white;
+  max-width: 260px;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  -webkit-transform: translatex(-50%);
+  -moz-transform: translatex(-50%);
+  transform: translatex(-50%);
+  left: 50%;  
+  margin-top: 50px;
+}
+
+// Phone, Phablet
+@media (min-width: 400px) {
+  .docs-MastHead-button {
+  }
+
+  .docs-MastHead-buttonIcon { 
+    margin-bottom: 0;
+  }
+}
+
+// Tablet
+@media (min-width: 640px) {
+  .docs-MastHead-title { font-size: 48px; }
+  .docs-MastHead-tagline { 
+    font-size: $ms-font-size-xxl; 
+    max-width: 300px; 
+    // margin-bottom: 30px; 
+    & > p {
+      line-height: 28px;
+      font-size: $ms-font-size-l;
+    }
+  }
+
+}
+
+@media (min-width: 840px) {
+  // @media (min-width: 768px) {
+  .docs-MastHead-logoArea,
+  .docs-MastHead-tagline,
+  .docs-MastHead-version {
+    left: 0; 
+    margin-bottom: 0;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    transform: translatex(0);
+  }
+
+  .docs-MastHead-tagline,
+  .docs-MastHead-version {
+    text-align: left; 
+    margin-bottom: 10px;
+  }
+
+  .docs-MastHead-version {
+    margin-bottom: 0;
+  }
+
+  .docs-MastHead-logo {
+    margin-right: 35px;
+  }
+
+  .docs-MastHead-button { 
+    
+  }
+}
+
+// Large/Landscape Tablet, Desktop
+@media (min-width: 1024px) {
+}

@@ -1,0 +1,166 @@
+{
+  "items": [
+    {
+      "class": "ms-u-slideRightIn10",
+      "description": "Slide right 10px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideRightIn20",
+      "description": "Slide right 20px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideRightIn40",
+      "description": "Slide right 40px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideLeftIn10",
+      "description": "Slide left 10px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideLeftIn20",
+      "description": "Slide left 20px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideLeftIn40",
+      "description": "Slide left 40px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideUpIn20",
+      "description": "Slide up 20px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideUpIn10",
+      "description": "Slide up 10px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideDownIn20",
+      "description": "Slide down 20px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-slideDownIn10",
+      "description": "Slide down 10px and fade in",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideRightOut40",
+      "description": "Slide right 40px and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideLeftOut40",
+      "description": "Slide left 40px and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideUpOut20",
+      "description": "Slide up 20px and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideUpOut10",
+      "description": "Slide up 10px and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideDownOut20",
+      "description": "Slide down 20px and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-slideDownOut10",
+      "description": "Slide down 10px and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-scaleUpIn100",
+      "description": "Scale up to 100% and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-scaleDownIn100",
+      "description": "Scale down to 100% and fade in",
+      "bezier": "cubic-bezier(0.1, 0.9, 0.2, 1)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-scaleUpOut103",
+      "description": "Scale up to 103% and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-scaleDownOut98",
+      "description": "Scale down to 98% and fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-fadeIn100",
+      "description": "Fade in",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-fadeIn200",
+      "description": "Fade in",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.267s" 
+    },
+    {
+      "class": "ms-u-fadeIn400",
+      "description": "Fade in",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.367s" 
+    },
+    {
+      "class": "ms-u-fadeIn500",
+      "description": "Fade in",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.467s" 
+    },
+    {
+      "class": "ms-u-fadeOut100",
+      "description": "Fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.167s" 
+    },
+    {
+      "class": "ms-u-fadeOut200",
+      "description": "Fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.267s" 
+    },
+    {
+      "class": "ms-u-fadeOut400",
+      "description": "Fade out",
+      "bezier": "cubic-bezier(0.1, 0.25, 0.75, 0.9)",
+      "timing": "0.367s" 
+    }
+  ]
+}

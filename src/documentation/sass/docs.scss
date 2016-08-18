@@ -1,0 +1,371 @@
+// Main Sass file for the docs site
+
+// Import all of Fabric's variables, mixins, and utility classes
+@import '../../sass/_Fabric.Common.scss';
+
+// New font stack for presenting code
+$ms-font-family-code: "Consolas", "Monaco", "Ubuntu Mono", Courier, monospace;
+
+// Variables used throughout the site
+$LeftNavWidth: 210px;
+$HeaderHeight: 50px;
+$HeaderOffset: $HeaderHeight + 25; 
+$docs-InnerWidth: 948px; // Office Dev Width TODO Change this variable name
+$docs-mobileNavBreakpoint: 1024px;
+$docs-mediumSpacerSize: 64px;
+$docs-pageMaxWidth: 1417px;
+$docs-viewLeftMargin: 214px;
+$NavBarHeight: 50px;
+$initialColor: #0078d7;
+$docs-MastHead-buttonHeight: 32px;
+$docs-MastHead-width: 955px;
+$docs-MastHead-height: 446px;
+$docs-pagesBannerHeight: 260px;
+$docs-smBannerHeight: 248px;
+$docs-lgBannerHeight: 174px;
+$docs-innerButtonHeight: 28px;
+$docs-bannerIconSize: 18px;
+$docs-pagesMarginTop: 55px;
+
+
+// Highcontrast mode mixins
+@mixin high-contrast {
+  @media screen and (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin high-contrast-black-on-white {
+  @media screen and (-ms-high-contrast: black-on-white) {
+   @content;
+  }
+}
+
+@mixin high-contrast-white-on-black {
+  @media screen and (-ms-high-contrast: white-on-black) {
+   @content;
+  }
+}
+
+$high-contrast-blueBG: #0000c0;
+$high-contrast-purpleBG: #37006e;
+$high-contrast-cyan: #1aebff;
+$high-contrast-yellow: #ffff00;
+$high-contrast-green: #3ff23f;
+
+
+// Base styles
+@import './base/_Lists.scss';
+@import './base/_Typography.scss';
+
+// Import documentation component and layout styles
+// @todo: Remove the #body-content wrapper once specificity issues with dev.office.com are fixed
+
+#body-content {
+    @import './components/_BlogPost.scss';
+    @import './components/_Carousel.scss';
+    @import './components/_CarouselButtons.scss';
+    @import './components/_Header.scss';
+    @import './components/_MobileNav.scss';
+    @import './components/_Nav.scss';
+    @import './components/_Styles.scss';
+    @import './components/_Table.scss';
+    @import './layouts/_Page.scss';
+}
+
+// Import Pages
+@import './_AnimationsSection.scss';
+@import './_ChangelogPage.scss';
+@import './_ColorSection.scss';
+@import './_ComponentsPage.scss';
+@import './_FabricApp.scss';
+@import './_IconsSection.scss';
+@import './_LeftNav.scss';
+@import './_MastHead.scss';
+@import './_NavBar.scss';
+@import './_OverviewPage.scss';
+@import './_ResponsiveGridSection.scss';
+@import './_TypographySection.scss';
+@import './_OFficeDevOverrides.scss';
+@import './_ComponentPicker.scss';
+@import './_ColorBoxes.scss';
+@import './_RightNav.scss';
+@import './_ParagraphStyles.scss';
+
+#Header {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    left: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    background: #005a9e;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 10;
+}
+
+.full-width-container {
+    margin-top: 0 !important;
+    padding-top: 0;
+}
+
+.docs-MastHead-buttonText.ms-font-s {
+    color: #ffffff;
+}
+
+#header-container {
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 10;
+    min-height: 80px;
+    pointer-events: none;
+
+    @media (min-width: $ms-screen-lg-min) {
+        height: 214px;
+    }
+
+    @media (min-width: 967px) {
+        height: 260px;
+    }
+}
+
+// slideRightIn80
+@mixin ms-u-slideRightIn80 {
+    @include animationMix((fadeIn, slideRightIn80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideRightIn80 {
+  @include ms-u-slideRightIn80;
+}
+@-webkit-keyframes slideRightIn80 {
+    from { -webkit-transform:translate3d(-80px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideRightIn80 {
+    from { transform:translate3d(-80px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+// slideLeftIn80
+@mixin ms-u-slideLeftIn80 {
+    @include animationMix((fadeIn, slideLeftIn80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideLeftIn80 {
+  @include ms-u-slideLeftIn80;
+}
+@-webkit-keyframes slideLeftIn80 {
+    from { -webkit-transform:translate3d(80px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideLeftIn80 {
+    from { transform:translate3d(80px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+
+// slideLeftIn80
+@mixin ms-u-slideLeftOut80 {
+    @include animationMix((fadeOut, slideLeftOut80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideLeftOut80 {
+  @include ms-u-slideLeftOut80;
+}
+@-webkit-keyframes slideLeftOut80 {
+    from { -webkit-transform:translate3d(0, 0px, 0px); }
+    to { -webkit-transform:translate3d(-80px, 0px, 0px); }
+}
+@keyframes slideLeftOut80 {
+    from { transform:translate3d(0, 0px, 0px); }
+    to { transform:translate3d(-80px, 0px, 0px); }
+}
+
+
+// slideLeftIn80
+@mixin ms-u-slideRightOut80 {
+    @include animationMix((fadeOut, slideRightOut80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideRightOut80 {
+  @include ms-u-slideRightOut80;
+}
+@-webkit-keyframes slideRightOut80 {
+    from { -webkit-transform:translate3d(0px, 0px, 0px); }
+    to { -webkit-transform:translate3d(80px, 0px, 0px); }
+}
+@keyframes slideRightOut80 {
+    from { transform:translate3d(0px, 0px, 0px); }
+    to { transform:translate3d(80px, 0px, 0px); }
+}
+
+#banner-image {
+  display: none;
+}
+
+#header-container.homePage {
+    height: auto;
+}
+
+.fabric-ie #layout-navigation {top: 56px; }
+.fabric-ie div.docs-showNavigation .tier-1 {margin-top: 57px; }
+.widget-FabricStyleOverrides {display: none;}
+@media (max-width: 700px) {
+    .fabric-ie #layout-navigation {top: 0; }
+}
+
+#stage_8
+{
+    position: absolute !important;
+    z-index: 0;
+    top: -156px;
+    left: 50%;
+
+    width: 869px;
+    height: 570px;
+
+    -webkit-transform: translateX(-50.6%) scale(.4);
+        -ms-transform: translateX(-50.6%) scale(.4);
+            transform: translateX(-50.6%) scale(.4);
+
+    backface-visiblity: hidden;
+}
+
+@media (min-width: 480px)
+{
+    #stage_8
+    {
+        z-index: 0;
+        top: -132px;
+
+        -webkit-transform: translateX(-50%) scale(.6);
+            -ms-transform: translateX(-50%) scale(.6);
+                transform: translateX(-50%) scale(.6);
+    }
+}
+
+@media (min-width: 1024px)
+{
+    #stage_8
+    {
+        top: -42px;
+        left: auto;
+        right: -207px;
+
+        -webkit-transform: scale(.78);
+            -ms-transform: scale(.78);
+                transform: scale(.78);
+
+        backface-visiblity: hidden;
+    }
+}
+
+#stage_5
+{
+    position: absolute !important;
+    z-index: 0;
+    top: -157px;
+    left: 50%;
+    width: 869px;
+    height: 570px;
+
+    -webkit-transform: translateX(-50%) scale(.4);
+        -ms-transform: translateX(-50%) scale(.4);
+            transform: translateX(-50%) scale(.4);
+
+    backface-visiblity: hidden;
+}
+
+@media (min-width: 480px)
+{
+    #stage_5
+    {
+        position: absolute !important;
+        z-index: 0;
+        top: -132px;
+        left: 50%;
+
+        width: 869px;
+        height: 570px;
+
+        -webkit-transform: translateX(-49%) scale(.5);
+            -ms-transform: translateX(-49%) scale(.5);
+                transform: translateX(-49%) scale(.5);
+
+        backface-visiblity: hidden;
+    }
+}
+
+@media (min-width: 1024px)
+{
+    #stage_5
+    {
+        position: absolute !important;
+        z-index: 0;
+        top: -42px;
+        left: auto;
+        right: -230px;
+        width: 869px;
+        height: 570px;
+
+        -webkit-transform: translateX(0) scale(.78);
+            -ms-transform: translateX(0) scale(.78);
+                transform: translateX(0) scale(.78);
+
+        backface-visiblity: hidden;
+    }
+}
+
+#stage_2
+{
+    position: absolute !important;
+    z-index: 0;
+    top: -54px;
+    left: 50%;
+
+    width: 869px;
+    height: 570px;
+
+    -webkit-transform: translateX(-50%) scale(.63);
+        -ms-transform: translateX(-50%) scale(.63);
+            transform: translateX(-50%) scale(.63);
+
+    backface-visiblity: hidden;
+}
+
+@media (min-width: 1024px)
+{
+    #stage_2
+    {
+        position: absolute !important;
+        z-index: 0;
+        top: 47px;
+        left: auto;
+        right: -57px;
+
+        width: 869px;
+        height: 570px;
+
+        -webkit-transform: scale(.9);
+            -ms-transform: scale(.9);
+                transform: scale(.9);
+
+        backface-visiblity: hidden;
+    }
+}
+
+#branding {
+    #logo-link {
+       & > .logo {
+           color: $ms-color-black;
+       }
+    }
+    
+    #logo-link:before {
+       //  display: none;
+    }
+}

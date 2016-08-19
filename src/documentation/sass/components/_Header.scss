@@ -15,152 +15,30 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
 
-.docs-bannerButtons {
-	position: relative;
-    top: 79px;
-    right: auto;
-    width: 256px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-
-    .ms-Button {
-    	background: none;
-    	width: 100%;
-    	margin-top: 0;
-    	margin-bottom: 14px;
-    	font-size: $ms-font-size-s-plus;
-    	display: inline-block;
-    	margin-left: 0;
-    	padding-top: 0;
-    	padding-bottom: 0;
-    	padding-left: 16px;
-    	padding-right: 16px;
-		line-height: 25px;
-		display: inline-block;
-		vertical-align: middle;
-		text-align: center;
-
-		&:active,
-		&:hover {
-			background: rgba(255,255,255,0.9);
-			color: $ms-color-neutralPrimary;
-			
-			&:before {
-				display: none;
-			}
-			
-			.ms-Button-label,
-			.ms-Icon  {
-				color: $ms-color-neutralPrimary;
-			}
-			
-			@include high-contrast {
-				background: none;
-				border: $ms-color-white;
-				
-				&:before {
-					display: none;
-				}
-				
-				.ms-Button-label,
-				.ms-Icon  {
-					color: $ms-color-white;
-				}
-			}
-			
-			@include high-contrast-black-on-white  {
-				background: none;
-				border: $high-contrast-purpleBG;
-				
-				&:before {
-					display: none;
-				}
-				
-				.ms-Button-label,
-				.ms-Icon  {
-					color: $high-contrast-purpleBG;
-				}
-			}
-		}
-	
-		&:focus {
-			background: rgba(255,255,255,0.9);
-			color: $ms-color-neutralPrimary;
-			
-			.ms-Button-label,
-			.ms-Icon  {
-				color: $ms-color-neutralPrimary;
-			}
-			
-			&::before {
-				content: none;
-				display: none;
-			}
-			
-			@include high-contrast {
-				border: 1px solid $ms-color-white;
-				
-				.ms-Button-label,
-				.ms-Icon  {
-					color: $ms-color-white;
-				}
-			}
-			
-			@include high-contrast-black-on-white  {
-				border: 1px solid $high-contrast-purpleBG;
-				
-				.ms-Button-label,
-				.ms-Icon  {
-					color: $high-contrast-purpleBG;
-				}
-			}
-		}
+    .Header-buttons {
+        float: right; 
     }
 
-	.ms-Button-label {
-		color: $ms-color-white;
-		height: 25px;
-		line-height: 23px;
-		display: inline-block;
-		vertical-align: middle;
-	}
-	.ms-Button-icon {
-		display: inline-block;
-		font-size: 16px;
-		color: $ms-color-white;
-		width: $docs-bannerIconSize;
-		height: $docs-innerButtonHeight;
-		vertical-align: middle;
-		margin-right: 8px;
+    .Header-button {
+      position: relative;
+      text-decoration: none;
+      background: 0 0;
+      color: #fff;
+      border: none;
+      padding: 0;
+      padding: 0 10px;
+      min-width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin: 0 5px;
+      text-transform: uppercase;
+      display: inline-block;
+      vertical-align: top;
+      box-sizing: border-box;
 
-		img {
-			width: 16px;
-			height: auto;
-			transform: translateY(-2px);
-		}
-	}
-
-	@media (min-width: $ms-screen-xl-min) {
-		display: block;
-		position: absolute;
-		right: 0px;
-		top: 46px;
-		transform: translateX(0);
-		left: auto;
-		width: 174px;
-		
-		.ms-Button {
-			a {
-				text-align: center;
-			}
-		}
-
-	}
-
-	@media (min-width: $ms-screen-xl-min) { 
-		right: 0px;
-	}
+        &:hover {
+            @include ms-bgColor-themePrimary;
+        }
+    }
 }

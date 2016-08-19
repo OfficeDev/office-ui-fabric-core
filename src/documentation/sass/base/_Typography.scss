@@ -4,7 +4,7 @@ h3,
 h4 {
     font-weight: normal;
     line-height: 1.2;
-    margin: 40px 0 8px 0;
+    margin: 30px 0 8px 0;
 }
 
 h1 {
@@ -48,6 +48,13 @@ p {
         font-weight: normal;
         font-weight: $ms-font-weight-semibold;
     }
+}
+
+code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #DEECF9;
 }
 
 #body-content {

@@ -4,6 +4,7 @@ var Utilities = require('./modules/Utilities');
 var Banners = require('./modules/Banners');
 var Config = require('./modules/Config');
 var BuildConfig = require('./modules/BuildConfig');
+var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 

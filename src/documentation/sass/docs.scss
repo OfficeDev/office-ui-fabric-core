@@ -9,24 +9,7 @@ $ms-font-family-code: "Consolas", "Monaco", "Ubuntu Mono", Courier, monospace;
 // Variables used throughout the site
 $LeftNavWidth: 210px;
 $HeaderHeight: 50px;
-$HeaderOffset: $HeaderHeight + 25; 
-$docs-InnerWidth: 948px; // Office Dev Width TODO Change this variable name
 $docs-mobileNavBreakpoint: 1024px;
-$docs-mediumSpacerSize: 64px;
-$docs-pageMaxWidth: 1417px;
-$docs-viewLeftMargin: 214px;
-$NavBarHeight: 50px;
-$initialColor: #0078d7;
-$docs-MastHead-buttonHeight: 32px;
-$docs-MastHead-width: 955px;
-$docs-MastHead-height: 446px;
-$docs-pagesBannerHeight: 260px;
-$docs-smBannerHeight: 248px;
-$docs-lgBannerHeight: 174px;
-$docs-innerButtonHeight: 28px;
-$docs-bannerIconSize: 18px;
-$docs-pagesMarginTop: 55px;
-
 
 // Highcontrast mode mixins
 @mixin high-contrast {
@@ -75,8 +58,6 @@ $high-contrast-green: #3ff23f;
 @import './_FabricApp.scss';
 @import './_IconsSection.scss';
 @import './_LeftNav.scss';
-@import './_MastHead.scss';
-@import './_NavBar.scss';
 @import './_ParagraphStyles.scss';
 @import './_ResponsiveGridSection.scss';
 @import './_TypographySection.scss';

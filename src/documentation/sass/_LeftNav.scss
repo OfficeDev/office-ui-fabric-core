@@ -8,35 +8,10 @@
         @media (min-width: 967px) {
             display: block;
         }
-
-        // States
-        &.is-sticky {
-            top: 62px;
-            position: fixed;
-            margin-top: 0;
-        }
     }
 
     .LeftNav-links {
         margin: 0;
-    }
-
-    .LeftNav-title {
-        text-transform: uppercase;
-        margin-top: 0;
-    }
-
-    .LeftNav-linkGroup {
-        padding-bottom: 20px;
-    }
-
-    .LeftNav-chevron {
-        position: absolute;
-        height: 30px;
-        width: 16px;
-        left: 17px;
-        line-height: 30px;
-        transition: transform $ms-duration1 $ms-ease1;
     }
 
     .LeftNav-item {
@@ -104,12 +79,4 @@
     a:hover.LeftNav-link {
         color: $ms-color-themePrimary;
     }
-    
-    // @todo: Can LeftNav and RightNav be the same component?
-    .LeftNav-links.is-stuck,
-    .RightNav-links.is-stuck {
-        position: fixed;
-        top: 80px;
-    }
-
 }

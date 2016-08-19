@@ -13,15 +13,6 @@ body {
   @include ms-u-borderBox;
 }  
 
-.docs-UnorderedList {
-  margin: 0 0 15px 0;
-  list-style-position: inside;
-
-  li {
-    margin-bottom: 5px;
-  }
-}
-
 img {
     border: none;
     padding: 0;

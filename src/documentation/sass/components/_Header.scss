@@ -1,26 +1,26 @@
 .docs-Header {
-    position: fixed;
-    top: 0;
-    height: 50px;
-    left: 0;
-    right: 0;
-    line-height: 50px;
-    padding: 0 20px;
-    background: #005a9e;
-    overflow: hidden;
-    white-space: nowrap;
-    z-index: 10;
-	width: 100%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+   position: fixed;
+   top: 0;
+   height: 50px;
+   left: 0;
+   right: 0;
+   line-height: 50px;
+   padding: 0 20px;
+   background: #005a9e;
+   overflow: hidden;
+   white-space: nowrap;
+   z-index: 10;
+   width: 100%;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 
-    .Header-buttons {
-        float: right; 
-    }
+   .Header-buttons {
+      float: right; 
+   }
 
-    .Header-button {
+   .Header-button {
       position: relative;
       text-decoration: none;
       background: 0 0;
@@ -37,8 +37,8 @@
       vertical-align: top;
       box-sizing: border-box;
 
-        &:hover {
-            @include ms-bgColor-themePrimary;
-        }
-    }
+      &:hover {
+         @include ms-bgColor-themePrimary;
+      }
+   }
 }

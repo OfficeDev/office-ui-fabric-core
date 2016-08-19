@@ -351,24 +351,14 @@
   }
 }
 
-// Fabric Core Icon variables
+// Icon size variables
 $ms-icon-size-xs: 10px;
 $ms-icon-size-s: 12px;
 $ms-icon-size-m: 16px;
 $ms-icon-size-l: 20px;
 
-.ms-Icon--xs {
-  font-size: $ms-icon-size-xs;
-}
-
-.ms-Icon--s {
-  font-size: $ms-icon-size-s;
-}
-
-.ms-Icon--m {
-  font-size: $ms-icon-size-m;
-}
-
-.ms-Icon--l {
-  font-size: $ms-icon-size-l;
-}
+// Icon size mixins
+@mixin ms-Icon--xs { font-size: $ms-icon-size-xs; }
+@mixin ms-Icon--s { font-size: $ms-icon-size-s; }
+@mixin ms-Icon--m { font-size: $ms-icon-size-m; }
+@mixin ms-Icon--l { font-size: $ms-icon-size-l; }

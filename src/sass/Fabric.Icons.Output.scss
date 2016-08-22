@@ -682,6 +682,8 @@
 .ms-Icon--Flow::before { @include ms-Icon--Flow }
 .ms-Icon--PowerAppsLogo::before { @include ms-Icon--PowerAppsLogo }
 .ms-Icon--PowerApps2Logo::before { @include ms-Icon--PowerApps2Logo }
+
+
 // Modifier: Place the icon in a circle.
 .ms-Icon--circle {
   @include ms-Icon--circle;

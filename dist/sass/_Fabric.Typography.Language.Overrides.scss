@@ -1,0 +1,50 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Language override definitions
+
+
+// A mixin that overrides all of the font classes for languages that
+// use system fonts. A single font-family is used for all weights.
+@mixin language-override-system-fonts($lang-code, $font-family) {
+  *[lang="#{$lang-code}"] {
+    .ms-font-mi,
+    .ms-font-xs,
+    .ms-font-s,
+    .ms-font-s-plus,
+    .ms-font-m,
+    .ms-font-m-plus,
+    .ms-font-l,
+    .ms-font-xl,
+    .ms-font-xxl,
+    .ms-font-su,
+    .ms-fontWeight-light,
+    .ms-fontWeight-light-hover:hover,
+    .ms-fontWeight-semilight,
+    .ms-fontWeight-semilight-hover:hover,
+    .ms-fontWeight-regular,
+    .ms-fontWeight-regular-hover:hover,
+    .ms-fontWeight-semibold,
+    .ms-fontWeight-semibold-hover:hover {
+      font-family: $font-family;
+    }
+  }
+}
+
+// Variables for each of the non-distributed (native) font stacks.
+$ms-font-stack-japanese: 'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-system-base;
+$ms-font-stack-korean: 'Malgun Gothic', Gulim, $ms-font-system-base;
+$ms-font-stack-chinese-simplified: 'Microsoft Yahei', Verdana, Simsun, $ms-font-system-base;
+$ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-system-base;
+$ms-font-stack-hindi: 'Nirmala UI', $ms-font-system-base;
+
+// Variables for each of the web font stacks.
+$ms-font-stack-arabic:        'Segoe UI Arabic', $ms-font-family-base;
+$ms-font-stack-cyrillic:      'Segoe UI Cyrillic', $ms-font-family-base;
+$ms-font-stack-eastEuropean:  'Segoe UI EastEuropean', $ms-font-family-base;
+$ms-font-stack-greek:         'Segoe UI Greek', $ms-font-family-base;
+$ms-font-stack-hebrew:        'Segoe UI Hebrew', $ms-font-family-base;
+$ms-font-stack-vietnamese:    'Segoe UI Vietnamese', $ms-font-family-base;
+$ms-font-stack-leelawadee:    'Leelawadee UI', 'Kmer UI', $ms-font-family-base;

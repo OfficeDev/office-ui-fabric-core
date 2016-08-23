@@ -1,0 +1,46 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Utility classes and mixins used throughout Fabric.
+
+@import "Fabric.Utilities";
+
+// The best box is a border box.
+.ms-u-borderBox, .ms-u-borderBox::before, .ms-u-borderBox::after {
+  @include ms-u-borderBox;
+}
+
+// To apply border base settings
+.ms-u-borderBase {
+  @include ms-u-borderBase;
+}
+
+// Ensures the block expands to the full height to enclose its floated childen.
+.ms-u-clearfix {
+  @include ms-u-clearfix;
+}
+
+// Basic border-box, margin, and padding reset.
+.ms-u-normalize {
+  @include ms-u-normalize;
+}
+
+// Use to set left, center, right text alignment styles 
+@include ms-u-textAlign(left, center, right);
+
+// Use to hide content while still making it readable by screen reader (Accessibility)
+.ms-u-screenReaderOnly {
+  @include ms-u-screenReaderOnly
+}
+
+// Use to add truncation with ellipsis
+.ms-u-textTruncate {
+  @include ms-u-textTruncate
+}
+
+// Use to disable text wrapping
+.ms-u-noWrap{
+  @include ms-u-noWrap
+}

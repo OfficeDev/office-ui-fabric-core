@@ -13,7 +13,6 @@
   @include ms-Icon();
 }
 
-
 // Modifiers: Each of the icons.
 .ms-Icon--GlobalNavButton::before { @include ms-Icon--GlobalNavButton }
 .ms-Icon--MapPin::before { @include ms-Icon--MapPin }
@@ -304,8 +303,29 @@
 .ms-Icon--PageAdd::before { @include ms-Icon--PageAdd }
 .ms-Icon--NumberedList::before { @include ms-Icon--NumberedList }
 .ms-Icon--Glimmer::before { @include ms-Icon--Glimmer }
+.ms-Icon--SkypeCheck::before { @include ms-Icon--SkypeCheck; }
+.ms-Icon--SkypeClock::before { @include ms-Icon--SkypeClock; }
+.ms-Icon--SkypeMinus::before { @include ms-Icon--SkypeMinus; }
 
 // Modifier: Place the icon in a circle.
 .ms-Icon--circle {
   @include ms-Icon--circle;
+}
+
+// Icon size classes
+
+.ms-Icon--xs {
+  @include ms-Icon--xs;
+}
+
+.ms-Icon--s {
+  @include ms-Icon--s;
+}
+
+.ms-Icon--m {
+  @include ms-Icon--m;
+}
+
+.ms-Icon--l {
+  @include ms-Icon--l;
 }

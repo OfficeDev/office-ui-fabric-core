@@ -308,6 +308,9 @@
 @mixin ms-Icon--PageAdd { content: "\EA1A"; }
 @mixin ms-Icon--NumberedList { content: "\EA1C"; }
 @mixin ms-Icon--Glimmer { content: "\ECF4"; }
+@mixin ms-Icon--SkypeCheck { content: "\EF80"; }
+@mixin ms-Icon--SkypeClock { content: "\EF81"; }
+@mixin ms-Icon--SkypeMinus { content: "\EF82"; }
 
 
 // Modifier: Place the icon in a circle.
@@ -348,24 +351,14 @@
   }
 }
 
-// Fabric Core Icon variables
+// Icon size variables
 $ms-icon-size-xs: 10px;
 $ms-icon-size-s: 12px;
 $ms-icon-size-m: 16px;
 $ms-icon-size-l: 20px;
 
-.ms-Icon--xs {
-  font-size: $ms-icon-size-xs;
-}
-
-.ms-Icon--s {
-  font-size: $ms-icon-size-s;
-}
-
-.ms-Icon--m {
-  font-size: $ms-icon-size-m;
-}
-
-.ms-Icon--l {
-  font-size: $ms-icon-size-l;
-}
+// Icon size mixins
+@mixin ms-Icon--xs { font-size: $ms-icon-size-xs; }
+@mixin ms-Icon--s { font-size: $ms-icon-size-s; }
+@mixin ms-Icon--m { font-size: $ms-icon-size-m; }
+@mixin ms-Icon--l { font-size: $ms-icon-size-l; }

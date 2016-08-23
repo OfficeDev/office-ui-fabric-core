@@ -1,6 +1,6 @@
 #Building Fabric, gulp tasks, bundling, and the starter template
 
-Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styling, build and serve demos, and generate or watch other parts of the framework for changes. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
+Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styles. Use it to customize Fabric for your project, or to test changes you make to specific aspects of the toolkit.
 
 ##Contents
 
@@ -47,7 +47,6 @@ Builds and watches everything but uses the Sass versions of the files and gives 
 
 Builds all bundles specified in `gulp/modules/Config.js`. View more details in the [Bundling](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUNDLING.md)
 
-
 ##Starter template
 
 The following starter template represents the minimum recommended HTML structure for an app or add-in that uses Fabric. Copy the code into your project to start working with a basic Fabric document.
@@ -61,12 +60,8 @@ The following starter template represents the minimum recommended HTML structure
     <title>Application Name</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Optionally include jQuery to use Fabric's Component jQuery plugins -->
-    <script type="text/javascript" src="js/jquery.js"></script>
-
     <!-- Fabric core -->
     <link rel="stylesheet" href="css/fabric.min.css">
-    <link rel="stylesheet" href="css/fabric.components.min.css">
 
     <!-- Application-specific CSS -->
     <link rel="stylesheet" href="/css/app.css">
@@ -74,9 +69,6 @@ The following starter template represents the minimum recommended HTML structure
   <body>
     <!-- Application content goes here -->
     <h1 class="ms-font-su">Why, hello, world.</h1>
-
-    <!-- Optionally include Fabric's Component jQuery plugins -->
-    <script type="text/javascript" src="js/jquery.fabric.min.js"></script>
   </body>
 </html>
 ```

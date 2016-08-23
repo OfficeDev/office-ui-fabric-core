@@ -1,5 +1,5 @@
 {
-  "name": "office-ui-fabric",
+  "name": "office-ui-fabric-core",
   "author": "Office UI Fabric Team",
   "version": "3.0.0",
   "description": "The front-end framework for building experiences for Office 365.",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/OfficeDev/Office-UI-Fabric"
+    "url": "https://github.com/OfficeDev/Office-UI-Fabric-Core"
   },
   "private": false,
   "devDependencies": {

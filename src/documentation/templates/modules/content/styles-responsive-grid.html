@@ -1,0 +1,160 @@
+
+<div class="ms-Grid docs-demoGrid" aria-label="Example Grid">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm1">
+            <div class="block">1</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm2">
+            <div class="block">2</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm3">
+            <div class="block">3</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm3">
+            <div class="block">3</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm3">
+            <div class="block">3</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm3">
+            <div class="block">3</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm4">
+            <div class="block">4</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm4">
+            <div class="block">4</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm4">
+            <div class="block">4</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6">
+            <div class="block">6</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm6">
+            <div class="block">6</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm12">
+            <div class="block">12</div>
+        </div>
+    </div>
+</div>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p>
+
+<p class="ms-font-m">A grid (<span class="docs-u-fontCode">ms-Grid</span>) can contain multiple rows (<span class="docs-u-fontCode">ms-Grid-row</span>), each of which has one or more columns (<span class="docs-u-fontCode">ms-Grid-col</span>). Utility classes (<span class="docs-u-fontCode">ms-u-sm6</span>) specify how large each column should be on small, medium, and large devices. The columns in a row should add up to 12 for each device size.</p>
+<pre><code>&lt;div class="ms-Grid"&gt; 
+    &lt;div class="ms-Grid-row"&gt;
+        &lt;div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2"&gt;First&lt;/div&gt;
+        &lt;div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10"&gt;Second&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Would result in:</p>
+
+<div class="ms-Grid docs-demoGrid" aria-label="Grid example">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg2">
+            <div class="block">First</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg10">
+            <div class="block">Second</div>
+        </div>
+    </div>
+</div>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Inheritance</p>
+
+<p class="ms-font-m">Because Fabric is mobile-first, any layout defined for small screens is automatically inherited by medium and large screens. The small size utilities (<span class="docs-u-fontCode">ms-u-sm6</span>) are required. If you want to change the layout on larger screens, you can apply the other utility classes.</p>
+
+<p class="ms-font-m">Try this out! On a large screen, the Example block will be smaller. Try shrinking your browser window – the Example block will take up the entire width of the screen.</p>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p>
+<pre><code>&lt;div class="ms-Grid-col ms-u-sm12 ms-u-lg4"&gt;Example&lt;/div&gt;
+</pre></code>
+<div class="ms-Grid docs-demoGrid" aria-label="Grid example">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm12 ms-u-lg4">
+            <div class="block">Example</div>
+        </div>
+    </div>
+</div>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Push and pull</p>
+
+<p class="ms-font-m">You might want your column source order to differ from the display order, or to change the column display order based on the screen size. The push and pull utilities make this possible. Push moves a column to the right; pull moves it to the left.</p>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p>
+<pre><code>&lt;div class="ms-Grid-col ms-u-sm4 ms-u-smPush8"&gt;first in code&lt;/div&gt;
+&lt;div class="ms-Grid-col ms-u-sm8 ms-u-smPull4"&gt;second in code&lt;/div&gt;
+</code></pre>
+
+<div class="ms-Grid docs-demoGrid" aria-label="Grid example">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-u-sm4 ms-u-smPush8">
+            <div class="block">first in code</div>
+        </div>
+        <div class="ms-Grid-col ms-u-sm8 ms-u-smPull4">
+            <div class="block">second in code</div>
+        </div>
+    </div>
+</div>

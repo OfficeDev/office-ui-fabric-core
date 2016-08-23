@@ -1,0 +1,82 @@
+#body-content {
+    .LeftNav { 
+        width: $LeftNavWidth;
+        text-align: right;
+        margin-top: 42px;
+        display: none;
+
+        @media (min-width: 967px) {
+            display: block;
+        }
+    }
+
+    .LeftNav-links {
+        margin: 0;
+    }
+
+    .LeftNav-item {
+        display: block;
+        text-align: left;
+        margin: 0;
+    }
+
+    a.LeftNav-link {
+        display: block;
+        height: 40px;
+        font-family: "Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif;
+        font-size: 14px;
+        line-height: 40px;
+        padding: 0 40px;
+        border: none;
+        cursor: pointer;
+        color: #333;
+        background: #ffffff;
+        outline: transparent;
+
+        // States
+        &:hover {
+            background: #f8f8f8;
+            cursor: pointer;
+        }
+
+        &:focus {
+            color: $ms-color-neutralDark;
+             outline: none !important;
+             outline-style:none;
+            box-shadow:none;
+            border-color:transparent;
+        }
+
+        &.is-selected {
+            @include ms-baseFont;
+            font-weight: $ms-font-weight-semibold;
+            color: $ms-color-black;
+            border-left-width: 2px;
+            border-left-style: solid;
+        }
+        
+        &.LeftNav-link--active {
+            color: $ms-color-themePrimary;
+            @include ms-bgColor-info;
+            position: relative;
+            color: #333;
+
+            &:after {
+                content: '';
+                position: absolute;
+                border-left: 2px solid black;
+                top: 0; 
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+             &:visited, &:active {
+                color: $ms-color-themePrimary;
+            }
+        }
+    }
+
+    a:hover.LeftNav-link {
+        color: $ms-color-themePrimary;
+    }
+}

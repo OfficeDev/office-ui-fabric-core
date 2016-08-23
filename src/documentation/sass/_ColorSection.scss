@@ -1,0 +1,105 @@
+.docs-ColorSection-palette {
+  margin-bottom: 20px;
+}
+
+.docs-ColorSection-swatches {
+  padding: 10px;
+  border: 1px solid $ms-color-neutralLight;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+
+.ms-Callout-inner {
+  position: relative;
+}
+
+.docs-ColorSection-contrastCaptionLeft {
+  float: left;
+  h4 {
+    @include ms-font-m;
+  }
+}
+
+.docs-ColorSection-contrastCaptionRight {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: $ms-color-black;
+  width: 52px;
+  h4 {
+    @include ms-font-m;
+  }
+}
+
+.docs-ColorSection-contrastCaption {
+    margin-bottom: 10px;
+    padding-left: 7px;
+    white-space: nowrap;
+}
+
+.docs-ColorSection-swatchHeader {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  position: relative;
+}
+
+.docs-ColorSection-swatchTitle {
+  position: absolute;
+  bottom: 10px;
+}
+
+.docs-ColorSection-swatchHex {
+  position: absolute;
+  right: 10px;
+  text-align: right;
+}
+
+.docs-ColorSection-swatchBody {
+  // padding: 10px;
+  overflow: hidden; 
+  height: 0;  
+}
+
+.docs-ColorSection-swatchCode {
+  padding: 5px;
+  padding-right: 0;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  font-size: $ms-font-size-s;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Phone, Phablet
+@media (min-width: 600px) {
+  .docs-ColorSection-swatchBody {
+      padding: 10px;
+      height: auto;
+  }
+
+  .docs-ColorSection-swatch {
+    width: calc("50% - 10px");
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid $ms-color-neutralLight;
+  }
+}
+
+// Tablet
+@media (min-width: 980px) {
+  .docs-ColorSection-swatch {
+    width: calc("33.3% - 10px");
+  }
+}
+
+// Large/Landscape Tablet, Desktop
+@media (min-width: 1200px) {
+  .docs-ColorSection-swatch {
+    width: calc("25% - 10px");
+  }
+}

@@ -1,0 +1,36 @@
+html, body, input, a
+{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  @include ms-font-m-plus;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+  @include ms-u-borderBox;
+}  
+
+img {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+pre {
+  font-family: $ms-font-family-code;
+  font-size: 13px;
+  padding: 10px;
+  background-color: $ms-color-neutralLighter;
+}
+
+code,
+.docs-u-fontCode {
+  font-family: $ms-font-family-code;
+  font-weight: normal;
+  padding: 2px;
+  overflow: hidden;
+  border: none;
+}

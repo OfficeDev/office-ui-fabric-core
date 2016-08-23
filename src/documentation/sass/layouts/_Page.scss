@@ -1,0 +1,49 @@
+$docs-sideNavWidths: 300px;
+
+.docs-Page {
+  margin: $HeaderHeight auto 50px auto;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.docs-Page--home {
+  min-height: 0;
+}
+
+.docs-innerPage {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+// Left and right nav, hidden on small screens
+.docs-Page-leftNav {
+    display: none;
+    position: fixed;
+    top: $HeaderHeight; // Brings the top roughly in line with the first header on the page
+    width: $docs-sideNavWidths;
+    height: 100%;
+    border-right: 1px solid #eeeeee;
+}
+
+// On larger screens, show and position the navs
+@media (min-width: $ms-screen-xl-min) {
+    .docs-Page.has-leftNav {
+        padding-left: $docs-sideNavWidths + 30px;
+        
+        .docs-Page-leftNav {
+            left: 0;
+            display: block;
+        }
+    }
+
+    .docs-Page.has-rightNav {
+        padding-right: $docs-sideNavWidths;
+        
+        .docs-Page-rightNav {
+            right: 0;
+            display: block;
+        }
+    }
+}

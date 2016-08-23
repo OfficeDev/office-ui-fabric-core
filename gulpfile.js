@@ -14,6 +14,18 @@ var BuildConfig = require('./gulp/modules/BuildConfig');
 
 Plugins.requireDir('../../gulp');
 
+//
+// Local Server Configuration and Testing Website
+// ----------------------------------------------------------------------------
+
+Server.configServer(
+   Config.port, // Port Number
+   Config.projectURL, // URL To access the server
+   Config.projectDirectory // Directory to serve up
+);
+
+// Config Paths
+Server.serveSpecificPaths(Config.servePaths);
 
 //
 // Nuke Tasks
@@ -30,7 +42,7 @@ gulp.task('watch-build', BuildConfig.buildTasks, function () {
     }));
 });
 
-gulp.task('watch', ['watch-build', 'BuildMessages-finished']);
+gulp.task('watch', ['watch-build', 'Server', 'BuildMessages-server']);
 
 // Debug Tasks
 gulp.task('watch-debug-build-tasks', BuildConfig.buildTasks);

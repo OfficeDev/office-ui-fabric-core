@@ -1,0 +1,47 @@
+@@include('../../templates/modules/components/DocumentationPageHeader.html')
+  <div class="docs-Styles-section" id="responsive-grid">
+    <h2>Responsive Grid</h2>
+    <p>Fabric comes with a mobile-first, 12-column, responsive grid that you can use to create flexible layouts for a variety of screen sizes and device types.</p>
+    @@include('../../templates/modules/content/styles-responsive-grid.html')
+
+    <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Visibility</p>
+
+    <p class="ms-font-m">Some designs call for certain content to be shown or hidden depending on the screen size. You can achieve this using Fabric's responsive visibility classes. These allow you to show or hide content at a specific screen size, or across a whole range of sizes.</p>
+
+    <table class="docs-Table docs-Table--striped" style="width: 100%;" aria-label="Table of classes to hide content on the screen depending on screensize">
+        <col>
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <tr>
+            <th colspan="2" style="text-align:center;" scope="colgroup">Visibility class</th>
+            <th colspan="6" style="text-align:center;" scope="colgroup">Hides content on screen of size</th>
+        </tr>
+        <tr>
+            <th colspan="1" style="text-align:center;"></th>
+            <th style="text-align:center;" scope="col">SM</th>
+            <th style="text-align:center;" scope="col">MD</th>
+            <th style="text-align:center;" scope="col">LG</th>
+            <th style="text-align:center;" scope="col">XL</th>
+            <th style="text-align:center;" scope="col">XXL</th>
+            <th style="text-align:center;" scope="col">XXXL</th>
+        </tr>
+        {{#each ResponsiveTableModel.items}}
+            {{> ResponsiveTableRow this }}
+        {{/each}}
+    </table>
+
+    <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p><pre><code>&lt;div class="ms-Grid-col ms-u-sm12 ms-u-hiddenXlDown"&gt;hidden on small&lt;/div&gt;
+      &lt;div class="ms-Grid-col ms-u-sm12 ms-u-hiddenXxlUp"&gt;hidden on large up&lt;/div&gt;</code></pre>
+
+    <div class="ms-Grid docs-demoGrid">
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-u-sm12 ms-u-hiddenXlDown">
+                <div class="block">The screen is XL or smaller.</div>
+            </div>
+            <div class="ms-Grid-col ms-u-sm12 ms-u-hiddenXxlUp">
+                <div class="block">The screen is XXL or larger.</div>
+            </div>
+        </div>
+    </div>
+  </div>
+@@include('../../templates/modules/components/DocumentationPageFooter.html')

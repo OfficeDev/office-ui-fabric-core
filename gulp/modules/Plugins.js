@@ -18,6 +18,7 @@ var Plugins = function() {
 	this.header = require('gulp-header');
 	this.zip = require('gulp-zip');
 	this.gutil = require('gulp-util');
+	this.handlebars = require('gulp-compile-handlebars');
 	this.runSequence = require('run-sequence');
 	this.template = require('gulp-template');
 	this.concat = require('gulp-concat');

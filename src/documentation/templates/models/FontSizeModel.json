@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "class": "ms-fontSize-su",
+      "size": "42px"
+    },
+    {
+      "class": "ms-fontSize-xxl",
+      "size": "28px"
+    },
+    {
+      "class": "ms-fontSize-xl",
+      "size": "21px"
+    },
+    {
+      "class": "ms-fontSize-l",
+      "size": "17px"
+    },
+    {
+      "class": "ms-fontSize-mPlus",
+      "size": "15px"
+    },
+    {
+      "class": "ms-fontSize-m",
+      "size": "14px"
+    },
+    {
+      "class": "ms-fontSize-sPlus",
+      "size": "13px"
+    },
+    {
+      "class": "ms-fontSize-s",
+      "size": "12px"
+    },
+    {
+      "class": "ms-fontSize-xs",
+      "size": "11px"
+    },
+    {
+      "class": "ms-fontSize-mi",
+      "size": "10px"
+    }
+  ]
+}

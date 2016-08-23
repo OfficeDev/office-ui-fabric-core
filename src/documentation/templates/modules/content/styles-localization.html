@@ -1,0 +1,158 @@
+<h4>Usage</h4>
+<p>Apply the “dir” attribute to the HTML tag, and reference the RTL version of Fabric.</p>
+
+<pre><code class="hljs">&lt;html dir="rtl"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;link rel="stylesheet" href="fabric-[version].rtl.min.css"&gt;
+  &lt;/head&gt;
+  ...
+&lt;/html&gt;</code></pre>
+
+<h3>Language-optimized fonts</h3>
+<p class="ms-font-m">By default, Fabric presents all text using the Western European character set of Segoe UI. For languages with other characters, Fabric will either serve a version of Segoe UI with a different character set or use a system font.</p>
+  
+<h4>Usage</h4>
+<p class="ms-font-m">The HTML “lang” attribute specifies the language of the element's content. This is typically applied to the root HTML element, where it will be inherited by the entire page. In this example the entire page is in Thai.</p>
+
+<pre><code class="hljs">&lt;html lang="th-TH"&gt;...&lt;/html&gt;</code></pre>
+<p class="ms-font-m">For pages with content in multiple languages, the “lang” attribute can be applied to individual elements. In this example, a page that is mostly Thai also contains some Vietnamese.</p>
+<pre><code class="hljs">&lt;html lang="th-TH"&gt;
+  ...
+  &lt;section lang="vi-VN"&gt;...&lt;/section&gt;
+&lt;/html&gt;</code></pre>
+
+<p class="ms-font-m">Fabric supports a variety of language codes, which map to the following font stacks:</p>
+
+<table class="docs-Table" style="width: 100%;">
+    <tr>
+        <th style="width: 25%; min-width: 100px;">Language</th>
+        <th style="width: 15%; min-width: 100px;">Code</th>
+        <th style="width: 60%; min-width: 100px;">Font stack</th>
+    </tr>
+    <tr>
+        <td role="gridcell">Western European (default)</td>
+        <td role="gridcell">N/A</td>
+        <td role="gridcell">'Segoe UI Web Regular', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Japanese</td>
+        <td role="gridcell">ja-JP</td>
+        <td role="gridcell">YuGothic, "Meiryo UI", Meiryo, "MS Pgothic", Osaka, "Segoe UI", Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Korean</td>
+        <td role="gridcell">ko-KR</td>
+        <td role="gridcell">"Malgun Gothic", Gulim, "Segoe UI", Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Chinese (simplified)</td>
+        <td role="gridcell">ch-ZHS</td>
+        <td role="gridcell">"Microsoft Yahei", Verdana, Simsun, "Segoe UI", Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Chinese (traditional)</td>
+        <td role="gridcell">ch-ZHT</td>
+        <td role="gridcell">"Microsoft Jhenghei", Pmingliu, "Segoe UI", Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Hindi</td>
+        <td role="gridcell">hi-IN</td>
+        <td role="gridcell">"Nirmala UI", "Segoe UI", Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Thai</td>
+        <td role="gridcell">th-TH</td>
+        <td role="gridcell">'Leelawadee UI Regular', 'Kmer UI', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Arabic</td>
+        <td role="gridcell">ar</td>
+        <td role="gridcell">'Segoe UI Regular Arabic', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Bulgarian</td>
+        <td role="gridcell">bg-BG</td>
+        <td role="gridcell">'Segoe UI Regular Cyrillic', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Czech</td>
+        <td role="gridcell">cs-CZ</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Estonian</td>
+        <td role="gridcell">et-EE</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Croatian</td>
+        <td role="gridcell">hr-HR</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Hungarian</td>
+        <td role="gridcell">hu-HU</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Lithuanian</td>
+        <td role="gridcell">lt-LT</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Latvian (Lettish)</td>
+        <td role="gridcell">lv-LV</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Polish</td>
+        <td role="gridcell">pl-PL</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Serbian</td>
+        <td role="gridcell">lt-sr-SP</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Russian</td>
+        <td role="gridcell">ru-RU</td>
+        <td role="gridcell">'Segoe UI Regular Cyrillic', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Ukrainian</td>
+        <td role="gridcell">uk-UA</td>
+        <td role="gridcell">'Segoe UI Regular Cyrillic', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Turkish</td>
+        <td role="gridcell">tr-TR</td>
+        <td>'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Slovak</td>
+        <td role="gridcell">sk-SK</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Kazakh</td>
+        <td role="gridcell">kk-KZ</td>
+        <td role="gridcell">'Segoe UI Regular EastEuropean', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Greek</td>
+        <td role="gridcell">el-GR</td>
+        <td role="gridcell">'Segoe UI Regular Greek', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Hebrew</td>
+        <td role="gridcell">he-IL</td>
+        <td role="gridcell">'Segoe UI Regular Hebrew', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Vietnamese</td>
+        <td role="gridcell">vi-VN</td>
+        <td role="gridcell">'Segoe UI Regular Vietnamese', 'Segoe UI', 'Segoe WP', Tahoma, Arial, sans-serif</td>
+    </tr>
+</table>

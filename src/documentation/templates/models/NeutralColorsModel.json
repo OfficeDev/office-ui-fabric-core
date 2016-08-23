@@ -1,0 +1,186 @@
+{
+  "items": [
+    {
+      "name": "Black",
+      "hex": "#000000",
+      "fontClass": "ms-fontColor-black",
+      "bgClass": "ms-bgColor-black",
+      "borderClass": "ms-borderColor-black",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-neutralLight",
+          "ratio": "17:5:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLighter",
+          "ratio": "19:9:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLightAlt",
+          "ratio": "19:8:1"
+        },
+        {
+          "class": "ms-bgColor-themeLight",
+          "ratio": "15:4:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighter",
+          "ratio": "17:5:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighterAlt",
+          "ratio": "19:3:1"
+        },
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "21:1"
+        }
+      ]
+    },
+    {
+      "name": "Neutral Dark",
+      "hex": "#212121",
+      "fontClass": "ms-fontColor-neutralDark",
+      "bgClass": "ms-bgColor-neutralDark",
+      "borderClass": "ms-borderColor-neutralDark"
+    },
+     {
+      "name": "Neutral Primary",
+      "hex": "#333333",
+      "fontClass": "ms-fontColor-neutralPrimary",
+      "bgClass": "ms-bgColor-neutralPrimary",
+      "borderClass": "ms-borderColor-neutralPrimary",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-neutralLight",
+          "ratio": "10:5:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLighter",
+          "ratio": "11:5:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLightAlt",
+          "ratio": "11:9:1"
+        },
+        {
+          "class": "ms-bgColor-themeLight",
+          "ratio": "9:3:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighterAlt",
+          "ratio": "11:6:1"
+        },
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "12:6:1"
+        }
+      ]
+    },
+    {
+      "name": "Neutral Primary Alt",
+      "hex": "#3C3C3C",
+      "fontClass": "ms-fontColor-neutralPrimaryAlt",
+      "bgClass": "ms-bgColor-neutralPrimaryAlt",
+      "borderClass": "ms-borderColor-neutralPrimaryAlt"
+    },
+    {
+      "name": "Neutral Secondary",
+      "hex": "#666666",
+      "fontClass": "ms-fontColor-neutralSecondary",
+      "bgClass": "ms-bgColor-neutralSecondary",
+      "borderClass": "ms-borderColor-neutralSecondary",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-neutralLight",
+          "ratio": "4:8:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLighter",
+          "ratio": "5:2:1"
+        },
+        {
+          "class": "ms-bgColor-neutralLightAlt",
+          "ratio": "5:4:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighter",
+          "ratio": "4:8:1"
+        },
+        {
+          "class": "ms-bgColor-themeLighterAlt",
+          "ratio": "5:27:1"
+        },
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "5:7:1"
+        }
+      ]
+    },
+    {
+      "name": "Neutral Secondary Alt",
+      "hex": "#767676",
+      "fontClass": "ms-fontColor-neutralSecondaryAlt",
+      "bgClass": "ms-bgColor-neutralSecondaryAlt",
+      "borderClass": "ms-borderColor-neutralSecondaryAlt",
+      "contrastBgs": [
+        {
+          "class": "ms-bgColor-white",
+          "ratio": "4:5:1"
+        }
+      ]
+    },
+    {
+      "name": "Neutral Tertiary",
+      "hex": "#A6A6A6",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-neutralTertiary",
+      "bgClass": "ms-bgColor-neutralTertiary",
+      "borderClass": "ms-borderColor-neutralTertiary"
+    },
+    {
+      "name": "Neutral Tertiary Alt",
+      "customNameColor": "ms-fontColor-black",
+      "hex": "#C8C8C8",
+      "fontClass": "ms-fontColor-neutralTertiaryAlt",
+      "bgClass": "ms-bgColor-neutralTertiaryAlt",
+      "borderClass": "ms-borderColor-neutralTertiaryAlt"
+    },
+    {
+      "name": "Neutral Light",
+      "hex": "#EAEAEA",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-neutralLight",
+      "bgClass": "ms-bgColor-neutralLight",
+      "borderClass": "ms-borderColor-neutralLight",
+      "secondBgClass": "ms-bgColor-neutralPrimaryAlt"
+    },
+    {
+      "name": "Neutral Lighter",
+      "hex": "#004578",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-neutralLighter",
+      "bgClass": "ms-bgColor-neutralLighter",
+      "borderClass": "ms-borderColor-neutralLighter",
+      "secondBgClass": "ms-bgColor-neutralPrimaryAlt"
+    },
+    {
+      "name": "Neutral Lighter Alt",
+      "hex": "#F8F8F8",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-neutralLighterAlt",
+      "bgClass": "ms-bgColor-neutralLighterAlt",
+      "borderClass": "ms-borderColor-neutralLighterAlt",
+      "secondBgClass": "ms-bgColor-neutralPrimary"
+    },
+    {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-white",
+      "bgClass": "ms-bgColor-white",
+      "borderClass": "ms-borderColor-white",
+      "secondBgClass": "ms-bgColor-neutralPrimary"
+    }
+  ]
+}

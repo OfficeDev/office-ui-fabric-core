@@ -1,0 +1,172 @@
+$ms-InfoBarHeight: 30px;
+
+.docs-colorContainer {
+  padding-left: 9px;
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.docs-colorBox {
+  height: 65px;
+  padding: 18px;
+  box-sizing: border-box;
+  
+  p {
+    line-height: 20px;
+    font-size: $ms-font-size-s;
+    margin: 0;
+  }
+  .mobileText {
+    @include ms-baseFont;
+    font-weight: $ms-font-weight-semibold;
+  }
+}
+
+.docs-colorBoxBG {
+  padding-top: 11px;
+  
+  span.ms-font-size-m {
+    font-size:  $ms-font-size-mi;
+    line-height: 14px;
+  }
+  
+  @media (min-width: $ms-screen-lg-min) {
+  
+     span.ms-font-size-m {
+      font-size:  $ms-font-size-m;
+      line-height: 20px;
+    }
+  }
+}
+
+.docs-colorBox.ms-u-lg4 {
+  line-height: 7px;
+
+  @media (min-width: $ms-screen-lg-min) {
+    width: 32.333333%;
+    margin-right: 1%;
+  }
+}
+
+.docs-colorBottomRow {
+  margin-bottom: 16px;
+  .docs-colorBox {
+    width: 100%;
+    font-size: $ms-font-size-s;
+    padding-top:12px;
+  }
+  
+  @media (min-width: $ms-screen-lg-min) {
+    .docs-colorBox {
+      width: 32.333333%;
+      font-size: $ms-font-size-m;
+    }
+  }
+}
+
+.docs-colorBox-hasBg {
+  background-color: $ms-color-neutralLighterAlt;
+}
+
+.docs-colorBox-hasBorder {
+  border: 1px solid $ms-color-neutralLight;
+}
+
+.docs-colorBoxBorder {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.docs-colorBox:last-child {
+  margin-right: 0;
+}
+
+
+.Typography-infoButton,
+.Typography-toggleCodeButton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: $ms-font-size-s;
+  padding: 0 7px;
+  height: $ms-InfoBarHeight;
+  display: inline-block;
+  outline: none;
+  vertical-align: super;
+  position: absolute;
+  right: 0;
+  z-index: 20;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .ms-Icon {
+    color: $ms-color-neutralTertiary;
+  }
+
+  img {
+    fill: $ms-color-neutralTertiary;
+  }
+
+  &:hover .ms-Icon,
+  &:hover img {
+    color: $ms-color-neutralSecondary;
+    fill: $ms-color-neutralSecondary;
+  }
+}
+
+.ms-Callout.docs-ColorSection-swatchCallout {
+  position:absolute;
+  width:290px;
+  height: inherit;
+  right: -14%;
+  top: 100%;
+  z-index:($ms-zIndex-Callout + $ms-zIndex-front);
+  display: none;
+  pointer-events: none;
+
+  &.ms-Callout--arrowTop:after {
+    right: 47px;
+    left: auto;
+  }
+
+  &.ms-Callout--arrowTop:before {
+    right: 47px;
+    left: auto;
+  }
+
+  .ms-Callout-inner {
+    width: 100%;
+  }
+
+  .ms-Callout-header {
+    background-color: $ms-color-white;
+  }
+}
+
+.docs-colorBottomRow .Typography-infoButton:hover + .ms-Callout.docs-ColorSection-swatchCallout {
+  display: block;
+}
+
+
+.docs-ColorSection-contrastText {
+    float: left;
+    width: 75%;
+    padding: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.docs-ColorSection-contrastRatio {
+    float: right;
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}

@@ -1,0 +1,59 @@
+#body-content { // Office Dev overrides
+  .docs-IconList {
+
+    ul {
+      margin: 0;
+      margin-bottom: 20px;
+
+      li {
+        float: left;
+        font-size: $ms-font-size-xs;
+        color: $ms-color-neutralSecondary;
+        text-align: center;
+        width: 33.3%;
+        height: 138px; 
+        padding: 10px;
+        overflow: hidden;
+        background-color: $ms-color-neutralLighterAlt;
+        width: 49%;
+        margin-right: 1%;
+        margin-bottom: 1%;
+        min-height: 124px;
+        list-style: none !important;
+
+        // Phone, Phablet
+        @media (min-width: $ms-screen-lg-min) {
+          width: 24%;
+        }
+
+        @media (min-width: $ms-screen-xl-min) {
+          margin-right: 1%;
+          margin-bottom: 1%;
+          min-height: 124px;
+          height: 100px;
+        }
+
+        .ms-Icon {
+          color: $ms-color-neutralPrimary;
+          font-size: 32px;
+          margin: 10px auto;
+          width: 100%;
+          margin-top: 0.8em;
+        }
+
+        span {
+          display: inline-block;
+          text-align: left;
+          margin-top: 10px;
+          width: 100%;
+          font-size: $ms-font-size-s;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+

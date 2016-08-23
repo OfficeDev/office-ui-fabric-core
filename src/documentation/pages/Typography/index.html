@@ -1,0 +1,51 @@
+@@include('../../templates/modules/components/DocumentationPageHeader.html')
+<div class="docs-Styles-section" id="typography">
+  <h2>Typography</h2>
+  <p>Fabric includes 10 base font classes that represent the type ramp for the Office Design Language. Each base class sets a default <strong>size, weight, and color</strong>.</p>
+  
+  <ul class="ms-Grid docs-ListTable" aria-label="Typography classes table">
+    {{#each TypographyModel.items}}
+      {{> Typography this }}
+    {{/each}}
+  </ul>
+
+  <h3>Font weight</h3>
+  <p>Use these classes to set the font weight, independent of its size and color.</p>
+  
+  <div class="ms-Grid" role="grid">
+    <div class="ms-Grid-row docs-HelperClasses">
+      <div class="ms-Grid-row docs-TypeHeader" role="row">
+        <div class="ms-Grid-col ms-u-sm12 ms-u-lg5 docs-HelperHeader" role="columnheader">
+          <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Class</p>
+        </div>
+        <div class="ms-Grid-col ms-u-sm12 ms-u-lg3 docs-HelperHeader" role="columnheader">
+          <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Weight</p>
+        </div>
+      </div>
+      {{#each FontWeightModel.items}}
+        {{> FontWeight this }}
+      {{/each}}
+    </div>
+  </div>
+
+  <h3>Font size</h3>
+  <p>Use these classes to set the font size, independent of its weight and color.</p>
+  
+  <div class="ms-Grid" role="grid">
+    <div class="ms-Grid-row docs-HelperClasses">
+      <div class="ms-Grid-row docs-TypeHeader" role="row">
+        <div class="ms-Grid-col ms-u-sm12 ms-u-lg5 docs-HelperHeader" role="columnheader">
+          <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Class</p>
+        </div>
+        <div class="ms-Grid-col ms-u-sm12 ms-u-lg3 docs-HelperHeader" role="columnheader">
+          <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Size</p>
+        </div>
+      </div>
+
+      {{#each FontSizeModel.items}}
+        {{> FontSize this }}
+      {{/each}}
+    </div>
+  </div>
+</div>
+@@include('../../templates/modules/components/DocumentationPageFooter.html')

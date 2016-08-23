@@ -1,0 +1,100 @@
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 30px 0 8px 0;
+}
+
+h1 {
+    color: $ms-color-neutralSecondary;
+    font-family: $ms-font-system-base;
+    font-size: $ms-font-size-su;
+    font-weight: $ms-font-weight-light;
+}
+
+h2 {
+    font-family: $ms-font-system-base;
+    font-weight: $ms-font-weight-semilight;
+    font-size: $ms-font-size-xxl;
+    color: $ms-color-neutralPrimary;
+}
+
+h3 {
+    font-family: $ms-font-system-base;
+    font-weight: $ms-font-weight-regular;
+    font-size: $ms-font-size-xl;
+    color: $ms-color-neutralDark !important; // @todo: Remove this important when dev.office.com styles no longer leak
+}
+
+h4 {
+    font-family: $ms-font-system-base;
+    font-weight: $ms-font-weight-semibold;
+    font-size: $ms-font-size-l;
+    color: $ms-color-neutralPrimary;
+}
+
+p {
+    font-family: $ms-font-system-base;
+    font-weight: $ms-font-weight-regular;
+    font-size: $ms-font-size-l;
+    color: $ms-color-neutralPrimary;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    
+    strong {
+        font-family: $ms-font-system-base;
+        font-weight: normal;
+        font-weight: $ms-font-weight-semibold;
+    }
+}
+
+code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #DEECF9;
+}
+
+#body-content {
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+
+        &:focus {
+            outline: none !important;
+            
+
+            @include high-contrast {
+                &::before {
+                    border: 1px solid $ms-color-white;
+                }
+            }
+            
+            @include high-contrast-black-on-white  {
+                &::before {
+                    border: 1px solid $high-contrast-purpleBG;
+                }
+            }
+        }
+        
+        @include high-contrast {
+            color: $high-contrast-blueBG;
+            
+            &:hover {
+                color: $high-contrast-blueBG;
+            }
+        }
+        
+        @include high-contrast-black-on-white  {
+            color: $high-contrast-blueBG;
+            
+            &:hover {
+                color: $high-contrast-blueBG;
+            }
+        }
+    }
+}

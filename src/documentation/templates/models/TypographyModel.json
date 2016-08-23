@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "class": "ms-font-su",
+      "size": "42px",
+      "weight": "Segoe UI Light",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-xxl",
+      "size": "28px",
+      "weight": "Segoe UI Light",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-xl",
+      "size": "21px",
+      "weight": "Segoe UI Light",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-l",
+      "size": "17px",
+      "weight": "Segoe UI Semilight",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-m-plus",
+      "size": "15px",
+      "weight": "Segoe UI Regular",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-m",
+      "size": "14px",
+      "weight": "Segoe UI Regular",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-s-plus",
+      "size": "13px",
+      "weight": "Segoe UI Regular",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-s",
+      "size": "12px",
+      "weight": "Segoe UI Regular",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-xs",
+      "size": "11px",
+      "weight": "Segoe UI Regular",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
+      "class": "ms-font-mi",
+      "size": "10px",
+      "weight": "Segoe UI Semibold",
+      "color": "ms-color-neutralPrimary"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+// Main Sass file for the docs site
+
+// Import all of Fabric's variables, mixins, and utility classes
+@import '../../sass/_Fabric.Common.scss';
+
+// New font stack for presenting code
+$ms-font-family-code: "Consolas", "Monaco", "Ubuntu Mono", Courier, monospace;
+
+// Variables used throughout the site
+$LeftNavWidth: 210px;
+$HeaderHeight: 50px;
+$docs-mobileNavBreakpoint: 1024px;
+
+// Highcontrast mode mixins
+@mixin high-contrast {
+  @media screen and (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin high-contrast-black-on-white {
+  @media screen and (-ms-high-contrast: black-on-white) {
+   @content;
+  }
+}
+
+@mixin high-contrast-white-on-black {
+  @media screen and (-ms-high-contrast: white-on-black) {
+   @content;
+  }
+}
+
+$high-contrast-blueBG: #0000c0;
+$high-contrast-purpleBG: #37006e;
+$high-contrast-cyan: #1aebff;
+$high-contrast-yellow: #ffff00;
+$high-contrast-green: #3ff23f;
+
+
+// Base styles
+@import './base/_Typography.scss';
+
+// Import documentation component and layout styles
+// @todo: Remove the #body-content wrapper once specificity issues with dev.office.com are fixed
+
+#body-content {
+    @import './components/_Header.scss';
+    @import './components/_Nav.scss';
+    @import './components/_Styles.scss';
+    @import './components/_Table.scss';
+    @import './layouts/_Page.scss';
+}
+
+// Import Pages
+@import './_AnimationsSection.scss';
+@import './_ColorBoxes.scss';
+@import './_ColorSection.scss';
+@import './_FabricApp.scss';
+@import './_IconsSection.scss';
+@import './_LeftNav.scss';
+@import './_ParagraphStyles.scss';
+@import './_ResponsiveGridSection.scss';
+@import './_TypographySection.scss';
+
+.full-width-container {
+    margin-top: 0 !important;
+    padding-top: 0;
+}
+
+// slideRightIn80
+@mixin ms-u-slideRightIn80 {
+    @include animationMix((fadeIn, slideRightIn80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideRightIn80 {
+  @include ms-u-slideRightIn80;
+}
+@-webkit-keyframes slideRightIn80 {
+    from { -webkit-transform:translate3d(-80px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideRightIn80 {
+    from { transform:translate3d(-80px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+// slideLeftIn80
+@mixin ms-u-slideLeftIn80 {
+    @include animationMix((fadeIn, slideLeftIn80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideLeftIn80 {
+  @include ms-u-slideLeftIn80;
+}
+@-webkit-keyframes slideLeftIn80 {
+    from { -webkit-transform:translate3d(80px, 0px, 0px); }
+    to { -webkit-transform:translate3d(0px, 0px, 0px); }
+}
+@keyframes slideLeftIn80 {
+    from { transform:translate3d(80px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+}
+
+
+// slideLeftIn80
+@mixin ms-u-slideLeftOut80 {
+    @include animationMix((fadeOut, slideLeftOut80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideLeftOut80 {
+  @include ms-u-slideLeftOut80;
+}
+@-webkit-keyframes slideLeftOut80 {
+    from { -webkit-transform:translate3d(0, 0px, 0px); }
+    to { -webkit-transform:translate3d(-80px, 0px, 0px); }
+}
+@keyframes slideLeftOut80 {
+    from { transform:translate3d(0, 0px, 0px); }
+    to { transform:translate3d(-80px, 0px, 0px); }
+}
+
+
+// slideLeftIn80
+@mixin ms-u-slideRightOut80 {
+    @include animationMix((fadeOut, slideRightOut80), $ms-duration3, $ms-ease1);
+}
+.ms-u-slideRightOut80 {
+  @include ms-u-slideRightOut80;
+}
+@-webkit-keyframes slideRightOut80 {
+    from { -webkit-transform:translate3d(0px, 0px, 0px); }
+    to { -webkit-transform:translate3d(80px, 0px, 0px); }
+}
+@keyframes slideRightOut80 {
+    from { transform:translate3d(0px, 0px, 0px); }
+    to { transform:translate3d(80px, 0px, 0px); }
+}
+
+.fabric-ie #layout-navigation {top: 56px; }
+.fabric-ie div.docs-showNavigation .tier-1 {margin-top: 57px; }
+.widget-FabricStyleOverrides {display: none;}
+@media (max-width: 700px) {
+    .fabric-ie #layout-navigation {top: 0; }
+}

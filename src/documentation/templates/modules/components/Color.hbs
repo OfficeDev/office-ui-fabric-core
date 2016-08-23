@@ -1,0 +1,55 @@
+<!-- Start Color -->
+<div class="ms-Grid-row" aria-label="First row of the color example for {{name}}, this row of the color example shows an example for background color, border color, and font color">    
+  <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBoxBG {{bgClass}}" aria-label="Example for {{bgClass}}">
+    <span class="ms-font-size-m {{#if customNameColor}}{{customNameColor}}{{else}}ms-fontColor-white{{/if}}">{{name}}<br />
+      {{hex}}</span>
+  </div>
+  <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox {{#if secondBgClass}}{{secondBgClass}}{{else}}docs-colorBox-hasBg{{/if}} docs-colorBox-hasBorder {{fontClass}}" aria-label="Example for {{fontClass}}">
+    <span class="ms-font-su {{fontClass}}">Aa</span>
+  </div>
+  <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox {{#if thirdBgClass}}{{thirdBgClass}}{{else}}docs-colorBox-hasBg{{/if}} docs-colorBoxBorder {{borderClass}}"  aria-label="Example for {{borderClass}}">
+  </div>
+</div>
+
+<div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example {{name}}, this row has the specific class names listed for background color, border color, and font color"> 
+  <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class {{bgClass}}">
+    <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> {{bgClass}}</p>
+  </div>
+  <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class {{fontClass}}">
+    <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> {{fontClass}}</p>
+    <!-- Info Button -->
+    {{#if contrastBgs}}
+    <button class="Typography-infoButton" aria-label="High contrast informatoin for the color {{name}}"> <i class="ms-Icon ms-Icon--Info ms-fontColor-neutralPrimary" aria-hidden="true"></i> </button>
+    <div class="ms-Callout docs-ColorSection-swatchCallout ms-Callout--arrowTop">
+      <div class="ms-Callout-main ms-u-clearfix">
+        <div class="ms-Callout-header">
+          <p class="ms-Callout-title">Acceptable Backgrounds</p>
+        </div>
+        <div class="ms-Callout-inner">
+          <div class="ms-Callout-content">
+            <div class="docs-ColorSection-contrastTextColumn">
+              <div class="docs-ColorSection-contrastCaption">
+                <div class="docs-ColorSection-contrastCaptionLeft">
+                <h4>Background Color Class:</h4></div>
+                <div class="docs-ColorSection-contrastCaptionRight">
+                <h4>Ratio:</h4></div>
+              </div>
+              <div class="docs-ColorSection-contrastData">
+                {{#each contrastBgs}}
+                <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode {{class}} {{../fontClass}}" title="{{class}}">{{class}}</div>
+                <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode {{class}} {{../fontClass}}">{{ratio}}</div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+     <!-- End Info Button -->
+  </div>
+  <div class="ms-Grid-col ms-u-sm4 ms-u-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class {{borderClass}}">
+    <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> {{borderClass}}</p>
+  </div>
+</div>
+<!-- End Color -->

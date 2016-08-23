@@ -1,0 +1,24 @@
+.docs-HelperClasses {
+  .ms-Grid-row {
+    width: 100%;
+    float: left;
+  }
+
+  .docs-HelperHeader {
+    display: none;
+  }
+  .ms-Grid-col {
+    p.font-size-m {
+      margin-bottom: 12px;
+    }
+  }
+
+  @media(min-width: $ms-screen-lg-min) {
+    .docs-HelperHeader {
+      display: block;
+    }
+    p.font-size-m {
+      margin-bottom: 0;
+    }
+  }
+}

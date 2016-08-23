@@ -1,0 +1,89 @@
+$od-Header-height: 50px;
+$od-Header-searchHeight: 33px;
+$od-Header-bannerWidth: $ms-screen-xl-min;
+
+.od-Header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $ms-color-black;
+  height: $od-Header-height;
+  z-index: 100;
+  height: $od-Header-height;
+
+  @media (min-width: $od-Header-bannerWidth) {
+     position: fixed;
+  }
+}
+
+.od-Header-banner {
+  height: $od-Header-height;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: $od-Header-bannerWidth) {
+     width: $od-Header-bannerWidth;
+     margin: auto;
+  }
+}
+
+.od-Header-searchContainer {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 330px;
+  height: $od-Header-searchHeight;
+  display: none;
+
+   @media (min-width: $od-Header-bannerWidth) {
+     display: block;
+   }
+}
+
+.od-Header-navigationContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: $od-Header-height;
+  background-color: $ms-color-neutralDark;
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  @media (min-width: $od-Header-bannerWidth) {
+    display: block;
+  }
+}
+
+.od-Header-hamburgerButton {
+  position: absolute;
+  right: 14px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: $ms-color-white;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+
+  &:focus {
+    box-shadow: inset 0px 0px 0px 1px $ms-color-white;
+    
+    @include high-contrast {
+      box-shadow: inset 0px 0px 0px 1px $ms-color-white;
+    }
+    
+    @include high-contrast-black-on-white  {
+      box-shadow: inset 0px 0px 0px 1px $high-contrast-purpleBG;
+    }
+  }
+
+  @media (min-width: $od-Header-bannerWidth) {
+    display: none;
+  }
+}

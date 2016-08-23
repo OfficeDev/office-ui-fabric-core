@@ -3,9 +3,11 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// Fabric Core Typography mixins
+// Wrapper component to set base typography.
 
-@mixin ms-baseFont {
-  font-family: $ms-font-family-base;
-  -webkit-font-smoothing: antialiased;
+
+//== Wrapper/base component
+//
+@mixin ms-Fabric {
+  @include ms-fontColor-neutralPrimary;
 }

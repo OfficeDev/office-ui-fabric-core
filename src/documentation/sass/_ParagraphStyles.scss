@@ -1,0 +1,32 @@
+// -- Paragraph Styles
+// -- All styles that affect fonts and images inside of the body content
+
+#body-content {
+    .ms-font-xxl:first-child {
+        margin-top: 0;
+    }
+
+    .ms-font-l {
+        line-height: 24px;
+    }
+
+    .ms-font-m {
+        line-height: 20px;
+    }
+
+    .ms-font-s {
+        line-height: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    pre {
+        border-radius: 0;
+        padding: 0;
+        border: none;
+        margin-bottom: 20px;
+    }
+}

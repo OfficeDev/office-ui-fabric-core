@@ -1,0 +1,65 @@
+// Tables
+.docs-Table {
+    margin-bottom: 20px;
+    max-width: 1140px;
+    width: 100%;
+    
+    th {
+        @include ms-baseFont;
+        font-size: 14px;
+        font-weight: $ms-font-weight-regular;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    tr {
+        border-bottom: 1px solid $ms-color-neutralLighter;
+        padding: 5px 10px;
+    }
+
+    td {
+        font-size: 14px;
+        padding: 10px;
+
+        &.light-border {
+            border-style: solid;
+            border-width: 2px;
+        }
+    }
+
+    .docs-Table-visibleForScreenReaders {
+        font-size: 0;
+    }
+
+    i.ms-Icon--CheckMark::before {
+        font-size: $ms-font-size-l;
+    }
+    
+    i.ms-Icon--Cancel::before {
+        font-size: $ms-font-size-m;
+    }
+}
+
+.docs-Table--striped {
+    tbody tr:nth-child(odd) {
+        background: $ms-color-neutralLighterAlt;
+    }
+}
+
+.docs-ListTable li {
+    list-style-type: none !important;
+}
+
+ol.docs-ListTable, 
+ul.docs-ListTable {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+ul.docs-ListTable, 
+ul.docs-ListTable li {
+    list-style-type: none !important;
+}

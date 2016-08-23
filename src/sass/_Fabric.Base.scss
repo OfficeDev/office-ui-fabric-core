@@ -9,6 +9,5 @@
 //== Wrapper/base component
 //
 @mixin ms-Fabric {
-  @include ms-baseFont;
   @include ms-fontColor-neutralPrimary;
 }

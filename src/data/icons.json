@@ -1,0 +1,2678 @@
+{
+  "fontName": "FabricMDL2Icons",
+  "version": "1.85",
+  "glyphs": [
+    {
+      "friendlyName": "DecreaseIndentLegacy",
+      "unicode": "E290"
+    },
+    {
+      "friendlyName": "IncreaseIndentLegacy",
+      "unicode": "E291"
+    },
+    {
+      "friendlyName": "GlobalNavButton",
+      "unicode": "E700"
+    },
+    {
+      "friendlyName": "InternetSharing",
+      "unicode": "E704"
+    },
+    {
+      "friendlyName": "Brightness",
+      "unicode": "E706"
+    },
+    {
+      "friendlyName": "MapPin",
+      "unicode": "E707"
+    },
+    {
+      "friendlyName": "Airplane",
+      "unicode": "E709"
+    },
+    {
+      "friendlyName": "Tablet",
+      "unicode": "E70A"
+    },
+    {
+      "friendlyName": "QuickNote",
+      "unicode": "E70B"
+    },
+    {
+      "friendlyName": "ChevronDown",
+      "unicode": "E70D"
+    },
+    {
+      "friendlyName": "ChevronUp",
+      "unicode": "E70E"
+    },
+    {
+      "friendlyName": "Edit",
+      "unicode": "E70F"
+    },
+    {
+      "friendlyName": "Add",
+      "unicode": "E710"
+    },
+    {
+      "friendlyName": "Cancel",
+      "unicode": "E711"
+    },
+    {
+      "friendlyName": "More",
+      "unicode": "E712"
+    },
+    {
+      "friendlyName": "Settings",
+      "unicode": "E713"
+    },
+    {
+      "friendlyName": "Video",
+      "unicode": "E714"
+    },
+    {
+      "friendlyName": "Mail",
+      "unicode": "E715"
+    },
+    {
+      "friendlyName": "People",
+      "unicode": "E716"
+    },
+    {
+      "friendlyName": "Phone",
+      "unicode": "E717"
+    },
+    {
+      "friendlyName": "Pin",
+      "unicode": "E718"
+    },
+    {
+      "friendlyName": "Shop",
+      "unicode": "E719"
+    },
+    {
+      "friendlyName": "Link",
+      "unicode": "E71B"
+    },
+    {
+      "friendlyName": "Filter",
+      "unicode": "E71C"
+    },
+    {
+      "friendlyName": "Zoom",
+      "unicode": "E71E"
+    },
+    {
+      "friendlyName": "ZoomOut",
+      "unicode": "E71F"
+    },
+    {
+      "friendlyName": "Microphone",
+      "unicode": "E720"
+    },
+    {
+      "friendlyName": "Search",
+      "unicode": "E721"
+    },
+    {
+      "friendlyName": "Camera",
+      "unicode": "E722"
+    },
+    {
+      "friendlyName": "Attach",
+      "unicode": "E723"
+    },
+    {
+      "friendlyName": "Send",
+      "unicode": "E724"
+    },
+    {
+      "friendlyName": "FavoriteList",
+      "unicode": "E728"
+    },
+    {
+      "friendlyName": "PageSolid",
+      "unicode": "E729"
+    },
+    {
+      "friendlyName": "Forward",
+      "unicode": "E72A"
+    },
+    {
+      "friendlyName": "Back",
+      "unicode": "E72B"
+    },
+    {
+      "friendlyName": "Refresh",
+      "unicode": "E72C"
+    },
+    {
+      "friendlyName": "Share",
+      "unicode": "E72D"
+    },
+    {
+      "friendlyName": "Lock",
+      "unicode": "E72E"
+    },
+    {
+      "friendlyName": "EMI",
+      "unicode": "E731"
+    },
+    {
+      "friendlyName": "MiniLink",
+      "unicode": "E732"
+    },
+    {
+      "friendlyName": "Blocked",
+      "unicode": "E733"
+    },
+    {
+      "friendlyName": "FavoriteStar",
+      "unicode": "E734"
+    },
+    {
+      "friendlyName": "FavoriteStarFill",
+      "unicode": "E735"
+    },
+    {
+      "friendlyName": "ReadingMode",
+      "unicode": "E736"
+    },
+    {
+      "friendlyName": "Remove",
+      "unicode": "E738"
+    },
+    {
+      "friendlyName": "Checkbox",
+      "unicode": "E739"
+    },
+    {
+      "friendlyName": "CheckboxComposite",
+      "unicode": "E73A"
+    },
+    {
+      "friendlyName": "CheckboxIndeterminate",
+      "unicode": "E73C"
+    },
+    {
+      "friendlyName": "CheckMark",
+      "unicode": "E73E"
+    },
+    {
+      "friendlyName": "BackToWindow",
+      "unicode": "E73F"
+    },
+    {
+      "friendlyName": "FullScreen",
+      "unicode": "E740"
+    },
+    {
+      "friendlyName": "Print",
+      "unicode": "E749"
+    },
+    {
+      "friendlyName": "Up",
+      "unicode": "E74A"
+    },
+    {
+      "friendlyName": "Down",
+      "unicode": "E74B"
+    },
+    {
+      "friendlyName": "Delete",
+      "unicode": "E74D"
+    },
+    {
+      "friendlyName": "Save",
+      "unicode": "E74E"
+    },
+    {
+      "friendlyName": "Sad",
+      "unicode": "E757"
+    },
+    {
+      "friendlyName": "SIPMove",
+      "unicode": "E759"
+    },
+    {
+      "friendlyName": "EraseTool",
+      "unicode": "E75C"
+    },
+    {
+      "friendlyName": "GripperTool",
+      "unicode": "E75E"
+    },
+    {
+      "friendlyName": "Dialpad",
+      "unicode": "E75F"
+    },
+    {
+      "friendlyName": "PageLeft",
+      "unicode": "E760"
+    },
+    {
+      "friendlyName": "PageRight",
+      "unicode": "E761"
+    },
+    {
+      "friendlyName": "MultiSelect",
+      "unicode": "E762"
+    },
+    {
+      "friendlyName": "Play",
+      "unicode": "E768"
+    },
+    {
+      "friendlyName": "Pause",
+      "unicode": "E769"
+    },
+    {
+      "friendlyName": "ChevronLeft",
+      "unicode": "E76B"
+    },
+    {
+      "friendlyName": "ChevronRight",
+      "unicode": "E76C"
+    },
+    {
+      "friendlyName": "Emoji2",
+      "unicode": "E76E"
+    },
+    {
+      "friendlyName": "System",
+      "unicode": "E770"
+    },
+    {
+      "friendlyName": "Globe",
+      "unicode": "E774"
+    },
+    {
+      "friendlyName": "ContactInfo",
+      "unicode": "E779"
+    },
+    {
+      "friendlyName": "Unpin",
+      "unicode": "E77A"
+    },
+    {
+      "friendlyName": "Contact",
+      "unicode": "E77B"
+    },
+    {
+      "friendlyName": "Memo",
+      "unicode": "E77C"
+    },
+    {
+      "friendlyName": "WindowsLogo",
+      "unicode": "E782"
+    },
+    {
+      "friendlyName": "Error",
+      "unicode": "E783"
+    },
+    {
+      "friendlyName": "Unlock",
+      "unicode": "E785"
+    },
+    {
+      "friendlyName": "Calendar",
+      "unicode": "E787"
+    },
+    {
+      "friendlyName": "Megaphone",
+      "unicode": "E789"
+    },
+    {
+      "friendlyName": "AutoEnhanceOn",
+      "unicode": "E78D"
+    },
+    {
+      "friendlyName": "AutoEnhanceOff",
+      "unicode": "E78E"
+    },
+    {
+      "friendlyName": "Color",
+      "unicode": "E790"
+    },
+    {
+      "friendlyName": "SaveAs",
+      "unicode": "E792"
+    },
+    {
+      "friendlyName": "Light",
+      "unicode": "E793"
+    },
+    {
+      "friendlyName": "Filters",
+      "unicode": "E795"
+    },
+    {
+      "friendlyName": "Contrast",
+      "unicode": "E7A1"
+    },
+    {
+      "friendlyName": "Redo",
+      "unicode": "E7A6"
+    },
+    {
+      "friendlyName": "Undo",
+      "unicode": "E7A7"
+    },
+    {
+      "friendlyName": "Album",
+      "unicode": "E7AB"
+    },
+    {
+      "friendlyName": "Rotate",
+      "unicode": "E7AD"
+    },
+    {
+      "friendlyName": "PanoIndicator",
+      "unicode": "E7B0"
+    },
+    {
+      "friendlyName": "ThumbnailView",
+      "unicode": "E7B6"
+    },
+    {
+      "friendlyName": "Package",
+      "unicode": "E7B8"
+    },
+    {
+      "friendlyName": "Warning",
+      "unicode": "E7BA"
+    },
+    {
+      "friendlyName": "Financial",
+      "unicode": "E7BB"
+    },
+    {
+      "friendlyName": "ShoppingCart",
+      "unicode": "E7BF"
+    },
+    {
+      "friendlyName": "Train",
+      "unicode": "E7C0"
+    },
+    {
+      "friendlyName": "Flag",
+      "unicode": "E7C1"
+    },
+    {
+      "friendlyName": "Move",
+      "unicode": "E7C2"
+    },
+    {
+      "friendlyName": "Page",
+      "unicode": "E7C3"
+    },
+    {
+      "friendlyName": "TouchPointer",
+      "unicode": "E7C9"
+    },
+    {
+      "friendlyName": "Merge",
+      "unicode": "E7D5"
+    },
+    {
+      "friendlyName": "TurnRight",
+      "unicode": "E7DB"
+    },
+    {
+      "friendlyName": "Ferry",
+      "unicode": "E7E3"
+    },
+    {
+      "friendlyName": "Tab",
+      "unicode": "E7E9"
+    },
+    {
+      "friendlyName": "Admin",
+      "unicode": "E7EF"
+    },
+    {
+      "friendlyName": "TVMonitor",
+      "unicode": "E7F4"
+    },
+    {
+      "friendlyName": "Speakers",
+      "unicode": "E7F5"
+    },
+    {
+      "friendlyName": "Car",
+      "unicode": "E804"
+    },
+    {
+      "friendlyName": "EatDrink",
+      "unicode": "E807"
+    },
+    {
+      "friendlyName": "LocationCircle",
+      "unicode": "E80E"
+    },
+    {
+      "friendlyName": "Home",
+      "unicode": "E80F"
+    },
+    {
+      "friendlyName": "SwitcherStartEnd",
+      "unicode": "E810"
+    },
+    {
+      "friendlyName": "IncidentTriangle",
+      "unicode": "E814"
+    },
+    {
+      "friendlyName": "Touch",
+      "unicode": "E815"
+    },
+    {
+      "friendlyName": "MapDirections",
+      "unicode": "E816"
+    },
+    {
+      "friendlyName": "History",
+      "unicode": "E81C"
+    },
+    {
+      "friendlyName": "Location",
+      "unicode": "E81D"
+    },
+    {
+      "friendlyName": "Work",
+      "unicode": "E821"
+    },
+    {
+      "friendlyName": "Recent",
+      "unicode": "E823"
+    },
+    {
+      "friendlyName": "Hotel",
+      "unicode": "E824"
+    },
+    {
+      "friendlyName": "LocationDot",
+      "unicode": "E827"
+    },
+    {
+      "friendlyName": "News",
+      "unicode": "E900"
+    },
+    {
+      "friendlyName": "Chat",
+      "unicode": "E901"
+    },
+    {
+      "friendlyName": "Group",
+      "unicode": "E902"
+    },
+    {
+      "friendlyName": "View",
+      "unicode": "E890"
+    },
+    {
+      "friendlyName": "Clear",
+      "unicode": "E894"
+    },
+    {
+      "friendlyName": "Sync",
+      "unicode": "E895"
+    },
+    {
+      "friendlyName": "Download",
+      "unicode": "E896"
+    },
+    {
+      "friendlyName": "Help",
+      "unicode": "E897"
+    },
+    {
+      "friendlyName": "Upload",
+      "unicode": "E898"
+    },
+    {
+      "friendlyName": "Emoji",
+      "unicode": "E899"
+    },
+    {
+      "friendlyName": "MailForward",
+      "unicode": "E89C"
+    },
+    {
+      "friendlyName": "ClosePane",
+      "unicode": "E89F"
+    },
+    {
+      "friendlyName": "OpenPane",
+      "unicode": "E8A0"
+    },
+    {
+      "friendlyName": "PreviewLink",
+      "unicode": "E8A1"
+    },
+    {
+      "friendlyName": "ZoomIn",
+      "unicode": "E8A3"
+    },
+    {
+      "friendlyName": "Bookmarks",
+      "unicode": "E8A4"
+    },
+    {
+      "friendlyName": "Document",
+      "unicode": "E8A5"
+    },
+    {
+      "friendlyName": "ProtectedDocument",
+      "unicode": "E8A6"
+    },
+    {
+      "friendlyName": "OpenInNewWindow",
+      "unicode": "E8A7"
+    },
+    {
+      "friendlyName": "MailFill",
+      "unicode": "E8A8"
+    },
+    {
+      "friendlyName": "ViewAll",
+      "unicode": "E8A9"
+    },
+    {
+      "friendlyName": "Switch",
+      "unicode": "E8AB"
+    },
+    {
+      "friendlyName": "Rename",
+      "unicode": "E8AC"
+    },
+    {
+      "friendlyName": "Folder",
+      "unicode": "E8B7"
+    },
+    {
+      "friendlyName": "Picture",
+      "unicode": "E8B9"
+    },
+    {
+      "friendlyName": "ShowResults",
+      "unicode": "E8BC"
+    },
+    {
+      "friendlyName": "Message",
+      "unicode": "E8BD"
+    },
+    {
+      "friendlyName": "CalendarDay",
+      "unicode": "E8BF"
+    },
+    {
+      "friendlyName": "CalendarWeek",
+      "unicode": "E8C0"
+    },
+    {
+      "friendlyName": "MailReplyAll",
+      "unicode": "E8C2"
+    },
+    {
+      "friendlyName": "Read",
+      "unicode": "E8C3"
+    },
+    {
+      "friendlyName": "PaymentCard",
+      "unicode": "E8C7"
+    },
+    {
+      "friendlyName": "Copy",
+      "unicode": "E8C8"
+    },
+    {
+      "friendlyName": "Important",
+      "unicode": "E8C9"
+    },
+    {
+      "friendlyName": "MailReply",
+      "unicode": "E8CA"
+    },
+    {
+      "friendlyName": "Sort",
+      "unicode": "E8CB"
+    },
+    {
+      "friendlyName": "GotoToday",
+      "unicode": "E8D1"
+    },
+    {
+      "friendlyName": "Font",
+      "unicode": "E8D2"
+    },
+    {
+      "friendlyName": "FontColor",
+      "unicode": "E8D3"
+    },
+    {
+      "friendlyName": "FolderFill",
+      "unicode": "E8D5"
+    },
+    {
+      "friendlyName": "Permissions",
+      "unicode": "E8D7"
+    },
+    {
+      "friendlyName": "DisableUpdates",
+      "unicode": "E8D8"
+    },
+    {
+      "friendlyName": "Unfavorite",
+      "unicode": "E8D9"
+    },
+    {
+      "friendlyName": "Italic",
+      "unicode": "E8DB"
+    },
+    {
+      "friendlyName": "Underline",
+      "unicode": "E8DC"
+    },
+    {
+      "friendlyName": "Bold",
+      "unicode": "E8DD"
+    },
+    {
+      "friendlyName": "MoveToFolder",
+      "unicode": "E8DE"
+    },
+    {
+      "friendlyName": "Dislike",
+      "unicode": "E8E0"
+    },
+    {
+      "friendlyName": "Like",
+      "unicode": "E8E1"
+    },
+    {
+      "friendlyName": "AlignRight",
+      "unicode": "E8E2"
+    },
+    {
+      "friendlyName": "AlignCenter",
+      "unicode": "E8E3"
+    },
+    {
+      "friendlyName": "AlignLeft",
+      "unicode": "E8E4"
+    },
+    {
+      "friendlyName": "OpenFile",
+      "unicode": "E8E5"
+    },
+    {
+      "friendlyName": "FontDecrease",
+      "unicode": "E8E7"
+    },
+    {
+      "friendlyName": "FontIncrease",
+      "unicode": "E8E8"
+    },
+    {
+      "friendlyName": "FontSize",
+      "unicode": "E8E9"
+    },
+    {
+      "friendlyName": "CellPhone",
+      "unicode": "E8EA"
+    },
+    {
+      "friendlyName": "Tag",
+      "unicode": "E8EC"
+    },
+    {
+      "friendlyName": "Library",
+      "unicode": "E8F1"
+    },
+    {
+      "friendlyName": "PostUpdate",
+      "unicode": "E8F3"
+    },
+    {
+      "friendlyName": "NewFolder",
+      "unicode": "E8F4"
+    },
+    {
+      "friendlyName": "CalendarReply",
+      "unicode": "E8F5"
+    },
+    {
+      "friendlyName": "UnsyncFolder",
+      "unicode": "E8F6"
+    },
+    {
+      "friendlyName": "SyncFolder",
+      "unicode": "E8F7"
+    },
+    {
+      "friendlyName": "BlockContact",
+      "unicode": "E8F8"
+    },
+    {
+      "friendlyName": "AddFriend",
+      "unicode": "E8FA"
+    },
+    {
+      "friendlyName": "BulletedList",
+      "unicode": "E8FD"
+    },
+    {
+      "friendlyName": "Preview",
+      "unicode": "E8FF"
+    },
+    {
+      "friendlyName": "DockLeft",
+      "unicode": "E90C"
+    },
+    {
+      "friendlyName": "DockRight",
+      "unicode": "E90D"
+    },
+    {
+      "friendlyName": "Repair",
+      "unicode": "E90F"
+    },
+    {
+      "friendlyName": "Accounts",
+      "unicode": "E910"
+    },
+    {
+      "friendlyName": "RadioBullet",
+      "unicode": "E915"
+    },
+    {
+      "friendlyName": "Stopwatch",
+      "unicode": "E916"
+    },
+    {
+      "friendlyName": "Clock",
+      "unicode": "E917"
+    },
+    {
+      "friendlyName": "AlarmClock",
+      "unicode": "E919"
+    },
+    {
+      "friendlyName": "Hospital",
+      "unicode": "E91D"
+    },
+    {
+      "friendlyName": "Timer",
+      "unicode": "E91E"
+    },
+    {
+      "friendlyName": "FullCircleMask",
+      "unicode": "E91F"
+    },
+    {
+      "friendlyName": "LocationFill",
+      "unicode": "E920"
+    },
+    {
+      "friendlyName": "ChromeMinimize",
+      "unicode": "E921"
+    },
+    {
+      "friendlyName": "Annotation",
+      "unicode": "E924"
+    },
+    {
+      "friendlyName": "ChromeClose",
+      "unicode": "E8BB"
+    },
+    {
+      "friendlyName": "Accept",
+      "unicode": "E8FB"
+    },
+    {
+      "friendlyName": "Fingerprint",
+      "unicode": "E928"
+    },
+    {
+      "friendlyName": "Handwriting",
+      "unicode": "E929"
+    },
+    {
+      "friendlyName": "StackIndicator",
+      "unicode": "E7FF"
+    },
+    {
+      "friendlyName": "Completed",
+      "unicode": "E930"
+    },
+    {
+      "friendlyName": "Label",
+      "unicode": "E932"
+    },
+    {
+      "friendlyName": "FlickDown",
+      "unicode": "E935"
+    },
+    {
+      "friendlyName": "FlickUp",
+      "unicode": "E936"
+    },
+    {
+      "friendlyName": "FlickLeft",
+      "unicode": "E937"
+    },
+    {
+      "friendlyName": "FlickRight",
+      "unicode": "E938"
+    },
+    {
+      "friendlyName": "MusicInCollection",
+      "unicode": "E940"
+    },
+    {
+      "friendlyName": "OneDrive",
+      "unicode": "E941"
+    },
+    {
+      "friendlyName": "CompassNW",
+      "unicode": "E942"
+    },
+    {
+      "friendlyName": "Code",
+      "unicode": "E943"
+    },
+    {
+      "friendlyName": "LightningBolt",
+      "unicode": "E945"
+    },
+    {
+      "friendlyName": "Info",
+      "unicode": "E946"
+    },
+    {
+      "friendlyName": "CalculatorAddition",
+      "unicode": "E948"
+    },
+    {
+      "friendlyName": "CalculatorSubtract",
+      "unicode": "E949"
+    },
+    {
+      "friendlyName": "PrintfaxPrinterFile",
+      "unicode": "E956"
+    },
+    {
+      "friendlyName": "Health",
+      "unicode": "E95E"
+    },
+    {
+      "friendlyName": "ChevronUpSmall",
+      "unicode": "E96D"
+    },
+    {
+      "friendlyName": "ChevronDownSmall",
+      "unicode": "E96E"
+    },
+    {
+      "friendlyName": "ChevronLeftSmall",
+      "unicode": "E96F"
+    },
+    {
+      "friendlyName": "ChevronRightSmall",
+      "unicode": "E970"
+    },
+    {
+      "friendlyName": "ChevronUpMed",
+      "unicode": "E971"
+    },
+    {
+      "friendlyName": "ChevronDownMed",
+      "unicode": "E972"
+    },
+    {
+      "friendlyName": "ChevronLeftMed",
+      "unicode": "E973"
+    },
+    {
+      "friendlyName": "ChevronRightMed",
+      "unicode": "E974"
+    },
+    {
+      "friendlyName": "Dictionary",
+      "unicode": "E82D"
+    },
+    {
+      "friendlyName": "ChromeBack",
+      "unicode": "E830"
+    },
+    {
+      "friendlyName": "PC1",
+      "unicode": "E977"
+    },
+    {
+      "friendlyName": "PresenceChickletVideo",
+      "unicode": "E979"
+    },
+    {
+      "friendlyName": "Reply",
+      "unicode": "E97A"
+    },
+    {
+      "friendlyName": "DoubleChevronLeftMed",
+      "unicode": "E991"
+    },
+    {
+      "friendlyName": "Volume0",
+      "unicode": "E992"
+    },
+    {
+      "friendlyName": "Volume1",
+      "unicode": "E993"
+    },
+    {
+      "friendlyName": "Volume2",
+      "unicode": "E994"
+    },
+    {
+      "friendlyName": "Volume3",
+      "unicode": "E995"
+    },
+    {
+      "friendlyName": "CaretHollow",
+      "unicode": "E817"
+    },
+    {
+      "friendlyName": "CaretSolid",
+      "unicode": "E818"
+    },
+    {
+      "friendlyName": "Pinned",
+      "unicode": "E840"
+    },
+    {
+      "friendlyName": "PinnedFill",
+      "unicode": "E842"
+    },
+    {
+      "friendlyName": "Chart",
+      "unicode": "E999"
+    },
+    {
+      "friendlyName": "BidiLtr",
+      "unicode": "E9AA"
+    },
+    {
+      "friendlyName": "BidiRtl",
+      "unicode": "E9AB"
+    },
+    {
+      "friendlyName": "RevToggleKey",
+      "unicode": "E845"
+    },
+    {
+      "friendlyName": "RightDoubleQuote",
+      "unicode": "E9B1"
+    },
+    {
+      "friendlyName": "Sunny",
+      "unicode": "E9BD"
+    },
+    {
+      "friendlyName": "CloudWeather",
+      "unicode": "E9BE"
+    },
+    {
+      "friendlyName": "Cloudy",
+      "unicode": "E9BF"
+    },
+    {
+      "friendlyName": "PartlyCloudyDay",
+      "unicode": "E9C0"
+    },
+    {
+      "friendlyName": "PartlyCloudyNight",
+      "unicode": "E9C1"
+    },
+    {
+      "friendlyName": "ClearNight",
+      "unicode": "E9C2"
+    },
+    {
+      "friendlyName": "RainShowersDay",
+      "unicode": "E9C3"
+    },
+    {
+      "friendlyName": "Rain",
+      "unicode": "E9C4"
+    },
+    {
+      "friendlyName": "Thunderstorms",
+      "unicode": "E9C6"
+    },
+    {
+      "friendlyName": "RainSnow",
+      "unicode": "E9C7"
+    },
+    {
+      "friendlyName": "Snow",
+      "unicode": "E9C8"
+    },
+    {
+      "friendlyName": "BlowingSnow",
+      "unicode": "E9C9"
+    },
+    {
+      "friendlyName": "Frigid",
+      "unicode": "E9CA"
+    },
+    {
+      "friendlyName": "Fog",
+      "unicode": "E9CB"
+    },
+    {
+      "friendlyName": "Squalls",
+      "unicode": "E9CC"
+    },
+    {
+      "friendlyName": "Duststorm",
+      "unicode": "E9CD"
+    },
+    {
+      "friendlyName": "Precipitation",
+      "unicode": "E9CF"
+    },
+    {
+      "friendlyName": "Ringer",
+      "unicode": "EA8F"
+    },
+    {
+      "friendlyName": "PDF",
+      "unicode": "EA90"
+    },
+    {
+      "friendlyName": "SortLines",
+      "unicode": "E9D0"
+    },
+    {
+      "friendlyName": "Ribbon",
+      "unicode": "E9D1"
+    },
+    {
+      "friendlyName": "CheckList",
+      "unicode": "E9D5"
+    },
+    {
+      "friendlyName": "Generate",
+      "unicode": "E9DA"
+    },
+    {
+      "friendlyName": "Equalizer",
+      "unicode": "E9E9"
+    },
+    {
+      "friendlyName": "BarChartHorizontal",
+      "unicode": "E9EB"
+    },
+    {
+      "friendlyName": "Freezing",
+      "unicode": "E9EF"
+    },
+    {
+      "friendlyName": "SnowShowerDay",
+      "unicode": "E9FD"
+    },
+    {
+      "friendlyName": "HailDay",
+      "unicode": "EA00"
+    },
+    {
+      "friendlyName": "WorkFlow",
+      "unicode": "EA01"
+    },
+    {
+      "friendlyName": "StoreLogoMed",
+      "unicode": "EA04"
+    },
+    {
+      "friendlyName": "RainShowersNight",
+      "unicode": "EA0F"
+    },
+    {
+      "friendlyName": "SnowShowerNight",
+      "unicode": "EA11"
+    },
+    {
+      "friendlyName": "HailNight",
+      "unicode": "EA13"
+    },
+    {
+      "friendlyName": "Info2",
+      "unicode": "EA1F"
+    },
+    {
+      "friendlyName": "StoreLogo",
+      "unicode": "EA96"
+    },
+    {
+      "friendlyName": "MultiSelectMirrored",
+      "unicode": "EA98"
+    },
+    {
+      "friendlyName": "Broom",
+      "unicode": "EA99"
+    },
+    {
+      "friendlyName": "MusicInCollectionFill",
+      "unicode": "EA36"
+    },
+    {
+      "friendlyName": "List",
+      "unicode": "EA37"
+    },
+    {
+      "friendlyName": "Asterisk",
+      "unicode": "EA38"
+    },
+    {
+      "friendlyName": "ErrorBadge",
+      "unicode": "EA39"
+    },
+    {
+      "friendlyName": "CircleRing",
+      "unicode": "EA3A"
+    },
+    {
+      "friendlyName": "CircleFill",
+      "unicode": "EA3B"
+    },
+    {
+      "friendlyName": "BookmarksMirrored",
+      "unicode": "EA41"
+    },
+    {
+      "friendlyName": "BulletedListMirrored",
+      "unicode": "EA42"
+    },
+    {
+      "friendlyName": "CaretHollowMirrored",
+      "unicode": "EA45"
+    },
+    {
+      "friendlyName": "CaretSolidMirrored",
+      "unicode": "EA46"
+    },
+    {
+      "friendlyName": "ChromeBackMirrored",
+      "unicode": "EA47"
+    },
+    {
+      "friendlyName": "ClosePaneMirrored",
+      "unicode": "EA49"
+    },
+    {
+      "friendlyName": "DockLeftMirrored",
+      "unicode": "EA4C"
+    },
+    {
+      "friendlyName": "DoubleChevronLeftMedMirrored",
+      "unicode": "EA4D"
+    },
+    {
+      "friendlyName": "HelpMirrored",
+      "unicode": "EA51"
+    },
+    {
+      "friendlyName": "ListMirrored",
+      "unicode": "EA55"
+    },
+    {
+      "friendlyName": "MailForwardMirrored",
+      "unicode": "EA56"
+    },
+    {
+      "friendlyName": "MailReplyMirrored",
+      "unicode": "EA57"
+    },
+    {
+      "friendlyName": "MailReplyAllMirrored",
+      "unicode": "EA58"
+    },
+    {
+      "friendlyName": "OpenPaneMirrored",
+      "unicode": "EA5B"
+    },
+    {
+      "friendlyName": "SendMirrored",
+      "unicode": "EA63"
+    },
+    {
+      "friendlyName": "ShowResultsMirrored",
+      "unicode": "EA65"
+    },
+    {
+      "friendlyName": "ThumbnailViewMirrored",
+      "unicode": "EA67"
+    },
+    {
+      "friendlyName": "Lightbulb",
+      "unicode": "EA80"
+    },
+    {
+      "friendlyName": "StatusTriangle",
+      "unicode": "EA82"
+    },
+    {
+      "friendlyName": "VolumeDisabled",
+      "unicode": "EA85"
+    },
+    {
+      "friendlyName": "Puzzle",
+      "unicode": "EA86"
+    },
+    {
+      "friendlyName": "EmojiNeutral",
+      "unicode": "EA87"
+    },
+    {
+      "friendlyName": "EmojiDisappointed",
+      "unicode": "EA88"
+    },
+    {
+      "friendlyName": "HomeSolid",
+      "unicode": "EA8A"
+    },
+    {
+      "friendlyName": "Cocktails",
+      "unicode": "EA9D"
+    },
+    {
+      "friendlyName": "Articles",
+      "unicode": "EAC1"
+    },
+    {
+      "friendlyName": "Cycling",
+      "unicode": "EAC7"
+    },
+    {
+      "friendlyName": "DietPlanNotebook",
+      "unicode": "EAC8"
+    },
+    {
+      "friendlyName": "Pill",
+      "unicode": "EACB"
+    },
+    {
+      "friendlyName": "Running",
+      "unicode": "EADA"
+    },
+    {
+      "friendlyName": "Weights",
+      "unicode": "EADB"
+    },
+    {
+      "friendlyName": "BarChart4",
+      "unicode": "EAE7"
+    },
+    {
+      "friendlyName": "CirclePlus",
+      "unicode": "EAEE"
+    },
+    {
+      "friendlyName": "Coffee",
+      "unicode": "EAEF"
+    },
+    {
+      "friendlyName": "Cotton",
+      "unicode": "EAF3"
+    },
+    {
+      "friendlyName": "Market",
+      "unicode": "EAFC"
+    },
+    {
+      "friendlyName": "Money",
+      "unicode": "EAFD"
+    },
+    {
+      "friendlyName": "PieDouble",
+      "unicode": "EB04"
+    },
+    {
+      "friendlyName": "RemoveFilter",
+      "unicode": "EB08"
+    },
+    {
+      "friendlyName": "StockDown",
+      "unicode": "EB0F"
+    },
+    {
+      "friendlyName": "StockUp",
+      "unicode": "EB11"
+    },
+    {
+      "friendlyName": "Cricket",
+      "unicode": "EB1E"
+    },
+    {
+      "friendlyName": "Golf",
+      "unicode": "EB1F"
+    },
+    {
+      "friendlyName": "Baseball",
+      "unicode": "EB20"
+    },
+    {
+      "friendlyName": "Soccer",
+      "unicode": "EB21"
+    },
+    {
+      "friendlyName": "MoreSports",
+      "unicode": "EB22"
+    },
+    {
+      "friendlyName": "AutoRacing",
+      "unicode": "EB24"
+    },
+    {
+      "friendlyName": "CollegeHoops",
+      "unicode": "EB25"
+    },
+    {
+      "friendlyName": "CollegeFootball",
+      "unicode": "EB26"
+    },
+    {
+      "friendlyName": "ProFootball",
+      "unicode": "EB27"
+    },
+    {
+      "friendlyName": "ProHockey",
+      "unicode": "EB28"
+    },
+    {
+      "friendlyName": "Rugby",
+      "unicode": "EB2D"
+    },
+    {
+      "friendlyName": "Tennis",
+      "unicode": "EB33"
+    },
+    {
+      "friendlyName": "Arrivals",
+      "unicode": "EB34"
+    },
+    {
+      "friendlyName": "Design",
+      "unicode": "EB3C"
+    },
+    {
+      "friendlyName": "Website",
+      "unicode": "EB41"
+    },
+    {
+      "friendlyName": "Drop",
+      "unicode": "EB42"
+    },
+    {
+      "friendlyName": "Snow",
+      "unicode": "EB46"
+    },
+    {
+      "friendlyName": "BusSolid",
+      "unicode": "EB47"
+    },
+    {
+      "friendlyName": "FerrySolid",
+      "unicode": "EB48"
+    },
+    {
+      "friendlyName": "TrainSolid",
+      "unicode": "EB4D"
+    },
+    {
+      "friendlyName": "Heart",
+      "unicode": "EB51"
+    },
+    {
+      "friendlyName": "HeartFill",
+      "unicode": "EB52"
+    },
+    {
+      "friendlyName": "Ticket",
+      "unicode": "EB54"
+    },
+    {
+      "friendlyName": "AzureLogo",
+      "unicode": "EB6A"
+    },
+    {
+      "friendlyName": "BingLogo",
+      "unicode": "EB6B"
+    },
+    {
+      "friendlyName": "MSNLogo",
+      "unicode": "EB6C"
+    },
+    {
+      "friendlyName": "OutlookLogo",
+      "unicode": "EB6D"
+    },
+    {
+      "friendlyName": "OfficeLogo",
+      "unicode": "EB6E"
+    },
+    {
+      "friendlyName": "SkypeLogo",
+      "unicode": "EB6F"
+    },
+    {
+      "friendlyName": "Door",
+      "unicode": "EB75"
+    },
+    {
+      "friendlyName": "EditMirrored",
+      "unicode": "EB7E"
+    },
+    {
+      "friendlyName": "GiftCard",
+      "unicode": "EB8E"
+    },
+    {
+      "friendlyName": "DoubleBookmark",
+      "unicode": "EB8F"
+    },
+    {
+      "friendlyName": "StatusErrorFull",
+      "unicode": "EB90"
+    },
+    {
+      "friendlyName": "Certificate",
+      "unicode": "EB95"
+    },
+    {
+      "friendlyName": "Photo2",
+      "unicode": "EB9F"
+    },
+    {
+      "friendlyName": "CloudDownload",
+      "unicode": "EBD3"
+    },
+    {
+      "friendlyName": "WindDirection",
+      "unicode": "EBE6"
+    },
+    {
+      "friendlyName": "Family",
+      "unicode": "EBDA"
+    },
+    {
+      "friendlyName": "CSS",
+      "unicode": "EBEF"
+    },
+    {
+      "friendlyName": "JS",
+      "unicode": "EBF0"
+    },
+    {
+      "friendlyName": "ReminderGroup",
+      "unicode": "EBF8"
+    },
+    {
+      "friendlyName": "Section",
+      "unicode": "EC0C"
+    },
+    {
+      "friendlyName": "OneNoteLogo",
+      "unicode": "EC0D"
+    },
+    {
+      "friendlyName": "ToggleFilled",
+      "unicode": "EC11"
+    },
+    {
+      "friendlyName": "ToggleBorder",
+      "unicode": "EC12"
+    },
+    {
+      "friendlyName": "SliderThumb",
+      "unicode": "EC13"
+    },
+    {
+      "friendlyName": "ToggleThumb",
+      "unicode": "EC14"
+    },
+    {
+      "friendlyName": "Documentation",
+      "unicode": "EC17"
+    },
+    {
+      "friendlyName": "Badge",
+      "unicode": "EC1B"
+    },
+    {
+      "friendlyName": "Giftbox",
+      "unicode": "EC1F"
+    },
+    {
+      "friendlyName": "ExcelLogo",
+      "unicode": "EC28"
+    },
+    {
+      "friendlyName": "WordLogo",
+      "unicode": "EC29"
+    },
+    {
+      "friendlyName": "PowerPointLogo",
+      "unicode": "EC2A"
+    },
+    {
+      "friendlyName": "Cafe",
+      "unicode": "EC32"
+    },
+    {
+      "friendlyName": "SpeedHigh",
+      "unicode": "EC4A"
+    },
+    {
+      "friendlyName": "MusicNote",
+      "unicode": "EC4F"
+    },
+    {
+      "friendlyName": "EdgeLogo",
+      "unicode": "EC60"
+    },
+    {
+      "friendlyName": "CompletedSolid",
+      "unicode": "EC61"
+    },
+    {
+      "friendlyName": "AlbumRemove",
+      "unicode": "EC62"
+    },
+    {
+      "friendlyName": "MessageFill",
+      "unicode": "EC70"
+    },
+    {
+      "friendlyName": "TabletSelected",
+      "unicode": "EC74"
+    },
+    {
+      "friendlyName": "MobileSelected",
+      "unicode": "EC75"
+    },
+    {
+      "friendlyName": "LaptopSelected",
+      "unicode": "EC76"
+    },
+    {
+      "friendlyName": "TVMonitorSelected",
+      "unicode": "EC77"
+    },
+    {
+      "friendlyName": "DeveloperTools",
+      "unicode": "EC7A"
+    },
+    {
+      "friendlyName": "InsertTextBox",
+      "unicode": "EC7D"
+    },
+    {
+      "friendlyName": "LowerBrightness",
+      "unicode": "EC8A"
+    },
+    {
+      "friendlyName": "CloudUpload",
+      "unicode": "EC8E"
+    },
+    {
+      "friendlyName": "DateTime",
+      "unicode": "EC92"
+    },
+    {
+      "friendlyName": "Event",
+      "unicode": "ECA3"
+    },
+    {
+      "friendlyName": "Cake",
+      "unicode": "ECA4"
+    },
+    {
+      "friendlyName": "Tiles",
+      "unicode": "ECA5"
+    },
+    {
+      "friendlyName": "Org",
+      "unicode": "ECA6"
+    },
+    {
+      "friendlyName": "PartyLeader",
+      "unicode": "ECA7"
+    },
+    {
+      "friendlyName": "DRM",
+      "unicode": "ECA8"
+    },
+    {
+      "friendlyName": "CloudAdd",
+      "unicode": "ECA9"
+    },
+    {
+      "friendlyName": "AppIconDefault",
+      "unicode": "ECAA"
+    },
+    {
+      "friendlyName": "Photo2Add",
+      "unicode": "ECAB"
+    },
+    {
+      "friendlyName": "Photo2Remove",
+      "unicode": "ECAC"
+    },
+    {
+      "friendlyName": "POI",
+      "unicode": "ECAF"
+    },
+    {
+      "friendlyName": "FacebookLogo",
+      "unicode": "ECB3"
+    },
+    {
+      "friendlyName": "AddTo",
+      "unicode": "ECC8"
+    },
+    {
+      "friendlyName": "RadioBtnOn",
+      "unicode": "ECCB"
+    },
+    {
+      "friendlyName": "Embed",
+      "unicode": "ECCE"
+    },
+    {
+      "friendlyName": "VideoSolid",
+      "unicode": "EA0C"
+    },
+    {
+      "friendlyName": "Teamwork",
+      "unicode": "EA12"
+    },
+    {
+      "friendlyName": "PeopleAdd",
+      "unicode": "EA15"
+    },
+    {
+      "friendlyName": "Glasses",
+      "unicode": "EA16"
+    },
+    {
+      "friendlyName": "DateTime2",
+      "unicode": "EA17"
+    },
+    {
+      "friendlyName": "Shield",
+      "unicode": "EA18"
+    },
+    {
+      "friendlyName": "Header1",
+      "unicode": "EA19"
+    },
+    {
+      "friendlyName": "PageAdd",
+      "unicode": "EA1A"
+    },
+    {
+      "friendlyName": "NumberedList",
+      "unicode": "EA1C"
+    },
+    {
+      "friendlyName": "PowerBILogo",
+      "unicode": "EA1E"
+    },
+    {
+      "friendlyName": "Product",
+      "unicode": "ECDC"
+    },
+    {
+      "friendlyName": "Blocked2",
+      "unicode": "ECE4"
+    },
+    {
+      "friendlyName": "FangBody",
+      "unicode": "ECEB"
+    },
+    {
+      "friendlyName": "Glimmer",
+      "unicode": "ECF4"
+    },
+    {
+      "friendlyName": "ChatInviteFriend",
+      "unicode": "ECFE"
+    },
+    {
+      "friendlyName": "SharepointLogo",
+      "unicode": "ED18"
+    },
+    {
+      "friendlyName": "YammerLogo",
+      "unicode": "ED19"
+    },
+    {
+      "friendlyName": "ReturnToSession",
+      "unicode": "ED24"
+    },
+    {
+      "friendlyName": "OpenFolderHorizontal",
+      "unicode": "ED25"
+    },
+    {
+      "friendlyName": "CalendarMirrored",
+      "unicode": "ED28"
+    },
+    {
+      "friendlyName": "SwayLogo",
+      "unicode": "ED29"
+    },
+    {
+      "friendlyName": "OutOfOffice",
+      "unicode": "ED34"
+    },
+    {
+      "friendlyName": "Trophy",
+      "unicode": "ED3F"
+    },
+    {
+      "friendlyName": "ReopenPages",
+      "unicode": "ED50"
+    },
+    {
+      "friendlyName": "AADLogo",
+      "unicode": "ED68"
+    },
+    {
+      "friendlyName": "AccessLogo",
+      "unicode": "ED69"
+    },
+    {
+      "friendlyName": "AdminALogo",
+      "unicode": "ED6A"
+    },
+    {
+      "friendlyName": "AdminCLogo",
+      "unicode": "ED6B"
+    },
+    {
+      "friendlyName": "AdminDLogo",
+      "unicode": "ED6C"
+    },
+    {
+      "friendlyName": "AdminELogo",
+      "unicode": "ED6D"
+    },
+    {
+      "friendlyName": "AdminLLogo",
+      "unicode": "ED6E"
+    },
+    {
+      "friendlyName": "AdminMLogo",
+      "unicode": "ED6F"
+    },
+    {
+      "friendlyName": "AdminOLogo",
+      "unicode": "ED70"
+    },
+    {
+      "friendlyName": "AdminPLogo",
+      "unicode": "ED71"
+    },
+    {
+      "friendlyName": "AdminSLogo",
+      "unicode": "ED72"
+    },
+    {
+      "friendlyName": "AdminYLogo",
+      "unicode": "ED73"
+    },
+    {
+      "friendlyName": "AlchemyLogo",
+      "unicode": "ED74"
+    },
+    {
+      "friendlyName": "BoxLogo",
+      "unicode": "ED75"
+    },
+    {
+      "friendlyName": "DelveLogo",
+      "unicode": "ED76"
+    },
+    {
+      "friendlyName": "DropboxLogo",
+      "unicode": "ED77"
+    },
+    {
+      "friendlyName": "ExchangeLogo",
+      "unicode": "ED78"
+    },
+    {
+      "friendlyName": "LyncLogo",
+      "unicode": "ED79"
+    },
+    {
+      "friendlyName": "OfficeVideoLogo",
+      "unicode": "ED7A"
+    },
+    {
+      "friendlyName": "ParatureLogo",
+      "unicode": "ED7B"
+    },
+    {
+      "friendlyName": "SocialListeningLogo",
+      "unicode": "ED7C"
+    },
+    {
+      "friendlyName": "VisioLogo",
+      "unicode": "ED7D"
+    },
+    {
+      "friendlyName": "Balloons",
+      "unicode": "ED7E"
+    },
+    {
+      "friendlyName": "Cat",
+      "unicode": "ED7F"
+    },
+    {
+      "friendlyName": "MailAlert",
+      "unicode": "ED80"
+    },
+    {
+      "friendlyName": "MailCheck",
+      "unicode": "ED81"
+    },
+    {
+      "friendlyName": "MailLowImportance",
+      "unicode": "ED82"
+    },
+    {
+      "friendlyName": "MailPause",
+      "unicode": "ED83"
+    },
+    {
+      "friendlyName": "MailRepeat",
+      "unicode": "ED84"
+    },
+    {
+      "friendlyName": "SecurityGroup",
+      "unicode": "ED85"
+    },
+    {
+      "friendlyName": "Table",
+      "unicode": "ED86"
+    },
+    {
+      "friendlyName": "VoicemailForward",
+      "unicode": "ED87"
+    },
+    {
+      "friendlyName": "VoicemailReply",
+      "unicode": "ED88"
+    },
+    {
+      "friendlyName": "Waffle",
+      "unicode": "ED89"
+    },
+    {
+      "friendlyName": "RemoveEvent",
+      "unicode": "ED8A"
+    },
+    {
+      "friendlyName": "EventInfo",
+      "unicode": "ED8B"
+    },
+    {
+      "friendlyName": "ForwardEvent",
+      "unicode": "ED8C"
+    },
+    {
+      "friendlyName": "WipePhone",
+      "unicode": "ED8D"
+    },
+    {
+      "friendlyName": "AddOnlineMeeting",
+      "unicode": "ED8E"
+    },
+    {
+      "friendlyName": "JoinOnlineMeeting",
+      "unicode": "ED8F"
+    },
+    {
+      "friendlyName": "RemoveLink",
+      "unicode": "ED90"
+    },
+    {
+      "friendlyName": "PeopleBlock",
+      "unicode": "ED91"
+    },
+    {
+      "friendlyName": "PeopleRepeat",
+      "unicode": "ED92"
+    },
+    {
+      "friendlyName": "PeopleAlert",
+      "unicode": "ED93"
+    },
+    {
+      "friendlyName": "PeoplePause",
+      "unicode": "ED94"
+    },
+    {
+      "friendlyName": "TransferCall",
+      "unicode": "ED95"
+    },
+    {
+      "friendlyName": "AddPhone",
+      "unicode": "ED96"
+    },
+    {
+      "friendlyName": "UnknownCall",
+      "unicode": "ED97"
+    },
+    {
+      "friendlyName": "NoteReply",
+      "unicode": "ED98"
+    },
+    {
+      "friendlyName": "NoteForward",
+      "unicode": "ED99"
+    },
+    {
+      "friendlyName": "NotePinned",
+      "unicode": "ED9A"
+    },
+    {
+      "friendlyName": "RemoveOccurrence",
+      "unicode": "ED9B"
+    },
+    {
+      "friendlyName": "Timeline",
+      "unicode": "ED9C"
+    },
+    {
+      "friendlyName": "EditNote",
+      "unicode": "ED9D"
+    },
+    {
+      "friendlyName": "CircleHalfFull",
+      "unicode": "ED9E"
+    },
+    {
+      "friendlyName": "Room",
+      "unicode": "ED9F"
+    },
+    {
+      "friendlyName": "Unsubscribe",
+      "unicode": "EDA0"
+    },
+    {
+      "friendlyName": "Subscribe",
+      "unicode": "EDA1"
+    },
+    {
+      "friendlyName": "RecurringTask",
+      "unicode": "EDB2"
+    },
+    {
+      "friendlyName": "TaskManager",
+      "unicode": "EDB7"
+    },
+    {
+      "friendlyName": "TaskManagerMirrored",
+      "unicode": "EDB8"
+    },
+    {
+      "friendlyName": "Combine",
+      "unicode": "EDBB"
+    },
+    {
+      "friendlyName": "Split",
+      "unicode": "EDBC"
+    },
+    {
+      "friendlyName": "DoubleChevronUp",
+      "unicode": "EDBD"
+    },
+    {
+      "friendlyName": "DoubleChevronLeft",
+      "unicode": "EDBE"
+    },
+    {
+      "friendlyName": "DoubleChevronRight",
+      "unicode": "EDBF"
+    },
+    {
+      "friendlyName": "Ascending",
+      "unicode": "EDC0"
+    },
+    {
+      "friendlyName": "Descending",
+      "unicode": "EDC1"
+    },
+    {
+      "friendlyName": "TextBox",
+      "unicode": "EDC2"
+    },
+    {
+      "friendlyName": "TextField",
+      "unicode": "EDC3"
+    },
+    {
+      "friendlyName": "NumberField",
+      "unicode": "EDC4"
+    },
+    {
+      "friendlyName": "Dropdown",
+      "unicode": "EDC5"
+    },
+    {
+      "friendlyName": "BookingsLogo",
+      "unicode": "EDC7"
+    },
+    {
+      "friendlyName": "ClassNotebookLogo",
+      "unicode": "EDC8"
+    },
+    {
+      "friendlyName": "CollabsDBLogo",
+      "unicode": "EDC9"
+    },
+    {
+      "friendlyName": "DelveAnalyticsLogo",
+      "unicode": "EDCA"
+    },
+    {
+      "friendlyName": "DocsLogo",
+      "unicode": "EDCB"
+    },
+    {
+      "friendlyName": "DynamicsCRMLogo",
+      "unicode": "EDCC"
+    },
+    {
+      "friendlyName": "DynamicSMBLogo",
+      "unicode": "EDCD"
+    },
+    {
+      "friendlyName": "OfficeAssistantLogo",
+      "unicode": "EDCE"
+    },
+    {
+      "friendlyName": "OfficeStoreLogo",
+      "unicode": "EDCF"
+    },
+    {
+      "friendlyName": "OneNoteEduLogo",
+      "unicode": "EDD0"
+    },
+    {
+      "friendlyName": "Planner",
+      "unicode": "EDD1"
+    },
+    {
+      "friendlyName": "PowerApps",
+      "unicode": "EDD2"
+    },
+    {
+      "friendlyName": "Suitcase",
+      "unicode": "EDD3"
+    },
+    {
+      "friendlyName": "ProjectLogo",
+      "unicode": "EDD4"
+    },
+    {
+      "friendlyName": "CaretLeft8",
+      "unicode": "EDD5"
+    },
+    {
+      "friendlyName": "CaretRight8",
+      "unicode": "EDD6"
+    },
+    {
+      "friendlyName": "CaretUp8",
+      "unicode": "EDD7"
+    },
+    {
+      "friendlyName": "CaretDown8",
+      "unicode": "EDD8"
+    },
+    {
+      "friendlyName": "CaretLeftSolid8",
+      "unicode": "EDD9"
+    },
+    {
+      "friendlyName": "CarotRightSolid8",
+      "unicode": "EDDA"
+    },
+    {
+      "friendlyName": "CaretUpSolid8",
+      "unicode": "EDDB"
+    },
+    {
+      "friendlyName": "CaretDownSolid8",
+      "unicode": "EDDC"
+    },
+    {
+      "friendlyName": "ClearFormatting",
+      "unicode": "EDDD"
+    },
+    {
+      "friendlyName": "Superscript",
+      "unicode": "EDDE"
+    },
+    {
+      "friendlyName": "Subscript",
+      "unicode": "EDDF"
+    },
+    {
+      "friendlyName": "Strikethrough",
+      "unicode": "EDE0"
+    },
+    {
+      "friendlyName": "SingleBookmark",
+      "unicode": "EDFF"
+    },
+    {
+      "friendlyName": "DoubleChevronDown",
+      "unicode": "EE04"
+    },
+    {
+      "friendlyName": "ReplyAll",
+      "unicode": "EE0A"
+    },
+    {
+      "friendlyName": "GoogleDriveLogo",
+      "unicode": "EE0B"
+    },
+    {
+      "friendlyName": "Questionnaire",
+      "unicode": "EE19"
+    },
+    {
+      "friendlyName": "ReplyMirrored",
+      "unicode": "EE35"
+    },
+    {
+      "friendlyName": "ReplyAllMirrored",
+      "unicode": "EE36"
+    },
+    {
+      "friendlyName": "AddGroup",
+      "unicode": "EE3D"
+    },
+    {
+      "friendlyName": "QuestionnaireMirrored",
+      "unicode": "EE4B"
+    },
+    {
+      "friendlyName": "TemporaryUser",
+      "unicode": "EE58"
+    },
+    {
+      "friendlyName": "GroupedDescending",
+      "unicode": "EE66"
+    },
+    {
+      "friendlyName": "GroupedAscending",
+      "unicode": "EE67"
+    },
+    {
+      "friendlyName": "SortUp",
+      "unicode": "EE68"
+    },
+    {
+      "friendlyName": "SortDown",
+      "unicode": "EE69"
+    },
+    {
+      "friendlyName": "AwayStatus",
+      "unicode": "EE6A"
+    },
+    {
+      "friendlyName": "SyncToPC",
+      "unicode": "EE6E"
+    },
+    {
+      "friendlyName": "AustralianRules",
+      "unicode": "EE70"
+    },
+    {
+      "friendlyName": "DateTimeMirrored",
+      "unicode": "EE93"
+    },
+    {
+      "friendlyName": "DoubleChevronUp12",
+      "unicode": "EE96"
+    },
+    {
+      "friendlyName": "DoubleChevronDown12",
+      "unicode": "EE97"
+    },
+    {
+      "friendlyName": "DoubleChevronLeft12",
+      "unicode": "EE98"
+    },
+    {
+      "friendlyName": "DoubleChevronRight12",
+      "unicode": "EE99"
+    },
+    {
+      "friendlyName": "CalendarAgenda",
+      "unicode": "EE9A"
+    },
+    {
+      "friendlyName": "AddEvent",
+      "unicode": "EEB5"
+    },
+    {
+      "friendlyName": "AssetLibrary",
+      "unicode": "EEB6"
+    },
+    {
+      "friendlyName": "DataConnectionLibrary",
+      "unicode": "EEB7"
+    },
+    {
+      "friendlyName": "DocLibrary",
+      "unicode": "EEB8"
+    },
+    {
+      "friendlyName": "FormLibrary",
+      "unicode": "EEB9"
+    },
+    {
+      "friendlyName": "FormLibraryMirrored",
+      "unicode": "EEBA"
+    },
+    {
+      "friendlyName": "ReportLibrary",
+      "unicode": "EEBB"
+    },
+    {
+      "friendlyName": "ReportLibraryMirrored",
+      "unicode": "EEBC"
+    },
+    {
+      "friendlyName": "ContactCard",
+      "unicode": "EEBD"
+    },
+    {
+      "friendlyName": "CustomList",
+      "unicode": "EEBE"
+    },
+    {
+      "friendlyName": "CustomListMirrored",
+      "unicode": "EEBF"
+    },
+    {
+      "friendlyName": "IssueTracking",
+      "unicode": "EEC0"
+    },
+    {
+      "friendlyName": "IssueTrackingMirrored",
+      "unicode": "EEC1"
+    },
+    {
+      "friendlyName": "PictureLibrary",
+      "unicode": "EEC2"
+    },
+    {
+      "friendlyName": "AppForOfficeLogo",
+      "unicode": "EEC7"
+    },
+    {
+      "friendlyName": "OfflineOneDriveParachute",
+      "unicode": "EEC8"
+    },
+    {
+      "friendlyName": "OfflineOneDriveParachuteDisabled",
+      "unicode": "EEC9"
+    },
+    {
+      "friendlyName": "LargeGrid",
+      "unicode": "EECB"
+    },
+    {
+      "friendlyName": "TriangleSolidUp12",
+      "unicode": "EECC"
+    },
+    {
+      "friendlyName": "TriangleSolidDown12",
+      "unicode": "EECD"
+    },
+    {
+      "friendlyName": "TriangleSolidLeft12",
+      "unicode": "EECE"
+    },
+    {
+      "friendlyName": "TriangleSolidRight12",
+      "unicode": "EECF"
+    },
+    {
+      "friendlyName": "TriangleUp12",
+      "unicode": "EED0"
+    },
+    {
+      "friendlyName": "TriangleDown12",
+      "unicode": "EED1"
+    },
+    {
+      "friendlyName": "TriangleLeft12",
+      "unicode": "EED2"
+    },
+    {
+      "friendlyName": "TriangleRight12",
+      "unicode": "EED3"
+    },
+    {
+      "friendlyName": "ArrowUpRight8",
+      "unicode": "EED4"
+    },
+    {
+      "friendlyName": "ArrowDownRight8",
+      "unicode": "EED5"
+    },
+    {
+      "friendlyName": "DocumentSet",
+      "unicode": "EED6"
+    },
+    {
+      "friendlyName": "DelveAnalytics",
+      "unicode": "EEEE"
+    },
+    {
+      "friendlyName": "ArrowUpRightMirrored8",
+      "unicode": "EEEF"
+    },
+    {
+      "friendlyName": "ArrowDownRightMirrored8",
+      "unicode": "EEF0"
+    },
+    {
+      "friendlyName": "OneDriveAdd",
+      "unicode": "EF32"
+    },
+    {
+      "friendlyName": "Header2",
+      "unicode": "EF36"
+    },
+    {
+      "friendlyName": "Header3",
+      "unicode": "EF37"
+    },
+    {
+      "friendlyName": "Header4",
+      "unicode": "EF38"
+    },
+    {
+      "friendlyName": "MarketDown",
+      "unicode": "EF42"
+    },
+    {
+      "friendlyName": "CalendarWorkWeek",
+      "unicode": "EF51"
+    },
+    {
+      "friendlyName": "SidePanel",
+      "unicode": "EF52"
+    },
+    {
+      "friendlyName": "GlobeFavorite",
+      "unicode": "EF53"
+    },
+    {
+      "friendlyName": "CaretTopLeftSolid8",
+      "unicode": "EF54"
+    },
+    {
+      "friendlyName": "CaretTopRightSolid8",
+      "unicode": "EF55"
+    },
+    {
+      "friendlyName": "ViewAll2",
+      "unicode": "EF56"
+    },
+    {
+      "friendlyName": "DocumentReply",
+      "unicode": "EF57"
+    },
+    {
+      "friendlyName": "PlayerSettings",
+      "unicode": "EF58"
+    },
+    {
+      "friendlyName": "ReceiptForward",
+      "unicode": "EF59"
+    },
+    {
+      "friendlyName": "ReceiptReply",
+      "unicode": "EF5A"
+    },
+    {
+      "friendlyName": "ReceiptCheck",
+      "unicode": "EF5B"
+    },
+    {
+      "friendlyName": "Fax",
+      "unicode": "EF5C"
+    },
+    {
+      "friendlyName": "RecurringEvent",
+      "unicode": "EF5D"
+    },
+    {
+      "friendlyName": "ReplyAlt",
+      "unicode": "EF5E"
+    },
+    {
+      "friendlyName": "ReplyAllAlt",
+      "unicode": "EF5F"
+    },
+    {
+      "friendlyName": "EditStyle",
+      "unicode": "EF60"
+    },
+    {
+      "friendlyName": "EditMail",
+      "unicode": "EF61"
+    },
+    {
+      "friendlyName": "Lifesaver",
+      "unicode": "EF62"
+    },
+    {
+      "friendlyName": "LifesaverLock",
+      "unicode": "EF63"
+    },
+    {
+      "friendlyName": "InboxCheck",
+      "unicode": "EF64"
+    },
+    {
+      "friendlyName": "FolderSearch",
+      "unicode": "EF65"
+    },
+    {
+      "friendlyName": "CollapseMenu",
+      "unicode": "EF66"
+    },
+    {
+      "friendlyName": "ExpandMenu",
+      "unicode": "EF67"
+    },
+    {
+      "friendlyName": "Boards",
+      "unicode": "EF68"
+    },
+    {
+      "friendlyName": "SunAdd",
+      "unicode": "EF69"
+    },
+    {
+      "friendlyName": "SunQuestionMark",
+      "unicode": "EF6A"
+    },
+    {
+      "friendlyName": "LandscapeOrientation",
+      "unicode": "EF6B"
+    },
+    {
+      "friendlyName": "DocumentSearch",
+      "unicode": "EF6C"
+    },
+    {
+      "friendlyName": "PublicCalendar",
+      "unicode": "EF6D"
+    },
+    {
+      "friendlyName": "PublicContactCard",
+      "unicode": "EF6E"
+    },
+    {
+      "friendlyName": "PublicEmail",
+      "unicode": "EF6F"
+    },
+    {
+      "friendlyName": "PublicFolder",
+      "unicode": "EF70"
+    },
+    {
+      "friendlyName": "WordDocument",
+      "unicode": "EF71"
+    },
+    {
+      "friendlyName": "PowerPointDocument",
+      "unicode": "EF72"
+    },
+    {
+      "friendlyName": "ExcelDocument",
+      "unicode": "EF73"
+    },
+    {
+      "friendlyName": "GroupedList",
+      "unicode": "EF74"
+    },
+    {
+      "friendlyName": "ClassroomLogo",
+      "unicode": "EF75"
+    },
+    {
+      "friendlyName": "Sections",
+      "unicode": "EF76"
+    },
+    {
+      "friendlyName": "EditPhoto",
+      "unicode": "EF77"
+    },
+    {
+      "friendlyName": "Starburst",
+      "unicode": "EF78"
+    },
+    {
+      "friendlyName": "ShareiOS",
+      "unicode": "EF79"
+    },
+    {
+      "friendlyName": "AirTickets",
+      "unicode": "EF7A"
+    },
+    {
+      "friendlyName": "PencilReply",
+      "unicode": "EF7B"
+    },
+    {
+      "friendlyName": "Tiles2",
+      "unicode": "EF7C"
+    },
+    {
+      "friendlyName": "SkypeCircleCheck",
+      "unicode": "EF7D"
+    },
+    {
+      "friendlyName": "SkypeCircleClock",
+      "unicode": "EF7E"
+    },
+    {
+      "friendlyName": "SkypeCircleMinus",
+      "unicode": "EF7F"
+    },
+    {
+      "friendlyName": "SkypeCheck",
+      "unicode": "EF80"
+    },
+    {
+      "friendlyName": "SkypeClock",
+      "unicode": "EF81"
+    },
+    {
+      "friendlyName": "SkypeMinus",
+      "unicode": "EF82"
+    },
+    {
+      "friendlyName": "SkypeMessage",
+      "unicode": "EF83"
+    },
+    {
+      "friendlyName": "ClosedCaption",
+      "unicode": "EF84"
+    },
+    {
+      "friendlyName": "ATPLogo",
+      "unicode": "EF85"
+    },
+    {
+      "friendlyName": "OfficeFormLogo",
+      "unicode": "EF86"
+    },
+    {
+      "friendlyName": "RecycleBin",
+      "unicode": "EF87"
+    },
+    {
+      "friendlyName": "EmptyRecycleBin",
+      "unicode": "EF88"
+    },
+    {
+      "friendlyName": "Hide2",
+      "unicode": "EF89"
+    },
+    {
+      "friendlyName": "iOSAppStoreLogo",
+      "unicode": "EF8A"
+    },
+    {
+      "friendlyName": "AndroidLogo",
+      "unicode": "EF8B"
+    },
+    {
+      "friendlyName": "Breadcrumb",
+      "unicode": "EF8C"
+    },
+    {
+      "friendlyName": "ClearFilter",
+      "unicode": "EF8F"
+    },
+    {
+      "friendlyName": "Flow",
+      "unicode": "EF90"
+    },
+    {
+      "friendlyName": "PowerAppsLogo",
+      "unicode": "F091"
+    },
+    {
+      "friendlyName": "PowerApps2Logo",
+      "unicode": "F092"
+    }
+  ]
+}

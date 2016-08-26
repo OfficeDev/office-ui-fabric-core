@@ -3,7 +3,9 @@
 </div>
 <script>
 	var currPage = window.location.pathname.replace(/\//g, '');
-	document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
 </script>
 </body>
 </html>

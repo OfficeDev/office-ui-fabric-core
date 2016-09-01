@@ -1,7 +1,7 @@
 var path = require('path');
-var gulputil = require('gulp-util');
 var map = require('map-stream');
 var Config = require('./Config');
+var Plugins = require('./Plugins');
 /**
  * Custom Error Handling Class for Various Tasks
  */
@@ -53,7 +53,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generateError = function(error) {
-         gulputil.log(gulputil.colors.red(error));
+         Plugins.gutil.log(Plugins.gutil.colors.red(error));
          return;
     }
     /**
@@ -62,7 +62,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generateBuildError = function(error) {
-        gulputil.log(gulputil.colors.red("Build error: ") + gulputil.colors.yellow(error));
+        Plugins.gutil.log(Plugins.gutil.colors.red("Build error: ") + Plugins.gutil.colors.yellow(error));
         return;
     };
     /**
@@ -71,7 +71,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showNumberOfErrors = function(numberOfErrors) {
-        gulputil.log(gulputil.colors.red("Number of errors: " +  gulputil.colors.yellow(numberOfErrors)));
+        Plugins.gutil.log(Plugins.gutil.colors.red("Number of errors: " +  Plugins.gutil.colors.yellow(numberOfErrors)));
         return;
     };
     /**
@@ -80,7 +80,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showNumberOfWarnings = function(numberOfErrors) {
-        gulputil.log(gulputil.colors.yellow("Number of warnings: " +  gulputil.colors.yellow(numberOfErrors)));
+        Plugins.gutil.log(Plugins.gutil.colors.yellow("Number of warnings: " +  Plugins.gutil.colors.yellow(numberOfErrors)));
         return;
     };
     /**
@@ -89,7 +89,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showSuccessBuild = function(successMessage) {
-        gulputil.log(gulputil.colors.magenta("Successful build: " +  gulputil.colors.green(successMessage)));
+        Plugins.gutil.log(Plugins.gutil.colors.magenta("Successful build: " +  Plugins.gutil.colors.green(successMessage)));
         return;
     };
     /**
@@ -99,8 +99,8 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generatePluginError = function(pluginName, errorMessage) {
-        var gulpError = new gulputil.PluginError(pluginName, errorMessage, {showStack: false});
-        gulputil.log(gulpError.toString());
+        var gulpError = new Plugins.gutil.PluginError(pluginName, errorMessage, {showStack: false});
+        Plugins.gutil.log(gulpError.toString());
         that.addError(gulpError.toString());
         return;
     };
@@ -116,9 +116,9 @@ var ErrorHandling = function() {
      */
     this.createLineErrorMessage = function(messageStart, path, line, character, code, reason) {
         return messageStart
-                + gulputil.colors.green(path)
+                + Plugins.gutil.colors.green(path)
                 + ': '
-                + gulputil.colors.magenta('line ' 
+                + Plugins.gutil.colors.magenta('line ' 
                 + line
                 + ', col ' 
                 + character)
@@ -170,14 +170,14 @@ var ErrorHandling = function() {
                     failures.forEach(function (err) {
 
                         var errorString = that.createLineErrorMessage(
-                            gulputil.colors.red("Error ") + 'Typescript Linting ', 
+                            Plugins.gutil.colors.red("Error ") + 'Typescript Linting ', 
                             file.path,
                             (err.startPosition.line + 1),
                             err.startPosition.character + 1,
                             err.ruleName,
                             " "
                         );
-                        gulputil.log(errorString);
+                        Plugins.gutil.log(errorString);
                         that.addError(errorString);
                     });
                 }
@@ -201,14 +201,14 @@ var ErrorHandling = function() {
                 
                   warningLines.forEach(function (warningLine) {
                     errorString = that.createLineErrorMessage(
-                        gulputil.colors.yellow("Warning") + ' ' + lintingData[warningLine][0].message,
+                        Plugins.gutil.colors.yellow("Warning") + ' ' + lintingData[warningLine][0].message,
                         file.path,
                         lintingData[warningLine][0].line,
                         ' ',
                         ' ',
                         ' '
                     );
-                    gulputil.log(errorString);
+                    Plugins.gutil.log(errorString);
                     that.addWarning(errorString);
                 });
             }
@@ -244,25 +244,25 @@ var ErrorHandling = function() {
                    var errorString;
                     if (message.severity == 1) {
                         errorString = that.createLineErrorMessage(
-                            gulputil.colors.yellow("Warning") + ' ' + message.message,
+                            Plugins.gutil.colors.yellow("Warning") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
                         );
-                        gulputil.log(errorString);
+                        Plugins.gutil.log(errorString);
                         that.addWarning(errorString);
                     } else {
                          errorString = that.createLineErrorMessage(
-                            gulputil.colors.red("Error ") + ' ' + message.message,
+                            Plugins.gutil.colors.red("Error ") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
                          );
-                        gulputil.log(errorString);
+                        Plugins.gutil.log(errorString);
                         that.addError(errorString);
                     }
                 }

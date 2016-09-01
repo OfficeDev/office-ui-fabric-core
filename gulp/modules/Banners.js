@@ -21,7 +21,7 @@ var Banners = function() {
      */
 	this.getBannerTemplate = function() {
 		return ['/**',
-					' * Office UI Fabric <%= pkg.version %>',
+					' * Office UI Fabric Core <%= pkg.version %>',
 					' * <%= pkg.description %>',
 					' **/',
       			''].join('\n');

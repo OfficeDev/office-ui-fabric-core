@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp');
-var gulputil = require('gulp-util');
 var pkg = require('../package.json');
 
 // Fabric Helper Modules
@@ -29,6 +28,7 @@ var autoprefixer = Plugins.autoprefixer;
 var cssbeautify = Plugins.cssbeautify;
 var csscomb = Plugins.csscomb;
 var cssMinify = Plugins.cssMinify;
+var gulputil = Plugins.gutil;
 
 
 //

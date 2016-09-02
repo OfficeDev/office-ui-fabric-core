@@ -72,7 +72,6 @@ gulp.task('prepare-handlebars', function(cb) {
   jsonFile = fs.readFileSync(Config.paths.srcData + '/' + 'icons.json', 'utf8');
   jsonData['icons'] = JSON.parse(jsonFile);
   templateData = jsonData;
-  console.log(templateData);
   cb();
 });
 

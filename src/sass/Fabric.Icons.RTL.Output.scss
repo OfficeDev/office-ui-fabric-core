@@ -342,3 +342,6 @@
   -o-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+
+.ms-Icon--BidiLtr::before { @include ms-Icon--BidiRtl }
+.ms-Icon--BidiRtl::before { @include ms-Icon--BidiLtr }

@@ -35,6 +35,7 @@ var Config = function() {
   this.paths.bundlePath = this.paths.dist + '/bundles';
   
   this.paths.srcSamples = this.paths.src + '/samples';
+  this.paths.srcData = this.paths.src + '/data';
   this.paths.srcSass = this.paths.src + '/sass';
   this.paths.srcDocs = this.paths.src + '/documentation';
   this.paths.srcDocsPages = this.paths.srcDocs + '/pages';

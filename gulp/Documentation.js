@@ -62,11 +62,15 @@ gulp.task('prepare-handlebars', function(cb) {
   var jsonFile;
   var jsonFileName;
 
+  // Loop through DocumentationModels and parse JSON data
   for (var i = 0; i < modelFiles.length; i++) {
     jsonFile = fs.readFileSync(Config.paths.srcDocumentationModels + '/' + modelFiles[i], 'utf8');
     jsonFileName = modelFiles[i].replace('.json', '');
     jsonData[jsonFileName] = JSON.parse(jsonFile);
   }
+  // Grab Icon data (in separate folder /src/data/) and parse data
+  jsonFile = fs.readFileSync(Config.paths.srcData + '/' + 'icons.json', 'utf8');
+  jsonData['icons'] = JSON.parse(jsonFile);
   templateData = jsonData;
   cb();
 });

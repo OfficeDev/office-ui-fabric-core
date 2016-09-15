@@ -1155,10 +1155,6 @@
       "unicode": "EA96"
     },
     {
-      "friendlyName": "MultiSelectMirrored",
-      "unicode": "EA98"
-    },
-    {
       "friendlyName": "Broom",
       "unicode": "EA99"
     },
@@ -1185,74 +1181,6 @@
     {
       "friendlyName": "CircleFill",
       "unicode": "EA3B"
-    },
-    {
-      "friendlyName": "BookmarksMirrored",
-      "unicode": "EA41"
-    },
-    {
-      "friendlyName": "BulletedListMirrored",
-      "unicode": "EA42"
-    },
-    {
-      "friendlyName": "CaretHollowMirrored",
-      "unicode": "EA45"
-    },
-    {
-      "friendlyName": "CaretSolidMirrored",
-      "unicode": "EA46"
-    },
-    {
-      "friendlyName": "ChromeBackMirrored",
-      "unicode": "EA47"
-    },
-    {
-      "friendlyName": "ClosePaneMirrored",
-      "unicode": "EA49"
-    },
-    {
-      "friendlyName": "DockLeftMirrored",
-      "unicode": "EA4C"
-    },
-    {
-      "friendlyName": "DoubleChevronLeftMedMirrored",
-      "unicode": "EA4D"
-    },
-    {
-      "friendlyName": "HelpMirrored",
-      "unicode": "EA51"
-    },
-    {
-      "friendlyName": "ListMirrored",
-      "unicode": "EA55"
-    },
-    {
-      "friendlyName": "MailForwardMirrored",
-      "unicode": "EA56"
-    },
-    {
-      "friendlyName": "MailReplyMirrored",
-      "unicode": "EA57"
-    },
-    {
-      "friendlyName": "MailReplyAllMirrored",
-      "unicode": "EA58"
-    },
-    {
-      "friendlyName": "OpenPaneMirrored",
-      "unicode": "EA5B"
-    },
-    {
-      "friendlyName": "SendMirrored",
-      "unicode": "EA63"
-    },
-    {
-      "friendlyName": "ShowResultsMirrored",
-      "unicode": "EA65"
-    },
-    {
-      "friendlyName": "ThumbnailViewMirrored",
-      "unicode": "EA67"
     },
     {
       "friendlyName": "Lightbulb",
@@ -1469,10 +1397,6 @@
     {
       "friendlyName": "Door",
       "unicode": "EB75"
-    },
-    {
-      "friendlyName": "EditMirrored",
-      "unicode": "EB7E"
     },
     {
       "friendlyName": "GiftCard",
@@ -1767,10 +1691,6 @@
       "unicode": "ED25"
     },
     {
-      "friendlyName": "CalendarMirrored",
-      "unicode": "ED28"
-    },
-    {
       "friendlyName": "SwayLogo",
       "unicode": "ED29"
     },
@@ -2027,10 +1947,6 @@
       "unicode": "EDB7"
     },
     {
-      "friendlyName": "TaskManagerMirrored",
-      "unicode": "EDB8"
-    },
-    {
       "friendlyName": "Combine",
       "unicode": "EDBB"
     },
@@ -2199,20 +2115,8 @@
       "unicode": "EE19"
     },
     {
-      "friendlyName": "ReplyMirrored",
-      "unicode": "EE35"
-    },
-    {
-      "friendlyName": "ReplyAllMirrored",
-      "unicode": "EE36"
-    },
-    {
       "friendlyName": "AddGroup",
       "unicode": "EE3D"
-    },
-    {
-      "friendlyName": "QuestionnaireMirrored",
-      "unicode": "EE4B"
     },
     {
       "friendlyName": "TemporaryUser",
@@ -2245,10 +2149,6 @@
     {
       "friendlyName": "AustralianRules",
       "unicode": "EE70"
-    },
-    {
-      "friendlyName": "DateTimeMirrored",
-      "unicode": "EE93"
     },
     {
       "friendlyName": "DoubleChevronUp12",
@@ -2291,16 +2191,8 @@
       "unicode": "EEB9"
     },
     {
-      "friendlyName": "FormLibraryMirrored",
-      "unicode": "EEBA"
-    },
-    {
       "friendlyName": "ReportLibrary",
       "unicode": "EEBB"
-    },
-    {
-      "friendlyName": "ReportLibraryMirrored",
-      "unicode": "EEBC"
     },
     {
       "friendlyName": "ContactCard",
@@ -2311,16 +2203,8 @@
       "unicode": "EEBE"
     },
     {
-      "friendlyName": "CustomListMirrored",
-      "unicode": "EEBF"
-    },
-    {
       "friendlyName": "IssueTracking",
       "unicode": "EEC0"
-    },
-    {
-      "friendlyName": "IssueTrackingMirrored",
-      "unicode": "EEC1"
     },
     {
       "friendlyName": "PictureLibrary",
@@ -2389,14 +2273,6 @@
     {
       "friendlyName": "DelveAnalytics",
       "unicode": "EEEE"
-    },
-    {
-      "friendlyName": "ArrowUpRightMirrored8",
-      "unicode": "EEEF"
-    },
-    {
-      "friendlyName": "ArrowDownRightMirrored8",
-      "unicode": "EEF0"
     },
     {
       "friendlyName": "OneDriveAdd",

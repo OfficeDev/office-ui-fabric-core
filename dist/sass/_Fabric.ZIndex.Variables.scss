@@ -1,0 +1,32 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Z-Index Layeringz
+
+
+// Base Layer Variables
+$ms-zIndex-0: 0;
+$ms-zIndex-1: 100;
+$ms-zIndex-2: 200;
+$ms-zIndex-3: 300;
+$ms-zIndex-4: 400;
+$ms-zIndex-5: 500;
+
+// Base Layer Modifier Variables
+$ms-zIndex-back:   0;
+$ms-zIndex-middle: 5;
+$ms-zIndex-front:  10;
+
+
+// Fabric Component Base Layer Assignments
+
+$ms-zIndex-Callout:        $ms-zIndex-1;
+$ms-zIndex-ContextualMenu: $ms-zIndex-1;
+$ms-zIndex-Overlay:        $ms-zIndex-2;
+$ms-zIndex-Panel:          $ms-zIndex-3;
+$ms-zIndex-DatePicker:     $ms-zIndex-3;
+$ms-zIndex-Dialog:         $ms-zIndex-3;
+$ms-zIndex-PeoplePicker:   $ms-zIndex-3;
+$ms-zIndex-Dropdown:       $ms-zIndex-4;

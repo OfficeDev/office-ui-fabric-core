@@ -1,0 +1,5492 @@
+/* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
+/**
+ * Office UI Fabric Core 4.1.0
+ * The front-end framework for building experiences for Office 365.
+ **/
+.ms-u-borderBox,
+.ms-u-borderBox::before,
+.ms-u-borderBox::after {
+  box-sizing: border-box;
+}
+
+.ms-u-borderBase {
+  border: 1px solid;
+}
+
+.ms-u-clearfix {
+  *zoom: 1;
+}
+
+.ms-u-clearfix::before,
+.ms-u-clearfix::after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-u-clearfix::after {
+  clear: both;
+}
+
+.ms-u-normalize {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.ms-u-textAlignLeft {
+  text-align: left;
+}
+
+.ms-u-textAlignCenter {
+  text-align: center;
+}
+
+.ms-u-textAlignRight {
+  text-align: right;
+}
+
+.ms-u-screenReaderOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.ms-u-textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+.ms-u-noWrap {
+  white-space: nowrap;
+}
+
+.ms-bgColor-themeDark,
+.ms-bgColor-themeDark--hover:hover {
+  background-color: #005a9e;
+}
+
+.ms-bgColor-themeDarkAlt,
+.ms-bgColor-themeDarkAlt--hover:hover {
+  background-color: #106ebe;
+}
+
+.ms-bgColor-themeDarker,
+.ms-bgColor-themeDarker--hover:hover {
+  background-color: #004578;
+}
+
+.ms-bgColor-themePrimary,
+.ms-bgColor-themePrimary--hover:hover {
+  background-color: #0078d7;
+}
+
+.ms-bgColor-themeSecondary,
+.ms-bgColor-themeSecondary--hover:hover {
+  background-color: #2488d8;
+}
+
+.ms-bgColor-themeTertiary,
+.ms-bgColor-themeTertiary--hover:hover {
+  background-color: #69afe5;
+}
+
+.ms-bgColor-themeLight,
+.ms-bgColor-themeLight--hover:hover {
+  background-color: #b3d6f2;
+}
+
+.ms-bgColor-themeLighter,
+.ms-bgColor-themeLighter--hover:hover {
+  background-color: #deecf9;
+}
+
+.ms-bgColor-themeLighterAlt,
+.ms-bgColor-themeLighterAlt--hover:hover {
+  background-color: #eff6fc;
+}
+
+.ms-bgColor-black,
+.ms-bgColor-black--hover:hover {
+  background-color: #000000;
+}
+
+.ms-bgColor-neutralDark,
+.ms-bgColor-neutralDark--hover:hover {
+  background-color: #212121;
+}
+
+.ms-bgColor-neutralPrimary,
+.ms-bgColor-neutralPrimary--hover:hover {
+  background-color: #333333;
+}
+
+.ms-bgColor-neutralPrimaryAlt,
+.ms-bgColor-neutralPrimaryAlt--hover:hover {
+  background-color: #3c3c3c;
+}
+
+.ms-bgColor-neutralSecondary,
+.ms-bgColor-neutralSecondary--hover:hover {
+  background-color: #666666;
+}
+
+.ms-bgColor-neutralSecondaryAlt,
+.ms-bgColor-neutralSecondaryAlt--hover:hover {
+  background-color: #767676;
+}
+
+.ms-bgColor-neutralTertiary,
+.ms-bgColor-neutralTertiary--hover:hover {
+  background-color: #a6a6a6;
+}
+
+.ms-bgColor-neutralTertiaryAlt,
+.ms-bgColor-neutralTertiaryAlt--hover:hover {
+  background-color: #c8c8c8;
+}
+
+.ms-bgColor-neutralLight,
+.ms-bgColor-neutralLight--hover:hover {
+  background-color: #eaeaea;
+}
+
+.ms-bgColor-neutralLighter,
+.ms-bgColor-neutralLighter--hover:hover {
+  background-color: #f4f4f4;
+}
+
+.ms-bgColor-neutralLighterAlt,
+.ms-bgColor-neutralLighterAlt--hover:hover {
+  background-color: #f8f8f8;
+}
+
+.ms-bgColor-white,
+.ms-bgColor-white--hover:hover {
+  background-color: #ffffff;
+}
+
+.ms-bgColor-yellow {
+  background-color: #ffb900;
+}
+
+.ms-bgColor-yellowLight {
+  background-color: #fff100;
+}
+
+.ms-bgColor-orange {
+  background-color: #d83b01;
+}
+
+.ms-bgColor-orangeLight {
+  background-color: #ea4300;
+}
+
+.ms-bgColor-orangeLighter {
+  background-color: #ff8c00;
+}
+
+.ms-bgColor-redDark {
+  background-color: #a80000;
+}
+
+.ms-bgColor-red {
+  background-color: #e81123;
+}
+
+.ms-bgColor-magentaDark {
+  background-color: #5c005c;
+}
+
+.ms-bgColor-magenta {
+  background-color: #b4009e;
+}
+
+.ms-bgColor-magentaLight {
+  background-color: #e3008c;
+}
+
+.ms-bgColor-purpleDark {
+  background-color: #32145a;
+}
+
+.ms-bgColor-purple {
+  background-color: #5c2d91;
+}
+
+.ms-bgColor-purpleLight {
+  background-color: #b4a0ff;
+}
+
+.ms-bgColor-blueDark {
+  background-color: #002050;
+}
+
+.ms-bgColor-blueMid {
+  background-color: #00188f;
+}
+
+.ms-bgColor-blue {
+  background-color: #0078d7;
+}
+
+.ms-bgColor-blueLight {
+  background-color: #00bcf2;
+}
+
+.ms-bgColor-tealDark {
+  background-color: #004b50;
+}
+
+.ms-bgColor-teal {
+  background-color: #008272;
+}
+
+.ms-bgColor-tealLight {
+  background-color: #00b294;
+}
+
+.ms-bgColor-greenDark {
+  background-color: #004b1c;
+}
+
+.ms-bgColor-green {
+  background-color: #107c10;
+}
+
+.ms-bgColor-greenLight {
+  background-color: #bad80a;
+}
+
+.ms-bgColor-info {
+  background-color: #f4f4f4;
+}
+
+.ms-bgColor-success {
+  background-color: #dff6dd;
+}
+
+.ms-bgColor-severeWarning {
+  background-color: #fed9cc;
+}
+
+.ms-bgColor-warning {
+  background-color: #fff4ce;
+}
+
+.ms-bgColor-error {
+  background-color: #fde7e9;
+}
+
+.ms-borderColor-themeDark,
+.ms-borderColor-themeDark--hover:hover {
+  border-color: #005a9e;
+}
+
+.ms-borderColor-themeDarkAlt,
+.ms-borderColor-themeDarkAlt--hover:hover {
+  border-color: #106ebe;
+}
+
+.ms-borderColor-themeDarker,
+.ms-borderColor-themeDarker--hover:hover {
+  border-color: #004578;
+}
+
+.ms-borderColor-themePrimary,
+.ms-borderColor-themePrimary--hover:hover {
+  border-color: #0078d7;
+}
+
+.ms-borderColor-themeSecondary,
+.ms-borderColor-themeSecondary--hover:hover {
+  border-color: #2488d8;
+}
+
+.ms-borderColor-themeTertiary,
+.ms-borderColor-themeTertiary--hover:hover {
+  border-color: #69afe5;
+}
+
+.ms-borderColor-themeLight,
+.ms-borderColor-themeLight--hover:hover {
+  border-color: #b3d6f2;
+}
+
+.ms-borderColor-themeLighter,
+.ms-borderColor-themeLighter--hover:hover {
+  border-color: #deecf9;
+}
+
+.ms-borderColor-themeLighterAlt,
+.ms-borderColor-themeLighterAlt--hover:hover {
+  border-color: #eff6fc;
+}
+
+.ms-borderColor-black,
+.ms-borderColor-black--hover:hover {
+  border-color: #000000;
+}
+
+.ms-borderColor-neutralDark,
+.ms-borderColor-neutralDark--hover:hover {
+  border-color: #212121;
+}
+
+.ms-borderColor-neutralPrimary,
+.ms-borderColor-neutralPrimary--hover:hover {
+  border-color: #333333;
+}
+
+.ms-borderColor-neutralPrimaryAlt,
+.ms-borderColor-neutralPrimaryAlt--hover:hover {
+  border-color: #3c3c3c;
+}
+
+.ms-borderColor-neutralSecondary,
+.ms-borderColor-neutralSecondary--hover:hover {
+  border-color: #666666;
+}
+
+.ms-borderColor-neutralSecondaryAlt,
+.ms-borderColor-neutralSecondaryAlt--hover:hover {
+  border-color: #767676;
+}
+
+.ms-borderColor-neutralTertiary,
+.ms-borderColor-neutralTertiary--hover:hover {
+  border-color: #a6a6a6;
+}
+
+.ms-borderColor-neutralTertiaryAlt,
+.ms-borderColor-neutralTertiaryAlt--hover:hover {
+  border-color: #c8c8c8;
+}
+
+.ms-borderColor-neutralLight,
+.ms-borderColor-neutralLight--hover:hover {
+  border-color: #eaeaea;
+}
+
+.ms-borderColor-neutralLighter,
+.ms-borderColor-neutralLighter--hover:hover {
+  border-color: #f4f4f4;
+}
+
+.ms-borderColor-neutralLighterAlt,
+.ms-borderColor-neutralLighterAlt--hover:hover {
+  border-color: #f8f8f8;
+}
+
+.ms-borderColor-white,
+.ms-borderColor-white--hover:hover {
+  border-color: #ffffff;
+}
+
+.ms-borderColor-yellow {
+  border-color: #ffb900;
+}
+
+.ms-borderColor-yellowLight {
+  border-color: #fff100;
+}
+
+.ms-borderColor-orange {
+  border-color: #d83b01;
+}
+
+.ms-borderColor-orangeLight {
+  border-color: #ea4300;
+}
+
+.ms-borderColor-orangeLighter {
+  border-color: #ff8c00;
+}
+
+.ms-borderColor-redDark {
+  border-color: #a80000;
+}
+
+.ms-borderColor-red {
+  border-color: #e81123;
+}
+
+.ms-borderColor-magentaDark {
+  border-color: #5c005c;
+}
+
+.ms-borderColor-magenta {
+  border-color: #b4009e;
+}
+
+.ms-borderColor-magentaLight {
+  border-color: #e3008c;
+}
+
+.ms-borderColor-purpleDark {
+  border-color: #32145a;
+}
+
+.ms-borderColor-purple {
+  border-color: #5c2d91;
+}
+
+.ms-borderColor-purpleLight {
+  border-color: #b4a0ff;
+}
+
+.ms-borderColor-blueDark {
+  border-color: #002050;
+}
+
+.ms-borderColor-blueMid {
+  border-color: #00188f;
+}
+
+.ms-borderColor-blue {
+  border-color: #0078d7;
+}
+
+.ms-borderColor-blueLight {
+  border-color: #00bcf2;
+}
+
+.ms-borderColor-tealDark {
+  border-color: #004b50;
+}
+
+.ms-borderColor-teal {
+  border-color: #008272;
+}
+
+.ms-borderColor-tealLight {
+  border-color: #00b294;
+}
+
+.ms-borderColor-greenDark {
+  border-color: #004b1c;
+}
+
+.ms-borderColor-green {
+  border-color: #107c10;
+}
+
+.ms-borderColor-greenLight {
+  border-color: #bad80a;
+}
+
+.ms-borderColorTop-themePrimary,
+.ms-borderColorTop-themePrimary--hover:hover {
+  border-top-color: #0078d7;
+}
+
+.ms-font-su {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 42px;
+  font-weight: 100;
+}
+
+.ms-font-xxl {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 28px;
+  font-weight: 100;
+}
+
+.ms-font-xl {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 21px;
+  font-weight: 100;
+}
+
+.ms-font-l {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.ms-font-m-plus {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.ms-font-m {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ms-font-s-plus {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.ms-font-s {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.ms-font-xs {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.ms-font-mi {
+  font-family: 'Segoe UI WestEuropean', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.ms-fontWeight-light,
+.ms-fontWeight-light--hover:hover {
+  font-weight: 100;
+}
+
+.ms-fontWeight-semilight,
+.ms-fontWeight-semilight--hover:hover {
+  font-weight: 300;
+}
+
+.ms-fontWeight-regular,
+.ms-fontWeight-regular--hover:hover {
+  font-weight: 400;
+}
+
+.ms-fontWeight-semibold,
+.ms-fontWeight-semibold--hover:hover {
+  font-weight: 600;
+}
+
+.ms-fontSize-su {
+  font-size: 42px;
+}
+
+.ms-fontSize-xxl {
+  font-size: 28px;
+}
+
+.ms-fontSize-xl {
+  font-size: 21px;
+}
+
+.ms-fontSize-l {
+  font-size: 17px;
+}
+
+.ms-fontSize-mPlus {
+  font-size: 15px;
+}
+
+.ms-fontSize-m {
+  font-size: 14px;
+}
+
+.ms-fontSize-sPlus {
+  font-size: 13px;
+}
+
+.ms-fontSize-s {
+  font-size: 12px;
+}
+
+.ms-fontSize-xs {
+  font-size: 11px;
+}
+
+.ms-fontSize-mi {
+  font-size: 10px;
+}
+
+.ms-fontColor-themeDarker,
+.ms-fontColor-themeDarker--hover:hover {
+  color: #004578;
+}
+
+.ms-fontColor-themeDark,
+.ms-fontColor-themeDark--hover:hover {
+  color: #005a9e;
+}
+
+.ms-fontColor-themeDarkAlt,
+.ms-fontColor-themeDarkAlt--hover:hover {
+  color: #106ebe;
+}
+
+.ms-fontColor-themePrimary,
+.ms-fontColor-themePrimary--hover:hover {
+  color: #0078d7;
+}
+
+.ms-fontColor-themeSecondary,
+.ms-fontColor-themeSecondary--hover:hover {
+  color: #2488d8;
+}
+
+.ms-fontColor-themeTertiary,
+.ms-fontColor-themeTertiary--hover:hover {
+  color: #69afe5;
+}
+
+.ms-fontColor-themeLight,
+.ms-fontColor-themeLight--hover:hover {
+  color: #b3d6f2;
+}
+
+.ms-fontColor-themeLighter,
+.ms-fontColor-themeLighter--hover:hover {
+  color: #deecf9;
+}
+
+.ms-fontColor-themeLighterAlt,
+.ms-fontColor-themeLighterAlt--hover:hover {
+  color: #eff6fc;
+}
+
+.ms-fontColor-black,
+.ms-fontColor-black--hover:hover {
+  color: #000000;
+}
+
+.ms-fontColor-neutralDark,
+.ms-fontColor-neutralDark--hover:hover {
+  color: #212121;
+}
+
+.ms-fontColor-neutralPrimary,
+.ms-fontColor-neutralPrimary--hover:hover {
+  color: #333333;
+}
+
+.ms-fontColor-neutralPrimaryAlt,
+.ms-fontColor-neutralPrimaryAlt--hover:hover {
+  color: #3c3c3c;
+}
+
+.ms-fontColor-neutralSecondary,
+.ms-fontColor-neutralSecondary--hover:hover {
+  color: #666666;
+}
+
+.ms-fontColor-neutralSecondaryAlt,
+.ms-fontColor-neutralSecondaryAlt--hover:hover {
+  color: #767676;
+}
+
+.ms-fontColor-neutralTertiary,
+.ms-fontColor-neutralTertiary--hover:hover {
+  color: #a6a6a6;
+}
+
+.ms-fontColor-neutralTertiaryAlt,
+.ms-fontColor-neutralTertiaryAlt--hover:hover {
+  color: #c8c8c8;
+}
+
+.ms-fontColor-neutralLight,
+.ms-fontColor-neutralLight--hover:hover {
+  color: #eaeaea;
+}
+
+.ms-fontColor-neutralLighter,
+.ms-fontColor-neutralLighter--hover:hover {
+  color: #f4f4f4;
+}
+
+.ms-fontColor-neutralLighterAlt,
+.ms-fontColor-neutralLighterAlt--hover:hover {
+  color: #f8f8f8;
+}
+
+.ms-fontColor-white,
+.ms-fontColor-white--hover:hover {
+  color: #ffffff;
+}
+
+.ms-fontColor-yellow,
+.ms-fontColor-yellow--hover:hover {
+  color: #ffb900;
+}
+
+.ms-fontColor-yellowLight,
+.ms-fontColor-yellowLight--hover:hover {
+  color: #fff100;
+}
+
+.ms-fontColor-orange,
+.ms-fontColor-orange--hover:hover {
+  color: #d83b01;
+}
+
+.ms-fontColor-orangeLight,
+.ms-fontColor-orangeLight--hover:hover {
+  color: #ea4300;
+}
+
+.ms-fontColor-orangeLighter,
+.ms-fontColor-orangeLighter--hover:hover {
+  color: #ff8c00;
+}
+
+.ms-fontColor-redDark,
+.ms-fontColor-redDark--hover:hover {
+  color: #a80000;
+}
+
+.ms-fontColor-red,
+.ms-fontColor-red--hover:hover {
+  color: #e81123;
+}
+
+.ms-fontColor-magentaDark,
+.ms-fontColor-magentaDark--hover:hover {
+  color: #5c005c;
+}
+
+.ms-fontColor-magenta,
+.ms-fontColor-magenta--hover:hover {
+  color: #b4009e;
+}
+
+.ms-fontColor-magentaLight,
+.ms-fontColor-magentaLight--hover:hover {
+  color: #e3008c;
+}
+
+.ms-fontColor-purpleDark,
+.ms-fontColor-purpleDark--hover:hover {
+  color: #32145a;
+}
+
+.ms-fontColor-purple,
+.ms-fontColor-purple--hover:hover {
+  color: #5c2d91;
+}
+
+.ms-fontColor-purpleLight,
+.ms-fontColor-purpleLight--hover:hover {
+  color: #b4a0ff;
+}
+
+.ms-fontColor-blueDark,
+.ms-fontColor-blueDark--hover:hover {
+  color: #002050;
+}
+
+.ms-fontColor-blueMid,
+.ms-fontColor-blueMid--hover:hover {
+  color: #00188f;
+}
+
+.ms-fontColor-blue,
+.ms-fontColor-blue--hover:hover {
+  color: #0078d7;
+}
+
+.ms-fontColor-blueLight,
+.ms-fontColor-blueLight--hover:hover {
+  color: #00bcf2;
+}
+
+.ms-fontColor-tealDark,
+.ms-fontColor-tealDark--hover:hover {
+  color: #004b50;
+}
+
+.ms-fontColor-teal,
+.ms-fontColor-teal--hover:hover {
+  color: #008272;
+}
+
+.ms-fontColor-tealLight,
+.ms-fontColor-tealLight--hover:hover {
+  color: #00b294;
+}
+
+.ms-fontColor-greenDark,
+.ms-fontColor-greenDark--hover:hover {
+  color: #004b1c;
+}
+
+.ms-fontColor-green,
+.ms-fontColor-green--hover:hover {
+  color: #107c10;
+}
+
+.ms-fontColor-greenLight,
+.ms-fontColor-greenLight--hover:hover {
+  color: #bad80a;
+}
+
+.ms-fontColor-info,
+.ms-fontColor-info--hover:hover {
+  color: #767676;
+}
+
+.ms-fontColor-success,
+.ms-fontColor-success--hover:hover {
+  color: #107c10;
+}
+
+.ms-fontColor-alert,
+.ms-fontColor-alert--hover:hover {
+  color: #d83b01;
+}
+
+.ms-fontColor-warning,
+.ms-fontColor-warning--hover:hover {
+  color: #767676;
+}
+
+.ms-fontColor-severeWarning,
+.ms-fontColor-severeWarning--hover:hover {
+  color: #d83b01;
+}
+
+.ms-fontColor-error,
+.ms-fontColor-error--hover:hover {
+  color: #a80000;
+}
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+@font-face {
+  font-family: 'Segoe UI WestEuropean';
+  src: local('Segoe UI Light'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Light.woff2') format('woff2'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Light.woff') format('woff'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Light.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI WestEuropean';
+  src: local('Segoe UI'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Regular.woff2') format('woff2'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Regular.woff') format('woff'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI WestEuropean';
+  src: local('Segoe UI Semibold'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.woff2') format('woff2'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.woff') format('woff'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI WestEuropean';
+  src: local('Segoe UI Semilight'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.woff2') format('woff2'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.woff') format('woff'), url('https://appsforoffice.microsoft.com/fabric/fonts/SegoeUI-WestEuropean/SegoeUI-Semilight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+@font-face {
+  font-family: 'FabricMDL2Icons';
+  src: url('https://appsforoffice.microsoft.com/fabric/fonts/icons/FabricMDL2Icons.woff') format('woff'), url('https://appsforoffice.microsoft.com/fabric/fonts/icons/FabricMDL2Icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ms-Icon {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: 'FabricMDL2Icons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+}
+
+.ms-Icon--DecreaseIndentLegacy::before {
+  content: '\E290';
+}
+
+.ms-Icon--IncreaseIndentLegacy::before {
+  content: '\E291';
+}
+
+.ms-Icon--GlobalNavButton::before {
+  content: '\E700';
+}
+
+.ms-Icon--InternetSharing::before {
+  content: '\E704';
+}
+
+.ms-Icon--Brightness::before {
+  content: '\E706';
+}
+
+.ms-Icon--MapPin::before {
+  content: '\E707';
+}
+
+.ms-Icon--Airplane::before {
+  content: '\E709';
+}
+
+.ms-Icon--Tablet::before {
+  content: '\E70A';
+}
+
+.ms-Icon--QuickNote::before {
+  content: '\E70B';
+}
+
+.ms-Icon--ChevronDown::before {
+  content: '\E70D';
+}
+
+.ms-Icon--ChevronUp::before {
+  content: '\E70E';
+}
+
+.ms-Icon--Edit::before {
+  content: '\E70F';
+}
+
+.ms-Icon--Add::before {
+  content: '\E710';
+}
+
+.ms-Icon--Cancel::before {
+  content: '\E711';
+}
+
+.ms-Icon--More::before {
+  content: '\E712';
+}
+
+.ms-Icon--Settings::before {
+  content: '\E713';
+}
+
+.ms-Icon--Video::before {
+  content: '\E714';
+}
+
+.ms-Icon--Mail::before {
+  content: '\E715';
+}
+
+.ms-Icon--People::before {
+  content: '\E716';
+}
+
+.ms-Icon--Phone::before {
+  content: '\E717';
+}
+
+.ms-Icon--Pin::before {
+  content: '\E718';
+}
+
+.ms-Icon--Shop::before {
+  content: '\E719';
+}
+
+.ms-Icon--Link::before {
+  content: '\E71B';
+}
+
+.ms-Icon--Filter::before {
+  content: '\E71C';
+}
+
+.ms-Icon--Zoom::before {
+  content: '\E71E';
+}
+
+.ms-Icon--ZoomOut::before {
+  content: '\E71F';
+}
+
+.ms-Icon--Microphone::before {
+  content: '\E720';
+}
+
+.ms-Icon--Search::before {
+  content: '\E721';
+}
+
+.ms-Icon--Camera::before {
+  content: '\E722';
+}
+
+.ms-Icon--Attach::before {
+  content: '\E723';
+}
+
+.ms-Icon--Send::before {
+  content: '\E724';
+}
+
+.ms-Icon--FavoriteList::before {
+  content: '\E728';
+}
+
+.ms-Icon--PageSolid::before {
+  content: '\E729';
+}
+
+.ms-Icon--Forward::before {
+  content: '\E72A';
+}
+
+.ms-Icon--Back::before {
+  content: '\E72B';
+}
+
+.ms-Icon--Refresh::before {
+  content: '\E72C';
+}
+
+.ms-Icon--Share::before {
+  content: '\E72D';
+}
+
+.ms-Icon--Lock::before {
+  content: '\E72E';
+}
+
+.ms-Icon--EMI::before {
+  content: '\E731';
+}
+
+.ms-Icon--MiniLink::before {
+  content: '\E732';
+}
+
+.ms-Icon--Blocked::before {
+  content: '\E733';
+}
+
+.ms-Icon--FavoriteStar::before {
+  content: '\E734';
+}
+
+.ms-Icon--FavoriteStarFill::before {
+  content: '\E735';
+}
+
+.ms-Icon--ReadingMode::before {
+  content: '\E736';
+}
+
+.ms-Icon--Remove::before {
+  content: '\E738';
+}
+
+.ms-Icon--Checkbox::before {
+  content: '\E739';
+}
+
+.ms-Icon--CheckboxComposite::before {
+  content: '\E73A';
+}
+
+.ms-Icon--CheckboxIndeterminate::before {
+  content: '\E73C';
+}
+
+.ms-Icon--CheckMark::before {
+  content: '\E73E';
+}
+
+.ms-Icon--BackToWindow::before {
+  content: '\E73F';
+}
+
+.ms-Icon--FullScreen::before {
+  content: '\E740';
+}
+
+.ms-Icon--Print::before {
+  content: '\E749';
+}
+
+.ms-Icon--Up::before {
+  content: '\E74A';
+}
+
+.ms-Icon--Down::before {
+  content: '\E74B';
+}
+
+.ms-Icon--Delete::before {
+  content: '\E74D';
+}
+
+.ms-Icon--Save::before {
+  content: '\E74E';
+}
+
+.ms-Icon--Sad::before {
+  content: '\E757';
+}
+
+.ms-Icon--SIPMove::before {
+  content: '\E759';
+}
+
+.ms-Icon--EraseTool::before {
+  content: '\E75C';
+}
+
+.ms-Icon--GripperTool::before {
+  content: '\E75E';
+}
+
+.ms-Icon--Dialpad::before {
+  content: '\E75F';
+}
+
+.ms-Icon--PageLeft::before {
+  content: '\E760';
+}
+
+.ms-Icon--PageRight::before {
+  content: '\E761';
+}
+
+.ms-Icon--MultiSelect::before {
+  content: '\E762';
+}
+
+.ms-Icon--Play::before {
+  content: '\E768';
+}
+
+.ms-Icon--Pause::before {
+  content: '\E769';
+}
+
+.ms-Icon--ChevronLeft::before {
+  content: '\E76B';
+}
+
+.ms-Icon--ChevronRight::before {
+  content: '\E76C';
+}
+
+.ms-Icon--Emoji2::before {
+  content: '\E76E';
+}
+
+.ms-Icon--System::before {
+  content: '\E770';
+}
+
+.ms-Icon--Globe::before {
+  content: '\E774';
+}
+
+.ms-Icon--ContactInfo::before {
+  content: '\E779';
+}
+
+.ms-Icon--Unpin::before {
+  content: '\E77A';
+}
+
+.ms-Icon--Contact::before {
+  content: '\E77B';
+}
+
+.ms-Icon--Memo::before {
+  content: '\E77C';
+}
+
+.ms-Icon--WindowsLogo::before {
+  content: '\E782';
+}
+
+.ms-Icon--Error::before {
+  content: '\E783';
+}
+
+.ms-Icon--Unlock::before {
+  content: '\E785';
+}
+
+.ms-Icon--Calendar::before {
+  content: '\E787';
+}
+
+.ms-Icon--Megaphone::before {
+  content: '\E789';
+}
+
+.ms-Icon--AutoEnhanceOn::before {
+  content: '\E78D';
+}
+
+.ms-Icon--AutoEnhanceOff::before {
+  content: '\E78E';
+}
+
+.ms-Icon--Color::before {
+  content: '\E790';
+}
+
+.ms-Icon--SaveAs::before {
+  content: '\E792';
+}
+
+.ms-Icon--Light::before {
+  content: '\E793';
+}
+
+.ms-Icon--Filters::before {
+  content: '\E795';
+}
+
+.ms-Icon--Contrast::before {
+  content: '\E7A1';
+}
+
+.ms-Icon--Redo::before {
+  content: '\E7A6';
+}
+
+.ms-Icon--Undo::before {
+  content: '\E7A7';
+}
+
+.ms-Icon--Album::before {
+  content: '\E7AB';
+}
+
+.ms-Icon--Rotate::before {
+  content: '\E7AD';
+}
+
+.ms-Icon--PanoIndicator::before {
+  content: '\E7B0';
+}
+
+.ms-Icon--ThumbnailView::before {
+  content: '\E7B6';
+}
+
+.ms-Icon--Package::before {
+  content: '\E7B8';
+}
+
+.ms-Icon--Warning::before {
+  content: '\E7BA';
+}
+
+.ms-Icon--Financial::before {
+  content: '\E7BB';
+}
+
+.ms-Icon--ShoppingCart::before {
+  content: '\E7BF';
+}
+
+.ms-Icon--Train::before {
+  content: '\E7C0';
+}
+
+.ms-Icon--Flag::before {
+  content: '\E7C1';
+}
+
+.ms-Icon--Move::before {
+  content: '\E7C2';
+}
+
+.ms-Icon--Page::before {
+  content: '\E7C3';
+}
+
+.ms-Icon--TouchPointer::before {
+  content: '\E7C9';
+}
+
+.ms-Icon--Merge::before {
+  content: '\E7D5';
+}
+
+.ms-Icon--TurnRight::before {
+  content: '\E7DB';
+}
+
+.ms-Icon--Ferry::before {
+  content: '\E7E3';
+}
+
+.ms-Icon--Tab::before {
+  content: '\E7E9';
+}
+
+.ms-Icon--Admin::before {
+  content: '\E7EF';
+}
+
+.ms-Icon--TVMonitor::before {
+  content: '\E7F4';
+}
+
+.ms-Icon--Speakers::before {
+  content: '\E7F5';
+}
+
+.ms-Icon--Car::before {
+  content: '\E804';
+}
+
+.ms-Icon--EatDrink::before {
+  content: '\E807';
+}
+
+.ms-Icon--LocationCircle::before {
+  content: '\E80E';
+}
+
+.ms-Icon--Home::before {
+  content: '\E80F';
+}
+
+.ms-Icon--SwitcherStartEnd::before {
+  content: '\E810';
+}
+
+.ms-Icon--IncidentTriangle::before {
+  content: '\E814';
+}
+
+.ms-Icon--Touch::before {
+  content: '\E815';
+}
+
+.ms-Icon--MapDirections::before {
+  content: '\E816';
+}
+
+.ms-Icon--History::before {
+  content: '\E81C';
+}
+
+.ms-Icon--Location::before {
+  content: '\E81D';
+}
+
+.ms-Icon--Work::before {
+  content: '\E821';
+}
+
+.ms-Icon--Recent::before {
+  content: '\E823';
+}
+
+.ms-Icon--Hotel::before {
+  content: '\E824';
+}
+
+.ms-Icon--LocationDot::before {
+  content: '\E827';
+}
+
+.ms-Icon--News::before {
+  content: '\E900';
+}
+
+.ms-Icon--Chat::before {
+  content: '\E901';
+}
+
+.ms-Icon--Group::before {
+  content: '\E902';
+}
+
+.ms-Icon--View::before {
+  content: '\E890';
+}
+
+.ms-Icon--Clear::before {
+  content: '\E894';
+}
+
+.ms-Icon--Sync::before {
+  content: '\E895';
+}
+
+.ms-Icon--Download::before {
+  content: '\E896';
+}
+
+.ms-Icon--Help::before {
+  content: '\E897';
+}
+
+.ms-Icon--Upload::before {
+  content: '\E898';
+}
+
+.ms-Icon--Emoji::before {
+  content: '\E899';
+}
+
+.ms-Icon--MailForward::before {
+  content: '\E89C';
+}
+
+.ms-Icon--ClosePane::before {
+  content: '\E89F';
+}
+
+.ms-Icon--OpenPane::before {
+  content: '\E8A0';
+}
+
+.ms-Icon--PreviewLink::before {
+  content: '\E8A1';
+}
+
+.ms-Icon--ZoomIn::before {
+  content: '\E8A3';
+}
+
+.ms-Icon--Bookmarks::before {
+  content: '\E8A4';
+}
+
+.ms-Icon--Document::before {
+  content: '\E8A5';
+}
+
+.ms-Icon--ProtectedDocument::before {
+  content: '\E8A6';
+}
+
+.ms-Icon--OpenInNewWindow::before {
+  content: '\E8A7';
+}
+
+.ms-Icon--MailFill::before {
+  content: '\E8A8';
+}
+
+.ms-Icon--ViewAll::before {
+  content: '\E8A9';
+}
+
+.ms-Icon--Switch::before {
+  content: '\E8AB';
+}
+
+.ms-Icon--Rename::before {
+  content: '\E8AC';
+}
+
+.ms-Icon--Folder::before {
+  content: '\E8B7';
+}
+
+.ms-Icon--Picture::before {
+  content: '\E8B9';
+}
+
+.ms-Icon--ShowResults::before {
+  content: '\E8BC';
+}
+
+.ms-Icon--Message::before {
+  content: '\E8BD';
+}
+
+.ms-Icon--CalendarDay::before {
+  content: '\E8BF';
+}
+
+.ms-Icon--CalendarWeek::before {
+  content: '\E8C0';
+}
+
+.ms-Icon--MailReplyAll::before {
+  content: '\E8C2';
+}
+
+.ms-Icon--Read::before {
+  content: '\E8C3';
+}
+
+.ms-Icon--PaymentCard::before {
+  content: '\E8C7';
+}
+
+.ms-Icon--Copy::before {
+  content: '\E8C8';
+}
+
+.ms-Icon--Important::before {
+  content: '\E8C9';
+}
+
+.ms-Icon--MailReply::before {
+  content: '\E8CA';
+}
+
+.ms-Icon--Sort::before {
+  content: '\E8CB';
+}
+
+.ms-Icon--GotoToday::before {
+  content: '\E8D1';
+}
+
+.ms-Icon--Font::before {
+  content: '\E8D2';
+}
+
+.ms-Icon--FontColor::before {
+  content: '\E8D3';
+}
+
+.ms-Icon--FolderFill::before {
+  content: '\E8D5';
+}
+
+.ms-Icon--Permissions::before {
+  content: '\E8D7';
+}
+
+.ms-Icon--DisableUpdates::before {
+  content: '\E8D8';
+}
+
+.ms-Icon--Unfavorite::before {
+  content: '\E8D9';
+}
+
+.ms-Icon--Italic::before {
+  content: '\E8DB';
+}
+
+.ms-Icon--Underline::before {
+  content: '\E8DC';
+}
+
+.ms-Icon--Bold::before {
+  content: '\E8DD';
+}
+
+.ms-Icon--MoveToFolder::before {
+  content: '\E8DE';
+}
+
+.ms-Icon--Dislike::before {
+  content: '\E8E0';
+}
+
+.ms-Icon--Like::before {
+  content: '\E8E1';
+}
+
+.ms-Icon--AlignRight::before {
+  content: '\E8E2';
+}
+
+.ms-Icon--AlignCenter::before {
+  content: '\E8E3';
+}
+
+.ms-Icon--AlignLeft::before {
+  content: '\E8E4';
+}
+
+.ms-Icon--OpenFile::before {
+  content: '\E8E5';
+}
+
+.ms-Icon--FontDecrease::before {
+  content: '\E8E7';
+}
+
+.ms-Icon--FontIncrease::before {
+  content: '\E8E8';
+}
+
+.ms-Icon--FontSize::before {
+  content: '\E8E9';
+}
+
+.ms-Icon--CellPhone::before {
+  content: '\E8EA';
+}
+
+.ms-Icon--Tag::before {
+  content: '\E8EC';
+}
+
+.ms-Icon--Library::before {
+  content: '\E8F1';
+}
+
+.ms-Icon--PostUpdate::before {
+  content: '\E8F3';
+}
+
+.ms-Icon--NewFolder::before {
+  content: '\E8F4';
+}
+
+.ms-Icon--CalendarReply::before {
+  content: '\E8F5';
+}
+
+.ms-Icon--UnsyncFolder::before {
+  content: '\E8F6';
+}
+
+.ms-Icon--SyncFolder::before {
+  content: '\E8F7';
+}
+
+.ms-Icon--BlockContact::before {
+  content: '\E8F8';
+}
+
+.ms-Icon--AddFriend::before {
+  content: '\E8FA';
+}
+
+.ms-Icon--BulletedList::before {
+  content: '\E8FD';
+}
+
+.ms-Icon--Preview::before {
+  content: '\E8FF';
+}
+
+.ms-Icon--DockLeft::before {
+  content: '\E90C';
+}
+
+.ms-Icon--DockRight::before {
+  content: '\E90D';
+}
+
+.ms-Icon--Repair::before {
+  content: '\E90F';
+}
+
+.ms-Icon--Accounts::before {
+  content: '\E910';
+}
+
+.ms-Icon--RadioBullet::before {
+  content: '\E915';
+}
+
+.ms-Icon--Stopwatch::before {
+  content: '\E916';
+}
+
+.ms-Icon--Clock::before {
+  content: '\E917';
+}
+
+.ms-Icon--AlarmClock::before {
+  content: '\E919';
+}
+
+.ms-Icon--Hospital::before {
+  content: '\E91D';
+}
+
+.ms-Icon--Timer::before {
+  content: '\E91E';
+}
+
+.ms-Icon--FullCircleMask::before {
+  content: '\E91F';
+}
+
+.ms-Icon--LocationFill::before {
+  content: '\E920';
+}
+
+.ms-Icon--ChromeMinimize::before {
+  content: '\E921';
+}
+
+.ms-Icon--Annotation::before {
+  content: '\E924';
+}
+
+.ms-Icon--ChromeClose::before {
+  content: '\E8BB';
+}
+
+.ms-Icon--Accept::before {
+  content: '\E8FB';
+}
+
+.ms-Icon--Fingerprint::before {
+  content: '\E928';
+}
+
+.ms-Icon--Handwriting::before {
+  content: '\E929';
+}
+
+.ms-Icon--StackIndicator::before {
+  content: '\E7FF';
+}
+
+.ms-Icon--Completed::before {
+  content: '\E930';
+}
+
+.ms-Icon--Label::before {
+  content: '\E932';
+}
+
+.ms-Icon--FlickDown::before {
+  content: '\E935';
+}
+
+.ms-Icon--FlickUp::before {
+  content: '\E936';
+}
+
+.ms-Icon--FlickLeft::before {
+  content: '\E937';
+}
+
+.ms-Icon--FlickRight::before {
+  content: '\E938';
+}
+
+.ms-Icon--MusicInCollection::before {
+  content: '\E940';
+}
+
+.ms-Icon--OneDrive::before {
+  content: '\E941';
+}
+
+.ms-Icon--CompassNW::before {
+  content: '\E942';
+}
+
+.ms-Icon--Code::before {
+  content: '\E943';
+}
+
+.ms-Icon--LightningBolt::before {
+  content: '\E945';
+}
+
+.ms-Icon--Info::before {
+  content: '\E946';
+}
+
+.ms-Icon--CalculatorAddition::before {
+  content: '\E948';
+}
+
+.ms-Icon--CalculatorSubtract::before {
+  content: '\E949';
+}
+
+.ms-Icon--PrintfaxPrinterFile::before {
+  content: '\E956';
+}
+
+.ms-Icon--Health::before {
+  content: '\E95E';
+}
+
+.ms-Icon--ChevronUpSmall::before {
+  content: '\E96D';
+}
+
+.ms-Icon--ChevronDownSmall::before {
+  content: '\E96E';
+}
+
+.ms-Icon--ChevronLeftSmall::before {
+  content: '\E96F';
+}
+
+.ms-Icon--ChevronRightSmall::before {
+  content: '\E970';
+}
+
+.ms-Icon--ChevronUpMed::before {
+  content: '\E971';
+}
+
+.ms-Icon--ChevronDownMed::before {
+  content: '\E972';
+}
+
+.ms-Icon--ChevronLeftMed::before {
+  content: '\E973';
+}
+
+.ms-Icon--ChevronRightMed::before {
+  content: '\E974';
+}
+
+.ms-Icon--Dictionary::before {
+  content: '\E82D';
+}
+
+.ms-Icon--ChromeBack::before {
+  content: '\E830';
+}
+
+.ms-Icon--PC1::before {
+  content: '\E977';
+}
+
+.ms-Icon--PresenceChickletVideo::before {
+  content: '\E979';
+}
+
+.ms-Icon--Reply::before {
+  content: '\E97A';
+}
+
+.ms-Icon--DoubleChevronLeftMed::before {
+  content: '\E991';
+}
+
+.ms-Icon--Volume0::before {
+  content: '\E992';
+}
+
+.ms-Icon--Volume1::before {
+  content: '\E993';
+}
+
+.ms-Icon--Volume2::before {
+  content: '\E994';
+}
+
+.ms-Icon--Volume3::before {
+  content: '\E995';
+}
+
+.ms-Icon--CaretHollow::before {
+  content: '\E817';
+}
+
+.ms-Icon--CaretSolid::before {
+  content: '\E818';
+}
+
+.ms-Icon--Pinned::before {
+  content: '\E840';
+}
+
+.ms-Icon--PinnedFill::before {
+  content: '\E842';
+}
+
+.ms-Icon--Chart::before {
+  content: '\E999';
+}
+
+.ms-Icon--BidiLtr::before {
+  content: '\E9AA';
+}
+
+.ms-Icon--BidiRtl::before {
+  content: '\E9AB';
+}
+
+.ms-Icon--RevToggleKey::before {
+  content: '\E845';
+}
+
+.ms-Icon--RightDoubleQuote::before {
+  content: '\E9B1';
+}
+
+.ms-Icon--Sunny::before {
+  content: '\E9BD';
+}
+
+.ms-Icon--CloudWeather::before {
+  content: '\E9BE';
+}
+
+.ms-Icon--Cloudy::before {
+  content: '\E9BF';
+}
+
+.ms-Icon--PartlyCloudyDay::before {
+  content: '\E9C0';
+}
+
+.ms-Icon--PartlyCloudyNight::before {
+  content: '\E9C1';
+}
+
+.ms-Icon--ClearNight::before {
+  content: '\E9C2';
+}
+
+.ms-Icon--RainShowersDay::before {
+  content: '\E9C3';
+}
+
+.ms-Icon--Rain::before {
+  content: '\E9C4';
+}
+
+.ms-Icon--Thunderstorms::before {
+  content: '\E9C6';
+}
+
+.ms-Icon--RainSnow::before {
+  content: '\E9C7';
+}
+
+.ms-Icon--Snow::before {
+  content: '\EB46';
+}
+
+.ms-Icon--BlowingSnow::before {
+  content: '\E9C9';
+}
+
+.ms-Icon--Frigid::before {
+  content: '\E9CA';
+}
+
+.ms-Icon--Fog::before {
+  content: '\E9CB';
+}
+
+.ms-Icon--Squalls::before {
+  content: '\E9CC';
+}
+
+.ms-Icon--Duststorm::before {
+  content: '\E9CD';
+}
+
+.ms-Icon--Precipitation::before {
+  content: '\E9CF';
+}
+
+.ms-Icon--Ringer::before {
+  content: '\EA8F';
+}
+
+.ms-Icon--PDF::before {
+  content: '\EA90';
+}
+
+.ms-Icon--SortLines::before {
+  content: '\E9D0';
+}
+
+.ms-Icon--Ribbon::before {
+  content: '\E9D1';
+}
+
+.ms-Icon--CheckList::before {
+  content: '\E9D5';
+}
+
+.ms-Icon--Generate::before {
+  content: '\E9DA';
+}
+
+.ms-Icon--Equalizer::before {
+  content: '\E9E9';
+}
+
+.ms-Icon--BarChartHorizontal::before {
+  content: '\E9EB';
+}
+
+.ms-Icon--Freezing::before {
+  content: '\E9EF';
+}
+
+.ms-Icon--SnowShowerDay::before {
+  content: '\E9FD';
+}
+
+.ms-Icon--HailDay::before {
+  content: '\EA00';
+}
+
+.ms-Icon--WorkFlow::before {
+  content: '\EA01';
+}
+
+.ms-Icon--StoreLogoMed::before {
+  content: '\EA04';
+}
+
+.ms-Icon--RainShowersNight::before {
+  content: '\EA0F';
+}
+
+.ms-Icon--SnowShowerNight::before {
+  content: '\EA11';
+}
+
+.ms-Icon--HailNight::before {
+  content: '\EA13';
+}
+
+.ms-Icon--Info2::before {
+  content: '\EA1F';
+}
+
+.ms-Icon--StoreLogo::before {
+  content: '\EA96';
+}
+
+.ms-Icon--Broom::before {
+  content: '\EA99';
+}
+
+.ms-Icon--MusicInCollectionFill::before {
+  content: '\EA36';
+}
+
+.ms-Icon--List::before {
+  content: '\EA37';
+}
+
+.ms-Icon--Asterisk::before {
+  content: '\EA38';
+}
+
+.ms-Icon--ErrorBadge::before {
+  content: '\EA39';
+}
+
+.ms-Icon--CircleRing::before {
+  content: '\EA3A';
+}
+
+.ms-Icon--CircleFill::before {
+  content: '\EA3B';
+}
+
+.ms-Icon--Lightbulb::before {
+  content: '\EA80';
+}
+
+.ms-Icon--StatusTriangle::before {
+  content: '\EA82';
+}
+
+.ms-Icon--VolumeDisabled::before {
+  content: '\EA85';
+}
+
+.ms-Icon--Puzzle::before {
+  content: '\EA86';
+}
+
+.ms-Icon--EmojiNeutral::before {
+  content: '\EA87';
+}
+
+.ms-Icon--EmojiDisappointed::before {
+  content: '\EA88';
+}
+
+.ms-Icon--HomeSolid::before {
+  content: '\EA8A';
+}
+
+.ms-Icon--Cocktails::before {
+  content: '\EA9D';
+}
+
+.ms-Icon--Articles::before {
+  content: '\EAC1';
+}
+
+.ms-Icon--Cycling::before {
+  content: '\EAC7';
+}
+
+.ms-Icon--DietPlanNotebook::before {
+  content: '\EAC8';
+}
+
+.ms-Icon--Pill::before {
+  content: '\EACB';
+}
+
+.ms-Icon--Running::before {
+  content: '\EADA';
+}
+
+.ms-Icon--Weights::before {
+  content: '\EADB';
+}
+
+.ms-Icon--BarChart4::before {
+  content: '\EAE7';
+}
+
+.ms-Icon--CirclePlus::before {
+  content: '\EAEE';
+}
+
+.ms-Icon--Coffee::before {
+  content: '\EAEF';
+}
+
+.ms-Icon--Cotton::before {
+  content: '\EAF3';
+}
+
+.ms-Icon--Market::before {
+  content: '\EAFC';
+}
+
+.ms-Icon--Money::before {
+  content: '\EAFD';
+}
+
+.ms-Icon--PieDouble::before {
+  content: '\EB04';
+}
+
+.ms-Icon--RemoveFilter::before {
+  content: '\EB08';
+}
+
+.ms-Icon--StockDown::before {
+  content: '\EB0F';
+}
+
+.ms-Icon--StockUp::before {
+  content: '\EB11';
+}
+
+.ms-Icon--Cricket::before {
+  content: '\EB1E';
+}
+
+.ms-Icon--Golf::before {
+  content: '\EB1F';
+}
+
+.ms-Icon--Baseball::before {
+  content: '\EB20';
+}
+
+.ms-Icon--Soccer::before {
+  content: '\EB21';
+}
+
+.ms-Icon--MoreSports::before {
+  content: '\EB22';
+}
+
+.ms-Icon--AutoRacing::before {
+  content: '\EB24';
+}
+
+.ms-Icon--CollegeHoops::before {
+  content: '\EB25';
+}
+
+.ms-Icon--CollegeFootball::before {
+  content: '\EB26';
+}
+
+.ms-Icon--ProFootball::before {
+  content: '\EB27';
+}
+
+.ms-Icon--ProHockey::before {
+  content: '\EB28';
+}
+
+.ms-Icon--Rugby::before {
+  content: '\EB2D';
+}
+
+.ms-Icon--Tennis::before {
+  content: '\EB33';
+}
+
+.ms-Icon--Arrivals::before {
+  content: '\EB34';
+}
+
+.ms-Icon--Design::before {
+  content: '\EB3C';
+}
+
+.ms-Icon--Website::before {
+  content: '\EB41';
+}
+
+.ms-Icon--Drop::before {
+  content: '\EB42';
+}
+
+.ms-Icon--Snow::before {
+  content: '\EB46';
+}
+
+.ms-Icon--BusSolid::before {
+  content: '\EB47';
+}
+
+.ms-Icon--FerrySolid::before {
+  content: '\EB48';
+}
+
+.ms-Icon--TrainSolid::before {
+  content: '\EB4D';
+}
+
+.ms-Icon--Heart::before {
+  content: '\EB51';
+}
+
+.ms-Icon--HeartFill::before {
+  content: '\EB52';
+}
+
+.ms-Icon--Ticket::before {
+  content: '\EB54';
+}
+
+.ms-Icon--AzureLogo::before {
+  content: '\EB6A';
+}
+
+.ms-Icon--BingLogo::before {
+  content: '\EB6B';
+}
+
+.ms-Icon--MSNLogo::before {
+  content: '\EB6C';
+}
+
+.ms-Icon--OutlookLogo::before {
+  content: '\EB6D';
+}
+
+.ms-Icon--OfficeLogo::before {
+  content: '\EB6E';
+}
+
+.ms-Icon--SkypeLogo::before {
+  content: '\EB6F';
+}
+
+.ms-Icon--Door::before {
+  content: '\EB75';
+}
+
+.ms-Icon--GiftCard::before {
+  content: '\EB8E';
+}
+
+.ms-Icon--DoubleBookmark::before {
+  content: '\EB8F';
+}
+
+.ms-Icon--StatusErrorFull::before {
+  content: '\EB90';
+}
+
+.ms-Icon--Certificate::before {
+  content: '\EB95';
+}
+
+.ms-Icon--Photo2::before {
+  content: '\EB9F';
+}
+
+.ms-Icon--CloudDownload::before {
+  content: '\EBD3';
+}
+
+.ms-Icon--WindDirection::before {
+  content: '\EBE6';
+}
+
+.ms-Icon--Family::before {
+  content: '\EBDA';
+}
+
+.ms-Icon--CSS::before {
+  content: '\EBEF';
+}
+
+.ms-Icon--JS::before {
+  content: '\EBF0';
+}
+
+.ms-Icon--ReminderGroup::before {
+  content: '\EBF8';
+}
+
+.ms-Icon--Section::before {
+  content: '\EC0C';
+}
+
+.ms-Icon--OneNoteLogo::before {
+  content: '\EC0D';
+}
+
+.ms-Icon--ToggleFilled::before {
+  content: '\EC11';
+}
+
+.ms-Icon--ToggleBorder::before {
+  content: '\EC12';
+}
+
+.ms-Icon--SliderThumb::before {
+  content: '\EC13';
+}
+
+.ms-Icon--ToggleThumb::before {
+  content: '\EC14';
+}
+
+.ms-Icon--Documentation::before {
+  content: '\EC17';
+}
+
+.ms-Icon--Badge::before {
+  content: '\EC1B';
+}
+
+.ms-Icon--Giftbox::before {
+  content: '\EC1F';
+}
+
+.ms-Icon--ExcelLogo::before {
+  content: '\EC28';
+}
+
+.ms-Icon--WordLogo::before {
+  content: '\EC29';
+}
+
+.ms-Icon--PowerPointLogo::before {
+  content: '\EC2A';
+}
+
+.ms-Icon--Cafe::before {
+  content: '\EC32';
+}
+
+.ms-Icon--SpeedHigh::before {
+  content: '\EC4A';
+}
+
+.ms-Icon--MusicNote::before {
+  content: '\EC4F';
+}
+
+.ms-Icon--EdgeLogo::before {
+  content: '\EC60';
+}
+
+.ms-Icon--CompletedSolid::before {
+  content: '\EC61';
+}
+
+.ms-Icon--AlbumRemove::before {
+  content: '\EC62';
+}
+
+.ms-Icon--MessageFill::before {
+  content: '\EC70';
+}
+
+.ms-Icon--TabletSelected::before {
+  content: '\EC74';
+}
+
+.ms-Icon--MobileSelected::before {
+  content: '\EC75';
+}
+
+.ms-Icon--LaptopSelected::before {
+  content: '\EC76';
+}
+
+.ms-Icon--TVMonitorSelected::before {
+  content: '\EC77';
+}
+
+.ms-Icon--DeveloperTools::before {
+  content: '\EC7A';
+}
+
+.ms-Icon--InsertTextBox::before {
+  content: '\EC7D';
+}
+
+.ms-Icon--LowerBrightness::before {
+  content: '\EC8A';
+}
+
+.ms-Icon--CloudUpload::before {
+  content: '\EC8E';
+}
+
+.ms-Icon--DateTime::before {
+  content: '\EC92';
+}
+
+.ms-Icon--Event::before {
+  content: '\ECA3';
+}
+
+.ms-Icon--Cake::before {
+  content: '\ECA4';
+}
+
+.ms-Icon--Tiles::before {
+  content: '\ECA5';
+}
+
+.ms-Icon--Org::before {
+  content: '\ECA6';
+}
+
+.ms-Icon--PartyLeader::before {
+  content: '\ECA7';
+}
+
+.ms-Icon--DRM::before {
+  content: '\ECA8';
+}
+
+.ms-Icon--CloudAdd::before {
+  content: '\ECA9';
+}
+
+.ms-Icon--AppIconDefault::before {
+  content: '\ECAA';
+}
+
+.ms-Icon--Photo2Add::before {
+  content: '\ECAB';
+}
+
+.ms-Icon--Photo2Remove::before {
+  content: '\ECAC';
+}
+
+.ms-Icon--POI::before {
+  content: '\ECAF';
+}
+
+.ms-Icon--FacebookLogo::before {
+  content: '\ECB3';
+}
+
+.ms-Icon--AddTo::before {
+  content: '\ECC8';
+}
+
+.ms-Icon--RadioBtnOn::before {
+  content: '\ECCB';
+}
+
+.ms-Icon--Embed::before {
+  content: '\ECCE';
+}
+
+.ms-Icon--VideoSolid::before {
+  content: '\EA0C';
+}
+
+.ms-Icon--Teamwork::before {
+  content: '\EA12';
+}
+
+.ms-Icon--PeopleAdd::before {
+  content: '\EA15';
+}
+
+.ms-Icon--Glasses::before {
+  content: '\EA16';
+}
+
+.ms-Icon--DateTime2::before {
+  content: '\EA17';
+}
+
+.ms-Icon--Shield::before {
+  content: '\EA18';
+}
+
+.ms-Icon--Header1::before {
+  content: '\EA19';
+}
+
+.ms-Icon--PageAdd::before {
+  content: '\EA1A';
+}
+
+.ms-Icon--NumberedList::before {
+  content: '\EA1C';
+}
+
+.ms-Icon--PowerBILogo::before {
+  content: '\EA1E';
+}
+
+.ms-Icon--Product::before {
+  content: '\ECDC';
+}
+
+.ms-Icon--Blocked2::before {
+  content: '\ECE4';
+}
+
+.ms-Icon--FangBody::before {
+  content: '\ECEB';
+}
+
+.ms-Icon--Glimmer::before {
+  content: '\ECF4';
+}
+
+.ms-Icon--ChatInviteFriend::before {
+  content: '\ECFE';
+}
+
+.ms-Icon--SharepointLogo::before {
+  content: '\ED18';
+}
+
+.ms-Icon--YammerLogo::before {
+  content: '\ED19';
+}
+
+.ms-Icon--ReturnToSession::before {
+  content: '\ED24';
+}
+
+.ms-Icon--OpenFolderHorizontal::before {
+  content: '\ED25';
+}
+
+.ms-Icon--SwayLogo::before {
+  content: '\ED29';
+}
+
+.ms-Icon--OutOfOffice::before {
+  content: '\ED34';
+}
+
+.ms-Icon--Trophy::before {
+  content: '\ED3F';
+}
+
+.ms-Icon--ReopenPages::before {
+  content: '\ED50';
+}
+
+.ms-Icon--AADLogo::before {
+  content: '\ED68';
+}
+
+.ms-Icon--AccessLogo::before {
+  content: '\ED69';
+}
+
+.ms-Icon--AdminALogo::before {
+  content: '\ED6A';
+}
+
+.ms-Icon--AdminCLogo::before {
+  content: '\ED6B';
+}
+
+.ms-Icon--AdminDLogo::before {
+  content: '\ED6C';
+}
+
+.ms-Icon--AdminELogo::before {
+  content: '\ED6D';
+}
+
+.ms-Icon--AdminLLogo::before {
+  content: '\ED6E';
+}
+
+.ms-Icon--AdminMLogo::before {
+  content: '\ED6F';
+}
+
+.ms-Icon--AdminOLogo::before {
+  content: '\ED70';
+}
+
+.ms-Icon--AdminPLogo::before {
+  content: '\ED71';
+}
+
+.ms-Icon--AdminSLogo::before {
+  content: '\ED72';
+}
+
+.ms-Icon--AdminYLogo::before {
+  content: '\ED73';
+}
+
+.ms-Icon--AlchemyLogo::before {
+  content: '\ED74';
+}
+
+.ms-Icon--BoxLogo::before {
+  content: '\ED75';
+}
+
+.ms-Icon--DelveLogo::before {
+  content: '\ED76';
+}
+
+.ms-Icon--DropboxLogo::before {
+  content: '\ED77';
+}
+
+.ms-Icon--ExchangeLogo::before {
+  content: '\ED78';
+}
+
+.ms-Icon--LyncLogo::before {
+  content: '\ED79';
+}
+
+.ms-Icon--OfficeVideoLogo::before {
+  content: '\ED7A';
+}
+
+.ms-Icon--ParatureLogo::before {
+  content: '\ED7B';
+}
+
+.ms-Icon--SocialListeningLogo::before {
+  content: '\ED7C';
+}
+
+.ms-Icon--VisioLogo::before {
+  content: '\ED7D';
+}
+
+.ms-Icon--Balloons::before {
+  content: '\ED7E';
+}
+
+.ms-Icon--Cat::before {
+  content: '\ED7F';
+}
+
+.ms-Icon--MailAlert::before {
+  content: '\ED80';
+}
+
+.ms-Icon--MailCheck::before {
+  content: '\ED81';
+}
+
+.ms-Icon--MailLowImportance::before {
+  content: '\ED82';
+}
+
+.ms-Icon--MailPause::before {
+  content: '\ED83';
+}
+
+.ms-Icon--MailRepeat::before {
+  content: '\ED84';
+}
+
+.ms-Icon--SecurityGroup::before {
+  content: '\ED85';
+}
+
+.ms-Icon--Table::before {
+  content: '\ED86';
+}
+
+.ms-Icon--VoicemailForward::before {
+  content: '\ED87';
+}
+
+.ms-Icon--VoicemailReply::before {
+  content: '\ED88';
+}
+
+.ms-Icon--Waffle::before {
+  content: '\ED89';
+}
+
+.ms-Icon--RemoveEvent::before {
+  content: '\ED8A';
+}
+
+.ms-Icon--EventInfo::before {
+  content: '\ED8B';
+}
+
+.ms-Icon--ForwardEvent::before {
+  content: '\ED8C';
+}
+
+.ms-Icon--WipePhone::before {
+  content: '\ED8D';
+}
+
+.ms-Icon--AddOnlineMeeting::before {
+  content: '\ED8E';
+}
+
+.ms-Icon--JoinOnlineMeeting::before {
+  content: '\ED8F';
+}
+
+.ms-Icon--RemoveLink::before {
+  content: '\ED90';
+}
+
+.ms-Icon--PeopleBlock::before {
+  content: '\ED91';
+}
+
+.ms-Icon--PeopleRepeat::before {
+  content: '\ED92';
+}
+
+.ms-Icon--PeopleAlert::before {
+  content: '\ED93';
+}
+
+.ms-Icon--PeoplePause::before {
+  content: '\ED94';
+}
+
+.ms-Icon--TransferCall::before {
+  content: '\ED95';
+}
+
+.ms-Icon--AddPhone::before {
+  content: '\ED96';
+}
+
+.ms-Icon--UnknownCall::before {
+  content: '\ED97';
+}
+
+.ms-Icon--NoteReply::before {
+  content: '\ED98';
+}
+
+.ms-Icon--NoteForward::before {
+  content: '\ED99';
+}
+
+.ms-Icon--NotePinned::before {
+  content: '\ED9A';
+}
+
+.ms-Icon--RemoveOccurrence::before {
+  content: '\ED9B';
+}
+
+.ms-Icon--Timeline::before {
+  content: '\ED9C';
+}
+
+.ms-Icon--EditNote::before {
+  content: '\ED9D';
+}
+
+.ms-Icon--CircleHalfFull::before {
+  content: '\ED9E';
+}
+
+.ms-Icon--Room::before {
+  content: '\ED9F';
+}
+
+.ms-Icon--Unsubscribe::before {
+  content: '\EDA0';
+}
+
+.ms-Icon--Subscribe::before {
+  content: '\EDA1';
+}
+
+.ms-Icon--RecurringTask::before {
+  content: '\EDB2';
+}
+
+.ms-Icon--TaskManager::before {
+  content: '\EDB7';
+}
+
+.ms-Icon--Combine::before {
+  content: '\EDBB';
+}
+
+.ms-Icon--Split::before {
+  content: '\EDBC';
+}
+
+.ms-Icon--DoubleChevronUp::before {
+  content: '\EDBD';
+}
+
+.ms-Icon--DoubleChevronLeft::before {
+  content: '\EDBE';
+}
+
+.ms-Icon--DoubleChevronRight::before {
+  content: '\EDBF';
+}
+
+.ms-Icon--Ascending::before {
+  content: '\EDC0';
+}
+
+.ms-Icon--Descending::before {
+  content: '\EDC1';
+}
+
+.ms-Icon--TextBox::before {
+  content: '\EDC2';
+}
+
+.ms-Icon--TextField::before {
+  content: '\EDC3';
+}
+
+.ms-Icon--NumberField::before {
+  content: '\EDC4';
+}
+
+.ms-Icon--Dropdown::before {
+  content: '\EDC5';
+}
+
+.ms-Icon--BookingsLogo::before {
+  content: '\EDC7';
+}
+
+.ms-Icon--ClassNotebookLogo::before {
+  content: '\EDC8';
+}
+
+.ms-Icon--CollabsDBLogo::before {
+  content: '\EDC9';
+}
+
+.ms-Icon--DelveAnalyticsLogo::before {
+  content: '\EDCA';
+}
+
+.ms-Icon--DocsLogo::before {
+  content: '\EDCB';
+}
+
+.ms-Icon--DynamicsCRMLogo::before {
+  content: '\EDCC';
+}
+
+.ms-Icon--DynamicSMBLogo::before {
+  content: '\EDCD';
+}
+
+.ms-Icon--OfficeAssistantLogo::before {
+  content: '\EDCE';
+}
+
+.ms-Icon--OfficeStoreLogo::before {
+  content: '\EDCF';
+}
+
+.ms-Icon--OneNoteEduLogo::before {
+  content: '\EDD0';
+}
+
+.ms-Icon--Planner::before {
+  content: '\EDD1';
+}
+
+.ms-Icon--PowerApps::before {
+  content: '\EDD2';
+}
+
+.ms-Icon--Suitcase::before {
+  content: '\EDD3';
+}
+
+.ms-Icon--ProjectLogo::before {
+  content: '\EDD4';
+}
+
+.ms-Icon--CaretLeft8::before {
+  content: '\EDD5';
+}
+
+.ms-Icon--CaretRight8::before {
+  content: '\EDD6';
+}
+
+.ms-Icon--CaretUp8::before {
+  content: '\EDD7';
+}
+
+.ms-Icon--CaretDown8::before {
+  content: '\EDD8';
+}
+
+.ms-Icon--CaretLeftSolid8::before {
+  content: '\EDD9';
+}
+
+.ms-Icon--CarotRightSolid8::before {
+  content: '\EDDA';
+}
+
+.ms-Icon--CaretUpSolid8::before {
+  content: '\EDDB';
+}
+
+.ms-Icon--CaretDownSolid8::before {
+  content: '\EDDC';
+}
+
+.ms-Icon--ClearFormatting::before {
+  content: '\EDDD';
+}
+
+.ms-Icon--Superscript::before {
+  content: '\EDDE';
+}
+
+.ms-Icon--Subscript::before {
+  content: '\EDDF';
+}
+
+.ms-Icon--Strikethrough::before {
+  content: '\EDE0';
+}
+
+.ms-Icon--SingleBookmark::before {
+  content: '\EDFF';
+}
+
+.ms-Icon--DoubleChevronDown::before {
+  content: '\EE04';
+}
+
+.ms-Icon--ReplyAll::before {
+  content: '\EE0A';
+}
+
+.ms-Icon--GoogleDriveLogo::before {
+  content: '\EE0B';
+}
+
+.ms-Icon--Questionnaire::before {
+  content: '\EE19';
+}
+
+.ms-Icon--AddGroup::before {
+  content: '\EE3D';
+}
+
+.ms-Icon--TemporaryUser::before {
+  content: '\EE58';
+}
+
+.ms-Icon--GroupedDescending::before {
+  content: '\EE66';
+}
+
+.ms-Icon--GroupedAscending::before {
+  content: '\EE67';
+}
+
+.ms-Icon--SortUp::before {
+  content: '\EE68';
+}
+
+.ms-Icon--SortDown::before {
+  content: '\EE69';
+}
+
+.ms-Icon--AwayStatus::before {
+  content: '\EE6A';
+}
+
+.ms-Icon--SyncToPC::before {
+  content: '\EE6E';
+}
+
+.ms-Icon--AustralianRules::before {
+  content: '\EE70';
+}
+
+.ms-Icon--DoubleChevronUp12::before {
+  content: '\EE96';
+}
+
+.ms-Icon--DoubleChevronDown12::before {
+  content: '\EE97';
+}
+
+.ms-Icon--DoubleChevronLeft12::before {
+  content: '\EE98';
+}
+
+.ms-Icon--DoubleChevronRight12::before {
+  content: '\EE99';
+}
+
+.ms-Icon--CalendarAgenda::before {
+  content: '\EE9A';
+}
+
+.ms-Icon--AddEvent::before {
+  content: '\EEB5';
+}
+
+.ms-Icon--AssetLibrary::before {
+  content: '\EEB6';
+}
+
+.ms-Icon--DataConnectionLibrary::before {
+  content: '\EEB7';
+}
+
+.ms-Icon--DocLibrary::before {
+  content: '\EEB8';
+}
+
+.ms-Icon--FormLibrary::before {
+  content: '\EEB9';
+}
+
+.ms-Icon--ReportLibrary::before {
+  content: '\EEBB';
+}
+
+.ms-Icon--ContactCard::before {
+  content: '\EEBD';
+}
+
+.ms-Icon--CustomList::before {
+  content: '\EEBE';
+}
+
+.ms-Icon--IssueTracking::before {
+  content: '\EEC0';
+}
+
+.ms-Icon--PictureLibrary::before {
+  content: '\EEC2';
+}
+
+.ms-Icon--AppForOfficeLogo::before {
+  content: '\EEC7';
+}
+
+.ms-Icon--OfflineOneDriveParachute::before {
+  content: '\EEC8';
+}
+
+.ms-Icon--OfflineOneDriveParachuteDisabled::before {
+  content: '\EEC9';
+}
+
+.ms-Icon--LargeGrid::before {
+  content: '\EECB';
+}
+
+.ms-Icon--TriangleSolidUp12::before {
+  content: '\EECC';
+}
+
+.ms-Icon--TriangleSolidDown12::before {
+  content: '\EECD';
+}
+
+.ms-Icon--TriangleSolidLeft12::before {
+  content: '\EECE';
+}
+
+.ms-Icon--TriangleSolidRight12::before {
+  content: '\EECF';
+}
+
+.ms-Icon--TriangleUp12::before {
+  content: '\EED0';
+}
+
+.ms-Icon--TriangleDown12::before {
+  content: '\EED1';
+}
+
+.ms-Icon--TriangleLeft12::before {
+  content: '\EED2';
+}
+
+.ms-Icon--TriangleRight12::before {
+  content: '\EED3';
+}
+
+.ms-Icon--ArrowUpRight8::before {
+  content: '\EED4';
+}
+
+.ms-Icon--ArrowDownRight8::before {
+  content: '\EED5';
+}
+
+.ms-Icon--DocumentSet::before {
+  content: '\EED6';
+}
+
+.ms-Icon--DelveAnalytics::before {
+  content: '\EEEE';
+}
+
+.ms-Icon--OneDriveAdd::before {
+  content: '\EF32';
+}
+
+.ms-Icon--Header2::before {
+  content: '\EF36';
+}
+
+.ms-Icon--Header3::before {
+  content: '\EF37';
+}
+
+.ms-Icon--Header4::before {
+  content: '\EF38';
+}
+
+.ms-Icon--MarketDown::before {
+  content: '\EF42';
+}
+
+.ms-Icon--CalendarWorkWeek::before {
+  content: '\EF51';
+}
+
+.ms-Icon--SidePanel::before {
+  content: '\EF52';
+}
+
+.ms-Icon--GlobeFavorite::before {
+  content: '\EF53';
+}
+
+.ms-Icon--CaretTopLeftSolid8::before {
+  content: '\EF54';
+}
+
+.ms-Icon--CaretTopRightSolid8::before {
+  content: '\EF55';
+}
+
+.ms-Icon--ViewAll2::before {
+  content: '\EF56';
+}
+
+.ms-Icon--DocumentReply::before {
+  content: '\EF57';
+}
+
+.ms-Icon--PlayerSettings::before {
+  content: '\EF58';
+}
+
+.ms-Icon--ReceiptForward::before {
+  content: '\EF59';
+}
+
+.ms-Icon--ReceiptReply::before {
+  content: '\EF5A';
+}
+
+.ms-Icon--ReceiptCheck::before {
+  content: '\EF5B';
+}
+
+.ms-Icon--Fax::before {
+  content: '\EF5C';
+}
+
+.ms-Icon--RecurringEvent::before {
+  content: '\EF5D';
+}
+
+.ms-Icon--ReplyAlt::before {
+  content: '\EF5E';
+}
+
+.ms-Icon--ReplyAllAlt::before {
+  content: '\EF5F';
+}
+
+.ms-Icon--EditStyle::before {
+  content: '\EF60';
+}
+
+.ms-Icon--EditMail::before {
+  content: '\EF61';
+}
+
+.ms-Icon--Lifesaver::before {
+  content: '\EF62';
+}
+
+.ms-Icon--LifesaverLock::before {
+  content: '\EF63';
+}
+
+.ms-Icon--InboxCheck::before {
+  content: '\EF64';
+}
+
+.ms-Icon--FolderSearch::before {
+  content: '\EF65';
+}
+
+.ms-Icon--CollapseMenu::before {
+  content: '\EF66';
+}
+
+.ms-Icon--ExpandMenu::before {
+  content: '\EF67';
+}
+
+.ms-Icon--Boards::before {
+  content: '\EF68';
+}
+
+.ms-Icon--SunAdd::before {
+  content: '\EF69';
+}
+
+.ms-Icon--SunQuestionMark::before {
+  content: '\EF6A';
+}
+
+.ms-Icon--LandscapeOrientation::before {
+  content: '\EF6B';
+}
+
+.ms-Icon--DocumentSearch::before {
+  content: '\EF6C';
+}
+
+.ms-Icon--PublicCalendar::before {
+  content: '\EF6D';
+}
+
+.ms-Icon--PublicContactCard::before {
+  content: '\EF6E';
+}
+
+.ms-Icon--PublicEmail::before {
+  content: '\EF6F';
+}
+
+.ms-Icon--PublicFolder::before {
+  content: '\EF70';
+}
+
+.ms-Icon--WordDocument::before {
+  content: '\EF71';
+}
+
+.ms-Icon--PowerPointDocument::before {
+  content: '\EF72';
+}
+
+.ms-Icon--ExcelDocument::before {
+  content: '\EF73';
+}
+
+.ms-Icon--GroupedList::before {
+  content: '\EF74';
+}
+
+.ms-Icon--ClassroomLogo::before {
+  content: '\EF75';
+}
+
+.ms-Icon--Sections::before {
+  content: '\EF76';
+}
+
+.ms-Icon--EditPhoto::before {
+  content: '\EF77';
+}
+
+.ms-Icon--Starburst::before {
+  content: '\EF78';
+}
+
+.ms-Icon--ShareiOS::before {
+  content: '\EF79';
+}
+
+.ms-Icon--AirTickets::before {
+  content: '\EF7A';
+}
+
+.ms-Icon--PencilReply::before {
+  content: '\EF7B';
+}
+
+.ms-Icon--Tiles2::before {
+  content: '\EF7C';
+}
+
+.ms-Icon--SkypeCircleCheck::before {
+  content: '\EF7D';
+}
+
+.ms-Icon--SkypeCircleClock::before {
+  content: '\EF7E';
+}
+
+.ms-Icon--SkypeCircleMinus::before {
+  content: '\EF7F';
+}
+
+.ms-Icon--SkypeCheck::before {
+  content: '\EF80';
+}
+
+.ms-Icon--SkypeClock::before {
+  content: '\EF81';
+}
+
+.ms-Icon--SkypeMinus::before {
+  content: '\EF82';
+}
+
+.ms-Icon--SkypeMessage::before {
+  content: '\EF83';
+}
+
+.ms-Icon--ClosedCaption::before {
+  content: '\EF84';
+}
+
+.ms-Icon--ATPLogo::before {
+  content: '\EF85';
+}
+
+.ms-Icon--OfficeFormLogo::before {
+  content: '\EF86';
+}
+
+.ms-Icon--RecycleBin::before {
+  content: '\EF87';
+}
+
+.ms-Icon--EmptyRecycleBin::before {
+  content: '\EF88';
+}
+
+.ms-Icon--Hide2::before {
+  content: '\EF89';
+}
+
+.ms-Icon--iOSAppStoreLogo::before {
+  content: '\EF8A';
+}
+
+.ms-Icon--AndroidLogo::before {
+  content: '\EF8B';
+}
+
+.ms-Icon--Breadcrumb::before {
+  content: '\EF8C';
+}
+
+.ms-Icon--ClearFilter::before {
+  content: '\EF8F';
+}
+
+.ms-Icon--Flow::before {
+  content: '\EF90';
+}
+
+.ms-Icon--PowerAppsLogo::before {
+  content: '\F091';
+}
+
+.ms-Icon--PowerApps2Logo::before {
+  content: '\F092';
+}
+
+.ms-Icon--circle {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  width: 1em;
+  height: 1em;
+  margin: 0 0.5em 0 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ms-Icon--circle::before,
+.ms-Icon--circle::after {
+  line-height: 1;
+  font-size: inherit;
+}
+
+.ms-Icon--circle::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  position: absolute;
+}
+
+.ms-Icon--circle::after {
+  content: '\e000';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -ms-transform: scale(2);
+      transform: scale(2);
+  -ms-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+  z-index: 0;
+}
+
+.ms-Icon--xs {
+  font-size: 10px;
+}
+
+.ms-Icon--s {
+  font-size: 12px;
+}
+
+.ms-Icon--m {
+  font-size: 16px;
+}
+
+.ms-Icon--l {
+  font-size: 20px;
+}
+
+.ms-u-slideRightIn10 {
+  animation-name: fadeIn, slideRightIn10;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideRightIn10 {
+  from {
+    transform: translate3d(-10px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightIn20 {
+  animation-name: fadeIn, slideRightIn20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideRightIn20 {
+  from {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightIn40 {
+  animation-name: fadeIn, slideRightIn40;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideRightIn40 {
+  from {
+    transform: translate3d(-40px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftIn10 {
+  animation-name: fadeIn, slideLeftIn10;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideLeftIn10 {
+  from {
+    transform: translate3d(10px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftIn20 {
+  animation-name: fadeIn, slideLeftIn20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideLeftIn20 {
+  from {
+    transform: translate3d(20px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftIn40 {
+  animation-name: fadeIn, slideLeftIn40;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideLeftIn40 {
+  from {
+    transform: translate3d(40px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightIn400 {
+  animation-name: fadeIn, slideRightIn400;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideRightIn400 {
+  from {
+    transform: translate3d(-400px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftIn400 {
+  animation-name: fadeIn, slideLeft400;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideLeft400 {
+  from {
+    transform: translate3d(400px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideUpIn20 {
+  animation-name: fadeIn, slideUpIn20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideUpIn20 {
+  from {
+    transform: translate3d(0px, 20px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideUpIn10 {
+  animation-name: fadeIn, slideUpIn10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideUpIn10 {
+  from {
+    transform: translate3d(0px, 10px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideDownIn20 {
+  animation-name: fadeIn, slideDownIn20;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes slideDownIn20 {
+  from {
+    transform: translate3d(0px, -20px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideDownIn10 {
+  animation-name: fadeIn, slideDownIn10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideDownIn10 {
+  from {
+    transform: translate3d(0px, -10px, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightOut40 {
+  animation-name: fadeOut, slideRightOut40;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideRightOut40 {
+  from {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(40px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftOut40 {
+  animation-name: fadeOut, slideLeftOut40;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideLeftOut40 {
+  from {
+    transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(-40px, 0px, 0px);
+  }
+}
+
+.ms-u-slideRightOut400 {
+  animation-name: fadeOut, slideRightOut400;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideRightOut400 {
+  from {
+    transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(400px, 0px, 0px);
+  }
+}
+
+.ms-u-slideLeftOut400 {
+  animation-name: fadeOut, slideLeftOut400;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideLeftOut400 {
+  from {
+    transform: translate3d(0, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(-400px, 0px, 0px);
+  }
+}
+
+.ms-u-slideUpOut20 {
+  animation-name: fadeOut, slideUpOut20;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideUpOut20 {
+  from {
+    transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, -20px, 0px);
+  }
+}
+
+.ms-u-slideUpOut10 {
+  animation-name: fadeOut, slideUpOut10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideUpOut10 {
+  from {
+    transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, -10px, 0px);
+  }
+}
+
+.ms-u-slideDownOut20 {
+  animation-name: fadeOut, slideDownOut20;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideDownOut20 {
+  from {
+    transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 20px, 0px);
+  }
+}
+
+.ms-u-slideDownOut10 {
+  animation-name: fadeOut, slideDownOut10;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes slideDownOut10 {
+  from {
+    transform: translate3d(0px, 0, 0px);
+  }
+
+  to {
+    transform: translate3d(0px, 10px, 0px);
+  }
+}
+
+.ms-u-scaleUpIn100 {
+  animation-name: fadeIn, scaleUp100;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes scaleUp100 {
+  from {
+    transform: scale3d(0.98, 0.98, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.ms-u-scaleDownIn100 {
+  animation-name: fadeIn, scaleDown100;
+  -webkit-animation-duration: 0.367s;
+     -moz-animation-duration: 0.367s;
+      -ms-animation-duration: 0.367s;
+       -o-animation-duration: 0.367s;
+  animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+@keyframes scaleDown100 {
+  from {
+    transform: scale3d(1.03, 1.03, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.ms-u-scaleUpOut103 {
+  animation-name: fadeOut, scaleUp103;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes scaleUp103 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    transform: scale3d(1.03, 1.03, 1);
+  }
+}
+
+.ms-u-scaleDownOut98 {
+  animation-name: fadeOut, scaleDown98;
+  -webkit-animation-duration: 0.167s;
+     -moz-animation-duration: 0.167s;
+      -ms-animation-duration: 0.167s;
+       -o-animation-duration: 0.167s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes scaleDown98 {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    transform: scale3d(0.98, 0.98, 1);
+  }
+}
+
+.ms-u-fadeIn400 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeIn;
+          animation-fill-mode: both;
+}
+
+.ms-u-fadeIn100 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeIn;
+          animation-fill-mode: both;
+          animation-duration: 0.167s;
+}
+
+.ms-u-fadeIn200 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeIn;
+          animation-fill-mode: both;
+          animation-duration: 0.267s;
+}
+
+.ms-u-fadeIn500 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeIn;
+          animation-fill-mode: both;
+          animation-duration: 0.467s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.ms-u-fadeOut400 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeOut;
+          animation-fill-mode: both;
+}
+
+.ms-u-fadeOut100 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeOut;
+          animation-fill-mode: both;
+          animation-duration: 0.1s;
+}
+
+.ms-u-fadeOut200 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeOut;
+          animation-fill-mode: both;
+          animation-duration: 0.167s;
+}
+
+.ms-u-fadeOut500 {
+  -webkit-animation-duration: 0.367s;
+  -webkit-animation-name: fadeOut;
+  -webkit-animation-fill-mode: both;
+          animation-duration: 0.367s;
+          animation-name: fadeOut;
+          animation-fill-mode: both;
+          animation-duration: 0.467s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.ms-u-rotate90deg {
+  animation-name: rotate90;
+  -webkit-animation-duration: 0.1s;
+     -moz-animation-duration: 0.1s;
+      -ms-animation-duration: 0.1s;
+       -o-animation-duration: 0.1s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes rotate90 {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    transform: rotateZ(90deg);
+  }
+}
+
+.ms-u-rotateN90deg {
+  animation-name: rotateN90;
+  -webkit-animation-duration: 0.1s;
+     -moz-animation-duration: 0.1s;
+      -ms-animation-duration: 0.1s;
+       -o-animation-duration: 0.1s;
+  animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+  animation-fill-mode: both;
+}
+
+@keyframes rotateN90 {
+  from {
+    transform: rotateZ(90deg);
+  }
+
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+.ms-u-expandCollapse400 {
+  transition: height 0.367s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.ms-u-expandCollapse200 {
+  transition: height 0.167s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.ms-u-expandCollapse100 {
+  transition: height 0.1s cubic-bezier(0.1, 0.25, 0.75, 0.9);
+}
+
+.ms-u-delay100 {
+  animation-delay: 0.167s;
+}
+
+.ms-u-delay200 {
+  animation-delay: 0.267s;
+}
+
+@media (max-width: 479px) {
+  .ms-u-hiddenSm,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 639px) {
+  .ms-u-hiddenMd,
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenMdDown,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLg,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenLgDown,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXl,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXlDown,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxl,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ms-u-hiddenMdUp,
+  .ms-u-hiddenLgUp,
+  .ms-u-hiddenXlUp,
+  .ms-u-hiddenXxlUp,
+  .ms-u-hiddenXxxl {
+    display: none !important;
+  }
+}
+
+.ms-u-sm12 {
+  width: 100%;
+}
+
+.ms-u-sm11 {
+  width: 91.66666666666666%;
+}
+
+.ms-u-sm10 {
+  width: 83.33333333333334%;
+}
+
+.ms-u-sm9 {
+  width: 75%;
+}
+
+.ms-u-sm8 {
+  width: 66.66666666666666%;
+}
+
+.ms-u-sm7 {
+  width: 58.333333333333336%;
+}
+
+.ms-u-sm6 {
+  width: 50%;
+}
+
+.ms-u-sm5 {
+  width: 41.66666666666667%;
+}
+
+.ms-u-sm4 {
+  width: 33.33333333333333%;
+}
+
+.ms-u-sm3 {
+  width: 25%;
+}
+
+.ms-u-sm2 {
+  width: 16.666666666666664%;
+}
+
+.ms-u-sm1 {
+  width: 8.333333333333332%;
+}
+
+.ms-u-smPull12 {
+  right: 100%;
+}
+
+.ms-u-smPull11 {
+  right: 91.66666666666666%;
+}
+
+.ms-u-smPull10 {
+  right: 83.33333333333334%;
+}
+
+.ms-u-smPull9 {
+  right: 75%;
+}
+
+.ms-u-smPull8 {
+  right: 66.66666666666666%;
+}
+
+.ms-u-smPull7 {
+  right: 58.333333333333336%;
+}
+
+.ms-u-smPull6 {
+  right: 50%;
+}
+
+.ms-u-smPull5 {
+  right: 41.66666666666667%;
+}
+
+.ms-u-smPull4 {
+  right: 33.33333333333333%;
+}
+
+.ms-u-smPull3 {
+  right: 25%;
+}
+
+.ms-u-smPull2 {
+  right: 16.666666666666664%;
+}
+
+.ms-u-smPull1 {
+  right: 8.333333333333332%;
+}
+
+.ms-u-smPull0 {
+  right: auto;
+}
+
+.ms-u-smPush12 {
+  left: 100%;
+}
+
+.ms-u-smPush11 {
+  left: 91.66666666666666%;
+}
+
+.ms-u-smPush10 {
+  left: 83.33333333333334%;
+}
+
+.ms-u-smPush9 {
+  left: 75%;
+}
+
+.ms-u-smPush8 {
+  left: 66.66666666666666%;
+}
+
+.ms-u-smPush7 {
+  left: 58.333333333333336%;
+}
+
+.ms-u-smPush6 {
+  left: 50%;
+}
+
+.ms-u-smPush5 {
+  left: 41.66666666666667%;
+}
+
+.ms-u-smPush4 {
+  left: 33.33333333333333%;
+}
+
+.ms-u-smPush3 {
+  left: 25%;
+}
+
+.ms-u-smPush2 {
+  left: 16.666666666666664%;
+}
+
+.ms-u-smPush1 {
+  left: 8.333333333333332%;
+}
+
+.ms-u-smPush0 {
+  left: auto;
+}
+
+.ms-u-smOffset11 {
+  margin-left: 91.66666666666666%;
+}
+
+.ms-u-smOffset10 {
+  margin-left: 83.33333333333334%;
+}
+
+.ms-u-smOffset9 {
+  margin-left: 75%;
+}
+
+.ms-u-smOffset8 {
+  margin-left: 66.66666666666666%;
+}
+
+.ms-u-smOffset7 {
+  margin-left: 58.333333333333336%;
+}
+
+.ms-u-smOffset6 {
+  margin-left: 50%;
+}
+
+.ms-u-smOffset5 {
+  margin-left: 41.66666666666667%;
+}
+
+.ms-u-smOffset4 {
+  margin-left: 33.33333333333333%;
+}
+
+.ms-u-smOffset3 {
+  margin-left: 25%;
+}
+
+.ms-u-smOffset2 {
+  margin-left: 16.666666666666664%;
+}
+
+.ms-u-smOffset1 {
+  margin-left: 8.333333333333332%;
+}
+
+.ms-u-smOffset0 {
+  margin-left: 0;
+}
+
+@media (min-width: 480px) {
+  .ms-u-md12 {
+    width: 100%;
+  }
+
+  .ms-u-md11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-md10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-md9 {
+    width: 75%;
+  }
+
+  .ms-u-md8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-md7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-md6 {
+    width: 50%;
+  }
+
+  .ms-u-md5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-md4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-md3 {
+    width: 25%;
+  }
+
+  .ms-u-md2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-md1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-mdPull12 {
+    right: 100%;
+  }
+
+  .ms-u-mdPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-mdPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-mdPull9 {
+    right: 75%;
+  }
+
+  .ms-u-mdPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-mdPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-mdPull6 {
+    right: 50%;
+  }
+
+  .ms-u-mdPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-mdPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-mdPull3 {
+    right: 25%;
+  }
+
+  .ms-u-mdPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-mdPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-mdPull0 {
+    right: auto;
+  }
+
+  .ms-u-mdPush12 {
+    left: 100%;
+  }
+
+  .ms-u-mdPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-mdPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-mdPush9 {
+    left: 75%;
+  }
+
+  .ms-u-mdPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-mdPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-mdPush6 {
+    left: 50%;
+  }
+
+  .ms-u-mdPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-mdPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-mdPush3 {
+    left: 25%;
+  }
+
+  .ms-u-mdPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-mdPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-mdPush0 {
+    left: auto;
+  }
+
+  .ms-u-mdOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+
+  .ms-u-mdOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+
+  .ms-u-mdOffset9 {
+    margin-left: 75%;
+  }
+
+  .ms-u-mdOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+
+  .ms-u-mdOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+
+  .ms-u-mdOffset6 {
+    margin-left: 50%;
+  }
+
+  .ms-u-mdOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+
+  .ms-u-mdOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+
+  .ms-u-mdOffset3 {
+    margin-left: 25%;
+  }
+
+  .ms-u-mdOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+
+  .ms-u-mdOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+
+  .ms-u-mdOffset0 {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .ms-u-lg12 {
+    width: 100%;
+  }
+
+  .ms-u-lg11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-lg10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-lg9 {
+    width: 75%;
+  }
+
+  .ms-u-lg8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-lg7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-lg6 {
+    width: 50%;
+  }
+
+  .ms-u-lg5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-lg4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-lg3 {
+    width: 25%;
+  }
+
+  .ms-u-lg2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-lg1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-lgPull12 {
+    right: 100%;
+  }
+
+  .ms-u-lgPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-lgPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-lgPull9 {
+    right: 75%;
+  }
+
+  .ms-u-lgPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-lgPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-lgPull6 {
+    right: 50%;
+  }
+
+  .ms-u-lgPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-lgPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-lgPull3 {
+    right: 25%;
+  }
+
+  .ms-u-lgPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-lgPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-lgPull0 {
+    right: auto;
+  }
+
+  .ms-u-lgPush12 {
+    left: 100%;
+  }
+
+  .ms-u-lgPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-lgPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-lgPush9 {
+    left: 75%;
+  }
+
+  .ms-u-lgPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-lgPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-lgPush6 {
+    left: 50%;
+  }
+
+  .ms-u-lgPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-lgPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-lgPush3 {
+    left: 25%;
+  }
+
+  .ms-u-lgPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-lgPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-lgPush0 {
+    left: auto;
+  }
+
+  .ms-u-lgOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+
+  .ms-u-lgOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+
+  .ms-u-lgOffset9 {
+    margin-left: 75%;
+  }
+
+  .ms-u-lgOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+
+  .ms-u-lgOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+
+  .ms-u-lgOffset6 {
+    margin-left: 50%;
+  }
+
+  .ms-u-lgOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+
+  .ms-u-lgOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+
+  .ms-u-lgOffset3 {
+    margin-left: 25%;
+  }
+
+  .ms-u-lgOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+
+  .ms-u-lgOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+
+  .ms-u-lgOffset0 {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ms-u-xl12 {
+    width: 100%;
+  }
+
+  .ms-u-xl11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-xl10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-xl9 {
+    width: 75%;
+  }
+
+  .ms-u-xl8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-xl7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-xl6 {
+    width: 50%;
+  }
+
+  .ms-u-xl5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-xl4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-xl3 {
+    width: 25%;
+  }
+
+  .ms-u-xl2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-xl1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-xlPull12 {
+    right: 100%;
+  }
+
+  .ms-u-xlPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-xlPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-xlPull9 {
+    right: 75%;
+  }
+
+  .ms-u-xlPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-xlPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-xlPull6 {
+    right: 50%;
+  }
+
+  .ms-u-xlPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-xlPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-xlPull3 {
+    right: 25%;
+  }
+
+  .ms-u-xlPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-xlPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-xlPull0 {
+    right: auto;
+  }
+
+  .ms-u-xlPush12 {
+    left: 100%;
+  }
+
+  .ms-u-xlPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-xlPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-xlPush9 {
+    left: 75%;
+  }
+
+  .ms-u-xlPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-xlPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-xlPush6 {
+    left: 50%;
+  }
+
+  .ms-u-xlPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-xlPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-xlPush3 {
+    left: 25%;
+  }
+
+  .ms-u-xlPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-xlPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-xlPush0 {
+    left: auto;
+  }
+
+  .ms-u-xlOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+
+  .ms-u-xlOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+
+  .ms-u-xlOffset9 {
+    margin-left: 75%;
+  }
+
+  .ms-u-xlOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+
+  .ms-u-xlOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+
+  .ms-u-xlOffset6 {
+    margin-left: 50%;
+  }
+
+  .ms-u-xlOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+
+  .ms-u-xlOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+
+  .ms-u-xlOffset3 {
+    margin-left: 25%;
+  }
+
+  .ms-u-xlOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+
+  .ms-u-xlOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+
+  .ms-u-xlOffset0 {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1366px) {
+  .ms-u-xxl12 {
+    width: 100%;
+  }
+
+  .ms-u-xxl11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-xxl10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-xxl9 {
+    width: 75%;
+  }
+
+  .ms-u-xxl8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-xxl7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-xxl6 {
+    width: 50%;
+  }
+
+  .ms-u-xxl5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-xxl4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-xxl3 {
+    width: 25%;
+  }
+
+  .ms-u-xxl2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-xxl1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-xxlPull12 {
+    right: 100%;
+  }
+
+  .ms-u-xxlPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-xxlPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-xxlPull9 {
+    right: 75%;
+  }
+
+  .ms-u-xxlPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-xxlPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-xxlPull6 {
+    right: 50%;
+  }
+
+  .ms-u-xxlPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-xxlPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-xxlPull3 {
+    right: 25%;
+  }
+
+  .ms-u-xxlPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-xxlPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-xxlPull0 {
+    right: auto;
+  }
+
+  .ms-u-xxlPush12 {
+    left: 100%;
+  }
+
+  .ms-u-xxlPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-xxlPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-xxlPush9 {
+    left: 75%;
+  }
+
+  .ms-u-xxlPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-xxlPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-xxlPush6 {
+    left: 50%;
+  }
+
+  .ms-u-xxlPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-xxlPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-xxlPush3 {
+    left: 25%;
+  }
+
+  .ms-u-xxlPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-xxlPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-xxlPush0 {
+    left: auto;
+  }
+
+  .ms-u-xxlOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+
+  .ms-u-xxlOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+
+  .ms-u-xxlOffset9 {
+    margin-left: 75%;
+  }
+
+  .ms-u-xxlOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+
+  .ms-u-xxlOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+
+  .ms-u-xxlOffset6 {
+    margin-left: 50%;
+  }
+
+  .ms-u-xxlOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+
+  .ms-u-xxlOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+
+  .ms-u-xxlOffset3 {
+    margin-left: 25%;
+  }
+
+  .ms-u-xxlOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+
+  .ms-u-xxlOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+
+  .ms-u-xxlOffset0 {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ms-u-xxxl12 {
+    width: 100%;
+  }
+
+  .ms-u-xxxl11 {
+    width: 91.66666666666666%;
+  }
+
+  .ms-u-xxxl10 {
+    width: 83.33333333333334%;
+  }
+
+  .ms-u-xxxl9 {
+    width: 75%;
+  }
+
+  .ms-u-xxxl8 {
+    width: 66.66666666666666%;
+  }
+
+  .ms-u-xxxl7 {
+    width: 58.333333333333336%;
+  }
+
+  .ms-u-xxxl6 {
+    width: 50%;
+  }
+
+  .ms-u-xxxl5 {
+    width: 41.66666666666667%;
+  }
+
+  .ms-u-xxxl4 {
+    width: 33.33333333333333%;
+  }
+
+  .ms-u-xxxl3 {
+    width: 25%;
+  }
+
+  .ms-u-xxxl2 {
+    width: 16.666666666666664%;
+  }
+
+  .ms-u-xxxl1 {
+    width: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlPull12 {
+    right: 100%;
+  }
+
+  .ms-u-xxxlPull11 {
+    right: 91.66666666666666%;
+  }
+
+  .ms-u-xxxlPull10 {
+    right: 83.33333333333334%;
+  }
+
+  .ms-u-xxxlPull9 {
+    right: 75%;
+  }
+
+  .ms-u-xxxlPull8 {
+    right: 66.66666666666666%;
+  }
+
+  .ms-u-xxxlPull7 {
+    right: 58.333333333333336%;
+  }
+
+  .ms-u-xxxlPull6 {
+    right: 50%;
+  }
+
+  .ms-u-xxxlPull5 {
+    right: 41.66666666666667%;
+  }
+
+  .ms-u-xxxlPull4 {
+    right: 33.33333333333333%;
+  }
+
+  .ms-u-xxxlPull3 {
+    right: 25%;
+  }
+
+  .ms-u-xxxlPull2 {
+    right: 16.666666666666664%;
+  }
+
+  .ms-u-xxxlPull1 {
+    right: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlPull0 {
+    right: auto;
+  }
+
+  .ms-u-xxxlPush12 {
+    left: 100%;
+  }
+
+  .ms-u-xxxlPush11 {
+    left: 91.66666666666666%;
+  }
+
+  .ms-u-xxxlPush10 {
+    left: 83.33333333333334%;
+  }
+
+  .ms-u-xxxlPush9 {
+    left: 75%;
+  }
+
+  .ms-u-xxxlPush8 {
+    left: 66.66666666666666%;
+  }
+
+  .ms-u-xxxlPush7 {
+    left: 58.333333333333336%;
+  }
+
+  .ms-u-xxxlPush6 {
+    left: 50%;
+  }
+
+  .ms-u-xxxlPush5 {
+    left: 41.66666666666667%;
+  }
+
+  .ms-u-xxxlPush4 {
+    left: 33.33333333333333%;
+  }
+
+  .ms-u-xxxlPush3 {
+    left: 25%;
+  }
+
+  .ms-u-xxxlPush2 {
+    left: 16.666666666666664%;
+  }
+
+  .ms-u-xxxlPush1 {
+    left: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlPush0 {
+    left: auto;
+  }
+
+  .ms-u-xxxlOffset11 {
+    margin-left: 91.66666666666666%;
+  }
+
+  .ms-u-xxxlOffset10 {
+    margin-left: 83.33333333333334%;
+  }
+
+  .ms-u-xxxlOffset9 {
+    margin-left: 75%;
+  }
+
+  .ms-u-xxxlOffset8 {
+    margin-left: 66.66666666666666%;
+  }
+
+  .ms-u-xxxlOffset7 {
+    margin-left: 58.333333333333336%;
+  }
+
+  .ms-u-xxxlOffset6 {
+    margin-left: 50%;
+  }
+
+  .ms-u-xxxlOffset5 {
+    margin-left: 41.66666666666667%;
+  }
+
+  .ms-u-xxxlOffset4 {
+    margin-left: 33.33333333333333%;
+  }
+
+  .ms-u-xxxlOffset3 {
+    margin-left: 25%;
+  }
+
+  .ms-u-xxxlOffset2 {
+    margin-left: 16.666666666666664%;
+  }
+
+  .ms-u-xxxlOffset1 {
+    margin-left: 8.333333333333332%;
+  }
+
+  .ms-u-xxxlOffset0 {
+    margin-left: 0;
+  }
+}
+
+.ms-Grid {
+  box-sizing: border-box;
+  *zoom: 1;
+  padding: 0 8px;
+}
+
+.ms-Grid::before,
+.ms-Grid::after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-Grid::after {
+  clear: both;
+}
+
+.ms-Grid-row {
+  margin: 0 -8px;
+  box-sizing: border-box;
+  *zoom: 1;
+}
+
+.ms-Grid-row::before,
+.ms-Grid-row::after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+
+.ms-Grid-row::after {
+  clear: both;
+}
+
+.ms-Grid-col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 8px;
+  padding-right: 8px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.ms-Grid-col .ms-Grid {
+  padding: 0;
+}
+
+.ms-Fabric {
+  color: #333333;
+}

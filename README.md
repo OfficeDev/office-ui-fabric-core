@@ -34,6 +34,9 @@ New to Fabric? Start with [the project's site](http://dev.office.com/fabric) to 
 
 When you're ready to create an Office Add-in with Fabric, take a look at the [Use Office UI Fabric with Office Add-ins on MSDN](https://msdn.microsoft.com/EN-US/library/office/mt450443.aspx) article.
 
+## Trello board
+
+Fabric Core contains a variety of fundamental elements of the Office / Office 365 design language. If you're not seeing a feature or icon here that you'd like, first check out the [Office UI Fabric Core Requests board](https://trello.com/b/sPTXiMzG/office-ui-fabric-core-requests) and upvote it there (if it exists), or file an [issue on Fabric Core's issue tracker](https://github.com/OfficeDev/office-ui-fabric-core/issues) to kick off a new request.
 
 ##Contribute to Fabric
 

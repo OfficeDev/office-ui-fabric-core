@@ -76,7 +76,7 @@ gulp.task('Bundles-buildData', function() {
             //            SASS files, those will be included as well.
             // "full":    Builds all SASS files. Only runs if no includes or 
             //            excludes are defined.
-            let bundleMode = () => {
+            let bundleMode = (() => {
                 let _mode = '';
 
                 if (excludes !== undefined && excludes.length > 0) {
@@ -93,7 +93,7 @@ gulp.task('Bundles-buildData', function() {
                 }
 
                 return _mode;
-            }();
+            })();
 
             // Walk the SASS and components folders.
             let srcFolders = Utilities.getFolders(Config.paths.srcPath).filter((folderName) => {

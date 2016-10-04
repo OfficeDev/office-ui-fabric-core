@@ -53,7 +53,7 @@ Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp
 
 1. Clone the [2.6.1 release](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1)
 2. Navigate to the folder that contains the gulpfile.js file (Fabric's root)
-3. `npm install`
+3. `npm install` - as of October 4th, 2016 Node version 4.6.0 is required (+6.x.x is not working)
 4. `gulp`
 
 The built files will be in the `/dist/` folder.
@@ -69,6 +69,8 @@ Builds everything incrementally. This will run slowly the first time and very qu
 #####gulp watch
 
 Builds and watches everything. After running this once, your builds will be a lot faster. Now if you make a change anything anywhere in Fabric, only that area/section/file will get built/changed/moved.
+
+Using this, you can also view the localhost documentation site with examples for all of the components.
 
 #####gulp watch-debug
 

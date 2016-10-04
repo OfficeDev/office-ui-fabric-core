@@ -51,10 +51,11 @@ Office UI Fabric uses [gulp](http://gulpjs.com/) to compile its styling, build a
 
 Before you get started, make sure you have [node.js](https://nodejs.org/), [gulp](http://gulpjs.com/), and [git](https://git-scm.com/) installed. To build Fabric:
 
-1. Clone the [2.6.1 release](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1)
-2. Navigate to the folder that contains the gulpfile.js file (Fabric's root)
-3. `npm install` - as of October 4th, 2016 Node version 4.6.0 is required (+6.x.x is not working)
-4. `gulp`
+1. Clone the the Core project
+2. Checkout the branch for the 2.6.1 release: `git checkout release/2.6.1` from the command line
+3. Navigate to the folder that contains the gulpfile.js file (Fabric's root)
+4. `npm install` - as of October 4th, 2016 Node version 4.6.0 is required (+6.x.x is not working)
+5. `gulp`
 
 The built files will be in the `/dist/` folder.
 

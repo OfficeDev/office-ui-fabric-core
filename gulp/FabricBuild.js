@@ -64,6 +64,31 @@ gulp.task('Fabric-buildStyles', function () {
             }))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(gulp.dest(Config.paths.distCSS));    
+
+    var fabricScoped = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.Scoped.' + BuildConfig.fileExtension)
+            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+              title: "Building Core Fabric " + BuildConfig.fileExtension + " File"
+            })))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+            .pipe(Plugins.rename('fabric.scoped.css'))
+            .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
+            .pipe(Plugins.autoprefixer({
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
+            }))
+            .pipe(Plugins.cssbeautify())
+            .pipe(Plugins.csscomb())
+            .pipe(gulp.dest(Config.paths.distCSS))
+            .pipe(Plugins.rename('fabric.scoped.min.css'))
+            .pipe(Plugins.cssMinify({
+                safe: true
+            }))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
                 
     // Build full and minified Fabric RTL CSS.
@@ -93,7 +118,7 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
     // Merge all current streams into one.
-    return Plugins.mergeStream(fabric, fabricRtl);
+    return Plugins.mergeStream(fabric, fabricScoped, fabricRtl);
 });
 
 //

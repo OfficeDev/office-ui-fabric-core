@@ -1,0 +1,14 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// Core styles scoped to the current major version of Fabric
+
+
+@import './_Fabric.Scoped';
+
+// Scope all core styles under a helper class for the current major version.
+// This produces styles of the form .ms-Fabric-{version #} .ms-font-m.
+@include scope-fabric {
+  @import './Fabric';
+}

@@ -34,17 +34,17 @@
 }
 
 // Variables for each of the non-distributed (native) font stacks.
-$ms-font-stack-japanese: 'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-system-base;
-$ms-font-stack-korean: 'Malgun Gothic', Gulim, $ms-font-system-base;
-$ms-font-stack-chinese-simplified: 'Microsoft Yahei', Verdana, Simsun, $ms-font-system-base;
-$ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-system-base;
-$ms-font-stack-hindi: 'Nirmala UI', $ms-font-system-base;
+$ms-font-stack-japanese: 'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-system-base !default;
+$ms-font-stack-korean: 'Malgun Gothic', Gulim, $ms-font-system-base !default;
+$ms-font-stack-chinese-simplified: 'Microsoft Yahei', Verdana, Simsun, $ms-font-system-base !default;
+$ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-system-base !default;
+$ms-font-stack-hindi: 'Nirmala UI', $ms-font-system-base !default;
 
 // Variables for each of the web font stacks.
-$ms-font-stack-arabic:        'Segoe UI Arabic', $ms-font-family-base;
-$ms-font-stack-cyrillic:      'Segoe UI Cyrillic', $ms-font-family-base;
-$ms-font-stack-eastEuropean:  'Segoe UI EastEuropean', $ms-font-family-base;
-$ms-font-stack-greek:         'Segoe UI Greek', $ms-font-family-base;
-$ms-font-stack-hebrew:        'Segoe UI Hebrew', $ms-font-family-base;
-$ms-font-stack-vietnamese:    'Segoe UI Vietnamese', $ms-font-family-base;
-$ms-font-stack-leelawadee:    'Leelawadee UI', 'Kmer UI', $ms-font-family-base;
+$ms-font-stack-arabic:        'Segoe UI Arabic', $ms-font-family-base !default;
+$ms-font-stack-cyrillic:      'Segoe UI Cyrillic', $ms-font-family-base !default;
+$ms-font-stack-eastEuropean:  'Segoe UI EastEuropean', $ms-font-family-base !default;
+$ms-font-stack-greek:         'Segoe UI Greek', $ms-font-family-base !default;
+$ms-font-stack-hebrew:        'Segoe UI Hebrew', $ms-font-family-base !default;
+$ms-font-stack-vietnamese:    'Segoe UI Vietnamese', $ms-font-family-base !default;
+$ms-font-stack-leelawadee:    'Leelawadee UI', 'Kmer UI', $ms-font-family-base !default;

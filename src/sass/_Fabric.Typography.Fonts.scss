@@ -7,18 +7,18 @@
 
 
 // Font weights.
-$ms-font-name: "Segoe UI";
+$ms-font-name: "Segoe UI" !default;
 
 
 // Font paths.
-$ms-font-directory:         "https://appsforoffice.microsoft.com/fabric/fonts";
-$ms-font-path-arabic:       "SegoeUI-Arabic";
-$ms-font-path-cyrillic:     "SegoeUI-Cyrillic";
-$ms-font-path-easteuropean: "SegoeUI-EastEuropean";
-$ms-font-path-greek:        "SegoeUI-Greek";
-$ms-font-path-hebrew:       "SegoeUI-Hebrew";
-$ms-font-path-vietnamese:   "SegoeUI-Vietnamese";
-$ms-font-path-westeuropean: "SegoeUI-WestEuropean";
+$ms-font-directory:         "https://appsforoffice.microsoft.com/fabric/fonts" !default;
+$ms-font-path-arabic:       "SegoeUI-Arabic" !default;
+$ms-font-path-cyrillic:     "SegoeUI-Cyrillic" !default;
+$ms-font-path-easteuropean: "SegoeUI-EastEuropean" !default;
+$ms-font-path-greek:        "SegoeUI-Greek" !default;
+$ms-font-path-hebrew:       "SegoeUI-Hebrew" !default;
+$ms-font-path-vietnamese:   "SegoeUI-Vietnamese" !default;
+$ms-font-path-westeuropean: "SegoeUI-WestEuropean" !default;
 
 
 /*

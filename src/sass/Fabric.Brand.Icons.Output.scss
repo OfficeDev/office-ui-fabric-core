@@ -1,0 +1,82 @@
+// Images Path
+$imagesPath: "https://appsforoffice.microsoft.com/fabric/assets/Product/PNG";
+
+// Icon Names
+$iconList: Access Excel InfoPath Office OneDrive OneNote Outlook PowerPoint Project SharePoint Visio Word;
+
+// Icon Sizes
+$iconSizes: 16 48 96;
+
+// Mixin to loop through iconList and generate classes
+@mixin iconClass($size, $retina) {
+  @each $name in $iconList {
+    &.ms-Brand--#{$name}#{$size} {
+        @include Icon($name, $retina, $size);
+    }
+  }
+}
+
+// Generate icon size classes
+@mixin IconSizeClass() {
+	@each $size in $iconSizes {
+		&.ms-Brand--Icon#{$size} {
+			@include IconSize($size);
+		}
+	}
+}
+
+// Set image container width and height
+@mixin IconSize($size) {
+	width: #{$size}px;
+	height: #{$size}px;
+}
+
+// Set image source and size.
+@mixin Icon($name, $retina, $size) {
+	background-image: url(#{$imagesPath}/#{$name}_#{$size}x#{$retina}.png);
+}
+
+// Default icon set for Pixel Ratio 1
+.ms-Brand {
+	background-size: 100% 100%;
+	@include IconSizeClass();
+	@include iconClass(16, 1);
+	@include iconClass(48, 1);
+	@include iconClass(96, 1);
+}
+
+// Pixel Ratio 1.5
+@media only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 1.5/1),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+	.ms-Brand {
+		@include iconClass(16, 1_5);
+		@include iconClass(48, 1_5);
+		@include iconClass(96, 1_5);
+	}
+}
+
+// Pixel Ratio 2
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2) {
+	.ms-Brand {
+		@include iconClass(16, 2);
+		@include iconClass(48, 2);
+		@include iconClass(96, 2);
+	}
+}
+
+// Pixel Ratio 3
+@media only screen and (min--moz-device-pixel-ratio: 3),
+only screen and (-o-min-device-pixel-ratio: 3/1),
+only screen and (-webkit-min-device-pixel-ratio: 3),
+only screen and (min-device-pixel-ratio: 3) {
+	.ms-Brand {
+		@include iconClass(16, 3);
+		@include iconClass(48, 3);
+		@include iconClass(96, 3);
+	}
+}

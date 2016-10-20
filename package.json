@@ -38,7 +38,7 @@
     "gulp-sass": "^2.3.1",
     "gulp-size": "^1.0.0",
     "gulp-template": "^3.0.0",
-    "gulp-tslint": "^4.3.2",
+    "gulp-tslint": "^6.0.1",
     "gulp-typescript": "^2.13.4",
     "gulp-util": "^3.0.1",
     "jshint": "^2.8.0",

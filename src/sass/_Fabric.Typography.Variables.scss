@@ -5,25 +5,25 @@
 // --------------------------------------------------
 // Fabric Core Typography variables
 
-$ms-font-system-base: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
-$ms-font-family-base:  'Segoe UI WestEuropean', $ms-font-system-base;
+$ms-font-system-base: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif !default;
+$ms-font-family-base:  'Segoe UI WestEuropean', $ms-font-system-base !default;
 
-$ms-font-weight-light:     100;
-$ms-font-weight-regular:   400;
-$ms-font-weight-semilight: 300;
-$ms-font-weight-semibold:  600;
+$ms-font-weight-light:     100 !default;
+$ms-font-weight-regular:   400 !default;
+$ms-font-weight-semilight: 300 !default;
+$ms-font-weight-semibold:  600 !default;
 
 
 //== Type sizes
 //
 
-$ms-font-size-su:          42px;
-$ms-font-size-xxl:         28px;
-$ms-font-size-xl:          21px;
-$ms-font-size-l:           17px;
-$ms-font-size-m-plus:      15px;
-$ms-font-size-m:           14px;
-$ms-font-size-s-plus:      13px;
-$ms-font-size-s:           12px;
-$ms-font-size-xs:          11px;
-$ms-font-size-mi:          10px;
+$ms-font-size-su:          42px !default;
+$ms-font-size-xxl:         28px !default;
+$ms-font-size-xl:          21px !default;
+$ms-font-size-l:           17px !default;
+$ms-font-size-m-plus:      15px !default;
+$ms-font-size-m:           14px !default;
+$ms-font-size-s-plus:      13px !default;
+$ms-font-size-s:           12px !default;
+$ms-font-size-xs:          11px !default;
+$ms-font-size-mi:          10px !default;

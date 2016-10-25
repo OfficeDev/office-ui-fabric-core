@@ -103,6 +103,7 @@
 .ms-Icon--Contrast::before { @include ms-Icon--Contrast }
 .ms-Icon--Redo::before { @include ms-Icon--Redo }
 .ms-Icon--Undo::before { @include ms-Icon--Undo }
+.ms-Icon--PhotoCollection::before { @include ms-Icon--PhotoCollection }
 .ms-Icon--Album::before { @include ms-Icon--Album }
 .ms-Icon--Rotate::before { @include ms-Icon--Rotate }
 .ms-Icon--PanoIndicator::before { @include ms-Icon--PanoIndicator }
@@ -123,6 +124,7 @@
 .ms-Icon--Admin::before { @include ms-Icon--Admin }
 .ms-Icon--TVMonitor::before { @include ms-Icon--TVMonitor }
 .ms-Icon--Speakers::before { @include ms-Icon--Speakers }
+.ms-Icon--Nav2DMapView::before { @include ms-Icon--Nav2DMapView }
 .ms-Icon--Car::before { @include ms-Icon--Car }
 .ms-Icon--EatDrink::before { @include ms-Icon--EatDrink }
 .ms-Icon--LocationCircle::before { @include ms-Icon--LocationCircle }
@@ -212,6 +214,7 @@
 .ms-Icon--RadioBullet::before { @include ms-Icon--RadioBullet }
 .ms-Icon--Stopwatch::before { @include ms-Icon--Stopwatch }
 .ms-Icon--Clock::before { @include ms-Icon--Clock }
+.ms-Icon--WorldClock::before { @include ms-Icon--WorldClock }
 .ms-Icon--AlarmClock::before { @include ms-Icon--AlarmClock }
 .ms-Icon--Hospital::before { @include ms-Icon--Hospital }
 .ms-Icon--Timer::before { @include ms-Icon--Timer }
@@ -260,6 +263,7 @@
 .ms-Icon--Volume3::before { @include ms-Icon--Volume3 }
 .ms-Icon--CaretHollow::before { @include ms-Icon--CaretHollow }
 .ms-Icon--CaretSolid::before { @include ms-Icon--CaretSolid }
+.ms-Icon--FolderOpen::before { @include ms-Icon--FolderOpen }
 .ms-Icon--Pinned::before { @include ms-Icon--Pinned }
 .ms-Icon--PinnedFill::before { @include ms-Icon--PinnedFill }
 .ms-Icon--Chart::before { @include ms-Icon--Chart }
@@ -516,7 +520,9 @@
 .ms-Icon--CollabsDBLogo::before { @include ms-Icon--CollabsDBLogo }
 .ms-Icon--DelveAnalyticsLogo::before { @include ms-Icon--DelveAnalyticsLogo }
 .ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogo }
-.ms-Icon--DynamicsCRMLogo::before { @include ms-Icon--DynamicsCRMLogo }
+// @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
+.ms-Icon--DynamicsCRMLogo::before,
+.ms-Icon--Dynamics365Logo::before { @include ms-Icon--Dynamics365Logo }
 .ms-Icon--DynamicSMBLogo::before { @include ms-Icon--DynamicSMBLogo }
 .ms-Icon--OfficeAssistantLogo::before { @include ms-Icon--OfficeAssistantLogo }
 .ms-Icon--OfficeStoreLogo::before { @include ms-Icon--OfficeStoreLogo }
@@ -530,7 +536,9 @@
 .ms-Icon--CaretUp8::before { @include ms-Icon--CaretUp8 }
 .ms-Icon--CaretDown8::before { @include ms-Icon--CaretDown8 }
 .ms-Icon--CaretLeftSolid8::before { @include ms-Icon--CaretLeftSolid8 }
-.ms-Icon--CarotRightSolid8::before { @include ms-Icon--CarotRightSolid8 }
+// @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
+.ms-Icon--CarotRightSolid8::before,
+.ms-Icon--CaretRightSolid8::before { @include ms-Icon--CaretRightSolid8 }
 .ms-Icon--CaretUpSolid8::before { @include ms-Icon--CaretUpSolid8 }
 .ms-Icon--CaretDownSolid8::before { @include ms-Icon--CaretDownSolid8 }
 .ms-Icon--ClearFormatting::before { @include ms-Icon--ClearFormatting }
@@ -649,8 +657,33 @@
 .ms-Icon--Breadcrumb::before { @include ms-Icon--Breadcrumb }
 .ms-Icon--ClearFilter::before { @include ms-Icon--ClearFilter }
 .ms-Icon--Flow::before { @include ms-Icon--Flow }
+.ms-Icon--PageCheckedOut::before { @include ms-Icon--PageCheckedOut }
+.ms-Icon--SetAction::before { @include ms-Icon--SetAction }
 .ms-Icon--PowerAppsLogo::before { @include ms-Icon--PowerAppsLogo }
 .ms-Icon--PowerApps2Logo::before { @include ms-Icon--PowerApps2Logo }
+.ms-Icon--FabricAssetLibrary::before { @include ms-Icon--FabricAssetLibrary }
+.ms-Icon--FabricDataConnectionLibrary::before { @include ms-Icon--FabricDataConnectionLibrary }
+.ms-Icon--FabricDocLibrary::before { @include ms-Icon--FabricDocLibrary }
+.ms-Icon--FabricFormLibrary::before { @include ms-Icon--FabricFormLibrary }
+.ms-Icon--FabricReportLibrary::before { @include ms-Icon--FabricReportLibrary }
+.ms-Icon--FabricPublicFolder::before { @include ms-Icon--FabricPublicFolder }
+.ms-Icon--FabricFolderSearch::before { @include ms-Icon--FabricFolderSearch }
+.ms-Icon--FabricMovetoFolder::before { @include ms-Icon--FabricMovetoFolder }
+.ms-Icon--FabricUnsyncFolder::before { @include ms-Icon--FabricUnsyncFolder }
+.ms-Icon--FabricSyncFolder::before { @include ms-Icon--FabricSyncFolder }
+.ms-Icon--FabricOpenFolderHorizontal::before { @include ms-Icon--FabricOpenFolderHorizontal }
+.ms-Icon--FabricFolder::before { @include ms-Icon--FabricFolder }
+.ms-Icon--FabricFolderFill::before { @include ms-Icon--FabricFolderFill }
+.ms-Icon--FabricNewFolder::before { @include ms-Icon--FabricNewFolder }
+.ms-Icon--FabricPictureLibrary::before { @include ms-Icon--FabricPictureLibrary }
+.ms-Icon--AddFavorite::before { @include ms-Icon--AddFavorite }
+.ms-Icon--AddFavoriteFill::before { @include ms-Icon--AddFavoriteFill }
+.ms-Icon--BufferTimeBefore::before { @include ms-Icon--BufferTimeBefore }
+.ms-Icon--BufferTimeAfter::before { @include ms-Icon--BufferTimeAfter }
+.ms-Icon--BufferTimeBoth::before { @include ms-Icon--BufferTimeBoth }
+.ms-Icon--PageCheckedin::before { @include ms-Icon--PageCheckedin }
+.ms-Icon--CaretBottomLeftSolid8::before { @include ms-Icon--CaretBottomLeftSolid8 }
+.ms-Icon--CaretBottomRightSolid8::before { @include ms-Icon--CaretBottomRightSolid8 }
 
 
 // Modifier: Place the icon in a circle.

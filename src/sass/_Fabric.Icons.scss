@@ -107,6 +107,7 @@
 @mixin ms-Icon--Contrast { content: "\E7A1"; }
 @mixin ms-Icon--Redo { content: "\E7A6"; }
 @mixin ms-Icon--Undo { content: "\E7A7"; }
+@mixin ms-Icon--PhotoCollection { content: "\E7AA"; }
 @mixin ms-Icon--Album { content: "\E7AB"; }
 @mixin ms-Icon--Rotate { content: "\E7AD"; }
 @mixin ms-Icon--PanoIndicator { content: "\E7B0"; }
@@ -127,6 +128,7 @@
 @mixin ms-Icon--Admin { content: "\E7EF"; }
 @mixin ms-Icon--TVMonitor { content: "\E7F4"; }
 @mixin ms-Icon--Speakers { content: "\E7F5"; }
+@mixin ms-Icon--Nav2DMapView { content: "\E800"; }
 @mixin ms-Icon--Car { content: "\E804"; }
 @mixin ms-Icon--EatDrink { content: "\E807"; }
 @mixin ms-Icon--LocationCircle { content: "\E80E"; }
@@ -216,6 +218,7 @@
 @mixin ms-Icon--RadioBullet { content: "\E915"; }
 @mixin ms-Icon--Stopwatch { content: "\E916"; }
 @mixin ms-Icon--Clock { content: "\E917"; }
+@mixin ms-Icon--WorldClock { content: "\E918"; }
 @mixin ms-Icon--AlarmClock { content: "\E919"; }
 @mixin ms-Icon--Hospital { content: "\E91D"; }
 @mixin ms-Icon--Timer { content: "\E91E"; }
@@ -264,6 +267,7 @@
 @mixin ms-Icon--Volume3 { content: "\E995"; }
 @mixin ms-Icon--CaretHollow { content: "\E817"; }
 @mixin ms-Icon--CaretSolid { content: "\E818"; }
+@mixin ms-Icon--FolderOpen { content: "\E838"; }
 @mixin ms-Icon--Pinned { content: "\E840"; }
 @mixin ms-Icon--PinnedFill { content: "\E842"; }
 @mixin ms-Icon--Chart { content: "\E999"; }
@@ -520,7 +524,7 @@
 @mixin ms-Icon--CollabsDBLogo { content: "\EDC9"; }
 @mixin ms-Icon--DelveAnalyticsLogo { content: "\EDCA"; }
 @mixin ms-Icon--DocsLogo { content: "\EDCB"; }
-@mixin ms-Icon--DynamicsCRMLogo { content: "\EDCC"; }
+@mixin ms-Icon--Dynamics365Logo { content: "\EDCC"; }
 @mixin ms-Icon--DynamicSMBLogo { content: "\EDCD"; }
 @mixin ms-Icon--OfficeAssistantLogo { content: "\EDCE"; }
 @mixin ms-Icon--OfficeStoreLogo { content: "\EDCF"; }
@@ -534,7 +538,7 @@
 @mixin ms-Icon--CaretUp8 { content: "\EDD7"; }
 @mixin ms-Icon--CaretDown8 { content: "\EDD8"; }
 @mixin ms-Icon--CaretLeftSolid8 { content: "\EDD9"; }
-@mixin ms-Icon--CarotRightSolid8 { content: "\EDDA"; }
+@mixin ms-Icon--CaretRightSolid8 { content: "\EDDA"; }
 @mixin ms-Icon--CaretUpSolid8 { content: "\EDDB"; }
 @mixin ms-Icon--CaretDownSolid8 { content: "\EDDC"; }
 @mixin ms-Icon--ClearFormatting { content: "\EDDD"; }
@@ -653,9 +657,33 @@
 @mixin ms-Icon--Breadcrumb { content: "\EF8C"; }
 @mixin ms-Icon--ClearFilter { content: "\EF8F"; }
 @mixin ms-Icon--Flow { content: "\EF90"; }
+@mixin ms-Icon--PageCheckedOut { content: "\F02C"; }
+@mixin ms-Icon--SetAction { content: "\F071"; }
 @mixin ms-Icon--PowerAppsLogo { content: "\F091"; }
 @mixin ms-Icon--PowerApps2Logo { content: "\F092"; }
-
+@mixin ms-Icon--FabricAssetLibrary { content: "\F09C"; }
+@mixin ms-Icon--FabricDataConnectionLibrary { content: "\F09D"; }
+@mixin ms-Icon--FabricDocLibrary { content: "\F09E"; }
+@mixin ms-Icon--FabricFormLibrary { content: "\F09F"; }
+@mixin ms-Icon--FabricReportLibrary { content: "\F0A1"; }
+@mixin ms-Icon--FabricPublicFolder { content: "\F0A3"; }
+@mixin ms-Icon--FabricFolderSearch { content: "\F0A4"; }
+@mixin ms-Icon--FabricMovetoFolder { content: "\F0A5"; }
+@mixin ms-Icon--FabricUnsyncFolder { content: "\F0A6"; }
+@mixin ms-Icon--FabricSyncFolder { content: "\F0A7"; }
+@mixin ms-Icon--FabricOpenFolderHorizontal { content: "\F0A8"; }
+@mixin ms-Icon--FabricFolder { content: "\F0A9"; }
+@mixin ms-Icon--FabricFolderFill { content: "\F0AA"; }
+@mixin ms-Icon--FabricNewFolder { content: "\F0AB"; }
+@mixin ms-Icon--FabricPictureLibrary { content: "\F0AC"; }
+@mixin ms-Icon--AddFavorite { content: "\F0C8"; }
+@mixin ms-Icon--AddFavoriteFill { content: "\F0C9"; }
+@mixin ms-Icon--BufferTimeBefore { content: "\F0CF"; }
+@mixin ms-Icon--BufferTimeAfter { content: "\F0D0"; }
+@mixin ms-Icon--BufferTimeBoth { content: "\F0D1"; }
+@mixin ms-Icon--PageCheckedin { content: "\F104"; }
+@mixin ms-Icon--CaretBottomLeftSolid8 { content: "\F121"; }
+@mixin ms-Icon--CaretBottomRightSolid8 { content: "\F122"; }
 
 // Modifier: Place the icon in a circle.
 @mixin ms-Icon--circle {

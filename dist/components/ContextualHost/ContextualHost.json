@@ -1,0 +1,7 @@
+{
+  "name": "ContextualHost",
+  "notes": "",
+  "description": "A overlay host for context menus and callouts",
+  "template": "ContextualHost.html",
+  "class": "ms-ContextualHost"
+}

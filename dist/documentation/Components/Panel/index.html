@@ -1,0 +1,279 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="panel">Panel</h1>
+<p>Presents content by sliding over the rest of the application, which is covered by a partially-transparent overlay. Best used for experiences that do not require explicit context for heavy-weight creation/edit/management tasks such as settings, multi-field
+  forms, and permissions. For containers used for complex tasks that requires context, use a separate Pane alongside the existing experience such as a List/Details layout.</p>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+
+<div class="ms-PanelDefaultExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <button class="ms-Button 
+        
+        ">
+    <span class="ms-Button-label">Open Panel</span>
+  </button>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-Panel ">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+      <p class="ms-Panel-headerText">Panel</p>
+      <div class="ms-Panel-content">
+        <span class="ms-font-m">Content goes here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var PanelDefaultExampleButton = document.querySelector(".ms-PanelDefaultExample .ms-Button");
+  var PanelDefaultExamplePanel = document.querySelector(".ms-PanelDefaultExample .ms-Panel");
+  PanelDefaultExampleButton.addEventListener("click", function() {
+    new fabric['Panel'](PanelDefaultExamplePanel);
+  });
+</script>
+<h3 id="medium">Medium</h3>
+
+<div class="ms-PanelMediumExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <button class="ms-Button 
+        
+        ">
+    <span class="ms-Button-label">Open Panel</span>
+  </button>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-Panel  ms-Panel--md">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+      <p class="ms-Panel-headerText">Medium Panel</p>
+      <div class="ms-Panel-content">
+        <span class="ms-font-m">Content goes here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var PanelMediumExampleButton = document.querySelector(".ms-PanelMediumExample .ms-Button");
+  var PanelMediumExamplePanel = document.querySelector(".ms-PanelMediumExample .ms-Panel");
+  PanelMediumExampleButton.addEventListener("click", function() {
+    new fabric['Panel'](PanelMediumExamplePanel);
+  });
+</script>
+<h3 id="large">Large</h3>
+
+<div class="ms-PanelLargeExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <button class="ms-Button 
+        
+        ">
+    <span class="ms-Button-label">Open Panel</span>
+  </button>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-Panel  ms-Panel--lg">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+      <p class="ms-Panel-headerText">Large panel</p>
+      <div class="ms-Panel-content">
+        <span class="ms-font-m">Content goes here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var PanelLargeExampleButton = document.querySelector(".ms-PanelLargeExample .ms-Button");
+  var PanelLargeExamplePanel = document.querySelector(".ms-PanelLargeExample .ms-Panel");
+  PanelLargeExampleButton.addEventListener("click", function() {
+    new fabric['Panel'](PanelLargeExamplePanel);
+  });
+</script>
+<h3 id="large-fixed">Large, fixed</h3>
+
+<div class="ms-PanelLargeFixedExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <button class="ms-Button 
+        
+        ">
+    <span class="ms-Button-label">Open Panel</span>
+  </button>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-Panel  ms-Panel--lg ms-Panel--fixed">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+      <p class="ms-Panel-headerText">Large panel</p>
+      <div class="ms-Panel-content">
+        <span class="ms-font-m">Content goes here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var PanelLargeFixedExampleButton = document.querySelector(".ms-PanelLargeFixedExample .ms-Button");
+  var PanelLargeFixedExamplePanel = document.querySelector(".ms-PanelLargeFixedExample .ms-Panel");
+  PanelLargeFixedExampleButton.addEventListener("click", function() {
+    new fabric['Panel'](PanelLargeFixedExamplePanel);
+  });
+</script>
+<h3 id="extra-large">Extra Large</h3>
+
+<div class="ms-PanelExtraLargeExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <button class="ms-Button 
+        
+        ">
+    <span class="ms-Button-label">Open Panel</span>
+  </button>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-Panel  ms-Panel--xl">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+      <p class="ms-Panel-headerText">Extra large panel</p>
+      <div class="ms-Panel-content">
+        <span class="ms-font-m">Content goes here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var PanelExtraLargeExampleButton = document.querySelector(".ms-PanelExtraLargeExample .ms-Button");
+  var PanelExtraLargeExamplePanel = document.querySelector(".ms-PanelExtraLargeExample .ms-Panel");
+  PanelExtraLargeExampleButton.addEventListener("click", function() {
+    new fabric['Panel'](PanelExtraLargeExamplePanel);
+  });
+</script>
+<h3 id="extra-extra-large">Extra extra large</h3>
+
+<div class="ms-PanelExtraExtraLargeExample">
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <button class="ms-Button 
+        
+        ">
+    <span class="ms-Button-label">Open Panel</span>
+  </button>
+  <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+  <div class="ms-Panel  ms-Panel--xxl">
+    <button class="ms-Panel-closeButton ms-PanelAction-close">
+      <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+    </button>
+    <div class="ms-Panel-contentInner">
+      <p class="ms-Panel-headerText">Extra extra large panel</p>
+      <div class="ms-Panel-content">
+        <span class="ms-font-m">Content goes here</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var PanelExtraExtraLargeExampleButton = document.querySelector(".ms-PanelExtraExtraLargeExample .ms-Button");
+  var PanelExtraExtraLargeExamplePanel = document.querySelector(".ms-PanelExtraExtraLargeExample .ms-Panel");
+  PanelExtraExtraLargeExampleButton.addEventListener("click", function() {
+    new fabric['Panel'](PanelExtraExtraLargeExamplePanel);
+  });
+</script>
+<h3 id="left-aligned">Left aligned</h3>
+<p>You can add the <code>ms-Panel--left</code> modifier to any panel to attach it to the left side of the screen.
+
+  <div class="ms-PanelLeftExample">
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    <button class="ms-Button 
+        
+        ">
+      <span class="ms-Button-label">Open Panel</span>
+    </button>
+    <!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+    <div class="ms-Panel  ms-Panel--left">
+      <button class="ms-Panel-closeButton ms-PanelAction-close">
+        <i class="ms-Panel-closeIcon ms-Icon ms-Icon--x"></i>
+      </button>
+      <div class="ms-Panel-contentInner">
+        <p class="ms-Panel-headerText">Left Panel</p>
+        <div class="ms-Panel-content">
+          <span class="ms-font-m">Content goes here</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var PanelLeftExampleButton = document.querySelector(".ms-PanelLeftExample .ms-Button");
+    var PanelLeftExamplePanel = document.querySelector(".ms-PanelLeftExample .ms-Panel");
+    PanelLeftExampleButton.addEventListener("click", function() {
+      new fabric['Panel'](PanelLeftExamplePanel);
+    });
+  </script>
+</p>
+<h2 id="states">States</h2>
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Applied to</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.is-open</code>
+      </td>
+      <td><code>.ms-Panel</code>
+      </td>
+      <td>The panel is closed by default. Apply this class to open it.</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="using-this-component">Using this component</h2>
+<ol>
+  <li>Confirm that you have references to Fabric&#39;s CSS and JavaScript on your page, as well as jQuery:<pre><code> &lt;head&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.min.css&quot;&gt;
+     &lt;link rel=&quot;stylesheet&quot; href=&quot;fabric.components.min.css&quot;&gt;
+     &lt;script src=&quot;jquery-2.2.1.min.js&quot;&gt;&lt;/script&gt;
+     &lt;script src=&quot;jquery.fabric.min.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+</code></pre>
+  </li>
+  <li>Copy the HTML from the sample above into your page.</li>
+  <li>Add the following <code>&lt;script&gt;</code> tag to your page, below the references to jQuery and Fabric&#39;s JS, to instantiate all Dialog components on the page:<pre><code> &lt;script&gt;
+     var PanelElements = document.querySelectorAll(&quot;.ms-Panel&quot;);
+     for(var i = 0; i &lt; PanelElements.length; i++) {
+         new fabric[&#39;Panel&#39;](PanelElements[i]);
+     }
+ &lt;/script&gt;
+</code></pre>
+  </li>
+  <li>Verify that the component is working the same as in the sample above.</li>
+  <li>Replace the sample HTML content with your content.</li>
+</ol>
+
+</body>
+</html>

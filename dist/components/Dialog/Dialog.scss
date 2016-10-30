@@ -1,0 +1,117 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Dialog styles
+
+.ms-Dialog {
+  @include ms-baseFont;
+  @include drop-shadow(0, 0, 5px, 0, .4);
+  background-color: $ms-color-white;
+  display: none;
+  height: auto;
+  min-width: 220px;
+  max-width: 340px;
+  padding: 28px 24px;
+  z-index: $ms-zIndex-front;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.ms-Dialog.is-open {
+  display: block;
+}
+
+.ms-Dialog-title {
+  font-size: $ms-font-size-xl;
+  font-weight: $ms-font-weight-light;
+  margin-bottom: 24px;
+}
+
+.ms-Dialog-content {
+  position: relative;
+}
+
+.ms-Dialog-subText {
+  color: $ms-color-neutralPrimary;
+  font-size: $ms-font-size-s;
+  font-weight: $ms-font-weight-semilight;
+  line-height: 1.5;
+}
+
+.ms-Dialog-actions {
+  margin-top: 24px;
+  text-align: right;
+}
+
+//= Modifier: Multiline button dialog
+//
+.ms-Dialog--multiline {
+  .ms-Dialog-title {
+    font-size: $ms-font-size-xxl;
+  }
+}
+
+//= Modifier: Large header dialog
+//
+.ms-Dialog.ms-Dialog--lgHeader {
+  .ms-Dialog-title {
+    background-color: $ms-color-themePrimary;
+    color: $ms-color-white;
+    font-size: $ms-font-size-xxl;
+    font-weight: $ms-font-weight-light;
+    padding: 28px 24px;
+    margin-top: -28px;
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+}
+
+// Close button, hidden by default
+.ms-Dialog-buttonClose {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: $ms-zIndex-front;
+
+  .ms-Icon.ms-Icon--x {
+    color: $ms-color-neutralSecondary;
+    font-size: 16px;
+  }
+}
+
+// Add margin bottom between compound buttons
+.ms-Button.ms-Button--compound:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+//= Modifier: Dialog with close button
+//
+.ms-Dialog.ms-Dialog--close:not(.ms-Dialog--lgHeader) {
+  // Push the right side over so the icon doesn't overlap the text
+  .ms-Dialog-title {
+    margin-right: 20px;
+  }
+
+  // Show the close button
+  .ms-Dialog-button.ms-Dialog-buttonClose {
+    display: block;
+  }
+}
+
+@media (min-width: $ms-screen-md-min) {
+  // Allow wider dialog on larger screens
+  .ms-Dialog-main {
+    width: auto;
+    min-width: 288px;
+    max-width: 340px;
+  }
+}

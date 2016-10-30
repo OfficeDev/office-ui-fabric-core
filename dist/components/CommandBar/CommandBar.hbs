@@ -1,0 +1,23 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<div class="ms-CommandBar {{#if props.modifier}} ms-CommandBar--{{props.modifier}} {{/if}}">
+ {{#if props.sideCommands}}
+    <div class="ms-CommandBar-sideCommands">
+      {{#each props.sideCommands}}
+        {{renderPartial component props}}
+      {{/each}}
+    </div>
+  {{/if}}
+  <div class="ms-CommandBar-mainArea">
+    {{#if props.transientComponent}}
+      {{renderPartial props.transientComponent.component props.transientComponent.props}}
+    {{/if}}
+    {{#each props.commands}}
+      {{renderPartial component props}}
+    {{/each}}
+    {{#if props.overflow}}
+      <!-- Overflow Command -->
+        {{renderPartial props.overflow.component props.overflow.props}}
+      <!-- End Overflow Command -->
+    {{/if}}
+  </div>
+</div>

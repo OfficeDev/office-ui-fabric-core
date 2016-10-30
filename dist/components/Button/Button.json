@@ -1,0 +1,17 @@
+{
+  "name": "Button",
+  "template": "Button.html",
+  "class": "ms-Button",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Button.html",
+    "Button.Primary.html",
+    "Button.Hero.html",
+    "Button.Compound.html",
+    "Button.Submenu.html"
+  ],
+  "props":  {
+    "label": "Create Account",
+    "tag": "button"
+  }
+}

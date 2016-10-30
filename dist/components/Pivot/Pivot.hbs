@@ -1,0 +1,21 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-Pivot {{#each props.modifiers}} ms-Pivot--{{name}}{{/each}}">
+  <ul class="ms-Pivot-links">
+    {{#each props.links}}
+      <li class="ms-Pivot-link {{state}}" data-content="{{name}}" title="{{text}}" tabindex="1">
+        {{text}}
+      </li>
+    {{/each}}
+    {{#if props.hasEllipsis}}
+      <li class="ms-Pivot-link" tabindex="1">
+        <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--ellipsis"></i>
+      </li>
+    {{/if}}
+  </ul>
+  {{#each props.links}}
+    <div class="ms-Pivot-content" data-content="{{name}}">
+      {{content}}
+    </div>
+  {{/each}}
+</div>

@@ -1,0 +1,135 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MessageBar</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../../css/fabric.components.css">
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="../../js/fabric.js"></script>
+  <script type="text/javascript" src="../../js/fabric.templates.js"></script>
+  <script type="text/javascript" src="../../lib/pickadate.js"></script>
+</head>
+
+<body>
+<h1 id="message-bar">Message Bar</h1>
+<h2 id="variants">Variants</h2>
+<h3 id="default">Default</h3>
+<p>Lowest level of caution. Use when you want to present timely, concise information that accelerates a workflow, or to provide key information or actions that avoid a dead end in the experience.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBar ">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--infoCircle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.
+      <br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="warning">Warning</h3>
+<p>Use in exceptional situations where the use should be mindful of some sort of temporary condition. Notably, yellow is the most visible color to the human eye.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBar ms-MessageBar--warning">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--infoCircle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.
+      <br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="severe-warning">Severe Warning</h3>
+<p>Use for a situation that is not harmful or destructive yet but could easily turn into one. (e.g. You&#39;re about to run out of storage space).</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBar ms-MessageBar--severeWarning">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--alert"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.
+      <br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="error">Error</h3>
+<p>Use when a serious failure or error has occured and information may have been lost or some actions are impossible.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBar ms-MessageBar--error">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--xCircle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.
+      <br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="remove">Remove</h3>
+<p>Use when the user is explicitly forbidden from a particular action not because of an error, but because of security restrictions or policy enforcements.</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBar ms-MessageBar--remove">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--minus ms-Icon--circle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.
+      <br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+<h3 id="success">Success</h3>
+<p>Use sparingly when there&#39;s an exceptional need to tell the use that something went right. The preferred way to show success is to show, not tell (e.g. by navigating to show the result of the user action and letting users continue working on it or
+  elsewhere).</p>
+
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-MessageBar ms-MessageBar--success">
+  <div class="ms-MessageBar-content">
+    <div class="ms-MessageBar-icon">
+      <i class="ms-Icon ms-Icon--checkboxCheck ms-Icon--circle"></i>
+    </div>
+    <div class="ms-MessageBar-text">
+      Lorem ipsum dolor sit amet, a elit sem interdum consectetur adipiscing elit.
+      <br>
+      <a href="" class="ms-Link">Hyperlink string</a>
+    </div>
+  </div>
+</div>
+
+<h2 id="dependencies">Dependencies</h2>
+<p>This component has a dependency on the Link component.</p>
+
+</body>
+</html>

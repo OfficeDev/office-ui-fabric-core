@@ -1,0 +1,5 @@
+{
+  "name": "Panel",
+  "template": "Panel.html",
+  "class": "ms-Panel"
+}

@@ -1,0 +1,15 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-FacePile">
+  <button class="ms-FacePile-addButton ms-FacePile-addButton--addPerson">
+    <i class="ms-FacePile-addPersonIcon ms-Icon ms-Icon--personAdd"></i>
+  </button>
+  
+  {{#each props.members}}
+      {{> Persona props=props}}
+  {{/each}}
+  
+  <button class="ms-FacePile-addButton ms-FacePile-addButton--overflow">
+    <span class="ms-FacePile-overflowText">+3</span>
+  </button>
+</div>

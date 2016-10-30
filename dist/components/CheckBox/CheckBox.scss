@@ -1,0 +1,124 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// CheckBox styles
+
+
+// Unselected, radio button (default)
+.ms-CheckBox {
+  @include ms-baseFont;
+  @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  min-height: 36px;
+  position: relative;
+
+  .ms-Label {
+    font-size: $ms-font-size-m;
+    padding: 0 0 0 26px;
+  }
+
+  // disabled
+  & .ms-Choice-field.is-disabled {
+    pointer-events: none;
+    cursor: default;
+
+    &::before {
+      background-color: $ms-color-neutralTertiaryAlt;
+      color: $ms-color-neutralTertiaryAlt;
+    }
+
+    &::after {
+      border-color: $ms-color-neutralLight;
+    }
+
+    .ms-Label {
+      color: $ms-color-neutralTertiary;
+    }
+  }
+
+  & .ms-CheckBox-field.in-focus::after {
+    border-color: $ms-color-neutralSecondaryAlt;
+  }
+
+  // The CheckBox radio button or checkbox
+  .ms-Choice-field {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 8px;
+    position: relative;
+
+    // The actual styled CheckBox element - radio button by default
+    &::after {
+      content: '';
+      display: inline-block;
+      border: 1px $ms-color-neutralTertiaryAlt solid;
+      width: 19px;
+      height: 19px;
+      cursor: pointer;
+      font-weight: normal;
+      left: -1px;
+      top: -1px;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    &:hover {
+      &::after {
+        border-color: $ms-color-neutralSecondaryAlt;
+      }
+
+      .ms-Label {
+        color: $ms-color-black;
+      }
+    }
+
+    &.ms-Choice-type--checkbox {
+      &::after {
+        border-radius: 0;
+      }
+
+      &.is-checked {
+        &:hover::before,
+        &::before {
+          @include ms-Icon;
+          content: '\e041';
+          background-color: transparent;
+          border-radius: 0;
+          font-size: $ms-font-size-s-plus;
+          top: 3px;
+          left: 3px;
+        }
+      }
+    }
+
+    // Radio button by default
+    &.is-checked {
+      // Circle indicating a checked radio button
+      &::before {
+        background-color: $ms-color-neutralSecondary;
+        border-color: $ms-color-neutralSecondary;
+        color: $ms-color-neutralSecondary;
+        border-radius: 50%;
+        content: '\00a0';
+        display: inline-block;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        bottom: 0;
+        left: 4px;
+        width: 11px;
+        height: 11px;
+        box-sizing: border-box;
+      }
+
+      &:hover::before {
+        background-color: $ms-color-neutralDark;
+        color: $ms-color-neutralDark;
+      }
+    }
+  }
+}

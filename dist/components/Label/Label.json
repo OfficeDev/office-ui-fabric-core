@@ -1,0 +1,24 @@
+{
+  "name": "Label",
+  "notes": "A standard form label.",
+  "descripton": "Styling for form labels including the required and disabled variants.",
+  "template": "Label.html",
+  "class": "ms-Label",
+  "wrapBranches": true,
+  "fileOrder": [
+    "Label.html",
+    "Label.Disabled.html",
+    "Label.Required.html"
+  ],
+  "props": {
+    "label": "Name"
+  },
+  "propsDisabled":  {
+    "state": "is-disabled",
+    "label": "Name"
+  },
+  "propsRequired": {
+    "state": "is-required",
+    "label": "Name"
+  }
+}

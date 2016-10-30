@@ -1,0 +1,207 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Persona Card styles
+
+
+// Small
+//
+// The persona card docks to the bottom of the viewport.
+.ms-PersonaCard {
+  @include ms-baseFont;
+  @include ms-u-slideUpIn10;
+  color: $ms-color-neutralPrimary;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  outline: 1px solid transparent;
+}
+
+.ms-PersonaCard-persona {
+  background-color: $ms-color-neutralLighter;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+}
+
+.ms-PersonaCard-actions {
+  @include ms-u-borderBox;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  background-color: $ms-color-white;
+  height: 48px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $ms-color-neutralTertiaryAlt;
+  }
+}
+
+.ms-PersonaCard-action,
+.ms-PersonaCard-overflow {
+  display: inline-block;
+  cursor: pointer;
+  font-size: $ms-font-size-l;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 10px;
+  color: $ms-color-neutralSecondary;
+  outline: transparent;
+  position: relative;
+  @include ms-u-borderBox;
+
+  &:hover {
+    color: $ms-color-neutralDark;
+  }
+
+  &:active {
+    color: $ms-color-themePrimary;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  // Currently-selected action
+  &.is-active {
+    color: $ms-color-themePrimary;
+
+    // Arrow
+    &::after {
+      @include ms-u-borderBox;
+      @include rotate(45deg);
+      content: '';
+      width: 10px;
+      height: 10px;
+      border: 1px solid $ms-color-neutralTertiaryAlt;
+      background-color: $ms-color-white;
+      position: absolute;
+      border-right: 0;
+      border-bottom: 0;
+      bottom: -4px;
+      left: 15px;
+    }
+  }
+}
+
+.ms-PersonaCard-overflow {
+  font-size: $ms-font-size-m;
+  color: $ms-color-neutralPrimary;
+  float: right;
+  margin-top: -1px;
+
+  &:hover {
+    color: $ms-color-themePrimary;
+  }
+}
+
+.ms-PersonaCard-orgChart {
+  position: absolute;
+  right: 12px;
+  top: -95px;
+}
+
+.ms-PersonaCard-actionDetailBox {
+  min-height: 48px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $ms-color-white;
+}
+
+// Active detail items
+.ms-PersonaCard-details {
+  display: none;
+  width: 100%;
+  margin: 0;
+  max-height: 300px;
+  min-height: 48px;
+  color: $ms-color-neutralSecondary;
+  padding: 9px 20px;
+  box-sizing: border-box;
+
+  &.is-active {
+    display: block;
+  }
+
+  // State: Contents are collapsed to a single line.
+  &.is-collapsed {
+    height: 30px;
+    overflow: hidden;
+
+    // Show the expander icon.
+    .ms-PersonaCard-detailExpander::after {
+      content: '\e088';
+    }
+  }
+}
+
+.ms-PersonaCard-details[data-detail-id='org'] {
+  max-height: 300px;
+}
+
+// Icon to expand a collapsed actionDetails section.
+.ms-PersonaCard-detailExpander {
+  color: $ms-color-neutralPrimary;
+  cursor: pointer;
+  font-size: $ms-font-size-m-plus;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 1px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  width: 30px;
+
+  &::after {
+    @include ms-Icon;
+    content: '\e087';
+  }
+}
+
+.ms-PersonaCard-detailLine {
+  color: $ms-color-neutralPrimary;
+  line-height: 30px;
+}
+
+.ms-PersonaCard-detailLabel {
+  color: $ms-color-neutralSecondary;
+}
+
+.ms-PersonaCard-action.ms-PersonaCard-orgChart {
+  &::after {
+    display: none; // Hide arrow for orgchart action
+  }
+}
+
+@media (min-width: $ms-screen-md-min) {
+  // Undock the persona card and give it a shadow.
+  .ms-PersonaCard {
+    @include drop-shadow;
+    max-width: 360px;
+    position: relative;
+  }
+
+  .ms-ContextualHost {
+    .ms-PersonaCard {
+      box-shadow: none;
+    }
+  }
+}

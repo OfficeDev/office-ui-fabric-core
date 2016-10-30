@@ -1,0 +1,5 @@
+{
+  "name": "Overlay",
+  "template": "Overlay.html",
+  "class": "ms-Overlay"
+}

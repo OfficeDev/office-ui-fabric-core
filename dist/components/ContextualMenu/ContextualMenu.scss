@@ -1,0 +1,176 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Contextual Menu styles
+
+
+.ms-ContextualMenu {
+  @include ms-baseFont;
+  @include ms-u-normalize;
+  color: $ms-color-neutralPrimary;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  display: block;
+  min-width: 180px;
+  list-style-type: none;
+  position: relative;
+  background-color: $ms-color-white;
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.ms-ContextualMenu-item {
+  position: relative;
+}
+
+.ms-ContextualMenu-link {
+  @include ms-u-borderBox;
+  text-decoration: none;
+  color: $ms-color-neutralPrimary;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+  position: relative;
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $ms-color-neutralLight;
+    color: $ms-color-black;
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $ms-color-themePrimary;
+  }
+
+  &.is-selected {
+    background-color: $ms-color-themeLight;
+    color: $ms-color-black;
+    font-weight: $ms-font-weight-semibold;
+
+    &:hover {
+      background-color: $ms-color-themeLight;
+    }
+  }
+
+  &.is-disabled {
+    color: $ms-color-neutralTertiary;
+    background-color: $ms-color-white;
+
+    &:active,
+    &:focus {
+      border-color: $ms-color-white;
+    }
+
+    .ms-Icon {
+      color: $ms-color-neutralTertiary;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
+
+// Modifier: Menu item Dividers
+.ms-ContextualMenu-item.ms-ContextualMenu-item--divider {
+  cursor: default;
+  display: block;
+  height: 1px;
+  margin: 4px 0;
+  background-color: $ms-color-neutralLight;
+  position: relative;
+}
+
+// Modifier: Menu item Headers
+.ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+  color: $ms-color-themePrimary;
+  font-size: $ms-font-size-s;
+  text-transform: uppercase;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 18px;
+}
+
+// Modifier: Contextual menu with submenu
+.ms-ContextualMenu-item.ms-ContextualMenu-item--hasMenu .ms-ContextualMenu {
+  position: absolute;
+  top: -1px;
+  left: 178px; // Move the submenu to the left of the menu item that triggered it
+}
+
+// Right chevron.
+// Note: The .ms-ContextualMenu-caretRight class has been deprecated.
+// Please use .ms-ContextualMenu-subMenuIcon.
+.ms-ContextualMenu-subMenuIcon,
+.ms-ContextualMenu-caretRight {
+  color: $ms-color-neutralSecondary;
+  font-size: $ms-font-size-m-plus + 1;
+  height: 39px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 7px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+//== Modifier: Multi-select menu
+//
+.ms-ContextualMenu.ms-ContextualMenu--multiselect {
+
+  // Align the header with the items
+  .ms-ContextualMenu-item.ms-ContextualMenu-item--header {
+    padding: 0 30px;
+  }
+
+  .ms-ContextualMenu-link {
+    padding: 0 30px;
+
+    // Multi-select checkmark
+    &.is-selected {
+      background-color: $ms-color-white;
+
+      // Checkmark
+      &::after {
+        @include ms-Icon;
+        color: $ms-color-neutralPrimary;
+        content: '\e041';
+        font-size: $ms-font-size-s;
+        height: 39px;
+        line-height: 40px;
+        position: absolute;
+        left: 10px;
+      }
+    }
+  }
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons,
+.ms-ContextualMenu.ms-ContextualMenu--hasChecks {
+  .ms-ContextualMenu-link {
+    padding-left: 40px;
+  }
+
+  .ms-Icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    text-align: center;
+  }
+}
+
+.ms-ContextualMenu.ms-ContextualMenu--hasIcons {
+  width: 220px;
+}

@@ -1,0 +1,8 @@
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. -->
+
+<div class="ms-TextField {{#if props.modifier}} ms-TextField--{{props.modifier}}{{/if}} {{#if props.disabled}}is-disabled{{/if}}">
+  {{#if props.label}}<label class="ms-Label">{{props.label}}</label>{{/if}}
+  {{#if props.textfield}}<input class="ms-TextField-field" type="text" value="{{props.value}}" placeholder="{{props.placeholder}}" {{#if props.disabled}}disabled{{/if}}>{{/if}}
+  {{#if props.multiline}}<textarea class="ms-TextField-field" {{#if props.disabled}}disabled{{/if}}></textarea>{{/if}}
+  {{#if props.description}}<span class="ms-TextField-description">{{props.description}}</span>{{/if}}
+</div>

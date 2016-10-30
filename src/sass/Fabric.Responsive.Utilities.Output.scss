@@ -205,40 +205,40 @@
 
 // Small Offset classes 0 ... 11
 .ms-u-smOffset11 {
-  margin-left: 91.66666666666666%;
+  @include ms-u-smOffset11;
 }
 .ms-u-smOffset10 {
-  margin-left: 83.33333333333334%;
+  @include ms-u-smOffset10;
 }
 .ms-u-smOffset9 {
-  margin-left: 75%;
+  @include ms-u-smOffset9;
 }
 .ms-u-smOffset8 {
-  margin-left: 66.66666666666666%;
+  @include ms-u-smOffset8;
 }
 .ms-u-smOffset7 {
-  margin-left: 58.333333333333336%;
+  @include ms-u-smOffset7;
 }
 .ms-u-smOffset6 {
-  margin-left: 50%;
+  @include ms-u-smOffset6;
 }
 .ms-u-smOffset5 {
-  margin-left: 41.66666666666667%;
+  @include ms-u-smOffset5;
 }
 .ms-u-smOffset4 {
-  margin-left: 33.33333333333333%;
+  @include ms-u-smOffset4;
 }
 .ms-u-smOffset3 {
-  margin-left: 25%;
+  @include ms-u-smOffset3;
 }
 .ms-u-smOffset2 {
-  margin-left: 16.666666666666664%;
+  @include ms-u-smOffset2;
 }
 .ms-u-smOffset1 {
-  margin-left: 8.333333333333332%;
+  @include ms-u-smOffset1;
 }
 .ms-u-smOffset0 {
-  margin-left: 0;
+  @include ms-u-smOffset0;
 }
 
 // Medium screens
@@ -359,40 +359,40 @@
 
 // Medium Offset classes 0 ... 11
 .ms-u-mdOffset11 {
-  margin-left: 91.66666666666666%;
+  @include ms-u-mdOffset11;
 }
 .ms-u-mdOffset10 {
-  margin-left: 83.33333333333334%;
+  @include ms-u-mdOffset10;
 }
 .ms-u-mdOffset9 {
-  margin-left: 75%;
+  @include ms-u-mdOffset9;
 }
 .ms-u-mdOffset8 {
-  margin-left: 66.66666666666666%;
+  @include ms-u-mdOffset8;
 }
 .ms-u-mdOffset7 {
-  margin-left: 58.333333333333336%;
+  @include ms-u-mdOffset7;
 }
 .ms-u-mdOffset6 {
-  margin-left: 50%;
+  @include ms-u-mdOffset6;
 }
 .ms-u-mdOffset5 {
-  margin-left: 41.66666666666667%;
+  @include ms-u-mdOffset5;
 }
 .ms-u-mdOffset4 {
-  margin-left: 33.33333333333333%;
+  @include ms-u-mdOffset4;
 }
 .ms-u-mdOffset3 {
-  margin-left: 25%;
+  @include ms-u-mdOffset3;
 }
 .ms-u-mdOffset2 {
-  margin-left: 16.666666666666664%;
+  @include ms-u-mdOffset2;
 }
 .ms-u-mdOffset1 {
-  margin-left: 8.333333333333332%;
+  @include ms-u-mdOffset1;
 }
 .ms-u-mdOffset0 {
-  margin-left: 0;
+  @include ms-u-mdOffset0;
 }
 
 // Large screens
@@ -513,40 +513,40 @@
 
 // Large Offset classes 0 ... 11
 .ms-u-lgOffset11 {
-  margin-left: 91.66666666666666%;
+  @include ms-u-lgOffset11;
 }
 .ms-u-lgOffset10 {
-  margin-left: 83.33333333333334%;
+  @include ms-u-lgOffset10;
 }
 .ms-u-lgOffset9 {
-  margin-left: 75%;
+  @include ms-u-lgOffset9;
 }
 .ms-u-lgOffset8 {
-  margin-left: 66.66666666666666%;
+  @include ms-u-lgOffset8;
 }
 .ms-u-lgOffset7 {
-  margin-left: 58.333333333333336%;
+  @include ms-u-lgOffset7;
 }
 .ms-u-lgOffset6 {
-  margin-left: 50%;
+  @include ms-u-lgOffset6;
 }
 .ms-u-lgOffset5 {
-  margin-left: 41.66666666666667%;
+  @include ms-u-lgOffset5;
 }
 .ms-u-lgOffset4 {
-  margin-left: 33.33333333333333%;
+  @include ms-u-lgOffset4;
 }
 .ms-u-lgOffset3 {
-  margin-left: 25%;
+  @include ms-u-lgOffset3;
 }
 .ms-u-lgOffset2 {
-  margin-left: 16.666666666666664%;
+  @include ms-u-lgOffset2;
 }
 .ms-u-lgOffset1 {
-  margin-left: 8.333333333333332%;
+  @include ms-u-lgOffset1;
 }
 .ms-u-lgOffset0 {
-  margin-left: 0;
+  @include ms-u-lgOffset0;
 }
 
 // Extra large screens
@@ -667,40 +667,40 @@
 
 // Large Offset classes 0 ... 11
 .ms-u-xlOffset11 {
-  margin-left: 91.66666666666666%;
+  @include ms-u-xlOffset11;
 }
 .ms-u-xlOffset10 {
-  margin-left: 83.33333333333334%;
+  @include ms-u-xlOffset10;
 }
 .ms-u-xlOffset9 {
-  margin-left: 75%;
+  @include ms-u-xlOffset9;
 }
 .ms-u-xlOffset8 {
-  margin-left: 66.66666666666666%;
+  @include ms-u-xlOffset8;
 }
 .ms-u-xlOffset7 {
-  margin-left: 58.333333333333336%;
+  @include ms-u-xlOffset7;
 }
 .ms-u-xlOffset6 {
-  margin-left: 50%;
+  @include ms-u-xlOffset6;
 }
 .ms-u-xlOffset5 {
-  margin-left: 41.66666666666667%;
+  @include ms-u-xlOffset5;
 }
 .ms-u-xlOffset4 {
-  margin-left: 33.33333333333333%;
+  @include ms-u-xlOffset4;
 }
 .ms-u-xlOffset3 {
-  margin-left: 25%;
+  @include ms-u-xlOffset3;
 }
 .ms-u-xlOffset2 {
-  margin-left: 16.666666666666664%;
+  @include ms-u-xlOffset2;
 }
 .ms-u-xlOffset1 {
-  margin-left: 8.333333333333332%;
+  @include ms-u-xlOffset1;
 }
 .ms-u-xlOffset0 {
-  margin-left: 0;
+  @include ms-u-xlOffset0;
 }
 
 // Extra extra large screens
@@ -821,40 +821,40 @@
 
 // Extra extra large Offset classes 0 ... 11
 .ms-u-xxlOffset11 {
-  margin-left: 91.66666666666666%;
+  @include ms-u-xxlOffset11;
 }
 .ms-u-xxlOffset10 {
-  margin-left: 83.33333333333334%;
+  @include ms-u-xxlOffset10;
 }
 .ms-u-xxlOffset9 {
-  margin-left: 75%;
+  @include ms-u-xxlOffset9;
 }
 .ms-u-xxlOffset8 {
-  margin-left: 66.66666666666666%;
+  @include ms-u-xxlOffset8;
 }
 .ms-u-xxlOffset7 {
-  margin-left: 58.333333333333336%;
+  @include ms-u-xxlOffset7;
 }
 .ms-u-xxlOffset6 {
-  margin-left: 50%;
+  @include ms-u-xxlOffset6;
 }
 .ms-u-xxlOffset5 {
-  margin-left: 41.66666666666667%;
+  @include ms-u-xxlOffset5;
 }
 .ms-u-xxlOffset4 {
-  margin-left: 33.33333333333333%;
+  @include ms-u-xxlOffset4;
 }
 .ms-u-xxlOffset3 {
-  margin-left: 25%;
+  @include ms-u-xxlOffset3;
 }
 .ms-u-xxlOffset2 {
-  margin-left: 16.666666666666664%;
+  @include ms-u-xxlOffset2;
 }
 .ms-u-xxlOffset1 {
-  margin-left: 8.333333333333332%;
+  @include ms-u-xxlOffset1;
 }
 .ms-u-xxlOffset0 {
-  margin-left: 0;
+  @include ms-u-xxlOffset0;
 }
 
 // Extra extra extra large screens
@@ -975,38 +975,38 @@
 
 // Extra extra extra large Offset classes 0 ... 11
 .ms-u-xxxlOffset11 {
-  margin-left: 91.66666666666666%;
+  @include ms-u-xxxlOffset11;
 }
 .ms-u-xxxlOffset10 {
-  margin-left: 83.33333333333334%;
+  @include ms-u-xxxlOffset10;
 }
 .ms-u-xxxlOffset9 {
-  margin-left: 75%;
+  @include ms-u-xxxlOffset9;
 }
 .ms-u-xxxlOffset8 {
-  margin-left: 66.66666666666666%;
+  @include ms-u-xxxlOffset8;
 }
 .ms-u-xxxlOffset7 {
-  margin-left: 58.333333333333336%;
+  @include ms-u-xxxlOffset7;
 }
 .ms-u-xxxlOffset6 {
-  margin-left: 50%;
+  @include ms-u-xxxlOffset6;
 }
 .ms-u-xxxlOffset5 {
-  margin-left: 41.66666666666667%;
+  @include ms-u-xxxlOffset5;
 }
 .ms-u-xxxlOffset4 {
-  margin-left: 33.33333333333333%;
+  @include ms-u-xxxlOffset4;
 }
 .ms-u-xxxlOffset3 {
-  margin-left: 25%;
+  @include ms-u-xxxlOffset3;
 }
 .ms-u-xxxlOffset2 {
-  margin-left: 16.666666666666664%;
+  @include ms-u-xxxlOffset2;
 }
 .ms-u-xxxlOffset1 {
-  margin-left: 8.333333333333332%;
+  @include ms-u-xxxlOffset1;
 }
 .ms-u-xxxlOffset0 {
-  margin-left: 0;
+  @include ms-u-xxxlOffset0;
 }

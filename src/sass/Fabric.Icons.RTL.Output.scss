@@ -49,8 +49,8 @@
 .ms-Icon--ChevronLeftSmall::before { @include ms-Icon--ChevronRightSmall; }
 .ms-Icon--ChevronRightSmall::before { @include ms-Icon--ChevronLeftSmall; }
 
-.ms-Icon--ChromeBlackMirrored::before { @include ms-Icon--ChromeBlack; }
-.ms-Icon--ChromeBlack::before { @include ms-Icon--ChromeBlackMirrored; }
+.ms-Icon--ChromeBackMirrored::before { @include ms-Icon--ChromeBack; }
+.ms-Icon--ChromeBack::before { @include ms-Icon--ChromeBackMirrored; }
 
 .ms-Icon--ClosePaneMirrored::before { @include ms-Icon--ClosePane; }
 .ms-Icon--ClosePane::before { @include ms-Icon--ClosePaneMirrored; }
@@ -100,11 +100,11 @@
 .ms-Icon--ListMirrored::before { @include ms-Icon--List; }
 .ms-Icon--List::before { @include ms-Icon--ListMirrored; }
 
-.ms-Icon--MailForwardReplyAllMirrored::before { @include ms-Icon--MailForwardReplyAll; }
-.ms-Icon--MailForwardReplyAll::before { @include ms-Icon--MailForwardReplyAllMirrored; }
+.ms-Icon--MailReplyAllMirrored::before { @include ms-Icon--MailReplyAll; }
+.ms-Icon--MailReplyAll::before { @include ms-Icon--MailReplyAllMirrored; }
 
-.ms-Icon--MailForwardReplyMirrored::before { @include ms-Icon--MailForwardReply; }
-.ms-Icon--MailForwardReply::before { @include ms-Icon--MailForwardReplyMirrored; }
+.ms-Icon--MailReplyMirrored::before { @include ms-Icon--MailReply; }
+.ms-Icon--MailReply::before { @include ms-Icon--MailReplyMirrored; }
 
 .ms-Icon--MultiSelectMirrored::before { @include ms-Icon--MultiSelect; }
 .ms-Icon--MultiSelect::before { @include ms-Icon--MultiSelectMirrored; }

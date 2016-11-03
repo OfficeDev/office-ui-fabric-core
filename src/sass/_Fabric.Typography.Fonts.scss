@@ -11,14 +11,14 @@ $ms-font-name: "Segoe UI" !default;
 
 
 // Font paths.
-$ms-font-directory:         "https://appsforoffice.microsoft.com/fabric/fonts" !default;
-$ms-font-path-arabic:       "SegoeUI-Arabic" !default;
-$ms-font-path-cyrillic:     "SegoeUI-Cyrillic" !default;
-$ms-font-path-easteuropean: "SegoeUI-EastEuropean" !default;
-$ms-font-path-greek:        "SegoeUI-Greek" !default;
-$ms-font-path-hebrew:       "SegoeUI-Hebrew" !default;
-$ms-font-path-vietnamese:   "SegoeUI-Vietnamese" !default;
-$ms-font-path-westeuropean: "SegoeUI-WestEuropean" !default;
+$ms-font-directory:         "https://spoppe-a.akamaihd.net/files/fabric/assets/fonts/" !default;
+$ms-font-path-arabic:       "segoeui-arabic" !default;
+$ms-font-path-cyrillic:     "segoeui-cyrillic" !default;
+$ms-font-path-easteuropean: "segoeui-easteuropean" !default;
+$ms-font-path-greek:        "segoeui-greek" !default;
+$ms-font-path-hebrew:       "segoeui-hebrew" !default;
+$ms-font-path-vietnamese:   "segoeui-vietnamese" !default;
+$ms-font-path-westeuropean: "segoeui-westeuropean" !default;
 
 
 /*
@@ -30,9 +30,9 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean" !default;
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI Light"),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Light.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-light.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-light.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-light.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
   }
@@ -42,9 +42,9 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean" !default;
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI Semilight"),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semilight.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semilight.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semilight.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semilight.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
   }
@@ -54,9 +54,9 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean" !default;
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI"),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Regular.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-regular.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-regular.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
   }
@@ -66,9 +66,9 @@ $ms-font-path-westeuropean: "SegoeUI-WestEuropean" !default;
   @font-face {
     font-family: "#{$ms-font-name} #{$ms-font-language}";
     src: local("Segoe UI Semibold"),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/SegoeUI-Semibold.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semibold.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semibold.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semibold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
   }

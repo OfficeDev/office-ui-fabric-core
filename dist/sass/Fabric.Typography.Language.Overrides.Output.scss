@@ -1,0 +1,53 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Language override definitions using ISO 639-3 language codes
+
+@import "./Fabric.Typography.Language.Overrides";
+
+// Generate the override classes for non-distributed fonts.
+@include language-override-system-fonts(jpn, $ms-font-stack-japanese);
+@include language-override-system-fonts(kor, $ms-font-stack-korean);
+@include language-override-system-fonts(cmn, $ms-font-stack-chinese-simplified);
+@include language-override-system-fonts(yue, $ms-font-stack-chinese-traditional);
+@include language-override-system-fonts(hin, $ms-font-stack-hindi);
+
+// Generate the override classes for web fonts.
+// Thai (Leelawadee)
+// tha
+@include language-override-system-fonts(tha, $ms-font-stack-leelawadee);
+
+// Arabic
+// ara
+@include language-override-system-fonts(ara, $ms-font-stack-arabic);
+
+// East European
+// ces, et, hrv, hun, lit, pl, lat, tur, slk, kaz
+@include language-override-system-fonts(ces, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(est, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(hrv, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(hun, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(kaz, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lav, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(lit, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(pol, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(slk, $ms-font-stack-eastEuropean);
+@include language-override-system-fonts(tur, $ms-font-stack-eastEuropean);
+
+// Cyrillic
+// rus
+@include language-override-system-fonts(rus, $ms-font-stack-cyrillic);
+
+// Greek
+// ell
+@include language-override-system-fonts(ell, $ms-font-stack-greek);
+
+// Hebrew
+// heb
+@include language-override-system-fonts(heb, $ms-font-stack-hebrew);
+
+// Vietnamese
+// vie
+@include language-override-system-fonts(vie, $ms-font-stack-vietnamese);

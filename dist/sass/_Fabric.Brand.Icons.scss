@@ -1,0 +1,51 @@
+// Images Path for Product Icons
+$productImagesPath: "https://spoprod-a.akamaihd.net/files/fabric/assets/brand-icons/product/png";
+
+// Images Path for Document Icons
+$documentImagesPath: "https://spoprod-a.akamaihd.net/files/fabric/assets/brand-icons/document/png";
+
+// Icon Names
+$productIconList: access excel infopath office onedrive onenote outlook powerpoint project sharepoint visio word;
+
+$documentIconList: accdb csv docx dotx mpp mpt odp ods odt one onepkg onetoc potx ppsx pptx pub vsdx vssx vstx xls xlsx xltx xsn;
+
+// Icon Sizes
+$iconSizes: 16 48 96;
+
+
+//  Generate Icon Classes for product and document icons
+@mixin brandIconClasses($retina) {
+	// Generate Product icon list
+	@each $icon in $productIconList {
+		.ms-BrandIcon--#{$icon} {
+			@include brandIconSizes($icon, $retina, $productImagesPath);
+		}
+	}
+
+	// Generate Document icon list
+	@each $icon in $documentIconList {
+		.ms-BrandIcon--#{$icon} {
+			@include brandIconSizes($icon, $retina, $documentImagesPath);
+		}
+	}
+}
+
+// Generate size classes for each icon
+@mixin brandIconSizes($icon, $retina, $imagesPath) {
+	@each $size in $iconSizes {
+		&.ms-BrandIcon--Icon#{$size} {
+			background-image: url(#{$imagesPath}/#{$icon}_#{$size}x#{$retina}.png);
+		}
+	}
+}
+
+// Generate generic icon size classes
+@mixin brandIconSizesClasses() {
+	@each $size in $iconSizes {
+		.ms-BrandIcon--Icon#{$size} {
+			background-size: 100% 100%;
+			width: #{$size}px;
+			height: #{$size}px;
+		}
+	}
+}

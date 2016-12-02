@@ -17,6 +17,7 @@ var Config = function() {
     src: 'src',
 		componentsPath : 'src/components',
     srcLibPath: 'lib',
+    temp: 'temp'
 	};
   
   this.paths.distComponents = this.paths.dist + '/components';

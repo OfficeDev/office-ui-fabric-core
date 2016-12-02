@@ -12,13 +12,13 @@ $do-scope-styles: true;
 
 // Scope all core styles under a helper class for the current major version.
 // This produces styles of the form .ms-Fabric-{version #} .ms-font-m.
+
 @include scope-fabric {
   // Common utilities
   @import './Fabric.Utilities.Output';
   @import './Fabric.ZIndex.Variables';
   @import './Fabric.Mixins';
   @import "./Fabric.Mixins.RTL";
-
   // Colors
   @import './Fabric.Color.Variables';
   @import './Fabric.Color.Mixins.Output';
@@ -45,3 +45,6 @@ $do-scope-styles: true;
   // Base/wrapper component
   @import './Fabric.Base.Output';
 }
+
+// @font-face definitions do not need to be scoped
+@import './Fabric.Icons.Font.Output';

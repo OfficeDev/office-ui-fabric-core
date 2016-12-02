@@ -62,7 +62,7 @@ gulp.task('Fabric-scopedPreBuild', function () {
     return fabricScopedPreBuild;
 });
 
-gulp.task('Fabric-buildStyles', function () {
+gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -96,7 +96,6 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric-' + version.major + '.scoped.css'))
-            .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
               browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false

@@ -95,7 +95,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
-            .pipe(Plugins.rename('fabric-' + version.major + '.scoped.css'))
+            .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.css'))
             .pipe(Plugins.autoprefixer({
               browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
@@ -103,7 +103,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))
-            .pipe(Plugins.rename('fabric-' + version.major + '.scoped.min.css'))
+            .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.min.css'))
             .pipe(Plugins.cssMinify({
                 safe: true
             }))

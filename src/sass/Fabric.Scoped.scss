@@ -47,4 +47,5 @@ $do-scope-styles: true;
 }
 
 // @font-face definitions do not need to be scoped
+@import './Fabric.Typography.Fonts.Output';
 @import './Fabric.Icons.Font.Output';

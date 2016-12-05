@@ -1,0 +1,14 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Wrapper component to set base typography.
+
+@import "Fabric.Base";
+
+//== Wrapper/base component
+//
+.ms-Fabric {
+  @include ms-Fabric;
+}

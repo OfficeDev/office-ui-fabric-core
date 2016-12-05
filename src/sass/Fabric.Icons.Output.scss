@@ -34,6 +34,12 @@
   @include ms-Icon--l;
 }
 
+// @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
+// @todo: 'CarotRightSolid8' class is deprecated, will be removed in a future release
+.ms-Icon--CarotRightSolid8::before { @include ms-Icon--CaretRightSolid8; }
+.ms-Icon--DynamicsCRMLogo::before { @include ms-Icon--Dynamics365Logo; }
+
+
 // Modifiers: Each of the icons
 .ms-Icon--DecreaseIndentLegacy::before { @include ms-Icon--DecreaseIndentLegacy; }
 .ms-Icon--IncreaseIndentLegacy::before { @include ms-Icon--IncreaseIndentLegacy; }
@@ -128,6 +134,7 @@
 .ms-Icon--Album::before { @include ms-Icon--Album; }
 .ms-Icon--Rotate::before { @include ms-Icon--Rotate; }
 .ms-Icon--PanoIndicator::before { @include ms-Icon--PanoIndicator; }
+.ms-Icon--RedEye::before { @include ms-Icon--RedEye; }
 .ms-Icon--ThumbnailView::before { @include ms-Icon--ThumbnailView; }
 .ms-Icon--Package::before { @include ms-Icon--Package; }
 .ms-Icon--Warning::before { @include ms-Icon--Warning; }
@@ -263,6 +270,7 @@
 .ms-Icon--CalculatorAddition::before { @include ms-Icon--CalculatorAddition; }
 .ms-Icon--CalculatorSubtract::before { @include ms-Icon--CalculatorSubtract; }
 .ms-Icon--PrintfaxPrinterFile::before { @include ms-Icon--PrintfaxPrinterFile; }
+.ms-Icon--Headset::before { @include ms-Icon--Headset; }
 .ms-Icon--Health::before { @include ms-Icon--Health; }
 .ms-Icon--ChevronUpSmall::before { @include ms-Icon--ChevronUpSmall; }
 .ms-Icon--ChevronDownSmall::before { @include ms-Icon--ChevronDownSmall; }
@@ -352,6 +360,7 @@
 .ms-Icon--SendMirrored::before { @include ms-Icon--SendMirrored; }
 .ms-Icon--ShowResultsMirrored::before { @include ms-Icon--ShowResultsMirrored; }
 .ms-Icon--ThumbnailViewMirrored::before { @include ms-Icon--ThumbnailViewMirrored; }
+.ms-Icon--Devices3::before { @include ms-Icon--Devices3; }
 .ms-Icon--Lightbulb::before { @include ms-Icon--Lightbulb; }
 .ms-Icon--StatusTriangle::before { @include ms-Icon--StatusTriangle; }
 .ms-Icon--VolumeDisabled::before { @include ms-Icon--VolumeDisabled; }
@@ -399,6 +408,7 @@
 .ms-Icon--Heart::before { @include ms-Icon--Heart; }
 .ms-Icon--HeartFill::before { @include ms-Icon--HeartFill; }
 .ms-Icon--Ticket::before { @include ms-Icon--Ticket; }
+.ms-Icon--Devices4::before { @include ms-Icon--Devices4; }
 .ms-Icon--AzureLogo::before { @include ms-Icon--AzureLogo; }
 .ms-Icon--BingLogo::before { @include ms-Icon--BingLogo; }
 .ms-Icon--MSNLogo::before { @include ms-Icon--MSNLogo; }
@@ -478,6 +488,7 @@
 .ms-Icon--ChatInviteFriend::before { @include ms-Icon--ChatInviteFriend; }
 .ms-Icon--SharepointLogo::before { @include ms-Icon--SharepointLogo; }
 .ms-Icon--YammerLogo::before { @include ms-Icon--YammerLogo; }
+.ms-Icon--Hide::before { @include ms-Icon--Hide; }
 .ms-Icon--ReturnToSession::before { @include ms-Icon--ReturnToSession; }
 .ms-Icon--OpenFolderHorizontal::before { @include ms-Icon--OpenFolderHorizontal; }
 .ms-Icon--CalendarMirrored::before { @include ms-Icon--CalendarMirrored; }
@@ -562,9 +573,7 @@
 .ms-Icon--CollabsDBLogo::before { @include ms-Icon--CollabsDBLogo; }
 .ms-Icon--DelveAnalyticsLogo::before { @include ms-Icon--DelveAnalyticsLogo; }
 .ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogo; }
-// @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
-.ms-Icon--DynamicsCRMLogo::before,
-.ms-Icon--Dynamics365Logo::before { @include ms-Icon--Dynamics365Logo }
+.ms-Icon--Dynamics365Logo::before { @include ms-Icon--Dynamics365Logo; }
 .ms-Icon--DynamicSMBLogo::before { @include ms-Icon--DynamicSMBLogo; }
 .ms-Icon--OfficeAssistantLogo::before { @include ms-Icon--OfficeAssistantLogo; }
 .ms-Icon--OfficeStoreLogo::before { @include ms-Icon--OfficeStoreLogo; }
@@ -578,9 +587,7 @@
 .ms-Icon--CaretUp8::before { @include ms-Icon--CaretUp8; }
 .ms-Icon--CaretDown8::before { @include ms-Icon--CaretDown8; }
 .ms-Icon--CaretLeftSolid8::before { @include ms-Icon--CaretLeftSolid8; }
-// @todo: 'CarotRightSolid8' class is deprecated, will be removed in a future release
-.ms-Icon--CarotRightSolid8::before,
-.ms-Icon--CaretRightSolid8::before { @include ms-Icon--CaretRightSolid8 }
+.ms-Icon--CaretRightSolid8::before { @include ms-Icon--CaretRightSolid8; }
 .ms-Icon--CaretUpSolid8::before { @include ms-Icon--CaretUpSolid8; }
 .ms-Icon--CaretDownSolid8::before { @include ms-Icon--CaretDownSolid8; }
 .ms-Icon--ClearFormatting::before { @include ms-Icon--ClearFormatting; }
@@ -738,3 +745,7 @@
 .ms-Icon--PageCheckedin::before { @include ms-Icon--PageCheckedin; }
 .ms-Icon--CaretBottomLeftSolid8::before { @include ms-Icon--CaretBottomLeftSolid8; }
 .ms-Icon--CaretBottomRightSolid8::before { @include ms-Icon--CaretBottomRightSolid8; }
+.ms-Icon--FolderHorizontal::before { @include ms-Icon--FolderHorizontal; }
+.ms-Icon--MicrosoftStaffhubLogo::before { @include ms-Icon--MicrosoftStaffhubLogo; }
+.ms-Icon--CaloriesAdd::before { @include ms-Icon--CaloriesAdd; }
+.ms-Icon--BranchFork::before { @include ms-Icon--BranchFork; }

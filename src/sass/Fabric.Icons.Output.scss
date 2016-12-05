@@ -36,6 +36,8 @@
 
 // @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
 // @todo: 'CarotRightSolid8' class is deprecated, will be removed in a future release
+.ms-Icon--CarotRightSolid8::before { @include ms-Icon--CaretRightSolid8; }
+.ms-Icon--DynamicsCRMLogo::before { @include ms-Icon--Dynamics365Logo; }
 
 
 // Modifiers: Each of the icons
@@ -571,7 +573,6 @@
 .ms-Icon--CollabsDBLogo::before { @include ms-Icon--CollabsDBLogo; }
 .ms-Icon--DelveAnalyticsLogo::before { @include ms-Icon--DelveAnalyticsLogo; }
 .ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogo; }
-.ms-Icon--DynamicsCRMLogo::before,
 .ms-Icon--Dynamics365Logo::before { @include ms-Icon--Dynamics365Logo; }
 .ms-Icon--DynamicSMBLogo::before { @include ms-Icon--DynamicSMBLogo; }
 .ms-Icon--OfficeAssistantLogo::before { @include ms-Icon--OfficeAssistantLogo; }
@@ -586,7 +587,6 @@
 .ms-Icon--CaretUp8::before { @include ms-Icon--CaretUp8; }
 .ms-Icon--CaretDown8::before { @include ms-Icon--CaretDown8; }
 .ms-Icon--CaretLeftSolid8::before { @include ms-Icon--CaretLeftSolid8; }
-.ms-Icon--CarotRightSolid8::before,
 .ms-Icon--CaretRightSolid8::before { @include ms-Icon--CaretRightSolid8; }
 .ms-Icon--CaretUpSolid8::before { @include ms-Icon--CaretUpSolid8; }
 .ms-Icon--CaretDownSolid8::before { @include ms-Icon--CaretDownSolid8; }

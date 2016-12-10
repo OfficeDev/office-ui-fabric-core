@@ -5,9 +5,6 @@
 // --------------------------------------------------
 // Font definitions
 
-// Variables
-@import './variables/Typography';
-
 // Mixins to generate @font-face rules for unique languages.
 @mixin SegoeUILight($ms-font-language, $ms-font-path) {
   @font-face {

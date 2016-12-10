@@ -6,9 +6,13 @@
 // Fabric Core Module Loader (RTL)
 
 // Variables
+// @todo: Just import _Fabric.Common here instead of duplicating the imports?
+@import './variables/Animation';
+@import './variables/BrandIcon';
 @import './variables/Color';
+@import './variables/Font';
+@import './variables/Icon';
 @import './variables/Responsive';
-@import './variables/Typography';
 @import './variables/ZIndex';
 
 // Common utilities

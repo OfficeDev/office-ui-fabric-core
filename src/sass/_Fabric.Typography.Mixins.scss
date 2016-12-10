@@ -5,9 +5,6 @@
 // --------------------------------------------------
 // Fabric Core Typography mixins
 
-// Variables
-@import './variables/Typography';
-
 @mixin ms-baseFont {
   font-family: $ms-font-family-base;
   -webkit-font-smoothing: antialiased;

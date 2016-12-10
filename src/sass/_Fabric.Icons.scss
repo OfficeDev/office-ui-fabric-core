@@ -5,7 +5,10 @@
 // --------------------------------------------------
 // Icon mixin definitions
 
+// Variables
+// @todo: Why are these necessary? Variables should already be available
 @import './variables/Icon';
+@import './variables/ZIndex';
 
 // Base icon definition
 @mixin ms-Icon {

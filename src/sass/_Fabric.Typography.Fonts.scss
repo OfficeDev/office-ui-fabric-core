@@ -5,6 +5,10 @@
 // --------------------------------------------------
 // Font definitions
 
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+
 // Mixins to generate @font-face rules for unique languages.
 @mixin SegoeUILight($ms-font-language, $ms-font-path) {
   @font-face {

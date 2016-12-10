@@ -5,6 +5,7 @@
 // --------------------------------------------------
 // Icon mixin definitions
 
+@import './variables/Icon';
 
 // Base icon definition
 @mixin ms-Icon {
@@ -55,12 +56,6 @@
     z-index: $ms-zIndex-back;
   }
 }
-
-// Variables: Icon sizes
-$ms-icon-size-xs: 10px;
-$ms-icon-size-s: 12px;
-$ms-icon-size-m: 16px;
-$ms-icon-size-l: 20px;
 
 // Modifiers: Icon sizes
 @mixin ms-Icon--xs { font-size: $ms-icon-size-xs; }

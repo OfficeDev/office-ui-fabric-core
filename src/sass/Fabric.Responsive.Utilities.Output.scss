@@ -5,8 +5,8 @@
 // --------------------------------------------------
 // Responsive utilities based on defined variables, component visibility,
 // and size for different displays.
-@import './Fabric.Responsive.Variables';
-@import './Fabric.Responsive.Utilities.Variables';
+@import './variables/Responsive';
+@import './Fabric.Responsive.Utilities';
 
 //== Responsive visiblity classes
 //

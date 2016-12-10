@@ -5,18 +5,21 @@
 // --------------------------------------------------
 // Fabric Core Module Loader (RTL)
 
+// Variables
+@import './variables/Color';
+@import './variables/Responsive';
+@import './variables/Typography';
+@import './variables/ZIndex';
+
 // Common utilities
 @import './Fabric.Utilities.Output';
-@import './Fabric.ZIndex.Variables';
 @import './Fabric.Mixins';
 @import './Fabric.Mixins.RTL';
 
 // Colors
-@import './Fabric.Color.Variables';
 @import './Fabric.Color.Mixins.Output';
 
 // Typography
-@import './Fabric.Typography.Variables';
 @import './Fabric.Typography.Fonts.Output';
 @import './Fabric.Typography.Output';
 @import './Fabric.Typography.Language.Overrides.Output';
@@ -29,7 +32,6 @@
 @import './Fabric.Animations.RTL.Output';
 
 // Responsive
-@import './Fabric.Responsive.Variables';
 @import './Fabric.Responsive.Utilities.Output';
 
 // Grid

@@ -1,12 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-//
-// Office UI Fabric
-// --------------------------------------------------
-// Z-Index Layeringz
-
-
-// Base Layer Variables
+// Large ranges
 $ms-zIndex-0: 0 !default;
 $ms-zIndex-1: 100 !default;
 $ms-zIndex-2: 200 !default;
@@ -14,14 +8,13 @@ $ms-zIndex-3: 300 !default;
 $ms-zIndex-4: 400 !default;
 $ms-zIndex-5: 500 !default;
 
-// Base Layer Modifier Variables
+// Small ranges
 $ms-zIndex-back:   0 !default;
 $ms-zIndex-middle: 5 !default;
 $ms-zIndex-front:  10 !default;
 
-
-// Fabric Component Base Layer Assignments
-
+// Standard component indexes
+// @todo: Don't think these should be in Fabric Core.
 $ms-zIndex-Callout:        $ms-zIndex-1 !default;
 $ms-zIndex-ContextualMenu: $ms-zIndex-1 !default;
 $ms-zIndex-Overlay:        $ms-zIndex-2 !default;

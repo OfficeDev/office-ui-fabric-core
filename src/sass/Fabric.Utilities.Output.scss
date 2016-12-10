@@ -32,15 +32,15 @@
 
 // Use to hide content while still making it readable by screen reader (Accessibility)
 .ms-u-screenReaderOnly {
-  @include ms-u-screenReaderOnly
+  @include ms-u-screenReaderOnly;
 }
 
 // Use to add truncation with ellipsis
 .ms-u-textTruncate {
-  @include ms-u-textTruncate
+  @include ms-u-textTruncate;
 }
 
 // Use to disable text wrapping
 .ms-u-noWrap{
-  @include ms-u-noWrap
+  @include ms-u-noWrap;
 }

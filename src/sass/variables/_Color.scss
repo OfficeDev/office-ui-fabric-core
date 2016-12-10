@@ -1,13 +1,8 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-//
-// Office UI Fabric
-// --------------------------------------------------
-// Fabric Core Color Variables
+// @todo: Rationalize the variable names here? We have ms-color-themeDarker and then ms-font-size-m. Should it be ms-color-theme-darker?
 
-
-//== Theme Colors
-//
+// Theme
 $ms-color-themeDarker:     #004578 !default;
 $ms-color-themeDark:       #005a9e !default;
 $ms-color-themeDarkAlt:    #106ebe !default;
@@ -18,9 +13,7 @@ $ms-color-themeLight:      #b3d6f2 !default;
 $ms-color-themeLighter:    #deecf9 !default;
 $ms-color-themeLighterAlt: #eff6fc !default;
 
-
-//== Grayscale Colors
-//
+// Neutral
 $ms-color-black:                 #000000 !default;
 $ms-color-neutralDark:           #212121 !default;
 $ms-color-neutralPrimary:        #333333 !default;
@@ -36,14 +29,12 @@ $ms-color-neutralLighter:        #f4f4f4 !default;
 $ms-color-neutralLighterAlt:     #f8f8f8 !default;
 $ms-color-white:                 #ffffff !default;
 
-//== Translucent Colors
-//
+// Translucent
+// @todo: Where are these used? I don't think we've ever documented them.
 $ms-color-blackTranslucent40:  rgba(0,0,0,.4) !default;
 $ms-color-whiteTranslucent40:  rgba(255,255,255,.4) !default;
 
-
-//== Core brand and accent colors
-//
+// Accent
 $ms-color-yellow:        #ffb900 !default;
 $ms-color-yellowLight:   #fff100 !default;
 $ms-color-orange:        #d83b01 !default;
@@ -68,9 +59,7 @@ $ms-color-greenDark:     #004b1c !default;
 $ms-color-green:         #107c10 !default;
 $ms-color-greenLight:    #bad80a !default;
 
-
-//== Message colors
-//
+// Message
 $ms-color-info:              $ms-color-neutralSecondaryAlt !default;
 $ms-color-infoBackground:    $ms-color-neutralLighter !default;
 $ms-color-success:           $ms-color-green !default;
@@ -84,9 +73,7 @@ $ms-color-warningBackground: #fff4ce !default;
 $ms-color-error:             $ms-color-redDark !default;
 $ms-color-errorBackground:   #fde7e9 !default;
 
-
-//== High contrast colors
-//
+// High contrast colors
 $ms-color-contrastBlackDisabled: #00ff00 !default;
 $ms-color-contrastWhiteDisabled: #600000 !default;
 $ms-color-contrastBlackSelected: #1AEBFF !default;

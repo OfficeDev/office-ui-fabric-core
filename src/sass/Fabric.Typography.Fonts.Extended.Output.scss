@@ -6,7 +6,7 @@
 
 // Additional @font-face rules for the Leelawadee font.
 @font-face {
-  font-family: "Leelawadee UI";
+  font-family: 'Leelawadee UI';
   src: local('Leelawadee UI Bold'), 
        url('#{$ms-font-directory}/leelawadeeui-thai/leelawadeeui-bold.woff2') format('woff2'),
        url('#{$ms-font-directory}/leelawadeeui-thai/leelawadeeui-bold.woff') format('woff'),
@@ -16,7 +16,7 @@
 }
 
 @font-face {
-  font-family: "Leelawadee UI";
+  font-family: 'Leelawadee UI';
   src: local('Leelawadee UI Regular'),
        url('#{$ms-font-directory}/leelawadeeui-thai/leelawadeeui-regular.woff2') format('woff2'),
        url('#{$ms-font-directory}/leelawadeeui-thai/leelawadeeui-regular.woff') format('woff'),
@@ -26,7 +26,7 @@
 }
 
 @font-face {
-  font-family: "Leelawadee UI";
+  font-family: 'Leelawadee UI';
   src: local('Leelawadee UI Semilight'),
        url('#{$ms-font-directory}/leelawadeeui-thai/leelawadeeui-semilight.woff2') format('woff2'),
        url('#{$ms-font-directory}/leelawadeeui-thai/leelawadeeui-semilight.woff') format('woff'),

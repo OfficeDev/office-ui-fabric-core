@@ -5,7 +5,7 @@
 // --------------------------------------------------
 // Utility classes and mixins used throughout Fabric.
 
-@import "Fabric.Mixins";
+@import 'Fabric.Mixins';
 
 // The best box is a border box.
 @mixin ms-u-borderBox {
@@ -23,7 +23,7 @@
   &::before,
   &::after {
     display: table;
-    content: "";
+    content: '';
     line-height: 0;
   }
   &::after {

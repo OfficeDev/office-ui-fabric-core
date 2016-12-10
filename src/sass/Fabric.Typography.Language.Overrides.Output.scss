@@ -5,7 +5,7 @@
 // --------------------------------------------------
 // Language override definitions using ISO 639-3 language codes
 
-@import "./Fabric.Typography.Language.Overrides";
+@import './Fabric.Typography.Language.Overrides';
 
 // Generate the override classes for non-distributed fonts.
 @include language-override-system-fonts(jpn, $ms-font-stack-japanese);

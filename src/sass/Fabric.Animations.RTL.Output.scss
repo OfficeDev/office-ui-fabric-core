@@ -5,9 +5,12 @@
 // --------------------------------------------------
 // RTL overrides for Fabric Animations
 
+// Mixins
+@import './mixins/Animation.Keyframes';
+@import './Fabric.Animations.RTL';
 
-@import 'Fabric.Animations.Output';
-@import 'Fabric.Animations.RTL';
+// Output all @keyframes needed for the animations
+@include ms-animation-keyframes;
 
 // slideRightIn10
 .ms-u-slideRightIn10 {

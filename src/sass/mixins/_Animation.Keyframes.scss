@@ -1,5 +1,8 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+// Variables
+@import './variables/Animation';
+
 // Outputs the @keyframes used by the animation classes
 // @todo: Have this output only the @keyframes needed by a subset of animations?
 @mixin ms-animation-keyframes {
@@ -124,12 +127,18 @@
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; animation-timing-function: $ms-ease2; }
+    from {
+      opacity: 0;
+      animation-timing-function: $ms-ease2;
+    }
     to { opacity: 1; }
   }
 
   @keyframes fadeOut {
-    from { opacity: 1; animation-timing-function: $ms-ease2; }
+    from {
+      opacity: 1;
+      animation-timing-function: $ms-ease2;
+    }
     to { opacity: 0; }
   }
 

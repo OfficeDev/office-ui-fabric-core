@@ -280,3 +280,36 @@
     -webkit-align-items: $ms-mode;
     align-items: $ms-mode;
 }
+
+@mixin focusBorder($padding: 0, $color: $ms-color-neutralSecondary) {
+  // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
+  outline: transparent;
+
+  // Requirement because pseudo-element is absolutely positioned.
+  position: relative;
+
+  // Clear the focus border in Firefox.
+  // Reference: http://stackoverflow.com/a/199319/1436671
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  // When the element that uses this mixin is in a :focus state, add a pseudo-element to
+  // create a border. Only do this when it's a child of ms-Fabric in a focusVisible state.
+  .ms-Fabric.is-focusVisible &:focus::after {
+    // Wrap the parent element with $padding.
+    content: '';
+    position: absolute;
+    top: $padding;
+    right: $padding;
+    bottom: $padding;
+    left: $padding;
+
+    // Add focus border of specified $color.
+    border: 1px solid $color;
+
+    // Make the content not respond to mouse/touch events.
+    // Reference: https://css-tricks.com/almanac/properties/p/pointer-events/
+    pointer-events: none;
+  }
+}

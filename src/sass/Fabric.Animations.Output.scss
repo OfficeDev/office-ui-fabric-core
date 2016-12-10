@@ -9,220 +9,130 @@
 
 @import 'Fabric.Animations';
 
+// Mixins
+@import './mixins/Animation.Keyframes';
+
+// Output all @keyframes needed for the animations
+@include ms-animation-keyframes;
+
 // slideRightIn10
 .ms-u-slideRightIn10 {
     @include ms-u-slideRightIn10;
-}
-@keyframes slideRightIn10 {
-    from { transform:translate3d(-10px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
 }
 
 // slideRightIn20
 .ms-u-slideRightIn20 {
     @include ms-u-slideRightIn20;
 }
-@keyframes slideRightIn20 {
-    from { transform:translate3d(-20px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-}
 
 // slideRightIn40
 .ms-u-slideRightIn40 {
     @include ms-u-slideRightIn40;
-}
-@keyframes slideRightIn40 {
-    from { transform:translate3d(-40px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
 }
 
 // slideLeftIn10
 .ms-u-slideLeftIn10 {
     @include ms-u-slideLeftIn10;
 }
-@keyframes slideLeftIn10 {
-    from { transform:translate3d(10px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-}
 
 // slideLeftIn20
 .ms-u-slideLeftIn20 {
     @include ms-u-slideLeftIn20;
-}
-@keyframes slideLeftIn20 {
-    from { transform:translate3d(20px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
 }
 
 // slideLeftIn40
 .ms-u-slideLeftIn40 {
     @include ms-u-slideLeftIn40;
 }
-@keyframes slideLeftIn40 {
-    from { transform:translate3d(40px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-}
 
 // slideRightIn400
 .ms-u-slideRightIn400 {
     @include ms-u-slideRightIn400;
-}
-@keyframes slideRightIn400 {
-    from { transform:translate3d(-400px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
 }
 
 // slideLeftIn400
 .ms-u-slideLeftIn400 {
     @include ms-u-slideLeftIn400;
 }
-@keyframes slideLeft400 {
-    from { transform:translate3d(400px, 0px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-}
 
 // slideUpIn20
 .ms-u-slideUpIn20 {
     @include ms-u-slideUpIn20;
-}
-@keyframes slideUpIn20 {
-    from { transform:translate3d(0px, 20px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
 }
 
 // slideUpIn10
 .ms-u-slideUpIn10 {
     @include ms-u-slideUpIn10;
 }
-@keyframes slideUpIn10 {
-    from { transform:translate3d(0px, 10px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-}
 
 // slideDownIn20
 .ms-u-slideDownIn20 {
     @include ms-u-slideDownIn20;
-}
-@keyframes slideDownIn20 {
-    from { transform:translate3d(0px, -20px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
 }
 
 // slideDownIn10
 .ms-u-slideDownIn10 {
     @include ms-u-slideDownIn10;
 }
-@keyframes slideDownIn10 {
-    from { transform:translate3d(0px, -10px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-}
 
 // slideRightOut40
 .ms-u-slideRightOut40 {
     @include ms-u-slideRightOut40;
-}
-@keyframes slideRightOut40 {
-    from { transform:translate3d(0px, 0px, 0px); }
-    to { transform:translate3d(40px, 0px, 0px); }
 }
 
 // slideLeftOut40
 .ms-u-slideLeftOut40 {
     @include ms-u-slideLeftOut40;
 }
-@keyframes slideLeftOut40 {
-    from { transform:translate3d(0, 0px, 0px); }
-    to { transform:translate3d(-40px, 0px, 0px); }
-}
 
 // slideRightOut400
 .ms-u-slideRightOut400 {
     @include ms-u-slideRightOut400;
-}
-@keyframes slideRightOut400 {
-    from { transform:translate3d(0, 0px, 0px); }
-    to { transform:translate3d(400px, 0px, 0px); }
 }
 
 // slideLeftOut400
 .ms-u-slideLeftOut400 {
     @include ms-u-slideLeftOut400;
 }
-@keyframes slideLeftOut400 {
-    from { transform:translate3d(0, 0px, 0px); }
-    to { transform:translate3d(-400px, 0px, 0px); }
-}
 
 // slideUpOut20
 .ms-u-slideUpOut20 {
     @include ms-u-slideUpOut20;
-}
-@keyframes slideUpOut20 {
-    from { transform:translate3d(0px, 0, 0px); }
-    to { transform:translate3d(0px, -20px, 0px); }
 }
 
 // slideUpOut10
 .ms-u-slideUpOut10 {
     @include ms-u-slideUpOut10;
 }
-@keyframes slideUpOut10 {
-    from { transform:translate3d(0px, 0, 0px); }
-    to { transform:translate3d(0px, -10px, 0px); }
-}
 
 // slideDownOut20
 .ms-u-slideDownOut20 {
     @include ms-u-slideDownOut20;
-}
-@keyframes slideDownOut20 {
-    from { transform:translate3d(0px, 0, 0px); }
-    to { transform:translate3d(0px, 20px, 0px); }
 }
 
 // slideDownOut10
 .ms-u-slideDownOut10 {
     @include ms-u-slideDownOut10;
 }
-@keyframes slideDownOut10 {
-    from { transform:translate3d(0px, 0, 0px); }
-    to { transform:translate3d(0px, 10px, 0px); }
-}
 
 // scaleUpIn100
 .ms-u-scaleUpIn100 {
     @include ms-u-scaleUpIn100;
-}
-@keyframes scaleUp100 {
-    from { transform:scale3d(.98, .98, 1); }
-    to { transform:scale3d(1, 1, 1); }
 }
 
 // scaleDownIn100
 .ms-u-scaleDownIn100 {
     @include ms-u-scaleDownIn100;
 }
-@keyframes scaleDown100 {
-    from { transform:scale3d(1.03, 1.03, 1); }
-    to { transform:scale3d(1, 1, 1); }
-}
 
 // scaleUpOut103
 .ms-u-scaleUpOut103 {
     @include ms-u-scaleUpOut103;
 }
-@keyframes scaleUp103 {
-    from { transform:scale3d(1, 1, 1); }
-    to { transform:scale3d(1.03, 1.03, 1); }
-}
 
 // scaleDownOut98
 .ms-u-scaleDownOut98 {
     @include ms-u-scaleDownOut98;
-}
-@keyframes scaleDown98 {
-    from { transform:scale3d(1, 1, 1); }
-    to { transform:scale3d(0.98, 0.98, 1); }
 }
 
 // fadeIn
@@ -238,10 +148,6 @@
 .ms-u-fadeIn500 {
     @include ms-u-fadeIn500;
 }
-@keyframes fadeIn {
-    from { opacity: 0; animation-timing-function: $ms-ease2; }
-    to { opacity: 1; }
-}
 
 // fadeOut
 .ms-u-fadeOut400 {
@@ -256,27 +162,15 @@
 .ms-u-fadeOut500 {
     @include ms-u-fadeOut500;
 }
-@keyframes fadeOut {
-    from { opacity: 1; animation-timing-function: $ms-ease2; }
-    to { opacity: 0; }
-}
 
 // rotate90deg
 .ms-u-rotate90deg {
     @include ms-u-rotate90deg;
 }
-@keyframes rotate90 {
-    from { transform:rotateZ(0deg); }
-    to { transform:rotateZ(90deg); }
-}
 
 // rotateN90deg
 .ms-u-rotateN90deg {
     @include ms-u-rotateN90deg;
-}
-@keyframes rotateN90 {
-    from { transform:rotateZ(90deg); }
-    to { transform:rotateZ(0deg); }
 }
 
 // expandCollapse400

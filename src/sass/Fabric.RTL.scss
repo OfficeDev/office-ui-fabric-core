@@ -15,22 +15,27 @@
 @import './variables/Responsive';
 @import './variables/ZIndex';
 
-// Common utilities
-@import './Fabric.Utilities.Output';
+// Mixins
 @import './Fabric.Mixins';
 @import './Fabric.Mixins.RTL';
+
+// Common utilities
+@import './Fabric.Utilities.Output';
 
 // Colors
 @import './Fabric.Color.Mixins.Output';
 
 // Typography
-@import './Fabric.Typography.Fonts.Output';
 @import './Fabric.Typography.Output';
-@import './Fabric.Typography.Language.Overrides.Output';
+@import './Fabric.Typography.Fonts.Output';
 
 // Icons
 @import './Fabric.Icons.Font.Output';
+@import './Fabric.Icons.Output';
 @import './Fabric.Icons.RTL.Output';
+
+// Brand Icons
+@import './Fabric.Brand.Icons.Output';
 
 // Animations
 @import './Fabric.Animations.RTL.Output';

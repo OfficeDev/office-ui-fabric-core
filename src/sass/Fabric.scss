@@ -1,24 +1,31 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 //
-// Office UI Fabric
-// Core Module Loader
+// OSS Framework Design Language
+// --------------------------------------------------
+// Fabric Core Module Loader (LTR)
 
 // Variables
+// @todo: Just import _Fabric.Common here instead of duplicating the imports?
+@import './variables/Animation';
+@import './variables/BrandIcon';
 @import './variables/Color';
-@import './variables/Responsive';
 @import './variables/Font';
+@import './variables/Icon';
+@import './variables/Responsive';
+@import './variables/ZIndex';
+
+// Mixins
+@import './Fabric.Mixins';
+@import './Fabric.Mixins.RTL';
 
 // Common utilities
 @import './Fabric.Utilities.Output';
-@import './Fabric.Mixins';
-@import './Fabric.Mixins.RTL';
 
 // Colors
 @import './Fabric.Color.Mixins.Output';
 
 // Typography
-@import './Fabric.Typography.Mixins';
 @import './Fabric.Typography.Output';
 @import './Fabric.Typography.Fonts.Output';
 
@@ -33,7 +40,6 @@
 @import './Fabric.Animations.Output';
 
 // Responsive
-@import './Fabric.Responsive.Utilities';
 @import './Fabric.Responsive.Utilities.Output';
 
 // Grid

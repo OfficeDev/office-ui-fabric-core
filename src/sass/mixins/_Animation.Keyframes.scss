@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// A mixin that outputs they @keyframes needed for all animations.
+// Outputs the @keyframes used by the animation classes
 // @todo: Have this output only the @keyframes needed by a subset of animations?
 @mixin ms-animation-keyframes {
   @keyframes slideRightIn10 {
@@ -18,6 +18,21 @@
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
+  @keyframes slideRightIn400 {
+    from { transform:translate3d(-400px, 0px, 0px); }
+    to { transform:translate3d(0px, 0px, 0px); }
+  }
+
+  @keyframes slideRightOut40 {
+    from { transform:translate3d(0px, 0px, 0px); }
+    to { transform:translate3d(40px, 0px, 0px); }
+  }
+
+  @keyframes slideRightOut400 {
+    from { transform:translate3d(0, 0px, 0px); }
+    to { transform:translate3d(400px, 0px, 0px); }
+  }
+
   @keyframes slideLeftIn10 {
     from { transform:translate3d(10px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
@@ -33,13 +48,23 @@
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideRightIn400 {
-    from { transform:translate3d(-400px, 0px, 0px); }
+  @keyframes slideLeftIn400 {
+    from { transform:translate3d(400px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideLeft400 {
-    from { transform:translate3d(400px, 0px, 0px); }
+  @keyframes slideLeftOut40 {
+    from { transform:translate3d(0, 0px, 0px); }
+    to { transform:translate3d(-40px, 0px, 0px); }
+  }
+
+  @keyframes slideLeftOut400 {
+    from { transform:translate3d(0, 0px, 0px); }
+    to { transform:translate3d(-400px, 0px, 0px); }
+  }
+
+  @keyframes slideUpIn10 {
+    from { transform:translate3d(0px, 10px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
@@ -48,8 +73,8 @@
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideUpIn10 {
-    from { transform:translate3d(0px, 10px, 0px); }
+  @keyframes slideDownIn10 {
+    from { transform:translate3d(0px, -10px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
@@ -58,29 +83,9 @@
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideDownIn10 {
-    from { transform:translate3d(0px, -10px, 0px); }
-    to { transform:translate3d(0px, 0px, 0px); }
-  }
-
-  @keyframes slideRightOut40 {
-    from { transform:translate3d(0px, 0px, 0px); }
-    to { transform:translate3d(40px, 0px, 0px); }
-  }
-
-  @keyframes slideLeftOut40 {
-    from { transform:translate3d(0, 0px, 0px); }
-    to { transform:translate3d(-40px, 0px, 0px); }
-  }
-
-  @keyframes slideRightOut400 {
-    from { transform:translate3d(0, 0px, 0px); }
-    to { transform:translate3d(400px, 0px, 0px); }
-  }
-
-  @keyframes slideLeftOut400 {
-    from { transform:translate3d(0, 0px, 0px); }
-    to { transform:translate3d(-400px, 0px, 0px); }
+  @keyframes slideUpOut10 {
+    from { transform:translate3d(0px, 0, 0px); }
+    to { transform:translate3d(0px, -10px, 0px); }
   }
 
   @keyframes slideUpOut20 {
@@ -88,9 +93,9 @@
     to { transform:translate3d(0px, -20px, 0px); }
   }
 
-  @keyframes slideUpOut10 {
+  @keyframes slideDownOut10 {
     from { transform:translate3d(0px, 0, 0px); }
-    to { transform:translate3d(0px, -10px, 0px); }
+    to { transform:translate3d(0px, 10px, 0px); }
   }
 
   @keyframes slideDownOut20 {
@@ -98,18 +103,8 @@
     to { transform:translate3d(0px, 20px, 0px); }
   }
 
-  @keyframes slideDownOut10 {
-    from { transform:translate3d(0px, 0, 0px); }
-    to { transform:translate3d(0px, 10px, 0px); }
-  }
-
   @keyframes scaleUp100 {
     from { transform:scale3d(.98, .98, 1); }
-    to { transform:scale3d(1, 1, 1); }
-  }
-
-  @keyframes scaleDown100 {
-    from { transform:scale3d(1.03, 1.03, 1); }
     to { transform:scale3d(1, 1, 1); }
   }
 
@@ -121,6 +116,11 @@
   @keyframes scaleDown98 {
     from { transform:scale3d(1, 1, 1); }
     to { transform:scale3d(0.98, 0.98, 1); }
+  }
+
+  @keyframes scaleDown100 {
+    from { transform:scale3d(1.03, 1.03, 1); }
+    to { transform:scale3d(1, 1, 1); }
   }
 
   @keyframes fadeIn {

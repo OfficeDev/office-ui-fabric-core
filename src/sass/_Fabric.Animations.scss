@@ -55,7 +55,7 @@
 
 // slideLeftIn400
 @mixin ms-u-slideLeftIn400 {
-    @include animationMix((fadeIn, slideLeft400), $ms-duration3, $ms-ease1);
+    @include animationMix((fadeIn, slideLeftIn400), $ms-duration3, $ms-ease1);
 }
 
 // slideUpIn20

@@ -9,13 +9,15 @@
 
 // Mixins
 @import './mixins/Animation';
+@import './mixins/Color';
 @import './mixins/Directionality';
 @import './mixins/Mixins';
 
+// Default LTR mixins
+@import './mixins/Animation.LTR';
 
 
 // @todo: Go through these.
-@import './Fabric.Color.Mixins';
 @import './Fabric.Grid';
 @import './Fabric.Icons';
 @import './Fabric.Responsive.Utilities';

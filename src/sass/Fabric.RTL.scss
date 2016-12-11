@@ -15,16 +15,18 @@
 @import './variables/ZIndex';
 
 // Mixins, common to both LTR and RTL
-@import './mixins/Mixins';
 @import './mixins/Animation';
 @import './mixins/BrandIcon';
+@import './mixins/Color';
 @import './mixins/Directionality';
+@import './mixins/Mixins';
 
 // RTL-specific mixins
 @import './mixins/Animation.RTL';
 
 // Output
 @import './Animation';
+@import './Color';
 @import './Wrapper';
 
 
@@ -37,9 +39,6 @@
 
 // Common utilities
 @import './Fabric.Utilities.Output';
-
-// Colors
-@import './Fabric.Color.Mixins.Output';
 
 // Typography
 @import './Fabric.Typography.Output';

@@ -21,13 +21,13 @@
 @import './mixins/Grid';
 @import './mixins/Icon';
 @import './mixins/Mixins';
+@import './mixins/Responsive';
 
 // Default LTR mixins
 @import './mixins/Animation.LTR';
 
 
 // @todo: Go through these.
-@import './Fabric.Responsive.Utilities';
 @import './Fabric.Typography';
 @import './Fabric.Typography.Mixins';
 @import './Fabric.Utilities';

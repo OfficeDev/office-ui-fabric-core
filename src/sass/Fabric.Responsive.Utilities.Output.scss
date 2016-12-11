@@ -6,7 +6,7 @@
 // Responsive utilities based on defined variables, component visibility,
 // and size for different displays.
 @import './variables/Responsive';
-@import './Fabric.Responsive.Utilities';
+@import './mixins/Responsive';
 
 //== Responsive visiblity classes
 //

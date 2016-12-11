@@ -30,6 +30,7 @@
 @import './Color';
 @import './BrandIcon';
 @import './Animation';
+@import './Font';
 @import './Grid';
 @import './Icon';
 @import './Responsive';
@@ -47,7 +48,3 @@
 
 // Common utilities
 @import './Fabric.Utilities.Output';
-
-// Typography
-@import './Fabric.Typography.Output';
-@import './Fabric.Typography.Fonts.Output';

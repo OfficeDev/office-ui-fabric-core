@@ -20,18 +20,22 @@
 @import './mixins/Color';
 @import './mixins/Directionality';
 @import './mixins/Grid';
+@import './mixins/Icon';
 @import './mixins/Mixins';
 
-// RTL-specific mixins
+// Mixins, RTL-specific
 @import './mixins/Animation.RTL';
 
-// Partials that output CSS
+// Partials that output CSS, common to both LTR and RTL
 @import './Color';
 @import './BrandIcon';
 @import './Animation';
 @import './Grid';
+@import './Icon';
 @import './Wrapper';
 
+// Partials that output CSS, RTL-specific
+@import './Icon.RTL';
 
 
 
@@ -46,10 +50,6 @@
 // Typography
 @import './Fabric.Typography.Output';
 @import './Fabric.Typography.Fonts.Output';
-
-// Icons
-@import './Fabric.Icons.Font.Output';
-@import './Fabric.Icons.Output';
 
 // Responsive
 @import './Fabric.Responsive.Utilities.Output';

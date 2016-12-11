@@ -3,10 +3,22 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// Icon definitions
+// Icon font-family definition
 
-// @todo: This might not be needed.
-@import './mixins/Icon';
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+
+// Font-face definition for the 'FabricMDL2Icons' icon font
+@font-face {
+  font-family: 'FabricMDL2Icons';
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons.woff2') format('woff2'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons.woff') format('woff'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 // Base icon definition
 .ms-Icon {
@@ -36,9 +48,10 @@
 }
 
 // @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
+.ms-Icon--DynamicsCRMLogo::before { @include ms-Icon--Dynamics365Logo; }
+
 // @todo: 'CarotRightSolid8' class is deprecated, will be removed in a future release
 .ms-Icon--CarotRightSolid8::before { @include ms-Icon--CaretRightSolid8; }
-.ms-Icon--DynamicsCRMLogo::before { @include ms-Icon--Dynamics365Logo; }
 
 
 // Modifiers: Each of the icons

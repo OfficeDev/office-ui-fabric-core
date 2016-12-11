@@ -6,7 +6,6 @@
 // Fabric Core Module Loader (RTL)
 
 // Variables
-// @todo: Just import _Fabric.Common here instead of duplicating the imports?
 @import './variables/Animation';
 @import './variables/BrandIcon';
 @import './variables/Color';
@@ -15,11 +14,14 @@
 @import './variables/Responsive';
 @import './variables/ZIndex';
 
-// Mixins
+// Mixins, common to both LTR and RTL
 @import './mixins/Mixins';
 @import './mixins/Animation';
-@import './mixins/Animation.RTL';
+@import './mixins/BrandIcon';
 @import './mixins/Directionality';
+
+// RTL-specific mixins
+@import './mixins/Animation.RTL';
 
 // Output
 @import './Animation';
@@ -46,12 +48,6 @@
 // Icons
 @import './Fabric.Icons.Font.Output';
 @import './Fabric.Icons.Output';
-
-// Brand Icons
-@import './Fabric.Brand.Icons.Output';
-
-// Animations
-
 
 // Responsive
 @import './Fabric.Responsive.Utilities.Output';

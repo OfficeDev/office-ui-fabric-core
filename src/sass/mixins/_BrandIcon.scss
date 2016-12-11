@@ -1,7 +1,9 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 // Variables
-@import './variables/BrandIcon';
+@import '../variables/BrandIcon';
+
+// @todo: Prefix all mixins with "ms-"
 
 //  Generate Icon Classes for product and document icons
 @mixin brandIconClasses($retina) {

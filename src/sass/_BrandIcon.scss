@@ -1,19 +1,19 @@
-@import './Fabric.Brand.Icons';
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 @include brandIconClasses(1);
 @include brandIconSizesClasses();
 
 // Pixel Ratio 1.5
 @media only screen and (min-resolution: 144dpi) {
-    @include brandIconClasses(1_5);
+  @include brandIconClasses(1_5);
 }
 
 // Pixel Ratio 2
 @media only screen and (min-resolution: 192dpi)  {
-    @include brandIconClasses(2);
+  @include brandIconClasses(2);
 }
 
 // Pixel Ratio 3
 @media only screen and (min-resolution: 288dpi) {
-    @include brandIconClasses(3);
+  @include brandIconClasses(3);
 }

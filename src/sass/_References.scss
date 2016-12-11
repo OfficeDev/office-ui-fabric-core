@@ -19,6 +19,7 @@
 @import './mixins/Color';
 @import './mixins/Directionality';
 @import './mixins/Grid';
+@import './mixins/Icon';
 @import './mixins/Mixins';
 
 // Default LTR mixins
@@ -26,7 +27,6 @@
 
 
 // @todo: Go through these.
-@import './Fabric.Icons';
 @import './Fabric.Responsive.Utilities';
 @import './Fabric.Typography';
 @import './Fabric.Typography.Mixins';

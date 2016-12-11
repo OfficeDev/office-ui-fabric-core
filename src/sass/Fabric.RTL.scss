@@ -26,8 +26,9 @@
 @import './mixins/Animation.RTL';
 
 // Partials that output CSS
-@import './Animation';
 @import './Color';
+@import './BrandIcon';
+@import './Animation';
 @import './Grid';
 @import './Wrapper';
 

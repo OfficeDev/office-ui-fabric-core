@@ -5,10 +5,6 @@
 // --------------------------------------------------
 // Wrapper component to set base typography.
 
-@import 'Fabric.Base';
-
-//== Wrapper/base component
-//
 .ms-Fabric {
   @include ms-Fabric;
 }

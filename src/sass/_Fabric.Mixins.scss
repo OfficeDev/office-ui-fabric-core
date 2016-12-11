@@ -5,6 +5,9 @@
 // --------------------------------------------------
 // Vendor-prefixed mixins
 
+// @todo: May be able to remove this later.
+@import './Fabric.Typography';
+
 
 // Border radius.
 @mixin border-radius($ms-radius: 5px) {
@@ -247,4 +250,9 @@
     -ms-flex-align: $ms-mode;
     -webkit-align-items: $ms-mode;
     align-items: $ms-mode;
+}
+
+// Base/wrapper component
+@mixin ms-Fabric {
+  @include ms-fontColor-neutralPrimary;
 }

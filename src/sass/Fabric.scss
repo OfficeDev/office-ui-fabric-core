@@ -5,24 +5,8 @@
 // --------------------------------------------------
 // Fabric Core Module Loader (LTR)
 
-// Variables
-@import './variables/Animation';
-@import './variables/BrandIcon';
-@import './variables/Color';
-@import './variables/Font';
-@import './variables/Icon';
-@import './variables/Responsive';
-@import './variables/ZIndex';
-
-// Mixins
-@import './mixins/Animation';
-@import './mixins/BrandIcon';
-@import './mixins/Color';
-@import './mixins/Directionality';
-@import './mixins/Grid';
-@import './mixins/Icon';
-@import './mixins/Mixins';
-@import './mixins/Utility';
+// Variables and mixins
+@import './References';
 
 // Partials that output CSS
 @import './Animation';

@@ -28,15 +28,15 @@
 @import './mixins/Animation.RTL';
 
 // Partials that output CSS, common to both LTR and RTL
-@import './Color';
-@import './BrandIcon';
 @import './Animation';
+@import './BrandIcon';
+@import './Color';
 @import './Font';
 @import './Grid';
 @import './Icon';
 @import './Responsive';
-@import './Wrapper';
 @import './Utility';
+@import './Wrapper';
 
 // Partials that output CSS, RTL-specific
 @import './Icon.RTL';

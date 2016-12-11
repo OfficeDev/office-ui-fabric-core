@@ -16,8 +16,21 @@
 @import './variables/ZIndex';
 
 // Mixins
+@import './mixins/Animation';
+@import './mixins/Animation.RTL';
 @import './Fabric.Mixins';
 @import './Fabric.Mixins.RTL';
+
+// Output
+@import './Animation';
+
+
+
+
+
+
+
+
 
 // Common utilities
 @import './Fabric.Utilities.Output';
@@ -36,9 +49,6 @@
 
 // Brand Icons
 @import './Fabric.Brand.Icons.Output';
-
-// Animations
-@import './Fabric.Animations.RTL.Output';
 
 // Responsive
 @import './Fabric.Responsive.Utilities.Output';

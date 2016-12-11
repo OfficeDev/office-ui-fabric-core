@@ -337,9 +337,9 @@
 
 // Delay
 @mixin ms-u-delay100 {
-  animation-delay: $ms-duration1;
+  animation-delay: 0.1s;
 }
 
 @mixin ms-u-delay200 {
-  animation-delay: $ms-duration2;
+  animation-delay: 0.2s;
 }

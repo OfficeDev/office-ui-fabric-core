@@ -14,7 +14,7 @@
 @import './variables/Responsive';
 @import './variables/ZIndex';
 
-// Mixins, common to both LTR and RTL
+// Mixins
 @import './mixins/Animation';
 @import './mixins/BrandIcon';
 @import './mixins/Color';
@@ -24,10 +24,7 @@
 @import './mixins/Mixins';
 @import './mixins/Utility';
 
-// Mixins, LTR-specific
-@import './mixins/Animation.LTR';
-
-// Partials that output CSS, common to both LTR and RTL
+// Partials that output CSS
 @import './Animation';
 @import './BrandIcon';
 @import './Color';
@@ -37,5 +34,3 @@
 @import './Responsive';
 @import './Utility';
 @import './Wrapper';
-
-// Partials that output CSS, LTR-specific

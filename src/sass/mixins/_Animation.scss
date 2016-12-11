@@ -168,6 +168,54 @@
 }
 
 // Slide
+@mixin ms-u-slideRightIn10 {
+  @include ms-animation((fadeIn, slideRightIn10), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideRightIn20 {
+  @include ms-animation((fadeIn, slideRightIn20), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideRightIn40 {
+  @include ms-animation((fadeIn, slideRightIn40), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideRightIn400 {
+  @include ms-animation((fadeIn, slideRightIn400), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideRightOut40 {
+  @include ms-animation((fadeOut, slideRightOut40), $ms-duration1, $ms-ease2);
+}
+
+@mixin ms-u-slideRightOut400 {
+  @include ms-animation((fadeOut, slideRightOut400), $ms-duration1, $ms-ease2);
+}
+
+@mixin ms-u-slideLeftIn10 {
+  @include ms-animation((fadeIn, slideLeftIn10), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideLeftIn20 {
+  @include ms-animation((fadeIn, slideLeftIn20), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideLeftIn40 {
+  @include ms-animation((fadeIn, slideLeftIn40), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideLeftIn400 {
+  @include ms-animation((fadeIn, slideLeftIn400), $ms-duration3, $ms-ease1);
+}
+
+@mixin ms-u-slideLeftOut40 {
+  @include ms-animation((fadeOut, slideLeftOut40), $ms-duration1, $ms-ease2);
+}
+
+@mixin ms-u-slideLeftOut400 {
+  @include ms-animation((fadeOut, slideLeftOut400), $ms-duration1, $ms-ease2);
+}
+
 @mixin ms-u-slideUpIn10 {
   @include ms-animation((fadeIn, slideUpIn10), $ms-duration1, $ms-ease2);
 }
@@ -216,6 +264,16 @@
 @mixin ms-u-scaleDownIn100 {
   @include ms-animation((fadeIn, scaleDown100), $ms-duration3, $ms-ease1);
 }
+
+// Rotate
+@mixin ms-u-rotate90deg {
+  @include ms-animation(rotate90, $ms-duration1, $ms-ease2);
+}
+
+@mixin ms-u-rotateN90deg {
+  @include ms-animation(rotateN90, $ms-duration1, $ms-ease2);
+}
+
 
 // Fade
 @mixin ms-u-fadeIn100 {

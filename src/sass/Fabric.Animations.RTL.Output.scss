@@ -6,8 +6,7 @@
 // RTL overrides for Fabric Animations
 
 // Mixins
-@import './mixins/Animation.Keyframes';
-@import './Fabric.Animations.RTL';
+@import './mixins/Animation';
 
 // Output all @keyframes needed for the animations
 @include ms-animation-keyframes;

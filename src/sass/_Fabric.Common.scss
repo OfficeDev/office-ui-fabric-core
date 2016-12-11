@@ -8,9 +8,11 @@
 @import './variables/ZIndex';
 
 // Mixins
+@import './mixins/Animation';
 
-// Previous
-@import './Fabric.Animations';
+
+
+// @todo: Go through these.
 @import './Fabric.Color.Mixins';
 @import './Fabric.Grid';
 @import './Fabric.Icons';

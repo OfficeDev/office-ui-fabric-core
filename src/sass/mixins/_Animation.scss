@@ -9,8 +9,6 @@
 @import '../variables/Animation';
 
 // Outputs the @keyframes used by the animation classes
-// @todo: Have this output only the @keyframes needed by a subset of animations?
-// @todo: Prefix animation names with "ms-" to prevent conflicts?
 @mixin ms-animation-keyframes {
   @keyframes slideRightIn10 {
     from { transform:translate3d(-10px, 0px, 0px); }
@@ -342,7 +340,6 @@
   animation-delay: $ms-duration1;
 }
 
-// delay200
 @mixin ms-u-delay200 {
   animation-delay: $ms-duration2;
 }

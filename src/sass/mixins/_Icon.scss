@@ -5,11 +5,6 @@
 // --------------------------------------------------
 // Icon mixin definitions
 
-// Variables
-// @todo: Why are these necessary? Variables should already be available
-@import '../variables/Icon';
-@import '../variables/ZIndex';
-
 // Base icon definition
 @mixin ms-Icon {
   -moz-osx-font-smoothing: grayscale;
@@ -20,7 +15,6 @@
   font-weight: normal;
   speak: none;
 }
-
 
 // Modifier: Place the icon in a circle.
 @mixin ms-Icon--circle {

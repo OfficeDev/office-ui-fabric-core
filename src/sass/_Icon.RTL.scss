@@ -1,9 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// @todo: Make sure this file is included IN ADDITION to Icon.scss for the RTL stylesheet
-
 // Substitute icons for right-to-left users
-
 .ms-Icon--ArrowDownRightMirrored8::before { @include ms-Icon--ArrowDownRight8; }
 .ms-Icon--ArrowDownRight8::before { @include ms-Icon--ArrowDownRightMirrored8; }
 

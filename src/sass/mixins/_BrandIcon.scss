@@ -3,18 +3,14 @@
 // Variables
 @import '../variables/BrandIcon';
 
-// @todo: Prefix all mixins with "ms-"
-
-//  Generate Icon Classes for product and document icons
+// Generate classes for product and document icons
 @mixin brandIconClasses($retina) {
-	// Generate Product icon list
 	@each $icon in $ms-productIcons {
 		.ms-BrandIcon--#{$icon} {
 			@include brandIconSizes($icon, $retina, $ms-productImagesPath);
 		}
 	}
 
-	// Generate Document icon list
 	@each $icon in $ms-documentIcons {
 		.ms-BrandIcon--#{$icon} {
 			@include brandIconSizes($icon, $retina, $ms-documentImagesPath);

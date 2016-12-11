@@ -5,8 +5,6 @@
 // --------------------------------------------------
 // Directionality mixins to generate LTR and RTL-specific styles
 
-// @todo: Prefix all mixins with "ms-"
-
 // Base left-to-right mixin definition.
 @mixin LTR {
   [dir='ltr'] & {

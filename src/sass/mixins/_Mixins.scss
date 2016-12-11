@@ -5,10 +5,6 @@
 // --------------------------------------------------
 // Vendor-prefixed mixins
 
-// Mixins
-// @todo: Can this be removed?
-@import './Font';
-
 // Border radius.
 @mixin border-radius($ms-radius: 5px) {
   border-radius: $ms-radius;

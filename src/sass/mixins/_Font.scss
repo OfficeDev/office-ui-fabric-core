@@ -9,8 +9,6 @@
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
 */
 
-// @todo: Organize this file and prefix all mixins with "ms-"
-
 // Mixins to generate @font-face rules for unique languages.
 @mixin SegoeUILight($ms-font-language, $ms-font-path) {
   @font-face {
@@ -506,7 +504,7 @@
   color: $ms-color-success;
 }
 
-@mixin ms-fontColor-alert { // Deprecated: Use ms-fontColor-severeWarning
+@mixin ms-fontColor-alert { // @todo: Deprecated: Use ms-fontColor-severeWarning
   color: $ms-color-alert;
 }
 

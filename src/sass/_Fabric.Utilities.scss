@@ -5,8 +5,6 @@
 // --------------------------------------------------
 // Utility classes and mixins used throughout Fabric.
 
-@import 'Fabric.Mixins';
-
 // The best box is a border box.
 @mixin ms-u-borderBox {
   box-sizing: border-box;

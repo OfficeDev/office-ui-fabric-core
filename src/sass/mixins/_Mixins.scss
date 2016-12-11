@@ -5,9 +5,9 @@
 // --------------------------------------------------
 // Vendor-prefixed mixins
 
-// @todo: May be able to remove this later.
-@import './Fabric.Typography';
-
+// Mixins
+// @todo: Can this be removed?
+@import '../Fabric.Typography';
 
 // Border radius.
 @mixin border-radius($ms-radius: 5px) {

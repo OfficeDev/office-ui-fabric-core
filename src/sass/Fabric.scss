@@ -5,8 +5,8 @@
 // --------------------------------------------------
 // Fabric Core Module Loader (LTR)
 
-// Variables
-// @todo: Just import _Fabric.Common here instead of duplicating the imports?
+// Variables and mixins
+@import './Fabric.Common';
 @import './variables/Animation';
 @import './variables/BrandIcon';
 @import './variables/Color';
@@ -16,10 +16,10 @@
 @import './variables/ZIndex';
 
 // Mixins
+@import './mixins/Mixins';
 @import './mixins/Animation';
 @import './mixins/Animation.LTR';
-@import './Fabric.Mixins';
-@import './Fabric.Mixins.RTL';
+@import './mixins/Directionality';
 
 // Output
 @import './Animation';

@@ -3,10 +3,7 @@
 //
 // Office UI Fabric
 // --------------------------------------------------
-// Internationalization mixins
-
-// @todo: Rename this file to reduce confusion. Other 'RTL' files are only used in RTL builds,
-//        while these mixins are used in all builds. Directionality, maybe?
+// Directionality mixins to generate LTR and RTL-specific styles
 
 // Base left-to-right mixin definition.
 @mixin LTR {

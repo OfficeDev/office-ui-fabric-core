@@ -9,6 +9,8 @@
 
 // Mixins
 @import './mixins/Animation';
+@import './mixins/Directionality';
+@import './mixins/Mixins';
 
 
 
@@ -16,8 +18,6 @@
 @import './Fabric.Color.Mixins';
 @import './Fabric.Grid';
 @import './Fabric.Icons';
-@import './Fabric.Mixins';
-@import './Fabric.Mixins.RTL';
 @import './Fabric.Responsive.Utilities';
 @import './Fabric.Typography';
 @import './Fabric.Typography.Mixins';

@@ -221,41 +221,49 @@
 @mixin ms-u-fadeIn100 {
   animation-duration: 0.1s;
   animation-name: fadeIn;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeIn200 {
   animation-duration: 0.2s;
   animation-name: fadeIn;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeIn400 {
   animation-duration: 0.4s;
   animation-name: fadeIn;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeIn500 {
   animation-duration: 0.5s;
   animation-name: fadeIn;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut100 {
   animation-duration: 0.1s;
   animation-name: fadeOut;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut200 {
   animation-duration: 0.2s;
   animation-name: fadeOut;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut400 {
   animation-duration: 0.4s;
   animation-name: fadeOut;
+  animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut500 {
   animation-duration: 0.5s;
   animation-name: fadeOut;
+  animation-fill-mode: both;
 }
 
 // Expand-collapse

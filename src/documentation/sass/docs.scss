@@ -1,7 +1,7 @@
 // Main Sass file for the docs site
 
-// Import all of Fabric's variables, mixins, and utility classes
-@import '../../sass/_Fabric.Common.scss';
+// Import all of Fabric's variables and mixins
+@import '../../sass/_References.scss';
 
 // New font stack for presenting code
 $ms-font-family-code: "Consolas", "Monaco", "Ubuntu Mono", Courier, monospace;

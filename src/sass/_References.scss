@@ -23,10 +23,7 @@
 @import './mixins/Icon';
 @import './mixins/Mixins';
 @import './mixins/Responsive';
+@import './mixins/Utility';
 
 // Default LTR mixins
 @import './mixins/Animation.LTR';
-
-
-// @todo: Go through these.
-@import './Fabric.Utilities';

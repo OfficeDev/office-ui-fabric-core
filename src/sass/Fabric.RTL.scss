@@ -22,6 +22,7 @@
 @import './mixins/Grid';
 @import './mixins/Icon';
 @import './mixins/Mixins';
+@import './mixins/Utility';
 
 // Mixins, RTL-specific
 @import './mixins/Animation.RTL';
@@ -35,16 +36,7 @@
 @import './Icon';
 @import './Responsive';
 @import './Wrapper';
+@import './Utility';
 
 // Partials that output CSS, RTL-specific
 @import './Icon.RTL';
-
-
-
-
-
-
-// Need to review below here
-
-// Common utilities
-@import './Fabric.Utilities.Output';

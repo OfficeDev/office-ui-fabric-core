@@ -5,7 +5,7 @@
 // --------------------------------------------------
 // Utility classes and mixins used throughout Fabric.
 
-@import 'Fabric.Utilities';
+@import './mixins/Utility';
 
 // The best box is a border box.
 .ms-u-borderBox, .ms-u-borderBox::before, .ms-u-borderBox::after {

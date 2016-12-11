@@ -5,8 +5,6 @@
 // --------------------------------------------------
 // Fluid 12-column grids for small, medium, and large devices
 
-@import 'Fabric.Grid';
-
 //== Grid container (same for all sizes)
 //
 .ms-Grid {
@@ -23,10 +21,4 @@
 //
 .ms-Grid-col {
   @include ms-Grid-col;
-}
-
-// For nested grids (a grid inside a column), removing the padding
-// so that the nested grid's columns go to the edge of the parent's.
-.ms-Grid-col .ms-Grid {
-  padding: 0;
 }

@@ -19,6 +19,7 @@
 @import './mixins/BrandIcon';
 @import './mixins/Color';
 @import './mixins/Directionality';
+@import './mixins/Grid';
 @import './mixins/Mixins';
 
 // LTR-specific mixins
@@ -27,6 +28,7 @@
 // Partials that output CSS
 @import './Animation';
 @import './Color';
+@import './Grid';
 @import './Wrapper';
 
 
@@ -50,6 +52,3 @@
 
 // Responsive
 @import './Fabric.Responsive.Utilities.Output';
-
-// Grid
-@import './Fabric.Grid.Output';

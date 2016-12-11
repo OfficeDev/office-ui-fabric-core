@@ -5,6 +5,8 @@
 // --------------------------------------------------
 // Fluid 12-column grids for small, medium, and large devices
 
+// @todo: May be able to remove this later.
+@import '../Fabric.Utilities';
 
 //== Grid container (same for all sizes)
 //
@@ -31,4 +33,10 @@
   padding-right: 8px;
   @include ms-u-borderBox;
   float: left;
+
+  // For nested grids (a grid inside a column), removing the padding
+  // so that the nested grid's columns go to the edge of the parent's.
+  .ms-Grid {
+    padding: 0;
+  }
 }

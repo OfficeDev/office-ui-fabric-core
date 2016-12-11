@@ -18,6 +18,7 @@
 @import './mixins/Animation';
 @import './mixins/Color';
 @import './mixins/Directionality';
+@import './mixins/Font';
 @import './mixins/Grid';
 @import './mixins/Icon';
 @import './mixins/Mixins';
@@ -28,6 +29,4 @@
 
 
 // @todo: Go through these.
-@import './Fabric.Typography';
-@import './Fabric.Typography.Mixins';
 @import './Fabric.Utilities';

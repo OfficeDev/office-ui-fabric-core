@@ -7,7 +7,7 @@
 
 // Mixins
 // @todo: Can this be removed?
-@import '../Fabric.Typography';
+@import './Font';
 
 // Border radius.
 @mixin border-radius($ms-radius: 5px) {

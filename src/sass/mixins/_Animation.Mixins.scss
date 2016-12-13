@@ -5,9 +5,6 @@
 // --------------------------------------------------
 // Fabric Animations
 
-// Import variables and mixins
-@import '../variables/Animation';
-
 // Outputs the @keyframes used by the animation classes
 @mixin ms-animation-keyframes {
   @keyframes slideRightIn10 {

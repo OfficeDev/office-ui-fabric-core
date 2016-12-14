@@ -1,0 +1,51 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// Core styles scoped to the current major version of Fabric
+
+
+@import '../../temp/_Fabric.Scoped.Temp';
+
+// Sets a global flag to enable scoped styles within certain files
+$do-scope-styles: true;
+
+// Scope all core styles under a helper class for the current major version.
+// This produces styles of the form .ms-Fabric-{version #} .ms-font-m.
+
+@include scope-fabric {
+  // Common utilities
+  @import './Fabric.Utilities.Output';
+  @import './Fabric.ZIndex.Variables';
+  @import './Fabric.Mixins';
+  @import "./Fabric.Mixins.RTL";
+  // Colors
+  @import './Fabric.Color.Variables';
+  @import './Fabric.Color.Mixins.Output';
+
+  // Typography
+  @import './Fabric.Typography.Variables';
+  @import './Fabric.Typography.Mixins';
+  @import './Fabric.Typography.Output';
+
+  // Icons
+  @import './Fabric.Icons.Output';
+
+  // Animations
+  @import './Fabric.Animations.Output';
+
+  // Responsive
+  @import './Fabric.Responsive.Variables';
+  @import './Fabric.Responsive.Utilities.Variables';
+  @import './Fabric.Responsive.Utilities.Output';
+
+  // Grid
+  @import './Fabric.Grid.Output';
+
+  // Base/wrapper component
+  @import './Fabric.Base.Output';
+}
+
+// @font-face definitions do not need to be scoped
+@import './Fabric.Typography.Fonts.Output';
+@import './Fabric.Icons.Font.Output';

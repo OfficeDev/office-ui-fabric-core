@@ -11,11 +11,19 @@
 
 @import "Fabric.Typography.Fonts";
 
+$ms-icon-font-family: 'FabricMDL2Icons';
+$ms-icon-font-name: 'fabricmdl2icons';
+
+@if variable_exists(do-scope-styles) {
+  $ms-icon-font-family: 'FabricMDL2Icons-' + $fabric-version-major; 
+  $ms-icon-font-name: 'fabricmdl2icons-' + $fabric-version-major; 
+}
+
 @font-face {
-  font-family: 'FabricMDL2Icons';
-  src: url('https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons.woff2') format('woff2'),
-       url('https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons.woff') format('woff'),
-       url('https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons.ttf') format('truetype');
+  font-family: $ms-icon-font-family;
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$ms-icon-font-name}.woff2') format('woff2'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$ms-icon-font-name}.woff') format('woff'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$ms-icon-font-name}.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -1,18 +1,19 @@
-approve_by_comment: true
-approve_regex: ^Approved
-reject_regex: ^Rejected
-reset_on_push: false
-reviewers:
-  members:
-  - atneik
-  - battletoilet
-  - dammittom
-  - ericthompson
-  - Jahnp
-  - mikewheaton
-  - philworthington
-  - wdo3650
-  - dzearing
-  - micahgodbolt
-  name: default
-  required: 2
+version: 2
+groups:
+  code-review:
+    approve_by_comment:
+      approve_regex: ^Approved
+      enabled: true
+      reject_regex: ^Rejected
+    required: 2
+    reset_on_push:
+      enabled: false
+    users:
+    - atneik
+    - battletoilet
+    - dzearing
+    - Jahnp
+    - micahgodbolt
+    - mikewheaton
+    - philworthington
+    - wdo3650

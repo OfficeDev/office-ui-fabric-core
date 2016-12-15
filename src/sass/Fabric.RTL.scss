@@ -5,35 +5,9 @@
 // --------------------------------------------------
 // Fabric Core Module Loader (RTL)
 
-// Common utilities
-@import './Fabric.Utilities.Output';
-@import './Fabric.ZIndex.Variables';
-@import './Fabric.Mixins';
-@import './Fabric.Mixins.RTL';
+// Import the original, LTR version of Fabric
+@import './Fabric';
 
-// Colors
-@import './Fabric.Color.Variables';
-@import './Fabric.Color.Mixins.Output';
-
-// Typography
-@import './Fabric.Typography.Variables';
-@import './Fabric.Typography.Fonts.Output';
-@import './Fabric.Typography.Output';
-@import './Fabric.Typography.Language.Overrides.Output';
-
-// Icons
-@import './Fabric.Icons.Font.Output';
-@import './Fabric.Icons.RTL.Output';
-
-// Animations
-@import './Fabric.Animations.RTL.Output';
-
-// Responsive
-@import './Fabric.Responsive.Variables';
-@import './Fabric.Responsive.Utilities.Output';
-
-// Grid
-@import './Fabric.Grid.Output';
-
-// Base/wrapper component
-@import './Fabric.Base.Output';
+// Apply RTL-specific overrides
+@import './Icon.RTL';
+@import './Animation.RTL';

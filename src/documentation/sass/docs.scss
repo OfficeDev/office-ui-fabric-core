@@ -1,7 +1,7 @@
 // Main Sass file for the docs site
 
-// Import all of Fabric's variables, mixins, and utility classes
-@import '../../sass/_Fabric.Common.scss';
+// Import all of Fabric's variables and mixins
+@import '../../sass/_References.scss';
 
 // New font stack for presenting code
 $ms-font-family-code: "Consolas", "Monaco", "Ubuntu Mono", Courier, monospace;
@@ -69,7 +69,7 @@ $high-contrast-green: #3ff23f;
 
 // slideRightIn80
 @mixin ms-u-slideRightIn80 {
-    @include animationMix((fadeIn, slideRightIn80), $ms-duration3, $ms-ease1);
+    @include ms-animation((fadeIn, slideRightIn80), $ms-duration3, $ms-ease1);
 }
 .ms-u-slideRightIn80 {
   @include ms-u-slideRightIn80;
@@ -85,7 +85,7 @@ $high-contrast-green: #3ff23f;
 
 // slideLeftIn80
 @mixin ms-u-slideLeftIn80 {
-    @include animationMix((fadeIn, slideLeftIn80), $ms-duration3, $ms-ease1);
+    @include ms-animation((fadeIn, slideLeftIn80), $ms-duration3, $ms-ease1);
 }
 .ms-u-slideLeftIn80 {
   @include ms-u-slideLeftIn80;
@@ -102,7 +102,7 @@ $high-contrast-green: #3ff23f;
 
 // slideLeftIn80
 @mixin ms-u-slideLeftOut80 {
-    @include animationMix((fadeOut, slideLeftOut80), $ms-duration3, $ms-ease1);
+    @include ms-animation((fadeOut, slideLeftOut80), $ms-duration3, $ms-ease1);
 }
 .ms-u-slideLeftOut80 {
   @include ms-u-slideLeftOut80;
@@ -119,7 +119,7 @@ $high-contrast-green: #3ff23f;
 
 // slideLeftIn80
 @mixin ms-u-slideRightOut80 {
-    @include animationMix((fadeOut, slideRightOut80), $ms-duration3, $ms-ease1);
+    @include ms-animation((fadeOut, slideRightOut80), $ms-duration3, $ms-ease1);
 }
 .ms-u-slideRightOut80 {
   @include ms-u-slideRightOut80;

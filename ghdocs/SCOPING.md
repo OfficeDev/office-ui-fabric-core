@@ -1,5 +1,5 @@
 # Version scoping
-"Version-scoping" is a variation of Fabric Core which provides a wrapped or "scoped" version of every Fabric class under a modifier of the `.ms-Fabric` base class, which is tied to the current version. If the version is `5.0.1`, this "scope class" would take the form `.ms-Fabric--v5-0-1`.
+"Version-scoping" is a variation of Fabric Core which provides a wrapped or "scoped" version of every Fabric class under a modifier of the `.ms-Fabric` base class, which is tied to the current version. If the version is `5.1.0`, this "scope class" would take the form `.ms-Fabric--v5-1-0`.
 
 ## Why is this useful?
 Version scoping is targeted at the scenario where multiple versions of Fabric Core may live on a single web page, whose differences between major versions could potentially introduce regressions or conflicts.
@@ -19,11 +19,11 @@ Here's a minimal HTML page demonstrating this:
 <html>
     <head>
         <!-- Link to the scoped styles for the current version of Fabric Core -->
-        <link rel="stylesheet" href="/fabric-5.0.1.scoped.css">
+        <link rel="stylesheet" href="/fabric-5.1.0.scoped.css">
     </head>
     <body>
         <!-- Add the scoping class -->
-        <div class="ms-Fabric--v5-0-1">
+        <div class="ms-Fabric--v5-1-0">
             <!-- 
                 Use Fabric as usual. These styles will be unaffected
                 by other versions of Fabric. They also cannot be used

@@ -17,14 +17,14 @@ $do-scope-styles: true;
   @import './Animation';
   @import './BrandIcon';
   @import './Color';
+  @import './Font';
   @import './Grid';
   @import './Icon';
   @import './Responsive';
-  @import './Typography';
   @import './Utility';
   @import './Wrapper';
 }
 
 // @font-face definitions do not need to be scoped
-  @import './Font';
+  @import './Font.Definitions';
   @import './IconFont';

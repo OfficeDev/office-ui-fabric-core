@@ -20,12 +20,11 @@ $do-scope-styles: true;
   @import './Grid';
   @import './Icon';
   @import './Responsive';
+  @import './Typography';
   @import './Utility';
   @import './Wrapper';
 }
 
 // @font-face definitions do not need to be scoped
-// @TODO: Create an IconFont file. The @font-face definition should not be scoped...
-
-@import './IconFont';
-@import './Font';
+  @import './Font';
+  @import './IconFont';

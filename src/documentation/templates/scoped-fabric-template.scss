@@ -5,8 +5,6 @@
 // Template for variables & mixins that scope styles to the current Fabric version
 
 
-// The current version of Fabric.
-// @TODO: In the future this should be automatically pulled from package.json.
 $fabric-version-major: <%= version.major %>;
 $fabric-version-minor: <%= version.minor %>;
 $fabric-version-patch: <%= version.patch %>;

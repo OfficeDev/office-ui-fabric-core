@@ -1,124 +1,36 @@
 @@include('../../templates/modules/components/DocumentationPageHeader.html')
+<style>
+  .ms-Fabric--v5-0-0 .ms-fontColor-themePrimary {
+    color: #ff0000;
+  }
+</style>
+
 <div class="docs-Styles-section" id="scoping">
   <h2>Version Scoping Sample</h2>
   <p>For scenarios where multiple major versions may live in the same DOM, Fabric provides a "scoped" version of all Core styles that will only apply those styles when used under a versioned wrapper class.</p>
 
-  <h3>Unscoped</h3>
-  <!-- <p>The following styles use unscoped Fabric Core styles.</p> -->
-  
-  <div class="ms-Grid" role="grid">
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col">
-        <div class="ms-font-xxl ms-fontColor-themePrimary">Title using themePrimary from unscoped Fabric.</div>
-      </div>
-    </div>
-<!--     <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm10">
-        <i class="ms-Icon ms-Icon--Clock"></i>
-        <i class="ms-Icon ms-Icon--Cancel"></i>
-        <i class="ms-Icon ms-Icon--Add"></i>
-        <i class="ms-Icon ms-Icon--Share"></i>
-        <i class="ms-Icon ms-Icon--Camera"></i>
-      </div>
-    </div> -->
-    <div class="ms-Grid-row">
-      <div class="ms-Grid-col ms-u-sm10">
-        <div class="ms-bgColor-themePrimary docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeDarkAlt docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeDark docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeDarker docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeSecondary docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeTertiary docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeLight docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeLighter docs-ScopingBlock"></div>
-        <div class="ms-bgColor-themeLighterAlt docs-ScopingBlock"></div>
-      </div>
-    </div>
-  </div>
+  <p>
+    To use scoped Fabric styles, simply add the versioned wrapper class to the parent DOM element you wish to scope, then use Fabric as usual.
+  </p>
 
-  <h3>Scoped to Fabric Core v4</h3>
-  <!-- <p>The following styles are scoped to version 4 of Fabric Core.</p> -->
-  
-  <div class="ms-Fabric-4">
-    <div class="ms-Grid" role="grid">
-      <div class="ms-Grid-row">
-        <div class="ms-Grid-col">
-          <div class="ms-font-xxl ms-fontColor-themePrimary">Title using themePrimary from version 4.</div>
-        </div>
-      </div>
-<!--       <div class="ms-Grid-row">
-        <div class="ms-Grid-col ms-u-sm10">
-          <i class="ms-Icon ms-Icon--Clock"></i>
-          <i class="ms-Icon ms-Icon--Cancel"></i>
-          <i class="ms-Icon ms-Icon--Add"></i>
-          <i class="ms-Icon ms-Icon--Share"></i>
-          <i class="ms-Icon ms-Icon--Camera"></i>
-        </div>
-      </div> -->
-      <div class="ms-Grid-row">
-        <div class="ms-Grid-col ms-u-sm10">
-          <div class="ms-bgColor-themePrimary docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeDarkAlt docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeDark docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeDarker docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeSecondary docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeTertiary docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeLight docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeLighter docs-ScopingBlock"></div>
-          <div class="ms-bgColor-themeLighterAlt docs-ScopingBlock"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <p>For example, take this following title, which uses unscoped Fabric:</p>
 
-  <h3>Scoped to Fabric Core v5</h3>
-  <!-- <p>The following styles are scoped to a mock of version 5 of Fabric Core.</p> -->
-  
-  <div class="ms-Fabric-5">
-    <div class="ms-Grid" role="grid">
-      <div class="ms-Grid-row">
-        <div class="ms-Grid-col">
-          <div class="ms-font-xxl ms-fontColor-themePrimary">Title using themePrimary from version 5.</div>
-        </div>
-<!--         <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm10">
-            <i class="ms-Icon ms-Icon--Clock"></i>
-            <i class="ms-Icon ms-Icon--Cancel"></i>
-            <i class="ms-Icon ms-Icon--Add"></i>
-            <i class="ms-Icon ms-Icon--Share"></i>
-            <i class="ms-Icon ms-Icon--Camera"></i>
-          </div>
-        </div> -->
-        <div class="ms-Grid-row">
-          <div class="ms-Grid-col ms-u-sm10">
-            <div class="ms-bgColor-themePrimary docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeDarkAlt docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeDark docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeDarker docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeSecondary docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeTertiary docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeLight docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeLighter docs-ScopingBlock"></div>
-            <div class="ms-bgColor-themeLighterAlt docs-ScopingBlock"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <pre><code>
+&lt;div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from unscoped Fabric.&lt;/div&gt;
+</code></pre>
+
+  <div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from unscoped Fabric.</div>
+
+  <p>To scope this title to v5.0.0, add an extra wrapper <code>div</code> around it and add both the <code>ms-Fabric</code> wrapper class and the scoping class for the current version of Fabric. Note that to illustrate this behavior for this demonstration, <code>.ms-fontColor-themePrimary</code> has been overridden with a different color when used under the <code>ms-Fabric--v5-0-0</code> version-scoping class.</p>
+
+  <pre><code>
+  &lt;div class="ms-Fabric ms-Fabric--v5-0-0">
+    &lt;div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from Fabric 5.0.0.&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+  <div class="ms-Fabric ms-Fabric--v5-0-0">
+    <div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from Fabric 5.0.0.</div>
   </div>
 </div>
-
-<script>
-  var head = document.querySelector('head');
-
-  var scoped = document.createElement('link');
-  scoped.setAttribute('rel','stylesheet');
-  scoped.setAttribute('href','../../css/fabric-4.scoped.css');
-  
-  var scopedMock = document.createElement('link');
-  scopedMock.setAttribute('rel','stylesheet');
-  scopedMock.setAttribute('href','../../css/fabric-5.mock.scoped.css');
-
-  head.appendChild(scoped);
-  head.appendChild(scopedMock);
-</script>
 @@include('../../templates/modules/components/DocumentationPageFooter.html')

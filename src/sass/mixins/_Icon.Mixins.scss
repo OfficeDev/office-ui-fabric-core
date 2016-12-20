@@ -10,7 +10,7 @@
   $icon-font-family: 'FabricMDL2Icons';
 
   @if variable_exists(do-scope-styles) {
-    $icon-font-family: 'FabricMDL2Icons-' + $fabric-version-major; 
+    $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
   }
   
   -moz-osx-font-smoothing: grayscale;

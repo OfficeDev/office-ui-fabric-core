@@ -15,8 +15,8 @@
   $icon-font-name: 'fabricmdl2icons';
 
   @if variable_exists(do-scope-styles) {
-    $icon-font-family: 'FabricMDL2Icons-' + $fabric-version-major; 
-    $icon-font-name: 'fabricmdl2icons-' + $fabric-version-major; 
+    $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
+    $icon-font-name: 'fabricmdl2icons-' + $ms-fabric-version-major; 
   }
 
   font-family: $icon-font-family;

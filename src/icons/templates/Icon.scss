@@ -1,0 +1,3 @@
+<% _.each(obj, function(value, key){ %>
+.ms-Icon-<%= key %>::before { @include ms-Icon--<%= key %>; }
+<% }) %>

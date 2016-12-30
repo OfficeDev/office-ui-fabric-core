@@ -35,6 +35,8 @@ var Plugins = function() {
 	this.path = require('path');
 	this.pkg = require('../../package.json');
 	this.fs = require('fs');
+	this.yaml = require('js-yaml');
+	
 };
 
 module.exports = new Plugins();

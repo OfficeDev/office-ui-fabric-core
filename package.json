@@ -41,6 +41,7 @@
     "gulp-tslint": "^7.0.1",
     "gulp-typescript": "^3.1.1",
     "gulp-util": "^3.0.1",
+    "js-yaml": "^3.7.0",
     "jshint": "^2.8.0",
     "map-stream": "0.0.6",
     "merge-stream": "^1.0.0",
@@ -50,6 +51,5 @@
     "typescript": "^2.0.3",
     "walk-sync": "^0.3.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

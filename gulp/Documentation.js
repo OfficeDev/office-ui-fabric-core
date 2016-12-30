@@ -7,6 +7,7 @@ var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
+var _ = require('lodash');
 
 
 var filePath = '';
@@ -59,6 +60,7 @@ gulp.task('Documentation-buildStyles', function () {
 // ----------------------------------------------------------------------------
 gulp.task('prepare-handlebars', function(cb) {
   var modelFiles = fs.readdirSync(Config.paths.srcDocumentationModels);
+  var iconJson = [];
   var jsonFile;
   var jsonFileName;
 
@@ -68,9 +70,16 @@ gulp.task('prepare-handlebars', function(cb) {
     jsonFileName = modelFiles[i].replace('.json', '');
     jsonData[jsonFileName] = JSON.parse(jsonFile);
   }
-  // Grab Icon data (in separate folder /src/data/) and parse data
-  jsonFile = fs.readFileSync(Config.paths.srcData + '/' + 'icons.json', 'utf8');
-  jsonData['icons'] = JSON.parse(jsonFile);
+
+  // Grab Icon data (in separate folder /src/icon/data/) and parse data
+  var iconData = Plugins.yaml.load(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.yml', "utf8"));
+
+  _.each(iconData, function(item, key){
+    iconJson.push({'name': key});
+  });
+
+  jsonData['icons'] = iconJson;
+
   templateData = jsonData;
   cb();
 });

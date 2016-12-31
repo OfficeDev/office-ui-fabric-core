@@ -418,83 +418,83 @@
 }
 
 // Output the standard fonts
-@include SegoeUIWestEuropeanLight;
-@include SegoeUIWestEuropeanRegular;
-@include SegoeUIWestEuropeanSemibold;
-@include SegoeUIWestEuropeanSemilight;
+@include ms-fontFamily-SegoeUIWestEuropeanLight;
+@include ms-fontFamily-SegoeUIWestEuropeanRegular;
+@include ms-fontFamily-SegoeUIWestEuropeanSemibold;
+@include ms-fontFamily-SegoeUIWestEuropeanSemilight;
 
 // Mixins to generate language-specific font faces.
-@include SegoeUIArabicLight;
-@include SegoeUIArabicRegular;
-@include SegoeUIArabicSemibold;
-@include SegoeUIArabicSemilight;
+@include ms-fontFamily-SegoeUIArabicLight;
+@include ms-fontFamily-SegoeUIArabicRegular;
+@include ms-fontFamily-SegoeUIArabicSemibold;
+@include ms-fontFamily-SegoeUIArabicSemilight;
 
-@include SegoeUICyrillicLight;
-@include SegoeUICyrillicRegular;
-@include SegoeUICyrillicSemibold;
-@include SegoeUICyrillicSemilight;
+@include ms-fontFamily-SegoeUICyrillicLight;
+@include ms-fontFamily-SegoeUICyrillicRegular;
+@include ms-fontFamily-SegoeUICyrillicSemibold;
+@include ms-fontFamily-SegoeUICyrillicSemilight;
 
-@include SegoeUIEastEuropeanLight;
-@include SegoeUIEastEuropeanRegular;
-@include SegoeUIEastEuropeanSemibold;
-@include SegoeUIEastEuropeanSemilight;
+@include ms-fontFamily-SegoeUIEastEuropeanLight;
+@include ms-fontFamily-SegoeUIEastEuropeanRegular;
+@include ms-fontFamily-SegoeUIEastEuropeanSemibold;
+@include ms-fontFamily-SegoeUIEastEuropeanSemilight;
 
-@include SegoeUIGreekLight;
-@include SegoeUIGreekRegular;
-@include SegoeUIGreekSemibold;
-@include SegoeUIGreekSemilight;
+@include ms-fontFamily-SegoeUIGreekLight;
+@include ms-fontFamily-SegoeUIGreekRegular;
+@include ms-fontFamily-SegoeUIGreekSemibold;
+@include ms-fontFamily-SegoeUIGreekSemilight;
 
-@include SegoeUIHebrewLight;
-@include SegoeUIHebrewRegular;
-@include SegoeUIHebrewSemibold;
-@include SegoeUIHebrewSemilight;
+@include ms-fontFamily-SegoeUIHebrewLight;
+@include ms-fontFamily-SegoeUIHebrewRegular;
+@include ms-fontFamily-SegoeUIHebrewSemibold;
+@include ms-fontFamily-SegoeUIHebrewSemilight;
 
-@include SegoeUIVietnameseLight;
-@include SegoeUIVietnameseRegular;
-@include SegoeUIVietnameseSemibold;
-@include SegoeUIVietnameseSemilight;
+@include ms-fontFamily-SegoeUIVietnameseLight;
+@include ms-fontFamily-SegoeUIVietnameseRegular;
+@include ms-fontFamily-SegoeUIVietnameseSemibold;
+@include ms-fontFamily-SegoeUIVietnameseSemilight;
 
 // Generate the override classes for non-distributed fonts.
-@include language-override-system-fonts(jpn, $ms-font-stack-japanese);
-@include language-override-system-fonts(kor, $ms-font-stack-korean);
-@include language-override-system-fonts(cmn, $ms-font-stack-chinese-simplified);
-@include language-override-system-fonts(yue, $ms-font-stack-chinese-traditional);
-@include language-override-system-fonts(hin, $ms-font-stack-hindi);
+@include ms-font-language-override-system-fonts(jpn, $ms-font-stack-japanese);
+@include ms-font-language-override-system-fonts(kor, $ms-font-stack-korean);
+@include ms-font-language-override-system-fonts(cmn, $ms-font-stack-chinese-simplified);
+@include ms-font-language-override-system-fonts(yue, $ms-font-stack-chinese-traditional);
+@include ms-font-language-override-system-fonts(hin, $ms-font-stack-hindi);
 
 // Generate the override classes for web fonts.
 // Thai (Leelawadee)
 // tha
-@include language-override-system-fonts(tha, $ms-font-stack-leelawadee);
+@include ms-font-language-override-system-fonts(tha, $ms-font-stack-leelawadee);
 
 // Arabic
 // ara
-@include language-override-system-fonts(ara, $ms-font-stack-arabic);
+@include ms-font-language-override-system-fonts(ara, $ms-font-stack-arabic);
 
 // East European
 // ces, et, hrv, hun, lit, pl, lat, tur, slk, kaz
-@include language-override-system-fonts(ces, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(est, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(hrv, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(hun, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(kaz, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lav, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(lit, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(pol, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(slk, $ms-font-stack-eastEuropean);
-@include language-override-system-fonts(tur, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(ces, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(est, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(hrv, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(hun, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(kaz, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(lav, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(lit, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(pol, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(slk, $ms-font-stack-eastEuropean);
+@include ms-font-language-override-system-fonts(tur, $ms-font-stack-eastEuropean);
 
 // Cyrillic
 // rus
-@include language-override-system-fonts(rus, $ms-font-stack-cyrillic);
+@include ms-font-language-override-system-fonts(rus, $ms-font-stack-cyrillic);
 
 // Greek
 // ell
-@include language-override-system-fonts(ell, $ms-font-stack-greek);
+@include ms-font-language-override-system-fonts(ell, $ms-font-stack-greek);
 
 // Hebrew
 // heb
-@include language-override-system-fonts(heb, $ms-font-stack-hebrew);
+@include ms-font-language-override-system-fonts(heb, $ms-font-stack-hebrew);
 
 // Vietnamese
 // vie
-@include language-override-system-fonts(vie, $ms-font-stack-vietnamese);
+@include ms-font-language-override-system-fonts(vie, $ms-font-stack-vietnamese);

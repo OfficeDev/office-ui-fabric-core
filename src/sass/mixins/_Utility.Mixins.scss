@@ -32,9 +32,9 @@
 // Basic border-box, margin, and padding reset.
 @mixin ms-u-normalize {
   @include ms-u-borderBox;
-  @include resetMargins;
-  @include resetPadding;
-  @include resetBoxShadow;
+  @include ms-resetMargins;
+  @include ms-resetPadding;
+  @include ms-resetBoxShadow;
 }
 
 // To set various text alignment styles 

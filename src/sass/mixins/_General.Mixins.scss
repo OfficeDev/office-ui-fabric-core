@@ -6,35 +6,35 @@
 // Vendor-prefixed mixins
 
 // Border radius.
-@mixin border-radius($ms-radius: 5px) {
+@mixin ms-border-radius($ms-radius: 5px) {
   border-radius: $ms-radius;
   background-clip: padding-box;
 }
 
 // Drop shadow.
-@mixin drop-shadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
+@mixin ms-drop-shadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
   box-shadow: $ms-x-offset $ms-y-offset $ms-blur $ms-spread rgba(0, 0, 0, $ms-alpha);
 }
 
 // Background gradient.
-@mixin background-gradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
+@mixin ms-background-gradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
     background-color: $ms-start;
     background-image: linear-gradient($ms-origin, $ms-start $ms-start-location, $ms-stop $ms-stop-location);
 }
 
 // Rotation.
-@mixin rotate($ms-deg) {
+@mixin ms-rotate($ms-deg) {
   transform: rotate($ms-deg);
 }
 
 // Reset button styles.
-@mixin button-reset() {
+@mixin ms-button-reset() {
   background: none;
   border: 0;
   cursor: pointer;
 }
 
-@mixin resetAnimation() {
+@mixin ms-resetAnimation() {
     -webkit-animation: none;
     -moz-animation:  none;
     -ms-animation:  none;
@@ -42,17 +42,17 @@
     animation:  none;
 }
 
-@mixin resetBackface() {
+@mixin ms-resetBackface() {
    backface-visibility: visible;
 }
 
-@mixin resetBackground() {
+@mixin ms-resetBackground() {
   background: 0;
   background-clip: border-box;
   background-origin: padding-box;
 }
 
-@mixin resetBorder() {
+@mixin ms-resetBorder() {
   border: 0;
   border-collapse: separate;
   border-image: none;
@@ -60,17 +60,17 @@
   border-spacing: 0;
 }
 
-@mixin resetBoxShadow() {
+@mixin ms-resetBoxShadow() {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-@mixin resetBoxSizing() {
+@mixin ms-resetBoxSizing() {
    box-sizing: content-box;
 }
 
-@mixin resetColumns() {
+@mixin ms-resetColumns() {
   columns: auto;
   column-count: auto;
   column-fill: balance;
@@ -85,7 +85,7 @@
 
 
 // Fonts and Typography Resets
-@mixin resetFont() {
+@mixin ms-resetFont() {
   font: normal;
   font-family: inherit;
   font-size: normal;
@@ -94,7 +94,7 @@
   font-weight: normal;
 }
 
-@mixin resetTextStyling() {
+@mixin ms-resetTextStyling() {
   text-align: inherit;
   text-align-last: auto;
   text-decoration: none;
@@ -111,40 +111,40 @@
 
 
 // Box Model Resets
-@mixin resetPadding() {
+@mixin ms-resetPadding() {
   padding: 0;
 }
 
-@mixin resetMargins() {
+@mixin ms-resetMargins() {
   margin: 0;
 }
 
-@mixin resetOverflow() {
+@mixin ms-resetOverflow() {
   overflow: visible;
 }
 
-@mixin resetMax() {
+@mixin ms-resetMax() {
     max-height: none;
     max-width: none;
 }
 
-@mixin resetMin() {
+@mixin ms-resetMin() {
     min-height: 0;
     min-width: 0;
 }
 
-@mixin resetPositioning() {
+@mixin ms-resetPositioning() {
   bottom: auto;
   left: auto;
   top: auto;
   left: auto;
 }
 
-@mixin resetFloat() {
+@mixin ms-resetFloat() {
   float: none;
 }
 
-@mixin resetHeight($ms-useMaxMin: false) {
+@mixin ms-resetHeight($ms-useMaxMin: false) {
     height: auto;
     @if $ms-useMaxMin == true {
         min-height: 0;
@@ -152,7 +152,7 @@
     }
 }
 
-@mixin resetWidth($ms-useMaxMin: false) {
+@mixin ms-resetWidth($ms-useMaxMin: false) {
     width: auto;
     @if $ms-useMaxMin == true {
         min-width: 0;
@@ -160,11 +160,11 @@
     }
 }
 
-@mixin resetPosition() {
+@mixin ms-resetPosition() {
   position: static;
 }
 
-@mixin resetPerspective() {
+@mixin ms-resetPerspective() {
   -webkit-perspective: none;
   -webkit-perspective-origin: 50% 50%;
   perspective: none;
@@ -172,16 +172,16 @@
 
 }
 
-@mixin resetTransition() {
+@mixin ms-resetTransition() {
   -webkit-transition: none;
   transition: none;
 }
 
-@mixin resetListStyle() {
+@mixin ms-resetListStyle() {
   list-style: none;
 }
 
-@mixin resetTransform() {
+@mixin ms-resetTransform() {
   -ms-transform: none;
   -webkit-transform: none;
   -webkit-transform-style: flat;
@@ -189,26 +189,26 @@
   transform-style: flat;
 }
 
-@mixin resetOutline() {
+@mixin ms-resetOutline() {
   outline: 0;
 }
 
-@mixin resetPageBreak() {
+@mixin ms-resetPageBreak() {
   page-break-after: auto;
   page-break-before: auto;
   page-break-inside: auto;
 }
 
-@mixin resetDisplay() {
+@mixin ms-resetDisplay() {
   display: block;
 }
 
-@mixin resetVerticalAlign() {
+@mixin ms-resetVerticalAlign() {
     vertical-align: baseline;
 }
 
 // Prevents user selection of text elements.
-@mixin user-select ($val) {
+@mixin ms-user-select ($val) {
     -webkit-touch-callout:  $val;
     -webkit-user-select:    $val;
     -khtml-user-select:     $val;
@@ -218,7 +218,7 @@
 }
 
 // Prevents the text within a block element from wrapping to second line.
-@mixin noWrap() {
+@mixin ms-noWrap() {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -226,7 +226,7 @@
 }
 
 // Input placehoder
-@mixin input-placeholder {
+@mixin ms-input-placeholder {
     &::-webkit-input-placeholder  {@content}
     &::-moz-placeholder           {@content}
     &:-moz-placeholder            {@content}
@@ -234,13 +234,13 @@
 }
 
 // Flexbox
-@mixin flexBox() {
+@mixin ms-flexBox() {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
 }
 
-@mixin alignItems($ms-mode) {
+@mixin ms-alignItems($ms-mode) {
     -webkit-box-align: $ms-mode;
     -moz-box-align: $ms-mode;
     -ms-flex-align: $ms-mode;
@@ -253,7 +253,7 @@
   @include ms-fontColor-neutralPrimary;
 }
 
-@mixin focusBorder($padding: 0, $color: $ms-color-neutralSecondary) {
+@mixin ms-focusBorder($padding: 0, $color: $ms-color-neutralSecondary) {
   // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
   outline: transparent;
 

@@ -1,22 +1,22 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 // Generate classes for product and document icons
-@mixin brandIconClasses($retina) {
+@mixin ms-brandIconClasses($retina) {
 	@each $icon in $ms-productIcons {
 		.ms-BrandIcon--#{$icon} {
-			@include brandIconSizes($icon, $retina, $ms-productImagesPath);
+			@include ms-brandIconSizes($icon, $retina, $ms-productImagesPath);
 		}
 	}
 
 	@each $icon in $ms-documentIcons {
 		.ms-BrandIcon--#{$icon} {
-			@include brandIconSizes($icon, $retina, $ms-documentImagesPath);
+			@include ms-brandIconSizes($icon, $retina, $ms-documentImagesPath);
 		}
 	}
 }
 
 // Generate size classes for each icon
-@mixin brandIconSizes($icon, $retina, $imagesPath) {
+@mixin ms-brandIconSizes($icon, $retina, $imagesPath) {
 	@each $size in $ms-brandIconSizes {
 		&.ms-BrandIcon--Icon#{$size} {
 			background-image: url(#{$imagesPath}/#{$icon}_#{$size}x#{$retina}.png);
@@ -25,7 +25,7 @@
 }
 
 // Generate generic icon size classes
-@mixin brandIconSizesClasses() {
+@mixin ms-brandIconSizesClasses() {
 	@each $size in $ms-brandIconSizes {
 		.ms-BrandIcon--Icon#{$size} {
 			background-size: 100% 100%;

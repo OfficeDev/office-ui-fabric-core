@@ -10,7 +10,7 @@
 //
 
 // Hidden on small
-@media (max-width: $ms-screen-sm-max) {
+@media (max-width: $ms-screen-max-sm) {
   .ms-u-hiddenSm,
   .ms-u-hiddenMdDown,
   .ms-u-hiddenLgDown,
@@ -21,7 +21,7 @@
 }
 
 // Hidden on medium
-@media (min-width: $ms-screen-md-min) and (max-width: $ms-screen-md-max) {
+@media (min-width: $ms-screen-min-md) and (max-width: $ms-screen-max-md) {
   .ms-u-hiddenMd,
   .ms-u-hiddenMdUp,
   .ms-u-hiddenMdDown,
@@ -33,7 +33,7 @@
 }
 
 // Hidden on large
-@media (min-width: $ms-screen-lg-min) and (max-width: $ms-screen-lg-max) {
+@media (min-width: $ms-screen-min-lg) and (max-width: $ms-screen-max-lg) {
   .ms-u-hiddenMdUp,
   .ms-u-hiddenLg,
   .ms-u-hiddenLgUp,
@@ -45,7 +45,7 @@
 }
 
 // Hidden on extra large
-@media (min-width: $ms-screen-xl-min) and (max-width: $ms-screen-xl-max) {
+@media (min-width: $ms-screen-min-xl) and (max-width: $ms-screen-max-xl) {
   .ms-u-hiddenMdUp,
   .ms-u-hiddenLgUp,
   .ms-u-hiddenXl,
@@ -57,7 +57,7 @@
 }
 
 // Hidden on extra extra large
-@media (min-width: $ms-screen-xxl-min) and (max-width: $ms-screen-xxl-max) {
+@media (min-width: $ms-screen-min-xxl) and (max-width: $ms-screen-max-xxl) {
   .ms-u-hiddenMdUp,
   .ms-u-hiddenLgUp,
   .ms-u-hiddenXlUp,
@@ -69,7 +69,7 @@
 }
 
 // Hidden on extra extra extra large
-@media (min-width: $ms-screen-xxxl-min) {
+@media (min-width: $ms-screen-min-xxxl) {
   .ms-u-hiddenMdUp,
   .ms-u-hiddenLgUp,
   .ms-u-hiddenXlUp,

@@ -18,7 +18,7 @@
 // Generate size classes for each icon
 @mixin ms-brandIconSizes($icon, $retina, $imagesPath) {
 	@each $size in $ms-brandIconSizes {
-		&.ms-BrandIcon--Icon#{$size} {
+		&.ms-BrandIcon--icon#{$size} {
 			background-image: url(#{$imagesPath}/#{$icon}_#{$size}x#{$retina}.png);
 		}
 	}
@@ -27,7 +27,7 @@
 // Generate generic icon size classes
 @mixin ms-brandIconSizesClasses() {
 	@each $size in $ms-brandIconSizes {
-		.ms-BrandIcon--Icon#{$size} {
+		.ms-BrandIcon--icon#{$size} {
 			background-size: 100% 100%;
 			width: #{$size}px;
 			height: #{$size}px;

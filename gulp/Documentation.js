@@ -60,7 +60,6 @@ gulp.task('Documentation-buildStyles', function () {
 // ----------------------------------------------------------------------------
 gulp.task('prepare-handlebars', function(cb) {
   var modelFiles = fs.readdirSync(Config.paths.srcDocumentationModels);
-  var iconJson = [];
   var jsonFile;
   var jsonFileName;
 
@@ -72,13 +71,8 @@ gulp.task('prepare-handlebars', function(cb) {
   }
 
   // Grab Icon data (in separate folder /src/icon/data/) and parse data
-  var iconData = Plugins.yaml.load(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.yml', "utf8"));
 
-  _.each(iconData, function(item, key){
-    iconJson.push({'name': key});
-  });
-
-  jsonData['icons'] = iconJson;
+  jsonData.icons = JSON.parse(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.json', "utf8"));;
 
   templateData = jsonData;
   cb();

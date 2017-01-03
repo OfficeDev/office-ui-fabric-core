@@ -1,3 +1,0 @@
-<% _.each(obj, function(value, key){ %>
-@mixin ms-Icon--<%= key %> { content: '\<%= value %>'; }
-<% }) %>

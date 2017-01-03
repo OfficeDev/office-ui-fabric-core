@@ -36,12 +36,12 @@ gulp.task('Fabric-copyAssets', function () {
 
 // Icon Tasks
 gulp.task('Fabric-iconGenerate', function() {
-  var iconData = Plugins.yaml.load(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.yml', "utf8"));
-   gulp.src(Config.paths.iconsTemplates + '/Icon.Mixins.scss')
-    .pipe(Plugins.template(iconData))
+  var iconData = JSON.parse(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.json', "utf8"));
+   gulp.src(Config.paths.iconsTemplates + '/_Icon.Mixins.Data.scss')
+    .pipe(Plugins.template({'data':iconData}))
     .pipe(gulp.dest(Config.paths.iconsTemp));
-   gulp.src(Config.paths.iconsTemplates + '/Icon.scss')
-    .pipe(Plugins.template(iconData))
+   gulp.src(Config.paths.iconsTemplates + '/_Icon.Data.scss')
+    .pipe(Plugins.template({'data':iconData}))
     .pipe(gulp.dest(Config.paths.iconsTemp));
 });
 

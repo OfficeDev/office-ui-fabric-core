@@ -262,81 +262,83 @@
 
 // Rotate
 @mixin ms-u-rotate90deg {
-  @include ms-animation(rotate90, $ms-duration1, $ms-ease2);
+  // @todo: The duration should use a variable, likely $ms-duration1
+  @include ms-animation(rotate90, 0.1s, $ms-ease2);
 }
 
 @mixin ms-u-rotateN90deg {
-  @include ms-animation(rotateN90, $ms-duration1, $ms-ease2);
+  // @todo: The duration should use a variable, likely $ms-duration1
+  @include ms-animation(rotateN90, 0.1s, $ms-ease2);
 }
 
 
 // Fade
 @mixin ms-u-fadeIn100 {
-  animation-duration: 0.1s;
+  animation-duration: $ms-duration1; // @todo: Based on class name, likely intended to be 0.1s
   animation-name: fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeIn200 {
-  animation-duration: 0.2s;
+  animation-duration: $ms-duration2; // @todo: Based on class name, likely intended to be 0.2s
   animation-name: fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeIn400 {
-  animation-duration: 0.4s;
+  animation-duration: $ms-duration3; // @todo: Based on class name, likely intended to be 0.4s
   animation-name: fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeIn500 {
-  animation-duration: 0.5s;
+  animation-duration: $ms-duration4; // @todo: Based on class name, likely intended to be 0.5s
   animation-name: fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut100 {
-  animation-duration: 0.1s;
+  animation-duration: 0.1s; // @todo: This is the only duration that matches the class name
   animation-name: fadeOut;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut200 {
-  animation-duration: 0.2s;
+  animation-duration: $ms-duration1; // @todo: Based on class name, likely intended to be 0.2s
   animation-name: fadeOut;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut400 {
-  animation-duration: 0.4s;
+  animation-duration: $ms-duration3; // @todo: Based on class name, likely intended to be 0.4s
   animation-name: fadeOut;
   animation-fill-mode: both;
 }
 
 @mixin ms-u-fadeOut500 {
-  animation-duration: 0.5s;
+  animation-duration: $ms-duration4; // @todo: Based on class name, likely intended to be 0.5s
   animation-name: fadeOut;
   animation-fill-mode: both;
 }
 
 // Expand-collapse
 @mixin ms-u-expandCollapse100 {
-  transition: height 0.1s $ms-ease2;
+  transition: height 0.1s $ms-ease2; // @todo: This is the only duration that matches the class name
 }
 
 @mixin ms-u-expandCollapse200 {
-  transition: height 0.2s $ms-ease2;
+  transition: height $ms-duration1 $ms-ease2; // @todo: Based on class name, likely intended to be 0.2s
 }
 
 @mixin ms-u-expandCollapse400 {
-  transition: height 0.4s $ms-ease2;
+  transition: height $ms-duration3 $ms-ease2; // @todo: Based on class name, likely intended to be 0.4s
 }
 
 // Delay
 @mixin ms-u-delay100 {
-  animation-delay: 0.1s;
+  animation-delay: $ms-duration1; // @todo: Based on class name, likely intended to be 0.1s
 }
 
 @mixin ms-u-delay200 {
-  animation-delay: 0.2s;
+  animation-delay: $ms-duration2; // @todo: Based on class name, likely intended to be 0.2s
 }

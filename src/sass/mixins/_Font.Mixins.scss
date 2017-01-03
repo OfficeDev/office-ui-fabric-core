@@ -10,7 +10,7 @@
 */
 
 // Mixins to generate @font-face rules for unique languages.
-@mixin ms-fontFamily-SegoeUILight($ms-font-language, $ms-font-path) {
+@mixin ms-fontFamily-segoeUILight($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: '#{$ms-font-name} #{$ms-font-language}';
     src: local('Segoe UI Light'),
@@ -22,7 +22,7 @@
   }
 }
 
-@mixin ms-fontFamily-SegoeUISemilight($ms-font-language, $ms-font-path) {
+@mixin ms-fontFamily-segoeUISemilight($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: '#{$ms-font-name} #{$ms-font-language}';
     src: local('Segoe UI Semilight'),
@@ -34,7 +34,7 @@
   }
 }
 
-@mixin ms-fontFamily-SegoeUIRegular($ms-font-language, $ms-font-path) {
+@mixin ms-fontFamily-segoeUIRegular($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: '#{$ms-font-name} #{$ms-font-language}';
     src: local('Segoe UI'),
@@ -46,7 +46,7 @@
   }
 }
 
-@mixin ms-fontFamily-SegoeUISemibold($ms-font-language, $ms-font-path) {
+@mixin ms-fontFamily-segoeUISemibold($ms-font-language, $ms-font-path) {
   @font-face {
     font-family: '#{$ms-font-name} #{$ms-font-language}';
     src: local('Segoe UI Semibold'),
@@ -59,100 +59,100 @@
 }
 
 // Mixins to generate language-specific font faces.
-@mixin ms-fontFamily-SegoeUIArabicLight {
-  @include ms-fontFamily-SegoeUILight('Arabic', $ms-font-path-arabic);
+@mixin ms-fontFamily-segoeUIArabicLight {
+  @include ms-fontFamily-segoeUILight('Arabic', $ms-font-path-arabic);
 }
-@mixin ms-fontFamily-SegoeUIArabicRegular {
-  @include ms-fontFamily-SegoeUIRegular('Arabic', $ms-font-path-arabic);
+@mixin ms-fontFamily-segoeUIArabicRegular {
+  @include ms-fontFamily-segoeUIRegular('Arabic', $ms-font-path-arabic);
 }
-@mixin ms-fontFamily-SegoeUIArabicSemibold {
-  @include ms-fontFamily-SegoeUISemibold('Arabic', $ms-font-path-arabic);
+@mixin ms-fontFamily-segoeUIArabicSemibold {
+  @include ms-fontFamily-segoeUISemibold('Arabic', $ms-font-path-arabic);
 }
-@mixin ms-fontFamily-SegoeUIArabicSemilight {
-  @include ms-fontFamily-SegoeUISemilight('Arabic', $ms-font-path-arabic);
-}
-
-@mixin ms-fontFamily-SegoeUICyrillicLight {
-  @include ms-fontFamily-SegoeUILight('Cyrillic', $ms-font-path-cyrillic);
-}
-@mixin ms-fontFamily-SegoeUICyrillicRegular {
-  @include ms-fontFamily-SegoeUIRegular('Cyrillic', $ms-font-path-cyrillic);
-}
-@mixin ms-fontFamily-SegoeUICyrillicSemibold {
-  @include ms-fontFamily-SegoeUISemibold('Cyrillic', $ms-font-path-cyrillic);
-}
-@mixin ms-fontFamily-SegoeUICyrillicSemilight {
-  @include ms-fontFamily-SegoeUISemilight('Cyrillic', $ms-font-path-cyrillic);
+@mixin ms-fontFamily-segoeUIArabicSemilight {
+  @include ms-fontFamily-segoeUISemilight('Arabic', $ms-font-path-arabic);
 }
 
-@mixin ms-fontFamily-SegoeUIEastEuropeanLight {
-  @include ms-fontFamily-SegoeUILight('EastEuropean', $ms-font-path-easteuropean);
+@mixin ms-fontFamily-segoeUICyrillicLight {
+  @include ms-fontFamily-segoeUILight('Cyrillic', $ms-font-path-cyrillic);
 }
-@mixin ms-fontFamily-SegoeUIEastEuropeanRegular {
-  @include ms-fontFamily-SegoeUIRegular('EastEuropean', $ms-font-path-easteuropean);
+@mixin ms-fontFamily-segoeUICyrillicRegular {
+  @include ms-fontFamily-segoeUIRegular('Cyrillic', $ms-font-path-cyrillic);
 }
-@mixin ms-fontFamily-SegoeUIEastEuropeanSemibold {
-  @include ms-fontFamily-SegoeUISemibold('EastEuropean', $ms-font-path-easteuropean);
+@mixin ms-fontFamily-segoeUICyrillicSemibold {
+  @include ms-fontFamily-segoeUISemibold('Cyrillic', $ms-font-path-cyrillic);
 }
-@mixin ms-fontFamily-SegoeUIEastEuropeanSemilight {
-  @include ms-fontFamily-SegoeUISemilight('EastEuropean', $ms-font-path-easteuropean);
-}
-
-@mixin ms-fontFamily-SegoeUIGreekLight {
-  @include ms-fontFamily-SegoeUILight('Greek', $ms-font-path-greek);
-}
-@mixin ms-fontFamily-SegoeUIGreekRegular {
-  @include ms-fontFamily-SegoeUIRegular('Greek', $ms-font-path-greek);
-}
-@mixin ms-fontFamily-SegoeUIGreekSemibold {
-  @include ms-fontFamily-SegoeUISemibold('Greek', $ms-font-path-greek);
-}
-@mixin ms-fontFamily-SegoeUIGreekSemilight {
-  @include ms-fontFamily-SegoeUISemilight('Greek', $ms-font-path-greek);
+@mixin ms-fontFamily-segoeUICyrillicSemilight {
+  @include ms-fontFamily-segoeUISemilight('Cyrillic', $ms-font-path-cyrillic);
 }
 
-@mixin ms-fontFamily-SegoeUIHebrewLight {
-  @include ms-fontFamily-SegoeUILight('Hebrew', $ms-font-path-hebrew);
+@mixin ms-fontFamily-segoeUIEastEuropeanLight {
+  @include ms-fontFamily-segoeUILight('EastEuropean', $ms-font-path-easteuropean);
 }
-@mixin ms-fontFamily-SegoeUIHebrewRegular {
-  @include ms-fontFamily-SegoeUIRegular('Hebrew', $ms-font-path-hebrew);
+@mixin ms-fontFamily-segoeUIEastEuropeanRegular {
+  @include ms-fontFamily-segoeUIRegular('EastEuropean', $ms-font-path-easteuropean);
 }
-@mixin ms-fontFamily-SegoeUIHebrewSemibold {
-  @include ms-fontFamily-SegoeUISemibold('Hebrew', $ms-font-path-hebrew);
+@mixin ms-fontFamily-segoeUIEastEuropeanSemibold {
+  @include ms-fontFamily-segoeUISemibold('EastEuropean', $ms-font-path-easteuropean);
 }
-@mixin ms-fontFamily-SegoeUIHebrewSemilight {
-  @include ms-fontFamily-SegoeUISemilight('Hebrew', $ms-font-path-hebrew);
-}
-
-@mixin ms-fontFamily-SegoeUIVietnameseLight {
-  @include ms-fontFamily-SegoeUILight('Vietnamese', $ms-font-path-vietnamese);
-}
-@mixin ms-fontFamily-SegoeUIVietnameseRegular {
-  @include ms-fontFamily-SegoeUIRegular('Vietnamese', $ms-font-path-vietnamese);
-}
-@mixin ms-fontFamily-SegoeUIVietnameseSemibold {
-  @include ms-fontFamily-SegoeUISemibold('Vietnamese', $ms-font-path-vietnamese);
-}
-@mixin ms-fontFamily-SegoeUIVietnameseSemilight {
-  @include ms-fontFamily-SegoeUISemilight('Vietnamese', $ms-font-path-vietnamese);
+@mixin ms-fontFamily-segoeUIEastEuropeanSemilight {
+  @include ms-fontFamily-segoeUISemilight('EastEuropean', $ms-font-path-easteuropean);
 }
 
-@mixin ms-fontFamily-SegoeUIWestEuropeanLight {
-  @include ms-fontFamily-SegoeUILight('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-fontFamily-segoeUIGreekLight {
+  @include ms-fontFamily-segoeUILight('Greek', $ms-font-path-greek);
 }
-@mixin ms-fontFamily-SegoeUIWestEuropeanRegular {
-  @include ms-fontFamily-SegoeUIRegular('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-fontFamily-segoeUIGreekRegular {
+  @include ms-fontFamily-segoeUIRegular('Greek', $ms-font-path-greek);
 }
-@mixin ms-fontFamily-SegoeUIWestEuropeanSemibold {
-  @include ms-fontFamily-SegoeUISemibold('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-fontFamily-segoeUIGreekSemibold {
+  @include ms-fontFamily-segoeUISemibold('Greek', $ms-font-path-greek);
 }
-@mixin ms-fontFamily-SegoeUIWestEuropeanSemilight {
-  @include ms-fontFamily-SegoeUISemilight('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-fontFamily-segoeUIGreekSemilight {
+  @include ms-fontFamily-segoeUISemilight('Greek', $ms-font-path-greek);
+}
+
+@mixin ms-fontFamily-segoeUIHebrewLight {
+  @include ms-fontFamily-segoeUILight('Hebrew', $ms-font-path-hebrew);
+}
+@mixin ms-fontFamily-segoeUIHebrewRegular {
+  @include ms-fontFamily-segoeUIRegular('Hebrew', $ms-font-path-hebrew);
+}
+@mixin ms-fontFamily-segoeUIHebrewSemibold {
+  @include ms-fontFamily-segoeUISemibold('Hebrew', $ms-font-path-hebrew);
+}
+@mixin ms-fontFamily-segoeUIHebrewSemilight {
+  @include ms-fontFamily-segoeUISemilight('Hebrew', $ms-font-path-hebrew);
+}
+
+@mixin ms-fontFamily-segoeUIVietnameseLight {
+  @include ms-fontFamily-segoeUILight('Vietnamese', $ms-font-path-vietnamese);
+}
+@mixin ms-fontFamily-segoeUIVietnameseRegular {
+  @include ms-fontFamily-segoeUIRegular('Vietnamese', $ms-font-path-vietnamese);
+}
+@mixin ms-fontFamily-segoeUIVietnameseSemibold {
+  @include ms-fontFamily-segoeUISemibold('Vietnamese', $ms-font-path-vietnamese);
+}
+@mixin ms-fontFamily-segoeUIVietnameseSemilight {
+  @include ms-fontFamily-segoeUISemilight('Vietnamese', $ms-font-path-vietnamese);
+}
+
+@mixin ms-fontFamily-segoeUIWestEuropeanLight {
+  @include ms-fontFamily-segoeUILight('WestEuropean', $ms-font-path-westeuropean);
+}
+@mixin ms-fontFamily-segoeUIWestEuropeanRegular {
+  @include ms-fontFamily-segoeUIRegular('WestEuropean', $ms-font-path-westeuropean);
+}
+@mixin ms-fontFamily-segoeUIWestEuropeanSemibold {
+  @include ms-fontFamily-segoeUISemibold('WestEuropean', $ms-font-path-westeuropean);
+}
+@mixin ms-fontFamily-segoeUIWestEuropeanSemilight {
+  @include ms-fontFamily-segoeUISemilight('WestEuropean', $ms-font-path-westeuropean);
 }
 
 // A mixin that overrides all of the font classes for languages that
 // use system fonts. A single font-family is used for all weights.
-@mixin ms-font-language-override-system-fonts($lang-code, $font-family) {
+@mixin ms-fontFamilyOverride($lang-code, $font-family) {
   *[lang='#{$lang-code}'] {
     .ms-font-mi,
     .ms-font-xs,

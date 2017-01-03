@@ -6,18 +6,18 @@
 // Vendor-prefixed mixins
 
 // Border radius.
-@mixin ms-border-radius($ms-radius: 5px) {
+@mixin ms-borderRadius($ms-radius: 5px) {
   border-radius: $ms-radius;
   background-clip: padding-box;
 }
 
 // Drop shadow.
-@mixin ms-drop-shadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
+@mixin ms-dropShadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
   box-shadow: $ms-x-offset $ms-y-offset $ms-blur $ms-spread rgba(0, 0, 0, $ms-alpha);
 }
 
 // Background gradient.
-@mixin ms-background-gradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
+@mixin ms-backgroundGradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
     background-color: $ms-start;
     background-image: linear-gradient($ms-origin, $ms-start $ms-start-location, $ms-stop $ms-stop-location);
 }
@@ -28,7 +28,7 @@
 }
 
 // Reset button styles.
-@mixin ms-button-reset() {
+@mixin ms-buttonReset() {
   background: none;
   border: 0;
   cursor: pointer;
@@ -208,7 +208,7 @@
 }
 
 // Prevents user selection of text elements.
-@mixin ms-user-select ($val) {
+@mixin ms-userSelect ($val) {
     -webkit-touch-callout:  $val;
     -webkit-user-select:    $val;
     -khtml-user-select:     $val;
@@ -226,7 +226,7 @@
 }
 
 // Input placehoder
-@mixin ms-input-placeholder {
+@mixin ms-inputPlaceholder {
     &::-webkit-input-placeholder  {@content}
     &::-moz-placeholder           {@content}
     &:-moz-placeholder            {@content}

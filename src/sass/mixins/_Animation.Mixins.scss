@@ -6,7 +6,7 @@
 // Fabric Animations
 
 // Outputs the keyframes used by the animation classes
-@mixin ms-animation-keyframes {
+@mixin ms-animationKeyframes {
   @keyframes ms-slideRightIn10 {
     from { transform:translate3d(-10px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }

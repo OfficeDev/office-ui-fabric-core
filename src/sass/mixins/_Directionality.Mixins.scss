@@ -20,7 +20,7 @@
 }
 
 // Use baseRTL on a root element (e.g. page or region) that needs RTL support.
-@mixin ms-baseRtl {
+@mixin ms-baseRTL {
   @include ms-RTL {
     direction: rtl;
     unicode-bidi: bidi-override;
@@ -32,7 +32,7 @@
 // Use to automatically create RTL versions of your properties.
 
 // Border styles.
-@mixin ms-border-color($top, $right, $bottom, $left) {
+@mixin ms-borderColor($top, $right, $bottom, $left) {
   border-color: $top $right $bottom $left;
 
   @include ms-RTL {
@@ -40,7 +40,7 @@
   }
 }
 
-@mixin ms-border-left($width, $style, $color) {
+@mixin ms-borderLeft($width, $style, $color) {
   @include ms-LTR {
     border-left: $width $style $color;
   }
@@ -50,7 +50,7 @@
   }
 }
 
-@mixin ms-border-left-color($color) {
+@mixin ms-borderLeftColor($color) {
   @include ms-LTR {
     border-left-color: $color;
   }
@@ -60,7 +60,7 @@
   }
 }
 
-@mixin ms-border-left-style($style) {
+@mixin ms-borderLeftStyle($style) {
   @include ms-LTR {
     border-left-style: $style;
   }
@@ -70,7 +70,7 @@
   }
 }
 
-@mixin ms-border-left-width($width) {
+@mixin ms-borderLeftWidth($width) {
   @include ms-LTR {
     border-left-width: $width;
   }
@@ -80,7 +80,7 @@
   }
 }
 
-@mixin ms-border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+@mixin ms-borderRadius($topLeft, $topRight, $bottomRight, $bottomLeft) {
   border-radius: $topLeft $topRight $bottomRight $bottomLeft;
 
   @include ms-RTL {
@@ -88,7 +88,7 @@
   }
 }
 
-@mixin ms-border-right($width, $style, $color) {
+@mixin ms-borderRight($width, $style, $color) {
   @include ms-LTR {
     border-right: $width $style $color;
   }
@@ -98,7 +98,7 @@
   }
 }
 
-@mixin ms-border-right-color($color) {
+@mixin ms-borderRightColor($color) {
   @include ms-LTR {
       border-right-color: $color;
   }
@@ -108,7 +108,7 @@
   }
 }
 
-@mixin ms-border-right-style($style) {
+@mixin ms-borderRightStyle($style) {
   @include ms-LTR {
     border-right-style: $style;
   }
@@ -118,7 +118,7 @@
   }
 }
 
-@mixin ms-border-right-width($width) {
+@mixin ms-borderRightWidth($width) {
   @include ms-LTR {
     border-right-width: $width;
   }
@@ -201,7 +201,7 @@
   }
 }
 
-@mixin ms-margin-left($distance) {
+@mixin ms-marginLeft($distance) {
   @include ms-LTR {
     margin-left: $distance;
   }
@@ -211,7 +211,7 @@
   }
 }
 
-@mixin ms-margin-right($distance) {
+@mixin ms-marginRight($distance) {
   @include ms-LTR {
     margin-right: $distance;
   }
@@ -229,7 +229,7 @@
   }
 }
 
-@mixin ms-padding-left($distance) {
+@mixin ms-paddingLeft($distance) {
   @include ms-LTR {
     padding-left: $distance;
   }
@@ -239,7 +239,7 @@
   }
 }
 
-@mixin ms-padding-right($distance) {
+@mixin ms-paddingRight($distance) {
   @include ms-LTR {
     padding-right: $distance;
   }
@@ -250,7 +250,7 @@
 }
 
 // Text-alignment.
-@mixin ms-text-align($direction) {
+@mixin ms-textAlign($direction) {
   @if $direction == left {
     @include ms-LTR {
       text-align: left;
@@ -271,7 +271,7 @@
 }
 
 // Box-shadow.
-@mixin ms-box-shadow($left, $etc) {
+@mixin ms-boxShadow($left, $etc) {
   @include ms-LTR {
     box-shadow: $left $etc;
   }
@@ -282,7 +282,7 @@
 }
 
 // Transforms.
-@mixin ms-transform-scaleX($scaleX: 1) {
+@mixin ms-transformScaleX($scaleX: 1) {
   @include ms-LTR {
     transform: scaleX($scaleX);
   }
@@ -292,7 +292,7 @@
   }
 }
 
-@mixin ms-transform-translateX($distance) {
+@mixin ms-transformTranslateX($distance) {
   @include ms-LTR {
     transform: translateX($distance);
   }
@@ -303,7 +303,7 @@
 }
 
 // Transitions. Only supported when ONLY left/right are declared
-@mixin ms-transition-property($direction) {
+@mixin ms-transitionProperty($direction) {
   @if $direction == left {
     @include ms-LTR {
       transition-property: left;

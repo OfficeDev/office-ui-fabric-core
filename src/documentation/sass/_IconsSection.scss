@@ -22,11 +22,11 @@
         list-style: none !important;
 
         // Phone, Phablet
-        @media (min-width: $ms-screen-lg-min) {
+        @media (min-width: $ms-screen-min-lg) {
           width: 24%;
         }
 
-        @media (min-width: $ms-screen-xl-min) {
+        @media (min-width: $ms-screen-min-xl) {
           margin-right: 1%;
           margin-bottom: 1%;
           min-height: 124px;

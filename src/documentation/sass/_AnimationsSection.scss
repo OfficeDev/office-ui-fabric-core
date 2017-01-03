@@ -6,7 +6,7 @@ $animationExample-height: 90px;
         display: none;
     }
 
-    @media(min-width: $ms-screen-md-min) {
+    @media(min-width: $ms-screen-min-md) {
         display: block;
         .docs-animationExampleColumn {
             display: block;
@@ -36,7 +36,7 @@ $animationExample-height: 90px;
         margin-bottom: 14px;
     }
 
-    @media(min-width: $ms-screen-lg-min) {
+    @media(min-width: $ms-screen-min-lg) {
         .docs-animationDescriptionColumn {
             margin-bottom: 0;
         }
@@ -48,7 +48,7 @@ $animationExample-height: 90px;
         }
     }
 
-    @media(min-width: $ms-screen-xl-min) {
+    @media(min-width: $ms-screen-min-xl) {
         
         .docs-animationCubicColumn {
             display: block;
@@ -74,7 +74,7 @@ $animationExample-height: 90px;
             font-weight: $ms-font-weight-semibold;
         }
 
-        @media(min-width: $ms-screen-md-min) {
+        @media(min-width: $ms-screen-min-md) {
             line-height: 18px;
             vertical-align: middle;
             .mobileText {
@@ -82,7 +82,7 @@ $animationExample-height: 90px;
             }
         }
 
-        @media(min-width: $ms-screen-xl-min) {
+        @media(min-width: $ms-screen-min-xl) {
              min-height: $animationExample-height;
             line-height: $animationExample-height;
         }

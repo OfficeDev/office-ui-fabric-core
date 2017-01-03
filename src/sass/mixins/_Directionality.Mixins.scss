@@ -6,22 +6,22 @@
 // Directionality mixins to generate LTR and RTL-specific styles
 
 // Base left-to-right mixin definition.
-@mixin ms-u-LTR {
+@mixin ms-LTR {
   [dir='ltr'] & {
     @content;
   }
 }
 
 // Base right-to-left mixin definition.
-@mixin ms-u-RTL {
+@mixin ms-RTL {
   [dir='rtl'] & {
     @content;
   }
 }
 
 // Use baseRTL on a root element (e.g. page or region) that needs RTL support.
-@mixin ms-u-baseRtl {
-  @include ms-u-RTL {
+@mixin ms-baseRtl {
+  @include ms-RTL {
     direction: rtl;
     unicode-bidi: bidi-override;
   }
@@ -32,118 +32,118 @@
 // Use to automatically create RTL versions of your properties.
 
 // Border styles.
-@mixin ms-u-border-color($top, $right, $bottom, $left) {
+@mixin ms-border-color($top, $right, $bottom, $left) {
   border-color: $top $right $bottom $left;
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-color: $top $left $bottom $right;
   }
 }
 
-@mixin ms-u-border-left($width, $style, $color) {
-  @include ms-u-LTR {
+@mixin ms-border-left($width, $style, $color) {
+  @include ms-LTR {
     border-left: $width $style $color;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-right: $width $style $color;
   }
 }
 
-@mixin ms-u-border-left-color($color) {
-  @include ms-u-LTR {
+@mixin ms-border-left-color($color) {
+  @include ms-LTR {
     border-left-color: $color;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-right-color: $color;
   }
 }
 
-@mixin ms-u-border-left-style($style) {
-  @include ms-u-LTR {
+@mixin ms-border-left-style($style) {
+  @include ms-LTR {
     border-left-style: $style;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-right-style: $style;
   }
 }
 
-@mixin ms-u-border-left-width($width) {
-  @include ms-u-LTR {
+@mixin ms-border-left-width($width) {
+  @include ms-LTR {
     border-left-width: $width;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-right-width: $width;
   }
 }
 
-@mixin ms-u-border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+@mixin ms-border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
   border-radius: $topLeft $topRight $bottomRight $bottomLeft;
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-radius: $topRight $topLeft $bottomLeft $bottomRight;
   }
 }
 
-@mixin ms-u-border-right($width, $style, $color) {
-  @include ms-u-LTR {
+@mixin ms-border-right($width, $style, $color) {
+  @include ms-LTR {
     border-right: $width $style $color;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-left: $width $style $color;
   }
 }
 
-@mixin ms-u-border-right-color($color) {
-  @include ms-u-LTR {
+@mixin ms-border-right-color($color) {
+  @include ms-LTR {
       border-right-color: $color;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
       border-left-color: $color;
   }
 }
 
-@mixin ms-u-border-right-style($style) {
-  @include ms-u-LTR {
+@mixin ms-border-right-style($style) {
+  @include ms-LTR {
     border-right-style: $style;
   }
   
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-left-style: $style;
   }
 }
 
-@mixin ms-u-border-right-width($width) {
-  @include ms-u-LTR {
+@mixin ms-border-right-width($width) {
+  @include ms-LTR {
     border-right-width: $width;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     border-left-width: $width;
   }
 }
 
 // Floats.
-@mixin ms-u-clear($side) {
+@mixin ms-clear($side) {
   @if $side == left {
-    @include ms-u-LTR {
+    @include ms-LTR {
       clear: $side;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       clear: right;
     }
   } @else if $side == right {
-    @include ms-u-LTR {
+    @include ms-LTR {
       clear: $side;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       clear: left;
     }
   } @else {
@@ -151,173 +151,173 @@
   }
 }
 
-@mixin ms-u-float($direction) {
+@mixin ms-float($direction) {
   @if $direction == left {
-    @include ms-u-LTR {
+    @include ms-LTR {
       float: left;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       float: right;
     }
   } @else {
-    @include ms-u-LTR {
+    @include ms-LTR {
       float: right;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       float: left;
     }
   }
 }
 
 // Positioning.
-@mixin ms-u-left($distance) {
-  @include ms-u-LTR {
+@mixin ms-left($distance) {
+  @include ms-LTR {
     left: $distance;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     right: $distance;
   }
 }
 
-@mixin ms-u-right($distance) {
-  @include ms-u-LTR {
+@mixin ms-right($distance) {
+  @include ms-LTR {
     right: $distance;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     left: $distance;
   }
 }
 
 // Margins.
-@mixin ms-u-margin($top, $right, $bottom, $left) {
+@mixin ms-margin($top, $right, $bottom, $left) {
   margin: $top $right $bottom $left;
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     margin: $top $left $bottom $right;
   }
 }
 
-@mixin ms-u-margin-left($distance) {
-  @include ms-u-LTR {
+@mixin ms-margin-left($distance) {
+  @include ms-LTR {
     margin-left: $distance;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     margin-right: $distance;
   }
 }
 
-@mixin ms-u-margin-right($distance) {
-  @include ms-u-LTR {
+@mixin ms-margin-right($distance) {
+  @include ms-LTR {
     margin-right: $distance;
   }
-  @include ms-u-RTL {
+  @include ms-RTL {
     margin-left: $distance;
   }
 }
 
 // Padding.
-@mixin ms-u-padding($top, $right, $bottom, $left) {
+@mixin ms-padding($top, $right, $bottom, $left) {
   padding: $top $right $bottom $left;
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     padding: $top $left $bottom $right;
   }
 }
 
-@mixin ms-u-padding-left($distance) {
-  @include ms-u-LTR {
+@mixin ms-padding-left($distance) {
+  @include ms-LTR {
     padding-left: $distance;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     padding-right: $distance;
   }
 }
 
-@mixin ms-u-padding-right($distance) {
-  @include ms-u-LTR {
+@mixin ms-padding-right($distance) {
+  @include ms-LTR {
     padding-right: $distance;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     padding-left: $distance;
   }
 }
 
 // Text-alignment.
-@mixin ms-u-text-align($direction) {
+@mixin ms-text-align($direction) {
   @if $direction == left {
-    @include ms-u-LTR {
+    @include ms-LTR {
       text-align: left;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       text-align: right;
     }
   } @else {
-    @include ms-u-LTR {
+    @include ms-LTR {
       text-align: right;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       text-align: left;
     }
   }
 }
 
 // Box-shadow.
-@mixin ms-u-box-shadow($left, $etc) {
-  @include ms-u-LTR {
+@mixin ms-box-shadow($left, $etc) {
+  @include ms-LTR {
     box-shadow: $left $etc;
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     box-shadow: -$left $etc;
   }
 }
 
 // Transforms.
-@mixin ms-u-transform-scaleX($scaleX: 1) {
-  @include ms-u-LTR {
+@mixin ms-transform-scaleX($scaleX: 1) {
+  @include ms-LTR {
     transform: scaleX($scaleX);
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     transform: scaleX(-$scaleX);
   }
 }
 
-@mixin ms-u-transform-translateX($distance) {
-  @include ms-u-LTR {
+@mixin ms-transform-translateX($distance) {
+  @include ms-LTR {
     transform: translateX($distance);
   }
 
-  @include ms-u-RTL {
+  @include ms-RTL {
     transform: translateX(-$distance);
   }
 }
 
 // Transitions. Only supported when ONLY left/right are declared
-@mixin ms-u-transition-property($direction) {
+@mixin ms-transition-property($direction) {
   @if $direction == left {
-    @include ms-u-LTR {
+    @include ms-LTR {
       transition-property: left;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       transition-property: right;
     }
   } @else {
-    @include ms-u-LTR {
+    @include ms-LTR {
       transition-property: right;
     }
 
-    @include ms-u-RTL {
+    @include ms-RTL {
       transition-property: left;
     }
   }

@@ -2,22 +2,22 @@
 
 // Generate classes for product and document icons
 @mixin ms-brandIconClasses($retina) {
-	@each $icon in $ms-productIcons {
+	@each $icon in $ms-brandIcon-productIcons {
 		.ms-BrandIcon--#{$icon} {
-			@include ms-brandIconSizes($icon, $retina, $ms-productImagesPath);
+			@include ms-brandIcon-sizes($icon, $retina, $ms-productImagesPath);
 		}
 	}
 
-	@each $icon in $ms-documentIcons {
+	@each $icon in $ms-brandIcon-documentIcons {
 		.ms-BrandIcon--#{$icon} {
-			@include ms-brandIconSizes($icon, $retina, $ms-documentImagesPath);
+			@include ms-brandIcon-sizes($icon, $retina, $ms-brandIcon-documentImagesPath);
 		}
 	}
 }
 
 // Generate size classes for each icon
-@mixin ms-brandIconSizes($icon, $retina, $imagesPath) {
-	@each $size in $ms-brandIconSizes {
+@mixin ms-brandIcon-sizes($icon, $retina, $imagesPath) {
+	@each $size in $ms-brandIcon-sizes {
 		&.ms-BrandIcon--icon#{$size} {
 			background-image: url(#{$imagesPath}/#{$icon}_#{$size}x#{$retina}.png);
 		}
@@ -25,8 +25,8 @@
 }
 
 // Generate generic icon size classes
-@mixin ms-brandIconSizesClasses() {
-	@each $size in $ms-brandIconSizes {
+@mixin ms-brandIcon-sizesClasses() {
+	@each $size in $ms-brandIcon-sizes {
 		.ms-BrandIcon--icon#{$size} {
 			background-size: 100% 100%;
 			width: #{$size}px;

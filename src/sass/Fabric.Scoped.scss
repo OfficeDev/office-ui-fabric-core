@@ -4,8 +4,11 @@
 // Office UI Fabric
 // Core styles scoped to the current major version of Fabric
 
+// Variable is set during gulp task as comma seperated list. i.e. 5,1,0
+$ms-fabric-version: <%= fabricVersion %>;
+
 @import './References';
-@import '../../temp/_Fabric.Scoped.Temp';
+@import './mixins/ScopedStyles.Mixins';
 
 // Sets a global flag to enable scoped styles within certain files
 $do-scope-styles: true;

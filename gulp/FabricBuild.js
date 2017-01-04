@@ -17,6 +17,8 @@ var version = {
     patch: versionParts[2]
 }
 
+var versionCommaDelim = pkg.version.split('.').join(',');
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -36,6 +38,7 @@ gulp.task('Fabric-copyAssets', function () {
      var moveSass =  gulp.src([Config.paths.srcSass + '/**/*', !Config.paths.srcSass + '/Fabric.Scoped.scss'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
+            .pipe(Plugins.replace('<%= fabricVersion %>', versionCommaDelim))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Moving Sass files over to Dist"
             })))
@@ -47,22 +50,7 @@ gulp.task('Fabric-copyAssets', function () {
 // Sass tasks
 // ----------------------------------------------------------------------------
 
-// Build Sass files for core Fabric into LTR and RTL CSS files.
-
-gulp.task('Fabric-scopedPreBuild', function () {
-    var fabricScopedPreBuild = gulp.src(Config.paths.srcTemplate + '/' + 'scoped-fabric-template.' + BuildConfig.fileExtension)
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.data(function () {
-              return { "version": version };
-            }))
-            .pipe(Plugins.template())
-            .pipe(Plugins.rename('_Fabric.Scoped.Temp.scss'))
-            .pipe(gulp.dest(Config.paths.temp));
-
-    return fabricScopedPreBuild;
-});
-
-gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
+gulp.task('Fabric-buildStyles', function () {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -94,6 +82,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
             })))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(Plugins.replace('<%= fabricVersion %>', versionCommaDelim))
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.css'))
             .pipe(Plugins.autoprefixer({
@@ -146,6 +135,6 @@ gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets','Fabric-scopedPreBuild', 'Fabric-buildStyles']);
+gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
 BuildConfig.buildTasks.push('Fabric');
 BuildConfig.nukeTasks.push('Fabric-nuke');

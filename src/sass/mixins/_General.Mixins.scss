@@ -250,7 +250,8 @@
 
 // Base/wrapper component
 @mixin ms-Fabric {
-  @include ms-fontColor-neutralPrimary;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-base-family;
 }
 
 @mixin ms-focusBorder($padding: 0, $color: $ms-color-neutralSecondary) {

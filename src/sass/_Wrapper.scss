@@ -8,3 +8,8 @@
 .ms-Fabric {
   @include ms-Fabric;
 }
+
+// Modifier: Use Courier.
+.ms-Fabric--alternateFont {
+  font-family: Courier New, Courier, monospace;
+}

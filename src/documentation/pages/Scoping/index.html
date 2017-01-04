@@ -1,0 +1,36 @@
+@@include('../../templates/modules/components/DocumentationPageHeader.html')
+<style>
+  .ms-Fabric--v5-1-0 .ms-fontColor-themePrimary {
+    color: #ff0000;
+  }
+</style>
+
+<div class="docs-Styles-section" id="scoping">
+  <h2>Version Scoping Sample</h2>
+  <p>For scenarios where multiple major versions may live in the same DOM, Fabric provides a "scoped" version of all Core styles that will only apply those styles when used under a versioned wrapper class.</p>
+
+  <p>
+    To use scoped Fabric styles, simply add the versioned wrapper class to the parent DOM element you wish to scope, then use Fabric as usual.
+  </p>
+
+  <p>For example, take this following title, which uses unscoped Fabric:</p>
+
+  <pre><code>
+&lt;div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from unscoped Fabric.&lt;/div&gt;
+</code></pre>
+
+  <div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from unscoped Fabric.</div>
+
+  <p>To scope this title to v5.1.0, add an extra wrapper <code>div</code> around it and add both the <code>ms-Fabric</code> wrapper class and the scoping class for the current version of Fabric. Note that to illustrate this behavior for this demonstration, <code>.ms-fontColor-themePrimary</code> has been overridden with a different color when used under the <code>ms-Fabric--v5-1-0</code> version-scoping class.</p>
+
+  <pre><code>
+  &lt;div class="ms-Fabric ms-Fabric--v5-1-0">
+    &lt;div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from Fabric 5.1.0.&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+  <div class="ms-Fabric ms-Fabric--v5-1-0">
+    <div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from Fabric 5.1.0.</div>
+  </div>
+</div>
+@@include('../../templates/modules/components/DocumentationPageFooter.html')

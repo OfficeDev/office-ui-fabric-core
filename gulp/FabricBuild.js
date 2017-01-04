@@ -7,6 +7,17 @@ var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
+var pkg = require('../package.json');
+
+var versionParts = pkg.version.split('.');
+
+var version = {
+    major: versionParts[0],
+    minor: versionParts[1],
+    patch: versionParts[2]
+}
+
+var versionCommaDelim = pkg.version.split('.').join(',');
 
 //
 // Clean/Delete Tasks
@@ -14,7 +25,7 @@ var Plugins = require('./modules/Plugins');
 
 // Clean out the distribution folder.
 gulp.task('Fabric-nuke', function () {
-    return Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass]);
+    return Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass, Config.paths.temp]);
 });
 
 
@@ -24,9 +35,10 @@ gulp.task('Fabric-nuke', function () {
 
 // Copy all Sass files to distribution folder.
 gulp.task('Fabric-copyAssets', function () {            
-     var moveSass =  gulp.src([Config.paths.srcSass + '/**/*'])
+     var moveSass =  gulp.src([Config.paths.srcSass + '/**/*', !Config.paths.srcSass + '/Fabric.Scoped.scss'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
+            .pipe(Plugins.replace('<%= fabricVersion %>', versionCommaDelim))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Moving Sass files over to Dist"
             })))
@@ -37,8 +49,6 @@ gulp.task('Fabric-copyAssets', function () {
 //
 // Sass tasks
 // ----------------------------------------------------------------------------
-
-// Build Sass files for core Fabric into LTR and RTL CSS files.
 
 gulp.task('Fabric-buildStyles', function () {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
@@ -64,8 +74,32 @@ gulp.task('Fabric-buildStyles', function () {
             }))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(gulp.dest(Config.paths.distCSS));    
+    
+    var fabricScoped = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.Scoped.' + BuildConfig.fileExtension)
+            .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
+              title: "Building Core Fabric Scoped " + BuildConfig.fileExtension + " File"
+            })))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(Plugins.replace('<%= fabricVersion %>', versionCommaDelim))
+            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+            .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.css'))
+            .pipe(Plugins.autoprefixer({
+              browsers: ['last 2 versions', 'ie >= 9'],
+              cascade: false
+            }))
+            .pipe(Plugins.cssbeautify())
+            .pipe(Plugins.csscomb())
+            .pipe(gulp.dest(Config.paths.distCSS))
+            .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.min.css'))
+            .pipe(Plugins.cssMinify({
+                safe: true
+            }))
+            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
-                
+
     // Build full and minified Fabric RTL CSS.
     var fabricRtl = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.Rtl.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
@@ -92,8 +126,9 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
+
     // Merge all current streams into one.
-    return Plugins.mergeStream(fabric, fabricRtl);
+    return Plugins.mergeStream(fabric, fabricScoped, fabricRtl);
 });
 
 //

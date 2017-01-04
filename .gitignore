@@ -11,6 +11,7 @@ npm-debug.log
 *.sublime-workspace
 docs.css
 dist
+temp
 
 # Docs files
 docs/app

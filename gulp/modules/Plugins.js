@@ -35,6 +35,7 @@ var Plugins = function() {
 	this.path = require('path');
 	this.pkg = require('../../package.json');
 	this.fs = require('fs');
+	this.replace = require('gulp-replace');
 };
 
 module.exports = new Plugins();

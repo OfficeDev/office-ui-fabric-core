@@ -17,6 +17,8 @@ var version = {
     patch: versionParts[2]
 }
 
+var versionCommaDelim = pkg.version.split('.').join(',');
+
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
@@ -36,6 +38,7 @@ gulp.task('Fabric-copyAssets', function () {
      var moveSass =  gulp.src([Config.paths.srcSass + '/**/*', !Config.paths.srcSass + '/Fabric.Scoped.scss'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
+            .pipe(Plugins.replace('$FabricVersion', versionCommaDelim))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
                     title: "Moving Sass files over to Dist"
             })))
@@ -94,6 +97,7 @@ gulp.task('Fabric-buildStyles', ['Fabric-scopedPreBuild'], function () {
             })))
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+            .pipe(Plugins.replace('$FabricVersion', versionCommaDelim))
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.css'))
             .pipe(Plugins.autoprefixer({

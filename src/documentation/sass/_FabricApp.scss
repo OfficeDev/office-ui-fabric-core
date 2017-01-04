@@ -5,7 +5,7 @@ html, body, input, a
 }
 
 body {
-  @include ms-font-m-plus;
+  font-size: $ms-font-size-m-plus;
   -webkit-font-smoothing: antialiased;
 }
 

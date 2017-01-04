@@ -1,7 +1,6 @@
 .docs-OfficeFooter {
   background: $ms-color-black;
   color: $ms-color-white;
-  font-family: $ms-font-family-regular;
   font-size: $ms-font-size-m;
   padding: 32px 20px;
   position: relative;
@@ -28,7 +27,6 @@
 }
 
 .docs-OfficeFooter-heading {
-  font-family: $ms-font-family-semibold;
   font-size: $ms-font-size-l;
   white-space: nowrap;
 }

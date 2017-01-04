@@ -7,10 +7,16 @@
 
 // Base icon definition
 @mixin ms-Icon {
+  $icon-font-family: 'FabricMDL2Icons';
+
+  @if variable_exists(do-scope-styles) {
+    $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
+  }
+  
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
-  font-family: 'FabricMDL2Icons';
+  font-family: $icon-font-family;
   font-style: normal;
   font-weight: normal;
   speak: none;

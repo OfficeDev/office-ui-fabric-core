@@ -35,6 +35,7 @@
     "gulp-nuget-pack": "0.0.6",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^3.0.0",
     "gulp-size": "^1.0.0",
     "gulp-template": "^3.0.0",
@@ -50,6 +51,5 @@
     "typescript": "^2.0.3",
     "walk-sync": "^0.3.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

@@ -123,7 +123,7 @@ $ms-InfoBarHeight: 30px;
   height: inherit;
   right: -14%;
   top: 100%;
-  z-index:($ms-zIndex-Callout + $ms-zIndex-front);
+  z-index:($ms-zIndex-1 + $ms-zIndex-front);
   display: none;
   pointer-events: none;
 

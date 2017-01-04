@@ -18,7 +18,6 @@ $ms-InfoBarHeight: 30px;
     margin: 0;
   }
   .mobileText {
-    @include ms-baseFont;
     font-weight: $ms-font-weight-semibold;
   }
 }

@@ -248,8 +248,9 @@
     align-items: $ms-mode;
 }
 
-// Base/wrapper component
+// Base/wrapper component to set typography throughout the app.
 @mixin ms-Fabric {
+  -webkit-font-smoothing: antialiased;
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-base-family;
 }

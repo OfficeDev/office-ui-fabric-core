@@ -70,7 +70,6 @@ $animationExample-height: 90px;
         min-height: 30px;
 
         .mobileText {
-            @include ms-baseFont;
             font-weight: $ms-font-weight-semibold;
         }
 

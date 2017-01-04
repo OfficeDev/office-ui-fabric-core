@@ -5,129 +5,133 @@
 // --------------------------------------------------
 // Fabric Animations
 
+
 // Outputs the @keyframes used by the animation classes
-@mixin ms-animation-keyframes {
-  @keyframes slideRightIn10 {
+@mixin ms-animation-keyframes() {
+  // Set a default value for the version-scoped variable if it isn't assigned
+  $ms-fabric-version-suffix: '' !default;
+
+  @keyframes slideRightIn10#{$ms-fabric-version-suffix} {
     from { transform:translate3d(-10px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideRightIn20 {
+  @keyframes slideRightIn20#{$ms-fabric-version-suffix} {
     from { transform:translate3d(-20px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideRightIn40 {
+  @keyframes slideRightIn40#{$ms-fabric-version-suffix} {
     from { transform:translate3d(-40px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideRightIn400 {
+  @keyframes slideRightIn400#{$ms-fabric-version-suffix} {
     from { transform:translate3d(-400px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideRightOut40 {
+  @keyframes slideRightOut40#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 0px, 0px); }
     to { transform:translate3d(40px, 0px, 0px); }
   }
 
-  @keyframes slideRightOut400 {
+  @keyframes slideRightOut400#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0, 0px, 0px); }
     to { transform:translate3d(400px, 0px, 0px); }
   }
 
-  @keyframes slideLeftIn10 {
+  @keyframes slideLeftIn10#{$ms-fabric-version-suffix} {
     from { transform:translate3d(10px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideLeftIn20 {
+  @keyframes slideLeftIn20#{$ms-fabric-version-suffix} {
     from { transform:translate3d(20px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideLeftIn40 {
+  @keyframes slideLeftIn40#{$ms-fabric-version-suffix} {
     from { transform:translate3d(40px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideLeftIn400 {
+  @keyframes slideLeftIn400#{$ms-fabric-version-suffix} {
     from { transform:translate3d(400px, 0px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideLeftOut40 {
+  @keyframes slideLeftOut40#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0, 0px, 0px); }
     to { transform:translate3d(-40px, 0px, 0px); }
   }
 
-  @keyframes slideLeftOut400 {
+  @keyframes slideLeftOut400#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0, 0px, 0px); }
     to { transform:translate3d(-400px, 0px, 0px); }
   }
 
-  @keyframes slideUpIn10 {
+  @keyframes slideUpIn10#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 10px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideUpIn20 {
+  @keyframes slideUpIn20#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 20px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideDownIn10 {
+  @keyframes slideDownIn10#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, -10px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideDownIn20 {
+  @keyframes slideDownIn20#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, -20px, 0px); }
     to { transform:translate3d(0px, 0px, 0px); }
   }
 
-  @keyframes slideUpOut10 {
+  @keyframes slideUpOut10#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 0, 0px); }
     to { transform:translate3d(0px, -10px, 0px); }
   }
 
-  @keyframes slideUpOut20 {
+  @keyframes slideUpOut20#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 0, 0px); }
     to { transform:translate3d(0px, -20px, 0px); }
   }
 
-  @keyframes slideDownOut10 {
+  @keyframes slideDownOut10#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 0, 0px); }
     to { transform:translate3d(0px, 10px, 0px); }
   }
 
-  @keyframes slideDownOut20 {
+  @keyframes slideDownOut20#{$ms-fabric-version-suffix} {
     from { transform:translate3d(0px, 0, 0px); }
     to { transform:translate3d(0px, 20px, 0px); }
   }
 
-  @keyframes scaleUp100 {
+  @keyframes scaleUp100#{$ms-fabric-version-suffix} {
     from { transform:scale3d(.98, .98, 1); }
     to { transform:scale3d(1, 1, 1); }
   }
 
-  @keyframes scaleUp103 {
+  @keyframes scaleUp103#{$ms-fabric-version-suffix} {
     from { transform:scale3d(1, 1, 1); }
     to { transform:scale3d(1.03, 1.03, 1); }
   }
 
-  @keyframes scaleDown98 {
+  @keyframes scaleDown98#{$ms-fabric-version-suffix} {
     from { transform:scale3d(1, 1, 1); }
     to { transform:scale3d(0.98, 0.98, 1); }
   }
 
-  @keyframes scaleDown100 {
+  @keyframes scaleDown100#{$ms-fabric-version-suffix} {
     from { transform:scale3d(1.03, 1.03, 1); }
     to { transform:scale3d(1, 1, 1); }
   }
 
-  @keyframes fadeIn {
+  @keyframes fadeIn#{$ms-fabric-version-suffix} {
     from {
       opacity: 0;
       animation-timing-function: $ms-ease2;
@@ -135,7 +139,7 @@
     to { opacity: 1; }
   }
 
-  @keyframes fadeOut {
+  @keyframes fadeOut#{$ms-fabric-version-suffix} {
     from {
       opacity: 1;
       animation-timing-function: $ms-ease2;
@@ -143,20 +147,32 @@
     to { opacity: 0; }
   }
 
-  @keyframes rotate90 {
+  @keyframes rotate90#{$ms-fabric-version-suffix} {
     from { transform:rotateZ(0deg); }
     to { transform:rotateZ(90deg); }
   }
 
-  @keyframes rotateN90 {
+  @keyframes rotateN90#{$ms-fabric-version-suffix} {
     from { transform:rotateZ(90deg); }
     to { transform:rotateZ(0deg); }
   }
 }
 
 // Generate an animation
-@mixin ms-animation($name, $duration, $timing: $ms-ease1, $fillMode: both) {
-  animation-name: $name;
+@mixin ms-animation($names, $duration, $timing: $ms-ease1, $fillMode: both) {
+  // Set a default value for the version-scoped variable if it isn't assigned
+  $ms-fabric-version-suffix: '' !default;
+
+  // Append the scoping suffix to each animation name
+  $namelist: ();
+
+  @each $name in $names {
+    $newname: $name#{$ms-fabric-version-suffix};
+
+    $namelist: append($namelist, unquote($newname), 'comma');
+  }
+
+  animation-name: $namelist;
   animation-duration: $duration;
   animation-timing-function: $timing;
   animation-fill-mode: $fillMode;

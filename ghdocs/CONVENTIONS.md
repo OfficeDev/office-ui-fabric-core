@@ -6,7 +6,7 @@ When naming classes, animation keyframes, variables, and mixins, please follow t
 - Everything in the global scope is prefixed with "ms-".
 - CSS classes remain unchanged (following [SUIT CSS conventions](https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md)).
     - `ms-Grid-col`
-    - _Exception: Pascal case is used for the icon names:_ `$ms-Icon--EraseTool`
+    - _Exception: Pascal case is used for the icon names:_ `ms-Icon--EraseTool`
 - Animation keyframes all match their corresponding CSS class.
     - `@keyframes ms-slideRightIn10`
 - Variables are kebab case.

@@ -48,7 +48,7 @@
         }
 
         &.is-selected {
-            @include ms-baseFont;
+            @include ms-base-font;
             font-weight: $ms-font-weight-semibold;
             color: $ms-color-black;
             border-left-width: 2px;

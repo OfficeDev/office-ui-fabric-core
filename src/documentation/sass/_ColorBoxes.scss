@@ -18,7 +18,7 @@ $ms-InfoBarHeight: 30px;
     margin: 0;
   }
   .mobileText {
-    @include ms-baseFont;
+    @include ms-base-font;
     font-weight: $ms-font-weight-semibold;
   }
 }
@@ -31,7 +31,7 @@ $ms-InfoBarHeight: 30px;
     line-height: 14px;
   }
   
-  @media (min-width: $ms-screen-lg-min) {
+  @media (min-width: $ms-screen-min-lg) {
   
      span.ms-font-size-m {
       font-size:  $ms-font-size-m;
@@ -43,7 +43,7 @@ $ms-InfoBarHeight: 30px;
 .docs-colorBox.ms-u-lg4 {
   line-height: 7px;
 
-  @media (min-width: $ms-screen-lg-min) {
+  @media (min-width: $ms-screen-min-lg) {
     width: 32.333333%;
     margin-right: 1%;
   }
@@ -57,7 +57,7 @@ $ms-InfoBarHeight: 30px;
     padding-top:12px;
   }
   
-  @media (min-width: $ms-screen-lg-min) {
+  @media (min-width: $ms-screen-min-lg) {
     .docs-colorBox {
       width: 32.333333%;
       font-size: $ms-font-size-m;

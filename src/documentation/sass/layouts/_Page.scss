@@ -28,7 +28,7 @@ $docs-sideNavWidths: 300px;
 }
 
 // On larger screens, show and position the navs
-@media (min-width: $ms-screen-xl-min) {
+@media (min-width: $ms-screen-min-xl) {
     .docs-Page.has-leftNav {
         padding-left: $docs-sideNavWidths + 30px;
         

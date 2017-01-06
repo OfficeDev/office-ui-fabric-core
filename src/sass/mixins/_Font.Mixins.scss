@@ -10,149 +10,149 @@
 */
 
 // Mixins to generate @font-face rules for unique languages.
-@mixin SegoeUILight($ms-font-language, $ms-font-path) {
+@mixin ms-font-family-segoeUILight($font-language, $font-path) {
   @font-face {
-    font-family: '#{$ms-font-name} #{$ms-font-language}';
+    font-family: '#{$ms-font-name} #{$font-language}';
     src: local('Segoe UI Light'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-light.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-light.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-light.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-light.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-light.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-light.ttf') format('truetype');
     font-weight: 100;
     font-style: normal;
   }
 }
 
-@mixin SegoeUISemilight($ms-font-language, $ms-font-path) {
+@mixin ms-font-family-segoeUISemilight($font-language, $font-path) {
   @font-face {
-    font-family: '#{$ms-font-name} #{$ms-font-language}';
+    font-family: '#{$ms-font-name} #{$font-language}';
     src: local('Segoe UI Semilight'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semilight.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semilight.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semilight.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-semilight.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-semilight.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-semilight.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
   }
 }
 
-@mixin SegoeUIRegular($ms-font-language, $ms-font-path) {
+@mixin ms-font-family-segoeUIRegular($font-language, $font-path) {
   @font-face {
-    font-family: '#{$ms-font-name} #{$ms-font-language}';
+    font-family: '#{$ms-font-name} #{$font-language}';
     src: local('Segoe UI'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-regular.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-regular.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-regular.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-regular.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-regular.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
   }
 }
 
-@mixin SegoeUISemibold($ms-font-language, $ms-font-path) {
+@mixin ms-font-family-segoeUISemibold($font-language, $font-path) {
   @font-face {
-    font-family: '#{$ms-font-name} #{$ms-font-language}';
+    font-family: '#{$ms-font-name} #{$font-language}';
     src: local('Segoe UI Semibold'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semibold.woff2') format('woff2'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semibold.woff') format('woff'),
-         url('#{$ms-font-directory}/#{$ms-font-path}/segoeui-semibold.ttf') format('truetype');
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-semibold.woff2') format('woff2'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-semibold.woff') format('woff'),
+         url('#{$ms-font-directory}/#{$font-path}/segoeui-semibold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
   }
 }
 
 // Mixins to generate language-specific font faces.
-@mixin SegoeUIArabicLight {
-  @include SegoeUILight('Arabic', $ms-font-path-arabic);
+@mixin ms-font-family-segoeUIArabicLight {
+  @include ms-font-family-segoeUILight('Arabic', $ms-font-path-arabic);
 }
-@mixin SegoeUIArabicRegular {
-  @include SegoeUIRegular('Arabic', $ms-font-path-arabic);
+@mixin ms-font-family-segoeUIArabicRegular {
+  @include ms-font-family-segoeUIRegular('Arabic', $ms-font-path-arabic);
 }
-@mixin SegoeUIArabicSemibold {
-  @include SegoeUISemibold('Arabic', $ms-font-path-arabic);
+@mixin ms-font-family-segoeUIArabicSemibold {
+  @include ms-font-family-segoeUISemibold('Arabic', $ms-font-path-arabic);
 }
-@mixin SegoeUIArabicSemilight {
-  @include SegoeUISemilight('Arabic', $ms-font-path-arabic);
-}
-
-@mixin SegoeUICyrillicLight {
-  @include SegoeUILight('Cyrillic', $ms-font-path-cyrillic);
-}
-@mixin SegoeUICyrillicRegular {
-  @include SegoeUIRegular('Cyrillic', $ms-font-path-cyrillic);
-}
-@mixin SegoeUICyrillicSemibold {
-  @include SegoeUISemibold('Cyrillic', $ms-font-path-cyrillic);
-}
-@mixin SegoeUICyrillicSemilight {
-  @include SegoeUISemilight('Cyrillic', $ms-font-path-cyrillic);
+@mixin ms-font-family-segoeUIArabicSemilight {
+  @include ms-font-family-segoeUISemilight('Arabic', $ms-font-path-arabic);
 }
 
-@mixin SegoeUIEastEuropeanLight {
-  @include SegoeUILight('EastEuropean', $ms-font-path-easteuropean);
+@mixin ms-font-family-segoeUICyrillicLight {
+  @include ms-font-family-segoeUILight('Cyrillic', $ms-font-path-cyrillic);
 }
-@mixin SegoeUIEastEuropeanRegular {
-  @include SegoeUIRegular('EastEuropean', $ms-font-path-easteuropean);
+@mixin ms-font-family-segoeUICyrillicRegular {
+  @include ms-font-family-segoeUIRegular('Cyrillic', $ms-font-path-cyrillic);
 }
-@mixin SegoeUIEastEuropeanSemibold {
-  @include SegoeUISemibold('EastEuropean', $ms-font-path-easteuropean);
+@mixin ms-font-family-segoeUICyrillicSemibold {
+  @include ms-font-family-segoeUISemibold('Cyrillic', $ms-font-path-cyrillic);
 }
-@mixin SegoeUIEastEuropeanSemilight {
-  @include SegoeUISemilight('EastEuropean', $ms-font-path-easteuropean);
-}
-
-@mixin SegoeUIGreekLight {
-  @include SegoeUILight('Greek', $ms-font-path-greek);
-}
-@mixin SegoeUIGreekRegular {
-  @include SegoeUIRegular('Greek', $ms-font-path-greek);
-}
-@mixin SegoeUIGreekSemibold {
-  @include SegoeUISemibold('Greek', $ms-font-path-greek);
-}
-@mixin SegoeUIGreekSemilight {
-  @include SegoeUISemilight('Greek', $ms-font-path-greek);
+@mixin ms-font-family-segoeUICyrillicSemilight {
+  @include ms-font-family-segoeUISemilight('Cyrillic', $ms-font-path-cyrillic);
 }
 
-@mixin SegoeUIHebrewLight {
-  @include SegoeUILight('Hebrew', $ms-font-path-hebrew);
+@mixin ms-font-family-segoeUIEastEuropeanLight {
+  @include ms-font-family-segoeUILight('EastEuropean', $ms-font-path-easteuropean);
 }
-@mixin SegoeUIHebrewRegular {
-  @include SegoeUIRegular('Hebrew', $ms-font-path-hebrew);
+@mixin ms-font-family-segoeUIEastEuropeanRegular {
+  @include ms-font-family-segoeUIRegular('EastEuropean', $ms-font-path-easteuropean);
 }
-@mixin SegoeUIHebrewSemibold {
-  @include SegoeUISemibold('Hebrew', $ms-font-path-hebrew);
+@mixin ms-font-family-segoeUIEastEuropeanSemibold {
+  @include ms-font-family-segoeUISemibold('EastEuropean', $ms-font-path-easteuropean);
 }
-@mixin SegoeUIHebrewSemilight {
-  @include SegoeUISemilight('Hebrew', $ms-font-path-hebrew);
-}
-
-@mixin SegoeUIVietnameseLight {
-  @include SegoeUILight('Vietnamese', $ms-font-path-vietnamese);
-}
-@mixin SegoeUIVietnameseRegular {
-  @include SegoeUIRegular('Vietnamese', $ms-font-path-vietnamese);
-}
-@mixin SegoeUIVietnameseSemibold {
-  @include SegoeUISemibold('Vietnamese', $ms-font-path-vietnamese);
-}
-@mixin SegoeUIVietnameseSemilight {
-  @include SegoeUISemilight('Vietnamese', $ms-font-path-vietnamese);
+@mixin ms-font-family-segoeUIEastEuropeanSemilight {
+  @include ms-font-family-segoeUISemilight('EastEuropean', $ms-font-path-easteuropean);
 }
 
-@mixin SegoeUIWestEuropeanLight {
-  @include SegoeUILight('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-font-family-segoeUIGreekLight {
+  @include ms-font-family-segoeUILight('Greek', $ms-font-path-greek);
 }
-@mixin SegoeUIWestEuropeanRegular {
-  @include SegoeUIRegular('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-font-family-segoeUIGreekRegular {
+  @include ms-font-family-segoeUIRegular('Greek', $ms-font-path-greek);
 }
-@mixin SegoeUIWestEuropeanSemibold {
-  @include SegoeUISemibold('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-font-family-segoeUIGreekSemibold {
+  @include ms-font-family-segoeUISemibold('Greek', $ms-font-path-greek);
 }
-@mixin SegoeUIWestEuropeanSemilight {
-  @include SegoeUISemilight('WestEuropean', $ms-font-path-westeuropean);
+@mixin ms-font-family-segoeUIGreekSemilight {
+  @include ms-font-family-segoeUISemilight('Greek', $ms-font-path-greek);
+}
+
+@mixin ms-font-family-segoeUIHebrewLight {
+  @include ms-font-family-segoeUILight('Hebrew', $ms-font-path-hebrew);
+}
+@mixin ms-font-family-segoeUIHebrewRegular {
+  @include ms-font-family-segoeUIRegular('Hebrew', $ms-font-path-hebrew);
+}
+@mixin ms-font-family-segoeUIHebrewSemibold {
+  @include ms-font-family-segoeUISemibold('Hebrew', $ms-font-path-hebrew);
+}
+@mixin ms-font-family-segoeUIHebrewSemilight {
+  @include ms-font-family-segoeUISemilight('Hebrew', $ms-font-path-hebrew);
+}
+
+@mixin ms-font-family-segoeUIVietnameseLight {
+  @include ms-font-family-segoeUILight('Vietnamese', $ms-font-path-vietnamese);
+}
+@mixin ms-font-family-segoeUIVietnameseRegular {
+  @include ms-font-family-segoeUIRegular('Vietnamese', $ms-font-path-vietnamese);
+}
+@mixin ms-font-family-segoeUIVietnameseSemibold {
+  @include ms-font-family-segoeUISemibold('Vietnamese', $ms-font-path-vietnamese);
+}
+@mixin ms-font-family-segoeUIVietnameseSemilight {
+  @include ms-font-family-segoeUISemilight('Vietnamese', $ms-font-path-vietnamese);
+}
+
+@mixin ms-font-family-segoeUIWestEuropeanLight {
+  @include ms-font-family-segoeUILight('WestEuropean', $ms-font-path-westeuropean);
+}
+@mixin ms-font-family-segoeUIWestEuropeanRegular {
+  @include ms-font-family-segoeUIRegular('WestEuropean', $ms-font-path-westeuropean);
+}
+@mixin ms-font-family-segoeUIWestEuropeanSemibold {
+  @include ms-font-family-segoeUISemibold('WestEuropean', $ms-font-path-westeuropean);
+}
+@mixin ms-font-family-segoeUIWestEuropeanSemilight {
+  @include ms-font-family-segoeUISemilight('WestEuropean', $ms-font-path-westeuropean);
 }
 
 // A mixin that overrides all of the font classes for languages that
 // use system fonts. A single font-family is used for all weights.
-@mixin language-override-system-fonts($lang-code, $font-family) {
+@mixin ms-font-family-override($lang-code, $font-family) {
   *[lang='#{$lang-code}'] {
     .ms-font-mi,
     .ms-font-xs,
@@ -177,78 +177,78 @@
   }
 }
 
-@mixin ms-baseFont {
-  font-family: $ms-font-family-base;
+@mixin ms-base-font {
+  font-family: $ms-font-base-family;
   -webkit-font-smoothing: antialiased;
 }
 
 
 // Super Styles (LIMITED USE)
 @mixin ms-font-su {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-su;
   font-weight: $ms-font-weight-light;
 }
 
 // Extra-Extra-Large
 @mixin ms-font-xxl {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-xxl;
   font-weight: $ms-font-weight-light;
 }
 
 // Extra-Large Styles
 @mixin ms-font-xl {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-xl;
   font-weight: $ms-font-weight-light;
 }
 
 // Large Styles
 @mixin ms-font-l {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-l;
   font-weight: $ms-font-weight-semilight;
 }
 
 // Medium Plus Styles
 @mixin ms-font-m-plus {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-m-plus;
   font-weight: $ms-font-weight-regular;
 }
 
 // Medium Styles
 @mixin ms-font-m {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-m;
   font-weight: $ms-font-weight-regular;
 }
 
 // Small Plus Styles
 @mixin ms-font-s-plus {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-s-plus;
   font-weight: $ms-font-weight-regular;
 }
 
 // Small Styles
 @mixin ms-font-s {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-s;
   font-weight: $ms-font-weight-regular;
 }
 
 // XS Styles
 @mixin ms-font-xs {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-xs;
   font-weight: $ms-font-weight-regular;
 }
 
 // Micro Styles (LIMITED USE)
 @mixin ms-font-mi {
-  @include ms-baseFont;
+  @include ms-base-font;
   font-size: $ms-font-size-mi;
   font-weight: $ms-font-weight-semibold;
 }

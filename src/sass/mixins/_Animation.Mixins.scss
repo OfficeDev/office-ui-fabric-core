@@ -7,7 +7,7 @@
 
 
 // Outputs the keyframes used by the animation classes
-@mixin ms-animationKeyframes() {
+@mixin ms-animation-keyframes() {
   // Set a default value for the version-scoped variable if it isn't assigned
   $ms-fabric-version-suffix: '' !default;
 

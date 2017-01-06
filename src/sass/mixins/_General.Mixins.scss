@@ -6,18 +6,18 @@
 // Vendor-prefixed mixins
 
 // Border radius.
-@mixin ms-borderRadius($ms-radius: 5px) {
+@mixin ms-border-radius($ms-radius: 5px) {
   border-radius: $ms-radius;
   background-clip: padding-box;
 }
 
 // Drop shadow.
-@mixin ms-dropShadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
+@mixin ms-drop-shadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
   box-shadow: $ms-x-offset $ms-y-offset $ms-blur $ms-spread rgba(0, 0, 0, $ms-alpha);
 }
 
 // Background gradient.
-@mixin ms-backgroundGradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
+@mixin ms-background-gradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
     background-color: $ms-start;
     background-image: linear-gradient($ms-origin, $ms-start $ms-start-location, $ms-stop $ms-stop-location);
 }
@@ -28,13 +28,13 @@
 }
 
 // Reset button styles.
-@mixin ms-buttonReset() {
+@mixin ms-button-reset() {
   background: none;
   border: 0;
   cursor: pointer;
 }
 
-@mixin ms-resetAnimation() {
+@mixin ms-reset-animation() {
     -webkit-animation: none;
     -moz-animation:  none;
     -ms-animation:  none;
@@ -42,17 +42,17 @@
     animation:  none;
 }
 
-@mixin ms-resetBackface() {
+@mixin ms-reset-backface() {
    backface-visibility: visible;
 }
 
-@mixin ms-resetBackground() {
+@mixin ms-reset-background() {
   background: 0;
   background-clip: border-box;
   background-origin: padding-box;
 }
 
-@mixin ms-resetBorder() {
+@mixin ms-reset-border() {
   border: 0;
   border-collapse: separate;
   border-image: none;
@@ -60,17 +60,17 @@
   border-spacing: 0;
 }
 
-@mixin ms-resetBoxShadow() {
+@mixin ms-reset-box-shadow() {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
 
-@mixin ms-resetBoxSizing() {
+@mixin ms-reset-box-sizing() {
    box-sizing: content-box;
 }
 
-@mixin ms-resetColumns() {
+@mixin ms-reset-columns() {
   columns: auto;
   column-count: auto;
   column-fill: balance;
@@ -85,7 +85,7 @@
 
 
 // Fonts and Typography Resets
-@mixin ms-resetFont() {
+@mixin ms-reset-font() {
   font: normal;
   font-family: inherit;
   font-size: normal;
@@ -94,7 +94,7 @@
   font-weight: normal;
 }
 
-@mixin ms-resetTextStyling() {
+@mixin ms-reset-text-styling() {
   text-align: inherit;
   text-align-last: auto;
   text-decoration: none;
@@ -111,40 +111,40 @@
 
 
 // Box Model Resets
-@mixin ms-resetPadding() {
+@mixin ms-reset-padding() {
   padding: 0;
 }
 
-@mixin ms-resetMargins() {
+@mixin ms-reset-margins() {
   margin: 0;
 }
 
-@mixin ms-resetOverflow() {
+@mixin ms-reset-overflow() {
   overflow: visible;
 }
 
-@mixin ms-resetMax() {
+@mixin ms-reset-max() {
     max-height: none;
     max-width: none;
 }
 
-@mixin ms-resetMin() {
+@mixin ms-reset-min() {
     min-height: 0;
     min-width: 0;
 }
 
-@mixin ms-resetPositioning() {
+@mixin ms-reset-positioning() {
   bottom: auto;
   left: auto;
   top: auto;
   left: auto;
 }
 
-@mixin ms-resetFloat() {
+@mixin ms-reset-float() {
   float: none;
 }
 
-@mixin ms-resetHeight($ms-useMaxMin: false) {
+@mixin ms-reset-height($ms-useMaxMin: false) {
     height: auto;
     @if $ms-useMaxMin == true {
         min-height: 0;
@@ -152,7 +152,7 @@
     }
 }
 
-@mixin ms-resetWidth($ms-useMaxMin: false) {
+@mixin ms-reset-width($ms-useMaxMin: false) {
     width: auto;
     @if $ms-useMaxMin == true {
         min-width: 0;
@@ -160,11 +160,11 @@
     }
 }
 
-@mixin ms-resetPosition() {
+@mixin ms-reset-position() {
   position: static;
 }
 
-@mixin ms-resetPerspective() {
+@mixin ms-reset-perspective() {
   -webkit-perspective: none;
   -webkit-perspective-origin: 50% 50%;
   perspective: none;
@@ -172,16 +172,16 @@
 
 }
 
-@mixin ms-resetTransition() {
+@mixin ms-reset-transition() {
   -webkit-transition: none;
   transition: none;
 }
 
-@mixin ms-resetListStyle() {
+@mixin ms-reset-list-style() {
   list-style: none;
 }
 
-@mixin ms-resetTransform() {
+@mixin ms-reset-transform() {
   -ms-transform: none;
   -webkit-transform: none;
   -webkit-transform-style: flat;
@@ -189,26 +189,26 @@
   transform-style: flat;
 }
 
-@mixin ms-resetOutline() {
+@mixin ms-reset-outline() {
   outline: 0;
 }
 
-@mixin ms-resetPageBreak() {
+@mixin ms-reset-page-break() {
   page-break-after: auto;
   page-break-before: auto;
   page-break-inside: auto;
 }
 
-@mixin ms-resetDisplay() {
+@mixin ms-reset-display() {
   display: block;
 }
 
-@mixin ms-resetVerticalAlign() {
+@mixin ms-reset-vertical-align() {
     vertical-align: baseline;
 }
 
 // Prevents user selection of text elements.
-@mixin ms-userSelect ($val) {
+@mixin ms-user-select ($val) {
     -webkit-touch-callout:  $val;
     -webkit-user-select:    $val;
     -khtml-user-select:     $val;
@@ -218,7 +218,7 @@
 }
 
 // Prevents the text within a block element from wrapping to second line.
-@mixin ms-noWrap() {
+@mixin ms-no-wrap() {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -226,7 +226,7 @@
 }
 
 // Input placehoder
-@mixin ms-inputPlaceholder {
+@mixin ms-input-placeholder {
     &::-webkit-input-placeholder  {@content}
     &::-moz-placeholder           {@content}
     &:-moz-placeholder            {@content}
@@ -234,7 +234,7 @@
 }
 
 // Flexbox
-@mixin ms-flexBox() {
+@mixin ms-flex-box() {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -255,7 +255,7 @@
   font-family: $ms-font-base-family;
 }
 
-@mixin ms-focusBorder($padding: 0, $color: $ms-color-neutralSecondary) {
+@mixin ms-focus-border($padding: 0, $color: $ms-color-neutralSecondary) {
   // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
   outline: transparent;
 

@@ -20,6 +20,9 @@ When creating a pull request, please describe in detail the problem you are solv
 ### Feature requests
 Please be sure to open an issue before starting a hefty PR so we can let you know if we're likely to consider your request--and to make sure we aren't already planning on doing the work.
 
+### Naming conventions
+See the [code conventions](https://github.com/OfficeDev/office-ui-fabric-core/blob/master/ghdocs/CONVENTIONS.md) for details on what to name CSS classes, animation keyframes, variables, and mixins.
+
 ### Contribution license agreement
 For pull requests affecting fewer than 15 lines of code, you will need to sign a [Contribution License Agreement (CLA)](https://cla.microsoft.com/) before your contribution can be incorporated. To complete the CLA, you will need to submit the request via the form and then electronically sign the CLA when you receive the email containing the link to the document.
 

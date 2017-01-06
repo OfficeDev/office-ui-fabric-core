@@ -37,83 +37,83 @@
 }
 
 // Output the standard fonts
-@include ms-fontFamily-segoeUIWestEuropeanLight;
-@include ms-fontFamily-segoeUIWestEuropeanRegular;
-@include ms-fontFamily-segoeUIWestEuropeanSemibold;
-@include ms-fontFamily-segoeUIWestEuropeanSemilight;
+@include ms-font-family-segoeUIWestEuropeanLight;
+@include ms-font-family-segoeUIWestEuropeanRegular;
+@include ms-font-family-segoeUIWestEuropeanSemibold;
+@include ms-font-family-segoeUIWestEuropeanSemilight;
 
 // Mixins to generate language-specific font faces.
-@include ms-fontFamily-segoeUIArabicLight;
-@include ms-fontFamily-segoeUIArabicRegular;
-@include ms-fontFamily-segoeUIArabicSemibold;
-@include ms-fontFamily-segoeUIArabicSemilight;
+@include ms-font-family-segoeUIArabicLight;
+@include ms-font-family-segoeUIArabicRegular;
+@include ms-font-family-segoeUIArabicSemibold;
+@include ms-font-family-segoeUIArabicSemilight;
 
-@include ms-fontFamily-segoeUICyrillicLight;
-@include ms-fontFamily-segoeUICyrillicRegular;
-@include ms-fontFamily-segoeUICyrillicSemibold;
-@include ms-fontFamily-segoeUICyrillicSemilight;
+@include ms-font-family-segoeUICyrillicLight;
+@include ms-font-family-segoeUICyrillicRegular;
+@include ms-font-family-segoeUICyrillicSemibold;
+@include ms-font-family-segoeUICyrillicSemilight;
 
-@include ms-fontFamily-segoeUIEastEuropeanLight;
-@include ms-fontFamily-segoeUIEastEuropeanRegular;
-@include ms-fontFamily-segoeUIEastEuropeanSemibold;
-@include ms-fontFamily-segoeUIEastEuropeanSemilight;
+@include ms-font-family-segoeUIEastEuropeanLight;
+@include ms-font-family-segoeUIEastEuropeanRegular;
+@include ms-font-family-segoeUIEastEuropeanSemibold;
+@include ms-font-family-segoeUIEastEuropeanSemilight;
 
-@include ms-fontFamily-segoeUIGreekLight;
-@include ms-fontFamily-segoeUIGreekRegular;
-@include ms-fontFamily-segoeUIGreekSemibold;
-@include ms-fontFamily-segoeUIGreekSemilight;
+@include ms-font-family-segoeUIGreekLight;
+@include ms-font-family-segoeUIGreekRegular;
+@include ms-font-family-segoeUIGreekSemibold;
+@include ms-font-family-segoeUIGreekSemilight;
 
-@include ms-fontFamily-segoeUIHebrewLight;
-@include ms-fontFamily-segoeUIHebrewRegular;
-@include ms-fontFamily-segoeUIHebrewSemibold;
-@include ms-fontFamily-segoeUIHebrewSemilight;
+@include ms-font-family-segoeUIHebrewLight;
+@include ms-font-family-segoeUIHebrewRegular;
+@include ms-font-family-segoeUIHebrewSemibold;
+@include ms-font-family-segoeUIHebrewSemilight;
 
-@include ms-fontFamily-segoeUIVietnameseLight;
-@include ms-fontFamily-segoeUIVietnameseRegular;
-@include ms-fontFamily-segoeUIVietnameseSemibold;
-@include ms-fontFamily-segoeUIVietnameseSemilight;
+@include ms-font-family-segoeUIVietnameseLight;
+@include ms-font-family-segoeUIVietnameseRegular;
+@include ms-font-family-segoeUIVietnameseSemibold;
+@include ms-font-family-segoeUIVietnameseSemilight;
 
 // Generate the override classes for non-distributed fonts.
-@include ms-fontFamilyOverride(jpn, $ms-font-stack-japanese);
-@include ms-fontFamilyOverride(kor, $ms-font-stack-korean);
-@include ms-fontFamilyOverride(cmn, $ms-font-stack-chinese-simplified);
-@include ms-fontFamilyOverride(yue, $ms-font-stack-chinese-traditional);
-@include ms-fontFamilyOverride(hin, $ms-font-stack-hindi);
+@include ms-font-family-override(jpn, $ms-font-stack-japanese);
+@include ms-font-family-override(kor, $ms-font-stack-korean);
+@include ms-font-family-override(cmn, $ms-font-stack-chinese-simplified);
+@include ms-font-family-override(yue, $ms-font-stack-chinese-traditional);
+@include ms-font-family-override(hin, $ms-font-stack-hindi);
 
 // Generate the override classes for web fonts.
 // Thai (Leelawadee)
 // tha
-@include ms-fontFamilyOverride(tha, $ms-font-stack-leelawadee);
+@include ms-font-family-override(tha, $ms-font-stack-leelawadee);
 
 // Arabic
 // ara
-@include ms-fontFamilyOverride(ara, $ms-font-stack-arabic);
+@include ms-font-family-override(ara, $ms-font-stack-arabic);
 
 // East European
 // ces, et, hrv, hun, lit, pl, lat, tur, slk, kaz
-@include ms-fontFamilyOverride(ces, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(est, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(hrv, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(hun, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(kaz, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(lav, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(lit, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(pol, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(slk, $ms-font-stack-eastEuropean);
-@include ms-fontFamilyOverride(tur, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(ces, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(est, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(hrv, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(hun, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(kaz, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(lav, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(lit, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(pol, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(slk, $ms-font-stack-eastEuropean);
+@include ms-font-family-override(tur, $ms-font-stack-eastEuropean);
 
 // Cyrillic
 // rus
-@include ms-fontFamilyOverride(rus, $ms-font-stack-cyrillic);
+@include ms-font-family-override(rus, $ms-font-stack-cyrillic);
 
 // Greek
 // ell
-@include ms-fontFamilyOverride(ell, $ms-font-stack-greek);
+@include ms-font-family-override(ell, $ms-font-stack-greek);
 
 // Hebrew
 // heb
-@include ms-fontFamilyOverride(heb, $ms-font-stack-hebrew);
+@include ms-font-family-override(heb, $ms-font-stack-hebrew);
 
 // Vietnamese
 // vie
-@include ms-fontFamilyOverride(vie, $ms-font-stack-vietnamese);
+@include ms-font-family-override(vie, $ms-font-stack-vietnamese);

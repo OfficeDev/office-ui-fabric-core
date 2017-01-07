@@ -252,7 +252,7 @@
 @mixin ms-Fabric {
   -webkit-font-smoothing: antialiased;
   color: $ms-color-neutralPrimary;
-  font-family: $ms-font-base-family;
+  font-family: $ms-font-family-west-european;
 }
 
 @mixin ms-focus-border($padding: 0, $color: $ms-color-neutralSecondary) {

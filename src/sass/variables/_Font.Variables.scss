@@ -1,42 +1,30 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Font name
-$ms-font-name: 'Segoe UI' !default;
-
 // Font directory and paths
-$ms-font-directory:         'https://static2.sharepointonline.com/files/fabric/assets/fonts/' !default;
-$ms-font-path-arabic:       'segoeui-arabic' !default;
-$ms-font-path-cyrillic:     'segoeui-cyrillic' !default;
-$ms-font-path-easteuropean: 'segoeui-easteuropean' !default;
-$ms-font-path-greek:        'segoeui-greek' !default;
-$ms-font-path-hebrew:       'segoeui-hebrew' !default;
-$ms-font-path-vietnamese:   'segoeui-vietnamese' !default;
-$ms-font-path-westeuropean: 'segoeui-westeuropean' !default;
+$ms-font-cdn-path: 'https://static2.sharepointonline.com/files/fabric/assets/fonts' !default;
 
-// Base font stacks
-$ms-font-base-system: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif !default;
-$ms-font-base-family: 'Segoe UI WestEuropean', $ms-font-base-system !default;
+// Fallback fonts, if specified system or web fonts are unavailable.
+$ms-font-family-fallbacks: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif !default;
 
-// Localized font stacks that use non-distributed system fonts
-$ms-font-stack-japanese:            'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-base-system !default;
-$ms-font-stack-korean:              'Malgun Gothic', Gulim, $ms-font-base-system !default;
-$ms-font-stack-chinese-simplified:  'Microsoft Yahei', Verdana, Simsun, $ms-font-base-system !default;
-$ms-font-stack-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, $ms-font-base-system !default;
-$ms-font-stack-hindi:               'Nirmala UI', $ms-font-base-system !default;
-
-// Localized font stacks that include web fonts
-$ms-font-stack-arabic:        'Segoe UI Arabic', $ms-font-base-family !default;
-$ms-font-stack-cyrillic:      'Segoe UI Cyrillic', $ms-font-base-family !default;
-$ms-font-stack-eastEuropean:  'Segoe UI EastEuropean', $ms-font-base-family !default;
-$ms-font-stack-greek:         'Segoe UI Greek', $ms-font-base-family !default;
-$ms-font-stack-hebrew:        'Segoe UI Hebrew', $ms-font-base-family !default;
-$ms-font-stack-vietnamese:    'Segoe UI Vietnamese', $ms-font-base-family !default;
-$ms-font-stack-leelawadee:    'Leelawadee UI', 'Kmer UI', $ms-font-base-family !default;
+// Language-specific font stacks.
+$ms-font-family-arabic:              'Segoe UI Web (Arabic)', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-chinese-simplified:  'Microsoft Yahei', Verdana, Simsun, 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-cyrillic:            'Segoe UI Web (Cyrillic)', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-east-european:       'Segoe UI Web (East European)', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-greek:               'Segoe UI Web (Greek)', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-hebrew:              'Segoe UI Web (Hebrew)', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-hindi:               'Nirmala UI', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-japanese:            'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-korean:              'Malgun Gothic', Gulim, 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-thai:                'Leelawadee UI Web', 'Kmer UI', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-vietnamese:          'Segoe UI Web (Vietnamese)', 'Segoe UI', $ms-font-family-fallbacks;
+$ms-font-family-west-european:       'Segoe UI', 'Segoe UI Web (West European)', $ms-font-family-fallbacks;
 
 // Weights
 $ms-font-weight-light:     100 !default;
-$ms-font-weight-regular:   400 !default;
 $ms-font-weight-semilight: 300 !default;
+$ms-font-weight-regular:   400 !default;
 $ms-font-weight-semibold:  600 !default;
 
 // Sizes

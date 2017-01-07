@@ -9,12 +9,6 @@
   @include ms-Fabric;
 }
 
-// Modifier: Use Courier.
-// @todo: This should be Selawik.
-.ms-Fabric--alternateFont {
-  font-family: Courier New, Courier, monospace;
-}
-
 // Create overrides for each language that has an alternate font-family.
 @include ms-font-family-language-override('ar', $ms-font-family-arabic);
 @include ms-font-family-language-override('bg', $ms-font-family-cyrillic);
@@ -40,3 +34,8 @@
 @include ms-font-family-language-override('vi', $ms-font-family-vietnamese);
 @include ms-font-family-language-override('zh-hans', $ms-font-family-chinese-simplified);
 @include ms-font-family-language-override('zh-hant', $ms-font-family-chinese-traditional);
+
+// Modifier: Use Selawik as an open source alternative to Segoe UI.
+.ms-Fabric--selawik {
+  font-family: $ms-font-family-selawik;
+}

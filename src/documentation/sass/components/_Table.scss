@@ -18,6 +18,8 @@
     }
 
     td {
+        @include ms-u-textTruncate();
+        max-width: 300px;
         font-size: 14px;
         padding: 10px;
 

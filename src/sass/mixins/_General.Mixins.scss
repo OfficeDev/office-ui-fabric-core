@@ -225,14 +225,6 @@
   white-space: nowrap;
 }
 
-// Input placehoder
-@mixin ms-input-placeholder {
-    &::-webkit-input-placeholder  {@content}
-    &::-moz-placeholder           {@content}
-    &:-moz-placeholder            {@content}
-    &:-ms-input-placeholder       {@content}
-}
-
 // Flexbox
 @mixin ms-flex-box() {
     display: -ms-flexbox;

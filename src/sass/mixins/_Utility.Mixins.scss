@@ -6,17 +6,17 @@
 // Utility classes and mixins used throughout Fabric.
 
 // The best box is a border box.
-@mixin ms-u-borderBox {
+@mixin ms-borderBox {
   box-sizing: border-box;
 }
 
 // For setting the border base width
-@mixin ms-u-borderBase {
+@mixin ms-borderBase {
   border: 1px solid;
 }
 
 // Ensures the block expands to the full height to enclose its floated childen.
-@mixin ms-u-clearfix {
+@mixin ms-clearfix {
   *zoom: 1;
   &::before,
   &::after {
@@ -30,8 +30,8 @@
 }
 
 // Basic border-box, margin, and padding reset.
-@mixin ms-u-normalize {
-  @include ms-u-borderBox;
+@mixin ms-normalize {
+  @include ms-borderBox;
   @include ms-reset-margins;
   @include ms-reset-padding;
   @include ms-reset-box-shadow;
@@ -39,17 +39,17 @@
 
 // To set various text alignment styles 
 // @param [variable list] $alignments
-@mixin ms-u-textAlign($alignments...) {
+@mixin ms-textAlign($alignments...) {
   @each $align in $alignments {
     $alignStr: inspect($align);
-    .ms-u-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
+    .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
       text-align: $align;
     }
   }
 }
 
 // To hide content while still making it readable by screen readers (Accessibility)
-@mixin ms-u-screenReaderOnly {
+@mixin ms-screenReaderOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -61,7 +61,7 @@
 }
 
 // To add truncation with ellipsis
-@mixin ms-u-textTruncate {
+@mixin ms-textTruncate {
 	overflow: hidden; 
 	text-overflow: ellipsis; 
 	white-space: nowrap; 
@@ -69,6 +69,6 @@
 }
 
 // To disable text wrapping
-@mixin ms-u-noWrap {
+@mixin ms-noWrap {
 	white-space: nowrap; 
 }

@@ -12,9 +12,7 @@
   @if variable_exists(do-scope-styles) {
     $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
   }
-  
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+
   display: inline-block;
   font-family: $icon-font-family;
   font-style: normal;
@@ -32,7 +30,6 @@
   margin:  0 0.5em 0 0;
   padding: 0;
   text-align: left;
-  -webkit-font-smoothing: antialiased;
 
   &::before, &::after {
     line-height: 1;

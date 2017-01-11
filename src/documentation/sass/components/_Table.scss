@@ -5,7 +5,6 @@
     width: 100%;
     
     th {
-        @include ms-base-font;
         font-size: 14px;
         font-weight: $ms-font-weight-regular;
         padding: 10px;
@@ -19,6 +18,8 @@
     }
 
     td {
+        @include ms-u-textTruncate();
+        max-width: 300px;
         font-size: 14px;
         padding: 10px;
 

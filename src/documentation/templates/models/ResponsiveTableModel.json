@@ -1,20 +1,20 @@
 {
   "items": [
     {
-      "class": "ms-u-hiddenSm",
+      "class": "ms-hiddenSm",
       "SM": true
     },
     {
-      "class": "ms-u-hiddenMd",
+      "class": "ms-hiddenMd",
       "MD": true
     },
     {
-      "class": "ms-u-hiddenMdDown",
+      "class": "ms-hiddenMdDown",
       "SM": true,
       "MD": true
     },
     {
-      "class": "ms-u-hiddenMdUp",
+      "class": "ms-hiddenMdUp",
       "MD": true,
       "LG": true,
       "XL": true,
@@ -22,45 +22,45 @@
       "XXXL": true
     },
     {
-      "class": "ms-u-hiddenLg",
+      "class": "ms-hiddenLg",
       "LG": true
     },
     {
-      "class": "ms-u-hiddenLgDown",
+      "class": "ms-hiddenLgDown",
       "SM": true,
       "MD": true,
       "LG": true
     },
     {
-      "class": "ms-u-hiddenLgUp",
+      "class": "ms-hiddenLgUp",
       "LG": true,
       "XL": true,
       "XXL": true,
       "XXXL": true
     },
     {
-      "class": "ms-u-hiddenXl",
+      "class": "ms-hiddenXl",
       "XL": true
     },
     {
-      "class": "ms-u-hiddenXlDown",
+      "class": "ms-hiddenXlDown",
       "SM": true,
       "MD": true,
       "LG": true,
       "XL": true
     },
     {
-      "class": "ms-u-hiddenXlUp",
+      "class": "ms-hiddenXlUp",
       "XL": true,
       "XXL": true,
       "XXXL": true
     },
     {
-      "class": "ms-u-hiddenXxl",
+      "class": "ms-hiddenXxl",
       "XXL": true
     },
     {
-      "class": "ms-u-hiddenXxlDown",
+      "class": "ms-hiddenXxlDown",
       "SM": true,
       "MD": true,
       "LG": true,
@@ -68,12 +68,12 @@
       "XXL": true
     },
     {
-      "class": "ms-u-hiddenXxlUp",
+      "class": "ms-hiddenXxlUp",
       "XXL": true,
       "XXXL": true
     },
     {
-      "class": "ms-u-hiddenXxxl",
+      "class": "ms-hiddenXxxl",
       "XXXL": true
     }
   ]

@@ -8,8 +8,8 @@
 //== Grid container (same for all sizes)
 //
 @mixin ms-Grid {
-  @include ms-u-borderBox;
-  @include ms-u-clearfix;
+  @include ms-borderBox;
+  @include ms-clearfix;
   padding: 0 8px;
 }
 
@@ -17,8 +17,8 @@
 //
 @mixin ms-Grid-row {
   margin: 0 -8px;
-  @include ms-u-borderBox;
-  @include ms-u-clearfix;
+  @include ms-borderBox;
+  @include ms-clearfix;
 }
 
 //== Grid cells
@@ -28,7 +28,7 @@
   min-height: 1px;
   padding-left: 8px;
   padding-right: 8px;
-  @include ms-u-borderBox;
+  @include ms-borderBox;
   float: left;
 
   // For nested grids (a grid inside a column), removing the padding

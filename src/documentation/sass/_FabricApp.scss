@@ -9,7 +9,7 @@ body {
 }
 
 *, *:before, *:after {
-  @include ms-u-borderBox;
+  @include ms-borderBox;
 }  
 
 img {

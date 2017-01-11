@@ -68,11 +68,11 @@ $high-contrast-green: #3ff23f;
 }
 
 // slideRightIn80
-@mixin ms-u-slideRightIn80 {
+@mixin ms-slideRightIn80 {
     @include ms-animation((fadeIn, slideRightIn80), $ms-animation-duration-3, $ms-animation-ease-1);
 }
-.ms-u-slideRightIn80 {
-  @include ms-u-slideRightIn80;
+.ms-slideRightIn80 {
+  @include ms-slideRightIn80;
 }
 @-webkit-keyframes slideRightIn80 {
     from { -webkit-transform:translate3d(-80px, 0px, 0px); }
@@ -84,11 +84,11 @@ $high-contrast-green: #3ff23f;
 }
 
 // slideLeftIn80
-@mixin ms-u-slideLeftIn80 {
+@mixin ms-slideLeftIn80 {
     @include ms-animation((fadeIn, slideLeftIn80), $ms-animation-duration-3, $ms-animation-ease-1);
 }
-.ms-u-slideLeftIn80 {
-  @include ms-u-slideLeftIn80;
+.ms-slideLeftIn80 {
+  @include ms-slideLeftIn80;
 }
 @-webkit-keyframes slideLeftIn80 {
     from { -webkit-transform:translate3d(80px, 0px, 0px); }
@@ -101,11 +101,11 @@ $high-contrast-green: #3ff23f;
 
 
 // slideLeftIn80
-@mixin ms-u-slideLeftOut80 {
+@mixin ms-slideLeftOut80 {
     @include ms-animation((fadeOut, slideLeftOut80), $ms-animation-duration-3, $ms-animation-ease-1);
 }
-.ms-u-slideLeftOut80 {
-  @include ms-u-slideLeftOut80;
+.ms-slideLeftOut80 {
+  @include ms-slideLeftOut80;
 }
 @-webkit-keyframes slideLeftOut80 {
     from { -webkit-transform:translate3d(0, 0px, 0px); }
@@ -118,11 +118,11 @@ $high-contrast-green: #3ff23f;
 
 
 // slideLeftIn80
-@mixin ms-u-slideRightOut80 {
+@mixin ms-slideRightOut80 {
     @include ms-animation((fadeOut, slideRightOut80), $ms-animation-duration-3, $ms-animation-ease-1);
 }
-.ms-u-slideRightOut80 {
-  @include ms-u-slideRightOut80;
+.ms-slideRightOut80 {
+  @include ms-slideRightOut80;
 }
 @-webkit-keyframes slideRightOut80 {
     from { -webkit-transform:translate3d(0px, 0px, 0px); }

@@ -9,165 +9,165 @@
 @include ms-animation-keyframes;
 
 // Slide
-.ms-u-slideRightIn10 {
-  @include ms-u-slideRightIn10;
+.ms-slideRightIn10 {
+  @include ms-slideRightIn10;
 }
 
-.ms-u-slideRightIn20 {
-  @include ms-u-slideRightIn20;
+.ms-slideRightIn20 {
+  @include ms-slideRightIn20;
 }
 
-.ms-u-slideRightIn40 {
-  @include ms-u-slideRightIn40;
+.ms-slideRightIn40 {
+  @include ms-slideRightIn40;
 }
 
-.ms-u-slideRightIn400 {
-  @include ms-u-slideRightIn400;
+.ms-slideRightIn400 {
+  @include ms-slideRightIn400;
 }
 
-.ms-u-slideRightOut40 {
-  @include ms-u-slideRightOut40;
+.ms-slideRightOut40 {
+  @include ms-slideRightOut40;
 }
 
-.ms-u-slideRightOut400 {
-  @include ms-u-slideRightOut400;
+.ms-slideRightOut400 {
+  @include ms-slideRightOut400;
 }
 
-.ms-u-slideLeftIn10 {
-  @include ms-u-slideLeftIn10;
+.ms-slideLeftIn10 {
+  @include ms-slideLeftIn10;
 }
 
-.ms-u-slideLeftIn20 {
-  @include ms-u-slideLeftIn20;
+.ms-slideLeftIn20 {
+  @include ms-slideLeftIn20;
 }
 
-.ms-u-slideLeftIn40 {
-  @include ms-u-slideLeftIn40;
+.ms-slideLeftIn40 {
+  @include ms-slideLeftIn40;
 }
 
-.ms-u-slideLeftIn400 {
-  @include ms-u-slideLeftIn400;
+.ms-slideLeftIn400 {
+  @include ms-slideLeftIn400;
 }
 
-.ms-u-slideLeftOut40 {
-  @include ms-u-slideLeftOut40;
+.ms-slideLeftOut40 {
+  @include ms-slideLeftOut40;
 }
 
-.ms-u-slideLeftOut400 {
-  @include ms-u-slideLeftOut400;
+.ms-slideLeftOut400 {
+  @include ms-slideLeftOut400;
 }
 
-.ms-u-slideUpIn10 {
-  @include ms-u-slideUpIn10;
+.ms-slideUpIn10 {
+  @include ms-slideUpIn10;
 }
 
-.ms-u-slideUpIn20 {
-  @include ms-u-slideUpIn20;
+.ms-slideUpIn20 {
+  @include ms-slideUpIn20;
 }
 
-.ms-u-slideDownIn10 {
-  @include ms-u-slideDownIn10;
+.ms-slideDownIn10 {
+  @include ms-slideDownIn10;
 }
 
-.ms-u-slideDownIn20 {
-  @include ms-u-slideDownIn20;
+.ms-slideDownIn20 {
+  @include ms-slideDownIn20;
 }
 
-.ms-u-slideUpOut10 {
-  @include ms-u-slideUpOut10;
+.ms-slideUpOut10 {
+  @include ms-slideUpOut10;
 }
 
-.ms-u-slideUpOut20 {
-  @include ms-u-slideUpOut20;
+.ms-slideUpOut20 {
+  @include ms-slideUpOut20;
 }
 
-.ms-u-slideDownOut10 {
-  @include ms-u-slideDownOut10;
+.ms-slideDownOut10 {
+  @include ms-slideDownOut10;
 }
 
-.ms-u-slideDownOut20 {
-  @include ms-u-slideDownOut20;
+.ms-slideDownOut20 {
+  @include ms-slideDownOut20;
 }
 
 // Scale
-.ms-u-scaleUpIn100 {
-  @include ms-u-scaleUpIn100;
+.ms-scaleUpIn100 {
+  @include ms-scaleUpIn100;
 }
 
-.ms-u-scaleUpOut103 {
-  @include ms-u-scaleUpOut103;
+.ms-scaleUpOut103 {
+  @include ms-scaleUpOut103;
 }
 
-.ms-u-scaleDownOut98 {
-  @include ms-u-scaleDownOut98;
+.ms-scaleDownOut98 {
+  @include ms-scaleDownOut98;
 }
 
-.ms-u-scaleDownIn100 {
-  @include ms-u-scaleDownIn100;
+.ms-scaleDownIn100 {
+  @include ms-scaleDownIn100;
 }
 
 // Fade
 
-.ms-u-fadeIn100 {
-  @include ms-u-fadeIn100;
+.ms-fadeIn100 {
+  @include ms-fadeIn100;
 }
 
-.ms-u-fadeIn200 {
-  @include ms-u-fadeIn200;
+.ms-fadeIn200 {
+  @include ms-fadeIn200;
 }
 
-.ms-u-fadeIn400 {
-  @include ms-u-fadeIn400;
+.ms-fadeIn400 {
+  @include ms-fadeIn400;
 }
 
-.ms-u-fadeIn500 {
-  @include ms-u-fadeIn500;
+.ms-fadeIn500 {
+  @include ms-fadeIn500;
 }
 
-.ms-u-fadeOut100 {
-  @include ms-u-fadeOut100;
+.ms-fadeOut100 {
+  @include ms-fadeOut100;
 }
 
-.ms-u-fadeOut200 {
-  @include ms-u-fadeOut200;
+.ms-fadeOut200 {
+  @include ms-fadeOut200;
 }
 
-.ms-u-fadeOut400 {
-  @include ms-u-fadeOut400;
+.ms-fadeOut400 {
+  @include ms-fadeOut400;
 }
 
-.ms-u-fadeOut500 {
-  @include ms-u-fadeOut500;
+.ms-fadeOut500 {
+  @include ms-fadeOut500;
 }
 
 // Expand-collapse
 
-.ms-u-expandCollapse100 {
-  @include ms-u-expandCollapse100;
+.ms-expandCollapse100 {
+  @include ms-expandCollapse100;
 }
 
-.ms-u-expandCollapse200 {
-  @include ms-u-expandCollapse200;
+.ms-expandCollapse200 {
+  @include ms-expandCollapse200;
 }
 
-.ms-u-expandCollapse400 {
-  @include ms-u-expandCollapse400;
+.ms-expandCollapse400 {
+  @include ms-expandCollapse400;
 }
 
 // Delay
-.ms-u-delay100 {
-  @include ms-u-delay100;
+.ms-delay100 {
+  @include ms-delay100;
 }
 
-.ms-u-delay200 {
-  @include ms-u-delay200;
+.ms-delay200 {
+  @include ms-delay200;
 }
 
 // Rotate
-.ms-u-rotate90deg {
-  @include ms-u-rotate90deg;
+.ms-rotate90deg {
+  @include ms-rotate90deg;
 }
 
-.ms-u-rotateN90deg {
-  @include ms-u-rotateN90deg;
+.ms-rotateN90deg {
+  @include ms-rotateN90deg;
 }

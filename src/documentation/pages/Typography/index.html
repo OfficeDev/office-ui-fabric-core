@@ -47,5 +47,29 @@
       {{/each}}
     </div>
   </div>
+
+  <h3>Alternative fonts</h3>
+  <p>Usage of Fabric's default web font, Segoe UI, is subject to the <a href="https://aka.ms/fabric-assets-license/">assets license</a>. If your app does not meet these requirements, you can substitute another font in place of Segoe UI. There are two methods available:</p>
+
+  <ol class="ms-font-l">
+    <li>
+      Use <a href="https://github.com/Microsoft/Selawik">Selawik</a>, an open source alternative to Segoe UI from Microsoft. With support for this font built-in to Fabric, it's as simple as applying an additional class to the root "ms-Fabric" class that wraps your application. If Segoe UI is not installed on the user's system, Selawik will be used instead.
+      <pre><code class="hljs">&lt;div class="ms-Fabric ms-Fabric--selawik"&gt;...&lt;/div&gt;</code></pre>
+      <div class="ms-Fabric ms-Fabric--selawik">
+        <h4 class="ms-font-xl">This text is now in Selawik.</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper leo a elit malesuada scelerisque. Nam et accumsan nibh. Nulla facilisi. Nulla commodo vestibulum lobortis. Mauris interdum vitae mi a blandit. Duis odio mi, gravida et velit sit amet, pulvinar porta magna. Ut fermentum erat tortor, eu bibendum felis laoreet vel. Nulla vitae erat lacinia, mollis felis id, mollis risus. Integer in metus lacus. Ut ac ligula nunc. Vivamus sed lacinia ante.</p>
+      </div>
+    </li>
+    <li>
+      Specify a custom font for your application. This can be a commonly-installed local font, such as Helvetica, or a web font that you have included a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face?redirectlocale=en-US&redirectslug=CSS%2F%40font-face">@font-face declaration</a> for.
+<pre><code class="hljs">.ms-Fabric {
+  font-family: Helvetica, Arial, sans-serif;
+}</code></pre>
+      <div class="ms-Fabric" style="font-family: Helvetica, Arial, sans-serif;">
+        <h4 class="ms-font-xl">This text is now in Helvetica.</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper leo a elit malesuada scelerisque. Nam et accumsan nibh. Nulla facilisi. Nulla commodo vestibulum lobortis. Mauris interdum vitae mi a blandit. Duis odio mi, gravida et velit sit amet, pulvinar porta magna. Ut fermentum erat tortor, eu bibendum felis laoreet vel. Nulla vitae erat lacinia, mollis felis id, mollis risus. Integer in metus lacus. Ut ac ligula nunc. Vivamus sed lacinia ante.</p>
+      </div>
+    </li>
+  </ol>
 </div>
 @@include('../../templates/modules/components/DocumentationPageFooter.html')

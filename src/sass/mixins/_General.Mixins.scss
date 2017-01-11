@@ -240,9 +240,12 @@
     align-items: $ms-mode;
 }
 
-// Base/wrapper component
+// Base/wrapper component to set typography throughout the app.
 @mixin ms-Fabric {
-  @include ms-fontColor-neutralPrimary;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-west-european;
 }
 
 @mixin ms-focus-border($padding: 0, $color: $ms-color-neutralSecondary) {

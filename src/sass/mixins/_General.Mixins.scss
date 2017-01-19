@@ -244,8 +244,18 @@
 @mixin ms-Fabric {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  @include ms-inherit-font-family();
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-west-european;
+}
+
+// Set the font-family to 'inherit' for elements where the browser
+// styles commonly conflict with the font-family that we want.
+@mixin ms-inherit-font-family() {
+  button,
+  input {
+    font-family: inherit;
+  }
 }
 
 @mixin ms-focus-border($padding: 0, $color: $ms-color-neutralSecondary) {

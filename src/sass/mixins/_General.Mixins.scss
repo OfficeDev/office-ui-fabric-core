@@ -243,6 +243,7 @@
 // Base/wrapper component to set typography throughout the app.
 @mixin ms-Fabric {
   -moz-osx-font-smoothing: grayscale;
+  -ms-high-contrast-adjust: none;
   -webkit-font-smoothing: antialiased;
   @include ms-inherit-font-family();
   color: $ms-color-neutralPrimary;

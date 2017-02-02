@@ -258,7 +258,7 @@
   }
 }
 
-@mixin ms-focus-border($padding: 0, $color: $ms-color-neutralSecondary) {
+@mixin ms-focus-border($inset: 0, $color: $ms-focus-border-color) {
   // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
   outline: transparent;
 
@@ -277,13 +277,13 @@
     // Wrap the parent element with $padding.
     content: '';
     position: absolute;
-    top: $padding;
-    right: $padding;
-    bottom: $padding;
-    left: $padding;
+    top: $inset;
+    right: $inset;
+    bottom: $inset;
+    left: $inset;
 
     // Add focus border of specified $color.
-    border: 1px solid $color;
+    border: $ms-focus-border-width $ms-focus-border-style $color;
 
     // Make the content not respond to mouse/touch events.
     // Reference: https://css-tricks.com/almanac/properties/p/pointer-events/

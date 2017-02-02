@@ -1,0 +1,4 @@
+// This file is programatically generated. Do not edit directly.
+<% for(const icon of data){ %>
+@mixin ms-Icon--<%= icon.name %> { content: '\<%= icon.value %>'; }
+<% } %>

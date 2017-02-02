@@ -7,6 +7,7 @@ var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
+var _ = require('lodash');
 
 
 var filePath = '';
@@ -68,9 +69,11 @@ gulp.task('prepare-handlebars', function(cb) {
     jsonFileName = modelFiles[i].replace('.json', '');
     jsonData[jsonFileName] = JSON.parse(jsonFile);
   }
-  // Grab Icon data (in separate folder /src/data/) and parse data
-  jsonFile = fs.readFileSync(Config.paths.srcData + '/' + 'icons.json', 'utf8');
-  jsonData['icons'] = JSON.parse(jsonFile);
+
+  // Grab Icon data (in separate folder /src/icon/data/) and parse data
+
+  jsonData.icons = JSON.parse(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.json', "utf8"));;
+
   templateData = jsonData;
   cb();
 });

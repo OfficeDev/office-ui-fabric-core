@@ -46,6 +46,17 @@ gulp.task('Fabric-copyAssets', function () {
      return moveSass;
 });
 
+// Icon Tasks
+gulp.task('Fabric-iconGenerate', function() {
+  var iconData = JSON.parse(Plugins.fs.readFileSync(Config.paths.iconsData + '/icons.json', "utf8"));
+   gulp.src(Config.paths.iconsTemplates + '/_Icon.Mixins.Data.scss')
+    .pipe(Plugins.template({'data':iconData}))
+    .pipe(gulp.dest(Config.paths.iconsTemp));
+   gulp.src(Config.paths.iconsTemplates + '/_Icon.Data.scss')
+    .pipe(Plugins.template({'data':iconData}))
+    .pipe(gulp.dest(Config.paths.iconsTemp));
+});
+
 //
 // Sass tasks
 // ----------------------------------------------------------------------------
@@ -135,6 +146,6 @@ gulp.task('Fabric-buildStyles', function () {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
+gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-iconGenerate', 'Fabric-buildStyles']);
 BuildConfig.buildTasks.push('Fabric');
 BuildConfig.nukeTasks.push('Fabric-nuke');

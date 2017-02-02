@@ -1,0 +1,4 @@
+// This file is programatically generated. Do not edit directly.
+<% for(const icon of data){ %>
+.ms-Icon-<%= icon.name %>::before { @include ms-Icon--<%= icon.name %>; }
+<% } %>

@@ -33,11 +33,11 @@
   @include ms-Icon--l;
 }
 
-// @todo: 'DynamicsCRMLogo' class is deprecated, will be removed in a future release
-.ms-Icon--DynamicsCRMLogo::before { @include ms-Icon--Dynamics365Logo; }
+// @todo: 'Planner' class is deprecated, will be removed in a future release
+.ms-Icon--Planner::before { @include ms-Icon--PlannerLogo; }
 
-// @todo: 'CarotRightSolid8' class is deprecated, will be removed in a future release
-.ms-Icon--CarotRightSolid8::before { @include ms-Icon--CaretRightSolid8; }
+// @todo: 'AppForOfficeLogo' class is deprecated, will be removed in a future release
+.ms-Icon--AppForOfficeLogo::before { @include ms-Icon--OfficeAddinsLogo; }
 
 
 // Modifiers: Each of the icons
@@ -401,7 +401,7 @@
 .ms-Icon--Design::before { @include ms-Icon--Design; }
 .ms-Icon--Website::before { @include ms-Icon--Website; }
 .ms-Icon--Drop::before { @include ms-Icon--Drop; }
-.ms-Icon--Snow::before { @include ms-Icon--Snow; }
+.ms-Icon--Snowflake::before { @include ms-Icon--Snowflake; }
 .ms-Icon--BusSolid::before { @include ms-Icon--BusSolid; }
 .ms-Icon--FerrySolid::before { @include ms-Icon--FerrySolid; }
 .ms-Icon--TrainSolid::before { @include ms-Icon--TrainSolid; }
@@ -508,7 +508,6 @@
 .ms-Icon--AdminPLogo::before { @include ms-Icon--AdminPLogo; }
 .ms-Icon--AdminSLogo::before { @include ms-Icon--AdminSLogo; }
 .ms-Icon--AdminYLogo::before { @include ms-Icon--AdminYLogo; }
-.ms-Icon--AlchemyLogo::before { @include ms-Icon--AlchemyLogo; }
 .ms-Icon--BoxLogo::before { @include ms-Icon--BoxLogo; }
 .ms-Icon--DelveLogo::before { @include ms-Icon--DelveLogo; }
 .ms-Icon--DropboxLogo::before { @include ms-Icon--DropboxLogo; }
@@ -570,7 +569,6 @@
 .ms-Icon--Dropdown::before { @include ms-Icon--Dropdown; }
 .ms-Icon--BookingsLogo::before { @include ms-Icon--BookingsLogo; }
 .ms-Icon--ClassNotebookLogo::before { @include ms-Icon--ClassNotebookLogo; }
-.ms-Icon--CollabsDBLogo::before { @include ms-Icon--CollabsDBLogo; }
 .ms-Icon--DelveAnalyticsLogo::before { @include ms-Icon--DelveAnalyticsLogo; }
 .ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogo; }
 .ms-Icon--Dynamics365Logo::before { @include ms-Icon--Dynamics365Logo; }
@@ -578,7 +576,7 @@
 .ms-Icon--OfficeAssistantLogo::before { @include ms-Icon--OfficeAssistantLogo; }
 .ms-Icon--OfficeStoreLogo::before { @include ms-Icon--OfficeStoreLogo; }
 .ms-Icon--OneNoteEduLogo::before { @include ms-Icon--OneNoteEduLogo; }
-.ms-Icon--Planner::before { @include ms-Icon--Planner; }
+.ms-Icon--PlannerLogo::before { @include ms-Icon--PlannerLogo; }
 .ms-Icon--PowerApps::before { @include ms-Icon--PowerApps; }
 .ms-Icon--Suitcase::before { @include ms-Icon--Suitcase; }
 .ms-Icon--ProjectLogo::before { @include ms-Icon--ProjectLogo; }
@@ -631,7 +629,7 @@
 .ms-Icon--IssueTracking::before { @include ms-Icon--IssueTracking; }
 .ms-Icon--IssueTrackingMirrored::before { @include ms-Icon--IssueTrackingMirrored; }
 .ms-Icon--PictureLibrary::before { @include ms-Icon--PictureLibrary; }
-.ms-Icon--AppForOfficeLogo::before { @include ms-Icon--AppForOfficeLogo; }
+.ms-Icon--OfficeAddinsLogo::before { @include ms-Icon--OfficeAddinsLogo; }
 .ms-Icon--OfflineOneDriveParachute::before { @include ms-Icon--OfflineOneDriveParachute; }
 .ms-Icon--OfflineOneDriveParachuteDisabled::before { @include ms-Icon--OfflineOneDriveParachuteDisabled; }
 .ms-Icon--LargeGrid::before { @include ms-Icon--LargeGrid; }
@@ -749,3 +747,8 @@
 .ms-Icon--MicrosoftStaffhubLogo::before { @include ms-Icon--MicrosoftStaffhubLogo; }
 .ms-Icon--CaloriesAdd::before { @include ms-Icon--CaloriesAdd; }
 .ms-Icon--BranchFork::before { @include ms-Icon--BranchFork; }
+.ms-Icon--SingleColumn::before { @include ms-Icon--SingleColumn; }
+.ms-Icon--DoubleColumn::before { @include ms-Icon--DoubleColumn; }
+.ms-Icon--TripleColumn::before { @include ms-Icon--TripleColumn; }
+.ms-Icon--ColumnLeftTwoThirds::before { @include ms-Icon--ColumnLeftTwoThirds; }
+.ms-Icon--ColumnRightTwoThirds::before { @include ms-Icon--ColumnRightTwoThirds; }

@@ -424,7 +424,7 @@
 @mixin ms-Icon--Design { content: '\EB3C'; }
 @mixin ms-Icon--Website { content: '\EB41'; }
 @mixin ms-Icon--Drop { content: '\EB42'; }
-@mixin ms-Icon--Snow { content: '\EB46'; }
+@mixin ms-Icon--Snowflake { content: '\EB46'; }
 @mixin ms-Icon--BusSolid { content: '\EB47'; }
 @mixin ms-Icon--FerrySolid { content: '\EB48'; }
 @mixin ms-Icon--TrainSolid { content: '\EB4D'; }
@@ -531,7 +531,6 @@
 @mixin ms-Icon--AdminPLogo { content: '\ED71'; }
 @mixin ms-Icon--AdminSLogo { content: '\ED72'; }
 @mixin ms-Icon--AdminYLogo { content: '\ED73'; }
-@mixin ms-Icon--AlchemyLogo { content: '\ED74'; }
 @mixin ms-Icon--BoxLogo { content: '\ED75'; }
 @mixin ms-Icon--DelveLogo { content: '\ED76'; }
 @mixin ms-Icon--DropboxLogo { content: '\ED77'; }
@@ -593,7 +592,6 @@
 @mixin ms-Icon--Dropdown { content: '\EDC5'; }
 @mixin ms-Icon--BookingsLogo { content: '\EDC7'; }
 @mixin ms-Icon--ClassNotebookLogo { content: '\EDC8'; }
-@mixin ms-Icon--CollabsDBLogo { content: '\EDC9'; }
 @mixin ms-Icon--DelveAnalyticsLogo { content: '\EDCA'; }
 @mixin ms-Icon--DocsLogo { content: '\EDCB'; }
 @mixin ms-Icon--Dynamics365Logo { content: '\EDCC'; }
@@ -601,7 +599,7 @@
 @mixin ms-Icon--OfficeAssistantLogo { content: '\EDCE'; }
 @mixin ms-Icon--OfficeStoreLogo { content: '\EDCF'; }
 @mixin ms-Icon--OneNoteEduLogo { content: '\EDD0'; }
-@mixin ms-Icon--Planner { content: '\EDD1'; }
+@mixin ms-Icon--PlannerLogo { content: '\EDD1'; }
 @mixin ms-Icon--PowerApps { content: '\EDD2'; }
 @mixin ms-Icon--Suitcase { content: '\EDD3'; }
 @mixin ms-Icon--ProjectLogo { content: '\EDD4'; }
@@ -654,7 +652,7 @@
 @mixin ms-Icon--IssueTracking { content: '\EEC0'; }
 @mixin ms-Icon--IssueTrackingMirrored { content: '\EEC1'; }
 @mixin ms-Icon--PictureLibrary { content: '\EEC2'; }
-@mixin ms-Icon--AppForOfficeLogo { content: '\EEC7'; }
+@mixin ms-Icon--OfficeAddinsLogo { content: '\EEC7'; }
 @mixin ms-Icon--OfflineOneDriveParachute { content: '\EEC8'; }
 @mixin ms-Icon--OfflineOneDriveParachuteDisabled { content: '\EEC9'; }
 @mixin ms-Icon--LargeGrid { content: '\EECB'; }
@@ -772,3 +770,8 @@
 @mixin ms-Icon--MicrosoftStaffhubLogo { content: '\F130'; }
 @mixin ms-Icon--CaloriesAdd { content: '\F172'; }
 @mixin ms-Icon--BranchFork { content: '\F173'; }
+@mixin ms-Icon--SingleColumn { content: '\F1D3'; }
+@mixin ms-Icon--DoubleColumn { content: '\F1D4'; }
+@mixin ms-Icon--TripleColumn { content: '\F1D5'; }
+@mixin ms-Icon--ColumnLeftTwoThirds { content: '\F1D6'; }
+@mixin ms-Icon--ColumnRightTwoThirds { content: '\F1D7'; }

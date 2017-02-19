@@ -179,7 +179,6 @@
   list-style-type: none;
   position: absolute;
   width: 100%;
-  max-height: 200px;
   max-width: 268px;
   z-index: 400;
   top: 0;
@@ -320,6 +319,7 @@
     bottom: auto;
     left: auto;
     max-width: 100%;
+    max-height: 200px;
   }
 
   .ms-Dropdown.ms-Dropdown--open .ms-Dropdown-items,

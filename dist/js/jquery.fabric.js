@@ -2,6 +2,336 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 /**
+ * Breadcrumb component
+ *
+ * Shows the user's current location in a hierarchy and provides a means of navigating upward.
+ *
+ */
+
+/**
+ * @namespace fabric
+ */
+var fabric = fabric || {};
+/**
+ *
+ * @param {HTMLElement} container - the target container for an instance of Breadcrumb
+ * @constructor
+ *
+ * If dynamically populating a list run the constructor after the list has been populated
+ * in the DOM.
+ */
+fabric.Breadcrumb = function(container) {
+  this.breadcrumb = container;
+  this.breadcrumbList = container.querySelector('.ms-Breadcrumb-list');
+  this.listItems = container.querySelectorAll('.ms-Breadcrumb-listItem');
+  this.contextMenu = container.querySelector('.ms-ContextualMenu');
+  this.overflowButton = container.querySelector('.ms-Breadcrumb-overflowButton');
+  this.overflowMenu = container.querySelector('.ms-Breadcrumb-overflowMenu');
+  this.itemCollection = [];
+  this.currentMaxItems = 0;
+  this.init();
+
+};
+
+fabric.Breadcrumb.prototype = (function() {
+
+  //medium breakpoint
+  var MEDIUM = 639;
+
+  /**
+   * initializes component
+   */
+  var init = function() {
+    _setListeners.call(this);
+    _createItemCollection.call(this);
+    _onResize.call(this, null);
+  };
+
+  /**
+   * Adds a breadcrumb item to a breadcrumb
+   * @param itemLabel {String} the item's text label
+   * @param itemLink {String} the item's href link
+   * @param tabIndex {number} the item's tabIndex
+   */
+  var addItem = function(itemLabel, itemLink, tabIndex) {
+    this.itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
+   * Removes a breadcrumb item by item label in the breadcrumbs list
+   * @param itemLabel {String} the item's text label
+   */
+  var removeItemByLabel = function(itemLabel) {
+    var i = this.itemCollection.length;
+    while (i--) {
+      if (this.itemCollection[i].text === itemLabel) {
+        this.itemCollection.splice(i, 1);
+      }
+    }
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
+   * removes a breadcrumb item by position in the breadcrumbs list
+   * index starts at 0
+   * @param itemLabel {String} the item's text label
+   * @param itemLink {String} the item's href link
+   * @param tabIndex {number} the item's tabIndex
+   */
+  var removeItemByPosition = function(value) {
+    this.itemCollection.splice(value, 1);
+    _updateBreadcrumbs.call(this);
+  };
+
+  /**
+   * create internal model of list items from DOM
+   */
+  var _createItemCollection = function() {
+    var length = this.listItems.length;
+    var i = 0;
+    var item;
+    var text;
+    var link;
+    var tabIndex;
+
+    for (i; i < length; i++) {
+      item = this.listItems[i].querySelector('.ms-Breadcrumb-itemLink');
+      text = item.textContent;
+      link = item.getAttribute('href');
+      tabIndex = parseInt(item.getAttribute('tabindex'), 10);
+      this.itemCollection.push({text: text, link: link, tabIndex: tabIndex});
+    }
+  };
+
+  /**
+   * Re-render lists on resize
+   *
+   */
+  var _onResize = function() {
+    _closeOverflow.call(this, null);
+    _renderListOnResize.call(this);
+  };
+
+  /**
+   * render breadcrumbs and overflow menus on resize
+   */
+  var _renderListOnResize = function() {
+    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
+    if (maxItems !== this.currentMaxItems) {
+      _updateBreadcrumbs.call(this);
+    }
+
+    this.currentMaxItems = maxItems;
+  };
+
+  /**
+   * creates the overflow menu
+   */
+  var _addItemsToOverflow = function(maxItems) {
+    _resetList.call(this, this.contextMenu);
+    var end = this.itemCollection.length - maxItems;
+    var overflowItems = this.itemCollection.slice(0, end);
+    var contextMenu = this.contextMenu;
+    overflowItems.forEach(function(item) {
+      var li = document.createElement('li');
+      li.className = 'ms-ContextualMenu-item';
+      if(!isNaN(item.tabIndex)) {
+        li.setAttribute('tabindex', item.tabIndex);
+      }
+      var a = document.createElement('a');
+      a.className = 'ms-ContextualMenu-link';
+      if (item.link !== null) {
+        a.setAttribute('href', item.link);
+      }
+      a.textContent = item.text;
+      li.appendChild(a);
+      contextMenu.appendChild(li);
+    });
+  };
+
+  /**
+   * creates the breadcrumbs
+   */
+  var _addBreadcrumbItems = function(maxItems) {
+    _resetList.call(this, this.breadcrumbList);
+    var i = this.itemCollection.length - maxItems;
+    i = i < 0 ? 0 : i;
+    if (i >= 0) {
+      for (i; i < this.itemCollection.length; i++) {
+        var listItem = document.createElement('li');
+        var item = this.itemCollection[i];
+        var a = document.createElement('a');
+        var chevron = document.createElement('i');
+        listItem.className = 'ms-Breadcrumb-listItem';
+        a.className = 'ms-Breadcrumb-itemLink';
+        if (item.link !== null) {
+          a.setAttribute('href', item.link);
+        }
+        if (!isNaN(item.tabIndex)) {
+          a.setAttribute('tabindex', item.tabIndex);
+        }
+        a.textContent = item.text;
+        chevron.className = 'ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight';
+        listItem.appendChild(a);
+        listItem.appendChild(chevron);
+        this.breadcrumbList.appendChild(listItem);
+      }
+    }
+  };
+
+  /**
+   * resets a list by removing its children
+   */
+  var _resetList = function(list) {
+    while (list.firstChild) {
+      list.removeChild(list.firstChild);
+    }
+  };
+
+  /**
+   * opens the overflow menu
+   */
+  var _openOverflow = function(event) {
+    if (this.overflowMenu.className.indexOf(' is-open') === -1) {
+      this.overflowMenu.className += ' is-open';
+      removeOutlinesOnClick.call(this, event);
+      // force focus rect onto overflow button
+      this.overflowButton.focus();
+    }
+  };
+
+  var _overflowKeyPress = function(event) {
+    if (event.keyCode === 13) {
+      _openOverflow.call(this, event);
+    }
+  };
+
+  /**
+   * closes the overflow menu
+   */
+  var _closeOverflow = function(event) {
+    if (!event || event.target !== this.overflowButton) {
+      _removeClass.call(this, this.overflowMenu, ' is-open');
+    }
+  };
+
+  /**
+   * utility that removes a class from an element
+   */
+  var _removeClass = function (element, value) {
+    var index = element.className.indexOf(value);
+    if (index > -1) {
+      element.className = element.className.substring(0, index);
+    }
+  };
+
+  /**
+   * sets handlers for resize and button click events
+   */
+  var _setListeners = function() {
+    window.addEventListener('resize', _onResize.bind(this), false);
+    document.addEventListener('click', _closeOverflow.bind(this), false);
+    this.overflowButton.addEventListener('click', _openOverflow.bind(this), false);
+    this.overflowButton.addEventListener('keypress', _overflowKeyPress.bind(this), false);
+    this.breadcrumbList.addEventListener('click', removeOutlinesOnClick.bind(this), false);
+  };
+
+  /**
+   * removes focus outlines so they don't linger after click
+   */
+  var removeOutlinesOnClick = function(event) {
+    event.target.blur();
+  };
+
+  /**
+   * updates the breadcrumbs and overflow menu
+   */
+  var _updateBreadcrumbs = function() {
+    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
+    if (this.itemCollection.length > maxItems) {
+      this.breadcrumb.className += ' is-overflow';
+    } else {
+      _removeClass.call(this, this.breadcrumb, ' is-overflow');
+    }
+
+    _addBreadcrumbItems.call(this, maxItems);
+    _addItemsToOverflow.call(this, maxItems);
+  };
+
+  return {
+    init: init,
+    addItem: addItem,
+    removeItemByLabel: removeItemByLabel,
+    removeItemByPosition: removeItemByPosition
+  };
+
+}());
+
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * Contextual Menu Plugin
+ */
+(function ($) {
+  $.fn.ContextualMenu = function () {
+
+    /** Go through each nav bar we've been given. */
+    return this.each(function () {
+
+      var $contextualMenu = $(this);
+
+
+      // Set selected states.
+      $contextualMenu.on('click', '.ms-ContextualMenu-link:not(.is-disabled)', function(event) {
+        event.preventDefault();
+
+        // Check if multiselect - set selected states
+        if ( $contextualMenu.hasClass('ms-ContextualMenu--multiselect') ) {
+
+          // If already selected, remove selection; if not, add selection
+          if ( $(this).hasClass('is-selected') ) {
+            $(this).removeClass('is-selected');
+          }
+          else {
+            $(this).addClass('is-selected');
+          }
+
+        }
+        // All other contextual menu variants
+        else {
+
+          // Deselect all of the items and close any menus.
+          $('.ms-ContextualMenu-link')
+              .removeClass('is-selected')
+              .siblings('.ms-ContextualMenu')
+              .removeClass('is-open');
+
+          // Select this item.
+          $(this).addClass('is-selected');
+
+          // If this item has a menu, open it.
+          if ($(this).hasClass('ms-ContextualMenu-link--hasMenu')) {
+            $(this).siblings('.ms-ContextualMenu:first').addClass('is-open');
+
+            // Open the menu without bubbling up the click event,
+            // which can cause the menu to close.
+            event.stopPropagation();
+          }
+
+        }
+
+
+      });
+
+    });
+  };
+})(jQuery);
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
  * Command Bar Plugin
  */
 
@@ -1244,815 +1574,6 @@ fabric.MessageBanner.prototype = (function() {
 
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-/**
- * Contextual Menu Plugin
- */
-(function ($) {
-  $.fn.ContextualMenu = function () {
-
-    /** Go through each nav bar we've been given. */
-    return this.each(function () {
-
-      var $contextualMenu = $(this);
-
-
-      // Set selected states.
-      $contextualMenu.on('click', '.ms-ContextualMenu-link:not(.is-disabled)', function(event) {
-        event.preventDefault();
-
-        // Check if multiselect - set selected states
-        if ( $contextualMenu.hasClass('ms-ContextualMenu--multiselect') ) {
-
-          // If already selected, remove selection; if not, add selection
-          if ( $(this).hasClass('is-selected') ) {
-            $(this).removeClass('is-selected');
-          }
-          else {
-            $(this).addClass('is-selected');
-          }
-
-        }
-        // All other contextual menu variants
-        else {
-
-          // Deselect all of the items and close any menus.
-          $('.ms-ContextualMenu-link')
-              .removeClass('is-selected')
-              .siblings('.ms-ContextualMenu')
-              .removeClass('is-open');
-
-          // Select this item.
-          $(this).addClass('is-selected');
-
-          // If this item has a menu, open it.
-          if ($(this).hasClass('ms-ContextualMenu-link--hasMenu')) {
-            $(this).siblings('.ms-ContextualMenu:first').addClass('is-open');
-
-            // Open the menu without bubbling up the click event,
-            // which can cause the menu to close.
-            event.stopPropagation();
-          }
-
-        }
-
-
-      });
-
-    });
-  };
-})(jQuery);
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * Persona Card Plugin
- *
- * Adds basic demonstration functionality to .ms-PersonaCard components.
- *
- * @param  {jQuery Object}  One or more .ms-PersonaCard components
- * @return {jQuery Object}  The same components (allows for chaining)
- */
-(function ($) {
-  $.fn.PersonaCard = function () {
-
-    /** Go through each file picker we've been given. */
-    return this.each(function () {
-
-      var $personaCard = $(this);
-
-      /** When selecting an action, show its details. */
-      $personaCard.on('click', '.ms-PersonaCard-action', function() {
-
-        /** Select the correct tab. */
-        $personaCard.find('.ms-PersonaCard-action').removeClass('is-active');
-        $(this).addClass('is-active');
-
-        /** Function for switching selected item into view by adding a class to ul. */
-        var updateForItem = function(wrapper, item) {
-          var previousItem = wrapper.className + "";
-          var detail = item.charAt(0).toUpperCase() + item.slice(1);
-          var nextItem = "ms-PersonaCard-detail" + detail;
-          if (previousItem !== nextItem){
-            wrapper.classList.remove(previousItem);
-            wrapper.classList.add(nextItem);
-          }
-        };
-
-        /** Get id of selected item */
-        var el = $(this).attr('id');
-        /** Add detail class to ul to switch it into view. */
-        updateForItem($(this).parent().next().find('#detailList')[0], el);
-
-        /** Display the corresponding details. */
-        var requestedAction = $(this).attr('id');
-        $personaCard.find('.ms-PersonaCard-actionDetails').removeClass('is-active');
-        $personaCard.find('#' + requestedAction + '.ms-PersonaCard-actionDetails').addClass('is-active');
-
-      });
-
-      /** Toggle more details. */
-      $personaCard.on('click', '.ms-PersonaCard-detailExpander', function() {
-        $(this).parent('.ms-PersonaCard-actionDetails').toggleClass('is-collapsed');
-      });
-
-    });
-
-  };
-})(jQuery);
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * Breadcrumb component
- *
- * Shows the user's current location in a hierarchy and provides a means of navigating upward.
- *
- */
-
-/**
- * @namespace fabric
- */
-var fabric = fabric || {};
-/**
- *
- * @param {HTMLElement} container - the target container for an instance of Breadcrumb
- * @constructor
- *
- * If dynamically populating a list run the constructor after the list has been populated
- * in the DOM.
- */
-fabric.Breadcrumb = function(container) {
-  this.breadcrumb = container;
-  this.breadcrumbList = container.querySelector('.ms-Breadcrumb-list');
-  this.listItems = container.querySelectorAll('.ms-Breadcrumb-listItem');
-  this.contextMenu = container.querySelector('.ms-ContextualMenu');
-  this.overflowButton = container.querySelector('.ms-Breadcrumb-overflowButton');
-  this.overflowMenu = container.querySelector('.ms-Breadcrumb-overflowMenu');
-  this.itemCollection = [];
-  this.currentMaxItems = 0;
-  this.init();
-
-};
-
-fabric.Breadcrumb.prototype = (function() {
-
-  //medium breakpoint
-  var MEDIUM = 639;
-
-  /**
-   * initializes component
-   */
-  var init = function() {
-    _setListeners.call(this);
-    _createItemCollection.call(this);
-    _onResize.call(this, null);
-  };
-
-  /**
-   * Adds a breadcrumb item to a breadcrumb
-   * @param itemLabel {String} the item's text label
-   * @param itemLink {String} the item's href link
-   * @param tabIndex {number} the item's tabIndex
-   */
-  var addItem = function(itemLabel, itemLink, tabIndex) {
-    this.itemCollection.push({text: itemLabel, link: itemLink, tabIndex: tabIndex});
-    _updateBreadcrumbs.call(this);
-  };
-
-  /**
-   * Removes a breadcrumb item by item label in the breadcrumbs list
-   * @param itemLabel {String} the item's text label
-   */
-  var removeItemByLabel = function(itemLabel) {
-    var i = this.itemCollection.length;
-    while (i--) {
-      if (this.itemCollection[i].text === itemLabel) {
-        this.itemCollection.splice(i, 1);
-      }
-    }
-    _updateBreadcrumbs.call(this);
-  };
-
-  /**
-   * removes a breadcrumb item by position in the breadcrumbs list
-   * index starts at 0
-   * @param itemLabel {String} the item's text label
-   * @param itemLink {String} the item's href link
-   * @param tabIndex {number} the item's tabIndex
-   */
-  var removeItemByPosition = function(value) {
-    this.itemCollection.splice(value, 1);
-    _updateBreadcrumbs.call(this);
-  };
-
-  /**
-   * create internal model of list items from DOM
-   */
-  var _createItemCollection = function() {
-    var length = this.listItems.length;
-    var i = 0;
-    var item;
-    var text;
-    var link;
-    var tabIndex;
-
-    for (i; i < length; i++) {
-      item = this.listItems[i].querySelector('.ms-Breadcrumb-itemLink');
-      text = item.textContent;
-      link = item.getAttribute('href');
-      tabIndex = parseInt(item.getAttribute('tabindex'), 10);
-      this.itemCollection.push({text: text, link: link, tabIndex: tabIndex});
-    }
-  };
-
-  /**
-   * Re-render lists on resize
-   *
-   */
-  var _onResize = function() {
-    _closeOverflow.call(this, null);
-    _renderListOnResize.call(this);
-  };
-
-  /**
-   * render breadcrumbs and overflow menus on resize
-   */
-  var _renderListOnResize = function() {
-    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
-    if (maxItems !== this.currentMaxItems) {
-      _updateBreadcrumbs.call(this);
-    }
-
-    this.currentMaxItems = maxItems;
-  };
-
-  /**
-   * creates the overflow menu
-   */
-  var _addItemsToOverflow = function(maxItems) {
-    _resetList.call(this, this.contextMenu);
-    var end = this.itemCollection.length - maxItems;
-    var overflowItems = this.itemCollection.slice(0, end);
-    var contextMenu = this.contextMenu;
-    overflowItems.forEach(function(item) {
-      var li = document.createElement('li');
-      li.className = 'ms-ContextualMenu-item';
-      if(!isNaN(item.tabIndex)) {
-        li.setAttribute('tabindex', item.tabIndex);
-      }
-      var a = document.createElement('a');
-      a.className = 'ms-ContextualMenu-link';
-      if (item.link !== null) {
-        a.setAttribute('href', item.link);
-      }
-      a.textContent = item.text;
-      li.appendChild(a);
-      contextMenu.appendChild(li);
-    });
-  };
-
-  /**
-   * creates the breadcrumbs
-   */
-  var _addBreadcrumbItems = function(maxItems) {
-    _resetList.call(this, this.breadcrumbList);
-    var i = this.itemCollection.length - maxItems;
-    i = i < 0 ? 0 : i;
-    if (i >= 0) {
-      for (i; i < this.itemCollection.length; i++) {
-        var listItem = document.createElement('li');
-        var item = this.itemCollection[i];
-        var a = document.createElement('a');
-        var chevron = document.createElement('i');
-        listItem.className = 'ms-Breadcrumb-listItem';
-        a.className = 'ms-Breadcrumb-itemLink';
-        if (item.link !== null) {
-          a.setAttribute('href', item.link);
-        }
-        if (!isNaN(item.tabIndex)) {
-          a.setAttribute('tabindex', item.tabIndex);
-        }
-        a.textContent = item.text;
-        chevron.className = 'ms-Breadcrumb-chevron ms-Icon ms-Icon--chevronRight';
-        listItem.appendChild(a);
-        listItem.appendChild(chevron);
-        this.breadcrumbList.appendChild(listItem);
-      }
-    }
-  };
-
-  /**
-   * resets a list by removing its children
-   */
-  var _resetList = function(list) {
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
-  };
-
-  /**
-   * opens the overflow menu
-   */
-  var _openOverflow = function(event) {
-    if (this.overflowMenu.className.indexOf(' is-open') === -1) {
-      this.overflowMenu.className += ' is-open';
-      removeOutlinesOnClick.call(this, event);
-      // force focus rect onto overflow button
-      this.overflowButton.focus();
-    }
-  };
-
-  var _overflowKeyPress = function(event) {
-    if (event.keyCode === 13) {
-      _openOverflow.call(this, event);
-    }
-  };
-
-  /**
-   * closes the overflow menu
-   */
-  var _closeOverflow = function(event) {
-    if (!event || event.target !== this.overflowButton) {
-      _removeClass.call(this, this.overflowMenu, ' is-open');
-    }
-  };
-
-  /**
-   * utility that removes a class from an element
-   */
-  var _removeClass = function (element, value) {
-    var index = element.className.indexOf(value);
-    if (index > -1) {
-      element.className = element.className.substring(0, index);
-    }
-  };
-
-  /**
-   * sets handlers for resize and button click events
-   */
-  var _setListeners = function() {
-    window.addEventListener('resize', _onResize.bind(this), false);
-    document.addEventListener('click', _closeOverflow.bind(this), false);
-    this.overflowButton.addEventListener('click', _openOverflow.bind(this), false);
-    this.overflowButton.addEventListener('keypress', _overflowKeyPress.bind(this), false);
-    this.breadcrumbList.addEventListener('click', removeOutlinesOnClick.bind(this), false);
-  };
-
-  /**
-   * removes focus outlines so they don't linger after click
-   */
-  var removeOutlinesOnClick = function(event) {
-    event.target.blur();
-  };
-
-  /**
-   * updates the breadcrumbs and overflow menu
-   */
-  var _updateBreadcrumbs = function() {
-    var maxItems = window.innerWidth > MEDIUM ? 4 : 2;
-    if (this.itemCollection.length > maxItems) {
-      this.breadcrumb.className += ' is-overflow';
-    } else {
-      _removeClass.call(this, this.breadcrumb, ' is-overflow');
-    }
-
-    _addBreadcrumbItems.call(this, maxItems);
-    _addItemsToOverflow.call(this, maxItems);
-  };
-
-  return {
-    init: init,
-    addItem: addItem,
-    removeItemByLabel: removeItemByLabel,
-    removeItemByPosition: removeItemByPosition
-  };
-
-}());
-
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * ProgressIndicator component
- *
- * A component for outputting determinate progress
- *
- */
-
-/**
- * @namespace fabric
- */
-var fabric = fabric || {};
-/**
- *
- * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
- * @constructor
- */
-fabric.ProgressIndicator = function(container) {
-  this.container = container;
-  this.cacheDOM();
-};
-
-fabric.ProgressIndicator.prototype = (function() {
-
-  var _progress;
-  var _width;
-  var _itemName;
-  var _total;
-  var _itemDescription;
-  var _progressBar;
-
-  /**
-   * Sets the progress percentage for a determinate
-   * operation. Either use this or setProgress
-   * and setTotal as setProgressPercent assumes
-   * you've done a percentage calculation before
-   * injecting it into the function
-   * @param {number} percent - a floating point number from 0 to 1
-   */
-  var setProgressPercent = function(percent) {
-    _progressBar.style.width = Math.round(_width * percent) + "px";
-  };
-
-  /**
-   * Sets the progress for a determinate operation.
-   * Use this in combination with setTotal.
-   * @param {number} progress
-   */
-  var setProgress = function(progress) {
-    _progress = progress;
-    var percentage = _progress / _total;
-    this.setProgressPercent(percentage);
-  };
-
-  /**
-   * Sets the total file size, etc. for a
-   * determinate operation. Use this in
-   * combination with setProgress
-   * @param {number} total
-   */
-  var setTotal = function(total) {
-    _total = total;
-  };
-
-  /**
-   * Sets the text for the title or label
-   * of an instance
-   * @param {string} name
-   */
-  var setName = function(name) {
-    _itemName.innerHTML = name;
-  };
-
-  /**
-   * Sets the text for a description
-   * of an instance
-   * @param {string} name
-   */
-  var setDescription = function(description) {
-    _itemDescription.innerHTML = description;
-  };
-
-  /**
-   * caches elements and values of the component
-   *
-   */
-  var cacheDOM = function() {
-    _itemName = this.container.querySelector('.ms-ProgressIndicator-itemName') || null; //an itemName element is optional
-    _itemDescription = this.container.querySelector('.ms-ProgressIndicator-itemDescription') || null; //an itemDescription element is optional
-    _progressBar = this.container.querySelector('.ms-ProgressIndicator-progressBar');
-    _width = this.container.querySelector('.ms-ProgressIndicator-itemProgress').offsetWidth;
-  };
-
-  return {
-    setProgressPercent: setProgressPercent,
-    setName: setName,
-    setDescription: setDescription,
-    setProgress: setProgress,
-    setTotal: setTotal,
-    cacheDOM: cacheDOM
-  };
-}());
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * Pivot Plugin
- *
- * Adds basic demonstration functionality to .ms-Pivot components.
- *
- * @param  {jQuery Object}  One or more .ms-Pivot components
- * @return {jQuery Object}  The same components (allows for chaining)
- */
-(function ($) {
-  $.fn.Pivot = function () {
-
-    /** Go through each pivot we've been given. */
-    return this.each(function () {
-
-      var $pivotContainer = $(this);
-
-      /** When clicking/tapping a link, select it. */
-      $pivotContainer.on('click', '.ms-Pivot-link', function(event) {
-        event.preventDefault();
-        /** Check if current selection has elipses child element **/
-        var $elipsisCheck = $(this).find('.ms-Pivot-ellipsis');
-        
-        /** Only execute when no elipses element can be found **/
-        if($elipsisCheck.length === 0){
-  
-          $(this).siblings('.ms-Pivot-link').removeClass('is-selected');
-          $(this).addClass('is-selected');
-        }
-  
-      });
-
-    });
-
-  };
-})(jQuery);
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * SearchBox Plugin
- *
- * Adds basic demonstration functionality to .ms-SearchBox components.
- *
- * @param  {jQuery Object}  One or more .ms-SearchBox components
- * @return {jQuery Object}  The same components (allows for chaining)
- */
-(function ($) {
-  $.fn.SearchBox = function () {
-
-    /** Iterate through each text field provided. */
-    return this.each(function () {
-      // Set cancel to false
-      var cancel = false;
-      var $searchField = $(this).find('.ms-SearchBox-field');
-
-      /** SearchBox focus - hide label and show cancel button */
-      $searchField.on('focus', function() {
-        /** Hide the label on focus. */
-        $(this).siblings('.ms-SearchBox-label').hide();
-        // Show cancel button by adding is-active class
-        $(this).parent('.ms-SearchBox').addClass('is-active');
-      });
-
-      /** 'hovering' class allows for more fine grained control of hover state */
-      $searchField.on('mouseover', function() {
-        $searchField.addClass('hovering');
-      });
-
-      $searchField.on('mouseout', function() {
-        $searchField.removeClass('hovering');
-      });
-
-      // If cancel button is selected, change cancel value to true
-      $(this).find('.ms-SearchBox-closeButton').on('mousedown', function() {
-        cancel = true;
-      });
-
-      /** Show the label again when leaving the field. */
-      $(this).find('.ms-SearchBox-field').on('blur', function() {
-
-        // If cancel button is selected remove the text and show the label
-        if (cancel) {
-          $(this).val('');
-          $searchField.addClass('hovering');
-        }
-        
-        var $searchBox = $(this).parent('.ms-SearchBox');
-        // Prevents inputfield from gaining focus too soon
-        setTimeout(function() {
-          // Remove is-active class - hides cancel button
-          $searchBox.removeClass('is-active');
-        }, 10);
-        
-        /** Only do this if no text was entered. */
-        if ($(this).val().length === 0 ) {
-          $(this).siblings('.ms-SearchBox-label').show();
-        }
-
-        // Reset cancel to false
-        cancel = false;
-      });
-    });
-
-  };
-})(jQuery);
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * Spinner Component
- *
- * An animating activity indicator.
- *
- */
-
-/**
- * @namespace fabric
- */
-var fabric = fabric || {};
-
-/**
- * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
- */
-
-fabric.Spinner = function(target) {
-
-    var _target = target;
-    var eightSize = 0.2;
-    var circleObjects = [];
-    var animationSpeed = 90;
-    var interval;
-    var spinner;
-    var numCircles;
-    var offsetSize;
-    var fadeIncrement = 0;
-    var parentSize = 20;
-
-    /**
-     * @function start - starts or restarts the animation sequence
-     * @memberOf fabric.Spinner
-     */
-    function start() {
-        stop();
-        interval = setInterval(function() {
-            var i = circleObjects.length;
-            while(i--) {
-                _fade(circleObjects[i]);
-            }
-        }, animationSpeed);
-    }
-
-    /**
-     * @function stop - stops the animation sequence
-     * @memberOf fabric.Spinner
-     */
-    function stop() {
-        clearInterval(interval);
-    }
-
-    //private methods
-
-    function _init() {
-        _setTargetElement();
-        _setPropertiesForSize();
-        _createCirclesAndArrange();
-        _initializeOpacities();
-        start();
-    }
-
-    function _initializeOpacities() {
-        var i = 0;
-        var j = 1;
-        var opacity;
-        fadeIncrement = 1 / numCircles;
-
-        for (i; i < numCircles; i++) {
-            var circleObject = circleObjects[i];
-            opacity = (fadeIncrement * j++);
-            _setOpacity(circleObject.element, opacity);
-        }
-    }
-
-    function _fade(circleObject) {
-        var opacity = _getOpacity(circleObject.element) - fadeIncrement;
-
-        if (opacity <= 0) {
-            opacity = 1;
-        }
-
-        _setOpacity(circleObject.element, opacity);
-    }
-
-    function _getOpacity(element) {
-        return parseFloat(window.getComputedStyle(element).getPropertyValue("opacity"));
-    }
-
-    function _setOpacity(element, opacity) {
-        element.style.opacity = opacity;
-    }
-
-    function _createCircle() {
-        var circle = document.createElement('div');
-        circle.className = "ms-Spinner-circle";
-        circle.style.width = circle.style.height = parentSize * offsetSize + "px";
-        return circle;
-    }
-
-    function _createCirclesAndArrange() {
-
-        var angle = 0;
-        var offset = parentSize * offsetSize;
-        var step = (2 * Math.PI) / numCircles;
-        var i = numCircles;
-        var circleObject;
-        var radius = (parentSize - offset) * 0.5;
-
-        while (i--) {
-            var circle = _createCircle();
-            var x = Math.round(parentSize * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
-            var y = Math.round(parentSize * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
-            spinner.appendChild(circle);
-            circle.style.left = x + 'px';
-            circle.style.top = y + 'px';
-            angle += step;
-            circleObject = { element:circle, j:i };
-            circleObjects.push(circleObject);
-        }
-    }
-
-    function _setPropertiesForSize() {
-        if (spinner.className.indexOf("large") > -1) {
-            parentSize = 28;
-            eightSize = 0.179;
-        }
-
-        offsetSize = eightSize;
-        numCircles = 8;
-    }
-
-    function _setTargetElement() {
-        //for backwards compatibility
-        if (_target.className.indexOf("ms-Spinner") === -1) {
-            spinner = document.createElement("div");
-            spinner.className = "ms-Spinner";
-            _target.appendChild(spinner);
-        } else {
-            spinner = _target;
-        }
-    }
-
-    _init();
-
-    return {
-        start:start,
-        stop:stop
-    };
-};
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
-/**
- * Text Field Plugin
- *
- * Adds basic demonstration functionality to .ms-TextField components.
- *
- * @param  {jQuery Object}  One or more .ms-TextField components
- * @return {jQuery Object}  The same components (allows for chaining)
- */
-(function ($) {
-  $.fn.TextField = function () {
-
-    /** Iterate through each text field provided. */
-    return this.each(function () {
-
-      /** Does it have a placeholder? */
-      if ($(this).hasClass("ms-TextField--placeholder")) {
-
-        /** Hide the label on click. */
-        $(this).on('click', function () {
-          $(this).find('.ms-Label').hide();
-        });
-        
-        /** Hide the label on focus. */
-        $(this).find('.ms-TextField-field').on('focus', function () {
-          $(this).siblings('.ms-Label').hide();
-        });
-
-        /** Show the label again when leaving the field. */
-        $(this).find('.ms-TextField-field').on('blur', function () {
-
-          /** Only do this if no text was entered. */
-          if ($(this).val().length === 0) {
-            $(this).siblings('.ms-Label').show();
-          }
-        });
-      }
-
-      /** Underlined - adding/removing a focus class */
-      if ($(this).hasClass('ms-TextField--underlined')) {
-
-        /** Add is-active class - changes border color to theme primary */
-        $(this).find('.ms-TextField-field').on('focus', function() {
-          $(this).parent('.ms-TextField--underlined').addClass('is-active');
-        });
-
-        /** Remove is-active on blur of textfield */
-        $(this).find('.ms-TextField-field').on('blur', function() {
-          $(this).parent('.ms-TextField--underlined').removeClass('is-active');
-        });
-      }
-
-    });
-  };
-})(jQuery);
-
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-
 var fabric = fabric || {};
 
 /**
@@ -2448,4 +1969,483 @@ var fabric = fabric || {};
     // Set the width of the search field
     $peoplePicker.find('.ms-PeoplePicker-searchField').outerWidth(newFieldWidth);
   }
+})(jQuery);
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * Persona Card Plugin
+ *
+ * Adds basic demonstration functionality to .ms-PersonaCard components.
+ *
+ * @param  {jQuery Object}  One or more .ms-PersonaCard components
+ * @return {jQuery Object}  The same components (allows for chaining)
+ */
+(function ($) {
+  $.fn.PersonaCard = function () {
+
+    /** Go through each file picker we've been given. */
+    return this.each(function () {
+
+      var $personaCard = $(this);
+
+      /** When selecting an action, show its details. */
+      $personaCard.on('click', '.ms-PersonaCard-action', function() {
+
+        /** Select the correct tab. */
+        $personaCard.find('.ms-PersonaCard-action').removeClass('is-active');
+        $(this).addClass('is-active');
+
+        /** Function for switching selected item into view by adding a class to ul. */
+        var updateForItem = function(wrapper, item) {
+          var previousItem = wrapper.className + "";
+          var detail = item.charAt(0).toUpperCase() + item.slice(1);
+          var nextItem = "ms-PersonaCard-detail" + detail;
+          if (previousItem !== nextItem){
+            wrapper.classList.remove(previousItem);
+            wrapper.classList.add(nextItem);
+          }
+        };
+
+        /** Get id of selected item */
+        var el = $(this).attr('id');
+        /** Add detail class to ul to switch it into view. */
+        updateForItem($(this).parent().next().find('#detailList')[0], el);
+
+        /** Display the corresponding details. */
+        var requestedAction = $(this).attr('id');
+        $personaCard.find('.ms-PersonaCard-actionDetails').removeClass('is-active');
+        $personaCard.find('#' + requestedAction + '.ms-PersonaCard-actionDetails').addClass('is-active');
+
+      });
+
+      /** Toggle more details. */
+      $personaCard.on('click', '.ms-PersonaCard-detailExpander', function() {
+        $(this).parent('.ms-PersonaCard-actionDetails').toggleClass('is-collapsed');
+      });
+
+    });
+
+  };
+})(jQuery);
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * Pivot Plugin
+ *
+ * Adds basic demonstration functionality to .ms-Pivot components.
+ *
+ * @param  {jQuery Object}  One or more .ms-Pivot components
+ * @return {jQuery Object}  The same components (allows for chaining)
+ */
+(function ($) {
+  $.fn.Pivot = function () {
+
+    /** Go through each pivot we've been given. */
+    return this.each(function () {
+
+      var $pivotContainer = $(this);
+
+      /** When clicking/tapping a link, select it. */
+      $pivotContainer.on('click', '.ms-Pivot-link', function(event) {
+        event.preventDefault();
+        /** Check if current selection has elipses child element **/
+        var $elipsisCheck = $(this).find('.ms-Pivot-ellipsis');
+        
+        /** Only execute when no elipses element can be found **/
+        if($elipsisCheck.length === 0){
+  
+          $(this).siblings('.ms-Pivot-link').removeClass('is-selected');
+          $(this).addClass('is-selected');
+        }
+  
+      });
+
+    });
+
+  };
+})(jQuery);
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * ProgressIndicator component
+ *
+ * A component for outputting determinate progress
+ *
+ */
+
+/**
+ * @namespace fabric
+ */
+var fabric = fabric || {};
+/**
+ *
+ * @param {HTMLDivElement} container - the target container for an instance of ProgressIndicator
+ * @constructor
+ */
+fabric.ProgressIndicator = function(container) {
+  this.container = container;
+  this.cacheDOM();
+};
+
+fabric.ProgressIndicator.prototype = (function() {
+
+  var _progress;
+  var _width;
+  var _itemName;
+  var _total;
+  var _itemDescription;
+  var _progressBar;
+
+  /**
+   * Sets the progress percentage for a determinate
+   * operation. Either use this or setProgress
+   * and setTotal as setProgressPercent assumes
+   * you've done a percentage calculation before
+   * injecting it into the function
+   * @param {number} percent - a floating point number from 0 to 1
+   */
+  var setProgressPercent = function(percent) {
+    _progressBar.style.width = Math.round(_width * percent) + "px";
+  };
+
+  /**
+   * Sets the progress for a determinate operation.
+   * Use this in combination with setTotal.
+   * @param {number} progress
+   */
+  var setProgress = function(progress) {
+    _progress = progress;
+    var percentage = _progress / _total;
+    this.setProgressPercent(percentage);
+  };
+
+  /**
+   * Sets the total file size, etc. for a
+   * determinate operation. Use this in
+   * combination with setProgress
+   * @param {number} total
+   */
+  var setTotal = function(total) {
+    _total = total;
+  };
+
+  /**
+   * Sets the text for the title or label
+   * of an instance
+   * @param {string} name
+   */
+  var setName = function(name) {
+    _itemName.innerHTML = name;
+  };
+
+  /**
+   * Sets the text for a description
+   * of an instance
+   * @param {string} name
+   */
+  var setDescription = function(description) {
+    _itemDescription.innerHTML = description;
+  };
+
+  /**
+   * caches elements and values of the component
+   *
+   */
+  var cacheDOM = function() {
+    _itemName = this.container.querySelector('.ms-ProgressIndicator-itemName') || null; //an itemName element is optional
+    _itemDescription = this.container.querySelector('.ms-ProgressIndicator-itemDescription') || null; //an itemDescription element is optional
+    _progressBar = this.container.querySelector('.ms-ProgressIndicator-progressBar');
+    _width = this.container.querySelector('.ms-ProgressIndicator-itemProgress').offsetWidth;
+  };
+
+  return {
+    setProgressPercent: setProgressPercent,
+    setName: setName,
+    setDescription: setDescription,
+    setProgress: setProgress,
+    setTotal: setTotal,
+    cacheDOM: cacheDOM
+  };
+}());
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * SearchBox Plugin
+ *
+ * Adds basic demonstration functionality to .ms-SearchBox components.
+ *
+ * @param  {jQuery Object}  One or more .ms-SearchBox components
+ * @return {jQuery Object}  The same components (allows for chaining)
+ */
+(function ($) {
+  $.fn.SearchBox = function () {
+
+    /** Iterate through each text field provided. */
+    return this.each(function () {
+      // Set cancel to false
+      var cancel = false;
+      var $searchField = $(this).find('.ms-SearchBox-field');
+
+      /** SearchBox focus - hide label and show cancel button */
+      $searchField.on('focus', function() {
+        /** Hide the label on focus. */
+        $(this).siblings('.ms-SearchBox-label').hide();
+        // Show cancel button by adding is-active class
+        $(this).parent('.ms-SearchBox').addClass('is-active');
+      });
+
+      /** 'hovering' class allows for more fine grained control of hover state */
+      $searchField.on('mouseover', function() {
+        $searchField.addClass('hovering');
+      });
+
+      $searchField.on('mouseout', function() {
+        $searchField.removeClass('hovering');
+      });
+
+      // If cancel button is selected, change cancel value to true
+      $(this).find('.ms-SearchBox-closeButton').on('mousedown', function() {
+        cancel = true;
+      });
+
+      /** Show the label again when leaving the field. */
+      $(this).find('.ms-SearchBox-field').on('blur', function() {
+
+        // If cancel button is selected remove the text and show the label
+        if (cancel) {
+          $(this).val('');
+          $searchField.addClass('hovering');
+        }
+        
+        var $searchBox = $(this).parent('.ms-SearchBox');
+        // Prevents inputfield from gaining focus too soon
+        setTimeout(function() {
+          // Remove is-active class - hides cancel button
+          $searchBox.removeClass('is-active');
+        }, 10);
+        
+        /** Only do this if no text was entered. */
+        if ($(this).val().length === 0 ) {
+          $(this).siblings('.ms-SearchBox-label').show();
+        }
+
+        // Reset cancel to false
+        cancel = false;
+      });
+    });
+
+  };
+})(jQuery);
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * Spinner Component
+ *
+ * An animating activity indicator.
+ *
+ */
+
+/**
+ * @namespace fabric
+ */
+var fabric = fabric || {};
+
+/**
+ * @param {HTMLDOMElement} target - The element the Spinner will attach itself to.
+ */
+
+fabric.Spinner = function(target) {
+
+    var _target = target;
+    var eightSize = 0.2;
+    var circleObjects = [];
+    var animationSpeed = 90;
+    var interval;
+    var spinner;
+    var numCircles;
+    var offsetSize;
+    var fadeIncrement = 0;
+    var parentSize = 20;
+
+    /**
+     * @function start - starts or restarts the animation sequence
+     * @memberOf fabric.Spinner
+     */
+    function start() {
+        stop();
+        interval = setInterval(function() {
+            var i = circleObjects.length;
+            while(i--) {
+                _fade(circleObjects[i]);
+            }
+        }, animationSpeed);
+    }
+
+    /**
+     * @function stop - stops the animation sequence
+     * @memberOf fabric.Spinner
+     */
+    function stop() {
+        clearInterval(interval);
+    }
+
+    //private methods
+
+    function _init() {
+        _setTargetElement();
+        _setPropertiesForSize();
+        _createCirclesAndArrange();
+        _initializeOpacities();
+        start();
+    }
+
+    function _initializeOpacities() {
+        var i = 0;
+        var j = 1;
+        var opacity;
+        fadeIncrement = 1 / numCircles;
+
+        for (i; i < numCircles; i++) {
+            var circleObject = circleObjects[i];
+            opacity = (fadeIncrement * j++);
+            _setOpacity(circleObject.element, opacity);
+        }
+    }
+
+    function _fade(circleObject) {
+        var opacity = _getOpacity(circleObject.element) - fadeIncrement;
+
+        if (opacity <= 0) {
+            opacity = 1;
+        }
+
+        _setOpacity(circleObject.element, opacity);
+    }
+
+    function _getOpacity(element) {
+        return parseFloat(window.getComputedStyle(element).getPropertyValue("opacity"));
+    }
+
+    function _setOpacity(element, opacity) {
+        element.style.opacity = opacity;
+    }
+
+    function _createCircle() {
+        var circle = document.createElement('div');
+        circle.className = "ms-Spinner-circle";
+        circle.style.width = circle.style.height = parentSize * offsetSize + "px";
+        return circle;
+    }
+
+    function _createCirclesAndArrange() {
+
+        var angle = 0;
+        var offset = parentSize * offsetSize;
+        var step = (2 * Math.PI) / numCircles;
+        var i = numCircles;
+        var circleObject;
+        var radius = (parentSize - offset) * 0.5;
+
+        while (i--) {
+            var circle = _createCircle();
+            var x = Math.round(parentSize * 0.5 + radius * Math.cos(angle) - circle.clientWidth * 0.5) - offset * 0.5;
+            var y = Math.round(parentSize * 0.5 + radius * Math.sin(angle) - circle.clientHeight * 0.5) - offset * 0.5;
+            spinner.appendChild(circle);
+            circle.style.left = x + 'px';
+            circle.style.top = y + 'px';
+            angle += step;
+            circleObject = { element:circle, j:i };
+            circleObjects.push(circleObject);
+        }
+    }
+
+    function _setPropertiesForSize() {
+        if (spinner.className.indexOf("large") > -1) {
+            parentSize = 28;
+            eightSize = 0.179;
+        }
+
+        offsetSize = eightSize;
+        numCircles = 8;
+    }
+
+    function _setTargetElement() {
+        //for backwards compatibility
+        if (_target.className.indexOf("ms-Spinner") === -1) {
+            spinner = document.createElement("div");
+            spinner.className = "ms-Spinner";
+            _target.appendChild(spinner);
+        } else {
+            spinner = _target;
+        }
+    }
+
+    _init();
+
+    return {
+        start:start,
+        stop:stop
+    };
+};
+
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+/**
+ * Text Field Plugin
+ *
+ * Adds basic demonstration functionality to .ms-TextField components.
+ *
+ * @param  {jQuery Object}  One or more .ms-TextField components
+ * @return {jQuery Object}  The same components (allows for chaining)
+ */
+(function ($) {
+  $.fn.TextField = function () {
+
+    /** Iterate through each text field provided. */
+    return this.each(function () {
+
+      /** Does it have a placeholder? */
+      if ($(this).hasClass("ms-TextField--placeholder")) {
+
+        /** Hide the label on click. */
+        $(this).on('click', function () {
+          $(this).find('.ms-Label').hide();
+        });
+        
+        /** Hide the label on focus. */
+        $(this).find('.ms-TextField-field').on('focus', function () {
+          $(this).siblings('.ms-Label').hide();
+        });
+
+        /** Show the label again when leaving the field. */
+        $(this).find('.ms-TextField-field').on('blur', function () {
+
+          /** Only do this if no text was entered. */
+          if ($(this).val().length === 0) {
+            $(this).siblings('.ms-Label').show();
+          }
+        });
+      }
+
+      /** Underlined - adding/removing a focus class */
+      if ($(this).hasClass('ms-TextField--underlined')) {
+
+        /** Add is-active class - changes border color to theme primary */
+        $(this).find('.ms-TextField-field').on('focus', function() {
+          $(this).parent('.ms-TextField--underlined').addClass('is-active');
+        });
+
+        /** Remove is-active on blur of textfield */
+        $(this).find('.ms-TextField-field').on('blur', function() {
+          $(this).parent('.ms-TextField--underlined').removeClass('is-active');
+        });
+      }
+
+    });
+  };
 })(jQuery);

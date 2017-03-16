@@ -1,0 +1,371 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Vendor-prefixed mixins
+
+// Border radius.
+@mixin ms-border-radius($ms-radius: 5px) {
+  border-radius: $ms-radius;
+  background-clip: padding-box;
+}
+
+// Drop shadow.
+@mixin ms-drop-shadow($ms-x-offset: 0, $ms-y-offset: 0, $ms-blur: 5px, $ms-spread: 0, $ms-alpha: 0.4) {
+  box-shadow: $ms-x-offset $ms-y-offset $ms-blur $ms-spread rgba(0, 0, 0, $ms-alpha);
+}
+
+// Background gradient.
+@mixin ms-background-gradient($ms-origin: left, $ms-start: #000, $ms-start-location: 0%, $ms-stop: #FFF, $ms-stop-location: 100%) {
+    background-color: $ms-start;
+    background-image: linear-gradient($ms-origin, $ms-start $ms-start-location, $ms-stop $ms-stop-location);
+}
+
+// Rotation.
+@mixin ms-rotate($ms-deg) {
+  transform: rotate($ms-deg);
+}
+
+// Reset button styles.
+@mixin ms-button-reset() {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+@mixin ms-reset-animation() {
+    -webkit-animation: none;
+    -moz-animation:  none;
+    -ms-animation:  none;
+    -o-animation:  none;
+    animation:  none;
+}
+
+@mixin ms-reset-backface() {
+   backface-visibility: visible;
+}
+
+@mixin ms-reset-background() {
+  background: 0;
+  background-clip: border-box;
+  background-origin: padding-box;
+}
+
+@mixin ms-reset-border() {
+  border: 0;
+  border-collapse: separate;
+  border-image: none;
+  border-radius: 0;
+  border-spacing: 0;
+}
+
+@mixin ms-reset-box-shadow() {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin ms-reset-box-sizing() {
+   box-sizing: content-box;
+}
+
+@mixin ms-reset-columns() {
+  columns: auto;
+  column-count: auto;
+  column-fill: balance;
+  column-gap: normal;
+  column-rule: medium none currentColor;
+  column-rule-color: currentColor;
+  column-rule-style: none;
+  column-rule-width: none;
+  column-span: 1;
+  column-width: auto;
+}
+
+
+// Fonts and Typography Resets
+@mixin ms-reset-font() {
+  font: normal;
+  font-family: inherit;
+  font-size: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+}
+
+@mixin ms-reset-text-styling() {
+  text-align: inherit;
+  text-align-last: auto;
+  text-decoration: none;
+  text-decoration-color: inherit;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  line-height: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+
+// Box Model Resets
+@mixin ms-reset-padding() {
+  padding: 0;
+}
+
+@mixin ms-reset-margins() {
+  margin: 0;
+}
+
+@mixin ms-reset-overflow() {
+  overflow: visible;
+}
+
+@mixin ms-reset-max() {
+    max-height: none;
+    max-width: none;
+}
+
+@mixin ms-reset-min() {
+    min-height: 0;
+    min-width: 0;
+}
+
+@mixin ms-reset-positioning() {
+  bottom: auto;
+  left: auto;
+  top: auto;
+  left: auto;
+}
+
+@mixin ms-reset-float() {
+  float: none;
+}
+
+@mixin ms-reset-height($ms-useMaxMin: false) {
+    height: auto;
+    @if $ms-useMaxMin == true {
+        min-height: 0;
+        max-height: 0;
+    }
+}
+
+@mixin ms-reset-width($ms-useMaxMin: false) {
+    width: auto;
+    @if $ms-useMaxMin == true {
+        min-width: 0;
+        max-width: 0;
+    }
+}
+
+@mixin ms-reset-position() {
+  position: static;
+}
+
+@mixin ms-reset-perspective() {
+  -webkit-perspective: none;
+  -webkit-perspective-origin: 50% 50%;
+  perspective: none;
+  perspective-origin: 50% 50%;
+
+}
+
+@mixin ms-reset-transition() {
+  -webkit-transition: none;
+  transition: none;
+}
+
+@mixin ms-reset-list-style() {
+  list-style: none;
+}
+
+@mixin ms-reset-transform() {
+  -ms-transform: none;
+  -webkit-transform: none;
+  -webkit-transform-style: flat;
+  transform: none;
+  transform-style: flat;
+}
+
+@mixin ms-reset-outline() {
+  outline: 0;
+}
+
+@mixin ms-reset-page-break() {
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+}
+
+@mixin ms-reset-display() {
+  display: block;
+}
+
+@mixin ms-reset-vertical-align() {
+    vertical-align: baseline;
+}
+
+// Prevents user selection of text elements.
+@mixin ms-user-select ($val) {
+    -webkit-touch-callout:  $val;
+    -webkit-user-select:    $val;
+    -khtml-user-select:     $val;
+    -moz-user-select:       $val;
+    -ms-user-select:        $val;
+    user-select:            $val;
+}
+
+// Prevents the text within a block element from wrapping to second line.
+@mixin ms-no-wrap() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Flexbox
+@mixin ms-flex-box() {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin ms-alignItems($ms-mode) {
+    -webkit-box-align: $ms-mode;
+    -moz-box-align: $ms-mode;
+    -ms-flex-align: $ms-mode;
+    -webkit-align-items: $ms-mode;
+    align-items: $ms-mode;
+}
+
+// Base/wrapper component to set typography throughout the app.
+@mixin ms-Fabric {
+  -moz-osx-font-smoothing: grayscale;
+  -ms-high-contrast-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  @include ms-inherit-font-family();
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-west-european;
+}
+
+// Set the font-family to 'inherit' for elements where the browser
+// styles commonly conflict with the font-family that we want.
+@mixin ms-inherit-font-family() {
+  button,
+  input {
+    font-family: inherit;
+  }
+}
+
+// Overrides the browser's default focus outline style.
+@mixin ms-focus-outline($inset: 0, $color: $ms-focus-border-color) {
+  // Only do this when it's a child of ms-Fabric in a focusVisible state.
+  .ms-Fabric.is-focusVisible &:focus {
+    outline: $ms-focus-border-width $ms-focus-border-style $color;
+    outline-offset: -$inset;
+  }
+}
+
+// Simulates a focus outline using an absolutely-positioned pseudo-element.
+@mixin ms-focus-border($inset: 0, $color: $ms-focus-border-color) {
+  // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
+  outline: transparent;
+
+  // Requirement because pseudo-element is absolutely positioned.
+  position: relative;
+
+  // Clear the focus border in Firefox.
+  // Reference: http://stackoverflow.com/a/199319/1436671
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  // When the element that uses this mixin is in a :focus state, add a pseudo-element to
+  // create a border. Only do this when it's a child of ms-Fabric in a focusVisible state.
+  .ms-Fabric.is-focusVisible &:focus::after {
+    // Wrap the parent element with $padding.
+    content: '';
+    position: absolute;
+    top: $inset;
+    right: $inset;
+    bottom: $inset;
+    left: $inset;
+
+    // Add focus border of specified $color.
+    border: $ms-focus-border-width $ms-focus-border-style $color;
+
+    // Make the content not respond to mouse/touch events.
+    // Reference: https://css-tricks.com/almanac/properties/p/pointer-events/
+    pointer-events: none;
+  }
+}
+
+// The best box is a border box.
+@mixin ms-borderBox {
+  box-sizing: border-box;
+}
+
+// For setting the border base width
+@mixin ms-borderBase {
+  border: 1px solid;
+}
+
+// Ensures the block expands to the full height to enclose its floated childen.
+@mixin ms-clearfix {
+  *zoom: 1;
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+    line-height: 0;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+// Basic border-box, margin, and padding reset.
+@mixin ms-normalize {
+  @include ms-borderBox;
+  @include ms-reset-margins;
+  @include ms-reset-padding;
+  @include ms-reset-box-shadow;
+}
+
+// To set various text alignment styles 
+// @param [variable list] $alignments
+@mixin ms-textAlign($alignments...) {
+  @each $align in $alignments {
+    $alignStr: inspect($align);
+    .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
+      text-align: $align;
+    }
+  }
+}
+
+// To hide content while still making it readable by screen readers (Accessibility)
+@mixin ms-screenReaderOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// To add truncation with ellipsis
+@mixin ms-textTruncate {
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	word-wrap: normal; // Fix for IE 8/9 in case 'word-wrap: break-word' is set on parent nodes
+}
+
+// To disable text wrapping
+@mixin ms-noWrap {
+	white-space: nowrap; 
+}

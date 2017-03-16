@@ -1,0 +1,1010 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Responsive utilities based on defined variables, component visibility,
+// and size for different displays.
+
+//== Responsive visiblity classes
+//
+
+// Hidden on small
+@media (max-width: $ms-screen-max-sm) {
+  .ms-hiddenSm,
+  .ms-hiddenMdDown,
+  .ms-hiddenLgDown,
+  .ms-hiddenXlDown,
+  .ms-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on medium
+@media (min-width: $ms-screen-min-md) and (max-width: $ms-screen-max-md) {
+  .ms-hiddenMd,
+  .ms-hiddenMdUp,
+  .ms-hiddenMdDown,
+  .ms-hiddenLgDown,
+  .ms-hiddenXlDown,
+  .ms-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on large
+@media (min-width: $ms-screen-min-lg) and (max-width: $ms-screen-max-lg) {
+  .ms-hiddenMdUp,
+  .ms-hiddenLg,
+  .ms-hiddenLgUp,
+  .ms-hiddenLgDown,
+  .ms-hiddenXlDown,
+  .ms-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra large
+@media (min-width: $ms-screen-min-xl) and (max-width: $ms-screen-max-xl) {
+  .ms-hiddenMdUp,
+  .ms-hiddenLgUp,
+  .ms-hiddenXl,
+  .ms-hiddenXlUp,
+  .ms-hiddenXlDown,
+  .ms-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra extra large
+@media (min-width: $ms-screen-min-xxl) and (max-width: $ms-screen-max-xxl) {
+  .ms-hiddenMdUp,
+  .ms-hiddenLgUp,
+  .ms-hiddenXlUp,
+  .ms-hiddenXxl,
+  .ms-hiddenXxlUp,
+  .ms-hiddenXxlDown {
+    display: none !important;
+  }
+}
+
+// Hidden on extra extra extra large
+@media (min-width: $ms-screen-min-xxxl) {
+  .ms-hiddenMdUp,
+  .ms-hiddenLgUp,
+  .ms-hiddenXlUp,
+  .ms-hiddenXxlUp,
+  .ms-hiddenXxxl {
+    display: none !important;
+  }
+}
+
+
+//== Responsive sizes
+//
+// These are all based on a 12 column grid. For example,
+// ms-sm6 sets the width to 50% (6/12) on small screens.
+
+// Small screens (default)
+.ms-sm12 {
+  @include ms-sm12;
+}
+.ms-sm11 {
+  @include ms-sm11;
+}
+.ms-sm10 {
+  @include ms-sm10;
+}
+.ms-sm9 {
+  @include ms-sm9;
+}
+.ms-sm8 {
+  @include ms-sm8;
+}
+.ms-sm7 {
+  @include ms-sm7;
+}
+.ms-sm6 {
+  @include ms-sm6;
+}
+.ms-sm5 {
+  @include ms-sm5;
+}
+.ms-sm4 {
+  @include ms-sm4;
+}
+.ms-sm3 {
+  @include ms-sm3;
+}
+.ms-sm2 {
+  @include ms-sm2;
+}
+.ms-sm1 {
+  @include ms-sm1;
+}
+.ms-smPull12 {
+  @include ms-smPull12;
+}
+.ms-smPull11 {
+  @include ms-smPull11;
+}
+.ms-smPull10 {
+  @include ms-smPull10;
+}
+.ms-smPull9 {
+  @include ms-smPull9;
+}
+.ms-smPull8 {
+  @include ms-smPull8;
+}
+.ms-smPull7 {
+  @include ms-smPull7;
+}
+.ms-smPull6 {
+  @include ms-smPull6;
+}
+.ms-smPull5 {
+  @include ms-smPull5;
+}
+.ms-smPull4 {
+  @include ms-smPull4;
+}
+.ms-smPull3 {
+  @include ms-smPull3;
+}
+.ms-smPull2 {
+  @include ms-smPull2;
+}
+.ms-smPull1 {
+  @include ms-smPull1;
+}
+.ms-smPull0 {
+  @include ms-smPull0;
+}
+.ms-smPush12 {
+  @include ms-smPush12;
+}
+.ms-smPush11 {
+  @include ms-smPush11;
+}
+.ms-smPush10 {
+  @include ms-smPush10;
+}
+.ms-smPush9 {
+  @include ms-smPush9;
+}
+.ms-smPush8 {
+  @include ms-smPush8;
+}
+.ms-smPush7 {
+  @include ms-smPush7;
+}
+.ms-smPush6 {
+  @include ms-smPush6;
+}
+.ms-smPush5 {
+  @include ms-smPush5;
+}
+.ms-smPush4 {
+  @include ms-smPush4;
+}
+.ms-smPush3 {
+  @include ms-smPush3;
+}
+.ms-smPush2 {
+  @include ms-smPush2;
+}
+.ms-smPush1 {
+  @include ms-smPush1;
+}
+.ms-smPush0 {
+  @include ms-smPush0;
+}
+
+// Small Offset classes 0 ... 11
+.ms-smOffset11 {
+  @include ms-smOffset11;
+}
+.ms-smOffset10 {
+  @include ms-smOffset10;
+}
+.ms-smOffset9 {
+  @include ms-smOffset9;
+}
+.ms-smOffset8 {
+  @include ms-smOffset8;
+}
+.ms-smOffset7 {
+  @include ms-smOffset7;
+}
+.ms-smOffset6 {
+  @include ms-smOffset6;
+}
+.ms-smOffset5 {
+  @include ms-smOffset5;
+}
+.ms-smOffset4 {
+  @include ms-smOffset4;
+}
+.ms-smOffset3 {
+  @include ms-smOffset3;
+}
+.ms-smOffset2 {
+  @include ms-smOffset2;
+}
+.ms-smOffset1 {
+  @include ms-smOffset1;
+}
+.ms-smOffset0 {
+  @include ms-smOffset0;
+}
+
+// Medium screens
+.ms-md12 {
+  @include ms-md12;
+}
+.ms-md11 {
+  @include ms-md11;
+}
+.ms-md10 {
+  @include ms-md10;
+}
+.ms-md9 {
+  @include ms-md9;
+}
+.ms-md8 {
+  @include ms-md8;
+}
+.ms-md7 {
+  @include ms-md7;
+}
+.ms-md6 {
+  @include ms-md6;
+}
+.ms-md5 {
+  @include ms-md5;
+}
+.ms-md4 {
+  @include ms-md4;
+}
+.ms-md3 {
+  @include ms-md3;
+}
+.ms-md2 {
+  @include ms-md2;
+}
+.ms-md1 {
+  @include ms-md1;
+}
+.ms-mdPull12 {
+  @include ms-mdPull12;
+}
+.ms-mdPull11 {
+  @include ms-mdPull11;
+}
+.ms-mdPull10 {
+  @include ms-mdPull10;
+}
+.ms-mdPull9 {
+  @include ms-mdPull9;
+}
+.ms-mdPull8 {
+  @include ms-mdPull8;
+}
+.ms-mdPull7 {
+  @include ms-mdPull7;
+}
+.ms-mdPull6 {
+  @include ms-mdPull6;
+}
+.ms-mdPull5 {
+  @include ms-mdPull5;
+}
+.ms-mdPull4 {
+  @include ms-mdPull4;
+}
+.ms-mdPull3 {
+  @include ms-mdPull3;
+}
+.ms-mdPull2 {
+  @include ms-mdPull2;
+}
+.ms-mdPull1 {
+  @include ms-mdPull1;
+}
+.ms-mdPull0 {
+  @include ms-mdPull0;
+}
+.ms-mdPush12 {
+  @include ms-mdPush12;
+}
+.ms-mdPush11 {
+  @include ms-mdPush11;
+}
+.ms-mdPush10 {
+  @include ms-mdPush10;
+}
+.ms-mdPush9 {
+  @include ms-mdPush9;
+}
+.ms-mdPush8 {
+  @include ms-mdPush8;
+}
+.ms-mdPush7 {
+  @include ms-mdPush7;
+}
+.ms-mdPush6 {
+  @include ms-mdPush6;
+}
+.ms-mdPush5 {
+  @include ms-mdPush5;
+}
+.ms-mdPush4 {
+  @include ms-mdPush4;
+}
+.ms-mdPush3 {
+  @include ms-mdPush3;
+}
+.ms-mdPush2 {
+  @include ms-mdPush2;
+}
+.ms-mdPush1 {
+  @include ms-mdPush1;
+}
+.ms-mdPush0 {
+  @include ms-mdPush0;
+}
+
+// Medium Offset classes 0 ... 11
+.ms-mdOffset11 {
+  @include ms-mdOffset11;
+}
+.ms-mdOffset10 {
+  @include ms-mdOffset10;
+}
+.ms-mdOffset9 {
+  @include ms-mdOffset9;
+}
+.ms-mdOffset8 {
+  @include ms-mdOffset8;
+}
+.ms-mdOffset7 {
+  @include ms-mdOffset7;
+}
+.ms-mdOffset6 {
+  @include ms-mdOffset6;
+}
+.ms-mdOffset5 {
+  @include ms-mdOffset5;
+}
+.ms-mdOffset4 {
+  @include ms-mdOffset4;
+}
+.ms-mdOffset3 {
+  @include ms-mdOffset3;
+}
+.ms-mdOffset2 {
+  @include ms-mdOffset2;
+}
+.ms-mdOffset1 {
+  @include ms-mdOffset1;
+}
+.ms-mdOffset0 {
+  @include ms-mdOffset0;
+}
+
+// Large screens
+.ms-lg12 {
+  @include ms-lg12;
+}
+.ms-lg11 {
+  @include ms-lg11;
+}
+.ms-lg10 {
+  @include ms-lg10;
+}
+.ms-lg9 {
+  @include ms-lg9;
+}
+.ms-lg8 {
+  @include ms-lg8;
+}
+.ms-lg7 {
+  @include ms-lg7;
+}
+.ms-lg6 {
+  @include ms-lg6;
+}
+.ms-lg5 {
+  @include ms-lg5;
+}
+.ms-lg4 {
+  @include ms-lg4;
+}
+.ms-lg3 {
+  @include ms-lg3;
+}
+.ms-lg2 {
+  @include ms-lg2;
+}
+.ms-lg1 {
+  @include ms-lg1;
+}
+.ms-lgPull12 {
+  @include ms-lgPull12;
+}
+.ms-lgPull11 {
+  @include ms-lgPull11;
+}
+.ms-lgPull10 {
+  @include ms-lgPull10;
+}
+.ms-lgPull9 {
+  @include ms-lgPull9;
+}
+.ms-lgPull8 {
+  @include ms-lgPull8;
+}
+.ms-lgPull7 {
+  @include ms-lgPull7;
+}
+.ms-lgPull6 {
+  @include ms-lgPull6;
+}
+.ms-lgPull5 {
+  @include ms-lgPull5;
+}
+.ms-lgPull4 {
+  @include ms-lgPull4;
+}
+.ms-lgPull3 {
+  @include ms-lgPull3;
+}
+.ms-lgPull2 {
+  @include ms-lgPull2;
+}
+.ms-lgPull1 {
+  @include ms-lgPull1;
+}
+.ms-lgPull0 {
+  @include ms-lgPull0;
+}
+.ms-lgPush12 {
+  @include ms-lgPush12;
+}
+.ms-lgPush11 {
+  @include ms-lgPush11;
+}
+.ms-lgPush10 {
+  @include ms-lgPush10;
+}
+.ms-lgPush9 {
+  @include ms-lgPush9;
+}
+.ms-lgPush8 {
+  @include ms-lgPush8;
+}
+.ms-lgPush7 {
+  @include ms-lgPush7;
+}
+.ms-lgPush6 {
+  @include ms-lgPush6;
+}
+.ms-lgPush5 {
+  @include ms-lgPush5;
+}
+.ms-lgPush4 {
+  @include ms-lgPush4;
+}
+.ms-lgPush3 {
+  @include ms-lgPush3;
+}
+.ms-lgPush2 {
+  @include ms-lgPush2;
+}
+.ms-lgPush1 {
+  @include ms-lgPush1;
+}
+.ms-lgPush0 {
+  @include ms-lgPush0;
+}
+
+// Large Offset classes 0 ... 11
+.ms-lgOffset11 {
+  @include ms-lgOffset11;
+}
+.ms-lgOffset10 {
+  @include ms-lgOffset10;
+}
+.ms-lgOffset9 {
+  @include ms-lgOffset9;
+}
+.ms-lgOffset8 {
+  @include ms-lgOffset8;
+}
+.ms-lgOffset7 {
+  @include ms-lgOffset7;
+}
+.ms-lgOffset6 {
+  @include ms-lgOffset6;
+}
+.ms-lgOffset5 {
+  @include ms-lgOffset5;
+}
+.ms-lgOffset4 {
+  @include ms-lgOffset4;
+}
+.ms-lgOffset3 {
+  @include ms-lgOffset3;
+}
+.ms-lgOffset2 {
+  @include ms-lgOffset2;
+}
+.ms-lgOffset1 {
+  @include ms-lgOffset1;
+}
+.ms-lgOffset0 {
+  @include ms-lgOffset0;
+}
+
+// Extra large screens
+.ms-xl12 {
+  @include ms-xl12;
+}
+.ms-xl11 {
+  @include ms-xl11;
+}
+.ms-xl10 {
+  @include ms-xl10;
+}
+.ms-xl9 {
+  @include ms-xl9;
+}
+.ms-xl8 {
+  @include ms-xl8;
+}
+.ms-xl7 {
+  @include ms-xl7;
+}
+.ms-xl6 {
+  @include ms-xl6;
+}
+.ms-xl5 {
+  @include ms-xl5;
+}
+.ms-xl4 {
+  @include ms-xl4;
+}
+.ms-xl3 {
+  @include ms-xl3;
+}
+.ms-xl2 {
+  @include ms-xl2;
+}
+.ms-xl1 {
+  @include ms-xl1;
+}
+.ms-xlPull12 {
+  @include ms-xlPull12;
+}
+.ms-xlPull11 {
+  @include ms-xlPull11;
+}
+.ms-xlPull10 {
+  @include ms-xlPull10;
+}
+.ms-xlPull9 {
+  @include ms-xlPull9;
+}
+.ms-xlPull8 {
+  @include ms-xlPull8;
+}
+.ms-xlPull7 {
+  @include ms-xlPull7;
+}
+.ms-xlPull6 {
+  @include ms-xlPull6;
+}
+.ms-xlPull5 {
+  @include ms-xlPull5;
+}
+.ms-xlPull4 {
+  @include ms-xlPull4;
+}
+.ms-xlPull3 {
+  @include ms-xlPull3;
+}
+.ms-xlPull2 {
+  @include ms-xlPull2;
+}
+.ms-xlPull1 {
+  @include ms-xlPull1;
+}
+.ms-xlPull0 {
+  @include ms-xlPull0;
+}
+.ms-xlPush12 {
+  @include ms-xlPush12;
+}
+.ms-xlPush11 {
+  @include ms-xlPush11;
+}
+.ms-xlPush10 {
+  @include ms-xlPush10;
+}
+.ms-xlPush9 {
+  @include ms-xlPush9;
+}
+.ms-xlPush8 {
+  @include ms-xlPush8;
+}
+.ms-xlPush7 {
+  @include ms-xlPush7;
+}
+.ms-xlPush6 {
+  @include ms-xlPush6;
+}
+.ms-xlPush5 {
+  @include ms-xlPush5;
+}
+.ms-xlPush4 {
+  @include ms-xlPush4;
+}
+.ms-xlPush3 {
+  @include ms-xlPush3;
+}
+.ms-xlPush2 {
+  @include ms-xlPush2;
+}
+.ms-xlPush1 {
+  @include ms-xlPush1;
+}
+.ms-xlPush0 {
+  @include ms-xlPush0;
+}
+
+// Large Offset classes 0 ... 11
+.ms-xlOffset11 {
+  @include ms-xlOffset11;
+}
+.ms-xlOffset10 {
+  @include ms-xlOffset10;
+}
+.ms-xlOffset9 {
+  @include ms-xlOffset9;
+}
+.ms-xlOffset8 {
+  @include ms-xlOffset8;
+}
+.ms-xlOffset7 {
+  @include ms-xlOffset7;
+}
+.ms-xlOffset6 {
+  @include ms-xlOffset6;
+}
+.ms-xlOffset5 {
+  @include ms-xlOffset5;
+}
+.ms-xlOffset4 {
+  @include ms-xlOffset4;
+}
+.ms-xlOffset3 {
+  @include ms-xlOffset3;
+}
+.ms-xlOffset2 {
+  @include ms-xlOffset2;
+}
+.ms-xlOffset1 {
+  @include ms-xlOffset1;
+}
+.ms-xlOffset0 {
+  @include ms-xlOffset0;
+}
+
+// Extra extra large screens
+.ms-xxl12 {
+  @include ms-xxl12;
+}
+.ms-xxl11 {
+  @include ms-xxl11;
+}
+.ms-xxl10 {
+  @include ms-xxl10;
+}
+.ms-xxl9 {
+  @include ms-xxl9;
+}
+.ms-xxl8 {
+  @include ms-xxl8;
+}
+.ms-xxl7 {
+  @include ms-xxl7;
+}
+.ms-xxl6 {
+  @include ms-xxl6;
+}
+.ms-xxl5 {
+  @include ms-xxl5;
+}
+.ms-xxl4 {
+  @include ms-xxl4;
+}
+.ms-xxl3 {
+  @include ms-xxl3;
+}
+.ms-xxl2 {
+  @include ms-xxl2;
+}
+.ms-xxl1 {
+  @include ms-xxl1;
+}
+.ms-xxlPull12 {
+  @include ms-xxlPull12;
+}
+.ms-xxlPull11 {
+  @include ms-xxlPull11;
+}
+.ms-xxlPull10 {
+  @include ms-xxlPull10;
+}
+.ms-xxlPull9 {
+  @include ms-xxlPull9;
+}
+.ms-xxlPull8 {
+  @include ms-xxlPull8;
+}
+.ms-xxlPull7 {
+  @include ms-xxlPull7;
+}
+.ms-xxlPull6 {
+  @include ms-xxlPull6;
+}
+.ms-xxlPull5 {
+  @include ms-xxlPull5;
+}
+.ms-xxlPull4 {
+  @include ms-xxlPull4;
+}
+.ms-xxlPull3 {
+  @include ms-xxlPull3;
+}
+.ms-xxlPull2 {
+  @include ms-xxlPull2;
+}
+.ms-xxlPull1 {
+  @include ms-xxlPull1;
+}
+.ms-xxlPull0 {
+  @include ms-xxlPull0;
+}
+.ms-xxlPush12 {
+  @include ms-xxlPush12;
+}
+.ms-xxlPush11 {
+  @include ms-xxlPush11;
+}
+.ms-xxlPush10 {
+  @include ms-xxlPush10;
+}
+.ms-xxlPush9 {
+  @include ms-xxlPush9;
+}
+.ms-xxlPush8 {
+  @include ms-xxlPush8;
+}
+.ms-xxlPush7 {
+  @include ms-xxlPush7;
+}
+.ms-xxlPush6 {
+  @include ms-xxlPush6;
+}
+.ms-xxlPush5 {
+  @include ms-xxlPush5;
+}
+.ms-xxlPush4 {
+  @include ms-xxlPush4;
+}
+.ms-xxlPush3 {
+  @include ms-xxlPush3;
+}
+.ms-xxlPush2 {
+  @include ms-xxlPush2;
+}
+.ms-xxlPush1 {
+  @include ms-xxlPush1;
+}
+.ms-xxlPush0 {
+  @include ms-xxlPush0;
+}
+
+// Extra extra large Offset classes 0 ... 11
+.ms-xxlOffset11 {
+  @include ms-xxlOffset11;
+}
+.ms-xxlOffset10 {
+  @include ms-xxlOffset10;
+}
+.ms-xxlOffset9 {
+  @include ms-xxlOffset9;
+}
+.ms-xxlOffset8 {
+  @include ms-xxlOffset8;
+}
+.ms-xxlOffset7 {
+  @include ms-xxlOffset7;
+}
+.ms-xxlOffset6 {
+  @include ms-xxlOffset6;
+}
+.ms-xxlOffset5 {
+  @include ms-xxlOffset5;
+}
+.ms-xxlOffset4 {
+  @include ms-xxlOffset4;
+}
+.ms-xxlOffset3 {
+  @include ms-xxlOffset3;
+}
+.ms-xxlOffset2 {
+  @include ms-xxlOffset2;
+}
+.ms-xxlOffset1 {
+  @include ms-xxlOffset1;
+}
+.ms-xxlOffset0 {
+  @include ms-xxlOffset0;
+}
+
+// Extra extra extra large screens
+.ms-xxxl12 {
+  @include ms-xxxl12;
+}
+.ms-xxxl11 {
+  @include ms-xxxl11;
+}
+.ms-xxxl10 {
+  @include ms-xxxl10;
+}
+.ms-xxxl9 {
+  @include ms-xxxl9;
+}
+.ms-xxxl8 {
+  @include ms-xxxl8;
+}
+.ms-xxxl7 {
+  @include ms-xxxl7;
+}
+.ms-xxxl6 {
+  @include ms-xxxl6;
+}
+.ms-xxxl5 {
+  @include ms-xxxl5;
+}
+.ms-xxxl4 {
+  @include ms-xxxl4;
+}
+.ms-xxxl3 {
+  @include ms-xxxl3;
+}
+.ms-xxxl2 {
+  @include ms-xxxl2;
+}
+.ms-xxxl1 {
+  @include ms-xxxl1;
+}
+.ms-xxxlPull12 {
+  @include ms-xxxlPull12;
+}
+.ms-xxxlPull11 {
+  @include ms-xxxlPull11;
+}
+.ms-xxxlPull10 {
+  @include ms-xxxlPull10;
+}
+.ms-xxxlPull9 {
+  @include ms-xxxlPull9;
+}
+.ms-xxxlPull8 {
+  @include ms-xxxlPull8;
+}
+.ms-xxxlPull7 {
+  @include ms-xxxlPull7;
+}
+.ms-xxxlPull6 {
+  @include ms-xxxlPull6;
+}
+.ms-xxxlPull5 {
+  @include ms-xxxlPull5;
+}
+.ms-xxxlPull4 {
+  @include ms-xxxlPull4;
+}
+.ms-xxxlPull3 {
+  @include ms-xxxlPull3;
+}
+.ms-xxxlPull2 {
+  @include ms-xxxlPull2;
+}
+.ms-xxxlPull1 {
+  @include ms-xxxlPull1;
+}
+.ms-xxxlPull0 {
+  @include ms-xxxlPull0;
+}
+.ms-xxxlPush12 {
+  @include ms-xxxlPush12;
+}
+.ms-xxxlPush11 {
+  @include ms-xxxlPush11;
+}
+.ms-xxxlPush10 {
+  @include ms-xxxlPush10;
+}
+.ms-xxxlPush9 {
+  @include ms-xxxlPush9;
+}
+.ms-xxxlPush8 {
+  @include ms-xxxlPush8;
+}
+.ms-xxxlPush7 {
+  @include ms-xxxlPush7;
+}
+.ms-xxxlPush6 {
+  @include ms-xxxlPush6;
+}
+.ms-xxxlPush5 {
+  @include ms-xxxlPush5;
+}
+.ms-xxxlPush4 {
+  @include ms-xxxlPush4;
+}
+.ms-xxxlPush3 {
+  @include ms-xxxlPush3;
+}
+.ms-xxxlPush2 {
+  @include ms-xxxlPush2;
+}
+.ms-xxxlPush1 {
+  @include ms-xxxlPush1;
+}
+.ms-xxxlPush0 {
+  @include ms-xxxlPush0;
+}
+
+// Extra extra extra large Offset classes 0 ... 11
+.ms-xxxlOffset11 {
+  @include ms-xxxlOffset11;
+}
+.ms-xxxlOffset10 {
+  @include ms-xxxlOffset10;
+}
+.ms-xxxlOffset9 {
+  @include ms-xxxlOffset9;
+}
+.ms-xxxlOffset8 {
+  @include ms-xxxlOffset8;
+}
+.ms-xxxlOffset7 {
+  @include ms-xxxlOffset7;
+}
+.ms-xxxlOffset6 {
+  @include ms-xxxlOffset6;
+}
+.ms-xxxlOffset5 {
+  @include ms-xxxlOffset5;
+}
+.ms-xxxlOffset4 {
+  @include ms-xxxlOffset4;
+}
+.ms-xxxlOffset3 {
+  @include ms-xxxlOffset3;
+}
+.ms-xxxlOffset2 {
+  @include ms-xxxlOffset2;
+}
+.ms-xxxlOffset1 {
+  @include ms-xxxlOffset1;
+}
+.ms-xxxlOffset0 {
+  @include ms-xxxlOffset0;
+}

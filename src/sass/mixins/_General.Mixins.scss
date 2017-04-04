@@ -248,6 +248,7 @@
   @include ms-inherit-font-family();
   color: $ms-color-neutralPrimary;
   font-family: $ms-font-family-west-european;
+  font-size: $ms-font-size-m;
 }
 
 // Set the font-family to 'inherit' for elements where the browser

@@ -18,8 +18,25 @@
 
 // Background gradient.
 @mixin ms-background-gradient($origin: left, $start: #000, $start-location: 0%, $stop: #FFF, $stop-location: 100%) {
-    background-color: $start;
-    background-image: linear-gradient($origin, $start $start-location, $stop $stop-location);
+
+  // To maintain compatibility with the old arguments, reverse
+  // the $origin direction and set it as $destination.
+  $destination: null;
+  @if $origin == top {
+    $destination: bottom;
+  }
+  @if $origin == right {
+    $destination: left;
+  }
+  @if $origin == bottom {
+    $destination: top;
+  }
+  @if $origin == left {
+    $destination: right;
+  }
+
+  background-color: $start;
+  background-image: linear-gradient(to $destination, $start $start-location, $stop $stop-location);
 }
 
 // Rotation.

@@ -33,13 +33,6 @@
   @include ms-Icon--l;
 }
 
-// @todo: 'Planner' class is deprecated, will be removed in a future release
-.ms-Icon--Planner::before { @include ms-Icon--PlannerLogo; }
-
-// @todo: 'AppForOfficeLogo' class is deprecated, will be removed in a future release
-.ms-Icon--AppForOfficeLogo::before { @include ms-Icon--OfficeAddinsLogo; }
-
-
 // Modifiers: Each of the icons
 .ms-Icon--DecreaseIndentLegacy::before { @include ms-Icon--DecreaseIndentLegacy; }
 .ms-Icon--IncreaseIndentLegacy::before { @include ms-Icon--IncreaseIndentLegacy; }
@@ -148,6 +141,7 @@
 .ms-Icon--Merge::before { @include ms-Icon--Merge; }
 .ms-Icon--TurnRight::before { @include ms-Icon--TurnRight; }
 .ms-Icon--Ferry::before { @include ms-Icon--Ferry; }
+.ms-Icon--Highlight::before { @include ms-Icon--Highlight; }
 .ms-Icon--Tab::before { @include ms-Icon--Tab; }
 .ms-Icon--Admin::before { @include ms-Icon--Admin; }
 .ms-Icon--TVMonitor::before { @include ms-Icon--TVMonitor; }
@@ -235,6 +229,7 @@
 .ms-Icon--AddFriend::before { @include ms-Icon--AddFriend; }
 .ms-Icon--BulletedList::before { @include ms-Icon--BulletedList; }
 .ms-Icon--Preview::before { @include ms-Icon--Preview; }
+.ms-Icon--Comment::before { @include ms-Icon--Comment; }
 .ms-Icon--DockLeft::before { @include ms-Icon--DockLeft; }
 .ms-Icon--DockRight::before { @include ms-Icon--DockRight; }
 .ms-Icon--Repair::before { @include ms-Icon--Repair; }
@@ -270,6 +265,7 @@
 .ms-Icon--CalculatorAddition::before { @include ms-Icon--CalculatorAddition; }
 .ms-Icon--CalculatorSubtract::before { @include ms-Icon--CalculatorSubtract; }
 .ms-Icon--PrintfaxPrinterFile::before { @include ms-Icon--PrintfaxPrinterFile; }
+.ms-Icon--Communications::before { @include ms-Icon--Communications; }
 .ms-Icon--Headset::before { @include ms-Icon--Headset; }
 .ms-Icon--Health::before { @include ms-Icon--Health; }
 .ms-Icon--ChevronUpSmall::before { @include ms-Icon--ChevronUpSmall; }
@@ -412,7 +408,7 @@
 .ms-Icon--AzureLogo::before { @include ms-Icon--AzureLogo; }
 .ms-Icon--BingLogo::before { @include ms-Icon--BingLogo; }
 .ms-Icon--MSNLogo::before { @include ms-Icon--MSNLogo; }
-.ms-Icon--OutlookLogo::before { @include ms-Icon--OutlookLogo; }
+.ms-Icon--OutlookLogoInverse::before { @include ms-Icon--OutlookLogoInverse; }
 .ms-Icon--OfficeLogo::before { @include ms-Icon--OfficeLogo; }
 .ms-Icon--SkypeLogo::before { @include ms-Icon--SkypeLogo; }
 .ms-Icon--Door::before { @include ms-Icon--Door; }
@@ -429,7 +425,7 @@
 .ms-Icon--JS::before { @include ms-Icon--JS; }
 .ms-Icon--ReminderGroup::before { @include ms-Icon--ReminderGroup; }
 .ms-Icon--Section::before { @include ms-Icon--Section; }
-.ms-Icon--OneNoteLogo::before { @include ms-Icon--OneNoteLogo; }
+.ms-Icon--OneNoteLogoInverse::before { @include ms-Icon--OneNoteLogoInverse; }
 .ms-Icon--ToggleFilled::before { @include ms-Icon--ToggleFilled; }
 .ms-Icon--ToggleBorder::before { @include ms-Icon--ToggleBorder; }
 .ms-Icon--SliderThumb::before { @include ms-Icon--SliderThumb; }
@@ -437,9 +433,9 @@
 .ms-Icon--Documentation::before { @include ms-Icon--Documentation; }
 .ms-Icon--Badge::before { @include ms-Icon--Badge; }
 .ms-Icon--Giftbox::before { @include ms-Icon--Giftbox; }
-.ms-Icon--ExcelLogo::before { @include ms-Icon--ExcelLogo; }
-.ms-Icon--WordLogo::before { @include ms-Icon--WordLogo; }
-.ms-Icon--PowerPointLogo::before { @include ms-Icon--PowerPointLogo; }
+.ms-Icon--ExcelLogoInverse::before { @include ms-Icon--ExcelLogoInverse; }
+.ms-Icon--WordLogoInverse::before { @include ms-Icon--WordLogoInverse; }
+.ms-Icon--PowerPointLogoInverse::before { @include ms-Icon--PowerPointLogoInverse; }
 .ms-Icon--Cafe::before { @include ms-Icon--Cafe; }
 .ms-Icon--SpeedHigh::before { @include ms-Icon--SpeedHigh; }
 .ms-Icon--MusicNote::before { @include ms-Icon--MusicNote; }
@@ -486,13 +482,13 @@
 .ms-Icon--FangBody::before { @include ms-Icon--FangBody; }
 .ms-Icon--Glimmer::before { @include ms-Icon--Glimmer; }
 .ms-Icon--ChatInviteFriend::before { @include ms-Icon--ChatInviteFriend; }
-.ms-Icon--SharepointLogo::before { @include ms-Icon--SharepointLogo; }
+.ms-Icon--SharepointLogoInverse::before { @include ms-Icon--SharepointLogoInverse; }
 .ms-Icon--YammerLogo::before { @include ms-Icon--YammerLogo; }
 .ms-Icon--Hide::before { @include ms-Icon--Hide; }
 .ms-Icon--ReturnToSession::before { @include ms-Icon--ReturnToSession; }
 .ms-Icon--OpenFolderHorizontal::before { @include ms-Icon--OpenFolderHorizontal; }
 .ms-Icon--CalendarMirrored::before { @include ms-Icon--CalendarMirrored; }
-.ms-Icon--SwayLogo::before { @include ms-Icon--SwayLogo; }
+.ms-Icon--SwayLogoInverse::before { @include ms-Icon--SwayLogoInverse; }
 .ms-Icon--OutOfOffice::before { @include ms-Icon--OutOfOffice; }
 .ms-Icon--Trophy::before { @include ms-Icon--Trophy; }
 .ms-Icon--ReopenPages::before { @include ms-Icon--ReopenPages; }
@@ -509,11 +505,11 @@
 .ms-Icon--AdminSLogo::before { @include ms-Icon--AdminSLogo; }
 .ms-Icon--AdminYLogo::before { @include ms-Icon--AdminYLogo; }
 .ms-Icon--BoxLogo::before { @include ms-Icon--BoxLogo; }
-.ms-Icon--DelveLogo::before { @include ms-Icon--DelveLogo; }
+.ms-Icon--DelveLogoInverse::before { @include ms-Icon--DelveLogoInverse; }
 .ms-Icon--DropboxLogo::before { @include ms-Icon--DropboxLogo; }
-.ms-Icon--ExchangeLogo::before { @include ms-Icon--ExchangeLogo; }
+.ms-Icon--ExchangeLogoInverse::before { @include ms-Icon--ExchangeLogoInverse; }
 .ms-Icon--LyncLogo::before { @include ms-Icon--LyncLogo; }
-.ms-Icon--OfficeVideoLogo::before { @include ms-Icon--OfficeVideoLogo; }
+.ms-Icon--OfficeVideoLogoInverse::before { @include ms-Icon--OfficeVideoLogoInverse; }
 .ms-Icon--ParatureLogo::before { @include ms-Icon--ParatureLogo; }
 .ms-Icon--SocialListeningLogo::before { @include ms-Icon--SocialListeningLogo; }
 .ms-Icon--VisioLogo::before { @include ms-Icon--VisioLogo; }
@@ -568,18 +564,18 @@
 .ms-Icon--NumberField::before { @include ms-Icon--NumberField; }
 .ms-Icon--Dropdown::before { @include ms-Icon--Dropdown; }
 .ms-Icon--BookingsLogo::before { @include ms-Icon--BookingsLogo; }
-.ms-Icon--ClassNotebookLogo::before { @include ms-Icon--ClassNotebookLogo; }
+.ms-Icon--ClassNotebookLogoInverse::before { @include ms-Icon--ClassNotebookLogoInverse; }
 .ms-Icon--DelveAnalyticsLogo::before { @include ms-Icon--DelveAnalyticsLogo; }
-.ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogo; }
+.ms-Icon--DocsLogoInverse::before { @include ms-Icon--DocsLogoInverse; }
 .ms-Icon--Dynamics365Logo::before { @include ms-Icon--Dynamics365Logo; }
 .ms-Icon--DynamicSMBLogo::before { @include ms-Icon--DynamicSMBLogo; }
 .ms-Icon--OfficeAssistantLogo::before { @include ms-Icon--OfficeAssistantLogo; }
 .ms-Icon--OfficeStoreLogo::before { @include ms-Icon--OfficeStoreLogo; }
-.ms-Icon--OneNoteEduLogo::before { @include ms-Icon--OneNoteEduLogo; }
+.ms-Icon--OneNoteEduLogoInverse::before { @include ms-Icon--OneNoteEduLogoInverse; }
 .ms-Icon--PlannerLogo::before { @include ms-Icon--PlannerLogo; }
 .ms-Icon--PowerApps::before { @include ms-Icon--PowerApps; }
 .ms-Icon--Suitcase::before { @include ms-Icon--Suitcase; }
-.ms-Icon--ProjectLogo::before { @include ms-Icon--ProjectLogo; }
+.ms-Icon--ProjectLogoInverse::before { @include ms-Icon--ProjectLogoInverse; }
 .ms-Icon--CaretLeft8::before { @include ms-Icon--CaretLeft8; }
 .ms-Icon--CaretRight8::before { @include ms-Icon--CaretRight8; }
 .ms-Icon--CaretUp8::before { @include ms-Icon--CaretUp8; }
@@ -714,6 +710,7 @@
 .ms-Icon--Breadcrumb::before { @include ms-Icon--Breadcrumb; }
 .ms-Icon--ClearFilter::before { @include ms-Icon--ClearFilter; }
 .ms-Icon--Flow::before { @include ms-Icon--Flow; }
+.ms-Icon--TextDocument::before { @include ms-Icon--TextDocument; }
 .ms-Icon--PageCheckedOut::before { @include ms-Icon--PageCheckedOut; }
 .ms-Icon--SetAction::before { @include ms-Icon--SetAction; }
 .ms-Icon--PowerAppsLogo::before { @include ms-Icon--PowerAppsLogo; }
@@ -752,3 +749,37 @@
 .ms-Icon--TripleColumn::before { @include ms-Icon--TripleColumn; }
 .ms-Icon--ColumnLeftTwoThirds::before { @include ms-Icon--ColumnLeftTwoThirds; }
 .ms-Icon--ColumnRightTwoThirds::before { @include ms-Icon--ColumnRightTwoThirds; }
+.ms-Icon--AccessLogoFill::before { @include ms-Icon--AccessLogoFill; }
+.ms-Icon--AnalyticsLogo::before { @include ms-Icon--AnalyticsLogo; }
+.ms-Icon--AnalyticsQuery::before { @include ms-Icon--AnalyticsQuery; }
+.ms-Icon--NewAnalyticsQuery::before { @include ms-Icon--NewAnalyticsQuery; }
+.ms-Icon--AnalyticsReport::before { @include ms-Icon--AnalyticsReport; }
+.ms-Icon--WordLogo::before { @include ms-Icon--WordLogo; }
+.ms-Icon--WordLogoFill::before { @include ms-Icon--WordLogoFill; }
+.ms-Icon--ExcelLogo::before { @include ms-Icon--ExcelLogo; }
+.ms-Icon--ExcelLogoFill::before { @include ms-Icon--ExcelLogoFill; }
+.ms-Icon--OneNoteLogo::before { @include ms-Icon--OneNoteLogo; }
+.ms-Icon--OneNoteLogoFill::before { @include ms-Icon--OneNoteLogoFill; }
+.ms-Icon--OutlookLogo::before { @include ms-Icon--OutlookLogo; }
+.ms-Icon--OutlookLogoFill::before { @include ms-Icon--OutlookLogoFill; }
+.ms-Icon--PowerPointLogo::before { @include ms-Icon--PowerPointLogo; }
+.ms-Icon--PowerPointLogoFill::before { @include ms-Icon--PowerPointLogoFill; }
+.ms-Icon--PublisherLogo::before { @include ms-Icon--PublisherLogo; }
+.ms-Icon--PublisherLogoFill::before { @include ms-Icon--PublisherLogoFill; }
+.ms-Icon--ScheduleEventAction::before { @include ms-Icon--ScheduleEventAction; }
+.ms-Icon--ProtectRestrict::before { @include ms-Icon--ProtectRestrict; }
+.ms-Icon--VennDiagram::before { @include ms-Icon--VennDiagram; }
+.ms-Icon--FiveTileGrid::before { @include ms-Icon--FiveTileGrid; }
+.ms-Icon--FocalPoint::before { @include ms-Icon--FocalPoint; }
+.ms-Icon--TeamsLogoInverse::before { @include ms-Icon--TeamsLogoInverse; }
+.ms-Icon--Teamslogo::before { @include ms-Icon--Teamslogo; }
+.ms-Icon--TeamslogoFill::before { @include ms-Icon--TeamslogoFill; }
+.ms-Icon--SkypeForBusinessLogoFill::before { @include ms-Icon--SkypeForBusinessLogoFill; }
+.ms-Icon--SharepointLogo::before { @include ms-Icon--SharepointLogo; }
+.ms-Icon--SharepointLogoFill::before { @include ms-Icon--SharepointLogoFill; }
+.ms-Icon--DelveLogo::before { @include ms-Icon--DelveLogo; }
+.ms-Icon--DelveLogoFill::before { @include ms-Icon--DelveLogoFill; }
+.ms-Icon--OfficeVideoLogo::before { @include ms-Icon--OfficeVideoLogo; }
+.ms-Icon--OfficeVideoLogoFill::before { @include ms-Icon--OfficeVideoLogoFill; }
+.ms-Icon--ExchangeLogo::before { @include ms-Icon--ExchangeLogo; }
+.ms-Icon--ExchangeLogoFill::before { @include ms-Icon--ExchangeLogoFill; }

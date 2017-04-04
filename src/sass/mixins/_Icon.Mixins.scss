@@ -813,3 +813,10 @@
 @mixin ms-Icon--OfficeVideoLogoFill { content: '\F283'; }
 @mixin ms-Icon--ExchangeLogo { content: '\F284'; }
 @mixin ms-Icon--ExchangeLogoFill { content: '\F285'; }
+
+// @todo: These classes have been deprecated and will be removed in a future release.
+.ms-Icon--SwayLogo::before { @include ms-Icon--SwayLogoInverse; }
+.ms-Icon--ClassNotebookLogo::before { @include ms-Icon--ClassNotebookLogoInverse; }
+.ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogoInverse; }
+.ms-Icon--OneNoteEduLogo::before { @include ms-Icon--OneNoteEduLogoInverse; }
+.ms-Icon--ProjectLogo::before { @include ms-Icon--ProjectLogoInverse; }

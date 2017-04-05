@@ -1,7 +1,7 @@
 {
   "name": "office-ui-fabric-core",
   "author": "Office UI Fabric Team",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "The front-end framework for building experiences for Office 365.",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,7 @@
     "gulp-cssnano": "^2.1.1",
     "gulp-data": "^1.2.0",
     "gulp-debug": "^3.0.0",
-    "gulp-file-include": "^0.13.7",
+    "gulp-file-include": "^1.1.0",
     "gulp-header": "1.8.2",
     "gulp-if": "^2.0.0",
     "gulp-lintspaces": "^0.5.0",
@@ -47,7 +47,7 @@
     "merge-stream": "^1.0.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.0",
-    "tslint": "^4.0.0",
+    "tslint": "^5.0.0",
     "typescript": "^2.0.3",
     "walk-sync": "^0.3.0"
   },

@@ -20,9 +20,9 @@
   }
 
   font-family: $icon-font-family;
-  src: url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}.woff2') format('woff2'),
-       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}.woff') format('woff'),
-       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}.ttf') format('truetype');
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}.woff2?2.17') format('woff2'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}.woff?2.17') format('woff'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}.ttf?2.17') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

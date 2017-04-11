@@ -17,6 +17,12 @@
   @include ms-font-xxl;
 }
 
+// Extra-Large Plus Styles
+// Allowed weights: Light, SemiLight
+.ms-font-xl-plus {
+  @include ms-font-xl-plus;
+}
+
 // Extra-Large Styles
 // Allowed weights: Light, SemiLight
 .ms-font-xl {
@@ -97,6 +103,10 @@
 
 .ms-fontSize-xxl {
   @include ms-fontSize-xxl;
+}
+
+.ms-fontSize-xlPlus {
+  @include ms-fontSize-xlPlus;
 }
 
 .ms-fontSize-xl {

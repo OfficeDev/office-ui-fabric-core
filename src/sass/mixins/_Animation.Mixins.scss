@@ -180,160 +180,160 @@
 
 // Slide
 @mixin ms-slideRightIn10 {
-  @include ms-animation((fadeIn, slideRightIn10), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideRightIn10), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideRightIn20 {
-  @include ms-animation((fadeIn, slideRightIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideRightIn20), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideRightIn40 {
-  @include ms-animation((fadeIn, slideRightIn40), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideRightIn40), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideRightIn400 {
-  @include ms-animation((fadeIn, slideRightIn400), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideRightIn400), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideRightOut40 {
-  @include ms-animation((fadeOut, slideRightOut40), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideRightOut40), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideRightOut400 {
-  @include ms-animation((fadeOut, slideRightOut400), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideRightOut400), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideLeftIn10 {
-  @include ms-animation((fadeIn, slideLeftIn10), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideLeftIn10), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideLeftIn20 {
-  @include ms-animation((fadeIn, slideLeftIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideLeftIn20), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideLeftIn40 {
-  @include ms-animation((fadeIn, slideLeftIn40), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideLeftIn40), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideLeftIn400 {
-  @include ms-animation((fadeIn, slideLeftIn400), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideLeftIn400), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideLeftOut40 {
-  @include ms-animation((fadeOut, slideLeftOut40), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideLeftOut40), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideLeftOut400 {
-  @include ms-animation((fadeOut, slideLeftOut400), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideLeftOut400), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideUpIn10 {
-  @include ms-animation((fadeIn, slideUpIn10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeIn, ms-slideUpIn10), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideUpIn20 {
-  @include ms-animation((fadeIn, slideUpIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideUpIn20), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideDownIn10 {
-  @include ms-animation((fadeIn, slideDownIn10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeIn, ms-slideDownIn10), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideDownIn20 {
-  @include ms-animation((fadeIn, slideDownIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-slideDownIn20), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-slideUpOut10 {
-  @include ms-animation((fadeOut, slideUpOut10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideUpOut10), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideUpOut20 {
-  @include ms-animation((fadeOut, slideUpOut20), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideUpOut20), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideDownOut10 {
-  @include ms-animation((fadeOut, slideDownOut10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideDownOut10), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-slideDownOut20 {
-  @include ms-animation((fadeOut, slideDownOut20), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-slideDownOut20), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 // Scale
 @mixin ms-scaleUpIn100 {
-  @include ms-animation((fadeIn, scaleUp100), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-scaleUp100), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 @mixin ms-scaleUpOut103 {
-  @include ms-animation((fadeOut, scaleUp103), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-scaleUp103), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-scaleDownOut98 {
-  @include ms-animation((fadeOut, scaleDown98), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation((ms-fadeOut, ms-scaleDown98), $ms-animation-duration-1, $ms-animation-ease-2);
 }
 
 @mixin ms-scaleDownIn100 {
-  @include ms-animation((fadeIn, scaleDown100), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation((ms-fadeIn, ms-scaleDown100), $ms-animation-duration-3, $ms-animation-ease-1);
 }
 
 // Rotate
 @mixin ms-rotate90deg {
   // @todo: The duration should use a variable, likely $ms-animation-duration-1
-  @include ms-animation(rotate90, 0.1s, $ms-animation-ease-2);
+  @include ms-animation(ms-rotate90, 0.1s, $ms-animation-ease-2);
 }
 
 @mixin ms-rotateN90deg {
   // @todo: The duration should use a variable, likely $ms-animation-duration-1
-  @include ms-animation(rotateN90, 0.1s, $ms-animation-ease-2);
+  @include ms-animation(ms-rotateN90, 0.1s, $ms-animation-ease-2);
 }
 
 
 // Fade
 @mixin ms-fadeIn100 {
   animation-duration: $ms-animation-duration-1; // @todo: Based on class name, likely intended to be 0.1s
-  animation-name: fadeIn;
+  animation-name: ms-fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeIn200 {
   animation-duration: $ms-animation-duration-2; // @todo: Based on class name, likely intended to be 0.2s
-  animation-name: fadeIn;
+  animation-name: ms-fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeIn400 {
   animation-duration: $ms-animation-duration-3; // @todo: Based on class name, likely intended to be 0.4s
-  animation-name: fadeIn;
+  animation-name: ms-fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeIn500 {
   animation-duration: $ms-animation-duration-4; // @todo: Based on class name, likely intended to be 0.5s
-  animation-name: fadeIn;
+  animation-name: ms-fadeIn;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeOut100 {
   animation-duration: 0.1s; // @todo: This is the only duration that matches the class name
-  animation-name: fadeOut;
+  animation-name: ms-fadeOut;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeOut200 {
   animation-duration: $ms-animation-duration-1; // @todo: Based on class name, likely intended to be 0.2s
-  animation-name: fadeOut;
+  animation-name: ms-fadeOut;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeOut400 {
   animation-duration: $ms-animation-duration-3; // @todo: Based on class name, likely intended to be 0.4s
-  animation-name: fadeOut;
+  animation-name: ms-fadeOut;
   animation-fill-mode: both;
 }
 
 @mixin ms-fadeOut500 {
   animation-duration: $ms-animation-duration-4; // @todo: Based on class name, likely intended to be 0.5s
-  animation-name: fadeOut;
+  animation-name: ms-fadeOut;
   animation-fill-mode: both;
 }
 

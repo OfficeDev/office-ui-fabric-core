@@ -13,6 +13,12 @@
       "color": "ms-color-neutralPrimary"
     },
     {
+      "class": "ms-font-xl-plus",
+      "size": "24px",
+      "weight": "Segoe UI Light",
+      "color": "ms-color-neutralPrimary"
+    },
+    {
       "class": "ms-font-xl",
       "size": "21px",
       "weight": "Segoe UI Light",

@@ -9,6 +9,10 @@
       "size": "28px"
     },
     {
+      "class": "ms-fontSize-xlPlus",
+      "size": "24px"
+    },
+    {
       "class": "ms-fontSize-xl",
       "size": "21px"
     },

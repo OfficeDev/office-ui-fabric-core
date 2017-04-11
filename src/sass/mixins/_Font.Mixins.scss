@@ -15,7 +15,7 @@
     font-family: $font-family-name;
     src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff2') format('woff2'),
          url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff') format('woff');
-    font-weight: 100;
+    font-weight: $ms-font-weight-light;
     font-style: normal;
   }
 
@@ -23,7 +23,7 @@
     font-family: $font-family-name;
     src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff2') format('woff2'),
          url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff') format('woff');
-    font-weight: 200;
+    font-weight: $ms-font-weight-semilight;
     font-style: normal;
   }
 
@@ -31,7 +31,7 @@
     font-family: $font-family-name;
     src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff2') format('woff2'),
          url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff') format('woff');
-    font-weight: 400;
+    font-weight: $ms-font-weight-regular;
     font-style: normal;
   }
 
@@ -39,7 +39,7 @@
     font-family: $font-family-name;
     src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff2') format('woff2'),
          url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff') format('woff');
-    font-weight: 600;
+    font-weight: $ms-font-weight-semibold;
     font-style: normal;
   }
 }
@@ -62,6 +62,12 @@
 // Extra-Extra-Large
 @mixin ms-font-xxl {
   font-size: $ms-font-size-xxl;
+  font-weight: $ms-font-weight-light;
+}
+
+// Extra-Large Styles
+@mixin ms-font-xl-plus {
+  font-size: $ms-font-size-xl-plus;
   font-weight: $ms-font-weight-light;
 }
 
@@ -141,6 +147,10 @@
 
 @mixin ms-fontSize-xxl {
   font-size: $ms-font-size-xxl;
+}
+
+@mixin ms-fontSize-xlPlus {
+  font-size: $ms-font-size-xl-plus;
 }
 
 @mixin ms-fontSize-xl {

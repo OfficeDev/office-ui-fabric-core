@@ -66,6 +66,12 @@
 }
 
 // Extra-Large Styles
+@mixin ms-font-xl-plus {
+  font-size: $ms-font-size-xl-plus;
+  font-weight: $ms-font-weight-light;
+}
+
+// Extra-Large Styles
 @mixin ms-font-xl {
   font-size: $ms-font-size-xl;
   font-weight: $ms-font-weight-light;

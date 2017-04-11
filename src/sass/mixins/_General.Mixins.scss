@@ -276,7 +276,6 @@
   // See: http://browserhacks.com/#hack-f4ade0540d8e891e8190065f75acb186)
   &:not(*:root) {
     font-family: 'Segoe UI Web (West European)', $ms-font-family-fallbacks;
-    background-color: #ddd;
   }
 }
 

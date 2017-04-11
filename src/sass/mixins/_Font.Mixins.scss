@@ -149,6 +149,10 @@
   font-size: $ms-font-size-xxl;
 }
 
+@mixin ms-fontSize-xlPlus {
+  font-size: $ms-font-size-xl-plus;
+}
+
 @mixin ms-fontSize-xl {
   font-size: $ms-font-size-xl;
 }

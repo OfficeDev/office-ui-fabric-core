@@ -273,7 +273,7 @@
   // For now, we force Chrome and Opera to use the web fonts. This is accomplished
   // with the hack selector below. The overrides for language font stacks are more
   // specific, so this will not interfere with language overrides.
-  // See: http://browserhacks.com/#hack-f4ade0540d8e891e8190065f75acb186)
+  // See: http://browserhacks.com/#hack-f4ade0540d8e891e8190065f75acb186
   &:not(*:root) {
     font-family: 'Segoe UI Web (West European)', $ms-font-family-fallbacks;
   }

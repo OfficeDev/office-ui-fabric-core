@@ -17,10 +17,12 @@ $ms-font-family-hebrew:              'Segoe UI Web (Hebrew)', 'Segoe UI Local', 
 $ms-font-family-hindi:               'Nirmala UI', 'Segoe UI Local', $ms-font-family-fallbacks !default;
 $ms-font-family-japanese:            'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, 'Segoe UI Local', $ms-font-family-fallbacks !default;
 $ms-font-family-korean:              'Malgun Gothic', Gulim, 'Segoe UI Local', $ms-font-family-fallbacks !default;
-$ms-font-family-selawik:             'Segoe UI Local', 'Selawik Web', $ms-font-family-fallbacks !default;
 $ms-font-family-thai:                'Leelawadee UI Web', 'Kmer UI', 'Segoe UI Local', $ms-font-family-fallbacks !default;
 $ms-font-family-vietnamese:          'Segoe UI Web (Vietnamese)', 'Segoe UI Local', $ms-font-family-fallbacks !default;
 $ms-font-family-west-european:       'Segoe UI Local', 'Segoe UI Web (West European)', $ms-font-family-fallbacks !default;
+
+// Font stacks for alternative fonts.
+$ms-font-family-selawik:             'Segoe UI Local', 'Selawik Web', $ms-font-family-fallbacks !default;
 
 // Weights
 $ms-font-weight-light:     100 !default;

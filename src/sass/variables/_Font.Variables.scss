@@ -6,21 +6,25 @@ $ms-font-cdn-path: 'https://static2.sharepointonline.com/files/fabric/assets/fon
 // Fallback fonts, if specified system or web fonts are unavailable.
 $ms-font-family-fallbacks: -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif !default;
 
-// Language-specific font stacks.
-$ms-font-family-arabic:              'Segoe UI Web (Arabic)', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-chinese-simplified:  'Microsoft Yahei', Verdana, Simsun, 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-cyrillic:            'Segoe UI Web (Cyrillic)', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-east-european:       'Segoe UI Web (East European)', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-greek:               'Segoe UI Web (Greek)', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-hebrew:              'Segoe UI Web (Hebrew)', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-hindi:               'Nirmala UI', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-japanese:            'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-korean:              'Malgun Gothic', Gulim, 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-selawik:             'Segoe UI', 'Selawik Web', $ms-font-family-fallbacks !default;
-$ms-font-family-thai:                'Leelawadee UI Web', 'Kmer UI', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-vietnamese:          'Segoe UI Web (Vietnamese)', 'Segoe UI', $ms-font-family-fallbacks !default;
-$ms-font-family-west-european:       'Segoe UI', 'Segoe UI Web (West European)', $ms-font-family-fallbacks !default;
+// Font stacks that use local fonts only.
+$ms-font-family-chinese-simplified:  'Microsoft Yahei', Verdana, Simsun, 'Segoe UI Local', $ms-font-family-fallbacks !default;
+$ms-font-family-chinese-traditional: 'Microsoft Jhenghei', Pmingliu, 'Segoe UI Local', $ms-font-family-fallbacks !default;
+$ms-font-family-hindi:               'Nirmala UI', 'Segoe UI Local', $ms-font-family-fallbacks !default;
+$ms-font-family-japanese:            'Yu Gothic', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, 'Segoe UI Local', $ms-font-family-fallbacks !default;
+$ms-font-family-korean:              'Malgun Gothic', Gulim, 'Segoe UI Local', $ms-font-family-fallbacks !default;
+
+// Font stacks that prefer local Segoe UI, will fall back to web fonts if necessary.
+$ms-font-family-arabic:         'Segoe UI Local', 'Segoe UI Web (Arabic)', $ms-font-family-fallbacks !default;
+$ms-font-family-cyrillic:       'Segoe UI Local', 'Segoe UI Web (Cyrillic)', $ms-font-family-fallbacks !default;
+$ms-font-family-east-european:  'Segoe UI Local', 'Segoe UI Web (East European)', $ms-font-family-fallbacks !default;
+$ms-font-family-greek:          'Segoe UI Local', 'Segoe UI Web (Greek)', $ms-font-family-fallbacks !default;
+$ms-font-family-hebrew:         'Segoe UI Local', 'Segoe UI Web (Hebrew)', $ms-font-family-fallbacks !default;
+$ms-font-family-selawik:        'Segoe UI Local', 'Selawik Web', $ms-font-family-fallbacks !default;
+$ms-font-family-vietnamese:     'Segoe UI Local', 'Segoe UI Web (Vietnamese)', $ms-font-family-fallbacks !default;
+$ms-font-family-west-european:  'Segoe UI Local', 'Segoe UI Web (West European)', $ms-font-family-fallbacks !default;
+
+// Font stacks that prefer web fonts, will fall back to local fonts.
+$ms-font-family-thai: 'Leelawadee UI Web', 'Kmer UI', 'Segoe UI Local', $ms-font-family-fallbacks !default;
 
 // Weights
 $ms-font-weight-light:     100 !default;

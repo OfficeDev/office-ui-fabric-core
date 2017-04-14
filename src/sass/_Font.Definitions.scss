@@ -31,3 +31,32 @@
   font-weight: 600;
   font-style: normal;
 }
+
+// Define a custom font for locally-installed copies of Segoe UI.
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI Light');
+  font-weight: $ms-font-weight-light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI Semilight');
+  font-weight: $ms-font-weight-semilight;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI');
+  font-weight: $ms-font-weight-regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Segoe UI Local';
+  src: local('Segoe UI Semibold');
+  font-weight: $ms-font-weight-semibold;
+  font-style: normal;
+}

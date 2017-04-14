@@ -144,3 +144,6 @@
 
 .ms-Icon--TriangleSolidLeft12::before { @include ms-Icon--TriangleSolidRight12; }
 .ms-Icon--TriangleSolidRight12::before { @include ms-Icon--TriangleSolidLeft12; }
+
+.ms-Icon--ExportMirrored::before { @include ms-Icon--Export; }
+.ms-Icon--Export::before { @include ms-Icon--ExportMirrored; }

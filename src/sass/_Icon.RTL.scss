@@ -147,3 +147,24 @@
 
 .ms-Icon--ExportMirrored::before { @include ms-Icon--Export; }
 .ms-Icon--Export::before { @include ms-Icon--ExportMirrored; }
+
+.ms-Icon--ImportMirrored::before { @include ms-Icon--Import; }
+.ms-Icon--Import::before { @include ms-Icon--ImportMirrored; }
+
+.ms-Icon--TaskGroupMirrored::before { @include ms-Icon--TaskGroup; }
+.ms-Icon--TaskGroup::before { @include ms-Icon--TaskGroupMirrored; }
+
+.ms-Icon--BulletedList2Mirrored::before { @include ms-Icon--BulletedList2; }
+.ms-Icon--BulletedList2::before { @include ms-Icon--BulletedList2Mirrored; }
+
+.ms-Icon--FolderListMirrored::before { @include ms-Icon--FolderList; }
+.ms-Icon--FolderList::before { @include ms-Icon--FolderListMirrored; }
+
+.ms-Icon--NavigateBackMirrored::before { @include ms-Icon--NavigateBack; }
+.ms-Icon--NavigateBack::before { @include ms-Icon--NavigateBackMirrored; }
+
+.ms-Icon--NavigateForwardMirrored::before { @include ms-Icon--NavigateForward; }
+.ms-Icon--NavigateForward::before { @include ms-Icon--NavigateForwardMirrored; }
+
+.ms-Icon--UnknownMirroredSolid::before { @include ms-Icon--UnknownSolid; }
+.ms-Icon--UnknownSolid::before { @include ms-Icon--UnknownMirroredSolid; }

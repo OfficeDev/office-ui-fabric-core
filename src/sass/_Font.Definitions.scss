@@ -12,7 +12,7 @@
 @include ms-font-face('Selawik Web', 'selawik', 'selawik');
 
 
-// Leelawadee UI (Thai) does not have a 'light' weight, so we override
+// Leelawadee UI (Thai and Lao) does not have a 'light' weight, so we override
 // the font-face generated above to use the 'semilight' weight instead.
 @font-face {
   font-family: 'Leelawadee UI Web';
@@ -22,7 +22,7 @@
   font-style: normal;
 }
 
-// Leelawadee UI (Thai) does not have a 'semibold' weight, so we override
+// Leelawadee UI (Thai and Lao) does not have a 'semibold' weight, so we override
 // the font-face generated above to use the 'bold' weight instead.
 @font-face {
   font-family: 'Leelawadee UI Web';

@@ -168,3 +168,24 @@
 
 .ms-Icon--UnknownMirroredSolid::before { @include ms-Icon--UnknownSolid; }
 .ms-Icon--UnknownSolid::before { @include ms-Icon--UnknownMirroredSolid; }
+
+.ms-Icon--FeedbackRequestMirroredSolid::before { @include ms-Icon--FeedbackRequestSolid; }
+.ms-Icon--FeedbackRequestSolid::before { @include ms-Icon--FeedbackRequestMirroredSolid; }
+
+.ms-Icon--FinancialMirroredSolid::before { @include ms-Icon--FinancialSolid; }
+.ms-Icon--FinancialSolid::before { @include ms-Icon--FinancialMirroredSolid; }
+
+.ms-Icon--PageListMirroredSolid::before { @include ms-Icon--PageListSolid; }
+.ms-Icon--PageListSolid::before { @include ms-Icon--PageListMirroredSolid; }
+
+.ms-Icon--ParkingLocationMirrored::before { @include ms-Icon--ParkingLocation; }
+.ms-Icon--ParkingLocation::before { @include ms-Icon--ParkingLocationMirrored; }
+
+.ms-Icon--ParkingMirroredSolid::before { @include ms-Icon--ParkingSolid; }
+.ms-Icon--ParkingSolid::before { @include ms-Icon--ParkingMirroredSolid; }
+
+.ms-Icon--ReviewRequestMirroredSolid::before { @include ms-Icon--ReviewRequestSolid; }
+.ms-Icon--ReviewRequestSolid::before { @include ms-Icon--ReviewRequestMirroredSolid; }
+
+.ms-Icon--SidePanelMirrored::before { @include ms-Icon--SidePanel; }
+.ms-Icon--SidePanel::before { @include ms-Icon--SidePanelMirrored; }

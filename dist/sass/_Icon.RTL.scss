@@ -1,0 +1,191 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Substitute icons for right-to-left users
+.ms-Icon--ArrowDownRightMirrored8::before { @include ms-Icon--ArrowDownRight8; }
+.ms-Icon--ArrowDownRight8::before { @include ms-Icon--ArrowDownRightMirrored8; }
+
+.ms-Icon--ArrowUpRightMirrored8::before { @include ms-Icon--ArrowUpRight8; }
+.ms-Icon--ArrowUpRight8::before { @include ms-Icon--ArrowUpRightMirrored8; }
+
+.ms-Icon--BidiLtr::before { @include ms-Icon--BidiRtl; }
+.ms-Icon--BidiRtl::before { @include ms-Icon--BidiLtr; }
+
+.ms-Icon--BookmarksMirrored::before { @include ms-Icon--Bookmarks; }
+.ms-Icon--Bookmarks::before { @include ms-Icon--BookmarksMirrored; }
+
+.ms-Icon--BulletedListMirrored::before { @include ms-Icon--BulletedList; }
+.ms-Icon--BulletedList::before { @include ms-Icon--BulletedListMirrored; }
+
+.ms-Icon--CalendarMirrored::before { @include ms-Icon--Calendar; }
+.ms-Icon--Calendar::before { @include ms-Icon--CalendarMirrored; }
+
+.ms-Icon--CaretBottomLeftSolid8::before { @include ms-Icon--CaretBottomRightSolid8; }
+.ms-Icon--CaretBottomRightSolid8::before { @include ms-Icon--CaretBottomLeftSolid8; }
+
+.ms-Icon--CaretHollowMirrored::before { @include ms-Icon--CaretHollow; }
+.ms-Icon--CaretHollow::before { @include ms-Icon--CaretHollowMirrored; }
+
+.ms-Icon--CaretLeft8::before { @include ms-Icon--CaretRight8; }
+.ms-Icon--CaretRight8::before { @include ms-Icon--CaretLeft8; }
+
+.ms-Icon--CaretLeftSolid8::before { @include ms-Icon--CaretRightSolid8; }
+.ms-Icon--CaretRightSolid8::before { @include ms-Icon--CaretLeftSolid8; }
+
+.ms-Icon--CaretSolidMirrored::before { @include ms-Icon--CaretSolid; }
+.ms-Icon--CaretSolid::before { @include ms-Icon--CaretSolidMirrored; }
+
+.ms-Icon--CaretTopLeftSolid8::before { @include ms-Icon--CaretTopRightSolid8; }
+.ms-Icon--CaretTopRightSolid8::before { @include ms-Icon--CaretTopLeftSolid8; }
+
+.ms-Icon--ChevronLeft::before { @include ms-Icon--ChevronRight; }
+.ms-Icon--ChevronRight::before { @include ms-Icon--ChevronLeft; }
+
+.ms-Icon--ChevronLeftMed::before { @include ms-Icon--ChevronRightMed; }
+.ms-Icon--ChevronRightMed::before { @include ms-Icon--ChevronLeftMed; }
+
+.ms-Icon--ChevronLeftSmall::before { @include ms-Icon--ChevronRightSmall; }
+.ms-Icon--ChevronRightSmall::before { @include ms-Icon--ChevronLeftSmall; }
+
+.ms-Icon--ChromeBackMirrored::before { @include ms-Icon--ChromeBack; }
+.ms-Icon--ChromeBack::before { @include ms-Icon--ChromeBackMirrored; }
+
+.ms-Icon--ClosePaneMirrored::before { @include ms-Icon--ClosePane; }
+.ms-Icon--ClosePane::before { @include ms-Icon--ClosePaneMirrored; }
+
+.ms-Icon--CustomListMirrored::before { @include ms-Icon--CustomList; }
+.ms-Icon--CustomList::before { @include ms-Icon--CustomListMirrored; }
+
+.ms-Icon--DateTimeMirrored::before { @include ms-Icon--DateTime; }
+.ms-Icon--DateTime::before { @include ms-Icon--DateTimeMirrored; }
+
+.ms-Icon--DockLeftMirrored::before { @include ms-Icon--DockLeft; }
+.ms-Icon--DockLeft::before { @include ms-Icon--DockLeftMirrored; }
+
+.ms-Icon--DoubleChevronLeft::before { @include ms-Icon--DoubleChevronRight; }
+.ms-Icon--DoubleChevronRight::before { @include ms-Icon--DoubleChevronLeft; }
+
+.ms-Icon--DoubleChevronLeft12::before { @include ms-Icon--DoubleChevronRight12; }
+.ms-Icon--DoubleChevronRight12::before { @include ms-Icon--DoubleChevronLeft12; }
+
+.ms-Icon--DoubleChevronLeftMedMirrored::before { @include ms-Icon--DoubleChevronLeftMed; }
+.ms-Icon--DoubleChevronLeftMed::before { @include ms-Icon--DoubleChevronLeftMedMirrored; }
+
+.ms-Icon--EditMirrored::before { @include ms-Icon--Edit; }
+.ms-Icon--Edit::before { @include ms-Icon--EditMirrored; }
+
+.ms-Icon--FabricFormLibraryMirrored::before { @include ms-Icon--FabricFormLibrary; }
+.ms-Icon--FabricFormLibrary::before { @include ms-Icon--FabricFormLibraryMirrored; }
+
+.ms-Icon--FabricReportLibraryMirrored::before { @include ms-Icon--FabricReportLibrary; }
+.ms-Icon--FabricReportLibrary::before { @include ms-Icon--FabricReportLibraryMirrored; }
+
+.ms-Icon--FlickLeft::before { @include ms-Icon--FlickRight; }
+.ms-Icon--FlickRight::before { @include ms-Icon--FlickLeft; }
+
+.ms-Icon--FormLibraryMirrored::before { @include ms-Icon--FormLibrary; }
+.ms-Icon--FormLibrary::before { @include ms-Icon--FormLibraryMirrored; }
+
+.ms-Icon--Forward::before { @include ms-Icon--Back; }
+.ms-Icon--Back::before { @include ms-Icon--Forward; }
+
+.ms-Icon--HelpMirrored::before { @include ms-Icon--Help; }
+.ms-Icon--Help::before { @include ms-Icon--HelpMirrored; }
+
+.ms-Icon--IssueTrackingMirrored::before { @include ms-Icon--IssueTracking; }
+.ms-Icon--IssueTracking::before { @include ms-Icon--IssueTrackingMirrored; }
+
+.ms-Icon--ListMirrored::before { @include ms-Icon--List; }
+.ms-Icon--List::before { @include ms-Icon--ListMirrored; }
+
+.ms-Icon--MailReplyAllMirrored::before { @include ms-Icon--MailReplyAll; }
+.ms-Icon--MailReplyAll::before { @include ms-Icon--MailReplyAllMirrored; }
+
+.ms-Icon--MailReplyMirrored::before { @include ms-Icon--MailReply; }
+.ms-Icon--MailReply::before { @include ms-Icon--MailReplyMirrored; }
+
+.ms-Icon--MultiSelectMirrored::before { @include ms-Icon--MultiSelect; }
+.ms-Icon--MultiSelect::before { @include ms-Icon--MultiSelectMirrored; }
+
+.ms-Icon--OpenPaneMirrored::before { @include ms-Icon--OpenPane; }
+.ms-Icon--OpenPane::before { @include ms-Icon--OpenPaneMirrored; }
+
+.ms-Icon--PageLeft::before { @include ms-Icon--PageRight; }
+.ms-Icon--PageRight::before { @include ms-Icon--PageLeft; }
+
+.ms-Icon--QuestionnaireMirrored::before { @include ms-Icon--Questionnaire; }
+.ms-Icon--Questionnaire::before { @include ms-Icon--QuestionnaireMirrored; }
+
+.ms-Icon--Redo::before { @include ms-Icon--Undo; }
+.ms-Icon--Undo::before { @include ms-Icon--Redo; }
+
+.ms-Icon--ReplyAllMirrored::before { @include ms-Icon--ReplyAll; }
+.ms-Icon--ReplyAll::before { @include ms-Icon--ReplyAllMirrored; }
+
+.ms-Icon--ReplyMirrored::before { @include ms-Icon--Reply; }
+.ms-Icon--Reply::before { @include ms-Icon--ReplyMirrored; }
+
+.ms-Icon--ReportLibraryMirrored::before { @include ms-Icon--ReportLibrary; }
+.ms-Icon--ReportLibrary::before { @include ms-Icon--ReportLibraryMirrored; }
+
+.ms-Icon--SendMirrored::before { @include ms-Icon--Send; }
+.ms-Icon--Send::before { @include ms-Icon--SendMirrored; }
+
+.ms-Icon--ShowResultsMirrored::before { @include ms-Icon--ShowResults; }
+.ms-Icon--ShowResults::before { @include ms-Icon--ShowResultsMirrored; }
+
+.ms-Icon--TaskManagerMirrored::before { @include ms-Icon--TaskManager; }
+.ms-Icon--TaskManager::before { @include ms-Icon--TaskManagerMirrored; }
+
+.ms-Icon--ThumbnailViewMirrored::before { @include ms-Icon--ThumbnailView; }
+.ms-Icon--ThumbnailView::before { @include ms-Icon--ThumbnailViewMirrored; }
+
+.ms-Icon--TriangleLeft12::before { @include ms-Icon--TriangleRight12; }
+.ms-Icon--TriangleRight12::before { @include ms-Icon--TriangleLeft12; }
+
+.ms-Icon--TriangleSolidLeft12::before { @include ms-Icon--TriangleSolidRight12; }
+.ms-Icon--TriangleSolidRight12::before { @include ms-Icon--TriangleSolidLeft12; }
+
+.ms-Icon--ExportMirrored::before { @include ms-Icon--Export; }
+.ms-Icon--Export::before { @include ms-Icon--ExportMirrored; }
+
+.ms-Icon--ImportMirrored::before { @include ms-Icon--Import; }
+.ms-Icon--Import::before { @include ms-Icon--ImportMirrored; }
+
+.ms-Icon--TaskGroupMirrored::before { @include ms-Icon--TaskGroup; }
+.ms-Icon--TaskGroup::before { @include ms-Icon--TaskGroupMirrored; }
+
+.ms-Icon--BulletedList2Mirrored::before { @include ms-Icon--BulletedList2; }
+.ms-Icon--BulletedList2::before { @include ms-Icon--BulletedList2Mirrored; }
+
+.ms-Icon--FolderListMirrored::before { @include ms-Icon--FolderList; }
+.ms-Icon--FolderList::before { @include ms-Icon--FolderListMirrored; }
+
+.ms-Icon--NavigateBackMirrored::before { @include ms-Icon--NavigateBack; }
+.ms-Icon--NavigateBack::before { @include ms-Icon--NavigateBackMirrored; }
+
+.ms-Icon--NavigateForwardMirrored::before { @include ms-Icon--NavigateForward; }
+.ms-Icon--NavigateForward::before { @include ms-Icon--NavigateForwardMirrored; }
+
+.ms-Icon--UnknownMirroredSolid::before { @include ms-Icon--UnknownSolid; }
+.ms-Icon--UnknownSolid::before { @include ms-Icon--UnknownMirroredSolid; }
+
+.ms-Icon--FeedbackRequestMirroredSolid::before { @include ms-Icon--FeedbackRequestSolid; }
+.ms-Icon--FeedbackRequestSolid::before { @include ms-Icon--FeedbackRequestMirroredSolid; }
+
+.ms-Icon--FinancialMirroredSolid::before { @include ms-Icon--FinancialSolid; }
+.ms-Icon--FinancialSolid::before { @include ms-Icon--FinancialMirroredSolid; }
+
+.ms-Icon--PageListMirroredSolid::before { @include ms-Icon--PageListSolid; }
+.ms-Icon--PageListSolid::before { @include ms-Icon--PageListMirroredSolid; }
+
+.ms-Icon--ParkingLocationMirrored::before { @include ms-Icon--ParkingLocation; }
+.ms-Icon--ParkingLocation::before { @include ms-Icon--ParkingLocationMirrored; }
+
+.ms-Icon--ParkingMirroredSolid::before { @include ms-Icon--ParkingSolid; }
+.ms-Icon--ParkingSolid::before { @include ms-Icon--ParkingMirroredSolid; }
+
+.ms-Icon--ReviewRequestMirroredSolid::before { @include ms-Icon--ReviewRequestSolid; }
+.ms-Icon--ReviewRequestSolid::before { @include ms-Icon--ReviewRequestMirroredSolid; }
+
+.ms-Icon--SidePanelMirrored::before { @include ms-Icon--SidePanel; }
+.ms-Icon--SidePanel::before { @include ms-Icon--SidePanelMirrored; }

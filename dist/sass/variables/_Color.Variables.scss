@@ -1,0 +1,77 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Theme
+$ms-color-themeDarker:     #004578 !default;
+$ms-color-themeDark:       #005a9e !default;
+$ms-color-themeDarkAlt:    #106ebe !default;
+$ms-color-themePrimary:    #0078d7 !default;
+$ms-color-themeSecondary:  #2488d8 !default;
+$ms-color-themeTertiary:   #69afe5 !default;
+$ms-color-themeLight:      #c7e0f4 !default;
+$ms-color-themeLighter:    #deecf9 !default;
+$ms-color-themeLighterAlt: #eff6fc !default;
+
+// Neutral
+$ms-color-black:                 #000000 !default;
+$ms-color-neutralDark:           #212121 !default;
+$ms-color-neutralPrimary:        #333333 !default;
+$ms-color-neutralPrimaryAlt:     #3C3C3C !default;
+$ms-color-neutralSecondary:      #666666 !default;
+$ms-color-neutralSecondaryAlt:   #767676 !default;
+$ms-color-neutralTertiary:       #a6a6a6 !default;
+$ms-color-neutralTertiaryAlt:    #c8c8c8 !default;
+$ms-color-neutralQuaternary:     #d0d0d0 !default;
+$ms-color-neutralQuaternaryAlt:  #dadada !default;
+$ms-color-neutralLight:          #eaeaea !default;
+$ms-color-neutralLighter:        #f4f4f4 !default;
+$ms-color-neutralLighterAlt:     #f8f8f8 !default;
+$ms-color-white:                 #ffffff !default;
+
+// Translucent
+$ms-color-blackTranslucent40:  rgba(0,0,0,.4) !default;
+$ms-color-whiteTranslucent40:  rgba(255,255,255,.4) !default;
+
+// Accent
+$ms-color-yellow:        #ffb900 !default;
+$ms-color-yellowLight:   #fff100 !default;
+$ms-color-orange:        #d83b01 !default;
+$ms-color-orangeLight:   #ea4300 !default;
+$ms-color-orangeLighter: #ff8c00 !default;
+$ms-color-redDark:       #a80000 !default;
+$ms-color-red:           #e81123 !default;
+$ms-color-magentaDark:   #5c005c !default;
+$ms-color-magenta:       #b4009e !default;
+$ms-color-magentaLight:  #e3008c !default;
+$ms-color-purpleDark:    #32145a !default;
+$ms-color-purple:        #5c2d91 !default;
+$ms-color-purpleLight:   #b4a0ff !default;
+$ms-color-blueDark:      #002050 !default;
+$ms-color-blueMid:       #00188f !default;
+$ms-color-blue:          #0078d7 !default;
+$ms-color-blueLight:     #00bcf2 !default;
+$ms-color-tealDark:      #004b50 !default;
+$ms-color-teal:          #008272 !default;
+$ms-color-tealLight:     #00b294 !default;
+$ms-color-greenDark:     #004b1c !default;
+$ms-color-green:         #107c10 !default;
+$ms-color-greenLight:    #bad80a !default;
+
+// Message
+$ms-color-info:              $ms-color-neutralSecondaryAlt !default;
+$ms-color-infoBackground:    $ms-color-neutralLighter !default;
+$ms-color-success:           $ms-color-green !default;
+$ms-color-successBackground: #dff6dd !default;
+$ms-color-severeWarning:     $ms-color-orange !default;
+$ms-color-severeWarningBackground: #fed9cc !default;
+$ms-color-alert:             $ms-color-severeWarning !default;   // Deprecated: Use $ms-color-severeWarning
+$ms-color-alertBackground:   $ms-color-severeWarningBackground !default; // Deprecated: Use $ms-color-severeWarningBackground
+$ms-color-warning:           $ms-color-neutralSecondaryAlt !default;
+$ms-color-warningBackground: #fff4ce !default;
+$ms-color-error:             $ms-color-redDark !default;
+$ms-color-errorBackground:   #fde7e9 !default;
+
+// High contrast colors
+$ms-color-contrastBlackDisabled: #00ff00 !default;
+$ms-color-contrastWhiteDisabled: #600000 !default;
+$ms-color-contrastBlackSelected: #1AEBFF !default;
+$ms-color-contrastWhiteSelected: #37006E !default;

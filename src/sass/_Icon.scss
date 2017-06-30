@@ -33,6 +33,13 @@
   @include ms-Icon--l;
 }
 
+// @todo: These classes have been deprecated and will be removed in a future release.
+.ms-Icon--SwayLogo::before { @include ms-Icon--SwayLogoInverse; }
+.ms-Icon--ClassNotebookLogo::before { @include ms-Icon--ClassNotebookLogoInverse; }
+.ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogoInverse; }
+.ms-Icon--OneNoteEduLogo::before { @include ms-Icon--OneNoteEduLogoInverse; }
+.ms-Icon--ProjectLogo::before { @include ms-Icon--ProjectLogoInverse; }
+
 // Modifiers: Each of the icons
 .ms-Icon--AADLogo::before { @include ms-Icon--AADLogo; }
 .ms-Icon--Accept::before { @include ms-Icon--Accept; }
@@ -339,6 +346,7 @@
 .ms-Icon--DeveloperTools::before { @include ms-Icon--DeveloperTools; }
 .ms-Icon--Devices3::before { @include ms-Icon--Devices3; }
 .ms-Icon--Devices4::before { @include ms-Icon--Devices4; }
+.ms-Icon--Diagnostic::before { @include ms-Icon--Diagnostic; }
 .ms-Icon--Dialpad::before { @include ms-Icon--Dialpad; }
 .ms-Icon--DiamondSolid::before { @include ms-Icon--DiamondSolid; }
 .ms-Icon--Dictionary::before { @include ms-Icon--Dictionary; }
@@ -347,6 +355,7 @@
 .ms-Icon--DiffSideBySide::before { @include ms-Icon--DiffSideBySide; }
 .ms-Icon--DisableUpdates::before { @include ms-Icon--DisableUpdates; }
 .ms-Icon--Dislike::before { @include ms-Icon--Dislike; }
+.ms-Icon--DislikeSolid::before { @include ms-Icon--DislikeSolid; }
 .ms-Icon--DockLeft::before { @include ms-Icon--DockLeft; }
 .ms-Icon--DockLeftMirrored::before { @include ms-Icon--DockLeftMirrored; }
 .ms-Icon--DockRight::before { @include ms-Icon--DockRight; }
@@ -602,6 +611,7 @@
 .ms-Icon--Lightbulb::before { @include ms-Icon--Lightbulb; }
 .ms-Icon--LightningBolt::before { @include ms-Icon--LightningBolt; }
 .ms-Icon--Like::before { @include ms-Icon--Like; }
+.ms-Icon--LikeSolid::before { @include ms-Icon--LikeSolid; }
 .ms-Icon--LineChart::before { @include ms-Icon--LineChart; }
 .ms-Icon--Link::before { @include ms-Icon--Link; }
 .ms-Icon--LinkedInLogo::before { @include ms-Icon--LinkedInLogo; }
@@ -850,6 +860,7 @@
 .ms-Icon--Redo::before { @include ms-Icon--Redo; }
 .ms-Icon--Refresh::before { @include ms-Icon--Refresh; }
 .ms-Icon--ReminderGroup::before { @include ms-Icon--ReminderGroup; }
+.ms-Icon--ReminderPerson::before { @include ms-Icon--ReminderPerson; }
 .ms-Icon--Remove::before { @include ms-Icon--Remove; }
 .ms-Icon--RemoveEvent::before { @include ms-Icon--RemoveEvent; }
 .ms-Icon--RemoveFilter::before { @include ms-Icon--RemoveFilter; }
@@ -962,6 +973,9 @@
 .ms-Icon--StackIndicator::before { @include ms-Icon--StackIndicator; }
 .ms-Icon--Starburst::before { @include ms-Icon--Starburst; }
 .ms-Icon--StarburstSolid::before { @include ms-Icon--StarburstSolid; }
+.ms-Icon--StatusCircleCheckmark::before { @include ms-Icon--StatusCircleCheckmark; }
+.ms-Icon--StatusCircleInner::before { @include ms-Icon--StatusCircleInner; }
+.ms-Icon--StatusCircleOuter::before { @include ms-Icon--StatusCircleOuter; }
 .ms-Icon--StatusErrorFull::before { @include ms-Icon--StatusErrorFull; }
 .ms-Icon--StatusTriangle::before { @include ms-Icon--StatusTriangle; }
 .ms-Icon--Step::before { @include ms-Icon--Step; }
@@ -1146,10 +1160,3 @@
 .ms-Icon--Zoom::before { @include ms-Icon--Zoom; }
 .ms-Icon--ZoomIn::before { @include ms-Icon--ZoomIn; }
 .ms-Icon--ZoomOut::before { @include ms-Icon--ZoomOut; }
-
-// @todo: These classes have been deprecated and will be removed in a future release.
-.ms-Icon--SwayLogo::before { @include ms-Icon--SwayLogoInverse; }
-.ms-Icon--ClassNotebookLogo::before { @include ms-Icon--ClassNotebookLogoInverse; }
-.ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogoInverse; }
-.ms-Icon--OneNoteEduLogo::before { @include ms-Icon--OneNoteEduLogoInverse; }
-.ms-Icon--ProjectLogo::before { @include ms-Icon--ProjectLogoInverse; }

@@ -369,6 +369,7 @@
 @mixin ms-Icon--DeveloperTools { content: '\EC7A'; }
 @mixin ms-Icon--Devices3 { content: '\EA6C'; }
 @mixin ms-Icon--Devices4 { content: '\EB66'; }
+@mixin ms-Icon--Diagnostic { content: '\E9D9'; }
 @mixin ms-Icon--Dialpad { content: '\E75F'; }
 @mixin ms-Icon--DiamondSolid { content: '\F34C'; }
 @mixin ms-Icon--Dictionary { content: '\E82D'; }
@@ -377,6 +378,7 @@
 @mixin ms-Icon--DiffSideBySide { content: '\F30A'; }
 @mixin ms-Icon--DisableUpdates { content: '\E8D8'; }
 @mixin ms-Icon--Dislike { content: '\E8E0'; }
+@mixin ms-Icon--DislikeSolid { content: '\F3C0'; }
 @mixin ms-Icon--DockLeft { content: '\E90C'; }
 @mixin ms-Icon--DockLeftMirrored { content: '\EA4C'; }
 @mixin ms-Icon--DockRight { content: '\E90D'; }
@@ -632,6 +634,7 @@
 @mixin ms-Icon--Lightbulb { content: '\EA80'; }
 @mixin ms-Icon--LightningBolt { content: '\E945'; }
 @mixin ms-Icon--Like { content: '\E8E1'; }
+@mixin ms-Icon--LikeSolid { content: '\F3BF'; }
 @mixin ms-Icon--LineChart { content: '\E9E6'; }
 @mixin ms-Icon--Link { content: '\E71B'; }
 @mixin ms-Icon--LinkedInLogo { content: '\F20A'; }
@@ -880,6 +883,7 @@
 @mixin ms-Icon--Redo { content: '\E7A6'; }
 @mixin ms-Icon--Refresh { content: '\E72C'; }
 @mixin ms-Icon--ReminderGroup { content: '\EBF8'; }
+@mixin ms-Icon--ReminderPerson { content: '\EBF7'; }
 @mixin ms-Icon--Remove { content: '\E738'; }
 @mixin ms-Icon--RemoveEvent { content: '\ED8A'; }
 @mixin ms-Icon--RemoveFilter { content: '\EB08'; }
@@ -992,6 +996,9 @@
 @mixin ms-Icon--StackIndicator { content: '\E7FF'; }
 @mixin ms-Icon--Starburst { content: '\EF78'; }
 @mixin ms-Icon--StarburstSolid { content: '\F33C'; }
+@mixin ms-Icon--StatusCircleCheckmark { content: '\F13E'; }
+@mixin ms-Icon--StatusCircleInner { content: '\F137'; }
+@mixin ms-Icon--StatusCircleOuter { content: '\F136'; }
 @mixin ms-Icon--StatusErrorFull { content: '\EB90'; }
 @mixin ms-Icon--StatusTriangle { content: '\EA82'; }
 @mixin ms-Icon--Step { content: '\F241'; }

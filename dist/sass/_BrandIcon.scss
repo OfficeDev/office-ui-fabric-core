@@ -1,0 +1,19 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+@include ms-brand-icon-classes(1);
+@include ms-brand-icon-size-classes();
+
+// Pixel Ratio 1.5
+@media only screen and (min-resolution: 144dpi) {
+  @include ms-brand-icon-classes(1_5);
+}
+
+// Pixel Ratio 2
+@media only screen and (min-resolution: 192dpi)  {
+  @include ms-brand-icon-classes(2);
+}
+
+// Pixel Ratio 3
+@media only screen and (min-resolution: 288dpi) {
+  @include ms-brand-icon-classes(3);
+}

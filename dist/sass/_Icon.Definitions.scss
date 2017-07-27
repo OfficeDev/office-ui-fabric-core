@@ -1,0 +1,29 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Icon font-family definition
+
+/*
+  Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
+*/
+
+// Font-face definition for the 'FabricMDL2Icons' icon font
+@font-face {
+  $icon-font-family: 'FabricMDL2Icons';
+  $icon-font-name: 'fabricmdl2icons';
+  $icon-font-version: '2.35';
+
+  @if variable_exists(do-scope-styles) {
+    $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
+    $icon-font-name: 'scoped/fabricmdl2icons-' + $ms-fabric-version-major; 
+  }
+
+  font-family: $icon-font-family;
+  src: url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}-#{$icon-font-version}.woff2') format('woff2'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}-#{$icon-font-version}.woff') format('woff'),
+       url('https://static2.sharepointonline.com/files/fabric/assets/icons/#{$icon-font-name}-#{$icon-font-version}.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

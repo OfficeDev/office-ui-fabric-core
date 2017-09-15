@@ -7,62 +7,62 @@
 
 // Base icon definition
 @mixin ms-Icon {
-    $icon-font-family: 'FabricMDL2Icons';
-  
-    @if variable_exists(do-scope-styles) {
-      $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
-    }
-  
-    display: inline-block;
-    font-family: $icon-font-family;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
+  $icon-font-family: 'FabricMDL2Icons';
+
+  @if variable_exists(do-scope-styles) {
+    $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
   }
-  
-  // Modifier: Place the icon in a circle.
-  @mixin ms-Icon--circle {
-    position: relative;
-    display: inline-block;
-    font-size: 1rem;
-    width:   1em;
-    height:  1em;
-    margin:  0 0.5em 0 0;
+
+  display: inline-block;
+  font-family: $icon-font-family;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+}
+
+// Modifier: Place the icon in a circle.
+@mixin ms-Icon--circle {
+  position: relative;
+  display: inline-block;
+  font-size: 1rem;
+  width:   1em;
+  height:  1em;
+  margin:  0 0.5em 0 0;
+  padding: 0;
+  text-align: left;
+
+  &::before, &::after {
+    line-height: 1;
+    font-size: inherit;
+  }
+
+  &::before {
+    display: block;
+    width:  100%;
+    height: 100%;
+    margin:  0;
     padding: 0;
-    text-align: left;
-  
-    &::before, &::after {
-      line-height: 1;
-      font-size: inherit;
-    }
-  
-    &::before {
-      display: block;
-      width:  100%;
-      height: 100%;
-      margin:  0;
-      padding: 0;
-      vertical-align: top;
-      position: absolute;
-    }
-  
-    &::after {
-      content: '\e000';
-      position: absolute;
-      top:  0;
-      left: 0;
-      transform: scale(2);
-      transform-origin: 50% 50%;
-      z-index: $ms-zIndex-back;
-    }
+    vertical-align: top;
+    position: absolute;
   }
-  
-  // Modifiers: Icon sizes
-  @mixin ms-Icon--xs { font-size: $ms-icon-size-xs; }
-  @mixin ms-Icon--s { font-size: $ms-icon-size-s; }
-  @mixin ms-Icon--m { font-size: $ms-icon-size-m; }
-  @mixin ms-Icon--l { font-size: $ms-icon-size-l; }
-  
+
+  &::after {
+    content: '\e000';
+    position: absolute;
+    top:  0;
+    left: 0;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    z-index: $ms-zIndex-back;
+  }
+}
+
+// Modifiers: Icon sizes
+@mixin ms-Icon--xs { font-size: $ms-icon-size-xs; }
+@mixin ms-Icon--s { font-size: $ms-icon-size-s; }
+@mixin ms-Icon--m { font-size: $ms-icon-size-m; }
+@mixin ms-Icon--l { font-size: $ms-icon-size-l; }
+
 // Modifiers: Each of the icons.
 @mixin ms-Icon--AADLogo { content: '\ED68'; }
 @mixin ms-Icon--Accept { content: '\E8FB'; }

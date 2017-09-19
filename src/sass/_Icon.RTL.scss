@@ -73,6 +73,12 @@
 .ms-Icon--EditMirrored::before { @include ms-Icon--Edit; }
 .ms-Icon--Edit::before { @include ms-Icon--EditMirrored; }
 
+.ms-Icon--EditSolidMirrored12::before { @include ms-Icon--EditSolid12; }
+.ms-Icon--EditSolid12::before { @include ms-Icon--EditSolidMirrored12; }
+
+.ms-Icon--EventTentativeMirrored::before { @include ms-Icon--EventTentative; }
+.ms-Icon--EventTentative::before { @include ms-Icon--EventTentativeMirrored; }
+
 .ms-Icon--FabricFormLibraryMirrored::before { @include ms-Icon--FabricFormLibrary; }
 .ms-Icon--FabricFormLibrary::before { @include ms-Icon--FabricFormLibraryMirrored; }
 
@@ -91,6 +97,12 @@
 .ms-Icon--HelpMirrored::before { @include ms-Icon--Help; }
 .ms-Icon--Help::before { @include ms-Icon--HelpMirrored; }
 
+.ms-Icon--IRMForwardMirrored::before { @include ms-Icon--IRMForward; }
+.ms-Icon--IRMForward::before { @include ms-Icon--IRMForwardMirrored; }
+
+.ms-Icon--IRMReplyMirrored::before { @include ms-Icon--IRMReply; }
+.ms-Icon--IRMReply::before { @include ms-Icon--IRMReplyMirrored; }
+
 .ms-Icon--IssueTrackingMirrored::before { @include ms-Icon--IssueTracking; }
 .ms-Icon--IssueTracking::before { @include ms-Icon--IssueTrackingMirrored; }
 
@@ -102,6 +114,9 @@
 
 .ms-Icon--MailReplyMirrored::before { @include ms-Icon--MailReply; }
 .ms-Icon--MailReply::before { @include ms-Icon--MailReplyMirrored; }
+
+.ms-Icon--MailTentativeMirrored::before { @include ms-Icon--MailTentative; }
+.ms-Icon--MailTentative::before { @include ms-Icon--MailTentativeMirrored; }
 
 .ms-Icon--MultiSelectMirrored::before { @include ms-Icon--MultiSelect; }
 .ms-Icon--MultiSelect::before { @include ms-Icon--MultiSelectMirrored; }
@@ -115,6 +130,9 @@
 .ms-Icon--QuestionnaireMirrored::before { @include ms-Icon--Questionnaire; }
 .ms-Icon--Questionnaire::before { @include ms-Icon--QuestionnaireMirrored; }
 
+.ms-Icon--ReceiptTentativeMirrored::before { @include ms-Icon--ReceiptTentative; }
+.ms-Icon--ReceiptTentative::before { @include ms-Icon--ReceiptTentativeMirrored; }
+
 .ms-Icon--Redo::before { @include ms-Icon--Undo; }
 .ms-Icon--Undo::before { @include ms-Icon--Redo; }
 
@@ -126,6 +144,9 @@
 
 .ms-Icon--ReportLibraryMirrored::before { @include ms-Icon--ReportLibrary; }
 .ms-Icon--ReportLibrary::before { @include ms-Icon--ReportLibraryMirrored; }
+
+.ms-Icon--SearchIssueMirrored::before { @include ms-Icon--SearchIssue; }
+.ms-Icon--SearchIssue::before { @include ms-Icon--SearchIssueMirrored; }
 
 .ms-Icon--SendMirrored::before { @include ms-Icon--Send; }
 .ms-Icon--Send::before { @include ms-Icon--SendMirrored; }
@@ -144,6 +165,12 @@
 
 .ms-Icon--TriangleSolidLeft12::before { @include ms-Icon--TriangleSolidRight12; }
 .ms-Icon--TriangleSolidRight12::before { @include ms-Icon--TriangleSolidLeft12; }
+
+.ms-Icon--UneditableMirrored::before { @include ms-Icon--Uneditable; }
+.ms-Icon--Uneditable::before { @include ms-Icon--UneditableMirrored; }
+
+.ms-Icon--UneditableSolidMirrored12::before { @include ms-Icon--UneditableSolid12; }
+.ms-Icon--UneditableSolid12::before { @include ms-Icon--UneditableSolidMirrored12; }
 
 .ms-Icon--ExportMirrored::before { @include ms-Icon--Export; }
 .ms-Icon--Export::before { @include ms-Icon--ExportMirrored; }

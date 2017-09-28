@@ -33,24 +33,6 @@
   @include ms-Icon--l;
 }
 
-// @todo: These classes have been deprecated and will be removed in a future release.
-.ms-Icon--SwayLogo::before { @include ms-Icon--SwayLogoInverse; }
-.ms-Icon--ClassNotebookLogo::before { @include ms-Icon--ClassNotebookLogoInverse; }
-.ms-Icon--DocsLogo::before { @include ms-Icon--DocsLogoInverse; }
-.ms-Icon--OneNoteEduLogo::before { @include ms-Icon--OneNoteEduLogoInverse; }
-.ms-Icon--ProjectLogo::before { @include ms-Icon--ProjectLogoInverse; }
-.ms-Icon--AdminALogo::before { @include ms-Icon--AdminALogoInverse32; }
-.ms-Icon--AdminCLogo::before { @include ms-Icon--AdminCLogoInverse32; }
-.ms-Icon--AdminDLogo::before { @include ms-Icon--AdminDLogoInverse32; }
-.ms-Icon--AdminELogo::before { @include ms-Icon--AdminELogoInverse32; }
-.ms-Icon--AdminLLogo::before { @include ms-Icon--AdminLLogoInverse32; }
-.ms-Icon--AdminMLogo::before { @include ms-Icon--AdminMLogoInverse32; }
-.ms-Icon--AdminOLogo::before { @include ms-Icon--AdminOLogoInverse32; }
-.ms-Icon--AdminPLogo::before { @include ms-Icon--AdminPLogoInverse32; }
-.ms-Icon--AdminSLogo::before { @include ms-Icon--AdminSLogoInverse32; }
-.ms-Icon--AdminYLogo::before { @include ms-Icon--AdminYLogoInverse32; }
-.ms-Icon--OfficeFormLogo::before { @include ms-Icon--OfficeFormsLogoInverse; }
-
 // Modifiers: Each of the icons
 .ms-Icon--AADLogo::before { @include ms-Icon--AADLogo; }
 .ms-Icon--Accept::before { @include ms-Icon--Accept; }

@@ -206,3 +206,15 @@
 @mixin ms-noWrap {
 	white-space: nowrap; 
 }
+
+// Replace or remove a portion of a string.
+// Thanks to https://www.sassmeister.com/gist/1b4f2da5527830088e4d
+@function ms-string-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + ms-string-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}

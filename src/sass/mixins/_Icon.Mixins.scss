@@ -63,7 +63,56 @@
 @mixin ms-Icon--m { font-size: $ms-icon-size-m; }
 @mixin ms-Icon--l { font-size: $ms-icon-size-l; }
 
-// Modifiers: Each of the icons.
+@mixin ms-icon-classes($icons) {
+  // De-dupe the map by removing the LTR icon for every RTL icon.
+  // For example, remove 'Export' after finding 'ExportMirrored'.
+  // This assumes that RTL icons will contain 'Mirrored' and that
+  // they are sorted so that the mirrored icon comes later.
+  $dedupedIcons: $icons;
+  @each $iconName, $code in $dedupedIcons {
+    @if str-index($iconName, 'Mirrored') {
+      $duplicateIcon: ms-string-replace($iconName, 'Mirrored');
+      $dedupedIcons: map-remove($dedupedIcons, $duplicateIcon);
+    }
+  }
+
+  // Go through icon list and create a class for each icon.
+  @each $iconName, $iconCode in $dedupedIcons {
+    @if str-index($iconName, 'Mirrored') {
+      // Create different classes for LTR and RTL layouts.
+      $ltrIconName: ms-string-replace($iconName, 'Mirrored');
+      $ltrIconCode: map-get($icons, $ltrIconName);
+
+      // Classes for the regular icon.
+      .ms-Icon--#{$ltrIconName}::before {
+        @include ms-LTR {
+          content: $ltrIconCode;
+        }
+        @include ms-RTL {
+          content: $iconCode;
+        }
+      }
+
+      // Classes for the mirrored icon.
+      .ms-Icon--#{$iconName}::before {
+        @include ms-LTR {
+          content: $iconCode;
+        }
+        @include ms-RTL {
+          content: $ltrIconCode;
+        }
+      }
+    } @else {
+      // Class for both LTR and RTL.
+      .ms-Icon--#{$iconName}::before {
+        content: $iconCode;
+      }
+    }
+  }
+}
+
+// Modifiers: Each of the icons. These are no longer used within Fabric Core,
+//            and may be deprecated in a future release.
 @mixin ms-Icon--AADLogo { content: $ms-icon-code-AADLogo; }
 @mixin ms-Icon--ATPLogo { content: $ms-icon-code-ATPLogo; }
 @mixin ms-Icon--Accept { content: $ms-icon-code-Accept; }

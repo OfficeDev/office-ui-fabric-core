@@ -10,123 +10,51 @@
 
 // Slide
 .ms-slideRightIn10 {
-  @include ms-LTR {
-    @include ms-slideRightIn10;
-  }
-
-  @include ms-RTL {
-    @include ms-slideLeftIn10;
-  }
+  @include ms-slideRightIn10;
 }
 
 .ms-slideRightIn20 {
-  @include ms-LTR {
-    @include ms-slideRightIn20;
-  }
-
-  @include ms-RTL {
-    @include ms-slideLeftIn20;
-  }
+  @include ms-slideRightIn20;
 }
 
 .ms-slideRightIn40 {
-  @include ms-LTR {
-    @include ms-slideRightIn40;
-  }
-
-  @include ms-RTL {
-    @include ms-slideLeftIn40;
-  }
+  @include ms-slideRightIn40;
 }
 
 .ms-slideRightIn400 {
-  @include ms-LTR {
-    @include ms-slideRightIn400;
-  }
-
-  @include ms-RTL {
-    @include ms-slideLeftIn400;
-  }
+  @include ms-slideRightIn400;
 }
 
 .ms-slideRightOut40 {
-  @include ms-LTR {
-    @include ms-slideRightOut40;
-  }
-
-  @include ms-RTL {
-    @include ms-slideLeftOut40;
-  }
+  @include ms-slideRightOut40;
 }
 
 .ms-slideRightOut400 {
-  @include ms-LTR {
-    @include ms-slideRightOut400;
-  }
-
-  @include ms-RTL {
-    @include ms-slideLeftOut400;
-  }
+  @include ms-slideRightOut400;
 }
 
 .ms-slideLeftIn10 {
-  @include ms-LTR {
-    @include ms-slideLeftIn10;
-  }
-
-  @include ms-RTL {
-    @include ms-slideRightIn10;
-  }
+  @include ms-slideLeftIn10;
 }
 
 .ms-slideLeftIn20 {
-  @include ms-LTR {
-    @include ms-slideLeftIn20;
-  }
-
-  @include ms-RTL {
-    @include ms-slideRightIn20;
-  }
+  @include ms-slideLeftIn20;
 }
 
 .ms-slideLeftIn40 {
-  @include ms-LTR {
-    @include ms-slideLeftIn40;
-  }
-
-  @include ms-RTL {
-    @include ms-slideRightIn40;
-  }
+  @include ms-slideLeftIn40;
 }
 
 .ms-slideLeftIn400 {
-  @include ms-LTR {
-    @include ms-slideLeftIn400;
-  }
-
-  @include ms-RTL {
-    @include ms-slideRightIn400;
-  }
+  @include ms-slideLeftIn400;
 }
 
 .ms-slideLeftOut40 {
-  @include ms-LTR {
-    @include ms-slideLeftOut40;
-  }
-
-  @include ms-RTL {
-    @include ms-slideRightOut40;
-  }
+  @include ms-slideLeftOut40;
 }
 
 .ms-slideLeftOut400 {
-  @include ms-LTR {
-    @include ms-slideLeftOut400;
-  }
-
-  @include ms-RTL {
-    @include ms-slideRightOut400;
-  }
+  @include ms-slideLeftOut400;
 }
 
 .ms-slideUpIn10 {
@@ -237,21 +165,9 @@
 
 // Rotate
 .ms-rotate90deg {
-  @include ms-LTR {
-    @include ms-rotate90deg;
-  }
-
-  @include ms-RTL {
-    @include ms-rotateN90deg;
-  }
+  @include ms-rotate90deg;
 }
 
 .ms-rotateN90deg {
-  @include ms-LTR {
-    @include ms-rotateN90deg;
-  }
-
-  @include ms-RTL {
-    @include ms-rotate90deg;
-  }
+  @include ms-rotateN90deg;
 }

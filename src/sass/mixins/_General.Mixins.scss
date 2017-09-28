@@ -177,7 +177,7 @@
   @each $align in $alignments {
     $alignStr: inspect($align);
     .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
-      text-align: $align;
+      @include ms-text-align($align);
     }
   }
 }

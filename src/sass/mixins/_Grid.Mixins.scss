@@ -24,12 +24,12 @@
 //== Grid cells
 //
 @mixin ms-Grid-col {
+  @include ms-float(left);
   position: relative;
   min-height: 1px;
   padding-left: 8px;
   padding-right: 8px;
   @include ms-borderBox;
-  float: left;
 
   // For nested grids (a grid inside a column), removing the padding
   // so that the nested grid's columns go to the edge of the parent's.

@@ -22,12 +22,12 @@
 
 // Modifier: Place the icon in a circle.
 @mixin ms-Icon--circle {
+  @include margin(0, 0.5em, 0, 0);
   position: relative;
   display: inline-block;
   font-size: 1rem;
   width:   1em;
   height:  1em;
-  margin:  0 0.5em 0 0;
   padding: 0;
   text-align: left;
 

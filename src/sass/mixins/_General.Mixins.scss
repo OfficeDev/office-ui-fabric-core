@@ -13,7 +13,7 @@
 
 // Drop shadow.
 @mixin ms-drop-shadow($x-offset: 0, $y-offset: 0, $blur: 5px, $spread: 0, $alpha: 0.4) {
-  box-shadow: $x-offset $y-offset $blur $spread rgba(0, 0, 0, $alpha);
+  @include ms-box-shadow($x-offset, $y-offset $blur $spread rgba(0, 0, 0, $alpha));
 }
 
 // Background gradient.
@@ -40,8 +40,8 @@
 }
 
 // Rotation.
-@mixin ms-rotate($deg) {
-  transform: rotate($deg);
+@mixin ms-rotate($degrees) {
+  @include ms-transform-rotate($degrees);
 }
 
 // Prevents user selection of text elements.

@@ -303,6 +303,16 @@
   }
 }
 
+@mixin ms-transform-rotate($degrees) {
+  @include ms-LTR {
+    transform: rotate($degrees);
+  }
+
+  @include ms-RTL {
+    transform: rotate(-$degrees);
+  }
+}
+
 // Transitions. Only supported when ONLY left/right are declared
 @mixin ms-transition-property($direction) {
   @if $direction == left {

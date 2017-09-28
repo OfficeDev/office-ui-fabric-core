@@ -17,7 +17,7 @@
     "del": "^1.2.1",
     "express": "^4.10.4",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-batch": "^1.0.5",
     "gulp-changed": "^3.0.0",
     "gulp-compile-handlebars": "^0.6.1",

@@ -160,14 +160,6 @@ gulp.task('Bundles-buildData', function() {
                     if (extension === '.scss' && 
                         entryFileName !== 'Fabric.scss' && 
                         entryFileName !== 'Fabric.Components.scss') {
-                        // For now, strip out RTL. These will need to be handled separately.
-                        if (entryFileName.indexOf('.RTL') >= 0) {
-                            if (options.logWarnings) {
-                                gulputil.log(colors.yellow(entryFileName) + ' not included. Bundling of RTL files is not currently supported.');
-                            }
-
-                            return false;
-                        }
 
                         // Exclude partials, whose output shouldn't be compiled.
                         if (entryFileName[0] === '_') {

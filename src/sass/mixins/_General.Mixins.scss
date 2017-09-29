@@ -13,7 +13,7 @@
 
 // Drop shadow.
 @mixin ms-drop-shadow($x-offset: 0, $y-offset: 0, $blur: 5px, $spread: 0, $alpha: 0.4) {
-  box-shadow: $x-offset $y-offset $blur $spread rgba(0, 0, 0, $alpha);
+  @include ms-box-shadow($x-offset, $y-offset $blur $spread rgba(0, 0, 0, $alpha));
 }
 
 // Background gradient.
@@ -40,8 +40,8 @@
 }
 
 // Rotation.
-@mixin ms-rotate($deg) {
-  transform: rotate($deg);
+@mixin ms-rotate($degrees) {
+  @include ms-transform-rotate($degrees);
 }
 
 // Prevents user selection of text elements.
@@ -177,7 +177,7 @@
   @each $align in $alignments {
     $alignStr: inspect($align);
     .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
-      text-align: $align;
+      @include ms-text-align($align);
     }
   }
 }
@@ -205,4 +205,16 @@
 // To disable text wrapping
 @mixin ms-noWrap {
 	white-space: nowrap; 
+}
+
+// Replace or remove a portion of a string.
+// Thanks to https://www.sassmeister.com/gist/1b4f2da5527830088e4d
+@function ms-string-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + ms-string-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
 }

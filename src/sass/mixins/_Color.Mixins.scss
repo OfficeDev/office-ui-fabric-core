@@ -410,9 +410,3 @@
 @mixin ms-borderColor-error {
   border-color: $ms-color-error;
 }
-
-
-// Individual borders, by request
-@mixin ms-borderColorTop-themePrimary {
-  border-top-color: $ms-color-themePrimary;
-}

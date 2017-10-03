@@ -1425,12 +1425,6 @@
 }
 
 // Min-width media queries.
-@mixin ms-screen-sm-up  {
-  @media only screen and (min-width: $ms-screen-min-sm) {
-    @content;
-  }
-}
-
 @mixin ms-screen-md-up {
   @media only screen and (min-width: $ms-screen-min-md) {
     @content;
@@ -1451,6 +1445,12 @@
 
 @mixin ms-screen-xxl-up {
   @media only screen and (min-width: $ms-screen-min-xxl) {
+    @content;
+  }
+}
+
+@mixin ms-screen-xxxl-up {
+  @media only screen and (min-width: $ms-screen-min-xxxl) {
     @content;
   }
 }

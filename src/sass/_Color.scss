@@ -433,9 +433,3 @@
 .ms-borderColor-greenLight {
   @include ms-borderColor-greenLight;
 }
-
-// Individual borders, by request
-.ms-borderColorTop-themePrimary,
-.ms-borderColorTop-themePrimary--hover:hover {
-  @include ms-borderColorTop-themePrimary;
-}

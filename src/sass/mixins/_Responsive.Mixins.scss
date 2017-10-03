@@ -1423,3 +1423,65 @@
     @include ms-margin-left(0);
   }
 }
+
+// Min-width media queries.
+@mixin ms-screen-sm-up  {
+  @media only screen and (min-width: $ms-screen-min-sm) {
+    @content;
+  }
+}
+
+@mixin ms-screen-md-up {
+  @media only screen and (min-width: $ms-screen-min-md) {
+    @content;
+  }
+}
+
+@mixin ms-screen-lg-up {
+  @media only screen and (min-width: $ms-screen-min-lg) {
+    @content;
+  }
+}
+
+@mixin ms-screen-xl-up {
+  @media only screen and (min-width: $ms-screen-min-xl) {
+    @content;
+  }
+}
+
+@mixin ms-screen-xxl-up {
+  @media only screen and (min-width: $ms-screen-min-xxl) {
+    @content;
+  }
+}
+
+// Max-width media queries.
+@mixin ms-screen-sm-down {
+  @media only screen and (max-width: $ms-screen-max-sm) {
+    @content;
+  }
+}
+
+@mixin ms-screen-md-down {
+  @media only screen and (max-width: $ms-screen-max-md) {
+    @content;
+  }
+}
+
+@mixin ms-screen-lg-down {
+  @media only screen and (max-width: $ms-screen-max-lg) {
+    @content;
+  }
+}
+
+@mixin ms-screen-xl-down {
+  @media only screen and (max-width: $ms-screen-max-xl) {
+    @content;
+  }
+}
+
+@mixin ms-screen-xxl-down {
+  @media only screen and (max-width: $ms-screen-max-xxl) {
+    @content;
+  }
+}

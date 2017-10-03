@@ -76,23 +76,19 @@
 // Helper mixins to override default type values
 
 // Font weights
-.ms-fontWeight-light,
-.ms-fontWeight-light--hover:hover {
+.ms-fontWeight-light {
   @include ms-fontWeight-light;
 }
 
-.ms-fontWeight-semilight,
-.ms-fontWeight-semilight--hover:hover {
+.ms-fontWeight-semilight {
   @include ms-fontWeight-semilight;
 }
 
-.ms-fontWeight-regular,
-.ms-fontWeight-regular--hover:hover {
+.ms-fontWeight-regular {
   @include ms-fontWeight-regular;
 }
 
-.ms-fontWeight-semibold,
-.ms-fontWeight-semibold--hover:hover {
+.ms-fontWeight-semibold {
   @include ms-fontWeight-semibold;
 }
 

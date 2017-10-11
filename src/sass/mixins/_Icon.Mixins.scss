@@ -191,6 +191,7 @@
 @mixin ms-Icon--AzureServiceEndpoint { content: $ms-icon-code-AzureServiceEndpoint; }
 @mixin ms-Icon--Back { content: $ms-icon-code-Back; }
 @mixin ms-Icon--BackToWindow { content: $ms-icon-code-BackToWindow; }
+@mixin ms-Icon--BackgroundColor { content: $ms-icon-code-BackgroundColor; }
 @mixin ms-Icon--Backlog { content: $ms-icon-code-Backlog; }
 @mixin ms-Icon--BacklogBoard { content: $ms-icon-code-BacklogBoard; }
 @mixin ms-Icon--Badge { content: $ms-icon-code-Badge; }
@@ -406,10 +407,12 @@
 @mixin ms-Icon--Contact { content: $ms-icon-code-Contact; }
 @mixin ms-Icon--ContactCard { content: $ms-icon-code-ContactCard; }
 @mixin ms-Icon--ContactInfo { content: $ms-icon-code-ContactInfo; }
+@mixin ms-Icon--ContextMenu { content: $ms-icon-code-ContextMenu; }
 @mixin ms-Icon--Contrast { content: $ms-icon-code-Contrast; }
 @mixin ms-Icon--Copy { content: $ms-icon-code-Copy; }
 @mixin ms-Icon--Cotton { content: $ms-icon-code-Cotton; }
 @mixin ms-Icon--Cricket { content: $ms-icon-code-Cricket; }
+@mixin ms-Icon--Crop { content: $ms-icon-code-Crop; }
 @mixin ms-Icon--Crown { content: $ms-icon-code-Crown; }
 @mixin ms-Icon--CrownSolid { content: $ms-icon-code-CrownSolid; }
 @mixin ms-Icon--CustomList { content: $ms-icon-code-CustomList; }
@@ -506,6 +509,7 @@
 @mixin ms-Icon--Emoji2 { content: $ms-icon-code-Emoji2; }
 @mixin ms-Icon--EmojiDisappointed { content: $ms-icon-code-EmojiDisappointed; }
 @mixin ms-Icon--EmojiNeutral { content: $ms-icon-code-EmojiNeutral; }
+@mixin ms-Icon--EmojiTabSymbols { content: $ms-icon-code-EmojiTabSymbols; }
 @mixin ms-Icon--EmptyRecycleBin { content: $ms-icon-code-EmptyRecycleBin; }
 @mixin ms-Icon--EngineeringGroup { content: $ms-icon-code-EngineeringGroup; }
 @mixin ms-Icon--Equalizer { content: $ms-icon-code-Equalizer; }
@@ -538,6 +542,7 @@
 @mixin ms-Icon--ExternalBuild { content: $ms-icon-code-ExternalBuild; }
 @mixin ms-Icon--ExternalTFVC { content: $ms-icon-code-ExternalTFVC; }
 @mixin ms-Icon--ExternalXAML { content: $ms-icon-code-ExternalXAML; }
+@mixin ms-Icon--F12DevTools { content: $ms-icon-code-F12DevTools; }
 @mixin ms-Icon--FSharp { content: $ms-icon-code-FSharp; }
 @mixin ms-Icon--FSharpLanguage { content: $ms-icon-code-FSharpLanguage; }
 @mixin ms-Icon--FabricAssetLibrary { content: $ms-icon-code-FabricAssetLibrary; }
@@ -637,6 +642,7 @@
 @mixin ms-Icon--FullWidthEdit { content: $ms-icon-code-FullWidthEdit; }
 @mixin ms-Icon--GallatinLogo { content: $ms-icon-code-GallatinLogo; }
 @mixin ms-Icon--Generate { content: $ms-icon-code-Generate; }
+@mixin ms-Icon--GenericScan { content: $ms-icon-code-GenericScan; }
 @mixin ms-Icon--GiftBoxSolid { content: $ms-icon-code-GiftBoxSolid; }
 @mixin ms-Icon--GiftCard { content: $ms-icon-code-GiftCard; }
 @mixin ms-Icon--Giftbox { content: $ms-icon-code-Giftbox; }
@@ -789,7 +795,9 @@
 @mixin ms-Icon--Microphone { content: $ms-icon-code-Microphone; }
 @mixin ms-Icon--MicrosoftFlowLogo { content: $ms-icon-code-MicrosoftFlowLogo; }
 @mixin ms-Icon--MicrosoftStaffhubLogo { content: $ms-icon-code-MicrosoftStaffhubLogo; }
+@mixin ms-Icon--MiniExpand { content: $ms-icon-code-MiniExpand; }
 @mixin ms-Icon--MiniLink { content: $ms-icon-code-MiniLink; }
+@mixin ms-Icon--MobileReport { content: $ms-icon-code-MobileReport; }
 @mixin ms-Icon--MobileSelected { content: $ms-icon-code-MobileSelected; }
 @mixin ms-Icon--Money { content: $ms-icon-code-Money; }
 @mixin ms-Icon--More { content: $ms-icon-code-More; }
@@ -797,6 +805,7 @@
 @mixin ms-Icon--MoreVertical { content: $ms-icon-code-MoreVertical; }
 @mixin ms-Icon--Move { content: $ms-icon-code-Move; }
 @mixin ms-Icon--MoveToFolder { content: $ms-icon-code-MoveToFolder; }
+@mixin ms-Icon--Movers { content: $ms-icon-code-Movers; }
 @mixin ms-Icon--MultiSelect { content: $ms-icon-code-MultiSelect; }
 @mixin ms-Icon--MultiSelectMirrored { content: $ms-icon-code-MultiSelectMirrored; }
 @mixin ms-Icon--MusicInCollection { content: $ms-icon-code-MusicInCollection; }
@@ -859,6 +868,7 @@
 @mixin ms-Icon--OpenPaneMirrored { content: $ms-icon-code-OpenPaneMirrored; }
 @mixin ms-Icon--OpenSource { content: $ms-icon-code-OpenSource; }
 @mixin ms-Icon--Org { content: $ms-icon-code-Org; }
+@mixin ms-Icon--Orientation { content: $ms-icon-code-Orientation; }
 @mixin ms-Icon--OutOfOffice { content: $ms-icon-code-OutOfOffice; }
 @mixin ms-Icon--OutlookLogo { content: $ms-icon-code-OutlookLogo; }
 @mixin ms-Icon--OutlookLogo16 { content: $ms-icon-code-OutlookLogo16; }
@@ -957,6 +967,7 @@
 @mixin ms-Icon--ProcessMetaTask { content: $ms-icon-code-ProcessMetaTask; }
 @mixin ms-Icon--Processing { content: $ms-icon-code-Processing; }
 @mixin ms-Icon--Product { content: $ms-icon-code-Product; }
+@mixin ms-Icon--ProfileSearch { content: $ms-icon-code-ProfileSearch; }
 @mixin ms-Icon--ProgressLoopInner { content: $ms-icon-code-ProgressLoopInner; }
 @mixin ms-Icon--ProgressLoopOuter { content: $ms-icon-code-ProgressLoopOuter; }
 @mixin ms-Icon--ProgressRingDots { content: $ms-icon-code-ProgressRingDots; }
@@ -1004,6 +1015,7 @@
 @mixin ms-Icon--ReceiptUndelivered { content: $ms-icon-code-ReceiptUndelivered; }
 @mixin ms-Icon--Recent { content: $ms-icon-code-Recent; }
 @mixin ms-Icon--Record2 { content: $ms-icon-code-Record2; }
+@mixin ms-Icon--RectangularClipping { content: $ms-icon-code-RectangularClipping; }
 @mixin ms-Icon--RecurringEvent { content: $ms-icon-code-RecurringEvent; }
 @mixin ms-Icon--RecurringTask { content: $ms-icon-code-RecurringTask; }
 @mixin ms-Icon--RecycleBin { content: $ms-icon-code-RecycleBin; }
@@ -1059,6 +1071,7 @@
 @mixin ms-Icon--SaveAndClose { content: $ms-icon-code-SaveAndClose; }
 @mixin ms-Icon--SaveAs { content: $ms-icon-code-SaveAs; }
 @mixin ms-Icon--Savings { content: $ms-icon-code-Savings; }
+@mixin ms-Icon--ScaleUp { content: $ms-icon-code-ScaleUp; }
 @mixin ms-Icon--ScheduleEventAction { content: $ms-icon-code-ScheduleEventAction; }
 @mixin ms-Icon--ScopeTemplate { content: $ms-icon-code-ScopeTemplate; }
 @mixin ms-Icon--Script { content: $ms-icon-code-Script; }
@@ -1071,6 +1084,7 @@
 @mixin ms-Icon--Section { content: $ms-icon-code-Section; }
 @mixin ms-Icon--Sections { content: $ms-icon-code-Sections; }
 @mixin ms-Icon--SecurityGroup { content: $ms-icon-code-SecurityGroup; }
+@mixin ms-Icon--Sell { content: $ms-icon-code-Sell; }
 @mixin ms-Icon--Send { content: $ms-icon-code-Send; }
 @mixin ms-Icon--SendMirrored { content: $ms-icon-code-SendMirrored; }
 @mixin ms-Icon--Separator { content: $ms-icon-code-Separator; }
@@ -1098,6 +1112,7 @@
 @mixin ms-Icon--SingleBookmark { content: $ms-icon-code-SingleBookmark; }
 @mixin ms-Icon--SingleColumn { content: $ms-icon-code-SingleColumn; }
 @mixin ms-Icon--SingleColumnEdit { content: $ms-icon-code-SingleColumnEdit; }
+@mixin ms-Icon--SizeLegacy { content: $ms-icon-code-SizeLegacy; }
 @mixin ms-Icon--SkiResorts { content: $ms-icon-code-SkiResorts; }
 @mixin ms-Icon--SkypeCheck { content: $ms-icon-code-SkypeCheck; }
 @mixin ms-Icon--SkypeCircleCheck { content: $ms-icon-code-SkypeCircleCheck; }
@@ -1130,6 +1145,7 @@
 @mixin ms-Icon--Split { content: $ms-icon-code-Split; }
 @mixin ms-Icon--Sprint { content: $ms-icon-code-Sprint; }
 @mixin ms-Icon--Squalls { content: $ms-icon-code-Squalls; }
+@mixin ms-Icon--Stack { content: $ms-icon-code-Stack; }
 @mixin ms-Icon--StackIndicator { content: $ms-icon-code-StackIndicator; }
 @mixin ms-Icon--StackedBarChart { content: $ms-icon-code-StackedBarChart; }
 @mixin ms-Icon--StackedLineChart { content: $ms-icon-code-StackedLineChart; }
@@ -1165,6 +1181,7 @@
 @mixin ms-Icon--Strikethrough { content: $ms-icon-code-Strikethrough; }
 @mixin ms-Icon--Subscribe { content: $ms-icon-code-Subscribe; }
 @mixin ms-Icon--Subscript { content: $ms-icon-code-Subscript; }
+@mixin ms-Icon--SubstitutionsIn { content: $ms-icon-code-SubstitutionsIn; }
 @mixin ms-Icon--Suitcase { content: $ms-icon-code-Suitcase; }
 @mixin ms-Icon--SunAdd { content: $ms-icon-code-SunAdd; }
 @mixin ms-Icon--SunQuestionMark { content: $ms-icon-code-SunQuestionMark; }
@@ -1188,6 +1205,7 @@
 @mixin ms-Icon--Tab { content: $ms-icon-code-Tab; }
 @mixin ms-Icon--Table { content: $ms-icon-code-Table; }
 @mixin ms-Icon--Tablet { content: $ms-icon-code-Tablet; }
+@mixin ms-Icon--TabletMode { content: $ms-icon-code-TabletMode; }
 @mixin ms-Icon--TabletSelected { content: $ms-icon-code-TabletSelected; }
 @mixin ms-Icon--Tag { content: $ms-icon-code-Tag; }
 @mixin ms-Icon--TaskGroup { content: $ms-icon-code-TaskGroup; }

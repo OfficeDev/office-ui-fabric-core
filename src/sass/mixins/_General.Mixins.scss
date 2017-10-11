@@ -175,6 +175,7 @@
 // Generate text alignment classes, such as .ms-textAlignLeft 
 // @param [variable list] $alignments
 @mixin ms-textAlign($alignments...) {
+  @warn 'The ms-textAlign mixin has been deprecated and will be removed in a future release of Fabric Core.';
   @each $align in $alignments {
     $alignStr: inspect($align);
     .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {

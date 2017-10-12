@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Fabric UI Core Documentation</title>
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/2.6.2/css/fabric.components.min.css">
+</head>
+<body class="ms-Fabric">
+<div id="body-content">
+    <div id="Header" class="docs-Header">
+	    <a class="ms-font-xxl ms-fontColor-white" href="/">Office UI Fabric</a>
+	    <div class="Header-buttons">
+            <a href="https://github.com/OfficeDev/office-ui-fabric-core/" class="Header-button ms-fontColor-white">Github</a>
+        </div>
+	</div>
+	<div class="docs-Page has-leftNav">
+	    <div class="docs-Page-leftNav">
+    <div class="LeftNav-links" role="menu" aria-label="Anchor links for navigating this page">
+			<div class="LeftNav-item">
+	        	<a class="Typography LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Typography">Typography</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Color LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Color">Color</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Icons LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Icons">Icons</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Animations LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Animations">Animations</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Responsive-Grid LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Responsive-Grid">Responsive Grid</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Localization LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Localization">Localization</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Scoping LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Scoping">Scoping</a>
+	      	</div>
+    </div>
+</div>
+
+	<h1>Get Started</h1>
+    <h2 id="quick-start">Quick start</h2>
+    <p>The simplest way to get started is to add a copy of Fabric to your project.</p>
+    <ol>
+        <li>Download the source code zip file from the <a href="https://github.com/OfficeDev/Office-UI-Fabric/releases/latest">latest release on GitHub</a>.</li>
+        <li>Unzip the file and copy the Fabric folder into your project.</li>
+        <li>Add a reference to <code>fabric.css</code> in the <code>&lt;head&gt;</code> of your page. Make sure the path is correct.</li>
+        <li>If you're using <a href="http://dev.office.com/fabric/components">components</a>, add a reference to <code>fabric.components.css</code> after the <code>fabric.css</code> reference.</li>
+    </ol>
+
+    <h3>Using Fabric icons and fonts</h3>
+    <p>Now that your project references Fabric, you can apply <a href="/Typography">type styles</a> to any text element.</p>
+    <pre><code class="hljs">&#x3C;span class=&#x22;ms-font-su ms-fontColor-themePrimary&#x22;&#x3E;Big blue text&#x3C;/span&#x3E;</code></pre>
+    <p>To use icons, add an <code>&#x3C;i&#x3E;</code> element with the appropriate <a href="/Icons">icon classes</a>.</p>
+    <pre><code class="hljs">&#x3C;i class=&#x22;ms-Icon ms-Icon--mail&#x22; aria-hidden=&#x22;true&#x22;&#x3E;&#x3C;/i&#x3E;</code></pre>
+    <p>By default, icons inherit the text size and color of their parent. To override this, apply <a href="/Typography">type styles</a> directly to the icon.</p>
+    <p aria-hidden="true">
+         <svg aria-hidden="true" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 832 329.4" focusable="false" tabindex="-1">
+  <defs aria-hidden="true">
+    <clipPath aria-hidden="true" id="clip-path" transform="translate(0 29.4)">
+      <rect aria-hidden="true" x="273" width="304.5" height="281.8" style="fill:none"/>
+    </clipPath>
+    <clipPath aria-hidden="true" id="clip-path-2" transform="translate(0 29.4)">
+      <rect x="379" width="85" height="216" style="fill:none"/>
+    </clipPath>
+  </defs>
+  <title>Download image showing a rainbow exploding out of a zip file becuase fabric is amazing.</title>
+  <g id="back" aria-hidden="true">
+    <rect y="29.4" width="832" height="300" style="fill:#00b7c3"/>
+  </g>
+  <g id="Layer_1-2" data-name="Layer 1" aria-hidden="true">
+    <g style="opacity:0.6000000238418579" aria-hidden="true">
+      <path d="M475.9,278H366.7c-1.6,0-3,1.9-3,3.5s1.3,3.5,3,3.5H475.9c1.6,0,3-1.9,3-3.5S477.5,278,475.9,278Z" transform="translate(0 29.4)" style="fill:#009ca4"/>
+    </g>
+    <circle cx="422.4" cy="137.1" r="84" style="fill:#61d6d6" aria-hidden="true"/>
+    <g style="clip-path:url(#clip-path)" aria-hidden="true">
+      <circle aria-hidden="true" cx="422.4" cy="137.1" r="137.1" style="fill:#61d6d6;opacity:0.4000000059604645;isolation:isolate"/>
+    </g>
+    <polygon aria-hidden="true" points="425.1 228.4 482.6 228.4 463.9 245.4 406.3 245.4 425.1 228.4" style="fill:#f2f2f2"/>
+    <g style="clip-path:url(#clip-path-2)" aria-hidden="true">
+      <rect aria-hidden="true" x="379" y="29.4" width="22" height="53" style="fill:#ff703a"/>
+      <rect aria-hidden="true" x="401" y="29.4" width="21" height="53" style="fill:#ffa800"/>
+      <rect aria-hidden="true" x="422" y="29.4" width="22" height="53" style="fill:#ffcb00"/>
+      <rect aria-hidden="true" x="444" y="29.4" width="20" height="53" style="fill:#fff048"/>
+      <rect aria-hidden="true" x="379" y="82.4" width="22" height="55" style="fill:#d4e34a"/>
+      <rect aria-hidden="true" x="401" y="82.4" width="21" height="55" style="fill:#9bcd5f"/>
+      <rect aria-hidden="true" x="422" y="82.4" width="22" height="55" style="fill:#63bc66"/>
+      <rect aria-hidden="true" x="444" y="82.4" width="20" height="55" style="fill:#19a69a"/>
+      <rect aria-hidden="true" x="379" y="137.4" width="22" height="53" style="fill:#0ec6dc"/>
+      <rect aria-hidden="true" x="401" y="137.4" width="21" height="53" style="fill:#18b5f9"/>
+      <rect aria-hidden="true" x="422" y="137.4" width="22" height="53" style="fill:#3ba3f8"/>
+      <rect aria-hidden="true" x="444" y="137.4" width="20" height="53" style="fill:#0075d9"/>
+      <rect aria-hidden="true" x="379" y="190.4" width="22" height="59" style="fill:#7e53c5"/>
+      <rect aria-hidden="true" x="401" y="190.4" width="21" height="59" style="fill:#ac41be"/>
+      <rect aria-hidden="true" x="422" y="190.4" width="22" height="59" style="fill:#ef3c79"/>
+      <rect aria-hidden="true" x="444" y="190.4" width="20" height="59" style="fill:#f1524b"/>
+    </g>
+    <rect aria-hidden="true" x="379" y="245.4" width="85" height="65" style="fill:#e6e6e6"/>
+    <rect aria-hidden="true" x="379" y="245.4" width="60" height="65" style="fill:#f2f2f2"/>
+    <polygon aria-hidden="true" points="419.8 228.4 362.3 228.4 381 245.4 438.6 245.4 419.8 228.4" style="fill:#ccc"/>
+    <rect aria-hidden="true" x="445.7" y="246.4" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <rect aria-hidden="true" x="450.5" y="250.2" width="7.2" height="3.4" style="fill:#7a7574"/>
+    <rect  aria-hidden="true" x="445.7" y="253.6" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <rect  aria-hidden="true" x="450.5" y="257.5" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <rect  aria-hidden="true" x="445.7" y="261.3" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <rect aria-hidden="true" x="450.5" y="264.7" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <rect aria-hidden="true" x="445.7" y="268.6" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <rect aria-hidden="true" x="450.5" y="272.4" width="7.2" height="3.9" style="fill:#7a7574"/>
+    <text  aria-hidden="true" transform="translate(396.09 282.99)" style="isolation:isolate;font-size:16.072900772094727px;fill:#7a7574;font-family:Segoe Print">ZIP</text>
+    <line aria-hidden="true" x1="299.7" y1="64.9" x2="306.5" y2="80.9" style="fill:none;stroke:#61d6d6;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="311.1" y1="69.5" x2="295.1" y2="76.3" style="fill:none;stroke:#61d6d6;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="302.3" y1="168" x2="301" y2="179.9" style="fill:none;stroke:#61d6d6;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="307.6" y1="174.6" x2="295.7" y2="173.3" style="fill:none;stroke:#61d6d6;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="547.2" y1="80.6" x2="541.8" y2="97.2" style="fill:none;stroke:#61d6d6;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="552.8" y1="91.6" x2="536.2" y2="86.2" style="fill:none;stroke:#61d6d6;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="378.5" y1="125" x2="385.3" y2="141" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="389.9" y1="129.6" x2="373.9" y2="136.4" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="385.3" y1="125" x2="378.5" y2="141" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="389.9" y1="136.4" x2="373.9" y2="129.6" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="476.5" y1="167.7" x2="483.6" y2="177.3" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <line aria-hidden="true" x1="484.8" y1="169" x2="475.3" y2="176.1" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.753200054168701px"/>
+    <circle  aria-hidden="true" cx="345.3" cy="98.7" r="3.7" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="487.8" cy="49.6" r="3.7" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="431.1" cy="190" r="3.7" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="513" cy="148.1" r="3.7" style="fill:#fff"/>
+    <g  aria-hidden="true" style="opacity:0.4000000059604645">
+      <rect aria-hidden="true" x="163" y="40.4" width="6" height="18" style="fill:#fff"/>
+      <rect aria-hidden="true" x="163" y="58.4" width="6" height="18" style="fill:#f2f2f2"/>
+      <rect aria-hidden="true" x="163" y="76.4" width="6" height="16" style="fill:#e6e6e6"/>
+      <rect aria-hidden="true" x="163" y="92.4" width="6" height="18" style="fill:#ccc"/>
+    </g>
+    <g aria-hidden="true" style="opacity:0.4000000059604645">
+      <rect aria-hidden="true" x="224" y="105.4" width="5" height="16" style="fill:#fff"/>
+      <rect aria-hidden="true" x="224" y="121.4" width="5" height="17" style="fill:#f2f2f2"/>
+      <rect aria-hidden="true" x="224" y="138.4" width="5" height="18" style="fill:#e6e6e6"/>
+      <rect aria-hidden="true" x="224" y="156.4" width="5" height="18" style="fill:#ccc"/>
+    </g>
+    <g aria-hidden="true" style="opacity:0.4000000059604645">
+      <rect aria-hidden="true" x="648" y="29.4" width="6" height="40" style="fill:#fff"/>
+      <rect aria-hidden="true" x="648" y="69.4" width="6" height="45" style="fill:#f2f2f2"/>
+      <rect aria-hidden="true"t x="648" y="114.4" width="6" height="41" style="fill:#e6e6e6"/>
+      <rect aria-hidden="true" x="648" y="155.4" width="6" height="45" style="fill:#ccc"/>
+    </g>
+    <g aria-hidden="true" style="opacity:0.4000000059604645">
+      <rect aria-hidden="true" x="199" y="29.4" width="7" height="40" style="fill:#fff"/>
+      <rect aria-hidden="true" x="199" y="69.4" width="7" height="45" style="fill:#f2f2f2"/>
+      <rect aria-hidden="true" x="199" y="114.4" width="7" height="41" style="fill:#e6e6e6"/>
+      <rect aria-hidden="true" x="199" y="155.4" width="7" height="45" style="fill:#ccc"/>
+    </g>
+    <g aria-hidden="true" style="opacity:0.4000000059604645">
+      <rect aria-hidden="true" x="605" y="174.4" width="6" height="16" style="fill:#fff"/>
+      <rect aria-hidden="true" x="605" y="190.4" width="6" height="19" style="fill:#f2f2f2"/>
+      <rect aria-hidden="true" x="605" y="209.4" width="6" height="16" style="fill:#e6e6e6"/>
+      <rect aria-hidden="true" x="605" y="225.4" width="6" height="19" style="fill:#ccc"/>
+    </g>
+  </g>
+</svg>
+    </p>
+
+    <h3>Using components</h3>
+    <p>To use Fabric components:</p>
+    <ol>
+        <li>Add <a href="http://dev.office.com/fabric/components">markup</a> to your pages using the appropriate classes.</li>
+        <li>If the component requires JavaScript, you can use the sample JavaScript included in the <a href="https://github.com/OfficeDev/Office-UI-Fabric/releases/latest">latest release</a> on GitHub.</li>
+        <li>Initialize the component JavaScript, and you’re all set! For an example that shows how to initialize the JavaScript, see the <a href="http://dev.office.com/fabric/components">components page</a>.</li>
+    </ol>
+    <p aria-hidden="true">
+       <svg aria-hidden="true" id="9978b8a8-ff71-4bbf-b279-d82c522e95fa" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 832 300" focusable="false" tabindex="-1">
+  <defs aria-hidden="true">
+    <clipPath aria-hidden="true" id="335d9d4d-65c4-4f13-9f59-eba4d9fee526">
+      <rect aria-hidden="true" x="459.9" y="64.7" width="49" height="49" style="fill:none"/>
+    </clipPath>
+  </defs>
+  <title>This SVG contains an example of using fabric, the svg shows example code and the result after adding Fabric.</title>
+  <g aria-hidden="true" id="9c6ea95c-876e-4c41-8f13-e83b4341669d" data-name="back">
+    <rect width="832" height="300" style="fill:#00b7c3"/>
+  </g>
+  <g aria-hidden="true" id="ae88c816-e37e-41cf-b658-6f84e4a8a449" data-name="Layer 1">
+    <text aria-hidden="true" transform="translate(592.95 81.18)" style="isolation:isolate;font-size:9.350000381469727px;fill:#767676;font-family:Myriad Pro"></text>
+    <rect aria-hidden="true" x="199" y="52" width="187" height="193" style="fill:#393939"/>
+    <path aria-hidden="true" d="M386,52V45c0-.7-0.3-2-1.5-2H200.7c-1.6,0-1.7,1.3-1.7,2v7H386Z" style="fill:#e6e6e6"/>
+    <circle aria-hidden="true" cx="203.4" cy="47.8" r="1.4" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="209.1" cy="47.8" r="1.4" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="214.9" cy="47.8" r="1.4" style="fill:#fff"/>
+    <rect aria-hidden="true" x="199" y="110" width="187" height="24" style="fill:#4c4a48"/>
+    <text aria-hidden="true" transform="translate(223.49 124.43)" style="isolation:isolate;font-size:9.556300163269043px;fill:#fff;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M292.3,124.2v-1.4l3.3-1.1h0l-3.3-1.1v-1.4l4.6,1.9v1.1Z" style="fill:#fff"/>
+    <rect aria-hidden="true" x="233" y="121" width="54" height="2" style="fill:#fff"/>
+    <text aria-hidden="true" transform="translate(209.16 73.52)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">&lt;</text>
+    <text aria-hidden="true" transform="translate(218.21 74.37)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">head</text>
+    <text aria-hidden="true" transform="translate(245.41 73.52)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">&gt;</text>
+    <text aria-hidden="true" transform="translate(223.49 90.43)" style="isolation:isolate;font-size:9.556300163269043px;fill:#61d6d6;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M266.8,90.2V88.8l3.3-1.1h0l-3.3-1.1V85.2l4.6,1.9v1.1Z" style="fill:#61d6d6"/>
+    <rect aria-hidden="true" x="233" y="87" width="28" height="2" style="fill:#61d6d6"/>
+    <text aria-hidden="true" transform="translate(223.49 103.18)" style="isolation:isolate;font-size:9.556300163269043px;fill:#61d6d6;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M300.8,103v-1.4l3.3-1.1h0l-3.3-1.1V98l4.6,1.9V101Z" style="fill:#61d6d6"/>
+    <rect aria-hidden="true" x="233" y="99" width="62" height="3" style="fill:#61d6d6"/>
+    <text aria-hidden="true" transform="translate(209.16 149.17)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">&lt;</text>
+    <text aria-hidden="true" transform="translate(217.36 149.17)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">/</text>
+    <text aria-hidden="true" transform="translate(224.16 150.02)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">head</text>
+    <text aria-hidden="true" transform="translate(252.21 149.17)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">&gt;</text>
+    <text aria-hidden="true" transform="translate(209.04 166.93)" style="isolation:isolate;font-size:9.556300163269043px;fill:#61d6d6;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M254.1,166.7v-1.4l3.3-1.1h0l-3.3-1.1v-1.4l4.6,1.9v1.1Z" style="fill:#61d6d6"/>
+    <rect aria-hidden="true" x="219" y="163" width="30" height="3" style="fill:#61d6d6"/>
+    <text aria-hidden="true" transform="translate(234.54 192.43)" style="isolation:isolate;font-size:9.556300163269043px;fill:#fff;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M277.9,192.2v-1.4l3.3-1.1h0l-3.3-1.1v-1.4l4.6,1.9v1.1Z" style="fill:#fff"/>
+    <rect aria-hidden="true" x="244" y="189" width="28" height="2" style="fill:#fff"/>
+    <text aria-hidden="true" transform="translate(221.79 179.68)" style="isolation:isolate;font-size:9.556300163269043px;fill:#61d6d6;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M294.9,179.5v-1.4l3.3-1.1h0l-3.3-1.1v-1.4l4.6,1.9v1.1Z" style="fill:#61d6d6"/>
+    <rect aria-hidden="true" x="232" y="176" width="57" height="2" style="fill:#61d6d6"/>
+    <text aria-hidden="true" transform="translate(247.29 209.43)" style="isolation:isolate;font-size:9.556300163269043px;fill:#61d6d6;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M303.4,209.2v-1.4l3.3-1.1h0l-3.3-1.1v-1.4l4.6,1.9v1.1Z" style="fill:#61d6d6"/>
+    <rect aria-hidden="true" x="257" y="206" width="41" height="2" style="fill:#61d6d6"/>
+    <text aria-hidden="true" transform="translate(234.54 234.93)" style="isolation:isolate;font-size:9.556300163269043px;fill:#fff;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M260.9,234.7v-1.4l3.3-1.1h0l-3.3-1.1v-1.4l4.6,1.9v1.1Z" style="fill:#fff"/>
+    <rect aria-hidden="true" x="244" y="231" width="11" height="3" style="fill:#fff"/>
+    <text aria-hidden="true" transform="translate(247.29 222.18)" style="isolation:isolate;font-size:9.556300163269043px;fill:#ee3b83;font-family:Segoe Print">&lt;</text>
+    <path aria-hidden="true" d="M320.4,222v-1.4l3.3-1.1h0l-3.3-1.1V217l4.6,1.9V220Z" style="fill:#ee3b83"/>
+    <rect aria-hidden="true" x="256.8" y="218.5" width="58.2" height="2.5" style="fill:#ee3b83"/>
+    <rect aria-hidden="true" x="446" y="52" width="187" height="193" style="fill:#fff"/>
+    <path aria-hidden="true" d="M633,52V45a2.22,2.22,0,0,0-2-2H447.2c-1.6,0-1.2,1.3-1.2,2v7H633Z" style="fill:#e6e6e6"/>
+    <circle aria-hidden="true" cx="449.9" cy="47.8" r="1.4" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="455.6" cy="47.8" r="1.4" style="fill:#fff"/>
+    <circle aria-hidden="true" cx="461.4" cy="47.8" r="1.4" style="fill:#fff"/>
+    <rect aria-hidden="true" x="453.2" y="65.6" width="170.6" height="95.9" style="fill:#fff"/>
+    <path aria-hidden="true" d="M623,66.4v94.2H454.1V66.4H623m1.7-1.7H452.4v97.6H624.7V64.7h0Z" style="fill:#eee"/>
+    <rect aria-hidden="true" x="454.1" y="64.7" width="168.8" height="49" style="fill:#f2f2f2"/>
+    <rect aria-hidden="true" x="453.7" y="64.7" width="6.2" height="49" style="fill:#79db75"/>
+    <text aria-hidden="true" transform="translate(517.15 82.86)" style="isolation:isolate;font-size:10.691399574279785px;fill:#393939;font-family:Segoe UI">
+      J
+      <tspan aria-hidden="true" x="3.25" y="0">ay Kirby</tspan>
+    </text>
+    <g aria-hidden="true" style="clip-path:url(#335d9d4d-65c4-4f13-9f59-eba4d9fee526)">
+      <rect aria-hidden="true" x="459.9" y="64.7" width="49" height="49" style="fill:#e6e6e6"/>
+      <path aria-hidden="true" id="b83ac884-9a80-4bb7-a6ac-38919fb0dc9a" data-name="&lt;Path&gt;" d="M471.4,105.5h25.7a9.47,9.47,0,0,1,9.4,9.5v7.9h-9.4v28.8H471.4V122.9H462V115A9.47,9.47,0,0,1,471.4,105.5Z" style="fill:#7ba7ff"/>
+      <path aria-hidden="true" id="eb8da211-048a-40b8-a41e-a7ccc879bc85" data-name="&lt;Path&gt;" d="M493.9,84.5V80.4a8.83,8.83,0,0,0-8.9-8.8h-1.6a8.73,8.73,0,0,0-8.7,8.8v4.1h19.2Z" style="fill:#604123"/>
+      <path aria-hidden="true" id="731c8d25-c0e2-4be8-99bf-fc1c7af7502f" data-name="&lt;Path&gt;" d="M472.5,91.1a1.16,1.16,0,0,0,1.2,1.2h21.1a1.08,1.08,0,0,0,1.1-1.2V88.5a1,1,0,0,0-1.1-1.1H473.7a1.08,1.08,0,0,0-1.2,1.1v2.6Z" style="fill:#c3986f"/>
+      <polygon  aria-hidden="true" id="40ceca3a-0fd8-4eb2-bb0f-d982c0e811d7" data-name="&lt;Path&gt;" points="484.2 109.5 488.3 105.5 488.3 96.1 480.1 96.1 480.1 105.5 484.2 109.5" style="fill:#e0bb8d"/>
+      <path aria-hidden="true" id="b89b240e-1e44-4722-a9f0-5d528ea65a65" data-name="&lt;Path&gt;" d="M488.3,102.6a12.91,12.91,0,0,1-4,.5,14.24,14.24,0,0,1-4.2-.5V96.1h8.2v6.5Z" style="fill:#c3986f"/>
+      <path aria-hidden="true" id="220a8c2b-9ad2-4f26-b87d-7d67cafc522d" data-name="&lt;Path&gt;" d="M493.9,83.5v15h-0.1a15.46,15.46,0,0,1-9.4,3.2,16.35,16.35,0,0,1-9.7-3.2v-15s3.2-1.8,9.7-1.8S493.9,83.5,493.9,83.5Z" style="fill:#e0bb8d"/>
+      <rect aria-hidden="true" id="58b73b4f-2524-471e-b638-1b9b30de7342" data-name="&lt;Path&gt;" x="492.3" y="82.2" width="1.5" height="10" style="fill:#604123"/>
+      <rect aria-hidden="true" id="d9d111a5-81e4-4ec4-849b-d470f81ca163" data-name="&lt;Path&gt;" x="474.6" y="82.2" width="1.5" height="10" style="fill:#604123"/>
+      <path aria-hidden="true" id="ffad81ee-d0e0-4e1b-919d-7af7ecd4bf40" data-name="&lt;Path&gt;" d="M479.8,89.9a0.77,0.77,0,0,1-.8.7,0.68,0.68,0,0,1-.7-0.7,0.77,0.77,0,0,1,.7-0.8A0.79,0.79,0,0,1,479.8,89.9Z" style="fill:#505050"/>
+      <path aria-hidden="true" id="0299a9f7-d89a-4996-beeb-ff7cd5362241" data-name="&lt;Path&gt;" d="M490.2,89.9a0.68,0.68,0,0,1-.7.7,0.77,0.77,0,0,1-.8-0.7,0.86,0.86,0,0,1,.8-0.8A0.77,0.77,0,0,1,490.2,89.9Z" style="fill:#505050"/>
+      <path aria-hidden="true" id="a634d9ca-0a23-4c0f-bab1-14adc50f110b" data-name="&lt;Path&gt;" d="M484.2,94.6a1.27,1.27,0,0,0,1.4-1.2H483A1.16,1.16,0,0,0,484.2,94.6Z" style="fill:#c3986f"/>
+      <path aria-hidden="true" id="b6eba6ac-00a5-46ae-b1c4-bc8fbf756285" data-name="&lt;Path&gt;" d="M487,98.5a0.77,0.77,0,0,1-.7.8h-4.2a0.77,0.77,0,0,1-.7-0.8h0a0.77,0.77,0,0,1,.7-0.8h4.2A0.71,0.71,0,0,1,487,98.5Z" style="fill:#f2f2f2"/>
+    </g>
+    <polyline aria-hidden="true" points="624.7 143.5 471.9 143.5 465.9 137.5 460.8 143.5 452.4 143.5" style="fill:none;stroke:#e6e6e6;stroke-miterlimit:10;stroke-width:0.7307000160217285px"/>
+    <text aria-hidden="true" transform="translate(517.15 95.81)" style="isolation:isolate;font-size:6.752399921417236px;fill:#767676;font-family:Segoe UI">
+      Interior Designe
+      <tspan aria-hidden="true" x="44.82" y="0">r</tspan>
+      <tspan aria-hidden="true" x="46.25" y="0">, Contoso</tspan>
+    </text>
+    <g aria-hidden="true" style="isolation:isolate">
+      <text aria-hidden="true" transform="translate(458.82 128.86)" style="isolation:isolate;font-size:11.050000190734863px;fill:#0075d9;font-family:office365icons"></text>
+      <text aria-hidden="true" transform="translate(470.72 128.86)" style="isolation:isolate;font-size:11.050000190734863px;fill:#767676;font-family:office365icons;white-space:pre">   </text>
+    </g>
+    <rect aria-hidden="true" x="517" y="103" width="72" height="2" style="fill:#767676"/>
+    <rect aria-hidden="true" x="458" y="151" width="29" height="3" style="fill:#767676"/>
+    <rect aria-hidden="true" x="493.4" y="151.2" width="45.9" height="2.5" style="fill:#0075d9"/>
+    <g aria-hidden="true" style="opacity:0.6000000238418579">
+      <path aria-hidden="true" d="M366.9,277H218.6c-1.6,0-3,2.4-3,4s1.3,4,3,4H366.9c1.6,0,3-2.4,3-4S368.5,277,366.9,277Z" style="fill:#009ca4"/>
+    </g>
+    <g aria-hidden="true" style="opacity:0.6000000238418579">
+      <path aria-hidden="true" d="M613.4,277H465.1c-1.6,0-3,2.4-3,4s1.3,4,3,4H613.4c1.6,0,3-2.4,3-4S615,277,613.4,277Z" style="fill:#009ca4"/>
+    </g>
+  </g>
+</svg>
+    </p>
+    <h2>Other ways to get Fabric</h2>
+    <p>In addition to downloading a copy for your project, you can include Fabric via a CDN reference, by adding it through a package manager, or by building your own copy from the source code.</p>
+    
+    <h3 id="cdn">Reference the CDN</h3>
+    <p>If you prefer to have your project's assets stored on an external server, Fabric is available from the apps for Office CDN. To use it, include the following references in the <code>&#x3C;head&#x3E;</code> of your page.</p>
+    <pre><code class="hljs">&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.min.css&#x22;&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://appsforoffice.microsoft.com/fabric/2.2.0/fabric.components.min.css&#x22;&#x3E;
+</code></pre>
+    <p>New versions of Fabric might not be available on the CDN right away. The following table lists the releases that are available now. To reference a specific version, update the version number in the URL to match the one you want.</p>
+    <table class="docs-Table docs-Table--striped" style="width: 100%;">
+        <tr>
+            <th style="width: 80%;">Fabric Release</th>
+            <th style="width: 20%;">Available on CDN</th>
+        </tr>
+
+            <tr>
+                <td>2.6.1</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.6.1 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.6.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.6.0 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.5.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.5.0 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.4.1</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.4.1 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.4.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.4.0 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.3.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.3.0 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.2.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.2.0 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.1.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.1.0 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>2.0.1</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 2.0.1 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>1.2.1</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 1.2.1 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>1.1.3</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 1.1.3 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>1.1.2</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 1.1.2 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>1.1.1</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 1.1.1 Available on the CDN</span>
+                </td>
+            </tr>            <tr>
+                <td>1.0.0</td>
+                <td style="text-align:center;">
+                  <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                  <span class="docs-Table-visibleForScreenReaders">Version 1.0.0 Available on the CDN</span>
+                </td>
+            </tr>    </table>
+
+    <h3 id="package-managers">Package managers</h3>
+    <p>Fabric is also available from a variety of package managers, including <a href="http://bower.io/">Bower</a>, <a href="https://www.npmjs.com/">npm</a>, and the <a href="https://www.nuget.org/">NuGet Package Manager</a>. You can quickly add Fabric as a package and stay up to date with the latest version.</p>
+
+    <h4>Install with Bower</h4>
+    <p>To install Fabric using Bower, run the following command:</p>
+    <pre><code class="hljs">$ bower install office-ui-fabric</code></pre>
+
+    <h4>Install with npm</h4>
+    <p>To install Fabric using npm, run the following command:</p>
+    <pre><code class="hljs">$ npm install office-ui-fabric</code></pre>
+
+    <h4>Install with NuGet Package Manager</h4>
+    <p>To install Fabric's NuGet package, run the following command in the <a href="http://docs.nuget.org/consume/package-manager-console">package manager console</a>:</p>
+    <pre><code class="hljs">PM> Install-Package OfficeUIFabric</code></pre>
+    
+    <h3 id="build">Build from source</h3>
+    <p>Fabric is easy to build and customize locally using gulp and a handful of tasks to watch and build specific parts of the toolkit. You can also use gulp to build and tweak demos and samples.</p>
+
+    <p>For more information about how to build Fabric locally, including gulp tasks, check out <a href="https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUILDING.md">our instructions on GitHub</a>.</p>
+
+  </div>
+</div>
+<script>
+	var currPage = window.location.pathname.replace(/\//g, '');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
+</script>
+</body>
+</html>

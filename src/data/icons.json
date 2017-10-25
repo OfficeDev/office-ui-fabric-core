@@ -1325,5 +1325,5 @@
   { "name": "ZipFolder", "unicode": "F012" },
   { "name": "Zoom", "unicode": "E71E" },
   { "name": "ZoomIn", "unicode": "E8A3" },
-  { "name": "ZoomOut", "unicode": "E71F" },
+  { "name": "ZoomOut", "unicode": "E71F" }
 ]

@@ -113,6 +113,8 @@
 
 // Modifiers: Each of the icons. These are no longer used within Fabric Core,
 //            and may be deprecated in a future release.
+@mixin ms-Icon--12PointStar { content: $ms-icon-code-12PointStar; }
+@mixin ms-Icon--6PointStar { content: $ms-icon-code-6PointStar; }
 @mixin ms-Icon--AADLogo { content: $ms-icon-code-AADLogo; }
 @mixin ms-Icon--Accept { content: $ms-icon-code-Accept; }
 @mixin ms-Icon--AccessLogo { content: $ms-icon-code-AccessLogo; }
@@ -125,6 +127,7 @@
 @mixin ms-Icon--AddFavoriteFill { content: $ms-icon-code-AddFavoriteFill; }
 @mixin ms-Icon--AddFriend { content: $ms-icon-code-AddFriend; }
 @mixin ms-Icon--AddGroup { content: $ms-icon-code-AddGroup; }
+@mixin ms-Icon--AddNotes { content: $ms-icon-code-AddNotes; }
 @mixin ms-Icon--AddOnlineMeeting { content: $ms-icon-code-AddOnlineMeeting; }
 @mixin ms-Icon--AddPhone { content: $ms-icon-code-AddPhone; }
 @mixin ms-Icon--AddTo { content: $ms-icon-code-AddTo; }
@@ -149,15 +152,27 @@
 @mixin ms-Icon--AlbumRemove { content: $ms-icon-code-AlbumRemove; }
 @mixin ms-Icon--AlertSolid { content: $ms-icon-code-AlertSolid; }
 @mixin ms-Icon--AlignCenter { content: $ms-icon-code-AlignCenter; }
+@mixin ms-Icon--AlignHorizontalCenter { content: $ms-icon-code-AlignHorizontalCenter; }
+@mixin ms-Icon--AlignHorizontalLeft { content: $ms-icon-code-AlignHorizontalLeft; }
+@mixin ms-Icon--AlignHorizontalRight { content: $ms-icon-code-AlignHorizontalRight; }
+@mixin ms-Icon--AlignJustify { content: $ms-icon-code-AlignJustify; }
 @mixin ms-Icon--AlignLeft { content: $ms-icon-code-AlignLeft; }
 @mixin ms-Icon--AlignRight { content: $ms-icon-code-AlignRight; }
+@mixin ms-Icon--AlignVerticalBottom { content: $ms-icon-code-AlignVerticalBottom; }
+@mixin ms-Icon--AlignVerticalCenter { content: $ms-icon-code-AlignVerticalCenter; }
+@mixin ms-Icon--AlignVerticalTop { content: $ms-icon-code-AlignVerticalTop; }
 @mixin ms-Icon--AnalyticsLogo { content: $ms-icon-code-AnalyticsLogo; }
 @mixin ms-Icon--AnalyticsQuery { content: $ms-icon-code-AnalyticsQuery; }
 @mixin ms-Icon--AnalyticsReport { content: $ms-icon-code-AnalyticsReport; }
+@mixin ms-Icon--AnchorLock { content: $ms-icon-code-AnchorLock; }
 @mixin ms-Icon--Annotation { content: $ms-icon-code-Annotation; }
 @mixin ms-Icon--AppIconDefault { content: $ms-icon-code-AppIconDefault; }
 @mixin ms-Icon--Archive { content: $ms-icon-code-Archive; }
 @mixin ms-Icon--AreaChart { content: $ms-icon-code-AreaChart; }
+@mixin ms-Icon--ArrangeBringForward { content: $ms-icon-code-ArrangeBringForward; }
+@mixin ms-Icon--ArrangeBringToFront { content: $ms-icon-code-ArrangeBringToFront; }
+@mixin ms-Icon--ArrangeSendBackward { content: $ms-icon-code-ArrangeSendBackward; }
+@mixin ms-Icon--ArrangeSendToBack { content: $ms-icon-code-ArrangeSendToBack; }
 @mixin ms-Icon--Arrivals { content: $ms-icon-code-Arrivals; }
 @mixin ms-Icon--ArrowDownRight8 { content: $ms-icon-code-ArrowDownRight8; }
 @mixin ms-Icon--ArrowDownRightMirrored8 { content: $ms-icon-code-ArrowDownRightMirrored8; }
@@ -182,6 +197,7 @@
 @mixin ms-Icon--AutoEnhanceOff { content: $ms-icon-code-AutoEnhanceOff; }
 @mixin ms-Icon--AutoEnhanceOn { content: $ms-icon-code-AutoEnhanceOn; }
 @mixin ms-Icon--AutoFillTemplate { content: $ms-icon-code-AutoFillTemplate; }
+@mixin ms-Icon--AutoHeight { content: $ms-icon-code-AutoHeight; }
 @mixin ms-Icon--AutoRacing { content: $ms-icon-code-AutoRacing; }
 @mixin ms-Icon--AwayStatus { content: $ms-icon-code-AwayStatus; }
 @mixin ms-Icon--AzureAPIManagement { content: $ms-icon-code-AzureAPIManagement; }
@@ -207,6 +223,7 @@
 @mixin ms-Icon--BlockContact { content: $ms-icon-code-BlockContact; }
 @mixin ms-Icon--Blocked { content: $ms-icon-code-Blocked; }
 @mixin ms-Icon--Blocked2 { content: $ms-icon-code-Blocked2; }
+@mixin ms-Icon--BlockedSolid { content: $ms-icon-code-BlockedSolid; }
 @mixin ms-Icon--BlowingSnow { content: $ms-icon-code-BlowingSnow; }
 @mixin ms-Icon--Blur { content: $ms-icon-code-Blur; }
 @mixin ms-Icon--Boards { content: $ms-icon-code-Boards; }
@@ -214,6 +231,8 @@
 @mixin ms-Icon--BookingsLogo { content: $ms-icon-code-BookingsLogo; }
 @mixin ms-Icon--Bookmarks { content: $ms-icon-code-Bookmarks; }
 @mixin ms-Icon--BookmarksMirrored { content: $ms-icon-code-BookmarksMirrored; }
+@mixin ms-Icon--BorderDash { content: $ms-icon-code-BorderDash; }
+@mixin ms-Icon--BorderDot { content: $ms-icon-code-BorderDot; }
 @mixin ms-Icon--BoxAdditionSolid { content: $ms-icon-code-BoxAdditionSolid; }
 @mixin ms-Icon--BoxCheckmarkSolid { content: $ms-icon-code-BoxCheckmarkSolid; }
 @mixin ms-Icon--BoxMultiplySolid { content: $ms-icon-code-BoxMultiplySolid; }
@@ -300,6 +319,9 @@
 @mixin ms-Icon--CellPhone { content: $ms-icon-code-CellPhone; }
 @mixin ms-Icon--Certificate { content: $ms-icon-code-Certificate; }
 @mixin ms-Icon--Chart { content: $ms-icon-code-Chart; }
+@mixin ms-Icon--ChartSeries { content: $ms-icon-code-ChartSeries; }
+@mixin ms-Icon--ChartXAngle { content: $ms-icon-code-ChartXAngle; }
+@mixin ms-Icon--ChartYAngle { content: $ms-icon-code-ChartYAngle; }
 @mixin ms-Icon--Chat { content: $ms-icon-code-Chat; }
 @mixin ms-Icon--ChatInviteFriend { content: $ms-icon-code-ChatInviteFriend; }
 @mixin ms-Icon--ChatSolid { content: $ms-icon-code-ChatSolid; }
@@ -383,6 +405,7 @@
 @mixin ms-Icon--ColumnRightTwoThirds { content: $ms-icon-code-ColumnRightTwoThirds; }
 @mixin ms-Icon--ColumnRightTwoThirdsEdit { content: $ms-icon-code-ColumnRightTwoThirdsEdit; }
 @mixin ms-Icon--Combine { content: $ms-icon-code-Combine; }
+@mixin ms-Icon--Combobox { content: $ms-icon-code-Combobox; }
 @mixin ms-Icon--CommandPrompt { content: $ms-icon-code-CommandPrompt; }
 @mixin ms-Icon--Comment { content: $ms-icon-code-Comment; }
 @mixin ms-Icon--CommentAdd { content: $ms-icon-code-CommentAdd; }
@@ -417,6 +440,7 @@
 @mixin ms-Icon--CustomListMirrored { content: $ms-icon-code-CustomListMirrored; }
 @mixin ms-Icon--Cut { content: $ms-icon-code-Cut; }
 @mixin ms-Icon--Cycling { content: $ms-icon-code-Cycling; }
+@mixin ms-Icon--DashboardAdd { content: $ms-icon-code-DashboardAdd; }
 @mixin ms-Icon--Database { content: $ms-icon-code-Database; }
 @mixin ms-Icon--DataConnectionLibrary { content: $ms-icon-code-DataConnectionLibrary; }
 @mixin ms-Icon--DateTime { content: $ms-icon-code-DateTime; }
@@ -425,6 +449,7 @@
 @mixin ms-Icon--DecisionSolid { content: $ms-icon-code-DecisionSolid; }
 @mixin ms-Icon--DeclineCall { content: $ms-icon-code-DeclineCall; }
 @mixin ms-Icon--DecreaseIndentLegacy { content: $ms-icon-code-DecreaseIndentLegacy; }
+@mixin ms-Icon--DefaultRatio { content: $ms-icon-code-DefaultRatio; }
 @mixin ms-Icon--DefectSolid { content: $ms-icon-code-DefectSolid; }
 @mixin ms-Icon--Delete { content: $ms-icon-code-Delete; }
 @mixin ms-Icon--DeliveryTruck { content: $ms-icon-code-DeliveryTruck; }
@@ -482,6 +507,10 @@
 @mixin ms-Icon--DoubleColumnEdit { content: $ms-icon-code-DoubleColumnEdit; }
 @mixin ms-Icon--Down { content: $ms-icon-code-Down; }
 @mixin ms-Icon--Download { content: $ms-icon-code-Download; }
+@mixin ms-Icon--DrillDown { content: $ms-icon-code-DrillDown; }
+@mixin ms-Icon--DrillDownSolid { content: $ms-icon-code-DrillDownSolid; }
+@mixin ms-Icon--DrillExpand { content: $ms-icon-code-DrillExpand; }
+@mixin ms-Icon--DrillShow { content: $ms-icon-code-DrillShow; }
 @mixin ms-Icon--DRM { content: $ms-icon-code-DRM; }
 @mixin ms-Icon--Drop { content: $ms-icon-code-Drop; }
 @mixin ms-Icon--Dropdown { content: $ms-icon-code-Dropdown; }
@@ -499,6 +528,7 @@
 @mixin ms-Icon--EditSolidMirrored12 { content: $ms-icon-code-EditSolidMirrored12; }
 @mixin ms-Icon--EditStyle { content: $ms-icon-code-EditStyle; }
 @mixin ms-Icon--Education { content: $ms-icon-code-Education; }
+@mixin ms-Icon--Ellipse { content: $ms-icon-code-Ellipse; }
 @mixin ms-Icon--Embed { content: $ms-icon-code-Embed; }
 @mixin ms-Icon--EMI { content: $ms-icon-code-EMI; }
 @mixin ms-Icon--Emoji { content: $ms-icon-code-Emoji; }
@@ -619,6 +649,8 @@
 @mixin ms-Icon--FolderSearch { content: $ms-icon-code-FolderSearch; }
 @mixin ms-Icon--Font { content: $ms-icon-code-Font; }
 @mixin ms-Icon--FontColor { content: $ms-icon-code-FontColor; }
+@mixin ms-Icon--FontColorA { content: $ms-icon-code-FontColorA; }
+@mixin ms-Icon--FontColorSwatch { content: $ms-icon-code-FontColorSwatch; }
 @mixin ms-Icon--FontDecrease { content: $ms-icon-code-FontDecrease; }
 @mixin ms-Icon--FontIncrease { content: $ms-icon-code-FontIncrease; }
 @mixin ms-Icon--FontSize { content: $ms-icon-code-FontSize; }
@@ -661,10 +693,13 @@
 @mixin ms-Icon--GroupedAscending { content: $ms-icon-code-GroupedAscending; }
 @mixin ms-Icon--GroupedDescending { content: $ms-icon-code-GroupedDescending; }
 @mixin ms-Icon--GroupedList { content: $ms-icon-code-GroupedList; }
+@mixin ms-Icon--GroupObject { content: $ms-icon-code-GroupObject; }
+@mixin ms-Icon--GUID { content: $ms-icon-code-GUID; }
 @mixin ms-Icon--Guitar { content: $ms-icon-code-Guitar; }
 @mixin ms-Icon--HailDay { content: $ms-icon-code-HailDay; }
 @mixin ms-Icon--HailNight { content: $ms-icon-code-HailNight; }
 @mixin ms-Icon--HalfAlpha { content: $ms-icon-code-HalfAlpha; }
+@mixin ms-Icon--HalfCircle { content: $ms-icon-code-HalfCircle; }
 @mixin ms-Icon--Handwriting { content: $ms-icon-code-Handwriting; }
 @mixin ms-Icon--HardDriveGroup { content: $ms-icon-code-HardDriveGroup; }
 @mixin ms-Icon--Header1 { content: $ms-icon-code-Header1; }
@@ -679,13 +714,16 @@
 @mixin ms-Icon--HeartFill { content: $ms-icon-code-HeartFill; }
 @mixin ms-Icon--Help { content: $ms-icon-code-Help; }
 @mixin ms-Icon--HelpMirrored { content: $ms-icon-code-HelpMirrored; }
+@mixin ms-Icon--Hexagon { content: $ms-icon-code-Hexagon; }
 @mixin ms-Icon--Hide { content: $ms-icon-code-Hide; }
 @mixin ms-Icon--Hide2 { content: $ms-icon-code-Hide2; }
 @mixin ms-Icon--Highlight { content: $ms-icon-code-Highlight; }
 @mixin ms-Icon--HighlightMappedShapes { content: $ms-icon-code-HighlightMappedShapes; }
+@mixin ms-Icon--HintText { content: $ms-icon-code-HintText; }
 @mixin ms-Icon--History { content: $ms-icon-code-History; }
 @mixin ms-Icon--Home { content: $ms-icon-code-Home; }
 @mixin ms-Icon--HomeSolid { content: $ms-icon-code-HomeSolid; }
+@mixin ms-Icon--HorizontalDistributeCenter { content: $ms-icon-code-HorizontalDistributeCenter; }
 @mixin ms-Icon--Hospital { content: $ms-icon-code-Hospital; }
 @mixin ms-Icon--Hotel { content: $ms-icon-code-Hotel; }
 @mixin ms-Icon--IconSetsFlag { content: $ms-icon-code-IconSetsFlag; }
@@ -693,6 +731,7 @@
 @mixin ms-Icon--ImageCrosshair { content: $ms-icon-code-ImageCrosshair; }
 @mixin ms-Icon--ImageDiff { content: $ms-icon-code-ImageDiff; }
 @mixin ms-Icon--ImagePixel { content: $ms-icon-code-ImagePixel; }
+@mixin ms-Icon--ImageSearch { content: $ms-icon-code-ImageSearch; }
 @mixin ms-Icon--Import { content: $ms-icon-code-Import; }
 @mixin ms-Icon--Important { content: $ms-icon-code-Important; }
 @mixin ms-Icon--ImportMirrored { content: $ms-icon-code-ImportMirrored; }
@@ -729,9 +768,14 @@
 @mixin ms-Icon--Light { content: $ms-icon-code-Light; }
 @mixin ms-Icon--Lightbulb { content: $ms-icon-code-Lightbulb; }
 @mixin ms-Icon--LightningBolt { content: $ms-icon-code-LightningBolt; }
+@mixin ms-Icon--LightWeight { content: $ms-icon-code-LightWeight; }
 @mixin ms-Icon--Like { content: $ms-icon-code-Like; }
 @mixin ms-Icon--LikeSolid { content: $ms-icon-code-LikeSolid; }
+@mixin ms-Icon--Line { content: $ms-icon-code-Line; }
 @mixin ms-Icon--LineChart { content: $ms-icon-code-LineChart; }
+@mixin ms-Icon--LineSpacing { content: $ms-icon-code-LineSpacing; }
+@mixin ms-Icon--LineStyle { content: $ms-icon-code-LineStyle; }
+@mixin ms-Icon--LineThickness { content: $ms-icon-code-LineThickness; }
 @mixin ms-Icon--Link { content: $ms-icon-code-Link; }
 @mixin ms-Icon--LinkedInLogo { content: $ms-icon-code-LinkedInLogo; }
 @mixin ms-Icon--List { content: $ms-icon-code-List; }
@@ -767,9 +811,11 @@
 @mixin ms-Icon--MailUndelivered { content: $ms-icon-code-MailUndelivered; }
 @mixin ms-Icon--MapDirections { content: $ms-icon-code-MapDirections; }
 @mixin ms-Icon--MapPin { content: $ms-icon-code-MapPin; }
+@mixin ms-Icon--MapPinSolid { content: $ms-icon-code-MapPinSolid; }
 @mixin ms-Icon--MarkDownLanguage { content: $ms-icon-code-MarkDownLanguage; }
 @mixin ms-Icon--Market { content: $ms-icon-code-Market; }
 @mixin ms-Icon--MarketDown { content: $ms-icon-code-MarketDown; }
+@mixin ms-Icon--MediaAdd { content: $ms-icon-code-MediaAdd; }
 @mixin ms-Icon--Medical { content: $ms-icon-code-Medical; }
 @mixin ms-Icon--Megaphone { content: $ms-icon-code-Megaphone; }
 @mixin ms-Icon--MegaphoneSolid { content: $ms-icon-code-MegaphoneSolid; }
@@ -809,13 +855,16 @@
 @mixin ms-Icon--NavigateExternalInline { content: $ms-icon-code-NavigateExternalInline; }
 @mixin ms-Icon--NavigateForward { content: $ms-icon-code-NavigateForward; }
 @mixin ms-Icon--NavigateForwardMirrored { content: $ms-icon-code-NavigateForwardMirrored; }
+@mixin ms-Icon--NavigationFlipper { content: $ms-icon-code-NavigationFlipper; }
 @mixin ms-Icon--NetworkTower { content: $ms-icon-code-NetworkTower; }
 @mixin ms-Icon--NewAnalyticsQuery { content: $ms-icon-code-NewAnalyticsQuery; }
 @mixin ms-Icon--NewFolder { content: $ms-icon-code-NewFolder; }
 @mixin ms-Icon--News { content: $ms-icon-code-News; }
+@mixin ms-Icon--NewsSearch { content: $ms-icon-code-NewsSearch; }
 @mixin ms-Icon--NewTeamProject { content: $ms-icon-code-NewTeamProject; }
 @mixin ms-Icon--Next { content: $ms-icon-code-Next; }
 @mixin ms-Icon--NonprofitLogo32 { content: $ms-icon-code-NonprofitLogo32; }
+@mixin ms-Icon--NormalWeight { content: $ms-icon-code-NormalWeight; }
 @mixin ms-Icon--NoteForward { content: $ms-icon-code-NoteForward; }
 @mixin ms-Icon--NotePinned { content: $ms-icon-code-NotePinned; }
 @mixin ms-Icon--NoteReply { content: $ms-icon-code-NoteReply; }
@@ -824,6 +873,8 @@
 @mixin ms-Icon--NugetLogo { content: $ms-icon-code-NugetLogo; }
 @mixin ms-Icon--NumberedList { content: $ms-icon-code-NumberedList; }
 @mixin ms-Icon--NumberField { content: $ms-icon-code-NumberField; }
+@mixin ms-Icon--NumberSequence { content: $ms-icon-code-NumberSequence; }
+@mixin ms-Icon--Octagon { content: $ms-icon-code-Octagon; }
 @mixin ms-Icon--OfficeAddinsLogo { content: $ms-icon-code-OfficeAddinsLogo; }
 @mixin ms-Icon--OfficeAssistantLogo { content: $ms-icon-code-OfficeAssistantLogo; }
 @mixin ms-Icon--OfficeFormsLogo { content: $ms-icon-code-OfficeFormsLogo; }
@@ -869,6 +920,11 @@
 @mixin ms-Icon--OutOfOffice { content: $ms-icon-code-OutOfOffice; }
 @mixin ms-Icon--Package { content: $ms-icon-code-Package; }
 @mixin ms-Icon--Packages { content: $ms-icon-code-Packages; }
+@mixin ms-Icon--Padding { content: $ms-icon-code-Padding; }
+@mixin ms-Icon--PaddingBottom { content: $ms-icon-code-PaddingBottom; }
+@mixin ms-Icon--PaddingLeft { content: $ms-icon-code-PaddingLeft; }
+@mixin ms-Icon--PaddingRight { content: $ms-icon-code-PaddingRight; }
+@mixin ms-Icon--PaddingTop { content: $ms-icon-code-PaddingTop; }
 @mixin ms-Icon--Page { content: $ms-icon-code-Page; }
 @mixin ms-Icon--PageAdd { content: $ms-icon-code-PageAdd; }
 @mixin ms-Icon--PageCheckedin { content: $ms-icon-code-PageCheckedin; }
@@ -897,6 +953,7 @@
 @mixin ms-Icon--PC1 { content: $ms-icon-code-PC1; }
 @mixin ms-Icon--PDF { content: $ms-icon-code-PDF; }
 @mixin ms-Icon--PencilReply { content: $ms-icon-code-PencilReply; }
+@mixin ms-Icon--Pentagon { content: $ms-icon-code-Pentagon; }
 @mixin ms-Icon--People { content: $ms-icon-code-People; }
 @mixin ms-Icon--PeopleAdd { content: $ms-icon-code-PeopleAdd; }
 @mixin ms-Icon--PeopleAlert { content: $ms-icon-code-PeopleAlert; }
@@ -912,9 +969,15 @@
 @mixin ms-Icon--Photo2Remove { content: $ms-icon-code-Photo2Remove; }
 @mixin ms-Icon--PhotoCollection { content: $ms-icon-code-PhotoCollection; }
 @mixin ms-Icon--Picture { content: $ms-icon-code-Picture; }
+@mixin ms-Icon--PictureCenter { content: $ms-icon-code-PictureCenter; }
+@mixin ms-Icon--PictureFill { content: $ms-icon-code-PictureFill; }
 @mixin ms-Icon--PictureLibrary { content: $ms-icon-code-PictureLibrary; }
+@mixin ms-Icon--PicturePosition { content: $ms-icon-code-PicturePosition; }
+@mixin ms-Icon--PictureStretch { content: $ms-icon-code-PictureStretch; }
+@mixin ms-Icon--PictureTile { content: $ms-icon-code-PictureTile; }
 @mixin ms-Icon--PieDouble { content: $ms-icon-code-PieDouble; }
 @mixin ms-Icon--PieSingle { content: $ms-icon-code-PieSingle; }
+@mixin ms-Icon--PieSingleSolid { content: $ms-icon-code-PieSingleSolid; }
 @mixin ms-Icon--Pill { content: $ms-icon-code-Pill; }
 @mixin ms-Icon--Pin { content: $ms-icon-code-Pin; }
 @mixin ms-Icon--Pinned { content: $ms-icon-code-Pinned; }
@@ -981,11 +1044,13 @@
 @mixin ms-Icon--Puzzle { content: $ms-icon-code-Puzzle; }
 @mixin ms-Icon--PY { content: $ms-icon-code-PY; }
 @mixin ms-Icon--PythonLanguage { content: $ms-icon-code-PythonLanguage; }
+@mixin ms-Icon--QuarterCircle { content: $ms-icon-code-QuarterCircle; }
 @mixin ms-Icon--QueryList { content: $ms-icon-code-QueryList; }
 @mixin ms-Icon--Questionnaire { content: $ms-icon-code-Questionnaire; }
 @mixin ms-Icon--QuestionnaireMirrored { content: $ms-icon-code-QuestionnaireMirrored; }
 @mixin ms-Icon--QuickNote { content: $ms-icon-code-QuickNote; }
 @mixin ms-Icon--QuickNoteSolid { content: $ms-icon-code-QuickNoteSolid; }
+@mixin ms-Icon--R { content: $ms-icon-code-R; }
 @mixin ms-Icon--RadioBtnOff { content: $ms-icon-code-RadioBtnOff; }
 @mixin ms-Icon--RadioBtnOn { content: $ms-icon-code-RadioBtnOn; }
 @mixin ms-Icon--RadioBullet { content: $ms-icon-code-RadioBullet; }
@@ -1030,6 +1095,7 @@
 @mixin ms-Icon--ReplyAlt { content: $ms-icon-code-ReplyAlt; }
 @mixin ms-Icon--ReplyMirrored { content: $ms-icon-code-ReplyMirrored; }
 @mixin ms-Icon--Repo { content: $ms-icon-code-Repo; }
+@mixin ms-Icon--ReportAdd { content: $ms-icon-code-ReportAdd; }
 @mixin ms-Icon--ReportLibrary { content: $ms-icon-code-ReportLibrary; }
 @mixin ms-Icon--ReportLibraryMirrored { content: $ms-icon-code-ReportLibraryMirrored; }
 @mixin ms-Icon--RepoSolid { content: $ms-icon-code-RepoSolid; }
@@ -1043,6 +1109,7 @@
 @mixin ms-Icon--Ribbon { content: $ms-icon-code-Ribbon; }
 @mixin ms-Icon--RibbonSolid { content: $ms-icon-code-RibbonSolid; }
 @mixin ms-Icon--RightDoubleQuote { content: $ms-icon-code-RightDoubleQuote; }
+@mixin ms-Icon--RightTriangle { content: $ms-icon-code-RightTriangle; }
 @mixin ms-Icon--Ringer { content: $ms-icon-code-Ringer; }
 @mixin ms-Icon--RingerOff { content: $ms-icon-code-RingerOff; }
 @mixin ms-Icon--Robot { content: $ms-icon-code-Robot; }
@@ -1074,6 +1141,7 @@
 @mixin ms-Icon--Sections { content: $ms-icon-code-Sections; }
 @mixin ms-Icon--SecurityGroup { content: $ms-icon-code-SecurityGroup; }
 @mixin ms-Icon--Sell { content: $ms-icon-code-Sell; }
+@mixin ms-Icon--SemiboldWeight { content: $ms-icon-code-SemiboldWeight; }
 @mixin ms-Icon--Send { content: $ms-icon-code-Send; }
 @mixin ms-Icon--SendMirrored { content: $ms-icon-code-SendMirrored; }
 @mixin ms-Icon--Separator { content: $ms-icon-code-Separator; }
@@ -1102,6 +1170,7 @@
 @mixin ms-Icon--SingleColumn { content: $ms-icon-code-SingleColumn; }
 @mixin ms-Icon--SingleColumnEdit { content: $ms-icon-code-SingleColumnEdit; }
 @mixin ms-Icon--SIPMove { content: $ms-icon-code-SIPMove; }
+@mixin ms-Icon--SiteScan { content: $ms-icon-code-SiteScan; }
 @mixin ms-Icon--SizeLegacy { content: $ms-icon-code-SizeLegacy; }
 @mixin ms-Icon--SkiResorts { content: $ms-icon-code-SkiResorts; }
 @mixin ms-Icon--SkypeCheck { content: $ms-icon-code-SkypeCheck; }
@@ -1117,6 +1186,8 @@
 @mixin ms-Icon--SkypeLogo16 { content: $ms-icon-code-SkypeLogo16; }
 @mixin ms-Icon--SkypeMessage { content: $ms-icon-code-SkypeMessage; }
 @mixin ms-Icon--SkypeMinus { content: $ms-icon-code-SkypeMinus; }
+@mixin ms-Icon--Slider { content: $ms-icon-code-Slider; }
+@mixin ms-Icon--SliderHandleSize { content: $ms-icon-code-SliderHandleSize; }
 @mixin ms-Icon--SliderThumb { content: $ms-icon-code-SliderThumb; }
 @mixin ms-Icon--Snooze { content: $ms-icon-code-Snooze; }
 @mixin ms-Icon--Snow { content: $ms-icon-code-Snow; }
@@ -1162,8 +1233,8 @@
 @mixin ms-Icon--Stop { content: $ms-icon-code-Stop; }
 @mixin ms-Icon--StopSolid { content: $ms-icon-code-StopSolid; }
 @mixin ms-Icon--Stopwatch { content: $ms-icon-code-Stopwatch; }
-@mixin ms-Icon--StoreLogo { content: $ms-icon-code-StoreLogo; }
-@mixin ms-Icon--StoreLogoMed { content: $ms-icon-code-StoreLogoMed; }
+@mixin ms-Icon--StoreLogo16 { content: $ms-icon-code-StoreLogo16; }
+@mixin ms-Icon--StoreLogoMed20 { content: $ms-icon-code-StoreLogoMed20; }
 @mixin ms-Icon--Storyboard { content: $ms-icon-code-Storyboard; }
 @mixin ms-Icon--Streaming { content: $ms-icon-code-Streaming; }
 @mixin ms-Icon--StreamingOff { content: $ms-icon-code-StreamingOff; }
@@ -1226,8 +1297,10 @@
 @mixin ms-Icon--TextCallout { content: $ms-icon-code-TextCallout; }
 @mixin ms-Icon--TextDocument { content: $ms-icon-code-TextDocument; }
 @mixin ms-Icon--TextField { content: $ms-icon-code-TextField; }
+@mixin ms-Icon--TextOverflow { content: $ms-icon-code-TextOverflow; }
 @mixin ms-Icon--TFVCLogo { content: $ms-icon-code-TFVCLogo; }
 @mixin ms-Icon--ThisPC { content: $ms-icon-code-ThisPC; }
+@mixin ms-Icon--ThreeQuarterCircle { content: $ms-icon-code-ThreeQuarterCircle; }
 @mixin ms-Icon--ThumbnailView { content: $ms-icon-code-ThumbnailView; }
 @mixin ms-Icon--ThumbnailViewMirrored { content: $ms-icon-code-ThumbnailViewMirrored; }
 @mixin ms-Icon--Thunderstorms { content: $ms-icon-code-Thunderstorms; }
@@ -1244,6 +1317,7 @@
 @mixin ms-Icon--ToDoLogoTop { content: $ms-icon-code-ToDoLogoTop; }
 @mixin ms-Icon--ToggleBorder { content: $ms-icon-code-ToggleBorder; }
 @mixin ms-Icon--ToggleFilled { content: $ms-icon-code-ToggleFilled; }
+@mixin ms-Icon--ToggleOff { content: $ms-icon-code-ToggleOff; }
 @mixin ms-Icon--ToggleThumb { content: $ms-icon-code-ToggleThumb; }
 @mixin ms-Icon--Touch { content: $ms-icon-code-Touch; }
 @mixin ms-Icon--TouchPointer { content: $ms-icon-code-TouchPointer; }
@@ -1278,6 +1352,7 @@
 @mixin ms-Icon--UneditableSolid12 { content: $ms-icon-code-UneditableSolid12; }
 @mixin ms-Icon--UneditableSolidMirrored12 { content: $ms-icon-code-UneditableSolidMirrored12; }
 @mixin ms-Icon--Unfavorite { content: $ms-icon-code-Unfavorite; }
+@mixin ms-Icon--UngroupObject { content: $ms-icon-code-UngroupObject; }
 @mixin ms-Icon--Unknown { content: $ms-icon-code-Unknown; }
 @mixin ms-Icon--UnknownCall { content: $ms-icon-code-UnknownCall; }
 @mixin ms-Icon--UnknownMirroredSolid { content: $ms-icon-code-UnknownMirroredSolid; }
@@ -1298,8 +1373,10 @@
 @mixin ms-Icon--VariableGroup { content: $ms-icon-code-VariableGroup; }
 @mixin ms-Icon--VB { content: $ms-icon-code-VB; }
 @mixin ms-Icon--VennDiagram { content: $ms-icon-code-VennDiagram; }
+@mixin ms-Icon--VerticalDistributeCenter { content: $ms-icon-code-VerticalDistributeCenter; }
 @mixin ms-Icon--Video { content: $ms-icon-code-Video; }
 @mixin ms-Icon--VideoOff { content: $ms-icon-code-VideoOff; }
+@mixin ms-Icon--VideoSearch { content: $ms-icon-code-VideoSearch; }
 @mixin ms-Icon--VideoSolid { content: $ms-icon-code-VideoSolid; }
 @mixin ms-Icon--View { content: $ms-icon-code-View; }
 @mixin ms-Icon--ViewAll { content: $ms-icon-code-ViewAll; }
@@ -1317,6 +1394,8 @@
 @mixin ms-Icon--VisioLogoInverse { content: $ms-icon-code-VisioLogoInverse; }
 @mixin ms-Icon--VisioLogoInverse16 { content: $ms-icon-code-VisioLogoInverse16; }
 @mixin ms-Icon--VisualBasicLanguage { content: $ms-icon-code-VisualBasicLanguage; }
+@mixin ms-Icon--VisualsFolder { content: $ms-icon-code-VisualsFolder; }
+@mixin ms-Icon--VisualsStore { content: $ms-icon-code-VisualsStore; }
 @mixin ms-Icon--VisualStudioLogo { content: $ms-icon-code-VisualStudioLogo; }
 @mixin ms-Icon--VoicemailForward { content: $ms-icon-code-VoicemailForward; }
 @mixin ms-Icon--VoicemailIRM { content: $ms-icon-code-VoicemailIRM; }
@@ -1332,10 +1411,12 @@
 @mixin ms-Icon--Waffle { content: $ms-icon-code-Waffle; }
 @mixin ms-Icon--WaffleOffice365 { content: $ms-icon-code-WaffleOffice365; }
 @mixin ms-Icon--Warning { content: $ms-icon-code-Warning; }
+@mixin ms-Icon--WebPublish { content: $ms-icon-code-WebPublish; }
 @mixin ms-Icon--Website { content: $ms-icon-code-Website; }
 @mixin ms-Icon--Weights { content: $ms-icon-code-Weights; }
 @mixin ms-Icon--WifiEthernet { content: $ms-icon-code-WifiEthernet; }
 @mixin ms-Icon--WindDirection { content: $ms-icon-code-WindDirection; }
+@mixin ms-Icon--WindowEdit { content: $ms-icon-code-WindowEdit; }
 @mixin ms-Icon--WindowsLogo { content: $ms-icon-code-WindowsLogo; }
 @mixin ms-Icon--Wines { content: $ms-icon-code-Wines; }
 @mixin ms-Icon--WipePhone { content: $ms-icon-code-WipePhone; }
@@ -1359,3 +1440,14 @@
 @mixin ms-Icon--Zoom { content: $ms-icon-code-Zoom; }
 @mixin ms-Icon--ZoomIn { content: $ms-icon-code-ZoomIn; }
 @mixin ms-Icon--ZoomOut { content: $ms-icon-code-ZoomOut; }
+
+// Deprecated mixins, to be removed in the next major release.
+@mixin ms-Icon--StoreLogo {
+  @warn 'The ms-Icon--StoreLogo mixin has been deprecated and replaced with ms-Icon--StoreLogo16.';
+  content: $ms-icon-code-StoreLogo16;
+}
+
+@mixin ms-Icon--StoreLogoMed {
+  @warn 'The ms-Icon--StoreLogoMed mixin has been deprecated and replaced with ms-Icon--StoreLogoMed20.';
+  content: $ms-icon-code-StoreLogoMed20;
+}

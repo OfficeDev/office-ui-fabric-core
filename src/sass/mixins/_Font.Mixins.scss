@@ -42,6 +42,14 @@
     font-weight: $ms-font-weight-semibold;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: $font-family-name;
+    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff2') format('woff2'),
+         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff') format('woff');
+    font-weight: $ms-font-weight-bold;
+    font-style: normal;
+  }
 }
 
 // Generate overrides to set font-family based on the lang attribute.
@@ -138,6 +146,10 @@
 
 @mixin ms-fontWeight-semibold {
   font-weight: $ms-font-weight-semibold;
+}
+
+@mixin ms-fontWeight-bold {
+  font-weight: $ms-font-weight-bold;
 }
 
 // Font sizes

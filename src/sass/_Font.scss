@@ -92,6 +92,10 @@
   @include ms-fontWeight-semibold;
 }
 
+.ms-fontWeight-bold {
+  @include ms-fontWeight-bold;
+}
+
 // Font sizes
 .ms-fontSize-su {
   @include ms-fontSize-su;

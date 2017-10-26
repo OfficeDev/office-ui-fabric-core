@@ -15,6 +15,10 @@
     {
       "class": "ms-fontWeight-semibold",
       "name": "Semi Bold"
+    },
+    {
+      "class": "ms-fontWeight-bold",
+      "name": "Bold"
     }
   ]
 }

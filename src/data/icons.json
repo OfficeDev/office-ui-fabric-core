@@ -930,7 +930,7 @@
   { "name": "Puzzle", "unicode": "EA86" },
   { "name": "PY", "unicode": "F2F9" },
   { "name": "PythonLanguage", "unicode": "F2F8" },
-  { "name": "QuaterCircle", "unicode": "F502" },
+  { "name": "QuarterCircle", "unicode": "F502" },
   { "name": "QueryList", "unicode": "F2B8" },
   { "name": "Questionnaire", "unicode": "EE19" },
   { "name": "QuestionnaireMirrored", "unicode": "EE4B" },

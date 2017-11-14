@@ -4,7 +4,7 @@
 
 Fabric is a responsive, mobile-first collection of styles and tools designed to make it quick and simple for you to create web experiences using the Office Design Language.
 
-**Latest version:** 9.1.0
+**Latest version:** 9.2.0
 
 
 ## Contents

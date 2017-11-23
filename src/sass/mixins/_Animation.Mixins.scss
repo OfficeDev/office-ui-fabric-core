@@ -158,6 +158,17 @@
   }
 }
 
+// Wraps content in a 'prefers-reduced-motion' media query, so that the animation/transition only takes
+// effect if the user has NOT opted to reduce motion. This is currently supported by Safari on iOS and macOS,
+// and may be coming to other platforms and browsers in the future.
+//
+// See this article for more details: https://css-tricks.com/introduction-reduced-motion-media-query/
+@mixin ms-prefers-motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
 // Outputs the properties for an animation.
 @mixin ms-animation($names, $duration, $timing: $ms-animation-ease-1, $fillMode: both) {
   // Set a default value for the version-scoped variable if it isn't assigned
@@ -172,15 +183,19 @@
     $namelist: append($namelist, unquote($newname), 'comma');
   }
 
-  animation-name: $namelist;
-  animation-duration: $duration;
-  animation-timing-function: $timing;
-  animation-fill-mode: $fillMode;
+  @include ms-prefers-motion {
+    animation-name: $namelist;
+    animation-duration: $duration;
+    animation-timing-function: $timing;
+    animation-fill-mode: $fillMode;
+  }
 }
 
 // Ouptuts the properties for a transition.
 @mixin ms-transition($transition) {
-  transition: $transition;
+  @include ms-prefers-motion {
+    transition: $transition;
+  }
 }
 
 // Slide

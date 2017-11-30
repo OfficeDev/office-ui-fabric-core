@@ -390,8 +390,6 @@
   }
 }
 
-// @mixin ms-animation($names, $duration, $timing: $ms-animation-ease-1, $fillMode: both) {
-
 // Fade
 @mixin ms-fadeIn100 {
   @include ms-animation(ms-fadeIn, $ms-animation-duration-1);

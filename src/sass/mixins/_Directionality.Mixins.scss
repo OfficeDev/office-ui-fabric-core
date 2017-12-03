@@ -32,6 +32,29 @@
 // Common CSS property mixins with support for RTL.
 // Use to automatically create RTL versions of your properties.
 
+// Background direction.
+@mixin ms-background-position($alignment) {
+  @if $alignment == left {
+    @include ms-LTR {
+      background-position: left;
+    }
+
+    @include ms-RTL {
+      background-position: right;
+    }
+  } @else if $alignment == right {
+    @include ms-LTR {
+      background-position: right;
+    }
+
+    @include ms-RTL {
+      background-position: left;
+    }
+  } @else {
+    background-position: $alignment;
+  }
+}
+
 // Border styles.
 @mixin ms-border-color($top, $right, $bottom, $left) {
   border-color: $top $right $bottom $left;

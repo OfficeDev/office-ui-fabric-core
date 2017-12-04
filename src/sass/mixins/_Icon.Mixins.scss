@@ -1522,6 +1522,11 @@
 @mixin ms-Icon--ZoomOut { content: $ms-icon-code-ZoomOut; }
 
 // Deprecated mixins, to be removed in the next major release.
+@mixin ms-Icon--HumanResources {
+  @warn 'The ms-Icon--HumanResources mixin has been deprecated and will be removed in the next major version.';
+  content: $ms-icon-code-HumanResources;
+}
+
 @mixin ms-Icon--StoreLogo {
   @warn 'The ms-Icon--StoreLogo mixin has been deprecated and replaced with ms-Icon--StoreLogo16.';
   content: $ms-icon-code-StoreLogo16;

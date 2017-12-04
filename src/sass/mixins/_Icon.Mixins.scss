@@ -167,6 +167,7 @@
 @mixin ms-Icon--AnalyticsLogo { content: $ms-icon-code-AnalyticsLogo; }
 @mixin ms-Icon--AnalyticsQuery { content: $ms-icon-code-AnalyticsQuery; }
 @mixin ms-Icon--AnalyticsReport { content: $ms-icon-code-AnalyticsReport; }
+@mixin ms-Icon--AnalyticsView { content: $ms-icon-code-AnalyticsView; }
 @mixin ms-Icon--AnchorLock { content: $ms-icon-code-AnchorLock; }
 @mixin ms-Icon--Annotation { content: $ms-icon-code-Annotation; }
 @mixin ms-Icon--AppIconDefault { content: $ms-icon-code-AppIconDefault; }
@@ -257,6 +258,7 @@
 @mixin ms-Icon--Breakfast { content: $ms-icon-code-Breakfast; }
 @mixin ms-Icon--Brightness { content: $ms-icon-code-Brightness; }
 @mixin ms-Icon--Broom { content: $ms-icon-code-Broom; }
+@mixin ms-Icon--BrowserScreenShot { content: $ms-icon-code-BrowserScreenShot; }
 @mixin ms-Icon--BrowserTab { content: $ms-icon-code-BrowserTab; }
 @mixin ms-Icon--BrowserTabScreenshot { content: $ms-icon-code-BrowserTabScreenshot; }
 @mixin ms-Icon--Brunch { content: $ms-icon-code-Brunch; }
@@ -511,6 +513,7 @@
 @mixin ms-Icon--DocumentReply { content: $ms-icon-code-DocumentReply; }
 @mixin ms-Icon--DocumentSearch { content: $ms-icon-code-DocumentSearch; }
 @mixin ms-Icon--DocumentSet { content: $ms-icon-code-DocumentSet; }
+@mixin ms-Icon--DOM { content: $ms-icon-code-DOM; }
 @mixin ms-Icon--DonutChart { content: $ms-icon-code-DonutChart; }
 @mixin ms-Icon--Door { content: $ms-icon-code-Door; }
 @mixin ms-Icon--DoubleBookmark { content: $ms-icon-code-DoubleBookmark; }
@@ -736,6 +739,7 @@
 @mixin ms-Icon--HailNight { content: $ms-icon-code-HailNight; }
 @mixin ms-Icon--HalfAlpha { content: $ms-icon-code-HalfAlpha; }
 @mixin ms-Icon--HalfCircle { content: $ms-icon-code-HalfCircle; }
+@mixin ms-Icon--HandsFree { content: $ms-icon-code-HandsFree; }
 @mixin ms-Icon--Handwriting { content: $ms-icon-code-Handwriting; }
 @mixin ms-Icon--HardDrive { content: $ms-icon-code-HardDrive; }
 @mixin ms-Icon--HardDriveGroup { content: $ms-icon-code-HardDriveGroup; }
@@ -767,7 +771,6 @@
 @mixin ms-Icon--Hospital { content: $ms-icon-code-Hospital; }
 @mixin ms-Icon--Hotel { content: $ms-icon-code-Hotel; }
 @mixin ms-Icon--HourGlass { content: $ms-icon-code-HourGlass; }
-@mixin ms-Icon--HumanResources { content: $ms-icon-code-HumanResources; }
 @mixin ms-Icon--IconSetsFlag { content: $ms-icon-code-IconSetsFlag; }
 @mixin ms-Icon--IDBadge { content: $ms-icon-code-IDBadge; }
 @mixin ms-Icon--ImageCrosshair { content: $ms-icon-code-ImageCrosshair; }
@@ -1385,6 +1388,7 @@
 @mixin ms-Icon--ToggleFilled { content: $ms-icon-code-ToggleFilled; }
 @mixin ms-Icon--ToggleOff { content: $ms-icon-code-ToggleOff; }
 @mixin ms-Icon--ToggleThumb { content: $ms-icon-code-ToggleThumb; }
+@mixin ms-Icon--Toll { content: $ms-icon-code-Toll; }
 @mixin ms-Icon--Touch { content: $ms-icon-code-Touch; }
 @mixin ms-Icon--TouchPointer { content: $ms-icon-code-TouchPointer; }
 @mixin ms-Icon--Train { content: $ms-icon-code-Train; }

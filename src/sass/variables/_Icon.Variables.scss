@@ -61,6 +61,7 @@ $ms-icon-code-AlignVerticalTop: '\F4F6';
 $ms-icon-code-AnalyticsLogo: '\F1DE';
 $ms-icon-code-AnalyticsQuery: '\F1DF';
 $ms-icon-code-AnalyticsReport: '\F1E1';
+$ms-icon-code-AnalyticsView: '\F5F1';
 $ms-icon-code-AnchorLock: '\F511';
 $ms-icon-code-Annotation: '\E924';
 $ms-icon-code-AppIconDefault: '\ECAA';
@@ -151,6 +152,7 @@ $ms-icon-code-Breadcrumb: '\EF8C';
 $ms-icon-code-Breakfast: '\F49C';
 $ms-icon-code-Brightness: '\E706';
 $ms-icon-code-Broom: '\EA99';
+$ms-icon-code-BrowserScreenShot: '\EBED';
 $ms-icon-code-BrowserTab: '\F5D7';
 $ms-icon-code-BrowserTabScreenshot: '\F5D8';
 $ms-icon-code-Brunch: '\F49D';
@@ -405,6 +407,7 @@ $ms-icon-code-DocumentManagement: '\EFFC';
 $ms-icon-code-DocumentReply: '\EF57';
 $ms-icon-code-DocumentSearch: '\EF6C';
 $ms-icon-code-DocumentSet: '\EED6';
+$ms-icon-code-DOM: '\EC8D';
 $ms-icon-code-DonutChart: '\F368';
 $ms-icon-code-Door: '\EB75';
 $ms-icon-code-DoubleBookmark: '\EB8F';
@@ -630,6 +633,7 @@ $ms-icon-code-HailDay: '\EA00';
 $ms-icon-code-HailNight: '\EA13';
 $ms-icon-code-HalfAlpha: '\E97E';
 $ms-icon-code-HalfCircle: '\F501';
+$ms-icon-code-HandsFree: '\EAD0';
 $ms-icon-code-Handwriting: '\E929';
 $ms-icon-code-HardDrive: '\EDA2';
 $ms-icon-code-HardDriveGroup: '\F18F';
@@ -661,7 +665,6 @@ $ms-icon-code-HorizontalDistributeCenter: '\F4F9';
 $ms-icon-code-Hospital: '\E91D';
 $ms-icon-code-Hotel: '\E824';
 $ms-icon-code-HourGlass: '\EA03';
-$ms-icon-code-HumanResources: '\F240';
 $ms-icon-code-IconSetsFlag: '\F2A4';
 $ms-icon-code-IDBadge: '\F427';
 $ms-icon-code-ImageCrosshair: '\F2C9';
@@ -1279,6 +1282,7 @@ $ms-icon-code-ToggleBorder: '\EC12';
 $ms-icon-code-ToggleFilled: '\EC11';
 $ms-icon-code-ToggleOff: '\F19F';
 $ms-icon-code-ToggleThumb: '\EC14';
+$ms-icon-code-Toll: '\F160';
 $ms-icon-code-Touch: '\E815';
 $ms-icon-code-TouchPointer: '\E7C9';
 $ms-icon-code-Train: '\E7C0';
@@ -1411,6 +1415,10 @@ $ms-icon-code-Zoom: '\E71E';
 $ms-icon-code-ZoomIn: '\E8A3';
 $ms-icon-code-ZoomOut: '\E71F';
 
+// Deprecated icons.
+$ms-icon-code-HumanResources: '\F240';
+
+
 // A map containing icon names and values. Someday SCSS will support string
 // interpolation within a variable name and this map won't be necessary, as we'll
 // be able to do something like #{$ms-icon-code-#{$iconName}} to get the value.
@@ -1469,6 +1477,7 @@ $ms-icon-map: (
   'AnalyticsLogo': $ms-icon-code-AnalyticsLogo,
   'AnalyticsQuery': $ms-icon-code-AnalyticsQuery,
   'AnalyticsReport': $ms-icon-code-AnalyticsReport,
+  'AnalyticsView': $ms-icon-code-AnalyticsView,
   'AnchorLock': $ms-icon-code-AnchorLock,
   'Annotation': $ms-icon-code-Annotation,
   'AppIconDefault': $ms-icon-code-AppIconDefault,
@@ -1559,6 +1568,7 @@ $ms-icon-map: (
   'Breakfast': $ms-icon-code-Breakfast,
   'Brightness': $ms-icon-code-Brightness,
   'Broom': $ms-icon-code-Broom,
+  'BrowserScreenShot': $ms-icon-code-BrowserScreenShot,
   'BrowserTab': $ms-icon-code-BrowserTab,
   'BrowserTabScreenshot': $ms-icon-code-BrowserTabScreenshot,
   'Brunch': $ms-icon-code-Brunch,
@@ -1813,6 +1823,7 @@ $ms-icon-map: (
   'DocumentReply': $ms-icon-code-DocumentReply,
   'DocumentSearch': $ms-icon-code-DocumentSearch,
   'DocumentSet': $ms-icon-code-DocumentSet,
+  'DOM': $ms-icon-code-DOM,
   'DonutChart': $ms-icon-code-DonutChart,
   'Door': $ms-icon-code-Door,
   'DoubleBookmark': $ms-icon-code-DoubleBookmark,
@@ -2038,6 +2049,7 @@ $ms-icon-map: (
   'HailNight': $ms-icon-code-HailNight,
   'HalfAlpha': $ms-icon-code-HalfAlpha,
   'HalfCircle': $ms-icon-code-HalfCircle,
+  'HandsFree': $ms-icon-code-HandsFree,
   'Handwriting': $ms-icon-code-Handwriting,
   'HardDrive': $ms-icon-code-HardDrive,
   'HardDriveGroup': $ms-icon-code-HardDriveGroup,
@@ -2069,7 +2081,6 @@ $ms-icon-map: (
   'Hospital': $ms-icon-code-Hospital,
   'Hotel': $ms-icon-code-Hotel,
   'HourGlass': $ms-icon-code-HourGlass,
-  'HumanResources': $ms-icon-code-HumanResources,
   'IconSetsFlag': $ms-icon-code-IconSetsFlag,
   'IDBadge': $ms-icon-code-IDBadge,
   'ImageCrosshair': $ms-icon-code-ImageCrosshair,
@@ -2687,6 +2698,7 @@ $ms-icon-map: (
   'ToggleFilled': $ms-icon-code-ToggleFilled,
   'ToggleOff': $ms-icon-code-ToggleOff,
   'ToggleThumb': $ms-icon-code-ToggleThumb,
+  'Toll': $ms-icon-code-Toll,
   'Touch': $ms-icon-code-Touch,
   'TouchPointer': $ms-icon-code-TouchPointer,
   'Train': $ms-icon-code-Train,
@@ -2820,6 +2832,7 @@ $ms-icon-map: (
   'ZoomOut': $ms-icon-code-ZoomOut,
 
   // Deprecated icons.
+  'HumanResources': $ms-icon-code-HumanResources,
   'StoreLogo': $ms-icon-code-StoreLogo16,
   'StoreLogoMed': $ms-icon-code-StoreLogoMed20
 );

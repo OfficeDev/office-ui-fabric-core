@@ -158,7 +158,18 @@
   }
 }
 
-// Generate an animation
+// Wraps content in a 'prefers-reduced-motion' media query, so that the animation/transition only takes
+// effect if the user has NOT opted to reduce motion. This is currently supported by Safari on iOS and macOS,
+// and may be coming to other platforms and browsers in the future.
+//
+// See this article for more details: https://css-tricks.com/introduction-reduced-motion-media-query/
+@mixin ms-prefers-motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+// Outputs the properties for an animation.
 @mixin ms-animation($names, $duration, $timing: $ms-animation-ease-1, $fillMode: both) {
   // Set a default value for the version-scoped variable if it isn't assigned
   $ms-fabric-version-suffix: '' !default;
@@ -172,10 +183,19 @@
     $namelist: append($namelist, unquote($newname), 'comma');
   }
 
-  animation-name: $namelist;
-  animation-duration: $duration;
-  animation-timing-function: $timing;
-  animation-fill-mode: $fillMode;
+  @include ms-prefers-motion {
+    animation-name: $namelist;
+    animation-duration: $duration;
+    animation-timing-function: $timing;
+    animation-fill-mode: $fillMode;
+  }
+}
+
+// Ouptuts the properties for a transition.
+@mixin ms-transition($transition) {
+  @include ms-prefers-motion {
+    transition: $transition;
+  }
 }
 
 // Slide
@@ -370,70 +390,53 @@
   }
 }
 
-
 // Fade
 @mixin ms-fadeIn100 {
-  animation-duration: $ms-animation-duration-1; // @todo: Based on class name, likely intended to be 0.1s
-  animation-name: ms-fadeIn;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeIn, $ms-animation-duration-1);
 }
 
 @mixin ms-fadeIn200 {
-  animation-duration: $ms-animation-duration-2; // @todo: Based on class name, likely intended to be 0.2s
-  animation-name: ms-fadeIn;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeIn, $ms-animation-duration-2);
 }
 
 @mixin ms-fadeIn400 {
-  animation-duration: $ms-animation-duration-3; // @todo: Based on class name, likely intended to be 0.4s
-  animation-name: ms-fadeIn;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeIn, $ms-animation-duration-3);
 }
 
 @mixin ms-fadeIn500 {
-  animation-duration: $ms-animation-duration-4; // @todo: Based on class name, likely intended to be 0.5s
-  animation-name: ms-fadeIn;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeIn, $ms-animation-duration-4);
 }
 
 @mixin ms-fadeOut100 {
-  animation-duration: 0.1s; // @todo: This is the only duration that matches the class name
-  animation-name: ms-fadeOut;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeOut, 0.1s); // @todo: This is the only duration that matches the class name
 }
 
 @mixin ms-fadeOut200 {
-  animation-duration: $ms-animation-duration-1; // @todo: Based on class name, likely intended to be 0.2s
-  animation-name: ms-fadeOut;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeOut, $ms-animation-duration-1); // @todo: Based on class name, likely intended to be 0.2s
 }
 
 @mixin ms-fadeOut400 {
-  animation-duration: $ms-animation-duration-3; // @todo: Based on class name, likely intended to be 0.4s
-  animation-name: ms-fadeOut;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeOut, $ms-animation-duration-3); // @todo: Based on class name, likely intended to be 0.4s
 }
 
 @mixin ms-fadeOut500 {
-  animation-duration: $ms-animation-duration-4; // @todo: Based on class name, likely intended to be 0.5s
-  animation-name: ms-fadeOut;
-  animation-fill-mode: both;
+  @include ms-animation(ms-fadeOut, $ms-animation-duration-4); // @todo: Based on class name, likely intended to be 0.5s
 }
 
 // Expand-collapse
 @mixin ms-expandCollapse100 {
-  transition: height 0.1s $ms-animation-ease-2; // @todo: This is the only duration that matches the class name
+  @include ms-transition(height 0.1s $ms-animation-ease-2); // @todo: This is the only duration that matches the class name
 }
 
 @mixin ms-expandCollapse200 {
-  transition: height $ms-animation-duration-1 $ms-animation-ease-2; // @todo: Based on class name, likely intended to be 0.2s
+  @include ms-transition(height $ms-animation-duration-1 $ms-animation-ease-2); // @todo: Based on class name, likely intended to be 0.2s
 }
 
 @mixin ms-expandCollapse400 {
-  transition: height $ms-animation-duration-3 $ms-animation-ease-2; // @todo: Based on class name, likely intended to be 0.4s
+  @include ms-transition(height $ms-animation-duration-3 $ms-animation-ease-2); // @todo: Based on class name, likely intended to be 0.4s
 }
 
-// Delay
+// Utilities to set the animation delay property.
 @mixin ms-delay100 {
   animation-delay: $ms-animation-duration-1; // @todo: Based on class name, likely intended to be 0.1s
 }

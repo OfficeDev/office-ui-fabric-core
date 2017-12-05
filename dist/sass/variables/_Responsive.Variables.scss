@@ -1,0 +1,16 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Minimum widths for each breakpoint
+$ms-screen-min-sm:    320px !default;
+$ms-screen-min-md:    480px !default;
+$ms-screen-min-lg:    640px !default;
+$ms-screen-min-xl:    1024px !default;
+$ms-screen-min-xxl:   1366px !default;
+$ms-screen-min-xxxl:  1920px !default;
+
+// Maximum widths for each breakpoint
+$ms-screen-max-sm:  ($ms-screen-min-md - 1);
+$ms-screen-max-md:  ($ms-screen-min-lg - 1);
+$ms-screen-max-lg:  ($ms-screen-min-xl - 1);
+$ms-screen-max-xl:  ($ms-screen-min-xxl - 1);
+$ms-screen-max-xxl: ($ms-screen-min-xxxl - 1);

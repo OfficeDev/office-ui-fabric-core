@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Fabric UI Core Documentation</title>
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/2.6.2/css/fabric.components.min.css">
+</head>
+<body class="ms-Fabric">
+<div id="body-content">
+    <div id="Header" class="docs-Header">
+	    <a class="ms-font-xxl ms-fontColor-white" href="/">Office UI Fabric</a>
+	    <div class="Header-buttons">
+            <a href="https://github.com/OfficeDev/office-ui-fabric-core/" class="Header-button ms-fontColor-white">Github</a>
+        </div>
+	</div>
+	<div class="docs-Page has-leftNav">
+	    <div class="docs-Page-leftNav">
+    <div class="LeftNav-links" role="menu" aria-label="Anchor links for navigating this page">
+			<div class="LeftNav-item">
+	        	<a class="Typography LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Typography">Typography</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Color LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Color">Color</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Icons LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Icons">Icons</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Animations LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Animations">Animations</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Responsive-Grid LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Responsive-Grid">Responsive Grid</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Localization LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Localization">Localization</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Scoping LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Scoping">Scoping</a>
+	      	</div>
+    </div>
+</div>
+
+<style>
+  .ms-Fabric--v5-1-0 .ms-fontColor-themePrimary {
+    color: #ff0000;
+  }
+</style>
+
+<div class="docs-Styles-section" id="scoping">
+  <h2>Version Scoping Sample</h2>
+  <p>For scenarios where multiple major versions may live in the same DOM, Fabric provides a "scoped" version of all Core styles that will only apply those styles when used under a versioned wrapper class.</p>
+
+  <p>
+    To use scoped Fabric styles, simply add the versioned wrapper class to the parent DOM element you wish to scope, then use Fabric as usual.
+  </p>
+
+  <p>For example, take this following title, which uses unscoped Fabric:</p>
+
+  <pre><code>
+&lt;div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from unscoped Fabric.&lt;/div&gt;
+</code></pre>
+
+  <div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from unscoped Fabric.</div>
+
+  <p>To scope this title to v5.1.0, add an extra wrapper <code>div</code> around it and add both the <code>ms-Fabric</code> wrapper class and the scoping class for the current version of Fabric. Note that to illustrate this behavior for this demonstration, <code>.ms-fontColor-themePrimary</code> has been overridden with a different color when used under the <code>ms-Fabric--v5-1-0</code> version-scoping class.</p>
+
+  <pre><code>
+  &lt;div class="ms-Fabric ms-Fabric--v5-1-0">
+    &lt;div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from Fabric 5.1.0.&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+  <div class="ms-Fabric ms-Fabric--v5-1-0">
+    <div class="ms-font-xxl ms-fontColor-themePrimary">This title uses ms-fontColor-themePrimary from Fabric 5.1.0.</div>
+  </div>
+</div>
+
+  </div>
+</div>
+<script>
+	var currPage = window.location.pathname.replace(/\//g, '');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
+</script>
+</body>
+</html>

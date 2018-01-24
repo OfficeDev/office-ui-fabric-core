@@ -69,6 +69,7 @@ $ms-icon-code-Archive: '\F03F';
 $ms-icon-code-AreaChart: '\E9D2';
 $ms-icon-code-ArrangeBringForward: '\F509';
 $ms-icon-code-ArrangeBringToFront: '\F506';
+$ms-icon-code-ArrangeByFrom: '\F678';
 $ms-icon-code-ArrangeSendBackward: '\F508';
 $ms-icon-code-ArrangeSendToBack: '\F507';
 $ms-icon-code-Arrivals: '\EB34';
@@ -352,6 +353,7 @@ $ms-icon-code-Copy: '\E8C8';
 $ms-icon-code-Cotton: '\EAF3';
 $ms-icon-code-CPlusPlus: '\F2F4';
 $ms-icon-code-CPlusPlusLanguage: '\F2F3';
+$ms-icon-code-CreateMailRule: '\F67A';
 $ms-icon-code-Cricket: '\EB1E';
 $ms-icon-code-CRMReport: '\EFFE';
 $ms-icon-code-Crop: '\E7A8';
@@ -505,6 +507,7 @@ $ms-icon-code-ExploreData: '\F5B6';
 $ms-icon-code-Export: '\EDE1';
 $ms-icon-code-ExportMirrored: '\EDE2';
 $ms-icon-code-ExternalBuild: '\F445';
+$ms-icon-code-ExternalGit: '\F665';
 $ms-icon-code-ExternalTFVC: '\F446';
 $ms-icon-code-ExternalXAML: '\F447';
 $ms-icon-code-F12DevTools: '\EBEE';
@@ -617,6 +620,7 @@ $ms-icon-code-Giftbox: '\EC1F';
 $ms-icon-code-GiftboxOpen: '\F133';
 $ms-icon-code-GiftBoxSolid: '\F341';
 $ms-icon-code-GiftCard: '\EB8E';
+$ms-icon-code-GitFork: '\F661';
 $ms-icon-code-GitGraph: '\F2CA';
 $ms-icon-code-Glasses: '\EA16';
 $ms-icon-code-Glimmer: '\ECF4';
@@ -695,6 +699,7 @@ $ms-icon-code-InsertColumnsLeft: '\F64A';
 $ms-icon-code-InsertColumnsRight: '\F64B';
 $ms-icon-code-InsertRowsAbove: '\F64C';
 $ms-icon-code-InsertRowsBelow: '\F64D';
+$ms-icon-code-InsertSignatureLine: '\F677';
 $ms-icon-code-InsertTextBox: '\EC7D';
 $ms-icon-code-InstallToDrive: '\F28D';
 $ms-icon-code-InternetSharing: '\E704';
@@ -931,6 +936,7 @@ $ms-icon-code-PeopleRepeat: '\ED92';
 $ms-icon-code-Permissions: '\E8D7';
 $ms-icon-code-PermissionsSolid: '\F349';
 $ms-icon-code-Personalize: '\E771';
+$ms-icon-code-Phishing: '\F679';
 $ms-icon-code-Phone: '\E717';
 $ms-icon-code-Photo2: '\EB9F';
 $ms-icon-code-Photo2Add: '\ECAB';
@@ -1363,6 +1369,7 @@ $ms-icon-code-Variable: '\F305';
 $ms-icon-code-VariableGroup: '\F31B';
 $ms-icon-code-VB: '\F2F2';
 $ms-icon-code-VennDiagram: '\F273';
+$ms-icon-code-VersionControlPush: '\F664';
 $ms-icon-code-VerticalDistributeCenter: '\F4FA';
 $ms-icon-code-Video: '\E714';
 $ms-icon-code-VideoOff: '\F4B0';
@@ -1506,6 +1513,7 @@ $ms-icon-map: (
   'AreaChart': $ms-icon-code-AreaChart,
   'ArrangeBringForward': $ms-icon-code-ArrangeBringForward,
   'ArrangeBringToFront': $ms-icon-code-ArrangeBringToFront,
+  'ArrangeByFrom': $ms-icon-code-ArrangeByFrom,
   'ArrangeSendBackward': $ms-icon-code-ArrangeSendBackward,
   'ArrangeSendToBack': $ms-icon-code-ArrangeSendToBack,
   'Arrivals': $ms-icon-code-Arrivals,
@@ -1789,6 +1797,7 @@ $ms-icon-map: (
   'Cotton': $ms-icon-code-Cotton,
   'CPlusPlus': $ms-icon-code-CPlusPlus,
   'CPlusPlusLanguage': $ms-icon-code-CPlusPlusLanguage,
+  'CreateMailRule': $ms-icon-code-CreateMailRule,
   'Cricket': $ms-icon-code-Cricket,
   'CRMReport': $ms-icon-code-CRMReport,
   'Crop': $ms-icon-code-Crop,
@@ -1942,6 +1951,7 @@ $ms-icon-map: (
   'Export': $ms-icon-code-Export,
   'ExportMirrored': $ms-icon-code-ExportMirrored,
   'ExternalBuild': $ms-icon-code-ExternalBuild,
+  'ExternalGit': $ms-icon-code-ExternalGit,
   'ExternalTFVC': $ms-icon-code-ExternalTFVC,
   'ExternalXAML': $ms-icon-code-ExternalXAML,
   'F12DevTools': $ms-icon-code-F12DevTools,
@@ -2054,6 +2064,7 @@ $ms-icon-map: (
   'GiftboxOpen': $ms-icon-code-GiftboxOpen,
   'GiftBoxSolid': $ms-icon-code-GiftBoxSolid,
   'GiftCard': $ms-icon-code-GiftCard,
+  'GitFork': $ms-icon-code-GitFork,
   'GitGraph': $ms-icon-code-GitGraph,
   'Glasses': $ms-icon-code-Glasses,
   'Glimmer': $ms-icon-code-Glimmer,
@@ -2132,6 +2143,7 @@ $ms-icon-map: (
   'InsertColumnsRight': $ms-icon-code-InsertColumnsRight,
   'InsertRowsAbove': $ms-icon-code-InsertRowsAbove,
   'InsertRowsBelow': $ms-icon-code-InsertRowsBelow,
+  'InsertSignatureLine': $ms-icon-code-InsertSignatureLine,
   'InsertTextBox': $ms-icon-code-InsertTextBox,
   'InstallToDrive': $ms-icon-code-InstallToDrive,
   'InternetSharing': $ms-icon-code-InternetSharing,
@@ -2368,6 +2380,7 @@ $ms-icon-map: (
   'Permissions': $ms-icon-code-Permissions,
   'PermissionsSolid': $ms-icon-code-PermissionsSolid,
   'Personalize': $ms-icon-code-Personalize,
+  'Phishing': $ms-icon-code-Phishing,
   'Phone': $ms-icon-code-Phone,
   'Photo2': $ms-icon-code-Photo2,
   'Photo2Add': $ms-icon-code-Photo2Add,
@@ -2800,6 +2813,7 @@ $ms-icon-map: (
   'VariableGroup': $ms-icon-code-VariableGroup,
   'VB': $ms-icon-code-VB,
   'VennDiagram': $ms-icon-code-VennDiagram,
+  'VersionControlPush': $ms-icon-code-VersionControlPush,
   'VerticalDistributeCenter': $ms-icon-code-VerticalDistributeCenter,
   'Video': $ms-icon-code-Video,
   'VideoOff': $ms-icon-code-VideoOff,

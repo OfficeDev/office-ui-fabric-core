@@ -78,6 +78,14 @@
   background-color: $ms-color-neutralTertiaryAlt;
 }
 
+@mixin ms-bgColor-neutralQuaternary {
+  background-color: $ms-color-neutralQuaternary;
+}
+
+@mixin ms-bgColor-neutralQuaternaryAlt {
+  background-color: $ms-color-neutralQuaternaryAlt;
+}
+
 @mixin ms-bgColor-neutralLight {
   background-color: $ms-color-neutralLight;
 }
@@ -282,6 +290,14 @@
 
 @mixin ms-borderColor-neutralTertiaryAlt {
   border-color: $ms-color-neutralTertiaryAlt;
+}
+
+@mixin ms-borderColor-neutralQuaternary {
+  border-color: $ms-color-neutralQuaternary;
+}
+
+@mixin ms-borderColor-neutralQuaternaryAlt {
+  border-color: $ms-color-neutralQuaternaryAlt;
 }
 
 @mixin ms-borderColor-neutralLight {

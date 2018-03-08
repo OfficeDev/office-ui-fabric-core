@@ -229,6 +229,16 @@
   @include ms-fontColor-neutralTertiaryAlt;
 }
 
+.ms-fontColor-neutralQuaternary,
+.ms-fontColor-neutralQuaternary--hover:hover {
+  @include ms-fontColor-neutralQuaternary;
+}
+
+.ms-fontColor-neutralQuaternaryAlt,
+.ms-fontColor-neutralQuaternaryAlt--hover:hover {
+  @include ms-fontColor-neutralQuaternaryAlt;
+}
+
 .ms-fontColor-neutralLight,
 .ms-fontColor-neutralLight--hover:hover {
   @include ms-fontColor-neutralLight;

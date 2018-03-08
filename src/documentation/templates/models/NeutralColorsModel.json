@@ -147,6 +147,22 @@
       "borderClass": "ms-borderColor-neutralTertiaryAlt"
     },
     {
+      "name": "Neutral Quaternary",
+      "hex": "#D0D0D0",
+      "customNameColor": "ms-fontColor-black",
+      "fontClass": "ms-fontColor-neutralQuaternary",
+      "bgClass": "ms-bgColor-neutralQuaternary",
+      "borderClass": "ms-borderColor-neutralQuaternary"
+    },
+    {
+      "name": "Neutral Quaternary Alt",
+      "customNameColor": "ms-fontColor-black",
+      "hex": "#DADADA",
+      "fontClass": "ms-fontColor-neutralQuaternaryAlt",
+      "bgClass": "ms-bgColor-neutralQuaternaryAlt",
+      "borderClass": "ms-borderColor-neutralQuaternaryAlt"
+    },
+    {
       "name": "Neutral Light",
       "hex": "#EAEAEA",
       "customNameColor": "ms-fontColor-black",

@@ -1,0 +1,44 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Font directory and paths
+$ms-font-cdn-path: 'https://static2.sharepointonline.com/files/fabric/assets/fonts' !default;
+
+// Fallback fonts, if specified system or web fonts are unavailable.
+$ms-font-family-fallbacks: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif !default;
+
+// Language-specific font stacks.
+$ms-font-family-arabic:              'Segoe UI Web (Arabic)', $ms-font-family-fallbacks !default;
+$ms-font-family-chinese-simplified:  'Microsoft Yahei UI', Verdana, Simsun, $ms-font-family-fallbacks !default;
+$ms-font-family-chinese-traditional: 'Microsoft Jhenghei UI', Pmingliu, $ms-font-family-fallbacks !default;
+$ms-font-family-cyrillic:            'Segoe UI Web (Cyrillic)', $ms-font-family-fallbacks !default;
+$ms-font-family-east-european:       'Segoe UI Web (East European)', $ms-font-family-fallbacks !default;
+$ms-font-family-greek:               'Segoe UI Web (Greek)', $ms-font-family-fallbacks !default;
+$ms-font-family-hebrew:              'Segoe UI Web (Hebrew)', $ms-font-family-fallbacks !default;
+$ms-font-family-hindi:               'Nirmala UI', $ms-font-family-fallbacks !default;
+$ms-font-family-japanese:            'Yu Gothic UI', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka, $ms-font-family-fallbacks !default;
+$ms-font-family-korean:              'Malgun Gothic', Gulim, $ms-font-family-fallbacks !default;
+$ms-font-family-lao:                 'Leelawadee UI Web', 'Lao UI', DokChampa, $ms-font-family-fallbacks !default;
+$ms-font-family-selawik:             'Selawik Web', $ms-font-family-fallbacks !default;
+$ms-font-family-thai:                'Leelawadee UI Web', 'Kmer UI', $ms-font-family-fallbacks !default;
+$ms-font-family-vietnamese:          'Segoe UI Web (Vietnamese)', $ms-font-family-fallbacks !default;
+$ms-font-family-west-european:       'Segoe UI Web (West European)', $ms-font-family-fallbacks !default;
+
+// Weights
+$ms-font-weight-light:     100 !default;
+$ms-font-weight-semilight: 300 !default;
+$ms-font-weight-regular:   400 !default;
+$ms-font-weight-semibold:  600 !default;
+$ms-font-weight-bold:      700 !default;
+
+// Sizes
+$ms-font-size-su:       42px !default;
+$ms-font-size-xxl:      28px !default;
+$ms-font-size-xl-plus:  24px !default;
+$ms-font-size-xl:       21px !default;
+$ms-font-size-l:        17px !default;
+$ms-font-size-m-plus:   15px !default;
+$ms-font-size-m:        14px !default;
+$ms-font-size-s-plus:   13px !default;
+$ms-font-size-s:        12px !default;
+$ms-font-size-xs:       11px !default;
+$ms-font-size-mi:       10px !default;

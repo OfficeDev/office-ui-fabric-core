@@ -1,0 +1,173 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Fabric Animations
+
+// Output all @keyframes needed for the animations
+@include ms-animation-keyframes;
+
+// Slide
+.ms-slideRightIn10 {
+  @include ms-slideRightIn10;
+}
+
+.ms-slideRightIn20 {
+  @include ms-slideRightIn20;
+}
+
+.ms-slideRightIn40 {
+  @include ms-slideRightIn40;
+}
+
+.ms-slideRightIn400 {
+  @include ms-slideRightIn400;
+}
+
+.ms-slideRightOut40 {
+  @include ms-slideRightOut40;
+}
+
+.ms-slideRightOut400 {
+  @include ms-slideRightOut400;
+}
+
+.ms-slideLeftIn10 {
+  @include ms-slideLeftIn10;
+}
+
+.ms-slideLeftIn20 {
+  @include ms-slideLeftIn20;
+}
+
+.ms-slideLeftIn40 {
+  @include ms-slideLeftIn40;
+}
+
+.ms-slideLeftIn400 {
+  @include ms-slideLeftIn400;
+}
+
+.ms-slideLeftOut40 {
+  @include ms-slideLeftOut40;
+}
+
+.ms-slideLeftOut400 {
+  @include ms-slideLeftOut400;
+}
+
+.ms-slideUpIn10 {
+  @include ms-slideUpIn10;
+}
+
+.ms-slideUpIn20 {
+  @include ms-slideUpIn20;
+}
+
+.ms-slideDownIn10 {
+  @include ms-slideDownIn10;
+}
+
+.ms-slideDownIn20 {
+  @include ms-slideDownIn20;
+}
+
+.ms-slideUpOut10 {
+  @include ms-slideUpOut10;
+}
+
+.ms-slideUpOut20 {
+  @include ms-slideUpOut20;
+}
+
+.ms-slideDownOut10 {
+  @include ms-slideDownOut10;
+}
+
+.ms-slideDownOut20 {
+  @include ms-slideDownOut20;
+}
+
+// Scale
+.ms-scaleUpIn100 {
+  @include ms-scaleUpIn100;
+}
+
+.ms-scaleUpOut103 {
+  @include ms-scaleUpOut103;
+}
+
+.ms-scaleDownOut98 {
+  @include ms-scaleDownOut98;
+}
+
+.ms-scaleDownIn100 {
+  @include ms-scaleDownIn100;
+}
+
+// Fade
+
+.ms-fadeIn100 {
+  @include ms-fadeIn100;
+}
+
+.ms-fadeIn200 {
+  @include ms-fadeIn200;
+}
+
+.ms-fadeIn400 {
+  @include ms-fadeIn400;
+}
+
+.ms-fadeIn500 {
+  @include ms-fadeIn500;
+}
+
+.ms-fadeOut100 {
+  @include ms-fadeOut100;
+}
+
+.ms-fadeOut200 {
+  @include ms-fadeOut200;
+}
+
+.ms-fadeOut400 {
+  @include ms-fadeOut400;
+}
+
+.ms-fadeOut500 {
+  @include ms-fadeOut500;
+}
+
+// Expand-collapse
+
+.ms-expandCollapse100 {
+  @include ms-expandCollapse100;
+}
+
+.ms-expandCollapse200 {
+  @include ms-expandCollapse200;
+}
+
+.ms-expandCollapse400 {
+  @include ms-expandCollapse400;
+}
+
+// Delay
+.ms-delay100 {
+  @include ms-delay100;
+}
+
+.ms-delay200 {
+  @include ms-delay200;
+}
+
+// Rotate
+.ms-rotate90deg {
+  @include ms-rotate90deg;
+}
+
+.ms-rotateN90deg {
+  @include ms-rotateN90deg;
+}

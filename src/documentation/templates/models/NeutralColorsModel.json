@@ -33,7 +33,8 @@
       "hex": "#201f1e",
       "fontClass": "ms-fontColor-gray190",
       "bgClass": "ms-bgColor-gray190",
-      "borderClass": "ms-borderColor-gray190"
+      "borderClass": "ms-borderColor-gray190",
+      "mdl2Equivalent": "neutralDark"
     },
     {
       "name": "Gray180",
@@ -54,14 +55,16 @@
       "hex": "#323130",
       "fontClass": "ms-fontColor-gray160",
       "bgClass": "ms-bgColor-gray160",
-      "borderClass": "ms-borderColor-gray160"
+      "borderClass": "ms-borderColor-gray160",
+      "mdl2Equivalent": "neutralPrimary"
     },
     {
       "name": "Gray150",
       "hex": "#3b3a39",
       "fontClass": "ms-fontColor-gray150",
       "bgClass": "ms-bgColor-gray150",
-      "borderClass": "ms-borderColor-gray150"
+      "borderClass": "ms-borderColor-gray150",
+      "mdl2Equivalent": "neutralPrimaryAlt"
     },
     {
       "name": "Gray140",
@@ -75,14 +78,16 @@
       "hex": "#605e5c",
       "fontClass": "ms-fontColor-gray130",
       "bgClass": "ms-bgColor-gray130",
-      "borderClass": "ms-borderColor-gray130"
+      "borderClass": "ms-borderColor-gray130",
+      "mdl2Equivalent": "neutralSecondary"
     },
     {
       "name": "Gray120",
       "hex": "#797775",
       "fontClass": "ms-fontColor-gray120",
       "bgClass": "ms-bgColor-gray120",
-      "borderClass": "ms-borderColor-gray120"
+      "borderClass": "ms-borderColor-gray120",
+      "mdl2Equivalent": "neutralSecondaryAlt"
     },
     {
       "name": "Gray110",
@@ -103,7 +108,8 @@
       "hex": "#a19f9d",
       "fontClass": "ms-fontColor-gray90",
       "bgClass": "ms-bgColor-gray90",
-      "borderClass": "ms-borderColor-gray90"
+      "borderClass": "ms-borderColor-gray90",
+      "mdl2Equivalent": "neutralTertiary"
     },
     {
       "name": "Gray80",
@@ -128,7 +134,8 @@
       "bgClass": "ms-bgColor-gray60",
       "borderClass": "ms-borderColor-gray60",
       "secondBgClass": "ms-bgColor-neutralPrimary",
-      "customNameColor": "ms-fontColor-black"
+      "customNameColor": "ms-fontColor-black",
+      "mdl2Equivalent": "neutralTertiaryAlt"
     },
     {
       "name": "Gray50",
@@ -137,7 +144,8 @@
       "bgClass": "ms-bgColor-gray50",
       "borderClass": "ms-borderColor-gray50",
       "secondBgClass": "ms-bgColor-neutralPrimary",
-      "customNameColor": "ms-fontColor-black"
+      "customNameColor": "ms-fontColor-black",
+      "mdl2Equivalent": "neutralQuaternary"
     },
     {
       "name": "Gray40",
@@ -146,7 +154,8 @@
       "bgClass": "ms-bgColor-gray40",
       "borderClass": "ms-borderColor-gray40",
       "secondBgClass": "ms-bgColor-neutralPrimary",
-      "customNameColor": "ms-fontColor-black"
+      "customNameColor": "ms-fontColor-black",
+      "mdl2Equivalent": "neutralQuaternaryAlt"
     },
     {
       "name": "Gray30",
@@ -155,7 +164,8 @@
       "bgClass": "ms-bgColor-gray30",
       "borderClass": "ms-borderColor-gray30",
       "secondBgClass": "ms-bgColor-neutralPrimary",
-      "customNameColor": "ms-fontColor-black"
+      "customNameColor": "ms-fontColor-black",
+      "mdl2Equivalent": "neutralLight"
     },
     {
       "name": "Gray20",
@@ -164,7 +174,8 @@
       "bgClass": "ms-bgColor-gray20",
       "borderClass": "ms-borderColor-gray20",
       "secondBgClass": "ms-bgColor-neutralPrimary",
-      "customNameColor": "ms-fontColor-black"
+      "customNameColor": "ms-fontColor-black",
+      "mdl2Equivalent": "neutralLighter"
     },
     {
       "name": "Gray10",
@@ -173,7 +184,8 @@
       "bgClass": "ms-bgColor-gray10",
       "borderClass": "ms-borderColor-gray10",
       "secondBgClass": "ms-bgColor-neutralPrimary",
-      "customNameColor": "ms-fontColor-black"
+      "customNameColor": "ms-fontColor-black",
+      "mdl2Equivalent": "neutralLighterAlt"
     },
     {
       "name": "white",

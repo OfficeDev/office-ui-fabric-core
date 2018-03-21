@@ -28,3 +28,17 @@ $ms-color-gray30: #edebe9 !default;
 $ms-color-gray20: #f3f2f1 !default;
 $ms-color-gray10: #faf9f8 !default;
 $ms-color-white: #ffffff !default;
+
+// Overrides for deprecated MDL2 colors.
+$ms-color-neutralDark: $ms-color-gray190;
+$ms-color-neutralPrimary: $ms-color-gray160;
+$ms-color-neutralPrimaryAlt: $ms-color-gray150;
+$ms-color-neutralSecondary: $ms-color-gray130;
+$ms-color-neutralSecondaryAlt: $ms-color-gray120;
+$ms-color-neutralTertiary: $ms-color-gray90;
+$ms-color-neutralTertiaryAlt: $ms-color-gray60;
+$ms-color-neutralQuaternary: $ms-color-gray50;
+$ms-color-neutralQuaternaryAlt: $ms-color-gray40;
+$ms-color-neutralLight: $ms-color-gray30;
+$ms-color-neutralLighter: $ms-color-gray20;
+$ms-color-neutralLighterAlt: $ms-color-gray10;

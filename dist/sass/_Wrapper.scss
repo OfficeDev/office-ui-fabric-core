@@ -1,0 +1,42 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Wrapper component to set base typography.
+
+.ms-Fabric {
+  @include ms-Fabric;
+}
+
+// Create overrides for each language that has an alternate font-family.
+@include ms-font-family-language-override('ar', $ms-font-family-arabic);
+@include ms-font-family-language-override('bg', $ms-font-family-cyrillic);
+@include ms-font-family-language-override('cs', $ms-font-family-east-european);
+@include ms-font-family-language-override('el', $ms-font-family-greek);
+@include ms-font-family-language-override('et', $ms-font-family-east-european);
+@include ms-font-family-language-override('he', $ms-font-family-hebrew);
+@include ms-font-family-language-override('hi', $ms-font-family-hindi);
+@include ms-font-family-language-override('hr', $ms-font-family-east-european);
+@include ms-font-family-language-override('hu', $ms-font-family-east-european);
+@include ms-font-family-language-override('ja', $ms-font-family-japanese);
+@include ms-font-family-language-override('kk', $ms-font-family-east-european);
+@include ms-font-family-language-override('ko', $ms-font-family-korean);
+@include ms-font-family-language-override('lo', $ms-font-family-lao);
+@include ms-font-family-language-override('lt', $ms-font-family-east-european);
+@include ms-font-family-language-override('lv', $ms-font-family-east-european);
+@include ms-font-family-language-override('pl', $ms-font-family-east-european);
+@include ms-font-family-language-override('ru', $ms-font-family-cyrillic);
+@include ms-font-family-language-override('sk', $ms-font-family-east-european);
+@include ms-font-family-language-override('sr-latn', $ms-font-family-east-european);
+@include ms-font-family-language-override('th', $ms-font-family-thai);
+@include ms-font-family-language-override('tr', $ms-font-family-east-european);
+@include ms-font-family-language-override('uk', $ms-font-family-cyrillic);
+@include ms-font-family-language-override('vi', $ms-font-family-vietnamese);
+@include ms-font-family-language-override('zh-hans', $ms-font-family-chinese-simplified);
+@include ms-font-family-language-override('zh-hant', $ms-font-family-chinese-traditional);
+
+// Modifier: Use Selawik as an open source alternative to Segoe UI.
+.ms-Fabric--selawik {
+  font-family: $ms-font-family-selawik;
+}

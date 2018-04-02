@@ -1,0 +1,9 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+$ms-shadow-color: transparentize($ms-color-black, 0.9) !default;
+
+$ms-shadow-level0: 0 0 0 0 transparent !default;
+$ms-shadow-level1: 0 2px 4px -0.75px $ms-shadow-color !default;
+$ms-shadow-level2: 0 4px 8px -1px $ms-shadow-color !default;
+$ms-shadow-level3: 0 8px 10px -2px $ms-shadow-color !default;
+$ms-shadow-level4: 0 16px 18px -4px $ms-shadow-color !default;

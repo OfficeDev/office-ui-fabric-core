@@ -103,3 +103,53 @@
 .ms-fontColor-white--hover:hover {
   @include ms-fontColor-white;
 }
+
+//== Sizes.
+//
+
+.ms-fontSize-68 {
+  @include ms-fontSize-68;
+}
+.ms-fontSize-42 {
+  @include ms-fontSize-42;
+}
+.ms-fontSize-32 {
+  @include ms-fontSize-32;
+}
+.ms-fontSize-28 {
+  @include ms-fontSize-28;
+}
+.ms-fontSize-24 {
+  @include ms-fontSize-24;
+}
+.ms-fontSize-20 {
+  @include ms-fontSize-20;
+}
+.ms-fontSize-18 {
+  @include ms-fontSize-18;
+}
+.ms-fontSize-16 {
+  @include ms-fontSize-16;
+}
+.ms-fontSize-14 {
+  @include ms-fontSize-14;
+}
+.ms-fontSize-12 {
+  @include ms-fontSize-12;
+}
+.ms-fontSize-10 {
+  @include ms-fontSize-10;
+}
+
+//== Weights.
+//
+
+.ms-fontWeight-regular {
+  @include ms-fontWeight-regular;
+}
+.ms-fontWeight-semibold {
+  @include ms-fontWeight-semibold;
+}
+.ms-fontWeight-bold {
+  @include ms-fontWeight-bold;
+}

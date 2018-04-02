@@ -5,62 +5,6 @@
 // --------------------------------------------------
 // Font definitions
 
-/*
-  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
-*/
-
-// Produce @font-face definitions for the web fonts.
-@mixin ms-font-face($font-family-name, $cdn-folder, $cdn-font-name: 'segoeui') {
-  @font-face {
-    font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff') format('woff');
-    font-weight: $ms-font-weight-light;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff') format('woff');
-    font-weight: $ms-font-weight-semilight;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff') format('woff');
-    font-weight: $ms-font-weight-regular;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff') format('woff');
-    font-weight: $ms-font-weight-semibold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff') format('woff');
-    font-weight: $ms-font-weight-bold;
-    font-style: normal;
-  }
-}
-
-// Generate overrides to set font-family based on the lang attribute.
-@mixin ms-font-family-language-override($language-code, $font-family) {
-  *[lang^='#{$language-code}'] .ms-Fabric,
-  .ms-Fabric *[lang^='#{$language-code}'],
-  .ms-Fabric[lang^='#{$language-code}'] {
-    font-family: $font-family;
-  }
-}
-
 // Super Styles (LIMITED USE)
 @mixin ms-font-su {
   font-size: $ms-font-size-su;
@@ -138,18 +82,6 @@
 
 @mixin ms-fontWeight-semilight {
   font-weight: $ms-font-weight-semilight;
-}
-
-@mixin ms-fontWeight-regular {
-  font-weight: $ms-font-weight-regular;
-}
-
-@mixin ms-fontWeight-semibold {
-  font-weight: $ms-font-weight-semibold;
-}
-
-@mixin ms-fontWeight-bold {
-  font-weight: $ms-font-weight-bold;
 }
 
 // Font sizes

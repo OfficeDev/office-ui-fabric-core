@@ -1,69 +1,68 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 // Theme
-$ms-color-themeDarker:     #004578 !default;
-$ms-color-themeDark:       #005a9e !default;
-$ms-color-themeDarkAlt:    #106ebe !default;
-$ms-color-themePrimary:    #0078d4 !default;
-$ms-color-themeSecondary:  #2b88d8 !default;
-$ms-color-themeTertiary:   #71afe5 !default;
-$ms-color-themeLight:      #c7e0f4 !default;
-$ms-color-themeLighter:    #deecf9 !default;
+$ms-color-themeDarker: #004578 !default;
+$ms-color-themeDark: #005a9e !default;
+$ms-color-themeDarkAlt: #106ebe !default;
+$ms-color-themePrimary: #0078d4 !default;
+$ms-color-themeSecondary: #2b88d8 !default;
+$ms-color-themeTertiary: #71afe5 !default;
+$ms-color-themeLight: #c7e0f4 !default;
+$ms-color-themeLighter: #deecf9 !default;
 $ms-color-themeLighterAlt: #eff6fc !default;
 
 // Neutral
 // The original colors have been overridden by the new palette, with warmer grays.
-$ms-color-neutralDark:          $ms-color-gray190 !default;
-$ms-color-neutralPrimary:       $ms-color-gray160 !default;
-$ms-color-neutralPrimaryAlt:    $ms-color-gray150 !default;
-$ms-color-neutralSecondary:     $ms-color-gray130 !default;
-$ms-color-neutralSecondaryAlt:  $ms-color-gray120 !default;
-$ms-color-neutralTertiary:      $ms-color-gray90 !default;
-$ms-color-neutralTertiaryAlt:   $ms-color-gray60 !default;
-$ms-color-neutralQuaternary:    $ms-color-gray50 !default;
+$ms-color-neutralDark: $ms-color-gray190 !default;
+$ms-color-neutralPrimary: $ms-color-gray160 !default;
+$ms-color-neutralPrimaryAlt: $ms-color-gray150 !default;
+$ms-color-neutralSecondary: $ms-color-gray130 !default;
+$ms-color-neutralSecondaryAlt: $ms-color-gray120 !default;
+$ms-color-neutralTertiary: $ms-color-gray90 !default;
+$ms-color-neutralTertiaryAlt: $ms-color-gray60 !default;
+$ms-color-neutralQuaternary: $ms-color-gray50 !default;
 $ms-color-neutralQuaternaryAlt: $ms-color-gray40 !default;
-$ms-color-neutralLight:         $ms-color-gray30 !default;
-$ms-color-neutralLighter:       $ms-color-gray20 !default;
-$ms-color-neutralLighterAlt:    $ms-color-gray10 !default;
+$ms-color-neutralLight: $ms-color-gray30 !default;
+$ms-color-neutralLighter: $ms-color-gray20 !default;
+$ms-color-neutralLighterAlt: $ms-color-gray10 !default;
 
 // Accent
 // Where possible, these colors have been mapped to the new palette.
-$ms-color-yellow:        $ms-color-orangeYellow30 !default;
-$ms-color-yellowLight:   $ms-color-yellow40 !default;
-$ms-color-orange:        #d83b01 !default;
-$ms-color-orangeLight:   #ea4300 !default;
+$ms-color-yellow: $ms-color-orangeYellow30 !default;
+$ms-color-yellowLight: $ms-color-yellow40 !default;
+$ms-color-orange: #d83b01 !default;
+$ms-color-orangeLight: #ea4300 !default;
 $ms-color-orangeLighter: $ms-color-orange110 !default;
-$ms-color-redDark:       $ms-color-red150 !default;
-$ms-color-red:           $ms-color-red110 !default;
-$ms-color-magentaDark:   $ms-color-magenta160 !default;
-$ms-color-magenta:       $ms-color-magenta90 !default;
-$ms-color-magentaLight:  $ms-color-magentaPink30 !default;
-$ms-color-purpleDark:    #32145a !default;
-$ms-color-purple:        #5c2d91 !default;
-$ms-color-purpleLight:   $ms-color-blueMagenta20 !default;
-$ms-color-blueDark:      #002050 !default;
-$ms-color-blueMid:       $ms-color-blue130 !default;
-$ms-color-blue:          $ms-color-cyanBlue60 !default;
-$ms-color-blueLight:     $ms-color-cyan100 !default;
-$ms-color-tealDark:      #004b50 !default;
-$ms-color-teal:          $ms-color-cyan200 !default;
-$ms-color-tealLight:     $ms-color-cyan150 !default;
-$ms-color-greenDark:     #004b1c !default;
-$ms-color-green:         $ms-color-green120 !default;
-$ms-color-greenLight:    $ms-color-yellowGreen50 !default;
-
+$ms-color-redDark: $ms-color-red150 !default;
+$ms-color-red: $ms-color-red110 !default;
+$ms-color-magentaDark: $ms-color-magenta160 !default;
+$ms-color-magenta: $ms-color-magenta90 !default;
+$ms-color-magentaLight: $ms-color-magentaPink30 !default;
+$ms-color-purpleDark: #32145a !default;
+$ms-color-purple: #5c2d91 !default;
+$ms-color-purpleLight: $ms-color-blueMagenta20 !default;
+$ms-color-blueDark: #002050 !default;
+$ms-color-blueMid: $ms-color-blue130 !default;
+$ms-color-blue: $ms-color-cyanBlue60 !default;
+$ms-color-blueLight: $ms-color-cyan100 !default;
+$ms-color-tealDark: #004b50 !default;
+$ms-color-teal: $ms-color-cyan200 !default;
+$ms-color-tealLight: $ms-color-cyan150 !default;
+$ms-color-greenDark: #004b1c !default;
+$ms-color-green: $ms-color-green120 !default;
+$ms-color-greenLight: $ms-color-yellowGreen50 !default;
 
 // Message
 // Where possible, these colors have been mapped to the new palette.
-$ms-color-info:                       $ms-color-gray120 !default;
-$ms-color-infoBackground:             $ms-color-gray20 !default;
-$ms-color-success:                    $ms-color-green120 !default;
-$ms-color-successBackground:        #dff6dd !default;
-$ms-color-severeWarning:              $ms-color-orange !default;
-$ms-color-severeWarningBackground:  #fed9cc !default;
-$ms-color-alert:                      $ms-color-severeWarning !default;   // Deprecated: Use $ms-color-severeWarning
-$ms-color-alertBackground:            $ms-color-severeWarningBackground !default; // Deprecated: Use $ms-color-severeWarningBackground
-$ms-color-warning:                    $ms-color-gray120 !default;
-$ms-color-warningBackground:        #fff4ce !default;
-$ms-color-error:                      $ms-color-red150 !default;
-$ms-color-errorBackground:          #fde7e9 !default;
+$ms-color-info: $ms-color-gray120 !default;
+$ms-color-infoBackground: $ms-color-gray20 !default;
+$ms-color-success: $ms-color-green120 !default;
+$ms-color-successBackground: #dff6dd !default;
+$ms-color-severeWarning: $ms-color-orange !default;
+$ms-color-severeWarningBackground: #fed9cc !default;
+$ms-color-alert: $ms-color-severeWarning !default; // Deprecated: Use $ms-color-severeWarning
+$ms-color-alertBackground: $ms-color-severeWarningBackground !default; // Deprecated: Use $ms-color-severeWarningBackground
+$ms-color-warning: $ms-color-gray120 !default;
+$ms-color-warningBackground: #fff4ce !default;
+$ms-color-error: $ms-color-red150 !default;
+$ms-color-errorBackground: #fde7e9 !default;

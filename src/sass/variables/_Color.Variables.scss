@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Grays.
+// Gray
 $ms-color-black: #000000 !default;
 $ms-color-gray220: #11100f !default;
 $ms-color-gray210: #161514 !default;
@@ -26,7 +26,7 @@ $ms-color-gray20: #f3f2f1 !default;
 $ms-color-gray10: #faf9f8 !default;
 $ms-color-white: #ffffff !default;
 
-// Colors.
+// Color
 $ms-color-pinkRed40: #750b1c !default;
 $ms-color-pinkRed30: #761721 !default;
 $ms-color-pinkRed20: #e6808a !default;
@@ -224,7 +224,45 @@ $ms-color-pink30: #ea005e !default;
 $ms-color-pink20: #ee3f86 !default;
 $ms-color-pink10: #edbed3 !default;
 
-// High contrast colors
+// Communication
+$ms-color-communication90: #004578 !default;
+$ms-color-communication80: #005a9e !default;
+$ms-color-communication70: #106ebe !default;
+$ms-color-communication60: #0078d7 !default;
+$ms-color-communication50: #2b88d8 !default;
+$ms-color-communication40: #71afe5 !default;
+$ms-color-communication30: #c7e0f4 !default;
+$ms-color-communication20: #deecf9 !default;
+$ms-color-communication10: #eff6fc !default;
+
+// Excel
+$ms-color-excel70: #002901 !default;
+$ms-color-excel60: #0b4218 !default;
+$ms-color-excel50: #165a2f !default;
+$ms-color-excel40: #217346 !default;
+$ms-color-excel30: #4c916c !default;
+$ms-color-excel20: #77b091 !default;
+$ms-color-excel10: #a2ceb7 !default;
+
+// PowerPoint
+$ms-color-powerPoint70: #620000 !default;
+$ms-color-powerPoint60: #7e180e !default;
+$ms-color-powerPoint50: #9b2f1c !default;
+$ms-color-powerPoint40: #b7472a !default;
+$ms-color-powerPoint30: #c96c54 !default;
+$ms-color-powerPoint20: #dc927e !default;
+$ms-color-powerPoint10: #eeb7a9 !default;
+
+// Word
+$ms-color-word70: #001b59 !default;
+$ms-color-word60: #0e2f6f !default;
+$ms-color-word50: #1d4384 !default;
+$ms-color-word40: #2b579a !default;
+$ms-color-word30: #557bb3 !default;
+$ms-color-word20: #7f9ecc !default;
+$ms-color-word10: #a9c2e6 !default;
+
+// High contrast
 $ms-color-contrastBlackDisabled: #00ff00 !default;
 $ms-color-contrastWhiteDisabled: #600000 !default;
 $ms-color-contrastBlackSelected: #1aebff !default;

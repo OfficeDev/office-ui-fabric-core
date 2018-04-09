@@ -268,5 +268,17 @@ $ms-color-contrastWhiteDisabled: #600000 !default;
 $ms-color-contrastBlackSelected: #1aebff !default;
 $ms-color-contrastWhiteSelected: #37006e !default;
 
+// Message
+$ms-color-messageInfo: $ms-color-gray120 !default;
+$ms-color-messageInfoBackground: $ms-color-gray20 !default;
+$ms-color-messageSuccess: $ms-color-green120 !default;
+$ms-color-messageSuccessBackground: #dff6dd !default;
+$ms-color-messageSevereWarning: $ms-color-orange !default;
+$ms-color-messageSevereWarningBackground: #fed9cc !default;
+$ms-color-messageWarning: $ms-color-gray120 !default;
+$ms-color-messageWarningBackground: #fff4ce !default;
+$ms-color-messageError: $ms-color-red150 !default;
+$ms-color-messageErrorBackground: #fde7e9 !default;
+
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";

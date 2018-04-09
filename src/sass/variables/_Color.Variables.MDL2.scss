@@ -51,18 +51,3 @@ $ms-color-tealLight: $ms-color-cyan150 !default;
 $ms-color-greenDark: #004b1c !default;
 $ms-color-green: $ms-color-green120 !default;
 $ms-color-greenLight: $ms-color-yellowGreen50 !default;
-
-// Message
-// Where possible, these colors have been mapped to the new palette.
-$ms-color-info: $ms-color-gray120 !default;
-$ms-color-infoBackground: $ms-color-gray20 !default;
-$ms-color-success: $ms-color-green120 !default;
-$ms-color-successBackground: #dff6dd !default;
-$ms-color-severeWarning: $ms-color-orange !default;
-$ms-color-severeWarningBackground: #fed9cc !default;
-$ms-color-alert: $ms-color-severeWarning !default; // Deprecated: Use $ms-color-severeWarning
-$ms-color-alertBackground: $ms-color-severeWarningBackground !default; // Deprecated: Use $ms-color-severeWarningBackground
-$ms-color-warning: $ms-color-gray120 !default;
-$ms-color-warningBackground: #fff4ce !default;
-$ms-color-error: $ms-color-red150 !default;
-$ms-color-errorBackground: #fde7e9 !default;

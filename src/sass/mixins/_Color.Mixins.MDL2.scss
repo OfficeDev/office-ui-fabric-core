@@ -5,7 +5,6 @@
 // --------------------------------------------------
 // Fabric Core Color Mixins
 
-
 //== Background colors
 //
 // Theme colors
@@ -46,10 +45,6 @@
 }
 
 // Neutral colors
-@mixin ms-bgColor-black {
-  background-color: $ms-color-black;
-}
-
 @mixin ms-bgColor-neutralDark {
   background-color: $ms-color-neutralDark;
 }
@@ -97,11 +92,6 @@
 @mixin ms-bgColor-neutralLighterAlt {
   background-color: $ms-color-neutralLighterAlt;
 }
-
-@mixin ms-bgColor-white {
-  background-color: $ms-color-white;
-}
-
 
 // Brand and accent colors
 @mixin ms-bgColor-yellow {
@@ -217,7 +207,6 @@
   background-color: $ms-color-errorBackground;
 }
 
-
 //== Border colors
 //
 
@@ -258,12 +247,7 @@
   border-color: $ms-color-themeLighterAlt;
 }
 
-
 // Neutral colors
-@mixin ms-borderColor-black {
-  border-color: $ms-color-black;
-}
-
 @mixin ms-borderColor-neutralDark {
   border-color: $ms-color-neutralDark;
 }
@@ -310,10 +294,6 @@
 
 @mixin ms-borderColor-neutralLighterAlt {
   border-color: $ms-color-neutralLighterAlt;
-}
-
-@mixin ms-borderColor-white {
-  border-color: $ms-color-white;
 }
 
 // Brand and accent colors
@@ -408,7 +388,6 @@
 @mixin ms-borderColor-greenLight {
   border-color: $ms-color-greenLight;
 }
-
 
 // Message colors
 @mixin ms-borderColor-info {

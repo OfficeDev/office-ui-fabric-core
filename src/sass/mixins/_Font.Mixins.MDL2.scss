@@ -168,10 +168,6 @@
 
 
 // Neutral colors
-@mixin ms-fontColor-black {
-  color: $ms-color-black;
-}
-
 @mixin ms-fontColor-neutralDark {
   color: $ms-color-neutralDark;
 }
@@ -218,10 +214,6 @@
 
 @mixin ms-fontColor-neutralLighterAlt {
   color: $ms-color-neutralLighterAlt;
-}
-
-@mixin ms-fontColor-white {
-  color: $ms-color-white;
 }
 
 // Brand and accent colors

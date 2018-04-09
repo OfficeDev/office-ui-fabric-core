@@ -1,0 +1,789 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Gray
+@mixin ms-borderColor-black {
+  border-color: $ms-color-black;
+}
+@mixin ms-borderColor-gray220 {
+  border-color: $ms-color-gray220;
+}
+@mixin ms-borderColor-gray210 {
+  border-color: $ms-color-gray210;
+}
+@mixin ms-borderColor-gray200 {
+  border-color: $ms-color-gray200;
+}
+@mixin ms-borderColor-gray190 {
+  border-color: $ms-color-gray190;
+}
+@mixin ms-borderColor-gray180 {
+  border-color: $ms-color-gray180;
+}
+@mixin ms-borderColor-gray170 {
+  border-color: $ms-color-gray170;
+}
+@mixin ms-borderColor-gray160 {
+  border-color: $ms-color-gray160;
+}
+@mixin ms-borderColor-gray150 {
+  border-color: $ms-color-gray150;
+}
+@mixin ms-borderColor-gray140 {
+  border-color: $ms-color-gray140;
+}
+@mixin ms-borderColor-gray130 {
+  border-color: $ms-color-gray130;
+}
+@mixin ms-borderColor-gray120 {
+  border-color: $ms-color-gray120;
+}
+@mixin ms-borderColor-gray110 {
+  border-color: $ms-color-gray110;
+}
+@mixin ms-borderColor-gray100 {
+  border-color: $ms-color-gray100;
+}
+@mixin ms-borderColor-gray90 {
+  border-color: $ms-color-gray90;
+}
+@mixin ms-borderColor-gray80 {
+  border-color: $ms-color-gray80;
+}
+@mixin ms-borderColor-gray70 {
+  border-color: $ms-color-gray70;
+}
+@mixin ms-borderColor-gray60 {
+  border-color: $ms-color-gray60;
+}
+@mixin ms-borderColor-gray50 {
+  border-color: $ms-color-gray50;
+}
+@mixin ms-borderColor-gray40 {
+  border-color: $ms-color-gray40;
+}
+@mixin ms-borderColor-gray30 {
+  border-color: $ms-color-gray30;
+}
+@mixin ms-borderColor-gray20 {
+  border-color: $ms-color-gray20;
+}
+@mixin ms-borderColor-gray10 {
+  border-color: $ms-color-gray10;
+}
+@mixin ms-borderColor-white {
+  border-color: $ms-color-white;
+}
+
+// Color
+@mixin ms-borderColor-pinkRed40 {
+  border-color: $ms-color-pinkRed40;
+}
+@mixin ms-borderColor-pinkRed30 {
+  border-color: $ms-color-pinkRed30;
+}
+@mixin ms-borderColor-pinkRed20 {
+  border-color: $ms-color-pinkRed20;
+}
+@mixin ms-borderColor-pinkRed10 {
+  border-color: $ms-color-pinkRed10;
+}
+@mixin ms-borderColor-red160 {
+  border-color: $ms-color-red160;
+}
+@mixin ms-borderColor-red150 {
+  border-color: $ms-color-red150;
+}
+@mixin ms-borderColor-red140 {
+  border-color: $ms-color-red140;
+}
+@mixin ms-borderColor-red130 {
+  border-color: $ms-color-red130;
+}
+@mixin ms-borderColor-red120 {
+  border-color: $ms-color-red120;
+}
+@mixin ms-borderColor-red110 {
+  border-color: $ms-color-red110;
+}
+@mixin ms-borderColor-red100 {
+  border-color: $ms-color-red100;
+}
+@mixin ms-borderColor-red90 {
+  border-color: $ms-color-red90;
+}
+@mixin ms-borderColor-red80 {
+  border-color: $ms-color-red80;
+}
+@mixin ms-borderColor-red70 {
+  border-color: $ms-color-red70;
+}
+@mixin ms-borderColor-red60 {
+  border-color: $ms-color-red60;
+}
+@mixin ms-borderColor-red50 {
+  border-color: $ms-color-red50;
+}
+@mixin ms-borderColor-red40 {
+  border-color: $ms-color-red40;
+}
+@mixin ms-borderColor-red30 {
+  border-color: $ms-color-red30;
+}
+@mixin ms-borderColor-red20 {
+  border-color: $ms-color-red20;
+}
+@mixin ms-borderColor-red10 {
+  border-color: $ms-color-red10;
+}
+@mixin ms-borderColor-redOrange60 {
+  border-color: $ms-color-redOrange60;
+}
+@mixin ms-borderColor-redOrange50 {
+  border-color: $ms-color-redOrange50;
+}
+@mixin ms-borderColor-redOrange40 {
+  border-color: $ms-color-redOrange40;
+}
+@mixin ms-borderColor-redOrange30 {
+  border-color: $ms-color-redOrange30;
+}
+@mixin ms-borderColor-redOrange20 {
+  border-color: $ms-color-redOrange20;
+}
+@mixin ms-borderColor-redOrange10 {
+  border-color: $ms-color-redOrange10;
+}
+@mixin ms-borderColor-orange190 {
+  border-color: $ms-color-orange190;
+}
+@mixin ms-borderColor-orange180 {
+  border-color: $ms-color-orange180;
+}
+@mixin ms-borderColor-orange170 {
+  border-color: $ms-color-orange170;
+}
+@mixin ms-borderColor-orange160 {
+  border-color: $ms-color-orange160;
+}
+@mixin ms-borderColor-orange150 {
+  border-color: $ms-color-orange150;
+}
+@mixin ms-borderColor-orange140 {
+  border-color: $ms-color-orange140;
+}
+@mixin ms-borderColor-orange130 {
+  border-color: $ms-color-orange130;
+}
+@mixin ms-borderColor-orange120 {
+  border-color: $ms-color-orange120;
+}
+@mixin ms-borderColor-orange110 {
+  border-color: $ms-color-orange110;
+}
+@mixin ms-borderColor-orange100 {
+  border-color: $ms-color-orange100;
+}
+@mixin ms-borderColor-orange90 {
+  border-color: $ms-color-orange90;
+}
+@mixin ms-borderColor-orange80 {
+  border-color: $ms-color-orange80;
+}
+@mixin ms-borderColor-orange70 {
+  border-color: $ms-color-orange70;
+}
+@mixin ms-borderColor-orange60 {
+  border-color: $ms-color-orange60;
+}
+@mixin ms-borderColor-orange50 {
+  border-color: $ms-color-orange50;
+}
+@mixin ms-borderColor-orange40 {
+  border-color: $ms-color-orange40;
+}
+@mixin ms-borderColor-orange30 {
+  border-color: $ms-color-orange30;
+}
+@mixin ms-borderColor-orange20 {
+  border-color: $ms-color-orange20;
+}
+@mixin ms-borderColor-orange10 {
+  border-color: $ms-color-orange10;
+}
+@mixin ms-borderColor-orangeYellow60 {
+  border-color: $ms-color-orangeYellow60;
+}
+@mixin ms-borderColor-orangeYellow50 {
+  border-color: $ms-color-orangeYellow50;
+}
+@mixin ms-borderColor-orangeYellow40 {
+  border-color: $ms-color-orangeYellow40;
+}
+@mixin ms-borderColor-orangeYellow30 {
+  border-color: $ms-color-orangeYellow30;
+}
+@mixin ms-borderColor-orangeYellow20 {
+  border-color: $ms-color-orangeYellow20;
+}
+@mixin ms-borderColor-orangeYellow10 {
+  border-color: $ms-color-orangeYellow10;
+}
+@mixin ms-borderColor-yellow50 {
+  border-color: $ms-color-yellow50;
+}
+@mixin ms-borderColor-yellow40 {
+  border-color: $ms-color-yellow40;
+}
+@mixin ms-borderColor-yellow30 {
+  border-color: $ms-color-yellow30;
+}
+@mixin ms-borderColor-yellow20 {
+  border-color: $ms-color-yellow20;
+}
+@mixin ms-borderColor-yellow10 {
+  border-color: $ms-color-yellow10;
+}
+@mixin ms-borderColor-yellowGreen70 {
+  border-color: $ms-color-yellowGreen70;
+}
+@mixin ms-borderColor-yellowGreen60 {
+  border-color: $ms-color-yellowGreen60;
+}
+@mixin ms-borderColor-yellowGreen50 {
+  border-color: $ms-color-yellowGreen50;
+}
+@mixin ms-borderColor-yellowGreen40 {
+  border-color: $ms-color-yellowGreen40;
+}
+@mixin ms-borderColor-yellowGreen30 {
+  border-color: $ms-color-yellowGreen30;
+}
+@mixin ms-borderColor-yellowGreen20 {
+  border-color: $ms-color-yellowGreen20;
+}
+@mixin ms-borderColor-yellowGreen10 {
+  border-color: $ms-color-yellowGreen10;
+}
+@mixin ms-borderColor-green140 {
+  border-color: $ms-color-green140;
+}
+@mixin ms-borderColor-green130 {
+  border-color: $ms-color-green130;
+}
+@mixin ms-borderColor-green120 {
+  border-color: $ms-color-green120;
+}
+@mixin ms-borderColor-green110 {
+  border-color: $ms-color-green110;
+}
+@mixin ms-borderColor-green100 {
+  border-color: $ms-color-green100;
+}
+@mixin ms-borderColor-green90 {
+  border-color: $ms-color-green90;
+}
+@mixin ms-borderColor-green80 {
+  border-color: $ms-color-green80;
+}
+@mixin ms-borderColor-green70 {
+  border-color: $ms-color-green70;
+}
+@mixin ms-borderColor-green60 {
+  border-color: $ms-color-green60;
+}
+@mixin ms-borderColor-green50 {
+  border-color: $ms-color-green50;
+}
+@mixin ms-borderColor-green40 {
+  border-color: $ms-color-green40;
+}
+@mixin ms-borderColor-green30 {
+  border-color: $ms-color-green30;
+}
+@mixin ms-borderColor-green20 {
+  border-color: $ms-color-green20;
+}
+@mixin ms-borderColor-green10 {
+  border-color: $ms-color-green10;
+}
+@mixin ms-borderColor-greenCyan180 {
+  border-color: $ms-color-greenCyan180;
+}
+@mixin ms-borderColor-greenCyan170 {
+  border-color: $ms-color-greenCyan170;
+}
+@mixin ms-borderColor-greenCyan160 {
+  border-color: $ms-color-greenCyan160;
+}
+@mixin ms-borderColor-greenCyan150 {
+  border-color: $ms-color-greenCyan150;
+}
+@mixin ms-borderColor-greenCyan140 {
+  border-color: $ms-color-greenCyan140;
+}
+@mixin ms-borderColor-greenCyan130 {
+  border-color: $ms-color-greenCyan130;
+}
+@mixin ms-borderColor-greenCyan120 {
+  border-color: $ms-color-greenCyan120;
+}
+@mixin ms-borderColor-greenCyan110 {
+  border-color: $ms-color-greenCyan110;
+}
+@mixin ms-borderColor-greenCyan100 {
+  border-color: $ms-color-greenCyan100;
+}
+@mixin ms-borderColor-greenCyan90 {
+  border-color: $ms-color-greenCyan90;
+}
+@mixin ms-borderColor-greenCyan80 {
+  border-color: $ms-color-greenCyan80;
+}
+@mixin ms-borderColor-greenCyan70 {
+  border-color: $ms-color-greenCyan70;
+}
+@mixin ms-borderColor-greenCyan60 {
+  border-color: $ms-color-greenCyan60;
+}
+@mixin ms-borderColor-greenCyan50 {
+  border-color: $ms-color-greenCyan50;
+}
+@mixin ms-borderColor-greenCyan40 {
+  border-color: $ms-color-greenCyan40;
+}
+@mixin ms-borderColor-greenCyan30 {
+  border-color: $ms-color-greenCyan30;
+}
+@mixin ms-borderColor-greenCyan20 {
+  border-color: $ms-color-greenCyan20;
+}
+@mixin ms-borderColor-greenCyan10 {
+  border-color: $ms-color-greenCyan10;
+}
+@mixin ms-borderColor-cyan230 {
+  border-color: $ms-color-cyan230;
+}
+@mixin ms-borderColor-cyan220 {
+  border-color: $ms-color-cyan220;
+}
+@mixin ms-borderColor-cyan210 {
+  border-color: $ms-color-cyan210;
+}
+@mixin ms-borderColor-cyan200 {
+  border-color: $ms-color-cyan200;
+}
+@mixin ms-borderColor-cyan190 {
+  border-color: $ms-color-cyan190;
+}
+@mixin ms-borderColor-cyan180 {
+  border-color: $ms-color-cyan180;
+}
+@mixin ms-borderColor-cyan170 {
+  border-color: $ms-color-cyan170;
+}
+@mixin ms-borderColor-cyan160 {
+  border-color: $ms-color-cyan160;
+}
+@mixin ms-borderColor-cyan150 {
+  border-color: $ms-color-cyan150;
+}
+@mixin ms-borderColor-cyan140 {
+  border-color: $ms-color-cyan140;
+}
+@mixin ms-borderColor-cyan130 {
+  border-color: $ms-color-cyan130;
+}
+@mixin ms-borderColor-cyan120 {
+  border-color: $ms-color-cyan120;
+}
+@mixin ms-borderColor-cyan110 {
+  border-color: $ms-color-cyan110;
+}
+@mixin ms-borderColor-cyan100 {
+  border-color: $ms-color-cyan100;
+}
+@mixin ms-borderColor-cyan90 {
+  border-color: $ms-color-cyan90;
+}
+@mixin ms-borderColor-cyan80 {
+  border-color: $ms-color-cyan80;
+}
+@mixin ms-borderColor-cyan70 {
+  border-color: $ms-color-cyan70;
+}
+@mixin ms-borderColor-cyan60 {
+  border-color: $ms-color-cyan60;
+}
+@mixin ms-borderColor-cyan50 {
+  border-color: $ms-color-cyan50;
+}
+@mixin ms-borderColor-cyan40 {
+  border-color: $ms-color-cyan40;
+}
+@mixin ms-borderColor-cyan30 {
+  border-color: $ms-color-cyan30;
+}
+@mixin ms-borderColor-cyan20 {
+  border-color: $ms-color-cyan20;
+}
+@mixin ms-borderColor-cyan10 {
+  border-color: $ms-color-cyan10;
+}
+@mixin ms-borderColor-cyanBlue100 {
+  border-color: $ms-color-cyanBlue100;
+}
+@mixin ms-borderColor-cyanBlue90 {
+  border-color: $ms-color-cyanBlue90;
+}
+@mixin ms-borderColor-cyanBlue80 {
+  border-color: $ms-color-cyanBlue80;
+}
+@mixin ms-borderColor-cyanBlue70 {
+  border-color: $ms-color-cyanBlue70;
+}
+@mixin ms-borderColor-cyanBlue60 {
+  border-color: $ms-color-cyanBlue60;
+}
+@mixin ms-borderColor-cyanBlue50 {
+  border-color: $ms-color-cyanBlue50;
+}
+@mixin ms-borderColor-cyanBlue40 {
+  border-color: $ms-color-cyanBlue40;
+}
+@mixin ms-borderColor-cyanBlue30 {
+  border-color: $ms-color-cyanBlue30;
+}
+@mixin ms-borderColor-cyanBlue20 {
+  border-color: $ms-color-cyanBlue20;
+}
+@mixin ms-borderColor-cyanBlue10 {
+  border-color: $ms-color-cyanBlue10;
+}
+@mixin ms-borderColor-blue150 {
+  border-color: $ms-color-blue150;
+}
+@mixin ms-borderColor-blue140 {
+  border-color: $ms-color-blue140;
+}
+@mixin ms-borderColor-blue130 {
+  border-color: $ms-color-blue130;
+}
+@mixin ms-borderColor-blue120 {
+  border-color: $ms-color-blue120;
+}
+@mixin ms-borderColor-blue110 {
+  border-color: $ms-color-blue110;
+}
+@mixin ms-borderColor-blue100 {
+  border-color: $ms-color-blue100;
+}
+@mixin ms-borderColor-blue90 {
+  border-color: $ms-color-blue90;
+}
+@mixin ms-borderColor-blue80 {
+  border-color: $ms-color-blue80;
+}
+@mixin ms-borderColor-blue70 {
+  border-color: $ms-color-blue70;
+}
+@mixin ms-borderColor-blue60 {
+  border-color: $ms-color-blue60;
+}
+@mixin ms-borderColor-blue50 {
+  border-color: $ms-color-blue50;
+}
+@mixin ms-borderColor-blue40 {
+  border-color: $ms-color-blue40;
+}
+@mixin ms-borderColor-blue30 {
+  border-color: $ms-color-blue30;
+}
+@mixin ms-borderColor-blue20 {
+  border-color: $ms-color-blue20;
+}
+@mixin ms-borderColor-blue10 {
+  border-color: $ms-color-blue10;
+}
+@mixin ms-borderColor-blueMagenta250 {
+  border-color: $ms-color-blueMagenta250;
+}
+@mixin ms-borderColor-blueMagenta240 {
+  border-color: $ms-color-blueMagenta240;
+}
+@mixin ms-borderColor-blueMagenta230 {
+  border-color: $ms-color-blueMagenta230;
+}
+@mixin ms-borderColor-blueMagenta220 {
+  border-color: $ms-color-blueMagenta220;
+}
+@mixin ms-borderColor-blueMagenta210 {
+  border-color: $ms-color-blueMagenta210;
+}
+@mixin ms-borderColor-blueMagenta200 {
+  border-color: $ms-color-blueMagenta200;
+}
+@mixin ms-borderColor-blueMagenta190 {
+  border-color: $ms-color-blueMagenta190;
+}
+@mixin ms-borderColor-blueMagenta180 {
+  border-color: $ms-color-blueMagenta180;
+}
+@mixin ms-borderColor-blueMagenta170 {
+  border-color: $ms-color-blueMagenta170;
+}
+@mixin ms-borderColor-blueMagenta160 {
+  border-color: $ms-color-blueMagenta160;
+}
+@mixin ms-borderColor-blueMagenta150 {
+  border-color: $ms-color-blueMagenta150;
+}
+@mixin ms-borderColor-blueMagenta140 {
+  border-color: $ms-color-blueMagenta140;
+}
+@mixin ms-borderColor-blueMagenta130 {
+  border-color: $ms-color-blueMagenta130;
+}
+@mixin ms-borderColor-blueMagenta120 {
+  border-color: $ms-color-blueMagenta120;
+}
+@mixin ms-borderColor-blueMagenta110 {
+  border-color: $ms-color-blueMagenta110;
+}
+@mixin ms-borderColor-blueMagenta100 {
+  border-color: $ms-color-blueMagenta100;
+}
+@mixin ms-borderColor-blueMagenta90 {
+  border-color: $ms-color-blueMagenta90;
+}
+@mixin ms-borderColor-blueMagenta80 {
+  border-color: $ms-color-blueMagenta80;
+}
+@mixin ms-borderColor-blueMagenta70 {
+  border-color: $ms-color-blueMagenta70;
+}
+@mixin ms-borderColor-blueMagenta60 {
+  border-color: $ms-color-blueMagenta60;
+}
+@mixin ms-borderColor-blueMagenta50 {
+  border-color: $ms-color-blueMagenta50;
+}
+@mixin ms-borderColor-blueMagenta40 {
+  border-color: $ms-color-blueMagenta40;
+}
+@mixin ms-borderColor-blueMagenta30 {
+  border-color: $ms-color-blueMagenta30;
+}
+@mixin ms-borderColor-blueMagenta20 {
+  border-color: $ms-color-blueMagenta20;
+}
+@mixin ms-borderColor-blueMagenta10 {
+  border-color: $ms-color-blueMagenta10;
+}
+@mixin ms-borderColor-magenta160 {
+  border-color: $ms-color-magenta160;
+}
+@mixin ms-borderColor-magenta150 {
+  border-color: $ms-color-magenta150;
+}
+@mixin ms-borderColor-magenta140 {
+  border-color: $ms-color-magenta140;
+}
+@mixin ms-borderColor-magenta130 {
+  border-color: $ms-color-magenta130;
+}
+@mixin ms-borderColor-magenta120 {
+  border-color: $ms-color-magenta120;
+}
+@mixin ms-borderColor-magenta110 {
+  border-color: $ms-color-magenta110;
+}
+@mixin ms-borderColor-magenta100 {
+  border-color: $ms-color-magenta100;
+}
+@mixin ms-borderColor-magenta90 {
+  border-color: $ms-color-magenta90;
+}
+@mixin ms-borderColor-magenta80 {
+  border-color: $ms-color-magenta80;
+}
+@mixin ms-borderColor-magenta70 {
+  border-color: $ms-color-magenta70;
+}
+@mixin ms-borderColor-magenta60 {
+  border-color: $ms-color-magenta60;
+}
+@mixin ms-borderColor-magenta50 {
+  border-color: $ms-color-magenta50;
+}
+@mixin ms-borderColor-magenta40 {
+  border-color: $ms-color-magenta40;
+}
+@mixin ms-borderColor-magenta30 {
+  border-color: $ms-color-magenta30;
+}
+@mixin ms-borderColor-magenta20 {
+  border-color: $ms-color-magenta20;
+}
+@mixin ms-borderColor-magenta10 {
+  border-color: $ms-color-magenta10;
+}
+@mixin ms-borderColor-magentaPink70 {
+  border-color: $ms-color-magentaPink70;
+}
+@mixin ms-borderColor-magentaPink60 {
+  border-color: $ms-color-magentaPink60;
+}
+@mixin ms-borderColor-magentaPink50 {
+  border-color: $ms-color-magentaPink50;
+}
+@mixin ms-borderColor-magentaPink40 {
+  border-color: $ms-color-magentaPink40;
+}
+@mixin ms-borderColor-magentaPink30 {
+  border-color: $ms-color-magentaPink30;
+}
+@mixin ms-borderColor-magentaPink20 {
+  border-color: $ms-color-magentaPink20;
+}
+@mixin ms-borderColor-magentaPink10 {
+  border-color: $ms-color-magentaPink10;
+}
+@mixin ms-borderColor-pink50 {
+  border-color: $ms-color-pink50;
+}
+@mixin ms-borderColor-pink40 {
+  border-color: $ms-color-pink40;
+}
+@mixin ms-borderColor-pink30 {
+  border-color: $ms-color-pink30;
+}
+@mixin ms-borderColor-pink20 {
+  border-color: $ms-color-pink20;
+}
+@mixin ms-borderColor-pink10 {
+  border-color: $ms-color-pink10;
+}
+
+// Communication
+@mixin ms-borderColor-communication90 {
+  border-color: $ms-color-communication90;
+}
+@mixin ms-borderColor-communication80 {
+  border-color: $ms-color-communication80;
+}
+@mixin ms-borderColor-communication70 {
+  border-color: $ms-color-communication70;
+}
+@mixin ms-borderColor-communication60 {
+  border-color: $ms-color-communication60;
+}
+@mixin ms-borderColor-communication50 {
+  border-color: $ms-color-communication50;
+}
+@mixin ms-borderColor-communication40 {
+  border-color: $ms-color-communication40;
+}
+@mixin ms-borderColor-communication30 {
+  border-color: $ms-color-communication30;
+}
+@mixin ms-borderColor-communication20 {
+  border-color: $ms-color-communication20;
+}
+@mixin ms-borderColor-communication10 {
+  border-color: $ms-color-communication10;
+}
+
+// Excel
+@mixin ms-borderColor-excel70 {
+  border-color: $ms-color-excel70;
+}
+@mixin ms-borderColor-excel60 {
+  border-color: $ms-color-excel60;
+}
+@mixin ms-borderColor-excel50 {
+  border-color: $ms-color-excel50;
+}
+@mixin ms-borderColor-excel40 {
+  border-color: $ms-color-excel40;
+}
+@mixin ms-borderColor-excel30 {
+  border-color: $ms-color-excel30;
+}
+@mixin ms-borderColor-excel20 {
+  border-color: $ms-color-excel20;
+}
+@mixin ms-borderColor-excel10 {
+  border-color: $ms-color-excel10;
+}
+
+// PowerPoint
+@mixin ms-borderColor-powerPoint70 {
+  border-color: $ms-color-powerPoint70;
+}
+@mixin ms-borderColor-powerPoint60 {
+  border-color: $ms-color-powerPoint60;
+}
+@mixin ms-borderColor-powerPoint50 {
+  border-color: $ms-color-powerPoint50;
+}
+@mixin ms-borderColor-powerPoint40 {
+  border-color: $ms-color-powerPoint40;
+}
+@mixin ms-borderColor-powerPoint30 {
+  border-color: $ms-color-powerPoint30;
+}
+@mixin ms-borderColor-powerPoint20 {
+  border-color: $ms-color-powerPoint20;
+}
+@mixin ms-borderColor-powerPoint10 {
+  border-color: $ms-color-powerPoint10;
+}
+
+// Word
+@mixin ms-borderColor-word70 {
+  border-color: $ms-color-word70;
+}
+@mixin ms-borderColor-word60 {
+  border-color: $ms-color-word60;
+}
+@mixin ms-borderColor-word50 {
+  border-color: $ms-color-word50;
+}
+@mixin ms-borderColor-word40 {
+  border-color: $ms-color-word40;
+}
+@mixin ms-borderColor-word30 {
+  border-color: $ms-color-word30;
+}
+@mixin ms-borderColor-word20 {
+  border-color: $ms-color-word20;
+}
+@mixin ms-borderColor-word10 {
+  border-color: $ms-color-word10;
+}
+
+// Message
+@mixin ms-borderColor-messageInfo {
+  border-color: $ms-color-messageInfo;
+}
+@mixin ms-borderColor-messageInfoBackground {
+  border-color: $ms-color-messageInfoBackground;
+}
+@mixin ms-borderColor-messageSuccess {
+  border-color: $ms-color-messageSuccess;
+}
+@mixin ms-borderColor-messageSuccessBackground {
+  border-color: $ms-color-messageSuccessBackground;
+}
+@mixin ms-borderColor-messageSevereWarning {
+  border-color: $ms-color-messageSevereWarning;
+}
+@mixin ms-borderColor-messageSevereWarningBackground {
+  border-color: $ms-color-messageSevereWarningBackground;
+}
+@mixin ms-borderColor-messageError {
+  border-color: $ms-color-messageError;
+}
+@mixin ms-borderColor-messageErrorBackground {
+  border-color: $ms-color-messageErrorBackground;
+}

@@ -1,8 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Deprecated MDL2 color mixins.
-@import "./Color.Mixins.MDL2";
-
 //== Grays.
 //
 
@@ -1336,3 +1333,6 @@
 @mixin ms-borderColor-pink10 {
   border-color: $ms-color-pink10;
 }
+
+// Deprecated MDL2 color mixins.
+@import "./Color.Mixins.MDL2";

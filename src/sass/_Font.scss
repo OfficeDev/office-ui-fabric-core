@@ -1,8 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Deprecated MDL2 font classes.
-@import "./Font.MDL2";
-
 // Font color classes.
 //
 
@@ -153,3 +150,6 @@
 .ms-fontWeight-bold {
   @include ms-fontWeight-bold;
 }
+
+// Deprecated MDL2 font classes.
+@import "./Font.MDL2";

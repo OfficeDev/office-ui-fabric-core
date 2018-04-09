@@ -1,8 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Deprecated MDL2 font mixins.
-@import "./Font.Mixins.MDL2";
-
 //== Font definitions.
 //
 
@@ -11,43 +8,53 @@
 */
 
 // Produce @font-face definitions for the web fonts.
-@mixin ms-font-face($font-family-name, $cdn-folder, $cdn-font-name: 'segoeui') {
+@mixin ms-font-face($font-family-name, $cdn-folder, $cdn-font-name: "segoeui") {
   @font-face {
     font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff') format('woff');
+    src: url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff2")
+        format("woff2"),
+      url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-light.woff")
+        format("woff");
     font-weight: $ms-font-weight-light;
     font-style: normal;
   }
 
   @font-face {
     font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff') format('woff');
+    src: url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff2")
+        format("woff2"),
+      url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semilight.woff")
+        format("woff");
     font-weight: $ms-font-weight-semilight;
     font-style: normal;
   }
 
   @font-face {
     font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff') format('woff');
+    src: url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff2")
+        format("woff2"),
+      url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-regular.woff")
+        format("woff");
     font-weight: $ms-font-weight-regular;
     font-style: normal;
   }
 
   @font-face {
     font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff') format('woff');
+    src: url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff2")
+        format("woff2"),
+      url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-semibold.woff")
+        format("woff");
     font-weight: $ms-font-weight-semibold;
     font-style: normal;
   }
 
   @font-face {
     font-family: $font-family-name;
-    src: url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff2') format('woff2'),
-         url('#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff') format('woff');
+    src: url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff2")
+        format("woff2"),
+      url("#{$ms-font-cdn-path}/#{$cdn-folder}/#{$cdn-font-name}-bold.woff")
+        format("woff");
     font-weight: $ms-font-weight-bold;
     font-style: normal;
   }
@@ -55,9 +62,9 @@
 
 // Generate overrides to set font-family based on the lang attribute.
 @mixin ms-font-family-language-override($language-code, $font-family) {
-  *[lang^='#{$language-code}'] .ms-Fabric,
-  .ms-Fabric *[lang^='#{$language-code}'],
-  .ms-Fabric[lang^='#{$language-code}'] {
+  *[lang^="#{$language-code}"] .ms-Fabric,
+  .ms-Fabric *[lang^="#{$language-code}"],
+  .ms-Fabric[lang^="#{$language-code}"] {
     font-family: $font-family;
   }
 }
@@ -188,3 +195,6 @@
 @mixin ms-fontSize-10 {
   font-size: $ms-font-size-10;
 }
+
+// Deprecated MDL2 font mixins.
+@import "./Font.Mixins.MDL2";

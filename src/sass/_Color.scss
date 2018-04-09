@@ -3,10 +3,10 @@
 // Deprecated MDL2 color classes.
 @import "./Color.MDL2";
 
-//== Background color classes.
+//== Grays.
 //
 
-// Grays.
+// Background.
 .ms-bgColor-black,
 .ms-bgColor-black--hover:hover {
   @include ms-bgColor-black;
@@ -104,10 +104,7 @@
   @include ms-bgColor-white;
 }
 
-//== Border color classes.
-//
-
-// Grays.
+// Border.
 .ms-borderColor-black,
 .ms-borderColor-black--hover:hover {
   @include ms-borderColor-black;
@@ -203,4 +200,1579 @@
 .ms-borderColor-white,
 .ms-borderColor-white--hover:hover {
   @include ms-borderColor-white;
+}
+
+//== Colors.
+//
+
+// Background.
+.ms-bgColor-pinkRed40,
+.ms-bgColor-pinkRed40--hover:hover {
+  @include ms-bgColor-pinkRed40;
+}
+.ms-bgColor-pinkRed30,
+.ms-bgColor-pinkRed30--hover:hover {
+  @include ms-bgColor-pinkRed30;
+}
+.ms-bgColor-pinkRed20,
+.ms-bgColor-pinkRed20--hover:hover {
+  @include ms-bgColor-pinkRed20;
+}
+.ms-bgColor-pinkRed10,
+.ms-bgColor-pinkRed10--hover:hover {
+  @include ms-bgColor-pinkRed10;
+}
+.ms-bgColor-red160,
+.ms-bgColor-red160--hover:hover {
+  @include ms-bgColor-red160;
+}
+.ms-bgColor-red150,
+.ms-bgColor-red150--hover:hover {
+  @include ms-bgColor-red150;
+}
+.ms-bgColor-red140,
+.ms-bgColor-red140--hover:hover {
+  @include ms-bgColor-red140;
+}
+.ms-bgColor-red130,
+.ms-bgColor-red130--hover:hover {
+  @include ms-bgColor-red130;
+}
+.ms-bgColor-red120,
+.ms-bgColor-red120--hover:hover {
+  @include ms-bgColor-red120;
+}
+.ms-bgColor-red110,
+.ms-bgColor-red110--hover:hover {
+  @include ms-bgColor-red110;
+}
+.ms-bgColor-red100,
+.ms-bgColor-red100--hover:hover {
+  @include ms-bgColor-red100;
+}
+.ms-bgColor-red90,
+.ms-bgColor-red90--hover:hover {
+  @include ms-bgColor-red90;
+}
+.ms-bgColor-red80,
+.ms-bgColor-red80--hover:hover {
+  @include ms-bgColor-red80;
+}
+.ms-bgColor-red70,
+.ms-bgColor-red70--hover:hover {
+  @include ms-bgColor-red70;
+}
+.ms-bgColor-red60,
+.ms-bgColor-red60--hover:hover {
+  @include ms-bgColor-red60;
+}
+.ms-bgColor-red50,
+.ms-bgColor-red50--hover:hover {
+  @include ms-bgColor-red50;
+}
+.ms-bgColor-red40,
+.ms-bgColor-red40--hover:hover {
+  @include ms-bgColor-red40;
+}
+.ms-bgColor-red30,
+.ms-bgColor-red30--hover:hover {
+  @include ms-bgColor-red30;
+}
+.ms-bgColor-red20,
+.ms-bgColor-red20--hover:hover {
+  @include ms-bgColor-red20;
+}
+.ms-bgColor-red10,
+.ms-bgColor-red10--hover:hover {
+  @include ms-bgColor-red10;
+}
+.ms-bgColor-redOrange60,
+.ms-bgColor-redOrange60--hover:hover {
+  @include ms-bgColor-redOrange60;
+}
+.ms-bgColor-redOrange50,
+.ms-bgColor-redOrange50--hover:hover {
+  @include ms-bgColor-redOrange50;
+}
+.ms-bgColor-redOrange40,
+.ms-bgColor-redOrange40--hover:hover {
+  @include ms-bgColor-redOrange40;
+}
+.ms-bgColor-redOrange30,
+.ms-bgColor-redOrange30--hover:hover {
+  @include ms-bgColor-redOrange30;
+}
+.ms-bgColor-redOrange20,
+.ms-bgColor-redOrange20--hover:hover {
+  @include ms-bgColor-redOrange20;
+}
+.ms-bgColor-redOrange10,
+.ms-bgColor-redOrange10--hover:hover {
+  @include ms-bgColor-redOrange10;
+}
+.ms-bgColor-orange190,
+.ms-bgColor-orange190--hover:hover {
+  @include ms-bgColor-orange190;
+}
+.ms-bgColor-orange180,
+.ms-bgColor-orange180--hover:hover {
+  @include ms-bgColor-orange180;
+}
+.ms-bgColor-orange170,
+.ms-bgColor-orange170--hover:hover {
+  @include ms-bgColor-orange170;
+}
+.ms-bgColor-orange160,
+.ms-bgColor-orange160--hover:hover {
+  @include ms-bgColor-orange160;
+}
+.ms-bgColor-orange150,
+.ms-bgColor-orange150--hover:hover {
+  @include ms-bgColor-orange150;
+}
+.ms-bgColor-orange140,
+.ms-bgColor-orange140--hover:hover {
+  @include ms-bgColor-orange140;
+}
+.ms-bgColor-orange130,
+.ms-bgColor-orange130--hover:hover {
+  @include ms-bgColor-orange130;
+}
+.ms-bgColor-orange120,
+.ms-bgColor-orange120--hover:hover {
+  @include ms-bgColor-orange120;
+}
+.ms-bgColor-orange110,
+.ms-bgColor-orange110--hover:hover {
+  @include ms-bgColor-orange110;
+}
+.ms-bgColor-orange100,
+.ms-bgColor-orange100--hover:hover {
+  @include ms-bgColor-orange100;
+}
+.ms-bgColor-orange90,
+.ms-bgColor-orange90--hover:hover {
+  @include ms-bgColor-orange90;
+}
+.ms-bgColor-orange80,
+.ms-bgColor-orange80--hover:hover {
+  @include ms-bgColor-orange80;
+}
+.ms-bgColor-orange70,
+.ms-bgColor-orange70--hover:hover {
+  @include ms-bgColor-orange70;
+}
+.ms-bgColor-orange60,
+.ms-bgColor-orange60--hover:hover {
+  @include ms-bgColor-orange60;
+}
+.ms-bgColor-orange50,
+.ms-bgColor-orange50--hover:hover {
+  @include ms-bgColor-orange50;
+}
+.ms-bgColor-orange40,
+.ms-bgColor-orange40--hover:hover {
+  @include ms-bgColor-orange40;
+}
+.ms-bgColor-orange30,
+.ms-bgColor-orange30--hover:hover {
+  @include ms-bgColor-orange30;
+}
+.ms-bgColor-orange20,
+.ms-bgColor-orange20--hover:hover {
+  @include ms-bgColor-orange20;
+}
+.ms-bgColor-orange10,
+.ms-bgColor-orange10--hover:hover {
+  @include ms-bgColor-orange10;
+}
+.ms-bgColor-orangeYellow60,
+.ms-bgColor-orangeYellow60--hover:hover {
+  @include ms-bgColor-orangeYellow60;
+}
+.ms-bgColor-orangeYellow50,
+.ms-bgColor-orangeYellow50--hover:hover {
+  @include ms-bgColor-orangeYellow50;
+}
+.ms-bgColor-orangeYellow40,
+.ms-bgColor-orangeYellow40--hover:hover {
+  @include ms-bgColor-orangeYellow40;
+}
+.ms-bgColor-orangeYellow30,
+.ms-bgColor-orangeYellow30--hover:hover {
+  @include ms-bgColor-orangeYellow30;
+}
+.ms-bgColor-orangeYellow20,
+.ms-bgColor-orangeYellow20--hover:hover {
+  @include ms-bgColor-orangeYellow20;
+}
+.ms-bgColor-orangeYellow10,
+.ms-bgColor-orangeYellow10--hover:hover {
+  @include ms-bgColor-orangeYellow10;
+}
+.ms-bgColor-yellow50,
+.ms-bgColor-yellow50--hover:hover {
+  @include ms-bgColor-yellow50;
+}
+.ms-bgColor-yellow40,
+.ms-bgColor-yellow40--hover:hover {
+  @include ms-bgColor-yellow40;
+}
+.ms-bgColor-yellow30,
+.ms-bgColor-yellow30--hover:hover {
+  @include ms-bgColor-yellow30;
+}
+.ms-bgColor-yellow20,
+.ms-bgColor-yellow20--hover:hover {
+  @include ms-bgColor-yellow20;
+}
+.ms-bgColor-yellow10,
+.ms-bgColor-yellow10--hover:hover {
+  @include ms-bgColor-yellow10;
+}
+.ms-bgColor-yellowGreen70,
+.ms-bgColor-yellowGreen70--hover:hover {
+  @include ms-bgColor-yellowGreen70;
+}
+.ms-bgColor-yellowGreen60,
+.ms-bgColor-yellowGreen60--hover:hover {
+  @include ms-bgColor-yellowGreen60;
+}
+.ms-bgColor-yellowGreen50,
+.ms-bgColor-yellowGreen50--hover:hover {
+  @include ms-bgColor-yellowGreen50;
+}
+.ms-bgColor-yellowGreen40,
+.ms-bgColor-yellowGreen40--hover:hover {
+  @include ms-bgColor-yellowGreen40;
+}
+.ms-bgColor-yellowGreen30,
+.ms-bgColor-yellowGreen30--hover:hover {
+  @include ms-bgColor-yellowGreen30;
+}
+.ms-bgColor-yellowGreen20,
+.ms-bgColor-yellowGreen20--hover:hover {
+  @include ms-bgColor-yellowGreen20;
+}
+.ms-bgColor-yellowGreen10,
+.ms-bgColor-yellowGreen10--hover:hover {
+  @include ms-bgColor-yellowGreen10;
+}
+.ms-bgColor-green140,
+.ms-bgColor-green140--hover:hover {
+  @include ms-bgColor-green140;
+}
+.ms-bgColor-green130,
+.ms-bgColor-green130--hover:hover {
+  @include ms-bgColor-green130;
+}
+.ms-bgColor-green120,
+.ms-bgColor-green120--hover:hover {
+  @include ms-bgColor-green120;
+}
+.ms-bgColor-green110,
+.ms-bgColor-green110--hover:hover {
+  @include ms-bgColor-green110;
+}
+.ms-bgColor-green100,
+.ms-bgColor-green100--hover:hover {
+  @include ms-bgColor-green100;
+}
+.ms-bgColor-green90,
+.ms-bgColor-green90--hover:hover {
+  @include ms-bgColor-green90;
+}
+.ms-bgColor-green80,
+.ms-bgColor-green80--hover:hover {
+  @include ms-bgColor-green80;
+}
+.ms-bgColor-green70,
+.ms-bgColor-green70--hover:hover {
+  @include ms-bgColor-green70;
+}
+.ms-bgColor-green60,
+.ms-bgColor-green60--hover:hover {
+  @include ms-bgColor-green60;
+}
+.ms-bgColor-green50,
+.ms-bgColor-green50--hover:hover {
+  @include ms-bgColor-green50;
+}
+.ms-bgColor-green40,
+.ms-bgColor-green40--hover:hover {
+  @include ms-bgColor-green40;
+}
+.ms-bgColor-green30,
+.ms-bgColor-green30--hover:hover {
+  @include ms-bgColor-green30;
+}
+.ms-bgColor-green20,
+.ms-bgColor-green20--hover:hover {
+  @include ms-bgColor-green20;
+}
+.ms-bgColor-green10,
+.ms-bgColor-green10--hover:hover {
+  @include ms-bgColor-green10;
+}
+.ms-bgColor-greenCyan180,
+.ms-bgColor-greenCyan180--hover:hover {
+  @include ms-bgColor-greenCyan180;
+}
+.ms-bgColor-greenCyan170,
+.ms-bgColor-greenCyan170--hover:hover {
+  @include ms-bgColor-greenCyan170;
+}
+.ms-bgColor-greenCyan160,
+.ms-bgColor-greenCyan160--hover:hover {
+  @include ms-bgColor-greenCyan160;
+}
+.ms-bgColor-greenCyan150,
+.ms-bgColor-greenCyan150--hover:hover {
+  @include ms-bgColor-greenCyan150;
+}
+.ms-bgColor-greenCyan140,
+.ms-bgColor-greenCyan140--hover:hover {
+  @include ms-bgColor-greenCyan140;
+}
+.ms-bgColor-greenCyan130,
+.ms-bgColor-greenCyan130--hover:hover {
+  @include ms-bgColor-greenCyan130;
+}
+.ms-bgColor-greenCyan120,
+.ms-bgColor-greenCyan120--hover:hover {
+  @include ms-bgColor-greenCyan120;
+}
+.ms-bgColor-greenCyan110,
+.ms-bgColor-greenCyan110--hover:hover {
+  @include ms-bgColor-greenCyan110;
+}
+.ms-bgColor-greenCyan100,
+.ms-bgColor-greenCyan100--hover:hover {
+  @include ms-bgColor-greenCyan100;
+}
+.ms-bgColor-greenCyan90,
+.ms-bgColor-greenCyan90--hover:hover {
+  @include ms-bgColor-greenCyan90;
+}
+.ms-bgColor-greenCyan80,
+.ms-bgColor-greenCyan80--hover:hover {
+  @include ms-bgColor-greenCyan80;
+}
+.ms-bgColor-greenCyan70,
+.ms-bgColor-greenCyan70--hover:hover {
+  @include ms-bgColor-greenCyan70;
+}
+.ms-bgColor-greenCyan60,
+.ms-bgColor-greenCyan60--hover:hover {
+  @include ms-bgColor-greenCyan60;
+}
+.ms-bgColor-greenCyan50,
+.ms-bgColor-greenCyan50--hover:hover {
+  @include ms-bgColor-greenCyan50;
+}
+.ms-bgColor-greenCyan40,
+.ms-bgColor-greenCyan40--hover:hover {
+  @include ms-bgColor-greenCyan40;
+}
+.ms-bgColor-greenCyan30,
+.ms-bgColor-greenCyan30--hover:hover {
+  @include ms-bgColor-greenCyan30;
+}
+.ms-bgColor-greenCyan20,
+.ms-bgColor-greenCyan20--hover:hover {
+  @include ms-bgColor-greenCyan20;
+}
+.ms-bgColor-greenCyan10,
+.ms-bgColor-greenCyan10--hover:hover {
+  @include ms-bgColor-greenCyan10;
+}
+.ms-bgColor-cyan230,
+.ms-bgColor-cyan230--hover:hover {
+  @include ms-bgColor-cyan230;
+}
+.ms-bgColor-cyan220,
+.ms-bgColor-cyan220--hover:hover {
+  @include ms-bgColor-cyan220;
+}
+.ms-bgColor-cyan210,
+.ms-bgColor-cyan210--hover:hover {
+  @include ms-bgColor-cyan210;
+}
+.ms-bgColor-cyan200,
+.ms-bgColor-cyan200--hover:hover {
+  @include ms-bgColor-cyan200;
+}
+.ms-bgColor-cyan190,
+.ms-bgColor-cyan190--hover:hover {
+  @include ms-bgColor-cyan190;
+}
+.ms-bgColor-cyan180,
+.ms-bgColor-cyan180--hover:hover {
+  @include ms-bgColor-cyan180;
+}
+.ms-bgColor-cyan170,
+.ms-bgColor-cyan170--hover:hover {
+  @include ms-bgColor-cyan170;
+}
+.ms-bgColor-cyan160,
+.ms-bgColor-cyan160--hover:hover {
+  @include ms-bgColor-cyan160;
+}
+.ms-bgColor-cyan150,
+.ms-bgColor-cyan150--hover:hover {
+  @include ms-bgColor-cyan150;
+}
+.ms-bgColor-cyan140,
+.ms-bgColor-cyan140--hover:hover {
+  @include ms-bgColor-cyan140;
+}
+.ms-bgColor-cyan130,
+.ms-bgColor-cyan130--hover:hover {
+  @include ms-bgColor-cyan130;
+}
+.ms-bgColor-cyan120,
+.ms-bgColor-cyan120--hover:hover {
+  @include ms-bgColor-cyan120;
+}
+.ms-bgColor-cyan110,
+.ms-bgColor-cyan110--hover:hover {
+  @include ms-bgColor-cyan110;
+}
+.ms-bgColor-cyan100,
+.ms-bgColor-cyan100--hover:hover {
+  @include ms-bgColor-cyan100;
+}
+.ms-bgColor-cyan90,
+.ms-bgColor-cyan90--hover:hover {
+  @include ms-bgColor-cyan90;
+}
+.ms-bgColor-cyan80,
+.ms-bgColor-cyan80--hover:hover {
+  @include ms-bgColor-cyan80;
+}
+.ms-bgColor-cyan70,
+.ms-bgColor-cyan70--hover:hover {
+  @include ms-bgColor-cyan70;
+}
+.ms-bgColor-cyan60,
+.ms-bgColor-cyan60--hover:hover {
+  @include ms-bgColor-cyan60;
+}
+.ms-bgColor-cyan50,
+.ms-bgColor-cyan50--hover:hover {
+  @include ms-bgColor-cyan50;
+}
+.ms-bgColor-cyan40,
+.ms-bgColor-cyan40--hover:hover {
+  @include ms-bgColor-cyan40;
+}
+.ms-bgColor-cyan30,
+.ms-bgColor-cyan30--hover:hover {
+  @include ms-bgColor-cyan30;
+}
+.ms-bgColor-cyan20,
+.ms-bgColor-cyan20--hover:hover {
+  @include ms-bgColor-cyan20;
+}
+.ms-bgColor-cyan10,
+.ms-bgColor-cyan10--hover:hover {
+  @include ms-bgColor-cyan10;
+}
+.ms-bgColor-cyanBlue100,
+.ms-bgColor-cyanBlue100--hover:hover {
+  @include ms-bgColor-cyanBlue100;
+}
+.ms-bgColor-cyanBlue90,
+.ms-bgColor-cyanBlue90--hover:hover {
+  @include ms-bgColor-cyanBlue90;
+}
+.ms-bgColor-cyanBlue80,
+.ms-bgColor-cyanBlue80--hover:hover {
+  @include ms-bgColor-cyanBlue80;
+}
+.ms-bgColor-cyanBlue70,
+.ms-bgColor-cyanBlue70--hover:hover {
+  @include ms-bgColor-cyanBlue70;
+}
+.ms-bgColor-cyanBlue60,
+.ms-bgColor-cyanBlue60--hover:hover {
+  @include ms-bgColor-cyanBlue60;
+}
+.ms-bgColor-cyanBlue50,
+.ms-bgColor-cyanBlue50--hover:hover {
+  @include ms-bgColor-cyanBlue50;
+}
+.ms-bgColor-cyanBlue40,
+.ms-bgColor-cyanBlue40--hover:hover {
+  @include ms-bgColor-cyanBlue40;
+}
+.ms-bgColor-cyanBlue30,
+.ms-bgColor-cyanBlue30--hover:hover {
+  @include ms-bgColor-cyanBlue30;
+}
+.ms-bgColor-cyanBlue20,
+.ms-bgColor-cyanBlue20--hover:hover {
+  @include ms-bgColor-cyanBlue20;
+}
+.ms-bgColor-cyanBlue10,
+.ms-bgColor-cyanBlue10--hover:hover {
+  @include ms-bgColor-cyanBlue10;
+}
+.ms-bgColor-blue150,
+.ms-bgColor-blue150--hover:hover {
+  @include ms-bgColor-blue150;
+}
+.ms-bgColor-blue140,
+.ms-bgColor-blue140--hover:hover {
+  @include ms-bgColor-blue140;
+}
+.ms-bgColor-blue130,
+.ms-bgColor-blue130--hover:hover {
+  @include ms-bgColor-blue130;
+}
+.ms-bgColor-blue120,
+.ms-bgColor-blue120--hover:hover {
+  @include ms-bgColor-blue120;
+}
+.ms-bgColor-blue110,
+.ms-bgColor-blue110--hover:hover {
+  @include ms-bgColor-blue110;
+}
+.ms-bgColor-blue100,
+.ms-bgColor-blue100--hover:hover {
+  @include ms-bgColor-blue100;
+}
+.ms-bgColor-blue90,
+.ms-bgColor-blue90--hover:hover {
+  @include ms-bgColor-blue90;
+}
+.ms-bgColor-blue80,
+.ms-bgColor-blue80--hover:hover {
+  @include ms-bgColor-blue80;
+}
+.ms-bgColor-blue70,
+.ms-bgColor-blue70--hover:hover {
+  @include ms-bgColor-blue70;
+}
+.ms-bgColor-blue60,
+.ms-bgColor-blue60--hover:hover {
+  @include ms-bgColor-blue60;
+}
+.ms-bgColor-blue50,
+.ms-bgColor-blue50--hover:hover {
+  @include ms-bgColor-blue50;
+}
+.ms-bgColor-blue40,
+.ms-bgColor-blue40--hover:hover {
+  @include ms-bgColor-blue40;
+}
+.ms-bgColor-blue30,
+.ms-bgColor-blue30--hover:hover {
+  @include ms-bgColor-blue30;
+}
+.ms-bgColor-blue20,
+.ms-bgColor-blue20--hover:hover {
+  @include ms-bgColor-blue20;
+}
+.ms-bgColor-blue10,
+.ms-bgColor-blue10--hover:hover {
+  @include ms-bgColor-blue10;
+}
+.ms-bgColor-blueMagenta250,
+.ms-bgColor-blueMagenta250--hover:hover {
+  @include ms-bgColor-blueMagenta250;
+}
+.ms-bgColor-blueMagenta240,
+.ms-bgColor-blueMagenta240--hover:hover {
+  @include ms-bgColor-blueMagenta240;
+}
+.ms-bgColor-blueMagenta230,
+.ms-bgColor-blueMagenta230--hover:hover {
+  @include ms-bgColor-blueMagenta230;
+}
+.ms-bgColor-blueMagenta220,
+.ms-bgColor-blueMagenta220--hover:hover {
+  @include ms-bgColor-blueMagenta220;
+}
+.ms-bgColor-blueMagenta210,
+.ms-bgColor-blueMagenta210--hover:hover {
+  @include ms-bgColor-blueMagenta210;
+}
+.ms-bgColor-blueMagenta200,
+.ms-bgColor-blueMagenta200--hover:hover {
+  @include ms-bgColor-blueMagenta200;
+}
+.ms-bgColor-blueMagenta190,
+.ms-bgColor-blueMagenta190--hover:hover {
+  @include ms-bgColor-blueMagenta190;
+}
+.ms-bgColor-blueMagenta180,
+.ms-bgColor-blueMagenta180--hover:hover {
+  @include ms-bgColor-blueMagenta180;
+}
+.ms-bgColor-blueMagenta170,
+.ms-bgColor-blueMagenta170--hover:hover {
+  @include ms-bgColor-blueMagenta170;
+}
+.ms-bgColor-blueMagenta160,
+.ms-bgColor-blueMagenta160--hover:hover {
+  @include ms-bgColor-blueMagenta160;
+}
+.ms-bgColor-blueMagenta150,
+.ms-bgColor-blueMagenta150--hover:hover {
+  @include ms-bgColor-blueMagenta150;
+}
+.ms-bgColor-blueMagenta140,
+.ms-bgColor-blueMagenta140--hover:hover {
+  @include ms-bgColor-blueMagenta140;
+}
+.ms-bgColor-blueMagenta130,
+.ms-bgColor-blueMagenta130--hover:hover {
+  @include ms-bgColor-blueMagenta130;
+}
+.ms-bgColor-blueMagenta120,
+.ms-bgColor-blueMagenta120--hover:hover {
+  @include ms-bgColor-blueMagenta120;
+}
+.ms-bgColor-blueMagenta110,
+.ms-bgColor-blueMagenta110--hover:hover {
+  @include ms-bgColor-blueMagenta110;
+}
+.ms-bgColor-blueMagenta100,
+.ms-bgColor-blueMagenta100--hover:hover {
+  @include ms-bgColor-blueMagenta100;
+}
+.ms-bgColor-blueMagenta90,
+.ms-bgColor-blueMagenta90--hover:hover {
+  @include ms-bgColor-blueMagenta90;
+}
+.ms-bgColor-blueMagenta80,
+.ms-bgColor-blueMagenta80--hover:hover {
+  @include ms-bgColor-blueMagenta80;
+}
+.ms-bgColor-blueMagenta70,
+.ms-bgColor-blueMagenta70--hover:hover {
+  @include ms-bgColor-blueMagenta70;
+}
+.ms-bgColor-blueMagenta60,
+.ms-bgColor-blueMagenta60--hover:hover {
+  @include ms-bgColor-blueMagenta60;
+}
+.ms-bgColor-blueMagenta50,
+.ms-bgColor-blueMagenta50--hover:hover {
+  @include ms-bgColor-blueMagenta50;
+}
+.ms-bgColor-blueMagenta40,
+.ms-bgColor-blueMagenta40--hover:hover {
+  @include ms-bgColor-blueMagenta40;
+}
+.ms-bgColor-blueMagenta30,
+.ms-bgColor-blueMagenta30--hover:hover {
+  @include ms-bgColor-blueMagenta30;
+}
+.ms-bgColor-blueMagenta20,
+.ms-bgColor-blueMagenta20--hover:hover {
+  @include ms-bgColor-blueMagenta20;
+}
+.ms-bgColor-blueMagenta10,
+.ms-bgColor-blueMagenta10--hover:hover {
+  @include ms-bgColor-blueMagenta10;
+}
+.ms-bgColor-magenta160,
+.ms-bgColor-magenta160--hover:hover {
+  @include ms-bgColor-magenta160;
+}
+.ms-bgColor-magenta150,
+.ms-bgColor-magenta150--hover:hover {
+  @include ms-bgColor-magenta150;
+}
+.ms-bgColor-magenta140,
+.ms-bgColor-magenta140--hover:hover {
+  @include ms-bgColor-magenta140;
+}
+.ms-bgColor-magenta130,
+.ms-bgColor-magenta130--hover:hover {
+  @include ms-bgColor-magenta130;
+}
+.ms-bgColor-magenta120,
+.ms-bgColor-magenta120--hover:hover {
+  @include ms-bgColor-magenta120;
+}
+.ms-bgColor-magenta110,
+.ms-bgColor-magenta110--hover:hover {
+  @include ms-bgColor-magenta110;
+}
+.ms-bgColor-magenta100,
+.ms-bgColor-magenta100--hover:hover {
+  @include ms-bgColor-magenta100;
+}
+.ms-bgColor-magenta90,
+.ms-bgColor-magenta90--hover:hover {
+  @include ms-bgColor-magenta90;
+}
+.ms-bgColor-magenta80,
+.ms-bgColor-magenta80--hover:hover {
+  @include ms-bgColor-magenta80;
+}
+.ms-bgColor-magenta70,
+.ms-bgColor-magenta70--hover:hover {
+  @include ms-bgColor-magenta70;
+}
+.ms-bgColor-magenta60,
+.ms-bgColor-magenta60--hover:hover {
+  @include ms-bgColor-magenta60;
+}
+.ms-bgColor-magenta50,
+.ms-bgColor-magenta50--hover:hover {
+  @include ms-bgColor-magenta50;
+}
+.ms-bgColor-magenta40,
+.ms-bgColor-magenta40--hover:hover {
+  @include ms-bgColor-magenta40;
+}
+.ms-bgColor-magenta30,
+.ms-bgColor-magenta30--hover:hover {
+  @include ms-bgColor-magenta30;
+}
+.ms-bgColor-magenta20,
+.ms-bgColor-magenta20--hover:hover {
+  @include ms-bgColor-magenta20;
+}
+.ms-bgColor-magenta10,
+.ms-bgColor-magenta10--hover:hover {
+  @include ms-bgColor-magenta10;
+}
+.ms-bgColor-magentaPink70,
+.ms-bgColor-magentaPink70--hover:hover {
+  @include ms-bgColor-magentaPink70;
+}
+.ms-bgColor-magentaPink60,
+.ms-bgColor-magentaPink60--hover:hover {
+  @include ms-bgColor-magentaPink60;
+}
+.ms-bgColor-magentaPink50,
+.ms-bgColor-magentaPink50--hover:hover {
+  @include ms-bgColor-magentaPink50;
+}
+.ms-bgColor-magentaPink40,
+.ms-bgColor-magentaPink40--hover:hover {
+  @include ms-bgColor-magentaPink40;
+}
+.ms-bgColor-magentaPink30,
+.ms-bgColor-magentaPink30--hover:hover {
+  @include ms-bgColor-magentaPink30;
+}
+.ms-bgColor-magentaPink20,
+.ms-bgColor-magentaPink20--hover:hover {
+  @include ms-bgColor-magentaPink20;
+}
+.ms-bgColor-magentaPink10,
+.ms-bgColor-magentaPink10--hover:hover {
+  @include ms-bgColor-magentaPink10;
+}
+.ms-bgColor-pink50,
+.ms-bgColor-pink50--hover:hover {
+  @include ms-bgColor-pink50;
+}
+.ms-bgColor-pink40,
+.ms-bgColor-pink40--hover:hover {
+  @include ms-bgColor-pink40;
+}
+.ms-bgColor-pink30,
+.ms-bgColor-pink30--hover:hover {
+  @include ms-bgColor-pink30;
+}
+.ms-bgColor-pink20,
+.ms-bgColor-pink20--hover:hover {
+  @include ms-bgColor-pink20;
+}
+.ms-bgColor-pink10,
+.ms-bgColor-pink10--hover:hover {
+  @include ms-bgColor-pink10;
+}
+
+// Border.
+.ms-borderColor-pinkRed40,
+.ms-borderColor-pinkRed40--hover:hover {
+  @include ms-borderColor-pinkRed40;
+}
+.ms-borderColor-pinkRed30,
+.ms-borderColor-pinkRed30--hover:hover {
+  @include ms-borderColor-pinkRed30;
+}
+.ms-borderColor-pinkRed20,
+.ms-borderColor-pinkRed20--hover:hover {
+  @include ms-borderColor-pinkRed20;
+}
+.ms-borderColor-pinkRed10,
+.ms-borderColor-pinkRed10--hover:hover {
+  @include ms-borderColor-pinkRed10;
+}
+.ms-borderColor-red160,
+.ms-borderColor-red160--hover:hover {
+  @include ms-borderColor-red160;
+}
+.ms-borderColor-red150,
+.ms-borderColor-red150--hover:hover {
+  @include ms-borderColor-red150;
+}
+.ms-borderColor-red140,
+.ms-borderColor-red140--hover:hover {
+  @include ms-borderColor-red140;
+}
+.ms-borderColor-red130,
+.ms-borderColor-red130--hover:hover {
+  @include ms-borderColor-red130;
+}
+.ms-borderColor-red120,
+.ms-borderColor-red120--hover:hover {
+  @include ms-borderColor-red120;
+}
+.ms-borderColor-red110,
+.ms-borderColor-red110--hover:hover {
+  @include ms-borderColor-red110;
+}
+.ms-borderColor-red100,
+.ms-borderColor-red100--hover:hover {
+  @include ms-borderColor-red100;
+}
+.ms-borderColor-red90,
+.ms-borderColor-red90--hover:hover {
+  @include ms-borderColor-red90;
+}
+.ms-borderColor-red80,
+.ms-borderColor-red80--hover:hover {
+  @include ms-borderColor-red80;
+}
+.ms-borderColor-red70,
+.ms-borderColor-red70--hover:hover {
+  @include ms-borderColor-red70;
+}
+.ms-borderColor-red60,
+.ms-borderColor-red60--hover:hover {
+  @include ms-borderColor-red60;
+}
+.ms-borderColor-red50,
+.ms-borderColor-red50--hover:hover {
+  @include ms-borderColor-red50;
+}
+.ms-borderColor-red40,
+.ms-borderColor-red40--hover:hover {
+  @include ms-borderColor-red40;
+}
+.ms-borderColor-red30,
+.ms-borderColor-red30--hover:hover {
+  @include ms-borderColor-red30;
+}
+.ms-borderColor-red20,
+.ms-borderColor-red20--hover:hover {
+  @include ms-borderColor-red20;
+}
+.ms-borderColor-red10,
+.ms-borderColor-red10--hover:hover {
+  @include ms-borderColor-red10;
+}
+.ms-borderColor-redOrange60,
+.ms-borderColor-redOrange60--hover:hover {
+  @include ms-borderColor-redOrange60;
+}
+.ms-borderColor-redOrange50,
+.ms-borderColor-redOrange50--hover:hover {
+  @include ms-borderColor-redOrange50;
+}
+.ms-borderColor-redOrange40,
+.ms-borderColor-redOrange40--hover:hover {
+  @include ms-borderColor-redOrange40;
+}
+.ms-borderColor-redOrange30,
+.ms-borderColor-redOrange30--hover:hover {
+  @include ms-borderColor-redOrange30;
+}
+.ms-borderColor-redOrange20,
+.ms-borderColor-redOrange20--hover:hover {
+  @include ms-borderColor-redOrange20;
+}
+.ms-borderColor-redOrange10,
+.ms-borderColor-redOrange10--hover:hover {
+  @include ms-borderColor-redOrange10;
+}
+.ms-borderColor-orange190,
+.ms-borderColor-orange190--hover:hover {
+  @include ms-borderColor-orange190;
+}
+.ms-borderColor-orange180,
+.ms-borderColor-orange180--hover:hover {
+  @include ms-borderColor-orange180;
+}
+.ms-borderColor-orange170,
+.ms-borderColor-orange170--hover:hover {
+  @include ms-borderColor-orange170;
+}
+.ms-borderColor-orange160,
+.ms-borderColor-orange160--hover:hover {
+  @include ms-borderColor-orange160;
+}
+.ms-borderColor-orange150,
+.ms-borderColor-orange150--hover:hover {
+  @include ms-borderColor-orange150;
+}
+.ms-borderColor-orange140,
+.ms-borderColor-orange140--hover:hover {
+  @include ms-borderColor-orange140;
+}
+.ms-borderColor-orange130,
+.ms-borderColor-orange130--hover:hover {
+  @include ms-borderColor-orange130;
+}
+.ms-borderColor-orange120,
+.ms-borderColor-orange120--hover:hover {
+  @include ms-borderColor-orange120;
+}
+.ms-borderColor-orange110,
+.ms-borderColor-orange110--hover:hover {
+  @include ms-borderColor-orange110;
+}
+.ms-borderColor-orange100,
+.ms-borderColor-orange100--hover:hover {
+  @include ms-borderColor-orange100;
+}
+.ms-borderColor-orange90,
+.ms-borderColor-orange90--hover:hover {
+  @include ms-borderColor-orange90;
+}
+.ms-borderColor-orange80,
+.ms-borderColor-orange80--hover:hover {
+  @include ms-borderColor-orange80;
+}
+.ms-borderColor-orange70,
+.ms-borderColor-orange70--hover:hover {
+  @include ms-borderColor-orange70;
+}
+.ms-borderColor-orange60,
+.ms-borderColor-orange60--hover:hover {
+  @include ms-borderColor-orange60;
+}
+.ms-borderColor-orange50,
+.ms-borderColor-orange50--hover:hover {
+  @include ms-borderColor-orange50;
+}
+.ms-borderColor-orange40,
+.ms-borderColor-orange40--hover:hover {
+  @include ms-borderColor-orange40;
+}
+.ms-borderColor-orange30,
+.ms-borderColor-orange30--hover:hover {
+  @include ms-borderColor-orange30;
+}
+.ms-borderColor-orange20,
+.ms-borderColor-orange20--hover:hover {
+  @include ms-borderColor-orange20;
+}
+.ms-borderColor-orange10,
+.ms-borderColor-orange10--hover:hover {
+  @include ms-borderColor-orange10;
+}
+.ms-borderColor-orangeYellow60,
+.ms-borderColor-orangeYellow60--hover:hover {
+  @include ms-borderColor-orangeYellow60;
+}
+.ms-borderColor-orangeYellow50,
+.ms-borderColor-orangeYellow50--hover:hover {
+  @include ms-borderColor-orangeYellow50;
+}
+.ms-borderColor-orangeYellow40,
+.ms-borderColor-orangeYellow40--hover:hover {
+  @include ms-borderColor-orangeYellow40;
+}
+.ms-borderColor-orangeYellow30,
+.ms-borderColor-orangeYellow30--hover:hover {
+  @include ms-borderColor-orangeYellow30;
+}
+.ms-borderColor-orangeYellow20,
+.ms-borderColor-orangeYellow20--hover:hover {
+  @include ms-borderColor-orangeYellow20;
+}
+.ms-borderColor-orangeYellow10,
+.ms-borderColor-orangeYellow10--hover:hover {
+  @include ms-borderColor-orangeYellow10;
+}
+.ms-borderColor-yellow50,
+.ms-borderColor-yellow50--hover:hover {
+  @include ms-borderColor-yellow50;
+}
+.ms-borderColor-yellow40,
+.ms-borderColor-yellow40--hover:hover {
+  @include ms-borderColor-yellow40;
+}
+.ms-borderColor-yellow30,
+.ms-borderColor-yellow30--hover:hover {
+  @include ms-borderColor-yellow30;
+}
+.ms-borderColor-yellow20,
+.ms-borderColor-yellow20--hover:hover {
+  @include ms-borderColor-yellow20;
+}
+.ms-borderColor-yellow10,
+.ms-borderColor-yellow10--hover:hover {
+  @include ms-borderColor-yellow10;
+}
+.ms-borderColor-yellowGreen70,
+.ms-borderColor-yellowGreen70--hover:hover {
+  @include ms-borderColor-yellowGreen70;
+}
+.ms-borderColor-yellowGreen60,
+.ms-borderColor-yellowGreen60--hover:hover {
+  @include ms-borderColor-yellowGreen60;
+}
+.ms-borderColor-yellowGreen50,
+.ms-borderColor-yellowGreen50--hover:hover {
+  @include ms-borderColor-yellowGreen50;
+}
+.ms-borderColor-yellowGreen40,
+.ms-borderColor-yellowGreen40--hover:hover {
+  @include ms-borderColor-yellowGreen40;
+}
+.ms-borderColor-yellowGreen30,
+.ms-borderColor-yellowGreen30--hover:hover {
+  @include ms-borderColor-yellowGreen30;
+}
+.ms-borderColor-yellowGreen20,
+.ms-borderColor-yellowGreen20--hover:hover {
+  @include ms-borderColor-yellowGreen20;
+}
+.ms-borderColor-yellowGreen10,
+.ms-borderColor-yellowGreen10--hover:hover {
+  @include ms-borderColor-yellowGreen10;
+}
+.ms-borderColor-green140,
+.ms-borderColor-green140--hover:hover {
+  @include ms-borderColor-green140;
+}
+.ms-borderColor-green130,
+.ms-borderColor-green130--hover:hover {
+  @include ms-borderColor-green130;
+}
+.ms-borderColor-green120,
+.ms-borderColor-green120--hover:hover {
+  @include ms-borderColor-green120;
+}
+.ms-borderColor-green110,
+.ms-borderColor-green110--hover:hover {
+  @include ms-borderColor-green110;
+}
+.ms-borderColor-green100,
+.ms-borderColor-green100--hover:hover {
+  @include ms-borderColor-green100;
+}
+.ms-borderColor-green90,
+.ms-borderColor-green90--hover:hover {
+  @include ms-borderColor-green90;
+}
+.ms-borderColor-green80,
+.ms-borderColor-green80--hover:hover {
+  @include ms-borderColor-green80;
+}
+.ms-borderColor-green70,
+.ms-borderColor-green70--hover:hover {
+  @include ms-borderColor-green70;
+}
+.ms-borderColor-green60,
+.ms-borderColor-green60--hover:hover {
+  @include ms-borderColor-green60;
+}
+.ms-borderColor-green50,
+.ms-borderColor-green50--hover:hover {
+  @include ms-borderColor-green50;
+}
+.ms-borderColor-green40,
+.ms-borderColor-green40--hover:hover {
+  @include ms-borderColor-green40;
+}
+.ms-borderColor-green30,
+.ms-borderColor-green30--hover:hover {
+  @include ms-borderColor-green30;
+}
+.ms-borderColor-green20,
+.ms-borderColor-green20--hover:hover {
+  @include ms-borderColor-green20;
+}
+.ms-borderColor-green10,
+.ms-borderColor-green10--hover:hover {
+  @include ms-borderColor-green10;
+}
+.ms-borderColor-greenCyan180,
+.ms-borderColor-greenCyan180--hover:hover {
+  @include ms-borderColor-greenCyan180;
+}
+.ms-borderColor-greenCyan170,
+.ms-borderColor-greenCyan170--hover:hover {
+  @include ms-borderColor-greenCyan170;
+}
+.ms-borderColor-greenCyan160,
+.ms-borderColor-greenCyan160--hover:hover {
+  @include ms-borderColor-greenCyan160;
+}
+.ms-borderColor-greenCyan150,
+.ms-borderColor-greenCyan150--hover:hover {
+  @include ms-borderColor-greenCyan150;
+}
+.ms-borderColor-greenCyan140,
+.ms-borderColor-greenCyan140--hover:hover {
+  @include ms-borderColor-greenCyan140;
+}
+.ms-borderColor-greenCyan130,
+.ms-borderColor-greenCyan130--hover:hover {
+  @include ms-borderColor-greenCyan130;
+}
+.ms-borderColor-greenCyan120,
+.ms-borderColor-greenCyan120--hover:hover {
+  @include ms-borderColor-greenCyan120;
+}
+.ms-borderColor-greenCyan110,
+.ms-borderColor-greenCyan110--hover:hover {
+  @include ms-borderColor-greenCyan110;
+}
+.ms-borderColor-greenCyan100,
+.ms-borderColor-greenCyan100--hover:hover {
+  @include ms-borderColor-greenCyan100;
+}
+.ms-borderColor-greenCyan90,
+.ms-borderColor-greenCyan90--hover:hover {
+  @include ms-borderColor-greenCyan90;
+}
+.ms-borderColor-greenCyan80,
+.ms-borderColor-greenCyan80--hover:hover {
+  @include ms-borderColor-greenCyan80;
+}
+.ms-borderColor-greenCyan70,
+.ms-borderColor-greenCyan70--hover:hover {
+  @include ms-borderColor-greenCyan70;
+}
+.ms-borderColor-greenCyan60,
+.ms-borderColor-greenCyan60--hover:hover {
+  @include ms-borderColor-greenCyan60;
+}
+.ms-borderColor-greenCyan50,
+.ms-borderColor-greenCyan50--hover:hover {
+  @include ms-borderColor-greenCyan50;
+}
+.ms-borderColor-greenCyan40,
+.ms-borderColor-greenCyan40--hover:hover {
+  @include ms-borderColor-greenCyan40;
+}
+.ms-borderColor-greenCyan30,
+.ms-borderColor-greenCyan30--hover:hover {
+  @include ms-borderColor-greenCyan30;
+}
+.ms-borderColor-greenCyan20,
+.ms-borderColor-greenCyan20--hover:hover {
+  @include ms-borderColor-greenCyan20;
+}
+.ms-borderColor-greenCyan10,
+.ms-borderColor-greenCyan10--hover:hover {
+  @include ms-borderColor-greenCyan10;
+}
+.ms-borderColor-cyan230,
+.ms-borderColor-cyan230--hover:hover {
+  @include ms-borderColor-cyan230;
+}
+.ms-borderColor-cyan220,
+.ms-borderColor-cyan220--hover:hover {
+  @include ms-borderColor-cyan220;
+}
+.ms-borderColor-cyan210,
+.ms-borderColor-cyan210--hover:hover {
+  @include ms-borderColor-cyan210;
+}
+.ms-borderColor-cyan200,
+.ms-borderColor-cyan200--hover:hover {
+  @include ms-borderColor-cyan200;
+}
+.ms-borderColor-cyan190,
+.ms-borderColor-cyan190--hover:hover {
+  @include ms-borderColor-cyan190;
+}
+.ms-borderColor-cyan180,
+.ms-borderColor-cyan180--hover:hover {
+  @include ms-borderColor-cyan180;
+}
+.ms-borderColor-cyan170,
+.ms-borderColor-cyan170--hover:hover {
+  @include ms-borderColor-cyan170;
+}
+.ms-borderColor-cyan160,
+.ms-borderColor-cyan160--hover:hover {
+  @include ms-borderColor-cyan160;
+}
+.ms-borderColor-cyan150,
+.ms-borderColor-cyan150--hover:hover {
+  @include ms-borderColor-cyan150;
+}
+.ms-borderColor-cyan140,
+.ms-borderColor-cyan140--hover:hover {
+  @include ms-borderColor-cyan140;
+}
+.ms-borderColor-cyan130,
+.ms-borderColor-cyan130--hover:hover {
+  @include ms-borderColor-cyan130;
+}
+.ms-borderColor-cyan120,
+.ms-borderColor-cyan120--hover:hover {
+  @include ms-borderColor-cyan120;
+}
+.ms-borderColor-cyan110,
+.ms-borderColor-cyan110--hover:hover {
+  @include ms-borderColor-cyan110;
+}
+.ms-borderColor-cyan100,
+.ms-borderColor-cyan100--hover:hover {
+  @include ms-borderColor-cyan100;
+}
+.ms-borderColor-cyan90,
+.ms-borderColor-cyan90--hover:hover {
+  @include ms-borderColor-cyan90;
+}
+.ms-borderColor-cyan80,
+.ms-borderColor-cyan80--hover:hover {
+  @include ms-borderColor-cyan80;
+}
+.ms-borderColor-cyan70,
+.ms-borderColor-cyan70--hover:hover {
+  @include ms-borderColor-cyan70;
+}
+.ms-borderColor-cyan60,
+.ms-borderColor-cyan60--hover:hover {
+  @include ms-borderColor-cyan60;
+}
+.ms-borderColor-cyan50,
+.ms-borderColor-cyan50--hover:hover {
+  @include ms-borderColor-cyan50;
+}
+.ms-borderColor-cyan40,
+.ms-borderColor-cyan40--hover:hover {
+  @include ms-borderColor-cyan40;
+}
+.ms-borderColor-cyan30,
+.ms-borderColor-cyan30--hover:hover {
+  @include ms-borderColor-cyan30;
+}
+.ms-borderColor-cyan20,
+.ms-borderColor-cyan20--hover:hover {
+  @include ms-borderColor-cyan20;
+}
+.ms-borderColor-cyan10,
+.ms-borderColor-cyan10--hover:hover {
+  @include ms-borderColor-cyan10;
+}
+.ms-borderColor-cyanBlue100,
+.ms-borderColor-cyanBlue100--hover:hover {
+  @include ms-borderColor-cyanBlue100;
+}
+.ms-borderColor-cyanBlue90,
+.ms-borderColor-cyanBlue90--hover:hover {
+  @include ms-borderColor-cyanBlue90;
+}
+.ms-borderColor-cyanBlue80,
+.ms-borderColor-cyanBlue80--hover:hover {
+  @include ms-borderColor-cyanBlue80;
+}
+.ms-borderColor-cyanBlue70,
+.ms-borderColor-cyanBlue70--hover:hover {
+  @include ms-borderColor-cyanBlue70;
+}
+.ms-borderColor-cyanBlue60,
+.ms-borderColor-cyanBlue60--hover:hover {
+  @include ms-borderColor-cyanBlue60;
+}
+.ms-borderColor-cyanBlue50,
+.ms-borderColor-cyanBlue50--hover:hover {
+  @include ms-borderColor-cyanBlue50;
+}
+.ms-borderColor-cyanBlue40,
+.ms-borderColor-cyanBlue40--hover:hover {
+  @include ms-borderColor-cyanBlue40;
+}
+.ms-borderColor-cyanBlue30,
+.ms-borderColor-cyanBlue30--hover:hover {
+  @include ms-borderColor-cyanBlue30;
+}
+.ms-borderColor-cyanBlue20,
+.ms-borderColor-cyanBlue20--hover:hover {
+  @include ms-borderColor-cyanBlue20;
+}
+.ms-borderColor-cyanBlue10,
+.ms-borderColor-cyanBlue10--hover:hover {
+  @include ms-borderColor-cyanBlue10;
+}
+.ms-borderColor-blue150,
+.ms-borderColor-blue150--hover:hover {
+  @include ms-borderColor-blue150;
+}
+.ms-borderColor-blue140,
+.ms-borderColor-blue140--hover:hover {
+  @include ms-borderColor-blue140;
+}
+.ms-borderColor-blue130,
+.ms-borderColor-blue130--hover:hover {
+  @include ms-borderColor-blue130;
+}
+.ms-borderColor-blue120,
+.ms-borderColor-blue120--hover:hover {
+  @include ms-borderColor-blue120;
+}
+.ms-borderColor-blue110,
+.ms-borderColor-blue110--hover:hover {
+  @include ms-borderColor-blue110;
+}
+.ms-borderColor-blue100,
+.ms-borderColor-blue100--hover:hover {
+  @include ms-borderColor-blue100;
+}
+.ms-borderColor-blue90,
+.ms-borderColor-blue90--hover:hover {
+  @include ms-borderColor-blue90;
+}
+.ms-borderColor-blue80,
+.ms-borderColor-blue80--hover:hover {
+  @include ms-borderColor-blue80;
+}
+.ms-borderColor-blue70,
+.ms-borderColor-blue70--hover:hover {
+  @include ms-borderColor-blue70;
+}
+.ms-borderColor-blue60,
+.ms-borderColor-blue60--hover:hover {
+  @include ms-borderColor-blue60;
+}
+.ms-borderColor-blue50,
+.ms-borderColor-blue50--hover:hover {
+  @include ms-borderColor-blue50;
+}
+.ms-borderColor-blue40,
+.ms-borderColor-blue40--hover:hover {
+  @include ms-borderColor-blue40;
+}
+.ms-borderColor-blue30,
+.ms-borderColor-blue30--hover:hover {
+  @include ms-borderColor-blue30;
+}
+.ms-borderColor-blue20,
+.ms-borderColor-blue20--hover:hover {
+  @include ms-borderColor-blue20;
+}
+.ms-borderColor-blue10,
+.ms-borderColor-blue10--hover:hover {
+  @include ms-borderColor-blue10;
+}
+.ms-borderColor-blueMagenta250,
+.ms-borderColor-blueMagenta250--hover:hover {
+  @include ms-borderColor-blueMagenta250;
+}
+.ms-borderColor-blueMagenta240,
+.ms-borderColor-blueMagenta240--hover:hover {
+  @include ms-borderColor-blueMagenta240;
+}
+.ms-borderColor-blueMagenta230,
+.ms-borderColor-blueMagenta230--hover:hover {
+  @include ms-borderColor-blueMagenta230;
+}
+.ms-borderColor-blueMagenta220,
+.ms-borderColor-blueMagenta220--hover:hover {
+  @include ms-borderColor-blueMagenta220;
+}
+.ms-borderColor-blueMagenta210,
+.ms-borderColor-blueMagenta210--hover:hover {
+  @include ms-borderColor-blueMagenta210;
+}
+.ms-borderColor-blueMagenta200,
+.ms-borderColor-blueMagenta200--hover:hover {
+  @include ms-borderColor-blueMagenta200;
+}
+.ms-borderColor-blueMagenta190,
+.ms-borderColor-blueMagenta190--hover:hover {
+  @include ms-borderColor-blueMagenta190;
+}
+.ms-borderColor-blueMagenta180,
+.ms-borderColor-blueMagenta180--hover:hover {
+  @include ms-borderColor-blueMagenta180;
+}
+.ms-borderColor-blueMagenta170,
+.ms-borderColor-blueMagenta170--hover:hover {
+  @include ms-borderColor-blueMagenta170;
+}
+.ms-borderColor-blueMagenta160,
+.ms-borderColor-blueMagenta160--hover:hover {
+  @include ms-borderColor-blueMagenta160;
+}
+.ms-borderColor-blueMagenta150,
+.ms-borderColor-blueMagenta150--hover:hover {
+  @include ms-borderColor-blueMagenta150;
+}
+.ms-borderColor-blueMagenta140,
+.ms-borderColor-blueMagenta140--hover:hover {
+  @include ms-borderColor-blueMagenta140;
+}
+.ms-borderColor-blueMagenta130,
+.ms-borderColor-blueMagenta130--hover:hover {
+  @include ms-borderColor-blueMagenta130;
+}
+.ms-borderColor-blueMagenta120,
+.ms-borderColor-blueMagenta120--hover:hover {
+  @include ms-borderColor-blueMagenta120;
+}
+.ms-borderColor-blueMagenta110,
+.ms-borderColor-blueMagenta110--hover:hover {
+  @include ms-borderColor-blueMagenta110;
+}
+.ms-borderColor-blueMagenta100,
+.ms-borderColor-blueMagenta100--hover:hover {
+  @include ms-borderColor-blueMagenta100;
+}
+.ms-borderColor-blueMagenta90,
+.ms-borderColor-blueMagenta90--hover:hover {
+  @include ms-borderColor-blueMagenta90;
+}
+.ms-borderColor-blueMagenta80,
+.ms-borderColor-blueMagenta80--hover:hover {
+  @include ms-borderColor-blueMagenta80;
+}
+.ms-borderColor-blueMagenta70,
+.ms-borderColor-blueMagenta70--hover:hover {
+  @include ms-borderColor-blueMagenta70;
+}
+.ms-borderColor-blueMagenta60,
+.ms-borderColor-blueMagenta60--hover:hover {
+  @include ms-borderColor-blueMagenta60;
+}
+.ms-borderColor-blueMagenta50,
+.ms-borderColor-blueMagenta50--hover:hover {
+  @include ms-borderColor-blueMagenta50;
+}
+.ms-borderColor-blueMagenta40,
+.ms-borderColor-blueMagenta40--hover:hover {
+  @include ms-borderColor-blueMagenta40;
+}
+.ms-borderColor-blueMagenta30,
+.ms-borderColor-blueMagenta30--hover:hover {
+  @include ms-borderColor-blueMagenta30;
+}
+.ms-borderColor-blueMagenta20,
+.ms-borderColor-blueMagenta20--hover:hover {
+  @include ms-borderColor-blueMagenta20;
+}
+.ms-borderColor-blueMagenta10,
+.ms-borderColor-blueMagenta10--hover:hover {
+  @include ms-borderColor-blueMagenta10;
+}
+.ms-borderColor-magenta160,
+.ms-borderColor-magenta160--hover:hover {
+  @include ms-borderColor-magenta160;
+}
+.ms-borderColor-magenta150,
+.ms-borderColor-magenta150--hover:hover {
+  @include ms-borderColor-magenta150;
+}
+.ms-borderColor-magenta140,
+.ms-borderColor-magenta140--hover:hover {
+  @include ms-borderColor-magenta140;
+}
+.ms-borderColor-magenta130,
+.ms-borderColor-magenta130--hover:hover {
+  @include ms-borderColor-magenta130;
+}
+.ms-borderColor-magenta120,
+.ms-borderColor-magenta120--hover:hover {
+  @include ms-borderColor-magenta120;
+}
+.ms-borderColor-magenta110,
+.ms-borderColor-magenta110--hover:hover {
+  @include ms-borderColor-magenta110;
+}
+.ms-borderColor-magenta100,
+.ms-borderColor-magenta100--hover:hover {
+  @include ms-borderColor-magenta100;
+}
+.ms-borderColor-magenta90,
+.ms-borderColor-magenta90--hover:hover {
+  @include ms-borderColor-magenta90;
+}
+.ms-borderColor-magenta80,
+.ms-borderColor-magenta80--hover:hover {
+  @include ms-borderColor-magenta80;
+}
+.ms-borderColor-magenta70,
+.ms-borderColor-magenta70--hover:hover {
+  @include ms-borderColor-magenta70;
+}
+.ms-borderColor-magenta60,
+.ms-borderColor-magenta60--hover:hover {
+  @include ms-borderColor-magenta60;
+}
+.ms-borderColor-magenta50,
+.ms-borderColor-magenta50--hover:hover {
+  @include ms-borderColor-magenta50;
+}
+.ms-borderColor-magenta40,
+.ms-borderColor-magenta40--hover:hover {
+  @include ms-borderColor-magenta40;
+}
+.ms-borderColor-magenta30,
+.ms-borderColor-magenta30--hover:hover {
+  @include ms-borderColor-magenta30;
+}
+.ms-borderColor-magenta20,
+.ms-borderColor-magenta20--hover:hover {
+  @include ms-borderColor-magenta20;
+}
+.ms-borderColor-magenta10,
+.ms-borderColor-magenta10--hover:hover {
+  @include ms-borderColor-magenta10;
+}
+.ms-borderColor-magentaPink70,
+.ms-borderColor-magentaPink70--hover:hover {
+  @include ms-borderColor-magentaPink70;
+}
+.ms-borderColor-magentaPink60,
+.ms-borderColor-magentaPink60--hover:hover {
+  @include ms-borderColor-magentaPink60;
+}
+.ms-borderColor-magentaPink50,
+.ms-borderColor-magentaPink50--hover:hover {
+  @include ms-borderColor-magentaPink50;
+}
+.ms-borderColor-magentaPink40,
+.ms-borderColor-magentaPink40--hover:hover {
+  @include ms-borderColor-magentaPink40;
+}
+.ms-borderColor-magentaPink30,
+.ms-borderColor-magentaPink30--hover:hover {
+  @include ms-borderColor-magentaPink30;
+}
+.ms-borderColor-magentaPink20,
+.ms-borderColor-magentaPink20--hover:hover {
+  @include ms-borderColor-magentaPink20;
+}
+.ms-borderColor-magentaPink10,
+.ms-borderColor-magentaPink10--hover:hover {
+  @include ms-borderColor-magentaPink10;
+}
+.ms-borderColor-pink50,
+.ms-borderColor-pink50--hover:hover {
+  @include ms-borderColor-pink50;
+}
+.ms-borderColor-pink40,
+.ms-borderColor-pink40--hover:hover {
+  @include ms-borderColor-pink40;
+}
+.ms-borderColor-pink30,
+.ms-borderColor-pink30--hover:hover {
+  @include ms-borderColor-pink30;
+}
+.ms-borderColor-pink20,
+.ms-borderColor-pink20--hover:hover {
+  @include ms-borderColor-pink20;
+}
+.ms-borderColor-pink10,
+.ms-borderColor-pink10--hover:hover {
+  @include ms-borderColor-pink10;
 }

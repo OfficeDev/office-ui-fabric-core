@@ -762,20 +762,6 @@
   background-color: $ms-color-word10;
 }
 
-// High contrast
-@mixin ms-bgColor-contrastBlackDisabled {
-  background-color: $ms-color-contrastBlackDisabled;
-}
-@mixin ms-bgColor-contrastWhiteDisabled {
-  background-color: $ms-color-contrastWhiteDisabled;
-}
-@mixin ms-bgColor-contrastBlackSelected {
-  background-color: $ms-color-contrastBlackSelected;
-}
-@mixin ms-bgColor-contrastWhiteSelected {
-  background-color: $ms-color-contrastWhiteSelected;
-}
-
 // Message
 @mixin ms-bgColor-messageInfo {
   background-color: $ms-color-messageInfo;

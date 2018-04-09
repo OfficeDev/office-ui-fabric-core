@@ -1,15 +1,15 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
 // Theme
-$ms-color-themeDarker: #004578 !default;
-$ms-color-themeDark: #005a9e !default;
-$ms-color-themeDarkAlt: #106ebe !default;
-$ms-color-themePrimary: #0078d4 !default;
-$ms-color-themeSecondary: #2b88d8 !default;
-$ms-color-themeTertiary: #71afe5 !default;
-$ms-color-themeLight: #c7e0f4 !default;
-$ms-color-themeLighter: #deecf9 !default;
-$ms-color-themeLighterAlt: #eff6fc !default;
+$ms-color-themeDarker: $ms-color-communication90 !default;
+$ms-color-themeDark: $ms-color-communication80 !default;
+$ms-color-themeDarkAlt: $ms-color-communication70 !default;
+$ms-color-themePrimary: $ms-color-communication60 !default;
+$ms-color-themeSecondary: $ms-color-communication50 !default;
+$ms-color-themeTertiary: $ms-color-communication40 !default;
+$ms-color-themeLight: $ms-color-communication30 !default;
+$ms-color-themeLighter: $ms-color-communication20 !default;
+$ms-color-themeLighterAlt: $ms-color-communication10 !default;
 
 // Neutral
 // The original colors have been overridden by the new palette, with warmer grays.

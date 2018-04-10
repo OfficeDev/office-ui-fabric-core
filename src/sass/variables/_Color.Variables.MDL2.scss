@@ -51,3 +51,17 @@ $ms-color-tealLight: $ms-color-cyan150 !default;
 $ms-color-greenDark: #004b1c !default;
 $ms-color-green: $ms-color-green120 !default;
 $ms-color-greenLight: $ms-color-yellowGreen50 !default;
+
+// Message
+$ms-color-info: $ms-color-messageInfo !default;
+$ms-color-infoBackground: $ms-color-messageInfoBackground !default;
+$ms-color-success: $ms-color-messageSuccess !default;
+$ms-color-successBackground: $ms-color-messageSuccessBackground !default;
+$ms-color-severeWarning: $ms-color-messageSevereWarning !default;
+$ms-color-severeWarningBackground: $ms-color-messageSevereWarningBackground !default;
+$ms-color-alert: $ms-color-severeWarning !default;
+$ms-color-alertBackground: $ms-color-severeWarningBackground !default;
+$ms-color-warning: $ms-color-messageWarning !default;
+$ms-color-warningBackground: $ms-color-messageWarningBackground !default;
+$ms-color-error: $ms-color-messageError !default;
+$ms-color-errorBackground: $ms-color-messageError !default;

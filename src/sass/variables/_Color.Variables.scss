@@ -262,11 +262,24 @@ $ms-color-word30: #557bb3 !default;
 $ms-color-word20: #7f9ecc !default;
 $ms-color-word10: #a9c2e6 !default;
 
-// High contrast
-$ms-color-contrastBlackDisabled: #00ff00 !default;
-$ms-color-contrastWhiteDisabled: #600000 !default;
-$ms-color-contrastBlackSelected: #1aebff !default;
-$ms-color-contrastWhiteSelected: #37006e !default;
+// OneNote
+$ms-color-oneNote80: #4c0f6c !default;
+$ms-color-oneNote70: #5c1384 !default;
+$ms-color-oneNote60: #7719aa !default;
+$ms-color-oneNote50: #9953c0 !default;
+$ms-color-oneNote40: #d0afe2 !default;
+$ms-color-oneNote30: #ddc5ec !default;
+$ms-color-oneNote20: #efdffa !default;
+$ms-color-oneNote10: #f5edfd !default;
+
+// Teams
+$ms-color-teams70: #001765 !default;
+$ms-color-teams60: #1c2d7e !default;
+$ms-color-teams50: #394296 !default;
+$ms-color-teams40: #5558af !default;
+$ms-color-teams30: #787bc3 !default;
+$ms-color-teams20: #9b9dd8 !default;
+$ms-color-teams10: #bec0ec !default;
 
 // Message
 $ms-color-messageInfo: $ms-color-gray120 !default;
@@ -279,6 +292,12 @@ $ms-color-messageWarning: $ms-color-gray120 !default;
 $ms-color-messageWarningBackground: #fff4ce !default;
 $ms-color-messageError: $ms-color-red150 !default;
 $ms-color-messageErrorBackground: #fde7e9 !default;
+
+// High contrast
+$ms-color-contrastBlackDisabled: #00ff00 !default;
+$ms-color-contrastWhiteDisabled: #600000 !default;
+$ms-color-contrastBlackSelected: #1aebff !default;
+$ms-color-contrastWhiteSelected: #37006e !default;
 
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";

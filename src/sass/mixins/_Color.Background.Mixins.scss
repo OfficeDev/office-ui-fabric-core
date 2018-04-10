@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Gray
+// Grays
 @mixin ms-bgColor-black {
   background-color: $ms-color-black;
 }
@@ -74,7 +74,7 @@
   background-color: $ms-color-white;
 }
 
-// Color
+// Colors
 @mixin ms-bgColor-pinkRed40 {
   background-color: $ms-color-pinkRed40;
 }
@@ -664,6 +664,32 @@
   background-color: $ms-color-pink10;
 }
 
+// Message
+@mixin ms-bgColor-messageInfo {
+  background-color: $ms-color-messageInfo;
+}
+@mixin ms-bgColor-messageInfoBackground {
+  background-color: $ms-color-messageInfoBackground;
+}
+@mixin ms-bgColor-messageSuccess {
+  background-color: $ms-color-messageSuccess;
+}
+@mixin ms-bgColor-messageSuccessBackground {
+  background-color: $ms-color-messageSuccessBackground;
+}
+@mixin ms-bgColor-messageSevereWarning {
+  background-color: $ms-color-messageSevereWarning;
+}
+@mixin ms-bgColor-messageSevereWarningBackground {
+  background-color: $ms-color-messageSevereWarningBackground;
+}
+@mixin ms-bgColor-messageError {
+  background-color: $ms-color-messageError;
+}
+@mixin ms-bgColor-messageErrorBackground {
+  background-color: $ms-color-messageErrorBackground;
+}
+
 // Communication
 @mixin ms-bgColor-communication90 {
   background-color: $ms-color-communication90;
@@ -716,6 +742,32 @@
   background-color: $ms-color-excel10;
 }
 
+// OneNote
+@mixin ms-bgColor-oneNote80 {
+  background-color: $ms-color-oneNote80;
+}
+@mixin ms-bgColor-oneNote70 {
+  background-color: $ms-color-oneNote70;
+}
+@mixin ms-bgColor-oneNote60 {
+  background-color: $ms-color-oneNote60;
+}
+@mixin ms-bgColor-oneNote50 {
+  background-color: $ms-color-oneNote50;
+}
+@mixin ms-bgColor-oneNote40 {
+  background-color: $ms-color-oneNote40;
+}
+@mixin ms-bgColor-oneNote30 {
+  background-color: $ms-color-oneNote30;
+}
+@mixin ms-bgColor-oneNote20 {
+  background-color: $ms-color-oneNote20;
+}
+@mixin ms-bgColor-oneNote10 {
+  background-color: $ms-color-oneNote10;
+}
+
 // PowerPoint
 @mixin ms-bgColor-powerPoint70 {
   background-color: $ms-color-powerPoint70;
@@ -739,6 +791,29 @@
   background-color: $ms-color-powerPoint10;
 }
 
+// Teams
+@mixin ms-bgColor-teams70 {
+  background-color: $ms-color-teams70;
+}
+@mixin ms-bgColor-teams60 {
+  background-color: $ms-color-teams60;
+}
+@mixin ms-bgColor-teams50 {
+  background-color: $ms-color-teams50;
+}
+@mixin ms-bgColor-teams40 {
+  background-color: $ms-color-teams40;
+}
+@mixin ms-bgColor-teams30 {
+  background-color: $ms-color-teams30;
+}
+@mixin ms-bgColor-teams20 {
+  background-color: $ms-color-teams20;
+}
+@mixin ms-bgColor-teams10 {
+  background-color: $ms-color-teams10;
+}
+
 // Word
 @mixin ms-bgColor-word70 {
   background-color: $ms-color-word70;
@@ -760,30 +835,4 @@
 }
 @mixin ms-bgColor-word10 {
   background-color: $ms-color-word10;
-}
-
-// Message
-@mixin ms-bgColor-messageInfo {
-  background-color: $ms-color-messageInfo;
-}
-@mixin ms-bgColor-messageInfoBackground {
-  background-color: $ms-color-messageInfoBackground;
-}
-@mixin ms-bgColor-messageSuccess {
-  background-color: $ms-color-messageSuccess;
-}
-@mixin ms-bgColor-messageSuccessBackground {
-  background-color: $ms-color-messageSuccessBackground;
-}
-@mixin ms-bgColor-messageSevereWarning {
-  background-color: $ms-color-messageSevereWarning;
-}
-@mixin ms-bgColor-messageSevereWarningBackground {
-  background-color: $ms-color-messageSevereWarningBackground;
-}
-@mixin ms-bgColor-messageError {
-  background-color: $ms-color-messageError;
-}
-@mixin ms-bgColor-messageErrorBackground {
-  background-color: $ms-color-messageErrorBackground;
 }

@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Gray
+// Grays
 @mixin ms-borderColor-black {
   border-color: $ms-color-black;
 }
@@ -74,7 +74,7 @@
   border-color: $ms-color-white;
 }
 
-// Color
+// Colors
 @mixin ms-borderColor-pinkRed40 {
   border-color: $ms-color-pinkRed40;
 }
@@ -664,6 +664,32 @@
   border-color: $ms-color-pink10;
 }
 
+// Message
+@mixin ms-borderColor-messageInfo {
+  border-color: $ms-color-messageInfo;
+}
+@mixin ms-borderColor-messageInfoBackground {
+  border-color: $ms-color-messageInfoBackground;
+}
+@mixin ms-borderColor-messageSuccess {
+  border-color: $ms-color-messageSuccess;
+}
+@mixin ms-borderColor-messageSuccessBackground {
+  border-color: $ms-color-messageSuccessBackground;
+}
+@mixin ms-borderColor-messageSevereWarning {
+  border-color: $ms-color-messageSevereWarning;
+}
+@mixin ms-borderColor-messageSevereWarningBackground {
+  border-color: $ms-color-messageSevereWarningBackground;
+}
+@mixin ms-borderColor-messageError {
+  border-color: $ms-color-messageError;
+}
+@mixin ms-borderColor-messageErrorBackground {
+  border-color: $ms-color-messageErrorBackground;
+}
+
 // Communication
 @mixin ms-borderColor-communication90 {
   border-color: $ms-color-communication90;
@@ -716,6 +742,32 @@
   border-color: $ms-color-excel10;
 }
 
+// OneNote
+@mixin ms-borderColor-oneNote80 {
+  border-color: $ms-color-oneNote80;
+}
+@mixin ms-borderColor-oneNote70 {
+  border-color: $ms-color-oneNote70;
+}
+@mixin ms-borderColor-oneNote60 {
+  border-color: $ms-color-oneNote60;
+}
+@mixin ms-borderColor-oneNote50 {
+  border-color: $ms-color-oneNote50;
+}
+@mixin ms-borderColor-oneNote40 {
+  border-color: $ms-color-oneNote40;
+}
+@mixin ms-borderColor-oneNote30 {
+  border-color: $ms-color-oneNote30;
+}
+@mixin ms-borderColor-oneNote20 {
+  border-color: $ms-color-oneNote20;
+}
+@mixin ms-borderColor-oneNote10 {
+  border-color: $ms-color-oneNote10;
+}
+
 // PowerPoint
 @mixin ms-borderColor-powerPoint70 {
   border-color: $ms-color-powerPoint70;
@@ -739,6 +791,29 @@
   border-color: $ms-color-powerPoint10;
 }
 
+// Teams
+@mixin ms-borderColor-teams70 {
+  border-color: $ms-color-teams70;
+}
+@mixin ms-borderColor-teams60 {
+  border-color: $ms-color-teams60;
+}
+@mixin ms-borderColor-teams50 {
+  border-color: $ms-color-teams50;
+}
+@mixin ms-borderColor-teams40 {
+  border-color: $ms-color-teams40;
+}
+@mixin ms-borderColor-teams30 {
+  border-color: $ms-color-teams30;
+}
+@mixin ms-borderColor-teams20 {
+  border-color: $ms-color-teams20;
+}
+@mixin ms-borderColor-teams10 {
+  border-color: $ms-color-teams10;
+}
+
 // Word
 @mixin ms-borderColor-word70 {
   border-color: $ms-color-word70;
@@ -760,30 +835,4 @@
 }
 @mixin ms-borderColor-word10 {
   border-color: $ms-color-word10;
-}
-
-// Message
-@mixin ms-borderColor-messageInfo {
-  border-color: $ms-color-messageInfo;
-}
-@mixin ms-borderColor-messageInfoBackground {
-  border-color: $ms-color-messageInfoBackground;
-}
-@mixin ms-borderColor-messageSuccess {
-  border-color: $ms-color-messageSuccess;
-}
-@mixin ms-borderColor-messageSuccessBackground {
-  border-color: $ms-color-messageSuccessBackground;
-}
-@mixin ms-borderColor-messageSevereWarning {
-  border-color: $ms-color-messageSevereWarning;
-}
-@mixin ms-borderColor-messageSevereWarningBackground {
-  border-color: $ms-color-messageSevereWarningBackground;
-}
-@mixin ms-borderColor-messageError {
-  border-color: $ms-color-messageError;
-}
-@mixin ms-borderColor-messageErrorBackground {
-  border-color: $ms-color-messageErrorBackground;
 }

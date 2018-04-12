@@ -1,0 +1,1160 @@
+[
+  {
+    "palette": "Grays",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Gray220",
+        "hex": "#11100f"
+      },
+      {
+        "name": "Gray210",
+        "hex": "#161514"
+      },
+      {
+        "name": "Gray200",
+        "hex": "#1b1a19"
+      },
+      {
+        "name": "Gray190",
+        "hex": "#201f1e"
+      },
+      {
+        "name": "Gray180",
+        "hex": "#252423"
+      },
+      {
+        "name": "Gray170",
+        "hex": "#292827"
+      },
+      {
+        "name": "Gray160",
+        "hex": "#323130"
+      },
+      {
+        "name": "Gray150",
+        "hex": "#3b3a39"
+      },
+      {
+        "name": "Gray140",
+        "hex": "#484644"
+      },
+      {
+        "name": "Gray130",
+        "hex": "#605e5c"
+      },
+      {
+        "name": "Gray120",
+        "hex": "#797775"
+      },
+      {
+        "name": "Gray110",
+        "hex": "#8a8886"
+      },
+      {
+        "name": "Gray100",
+        "hex": "#979593"
+      },
+      {
+        "name": "Gray90",
+        "hex": "#a19f9d"
+      },
+      {
+        "name": "Gray80",
+        "hex": "#b3b0ad"
+      },
+      {
+        "name": "Gray70",
+        "hex": "#bebbb8"
+      },
+      {
+        "name": "Gray60",
+        "hex": "#c8c6c4"
+      },
+      {
+        "name": "Gray50",
+        "hex": "#d2d0ce"
+      },
+      {
+        "name": "Gray40",
+        "hex": "#e1dfdd"
+      },
+      {
+        "name": "Gray30",
+        "hex": "#edebe9"
+      },
+      {
+        "name": "Gray20",
+        "hex": "#f3f2f1"
+      },
+      {
+        "name": "Gray10",
+        "hex": "#faf9f8"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ]
+  },
+  {
+    "palette": "Colors",
+    "colors": [
+      {
+        "name": "PinkRed40",
+        "hex": "#750b1c"
+      },
+      {
+        "name": "PinkRed30",
+        "hex": "#761721"
+      },
+      {
+        "name": "PinkRed20",
+        "hex": "#e6808a"
+      },
+      {
+        "name": "PinkRed10",
+        "hex": "#f4abba"
+      },
+      {
+        "name": "Red160",
+        "hex": "#7f1d10"
+      },
+      {
+        "name": "Red150",
+        "hex": "#a80000"
+      },
+      {
+        "name": "Red140",
+        "hex": "#a52613"
+      },
+      {
+        "name": "Red130",
+        "hex": "#a4262c"
+      },
+      {
+        "name": "Red120",
+        "hex": "#c50f1f"
+      },
+      {
+        "name": "Red110",
+        "hex": "#e81123"
+      },
+      {
+        "name": "Red100",
+        "hex": "#f03a17"
+      },
+      {
+        "name": "Red90",
+        "hex": "#d13438"
+      },
+      {
+        "name": "Red80",
+        "hex": "#e74856"
+      },
+      {
+        "name": "Red70",
+        "hex": "#ef6950"
+      },
+      {
+        "name": "Red60",
+        "hex": "#ff4343"
+      },
+      {
+        "name": "Red50",
+        "hex": "#ff6767"
+      },
+      {
+        "name": "Red40",
+        "hex": "#ee9889"
+      },
+      {
+        "name": "Red30",
+        "hex": "#ff8c8c"
+      },
+      {
+        "name": "Red20",
+        "hex": "#eec7c2"
+      },
+      {
+        "name": "Red10",
+        "hex": "#ffc0c0"
+      },
+      {
+        "name": "RedOrange60",
+        "hex": "#4d291c"
+      },
+      {
+        "name": "RedOrange50",
+        "hex": "#7f2f08"
+      },
+      {
+        "name": "RedOrange40",
+        "hex": "#603d30"
+      },
+      {
+        "name": "RedOrange30",
+        "hex": "#a74019"
+      },
+      {
+        "name": "RedOrange20",
+        "hex": "#da3b01"
+      },
+      {
+        "name": "RedOrange10",
+        "hex": "#f2d5c9"
+      },
+      {
+        "name": "Orange190",
+        "hex": "#7f4200"
+      },
+      {
+        "name": "Orange180",
+        "hex": "#8e562e"
+      },
+      {
+        "name": "Orange170",
+        "hex": "#ab620d"
+      },
+      {
+        "name": "Orange160",
+        "hex": "#b05e0d"
+      },
+      {
+        "name": "Orange150",
+        "hex": "#d47300"
+      },
+      {
+        "name": "Orange140",
+        "hex": "#d48c00"
+      },
+      {
+        "name": "Orange130",
+        "hex": "#ca5010"
+      },
+      {
+        "name": "Orange120",
+        "hex": "#ac744c"
+      },
+      {
+        "name": "Orange110",
+        "hex": "#ff8c00"
+      },
+      {
+        "name": "Orange100",
+        "hex": "#f7630c"
+      },
+      {
+        "name": "Orange90",
+        "hex": "#bb9167"
+      },
+      {
+        "name": "Orange80",
+        "hex": "#f7894a"
+      },
+      {
+        "name": "Orange70",
+        "hex": "#ffaa44"
+      },
+      {
+        "name": "Orange60",
+        "hex": "#d8b094"
+      },
+      {
+        "name": "Orange50",
+        "hex": "#f7b189"
+      },
+      {
+        "name": "Orange40",
+        "hex": "#ffc988"
+      },
+      {
+        "name": "Orange30",
+        "hex": "#ffe5b6"
+      },
+      {
+        "name": "Orange20",
+        "hex": "#f7d7c4"
+      },
+      {
+        "name": "Orange10",
+        "hex": "#ffdabb"
+      },
+      {
+        "name": "OrangeYellow60",
+        "hex": "#986f0b"
+      },
+      {
+        "name": "OrangeYellow50",
+        "hex": "#c19c00"
+      },
+      {
+        "name": "OrangeYellow40",
+        "hex": "#eaa300"
+      },
+      {
+        "name": "OrangeYellow30",
+        "hex": "#ffb900"
+      },
+      {
+        "name": "OrangeYellow20",
+        "hex": "#ffc83d"
+      },
+      {
+        "name": "OrangeYellow10",
+        "hex": "#ffd679"
+      },
+      {
+        "name": "Yellow50",
+        "hex": "#dfbe00"
+      },
+      {
+        "name": "Yellow40",
+        "hex": "#fff100"
+      },
+      {
+        "name": "Yellow30",
+        "hex": "#fce100"
+      },
+      {
+        "name": "Yellow20",
+        "hex": "#faec6e"
+      },
+      {
+        "name": "Yellow10",
+        "hex": "#f9f1a5"
+      },
+      {
+        "name": "YellowGreen70",
+        "hex": "#8cbd18"
+      },
+      {
+        "name": "YellowGreen60",
+        "hex": "#a4cf0c"
+      },
+      {
+        "name": "YellowGreen50",
+        "hex": "#bad80a"
+      },
+      {
+        "name": "YellowGreen40",
+        "hex": "#d1ec3c"
+      },
+      {
+        "name": "YellowGreen30",
+        "hex": "#e4f577"
+      },
+      {
+        "name": "YellowGreen20",
+        "hex": "#d5e5ae"
+      },
+      {
+        "name": "YellowGreen10",
+        "hex": "#f8ffb3"
+      },
+      {
+        "name": "Green140",
+        "hex": "#0b6a0b"
+      },
+      {
+        "name": "Green130",
+        "hex": "#498205"
+      },
+      {
+        "name": "Green120",
+        "hex": "#107c10"
+      },
+      {
+        "name": "Green110",
+        "hex": "#599b00"
+      },
+      {
+        "name": "Green100",
+        "hex": "#13a10e"
+      },
+      {
+        "name": "Green90",
+        "hex": "#6bb700"
+      },
+      {
+        "name": "Green80",
+        "hex": "#73aa24"
+      },
+      {
+        "name": "Green70",
+        "hex": "#16c60c"
+      },
+      {
+        "name": "Green60",
+        "hex": "#7cd300"
+      },
+      {
+        "name": "Green50",
+        "hex": "#47d041"
+      },
+      {
+        "name": "Green40",
+        "hex": "#9ad93a"
+      },
+      {
+        "name": "Green30",
+        "hex": "#79db75"
+      },
+      {
+        "name": "Green20",
+        "hex": "#b7df74"
+      },
+      {
+        "name": "Green10",
+        "hex": "#aae5aa"
+      },
+      {
+        "name": "GreenCyan180",
+        "hex": "#2d3f3a"
+      },
+      {
+        "name": "GreenCyan170",
+        "hex": "#00722e"
+      },
+      {
+        "name": "GreenCyan160",
+        "hex": "#3b534d"
+      },
+      {
+        "name": "GreenCyan150",
+        "hex": "#10893e"
+      },
+      {
+        "name": "GreenCyan140",
+        "hex": "#00ae56"
+      },
+      {
+        "name": "GreenCyan130",
+        "hex": "#486860"
+      },
+      {
+        "name": "GreenCyan120",
+        "hex": "#00cc6a"
+      },
+      {
+        "name": "GreenCyan110",
+        "hex": "#00cea6"
+      },
+      {
+        "name": "GreenCyan100",
+        "hex": "#567c73"
+      },
+      {
+        "name": "GreenCyan90",
+        "hex": "#38d487"
+      },
+      {
+        "name": "GreenCyan80",
+        "hex": "#7d9d95"
+      },
+      {
+        "name": "GreenCyan70",
+        "hex": "#41dabc"
+      },
+      {
+        "name": "GreenCyan60",
+        "hex": "#70dda5"
+      },
+      {
+        "name": "GreenCyan50",
+        "hex": "#a3bfb7"
+      },
+      {
+        "name": "GreenCyan40",
+        "hex": "#81e6d3"
+      },
+      {
+        "name": "GreenCyan30",
+        "hex": "#a8e5c2"
+      },
+      {
+        "name": "GreenCyan20",
+        "hex": "#cae0d9"
+      },
+      {
+        "name": "GreenCyan10",
+        "hex": "#c2f2e9"
+      },
+      {
+        "name": "Cyan230",
+        "hex": "#005e50"
+      },
+      {
+        "name": "Cyan220",
+        "hex": "#006666"
+      },
+      {
+        "name": "Cyan210",
+        "hex": "#005b70"
+      },
+      {
+        "name": "Cyan200",
+        "hex": "#008272"
+      },
+      {
+        "name": "Cyan190",
+        "hex": "#038387"
+      },
+      {
+        "name": "Cyan180",
+        "hex": "#006f94"
+      },
+      {
+        "name": "Cyan170",
+        "hex": "#4a5459"
+      },
+      {
+        "name": "Cyan160",
+        "hex": "#009ca4"
+      },
+      {
+        "name": "Cyan150",
+        "hex": "#00b294"
+      },
+      {
+        "name": "Cyan140",
+        "hex": "#0099bc"
+      },
+      {
+        "name": "Cyan130",
+        "hex": "#00b7c3"
+      },
+      {
+        "name": "Cyan120",
+        "hex": "#5a686c"
+      },
+      {
+        "name": "Cyan110",
+        "hex": "#69797e"
+      },
+      {
+        "name": "Cyan100",
+        "hex": "#00bcf2"
+      },
+      {
+        "name": "Cyan90",
+        "hex": "#30c6cc"
+      },
+      {
+        "name": "Cyan80",
+        "hex": "#859599"
+      },
+      {
+        "name": "Cyan70",
+        "hex": "#31d2f7"
+      },
+      {
+        "name": "Cyan60",
+        "hex": "#61d6d6"
+      },
+      {
+        "name": "Cyan50",
+        "hex": "#a0aeb2"
+      },
+      {
+        "name": "Cyan40",
+        "hex": "#69eaff"
+      },
+      {
+        "name": "Cyan30",
+        "hex": "#91e5df"
+      },
+      {
+        "name": "Cyan20",
+        "hex": "#bac8cc"
+      },
+      {
+        "name": "Cyan10",
+        "hex": "#99ecff"
+      },
+      {
+        "name": "CyanBlue100",
+        "hex": "#003966"
+      },
+      {
+        "name": "CyanBlue90",
+        "hex": "#394146"
+      },
+      {
+        "name": "CyanBlue80",
+        "hex": "#004e8c"
+      },
+      {
+        "name": "CyanBlue70",
+        "hex": "#0063b1"
+      },
+      {
+        "name": "CyanBlue60",
+        "hex": "#0078d7"
+      },
+      {
+        "name": "CyanBlue50",
+        "hex": "#3a96dd"
+      },
+      {
+        "name": "CyanBlue40",
+        "hex": "#83beec"
+      },
+      {
+        "name": "CyanBlue30",
+        "hex": "#7ba7ff"
+      },
+      {
+        "name": "CyanBlue20",
+        "hex": "#abc9ed"
+      },
+      {
+        "name": "CyanBlue10",
+        "hex": "#b3dbf2"
+      },
+      {
+        "name": "Blue150",
+        "hex": "#11255e"
+      },
+      {
+        "name": "Blue140",
+        "hex": "#242466"
+      },
+      {
+        "name": "Blue130",
+        "hex": "#00188f"
+      },
+      {
+        "name": "Blue120",
+        "hex": "#19318d"
+      },
+      {
+        "name": "Blue110",
+        "hex": "#0027b4"
+      },
+      {
+        "name": "Blue100",
+        "hex": "#0037da"
+      },
+      {
+        "name": "Blue90",
+        "hex": "#203dbd"
+      },
+      {
+        "name": "Blue80",
+        "hex": "#0046ff"
+      },
+      {
+        "name": "Blue70",
+        "hex": "#2849ec"
+      },
+      {
+        "name": "Blue60",
+        "hex": "#4f6bed"
+      },
+      {
+        "name": "Blue50",
+        "hex": "#3b78ff"
+      },
+      {
+        "name": "Blue40",
+        "hex": "#7c96f9"
+      },
+      {
+        "name": "Blue30",
+        "hex": "#b5b5e2"
+      },
+      {
+        "name": "Blue20",
+        "hex": "#bebee5"
+      },
+      {
+        "name": "Blue10",
+        "hex": "#c3c3f4"
+      },
+      {
+        "name": "BlueMagenta250",
+        "hex": "#401b6c"
+      },
+      {
+        "name": "BlueMagenta240",
+        "hex": "#4e257f"
+      },
+      {
+        "name": "BlueMagenta230",
+        "hex": "#373277"
+      },
+      {
+        "name": "BlueMagenta220",
+        "hex": "#49397a"
+      },
+      {
+        "name": "BlueMagenta210",
+        "hex": "#32318c"
+      },
+      {
+        "name": "BlueMagenta200",
+        "hex": "#5c2e91"
+      },
+      {
+        "name": "BlueMagenta190",
+        "hex": "#49409a"
+      },
+      {
+        "name": "BlueMagenta180",
+        "hex": "#5e4a9d"
+      },
+      {
+        "name": "BlueMagenta170",
+        "hex": "#413eb3"
+      },
+      {
+        "name": "BlueMagenta160",
+        "hex": "#744da9"
+      },
+      {
+        "name": "BlueMagenta150",
+        "hex": "#5a4ebc"
+      },
+      {
+        "name": "BlueMagenta140",
+        "hex": "#735bc1"
+      },
+      {
+        "name": "BlueMagenta130",
+        "hex": "#8764b8"
+      },
+      {
+        "name": "BlueMagenta120",
+        "hex": "#4f4bd9"
+      },
+      {
+        "name": "BlueMagenta110",
+        "hex": "#6b69d6"
+      },
+      {
+        "name": "BlueMagenta100",
+        "hex": "#7160e8"
+      },
+      {
+        "name": "BlueMagenta90",
+        "hex": "#886ce4"
+      },
+      {
+        "name": "BlueMagenta80",
+        "hex": "#8378de"
+      },
+      {
+        "name": "BlueMagenta70",
+        "hex": "#8e8cd8"
+      },
+      {
+        "name": "BlueMagenta60",
+        "hex": "#a992d4"
+      },
+      {
+        "name": "BlueMagenta50",
+        "hex": "#9c89e9"
+      },
+      {
+        "name": "BlueMagenta40",
+        "hex": "#9a95de"
+      },
+      {
+        "name": "BlueMagenta30",
+        "hex": "#a68dff"
+      },
+      {
+        "name": "BlueMagenta20",
+        "hex": "#b4a0ff"
+      },
+      {
+        "name": "BlueMagenta10",
+        "hex": "#cfc4f5"
+      },
+      {
+        "name": "Magenta160",
+        "hex": "#5c005c"
+      },
+      {
+        "name": "Magenta150",
+        "hex": "#460f54"
+      },
+      {
+        "name": "Magenta140",
+        "hex": "#5c126b"
+      },
+      {
+        "name": "Magenta130",
+        "hex": "#800074"
+      },
+      {
+        "name": "Magenta120",
+        "hex": "#721481"
+      },
+      {
+        "name": "Magenta110",
+        "hex": "#9a0089"
+      },
+      {
+        "name": "Magenta100",
+        "hex": "#881798"
+      },
+      {
+        "name": "Magenta90",
+        "hex": "#b4009e"
+      },
+      {
+        "name": "Magenta80",
+        "hex": "#c239b3"
+      },
+      {
+        "name": "Magenta70",
+        "hex": "#b146c2"
+      },
+      {
+        "name": "Magenta60",
+        "hex": "#cc76ca"
+      },
+      {
+        "name": "Magenta50",
+        "hex": "#c182d1"
+      },
+      {
+        "name": "Magenta40",
+        "hex": "#e476c1"
+      },
+      {
+        "name": "Magenta30",
+        "hex": "#de94e0"
+      },
+      {
+        "name": "Magenta20",
+        "hex": "#e8a3de"
+      },
+      {
+        "name": "Magenta10",
+        "hex": "#dea2ed"
+      },
+      {
+        "name": "MagentaPink70",
+        "hex": "#6b0036"
+      },
+      {
+        "name": "MagentaPink60",
+        "hex": "#77004d"
+      },
+      {
+        "name": "MagentaPink50",
+        "hex": "#9b0062"
+      },
+      {
+        "name": "MagentaPink40",
+        "hex": "#bf0077"
+      },
+      {
+        "name": "MagentaPink30",
+        "hex": "#e3008c"
+      },
+      {
+        "name": "MagentaPink20",
+        "hex": "#e43ba6"
+      },
+      {
+        "name": "MagentaPink10",
+        "hex": "#f965bf"
+      },
+      {
+        "name": "Pink50",
+        "hex": "#970044"
+      },
+      {
+        "name": "Pink40",
+        "hex": "#c30052"
+      },
+      {
+        "name": "Pink30",
+        "hex": "#ea005e"
+      },
+      {
+        "name": "Pink20",
+        "hex": "#ee3f86"
+      },
+      {
+        "name": "Pink10",
+        "hex": "#edbed3"
+      }
+    ]
+  },
+  {
+    "palette": "Communication",
+    "colors": [
+      {
+        "name": "Communication90",
+        "hex": "#004578"
+      },
+      {
+        "name": "Communication80",
+        "hex": "#005a9e"
+      },
+      {
+        "name": "Communication70",
+        "hex": "#106ebe"
+      },
+      {
+        "name": "Communication60",
+        "hex": "#0078d7"
+      },
+      {
+        "name": "Communication50",
+        "hex": "#2b88d8"
+      },
+      {
+        "name": "Communication40",
+        "hex": "#71afe5"
+      },
+      {
+        "name": "Communication30",
+        "hex": "#c7e0f4"
+      },
+      {
+        "name": "Communication20",
+        "hex": "#deecf9"
+      },
+      {
+        "name": "Communication10",
+        "hex": "#eff6fc"
+      }
+    ]
+  },
+  {
+    "palette": "Excel",
+    "colors": [
+      {
+        "name": "Excel70",
+        "hex": "#002901"
+      },
+      {
+        "name": "Excel60",
+        "hex": "#0b4218"
+      },
+      {
+        "name": "Excel50",
+        "hex": "#165a2f"
+      },
+      {
+        "name": "Excel40",
+        "hex": "#217346"
+      },
+      {
+        "name": "Excel30",
+        "hex": "#4c916c"
+      },
+      {
+        "name": "Excel20",
+        "hex": "#77b091"
+      },
+      {
+        "name": "Excel10",
+        "hex": "#a2ceb7"
+      }
+    ]
+  },
+  {
+    "palette": "PowerPoint",
+    "colors": [
+      {
+        "name": "PowerPoint70",
+        "hex": "#620000"
+      },
+      {
+        "name": "PowerPoint60",
+        "hex": "#7e180e"
+      },
+      {
+        "name": "PowerPoint50",
+        "hex": "#9b2f1c"
+      },
+      {
+        "name": "PowerPoint40",
+        "hex": "#b7472a"
+      },
+      {
+        "name": "PowerPoint30",
+        "hex": "#c96c54"
+      },
+      {
+        "name": "PowerPoint20",
+        "hex": "#dc927e"
+      },
+      {
+        "name": "PowerPoint10",
+        "hex": "#eeb7a9"
+      }
+    ]
+  },
+  {
+    "palette": "Word",
+    "colors": [
+      {
+        "name": "Word70",
+        "hex": "#001b59"
+      },
+      {
+        "name": "Word60",
+        "hex": "#0e2f6f"
+      },
+      {
+        "name": "Word50",
+        "hex": "#1d4384"
+      },
+      {
+        "name": "Word40",
+        "hex": "#2b579a"
+      },
+      {
+        "name": "Word30",
+        "hex": "#557bb3"
+      },
+      {
+        "name": "Word20",
+        "hex": "#7f9ecc"
+      },
+      {
+        "name": "Word10",
+        "hex": "#a9c2e6"
+      }
+    ]
+  },
+  {
+    "palette": "OneNote",
+    "colors": [
+      {
+        "name": "OneNote80",
+        "hex": "#4c0f6c"
+      },
+      {
+        "name": "OneNote70",
+        "hex": "#5c1384"
+      },
+      {
+        "name": "OneNote60",
+        "hex": "#7719aa"
+      },
+      {
+        "name": "OneNote50",
+        "hex": "#9953c0"
+      },
+      {
+        "name": "OneNote40",
+        "hex": "#d0afe2"
+      },
+      {
+        "name": "OneNote30",
+        "hex": "#ddc5ec"
+      },
+      {
+        "name": "OneNote20",
+        "hex": "#efdffa"
+      },
+      {
+        "name": "OneNote10",
+        "hex": "#f5edfd"
+      }
+    ]
+  },
+  {
+    "palette": "Teams",
+    "colors": [
+      {
+        "name": "Teams70",
+        "hex": "#001765"
+      },
+      {
+        "name": "Teams60",
+        "hex": "#1c2d7e"
+      },
+      {
+        "name": "Teams50",
+        "hex": "#394296"
+      },
+      {
+        "name": "Teams40",
+        "hex": "#5558af"
+      },
+      {
+        "name": "Teams30",
+        "hex": "#787bc3"
+      },
+      {
+        "name": "Teams20",
+        "hex": "#9b9dd8"
+      },
+      {
+        "name": "Teams10",
+        "hex": "#bec0ec"
+      }
+    ]
+  },
+  {
+    "palette": "High Contrast",
+    "colors": [
+      {
+        "name": "ContrastBlackDisabled",
+        "hex": "#00ff00"
+      },
+      {
+        "name": "ContrastWhiteDisabled",
+        "hex": "#600000"
+      },
+      {
+        "name": "ContrastBlackSelected",
+        "hex": "#1aebff"
+      },
+      {
+        "name": "ContrastWhiteSelected",
+        "hex": "#37006e"
+      }
+    ]
+  },
+  {
+    "palette": "Message",
+    "colors": [
+      {
+        "name": "MessageInfo",
+        "hex": "#797775"
+      },
+      {
+        "name": "MessageInfoBackground",
+        "hex": "#f3f2f1"
+      },
+      {
+        "name": "MessageSuccess",
+        "hex": "#107c10"
+      },
+      {
+        "name": "MessageSuccessBackground",
+        "hex": "#dff6dd"
+      },
+      {
+        "name": "MessageSevereWarning",
+        "hex": "#d83b01"
+      },
+      {
+        "name": "MessageSevereWarningBackground",
+        "hex": "#fed9cc"
+      },
+      {
+        "name": "MessageError",
+        "hex": "#a80000"
+      },
+      {
+        "name": "MessageErrorBackground",
+        "hex": "#fde7e9"
+      }
+    ]
+  }
+]

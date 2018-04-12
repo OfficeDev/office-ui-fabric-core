@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Regular",
+    "weight": 400
+  },
+  {
+    "name": "Semibold",
+    "weight": 600
+  },
+  {
+    "name": "Bold",
+    "weight": 700
+  }
+]

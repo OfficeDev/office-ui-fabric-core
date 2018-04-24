@@ -918,6 +918,24 @@
   @include ms-fontColor-messageErrorBackground;
 }
 
+// High contrast
+.ms-fontColor-contrastBlackDisabled,
+.ms-fontColor-contrastBlackDisabled--hover:hover {
+  @include ms-fontColor-contrastBlackDisabled;
+}
+.ms-fontColor-contrastWhiteDisabled,
+.ms-fontColor-contrastWhiteDisabled--hover:hover {
+  @include ms-fontColor-contrastWhiteDisabled;
+}
+.ms-fontColor-contrastBlackSelected,
+.ms-fontColor-contrastBlackSelected--hover:hover {
+  @include ms-fontColor-contrastBlackSelected;
+}
+.ms-fontColor-contrastWhiteSelected,
+.ms-fontColor-contrastWhiteSelected--hover:hover {
+  @include ms-fontColor-contrastWhiteSelected;
+}
+
 // Communication
 .ms-fontColor-communication90,
 .ms-fontColor-communication90--hover:hover {

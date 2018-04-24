@@ -918,6 +918,24 @@
   @include ms-borderColor-messageErrorBackground;
 }
 
+// High contrast
+.ms-borderColor-contrastBlackDisabled,
+.ms-borderColor-contrastBlackDisabled--hover:hover {
+  @include ms-borderColor-contrastBlackDisabled;
+}
+.ms-borderColor-contrastWhiteDisabled,
+.ms-borderColor-contrastWhiteDisabled--hover:hover {
+  @include ms-borderColor-contrastWhiteDisabled;
+}
+.ms-borderColor-contrastBlackSelected,
+.ms-borderColor-contrastBlackSelected--hover:hover {
+  @include ms-borderColor-contrastBlackSelected;
+}
+.ms-borderColor-contrastWhiteSelected,
+.ms-borderColor-contrastWhiteSelected--hover:hover {
+  @include ms-borderColor-contrastWhiteSelected;
+}
+
 // Communication
 .ms-borderColor-communication90,
 .ms-borderColor-communication90--hover:hover {

@@ -690,6 +690,20 @@
   border-color: $ms-color-messageErrorBackground;
 }
 
+// High contrast
+@mixin ms-borderColor-contrastBlackDisabled {
+  border-color: $ms-color-contrastBlackDisabled;
+}
+@mixin ms-borderColor-contrastWhiteDisabled {
+  border-color: $ms-color-contrastWhiteDisabled;
+}
+@mixin ms-borderColor-contrastBlackSelected {
+  border-color: $ms-color-contrastBlackSelected;
+}
+@mixin ms-borderColor-contrastWhiteSelected {
+  border-color: $ms-color-contrastWhiteSelected;
+}
+
 // Communication
 @mixin ms-borderColor-communication90 {
   border-color: $ms-color-communication90;

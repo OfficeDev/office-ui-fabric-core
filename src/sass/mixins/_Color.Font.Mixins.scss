@@ -690,6 +690,20 @@
   color: $ms-color-messageErrorBackground;
 }
 
+// High contrast
+@mixin ms-fontColor-contrastBlackDisabled {
+  color: $ms-color-contrastBlackDisabled;
+}
+@mixin ms-fontColor-contrastWhiteDisabled {
+  color: $ms-color-contrastWhiteDisabled;
+}
+@mixin ms-fontColor-contrastBlackSelected {
+  color: $ms-color-contrastBlackSelected;
+}
+@mixin ms-fontColor-contrastWhiteSelected {
+  color: $ms-color-contrastWhiteSelected;
+}
+
 // Communication
 @mixin ms-fontColor-communication90 {
   color: $ms-color-communication90;

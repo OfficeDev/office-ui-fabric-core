@@ -9,21 +9,21 @@
 @import "./variables/Animation.Variables";
 @import "./variables/BrandIcon.Variables";
 @import "./variables/Color.Variables";
+@import "./variables/Depth.Variables";
 @import "./variables/Font.Variables";
 @import "./variables/General.Variables";
 @import "./variables/Icon.Variables";
 @import "./variables/Responsive.Variables";
-@import "./variables/Shadow.Variables";
 @import "./variables/ZIndex.Variables";
 
 // Mixins
 @import "./mixins/Animation.Mixins";
 @import "./mixins/BrandIcon.Mixins";
 @import "./mixins/Color.Mixins";
+@import "./mixins/Depth.Mixins";
 @import "./mixins/Directionality.Mixins";
 @import "./mixins/Font.Mixins";
+@import "./mixins/General.Mixins";
 @import "./mixins/Grid.Mixins";
 @import "./mixins/Icon.Mixins";
-@import "./mixins/General.Mixins";
 @import "./mixins/Responsive.Mixins";
-@import "./mixins/Shadow.Mixins";

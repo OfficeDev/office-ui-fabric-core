@@ -883,40 +883,6 @@
   @include ms-bgColor-pink10;
 }
 
-// Message
-.ms-bgColor-messageInfo,
-.ms-bgColor-messageInfo--hover:hover {
-  @include ms-bgColor-messageInfo;
-}
-.ms-bgColor-messageInfoBackground,
-.ms-bgColor-messageInfoBackground--hover:hover {
-  @include ms-bgColor-messageInfoBackground;
-}
-.ms-bgColor-messageSuccess,
-.ms-bgColor-messageSuccess--hover:hover {
-  @include ms-bgColor-messageSuccess;
-}
-.ms-bgColor-messageSuccessBackground,
-.ms-bgColor-messageSuccessBackground--hover:hover {
-  @include ms-bgColor-messageSuccessBackground;
-}
-.ms-bgColor-messageSevereWarning,
-.ms-bgColor-messageSevereWarning--hover:hover {
-  @include ms-bgColor-messageSevereWarning;
-}
-.ms-bgColor-messageSevereWarningBackground,
-.ms-bgColor-messageSevereWarningBackground--hover:hover {
-  @include ms-bgColor-messageSevereWarningBackground;
-}
-.ms-bgColor-messageError,
-.ms-bgColor-messageError--hover:hover {
-  @include ms-bgColor-messageError;
-}
-.ms-bgColor-messageErrorBackground,
-.ms-bgColor-messageErrorBackground--hover:hover {
-  @include ms-bgColor-messageErrorBackground;
-}
-
 // High contrast
 .ms-bgColor-contrastBlackDisabled,
 .ms-bgColor-contrastBlackDisabled--hover:hover {

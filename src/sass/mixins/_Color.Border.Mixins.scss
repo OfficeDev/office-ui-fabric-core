@@ -664,32 +664,6 @@
   border-color: $ms-color-pink10;
 }
 
-// Message
-@mixin ms-borderColor-messageInfo {
-  border-color: $ms-color-messageInfo;
-}
-@mixin ms-borderColor-messageInfoBackground {
-  border-color: $ms-color-messageInfoBackground;
-}
-@mixin ms-borderColor-messageSuccess {
-  border-color: $ms-color-messageSuccess;
-}
-@mixin ms-borderColor-messageSuccessBackground {
-  border-color: $ms-color-messageSuccessBackground;
-}
-@mixin ms-borderColor-messageSevereWarning {
-  border-color: $ms-color-messageSevereWarning;
-}
-@mixin ms-borderColor-messageSevereWarningBackground {
-  border-color: $ms-color-messageSevereWarningBackground;
-}
-@mixin ms-borderColor-messageError {
-  border-color: $ms-color-messageError;
-}
-@mixin ms-borderColor-messageErrorBackground {
-  border-color: $ms-color-messageErrorBackground;
-}
-
 // High contrast
 @mixin ms-borderColor-contrastBlackDisabled {
   border-color: $ms-color-contrastBlackDisabled;

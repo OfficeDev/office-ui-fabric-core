@@ -664,32 +664,6 @@
   background-color: $ms-color-pink10;
 }
 
-// Message
-@mixin ms-bgColor-messageInfo {
-  background-color: $ms-color-messageInfo;
-}
-@mixin ms-bgColor-messageInfoBackground {
-  background-color: $ms-color-messageInfoBackground;
-}
-@mixin ms-bgColor-messageSuccess {
-  background-color: $ms-color-messageSuccess;
-}
-@mixin ms-bgColor-messageSuccessBackground {
-  background-color: $ms-color-messageSuccessBackground;
-}
-@mixin ms-bgColor-messageSevereWarning {
-  background-color: $ms-color-messageSevereWarning;
-}
-@mixin ms-bgColor-messageSevereWarningBackground {
-  background-color: $ms-color-messageSevereWarningBackground;
-}
-@mixin ms-bgColor-messageError {
-  background-color: $ms-color-messageError;
-}
-@mixin ms-bgColor-messageErrorBackground {
-  background-color: $ms-color-messageErrorBackground;
-}
-
 // High contrast
 @mixin ms-bgColor-contrastBlackDisabled {
   background-color: $ms-color-contrastBlackDisabled;

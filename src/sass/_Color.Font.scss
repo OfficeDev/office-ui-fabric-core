@@ -884,40 +884,6 @@
   @include ms-fontColor-pink10;
 }
 
-// Message
-.ms-fontColor-messageInfo,
-.ms-fontColor-messageInfo--hover:hover {
-  @include ms-fontColor-messageInfo;
-}
-.ms-fontColor-messageInfoBackground,
-.ms-fontColor-messageInfoBackground--hover:hover {
-  @include ms-fontColor-messageInfoBackground;
-}
-.ms-fontColor-messageSuccess,
-.ms-fontColor-messageSuccess--hover:hover {
-  @include ms-fontColor-messageSuccess;
-}
-.ms-fontColor-messageSuccessBackground,
-.ms-fontColor-messageSuccessBackground--hover:hover {
-  @include ms-fontColor-messageSuccessBackground;
-}
-.ms-fontColor-messageSevereWarning,
-.ms-fontColor-messageSevereWarning--hover:hover {
-  @include ms-fontColor-messageSevereWarning;
-}
-.ms-fontColor-messageSevereWarningBackground,
-.ms-fontColor-messageSevereWarningBackground--hover:hover {
-  @include ms-fontColor-messageSevereWarningBackground;
-}
-.ms-fontColor-messageError,
-.ms-fontColor-messageError--hover:hover {
-  @include ms-fontColor-messageError;
-}
-.ms-fontColor-messageErrorBackground,
-.ms-fontColor-messageErrorBackground--hover:hover {
-  @include ms-fontColor-messageErrorBackground;
-}
-
 // High contrast
 .ms-fontColor-contrastBlackDisabled,
 .ms-fontColor-contrastBlackDisabled--hover:hover {

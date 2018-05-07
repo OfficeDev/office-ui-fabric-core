@@ -53,15 +53,15 @@ $ms-color-green: $ms-color-green120 !default;
 $ms-color-greenLight: $ms-color-yellowGreen50 !default;
 
 // Message
-$ms-color-info: $ms-color-messageInfo !default;
-$ms-color-infoBackground: $ms-color-messageInfoBackground !default;
-$ms-color-success: $ms-color-messageSuccess !default;
-$ms-color-successBackground: $ms-color-messageSuccessBackground !default;
-$ms-color-severeWarning: $ms-color-messageSevereWarning !default;
-$ms-color-severeWarningBackground: $ms-color-messageSevereWarningBackground !default;
-$ms-color-alert: $ms-color-severeWarning !default;
-$ms-color-alertBackground: $ms-color-severeWarningBackground !default;
-$ms-color-warning: $ms-color-messageWarning !default;
-$ms-color-warningBackground: $ms-color-messageWarningBackground !default;
-$ms-color-error: $ms-color-messageError !default;
-$ms-color-errorBackground: $ms-color-messageError !default;
+$ms-color-info: $ms-color-neutralSecondaryAlt !default;
+$ms-color-infoBackground: $ms-color-neutralLighter !default;
+$ms-color-success: $ms-color-green !default;
+$ms-color-successBackground: #dff6dd !default;
+$ms-color-severeWarning: $ms-color-orange !default;
+$ms-color-severeWarningBackground: #fed9cc !default;
+$ms-color-alert: $ms-color-severeWarning !default; // Deprecated: Use $ms-color-severeWarning
+$ms-color-alertBackground: $ms-color-severeWarningBackground !default; // Deprecated: Use $ms-color-severeWarningBackground
+$ms-color-warning: $ms-color-neutralSecondaryAlt !default;
+$ms-color-warningBackground: #fff4ce !default;
+$ms-color-error: $ms-color-redDark !default;
+$ms-color-errorBackground: #fde7e9 !default;

@@ -884,40 +884,6 @@
   @include ms-borderColor-pink10;
 }
 
-// Message
-.ms-borderColor-messageInfo,
-.ms-borderColor-messageInfo--hover:hover {
-  @include ms-borderColor-messageInfo;
-}
-.ms-borderColor-messageInfoBackground,
-.ms-borderColor-messageInfoBackground--hover:hover {
-  @include ms-borderColor-messageInfoBackground;
-}
-.ms-borderColor-messageSuccess,
-.ms-borderColor-messageSuccess--hover:hover {
-  @include ms-borderColor-messageSuccess;
-}
-.ms-borderColor-messageSuccessBackground,
-.ms-borderColor-messageSuccessBackground--hover:hover {
-  @include ms-borderColor-messageSuccessBackground;
-}
-.ms-borderColor-messageSevereWarning,
-.ms-borderColor-messageSevereWarning--hover:hover {
-  @include ms-borderColor-messageSevereWarning;
-}
-.ms-borderColor-messageSevereWarningBackground,
-.ms-borderColor-messageSevereWarningBackground--hover:hover {
-  @include ms-borderColor-messageSevereWarningBackground;
-}
-.ms-borderColor-messageError,
-.ms-borderColor-messageError--hover:hover {
-  @include ms-borderColor-messageError;
-}
-.ms-borderColor-messageErrorBackground,
-.ms-borderColor-messageErrorBackground--hover:hover {
-  @include ms-borderColor-messageErrorBackground;
-}
-
 // High contrast
 .ms-borderColor-contrastBlackDisabled,
 .ms-borderColor-contrastBlackDisabled--hover:hover {

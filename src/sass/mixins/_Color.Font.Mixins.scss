@@ -664,32 +664,6 @@
   color: $ms-color-pink10;
 }
 
-// Message
-@mixin ms-fontColor-messageInfo {
-  color: $ms-color-messageInfo;
-}
-@mixin ms-fontColor-messageInfoBackground {
-  color: $ms-color-messageInfoBackground;
-}
-@mixin ms-fontColor-messageSuccess {
-  color: $ms-color-messageSuccess;
-}
-@mixin ms-fontColor-messageSuccessBackground {
-  color: $ms-color-messageSuccessBackground;
-}
-@mixin ms-fontColor-messageSevereWarning {
-  color: $ms-color-messageSevereWarning;
-}
-@mixin ms-fontColor-messageSevereWarningBackground {
-  color: $ms-color-messageSevereWarningBackground;
-}
-@mixin ms-fontColor-messageError {
-  color: $ms-color-messageError;
-}
-@mixin ms-fontColor-messageErrorBackground {
-  color: $ms-color-messageErrorBackground;
-}
-
 // High contrast
 @mixin ms-fontColor-contrastBlackDisabled {
   color: $ms-color-contrastBlackDisabled;

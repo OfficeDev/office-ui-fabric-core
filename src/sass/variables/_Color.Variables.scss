@@ -231,15 +231,15 @@ $ms-color-contrastBlackSelected: #1aebff !default;
 $ms-color-contrastWhiteSelected: #37006e !default;
 
 // Communication
-$ms-color-communication90: #004578 !default;
-$ms-color-communication80: #005a9e !default;
-$ms-color-communication70: #106ebe !default;
-$ms-color-communication60: #0078d7 !default;
-$ms-color-communication50: #2b88d8 !default;
-$ms-color-communication40: #71afe5 !default;
-$ms-color-communication30: #c7e0f4 !default;
-$ms-color-communication20: #deecf9 !default;
-$ms-color-communication10: #eff6fc !default;
+$ms-color-communicationShade30: #004578 !default;
+$ms-color-communicationShade20: #005a9e !default;
+$ms-color-communicationShade10: #106ebe !default;
+$ms-color-communicationPrimary: #0078d7 !default;
+$ms-color-communicationTint10: #2b88d8 !default;
+$ms-color-communicationTint20: #71afe5 !default;
+$ms-color-communicationTint30: #c7e0f4 !default;
+$ms-color-communicationTint40: #deecf9 !default;
+$ms-color-communicationTint50: #eff6fc !default;
 
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";

@@ -679,30 +679,30 @@
 }
 
 // Communication
-@mixin ms-fontColor-communication90 {
-  color: $ms-color-communication90;
+@mixin ms-fontColor-communicationShade30 {
+  color: $ms-color-communicationShade30;
 }
-@mixin ms-fontColor-communication80 {
-  color: $ms-color-communication80;
+@mixin ms-fontColor-communicationShade20 {
+  color: $ms-color-communicationShade20;
 }
-@mixin ms-fontColor-communication70 {
-  color: $ms-color-communication70;
+@mixin ms-fontColor-communicationShade10 {
+  color: $ms-color-communicationShade10;
 }
-@mixin ms-fontColor-communication60 {
-  color: $ms-color-communication60;
+@mixin ms-fontColor-communicationPrimary {
+  color: $ms-color-communicationPrimary;
 }
-@mixin ms-fontColor-communication50 {
-  color: $ms-color-communication50;
+@mixin ms-fontColor-communicationTint10 {
+  color: $ms-color-communicationTint10;
 }
-@mixin ms-fontColor-communication40 {
-  color: $ms-color-communication40;
+@mixin ms-fontColor-communicationTint20 {
+  color: $ms-color-communicationTint20;
 }
-@mixin ms-fontColor-communication30 {
-  color: $ms-color-communication30;
+@mixin ms-fontColor-communicationTint30 {
+  color: $ms-color-communicationTint30;
 }
-@mixin ms-fontColor-communication20 {
-  color: $ms-color-communication20;
+@mixin ms-fontColor-communicationTint40 {
+  color: $ms-color-communicationTint40;
 }
-@mixin ms-fontColor-communication10 {
-  color: $ms-color-communication10;
+@mixin ms-fontColor-communicationTint50 {
+  color: $ms-color-communicationTint50;
 }

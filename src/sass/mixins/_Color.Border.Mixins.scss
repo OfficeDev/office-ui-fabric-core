@@ -679,30 +679,30 @@
 }
 
 // Communication
-@mixin ms-borderColor-communication90 {
-  border-color: $ms-color-communication90;
+@mixin ms-borderColor-communicationShade30 {
+  border-color: $ms-color-communicationShade30;
 }
-@mixin ms-borderColor-communication80 {
-  border-color: $ms-color-communication80;
+@mixin ms-borderColor-communicationShade20 {
+  border-color: $ms-color-communicationShade20;
 }
-@mixin ms-borderColor-communication70 {
-  border-color: $ms-color-communication70;
+@mixin ms-borderColor-communicationShade10 {
+  border-color: $ms-color-communicationShade10;
 }
-@mixin ms-borderColor-communication60 {
-  border-color: $ms-color-communication60;
+@mixin ms-borderColor-communicationPrimary {
+  border-color: $ms-color-communicationPrimary;
 }
-@mixin ms-borderColor-communication50 {
-  border-color: $ms-color-communication50;
+@mixin ms-borderColor-communicationTint10 {
+  border-color: $ms-color-communicationTint10;
 }
-@mixin ms-borderColor-communication40 {
-  border-color: $ms-color-communication40;
+@mixin ms-borderColor-communicationTint20 {
+  border-color: $ms-color-communicationTint20;
 }
-@mixin ms-borderColor-communication30 {
-  border-color: $ms-color-communication30;
+@mixin ms-borderColor-communicationTint30 {
+  border-color: $ms-color-communicationTint30;
 }
-@mixin ms-borderColor-communication20 {
-  border-color: $ms-color-communication20;
+@mixin ms-borderColor-communicationTint40 {
+  border-color: $ms-color-communicationTint40;
 }
-@mixin ms-borderColor-communication10 {
-  border-color: $ms-color-communication10;
+@mixin ms-borderColor-communicationTint50 {
+  border-color: $ms-color-communicationTint50;
 }

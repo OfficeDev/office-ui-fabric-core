@@ -893,39 +893,39 @@
     "palette": "Communication",
     "colors": [
       {
-        "name": "Communication90",
+        "name": "CommunicationShade30",
         "hex": "#004578"
       },
       {
-        "name": "Communication80",
+        "name": "CommunicationShade20",
         "hex": "#005a9e"
       },
       {
-        "name": "Communication70",
+        "name": "CommunicationShade10",
         "hex": "#106ebe"
       },
       {
-        "name": "Communication60",
+        "name": "CommunicationPrimary",
         "hex": "#0078d7"
       },
       {
-        "name": "Communication50",
+        "name": "communicationTint10",
         "hex": "#2b88d8"
       },
       {
-        "name": "Communication40",
+        "name": "CommunicationTint20",
         "hex": "#71afe5"
       },
       {
-        "name": "Communication30",
+        "name": "CommunicationTint30",
         "hex": "#c7e0f4"
       },
       {
-        "name": "Communication20",
+        "name": "CommunicationTint40",
         "hex": "#deecf9"
       },
       {
-        "name": "Communication10",
+        "name": "CommunicationTint50",
         "hex": "#eff6fc"
       }
     ]

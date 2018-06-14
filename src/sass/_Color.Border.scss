@@ -1,6 +1,44 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Grays
+// Communication
+.ms-borderColor-communicationShade30,
+.ms-borderColor-communicationShade30--hover:hover {
+  @include ms-borderColor-communicationShade30;
+}
+.ms-borderColor-communicationShade20,
+.ms-borderColor-communicationShade20--hover:hover {
+  @include ms-borderColor-communicationShade20;
+}
+.ms-borderColor-communicationShade10,
+.ms-borderColor-communicationShade10--hover:hover {
+  @include ms-borderColor-communicationShade10;
+}
+.ms-borderColor-communicationPrimary,
+.ms-borderColor-communicationPrimary--hover:hover {
+  @include ms-borderColor-communicationPrimary;
+}
+.ms-borderColor-communicationTint10,
+.ms-borderColor-communicationTint10--hover:hover {
+  @include ms-borderColor-communicationTint10;
+}
+.ms-borderColor-communicationTint20,
+.ms-borderColor-communicationTint20--hover:hover {
+  @include ms-borderColor-communicationTint20;
+}
+.ms-borderColor-communicationTint30,
+.ms-borderColor-communicationTint30--hover:hover {
+  @include ms-borderColor-communicationTint30;
+}
+.ms-borderColor-communicationTint40,
+.ms-borderColor-communicationTint40--hover:hover {
+  @include ms-borderColor-communicationTint40;
+}
+.ms-borderColor-communicationTint50,
+.ms-borderColor-communicationTint50--hover:hover {
+  @include ms-borderColor-communicationTint50;
+}
+
+// Neutral
 .ms-borderColor-black,
 .ms-borderColor-black--hover:hover {
   @include ms-borderColor-black;
@@ -98,6 +136,132 @@
   @include ms-borderColor-white;
 }
 
+// Shared
+.ms-borderColor-sharedPinkRed10,
+.ms-borderColor-sharedPinkRed10--hover:hover {
+  @include ms-borderColor-sharedPinkRed10;
+}
+.ms-borderColor-sharedRed30,
+.ms-borderColor-sharedRed30--hover:hover {
+  @include ms-borderColor-sharedRed30;
+}
+.ms-borderColor-sharedRed10,
+.ms-borderColor-sharedRed10--hover:hover {
+  @include ms-borderColor-sharedRed10;
+}
+.ms-borderColor-sharedRedOrange10,
+.ms-borderColor-sharedRedOrange10--hover:hover {
+  @include ms-borderColor-sharedRedOrange10;
+}
+.ms-borderColor-sharedOrange30,
+.ms-borderColor-sharedOrange30--hover:hover {
+  @include ms-borderColor-sharedOrange30;
+}
+.ms-borderColor-sharedOrange20,
+.ms-borderColor-sharedOrange20--hover:hover {
+  @include ms-borderColor-sharedOrange20;
+}
+.ms-borderColor-sharedOrange10,
+.ms-borderColor-sharedOrange10--hover:hover {
+  @include ms-borderColor-sharedOrange10;
+}
+.ms-borderColor-sharedYellow10,
+.ms-borderColor-sharedYellow10--hover:hover {
+  @include ms-borderColor-sharedYellow10;
+}
+.ms-borderColor-sharedOrangeYellow20,
+.ms-borderColor-sharedOrangeYellow20--hover:hover {
+  @include ms-borderColor-sharedOrangeYellow20;
+}
+.ms-borderColor-sharedOrangeYellow10,
+.ms-borderColor-sharedOrangeYellow10--hover:hover {
+  @include ms-borderColor-sharedOrangeYellow10;
+}
+.ms-borderColor-sharedYellowGreen10,
+.ms-borderColor-sharedYellowGreen10--hover:hover {
+  @include ms-borderColor-sharedYellowGreen10;
+}
+.ms-borderColor-sharedGreen20,
+.ms-borderColor-sharedGreen20--hover:hover {
+  @include ms-borderColor-sharedGreen20;
+}
+.ms-borderColor-sharedGreen10,
+.ms-borderColor-sharedGreen10--hover:hover {
+  @include ms-borderColor-sharedGreen10;
+}
+.ms-borderColor-sharedGreenCyan10,
+.ms-borderColor-sharedGreenCyan10--hover:hover {
+  @include ms-borderColor-sharedGreenCyan10;
+}
+.ms-borderColor-sharedCyan50,
+.ms-borderColor-sharedCyan50--hover:hover {
+  @include ms-borderColor-sharedCyan50;
+}
+.ms-borderColor-sharedCyan40,
+.ms-borderColor-sharedCyan40--hover:hover {
+  @include ms-borderColor-sharedCyan40;
+}
+.ms-borderColor-sharedCyan30,
+.ms-borderColor-sharedCyan30--hover:hover {
+  @include ms-borderColor-sharedCyan30;
+}
+.ms-borderColor-sharedCyan20,
+.ms-borderColor-sharedCyan20--hover:hover {
+  @include ms-borderColor-sharedCyan20;
+}
+.ms-borderColor-sharedCyan10,
+.ms-borderColor-sharedCyan10--hover:hover {
+  @include ms-borderColor-sharedCyan10;
+}
+.ms-borderColor-sharedCyanBlue20,
+.ms-borderColor-sharedCyanBlue20--hover:hover {
+  @include ms-borderColor-sharedCyanBlue20;
+}
+.ms-borderColor-sharedCyanBlue10,
+.ms-borderColor-sharedCyanBlue10--hover:hover {
+  @include ms-borderColor-sharedCyanBlue10;
+}
+.ms-borderColor-sharedBlue10,
+.ms-borderColor-sharedBlue10--hover:hover {
+  @include ms-borderColor-sharedBlue10;
+}
+.ms-borderColor-sharedBlueMagenta30,
+.ms-borderColor-sharedBlueMagenta30--hover:hover {
+  @include ms-borderColor-sharedBlueMagenta30;
+}
+.ms-borderColor-sharedBlueMagenta20,
+.ms-borderColor-sharedBlueMagenta20--hover:hover {
+  @include ms-borderColor-sharedBlueMagenta20;
+}
+.ms-borderColor-sharedBlueMagenta10,
+.ms-borderColor-sharedBlueMagenta10--hover:hover {
+  @include ms-borderColor-sharedBlueMagenta10;
+}
+.ms-borderColor-sharedMagenta20,
+.ms-borderColor-sharedMagenta20--hover:hover {
+  @include ms-borderColor-sharedMagenta20;
+}
+.ms-borderColor-sharedMagenta10,
+.ms-borderColor-sharedMagenta10--hover:hover {
+  @include ms-borderColor-sharedMagenta10;
+}
+.ms-borderColor-sharedMagentaPink20,
+.ms-borderColor-sharedMagentaPink20--hover:hover {
+  @include ms-borderColor-sharedMagentaPink20;
+}
+.ms-borderColor-sharedMagentaPink10,
+.ms-borderColor-sharedMagentaPink10--hover:hover {
+  @include ms-borderColor-sharedMagentaPink10;
+}
+.ms-borderColor-sharedGray20,
+.ms-borderColor-sharedGray20--hover:hover {
+  @include ms-borderColor-sharedGray20;
+}
+.ms-borderColor-sharedGray10,
+.ms-borderColor-sharedGray10--hover:hover {
+  @include ms-borderColor-sharedGray10;
+}
+
 // High contrast
 .ms-borderColor-contrastBlackDisabled,
 .ms-borderColor-contrastBlackDisabled--hover:hover {
@@ -114,42 +278,4 @@
 .ms-borderColor-contrastWhiteSelected,
 .ms-borderColor-contrastWhiteSelected--hover:hover {
   @include ms-borderColor-contrastWhiteSelected;
-}
-
-// Communication
-.ms-borderColor-communicationShade30,
-.ms-borderColor-communicationShade30--hover:hover {
-  @include ms-borderColor-communicationShade30;
-}
-.ms-borderColor-communicationShade20,
-.ms-borderColor-communicationShade20--hover:hover {
-  @include ms-borderColor-communicationShade20;
-}
-.ms-borderColor-communicationShade10,
-.ms-borderColor-communicationShade10--hover:hover {
-  @include ms-borderColor-communicationShade10;
-}
-.ms-borderColor-communicationPrimary,
-.ms-borderColor-communicationPrimary--hover:hover {
-  @include ms-borderColor-communicationPrimary;
-}
-.ms-borderColor-communicationTint10,
-.ms-borderColor-communicationTint10--hover:hover {
-  @include ms-borderColor-communicationTint10;
-}
-.ms-borderColor-communicationTint20,
-.ms-borderColor-communicationTint20--hover:hover {
-  @include ms-borderColor-communicationTint20;
-}
-.ms-borderColor-communicationTint30,
-.ms-borderColor-communicationTint30--hover:hover {
-  @include ms-borderColor-communicationTint30;
-}
-.ms-borderColor-communicationTint40,
-.ms-borderColor-communicationTint40--hover:hover {
-  @include ms-borderColor-communicationTint40;
-}
-.ms-borderColor-communicationTint50,
-.ms-borderColor-communicationTint50--hover:hover {
-  @include ms-borderColor-communicationTint50;
 }

@@ -1,6 +1,35 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Grays
+// Communication
+@mixin ms-borderColor-communicationShade30 {
+  border-color: $ms-color-communicationShade30;
+}
+@mixin ms-borderColor-communicationShade20 {
+  border-color: $ms-color-communicationShade20;
+}
+@mixin ms-borderColor-communicationShade10 {
+  border-color: $ms-color-communicationShade10;
+}
+@mixin ms-borderColor-communicationPrimary {
+  border-color: $ms-color-communicationPrimary;
+}
+@mixin ms-borderColor-communicationTint10 {
+  border-color: $ms-color-communicationTint10;
+}
+@mixin ms-borderColor-communicationTint20 {
+  border-color: $ms-color-communicationTint20;
+}
+@mixin ms-borderColor-communicationTint30 {
+  border-color: $ms-color-communicationTint30;
+}
+@mixin ms-borderColor-communicationTint40 {
+  border-color: $ms-color-communicationTint40;
+}
+@mixin ms-borderColor-communicationTint50 {
+  border-color: $ms-color-communicationTint50;
+}
+
+// Neutral
 @mixin ms-borderColor-black {
   border-color: $ms-color-black;
 }
@@ -74,6 +103,101 @@
   border-color: $ms-color-white;
 }
 
+// Shared
+@mixin ms-borderColor-sharedPinkRed10 {
+  border-color: $ms-color-sharedPinkRed10;
+}
+@mixin ms-borderColor-sharedRed30 {
+  border-color: $ms-color-sharedRed30;
+}
+@mixin ms-borderColor-sharedRed10 {
+  border-color: $ms-color-sharedRed10;
+}
+@mixin ms-borderColor-sharedRedOrange10 {
+  border-color: $ms-color-sharedRedOrange10;
+}
+@mixin ms-borderColor-sharedOrange30 {
+  border-color: $ms-color-sharedOrange30;
+}
+@mixin ms-borderColor-sharedOrange20 {
+  border-color: $ms-color-sharedOrange20;
+}
+@mixin ms-borderColor-sharedOrange10 {
+  border-color: $ms-color-sharedOrange10;
+}
+@mixin ms-borderColor-sharedYellow10 {
+  border-color: $ms-color-sharedYellow10;
+}
+@mixin ms-borderColor-sharedOrangeYellow20 {
+  border-color: $ms-color-sharedOrangeYellow20;
+}
+@mixin ms-borderColor-sharedOrangeYellow10 {
+  border-color: $ms-color-sharedOrangeYellow10;
+}
+@mixin ms-borderColor-sharedYellowGreen10 {
+  border-color: $ms-color-sharedYellowGreen10;
+}
+@mixin ms-borderColor-sharedGreen20 {
+  border-color: $ms-color-sharedGreen20;
+}
+@mixin ms-borderColor-sharedGreen10 {
+  border-color: $ms-color-sharedGreen10;
+}
+@mixin ms-borderColor-sharedGreenCyan10 {
+  border-color: $ms-color-sharedGreenCyan10;
+}
+@mixin ms-borderColor-sharedCyan50 {
+  border-color: $ms-color-sharedCyan50;
+}
+@mixin ms-borderColor-sharedCyan40 {
+  border-color: $ms-color-sharedCyan40;
+}
+@mixin ms-borderColor-sharedCyan30 {
+  border-color: $ms-color-sharedCyan30;
+}
+@mixin ms-borderColor-sharedCyan20 {
+  border-color: $ms-color-sharedCyan20;
+}
+@mixin ms-borderColor-sharedCyan10 {
+  border-color: $ms-color-sharedCyan10;
+}
+@mixin ms-borderColor-sharedCyanBlue20 {
+  border-color: $ms-color-sharedCyanBlue20;
+}
+@mixin ms-borderColor-sharedCyanBlue10 {
+  border-color: $ms-color-sharedCyanBlue10;
+}
+@mixin ms-borderColor-sharedBlue10 {
+  border-color: $ms-color-sharedBlue10;
+}
+@mixin ms-borderColor-sharedBlueMagenta30 {
+  border-color: $ms-color-sharedBlueMagenta30;
+}
+@mixin ms-borderColor-sharedBlueMagenta20 {
+  border-color: $ms-color-sharedBlueMagenta20;
+}
+@mixin ms-borderColor-sharedBlueMagenta10 {
+  border-color: $ms-color-sharedBlueMagenta10;
+}
+@mixin ms-borderColor-sharedMagenta20 {
+  border-color: $ms-color-sharedMagenta20;
+}
+@mixin ms-borderColor-sharedMagenta10 {
+  border-color: $ms-color-sharedMagenta10;
+}
+@mixin ms-borderColor-sharedMagentaPink20 {
+  border-color: $ms-color-sharedMagentaPink20;
+}
+@mixin ms-borderColor-sharedMagentaPink10 {
+  border-color: $ms-color-sharedMagentaPink10;
+}
+@mixin ms-borderColor-sharedGray20 {
+  border-color: $ms-color-sharedGray20;
+}
+@mixin ms-borderColor-sharedGray10 {
+  border-color: $ms-color-sharedGray10;
+}
+
 // High contrast
 @mixin ms-borderColor-contrastBlackDisabled {
   border-color: $ms-color-contrastBlackDisabled;
@@ -86,33 +210,4 @@
 }
 @mixin ms-borderColor-contrastWhiteSelected {
   border-color: $ms-color-contrastWhiteSelected;
-}
-
-// Communication
-@mixin ms-borderColor-communicationShade30 {
-  border-color: $ms-color-communicationShade30;
-}
-@mixin ms-borderColor-communicationShade20 {
-  border-color: $ms-color-communicationShade20;
-}
-@mixin ms-borderColor-communicationShade10 {
-  border-color: $ms-color-communicationShade10;
-}
-@mixin ms-borderColor-communicationPrimary {
-  border-color: $ms-color-communicationPrimary;
-}
-@mixin ms-borderColor-communicationTint10 {
-  border-color: $ms-color-communicationTint10;
-}
-@mixin ms-borderColor-communicationTint20 {
-  border-color: $ms-color-communicationTint20;
-}
-@mixin ms-borderColor-communicationTint30 {
-  border-color: $ms-color-communicationTint30;
-}
-@mixin ms-borderColor-communicationTint40 {
-  border-color: $ms-color-communicationTint40;
-}
-@mixin ms-borderColor-communicationTint50 {
-  border-color: $ms-color-communicationTint50;
 }

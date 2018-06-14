@@ -1,6 +1,17 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-// Grays
+// Communication
+$ms-color-communicationShade30: #004578 !default;
+$ms-color-communicationShade20: #005a9e !default;
+$ms-color-communicationShade10: #106ebe !default;
+$ms-color-communicationPrimary: #0078d7 !default;
+$ms-color-communicationTint10: #2b88d8 !default;
+$ms-color-communicationTint20: #71afe5 !default;
+$ms-color-communicationTint30: #c7e0f4 !default;
+$ms-color-communicationTint40: #deecf9 !default;
+$ms-color-communicationTint50: #eff6fc !default;
+
+// Neutrals
 $ms-color-black: #000000 !default;
 $ms-color-gray220: #11100f !default;
 $ms-color-gray210: #161514 !default;
@@ -26,22 +37,45 @@ $ms-color-gray20: #f3f2f1 !default;
 $ms-color-gray10: #faf9f8 !default;
 $ms-color-white: #ffffff !default;
 
+// Shared
+$ms-color-sharedPinkRed10: #750b1c !default;
+$ms-color-sharedRed30: #a4262c !default;
+$ms-color-sharedRed10: #d13438 !default;
+$ms-color-sharedRedOrange10: #da3b01 !default;
+$ms-color-sharedOrange30: #8e562e !default;
+$ms-color-sharedOrange20: #ca5010 !default;
+$ms-color-sharedOrange10: #ffaa44 !default;
+$ms-color-sharedYellow10: #fce100 !default;
+$ms-color-sharedOrangeYellow20: #986f0b !default;
+$ms-color-sharedOrangeYellow10: #c19c00 !default;
+$ms-color-sharedYellowGreen10: #8cbd18 !default;
+$ms-color-sharedGreen20: #0b6a0b !default;
+$ms-color-sharedGreen10: #498205 !default;
+$ms-color-sharedGreenCyan10: #00ad56 !default;
+$ms-color-sharedCyan50: #005b70 !default;
+$ms-color-sharedCyan40: #038387 !default;
+$ms-color-sharedCyan30: #00b7c3 !default;
+$ms-color-sharedCyan20: #69797e !default;
+$ms-color-sharedCyan10: #a0aeb2 !default;
+$ms-color-sharedCyanBlue20: #004e8c !default;
+$ms-color-sharedCyanBlue10: #0078d4 !default;
+$ms-color-sharedBlue10: #4f6bed !default;
+$ms-color-sharedBlueMagenta30: #5c2e91 !default;
+$ms-color-sharedBlueMagenta20: #8764b8 !default;
+$ms-color-sharedBlueMagenta10: #8378de !default;
+$ms-color-sharedMagenta20: #881798 !default;
+$ms-color-sharedMagenta10: #c239b3 !default;
+$ms-color-sharedMagentaPink20: #9b0062 !default;
+$ms-color-sharedMagentaPink10: #e3008c !default;
+$ms-color-sharedGray20: #393939 !default;
+$ms-color-sharedGray10: #7a7574 !default;
+
+
 // High contrast
 $ms-color-contrastBlackDisabled: #00ff00 !default;
 $ms-color-contrastWhiteDisabled: #600000 !default;
 $ms-color-contrastBlackSelected: #1aebff !default;
 $ms-color-contrastWhiteSelected: #37006e !default;
-
-// Communication
-$ms-color-communicationShade30: #004578 !default;
-$ms-color-communicationShade20: #005a9e !default;
-$ms-color-communicationShade10: #106ebe !default;
-$ms-color-communicationPrimary: #0078d7 !default;
-$ms-color-communicationTint10: #2b88d8 !default;
-$ms-color-communicationTint20: #71afe5 !default;
-$ms-color-communicationTint30: #c7e0f4 !default;
-$ms-color-communicationTint40: #deecf9 !default;
-$ms-color-communicationTint50: #eff6fc !default;
 
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";

@@ -1,5 +1,44 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
-// Grays
+
+// Communication
+.ms-bgColor-communicationShade30,
+.ms-bgColor-communicationShade30--hover:hover {
+  @include ms-bgColor-communicationShade30;
+}
+.ms-bgColor-communicationShade20,
+.ms-bgColor-communicationShade20--hover:hover {
+  @include ms-bgColor-communicationShade20;
+}
+.ms-bgColor-communicationShade10,
+.ms-bgColor-communicationShade10--hover:hover {
+  @include ms-bgColor-communicationShade10;
+}
+.ms-bgColor-communicationPrimary,
+.ms-bgColor-communicationPrimary--hover:hover {
+  @include ms-bgColor-communicationPrimary;
+}
+.ms-bgColor-communicationTint10,
+.ms-bgColor-communicationTint10--hover:hover {
+  @include ms-bgColor-communicationTint10;
+}
+.ms-bgColor-communicationTint20,
+.ms-bgColor-communicationTint20--hover:hover {
+  @include ms-bgColor-communicationTint20;
+}
+.ms-bgColor-communicationTint30,
+.ms-bgColor-communicationTint30--hover:hover {
+  @include ms-bgColor-communicationTint30;
+}
+.ms-bgColor-communicationTint40,
+.ms-bgColor-communicationTint40--hover:hover {
+  @include ms-bgColor-communicationTint40;
+}
+.ms-bgColor-communicationTint50,
+.ms-bgColor-communicationTint50--hover:hover {
+  @include ms-bgColor-communicationTint50;
+}
+
+// Neutral
 .ms-bgColor-black,
 .ms-bgColor-black--hover:hover {
   @include ms-bgColor-black;
@@ -97,6 +136,132 @@
   @include ms-bgColor-white;
 }
 
+// Shared
+.ms-bgColor-sharedPinkRed10,
+.ms-bgColor-sharedPinkRed10--hover:hover {
+  @include ms-bgColor-sharedPinkRed10;
+}
+.ms-bgColor-sharedRed30,
+.ms-bgColor-sharedRed30--hover:hover {
+  @include ms-bgColor-sharedRed30;
+}
+.ms-bgColor-sharedRed10,
+.ms-bgColor-sharedRed10--hover:hover {
+  @include ms-bgColor-sharedRed10;
+}
+.ms-bgColor-sharedRedOrange10,
+.ms-bgColor-sharedRedOrange10--hover:hover {
+  @include ms-bgColor-sharedRedOrange10;
+}
+.ms-bgColor-sharedOrange30,
+.ms-bgColor-sharedOrange30--hover:hover {
+  @include ms-bgColor-sharedOrange30;
+}
+.ms-bgColor-sharedOrange20,
+.ms-bgColor-sharedOrange20--hover:hover {
+  @include ms-bgColor-sharedOrange20;
+}
+.ms-bgColor-sharedOrange10,
+.ms-bgColor-sharedOrange10--hover:hover {
+  @include ms-bgColor-sharedOrange10;
+}
+.ms-bgColor-sharedYellow10,
+.ms-bgColor-sharedYellow10--hover:hover {
+  @include ms-bgColor-sharedYellow10;
+}
+.ms-bgColor-sharedOrangeYellow20,
+.ms-bgColor-sharedOrangeYellow20--hover:hover {
+  @include ms-bgColor-sharedOrangeYellow20;
+}
+.ms-bgColor-sharedOrangeYellow10,
+.ms-bgColor-sharedOrangeYellow10--hover:hover {
+  @include ms-bgColor-sharedOrangeYellow10;
+}
+.ms-bgColor-sharedYellowGreen10,
+.ms-bgColor-sharedYellowGreen10--hover:hover {
+  @include ms-bgColor-sharedYellowGreen10;
+}
+.ms-bgColor-sharedGreen20,
+.ms-bgColor-sharedGreen20--hover:hover {
+  @include ms-bgColor-sharedGreen20;
+}
+.ms-bgColor-sharedGreen10,
+.ms-bgColor-sharedGreen10--hover:hover {
+  @include ms-bgColor-sharedGreen10;
+}
+.ms-bgColor-sharedGreenCyan10,
+.ms-bgColor-sharedGreenCyan10--hover:hover {
+  @include ms-bgColor-sharedGreenCyan10;
+}
+.ms-bgColor-sharedCyan50,
+.ms-bgColor-sharedCyan50--hover:hover {
+  @include ms-bgColor-sharedCyan50;
+}
+.ms-bgColor-sharedCyan40,
+.ms-bgColor-sharedCyan40--hover:hover {
+  @include ms-bgColor-sharedCyan40;
+}
+.ms-bgColor-sharedCyan30,
+.ms-bgColor-sharedCyan30--hover:hover {
+  @include ms-bgColor-sharedCyan30;
+}
+.ms-bgColor-sharedCyan20,
+.ms-bgColor-sharedCyan20--hover:hover {
+  @include ms-bgColor-sharedCyan20;
+}
+.ms-bgColor-sharedCyan10,
+.ms-bgColor-sharedCyan10--hover:hover {
+  @include ms-bgColor-sharedCyan10;
+}
+.ms-bgColor-sharedCyanBlue20,
+.ms-bgColor-sharedCyanBlue20--hover:hover {
+  @include ms-bgColor-sharedCyanBlue20;
+}
+.ms-bgColor-sharedCyanBlue10,
+.ms-bgColor-sharedCyanBlue10--hover:hover {
+  @include ms-bgColor-sharedCyanBlue10;
+}
+.ms-bgColor-sharedBlue10,
+.ms-bgColor-sharedBlue10--hover:hover {
+  @include ms-bgColor-sharedBlue10;
+}
+.ms-bgColor-sharedBlueMagenta30,
+.ms-bgColor-sharedBlueMagenta30--hover:hover {
+  @include ms-bgColor-sharedBlueMagenta30;
+}
+.ms-bgColor-sharedBlueMagenta20,
+.ms-bgColor-sharedBlueMagenta20--hover:hover {
+  @include ms-bgColor-sharedBlueMagenta20;
+}
+.ms-bgColor-sharedBlueMagenta10,
+.ms-bgColor-sharedBlueMagenta10--hover:hover {
+  @include ms-bgColor-sharedBlueMagenta10;
+}
+.ms-bgColor-sharedMagenta20,
+.ms-bgColor-sharedMagenta20--hover:hover {
+  @include ms-bgColor-sharedMagenta20;
+}
+.ms-bgColor-sharedMagenta10,
+.ms-bgColor-sharedMagenta10--hover:hover {
+  @include ms-bgColor-sharedMagenta10;
+}
+.ms-bgColor-sharedMagentaPink20,
+.ms-bgColor-sharedMagentaPink20--hover:hover {
+  @include ms-bgColor-sharedMagentaPink20;
+}
+.ms-bgColor-sharedMagentaPink10,
+.ms-bgColor-sharedMagentaPink10--hover:hover {
+  @include ms-bgColor-sharedMagentaPink10;
+}
+.ms-bgColor-sharedGray20,
+.ms-bgColor-sharedGray20--hover:hover {
+  @include ms-bgColor-sharedGray20;
+}
+.ms-bgColor-sharedGray10,
+.ms-bgColor-sharedGray10--hover:hover {
+  @include ms-bgColor-sharedGray10;
+}
+
 // High contrast
 .ms-bgColor-contrastBlackDisabled,
 .ms-bgColor-contrastBlackDisabled--hover:hover {
@@ -113,42 +278,4 @@
 .ms-bgColor-contrastWhiteSelected,
 .ms-bgColor-contrastWhiteSelected--hover:hover {
   @include ms-bgColor-contrastWhiteSelected;
-}
-
-// Communication
-.ms-bgColor-communicationShade30,
-.ms-bgColor-communicationShade30--hover:hover {
-  @include ms-bgColor-communicationShade30;
-}
-.ms-bgColor-communicationShade20,
-.ms-bgColor-communicationShade20--hover:hover {
-  @include ms-bgColor-communicationShade20;
-}
-.ms-bgColor-communicationShade10,
-.ms-bgColor-communicationShade10--hover:hover {
-  @include ms-bgColor-communicationShade10;
-}
-.ms-bgColor-communicationPrimary,
-.ms-bgColor-communicationPrimary--hover:hover {
-  @include ms-bgColor-communicationPrimary;
-}
-.ms-bgColor-communicationTint10,
-.ms-bgColor-communicationTint10--hover:hover {
-  @include ms-bgColor-communicationTint10;
-}
-.ms-bgColor-communicationTint20,
-.ms-bgColor-communicationTint20--hover:hover {
-  @include ms-bgColor-communicationTint20;
-}
-.ms-bgColor-communicationTint30,
-.ms-bgColor-communicationTint30--hover:hover {
-  @include ms-bgColor-communicationTint30;
-}
-.ms-bgColor-communicationTint40,
-.ms-bgColor-communicationTint40--hover:hover {
-  @include ms-bgColor-communicationTint40;
-}
-.ms-bgColor-communicationTint50,
-.ms-bgColor-communicationTint50--hover:hover {
-  @include ms-bgColor-communicationTint50;
 }

@@ -125,18 +125,14 @@
       },
       {
         "name": "CommunicationTint20",
-        "hex": "#71afe5"
-      },
-      {
-        "name": "CommunicationTint30",
         "hex": "#c7e0f4"
       },
       {
-        "name": "CommunicationTint40",
+        "name": "CommunicationTint30",
         "hex": "#deecf9"
       },
       {
-        "name": "CommunicationTint50",
+        "name": "CommunicationTint40",
         "hex": "#eff6fc"
       }
     ]

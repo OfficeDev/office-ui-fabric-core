@@ -65,3 +65,9 @@ $ms-color-warning: $ms-color-neutralSecondaryAlt !default;
 $ms-color-warningBackground: #fff4ce !default;
 $ms-color-error: $ms-color-redDark !default;
 $ms-color-errorBackground: #fde7e9 !default;
+
+// High contrast
+$ms-color-contrastBlackDisabled: #00ff00 !default;
+$ms-color-contrastWhiteDisabled: #600000 !default;
+$ms-color-contrastBlackSelected: #1aebff !default;
+$ms-color-contrastWhiteSelected: #37006e !default;

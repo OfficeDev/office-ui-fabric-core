@@ -258,21 +258,3 @@
 .ms-fontColor-sharedGray10--hover:hover {
   @include ms-fontColor-sharedGray10;
 }
-
-// High contrast
-.ms-fontColor-contrastBlackDisabled,
-.ms-fontColor-contrastBlackDisabled--hover:hover {
-  @include ms-fontColor-contrastBlackDisabled;
-}
-.ms-fontColor-contrastWhiteDisabled,
-.ms-fontColor-contrastWhiteDisabled--hover:hover {
-  @include ms-fontColor-contrastWhiteDisabled;
-}
-.ms-fontColor-contrastBlackSelected,
-.ms-fontColor-contrastBlackSelected--hover:hover {
-  @include ms-fontColor-contrastBlackSelected;
-}
-.ms-fontColor-contrastWhiteSelected,
-.ms-fontColor-contrastWhiteSelected--hover:hover {
-  @include ms-fontColor-contrastWhiteSelected;
-}

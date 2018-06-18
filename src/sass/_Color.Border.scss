@@ -257,21 +257,3 @@
 .ms-borderColor-sharedGray10--hover:hover {
   @include ms-borderColor-sharedGray10;
 }
-
-// High contrast
-.ms-borderColor-contrastBlackDisabled,
-.ms-borderColor-contrastBlackDisabled--hover:hover {
-  @include ms-borderColor-contrastBlackDisabled;
-}
-.ms-borderColor-contrastWhiteDisabled,
-.ms-borderColor-contrastWhiteDisabled--hover:hover {
-  @include ms-borderColor-contrastWhiteDisabled;
-}
-.ms-borderColor-contrastBlackSelected,
-.ms-borderColor-contrastBlackSelected--hover:hover {
-  @include ms-borderColor-contrastBlackSelected;
-}
-.ms-borderColor-contrastWhiteSelected,
-.ms-borderColor-contrastWhiteSelected--hover:hover {
-  @include ms-borderColor-contrastWhiteSelected;
-}

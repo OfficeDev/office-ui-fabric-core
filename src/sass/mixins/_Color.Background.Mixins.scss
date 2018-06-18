@@ -194,19 +194,3 @@
 @mixin ms-bgColor-sharedGray10 {
   background-color: $ms-color-sharedGray10;
 }
-
-// High contrast
-@mixin ms-bgColor-contrastBlackDisabled {
-  background-color: $ms-color-contrastBlackDisabled;
-}
-@mixin ms-bgColor-contrastWhiteDisabled {
-  background-color: $ms-color-contrastWhiteDisabled;
-}
-@mixin ms-bgColor-contrastBlackSelected {
-  background-color: $ms-color-contrastBlackSelected;
-}
-@mixin ms-bgColor-contrastWhiteSelected {
-  background-color: $ms-color-contrastWhiteSelected;
-}
-
-

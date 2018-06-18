@@ -633,3 +633,60 @@
 .ms-fontColor-error--hover:hover {
   @include ms-fontColor-error;
 }
+
+//== High contrast colors
+//
+
+// Background
+.ms-bgColor-contrastBlackDisabled,
+.ms-bgColor-contrastBlackDisabled--hover:hover {
+  @include ms-bgColor-contrastBlackDisabled;
+}
+.ms-bgColor-contrastWhiteDisabled,
+.ms-bgColor-contrastWhiteDisabled--hover:hover {
+  @include ms-bgColor-contrastWhiteDisabled;
+}
+.ms-bgColor-contrastBlackSelected,
+.ms-bgColor-contrastBlackSelected--hover:hover {
+  @include ms-bgColor-contrastBlackSelected;
+}
+.ms-bgColor-contrastWhiteSelected,
+.ms-bgColor-contrastWhiteSelected--hover:hover {
+  @include ms-bgColor-contrastWhiteSelected;
+}
+
+// Font
+.ms-fontColor-contrastBlackDisabled,
+.ms-fontColor-contrastBlackDisabled--hover:hover {
+  @include ms-fontColor-contrastBlackDisabled;
+}
+.ms-fontColor-contrastWhiteDisabled,
+.ms-fontColor-contrastWhiteDisabled--hover:hover {
+  @include ms-fontColor-contrastWhiteDisabled;
+}
+.ms-fontColor-contrastBlackSelected,
+.ms-fontColor-contrastBlackSelected--hover:hover {
+  @include ms-fontColor-contrastBlackSelected;
+}
+.ms-fontColor-contrastWhiteSelected,
+.ms-fontColor-contrastWhiteSelected--hover:hover {
+  @include ms-fontColor-contrastWhiteSelected;
+}
+
+// Border
+.ms-borderColor-contrastBlackDisabled,
+.ms-borderColor-contrastBlackDisabled--hover:hover {
+  @include ms-borderColor-contrastBlackDisabled;
+}
+.ms-borderColor-contrastWhiteDisabled,
+.ms-borderColor-contrastWhiteDisabled--hover:hover {
+  @include ms-borderColor-contrastWhiteDisabled;
+}
+.ms-borderColor-contrastBlackSelected,
+.ms-borderColor-contrastBlackSelected--hover:hover {
+  @include ms-borderColor-contrastBlackSelected;
+}
+.ms-borderColor-contrastWhiteSelected,
+.ms-borderColor-contrastWhiteSelected--hover:hover {
+  @include ms-borderColor-contrastWhiteSelected;
+}

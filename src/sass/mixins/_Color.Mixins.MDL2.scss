@@ -477,3 +477,49 @@
 @mixin ms-fontColor-error {
   color: $ms-color-error;
 }
+
+
+//== High contrast colors
+//
+
+// Background
+@mixin ms-bgColor-contrastBlackDisabled {
+  background-color: $ms-color-contrastBlackDisabled;
+}
+@mixin ms-bgColor-contrastWhiteDisabled {
+  background-color: $ms-color-contrastWhiteDisabled;
+}
+@mixin ms-bgColor-contrastBlackSelected {
+  background-color: $ms-color-contrastBlackSelected;
+}
+@mixin ms-bgColor-contrastWhiteSelected {
+  background-color: $ms-color-contrastWhiteSelected;
+}
+
+// Border
+@mixin ms-borderColor-contrastBlackDisabled {
+  border-color: $ms-color-contrastBlackDisabled;
+}
+@mixin ms-borderColor-contrastWhiteDisabled {
+  border-color: $ms-color-contrastWhiteDisabled;
+}
+@mixin ms-borderColor-contrastBlackSelected {
+  border-color: $ms-color-contrastBlackSelected;
+}
+@mixin ms-borderColor-contrastWhiteSelected {
+  border-color: $ms-color-contrastWhiteSelected;
+}
+
+// Font
+@mixin ms-fontColor-contrastBlackDisabled {
+  color: $ms-color-contrastBlackDisabled;
+}
+@mixin ms-fontColor-contrastWhiteDisabled {
+  color: $ms-color-contrastWhiteDisabled;
+}
+@mixin ms-fontColor-contrastBlackSelected {
+  color: $ms-color-contrastBlackSelected;
+}
+@mixin ms-fontColor-contrastWhiteSelected {
+  color: $ms-color-contrastWhiteSelected;
+}

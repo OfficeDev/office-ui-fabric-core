@@ -194,17 +194,3 @@
 @mixin ms-borderColor-sharedGray10 {
   border-color: $ms-color-sharedGray10;
 }
-
-// High contrast
-@mixin ms-borderColor-contrastBlackDisabled {
-  border-color: $ms-color-contrastBlackDisabled;
-}
-@mixin ms-borderColor-contrastWhiteDisabled {
-  border-color: $ms-color-contrastWhiteDisabled;
-}
-@mixin ms-borderColor-contrastBlackSelected {
-  border-color: $ms-color-contrastBlackSelected;
-}
-@mixin ms-borderColor-contrastWhiteSelected {
-  border-color: $ms-color-contrastWhiteSelected;
-}

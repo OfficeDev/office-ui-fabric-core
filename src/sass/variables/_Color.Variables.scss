@@ -69,12 +69,5 @@ $ms-color-sharedMagentaPink10: #e3008c !default;
 $ms-color-sharedGray20: #393939 !default;
 $ms-color-sharedGray10: #7a7574 !default;
 
-
-// High contrast
-$ms-color-contrastBlackDisabled: #00ff00 !default;
-$ms-color-contrastWhiteDisabled: #600000 !default;
-$ms-color-contrastBlackSelected: #1aebff !default;
-$ms-color-contrastWhiteSelected: #37006e !default;
-
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";

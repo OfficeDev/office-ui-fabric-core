@@ -1,17 +1,17 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-.ms-depth-level0 {
-  @include ms-depth-level0;
+.ms-depth-0 {
+  @include ms-depth-0;
 }
-.ms-depth-level1 {
-  @include ms-depth-level1;
+.ms-depth-4 {
+  @include ms-depth-4;
 }
-.ms-depth-level2 {
-  @include ms-depth-level2;
+.ms-depth-8 {
+  @include ms-depth-8;
 }
-.ms-depth-level3 {
-  @include ms-depth-level3;
+.ms-depth-16 {
+  @include ms-depth-16;
 }
-.ms-depth-level4 {
-  @include ms-depth-level4;
+.ms-depth-64 {
+  @include ms-depth-64;
 }

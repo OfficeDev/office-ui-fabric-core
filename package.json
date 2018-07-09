@@ -5,8 +5,7 @@
   "publishConfig": {
     "tag": "fluent"
   },
-  "description":
-    "The front-end framework for building experiences for Office 365.",
+  "description": "The front-end framework for building experiences for Office 365.",
   "license": "MIT",
   "scripts": {
     "test": "gulp"

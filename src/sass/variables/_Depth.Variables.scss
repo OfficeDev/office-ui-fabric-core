@@ -1,10 +1,10 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-$ms-depth-border: 1px solid $ms-color-gray20;
-$ms-depth-shadow-color: transparentize($ms-color-black, 0.9) !default;
+$ms-depth-color-flood: transparentize($ms-color-black, 0.868) !default;
+$ms-depth-color-spot: transparentize($ms-color-black, 0.892) !default;
 
-$ms-depth-level0-shadow: 0 0 0 0 transparent !default;
-$ms-depth-level1-shadow: 0 2px 4px -0.75px $ms-depth-shadow-color !default;
-$ms-depth-level2-shadow: 0 4px 8px -1px $ms-depth-shadow-color !default;
-$ms-depth-level3-shadow: 0 8px 10px -2px $ms-depth-shadow-color !default;
-$ms-depth-level4-shadow: 0 16px 18px -4px $ms-depth-shadow-color !default;
+$ms-depth-shadow-0: 0 0 0 0 transparent !default;
+$ms-depth-shadow-4: 0 1.6px 3.6px 0 $ms-depth-color-flood, 0 0.3px 0.9px 0 $ms-depth-color-spot !default;
+$ms-depth-shadow-8: 0 3.2px 7.2px 0 $ms-depth-color-flood, 0 0.6px 1.8px 0 $ms-depth-color-spot !default;
+$ms-depth-shadow-16: 0 6.4px 16.4px 0 $ms-depth-color-flood, 0 1.2px 3.6px 0 $ms-depth-color-spot !default;
+$ms-depth-shadow-64: 0 25.6px 57.6px 0 $ms-depth-color-flood, 0 4.8px 14.4px 0 $ms-depth-color-spot !default;

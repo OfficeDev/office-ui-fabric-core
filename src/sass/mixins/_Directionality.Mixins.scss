@@ -296,12 +296,16 @@
 
 // Box-shadow.
 @mixin ms-box-shadow($left, $etc) {
-  @include ms-LTR {
-    box-shadow: $left $etc;
-  }
+  @if $left != 0 {
+    @include ms-LTR {
+      box-shadow: $left $etc;
+    }
 
-  @include ms-RTL {
-    box-shadow: -$left $etc;
+    @include ms-RTL {
+      box-shadow: -$left $etc;
+    }
+  } @else {
+    box-shadow: 0 $etc;
   }
 }
 

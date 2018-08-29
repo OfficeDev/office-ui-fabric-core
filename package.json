@@ -1,7 +1,7 @@
 {
   "name": "office-ui-fabric-core",
   "author": "Office UI Fabric Team",
-  "version": "9.6.0-fluent12",
+  "version": "9.6.0-fluent13",
   "publishConfig": {
     "tag": "fluent"
   },

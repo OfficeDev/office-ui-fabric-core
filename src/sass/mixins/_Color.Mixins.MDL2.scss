@@ -94,6 +94,9 @@
 //
 
 // Background
+@mixin ms-bgColor-black {
+  background-color: $ms-color-black;
+}
 @mixin ms-bgColor-neutralDark {
   background-color: $ms-color-neutralDark;
 }
@@ -130,8 +133,14 @@
 @mixin ms-bgColor-neutralLighterAlt {
   background-color: $ms-color-neutralLighterAlt;
 }
+@mixin ms-bgColor-white {
+  background-color: $ms-color-white;
+}
 
 // Border
+@mixin ms-borderColor-black {
+  border-color: $ms-color-black;
+}
 @mixin ms-borderColor-neutralDark {
   border-color: $ms-color-neutralDark;
 }
@@ -168,8 +177,14 @@
 @mixin ms-borderColor-neutralLighterAlt {
   border-color: $ms-color-neutralLighterAlt;
 }
+@mixin ms-borderColor-white {
+  border-color: $ms-color-white;
+}
 
 // Font
+@mixin ms-fontColor-black {
+  color: $ms-color-black;
+}
 @mixin ms-fontColor-neutralDark {
   color: $ms-color-neutralDark;
 }
@@ -205,6 +220,9 @@
 }
 @mixin ms-fontColor-neutralLighterAlt {
   color: $ms-color-neutralLighterAlt;
+}
+@mixin ms-fontColor-white {
+  color: $ms-color-white;
 }
 
 //== Brand and accent colors

@@ -43,7 +43,7 @@
       transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translate3d(-50px, 0, 0);
+      transform: translate3d(-48px, 0, 0);
     }
   }
 
@@ -52,13 +52,13 @@
       transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translate3d(50px, 0, 0);
+      transform: translate3d(48px, 0, 0);
     }
   }
 
   @keyframes ms-motion-slideLeftIn {
     from {
-      transform: translate3d(50px, 0, 0);
+      transform: translate3d(48px, 0, 0);
     }
     to {
       transform: translate3d(0, 0, 0);
@@ -67,7 +67,7 @@
 
   @keyframes ms-motion-slideRightIn {
     from {
-      transform: translate3d(-50px, 0, 0);
+      transform: translate3d(-48px, 0, 0);
     }
     to {
       transform: translate3d(0px, 0, 0);
@@ -79,7 +79,7 @@
       transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translate3d(0, -50px, 0);
+      transform: translate3d(0, -48px, 0);
     }
   }
 
@@ -88,13 +88,13 @@
       transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translate3d(0, 50px, 0);
+      transform: translate3d(0, 48px, 0);
     }
   }
 
   @keyframes ms-motion-slideUpIn {
     from {
-      transform: translate3d(0, 50px, 0);
+      transform: translate3d(0, 48px, 0);
     }
     to {
       transform: translate3d(0, 0, 0);
@@ -103,7 +103,7 @@
 
   @keyframes ms-motion-slideDownIn {
     from {
-      transform: translate3d(0, -50px, 0);
+      transform: translate3d(0, -48px, 0);
     }
     to {
       transform: translate3d(0px, 0, 0);

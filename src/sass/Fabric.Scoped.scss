@@ -17,12 +17,12 @@ $do-scope-styles: true;
 // This produces styles of the form .ms-Fabric-{version #} .ms-font-m.
 
 @include scope-fabric {
-  @import './Animation';
   @import './BrandIcon';
   @import './Color';
   @import './Font';
   @import './Grid';
   @import './Icon';
+  @import './Motion';
   @import './Responsive';
   @import './Utility';
   @import './Wrapper';

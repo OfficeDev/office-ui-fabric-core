@@ -111,5 +111,94 @@
   }
 }
 
+// Fades.
+@mixin ms-motion-fadeIn {
+  animation: ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-fadeOut {
+  animation: ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+}
+
+// Scales.
+@mixin ms-motion-scaleDownIn {
+  animation: ms-motion-scaleDownIn 300ms $ms-motion-timing-decelerate both,
+    ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-scaleDownOut {
+  animation: ms-motion-scaleDownOut 300ms $ms-motion-timing-decelerate both,
+    ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+}
+
+// Slides.
+@mixin ms-motion-slideLeftOut {
+  @include ms-LTR {
+    animation: ms-motion-slideLeftOut 100ms $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideRightOut 100ms $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideRightOut {
+  @include ms-LTR {
+    animation: ms-motion-slideRightOut 100ms $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideLeftOut 100ms $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideLeftIn {
+  @include ms-LTR {
+    animation: ms-motion-slideLeftIn 100ms $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideRightIn 100ms $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideRightIn {
+  @include ms-LTR {
+    animation: ms-motion-slideRightIn 100ms $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideLeftIn 100ms $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideUpOut {
+  animation: ms-motion-slideUpOut 100ms $ms-motion-timing-accelerate both,
+    ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-slideDownOut {
+  animation: ms-motion-slideDownOut 100ms $ms-motion-timing-accelerate both,
+    ms-motion-fadeOut 100ms $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-slideUpIn {
+  animation: ms-motion-slideUpIn 100ms $ms-motion-timing-decelerate both,
+    ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-slideDownIn {
+  animation: ms-motion-slideDownIn 100ms $ms-motion-timing-decelerate both,
+    ms-motion-fadeIn 100ms $ms-motion-timing-linear both;
+}
+
 // Deprecated MDL2 animation mixins.
 @import "./Animation.Mixins.MDL2";

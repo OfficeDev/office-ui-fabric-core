@@ -137,13 +137,17 @@
 .ms-borderColor-sharedPinkRed10--hover:hover {
   @include ms-borderColor-sharedPinkRed10;
 }
-.ms-borderColor-sharedRed30,
-.ms-borderColor-sharedRed30--hover:hover {
-  @include ms-borderColor-sharedRed30;
+.ms-borderColor-sharedRed20,
+.ms-borderColor-sharedRed20--hover:hover {
+  @include ms-borderColor-sharedRed20;
 }
 .ms-borderColor-sharedRed10,
 .ms-borderColor-sharedRed10--hover:hover {
   @include ms-borderColor-sharedRed10;
+}
+.ms-borderColor-sharedRedOrange20,
+.ms-borderColor-sharedRedOrange20--hover:hover {
+  @include ms-borderColor-sharedRedOrange20;
 }
 .ms-borderColor-sharedRedOrange10,
 .ms-borderColor-sharedRedOrange10--hover:hover {
@@ -189,10 +193,6 @@
 .ms-borderColor-sharedGreenCyan10--hover:hover {
   @include ms-borderColor-sharedGreenCyan10;
 }
-.ms-borderColor-sharedCyan50,
-.ms-borderColor-sharedCyan50--hover:hover {
-  @include ms-borderColor-sharedCyan50;
-}
 .ms-borderColor-sharedCyan40,
 .ms-borderColor-sharedCyan40--hover:hover {
   @include ms-borderColor-sharedCyan40;
@@ -221,6 +221,10 @@
 .ms-borderColor-sharedBlue10--hover:hover {
   @include ms-borderColor-sharedBlue10;
 }
+.ms-borderColor-sharedBlueMagenta40,
+.ms-borderColor-sharedBlueMagenta40--hover:hover {
+  @include ms-borderColor-sharedBlueMagenta40;
+}
 .ms-borderColor-sharedBlueMagenta30,
 .ms-borderColor-sharedBlueMagenta30--hover:hover {
   @include ms-borderColor-sharedBlueMagenta30;
@@ -248,6 +252,14 @@
 .ms-borderColor-sharedMagentaPink10,
 .ms-borderColor-sharedMagentaPink10--hover:hover {
   @include ms-borderColor-sharedMagentaPink10;
+}
+.ms-borderColor-sharedGray40,
+.ms-borderColor-sharedGray40--hover:hover {
+  @include ms-borderColor-sharedGray40;
+}
+.ms-borderColor-sharedGray30,
+.ms-borderColor-sharedGray30--hover:hover {
+  @include ms-borderColor-sharedGray30;
 }
 .ms-borderColor-sharedGray20,
 .ms-borderColor-sharedGray20--hover:hover {

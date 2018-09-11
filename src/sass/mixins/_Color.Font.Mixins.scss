@@ -105,11 +105,14 @@
 @mixin ms-fontColor-sharedPinkRed10 {
   color: $ms-color-sharedPinkRed10;
 }
-@mixin ms-fontColor-sharedRed30 {
-  color: $ms-color-sharedRed30;
+@mixin ms-fontColor-sharedRed20 {
+  color: $ms-color-sharedRed20;
 }
 @mixin ms-fontColor-sharedRed10 {
   color: $ms-color-sharedRed10;
+}
+@mixin ms-fontColor-sharedRedOrange20 {
+  color: $ms-color-sharedRedOrange20;
 }
 @mixin ms-fontColor-sharedRedOrange10 {
   color: $ms-color-sharedRedOrange10;
@@ -144,9 +147,6 @@
 @mixin ms-fontColor-sharedGreenCyan10 {
   color: $ms-color-sharedGreenCyan10;
 }
-@mixin ms-fontColor-sharedCyan50 {
-  color: $ms-color-sharedCyan50;
-}
 @mixin ms-fontColor-sharedCyan40 {
   color: $ms-color-sharedCyan40;
 }
@@ -168,6 +168,9 @@
 @mixin ms-fontColor-sharedBlue10 {
   color: $ms-color-sharedBlue10;
 }
+@mixin ms-fontColor-sharedBlueMagenta40 {
+  color: $ms-color-sharedBlueMagenta40;
+}
 @mixin ms-fontColor-sharedBlueMagenta30 {
   color: $ms-color-sharedBlueMagenta30;
 }
@@ -188,6 +191,12 @@
 }
 @mixin ms-fontColor-sharedMagentaPink10 {
   color: $ms-color-sharedMagentaPink10;
+}
+@mixin ms-fontColor-sharedGray40 {
+  color: $ms-color-sharedGray40;
+}
+@mixin ms-fontColor-sharedGray30 {
+  color: $ms-color-sharedGray30;
 }
 @mixin ms-fontColor-sharedGray20 {
   color: $ms-color-sharedGray20;

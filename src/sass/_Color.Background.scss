@@ -137,13 +137,17 @@
 .ms-bgColor-sharedPinkRed10--hover:hover {
   @include ms-bgColor-sharedPinkRed10;
 }
-.ms-bgColor-sharedRed30,
-.ms-bgColor-sharedRed30--hover:hover {
-  @include ms-bgColor-sharedRed30;
+.ms-bgColor-sharedRed20,
+.ms-bgColor-sharedRed20--hover:hover {
+  @include ms-bgColor-sharedRed20;
 }
 .ms-bgColor-sharedRed10,
 .ms-bgColor-sharedRed10--hover:hover {
   @include ms-bgColor-sharedRed10;
+}
+.ms-bgColor-sharedRedOrange20,
+.ms-bgColor-sharedRedOrange20--hover:hover {
+  @include ms-bgColor-sharedRedOrange20;
 }
 .ms-bgColor-sharedRedOrange10,
 .ms-bgColor-sharedRedOrange10--hover:hover {
@@ -189,10 +193,6 @@
 .ms-bgColor-sharedGreenCyan10--hover:hover {
   @include ms-bgColor-sharedGreenCyan10;
 }
-.ms-bgColor-sharedCyan50,
-.ms-bgColor-sharedCyan50--hover:hover {
-  @include ms-bgColor-sharedCyan50;
-}
 .ms-bgColor-sharedCyan40,
 .ms-bgColor-sharedCyan40--hover:hover {
   @include ms-bgColor-sharedCyan40;
@@ -221,6 +221,10 @@
 .ms-bgColor-sharedBlue10--hover:hover {
   @include ms-bgColor-sharedBlue10;
 }
+.ms-bgColor-sharedBlueMagenta40,
+.ms-bgColor-sharedBlueMagenta40--hover:hover {
+  @include ms-bgColor-sharedBlueMagenta40;
+}
 .ms-bgColor-sharedBlueMagenta30,
 .ms-bgColor-sharedBlueMagenta30--hover:hover {
   @include ms-bgColor-sharedBlueMagenta30;
@@ -248,6 +252,14 @@
 .ms-bgColor-sharedMagentaPink10,
 .ms-bgColor-sharedMagentaPink10--hover:hover {
   @include ms-bgColor-sharedMagentaPink10;
+}
+.ms-bgColor-sharedGray40,
+.ms-bgColor-sharedGray40--hover:hover {
+  @include ms-bgColor-sharedGray40;
+}
+.ms-bgColor-sharedGray30,
+.ms-bgColor-sharedGray30--hover:hover {
+  @include ms-bgColor-sharedGray30;
 }
 .ms-bgColor-sharedGray20,
 .ms-bgColor-sharedGray20--hover:hover {

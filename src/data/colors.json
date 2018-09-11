@@ -141,8 +141,9 @@
     "palette": "Shared",
     "colors": [
       { "name": "SharedPinkRed10", "hex": "#750b1c" },
-      { "name": "SharedRed30", "hex": "#a4262c" },
+      { "name": "SharedRed20", "hex": "#a4262c" },
       { "name": "SharedRed10", "hex": "#d13438" },
+      { "name": "SharedRedOrange20", "hex": "#603d30" },
       { "name": "SharedRedOrange10", "hex": "#da3b01" },
       { "name": "SharedOrange30", "hex": "#8e562e" },
       { "name": "SharedOrange20", "hex": "#ca5010" },
@@ -154,14 +155,14 @@
       { "name": "SharedGreen20", "hex": "#0b6a0b" },
       { "name": "SharedGreen10", "hex": "#498205" },
       { "name": "SharedGreenCyan10", "hex": "#00ad56" },
-      { "name": "SharedCyan50", "hex": "#005b70" },
-      { "name": "SharedCyan40", "hex": "#038387" },
-      { "name": "SharedCyan30", "hex": "#00b7c3" },
-      { "name": "SharedCyan20", "hex": "#69797e" },
-      { "name": "SharedCyan10", "hex": "#a0aeb2" },
+      { "name": "SharedCyan40", "hex": "#005e50" },
+      { "name": "SharedCyan30", "hex": "#005b70" },
+      { "name": "SharedCyan20", "hex": "#038387" },
+      { "name": "SharedCyan10", "hex": "#00b7c3" },
       { "name": "SharedCyanBlue20", "hex": "#004e8c" },
       { "name": "SharedCyanBlue10", "hex": "#0078d4" },
       { "name": "SharedBlue10", "hex": "#4f6bed" },
+      { "name": "SharedBlueMagenta40", "hex": "#373277" },
       { "name": "SharedBlueMagenta30", "hex": "#5c2e91" },
       { "name": "SharedBlueMagenta20", "hex": "#8764b8" },
       { "name": "SharedBlueMagenta10", "hex": "#8378de" },
@@ -169,8 +170,10 @@
       { "name": "SharedMagenta10", "hex": "#c239b3" },
       { "name": "SharedMagentaPink20", "hex": "#9b0062" },
       { "name": "SharedMagentaPink10", "hex": "#e3008c" },
-      { "name": "SharedGray20", "hex": "#393939" },
-      { "name": "SharedGray10", "hex": "#7a7574" }
+      { "name": "SharedGray40", "hex": "#393939" },
+      { "name": "SharedGray30", "hex": "#7a7574" },
+      { "name": "SharedGray20", "hex": "#69797e" },
+      { "name": "SharedGray10", "hex": "#a0aeb2" }
     ]
   },
   {

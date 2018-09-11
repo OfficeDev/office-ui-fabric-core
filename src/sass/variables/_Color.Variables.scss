@@ -38,8 +38,9 @@ $ms-color-white: #ffffff !default;
 
 // Shared
 $ms-color-sharedPinkRed10: #750b1c !default;
-$ms-color-sharedRed30: #a4262c !default;
+$ms-color-sharedRed20: #a4262c !default;
 $ms-color-sharedRed10: #d13438 !default;
+$ms-color-sharedRedOrange20: #603d30 !default;
 $ms-color-sharedRedOrange10: #da3b01 !default;
 $ms-color-sharedOrange30: #8e562e !default;
 $ms-color-sharedOrange20: #ca5010 !default;
@@ -51,14 +52,14 @@ $ms-color-sharedYellowGreen10: #8cbd18 !default;
 $ms-color-sharedGreen20: #0b6a0b !default;
 $ms-color-sharedGreen10: #498205 !default;
 $ms-color-sharedGreenCyan10: #00ad56 !default;
-$ms-color-sharedCyan50: #005b70 !default;
-$ms-color-sharedCyan40: #038387 !default;
-$ms-color-sharedCyan30: #00b7c3 !default;
-$ms-color-sharedCyan20: #69797e !default;
-$ms-color-sharedCyan10: #a0aeb2 !default;
+$ms-color-sharedCyan40: #005e50 !default;
+$ms-color-sharedCyan30: #005b70 !default;
+$ms-color-sharedCyan20: #038387 !default;
+$ms-color-sharedCyan10: #00b7c3 !default;
 $ms-color-sharedCyanBlue20: #004e8c !default;
 $ms-color-sharedCyanBlue10: #0078d4 !default;
 $ms-color-sharedBlue10: #4f6bed !default;
+$ms-color-sharedBlueMagenta40: #373277 !default;
 $ms-color-sharedBlueMagenta30: #5c2e91 !default;
 $ms-color-sharedBlueMagenta20: #8764b8 !default;
 $ms-color-sharedBlueMagenta10: #8378de !default;
@@ -66,8 +67,10 @@ $ms-color-sharedMagenta20: #881798 !default;
 $ms-color-sharedMagenta10: #c239b3 !default;
 $ms-color-sharedMagentaPink20: #9b0062 !default;
 $ms-color-sharedMagentaPink10: #e3008c !default;
-$ms-color-sharedGray20: #393939 !default;
-$ms-color-sharedGray10: #7a7574 !default;
+$ms-color-sharedGray40: #393939 !default;
+$ms-color-sharedGray30: #7a7574 !default;
+$ms-color-sharedGray20: #69797e !default;
+$ms-color-sharedGray10: #a0aeb2 !default;
 
 // Deprecated MDL2 color variables.
 @import "./Color.Variables.MDL2";

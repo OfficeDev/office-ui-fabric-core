@@ -104,11 +104,14 @@
 @mixin ms-bgColor-sharedPinkRed10 {
   background-color: $ms-color-sharedPinkRed10;
 }
-@mixin ms-bgColor-sharedRed30 {
-  background-color: $ms-color-sharedRed30;
+@mixin ms-bgColor-sharedRed20 {
+  background-color: $ms-color-sharedRed20;
 }
 @mixin ms-bgColor-sharedRed10 {
   background-color: $ms-color-sharedRed10;
+}
+@mixin ms-bgColor-sharedRedOrange20 {
+  background-color: $ms-color-sharedRedOrange20;
 }
 @mixin ms-bgColor-sharedRedOrange10 {
   background-color: $ms-color-sharedRedOrange10;
@@ -143,9 +146,6 @@
 @mixin ms-bgColor-sharedGreenCyan10 {
   background-color: $ms-color-sharedGreenCyan10;
 }
-@mixin ms-bgColor-sharedCyan50 {
-  background-color: $ms-color-sharedCyan50;
-}
 @mixin ms-bgColor-sharedCyan40 {
   background-color: $ms-color-sharedCyan40;
 }
@@ -167,6 +167,9 @@
 @mixin ms-bgColor-sharedBlue10 {
   background-color: $ms-color-sharedBlue10;
 }
+@mixin ms-bgColor-sharedBlueMagenta40 {
+  background-color: $ms-color-sharedBlueMagenta40;
+}
 @mixin ms-bgColor-sharedBlueMagenta30 {
   background-color: $ms-color-sharedBlueMagenta30;
 }
@@ -187,6 +190,12 @@
 }
 @mixin ms-bgColor-sharedMagentaPink10 {
   background-color: $ms-color-sharedMagentaPink10;
+}
+@mixin ms-bgColor-sharedGray40 {
+  background-color: $ms-color-sharedGray40;
+}
+@mixin ms-bgColor-sharedGray30 {
+  background-color: $ms-color-sharedGray30;
 }
 @mixin ms-bgColor-sharedGray20 {
   background-color: $ms-color-sharedGray20;

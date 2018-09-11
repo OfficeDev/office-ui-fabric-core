@@ -138,13 +138,17 @@
 .ms-fontColor-sharedPinkRed10--hover:hover {
   @include ms-fontColor-sharedPinkRed10;
 }
-.ms-fontColor-sharedRed30,
-.ms-fontColor-sharedRed30--hover:hover {
-  @include ms-fontColor-sharedRed30;
+.ms-fontColor-sharedRed20,
+.ms-fontColor-sharedRed20--hover:hover {
+  @include ms-fontColor-sharedRed20;
 }
 .ms-fontColor-sharedRed10,
 .ms-fontColor-sharedRed10--hover:hover {
   @include ms-fontColor-sharedRed10;
+}
+.ms-fontColor-sharedRedOrange20,
+.ms-fontColor-sharedRedOrange20--hover:hover {
+  @include ms-fontColor-sharedRedOrange20;
 }
 .ms-fontColor-sharedRedOrange10,
 .ms-fontColor-sharedRedOrange10--hover:hover {
@@ -190,10 +194,6 @@
 .ms-fontColor-sharedGreenCyan10--hover:hover {
   @include ms-fontColor-sharedGreenCyan10;
 }
-.ms-fontColor-sharedCyan50,
-.ms-fontColor-sharedCyan50--hover:hover {
-  @include ms-fontColor-sharedCyan50;
-}
 .ms-fontColor-sharedCyan40,
 .ms-fontColor-sharedCyan40--hover:hover {
   @include ms-fontColor-sharedCyan40;
@@ -222,6 +222,10 @@
 .ms-fontColor-sharedBlue10--hover:hover {
   @include ms-fontColor-sharedBlue10;
 }
+.ms-fontColor-sharedBlueMagenta40,
+.ms-fontColor-sharedBlueMagenta40--hover:hover {
+  @include ms-fontColor-sharedBlueMagenta40;
+}
 .ms-fontColor-sharedBlueMagenta30,
 .ms-fontColor-sharedBlueMagenta30--hover:hover {
   @include ms-fontColor-sharedBlueMagenta30;
@@ -249,6 +253,14 @@
 .ms-fontColor-sharedMagentaPink10,
 .ms-fontColor-sharedMagentaPink10--hover:hover {
   @include ms-fontColor-sharedMagentaPink10;
+}
+.ms-fontColor-sharedGray40,
+.ms-fontColor-sharedGray40--hover:hover {
+  @include ms-fontColor-sharedGray40;
+}
+.ms-fontColor-sharedGray30,
+.ms-fontColor-sharedGray30--hover:hover {
+  @include ms-fontColor-sharedGray30;
 }
 .ms-fontColor-sharedGray20,
 .ms-fontColor-sharedGray20--hover:hover {

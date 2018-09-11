@@ -104,11 +104,14 @@
 @mixin ms-borderColor-sharedPinkRed10 {
   border-color: $ms-color-sharedPinkRed10;
 }
-@mixin ms-borderColor-sharedRed30 {
-  border-color: $ms-color-sharedRed30;
+@mixin ms-borderColor-sharedRed20 {
+  border-color: $ms-color-sharedRed20;
 }
 @mixin ms-borderColor-sharedRed10 {
   border-color: $ms-color-sharedRed10;
+}
+@mixin ms-borderColor-sharedRedOrange20 {
+  border-color: $ms-color-sharedRedOrange20;
 }
 @mixin ms-borderColor-sharedRedOrange10 {
   border-color: $ms-color-sharedRedOrange10;
@@ -143,9 +146,6 @@
 @mixin ms-borderColor-sharedGreenCyan10 {
   border-color: $ms-color-sharedGreenCyan10;
 }
-@mixin ms-borderColor-sharedCyan50 {
-  border-color: $ms-color-sharedCyan50;
-}
 @mixin ms-borderColor-sharedCyan40 {
   border-color: $ms-color-sharedCyan40;
 }
@@ -167,6 +167,9 @@
 @mixin ms-borderColor-sharedBlue10 {
   border-color: $ms-color-sharedBlue10;
 }
+@mixin ms-borderColor-sharedBlueMagenta40 {
+  border-color: $ms-color-sharedBlueMagenta40;
+}
 @mixin ms-borderColor-sharedBlueMagenta30 {
   border-color: $ms-color-sharedBlueMagenta30;
 }
@@ -187,6 +190,12 @@
 }
 @mixin ms-borderColor-sharedMagentaPink10 {
   border-color: $ms-color-sharedMagentaPink10;
+}
+@mixin ms-borderColor-sharedGray40 {
+  border-color: $ms-color-sharedGray40;
+}
+@mixin ms-borderColor-sharedGray30 {
+  border-color: $ms-color-sharedGray30;
 }
 @mixin ms-borderColor-sharedGray20 {
   border-color: $ms-color-sharedGray20;

@@ -23,22 +23,23 @@ $ms-font-family-thai:                'Leelawadee UI Web', 'Kmer UI', $ms-font-fa
 $ms-font-family-vietnamese:          'Segoe UI Web (Vietnamese)', $ms-font-family-fallbacks !default;
 $ms-font-family-west-european:       'Segoe UI Web (West European)', $ms-font-family-fallbacks !default;
 
-// Weights
-$ms-font-weight-light:     100 !default;
-$ms-font-weight-semilight: 300 !default;
-$ms-font-weight-regular:   400 !default;
-$ms-font-weight-semibold:  600 !default;
-$ms-font-weight-bold:      700 !default;
+// Weights.
+$ms-font-weight-regular: 400 !default;
+$ms-font-weight-semibold: 600 !default;
+$ms-font-weight-bold: 700 !default;
 
-// Sizes
-$ms-font-size-su:       42px !default;
-$ms-font-size-xxl:      28px !default;
-$ms-font-size-xl-plus:  24px !default;
-$ms-font-size-xl:       21px !default;
-$ms-font-size-l:        17px !default;
-$ms-font-size-m-plus:   15px !default;
-$ms-font-size-m:        14px !default;
-$ms-font-size-s-plus:   13px !default;
-$ms-font-size-s:        12px !default;
-$ms-font-size-xs:       11px !default;
-$ms-font-size-mi:       10px !default;
+// Sizes.
+$ms-font-size-68: 68px !default;
+$ms-font-size-42: 42px !default;
+$ms-font-size-32: 32px !default;
+$ms-font-size-28: 28px !default;
+$ms-font-size-24: 24px !default;
+$ms-font-size-20: 20px !default;
+$ms-font-size-18: 18px !default;
+$ms-font-size-16: 16px !default;
+$ms-font-size-14: 14px !default;
+$ms-font-size-12: 12px !default;
+$ms-font-size-10: 10px !default;
+
+// Deprecated MDL2 font variables.
+@import "./Font.Variables.MDL2";

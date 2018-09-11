@@ -1,0 +1,200 @@
+[
+  {
+    "palette": "Neutral",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000"
+      },
+      {
+        "name": "Gray220",
+        "hex": "#11100f"
+      },
+      {
+        "name": "Gray210",
+        "hex": "#161514"
+      },
+      {
+        "name": "Gray200",
+        "hex": "#1b1a19"
+      },
+      {
+        "name": "Gray190",
+        "hex": "#201f1e"
+      },
+      {
+        "name": "Gray180",
+        "hex": "#252423"
+      },
+      {
+        "name": "Gray170",
+        "hex": "#292827"
+      },
+      {
+        "name": "Gray160",
+        "hex": "#323130"
+      },
+      {
+        "name": "Gray150",
+        "hex": "#3b3a39"
+      },
+      {
+        "name": "Gray140",
+        "hex": "#484644"
+      },
+      {
+        "name": "Gray130",
+        "hex": "#605e5c"
+      },
+      {
+        "name": "Gray120",
+        "hex": "#797775"
+      },
+      {
+        "name": "Gray110",
+        "hex": "#8a8886"
+      },
+      {
+        "name": "Gray100",
+        "hex": "#979593"
+      },
+      {
+        "name": "Gray90",
+        "hex": "#a19f9d"
+      },
+      {
+        "name": "Gray80",
+        "hex": "#b3b0ad"
+      },
+      {
+        "name": "Gray70",
+        "hex": "#bebbb8"
+      },
+      {
+        "name": "Gray60",
+        "hex": "#c8c6c4"
+      },
+      {
+        "name": "Gray50",
+        "hex": "#d2d0ce"
+      },
+      {
+        "name": "Gray40",
+        "hex": "#e1dfdd"
+      },
+      {
+        "name": "Gray30",
+        "hex": "#edebe9"
+      },
+      {
+        "name": "Gray20",
+        "hex": "#f3f2f1"
+      },
+      {
+        "name": "Gray10",
+        "hex": "#faf9f8"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      }
+    ]
+  },
+  {
+    "palette": "Communication",
+    "colors": [
+      {
+        "name": "CommunicationShade30",
+        "hex": "#004578"
+      },
+      {
+        "name": "CommunicationShade20",
+        "hex": "#005a9e"
+      },
+      {
+        "name": "CommunicationShade10",
+        "hex": "#106ebe"
+      },
+      {
+        "name": "CommunicationPrimary",
+        "hex": "#0078d7"
+      },
+      {
+        "name": "communicationTint10",
+        "hex": "#2b88d8"
+      },
+      {
+        "name": "CommunicationTint20",
+        "hex": "#c7e0f4"
+      },
+      {
+        "name": "CommunicationTint30",
+        "hex": "#deecf9"
+      },
+      {
+        "name": "CommunicationTint40",
+        "hex": "#eff6fc"
+      }
+    ]
+  },
+  {
+    "palette": "Shared",
+    "colors": [
+      { "name": "SharedPinkRed10", "hex": "#750b1c" },
+      { "name": "SharedRed20", "hex": "#a4262c" },
+      { "name": "SharedRed10", "hex": "#d13438" },
+      { "name": "SharedRedOrange20", "hex": "#603d30" },
+      { "name": "SharedRedOrange10", "hex": "#da3b01" },
+      { "name": "SharedOrange30", "hex": "#8e562e" },
+      { "name": "SharedOrange20", "hex": "#ca5010" },
+      { "name": "SharedOrange10", "hex": "#ffaa44" },
+      { "name": "SharedYellow10", "hex": "#fce100" },
+      { "name": "SharedOrangeYellow20", "hex": "#986f0b" },
+      { "name": "SharedOrangeYellow10", "hex": "#c19c00" },
+      { "name": "SharedYellowGreen10", "hex": "#8cbd18" },
+      { "name": "SharedGreen20", "hex": "#0b6a0b" },
+      { "name": "SharedGreen10", "hex": "#498205" },
+      { "name": "SharedGreenCyan10", "hex": "#00ad56" },
+      { "name": "SharedCyan40", "hex": "#005e50" },
+      { "name": "SharedCyan30", "hex": "#005b70" },
+      { "name": "SharedCyan20", "hex": "#038387" },
+      { "name": "SharedCyan10", "hex": "#00b7c3" },
+      { "name": "SharedCyanBlue20", "hex": "#004e8c" },
+      { "name": "SharedCyanBlue10", "hex": "#0078d4" },
+      { "name": "SharedBlue10", "hex": "#4f6bed" },
+      { "name": "SharedBlueMagenta40", "hex": "#373277" },
+      { "name": "SharedBlueMagenta30", "hex": "#5c2e91" },
+      { "name": "SharedBlueMagenta20", "hex": "#8764b8" },
+      { "name": "SharedBlueMagenta10", "hex": "#8378de" },
+      { "name": "SharedMagenta20", "hex": "#881798" },
+      { "name": "SharedMagenta10", "hex": "#c239b3" },
+      { "name": "SharedMagentaPink20", "hex": "#9b0062" },
+      { "name": "SharedMagentaPink10", "hex": "#e3008c" },
+      { "name": "SharedGray40", "hex": "#393939" },
+      { "name": "SharedGray30", "hex": "#7a7574" },
+      { "name": "SharedGray20", "hex": "#69797e" },
+      { "name": "SharedGray10", "hex": "#a0aeb2" }
+    ]
+  },
+  {
+    "palette": "Contrast",
+    "colors": [
+      {
+        "name": "ContrastBlackDisabled",
+        "hex": "#00ff00"
+      },
+      {
+        "name": "ContrastWhiteDisabled",
+        "hex": "#600000"
+      },
+      {
+        "name": "ContrastBlackSelected",
+        "hex": "#1aebff"
+      },
+      {
+        "name": "ContrastWhiteSelected",
+        "hex": "#37006e"
+      }
+    ]
+  }
+]

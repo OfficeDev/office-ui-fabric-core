@@ -1,0 +1,54 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Generate classes for product and document icons
+@mixin ms-brand-icon-classes($retina) {
+	@each $icon in $ms-brand-icon-product-icons {
+		.ms-BrandIcon--#{$icon} {
+			@include ms-brand-icon-product-sizes($icon, $retina, $ms-brand-icon-product-images-path);
+		}
+	}
+
+	@each $icon in $ms-brand-icon-document-icons {
+		.ms-BrandIcon--#{$icon} {
+			@include ms-brand-icon-document-sizes($icon, $retina, $ms-brand-icon-document-images-path);
+		}
+	}
+}
+
+// Generate size classes for each product icon
+@mixin ms-brand-icon-product-sizes($icon, $retina, $images-path) {
+	@each $size in $ms-brand-icon-sizes {
+		&.ms-BrandIcon--icon#{$size} {
+			background-image: url(#{$images-path}/#{$icon}_#{$size}x#{$retina}.png);
+		}
+	}
+}
+
+// Generate size classes for each document icon
+@mixin ms-brand-icon-document-sizes($icon, $retina, $images-path) {
+	$scaleSuffix: '';
+	@if $retina == '1' {
+		$scaleSuffix: '';
+	} @else if $retina == '1_5' {
+		$scaleSuffix: '_1.5x';
+	} @else {
+		$scaleSuffix: '_#{$retina}x';
+	}
+
+	@each $size in $ms-brand-icon-sizes {
+		&.ms-BrandIcon--icon#{$size} {
+			background-image: url(#{$images-path}/#{$size}#{$scaleSuffix}/#{$icon}.png);
+		}
+	}
+}
+
+// Generate generic icon size classes
+@mixin ms-brand-icon-size-classes() {
+	@each $size in $ms-brand-icon-sizes {
+		.ms-BrandIcon--icon#{$size} {
+			background-size: 100% 100%;
+			width: #{$size}px;
+			height: #{$size}px;
+		}
+	}
+}

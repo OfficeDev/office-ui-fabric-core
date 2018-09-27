@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Leelawadee UI Web';
   src: url('#{$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-semilight.woff2') format('woff2'),
-       url('#${$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-semilight.woff') format('woff');
+       url('#{$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-semilight.woff') format('woff');
   font-weight: 100;
   font-style: normal;
 }

@@ -2,7 +2,8 @@
   "name": "office-ui-fabric-core",
   "author": "Office UI Fabric Team",
   "version": "9.6.1",
-  "description": "The front-end framework for building experiences for Office 365.",
+  "description":
+    "The front-end framework for building experiences for Office 365.",
   "license": "MIT",
   "scripts": {
     "test": "gulp"

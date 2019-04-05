@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Fabric UI Core Documentation</title>
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/2.6.2/css/fabric.components.min.css">
+</head>
+<body class="ms-Fabric">
+<div id="body-content">
+    <div id="Header" class="docs-Header">
+	    <a class="ms-font-xxl ms-fontColor-white" href="/">Office UI Fabric</a>
+	    <div class="Header-buttons">
+            <a href="https://github.com/OfficeDev/office-ui-fabric-core/" class="Header-button ms-fontColor-white">Github</a>
+        </div>
+	</div>
+	<div class="docs-Page has-leftNav">
+	    <div class="docs-Page-leftNav">
+    <div class="LeftNav-links" role="menu" aria-label="Anchor links for navigating this page">
+			<div class="LeftNav-item">
+	        	<a class="Typography LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Typography">Typography</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Color LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Color">Color</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Icons LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Icons">Icons</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Animations LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Animations">Animations</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Responsive-Grid LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Responsive-Grid">Responsive Grid</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Localization LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Localization">Localization</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Scoping LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Scoping">Scoping</a>
+	      	</div>
+    </div>
+</div>
+
+<div class="docs-Styles-section" id="animations">
+  <h2>Animations</h2>
+  <p>Use the animation library to create web experiences that integrate with Office 365. You can use the animation CSS classes for navigation, panels, dialogs, and more. Animations include directionality (up, down, left, right relating to origin and completion of tasks), enter/exit (fade in, fade out, zoom in, zoom out), and duration (speed of enter/exit relating to urgency or content type).</p>
+  <p>When choosing a motion for side panels, consider the origin of the triggering element. Use the motion to create a link between the action and the resulting UI. For example, if the triggering element is on the right side of the interface, consider having the panel move in from the right.</p>
+  <p>When choosing a motion for dialogs, consider the origin and tone of the content. For a warning or error dialog, a quick fade in might be appropriate. If the dialog appears when a user chooses an item to get more information, a scale-up might be appropriate.</p>
+  <div class="docs-animationsTable" role="table">
+    <!-- Header Row -->
+    <div class="docs-animationsTable-header ms-Grid-row" role="row">
+      <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-l docs-subHeading ms-fontWeight-semibold docs-animationClassColumn" role="columnheader">CSS Class</div>
+      <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-l docs-subHeading ms-fontWeight-semibold docs-animationDescriptionColumn" role="columnheader">Description</div>
+      <div class="ms-Grid-col ms-xl3 ms-font-l docs-subHeading ms-fontWeight-semibold docs-animationCubicColumn" role="columnheader">Cubic Bezier</div>
+      <div class="ms-Grid-col ms-xl1 ms-font-l docs-subHeading ms-fontWeight-semibold docs-animationTimingColumn" role="columnheader">Timing</div>
+      <div class="ms-Grid-col ms-md5 ms-xl4 ms-font-l docs-subHeading ms-fontWeight-semibold docs-animationExampleColumn" role="columnheader">Example (Click to Animate)</div>
+    </div>
+    <!-- End Header Row -->
+
+      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide right 10px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide right 10px and fade in">Class <br />ms-slideRightIn10</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide right 10px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide right 10px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide right 10px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideRightIn10" data-class="ms-slideRightIn10" aria-label="Visual Animation Example for Slide right 10px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideRightIn10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide right 20px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide right 20px and fade in">Class <br />ms-slideRightIn20</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide right 20px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide right 20px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide right 20px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideRightIn20" data-class="ms-slideRightIn20" aria-label="Visual Animation Example for Slide right 20px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideRightIn20"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide right 40px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide right 40px and fade in">Class <br />ms-slideRightIn40</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide right 40px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide right 40px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide right 40px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideRightIn40" data-class="ms-slideRightIn40" aria-label="Visual Animation Example for Slide right 40px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideRightIn40"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide left 10px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide left 10px and fade in">Class <br />ms-slideLeftIn10</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide left 10px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide left 10px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide left 10px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideLeftIn10" data-class="ms-slideLeftIn10" aria-label="Visual Animation Example for Slide left 10px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideLeftIn10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide left 20px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide left 20px and fade in">Class <br />ms-slideLeftIn20</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide left 20px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide left 20px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide left 20px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideLeftIn20" data-class="ms-slideLeftIn20" aria-label="Visual Animation Example for Slide left 20px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideLeftIn20"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide left 40px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide left 40px and fade in">Class <br />ms-slideLeftIn40</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide left 40px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide left 40px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide left 40px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideLeftIn40" data-class="ms-slideLeftIn40" aria-label="Visual Animation Example for Slide left 40px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideLeftIn40"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide up 20px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide up 20px and fade in">Class <br />ms-slideUpIn20</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide up 20px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide up 20px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide up 20px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideUpIn20" data-class="ms-slideUpIn20" aria-label="Visual Animation Example for Slide up 20px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideUpIn20"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide up 10px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide up 10px and fade in">Class <br />ms-slideUpIn10</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide up 10px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide up 10px and fade in">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide up 10px and fade in">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideUpIn10" data-class="ms-slideUpIn10" aria-label="Visual Animation Example for Slide up 10px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideUpIn10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide down 20px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide down 20px and fade in">Class <br />ms-slideDownIn20</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide down 20px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide down 20px and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Slide down 20px and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideDownIn20" data-class="ms-slideDownIn20" aria-label="Visual Animation Example for Slide down 20px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideDownIn20"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide down 10px and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide down 10px and fade in">Class <br />ms-slideDownIn10</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide down 10px and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide down 10px and fade in">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide down 10px and fade in">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideDownIn10" data-class="ms-slideDownIn10" aria-label="Visual Animation Example for Slide down 10px and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideDownIn10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide right 40px and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide right 40px and fade out">Class <br />ms-slideRightOut40</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide right 40px and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide right 40px and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide right 40px and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideRightOut40" data-class="ms-slideRightOut40" aria-label="Visual Animation Example for Slide right 40px and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideRightOut40"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide left 40px and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide left 40px and fade out">Class <br />ms-slideLeftOut40</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide left 40px and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide left 40px and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide left 40px and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideLeftOut40" data-class="ms-slideLeftOut40" aria-label="Visual Animation Example for Slide left 40px and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideLeftOut40"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide up 20px and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide up 20px and fade out">Class <br />ms-slideUpOut20</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide up 20px and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide up 20px and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide up 20px and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideUpOut20" data-class="ms-slideUpOut20" aria-label="Visual Animation Example for Slide up 20px and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideUpOut20"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide up 10px and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide up 10px and fade out">Class <br />ms-slideUpOut10</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide up 10px and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide up 10px and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide up 10px and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideUpOut10" data-class="ms-slideUpOut10" aria-label="Visual Animation Example for Slide up 10px and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideUpOut10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide down 20px and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide down 20px and fade out">Class <br />ms-slideDownOut20</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide down 20px and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide down 20px and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide down 20px and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideDownOut20" data-class="ms-slideDownOut20" aria-label="Visual Animation Example for Slide down 20px and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideDownOut20"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Slide down 10px and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Slide down 10px and fade out">Class <br />ms-slideDownOut10</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Slide down 10px and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Slide down 10px and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Slide down 10px and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-slideDownOut10" data-class="ms-slideDownOut10" aria-label="Visual Animation Example for Slide down 10px and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-slideDownOut10"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Scale up to 100% and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Scale up to 100% and fade in">Class <br />ms-scaleUpIn100</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Scale up to 100% and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Scale up to 100% and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Scale up to 100% and fade in">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-scaleUpIn100" data-class="ms-scaleUpIn100" aria-label="Visual Animation Example for Scale up to 100% and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-scaleUpIn100"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Scale down to 100% and fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Scale down to 100% and fade in">Class <br />ms-scaleDownIn100</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Scale down to 100% and fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Scale down to 100% and fade in">cubic-bezier(0.1, 0.9, 0.2, 1)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Scale down to 100% and fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-scaleDownIn100" data-class="ms-scaleDownIn100" aria-label="Visual Animation Example for Scale down to 100% and fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-scaleDownIn100"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Scale up to 103% and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Scale up to 103% and fade out">Class <br />ms-scaleUpOut103</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Scale up to 103% and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Scale up to 103% and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Scale up to 103% and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-scaleUpOut103" data-class="ms-scaleUpOut103" aria-label="Visual Animation Example for Scale up to 103% and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-scaleUpOut103"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Scale down to 98% and fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Scale down to 98% and fade out">Class <br />ms-scaleDownOut98</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Scale down to 98% and fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Scale down to 98% and fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Scale down to 98% and fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-scaleDownOut98" data-class="ms-scaleDownOut98" aria-label="Visual Animation Example for Scale down to 98% and fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-scaleDownOut98"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade in">Class <br />ms-fadeIn100</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade in">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Fade in">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeIn100" data-class="ms-fadeIn100" aria-label="Visual Animation Example for Fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeIn100"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade in">Class <br />ms-fadeIn200</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade in">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.267s for Fade in">0.267s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeIn200" data-class="ms-fadeIn200" aria-label="Visual Animation Example for Fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeIn200"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade in">Class <br />ms-fadeIn400</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade in">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Fade in">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeIn400" data-class="ms-fadeIn400" aria-label="Visual Animation Example for Fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeIn400"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade in">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade in">Class <br />ms-fadeIn500</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade in</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade in">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.467s for Fade in">0.467s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeIn500" data-class="ms-fadeIn500" aria-label="Visual Animation Example for Fade in">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeIn500"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade out">Class <br />ms-fadeOut100</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.167s for Fade out">0.167s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeOut100" data-class="ms-fadeOut100" aria-label="Visual Animation Example for Fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeOut100"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade out">Class <br />ms-fadeOut200</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.267s for Fade out">0.267s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeOut200" data-class="ms-fadeOut200" aria-label="Visual Animation Example for Fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeOut200"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->      <!-- Animation -->
+      <div class="docs-animationsTable-body ms-Grid-row" role="row" aria-label="Animation row for animation Fade out">
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-xl2 ms-font-m docs-animationClassColumn" role="cell" aria-label="Class for animation Fade out">Class <br />ms-fadeOut400</div>
+        <div class="ms-Grid-col ms-sm12 ms-md3 ms-xl2 ms-font-m docs-animationDescriptionColumn" role="cell" aria-label="Animation description">Fade out</div>
+        <div class="ms-Grid-col ms-xl3 ms-font-m docs-animationCubicColumn" role="cell" aria-label="Animation bezier for Fade out">cubic-bezier(0.1, 0.25, 0.75, 0.9)</div>
+        <div class="ms-Grid-col ms-xl1 ms-font-m docs-animationTimingColumn" role="cell" aria-label="Timing 0.367s for Fade out">0.367s</div>
+        <div class="ms-Grid-col ms-sm12 ms-md5 ms-xl4 ms-font-m docs-animationExampleColumn" role="cell" aria-label="Animation Example">
+          <div class="AnimationExample ms-fadeOut400" data-class="ms-fadeOut400" aria-label="Visual Animation Example for Fade out">
+            <div class="AnimationExample-content" aria-hidden="true">
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+              <hr>
+            </div>
+            <div class="AnimationExample-panel ms-bg-color-themePrimary" data-class="ms-fadeOut400"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Animation -->  </div>
+</div>
+<script type="text/javascript">
+
+  function wireAnimations() {
+      var animationSample = document.querySelectorAll('.AnimationExample');
+
+      for (var i = 0; i < animationSample.length; i++) {
+          animationSample[i].addEventListener('click', function(event) {
+            var sample = this;
+            var panel = sample.querySelector('.AnimationExample-panel');
+            var sampleData = sample.dataset;
+            var cssClass = sampleData.class;
+
+            panel.classList.add(cssClass);
+
+            setTimeout(function () {
+              panel.classList.remove(cssClass);
+            }, 1000);          
+
+            event.preventDefault();
+          });
+      }            
+  }
+
+    setTimeout(function() {
+    wireAnimations();
+    }, 1000); 
+
+  </script>
+
+  </div>
+</div>
+<script>
+	var currPage = window.location.pathname.replace(/\//g, '');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
+</script>
+</body>
+</html>

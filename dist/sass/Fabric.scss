@@ -1,0 +1,26 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// OSS Framework Design Language
+// --------------------------------------------------
+// Fabric Core Module Loader (LTR)
+
+// Variables and mixins
+@import './References';
+
+// Partials that output CSS
+@import './Animation';
+@import './BrandIcon';
+@import './Color';
+@import './Color.Background';
+@import './Color.Border';
+@import './Color.Font';
+@import './Depth';
+@import './Font';
+@import './Font.Definitions';
+@import './Grid';
+@import './Icon';
+@import './Icon.Definitions';
+@import './Responsive';
+@import './Utility';
+@import './Wrapper';

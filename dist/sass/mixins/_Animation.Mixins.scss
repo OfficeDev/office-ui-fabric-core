@@ -1,0 +1,204 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Outputs the keyframes used by the animation classes
+@mixin ms-motion-keyframes() {
+  @keyframes ms-motion-fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ms-motion-fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes ms-motion-scaleDownIn {
+    from {
+      transform: scale3d(1.15, 1.15, 1);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes ms-motion-scaleDownOut {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    to {
+      transform: scale3d(0.9, 0.9, 1);
+    }
+  }
+
+  @keyframes ms-motion-slideLeftOut {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-48px, 0, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideRightOut {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(48px, 0, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideLeftIn {
+    from {
+      transform: translate3d(48px, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideRightIn {
+    from {
+      transform: translate3d(-48px, 0, 0);
+    }
+    to {
+      transform: translate3d(0px, 0, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideUpOut {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, -48px, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideDownOut {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 48px, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideUpIn {
+    from {
+      transform: translate3d(0, 48px, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes ms-motion-slideDownIn {
+    from {
+      transform: translate3d(0, -48px, 0);
+    }
+    to {
+      transform: translate3d(0px, 0, 0);
+    }
+  }
+}
+
+// Fades.
+@mixin ms-motion-fadeIn {
+  animation: ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-fadeOut {
+  animation: ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+// Scales.
+@mixin ms-motion-scaleDownIn {
+  animation: ms-motion-scaleDownIn $ms-motion-duration-3 $ms-motion-timing-decelerate both,
+    ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-scaleDownOut {
+  animation: ms-motion-scaleDownOut $ms-motion-duration-3 $ms-motion-timing-decelerate both,
+    ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+// Slides.
+@mixin ms-motion-slideLeftOut {
+  @include ms-LTR {
+    animation: ms-motion-slideLeftOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideRightOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideRightOut {
+  @include ms-LTR {
+    animation: ms-motion-slideRightOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideLeftOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+      ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideLeftIn {
+  @include ms-LTR {
+    animation: ms-motion-slideLeftIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideRightIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideRightIn {
+  @include ms-LTR {
+    animation: ms-motion-slideRightIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+
+  @include ms-RTL {
+    animation: ms-motion-slideLeftIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+      ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+  }
+}
+
+@mixin ms-motion-slideUpOut {
+  animation: ms-motion-slideUpOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+    ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-slideDownOut {
+  animation: ms-motion-slideDownOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+    ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-slideUpIn {
+  animation: ms-motion-slideUpIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+    ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+@mixin ms-motion-slideDownIn {
+  animation: ms-motion-slideDownIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+    ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+}
+
+// Deprecated MDL2 animation mixins.
+@import "./Animation.Mixins.MDL2";

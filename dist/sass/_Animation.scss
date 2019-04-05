@@ -1,0 +1,58 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Output all keyframes used by the motion classes.
+@include ms-motion-keyframes;
+
+// Fades.
+.ms-motion-fadeIn {
+  @include ms-motion-fadeIn;
+}
+
+.ms-motion-fadeOut {
+  @include ms-motion-fadeOut;
+}
+
+// Scales.
+.ms-motion-scaleDownIn {
+  @include ms-motion-scaleDownIn;
+}
+
+.ms-motion-scaleDownOut {
+  @include ms-motion-scaleDownOut;
+}
+
+// Slides.
+.ms-motion-slideLeftOut {
+  @include ms-motion-slideLeftOut;
+}
+
+.ms-motion-slideRightOut {
+  @include ms-motion-slideRightOut;
+}
+
+.ms-motion-slideLeftIn {
+  @include ms-motion-slideLeftIn;
+}
+
+.ms-motion-slideRightIn {
+  @include ms-motion-slideRightIn;
+}
+
+.ms-motion-slideUpOut {
+  @include ms-motion-slideUpOut;
+}
+
+.ms-motion-slideDownOut {
+  @include ms-motion-slideDownOut;
+}
+
+.ms-motion-slideUpIn {
+  @include ms-motion-slideUpIn;
+}
+
+.ms-motion-slideDownIn {
+  @include ms-motion-slideDownIn;
+}
+
+// Deprecated MDL2 animation classes.
+@import "./Animation.MDL2";

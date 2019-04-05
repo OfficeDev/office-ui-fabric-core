@@ -1,0 +1,20 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+
+$ms-fabric-version-major: nth($ms-fabric-version, 1);
+$ms-fabric-version-minor: nth($ms-fabric-version, 2);
+$ms-fabric-version-patch: nth($ms-fabric-version, 3);
+
+// The CSS class for scoping styles to the current version of Fabric.
+$ms-fabric-version-suffix: '--v' + $ms-fabric-version-major + '-' + $ms-fabric-version-minor + '-' + $ms-fabric-version-patch;
+$ms-fabric-scope-class: '.ms-Fabric' + $ms-fabric-version-suffix;
+
+// A mixin to scope styles to the current version of Fabric.
+// Produces styles of the form .ms-Fabric-{version #} @content.
+@mixin scope-fabric {
+  #{$ms-fabric-scope-class} {
+    @content;
+  }
+}

@@ -1,0 +1,108 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+@include ms-brand-icon-classes('1');
+@include ms-brand-icon-size-classes();
+
+// Pixel Ratio 1.5
+@media only screen and (min-resolution: 144dpi) {
+  @include ms-brand-icon-classes('1_5');
+}
+
+// Pixel Ratio 2
+@media only screen and (min-resolution: 192dpi)  {
+  @include ms-brand-icon-classes('2');
+}
+
+// Pixel Ratio 3
+@media only screen and (min-resolution: 288dpi) {
+  @include ms-brand-icon-classes('3');
+}
+
+// The 'onepkg' and 'xls' icons have been deprecated. These classes will be removed in
+// a future release. Until then, they are mapped to 'one' and 'xlsx'.
+
+.ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
+  background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16/one.png);
+}
+.ms-BrandIcon--onepkg.ms-BrandIcon--icon48 {
+  background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48/one.png);
+}
+.ms-BrandIcon--onepkg.ms-BrandIcon--icon96 {
+  background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96/one.png);
+}
+
+.ms-BrandIcon--xls.ms-BrandIcon--icon16 {
+  background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16/xlsx.png);
+}
+.ms-BrandIcon--xls.ms-BrandIcon--icon48 {
+  background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48/xlsx.png);
+}
+.ms-BrandIcon--xls.ms-BrandIcon--icon96 {
+  background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96/xlsx.png);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_1.5x/one.png);
+  }
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon48 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48_1.5x/one.png);
+  }
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon96 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96_1.5x/one.png);
+  }
+
+  .ms-BrandIcon--xls.ms-BrandIcon--icon16 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_1.5x/xlsx.png);
+  }
+  .ms-BrandIcon--xls.ms-BrandIcon--icon48 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48_1.5x/xlsx.png);
+  }
+  .ms-BrandIcon--xls.ms-BrandIcon--icon96 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96_1.5x/xlsx.png);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_2x/one.png);
+  }
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon48 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48_2x/one.png);
+  }
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon96 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96_2x/one.png);
+  }
+
+  .ms-BrandIcon--xls.ms-BrandIcon--icon16 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_2x/xlsx.png);
+  }
+  .ms-BrandIcon--xls.ms-BrandIcon--icon48 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48_2x/xlsx.png);
+  }
+  .ms-BrandIcon--xls.ms-BrandIcon--icon96 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96_2x/xlsx.png);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi) {
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_3x/one.png);
+  }
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon48 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48_3x/one.png);
+  }
+  .ms-BrandIcon--onepkg.ms-BrandIcon--icon96 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96_3x/one.png);
+  }
+
+  .ms-BrandIcon--xls.ms-BrandIcon--icon16 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_3x/xlsx.png);
+  }
+  .ms-BrandIcon--xls.ms-BrandIcon--icon48 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/48_3x/xlsx.png);
+  }
+  .ms-BrandIcon--xls.ms-BrandIcon--icon96 {
+    background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96_3x/xlsx.png);
+  }
+}

@@ -1,0 +1,272 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+
+// Communication
+.ms-fontColor-communicationShade30,
+.ms-fontColor-communicationShade30--hover:hover {
+  @include ms-fontColor-communicationShade30;
+}
+.ms-fontColor-communicationShade20,
+.ms-fontColor-communicationShade20--hover:hover {
+  @include ms-fontColor-communicationShade20;
+}
+.ms-fontColor-communicationShade10,
+.ms-fontColor-communicationShade10--hover:hover {
+  @include ms-fontColor-communicationShade10;
+}
+.ms-fontColor-communicationPrimary,
+.ms-fontColor-communicationPrimary--hover:hover {
+  @include ms-fontColor-communicationPrimary;
+}
+.ms-fontColor-communicationTint10,
+.ms-fontColor-communicationTint10--hover:hover {
+  @include ms-fontColor-communicationTint10;
+}
+.ms-fontColor-communicationTint20,
+.ms-fontColor-communicationTint20--hover:hover {
+  @include ms-fontColor-communicationTint20;
+}
+.ms-fontColor-communicationTint30,
+.ms-fontColor-communicationTint30--hover:hover {
+  @include ms-fontColor-communicationTint30;
+}
+.ms-fontColor-communicationTint40,
+.ms-fontColor-communicationTint40--hover:hover {
+  @include ms-fontColor-communicationTint40;
+}
+
+// Neutral
+.ms-fontColor-black,
+.ms-fontColor-black--hover:hover {
+  @include ms-fontColor-black;
+}
+.ms-fontColor-gray220,
+.ms-fontColor-gray220--hover:hover {
+  @include ms-fontColor-gray220;
+}
+.ms-fontColor-gray210,
+.ms-fontColor-gray210--hover:hover {
+  @include ms-fontColor-gray210;
+}
+.ms-fontColor-gray200,
+.ms-fontColor-gray200--hover:hover {
+  @include ms-fontColor-gray200;
+}
+.ms-fontColor-gray190,
+.ms-fontColor-gray190--hover:hover {
+  @include ms-fontColor-gray190;
+}
+.ms-fontColor-gray180,
+.ms-fontColor-gray180--hover:hover {
+  @include ms-fontColor-gray180;
+}
+.ms-fontColor-gray170,
+.ms-fontColor-gray170--hover:hover {
+  @include ms-fontColor-gray170;
+}
+.ms-fontColor-gray160,
+.ms-fontColor-gray160--hover:hover {
+  @include ms-fontColor-gray160;
+}
+.ms-fontColor-gray150,
+.ms-fontColor-gray150--hover:hover {
+  @include ms-fontColor-gray150;
+}
+.ms-fontColor-gray140,
+.ms-fontColor-gray140--hover:hover {
+  @include ms-fontColor-gray140;
+}
+.ms-fontColor-gray130,
+.ms-fontColor-gray130--hover:hover {
+  @include ms-fontColor-gray130;
+}
+.ms-fontColor-gray120,
+.ms-fontColor-gray120--hover:hover {
+  @include ms-fontColor-gray120;
+}
+.ms-fontColor-gray110,
+.ms-fontColor-gray110--hover:hover {
+  @include ms-fontColor-gray110;
+}
+.ms-fontColor-gray100,
+.ms-fontColor-gray100--hover:hover {
+  @include ms-fontColor-gray100;
+}
+.ms-fontColor-gray90,
+.ms-fontColor-gray90--hover:hover {
+  @include ms-fontColor-gray90;
+}
+.ms-fontColor-gray80,
+.ms-fontColor-gray80--hover:hover {
+  @include ms-fontColor-gray80;
+}
+.ms-fontColor-gray70,
+.ms-fontColor-gray70--hover:hover {
+  @include ms-fontColor-gray70;
+}
+.ms-fontColor-gray60,
+.ms-fontColor-gray60--hover:hover {
+  @include ms-fontColor-gray60;
+}
+.ms-fontColor-gray50,
+.ms-fontColor-gray50--hover:hover {
+  @include ms-fontColor-gray50;
+}
+.ms-fontColor-gray40,
+.ms-fontColor-gray40--hover:hover {
+  @include ms-fontColor-gray40;
+}
+.ms-fontColor-gray30,
+.ms-fontColor-gray30--hover:hover {
+  @include ms-fontColor-gray30;
+}
+.ms-fontColor-gray20,
+.ms-fontColor-gray20--hover:hover {
+  @include ms-fontColor-gray20;
+}
+.ms-fontColor-gray10,
+.ms-fontColor-gray10--hover:hover {
+  @include ms-fontColor-gray10;
+}
+.ms-fontColor-white,
+.ms-fontColor-white--hover:hover {
+  @include ms-fontColor-white;
+}
+
+// Shared
+.ms-fontColor-sharedPinkRed10,
+.ms-fontColor-sharedPinkRed10--hover:hover {
+  @include ms-fontColor-sharedPinkRed10;
+}
+.ms-fontColor-sharedRed20,
+.ms-fontColor-sharedRed20--hover:hover {
+  @include ms-fontColor-sharedRed20;
+}
+.ms-fontColor-sharedRed10,
+.ms-fontColor-sharedRed10--hover:hover {
+  @include ms-fontColor-sharedRed10;
+}
+.ms-fontColor-sharedRedOrange20,
+.ms-fontColor-sharedRedOrange20--hover:hover {
+  @include ms-fontColor-sharedRedOrange20;
+}
+.ms-fontColor-sharedRedOrange10,
+.ms-fontColor-sharedRedOrange10--hover:hover {
+  @include ms-fontColor-sharedRedOrange10;
+}
+.ms-fontColor-sharedOrange30,
+.ms-fontColor-sharedOrange30--hover:hover {
+  @include ms-fontColor-sharedOrange30;
+}
+.ms-fontColor-sharedOrange20,
+.ms-fontColor-sharedOrange20--hover:hover {
+  @include ms-fontColor-sharedOrange20;
+}
+.ms-fontColor-sharedOrange10,
+.ms-fontColor-sharedOrange10--hover:hover {
+  @include ms-fontColor-sharedOrange10;
+}
+.ms-fontColor-sharedYellow10,
+.ms-fontColor-sharedYellow10--hover:hover {
+  @include ms-fontColor-sharedYellow10;
+}
+.ms-fontColor-sharedOrangeYellow20,
+.ms-fontColor-sharedOrangeYellow20--hover:hover {
+  @include ms-fontColor-sharedOrangeYellow20;
+}
+.ms-fontColor-sharedOrangeYellow10,
+.ms-fontColor-sharedOrangeYellow10--hover:hover {
+  @include ms-fontColor-sharedOrangeYellow10;
+}
+.ms-fontColor-sharedYellowGreen10,
+.ms-fontColor-sharedYellowGreen10--hover:hover {
+  @include ms-fontColor-sharedYellowGreen10;
+}
+.ms-fontColor-sharedGreen20,
+.ms-fontColor-sharedGreen20--hover:hover {
+  @include ms-fontColor-sharedGreen20;
+}
+.ms-fontColor-sharedGreen10,
+.ms-fontColor-sharedGreen10--hover:hover {
+  @include ms-fontColor-sharedGreen10;
+}
+.ms-fontColor-sharedGreenCyan10,
+.ms-fontColor-sharedGreenCyan10--hover:hover {
+  @include ms-fontColor-sharedGreenCyan10;
+}
+.ms-fontColor-sharedCyan40,
+.ms-fontColor-sharedCyan40--hover:hover {
+  @include ms-fontColor-sharedCyan40;
+}
+.ms-fontColor-sharedCyan30,
+.ms-fontColor-sharedCyan30--hover:hover {
+  @include ms-fontColor-sharedCyan30;
+}
+.ms-fontColor-sharedCyan20,
+.ms-fontColor-sharedCyan20--hover:hover {
+  @include ms-fontColor-sharedCyan20;
+}
+.ms-fontColor-sharedCyan10,
+.ms-fontColor-sharedCyan10--hover:hover {
+  @include ms-fontColor-sharedCyan10;
+}
+.ms-fontColor-sharedCyanBlue20,
+.ms-fontColor-sharedCyanBlue20--hover:hover {
+  @include ms-fontColor-sharedCyanBlue20;
+}
+.ms-fontColor-sharedCyanBlue10,
+.ms-fontColor-sharedCyanBlue10--hover:hover {
+  @include ms-fontColor-sharedCyanBlue10;
+}
+.ms-fontColor-sharedBlue10,
+.ms-fontColor-sharedBlue10--hover:hover {
+  @include ms-fontColor-sharedBlue10;
+}
+.ms-fontColor-sharedBlueMagenta40,
+.ms-fontColor-sharedBlueMagenta40--hover:hover {
+  @include ms-fontColor-sharedBlueMagenta40;
+}
+.ms-fontColor-sharedBlueMagenta30,
+.ms-fontColor-sharedBlueMagenta30--hover:hover {
+  @include ms-fontColor-sharedBlueMagenta30;
+}
+.ms-fontColor-sharedBlueMagenta20,
+.ms-fontColor-sharedBlueMagenta20--hover:hover {
+  @include ms-fontColor-sharedBlueMagenta20;
+}
+.ms-fontColor-sharedBlueMagenta10,
+.ms-fontColor-sharedBlueMagenta10--hover:hover {
+  @include ms-fontColor-sharedBlueMagenta10;
+}
+.ms-fontColor-sharedMagenta20,
+.ms-fontColor-sharedMagenta20--hover:hover {
+  @include ms-fontColor-sharedMagenta20;
+}
+.ms-fontColor-sharedMagenta10,
+.ms-fontColor-sharedMagenta10--hover:hover {
+  @include ms-fontColor-sharedMagenta10;
+}
+.ms-fontColor-sharedMagentaPink20,
+.ms-fontColor-sharedMagentaPink20--hover:hover {
+  @include ms-fontColor-sharedMagentaPink20;
+}
+.ms-fontColor-sharedMagentaPink10,
+.ms-fontColor-sharedMagentaPink10--hover:hover {
+  @include ms-fontColor-sharedMagentaPink10;
+}
+.ms-fontColor-sharedGray40,
+.ms-fontColor-sharedGray40--hover:hover {
+  @include ms-fontColor-sharedGray40;
+}
+.ms-fontColor-sharedGray30,
+.ms-fontColor-sharedGray30--hover:hover {
+  @include ms-fontColor-sharedGray30;
+}
+.ms-fontColor-sharedGray20,
+.ms-fontColor-sharedGray20--hover:hover {
+  @include ms-fontColor-sharedGray20;
+}
+.ms-fontColor-sharedGray10,
+.ms-fontColor-sharedGray10--hover:hover {
+  @include ms-fontColor-sharedGray10;
+}

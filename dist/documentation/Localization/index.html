@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Fabric UI Core Documentation</title>
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/2.6.2/css/fabric.components.min.css">
+</head>
+<body class="ms-Fabric">
+<div id="body-content">
+    <div id="Header" class="docs-Header">
+	    <a class="ms-font-xxl ms-fontColor-white" href="/">Office UI Fabric</a>
+	    <div class="Header-buttons">
+            <a href="https://github.com/OfficeDev/office-ui-fabric-core/" class="Header-button ms-fontColor-white">Github</a>
+        </div>
+	</div>
+	<div class="docs-Page has-leftNav">
+	    <div class="docs-Page-leftNav">
+    <div class="LeftNav-links" role="menu" aria-label="Anchor links for navigating this page">
+			<div class="LeftNav-item">
+	        	<a class="Typography LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Typography">Typography</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Color LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Color">Color</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Icons LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Icons">Icons</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Animations LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Animations">Animations</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Responsive-Grid LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Responsive-Grid">Responsive Grid</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Localization LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Localization">Localization</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Scoping LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Scoping">Scoping</a>
+	      	</div>
+    </div>
+</div>
+
+    <div class="docs-Styles-section" id="localization">
+        <h2>Localization</h2>
+        <h3>Right-to-left support</h3>
+        <p>Fabric supports right-to-left (RTL) languages, such as Arabic and Hebrew. This reverses the order of columns in the responsive grid, making it easy to create an RTL layout without writing additional templates. Future versions of Fabric will also reverse some icons and provide additional helper utilities.</p>
+        <h4>Usage</h4>
+<p>Simply apply the “dir” attribute to the HTML tag.</p>
+
+<pre><code class="hljs">&lt;html dir="rtl"&gt;</code></pre>
+
+<h3>Language-optimized fonts</h3>
+<p class="ms-font-m">By default, Fabric presents all text using the Western European character set of Segoe UI. For languages with other characters, Fabric will either serve a version of Segoe UI with a different character set or use a system font.</p>
+  
+<h4>Usage</h4>
+<p class="ms-font-m">The HTML “lang” attribute specifies the language of the element's content. This is typically applied to the root HTML element, where it will be inherited by the entire page. In this example the entire page is in Thai.</p>
+
+<pre><code class="hljs">&lt;html lang="th-TH"&gt;...&lt;/html&gt;</code></pre>
+
+<p class="ms-font-m">For pages with content in multiple languages, the “lang” attribute can be applied to individual elements. In this example, a page that is mostly Thai also contains some Vietnamese.</p>
+<pre><code class="hljs">&lt;html lang="th"&gt;
+  ...
+  &lt;section lang="vi"&gt;...&lt;/section&gt;
+&lt;/html&gt;</code></pre>
+
+<p class="ms-font-m">Fabric supports a variety of language codes, which map to the following font stacks:</p>
+
+<table class="docs-Table" style="width: 100%;">
+    <tr>
+        <th style="width: 20%; min-width: 100px;">Language</th>
+        <th style="width: 15%; min-width: 100px;">Code</th>
+        <th style="width: 45%; min-width: 100px;">Font stack</th>
+        <th style="width: 20%; min-width: 100px;">Example text</th>
+    </tr>
+    <tr>
+        <td role="gridcell">West European (default)</td>
+        <td role="gridcell">N/A</td>
+        <td role="gridcell">Segoe UI Web (West European)'</td>
+        <td role="gridcell">Drag files here to upload</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Japanese</td>
+        <td role="gridcell">ja</td>
+        <td role="gridcell">'Yu Gothic UI', 'Meiryo UI', Meiryo, 'MS Pgothic', Osaka</td>
+        <td role="gridcell" lang="ja">アップロードするファイルをここにドラッグ</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Korean</td>
+        <td role="gridcell">ko</td>
+        <td role="gridcell">'Malgun Gothic', Gulim</td>
+        <td role="gridcell" lang="ko">파일을 업로드하려면 여기로 끌어오세요.</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Chinese (simplified)</td>
+        <td role="gridcell">zh-hans</td>
+        <td role="gridcell">'Microsoft Yahei UI', Verdana, Simsun</td>
+        <td role="gridcell" lang="zh-hans">将文件拖到此处以上传</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Chinese (traditional)</td>
+        <td role="gridcell">zh-hant</td>
+        <td role="gridcell">'Microsoft Jhenghei UI', Pmingliu</td>
+        <td role="gridcell" lang="zh-hant">拖曳檔案到這裡以上傳</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Hindi</td>
+        <td role="gridcell">hi</td>
+        <td role="gridcell">'Nirmala UI'</td>
+        <td role="gridcell" lang="hi">अपलोड करने के लिए फ़ाइलों को यहाँ खींचें</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Thai</td>
+        <td role="gridcell">th</td>
+        <td role="gridcell">'Leelawadee UI Web', 'Kmer UI'</td>
+        <td role="gridcell" lang="th">ลากไฟล์มาที่นี่เพื่ออัปโหลด</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Lao</td>
+        <td role="gridcell">lo</td>
+        <td role="gridcell">'Leelawadee UI Web', 'Lao UI', DokChampa</td>
+        <td role="gridcell" lang="lo">ລາກໄຟລ໌ທີ່ນີ້ເພື່ອອັບໂຫລດ</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Arabic</td>
+        <td role="gridcell">ar</td>
+        <td role="gridcell">'Segoe UI Web (Arabic)'</td>
+        <td role="gridcell" lang="ar">اسحب الملفات هنا للتحميل</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Bulgarian</td>
+        <td role="gridcell">bg</td>
+        <td role="gridcell">'Segoe UI Web (Cyrillic)'</td>
+        <td role="gridcell" lang="bg">Плъзнете файловете тук, за да ги качите</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Czech</td>
+        <td role="gridcell">cs</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="cs">Sem přetáhněte soubory, které chcete nahrát.</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Estonian</td>
+        <td role="gridcell">et</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="et">Üleslaadimiseks lohistage failid siia</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Croatian</td>
+        <td role="gridcell">hr</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="hr">Povucite datoteke ovdje da biste ih prenijeli</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Hungarian</td>
+        <td role="gridcell">hu</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="hu">Húzza ide a feltölteni kívánt fájlokat</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Lithuanian</td>
+        <td role="gridcell">lt</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="lt">Nusiųstinus failus vilkite čia</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Latvian</td>
+        <td role="gridcell">lv</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="lv">Velciet failus uz šejieni, lai augšupielādētu</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Polish</td>
+        <td role="gridcell">pl</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="pl">Przeciągnij pliki tutaj, aby je przekazać</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Serbian</td>
+        <td role="gridcell">sr-latn</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="sr-latn">Prevucite datoteke ovde da biste ih otpremili</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Russian</td>
+        <td role="gridcell">ru</td>
+        <td role="gridcell">'Segoe UI Web (Cyrillic)'</td>
+        <td role="gridcell" lang="ru">Перетащите сюда файлы для отправки</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Ukrainian</td>
+        <td role="gridcell">uk</td>
+        <td role="gridcell">'Segoe UI Web (Cyrillic)'</td>
+        <td role="gridcell" lang="uk">Перетягніть файли сюди, щоб передати їх</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Turkish</td>
+        <td role="gridcell">tr</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="tr">Dosyaları karşıya yüklemek için buraya sürükleyin</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Slovak</td>
+        <td role="gridcell">sk</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="sk">Nahrajte súbory presunutím sem</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Kazakh</td>
+        <td role="gridcell">kk</td>
+        <td role="gridcell">'Segoe UI Web (East European)'</td>
+        <td role="gridcell" lang="kk">Файлдарды жүктеп салу үшін осы жерге әкеліңіз</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Greek</td>
+        <td role="gridcell">el</td>
+        <td role="gridcell">'Segoe UI Web (Greek)'</td>
+        <td role="gridcell" lang="el">Σύρετε αρχεία εδώ για αποστολή</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Hebrew</td>
+        <td role="gridcell">he</td>
+        <td role="gridcell">'Segoe UI Web (Hebrew)'</td>
+        <td role="gridcell" lang="he">גרור קבצים לכאן כדי להעלות</td>
+    </tr>
+    <tr>
+        <td role="gridcell">Vietnamese</td>
+        <td role="gridcell">vi</td>
+        <td role="gridcell">'Segoe UI Web (Vietnamese)'</td>
+        <td role="gridcell" lang="vi">Kéo tệp vào đây để tải lên</td>
+    </tr>
+</table>
+
+<p class="ms-font-m">For all languages, if the fonts specified above are unavailable we then fall back to:</p>
+
+<pre><code class="hljs">-apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif</code></pre>
+
+    </div>
+
+  </div>
+</div>
+<script>
+	var currPage = window.location.pathname.replace(/\//g, '');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
+</script>
+</body>
+</html>

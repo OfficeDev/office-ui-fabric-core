@@ -8,7 +8,6 @@ var ConsoleHelper = require('./modules/ConsoleHelper');
 var ErrorHandling = require('./modules/ErrorHandling');
 var Plugins = require('./modules/Plugins');
 
-
 var filePath = '';
 var build = '';
 var jsonData = [];
@@ -23,14 +22,14 @@ var templateData,
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
-gulp.task('Documentation-nuke', function () {
+function documentationNuke() {
     return Plugins.del.sync([Config.paths.distDocumentation]);
-});
+};
 
 //
 // Build Documentation Styles
 // ----------------------------------------------------------------------------
-gulp.task('Documentation-buildStyles', function () {
+function documentationBuildStyles() {
     return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'docs.scss')
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.debug({
@@ -52,12 +51,12 @@ gulp.task('Documentation-buildStyles', function () {
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distDocumentationCSS));
-});
+};
 
 //
 // Prepare handlebars files
 // ----------------------------------------------------------------------------
-gulp.task('prepare-handlebars', function(cb) {
+function prepareHandlebars(cb) {
   var modelFiles = fs.readdirSync(Config.paths.srcDocumentationModels);
   var jsonFile;
   var jsonFileName;
@@ -73,12 +72,12 @@ gulp.task('prepare-handlebars', function(cb) {
   jsonData['icons'] = JSON.parse(jsonFile);
   templateData = jsonData;
   cb();
-});
+};
 
 //
 // Build separate pages (Animation, Color, Icons, Localization, Reponsive Grid, Typography)
 // ----------------------------------------------------------------------------
-gulp.task('Documentation-pages', ['prepare-handlebars'], function () {
+function documentationPages() {
   return gulp.src(Config.paths.srcDocsPages + "/**/index.html")
       .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
       .pipe(Plugins.debug({
@@ -92,12 +91,12 @@ gulp.task('Documentation-pages', ['prepare-handlebars'], function () {
         }
       }))
       .pipe(gulp.dest(Config.paths.distDocumentation));
-});
+};
 
 //
 // Build index page
 // ----------------------------------------------------------------------------
-gulp.task('Documentation-indexPage', function() {
+function documentationIndexPage() {
     return gulp.src(Config.paths.srcTemplate + '/documentation-template.html')
         .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
         .pipe(Plugins.debug({
@@ -112,8 +111,7 @@ gulp.task('Documentation-indexPage', function() {
         }))
         .pipe(Plugins.rename('index.html'))
         .pipe(gulp.dest(Config.paths.distDocumentation));
-});
-
+};
 
 //
 // Rolled up Build tasks
@@ -124,6 +122,12 @@ var DocumentationTasks = [
     'Documentation-indexPage'
 ];
 
-gulp.task('Documentation', DocumentationTasks);
+gulp.task('Documentation-nuke', documentationNuke);
+gulp.task('Documentation-buildStyles', documentationBuildStyles);
+gulp.task('prepare-handlebars', prepareHandlebars);
+gulp.task('Documentation-pages', gulp.series('prepare-handlebars', documentationPages));
+gulp.task('Documentation-indexPage', documentationIndexPage);
+
+gulp.task('Documentation', gulp.series(DocumentationTasks));
 BuildConfig.buildTasks.push('Documentation');
 BuildConfig.nukeTasks.push('Documentation-nuke');

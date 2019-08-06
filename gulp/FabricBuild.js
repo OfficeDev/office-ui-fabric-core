@@ -24,17 +24,16 @@ var versionCommaDelim = pkg.version.split('.').join(',');
 // ----------------------------------------------------------------------------
 
 // Clean out the distribution folder.
-gulp.task('Fabric-nuke', function () {
+function fabricNuke() {
     return Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass, Config.paths.temp]);
-});
-
+};
 
 //
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
 // Copy all Sass files to distribution folder.
-gulp.task('Fabric-copyAssets', function () {            
+function fabricCopyAssets() {            
      var moveSass =  gulp.src([Config.paths.srcSass + '/**/*', !Config.paths.srcSass + '/Fabric.Scoped.scss'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
@@ -44,13 +43,13 @@ gulp.task('Fabric-copyAssets', function () {
             })))
             .pipe(gulp.dest(Config.paths.distSass));
      return moveSass;
-});
+};
 
 //
 // Sass tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric-buildStyles', function () {
+function fabricBuildStyles() {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -102,12 +101,16 @@ gulp.task('Fabric-buildStyles', function () {
 
     // Merge all current streams into one.
     return Plugins.mergeStream(fabric, fabricScoped);
-});
+};
 
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
+gulp.task('Fabric-nuke', fabricNuke);
+gulp.task('Fabric-copyAssets', fabricCopyAssets);
+gulp.task('Fabric-buildStyles', fabricBuildStyles);
+
+gulp.task('Fabric', gulp.series('Fabric-copyAssets', 'Fabric-buildStyles'));
 BuildConfig.buildTasks.push('Fabric');
 BuildConfig.nukeTasks.push('Fabric-nuke');

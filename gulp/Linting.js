@@ -4,7 +4,7 @@ var Plugins = require('./modules/Plugins');
 var BuildConfig = require('./modules/BuildConfig');
 var ErrorHandling = require('./modules/ErrorHandling');
 
-gulp.task('Linting-spacesTabs', function (cb) {
+function lintingSpacesTab(cb) {
     return gulp.src([
             Config.paths.src + '/**/*.ts', 
             Config.paths.componentsPath + '/**/*.scss',
@@ -21,12 +21,14 @@ gulp.task('Linting-spacesTabs', function (cb) {
           ]
         }))
         .pipe(ErrorHandling.TabLintingErrors());
-});
+};
 
 var tasks = [
     'Linting-spacesTabs'
 ];
 
 //Build Fabric Component Samples
-gulp.task('Linting', tasks);
+gulp.task('Linting-spacesTabs', lintingSpacesTab)
+
+gulp.task('Linting', gulp.series(tasks));
 BuildConfig.buildTasks.push('Linting');

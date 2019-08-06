@@ -8,14 +8,18 @@ var Config = require('./modules/Config');
 // ----------------------------------------------------------------------------
 
 // var allFinishedtasks = watchTasks.concat(['Errors-checkAllErrors']);
-gulp.task('BuildMessages-finished', BuildConfig.buildTasks, function () {
+function buildMessagesFinished() {
     return console.log(ConsoleHelper.generateSuccess('Fabric build was successful, now sing and dance!', true));
-});
+};
 
-gulp.task('BuildMessages-server', BuildConfig.buildTasks, function () {
+function buildMessagesServer() {
     return console.log(ConsoleHelper.generateSuccess('Fabric built successfully! ' + "\r\n" + 'Fabric documentation located at ' + Config.projectURL + ':' + Config.port, false));
-});
+};
 
-gulp.task('BuildMessages-updated', BuildConfig.buildTasks, function () {
+function buildMessagesUpdated() {
     return console.log(ConsoleHelper.generateSuccess('Fabric updated, yay!', false));
-});
+};
+
+gulp.task('BuildMessages-finished', gulp.series(BuildConfig.buildTasks,buildMessagesFinished));
+gulp.task('BuildMessages-server', gulp.series(BuildConfig.buildTasks,buildMessagesServer));
+gulp.task('BuildMessages-updated', gulp.series(BuildConfig.buildTasks,buildMessagesUpdated));

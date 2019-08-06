@@ -36,9 +36,9 @@ var gulputil = Plugins.gutil;
 // ----------------------------------------------------------------------------
 
 // Clean out the distribution folder.
-gulp.task('Bundles-nuke', function () {
+function bundlesNuke() {
     return Plugins.del.sync([Config.paths.bundlePath]);
-});
+};
 
 // Flat list of paths for each file that should be included in a bundle.
 var bundleFilePaths = [];
@@ -46,7 +46,7 @@ var bundleFilePaths = [];
 // Assemble collection of file paths for each entry of each specified bundle.
 // This task populates bundleFilePaths, from which each bundle's SASS file is 
 // generated.
-gulp.task('Bundles-buildData', function() {
+function bundlesBuildData() {
     let allBundleSpecs = Config.bundlesConfig.bundles;
 
     if (allBundleSpecs.length > 0) {
@@ -239,9 +239,9 @@ gulp.task('Bundles-buildData', function() {
     } else {
         gulputil.log(colors.red('No bundles configured.'));
     }
-});
+};
 
-gulp.task('Bundles-build', function() {
+function bundlesBuild() {
     let allBundleSpecs = Config.bundlesConfig.bundles;
 
     if (allBundleSpecs.length > 0) {
@@ -286,11 +286,11 @@ gulp.task('Bundles-build', function() {
     } else {
         gulputil.log(colors.red('No bundles configured.'));
     }
-});
+};
 
-gulp.task('Bundles-resetData', function() {
+function bundlesResetData() {
     bundleFilePaths = [];
-});
+};
 
 var tasks = [
     'Bundles-nuke',
@@ -298,5 +298,10 @@ var tasks = [
     'Bundles-build'
 ];
 
-gulp.task('Bundles', tasks);
+gulp.task('Bundles-nuke', bundlesNuke);
+gulp.task('Bundles-buildData', bundlesBuildData);
+gulp.task('Bundles-build', bundlesBuild);
+gulp.task('Bundles-resetData', bundlesResetData);
+
+gulp.task('Bundles', gulp.series(tasks));
 BuildConfig.buildTasks.push('Bundles');

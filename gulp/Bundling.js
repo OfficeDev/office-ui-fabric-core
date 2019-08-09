@@ -36,8 +36,9 @@ var gulputil = Plugins.gutil;
 // ----------------------------------------------------------------------------
 
 // Clean out the distribution folder.
-function bundlesNuke() {
-    return Plugins.del.sync([Config.paths.bundlePath]);
+function bundlesNuke(done) {
+    Plugins.del.sync([Config.paths.bundlePath]);
+    done();
 };
 
 // Flat list of paths for each file that should be included in a bundle.
@@ -46,7 +47,7 @@ var bundleFilePaths = [];
 // Assemble collection of file paths for each entry of each specified bundle.
 // This task populates bundleFilePaths, from which each bundle's SASS file is 
 // generated.
-function bundlesBuildData() {
+function bundlesBuildData(done) {
     let allBundleSpecs = Config.bundlesConfig.bundles;
 
     if (allBundleSpecs.length > 0) {
@@ -239,9 +240,10 @@ function bundlesBuildData() {
     } else {
         gulputil.log(colors.red('No bundles configured.'));
     }
+    done();
 };
 
-function bundlesBuild() {
+function bundlesBuild(done) {
     let allBundleSpecs = Config.bundlesConfig.bundles;
 
     if (allBundleSpecs.length > 0) {
@@ -252,7 +254,8 @@ function bundlesBuild() {
                 Config.paths.bundlePath + '/' + bundleName, 
 
                 // srcTemplate
-                Config.paths.templatePath + '/'+ 'bundle-template.scss', 
+                // Config.paths.templatePath + '/'+ 'bundle-template.scss',
+                Config.paths.srcTemplate + '/'+ 'bundle-template.scss',
 
                 // componentName 
                 bundleName, 
@@ -286,22 +289,14 @@ function bundlesBuild() {
     } else {
         gulputil.log(colors.red('No bundles configured.'));
     }
+    done();
 };
 
 function bundlesResetData() {
     bundleFilePaths = [];
 };
 
-var tasks = [
-    'Bundles-nuke',
-    'Bundles-buildData', 
-    'Bundles-build'
-];
 
-gulp.task('Bundles-nuke', bundlesNuke);
-gulp.task('Bundles-buildData', bundlesBuildData);
-gulp.task('Bundles-build', bundlesBuild);
-gulp.task('Bundles-resetData', bundlesResetData);
-
-gulp.task('Bundles', gulp.series(tasks));
-BuildConfig.buildTasks.push('Bundles');
+exports.resetData = bundlesResetData;
+exports.bundlesNuke = bundlesNuke;
+exports.bundleBuild = gulp.series(bundlesNuke, bundlesBuildData, bundlesBuild);

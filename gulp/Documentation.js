@@ -22,8 +22,9 @@ var templateData,
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
-function documentationNuke() {
-    return Plugins.del.sync([Config.paths.distDocumentation]);
+function documentationNuke(done) {
+    Plugins.del.sync([Config.paths.distDocumentation]);
+    done();
 };
 
 //
@@ -116,18 +117,6 @@ function documentationIndexPage() {
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
-var DocumentationTasks = [
-    'Documentation-pages',
-    'Documentation-buildStyles',
-    'Documentation-indexPage'
-];
 
-gulp.task('Documentation-nuke', documentationNuke);
-gulp.task('Documentation-buildStyles', documentationBuildStyles);
-gulp.task('prepare-handlebars', prepareHandlebars);
-gulp.task('Documentation-pages', gulp.series('prepare-handlebars', documentationPages));
-gulp.task('Documentation-indexPage', documentationIndexPage);
-
-gulp.task('Documentation', gulp.series(DocumentationTasks));
-BuildConfig.buildTasks.push('Documentation');
-BuildConfig.nukeTasks.push('Documentation-nuke');
+exports.documentationNuke = documentationNuke;
+exports.documentationBuild = gulp.series(prepareHandlebars, gulp.parallel(documentationPages, documentationBuildStyles, documentationIndexPage));

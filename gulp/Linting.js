@@ -23,12 +23,5 @@ function lintingSpacesTab(cb) {
         .pipe(ErrorHandling.TabLintingErrors());
 };
 
-var tasks = [
-    'Linting-spacesTabs'
-];
 
-//Build Fabric Component Samples
-gulp.task('Linting-spacesTabs', lintingSpacesTab)
-
-gulp.task('Linting', gulp.series(tasks));
-BuildConfig.buildTasks.push('Linting');
+exports.linting = lintingSpacesTab;

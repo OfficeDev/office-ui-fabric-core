@@ -24,8 +24,9 @@ var versionCommaDelim = pkg.version.split('.').join(',');
 // ----------------------------------------------------------------------------
 
 // Clean out the distribution folder.
-function fabricNuke() {
-    return Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass, Config.paths.temp]);
+function fabricNuke(done) {
+    Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass, Config.paths.temp]);
+    done();
 };
 
 //
@@ -33,8 +34,8 @@ function fabricNuke() {
 // ----------------------------------------------------------------------------
 
 // Copy all Sass files to distribution folder.
-function fabricCopyAssets() {            
-     var moveSass =  gulp.src([Config.paths.srcSass + '/**/*', !Config.paths.srcSass + '/Fabric.Scoped.scss'])
+function fabricCopyAssets() {
+     return gulp.src([Config.paths.srcSass + '/**/*', Config.paths.srcSass + '/Fabric.Scoped.scss'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
             .pipe(Plugins.replace('<%= fabricVersion %>', versionCommaDelim))
@@ -42,7 +43,6 @@ function fabricCopyAssets() {
                     title: "Moving Sass files over to Dist"
             })))
             .pipe(gulp.dest(Config.paths.distSass));
-     return moveSass;
 };
 
 //
@@ -107,10 +107,5 @@ function fabricBuildStyles() {
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric-nuke', fabricNuke);
-gulp.task('Fabric-copyAssets', fabricCopyAssets);
-gulp.task('Fabric-buildStyles', fabricBuildStyles);
-
-gulp.task('Fabric', gulp.series('Fabric-copyAssets', 'Fabric-buildStyles'));
-BuildConfig.buildTasks.push('Fabric');
-BuildConfig.nukeTasks.push('Fabric-nuke');
+exports.fabricNuke = fabricNuke;
+exports.fabricBuild = gulp.series(fabricCopyAssets,fabricBuildStyles);

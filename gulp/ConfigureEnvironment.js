@@ -4,7 +4,8 @@ var BuildConfig = require('./modules/BuildConfig');
 var Plugins = require('./modules/Plugins');
 var ErrorHandling = require('./modules/ErrorHandling');
 
-gulp.task('ConfigureEnvironment-setDebugMode', function() {
-    Config.debugMode = true;
-    return;
-});
+function setDebugMode(done) {
+  Config.debugMode = true;
+  done();
+}
+exports.setDebugMode = setDebugMode;

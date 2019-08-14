@@ -20,7 +20,6 @@ Plugins.requireDir('../../gulp');
 var {buildMessagesFinished, buildMessagesServer, buildMessagesUpdated} = require('./gulp/BuildMessages');
 var {documentationBuild,documentationNuke} = require('./gulp/Documentation');
 var {fabricBuild, fabricNuke} = require('./gulp/FabricBuild');
-var {bundleBuild, bundlesNuke} = require('./gulp/Bundling');
 var {setDebugMode} = require('./gulp/ConfigureEnvironment')
 var {linting} = require('./gulp/Linting');
 var {server} = require('./gulp/Server');
@@ -29,8 +28,7 @@ var {server} = require('./gulp/Server');
 // MAIN BUILD
 //////////////////////////
 var build = gulp.parallel(documentationBuild, fabricBuild, linting);
-// var build = gulp.parallel(bundleBuild, documentationBuild, fabricBuild, linting);
-// TODO: Comment bundling functionality out for now. Need to resolve glob issue.
+// TODO: REMOVE BUNDLE AND DOCUMENTATION OF BUNDLE
 
 //
 // Local Server Configuration and Testing Website
@@ -48,7 +46,7 @@ Server.serveSpecificPaths(Config.servePaths);
 //
 // Nuke Tasks
 // ---------------------------------------------------------------------------
-exports.nuke = gulp.parallel(fabricNuke, documentationNuke, bundlesNuke)
+exports.nuke = gulp.parallel(fabricNuke, documentationNuke)
 
 //
 // Watch Tasks

@@ -48,9 +48,10 @@ var ComponentSamplesHelper = function() {
             })))
             .pipe(gulp.dest(destFolder))
             .pipe(Plugins.rename(componentName + '.min.css'))
-            .pipe(Plugins.cssMinify({
-              safe: true
-            }))
+            // .pipe(Plugins.cssMinify({
+            //   safe: true
+            // }))
+            .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
               title: "Minifying Component Sample " + name

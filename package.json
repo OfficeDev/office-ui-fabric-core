@@ -20,6 +20,7 @@
     "gulp-autoprefixer": "^2.3.1",
     "gulp-batch": "^1.0.5",
     "gulp-changed": "^3.0.0",
+    "gulp-clean-css": "^4.2.0",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-connect": "^5.7.0",
     "gulp-css-flipper": "^1.0.2",

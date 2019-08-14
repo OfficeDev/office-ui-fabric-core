@@ -28,7 +28,6 @@ var {server} = require('./gulp/Server');
 // MAIN BUILD
 //////////////////////////
 var build = gulp.parallel(documentationBuild, fabricBuild, linting);
-// TODO: REMOVE BUNDLE AND DOCUMENTATION OF BUNDLE
 
 //
 // Local Server Configuration and Testing Website

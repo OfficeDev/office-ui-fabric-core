@@ -43,10 +43,6 @@ Builds and watches everything but builds only Sass versions of our core library 
 
 Builds and watches everything but uses the Sass versions of the files and gives a readout of files in the pipe.
 
-### gulp Bundles
-
-Builds all bundles specified in `gulp/modules/Config.js`. View more details in the [Bundling](https://github.com/OfficeDev/Office-UI-Fabric/blob/master/ghdocs/BUNDLING.md)
-
 ## Starter template
 
 The following starter template represents the minimum recommended HTML structure for an app or add-in that uses Fabric. Copy the code into your project to start working with a basic Fabric document.

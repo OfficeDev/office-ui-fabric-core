@@ -7,6 +7,10 @@
   "scripts": {
     "test": "gulp"
   },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 9"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/OfficeDev/Office-UI-Fabric-Core"
@@ -17,7 +21,7 @@
     "del": "^1.2.1",
     "express": "^4.10.4",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-batch": "^1.0.5",
     "gulp-changed": "^3.0.0",
     "gulp-clean-css": "^4.2.0",

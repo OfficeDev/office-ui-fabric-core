@@ -10,8 +10,6 @@ var BuildConfig = function() {
   this.template = 'component-manifest-template.scss';
   this.compileErrorHandler = ErrorHandling.SASSCompileErrors;
   this.processorName = "sass";
-  this.nukeTasks = [];
-  this.buildTasks = [];
 };
 
 module.exports = new BuildConfig();

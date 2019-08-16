@@ -36,7 +36,6 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.gulpif(outputSass, gulp.dest(destFolder)))
             .pipe(processorPlugin().on('error', errorHandler))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.rename(componentName + '.css'))

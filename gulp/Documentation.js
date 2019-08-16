@@ -41,7 +41,6 @@ function documentationBuildStyles() {
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('docs.css'))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.cssbeautify())

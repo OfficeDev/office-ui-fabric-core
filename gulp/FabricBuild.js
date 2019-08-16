@@ -61,16 +61,12 @@ function fabricBuildStyles() {
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric.min.css'))
-            // .pipe(Plugins.cssMinify({
-            //     safe: true
-            // }))
             .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
@@ -86,16 +82,12 @@ function fabricBuildStyles() {
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.css'))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.min.css'))
-            // .pipe(Plugins.cssMinify({
-            //     safe: true
-            // }))
             .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))

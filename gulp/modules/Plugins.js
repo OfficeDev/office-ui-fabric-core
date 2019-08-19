@@ -7,22 +7,18 @@ var Plugins = function() {
 	this.del = require('del');
 	this.autoprefixer = require('gulp-autoprefixer');
 	this.batch = require('gulp-batch');
-	// TODO: remove?
+	// TODO: remove
   	this.changed = require('gulp-changed');
 	this.handlebars = require('gulp-compile-handlebars');
 	this.flipper = require('gulp-css-flipper');
 	this.cssbeautify = require('gulp-cssbeautify');
-	this.csscomb = require('gulp-csscomb');
-	// TODO: change to new dep
-	// this.cssMinify = require('gulp-cssnano');
+	this.csscomb = require('./CssComb');
 	this.cssMinify = require('gulp-clean-css');
-	// TODO: change to new dep
 	this.data = require('gulp-data');
 	this.fileinclude = require('gulp-file-include');
 	this.header = require('gulp-header');
 	this.gulpif = require('gulp-if');
-	this.lintspaces = require('gulp-lintspaces');
-	// TODO: change to new dep
+	this.lintspaces = require('./LintSpaces');
 	this.nugetpack = require('gulp-nuget-pack');
 	this.plumber = require('gulp-plumber');
 	this.rename = require('gulp-rename');
@@ -36,7 +32,7 @@ var Plugins = function() {
 	this.mergeStream = require('merge-stream');
 	this.requireDir = require('require-dir');
 	this.runSequence = require('run-sequence');
-	// TODO: remove?
+	// TODO: remove
 	this.walkSync = require('walk-sync');
 	this.path = require('path');
 	this.pkg = require('../../package.json');

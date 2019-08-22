@@ -8,8 +8,8 @@
     "test": "gulp"
   },
   "browserslist": [
-    "last 2 versions",
-    "ie >= 9"
+    "last 1 version",
+    "not dead"
   ],
   "repository": {
     "type": "git",
@@ -25,7 +25,6 @@
     "express": "^4.10.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
-    "gulp-batch": "^1.0.5",
     "gulp-changed": "^3.0.0",
     "gulp-clean-css": "^4.2.0",
     "gulp-compile-handlebars": "^0.6.1",
@@ -53,7 +52,6 @@
     "map-stream": "0.0.7",
     "merge-stream": "^1.0.0",
     "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.0",
     "tslint": "^5.0.0",
     "typescript": "^2.0.3",
     "walk-sync": "^0.3.0"

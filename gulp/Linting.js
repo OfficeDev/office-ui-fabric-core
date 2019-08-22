@@ -4,7 +4,7 @@ var Plugins = require('./modules/Plugins');
 var BuildConfig = require('./modules/BuildConfig');
 var ErrorHandling = require('./modules/ErrorHandling');
 
-function lintingSpacesTab(cb) {
+function lintingSpacesTabs(cb) {
     return gulp.src([
             Config.paths.src + '/**/*.ts', 
             Config.paths.componentsPath + '/**/*.scss',
@@ -24,4 +24,4 @@ function lintingSpacesTab(cb) {
 };
 
 
-exports.linting = lintingSpacesTab;
+exports.linting = lintingSpacesTabs;

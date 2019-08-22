@@ -6,8 +6,6 @@ var Plugins = function() {
 	this.colors = require('colors/safe');
 	this.del = require('del');
 	this.autoprefixer = require('gulp-autoprefixer');
-	this.batch = require('gulp-batch');
-	// TODO: remove
   	this.changed = require('gulp-changed');
 	this.handlebars = require('gulp-compile-handlebars');
 	this.flipper = require('gulp-css-flipper');
@@ -31,8 +29,6 @@ var Plugins = function() {
 	this.debug = require('gulp-debug');
 	this.mergeStream = require('merge-stream');
 	this.requireDir = require('require-dir');
-	this.runSequence = require('run-sequence');
-	// TODO: remove
 	this.walkSync = require('walk-sync');
 	this.path = require('path');
 	this.pkg = require('../../package.json');

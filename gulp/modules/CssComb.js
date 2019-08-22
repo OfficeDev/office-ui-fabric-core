@@ -1,4 +1,5 @@
-'use strict';
+// This file serves to replace the gulp-csscomb dependency since the child csscomb dependency was out of date and exposing security vulnerabilities.
+// It is a copy of the gulp-csscomb code but with the child csscomb dependency updated.
 
 var Comb = require('csscomb');
 var fs = require('fs');

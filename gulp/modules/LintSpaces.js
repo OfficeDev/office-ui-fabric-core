@@ -1,3 +1,6 @@
+// This file serves to replace the gulp-lintspaces dependency since the child lintspaces dependency was out of date and exposing security vulnerabilities.
+// It is a copy of the gulp-lintspaces code but with the child lintspaces dependency updated.
+
 var
 	es = require('event-stream'),
 	Lintspaces = require('lintspaces'),

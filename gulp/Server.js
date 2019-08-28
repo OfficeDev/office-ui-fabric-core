@@ -3,6 +3,9 @@ var BuildConfig = require('./modules/BuildConfig');
 var Server = require('./modules/Server');
 var running = false;
 
-gulp.task('Server', function(cb) {
-    return Server.start(); 
-});
+function server(done) {
+  Server.start();
+  done();
+}
+
+exports.server = server;

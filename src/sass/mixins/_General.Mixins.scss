@@ -152,7 +152,7 @@
 
 // Ensures the block expands to the full height to enclose its floated childen.
 @mixin ms-clearfix {
-  *zoom: 1;
+  zoom: 1;
   &::before,
   &::after {
     display: table;

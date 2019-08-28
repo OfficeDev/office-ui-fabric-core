@@ -24,18 +24,18 @@ var versionCommaDelim = pkg.version.split('.').join(',');
 // ----------------------------------------------------------------------------
 
 // Clean out the distribution folder.
-gulp.task('Fabric-nuke', function () {
-    return Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass, Config.paths.temp]);
-});
-
+function fabricNuke(done) {
+    Plugins.del.sync([Config.paths.distCSS, Config.paths.distSass, Config.paths.temp]);
+    done();
+};
 
 //
 // Copying Files Tasks
 // ----------------------------------------------------------------------------
 
 // Copy all Sass files to distribution folder.
-gulp.task('Fabric-copyAssets', function () {            
-     var moveSass =  gulp.src([Config.paths.srcSass + '/**/*', !Config.paths.srcSass + '/Fabric.Scoped.scss'])
+function fabricCopyAssets() {
+     return gulp.src([Config.paths.srcSass + '/**/*', Config.paths.srcSass + '/Fabric.Scoped.scss'])
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.changed(Config.paths.distSass))
             .pipe(Plugins.replace('<%= fabricVersion %>', versionCommaDelim))
@@ -43,14 +43,13 @@ gulp.task('Fabric-copyAssets', function () {
                     title: "Moving Sass files over to Dist"
             })))
             .pipe(gulp.dest(Config.paths.distSass));
-     return moveSass;
-});
+};
 
 //
 // Sass tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric-buildStyles', function () {
+function fabricBuildStyles() {
     var fabric = gulp.src(BuildConfig.srcPath + '/' + 'Fabric.' + BuildConfig.fileExtension)
             .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
@@ -62,16 +61,13 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(Plugins.rename('fabric.css'))
             .pipe(Plugins.changed(Config.paths.distCSS, {extension: '.css'}))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric.min.css'))
-            .pipe(Plugins.cssMinify({
-                safe: true
-            }))
+            .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));    
@@ -86,28 +82,24 @@ gulp.task('Fabric-buildStyles', function () {
             .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
             .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.css'))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.cssbeautify())
             .pipe(Plugins.csscomb())
             .pipe(gulp.dest(Config.paths.distCSS))
             .pipe(Plugins.rename('fabric-' + version.major + '.' + version.minor + '.' + version.patch + '.scoped.min.css'))
-            .pipe(Plugins.cssMinify({
-                safe: true
-            }))
+            .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
             .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
             .pipe(gulp.dest(Config.paths.distCSS));
 
     // Merge all current streams into one.
     return Plugins.mergeStream(fabric, fabricScoped);
-});
+};
 
 //
 // Rolled up Build tasks
 // ----------------------------------------------------------------------------
 
-gulp.task('Fabric', ['Fabric-copyAssets', 'Fabric-buildStyles']);
-BuildConfig.buildTasks.push('Fabric');
-BuildConfig.nukeTasks.push('Fabric-nuke');
+exports.fabricNuke = fabricNuke;
+exports.fabricBuild = gulp.series(fabricCopyAssets,fabricBuildStyles);

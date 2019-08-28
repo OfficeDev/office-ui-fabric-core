@@ -36,7 +36,6 @@ var ComponentSamplesHelper = function() {
             .pipe(Plugins.gulpif(outputSass, gulp.dest(destFolder)))
             .pipe(processorPlugin().on('error', errorHandler))
             .pipe(Plugins.autoprefixer({
-              browsers: ['last 2 versions', 'ie >= 9'],
               cascade: false
             }))
             .pipe(Plugins.rename(componentName + '.css'))
@@ -48,9 +47,7 @@ var ComponentSamplesHelper = function() {
             })))
             .pipe(gulp.dest(destFolder))
             .pipe(Plugins.rename(componentName + '.min.css'))
-            .pipe(Plugins.cssMinify({
-              safe: true
-            }))
+            .pipe(Plugins.cssMinify())
             .pipe(Plugins.header(Banners.getCSSCopyRight()))
             .pipe(Plugins.gulpif(Config.debugMode, Plugins.debug({
               title: "Minifying Component Sample " + name

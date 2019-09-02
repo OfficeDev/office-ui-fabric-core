@@ -1,6 +1,4 @@
-var fs = require('fs');
-var path = require('path');
-var colors = require('colors/safe');
+var Plugins = require('./Plugins');
 /**
  * Class to help format messages for the console
  */
@@ -13,8 +11,8 @@ var ConsoleHelper = function() {
 	this.generateSuccess = function(message, showTip) {
 		var spacing = "\r\n";
 		var tipsMessage = "";
-		var spaceDashes = colors.rainbow("---------------------------------------------------");
-		var consoleText = colors.green("Fabric Message: ") + colors.cyan(message);
+		var spaceDashes = Plugins.colors.rainbow("---------------------------------------------------");
+		var consoleText = Plugins.colors.green("Fabric Message: ") + Plugins.colors.cyan(message);
 		var completeMessage = spaceDashes + spacing + spacing + consoleText + spacing + tipsMessage + spacing + spaceDashes;
 		return completeMessage;
 	};

@@ -2,11 +2,10 @@
 // It is a copy of the gulp-csscomb code but with the child csscomb dependency updated.
 
 var Comb = require('csscomb');
-var fs = require('fs');
-var gutil = require('gulp-util');
-var path = require('path');
+var Plugins = require('./Plugins');
 var through = require('through2');
-var PluginError = gutil.PluginError;
+var path = require('path');
+var fs = require('fs');
 
 // Constants
 var PLUGIN_NAME = 'csscomb';
@@ -20,7 +19,7 @@ function csscomb() {
     if (file.isNull()) {
     //   Do nothing
     } else if (file.isStream()) {
-      this.emit('error', new PluginError(PLUGIN_NAME, 'Streams are not supported!'));
+      this.emit('error', new Plugins.pluginError(PLUGIN_NAME, 'Streams are not supported!'));
       return cb();
     } else if (file.isBuffer() && SUPPORTED_EXTENSIONS.indexOf(path.extname(file.path)) !== -1) {
 
@@ -29,7 +28,7 @@ function csscomb() {
       var config = Comb.getCustomConfig(configPath);
 
       if (configPath && !fs.existsSync(configPath)) {
-        this.emit('error', new PluginError(PLUGIN_NAME, 'Configuration file not found: ' + gutil.colors.magenta(configPath)));
+        this.emit('error', new Plugins.pluginError(PLUGIN_NAME, 'Configuration file not found: ' + Plugins.colors.magenta(configPath)));
         return cb();
       }
 
@@ -43,7 +42,7 @@ function csscomb() {
       }).then(function(results) {
           file.contents = Buffer.from(results);
       }).catch(function(err) {
-          that.emit('error', new PluginError(PLUGIN_NAME, file.path + '\n' + err));
+          that.emit('error', new Plugins.pluginError(PLUGIN_NAME, file.path + '\n' + err));
       })
     }
     this.push(file);

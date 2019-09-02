@@ -132,7 +132,7 @@ function handlebars(data, opts) {
 				_data = extend(_data, file.data);
 			}
 			var template = hb.compile(fileContents, options.compile);
-			file.contents = new Buffer(template(_data));
+			file.contents = Buffer.from(template(_data));
 		} catch (err) {
 			this.emit('error', new Plugins.pluginError('compile-handlebars', err));
 		}

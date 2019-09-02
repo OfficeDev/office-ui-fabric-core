@@ -1,4 +1,3 @@
-var path = require('path');
 var map = require('map-stream');
 var Config = require('./Config');
 var Plugins = require('./Plugins');
@@ -53,7 +52,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generateError = function(error) {
-         Plugins.gutil.log(Plugins.gutil.colors.red(error));
+         Plugins.log(Plugins.colors.red(error));
          return;
     }
     /**
@@ -62,7 +61,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generateBuildError = function(error) {
-        Plugins.gutil.log(Plugins.gutil.colors.red("Build error: ") + Plugins.gutil.colors.yellow(error));
+        Plugins.log(Plugins.colors.red("Build error: ") + Plugins.colors.yellow(error));
         return;
     };
     /**
@@ -71,7 +70,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showNumberOfErrors = function(numberOfErrors) {
-        Plugins.gutil.log(Plugins.gutil.colors.red("Number of errors: " +  Plugins.gutil.colors.yellow(numberOfErrors)));
+        Plugins.log(Plugins.colors.red("Number of errors: " +  Plugins.colors.yellow(numberOfErrors)));
         return;
     };
     /**
@@ -80,7 +79,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showNumberOfWarnings = function(numberOfErrors) {
-        Plugins.gutil.log(Plugins.gutil.colors.yellow("Number of warnings: " +  Plugins.gutil.colors.yellow(numberOfErrors)));
+        Plugins.log(Plugins.colors.yellow("Number of warnings: " +  Plugins.colors.yellow(numberOfErrors)));
         return;
     };
     /**
@@ -89,7 +88,7 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.showSuccessBuild = function(successMessage) {
-        Plugins.gutil.log(Plugins.gutil.colors.magenta("Successful build: " +  Plugins.gutil.colors.green(successMessage)));
+        Plugins.log(Plugins.colors.magenta("Successful build: " +  Plugins.colors.green(successMessage)));
         return;
     };
     /**
@@ -99,8 +98,8 @@ var ErrorHandling = function() {
      * @return {void}
      */
     this.generatePluginError = function(pluginName, errorMessage) {
-        var gulpError = new Plugins.gutil.PluginError(pluginName, errorMessage, {showStack: false});
-        Plugins.gutil.log(gulpError.toString());
+        var gulpError = new Plugins.pluginError(pluginName, errorMessage, {showStack: false});
+        Plugins.log(gulpError.toString());
         that.addError(gulpError.toString());
         return;
     };
@@ -116,9 +115,9 @@ var ErrorHandling = function() {
      */
     this.createLineErrorMessage = function(messageStart, path, line, character, code, reason) {
         return messageStart
-                + Plugins.gutil.colors.green(path)
+                + Plugins.colors.green(path)
                 + ': '
-                + Plugins.gutil.colors.magenta('line ' 
+                + Plugins.colors.magenta('line ' 
                 + line
                 + ', col ' 
                 + character)
@@ -170,14 +169,14 @@ var ErrorHandling = function() {
                     failures.forEach(function (err) {
 
                         var errorString = that.createLineErrorMessage(
-                            Plugins.gutil.colors.red("Error ") + 'Typescript Linting ', 
+                            Plugins.colors.red("Error ") + 'Typescript Linting ', 
                             file.path,
                             (err.startPosition.line + 1),
                             err.startPosition.character + 1,
                             err.ruleName,
                             " "
                         );
-                        Plugins.gutil.log(errorString);
+                        Plugins.log(errorString);
                         that.addError(errorString);
                     });
                 }
@@ -201,14 +200,14 @@ var ErrorHandling = function() {
                 
                   warningLines.forEach(function (warningLine) {
                     errorString = that.createLineErrorMessage(
-                        Plugins.gutil.colors.yellow("Warning") + ' ' + lintingData[warningLine][0].message,
+                        Plugins.colors.yellow("Warning") + ' ' + lintingData[warningLine][0].message,
                         file.path,
                         lintingData[warningLine][0].line,
                         ' ',
                         ' ',
                         ' '
                     );
-                    Plugins.gutil.log(errorString);
+                    Plugins.log(errorString);
                     that.addWarning(errorString);
                 });
             }
@@ -244,25 +243,25 @@ var ErrorHandling = function() {
                    var errorString;
                     if (message.severity == 1) {
                         errorString = that.createLineErrorMessage(
-                            Plugins.gutil.colors.yellow("Warning") + ' ' + message.message,
+                            Plugins.colors.yellow("Warning") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
                         );
-                        Plugins.gutil.log(errorString);
+                        Plugins.log(errorString);
                         that.addWarning(errorString);
                     } else {
                          errorString = that.createLineErrorMessage(
-                            Plugins.gutil.colors.red("Error ") + ' ' + message.message,
+                            Plugins.colors.red("Error ") + ' ' + message.message,
                             file.path,
                             message.line,
                             ' ',
                             message.ruleId,
                             ' '
                          );
-                        Plugins.gutil.log(errorString);
+                        Plugins.log(errorString);
                         that.addError(errorString);
                     }
                 }

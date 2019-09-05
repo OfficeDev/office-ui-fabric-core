@@ -6,17 +6,12 @@ var ConsoleHelper = require('./gulp/modules/ConsoleHelper');
 var Server = require('./gulp/modules/Server');
 var Utilites = require('./gulp/modules/Utilities');
 var ErrorHandling = require('./gulp/modules/ErrorHandling');
-var BuildConfig = require('./gulp/modules/BuildConfig');
 
 //////////////////////////
-// INCLUDE FABRIC TASKS
+// BUILD TASKS
 //////////////////////////
 
 Plugins.requireDir('../../gulp');
-
-//////////////////////////
-// Gulp 4 new imported/exported task format
-//////////////////////////
 var {buildMessagesFinished, buildMessagesServer, buildMessagesUpdated} = require('./gulp/BuildMessages');
 var {documentationBuild,documentationNuke} = require('./gulp/Documentation');
 var {fabricBuild, fabricNuke} = require('./gulp/FabricBuild');
@@ -105,14 +100,16 @@ function checkAllErrors(done) {
 //
 // Default Build
 // ----------------------------------------------------------------------------
-
-exports.rebuild = gulp.series(build, buildMessagesFinished);
 exports.default = gulp.series(build, checkAllErrors, buildMessagesFinished);
+
+//
+// Re-Build
+// ----------------------------------------------------------------------------
+exports.rebuild = gulp.series(build, buildMessagesFinished);
 
 //
 // Packaging tasks
 // ----------------------------------------------------------------------------
-
 exports.nugetPack = function(callback) {
     Plugins.nugetpack(Config.nugetConfig, Config.nugetPaths, callback);
 };

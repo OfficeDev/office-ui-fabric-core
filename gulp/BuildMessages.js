@@ -1,5 +1,3 @@
-var gulp = require('gulp');
-var BuildConfig = require('./modules/BuildConfig');
 var ConsoleHelper = require('./modules/ConsoleHelper');
 var Config = require('./modules/Config');
 

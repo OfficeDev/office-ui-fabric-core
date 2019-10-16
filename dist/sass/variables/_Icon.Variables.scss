@@ -1,0 +1,3653 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Icon directory and paths
+$ms-icon-cdn-path: 'https://static2.sharepointonline.com/files/fabric/assets/icons' !default;
+
+// Sizes
+$ms-icon-size-xs: 10px;
+$ms-icon-size-s: 12px;
+$ms-icon-size-m: 16px;
+$ms-icon-size-l: 20px;
+
+// Icons
+$ms-icon-code-12PointStar: '\F505';
+$ms-icon-code-6PointStar: '\F504';
+$ms-icon-code-AADLogo: '\ED68';
+$ms-icon-code-Accept: '\E8FB';
+$ms-icon-code-AccessibiltyChecker: '\F835';
+$ms-icon-code-AccessLogo: '\ED69';
+$ms-icon-code-AccessLogoFill: '\F1DB';
+$ms-icon-code-AccountActivity: '\EFF4';
+$ms-icon-code-AccountBrowser: '\F652';
+$ms-icon-code-AccountManagement: '\F55C';
+$ms-icon-code-Accounts: '\E910';
+$ms-icon-code-ActionCenter: '\E91C';
+$ms-icon-code-ActivateOrders: '\EFE0';
+$ms-icon-code-ActivityFeed: '\F056';
+$ms-icon-code-Add: '\E710';
+$ms-icon-code-AddBookmark: '\F5B7';
+$ms-icon-code-AddEvent: '\EEB5';
+$ms-icon-code-AddFavorite: '\F0C8';
+$ms-icon-code-AddFavoriteFill: '\F0C9';
+$ms-icon-code-AddFriend: '\E8FA';
+$ms-icon-code-AddGroup: '\EE3D';
+$ms-icon-code-AddHome: '\F17B';
+$ms-icon-code-AddIn: '\F775';
+$ms-icon-code-AddLink: '\E35E';
+$ms-icon-code-AddNotes: '\EAE3';
+$ms-icon-code-AddOnlineMeeting: '\ED8E';
+$ms-icon-code-AddPhone: '\ED96';
+$ms-icon-code-AddReaction: '\F85D';
+$ms-icon-code-AddTo: '\ECC8';
+$ms-icon-code-AddToShoppingList: '\EA9A';
+$ms-icon-code-AddWork: '\F17C';
+$ms-icon-code-Admin: '\E7EF';
+$ms-icon-code-AdminALogo32: '\F4BA';
+$ms-icon-code-AdminALogoFill32: '\F4BB';
+$ms-icon-code-AdminALogoInverse32: '\ED6A';
+$ms-icon-code-AdminCLogoInverse32: '\ED6B';
+$ms-icon-code-AdminDLogoInverse32: '\ED6C';
+$ms-icon-code-AdminELogoInverse32: '\ED6D';
+$ms-icon-code-AdminLLogoInverse32: '\ED6E';
+$ms-icon-code-AdminMLogoInverse32: '\ED6F';
+$ms-icon-code-AdminOLogoInverse32: '\ED70';
+$ms-icon-code-AdminPLogoInverse32: '\ED71';
+$ms-icon-code-AdminSLogoInverse32: '\ED72';
+$ms-icon-code-AdminYLogoInverse32: '\ED73';
+$ms-icon-code-Airplane: '\E709';
+$ms-icon-code-AirplaneSolid: '\EB4C';
+$ms-icon-code-AirTickets: '\EF7A';
+$ms-icon-code-AlarmClock: '\E919';
+$ms-icon-code-Album: '\E7AB';
+$ms-icon-code-AlbumRemove: '\EC62';
+$ms-icon-code-AlertSettings: '\F8B6';
+$ms-icon-code-AlertSolid: '\F331';
+$ms-icon-code-AlignCenter: '\E8E3';
+$ms-icon-code-AlignHorizontalCenter: '\F4F4';
+$ms-icon-code-AlignHorizontalLeft: '\F4F3';
+$ms-icon-code-AlignHorizontalRight: '\F4F5';
+$ms-icon-code-AlignJustify: '\F51E';
+$ms-icon-code-AlignLeft: '\E8E4';
+$ms-icon-code-AlignRight: '\E8E2';
+$ms-icon-code-AlignVerticalBottom: '\F4F8';
+$ms-icon-code-AlignVerticalCenter: '\F4F7';
+$ms-icon-code-AlignVerticalTop: '\F4F6';
+$ms-icon-code-AllApps: '\E71D';
+$ms-icon-code-AllAppsMirrored: '\EA40';
+$ms-icon-code-AllCurrency: '\EAE4';
+$ms-icon-code-AnalyticsLogo: '\F1DE';
+$ms-icon-code-AnalyticsQuery: '\F1DF';
+$ms-icon-code-AnalyticsReport: '\F1E1';
+$ms-icon-code-AnalyticsView: '\F5F1';
+$ms-icon-code-AnchorLock: '\F511';
+$ms-icon-code-Annotation: '\E924';
+$ms-icon-code-AppIconDefault: '\ECAA';
+$ms-icon-code-AppIconDefaultAdd: '\EFDA';
+$ms-icon-code-AppIconDefaultList: '\EFDE';
+$ms-icon-code-Archive: '\F03F';
+$ms-icon-code-AreaChart: '\E9D2';
+$ms-icon-code-ArrangeBringForward: '\F509';
+$ms-icon-code-ArrangeBringToFront: '\F506';
+$ms-icon-code-ArrangeByFrom: '\F678';
+$ms-icon-code-ArrangeSendBackward: '\F508';
+$ms-icon-code-ArrangeSendToBack: '\F507';
+$ms-icon-code-Arrivals: '\EB34';
+$ms-icon-code-ArrowDownRight8: '\EED5';
+$ms-icon-code-ArrowDownRightMirrored8: '\EEF0';
+$ms-icon-code-ArrowTallDownLeft: '\F2BF';
+$ms-icon-code-ArrowTallDownRight: '\F2C0';
+$ms-icon-code-ArrowTallUpLeft: '\F2BD';
+$ms-icon-code-ArrowTallUpRight: '\F2BE';
+$ms-icon-code-ArrowUpRight: '\F069';
+$ms-icon-code-ArrowUpRight8: '\EED4';
+$ms-icon-code-ArrowUpRightMirrored8: '\EEEF';
+$ms-icon-code-Articles: '\EAC1';
+$ms-icon-code-Ascending: '\EDC0';
+$ms-icon-code-AspectRatio: '\E799';
+$ms-icon-code-AssessmentGroup: '\F31A';
+$ms-icon-code-AssessmentGroupTemplate: '\F2B1';
+$ms-icon-code-AssetLibrary: '\EEB6';
+$ms-icon-code-Assign: '\E9D3';
+$ms-icon-code-Asterisk: '\EA38';
+$ms-icon-code-AsteriskSolid: '\F34D';
+$ms-icon-code-ATPLogo: '\EF85';
+$ms-icon-code-Attach: '\E723';
+$ms-icon-code-AustralianRules: '\EE70';
+$ms-icon-code-AuthenticatorApp: '\F6B1';
+$ms-icon-code-AutoEnhanceOff: '\E78E';
+$ms-icon-code-AutoEnhanceOn: '\E78D';
+$ms-icon-code-AutoFillTemplate: '\F313';
+$ms-icon-code-AutoHeight: '\F512';
+$ms-icon-code-AutoRacing: '\EB24';
+$ms-icon-code-AwayStatus: '\EE6A';
+$ms-icon-code-AzureAPIManagement: '\F37F';
+$ms-icon-code-AzureKeyVault: '\F3B4';
+$ms-icon-code-AzureLogo: '\EB6A';
+$ms-icon-code-AzureServiceEndpoint: '\F380';
+$ms-icon-code-Back: '\E72B';
+$ms-icon-code-BackgroundColor: '\F42B';
+$ms-icon-code-Backlog: '\F2AC';
+$ms-icon-code-BacklogBoard: '\F444';
+$ms-icon-code-BacklogList: '\F6BF';
+$ms-icon-code-BackToWindow: '\E73F';
+$ms-icon-code-Badge: '\EC1B';
+$ms-icon-code-Balloons: '\ED7E';
+$ms-icon-code-Bank: '\E825';
+$ms-icon-code-BankSolid: '\F34F';
+$ms-icon-code-BarChart4: '\EAE7';
+$ms-icon-code-BarChartHorizontal: '\E9EB';
+$ms-icon-code-BarChartVertical: '\E9EC';
+$ms-icon-code-BarChartVerticalEdit: '\F89D';
+$ms-icon-code-BarChartVerticalFill: '\F830';
+$ms-icon-code-BarChartVerticalFilter: '\F77E';
+$ms-icon-code-BarChartVerticalFilterSolid: '\F77F';
+$ms-icon-code-Baseball: '\EB20';
+$ms-icon-code-BeerMug: '\F49E';
+$ms-icon-code-BIDashboard: '\F543';
+$ms-icon-code-BidiLtr: '\E9AA';
+$ms-icon-code-BidiRtl: '\E9AB';
+$ms-icon-code-BingLogo: '\EB6B';
+$ms-icon-code-BirthdayCake: '\EF8D';
+$ms-icon-code-BlockContact: '\E8F8';
+$ms-icon-code-Blocked: '\E733';
+$ms-icon-code-Blocked12: '\F62E';
+$ms-icon-code-Blocked2: '\ECE4';
+$ms-icon-code-Blocked2Solid: '\F737';
+$ms-icon-code-BlockedSite: '\E72F';
+$ms-icon-code-BlockedSiteSolid12: '\F70A';
+$ms-icon-code-BlockedSolid: '\F531';
+$ms-icon-code-Blog: '\F22B';
+$ms-icon-code-BlowingSnow: '\E9C9';
+$ms-icon-code-Blur: '\F28E';
+$ms-icon-code-Boards: '\EF68';
+$ms-icon-code-Bold: '\E8DD';
+$ms-icon-code-BookAnswers: '\F8A4';
+$ms-icon-code-BookingsLogo: '\EDC7';
+$ms-icon-code-BookmarkReport: '\F76B';
+$ms-icon-code-Bookmarks: '\E8A4';
+$ms-icon-code-BookmarksMirrored: '\EA41';
+$ms-icon-code-BorderDash: '\F50A';
+$ms-icon-code-BorderDot: '\F50B';
+$ms-icon-code-BoxAdditionSolid: '\F2D4';
+$ms-icon-code-BoxCheckmarkSolid: '\F2D7';
+$ms-icon-code-BoxMultiplySolid: '\F2D5';
+$ms-icon-code-BoxPlaySolid: '\F2D6';
+$ms-icon-code-BoxSubtractSolid: '\F2D3';
+$ms-icon-code-BranchCommit: '\F293';
+$ms-icon-code-BranchCompare: '\F294';
+$ms-icon-code-BranchFork: '\F173';
+$ms-icon-code-BranchFork2: '\F291';
+$ms-icon-code-BranchLocked: '\F292';
+$ms-icon-code-BranchMerge: '\F295';
+$ms-icon-code-BranchPullRequest: '\F296';
+$ms-icon-code-BranchSearch: '\F297';
+$ms-icon-code-BranchShelveset: '\F298';
+$ms-icon-code-Breadcrumb: '\EF8C';
+$ms-icon-code-Breakfast: '\F49C';
+$ms-icon-code-Brightness: '\E706';
+$ms-icon-code-Broom: '\EA99';
+$ms-icon-code-BrowserScreenShot: '\EBED';
+$ms-icon-code-BrowserTab: '\F5D7';
+$ms-icon-code-BrowserTabScreenshot: '\F5D8';
+$ms-icon-code-Brunch: '\F49D';
+$ms-icon-code-Brush: '\ECFF';
+$ms-icon-code-BucketColor: '\F1B6';
+$ms-icon-code-BucketColorFill: '\F1B7';
+$ms-icon-code-BufferTimeAfter: '\F0D0';
+$ms-icon-code-BufferTimeBefore: '\F0CF';
+$ms-icon-code-BufferTimeBoth: '\F0D1';
+$ms-icon-code-Bug: '\EBE8';
+$ms-icon-code-BugSolid: '\F335';
+$ms-icon-code-Build: '\F28F';
+$ms-icon-code-BuildDefinition: '\F6E9';
+$ms-icon-code-BuildIssue: '\F319';
+$ms-icon-code-BuildQueue: '\F24F';
+$ms-icon-code-BuildQueueNew: '\F250';
+$ms-icon-code-BulkUpload: '\F548';
+$ms-icon-code-BulletedList: '\E8FD';
+$ms-icon-code-BulletedList2: '\F2C7';
+$ms-icon-code-BulletedList2Mirrored: '\F2C8';
+$ms-icon-code-BulletedListBullet: '\F793';
+$ms-icon-code-BulletedListBulletMirrored: '\F795';
+$ms-icon-code-BulletedListMirrored: '\EA42';
+$ms-icon-code-BulletedListText: '\F792';
+$ms-icon-code-BulletedListTextMirrored: '\F794';
+$ms-icon-code-BulletedTreeList: '\F84C';
+$ms-icon-code-Bullseye: '\F272';
+$ms-icon-code-BullseyeTarget: '\F5F0';
+$ms-icon-code-BullseyeTargetEdit: '\E319';
+$ms-icon-code-Bus: '\E806';
+$ms-icon-code-BusinessCenterLogo: '\F4B2';
+$ms-icon-code-BusinessHoursSign: '\F310';
+$ms-icon-code-BusSolid: '\EB47';
+$ms-icon-code-ButtonControl: '\F6C0';
+$ms-icon-code-Cafe: '\EC32';
+$ms-icon-code-Cake: '\ECA4';
+$ms-icon-code-Calculator: '\E8EF';
+$ms-icon-code-CalculatorAddition: '\E948';
+$ms-icon-code-CalculatorEqualTo: '\E94E';
+$ms-icon-code-CalculatorMultiply: '\E947';
+$ms-icon-code-CalculatorNotEqualTo: '\F2D2';
+$ms-icon-code-CalculatorPercentage: '\E94C';
+$ms-icon-code-CalculatorSubtract: '\E949';
+$ms-icon-code-Calendar: '\E787';
+$ms-icon-code-CalendarAgenda: '\EE9A';
+$ms-icon-code-CalendarDay: '\E8BF';
+$ms-icon-code-CalendarMirrored: '\ED28';
+$ms-icon-code-CalendarReply: '\E8F5';
+$ms-icon-code-CalendarSettings: '\F558';
+$ms-icon-code-CalendarSettingsMirrored: '\F559';
+$ms-icon-code-CalendarWeek: '\E8C0';
+$ms-icon-code-CalendarWorkWeek: '\EF51';
+$ms-icon-code-CalendarYear: '\E371';
+$ms-icon-code-Calories: '\ECAD';
+$ms-icon-code-CaloriesAdd: '\F172';
+$ms-icon-code-Camera: '\E722';
+$ms-icon-code-CampaignTemplate: '\F811';
+$ms-icon-code-Cancel: '\E711';
+$ms-icon-code-CannedChat: '\F0F2';
+$ms-icon-code-Car: '\E804';
+$ms-icon-code-CaretBottomLeftCenter8: '\F365';
+$ms-icon-code-CaretBottomLeftSolid8: '\F121';
+$ms-icon-code-CaretBottomRightCenter8: '\F364';
+$ms-icon-code-CaretBottomRightSolid8: '\F122';
+$ms-icon-code-CaretDown8: '\EDD8';
+$ms-icon-code-CaretDownSolid8: '\EDDC';
+$ms-icon-code-CaretHollow: '\E817';
+$ms-icon-code-CaretHollowMirrored: '\EA45';
+$ms-icon-code-CaretLeft8: '\EDD5';
+$ms-icon-code-CaretLeftSolid8: '\EDD9';
+$ms-icon-code-CaretRight: '\F06B';
+$ms-icon-code-CaretRight8: '\EDD6';
+$ms-icon-code-CaretRightSolid8: '\EDDA';
+$ms-icon-code-CaretSolid: '\E818';
+$ms-icon-code-CaretSolid16: '\EE62';
+$ms-icon-code-CaretSolidDown: '\F08E';
+$ms-icon-code-CaretSolidLeft: '\F08D';
+$ms-icon-code-CaretSolidMirrored: '\EA46';
+$ms-icon-code-CaretSolidRight: '\F08F';
+$ms-icon-code-CaretSolidUp: '\F090';
+$ms-icon-code-CaretTopLeftCenter8: '\F367';
+$ms-icon-code-CaretTopLeftSolid8: '\EF54';
+$ms-icon-code-CaretTopRightCenter8: '\F366';
+$ms-icon-code-CaretTopRightSolid8: '\EF55';
+$ms-icon-code-CaretUp8: '\EDD7';
+$ms-icon-code-CaretUpSolid8: '\EDDB';
+$ms-icon-code-Cat: '\ED7F';
+$ms-icon-code-CellPhone: '\E8EA';
+$ms-icon-code-Certificate: '\EB95';
+$ms-icon-code-CertifiedDatabase: '\F5BB';
+$ms-icon-code-ChangeEntitlements: '\E310';
+$ms-icon-code-Chart: '\E999';
+$ms-icon-code-ChartSeries: '\F513';
+$ms-icon-code-ChartTemplate: '\F812';
+$ms-icon-code-ChartXAngle: '\F514';
+$ms-icon-code-ChartYAngle: '\F515';
+$ms-icon-code-Chat: '\E901';
+$ms-icon-code-ChatBot: '\F08B';
+$ms-icon-code-ChatInviteFriend: '\ECFE';
+$ms-icon-code-ChatSolid: '\F344';
+$ms-icon-code-Checkbox: '\E739';
+$ms-icon-code-CheckboxComposite: '\E73A';
+$ms-icon-code-CheckboxCompositeReversed: '\E73D';
+$ms-icon-code-CheckboxFill: '\E73B';
+$ms-icon-code-CheckboxIndeterminate: '\E73C';
+$ms-icon-code-CheckedOutByOther12: '\F630';
+$ms-icon-code-CheckedOutByYou12: '\F631';
+$ms-icon-code-CheckList: '\E9D5';
+$ms-icon-code-CheckListCheck: '\F7A9';
+$ms-icon-code-CheckListCheckMirrored: '\F7AB';
+$ms-icon-code-CheckListText: '\F7A8';
+$ms-icon-code-CheckListTextMirrored: '\F7AA';
+$ms-icon-code-CheckMark: '\E73E';
+$ms-icon-code-ChevronDown: '\E70D';
+$ms-icon-code-ChevronDownEnd6: '\F36F';
+$ms-icon-code-ChevronDownMed: '\E972';
+$ms-icon-code-ChevronDownSmall: '\E96E';
+$ms-icon-code-ChevronFold10: '\F36A';
+$ms-icon-code-ChevronLeft: '\E76B';
+$ms-icon-code-ChevronLeftEnd6: '\F371';
+$ms-icon-code-ChevronLeftMed: '\E973';
+$ms-icon-code-ChevronLeftSmall: '\E96F';
+$ms-icon-code-ChevronRight: '\E76C';
+$ms-icon-code-ChevronRightEnd6: '\F372';
+$ms-icon-code-ChevronRightMed: '\E974';
+$ms-icon-code-ChevronRightSmall: '\E970';
+$ms-icon-code-ChevronUnfold10: '\F369';
+$ms-icon-code-ChevronUp: '\E70E';
+$ms-icon-code-ChevronUpEnd6: '\F370';
+$ms-icon-code-ChevronUpMed: '\E971';
+$ms-icon-code-ChevronUpSmall: '\E96D';
+$ms-icon-code-Childof: '\F82D';
+$ms-icon-code-Chopsticks: '\F4A2';
+$ms-icon-code-ChromeBack: '\E830';
+$ms-icon-code-ChromeBackMirrored: '\EA47';
+$ms-icon-code-ChromeClose: '\E8BB';
+$ms-icon-code-ChromeFullScreen: '\E92D';
+$ms-icon-code-ChromeMinimize: '\E921';
+$ms-icon-code-ChromeRestore: '\E923';
+$ms-icon-code-CircleAddition: '\F2E3';
+$ms-icon-code-CircleAdditionSolid: '\F2E4';
+$ms-icon-code-CircleFill: '\EA3B';
+$ms-icon-code-CircleHalfFull: '\ED9E';
+$ms-icon-code-CirclePause: '\F2D9';
+$ms-icon-code-CirclePauseSolid: '\F2D8';
+$ms-icon-code-CirclePlus: '\EAEE';
+$ms-icon-code-CircleRing: '\EA3A';
+$ms-icon-code-CircleShapeSolid: '\F63C';
+$ms-icon-code-CircleStop: '\F2DC';
+$ms-icon-code-CircleStopSolid: '\F2DB';
+$ms-icon-code-CityNext: '\EC06';
+$ms-icon-code-CityNext2: '\EC07';
+$ms-icon-code-ClassNotebookLogo16: '\F488';
+$ms-icon-code-ClassNotebookLogo32: '\F486';
+$ms-icon-code-ClassNotebookLogoFill16: '\F489';
+$ms-icon-code-ClassNotebookLogoFill32: '\F487';
+$ms-icon-code-ClassNotebookLogoInverse: '\EDC8';
+$ms-icon-code-ClassNotebookLogoInverse16: '\F48B';
+$ms-icon-code-ClassNotebookLogoInverse32: '\F48A';
+$ms-icon-code-ClassroomLogo: '\EF75';
+$ms-icon-code-Clear: '\E894';
+$ms-icon-code-ClearFilter: '\EF8F';
+$ms-icon-code-ClearFormatting: '\EDDD';
+$ms-icon-code-ClearFormattingA: '\F79D';
+$ms-icon-code-ClearFormattingEraser: '\F79E';
+$ms-icon-code-ClearNight: '\E9C2';
+$ms-icon-code-ClearSelection: '\E8E6';
+$ms-icon-code-ClearSelectionMirrored: '\EA48';
+$ms-icon-code-ClipboardList: '\F0E3';
+$ms-icon-code-ClipboardListMirrored: '\F0E4';
+$ms-icon-code-ClipboardSolid: '\F5DC';
+$ms-icon-code-Clock: '\E917';
+$ms-icon-code-CloneToDesktop: '\F28C';
+$ms-icon-code-ClosedCaption: '\EF84';
+$ms-icon-code-ClosePane: '\E89F';
+$ms-icon-code-ClosePaneMirrored: '\EA49';
+$ms-icon-code-Cloud: '\E753';
+$ms-icon-code-CloudAdd: '\ECA9';
+$ms-icon-code-CloudDownload: '\EBD3';
+$ms-icon-code-CloudImportExport: '\EE55';
+$ms-icon-code-CloudUpload: '\EC8E';
+$ms-icon-code-CloudWeather: '\E9BE';
+$ms-icon-code-Cloudy: '\E9BF';
+$ms-icon-code-Cocktails: '\EA9D';
+$ms-icon-code-Code: '\E943';
+$ms-icon-code-CodeEdit: '\F544';
+$ms-icon-code-Coffee: '\EAEF';
+$ms-icon-code-CoffeeScript: '\F2FA';
+$ms-icon-code-CollapseContent: '\F165';
+$ms-icon-code-CollapseContentSingle: '\F166';
+$ms-icon-code-CollapseMenu: '\EF66';
+$ms-icon-code-CollegeFootball: '\EB26';
+$ms-icon-code-CollegeHoops: '\EB25';
+$ms-icon-code-Color: '\E790';
+$ms-icon-code-ColorSolid: '\F354';
+$ms-icon-code-ColumnLeftTwoThirds: '\F1D6';
+$ms-icon-code-ColumnLeftTwoThirdsEdit: '\F324';
+$ms-icon-code-ColumnOptions: '\F317';
+$ms-icon-code-ColumnRightTwoThirds: '\F1D7';
+$ms-icon-code-ColumnRightTwoThirdsEdit: '\F325';
+$ms-icon-code-ColumnVerticalSection: '\F81E';
+$ms-icon-code-ColumnVerticalSectionEdit: '\F806';
+$ms-icon-code-Combine: '\EDBB';
+$ms-icon-code-Combobox: '\F516';
+$ms-icon-code-CommandPrompt: '\E756';
+$ms-icon-code-Comment: '\E90A';
+$ms-icon-code-CommentActive: '\F804';
+$ms-icon-code-CommentAdd: '\F2B3';
+$ms-icon-code-CommentNext: '\F2B4';
+$ms-icon-code-CommentPrevious: '\F2B5';
+$ms-icon-code-CommentSolid: '\E30E';
+$ms-icon-code-CommentUrgent: '\F307';
+$ms-icon-code-Commitments: '\EC4D';
+$ms-icon-code-Communications: '\E95A';
+$ms-icon-code-CompanyDirectory: '\EF0D';
+$ms-icon-code-CompanyDirectoryMirrored: '\EF2B';
+$ms-icon-code-Compare: '\F057';
+$ms-icon-code-CompassNW: '\E942';
+$ms-icon-code-Completed: '\E930';
+$ms-icon-code-CompletedSolid: '\EC61';
+$ms-icon-code-ComplianceAudit: '\E369';
+$ms-icon-code-ConfigurationSolid: '\F334';
+$ms-icon-code-ConnectContacts: '\EFD4';
+$ms-icon-code-ConnectVirtualMachine: '\EE9D';
+$ms-icon-code-ConstructionCone: '\E98F';
+$ms-icon-code-ConstructionConeSolid: '\F339';
+$ms-icon-code-Contact: '\E77B';
+$ms-icon-code-ContactCard: '\EEBD';
+$ms-icon-code-ContactCardSettings: '\F556';
+$ms-icon-code-ContactCardSettingsMirrored: '\F557';
+$ms-icon-code-ContactHeart: '\F862';
+$ms-icon-code-ContactInfo: '\E779';
+$ms-icon-code-ContactLink: '\F25F';
+$ms-icon-code-ContactList: '\F7E5';
+$ms-icon-code-ContextMenu: '\F37C';
+$ms-icon-code-Contrast: '\E7A1';
+$ms-icon-code-Copy: '\E8C8';
+$ms-icon-code-Cotton: '\EAF3';
+$ms-icon-code-Coupon: '\F7BC';
+$ms-icon-code-CPlusPlus: '\F2F4';
+$ms-icon-code-CPlusPlusLanguage: '\F2F3';
+$ms-icon-code-CreateMailRule: '\F67A';
+$ms-icon-code-Cricket: '\EB1E';
+$ms-icon-code-CRMCustomerInsightsApp: '\F3C8';
+$ms-icon-code-CRMProcesses: '\EFB1';
+$ms-icon-code-CRMReport: '\EFFE';
+$ms-icon-code-CRMServices: '\EFD2';
+$ms-icon-code-Crop: '\E7A8';
+$ms-icon-code-Crown: '\ED01';
+$ms-icon-code-CrownSolid: '\F336';
+$ms-icon-code-CSharp: '\F2F0';
+$ms-icon-code-CSharpLanguage: '\F2EF';
+$ms-icon-code-CSS: '\EBEF';
+$ms-icon-code-CubeShape: '\F1AA';
+$ms-icon-code-CustomizeToolbar: '\F828';
+$ms-icon-code-CustomList: '\EEBE';
+$ms-icon-code-CustomListMirrored: '\EEBF';
+$ms-icon-code-Cut: '\E8C6';
+$ms-icon-code-Cycling: '\EAC7';
+$ms-icon-code-D365TalentHRCore: '\F6BD';
+$ms-icon-code-D365TalentInsight: '\F6BC';
+$ms-icon-code-D365TalentLearn: '\F6BB';
+$ms-icon-code-DashboardAdd: '\F52D';
+$ms-icon-code-Database: '\EFC7';
+$ms-icon-code-DatabaseSync: '\F842';
+$ms-icon-code-DataConnectionLibrary: '\EEB7';
+$ms-icon-code-Dataflows: '\F7DD';
+$ms-icon-code-DataflowsLink: '\E366';
+$ms-icon-code-DataManagementSettings: '\EFC8';
+$ms-icon-code-DateTime: '\EC92';
+$ms-icon-code-DateTime2: '\EA17';
+$ms-icon-code-DateTimeMirrored: '\EE93';
+$ms-icon-code-DeactivateOrders: '\EFE1';
+$ms-icon-code-Decimals: '\F218';
+$ms-icon-code-DecisionSolid: '\F350';
+$ms-icon-code-DeclineCall: '\F405';
+$ms-icon-code-DecreaseIndentArrow: '\F7A3';
+$ms-icon-code-DecreaseIndentArrowMirrored: '\F7A7';
+$ms-icon-code-DecreaseIndentLegacy: '\E290';
+$ms-icon-code-DecreaseIndentText: '\F7A2';
+$ms-icon-code-DecreaseIndentTextMirrored: '\F7A6';
+$ms-icon-code-DefaultRatio: '\F529';
+$ms-icon-code-DefectSolid: '\F449';
+$ms-icon-code-DefenderTVM: '\F6B3';
+$ms-icon-code-Delete: '\E74D';
+$ms-icon-code-DeleteColumns: '\F64E';
+$ms-icon-code-DeleteRows: '\F64F';
+$ms-icon-code-DeleteRowsMirrored: '\F650';
+$ms-icon-code-DeleteTable: '\F651';
+$ms-icon-code-DeliveryTruck: '\EBF4';
+$ms-icon-code-DelveAnalytics: '\EEEE';
+$ms-icon-code-DelveAnalyticsLogo: '\EDCA';
+$ms-icon-code-DelveLogo: '\F280';
+$ms-icon-code-DelveLogoFill: '\F281';
+$ms-icon-code-DelveLogoInverse: '\ED76';
+$ms-icon-code-DependencyAdd: '\E344';
+$ms-icon-code-DependencyRemove: '\E345';
+$ms-icon-code-Deploy: '\F29D';
+$ms-icon-code-Descending: '\EDC1';
+$ms-icon-code-Design: '\EB3C';
+$ms-icon-code-DesktopScreenshot: '\F5D9';
+$ms-icon-code-DeveloperTools: '\EC7A';
+$ms-icon-code-Devices2: '\E975';
+$ms-icon-code-Devices3: '\EA6C';
+$ms-icon-code-Devices4: '\EB66';
+$ms-icon-code-Diagnostic: '\E9D9';
+$ms-icon-code-DiagnosticDataBarTooltip: '\F7DF';
+$ms-icon-code-Dialpad: '\E75F';
+$ms-icon-code-Diamond: '\ED02';
+$ms-icon-code-DiamondSolid: '\F34C';
+$ms-icon-code-Dictionary: '\E82D';
+$ms-icon-code-DictionaryRemove: '\F69A';
+$ms-icon-code-DietPlanNotebook: '\EAC8';
+$ms-icon-code-DiffInline: '\F309';
+$ms-icon-code-DiffSideBySide: '\F30A';
+$ms-icon-code-DisableUpdates: '\E8D8';
+$ms-icon-code-DisconnectVirtualMachine: '\F873';
+$ms-icon-code-Dislike: '\E8E0';
+$ms-icon-code-DislikeSolid: '\F3C0';
+$ms-icon-code-DistributeDown: '\F76A';
+$ms-icon-code-DockLeft: '\E90C';
+$ms-icon-code-DockLeftMirrored: '\EA4C';
+$ms-icon-code-DockRight: '\E90D';
+$ms-icon-code-DocLibrary: '\EEB8';
+$ms-icon-code-DocsLogoInverse: '\EDCB';
+$ms-icon-code-Document: '\E8A5';
+$ms-icon-code-DocumentApproval: '\F28B';
+$ms-icon-code-Documentation: '\EC17';
+$ms-icon-code-DocumentManagement: '\EFFC';
+$ms-icon-code-DocumentReply: '\EF57';
+$ms-icon-code-DocumentSearch: '\EF6C';
+$ms-icon-code-DocumentSet: '\EED6';
+$ms-icon-code-DOM: '\EC8D';
+$ms-icon-code-DonutChart: '\F368';
+$ms-icon-code-Door: '\EB75';
+$ms-icon-code-DoubleBookmark: '\EB8F';
+$ms-icon-code-DoubleChevronDown: '\EE04';
+$ms-icon-code-DoubleChevronDown12: '\EE97';
+$ms-icon-code-DoubleChevronDown8: '\F36B';
+$ms-icon-code-DoubleChevronLeft: '\EDBE';
+$ms-icon-code-DoubleChevronLeft12: '\EE98';
+$ms-icon-code-DoubleChevronLeft8: '\F36D';
+$ms-icon-code-DoubleChevronLeftMed: '\E991';
+$ms-icon-code-DoubleChevronLeftMedMirrored: '\EA4D';
+$ms-icon-code-DoubleChevronRight: '\EDBF';
+$ms-icon-code-DoubleChevronRight12: '\EE99';
+$ms-icon-code-DoubleChevronRight8: '\F36E';
+$ms-icon-code-DoubleChevronUp: '\EDBD';
+$ms-icon-code-DoubleChevronUp12: '\EE96';
+$ms-icon-code-DoubleChevronUp8: '\F36C';
+$ms-icon-code-DoubleColumn: '\F1D4';
+$ms-icon-code-DoubleColumnEdit: '\F322';
+$ms-icon-code-DoubleDownArrow: '\F769';
+$ms-icon-code-Down: '\E74B';
+$ms-icon-code-Download: '\E896';
+$ms-icon-code-DownloadDocument: '\F549';
+$ms-icon-code-DragObject: '\F553';
+$ms-icon-code-DrillDown: '\F532';
+$ms-icon-code-DrillDownSolid: '\F533';
+$ms-icon-code-DrillExpand: '\F534';
+$ms-icon-code-DrillShow: '\F535';
+$ms-icon-code-DrillThrough: '\F5B9';
+$ms-icon-code-DRM: '\ECA8';
+$ms-icon-code-Drop: '\EB42';
+$ms-icon-code-Dropdown: '\EDC5';
+$ms-icon-code-DropShapeSolid: '\F63F';
+$ms-icon-code-DuplicateRow: '\F82A';
+$ms-icon-code-Duststorm: '\E9CD';
+$ms-icon-code-Dynamics365Logo: '\EDCC';
+$ms-icon-code-DynamicSMBLogo: '\EDCD';
+$ms-icon-code-EaseOfAccess: '\E776';
+$ms-icon-code-EatDrink: '\E807';
+$ms-icon-code-EdgeLogo: '\EC60';
+$ms-icon-code-eDiscovery: '\E370';
+$ms-icon-code-Edit: '\E70F';
+$ms-icon-code-EditContact: '\EFD3';
+$ms-icon-code-EditCreate: '\F3C9';
+$ms-icon-code-EditMail: '\EF61';
+$ms-icon-code-EditMirrored: '\EB7E';
+$ms-icon-code-EditNote: '\ED9D';
+$ms-icon-code-EditPhoto: '\EF77';
+$ms-icon-code-EditSolid12: '\F4B5';
+$ms-icon-code-EditSolidMirrored12: '\F4B6';
+$ms-icon-code-EditStyle: '\EF60';
+$ms-icon-code-Education: '\E7BE';
+$ms-icon-code-Ellipse: '\F4FB';
+$ms-icon-code-Embed: '\ECCE';
+$ms-icon-code-EMI: '\E731';
+$ms-icon-code-Emoji: '\E899';
+$ms-icon-code-Emoji2: '\E76E';
+$ms-icon-code-EmojiDisappointed: '\EA88';
+$ms-icon-code-EmojiNeutral: '\EA87';
+$ms-icon-code-EmojiTabSymbols: '\ED58';
+$ms-icon-code-EmptyRecycleBin: '\EF88';
+$ms-icon-code-Encryption: '\F69D';
+$ms-icon-code-EngineeringGroup: '\F362';
+$ms-icon-code-EntitlementPolicy: '\E346';
+$ms-icon-code-EntitlementRedemption: '\E347';
+$ms-icon-code-EntryDecline: '\F555';
+$ms-icon-code-EntryView: '\F554';
+$ms-icon-code-Equalizer: '\E9E9';
+$ms-icon-code-EraseTool: '\E75C';
+$ms-icon-code-Error: '\E783';
+$ms-icon-code-ErrorBadge: '\EA39';
+$ms-icon-code-Event: '\ECA3';
+$ms-icon-code-Event12: '\F763';
+$ms-icon-code-EventAccepted: '\F422';
+$ms-icon-code-EventDate: '\F059';
+$ms-icon-code-EventDateMissed12: '\F764';
+$ms-icon-code-EventDeclined: '\F425';
+$ms-icon-code-EventInfo: '\ED8B';
+$ms-icon-code-EventTentative: '\F423';
+$ms-icon-code-EventTentativeMirrored: '\F424';
+$ms-icon-code-EventToDoLogo: '\F869';
+$ms-icon-code-ExcelDocument: '\EF73';
+$ms-icon-code-ExcelLogo: '\F1E5';
+$ms-icon-code-ExcelLogo16: '\F397';
+$ms-icon-code-ExcelLogoFill: '\F1E6';
+$ms-icon-code-ExcelLogoFill16: '\F398';
+$ms-icon-code-ExcelLogoInverse: '\EC28';
+$ms-icon-code-ExcelLogoInverse16: '\F396';
+$ms-icon-code-ExchangeLogo: '\F284';
+$ms-icon-code-ExchangeLogoFill: '\F285';
+$ms-icon-code-ExchangeLogoInverse: '\ED78';
+$ms-icon-code-ExerciseTracker: '\EACC';
+$ms-icon-code-ExpandMenu: '\EF67';
+$ms-icon-code-ExploreContent: '\ECCD';
+$ms-icon-code-ExploreContentSingle: '\F164';
+$ms-icon-code-ExploreData: '\F5B6';
+$ms-icon-code-Export: '\EDE1';
+$ms-icon-code-ExportMirrored: '\EDE2';
+$ms-icon-code-ExternalBuild: '\F445';
+$ms-icon-code-ExternalTFVC: '\F446';
+$ms-icon-code-ExternalXAML: '\F447';
+$ms-icon-code-Eyedropper: '\EF3C';
+$ms-icon-code-EyeShadow: '\F7EB';
+$ms-icon-code-F12DevTools: '\EBEE';
+$ms-icon-code-FabricAssetLibrary: '\F09C';
+$ms-icon-code-FabricDataConnectionLibrary: '\F09D';
+$ms-icon-code-FabricDocLibrary: '\F09E';
+$ms-icon-code-FabricFolder: '\F0A9';
+$ms-icon-code-FabricFolderConfirm: '\F7FF';
+$ms-icon-code-FabricFolderFill: '\F0AA';
+$ms-icon-code-FabricFolderSearch: '\F0A4';
+$ms-icon-code-FabricFormLibrary: '\F09F';
+$ms-icon-code-FabricFormLibraryMirrored: '\F0A0';
+$ms-icon-code-FabricMovetoFolder: '\F0A5';
+$ms-icon-code-FabricNetworkFolder: '\F5E6';
+$ms-icon-code-FabricNewFolder: '\F0AB';
+$ms-icon-code-FabricOpenFolderHorizontal: '\F0A8';
+$ms-icon-code-FabricPictureLibrary: '\F0AC';
+$ms-icon-code-FabricPublicFolder: '\F0A3';
+$ms-icon-code-FabricReportLibrary: '\F0A1';
+$ms-icon-code-FabricReportLibraryMirrored: '\F0A2';
+$ms-icon-code-FabricSyncFolder: '\F0A7';
+$ms-icon-code-FabricTextHighlight: '\F79C';
+$ms-icon-code-FabricTextHighlightComposite: '\F7DA';
+$ms-icon-code-FabricUnsyncFolder: '\F0A6';
+$ms-icon-code-FabricUserFolder: '\F5E5';
+$ms-icon-code-Family: '\EBDA';
+$ms-icon-code-FangBody: '\ECEB';
+$ms-icon-code-FastForward: '\EB9D';
+$ms-icon-code-FastMode: '\F19A';
+$ms-icon-code-Favicon: '\E737';
+$ms-icon-code-FavoriteList: '\E728';
+$ms-icon-code-FavoriteStar: '\E734';
+$ms-icon-code-FavoriteStarFill: '\E735';
+$ms-icon-code-Fax: '\EF5C';
+$ms-icon-code-Feedback: '\ED15';
+$ms-icon-code-FeedbackRequestMirroredSolid: '\F35A';
+$ms-icon-code-FeedbackRequestSolid: '\F359';
+$ms-icon-code-FeedbackResponseSolid: '\F35B';
+$ms-icon-code-Ferry: '\E7E3';
+$ms-icon-code-FerrySolid: '\EB48';
+$ms-icon-code-FieldChanged: '\F2C3';
+$ms-icon-code-FieldEmpty: '\F2C1';
+$ms-icon-code-FieldFilled: '\F2C2';
+$ms-icon-code-FieldNotChanged: '\F2C4';
+$ms-icon-code-FieldReadOnly: '\F442';
+$ms-icon-code-FieldRequired: '\F443';
+$ms-icon-code-FileASPX: '\F2E9';
+$ms-icon-code-FileBug: '\F30D';
+$ms-icon-code-FileCode: '\F30E';
+$ms-icon-code-FileComment: '\F30F';
+$ms-icon-code-FileCSS: '\F2EA';
+$ms-icon-code-FileHTML: '\F2ED';
+$ms-icon-code-FileImage: '\F311';
+$ms-icon-code-FileJAVA: '\F2E8';
+$ms-icon-code-FileLess: '\F2EC';
+$ms-icon-code-FilePDB: '\F2E5';
+$ms-icon-code-FileRequest: '\F789';
+$ms-icon-code-FileSass: '\F2EB';
+$ms-icon-code-FileSQL: '\F2E7';
+$ms-icon-code-FileSymlink: '\F312';
+$ms-icon-code-FileTemplate: '\F2E6';
+$ms-icon-code-FileTypeSolution: '\F387';
+$ms-icon-code-FileYML: '\F5DA';
+$ms-icon-code-Filter: '\E71C';
+$ms-icon-code-Filters: '\E795';
+$ms-icon-code-FilterSettings: '\F76C';
+$ms-icon-code-FilterSolid: '\F412';
+$ms-icon-code-FiltersSolid: '\F353';
+$ms-icon-code-Financial: '\E7BB';
+$ms-icon-code-FinancialMirroredSolid: '\F347';
+$ms-icon-code-FinancialSolid: '\F346';
+$ms-icon-code-Fingerprint: '\E928';
+$ms-icon-code-FitPage: '\E9A6';
+$ms-icon-code-FitWidth: '\E9A7';
+$ms-icon-code-FiveTileGrid: '\F274';
+$ms-icon-code-Flag: '\E7C1';
+$ms-icon-code-FlameSolid: '\F1F3';
+$ms-icon-code-Flashlight: '\E754';
+$ms-icon-code-FlickDown: '\E935';
+$ms-icon-code-FlickLeft: '\E937';
+$ms-icon-code-FlickRight: '\E938';
+$ms-icon-code-FlickUp: '\E936';
+$ms-icon-code-Flow: '\EF90';
+$ms-icon-code-FlowChart: '\E9D4';
+$ms-icon-code-Flower: '\F54E';
+$ms-icon-code-FocalPoint: '\F277';
+$ms-icon-code-Focus: '\EA6F';
+$ms-icon-code-Fog: '\E9CB';
+$ms-icon-code-Folder: '\E8B7';
+$ms-icon-code-FolderFill: '\E8D5';
+$ms-icon-code-FolderHorizontal: '\F12B';
+$ms-icon-code-FolderList: '\F2CE';
+$ms-icon-code-FolderListMirrored: '\F2CF';
+$ms-icon-code-FolderOpen: '\E838';
+$ms-icon-code-FolderQuery: '\F2CD';
+$ms-icon-code-FolderSearch: '\EF65';
+$ms-icon-code-FollowUser: '\EE05';
+$ms-icon-code-Font: '\E8D2';
+$ms-icon-code-FontColor: '\E8D3';
+$ms-icon-code-FontColorA: '\F4EC';
+$ms-icon-code-FontColorSwatch: '\F4ED';
+$ms-icon-code-FontDecrease: '\E8E7';
+$ms-icon-code-FontIncrease: '\E8E8';
+$ms-icon-code-FontSize: '\E8E9';
+$ms-icon-code-Footer: '\F82E';
+$ms-icon-code-FormLibrary: '\EEB9';
+$ms-icon-code-FormLibraryMirrored: '\EEBA';
+$ms-icon-code-Forum: '\E378';
+$ms-icon-code-Forward: '\E72A';
+$ms-icon-code-ForwardEvent: '\ED8C';
+$ms-icon-code-Freezing: '\E9EF';
+$ms-icon-code-Frigid: '\E9CA';
+$ms-icon-code-FrontCamera: '\E96B';
+$ms-icon-code-FSharp: '\F2F6';
+$ms-icon-code-FSharpLanguage: '\F2F5';
+$ms-icon-code-FullCircleMask: '\E91F';
+$ms-icon-code-FullHistory: '\F31C';
+$ms-icon-code-FullScreen: '\E740';
+$ms-icon-code-FullWidth: '\F2FE';
+$ms-icon-code-FullWidthEdit: '\F2FF';
+$ms-icon-code-FunctionalManagerDashboard: '\F542';
+$ms-icon-code-FunnelChart: '\E9F1';
+$ms-icon-code-GallatinLogo: '\F496';
+$ms-icon-code-Game: '\E7FC';
+$ms-icon-code-Generate: '\E9DA';
+$ms-icon-code-GenericScan: '\EE6F';
+$ms-icon-code-GenericScanFilled: '\F7DE';
+$ms-icon-code-GIF: '\F4A9';
+$ms-icon-code-Giftbox: '\EC1F';
+$ms-icon-code-GiftboxOpen: '\F133';
+$ms-icon-code-GiftBoxSolid: '\F341';
+$ms-icon-code-GiftCard: '\EB8E';
+$ms-icon-code-GitGraph: '\F2CA';
+$ms-icon-code-Glasses: '\EA16';
+$ms-icon-code-Glimmer: '\ECF4';
+$ms-icon-code-GlobalNavButton: '\E700';
+$ms-icon-code-GlobalNavButtonActive: '\F89F';
+$ms-icon-code-Globe: '\E774';
+$ms-icon-code-Globe2: '\F49A';
+$ms-icon-code-GlobeFavorite: '\EF53';
+$ms-icon-code-Go: '\E8AD';
+$ms-icon-code-Golf: '\EB1F';
+$ms-icon-code-GoMirrored: '\EA4F';
+$ms-icon-code-GoToDashboard: '\EEED';
+$ms-icon-code-GotoToday: '\E8D1';
+$ms-icon-code-GreetingCard: '\F54B';
+$ms-icon-code-GridViewLarge: '\F234';
+$ms-icon-code-GridViewMedium: '\F233';
+$ms-icon-code-GridViewSmall: '\F232';
+$ms-icon-code-GripperBarHorizontal: '\E76F';
+$ms-icon-code-GripperBarVertical: '\E784';
+$ms-icon-code-GripperDotsVertical: '\F772';
+$ms-icon-code-GripperTool: '\E75E';
+$ms-icon-code-Group: '\E902';
+$ms-icon-code-GroupedAscending: '\EE67';
+$ms-icon-code-GroupedDescending: '\EE66';
+$ms-icon-code-GroupedList: '\EF74';
+$ms-icon-code-GroupList: '\F168';
+$ms-icon-code-GroupObject: '\F4F1';
+$ms-icon-code-GUID: '\F52B';
+$ms-icon-code-Guitar: '\F49B';
+$ms-icon-code-HailDay: '\EA00';
+$ms-icon-code-HailNight: '\EA13';
+$ms-icon-code-HalfAlpha: '\E97E';
+$ms-icon-code-HalfCircle: '\F501';
+$ms-icon-code-HandsFree: '\EAD0';
+$ms-icon-code-Handwriting: '\E929';
+$ms-icon-code-HardDrive: '\EDA2';
+$ms-icon-code-HardDriveGroup: '\F18F';
+$ms-icon-code-HardDriveLock: '\F55A';
+$ms-icon-code-HardDriveUnlock: '\F55B';
+$ms-icon-code-Header: '\F82F';
+$ms-icon-code-Header1: '\EA19';
+$ms-icon-code-Header2: '\EF36';
+$ms-icon-code-Header3: '\EF37';
+$ms-icon-code-Header4: '\EF38';
+$ms-icon-code-Headset: '\E95B';
+$ms-icon-code-HeadsetSolid: '\F348';
+$ms-icon-code-Health: '\E95E';
+$ms-icon-code-HealthSolid: '\F33F';
+$ms-icon-code-Heart: '\EB51';
+$ms-icon-code-HeartBroken: '\EA92';
+$ms-icon-code-HeartFill: '\EB52';
+$ms-icon-code-Help: '\E897';
+$ms-icon-code-HelpMirrored: '\EA51';
+$ms-icon-code-Hexagon: '\F4FE';
+$ms-icon-code-Hide: '\ED1A';
+$ms-icon-code-Hide2: '\EF89';
+$ms-icon-code-Hide3: '\F6AC';
+$ms-icon-code-Highlight: '\E7E6';
+$ms-icon-code-HighlightMappedShapes: '\F2A1';
+$ms-icon-code-HintText: '\F50F';
+$ms-icon-code-HistoricalWeather: '\EB43';
+$ms-icon-code-History: '\E81C';
+$ms-icon-code-Home: '\E80F';
+$ms-icon-code-HomeGroup: '\EC26';
+$ms-icon-code-HomeSolid: '\EA8A';
+$ms-icon-code-HomeVerify: '\F00E';
+$ms-icon-code-HorizontalDistributeCenter: '\F4F9';
+$ms-icon-code-HorizontalTabKey: '\E7FD';
+$ms-icon-code-Hospital: '\E91D';
+$ms-icon-code-Hotel: '\E824';
+$ms-icon-code-HourGlass: '\EA03';
+$ms-icon-code-IconSetsFlag: '\F2A4';
+$ms-icon-code-IDBadge: '\F427';
+$ms-icon-code-IgnoreConversation: '\E372';
+$ms-icon-code-ImageCrosshair: '\F2C9';
+$ms-icon-code-ImageDiff: '\F30B';
+$ms-icon-code-ImagePixel: '\F30C';
+$ms-icon-code-ImageSearch: '\F4E8';
+$ms-icon-code-Import: '\E8B5';
+$ms-icon-code-ImportAllMirrored: '\EA53';
+$ms-icon-code-Important: '\E8C9';
+$ms-icon-code-ImportMirrored: '\EA52';
+$ms-icon-code-Inbox: '\F41C';
+$ms-icon-code-InboxCheck: '\EF64';
+$ms-icon-code-IncidentTriangle: '\E814';
+$ms-icon-code-IncomingCall: '\E77E';
+$ms-icon-code-IncreaseIndentArrow: '\F7A1';
+$ms-icon-code-IncreaseIndentArrowMirrored: '\F7A5';
+$ms-icon-code-IncreaseIndentLegacy: '\E291';
+$ms-icon-code-IncreaseIndentText: '\F7A0';
+$ms-icon-code-IncreaseIndentTextMirrored: '\F7A4';
+$ms-icon-code-Info: '\E946';
+$ms-icon-code-Info2: '\EA1F';
+$ms-icon-code-InformationBarriers: '\F803';
+$ms-icon-code-InfoSolid: '\F167';
+$ms-icon-code-InkingTool: '\E76D';
+$ms-icon-code-Insert: '\F278';
+$ms-icon-code-InsertColumnsLeft: '\F64A';
+$ms-icon-code-InsertColumnsRight: '\F64B';
+$ms-icon-code-InsertRowsAbove: '\F64C';
+$ms-icon-code-InsertRowsBelow: '\F64D';
+$ms-icon-code-InsertSignatureLine: '\F677';
+$ms-icon-code-InsertTextBox: '\EC7D';
+$ms-icon-code-Installation: '\E311';
+$ms-icon-code-InstallToDrive: '\F28D';
+$ms-icon-code-InternalInvestigation: '\F854';
+$ms-icon-code-InternetSharing: '\E704';
+$ms-icon-code-IRMForward: '\F41F';
+$ms-icon-code-IRMForwardMirrored: '\F420';
+$ms-icon-code-IRMReply: '\F41D';
+$ms-icon-code-IRMReplyMirrored: '\F41E';
+$ms-icon-code-IssueSolid: '\F448';
+$ms-icon-code-IssueTracking: '\EEC0';
+$ms-icon-code-IssueTrackingMirrored: '\EEC1';
+$ms-icon-code-Italic: '\E8DB';
+$ms-icon-code-JavaScriptLanguage: '\F2EE';
+$ms-icon-code-JoinOnlineMeeting: '\ED8F';
+$ms-icon-code-JS: '\EBF0';
+$ms-icon-code-KaizalaLogo: '\F492';
+$ms-icon-code-KeyboardClassic: '\E765';
+$ms-icon-code-KnowledgeArticle: '\F000';
+$ms-icon-code-Label: '\E932';
+$ms-icon-code-LadybugSolid: '\F44A';
+$ms-icon-code-Lamp: '\EB19';
+$ms-icon-code-LandscapeOrientation: '\EF6B';
+$ms-icon-code-LaptopSecure: '\F552';
+$ms-icon-code-LaptopSelected: '\EC76';
+$ms-icon-code-LargeGrid: '\EECB';
+$ms-icon-code-Leave: '\F627';
+$ms-icon-code-Library: '\E8F1';
+$ms-icon-code-Lifesaver: '\EF62';
+$ms-icon-code-LifesaverLock: '\EF63';
+$ms-icon-code-Light: '\E793';
+$ms-icon-code-Lightbulb: '\EA80';
+$ms-icon-code-LightningBolt: '\E945';
+$ms-icon-code-LightWeight: '\F4EE';
+$ms-icon-code-Like: '\E8E1';
+$ms-icon-code-LikeSolid: '\F3BF';
+$ms-icon-code-Line: '\F4FC';
+$ms-icon-code-LineChart: '\E9E6';
+$ms-icon-code-LineSpacing: '\F517';
+$ms-icon-code-LineStyle: '\F50C';
+$ms-icon-code-LineThickness: '\F50D';
+$ms-icon-code-Link: '\E71B';
+$ms-icon-code-Link12: '\F6E3';
+$ms-icon-code-LinkedDatabase: '\F779';
+$ms-icon-code-LinkedInLogo: '\F20A';
+$ms-icon-code-List: '\EA37';
+$ms-icon-code-ListMirrored: '\EA55';
+$ms-icon-code-LocaleLanguage: '\F2B7';
+$ms-icon-code-Location: '\E81D';
+$ms-icon-code-LocationCircle: '\E80E';
+$ms-icon-code-LocationDot: '\E827';
+$ms-icon-code-LocationFill: '\E920';
+$ms-icon-code-LocationOutline: '\F2D0';
+$ms-icon-code-Lock: '\E72E';
+$ms-icon-code-Lock12: '\F6E6';
+$ms-icon-code-LockSolid: '\E9A2';
+$ms-icon-code-LogRemove: '\F316';
+$ms-icon-code-LookupEntities: '\F5B5';
+$ms-icon-code-LowerBrightness: '\EC8A';
+$ms-icon-code-LyncLogo: '\ED79';
+$ms-icon-code-M365InvoicingLogo: '\F7C1';
+$ms-icon-code-Mail: '\E715';
+$ms-icon-code-MailAlert: '\ED80';
+$ms-icon-code-MailAttached: '\F774';
+$ms-icon-code-MailCheck: '\ED81';
+$ms-icon-code-MailFill: '\E8A8';
+$ms-icon-code-MailForward: '\E89C';
+$ms-icon-code-MailForwardMirrored: '\EA56';
+$ms-icon-code-MailLowImportance: '\ED82';
+$ms-icon-code-MailOptions: '\F82C';
+$ms-icon-code-MailPause: '\ED83';
+$ms-icon-code-MailReminder: '\F418';
+$ms-icon-code-MailRepeat: '\ED84';
+$ms-icon-code-MailReply: '\E8CA';
+$ms-icon-code-MailReplyAll: '\E8C2';
+$ms-icon-code-MailReplyAllMirrored: '\EA58';
+$ms-icon-code-MailReplyMirrored: '\EA57';
+$ms-icon-code-MailSchedule: '\F72E';
+$ms-icon-code-MailSolid: '\F343';
+$ms-icon-code-MailTentative: '\F416';
+$ms-icon-code-MailTentativeMirrored: '\F417';
+$ms-icon-code-MailUndelivered: '\F415';
+$ms-icon-code-ManagerSelfService: '\EE23';
+$ms-icon-code-Manufacturing: '\E99C';
+$ms-icon-code-MapDirections: '\E816';
+$ms-icon-code-MapLayers: '\E81E';
+$ms-icon-code-MapPin: '\E707';
+$ms-icon-code-MapPinSolid: '\F52E';
+$ms-icon-code-MarkAsProtected: '\F6AE';
+$ms-icon-code-MarkDownLanguage: '\F2FB';
+$ms-icon-code-Market: '\EAFC';
+$ms-icon-code-MarketDown: '\EF42';
+$ms-icon-code-MasterDatabase: '\F5BA';
+$ms-icon-code-MaximumValue: '\F5BC';
+$ms-icon-code-Medal: '\EE38';
+$ms-icon-code-MedalSolid: '\F6B9';
+$ms-icon-code-Media: '\EA69';
+$ms-icon-code-MediaAdd: '\F510';
+$ms-icon-code-Medical: '\EAD4';
+$ms-icon-code-Megaphone: '\E789';
+$ms-icon-code-MegaphoneSolid: '\F332';
+$ms-icon-code-Memo: '\E77C';
+$ms-icon-code-Merge: '\E7D5';
+$ms-icon-code-MergeDuplicate: '\F29A';
+$ms-icon-code-Message: '\E8BD';
+$ms-icon-code-MessageFill: '\EC70';
+$ms-icon-code-MicOff: '\EC54';
+$ms-icon-code-MicOff2: '\F781';
+$ms-icon-code-Microphone: '\E720';
+$ms-icon-code-MicrosoftFlowLogo: '\F4B1';
+$ms-icon-code-MicrosoftStaffhubLogo: '\F130';
+$ms-icon-code-MicrosoftTranslatorLogo: '\F782';
+$ms-icon-code-MicrosoftTranslatorLogoBlue: '\F853';
+$ms-icon-code-MicrosoftTranslatorLogoGreen: '\F852';
+$ms-icon-code-MiniContract: '\E93B';
+$ms-icon-code-MiniContractMirrored: '\EA59';
+$ms-icon-code-MiniExpand: '\E93A';
+$ms-icon-code-MiniExpandMirrored: '\EA5A';
+$ms-icon-code-MiniLink: '\E732';
+$ms-icon-code-MinimumValue: '\F5BD';
+$ms-icon-code-MobileReport: '\F18A';
+$ms-icon-code-MobileSelected: '\EC75';
+$ms-icon-code-ModelingView: '\F871';
+$ms-icon-code-Money: '\EAFD';
+$ms-icon-code-More: '\E712';
+$ms-icon-code-MoreSports: '\EB22';
+$ms-icon-code-MoreVertical: '\F2BC';
+$ms-icon-code-MountainClimbing: '\F6DB';
+$ms-icon-code-Move: '\E7C2';
+$ms-icon-code-Movers: '\EBCD';
+$ms-icon-code-MoveToFolder: '\E8DE';
+$ms-icon-code-MSNLogo: '\EB6C';
+$ms-icon-code-MSNVideos: '\EB1C';
+$ms-icon-code-MSNVideosSolid: '\F2DA';
+$ms-icon-code-MultiSelect: '\E762';
+$ms-icon-code-MultiSelectMirrored: '\EA98';
+$ms-icon-code-MusicInCollection: '\E940';
+$ms-icon-code-MusicInCollectionFill: '\EA36';
+$ms-icon-code-MusicNote: '\EC4F';
+$ms-icon-code-MuteChat: '\F17A';
+$ms-icon-code-MyMoviesTV: '\EE6C';
+$ms-icon-code-Nav2DMapView: '\E800';
+$ms-icon-code-NavigateBack: '\F2DD';
+$ms-icon-code-NavigateBackMirrored: '\F2DE';
+$ms-icon-code-NavigateExternalInline: '\F35F';
+$ms-icon-code-NavigateForward: '\F2DF';
+$ms-icon-code-NavigateForwardMirrored: '\F2E0';
+$ms-icon-code-NavigationFlipper: '\F51D';
+$ms-icon-code-NetworkTower: '\EC05';
+$ms-icon-code-NewAnalyticsQuery: '\F1E0';
+$ms-icon-code-NewFolder: '\E8F4';
+$ms-icon-code-NewMail: '\F7EA';
+$ms-icon-code-News: '\E900';
+$ms-icon-code-NewsSearch: '\F4E9';
+$ms-icon-code-NewTeamProject: '\F2B2';
+$ms-icon-code-Next: '\E893';
+$ms-icon-code-NormalWeight: '\F4EF';
+$ms-icon-code-NoteForward: '\ED99';
+$ms-icon-code-NotePinned: '\ED9A';
+$ms-icon-code-NoteReply: '\ED98';
+$ms-icon-code-NotExecuted: '\F440';
+$ms-icon-code-NotImpactedSolid: '\F441';
+$ms-icon-code-NugetLogo: '\F44C';
+$ms-icon-code-NumberedList: '\EA1C';
+$ms-icon-code-NumberedListNumber: '\F797';
+$ms-icon-code-NumberedListNumberMirrored: '\F799';
+$ms-icon-code-NumberedListText: '\F796';
+$ms-icon-code-NumberedListTextMirrored: '\F798';
+$ms-icon-code-NumberField: '\EDC4';
+$ms-icon-code-NumberSequence: '\F52A';
+$ms-icon-code-NumberSymbol: '\F7AC';
+$ms-icon-code-Octagon: '\F4FD';
+$ms-icon-code-OEM: '\E74C';
+$ms-icon-code-OfficeAddinsLogo: '\EEC7';
+$ms-icon-code-OfficeAssistantLogo: '\EDCE';
+$ms-icon-code-OfficeChat: '\F70F';
+$ms-icon-code-OfficeChatSolid: '\F710';
+$ms-icon-code-OfficeFormsLogo: '\F434';
+$ms-icon-code-OfficeFormsLogo16: '\F436';
+$ms-icon-code-OfficeFormsLogo24: '\F43B';
+$ms-icon-code-OfficeFormsLogoFill: '\F435';
+$ms-icon-code-OfficeFormsLogoFill16: '\F437';
+$ms-icon-code-OfficeFormsLogoFill24: '\F43C';
+$ms-icon-code-OfficeFormsLogoInverse: '\EF86';
+$ms-icon-code-OfficeFormsLogoInverse16: '\F433';
+$ms-icon-code-OfficeFormsLogoInverse24: '\F43A';
+$ms-icon-code-OfficeLogo: '\EB6E';
+$ms-icon-code-OfficeStoreLogo: '\EDCF';
+$ms-icon-code-OfficeVideoLogo: '\F282';
+$ms-icon-code-OfficeVideoLogoFill: '\F283';
+$ms-icon-code-OfficeVideoLogoInverse: '\ED7A';
+$ms-icon-code-OfflineOneDriveParachute: '\EEC8';
+$ms-icon-code-OfflineOneDriveParachuteDisabled: '\EEC9';
+$ms-icon-code-OfflineStorage: '\EC8C';
+$ms-icon-code-OfflineStorageSolid: '\F34E';
+$ms-icon-code-Onboarding: '\F3BA';
+$ms-icon-code-OneDriveAdd: '\EF32';
+$ms-icon-code-OneDriveFolder16: '\F53B';
+$ms-icon-code-OneDriveLogo: '\E941';
+$ms-icon-code-OneNoteEduLogoInverse: '\EDD0';
+$ms-icon-code-OneNoteLogo: '\F1E7';
+$ms-icon-code-OneNoteLogo16: '\F39A';
+$ms-icon-code-OneNoteLogoFill: '\F1E8';
+$ms-icon-code-OneNoteLogoFill16: '\F39B';
+$ms-icon-code-OneNoteLogoInverse: '\EC0D';
+$ms-icon-code-OneNoteLogoInverse16: '\F399';
+$ms-icon-code-OpenEnrollment: '\EF1C';
+$ms-icon-code-OpenFile: '\E8E5';
+$ms-icon-code-OpenFolderHorizontal: '\ED25';
+$ms-icon-code-OpenInNewTab: '\F6AB';
+$ms-icon-code-OpenInNewWindow: '\E8A7';
+$ms-icon-code-OpenPane: '\E8A0';
+$ms-icon-code-OpenPaneMirrored: '\EA5B';
+$ms-icon-code-OpenSource: '\EBC2';
+$ms-icon-code-OpenWith: '\E7AC';
+$ms-icon-code-OpenWithMirrored: '\EA5C';
+$ms-icon-code-Org: '\ECA6';
+$ms-icon-code-Orientation: '\E8B4';
+$ms-icon-code-Orientation2: '\F7E1';
+$ms-icon-code-OutlookLogo: '\F1E9';
+$ms-icon-code-OutlookLogo16: '\F39D';
+$ms-icon-code-OutlookLogoFill: '\F1EA';
+$ms-icon-code-OutlookLogoFill16: '\F39E';
+$ms-icon-code-OutlookLogoInverse: '\EB6D';
+$ms-icon-code-OutlookLogoInverse16: '\F39C';
+$ms-icon-code-OutOfOffice: '\ED34';
+$ms-icon-code-Package: '\E7B8';
+$ms-icon-code-Packages: '\F318';
+$ms-icon-code-Padding: '\F518';
+$ms-icon-code-PaddingBottom: '\F51A';
+$ms-icon-code-PaddingLeft: '\F51B';
+$ms-icon-code-PaddingRight: '\F51C';
+$ms-icon-code-PaddingTop: '\F519';
+$ms-icon-code-Page: '\E7C3';
+$ms-icon-code-PageAdd: '\EA1A';
+$ms-icon-code-PageArrowRight: '\EFB8';
+$ms-icon-code-PageCheckedin: '\F104';
+$ms-icon-code-PageCheckedOut: '\F02C';
+$ms-icon-code-PageData: '\E31C';
+$ms-icon-code-PageEdit: '\EFB6';
+$ms-icon-code-PageHeader: '\ECEE';
+$ms-icon-code-PageHeaderEdit: '\E31D';
+$ms-icon-code-PageLeft: '\E760';
+$ms-icon-code-PageLink: '\E302';
+$ms-icon-code-PageList: '\F106';
+$ms-icon-code-PageListFilter: '\F813';
+$ms-icon-code-PageListMirroredSolid: '\F33B';
+$ms-icon-code-PageListSolid: '\F33A';
+$ms-icon-code-PageLock: '\F43F';
+$ms-icon-code-PageRemove: '\EFBA';
+$ms-icon-code-PageRight: '\E761';
+$ms-icon-code-PageShared: '\F02D';
+$ms-icon-code-PageSolid: '\E729';
+$ms-icon-code-PanoIndicator: '\E7B0';
+$ms-icon-code-Parachute: '\F351';
+$ms-icon-code-ParachuteSolid: '\F352';
+$ms-icon-code-Parameter: '\F306';
+$ms-icon-code-ParkingLocation: '\E811';
+$ms-icon-code-ParkingLocationMirrored: '\EA5E';
+$ms-icon-code-ParkingMirroredSolid: '\F34B';
+$ms-icon-code-ParkingSolid: '\F34A';
+$ms-icon-code-PartlyCloudyDay: '\E9C0';
+$ms-icon-code-PartlyCloudyNight: '\E9C1';
+$ms-icon-code-PartyLeader: '\ECA7';
+$ms-icon-code-PassiveAuthentication: '\F32A';
+$ms-icon-code-PasswordField: '\F6AA';
+$ms-icon-code-Paste: '\E77F';
+$ms-icon-code-PasteAsCode: '\F5D6';
+$ms-icon-code-PasteAsText: '\F5D5';
+$ms-icon-code-Pause: '\E769';
+$ms-icon-code-PaymentCard: '\E8C7';
+$ms-icon-code-PC1: '\E977';
+$ms-icon-code-PDF: '\EA90';
+$ms-icon-code-PencilReply: '\EF7B';
+$ms-icon-code-Pentagon: '\F4FF';
+$ms-icon-code-PenWorkspace: '\EDC6';
+$ms-icon-code-People: '\E716';
+$ms-icon-code-PeopleAdd: '\EA15';
+$ms-icon-code-PeopleAlert: '\ED93';
+$ms-icon-code-PeopleBlock: '\ED91';
+$ms-icon-code-PeoplePause: '\ED94';
+$ms-icon-code-PeopleRepeat: '\ED92';
+$ms-icon-code-Permissions: '\E8D7';
+$ms-icon-code-PermissionsSolid: '\F349';
+$ms-icon-code-Personalize: '\E771';
+$ms-icon-code-Phishing: '\F679';
+$ms-icon-code-Phone: '\E717';
+$ms-icon-code-Photo: '\E91B';
+$ms-icon-code-Photo2: '\EB9F';
+$ms-icon-code-Photo2Add: '\ECAB';
+$ms-icon-code-Photo2Fill: '\F79F';
+$ms-icon-code-Photo2Remove: '\ECAC';
+$ms-icon-code-PhotoCollection: '\E7AA';
+$ms-icon-code-PhotoVideoMedia: '\F0B1';
+$ms-icon-code-Picture: '\E8B9';
+$ms-icon-code-PictureCenter: '\F522';
+$ms-icon-code-PictureFill: '\F523';
+$ms-icon-code-PictureLibrary: '\EEC2';
+$ms-icon-code-PicturePosition: '\F524';
+$ms-icon-code-PictureStretch: '\F525';
+$ms-icon-code-PictureTile: '\F526';
+$ms-icon-code-PieDouble: '\EB04';
+$ms-icon-code-PieSingle: '\EB05';
+$ms-icon-code-PieSingleSolid: '\F530';
+$ms-icon-code-Pill: '\EACB';
+$ms-icon-code-Pin: '\E718';
+$ms-icon-code-Pinned: '\E840';
+$ms-icon-code-PinnedFill: '\E842';
+$ms-icon-code-PinnedSolid: '\F676';
+$ms-icon-code-PinSolid12: '\E352';
+$ms-icon-code-PinSolidOff12: '\E353';
+$ms-icon-code-PivotChart: '\F24C';
+$ms-icon-code-PlainText: '\F834';
+$ms-icon-code-PlannerLogo: '\EDD1';
+$ms-icon-code-PlanView: '\F360';
+$ms-icon-code-Play: '\E768';
+$ms-icon-code-PlaybackRate1x: '\EC57';
+$ms-icon-code-PlayerSettings: '\EF58';
+$ms-icon-code-PlayResume: '\F2C6';
+$ms-icon-code-PlayReverse: '\F3E5';
+$ms-icon-code-PlayReverseResume: '\F3E4';
+$ms-icon-code-Plug: '\F300';
+$ms-icon-code-PlugConnected: '\F302';
+$ms-icon-code-PlugDisconnected: '\F303';
+$ms-icon-code-PlugSolid: '\F301';
+$ms-icon-code-POI: '\ECAF';
+$ms-icon-code-POISolid: '\F2D1';
+$ms-icon-code-PollResults: '\F8A0';
+$ms-icon-code-PostUpdate: '\E8F3';
+$ms-icon-code-PowerApps: '\EDD2';
+$ms-icon-code-PowerApps2Logo: '\F092';
+$ms-icon-code-PowerAppsCDS: '\E377';
+$ms-icon-code-PowerAppsLogo: '\F091';
+$ms-icon-code-PowerBILogo: '\EA1E';
+$ms-icon-code-PowerBILogo16: '\F790';
+$ms-icon-code-PowerBILogoBackplate16: '\F791';
+$ms-icon-code-PowerButton: '\E7E8';
+$ms-icon-code-PowerPointDocument: '\EF72';
+$ms-icon-code-PowerPointLogo: '\F1EB';
+$ms-icon-code-PowerPointLogo16: '\F394';
+$ms-icon-code-PowerPointLogoFill: '\F1EC';
+$ms-icon-code-PowerPointLogoFill16: '\F395';
+$ms-icon-code-PowerPointLogoInverse: '\EC2A';
+$ms-icon-code-PowerPointLogoInverse16: '\F393';
+$ms-icon-code-PowerShell: '\F1FD';
+$ms-icon-code-PowerShell2: '\F730';
+$ms-icon-code-Precipitation: '\E9CF';
+$ms-icon-code-PresenceChickletVideo: '\E979';
+$ms-icon-code-Presentation: '\F6E4';
+$ms-icon-code-Presentation12: '\F6E5';
+$ms-icon-code-Preview: '\E8FF';
+$ms-icon-code-PreviewLink: '\E8A1';
+$ms-icon-code-Previous: '\E892';
+$ms-icon-code-PrimaryCalendar: '\F4AE';
+$ms-icon-code-Print: '\E749';
+$ms-icon-code-PrintfaxPrinterFile: '\E956';
+$ms-icon-code-Processing: '\E9F5';
+$ms-icon-code-ProcessMetaTask: '\F290';
+$ms-icon-code-Product: '\ECDC';
+$ms-icon-code-ProductCatalog: '\EFE8';
+$ms-icon-code-ProductionFloorManagement: '\EE29';
+$ms-icon-code-ProductList: '\E31E';
+$ms-icon-code-ProductRelease: '\EE2E';
+$ms-icon-code-ProductVariant: '\EE30';
+$ms-icon-code-ProfileSearch: '\EF35';
+$ms-icon-code-ProFootball: '\EB27';
+$ms-icon-code-ProgressLoopInner: '\ECDE';
+$ms-icon-code-ProgressLoopOuter: '\ECDF';
+$ms-icon-code-ProgressRingDots: '\F16A';
+$ms-icon-code-ProHockey: '\EB28';
+$ms-icon-code-ProjectCollection: '\F363';
+$ms-icon-code-ProjectDocument: '\F759';
+$ms-icon-code-ProjectLogo16: '\F480';
+$ms-icon-code-ProjectLogo32: '\F47E';
+$ms-icon-code-ProjectLogoFill16: '\F481';
+$ms-icon-code-ProjectLogoFill32: '\F47F';
+$ms-icon-code-ProjectLogoInverse: '\EDD4';
+$ms-icon-code-PromotedDatabase: '\F77D';
+$ms-icon-code-ProtectedDocument: '\E8A6';
+$ms-icon-code-ProtectionCenterLogo32: '\F494';
+$ms-icon-code-ProtectRestrict: '\F22A';
+$ms-icon-code-PublicCalendar: '\EF6D';
+$ms-icon-code-PublicContactCard: '\EF6E';
+$ms-icon-code-PublicContactCardMirrored: '\F230';
+$ms-icon-code-PublicEmail: '\EF6F';
+$ms-icon-code-PublicFolder: '\EF70';
+$ms-icon-code-PublishContent: '\F0D4';
+$ms-icon-code-PublishCourse: '\F699';
+$ms-icon-code-PublisherLogo: '\F1ED';
+$ms-icon-code-PublisherLogo16: '\F3A0';
+$ms-icon-code-PublisherLogoFill: '\F1EE';
+$ms-icon-code-PublisherLogoFill16: '\F3A1';
+$ms-icon-code-PublisherLogoInverse16: '\F39F';
+$ms-icon-code-Puzzle: '\EA86';
+$ms-icon-code-PY: '\F2F9';
+$ms-icon-code-PythonLanguage: '\F2F8';
+$ms-icon-code-QandA: '\F8A2';
+$ms-icon-code-QandAMirror: '\F8A3';
+$ms-icon-code-QRCode: '\ED14';
+$ms-icon-code-QuadColumn: '\F66F';
+$ms-icon-code-Quantity: '\E9F8';
+$ms-icon-code-QuarterCircle: '\F502';
+$ms-icon-code-QueryList: '\F2B8';
+$ms-icon-code-Questionnaire: '\EE19';
+$ms-icon-code-QuestionnaireMirrored: '\EE4B';
+$ms-icon-code-QuickNote: '\E70B';
+$ms-icon-code-QuickNoteSolid: '\F338';
+$ms-icon-code-R: '\F4EB';
+$ms-icon-code-RadioBtnOff: '\ECCA';
+$ms-icon-code-RadioBtnOn: '\ECCB';
+$ms-icon-code-RadioBullet: '\E915';
+$ms-icon-code-Rain: '\E9C4';
+$ms-icon-code-RainShowersDay: '\E9C3';
+$ms-icon-code-RainShowersNight: '\EA0F';
+$ms-icon-code-RainSnow: '\E9C7';
+$ms-icon-code-RawSource: '\F299';
+$ms-icon-code-Read: '\E8C3';
+$ms-icon-code-ReadingMode: '\E736';
+$ms-icon-code-ReadingModeSolid: '\F33D';
+$ms-icon-code-ReadOutLoud: '\F112';
+$ms-icon-code-RealEstate: '\E758';
+$ms-icon-code-ReceiptCheck: '\EF5B';
+$ms-icon-code-ReceiptForward: '\EF59';
+$ms-icon-code-ReceiptReply: '\EF5A';
+$ms-icon-code-ReceiptTentative: '\F41A';
+$ms-icon-code-ReceiptTentativeMirrored: '\F41B';
+$ms-icon-code-ReceiptUndelivered: '\F419';
+$ms-icon-code-Recent: '\E823';
+$ms-icon-code-Record2: '\EA3F';
+$ms-icon-code-RecruitmentManagement: '\EE12';
+$ms-icon-code-RectangleShape: '\F1A9';
+$ms-icon-code-RectangleShapeSolid: '\F640';
+$ms-icon-code-RectangularClipping: '\F407';
+$ms-icon-code-RecurringEvent: '\EF5D';
+$ms-icon-code-RecurringTask: '\EDB2';
+$ms-icon-code-RecycleBin: '\EF87';
+$ms-icon-code-Redeploy: '\F29E';
+$ms-icon-code-RedEye: '\E7B3';
+$ms-icon-code-Redo: '\E7A6';
+$ms-icon-code-Refresh: '\E72C';
+$ms-icon-code-Relationship: '\F003';
+$ms-icon-code-ReleaseDefinition: '\F6EA';
+$ms-icon-code-ReleaseGate: '\F7BE';
+$ms-icon-code-ReleaseGateCheck: '\F7BF';
+$ms-icon-code-ReleaseGateError: '\F7C0';
+$ms-icon-code-ReminderGroup: '\EBF8';
+$ms-icon-code-ReminderPerson: '\EBF7';
+$ms-icon-code-ReminderTime: '\EBF9';
+$ms-icon-code-Remote: '\E8AF';
+$ms-icon-code-Remove: '\E738';
+$ms-icon-code-RemoveEvent: '\ED8A';
+$ms-icon-code-RemoveFilter: '\EB08';
+$ms-icon-code-RemoveFromShoppingList: '\F7D5';
+$ms-icon-code-RemoveFromTrash: '\F82B';
+$ms-icon-code-RemoveLink: '\ED90';
+$ms-icon-code-RemoveLinkChain: '\F79A';
+$ms-icon-code-RemoveLinkX: '\F79B';
+$ms-icon-code-RemoveOccurrence: '\ED9B';
+$ms-icon-code-Rename: '\E8AC';
+$ms-icon-code-RenewalCurrent: '\F545';
+$ms-icon-code-RenewalFuture: '\F546';
+$ms-icon-code-ReopenPages: '\ED50';
+$ms-icon-code-Repair: '\E90F';
+$ms-icon-code-RepeatAll: '\E8EE';
+$ms-icon-code-RepeatOne: '\E8ED';
+$ms-icon-code-Reply: '\E97A';
+$ms-icon-code-ReplyAll: '\EE0A';
+$ms-icon-code-ReplyAllAlt: '\EF5F';
+$ms-icon-code-ReplyAllMirrored: '\EE36';
+$ms-icon-code-ReplyAlt: '\EF5E';
+$ms-icon-code-ReplyMirrored: '\EE35';
+$ms-icon-code-Repo: '\F2CB';
+$ms-icon-code-ReportAdd: '\F52C';
+$ms-icon-code-ReportDocument: '\E9F9';
+$ms-icon-code-ReportHacked: '\E730';
+$ms-icon-code-ReportLibrary: '\EEBB';
+$ms-icon-code-ReportLibraryMirrored: '\EEBC';
+$ms-icon-code-ReportLock: '\F875';
+$ms-icon-code-ReportWarning: '\F569';
+$ms-icon-code-RepoSolid: '\F2CC';
+$ms-icon-code-Rerun: '\F8A1';
+$ms-icon-code-ReservationOrders: '\F845';
+$ms-icon-code-ResetDevice: '\ED10';
+$ms-icon-code-ResponsesMenu: '\F768';
+$ms-icon-code-ReturnKey: '\E751';
+$ms-icon-code-ReturnToSession: '\ED24';
+$ms-icon-code-ReviewRequestMirroredSolid: '\F357';
+$ms-icon-code-ReviewRequestSolid: '\F356';
+$ms-icon-code-ReviewResponseSolid: '\F358';
+$ms-icon-code-ReviewSolid: '\F355';
+$ms-icon-code-RevToggleKey: '\E845';
+$ms-icon-code-Rewind: '\EB9E';
+$ms-icon-code-Ribbon: '\E9D1';
+$ms-icon-code-RibbonSolid: '\F345';
+$ms-icon-code-RightDoubleQuote: '\E9B1';
+$ms-icon-code-RightTriangle: '\F500';
+$ms-icon-code-Ringer: '\EA8F';
+$ms-icon-code-RingerOff: '\F2C5';
+$ms-icon-code-RingerRemove: '\F279';
+$ms-icon-code-RingerSolid: '\EF3A';
+$ms-icon-code-Robot: '\E99A';
+$ms-icon-code-Rocket: '\F3B3';
+$ms-icon-code-Room: '\ED9F';
+$ms-icon-code-Rotate: '\E7AD';
+$ms-icon-code-Rotate90Clockwise: '\F80D';
+$ms-icon-code-Rotate90CounterClockwise: '\F80E';
+$ms-icon-code-RowsChild: '\F29C';
+$ms-icon-code-RowsGroup: '\F29B';
+$ms-icon-code-Rugby: '\EB2D';
+$ms-icon-code-Running: '\EADA';
+$ms-icon-code-Sad: '\E757';
+$ms-icon-code-SadSolid: '\F33E';
+$ms-icon-code-Save: '\E74E';
+$ms-icon-code-SaveAll: '\F203';
+$ms-icon-code-SaveAndClose: '\F038';
+$ms-icon-code-SaveAs: '\E792';
+$ms-icon-code-SaveTemplate: '\F6EC';
+$ms-icon-code-SaveToMobile: '\F7E0';
+$ms-icon-code-Savings: '\EB0B';
+$ms-icon-code-ScaleUp: '\ED09';
+$ms-icon-code-ScaleVolume: '\F18C';
+$ms-icon-code-ScatterChart: '\EFEB';
+$ms-icon-code-ScheduleEventAction: '\F1EF';
+$ms-icon-code-SchoolDataSyncLogo: '\E34C';
+$ms-icon-code-ScopeTemplate: '\F2B0';
+$ms-icon-code-ScreenCast: '\F7E2';
+$ms-icon-code-Script: '\F03A';
+$ms-icon-code-ScrollUpDown: '\EC8F';
+$ms-icon-code-Search: '\E721';
+$ms-icon-code-SearchAndApps: '\E773';
+$ms-icon-code-SearchBookmark: '\F5B8';
+$ms-icon-code-SearchCalendar: '\F4AF';
+$ms-icon-code-SearchData: '\F3F1';
+$ms-icon-code-SearchIssue: '\F09A';
+$ms-icon-code-SearchIssueMirrored: '\F09B';
+$ms-icon-code-SearchNearby: '\E820';
+$ms-icon-code-SecondaryNav: '\F814';
+$ms-icon-code-Section: '\EC0C';
+$ms-icon-code-Sections: '\EF76';
+$ms-icon-code-SecurityGroup: '\ED85';
+$ms-icon-code-SeeDo: '\E808';
+$ms-icon-code-SelectAll: '\E8B3';
+$ms-icon-code-Sell: '\EB0C';
+$ms-icon-code-SemiboldWeight: '\F4F0';
+$ms-icon-code-Send: '\E724';
+$ms-icon-code-SendMirrored: '\EA63';
+$ms-icon-code-Separator: '\F35E';
+$ms-icon-code-Server: '\F201';
+$ms-icon-code-ServerEnviroment: '\F29F';
+$ms-icon-code-ServerProcesses: '\F1FE';
+$ms-icon-code-SetAction: '\F071';
+$ms-icon-code-Settings: '\E713';
+$ms-icon-code-ShakeDevice: '\F80A';
+$ms-icon-code-Shapes: '\EC7C';
+$ms-icon-code-Share: '\E72D';
+$ms-icon-code-ShareiOS: '\EF79';
+$ms-icon-code-SharepointAppIcon16: '\E365';
+$ms-icon-code-SharepointLogo: '\F27E';
+$ms-icon-code-SharepointLogoFill: '\F27F';
+$ms-icon-code-SharepointLogoInverse: '\ED18';
+$ms-icon-code-Shield: '\EA18';
+$ms-icon-code-ShieldAlert: '\F7D7';
+$ms-icon-code-ShieldSolid: '\F340';
+$ms-icon-code-Shirt: '\ED00';
+$ms-icon-code-Shop: '\E719';
+$ms-icon-code-ShoppingCart: '\E7BF';
+$ms-icon-code-ShoppingCartSolid: '\F342';
+$ms-icon-code-ShopServer: '\F2B6';
+$ms-icon-code-ShowGrid: '\F7E3';
+$ms-icon-code-ShowResults: '\E8BC';
+$ms-icon-code-ShowResultsMirrored: '\EA65';
+$ms-icon-code-ShowTimeAs: '\F787';
+$ms-icon-code-SidePanel: '\EF52';
+$ms-icon-code-SidePanelMirrored: '\F221';
+$ms-icon-code-Signin: '\F286';
+$ms-icon-code-SignOut: '\F3B1';
+$ms-icon-code-SingleBookmark: '\EDFF';
+$ms-icon-code-SingleBookmarkSolid: '\EE00';
+$ms-icon-code-SingleColumn: '\F1D3';
+$ms-icon-code-SingleColumnEdit: '\F321';
+$ms-icon-code-SIPMove: '\E759';
+$ms-icon-code-SiteScan: '\EBEC';
+$ms-icon-code-SizeLegacy: '\E2B2';
+$ms-icon-code-SkiResorts: '\EB45';
+$ms-icon-code-SkypeArrow: '\F748';
+$ms-icon-code-SkypeCheck: '\EF80';
+$ms-icon-code-SkypeCircleArrow: '\F747';
+$ms-icon-code-SkypeCircleCheck: '\EF7D';
+$ms-icon-code-SkypeCircleClock: '\EF7E';
+$ms-icon-code-SkypeCircleMinus: '\EF7F';
+$ms-icon-code-SkypeCircleSlash: '\F825';
+$ms-icon-code-SkypeClock: '\EF81';
+$ms-icon-code-SkypeForBusinessLogo: '\F0FC';
+$ms-icon-code-SkypeForBusinessLogo16: '\F40F';
+$ms-icon-code-SkypeForBusinessLogoFill: '\F27D';
+$ms-icon-code-SkypeForBusinessLogoFill16: '\F410';
+$ms-icon-code-SkypeLogo: '\EB6F';
+$ms-icon-code-SkypeLogo16: '\F40E';
+$ms-icon-code-SkypeMessage: '\EF83';
+$ms-icon-code-SkypeMinus: '\EF82';
+$ms-icon-code-SkypeSlash: '\F826';
+$ms-icon-code-Slider: '\F527';
+$ms-icon-code-SliderHandleSize: '\F528';
+$ms-icon-code-SliderThumb: '\EC13';
+$ms-icon-code-Slideshow: '\E786';
+$ms-icon-code-SmartGlassRemote: '\F80B';
+$ms-icon-code-SnapToGrid: '\F7E4';
+$ms-icon-code-Snooze: '\F4BD';
+$ms-icon-code-Snow: '\E9C8';
+$ms-icon-code-Snowflake: '\EB46';
+$ms-icon-code-SnowShowerDay: '\E9FD';
+$ms-icon-code-SnowShowerNight: '\EA11';
+$ms-icon-code-Soccer: '\EB21';
+$ms-icon-code-SocialListeningLogo: '\ED7C';
+$ms-icon-code-Sort: '\E8CB';
+$ms-icon-code-SortDown: '\EE69';
+$ms-icon-code-SortLines: '\E9D0';
+$ms-icon-code-SortUp: '\EE68';
+$ms-icon-code-Source: '\EB1B';
+$ms-icon-code-Spacer: '\F40D';
+$ms-icon-code-Speakers: '\E7F5';
+$ms-icon-code-SpecialEvent: '\F536';
+$ms-icon-code-SpeedHigh: '\EC4A';
+$ms-icon-code-Split: '\EDBC';
+$ms-icon-code-SplitObject: '\F547';
+$ms-icon-code-Sprint: '\F3B0';
+$ms-icon-code-Squalls: '\E9CC';
+$ms-icon-code-SquareShapeSolid: '\F63D';
+$ms-icon-code-Stack: '\F26F';
+$ms-icon-code-StackColumnChart: '\E9FC';
+$ms-icon-code-StackedBarChart: '\F24D';
+$ms-icon-code-StackedColumnChart2: '\F666';
+$ms-icon-code-StackedColumnChart2Fill: '\F831';
+$ms-icon-code-StackedLineChart: '\F24E';
+$ms-icon-code-StackIndicator: '\E7FF';
+$ms-icon-code-StaffNotebookLogo16: '\F48E';
+$ms-icon-code-StaffNotebookLogo32: '\F48C';
+$ms-icon-code-StaffNotebookLogoFill16: '\F48F';
+$ms-icon-code-StaffNotebookLogoFill32: '\F48D';
+$ms-icon-code-StaffNotebookLogoInverted16: '\F491';
+$ms-icon-code-StaffNotebookLogoInverted32: '\F490';
+$ms-icon-code-Starburst: '\EF78';
+$ms-icon-code-StarburstSolid: '\F33C';
+$ms-icon-code-StatusCircleBlock: '\F140';
+$ms-icon-code-StatusCircleBlock2: '\F141';
+$ms-icon-code-StatusCircleCheckmark: '\F13E';
+$ms-icon-code-StatusCircleErrorX: '\F13D';
+$ms-icon-code-StatusCircleExclamation: '\F13C';
+$ms-icon-code-StatusCircleInfo: '\F13F';
+$ms-icon-code-StatusCircleInner: '\F137';
+$ms-icon-code-StatusCircleOuter: '\F136';
+$ms-icon-code-StatusCircleQuestionMark: '\F142';
+$ms-icon-code-StatusCircleRing: '\F138';
+$ms-icon-code-StatusCircleSync: '\F143';
+$ms-icon-code-StatusErrorFull: '\EB90';
+$ms-icon-code-StatusTriangle: '\EA82';
+$ms-icon-code-StatusTriangleExclamation: '\F13B';
+$ms-icon-code-StatusTriangleInner: '\F13A';
+$ms-icon-code-StatusTriangleOuter: '\F139';
+$ms-icon-code-Step: '\F241';
+$ms-icon-code-StepInsert: '\F242';
+$ms-icon-code-StepShared: '\F243';
+$ms-icon-code-StepSharedAdd: '\F244';
+$ms-icon-code-StepSharedInsert: '\F245';
+$ms-icon-code-StickyNotesOutlineAppIcon: '\E36A';
+$ms-icon-code-StickyNotesSolidAppIcon: '\E36B';
+$ms-icon-code-StockDown: '\EB0F';
+$ms-icon-code-StockUp: '\EB11';
+$ms-icon-code-Stop: '\E71A';
+$ms-icon-code-StopSolid: '\EE95';
+$ms-icon-code-Stopwatch: '\E916';
+$ms-icon-code-StorageOptical: '\E958';
+$ms-icon-code-StoreLogo16: '\EA96';
+$ms-icon-code-StoreLogoMed20: '\EA04';
+$ms-icon-code-Storyboard: '\F308';
+$ms-icon-code-Streaming: '\E93E';
+$ms-icon-code-StreamingOff: '\F2BB';
+$ms-icon-code-StreamLogo: '\F329';
+$ms-icon-code-Street: '\E913';
+$ms-icon-code-StreetsideSplitMinimize: '\E802';
+$ms-icon-code-Strikethrough: '\EDE0';
+$ms-icon-code-Subscribe: '\EDA1';
+$ms-icon-code-Subscript: '\EDDF';
+$ms-icon-code-SubstitutionsIn: '\EB31';
+$ms-icon-code-Suitcase: '\EDD3';
+$ms-icon-code-SunAdd: '\EF69';
+$ms-icon-code-Sunny: '\E9BD';
+$ms-icon-code-SunQuestionMark: '\EF6A';
+$ms-icon-code-Superscript: '\EDDE';
+$ms-icon-code-SurveyQuestions: '\F01B';
+$ms-icon-code-SwayLogo16: '\F484';
+$ms-icon-code-SwayLogo32: '\F482';
+$ms-icon-code-SwayLogoFill16: '\F485';
+$ms-icon-code-SwayLogoFill32: '\F483';
+$ms-icon-code-SwayLogoInverse: '\ED29';
+$ms-icon-code-Switch: '\E8AB';
+$ms-icon-code-SwitcherStartEnd: '\E810';
+$ms-icon-code-Sync: '\E895';
+$ms-icon-code-SyncFolder: '\E8F7';
+$ms-icon-code-SyncOccurence: '\F4A3';
+$ms-icon-code-SyncStatus: '\F751';
+$ms-icon-code-SyncStatusSolid: '\F752';
+$ms-icon-code-SyncToPC: '\EE6E';
+$ms-icon-code-System: '\E770';
+$ms-icon-code-Tab: '\E7E9';
+$ms-icon-code-TabCenter: '\F100';
+$ms-icon-code-Table: '\ED86';
+$ms-icon-code-TableComputed: '\F8F5';
+$ms-icon-code-TableGroup: '\F6D9';
+$ms-icon-code-TableLink: '\F77A';
+$ms-icon-code-Tablet: '\E70A';
+$ms-icon-code-TabletMode: '\EBFC';
+$ms-icon-code-TabletSelected: '\EC74';
+$ms-icon-code-TabOneColumn: '\F849';
+$ms-icon-code-TabThreeColumn: '\F84B';
+$ms-icon-code-TabTwoColumn: '\F84A';
+$ms-icon-code-Tag: '\E8EC';
+$ms-icon-code-TagSolid: '\F70E';
+$ms-icon-code-TagUnknown: '\F6DF';
+$ms-icon-code-TagUnknown12: '\F6E1';
+$ms-icon-code-TagUnknown12Mirror: '\F6E2';
+$ms-icon-code-TagUnknownMirror: '\F6E0';
+$ms-icon-code-Taskboard: '\F1C2';
+$ms-icon-code-TaskGroup: '\F2AE';
+$ms-icon-code-TaskGroupMirrored: '\F2AF';
+$ms-icon-code-TaskLogo: '\F493';
+$ms-icon-code-TaskManager: '\EDB7';
+$ms-icon-code-TaskManagerMirrored: '\EDB8';
+$ms-icon-code-TaskSolid: '\F333';
+$ms-icon-code-Taxi: '\F4A1';
+$ms-icon-code-TeamFavorite: '\F2AD';
+$ms-icon-code-TeamsLogo: '\F27B';
+$ms-icon-code-TeamsLogo16: '\F40A';
+$ms-icon-code-TeamsLogoFill: '\F27C';
+$ms-icon-code-TeamsLogoFill16: '\F40B';
+$ms-icon-code-TeamsLogoInverse: '\F27A';
+$ms-icon-code-Teamwork: '\EA12';
+$ms-icon-code-Teeth: '\F4A0';
+$ms-icon-code-Telemarketer: '\E7B9';
+$ms-icon-code-TemporaryUser: '\EE58';
+$ms-icon-code-Tennis: '\EB33';
+$ms-icon-code-TestAutoSolid: '\F3A8';
+$ms-icon-code-TestBeaker: '\F3A5';
+$ms-icon-code-TestBeakerSolid: '\F3A6';
+$ms-icon-code-TestCase: '\F3AF';
+$ms-icon-code-TestExploreSolid: '\F3A7';
+$ms-icon-code-TestImpactSolid: '\F3AA';
+$ms-icon-code-TestParameter: '\F3AD';
+$ms-icon-code-TestPlan: '\F3AB';
+$ms-icon-code-TestStep: '\F3AC';
+$ms-icon-code-TestSuite: '\F3AE';
+$ms-icon-code-TestUserSolid: '\F3A9';
+$ms-icon-code-TextBox: '\EDC2';
+$ms-icon-code-TextCallout: '\F2A2';
+$ms-icon-code-TextDocument: '\F029';
+$ms-icon-code-TextDocumentShared: '\F02B';
+$ms-icon-code-TextField: '\EDC3';
+$ms-icon-code-TextOverflow: '\F51F';
+$ms-icon-code-TFVCLogo: '\F44D';
+$ms-icon-code-ThisPC: '\EC4E';
+$ms-icon-code-ThreeQuarterCircle: '\F503';
+$ms-icon-code-ThumbnailView: '\E7B6';
+$ms-icon-code-ThumbnailViewMirrored: '\EA67';
+$ms-icon-code-Thunderstorms: '\E9C6';
+$ms-icon-code-Ticket: '\EB54';
+$ms-icon-code-Tiles: '\ECA5';
+$ms-icon-code-Tiles2: '\EF7C';
+$ms-icon-code-TimeEntry: '\EF95';
+$ms-icon-code-Timeline: '\ED9C';
+$ms-icon-code-TimelineDelivery: '\F2AB';
+$ms-icon-code-TimelineMatrixView: '\F361';
+$ms-icon-code-TimelineProgress: '\F2AA';
+$ms-icon-code-TimePicker: '\E367';
+$ms-icon-code-Timer: '\E91E';
+$ms-icon-code-TimeSheet: '\EA05';
+$ms-icon-code-ToDoLogoBottom: '\F4B3';
+$ms-icon-code-ToDoLogoInverse: '\F4BC';
+$ms-icon-code-ToDoLogoOutline: '\F75B';
+$ms-icon-code-ToDoLogoTop: '\F4B4';
+$ms-icon-code-ToggleBorder: '\EC12';
+$ms-icon-code-ToggleFilled: '\EC11';
+$ms-icon-code-ToggleLeft: '\F19E';
+$ms-icon-code-ToggleRight: '\F19F';
+$ms-icon-code-ToggleThumb: '\EC14';
+$ms-icon-code-Toll: '\F160';
+$ms-icon-code-Toolbox: '\ECED';
+$ms-icon-code-Touch: '\E815';
+$ms-icon-code-TouchPointer: '\E7C9';
+$ms-icon-code-Trackers: '\EADF';
+$ms-icon-code-TrackersMirrored: '\EE92';
+$ms-icon-code-Train: '\E7C0';
+$ms-icon-code-TrainSolid: '\EB4D';
+$ms-icon-code-TransferCall: '\ED95';
+$ms-icon-code-Transition: '\F3BC';
+$ms-icon-code-TransitionEffect: '\F5B4';
+$ms-icon-code-TransitionPop: '\F5B2';
+$ms-icon-code-TransitionPush: '\F5B3';
+$ms-icon-code-Translate: '\E7B2';
+$ms-icon-code-Trending12: '\F62D';
+$ms-icon-code-TriangleDown12: '\EED1';
+$ms-icon-code-TriangleLeft12: '\EED2';
+$ms-icon-code-TriangleRight12: '\EED3';
+$ms-icon-code-TriangleShape: '\F1A7';
+$ms-icon-code-TriangleShapeSolid: '\F63E';
+$ms-icon-code-TriangleSolid: '\EA08';
+$ms-icon-code-TriangleSolidDown12: '\EECD';
+$ms-icon-code-TriangleSolidLeft12: '\EECE';
+$ms-icon-code-TriangleSolidRight12: '\EECF';
+$ms-icon-code-TriangleSolidUp12: '\EECC';
+$ms-icon-code-TriangleUp12: '\EED0';
+$ms-icon-code-TriggerApproval: '\F3B2';
+$ms-icon-code-TriggerAuto: '\F24A';
+$ms-icon-code-TriggerUser: '\F24B';
+$ms-icon-code-Trim: '\E78A';
+$ms-icon-code-TrimEnd: '\F8BC';
+$ms-icon-code-TrimStart: '\F8BB';
+$ms-icon-code-TripleColumn: '\F1D5';
+$ms-icon-code-TripleColumnEdit: '\F323';
+$ms-icon-code-TripleColumnWide: '\F66E';
+$ms-icon-code-Trophy: '\ED3F';
+$ms-icon-code-Trophy2: '\F1AE';
+$ms-icon-code-Trophy2Solid: '\F337';
+$ms-icon-code-TurnRight: '\E7DB';
+$ms-icon-code-TVMonitor: '\E7F4';
+$ms-icon-code-TVMonitorSelected: '\EC77';
+$ms-icon-code-TypeScriptLanguage: '\F2F7';
+$ms-icon-code-Umbrella: '\EC04';
+$ms-icon-code-Underline: '\E8DC';
+$ms-icon-code-Undo: '\E7A7';
+$ms-icon-code-Uneditable: '\ED1D';
+$ms-icon-code-Uneditable2: '\F876';
+$ms-icon-code-Uneditable2Mirrored: '\F877';
+$ms-icon-code-UneditableMirrored: '\F4B9';
+$ms-icon-code-UneditableSolid12: '\F4B7';
+$ms-icon-code-UneditableSolidMirrored12: '\F4B8';
+$ms-icon-code-Unfavorite: '\E8D9';
+$ms-icon-code-UngroupObject: '\F4F2';
+$ms-icon-code-Unknown: '\E9CE';
+$ms-icon-code-UnknownCall: '\ED97';
+$ms-icon-code-UnknownMirrored: '\F22E';
+$ms-icon-code-UnknownMirroredSolid: '\F2E2';
+$ms-icon-code-UnknownSolid: '\F2E1';
+$ms-icon-code-Unlock: '\E785';
+$ms-icon-code-UnlockSolid: '\F304';
+$ms-icon-code-Unpin: '\E77A';
+$ms-icon-code-UnpublishContent: '\E31F';
+$ms-icon-code-UnSetColor: '\F3F9';
+$ms-icon-code-UnstackSelected: '\E7FE';
+$ms-icon-code-Unsubscribe: '\EDA0';
+$ms-icon-code-UnsyncFolder: '\E8F6';
+$ms-icon-code-UnsyncOccurence: '\F4A4';
+$ms-icon-code-Untag: '\F60B';
+$ms-icon-code-Up: '\E74A';
+$ms-icon-code-UpgradeAnalysis: '\EA0B';
+$ms-icon-code-Upload: '\E898';
+$ms-icon-code-USB: '\E88E';
+$ms-icon-code-UserEvent: '\F69C';
+$ms-icon-code-UserFollowed: '\F25C';
+$ms-icon-code-UserGauge: '\F6ED';
+$ms-icon-code-UserOptional: '\F767';
+$ms-icon-code-UserPause: '\F2BA';
+$ms-icon-code-UserRemove: '\F69B';
+$ms-icon-code-UserSync: '\F2B9';
+$ms-icon-code-UserWarning: '\E368';
+$ms-icon-code-Vacation: '\F49F';
+$ms-icon-code-Variable: '\F305';
+$ms-icon-code-Variable2: '\F86D';
+$ms-icon-code-VariableGroup: '\F31B';
+$ms-icon-code-VB: '\F2F2';
+$ms-icon-code-VennDiagram: '\F273';
+$ms-icon-code-VerifiedBrand: '\F7BD';
+$ms-icon-code-VerifiedBrandSolid: '\F6AD';
+$ms-icon-code-VersionControlPush: '\F664';
+$ms-icon-code-VerticalDistributeCenter: '\F4FA';
+$ms-icon-code-Video: '\E714';
+$ms-icon-code-Video360Generic: '\F609';
+$ms-icon-code-VideoLightOff: '\EA74';
+$ms-icon-code-VideoOff: '\F4B0';
+$ms-icon-code-VideoSearch: '\F4EA';
+$ms-icon-code-VideoSolid: '\EA0C';
+$ms-icon-code-View: '\E890';
+$ms-icon-code-ViewAll: '\E8A9';
+$ms-icon-code-ViewAll2: '\EF56';
+$ms-icon-code-ViewDashboard: '\F246';
+$ms-icon-code-ViewList: '\F247';
+$ms-icon-code-ViewListGroup: '\F248';
+$ms-icon-code-ViewListTree: '\F249';
+$ms-icon-code-ViewOriginal: '\E7B4';
+$ms-icon-code-VisioDiagram: '\F2A0';
+$ms-icon-code-VisioDiagramSync: '\F762';
+$ms-icon-code-VisioDocument: '\F2A9';
+$ms-icon-code-VisioLogo: '\F2A7';
+$ms-icon-code-VisioLogo16: '\F3A3';
+$ms-icon-code-VisioLogoFill: '\F2A8';
+$ms-icon-code-VisioLogoFill16: '\F3A4';
+$ms-icon-code-VisioLogoInverse: '\ED7D';
+$ms-icon-code-VisioLogoInverse16: '\F3A2';
+$ms-icon-code-VisualBasicLanguage: '\F2F1';
+$ms-icon-code-VisuallyImpaired: '\F866';
+$ms-icon-code-VisualsFolder: '\F520';
+$ms-icon-code-VisualsStore: '\F521';
+$ms-icon-code-VisualStudioIDELogo32: '\F5D0';
+$ms-icon-code-VisualStudioLogo: '\EC22';
+$ms-icon-code-VoicemailForward: '\ED87';
+$ms-icon-code-VoicemailIRM: '\F421';
+$ms-icon-code-VoicemailReply: '\ED88';
+$ms-icon-code-Volume0: '\E992';
+$ms-icon-code-Volume1: '\E993';
+$ms-icon-code-Volume2: '\E994';
+$ms-icon-code-Volume3: '\E995';
+$ms-icon-code-VolumeDisabled: '\EA85';
+$ms-icon-code-VSTSAltLogo1: '\F382';
+$ms-icon-code-VSTSAltLogo2: '\F383';
+$ms-icon-code-VSTSLogo: '\F381';
+$ms-icon-code-Waffle: '\ED89';
+$ms-icon-code-WaffleOffice365: '\F4E0';
+$ms-icon-code-WaitlistConfirm: '\F550';
+$ms-icon-code-WaitlistConfirmMirrored: '\F551';
+$ms-icon-code-Warning: '\E7BA';
+$ms-icon-code-Warning12: '\F62F';
+$ms-icon-code-WarningSolid: '\F736';
+$ms-icon-code-WavingHand: '\F807';
+$ms-icon-code-WebAppBuilderFragment: '\E314';
+$ms-icon-code-WebAppBuilderFragmentCreate: '\E31B';
+$ms-icon-code-WebAppBuilderModule: '\E313';
+$ms-icon-code-WebAppBuilderSlot: '\E315';
+$ms-icon-code-Webcam2: '\E960';
+$ms-icon-code-Webcam2Off: '\E36D';
+$ms-icon-code-WebComponents: '\EC8B';
+$ms-icon-code-WebPublish: '\F52F';
+$ms-icon-code-Website: '\EB41';
+$ms-icon-code-WebTemplate: '\F6B2';
+$ms-icon-code-Weights: '\EADB';
+$ms-icon-code-Wheelchair: '\F31F';
+$ms-icon-code-WhiteBoardApp16: '\F673';
+$ms-icon-code-WhiteBoardApp32: '\F674';
+$ms-icon-code-WifiEthernet: '\EE77';
+$ms-icon-code-WifiWarning4: '\EB63';
+$ms-icon-code-WindDirection: '\EBE6';
+$ms-icon-code-WindowEdit: '\F50E';
+$ms-icon-code-WindowsLogo: '\E782';
+$ms-icon-code-Wines: '\EABF';
+$ms-icon-code-WipePhone: '\ED8D';
+$ms-icon-code-WordDocument: '\EF71';
+$ms-icon-code-WordLogo: '\F1E3';
+$ms-icon-code-WordLogo16: '\F391';
+$ms-icon-code-WordLogoFill: '\F1E4';
+$ms-icon-code-WordLogoFill16: '\F392';
+$ms-icon-code-WordLogoInverse: '\EC29';
+$ms-icon-code-WordLogoInverse16: '\F390';
+$ms-icon-code-Work: '\E821';
+$ms-icon-code-WorkFlow: '\EA01';
+$ms-icon-code-WorkforceManagement: '\EE0F';
+$ms-icon-code-WorkItem: '\F314';
+$ms-icon-code-WorkItemAlert: '\F78F';
+$ms-icon-code-WorkItemBar: '\F35C';
+$ms-icon-code-WorkItemBarSolid: '\F35D';
+$ms-icon-code-WorkItemBug: '\F315';
+$ms-icon-code-World: '\E909';
+$ms-icon-code-WorldClock: '\E918';
+$ms-icon-code-YammerLogo: '\ED19';
+$ms-icon-code-ZipFolder: '\F012';
+$ms-icon-code-Zoom: '\E71E';
+$ms-icon-code-ZoomIn: '\E8A3';
+$ms-icon-code-ZoomOut: '\E71F';
+$ms-icon-code-ZoomToFit: '\F649';
+
+// Deprecated icons.
+$ms-icon-code-HumanResources: '\F240';
+$ms-icon-code-OneDrive: $ms-icon-code-OneDriveLogo;
+$ms-icon-code-ToggleOff: $ms-icon-code-ToggleRight;
+
+
+// A map containing icon names and values. Someday SCSS will support string
+// interpolation within a variable name and this map won't be necessary, as we'll
+// be able to do something like #{$ms-icon-code-#{$iconName}} to get the value.
+$ms-icon-map: (
+  '12PointStar': $ms-icon-code-12PointStar,
+  '6PointStar': $ms-icon-code-6PointStar,
+  'AADLogo': $ms-icon-code-AADLogo,
+  'Accept': $ms-icon-code-Accept,
+  'AccessibiltyChecker': $ms-icon-code-AccessibiltyChecker,
+  'AccessLogo': $ms-icon-code-AccessLogo,
+  'AccessLogoFill': $ms-icon-code-AccessLogoFill,
+  'AccountActivity': $ms-icon-code-AccountActivity,
+  'AccountBrowser': $ms-icon-code-AccountBrowser,
+  'AccountManagement': $ms-icon-code-AccountManagement,
+  'Accounts': $ms-icon-code-Accounts,
+  'ActionCenter': $ms-icon-code-ActionCenter,
+  'ActivateOrders': $ms-icon-code-ActivateOrders,
+  'ActivityFeed': $ms-icon-code-ActivityFeed,
+  'Add': $ms-icon-code-Add,
+  'AddBookmark': $ms-icon-code-AddBookmark,
+  'AddEvent': $ms-icon-code-AddEvent,
+  'AddFavorite': $ms-icon-code-AddFavorite,
+  'AddFavoriteFill': $ms-icon-code-AddFavoriteFill,
+  'AddFriend': $ms-icon-code-AddFriend,
+  'AddGroup': $ms-icon-code-AddGroup,
+  'AddHome': $ms-icon-code-AddHome,
+  'AddIn': $ms-icon-code-AddIn,
+  'AddLink': $ms-icon-code-AddLink,
+  'AddNotes': $ms-icon-code-AddNotes,
+  'AddOnlineMeeting': $ms-icon-code-AddOnlineMeeting,
+  'AddPhone': $ms-icon-code-AddPhone,
+  'AddReaction': $ms-icon-code-AddReaction,
+  'AddTo': $ms-icon-code-AddTo,
+  'AddToShoppingList': $ms-icon-code-AddToShoppingList,
+  'AddWork': $ms-icon-code-AddWork,
+  'Admin': $ms-icon-code-Admin,
+  'AdminALogo32': $ms-icon-code-AdminALogo32,
+  'AdminALogoFill32': $ms-icon-code-AdminALogoFill32,
+  'AdminALogoInverse32': $ms-icon-code-AdminALogoInverse32,
+  'AdminCLogoInverse32': $ms-icon-code-AdminCLogoInverse32,
+  'AdminDLogoInverse32': $ms-icon-code-AdminDLogoInverse32,
+  'AdminELogoInverse32': $ms-icon-code-AdminELogoInverse32,
+  'AdminLLogoInverse32': $ms-icon-code-AdminLLogoInverse32,
+  'AdminMLogoInverse32': $ms-icon-code-AdminMLogoInverse32,
+  'AdminOLogoInverse32': $ms-icon-code-AdminOLogoInverse32,
+  'AdminPLogoInverse32': $ms-icon-code-AdminPLogoInverse32,
+  'AdminSLogoInverse32': $ms-icon-code-AdminSLogoInverse32,
+  'AdminYLogoInverse32': $ms-icon-code-AdminYLogoInverse32,
+  'Airplane': $ms-icon-code-Airplane,
+  'AirplaneSolid': $ms-icon-code-AirplaneSolid,
+  'AirTickets': $ms-icon-code-AirTickets,
+  'AlarmClock': $ms-icon-code-AlarmClock,
+  'Album': $ms-icon-code-Album,
+  'AlbumRemove': $ms-icon-code-AlbumRemove,
+  'AlertSettings': $ms-icon-code-AlertSettings,
+  'AlertSolid': $ms-icon-code-AlertSolid,
+  'AlignCenter': $ms-icon-code-AlignCenter,
+  'AlignHorizontalCenter': $ms-icon-code-AlignHorizontalCenter,
+  'AlignHorizontalLeft': $ms-icon-code-AlignHorizontalLeft,
+  'AlignHorizontalRight': $ms-icon-code-AlignHorizontalRight,
+  'AlignJustify': $ms-icon-code-AlignJustify,
+  'AlignLeft': $ms-icon-code-AlignLeft,
+  'AlignRight': $ms-icon-code-AlignRight,
+  'AlignVerticalBottom': $ms-icon-code-AlignVerticalBottom,
+  'AlignVerticalCenter': $ms-icon-code-AlignVerticalCenter,
+  'AlignVerticalTop': $ms-icon-code-AlignVerticalTop,
+  'AllApps': $ms-icon-code-AllApps,
+  'AllAppsMirrored': $ms-icon-code-AllAppsMirrored,
+  'AllCurrency': $ms-icon-code-AllCurrency,
+  'AnalyticsLogo': $ms-icon-code-AnalyticsLogo,
+  'AnalyticsQuery': $ms-icon-code-AnalyticsQuery,
+  'AnalyticsReport': $ms-icon-code-AnalyticsReport,
+  'AnalyticsView': $ms-icon-code-AnalyticsView,
+  'AnchorLock': $ms-icon-code-AnchorLock,
+  'Annotation': $ms-icon-code-Annotation,
+  'AppIconDefault': $ms-icon-code-AppIconDefault,
+  'AppIconDefaultAdd': $ms-icon-code-AppIconDefaultAdd,
+  'AppIconDefaultList': $ms-icon-code-AppIconDefaultList,
+  'Archive': $ms-icon-code-Archive,
+  'AreaChart': $ms-icon-code-AreaChart,
+  'ArrangeBringForward': $ms-icon-code-ArrangeBringForward,
+  'ArrangeBringToFront': $ms-icon-code-ArrangeBringToFront,
+  'ArrangeByFrom': $ms-icon-code-ArrangeByFrom,
+  'ArrangeSendBackward': $ms-icon-code-ArrangeSendBackward,
+  'ArrangeSendToBack': $ms-icon-code-ArrangeSendToBack,
+  'Arrivals': $ms-icon-code-Arrivals,
+  'ArrowDownRight8': $ms-icon-code-ArrowDownRight8,
+  'ArrowDownRightMirrored8': $ms-icon-code-ArrowDownRightMirrored8,
+  'ArrowTallDownLeft': $ms-icon-code-ArrowTallDownLeft,
+  'ArrowTallDownRight': $ms-icon-code-ArrowTallDownRight,
+  'ArrowTallUpLeft': $ms-icon-code-ArrowTallUpLeft,
+  'ArrowTallUpRight': $ms-icon-code-ArrowTallUpRight,
+  'ArrowUpRight': $ms-icon-code-ArrowUpRight,
+  'ArrowUpRight8': $ms-icon-code-ArrowUpRight8,
+  'ArrowUpRightMirrored8': $ms-icon-code-ArrowUpRightMirrored8,
+  'Articles': $ms-icon-code-Articles,
+  'Ascending': $ms-icon-code-Ascending,
+  'AspectRatio': $ms-icon-code-AspectRatio,
+  'AssessmentGroup': $ms-icon-code-AssessmentGroup,
+  'AssessmentGroupTemplate': $ms-icon-code-AssessmentGroupTemplate,
+  'AssetLibrary': $ms-icon-code-AssetLibrary,
+  'Assign': $ms-icon-code-Assign,
+  'Asterisk': $ms-icon-code-Asterisk,
+  'AsteriskSolid': $ms-icon-code-AsteriskSolid,
+  'ATPLogo': $ms-icon-code-ATPLogo,
+  'Attach': $ms-icon-code-Attach,
+  'AustralianRules': $ms-icon-code-AustralianRules,
+  'AuthenticatorApp': $ms-icon-code-AuthenticatorApp,
+  'AutoEnhanceOff': $ms-icon-code-AutoEnhanceOff,
+  'AutoEnhanceOn': $ms-icon-code-AutoEnhanceOn,
+  'AutoFillTemplate': $ms-icon-code-AutoFillTemplate,
+  'AutoHeight': $ms-icon-code-AutoHeight,
+  'AutoRacing': $ms-icon-code-AutoRacing,
+  'AwayStatus': $ms-icon-code-AwayStatus,
+  'AzureAPIManagement': $ms-icon-code-AzureAPIManagement,
+  'AzureKeyVault': $ms-icon-code-AzureKeyVault,
+  'AzureLogo': $ms-icon-code-AzureLogo,
+  'AzureServiceEndpoint': $ms-icon-code-AzureServiceEndpoint,
+  'Back': $ms-icon-code-Back,
+  'BackgroundColor': $ms-icon-code-BackgroundColor,
+  'Backlog': $ms-icon-code-Backlog,
+  'BacklogBoard': $ms-icon-code-BacklogBoard,
+  'BacklogList': $ms-icon-code-BacklogList,
+  'BackToWindow': $ms-icon-code-BackToWindow,
+  'Badge': $ms-icon-code-Badge,
+  'Balloons': $ms-icon-code-Balloons,
+  'Bank': $ms-icon-code-Bank,
+  'BankSolid': $ms-icon-code-BankSolid,
+  'BarChart4': $ms-icon-code-BarChart4,
+  'BarChartHorizontal': $ms-icon-code-BarChartHorizontal,
+  'BarChartVertical': $ms-icon-code-BarChartVertical,
+  'BarChartVerticalEdit': $ms-icon-code-BarChartVerticalEdit,
+  'BarChartVerticalFill': $ms-icon-code-BarChartVerticalFill,
+  'BarChartVerticalFilter': $ms-icon-code-BarChartVerticalFilter,
+  'BarChartVerticalFilterSolid': $ms-icon-code-BarChartVerticalFilterSolid,
+  'Baseball': $ms-icon-code-Baseball,
+  'BeerMug': $ms-icon-code-BeerMug,
+  'BIDashboard': $ms-icon-code-BIDashboard,
+  'BidiLtr': $ms-icon-code-BidiLtr,
+  'BidiRtl': $ms-icon-code-BidiRtl,
+  'BingLogo': $ms-icon-code-BingLogo,
+  'BirthdayCake': $ms-icon-code-BirthdayCake,
+  'BlockContact': $ms-icon-code-BlockContact,
+  'Blocked': $ms-icon-code-Blocked,
+  'Blocked12': $ms-icon-code-Blocked12,
+  'Blocked2': $ms-icon-code-Blocked2,
+  'Blocked2Solid': $ms-icon-code-Blocked2Solid,
+  'BlockedSite': $ms-icon-code-BlockedSite,
+  'BlockedSiteSolid12': $ms-icon-code-BlockedSiteSolid12,
+  'BlockedSolid': $ms-icon-code-BlockedSolid,
+  'Blog': $ms-icon-code-Blog,
+  'BlowingSnow': $ms-icon-code-BlowingSnow,
+  'Blur': $ms-icon-code-Blur,
+  'Boards': $ms-icon-code-Boards,
+  'Bold': $ms-icon-code-Bold,
+  'BookAnswers': $ms-icon-code-BookAnswers,
+  'BookingsLogo': $ms-icon-code-BookingsLogo,
+  'BookmarkReport': $ms-icon-code-BookmarkReport,
+  'Bookmarks': $ms-icon-code-Bookmarks,
+  'BookmarksMirrored': $ms-icon-code-BookmarksMirrored,
+  'BorderDash': $ms-icon-code-BorderDash,
+  'BorderDot': $ms-icon-code-BorderDot,
+  'BoxAdditionSolid': $ms-icon-code-BoxAdditionSolid,
+  'BoxCheckmarkSolid': $ms-icon-code-BoxCheckmarkSolid,
+  'BoxMultiplySolid': $ms-icon-code-BoxMultiplySolid,
+  'BoxPlaySolid': $ms-icon-code-BoxPlaySolid,
+  'BoxSubtractSolid': $ms-icon-code-BoxSubtractSolid,
+  'BranchCommit': $ms-icon-code-BranchCommit,
+  'BranchCompare': $ms-icon-code-BranchCompare,
+  'BranchFork': $ms-icon-code-BranchFork,
+  'BranchFork2': $ms-icon-code-BranchFork2,
+  'BranchLocked': $ms-icon-code-BranchLocked,
+  'BranchMerge': $ms-icon-code-BranchMerge,
+  'BranchPullRequest': $ms-icon-code-BranchPullRequest,
+  'BranchSearch': $ms-icon-code-BranchSearch,
+  'BranchShelveset': $ms-icon-code-BranchShelveset,
+  'Breadcrumb': $ms-icon-code-Breadcrumb,
+  'Breakfast': $ms-icon-code-Breakfast,
+  'Brightness': $ms-icon-code-Brightness,
+  'Broom': $ms-icon-code-Broom,
+  'BrowserScreenShot': $ms-icon-code-BrowserScreenShot,
+  'BrowserTab': $ms-icon-code-BrowserTab,
+  'BrowserTabScreenshot': $ms-icon-code-BrowserTabScreenshot,
+  'Brunch': $ms-icon-code-Brunch,
+  'Brush': $ms-icon-code-Brush,
+  'BucketColor': $ms-icon-code-BucketColor,
+  'BucketColorFill': $ms-icon-code-BucketColorFill,
+  'BufferTimeAfter': $ms-icon-code-BufferTimeAfter,
+  'BufferTimeBefore': $ms-icon-code-BufferTimeBefore,
+  'BufferTimeBoth': $ms-icon-code-BufferTimeBoth,
+  'Bug': $ms-icon-code-Bug,
+  'BugSolid': $ms-icon-code-BugSolid,
+  'Build': $ms-icon-code-Build,
+  'BuildDefinition': $ms-icon-code-BuildDefinition,
+  'BuildIssue': $ms-icon-code-BuildIssue,
+  'BuildQueue': $ms-icon-code-BuildQueue,
+  'BuildQueueNew': $ms-icon-code-BuildQueueNew,
+  'BulkUpload': $ms-icon-code-BulkUpload,
+  'BulletedList': $ms-icon-code-BulletedList,
+  'BulletedList2': $ms-icon-code-BulletedList2,
+  'BulletedList2Mirrored': $ms-icon-code-BulletedList2Mirrored,
+  'BulletedListBullet': $ms-icon-code-BulletedListBullet,
+  'BulletedListBulletMirrored': $ms-icon-code-BulletedListBulletMirrored,
+  'BulletedListMirrored': $ms-icon-code-BulletedListMirrored,
+  'BulletedListText': $ms-icon-code-BulletedListText,
+  'BulletedListTextMirrored': $ms-icon-code-BulletedListTextMirrored,
+  'BulletedTreeList': $ms-icon-code-BulletedTreeList,
+  'Bullseye': $ms-icon-code-Bullseye,
+  'BullseyeTarget': $ms-icon-code-BullseyeTarget,
+  'BullseyeTargetEdit': $ms-icon-code-BullseyeTargetEdit,
+  'Bus': $ms-icon-code-Bus,
+  'BusinessCenterLogo': $ms-icon-code-BusinessCenterLogo,
+  'BusinessHoursSign': $ms-icon-code-BusinessHoursSign,
+  'BusSolid': $ms-icon-code-BusSolid,
+  'ButtonControl': $ms-icon-code-ButtonControl,
+  'Cafe': $ms-icon-code-Cafe,
+  'Cake': $ms-icon-code-Cake,
+  'Calculator': $ms-icon-code-Calculator,
+  'CalculatorAddition': $ms-icon-code-CalculatorAddition,
+  'CalculatorEqualTo': $ms-icon-code-CalculatorEqualTo,
+  'CalculatorMultiply': $ms-icon-code-CalculatorMultiply,
+  'CalculatorNotEqualTo': $ms-icon-code-CalculatorNotEqualTo,
+  'CalculatorPercentage': $ms-icon-code-CalculatorPercentage,
+  'CalculatorSubtract': $ms-icon-code-CalculatorSubtract,
+  'Calendar': $ms-icon-code-Calendar,
+  'CalendarAgenda': $ms-icon-code-CalendarAgenda,
+  'CalendarDay': $ms-icon-code-CalendarDay,
+  'CalendarMirrored': $ms-icon-code-CalendarMirrored,
+  'CalendarReply': $ms-icon-code-CalendarReply,
+  'CalendarSettings': $ms-icon-code-CalendarSettings,
+  'CalendarSettingsMirrored': $ms-icon-code-CalendarSettingsMirrored,
+  'CalendarWeek': $ms-icon-code-CalendarWeek,
+  'CalendarWorkWeek': $ms-icon-code-CalendarWorkWeek,
+  'CalendarYear': $ms-icon-code-CalendarYear,
+  'Calories': $ms-icon-code-Calories,
+  'CaloriesAdd': $ms-icon-code-CaloriesAdd,
+  'Camera': $ms-icon-code-Camera,
+  'CampaignTemplate': $ms-icon-code-CampaignTemplate,
+  'Cancel': $ms-icon-code-Cancel,
+  'CannedChat': $ms-icon-code-CannedChat,
+  'Car': $ms-icon-code-Car,
+  'CaretBottomLeftCenter8': $ms-icon-code-CaretBottomLeftCenter8,
+  'CaretBottomLeftSolid8': $ms-icon-code-CaretBottomLeftSolid8,
+  'CaretBottomRightCenter8': $ms-icon-code-CaretBottomRightCenter8,
+  'CaretBottomRightSolid8': $ms-icon-code-CaretBottomRightSolid8,
+  'CaretDown8': $ms-icon-code-CaretDown8,
+  'CaretDownSolid8': $ms-icon-code-CaretDownSolid8,
+  'CaretHollow': $ms-icon-code-CaretHollow,
+  'CaretHollowMirrored': $ms-icon-code-CaretHollowMirrored,
+  'CaretLeft8': $ms-icon-code-CaretLeft8,
+  'CaretLeftSolid8': $ms-icon-code-CaretLeftSolid8,
+  'CaretRight': $ms-icon-code-CaretRight,
+  'CaretRight8': $ms-icon-code-CaretRight8,
+  'CaretRightSolid8': $ms-icon-code-CaretRightSolid8,
+  'CaretSolid': $ms-icon-code-CaretSolid,
+  'CaretSolid16': $ms-icon-code-CaretSolid16,
+  'CaretSolidDown': $ms-icon-code-CaretSolidDown,
+  'CaretSolidLeft': $ms-icon-code-CaretSolidLeft,
+  'CaretSolidMirrored': $ms-icon-code-CaretSolidMirrored,
+  'CaretSolidRight': $ms-icon-code-CaretSolidRight,
+  'CaretSolidUp': $ms-icon-code-CaretSolidUp,
+  'CaretTopLeftCenter8': $ms-icon-code-CaretTopLeftCenter8,
+  'CaretTopLeftSolid8': $ms-icon-code-CaretTopLeftSolid8,
+  'CaretTopRightCenter8': $ms-icon-code-CaretTopRightCenter8,
+  'CaretTopRightSolid8': $ms-icon-code-CaretTopRightSolid8,
+  'CaretUp8': $ms-icon-code-CaretUp8,
+  'CaretUpSolid8': $ms-icon-code-CaretUpSolid8,
+  'Cat': $ms-icon-code-Cat,
+  'CellPhone': $ms-icon-code-CellPhone,
+  'Certificate': $ms-icon-code-Certificate,
+  'CertifiedDatabase': $ms-icon-code-CertifiedDatabase,
+  'ChangeEntitlements': $ms-icon-code-ChangeEntitlements,
+  'Chart': $ms-icon-code-Chart,
+  'ChartSeries': $ms-icon-code-ChartSeries,
+  'ChartTemplate': $ms-icon-code-ChartTemplate,
+  'ChartXAngle': $ms-icon-code-ChartXAngle,
+  'ChartYAngle': $ms-icon-code-ChartYAngle,
+  'Chat': $ms-icon-code-Chat,
+  'ChatBot': $ms-icon-code-ChatBot,
+  'ChatInviteFriend': $ms-icon-code-ChatInviteFriend,
+  'ChatSolid': $ms-icon-code-ChatSolid,
+  'Checkbox': $ms-icon-code-Checkbox,
+  'CheckboxComposite': $ms-icon-code-CheckboxComposite,
+  'CheckboxCompositeReversed': $ms-icon-code-CheckboxCompositeReversed,
+  'CheckboxFill': $ms-icon-code-CheckboxFill,
+  'CheckboxIndeterminate': $ms-icon-code-CheckboxIndeterminate,
+  'CheckedOutByOther12': $ms-icon-code-CheckedOutByOther12,
+  'CheckedOutByYou12': $ms-icon-code-CheckedOutByYou12,
+  'CheckList': $ms-icon-code-CheckList,
+  'CheckListCheck': $ms-icon-code-CheckListCheck,
+  'CheckListCheckMirrored': $ms-icon-code-CheckListCheckMirrored,
+  'CheckListText': $ms-icon-code-CheckListText,
+  'CheckListTextMirrored': $ms-icon-code-CheckListTextMirrored,
+  'CheckMark': $ms-icon-code-CheckMark,
+  'ChevronDown': $ms-icon-code-ChevronDown,
+  'ChevronDownEnd6': $ms-icon-code-ChevronDownEnd6,
+  'ChevronDownMed': $ms-icon-code-ChevronDownMed,
+  'ChevronDownSmall': $ms-icon-code-ChevronDownSmall,
+  'ChevronFold10': $ms-icon-code-ChevronFold10,
+  'ChevronLeft': $ms-icon-code-ChevronLeft,
+  'ChevronLeftEnd6': $ms-icon-code-ChevronLeftEnd6,
+  'ChevronLeftMed': $ms-icon-code-ChevronLeftMed,
+  'ChevronLeftSmall': $ms-icon-code-ChevronLeftSmall,
+  'ChevronRight': $ms-icon-code-ChevronRight,
+  'ChevronRightEnd6': $ms-icon-code-ChevronRightEnd6,
+  'ChevronRightMed': $ms-icon-code-ChevronRightMed,
+  'ChevronRightSmall': $ms-icon-code-ChevronRightSmall,
+  'ChevronUnfold10': $ms-icon-code-ChevronUnfold10,
+  'ChevronUp': $ms-icon-code-ChevronUp,
+  'ChevronUpEnd6': $ms-icon-code-ChevronUpEnd6,
+  'ChevronUpMed': $ms-icon-code-ChevronUpMed,
+  'ChevronUpSmall': $ms-icon-code-ChevronUpSmall,
+  'Childof': $ms-icon-code-Childof,
+  'Chopsticks': $ms-icon-code-Chopsticks,
+  'ChromeBack': $ms-icon-code-ChromeBack,
+  'ChromeBackMirrored': $ms-icon-code-ChromeBackMirrored,
+  'ChromeClose': $ms-icon-code-ChromeClose,
+  'ChromeFullScreen': $ms-icon-code-ChromeFullScreen,
+  'ChromeMinimize': $ms-icon-code-ChromeMinimize,
+  'ChromeRestore': $ms-icon-code-ChromeRestore,
+  'CircleAddition': $ms-icon-code-CircleAddition,
+  'CircleAdditionSolid': $ms-icon-code-CircleAdditionSolid,
+  'CircleFill': $ms-icon-code-CircleFill,
+  'CircleHalfFull': $ms-icon-code-CircleHalfFull,
+  'CirclePause': $ms-icon-code-CirclePause,
+  'CirclePauseSolid': $ms-icon-code-CirclePauseSolid,
+  'CirclePlus': $ms-icon-code-CirclePlus,
+  'CircleRing': $ms-icon-code-CircleRing,
+  'CircleShapeSolid': $ms-icon-code-CircleShapeSolid,
+  'CircleStop': $ms-icon-code-CircleStop,
+  'CircleStopSolid': $ms-icon-code-CircleStopSolid,
+  'CityNext': $ms-icon-code-CityNext,
+  'CityNext2': $ms-icon-code-CityNext2,
+  'ClassNotebookLogo16': $ms-icon-code-ClassNotebookLogo16,
+  'ClassNotebookLogo32': $ms-icon-code-ClassNotebookLogo32,
+  'ClassNotebookLogoFill16': $ms-icon-code-ClassNotebookLogoFill16,
+  'ClassNotebookLogoFill32': $ms-icon-code-ClassNotebookLogoFill32,
+  'ClassNotebookLogoInverse': $ms-icon-code-ClassNotebookLogoInverse,
+  'ClassNotebookLogoInverse16': $ms-icon-code-ClassNotebookLogoInverse16,
+  'ClassNotebookLogoInverse32': $ms-icon-code-ClassNotebookLogoInverse32,
+  'ClassroomLogo': $ms-icon-code-ClassroomLogo,
+  'Clear': $ms-icon-code-Clear,
+  'ClearFilter': $ms-icon-code-ClearFilter,
+  'ClearFormatting': $ms-icon-code-ClearFormatting,
+  'ClearFormattingA': $ms-icon-code-ClearFormattingA,
+  'ClearFormattingEraser': $ms-icon-code-ClearFormattingEraser,
+  'ClearNight': $ms-icon-code-ClearNight,
+  'ClearSelection': $ms-icon-code-ClearSelection,
+  'ClearSelectionMirrored': $ms-icon-code-ClearSelectionMirrored,
+  'ClipboardList': $ms-icon-code-ClipboardList,
+  'ClipboardListMirrored': $ms-icon-code-ClipboardListMirrored,
+  'ClipboardSolid': $ms-icon-code-ClipboardSolid,
+  'Clock': $ms-icon-code-Clock,
+  'CloneToDesktop': $ms-icon-code-CloneToDesktop,
+  'ClosedCaption': $ms-icon-code-ClosedCaption,
+  'ClosePane': $ms-icon-code-ClosePane,
+  'ClosePaneMirrored': $ms-icon-code-ClosePaneMirrored,
+  'Cloud': $ms-icon-code-Cloud,
+  'CloudAdd': $ms-icon-code-CloudAdd,
+  'CloudDownload': $ms-icon-code-CloudDownload,
+  'CloudImportExport': $ms-icon-code-CloudImportExport,
+  'CloudUpload': $ms-icon-code-CloudUpload,
+  'CloudWeather': $ms-icon-code-CloudWeather,
+  'Cloudy': $ms-icon-code-Cloudy,
+  'Cocktails': $ms-icon-code-Cocktails,
+  'Code': $ms-icon-code-Code,
+  'CodeEdit': $ms-icon-code-CodeEdit,
+  'Coffee': $ms-icon-code-Coffee,
+  'CoffeeScript': $ms-icon-code-CoffeeScript,
+  'CollapseContent': $ms-icon-code-CollapseContent,
+  'CollapseContentSingle': $ms-icon-code-CollapseContentSingle,
+  'CollapseMenu': $ms-icon-code-CollapseMenu,
+  'CollegeFootball': $ms-icon-code-CollegeFootball,
+  'CollegeHoops': $ms-icon-code-CollegeHoops,
+  'Color': $ms-icon-code-Color,
+  'ColorSolid': $ms-icon-code-ColorSolid,
+  'ColumnLeftTwoThirds': $ms-icon-code-ColumnLeftTwoThirds,
+  'ColumnLeftTwoThirdsEdit': $ms-icon-code-ColumnLeftTwoThirdsEdit,
+  'ColumnOptions': $ms-icon-code-ColumnOptions,
+  'ColumnRightTwoThirds': $ms-icon-code-ColumnRightTwoThirds,
+  'ColumnRightTwoThirdsEdit': $ms-icon-code-ColumnRightTwoThirdsEdit,
+  'ColumnVerticalSection': $ms-icon-code-ColumnVerticalSection,
+  'ColumnVerticalSectionEdit': $ms-icon-code-ColumnVerticalSectionEdit,
+  'Combine': $ms-icon-code-Combine,
+  'Combobox': $ms-icon-code-Combobox,
+  'CommandPrompt': $ms-icon-code-CommandPrompt,
+  'Comment': $ms-icon-code-Comment,
+  'CommentActive': $ms-icon-code-CommentActive,
+  'CommentAdd': $ms-icon-code-CommentAdd,
+  'CommentNext': $ms-icon-code-CommentNext,
+  'CommentPrevious': $ms-icon-code-CommentPrevious,
+  'CommentSolid': $ms-icon-code-CommentSolid,
+  'CommentUrgent': $ms-icon-code-CommentUrgent,
+  'Commitments': $ms-icon-code-Commitments,
+  'Communications': $ms-icon-code-Communications,
+  'CompanyDirectory': $ms-icon-code-CompanyDirectory,
+  'CompanyDirectoryMirrored': $ms-icon-code-CompanyDirectoryMirrored,
+  'Compare': $ms-icon-code-Compare,
+  'CompassNW': $ms-icon-code-CompassNW,
+  'Completed': $ms-icon-code-Completed,
+  'CompletedSolid': $ms-icon-code-CompletedSolid,
+  'ComplianceAudit': $ms-icon-code-ComplianceAudit,
+  'ConfigurationSolid': $ms-icon-code-ConfigurationSolid,
+  'ConnectContacts': $ms-icon-code-ConnectContacts,
+  'ConnectVirtualMachine': $ms-icon-code-ConnectVirtualMachine,
+  'ConstructionCone': $ms-icon-code-ConstructionCone,
+  'ConstructionConeSolid': $ms-icon-code-ConstructionConeSolid,
+  'Contact': $ms-icon-code-Contact,
+  'ContactCard': $ms-icon-code-ContactCard,
+  'ContactCardSettings': $ms-icon-code-ContactCardSettings,
+  'ContactCardSettingsMirrored': $ms-icon-code-ContactCardSettingsMirrored,
+  'ContactHeart': $ms-icon-code-ContactHeart,
+  'ContactInfo': $ms-icon-code-ContactInfo,
+  'ContactLink': $ms-icon-code-ContactLink,
+  'ContactList': $ms-icon-code-ContactList,
+  'ContextMenu': $ms-icon-code-ContextMenu,
+  'Contrast': $ms-icon-code-Contrast,
+  'Copy': $ms-icon-code-Copy,
+  'Cotton': $ms-icon-code-Cotton,
+  'Coupon': $ms-icon-code-Coupon,
+  'CPlusPlus': $ms-icon-code-CPlusPlus,
+  'CPlusPlusLanguage': $ms-icon-code-CPlusPlusLanguage,
+  'CreateMailRule': $ms-icon-code-CreateMailRule,
+  'Cricket': $ms-icon-code-Cricket,
+  'CRMCustomerInsightsApp': $ms-icon-code-CRMCustomerInsightsApp,
+  'CRMProcesses': $ms-icon-code-CRMProcesses,
+  'CRMReport': $ms-icon-code-CRMReport,
+  'CRMServices': $ms-icon-code-CRMServices,
+  'Crop': $ms-icon-code-Crop,
+  'Crown': $ms-icon-code-Crown,
+  'CrownSolid': $ms-icon-code-CrownSolid,
+  'CSharp': $ms-icon-code-CSharp,
+  'CSharpLanguage': $ms-icon-code-CSharpLanguage,
+  'CSS': $ms-icon-code-CSS,
+  'CubeShape': $ms-icon-code-CubeShape,
+  'CustomizeToolbar': $ms-icon-code-CustomizeToolbar,
+  'CustomList': $ms-icon-code-CustomList,
+  'CustomListMirrored': $ms-icon-code-CustomListMirrored,
+  'Cut': $ms-icon-code-Cut,
+  'Cycling': $ms-icon-code-Cycling,
+  'D365TalentHRCore': $ms-icon-code-D365TalentHRCore,
+  'D365TalentInsight': $ms-icon-code-D365TalentInsight,
+  'D365TalentLearn': $ms-icon-code-D365TalentLearn,
+  'DashboardAdd': $ms-icon-code-DashboardAdd,
+  'Database': $ms-icon-code-Database,
+  'DatabaseSync': $ms-icon-code-DatabaseSync,
+  'DataConnectionLibrary': $ms-icon-code-DataConnectionLibrary,
+  'Dataflows': $ms-icon-code-Dataflows,
+  'DataflowsLink': $ms-icon-code-DataflowsLink,
+  'DataManagementSettings': $ms-icon-code-DataManagementSettings,
+  'DateTime': $ms-icon-code-DateTime,
+  'DateTime2': $ms-icon-code-DateTime2,
+  'DateTimeMirrored': $ms-icon-code-DateTimeMirrored,
+  'DeactivateOrders': $ms-icon-code-DeactivateOrders,
+  'Decimals': $ms-icon-code-Decimals,
+  'DecisionSolid': $ms-icon-code-DecisionSolid,
+  'DeclineCall': $ms-icon-code-DeclineCall,
+  'DecreaseIndentArrow': $ms-icon-code-DecreaseIndentArrow,
+  'DecreaseIndentArrowMirrored': $ms-icon-code-DecreaseIndentArrowMirrored,
+  'DecreaseIndentLegacy': $ms-icon-code-DecreaseIndentLegacy,
+  'DecreaseIndentText': $ms-icon-code-DecreaseIndentText,
+  'DecreaseIndentTextMirrored': $ms-icon-code-DecreaseIndentTextMirrored,
+  'DefaultRatio': $ms-icon-code-DefaultRatio,
+  'DefectSolid': $ms-icon-code-DefectSolid,
+  'DefenderTVM': $ms-icon-code-DefenderTVM,
+  'Delete': $ms-icon-code-Delete,
+  'DeleteColumns': $ms-icon-code-DeleteColumns,
+  'DeleteRows': $ms-icon-code-DeleteRows,
+  'DeleteRowsMirrored': $ms-icon-code-DeleteRowsMirrored,
+  'DeleteTable': $ms-icon-code-DeleteTable,
+  'DeliveryTruck': $ms-icon-code-DeliveryTruck,
+  'DelveAnalytics': $ms-icon-code-DelveAnalytics,
+  'DelveAnalyticsLogo': $ms-icon-code-DelveAnalyticsLogo,
+  'DelveLogo': $ms-icon-code-DelveLogo,
+  'DelveLogoFill': $ms-icon-code-DelveLogoFill,
+  'DelveLogoInverse': $ms-icon-code-DelveLogoInverse,
+  'DependencyAdd': $ms-icon-code-DependencyAdd,
+  'DependencyRemove': $ms-icon-code-DependencyRemove,
+  'Deploy': $ms-icon-code-Deploy,
+  'Descending': $ms-icon-code-Descending,
+  'Design': $ms-icon-code-Design,
+  'DesktopScreenshot': $ms-icon-code-DesktopScreenshot,
+  'DeveloperTools': $ms-icon-code-DeveloperTools,
+  'Devices2': $ms-icon-code-Devices2,
+  'Devices3': $ms-icon-code-Devices3,
+  'Devices4': $ms-icon-code-Devices4,
+  'Diagnostic': $ms-icon-code-Diagnostic,
+  'DiagnosticDataBarTooltip': $ms-icon-code-DiagnosticDataBarTooltip,
+  'Dialpad': $ms-icon-code-Dialpad,
+  'Diamond': $ms-icon-code-Diamond,
+  'DiamondSolid': $ms-icon-code-DiamondSolid,
+  'Dictionary': $ms-icon-code-Dictionary,
+  'DictionaryRemove': $ms-icon-code-DictionaryRemove,
+  'DietPlanNotebook': $ms-icon-code-DietPlanNotebook,
+  'DiffInline': $ms-icon-code-DiffInline,
+  'DiffSideBySide': $ms-icon-code-DiffSideBySide,
+  'DisableUpdates': $ms-icon-code-DisableUpdates,
+  'DisconnectVirtualMachine': $ms-icon-code-DisconnectVirtualMachine,
+  'Dislike': $ms-icon-code-Dislike,
+  'DislikeSolid': $ms-icon-code-DislikeSolid,
+  'DistributeDown': $ms-icon-code-DistributeDown,
+  'DockLeft': $ms-icon-code-DockLeft,
+  'DockLeftMirrored': $ms-icon-code-DockLeftMirrored,
+  'DockRight': $ms-icon-code-DockRight,
+  'DocLibrary': $ms-icon-code-DocLibrary,
+  'DocsLogoInverse': $ms-icon-code-DocsLogoInverse,
+  'Document': $ms-icon-code-Document,
+  'DocumentApproval': $ms-icon-code-DocumentApproval,
+  'Documentation': $ms-icon-code-Documentation,
+  'DocumentManagement': $ms-icon-code-DocumentManagement,
+  'DocumentReply': $ms-icon-code-DocumentReply,
+  'DocumentSearch': $ms-icon-code-DocumentSearch,
+  'DocumentSet': $ms-icon-code-DocumentSet,
+  'DOM': $ms-icon-code-DOM,
+  'DonutChart': $ms-icon-code-DonutChart,
+  'Door': $ms-icon-code-Door,
+  'DoubleBookmark': $ms-icon-code-DoubleBookmark,
+  'DoubleChevronDown': $ms-icon-code-DoubleChevronDown,
+  'DoubleChevronDown12': $ms-icon-code-DoubleChevronDown12,
+  'DoubleChevronDown8': $ms-icon-code-DoubleChevronDown8,
+  'DoubleChevronLeft': $ms-icon-code-DoubleChevronLeft,
+  'DoubleChevronLeft12': $ms-icon-code-DoubleChevronLeft12,
+  'DoubleChevronLeft8': $ms-icon-code-DoubleChevronLeft8,
+  'DoubleChevronLeftMed': $ms-icon-code-DoubleChevronLeftMed,
+  'DoubleChevronLeftMedMirrored': $ms-icon-code-DoubleChevronLeftMedMirrored,
+  'DoubleChevronRight': $ms-icon-code-DoubleChevronRight,
+  'DoubleChevronRight12': $ms-icon-code-DoubleChevronRight12,
+  'DoubleChevronRight8': $ms-icon-code-DoubleChevronRight8,
+  'DoubleChevronUp': $ms-icon-code-DoubleChevronUp,
+  'DoubleChevronUp12': $ms-icon-code-DoubleChevronUp12,
+  'DoubleChevronUp8': $ms-icon-code-DoubleChevronUp8,
+  'DoubleColumn': $ms-icon-code-DoubleColumn,
+  'DoubleColumnEdit': $ms-icon-code-DoubleColumnEdit,
+  'DoubleDownArrow': $ms-icon-code-DoubleDownArrow,
+  'Down': $ms-icon-code-Down,
+  'Download': $ms-icon-code-Download,
+  'DownloadDocument': $ms-icon-code-DownloadDocument,
+  'DragObject': $ms-icon-code-DragObject,
+  'DrillDown': $ms-icon-code-DrillDown,
+  'DrillDownSolid': $ms-icon-code-DrillDownSolid,
+  'DrillExpand': $ms-icon-code-DrillExpand,
+  'DrillShow': $ms-icon-code-DrillShow,
+  'DrillThrough': $ms-icon-code-DrillThrough,
+  'DRM': $ms-icon-code-DRM,
+  'Drop': $ms-icon-code-Drop,
+  'Dropdown': $ms-icon-code-Dropdown,
+  'DropShapeSolid': $ms-icon-code-DropShapeSolid,
+  'DuplicateRow': $ms-icon-code-DuplicateRow,
+  'Duststorm': $ms-icon-code-Duststorm,
+  'Dynamics365Logo': $ms-icon-code-Dynamics365Logo,
+  'DynamicSMBLogo': $ms-icon-code-DynamicSMBLogo,
+  'EaseOfAccess': $ms-icon-code-EaseOfAccess,
+  'EatDrink': $ms-icon-code-EatDrink,
+  'EdgeLogo': $ms-icon-code-EdgeLogo,
+  'eDiscovery': $ms-icon-code-eDiscovery,
+  'Edit': $ms-icon-code-Edit,
+  'EditContact': $ms-icon-code-EditContact,
+  'EditCreate': $ms-icon-code-EditCreate,
+  'EditMail': $ms-icon-code-EditMail,
+  'EditMirrored': $ms-icon-code-EditMirrored,
+  'EditNote': $ms-icon-code-EditNote,
+  'EditPhoto': $ms-icon-code-EditPhoto,
+  'EditSolid12': $ms-icon-code-EditSolid12,
+  'EditSolidMirrored12': $ms-icon-code-EditSolidMirrored12,
+  'EditStyle': $ms-icon-code-EditStyle,
+  'Education': $ms-icon-code-Education,
+  'Ellipse': $ms-icon-code-Ellipse,
+  'Embed': $ms-icon-code-Embed,
+  'EMI': $ms-icon-code-EMI,
+  'Emoji': $ms-icon-code-Emoji,
+  'Emoji2': $ms-icon-code-Emoji2,
+  'EmojiDisappointed': $ms-icon-code-EmojiDisappointed,
+  'EmojiNeutral': $ms-icon-code-EmojiNeutral,
+  'EmojiTabSymbols': $ms-icon-code-EmojiTabSymbols,
+  'EmptyRecycleBin': $ms-icon-code-EmptyRecycleBin,
+  'Encryption': $ms-icon-code-Encryption,
+  'EngineeringGroup': $ms-icon-code-EngineeringGroup,
+  'EntitlementPolicy': $ms-icon-code-EntitlementPolicy,
+  'EntitlementRedemption': $ms-icon-code-EntitlementRedemption,
+  'EntryDecline': $ms-icon-code-EntryDecline,
+  'EntryView': $ms-icon-code-EntryView,
+  'Equalizer': $ms-icon-code-Equalizer,
+  'EraseTool': $ms-icon-code-EraseTool,
+  'Error': $ms-icon-code-Error,
+  'ErrorBadge': $ms-icon-code-ErrorBadge,
+  'Event': $ms-icon-code-Event,
+  'Event12': $ms-icon-code-Event12,
+  'EventAccepted': $ms-icon-code-EventAccepted,
+  'EventDate': $ms-icon-code-EventDate,
+  'EventDateMissed12': $ms-icon-code-EventDateMissed12,
+  'EventDeclined': $ms-icon-code-EventDeclined,
+  'EventInfo': $ms-icon-code-EventInfo,
+  'EventTentative': $ms-icon-code-EventTentative,
+  'EventTentativeMirrored': $ms-icon-code-EventTentativeMirrored,
+  'EventToDoLogo': $ms-icon-code-EventToDoLogo,
+  'ExcelDocument': $ms-icon-code-ExcelDocument,
+  'ExcelLogo': $ms-icon-code-ExcelLogo,
+  'ExcelLogo16': $ms-icon-code-ExcelLogo16,
+  'ExcelLogoFill': $ms-icon-code-ExcelLogoFill,
+  'ExcelLogoFill16': $ms-icon-code-ExcelLogoFill16,
+  'ExcelLogoInverse': $ms-icon-code-ExcelLogoInverse,
+  'ExcelLogoInverse16': $ms-icon-code-ExcelLogoInverse16,
+  'ExchangeLogo': $ms-icon-code-ExchangeLogo,
+  'ExchangeLogoFill': $ms-icon-code-ExchangeLogoFill,
+  'ExchangeLogoInverse': $ms-icon-code-ExchangeLogoInverse,
+  'ExerciseTracker': $ms-icon-code-ExerciseTracker,
+  'ExpandMenu': $ms-icon-code-ExpandMenu,
+  'ExploreContent': $ms-icon-code-ExploreContent,
+  'ExploreContentSingle': $ms-icon-code-ExploreContentSingle,
+  'ExploreData': $ms-icon-code-ExploreData,
+  'Export': $ms-icon-code-Export,
+  'ExportMirrored': $ms-icon-code-ExportMirrored,
+  'ExternalBuild': $ms-icon-code-ExternalBuild,
+  'ExternalTFVC': $ms-icon-code-ExternalTFVC,
+  'ExternalXAML': $ms-icon-code-ExternalXAML,
+  'Eyedropper': $ms-icon-code-Eyedropper,
+  'EyeShadow': $ms-icon-code-EyeShadow,
+  'F12DevTools': $ms-icon-code-F12DevTools,
+  'FabricAssetLibrary': $ms-icon-code-FabricAssetLibrary,
+  'FabricDataConnectionLibrary': $ms-icon-code-FabricDataConnectionLibrary,
+  'FabricDocLibrary': $ms-icon-code-FabricDocLibrary,
+  'FabricFolder': $ms-icon-code-FabricFolder,
+  'FabricFolderConfirm': $ms-icon-code-FabricFolderConfirm,
+  'FabricFolderFill': $ms-icon-code-FabricFolderFill,
+  'FabricFolderSearch': $ms-icon-code-FabricFolderSearch,
+  'FabricFormLibrary': $ms-icon-code-FabricFormLibrary,
+  'FabricFormLibraryMirrored': $ms-icon-code-FabricFormLibraryMirrored,
+  'FabricMovetoFolder': $ms-icon-code-FabricMovetoFolder,
+  'FabricNetworkFolder': $ms-icon-code-FabricNetworkFolder,
+  'FabricNewFolder': $ms-icon-code-FabricNewFolder,
+  'FabricOpenFolderHorizontal': $ms-icon-code-FabricOpenFolderHorizontal,
+  'FabricPictureLibrary': $ms-icon-code-FabricPictureLibrary,
+  'FabricPublicFolder': $ms-icon-code-FabricPublicFolder,
+  'FabricReportLibrary': $ms-icon-code-FabricReportLibrary,
+  'FabricReportLibraryMirrored': $ms-icon-code-FabricReportLibraryMirrored,
+  'FabricSyncFolder': $ms-icon-code-FabricSyncFolder,
+  'FabricTextHighlight': $ms-icon-code-FabricTextHighlight,
+  'FabricTextHighlightComposite': $ms-icon-code-FabricTextHighlightComposite,
+  'FabricUnsyncFolder': $ms-icon-code-FabricUnsyncFolder,
+  'FabricUserFolder': $ms-icon-code-FabricUserFolder,
+  'Family': $ms-icon-code-Family,
+  'FangBody': $ms-icon-code-FangBody,
+  'FastForward': $ms-icon-code-FastForward,
+  'FastMode': $ms-icon-code-FastMode,
+  'Favicon': $ms-icon-code-Favicon,
+  'FavoriteList': $ms-icon-code-FavoriteList,
+  'FavoriteStar': $ms-icon-code-FavoriteStar,
+  'FavoriteStarFill': $ms-icon-code-FavoriteStarFill,
+  'Fax': $ms-icon-code-Fax,
+  'Feedback': $ms-icon-code-Feedback,
+  'FeedbackRequestMirroredSolid': $ms-icon-code-FeedbackRequestMirroredSolid,
+  'FeedbackRequestSolid': $ms-icon-code-FeedbackRequestSolid,
+  'FeedbackResponseSolid': $ms-icon-code-FeedbackResponseSolid,
+  'Ferry': $ms-icon-code-Ferry,
+  'FerrySolid': $ms-icon-code-FerrySolid,
+  'FieldChanged': $ms-icon-code-FieldChanged,
+  'FieldEmpty': $ms-icon-code-FieldEmpty,
+  'FieldFilled': $ms-icon-code-FieldFilled,
+  'FieldNotChanged': $ms-icon-code-FieldNotChanged,
+  'FieldReadOnly': $ms-icon-code-FieldReadOnly,
+  'FieldRequired': $ms-icon-code-FieldRequired,
+  'FileASPX': $ms-icon-code-FileASPX,
+  'FileBug': $ms-icon-code-FileBug,
+  'FileCode': $ms-icon-code-FileCode,
+  'FileComment': $ms-icon-code-FileComment,
+  'FileCSS': $ms-icon-code-FileCSS,
+  'FileHTML': $ms-icon-code-FileHTML,
+  'FileImage': $ms-icon-code-FileImage,
+  'FileJAVA': $ms-icon-code-FileJAVA,
+  'FileLess': $ms-icon-code-FileLess,
+  'FilePDB': $ms-icon-code-FilePDB,
+  'FileRequest': $ms-icon-code-FileRequest,
+  'FileSass': $ms-icon-code-FileSass,
+  'FileSQL': $ms-icon-code-FileSQL,
+  'FileSymlink': $ms-icon-code-FileSymlink,
+  'FileTemplate': $ms-icon-code-FileTemplate,
+  'FileTypeSolution': $ms-icon-code-FileTypeSolution,
+  'FileYML': $ms-icon-code-FileYML,
+  'Filter': $ms-icon-code-Filter,
+  'Filters': $ms-icon-code-Filters,
+  'FilterSettings': $ms-icon-code-FilterSettings,
+  'FilterSolid': $ms-icon-code-FilterSolid,
+  'FiltersSolid': $ms-icon-code-FiltersSolid,
+  'Financial': $ms-icon-code-Financial,
+  'FinancialMirroredSolid': $ms-icon-code-FinancialMirroredSolid,
+  'FinancialSolid': $ms-icon-code-FinancialSolid,
+  'Fingerprint': $ms-icon-code-Fingerprint,
+  'FitPage': $ms-icon-code-FitPage,
+  'FitWidth': $ms-icon-code-FitWidth,
+  'FiveTileGrid': $ms-icon-code-FiveTileGrid,
+  'Flag': $ms-icon-code-Flag,
+  'FlameSolid': $ms-icon-code-FlameSolid,
+  'Flashlight': $ms-icon-code-Flashlight,
+  'FlickDown': $ms-icon-code-FlickDown,
+  'FlickLeft': $ms-icon-code-FlickLeft,
+  'FlickRight': $ms-icon-code-FlickRight,
+  'FlickUp': $ms-icon-code-FlickUp,
+  'Flow': $ms-icon-code-Flow,
+  'FlowChart': $ms-icon-code-FlowChart,
+  'Flower': $ms-icon-code-Flower,
+  'FocalPoint': $ms-icon-code-FocalPoint,
+  'Focus': $ms-icon-code-Focus,
+  'Fog': $ms-icon-code-Fog,
+  'Folder': $ms-icon-code-Folder,
+  'FolderFill': $ms-icon-code-FolderFill,
+  'FolderHorizontal': $ms-icon-code-FolderHorizontal,
+  'FolderList': $ms-icon-code-FolderList,
+  'FolderListMirrored': $ms-icon-code-FolderListMirrored,
+  'FolderOpen': $ms-icon-code-FolderOpen,
+  'FolderQuery': $ms-icon-code-FolderQuery,
+  'FolderSearch': $ms-icon-code-FolderSearch,
+  'FollowUser': $ms-icon-code-FollowUser,
+  'Font': $ms-icon-code-Font,
+  'FontColor': $ms-icon-code-FontColor,
+  'FontColorA': $ms-icon-code-FontColorA,
+  'FontColorSwatch': $ms-icon-code-FontColorSwatch,
+  'FontDecrease': $ms-icon-code-FontDecrease,
+  'FontIncrease': $ms-icon-code-FontIncrease,
+  'FontSize': $ms-icon-code-FontSize,
+  'Footer': $ms-icon-code-Footer,
+  'FormLibrary': $ms-icon-code-FormLibrary,
+  'FormLibraryMirrored': $ms-icon-code-FormLibraryMirrored,
+  'Forum': $ms-icon-code-Forum,
+  'Forward': $ms-icon-code-Forward,
+  'ForwardEvent': $ms-icon-code-ForwardEvent,
+  'Freezing': $ms-icon-code-Freezing,
+  'Frigid': $ms-icon-code-Frigid,
+  'FrontCamera': $ms-icon-code-FrontCamera,
+  'FSharp': $ms-icon-code-FSharp,
+  'FSharpLanguage': $ms-icon-code-FSharpLanguage,
+  'FullCircleMask': $ms-icon-code-FullCircleMask,
+  'FullHistory': $ms-icon-code-FullHistory,
+  'FullScreen': $ms-icon-code-FullScreen,
+  'FullWidth': $ms-icon-code-FullWidth,
+  'FullWidthEdit': $ms-icon-code-FullWidthEdit,
+  'FunctionalManagerDashboard': $ms-icon-code-FunctionalManagerDashboard,
+  'FunnelChart': $ms-icon-code-FunnelChart,
+  'GallatinLogo': $ms-icon-code-GallatinLogo,
+  'Game': $ms-icon-code-Game,
+  'Generate': $ms-icon-code-Generate,
+  'GenericScan': $ms-icon-code-GenericScan,
+  'GenericScanFilled': $ms-icon-code-GenericScanFilled,
+  'GIF': $ms-icon-code-GIF,
+  'Giftbox': $ms-icon-code-Giftbox,
+  'GiftboxOpen': $ms-icon-code-GiftboxOpen,
+  'GiftBoxSolid': $ms-icon-code-GiftBoxSolid,
+  'GiftCard': $ms-icon-code-GiftCard,
+  'GitGraph': $ms-icon-code-GitGraph,
+  'Glasses': $ms-icon-code-Glasses,
+  'Glimmer': $ms-icon-code-Glimmer,
+  'GlobalNavButton': $ms-icon-code-GlobalNavButton,
+  'GlobalNavButtonActive': $ms-icon-code-GlobalNavButtonActive,
+  'Globe': $ms-icon-code-Globe,
+  'Globe2': $ms-icon-code-Globe2,
+  'GlobeFavorite': $ms-icon-code-GlobeFavorite,
+  'Go': $ms-icon-code-Go,
+  'Golf': $ms-icon-code-Golf,
+  'GoMirrored': $ms-icon-code-GoMirrored,
+  'GoToDashboard': $ms-icon-code-GoToDashboard,
+  'GotoToday': $ms-icon-code-GotoToday,
+  'GreetingCard': $ms-icon-code-GreetingCard,
+  'GridViewLarge': $ms-icon-code-GridViewLarge,
+  'GridViewMedium': $ms-icon-code-GridViewMedium,
+  'GridViewSmall': $ms-icon-code-GridViewSmall,
+  'GripperBarHorizontal': $ms-icon-code-GripperBarHorizontal,
+  'GripperBarVertical': $ms-icon-code-GripperBarVertical,
+  'GripperDotsVertical': $ms-icon-code-GripperDotsVertical,
+  'GripperTool': $ms-icon-code-GripperTool,
+  'Group': $ms-icon-code-Group,
+  'GroupedAscending': $ms-icon-code-GroupedAscending,
+  'GroupedDescending': $ms-icon-code-GroupedDescending,
+  'GroupedList': $ms-icon-code-GroupedList,
+  'GroupList': $ms-icon-code-GroupList,
+  'GroupObject': $ms-icon-code-GroupObject,
+  'GUID': $ms-icon-code-GUID,
+  'Guitar': $ms-icon-code-Guitar,
+  'HailDay': $ms-icon-code-HailDay,
+  'HailNight': $ms-icon-code-HailNight,
+  'HalfAlpha': $ms-icon-code-HalfAlpha,
+  'HalfCircle': $ms-icon-code-HalfCircle,
+  'HandsFree': $ms-icon-code-HandsFree,
+  'Handwriting': $ms-icon-code-Handwriting,
+  'HardDrive': $ms-icon-code-HardDrive,
+  'HardDriveGroup': $ms-icon-code-HardDriveGroup,
+  'HardDriveLock': $ms-icon-code-HardDriveLock,
+  'HardDriveUnlock': $ms-icon-code-HardDriveUnlock,
+  'Header': $ms-icon-code-Header,
+  'Header1': $ms-icon-code-Header1,
+  'Header2': $ms-icon-code-Header2,
+  'Header3': $ms-icon-code-Header3,
+  'Header4': $ms-icon-code-Header4,
+  'Headset': $ms-icon-code-Headset,
+  'HeadsetSolid': $ms-icon-code-HeadsetSolid,
+  'Health': $ms-icon-code-Health,
+  'HealthSolid': $ms-icon-code-HealthSolid,
+  'Heart': $ms-icon-code-Heart,
+  'HeartBroken': $ms-icon-code-HeartBroken,
+  'HeartFill': $ms-icon-code-HeartFill,
+  'Help': $ms-icon-code-Help,
+  'HelpMirrored': $ms-icon-code-HelpMirrored,
+  'Hexagon': $ms-icon-code-Hexagon,
+  'Hide': $ms-icon-code-Hide,
+  'Hide2': $ms-icon-code-Hide2,
+  'Hide3': $ms-icon-code-Hide3,
+  'Highlight': $ms-icon-code-Highlight,
+  'HighlightMappedShapes': $ms-icon-code-HighlightMappedShapes,
+  'HintText': $ms-icon-code-HintText,
+  'HistoricalWeather': $ms-icon-code-HistoricalWeather,
+  'History': $ms-icon-code-History,
+  'Home': $ms-icon-code-Home,
+  'HomeGroup': $ms-icon-code-HomeGroup,
+  'HomeSolid': $ms-icon-code-HomeSolid,
+  'HomeVerify': $ms-icon-code-HomeVerify,
+  'HorizontalDistributeCenter': $ms-icon-code-HorizontalDistributeCenter,
+  'HorizontalTabKey': $ms-icon-code-HorizontalTabKey,
+  'Hospital': $ms-icon-code-Hospital,
+  'Hotel': $ms-icon-code-Hotel,
+  'HourGlass': $ms-icon-code-HourGlass,
+  'IconSetsFlag': $ms-icon-code-IconSetsFlag,
+  'IDBadge': $ms-icon-code-IDBadge,
+  'IgnoreConversation': $ms-icon-code-IgnoreConversation,
+  'ImageCrosshair': $ms-icon-code-ImageCrosshair,
+  'ImageDiff': $ms-icon-code-ImageDiff,
+  'ImagePixel': $ms-icon-code-ImagePixel,
+  'ImageSearch': $ms-icon-code-ImageSearch,
+  'Import': $ms-icon-code-Import,
+  'ImportAllMirrored': $ms-icon-code-ImportAllMirrored,
+  'Important': $ms-icon-code-Important,
+  'ImportMirrored': $ms-icon-code-ImportMirrored,
+  'Inbox': $ms-icon-code-Inbox,
+  'InboxCheck': $ms-icon-code-InboxCheck,
+  'IncidentTriangle': $ms-icon-code-IncidentTriangle,
+  'IncomingCall': $ms-icon-code-IncomingCall,
+  'IncreaseIndentArrow': $ms-icon-code-IncreaseIndentArrow,
+  'IncreaseIndentArrowMirrored': $ms-icon-code-IncreaseIndentArrowMirrored,
+  'IncreaseIndentLegacy': $ms-icon-code-IncreaseIndentLegacy,
+  'IncreaseIndentText': $ms-icon-code-IncreaseIndentText,
+  'IncreaseIndentTextMirrored': $ms-icon-code-IncreaseIndentTextMirrored,
+  'Info': $ms-icon-code-Info,
+  'Info2': $ms-icon-code-Info2,
+  'InformationBarriers': $ms-icon-code-InformationBarriers,
+  'InfoSolid': $ms-icon-code-InfoSolid,
+  'InkingTool': $ms-icon-code-InkingTool,
+  'Insert': $ms-icon-code-Insert,
+  'InsertColumnsLeft': $ms-icon-code-InsertColumnsLeft,
+  'InsertColumnsRight': $ms-icon-code-InsertColumnsRight,
+  'InsertRowsAbove': $ms-icon-code-InsertRowsAbove,
+  'InsertRowsBelow': $ms-icon-code-InsertRowsBelow,
+  'InsertSignatureLine': $ms-icon-code-InsertSignatureLine,
+  'InsertTextBox': $ms-icon-code-InsertTextBox,
+  'Installation': $ms-icon-code-Installation,
+  'InstallToDrive': $ms-icon-code-InstallToDrive,
+  'InternalInvestigation': $ms-icon-code-InternalInvestigation,
+  'InternetSharing': $ms-icon-code-InternetSharing,
+  'IRMForward': $ms-icon-code-IRMForward,
+  'IRMForwardMirrored': $ms-icon-code-IRMForwardMirrored,
+  'IRMReply': $ms-icon-code-IRMReply,
+  'IRMReplyMirrored': $ms-icon-code-IRMReplyMirrored,
+  'IssueSolid': $ms-icon-code-IssueSolid,
+  'IssueTracking': $ms-icon-code-IssueTracking,
+  'IssueTrackingMirrored': $ms-icon-code-IssueTrackingMirrored,
+  'Italic': $ms-icon-code-Italic,
+  'JavaScriptLanguage': $ms-icon-code-JavaScriptLanguage,
+  'JoinOnlineMeeting': $ms-icon-code-JoinOnlineMeeting,
+  'JS': $ms-icon-code-JS,
+  'KaizalaLogo': $ms-icon-code-KaizalaLogo,
+  'KeyboardClassic': $ms-icon-code-KeyboardClassic,
+  'KnowledgeArticle': $ms-icon-code-KnowledgeArticle,
+  'Label': $ms-icon-code-Label,
+  'LadybugSolid': $ms-icon-code-LadybugSolid,
+  'Lamp': $ms-icon-code-Lamp,
+  'LandscapeOrientation': $ms-icon-code-LandscapeOrientation,
+  'LaptopSecure': $ms-icon-code-LaptopSecure,
+  'LaptopSelected': $ms-icon-code-LaptopSelected,
+  'LargeGrid': $ms-icon-code-LargeGrid,
+  'Leave': $ms-icon-code-Leave,
+  'Library': $ms-icon-code-Library,
+  'Lifesaver': $ms-icon-code-Lifesaver,
+  'LifesaverLock': $ms-icon-code-LifesaverLock,
+  'Light': $ms-icon-code-Light,
+  'Lightbulb': $ms-icon-code-Lightbulb,
+  'LightningBolt': $ms-icon-code-LightningBolt,
+  'LightWeight': $ms-icon-code-LightWeight,
+  'Like': $ms-icon-code-Like,
+  'LikeSolid': $ms-icon-code-LikeSolid,
+  'Line': $ms-icon-code-Line,
+  'LineChart': $ms-icon-code-LineChart,
+  'LineSpacing': $ms-icon-code-LineSpacing,
+  'LineStyle': $ms-icon-code-LineStyle,
+  'LineThickness': $ms-icon-code-LineThickness,
+  'Link': $ms-icon-code-Link,
+  'Link12': $ms-icon-code-Link12,
+  'LinkedDatabase': $ms-icon-code-LinkedDatabase,
+  'LinkedInLogo': $ms-icon-code-LinkedInLogo,
+  'List': $ms-icon-code-List,
+  'ListMirrored': $ms-icon-code-ListMirrored,
+  'LocaleLanguage': $ms-icon-code-LocaleLanguage,
+  'Location': $ms-icon-code-Location,
+  'LocationCircle': $ms-icon-code-LocationCircle,
+  'LocationDot': $ms-icon-code-LocationDot,
+  'LocationFill': $ms-icon-code-LocationFill,
+  'LocationOutline': $ms-icon-code-LocationOutline,
+  'Lock': $ms-icon-code-Lock,
+  'Lock12': $ms-icon-code-Lock12,
+  'LockSolid': $ms-icon-code-LockSolid,
+  'LogRemove': $ms-icon-code-LogRemove,
+  'LookupEntities': $ms-icon-code-LookupEntities,
+  'LowerBrightness': $ms-icon-code-LowerBrightness,
+  'LyncLogo': $ms-icon-code-LyncLogo,
+  'M365InvoicingLogo': $ms-icon-code-M365InvoicingLogo,
+  'Mail': $ms-icon-code-Mail,
+  'MailAlert': $ms-icon-code-MailAlert,
+  'MailAttached': $ms-icon-code-MailAttached,
+  'MailCheck': $ms-icon-code-MailCheck,
+  'MailFill': $ms-icon-code-MailFill,
+  'MailForward': $ms-icon-code-MailForward,
+  'MailForwardMirrored': $ms-icon-code-MailForwardMirrored,
+  'MailLowImportance': $ms-icon-code-MailLowImportance,
+  'MailOptions': $ms-icon-code-MailOptions,
+  'MailPause': $ms-icon-code-MailPause,
+  'MailReminder': $ms-icon-code-MailReminder,
+  'MailRepeat': $ms-icon-code-MailRepeat,
+  'MailReply': $ms-icon-code-MailReply,
+  'MailReplyAll': $ms-icon-code-MailReplyAll,
+  'MailReplyAllMirrored': $ms-icon-code-MailReplyAllMirrored,
+  'MailReplyMirrored': $ms-icon-code-MailReplyMirrored,
+  'MailSchedule': $ms-icon-code-MailSchedule,
+  'MailSolid': $ms-icon-code-MailSolid,
+  'MailTentative': $ms-icon-code-MailTentative,
+  'MailTentativeMirrored': $ms-icon-code-MailTentativeMirrored,
+  'MailUndelivered': $ms-icon-code-MailUndelivered,
+  'ManagerSelfService': $ms-icon-code-ManagerSelfService,
+  'Manufacturing': $ms-icon-code-Manufacturing,
+  'MapDirections': $ms-icon-code-MapDirections,
+  'MapLayers': $ms-icon-code-MapLayers,
+  'MapPin': $ms-icon-code-MapPin,
+  'MapPinSolid': $ms-icon-code-MapPinSolid,
+  'MarkAsProtected': $ms-icon-code-MarkAsProtected,
+  'MarkDownLanguage': $ms-icon-code-MarkDownLanguage,
+  'Market': $ms-icon-code-Market,
+  'MarketDown': $ms-icon-code-MarketDown,
+  'MasterDatabase': $ms-icon-code-MasterDatabase,
+  'MaximumValue': $ms-icon-code-MaximumValue,
+  'Medal': $ms-icon-code-Medal,
+  'MedalSolid': $ms-icon-code-MedalSolid,
+  'Media': $ms-icon-code-Media,
+  'MediaAdd': $ms-icon-code-MediaAdd,
+  'Medical': $ms-icon-code-Medical,
+  'Megaphone': $ms-icon-code-Megaphone,
+  'MegaphoneSolid': $ms-icon-code-MegaphoneSolid,
+  'Memo': $ms-icon-code-Memo,
+  'Merge': $ms-icon-code-Merge,
+  'MergeDuplicate': $ms-icon-code-MergeDuplicate,
+  'Message': $ms-icon-code-Message,
+  'MessageFill': $ms-icon-code-MessageFill,
+  'MicOff': $ms-icon-code-MicOff,
+  'MicOff2': $ms-icon-code-MicOff2,
+  'Microphone': $ms-icon-code-Microphone,
+  'MicrosoftFlowLogo': $ms-icon-code-MicrosoftFlowLogo,
+  'MicrosoftStaffhubLogo': $ms-icon-code-MicrosoftStaffhubLogo,
+  'MicrosoftTranslatorLogo': $ms-icon-code-MicrosoftTranslatorLogo,
+  'MicrosoftTranslatorLogoBlue': $ms-icon-code-MicrosoftTranslatorLogoBlue,
+  'MicrosoftTranslatorLogoGreen': $ms-icon-code-MicrosoftTranslatorLogoGreen,
+  'MiniContract': $ms-icon-code-MiniContract,
+  'MiniContractMirrored': $ms-icon-code-MiniContractMirrored,
+  'MiniExpand': $ms-icon-code-MiniExpand,
+  'MiniExpandMirrored': $ms-icon-code-MiniExpandMirrored,
+  'MiniLink': $ms-icon-code-MiniLink,
+  'MinimumValue': $ms-icon-code-MinimumValue,
+  'MobileReport': $ms-icon-code-MobileReport,
+  'MobileSelected': $ms-icon-code-MobileSelected,
+  'ModelingView': $ms-icon-code-ModelingView,
+  'Money': $ms-icon-code-Money,
+  'More': $ms-icon-code-More,
+  'MoreSports': $ms-icon-code-MoreSports,
+  'MoreVertical': $ms-icon-code-MoreVertical,
+  'MountainClimbing': $ms-icon-code-MountainClimbing,
+  'Move': $ms-icon-code-Move,
+  'Movers': $ms-icon-code-Movers,
+  'MoveToFolder': $ms-icon-code-MoveToFolder,
+  'MSNLogo': $ms-icon-code-MSNLogo,
+  'MSNVideos': $ms-icon-code-MSNVideos,
+  'MSNVideosSolid': $ms-icon-code-MSNVideosSolid,
+  'MultiSelect': $ms-icon-code-MultiSelect,
+  'MultiSelectMirrored': $ms-icon-code-MultiSelectMirrored,
+  'MusicInCollection': $ms-icon-code-MusicInCollection,
+  'MusicInCollectionFill': $ms-icon-code-MusicInCollectionFill,
+  'MusicNote': $ms-icon-code-MusicNote,
+  'MuteChat': $ms-icon-code-MuteChat,
+  'MyMoviesTV': $ms-icon-code-MyMoviesTV,
+  'Nav2DMapView': $ms-icon-code-Nav2DMapView,
+  'NavigateBack': $ms-icon-code-NavigateBack,
+  'NavigateBackMirrored': $ms-icon-code-NavigateBackMirrored,
+  'NavigateExternalInline': $ms-icon-code-NavigateExternalInline,
+  'NavigateForward': $ms-icon-code-NavigateForward,
+  'NavigateForwardMirrored': $ms-icon-code-NavigateForwardMirrored,
+  'NavigationFlipper': $ms-icon-code-NavigationFlipper,
+  'NetworkTower': $ms-icon-code-NetworkTower,
+  'NewAnalyticsQuery': $ms-icon-code-NewAnalyticsQuery,
+  'NewFolder': $ms-icon-code-NewFolder,
+  'NewMail': $ms-icon-code-NewMail,
+  'News': $ms-icon-code-News,
+  'NewsSearch': $ms-icon-code-NewsSearch,
+  'NewTeamProject': $ms-icon-code-NewTeamProject,
+  'Next': $ms-icon-code-Next,
+  'NormalWeight': $ms-icon-code-NormalWeight,
+  'NoteForward': $ms-icon-code-NoteForward,
+  'NotePinned': $ms-icon-code-NotePinned,
+  'NoteReply': $ms-icon-code-NoteReply,
+  'NotExecuted': $ms-icon-code-NotExecuted,
+  'NotImpactedSolid': $ms-icon-code-NotImpactedSolid,
+  'NugetLogo': $ms-icon-code-NugetLogo,
+  'NumberedList': $ms-icon-code-NumberedList,
+  'NumberedListNumber': $ms-icon-code-NumberedListNumber,
+  'NumberedListNumberMirrored': $ms-icon-code-NumberedListNumberMirrored,
+  'NumberedListText': $ms-icon-code-NumberedListText,
+  'NumberedListTextMirrored': $ms-icon-code-NumberedListTextMirrored,
+  'NumberField': $ms-icon-code-NumberField,
+  'NumberSequence': $ms-icon-code-NumberSequence,
+  'NumberSymbol': $ms-icon-code-NumberSymbol,
+  'Octagon': $ms-icon-code-Octagon,
+  'OEM': $ms-icon-code-OEM,
+  'OfficeAddinsLogo': $ms-icon-code-OfficeAddinsLogo,
+  'OfficeAssistantLogo': $ms-icon-code-OfficeAssistantLogo,
+  'OfficeChat': $ms-icon-code-OfficeChat,
+  'OfficeChatSolid': $ms-icon-code-OfficeChatSolid,
+  'OfficeFormsLogo': $ms-icon-code-OfficeFormsLogo,
+  'OfficeFormsLogo16': $ms-icon-code-OfficeFormsLogo16,
+  'OfficeFormsLogo24': $ms-icon-code-OfficeFormsLogo24,
+  'OfficeFormsLogoFill': $ms-icon-code-OfficeFormsLogoFill,
+  'OfficeFormsLogoFill16': $ms-icon-code-OfficeFormsLogoFill16,
+  'OfficeFormsLogoFill24': $ms-icon-code-OfficeFormsLogoFill24,
+  'OfficeFormsLogoInverse': $ms-icon-code-OfficeFormsLogoInverse,
+  'OfficeFormsLogoInverse16': $ms-icon-code-OfficeFormsLogoInverse16,
+  'OfficeFormsLogoInverse24': $ms-icon-code-OfficeFormsLogoInverse24,
+  'OfficeLogo': $ms-icon-code-OfficeLogo,
+  'OfficeStoreLogo': $ms-icon-code-OfficeStoreLogo,
+  'OfficeVideoLogo': $ms-icon-code-OfficeVideoLogo,
+  'OfficeVideoLogoFill': $ms-icon-code-OfficeVideoLogoFill,
+  'OfficeVideoLogoInverse': $ms-icon-code-OfficeVideoLogoInverse,
+  'OfflineOneDriveParachute': $ms-icon-code-OfflineOneDriveParachute,
+  'OfflineOneDriveParachuteDisabled': $ms-icon-code-OfflineOneDriveParachuteDisabled,
+  'OfflineStorage': $ms-icon-code-OfflineStorage,
+  'OfflineStorageSolid': $ms-icon-code-OfflineStorageSolid,
+  'Onboarding': $ms-icon-code-Onboarding,
+  'OneDriveAdd': $ms-icon-code-OneDriveAdd,
+  'OneDriveFolder16': $ms-icon-code-OneDriveFolder16,
+  'OneDriveLogo': $ms-icon-code-OneDriveLogo,
+  'OneNoteEduLogoInverse': $ms-icon-code-OneNoteEduLogoInverse,
+  'OneNoteLogo': $ms-icon-code-OneNoteLogo,
+  'OneNoteLogo16': $ms-icon-code-OneNoteLogo16,
+  'OneNoteLogoFill': $ms-icon-code-OneNoteLogoFill,
+  'OneNoteLogoFill16': $ms-icon-code-OneNoteLogoFill16,
+  'OneNoteLogoInverse': $ms-icon-code-OneNoteLogoInverse,
+  'OneNoteLogoInverse16': $ms-icon-code-OneNoteLogoInverse16,
+  'OpenEnrollment': $ms-icon-code-OpenEnrollment,
+  'OpenFile': $ms-icon-code-OpenFile,
+  'OpenFolderHorizontal': $ms-icon-code-OpenFolderHorizontal,
+  'OpenInNewTab': $ms-icon-code-OpenInNewTab,
+  'OpenInNewWindow': $ms-icon-code-OpenInNewWindow,
+  'OpenPane': $ms-icon-code-OpenPane,
+  'OpenPaneMirrored': $ms-icon-code-OpenPaneMirrored,
+  'OpenSource': $ms-icon-code-OpenSource,
+  'OpenWith': $ms-icon-code-OpenWith,
+  'OpenWithMirrored': $ms-icon-code-OpenWithMirrored,
+  'Org': $ms-icon-code-Org,
+  'Orientation': $ms-icon-code-Orientation,
+  'Orientation2': $ms-icon-code-Orientation2,
+  'OutlookLogo': $ms-icon-code-OutlookLogo,
+  'OutlookLogo16': $ms-icon-code-OutlookLogo16,
+  'OutlookLogoFill': $ms-icon-code-OutlookLogoFill,
+  'OutlookLogoFill16': $ms-icon-code-OutlookLogoFill16,
+  'OutlookLogoInverse': $ms-icon-code-OutlookLogoInverse,
+  'OutlookLogoInverse16': $ms-icon-code-OutlookLogoInverse16,
+  'OutOfOffice': $ms-icon-code-OutOfOffice,
+  'Package': $ms-icon-code-Package,
+  'Packages': $ms-icon-code-Packages,
+  'Padding': $ms-icon-code-Padding,
+  'PaddingBottom': $ms-icon-code-PaddingBottom,
+  'PaddingLeft': $ms-icon-code-PaddingLeft,
+  'PaddingRight': $ms-icon-code-PaddingRight,
+  'PaddingTop': $ms-icon-code-PaddingTop,
+  'Page': $ms-icon-code-Page,
+  'PageAdd': $ms-icon-code-PageAdd,
+  'PageArrowRight': $ms-icon-code-PageArrowRight,
+  'PageCheckedin': $ms-icon-code-PageCheckedin,
+  'PageCheckedOut': $ms-icon-code-PageCheckedOut,
+  'PageData': $ms-icon-code-PageData,
+  'PageEdit': $ms-icon-code-PageEdit,
+  'PageHeader': $ms-icon-code-PageHeader,
+  'PageHeaderEdit': $ms-icon-code-PageHeaderEdit,
+  'PageLeft': $ms-icon-code-PageLeft,
+  'PageLink': $ms-icon-code-PageLink,
+  'PageList': $ms-icon-code-PageList,
+  'PageListFilter': $ms-icon-code-PageListFilter,
+  'PageListMirroredSolid': $ms-icon-code-PageListMirroredSolid,
+  'PageListSolid': $ms-icon-code-PageListSolid,
+  'PageLock': $ms-icon-code-PageLock,
+  'PageRemove': $ms-icon-code-PageRemove,
+  'PageRight': $ms-icon-code-PageRight,
+  'PageShared': $ms-icon-code-PageShared,
+  'PageSolid': $ms-icon-code-PageSolid,
+  'PanoIndicator': $ms-icon-code-PanoIndicator,
+  'Parachute': $ms-icon-code-Parachute,
+  'ParachuteSolid': $ms-icon-code-ParachuteSolid,
+  'Parameter': $ms-icon-code-Parameter,
+  'ParkingLocation': $ms-icon-code-ParkingLocation,
+  'ParkingLocationMirrored': $ms-icon-code-ParkingLocationMirrored,
+  'ParkingMirroredSolid': $ms-icon-code-ParkingMirroredSolid,
+  'ParkingSolid': $ms-icon-code-ParkingSolid,
+  'PartlyCloudyDay': $ms-icon-code-PartlyCloudyDay,
+  'PartlyCloudyNight': $ms-icon-code-PartlyCloudyNight,
+  'PartyLeader': $ms-icon-code-PartyLeader,
+  'PassiveAuthentication': $ms-icon-code-PassiveAuthentication,
+  'PasswordField': $ms-icon-code-PasswordField,
+  'Paste': $ms-icon-code-Paste,
+  'PasteAsCode': $ms-icon-code-PasteAsCode,
+  'PasteAsText': $ms-icon-code-PasteAsText,
+  'Pause': $ms-icon-code-Pause,
+  'PaymentCard': $ms-icon-code-PaymentCard,
+  'PC1': $ms-icon-code-PC1,
+  'PDF': $ms-icon-code-PDF,
+  'PencilReply': $ms-icon-code-PencilReply,
+  'Pentagon': $ms-icon-code-Pentagon,
+  'PenWorkspace': $ms-icon-code-PenWorkspace,
+  'People': $ms-icon-code-People,
+  'PeopleAdd': $ms-icon-code-PeopleAdd,
+  'PeopleAlert': $ms-icon-code-PeopleAlert,
+  'PeopleBlock': $ms-icon-code-PeopleBlock,
+  'PeoplePause': $ms-icon-code-PeoplePause,
+  'PeopleRepeat': $ms-icon-code-PeopleRepeat,
+  'Permissions': $ms-icon-code-Permissions,
+  'PermissionsSolid': $ms-icon-code-PermissionsSolid,
+  'Personalize': $ms-icon-code-Personalize,
+  'Phishing': $ms-icon-code-Phishing,
+  'Phone': $ms-icon-code-Phone,
+  'Photo': $ms-icon-code-Photo,
+  'Photo2': $ms-icon-code-Photo2,
+  'Photo2Add': $ms-icon-code-Photo2Add,
+  'Photo2Fill': $ms-icon-code-Photo2Fill,
+  'Photo2Remove': $ms-icon-code-Photo2Remove,
+  'PhotoCollection': $ms-icon-code-PhotoCollection,
+  'PhotoVideoMedia': $ms-icon-code-PhotoVideoMedia,
+  'Picture': $ms-icon-code-Picture,
+  'PictureCenter': $ms-icon-code-PictureCenter,
+  'PictureFill': $ms-icon-code-PictureFill,
+  'PictureLibrary': $ms-icon-code-PictureLibrary,
+  'PicturePosition': $ms-icon-code-PicturePosition,
+  'PictureStretch': $ms-icon-code-PictureStretch,
+  'PictureTile': $ms-icon-code-PictureTile,
+  'PieDouble': $ms-icon-code-PieDouble,
+  'PieSingle': $ms-icon-code-PieSingle,
+  'PieSingleSolid': $ms-icon-code-PieSingleSolid,
+  'Pill': $ms-icon-code-Pill,
+  'Pin': $ms-icon-code-Pin,
+  'Pinned': $ms-icon-code-Pinned,
+  'PinnedFill': $ms-icon-code-PinnedFill,
+  'PinnedSolid': $ms-icon-code-PinnedSolid,
+  'PinSolid12': $ms-icon-code-PinSolid12,
+  'PinSolidOff12': $ms-icon-code-PinSolidOff12,
+  'PivotChart': $ms-icon-code-PivotChart,
+  'PlainText': $ms-icon-code-PlainText,
+  'PlannerLogo': $ms-icon-code-PlannerLogo,
+  'PlanView': $ms-icon-code-PlanView,
+  'Play': $ms-icon-code-Play,
+  'PlaybackRate1x': $ms-icon-code-PlaybackRate1x,
+  'PlayerSettings': $ms-icon-code-PlayerSettings,
+  'PlayResume': $ms-icon-code-PlayResume,
+  'PlayReverse': $ms-icon-code-PlayReverse,
+  'PlayReverseResume': $ms-icon-code-PlayReverseResume,
+  'Plug': $ms-icon-code-Plug,
+  'PlugConnected': $ms-icon-code-PlugConnected,
+  'PlugDisconnected': $ms-icon-code-PlugDisconnected,
+  'PlugSolid': $ms-icon-code-PlugSolid,
+  'POI': $ms-icon-code-POI,
+  'POISolid': $ms-icon-code-POISolid,
+  'PollResults': $ms-icon-code-PollResults,
+  'PostUpdate': $ms-icon-code-PostUpdate,
+  'PowerApps': $ms-icon-code-PowerApps,
+  'PowerApps2Logo': $ms-icon-code-PowerApps2Logo,
+  'PowerAppsCDS': $ms-icon-code-PowerAppsCDS,
+  'PowerAppsLogo': $ms-icon-code-PowerAppsLogo,
+  'PowerBILogo': $ms-icon-code-PowerBILogo,
+  'PowerBILogo16': $ms-icon-code-PowerBILogo16,
+  'PowerBILogoBackplate16': $ms-icon-code-PowerBILogoBackplate16,
+  'PowerButton': $ms-icon-code-PowerButton,
+  'PowerPointDocument': $ms-icon-code-PowerPointDocument,
+  'PowerPointLogo': $ms-icon-code-PowerPointLogo,
+  'PowerPointLogo16': $ms-icon-code-PowerPointLogo16,
+  'PowerPointLogoFill': $ms-icon-code-PowerPointLogoFill,
+  'PowerPointLogoFill16': $ms-icon-code-PowerPointLogoFill16,
+  'PowerPointLogoInverse': $ms-icon-code-PowerPointLogoInverse,
+  'PowerPointLogoInverse16': $ms-icon-code-PowerPointLogoInverse16,
+  'PowerShell': $ms-icon-code-PowerShell,
+  'PowerShell2': $ms-icon-code-PowerShell2,
+  'Precipitation': $ms-icon-code-Precipitation,
+  'PresenceChickletVideo': $ms-icon-code-PresenceChickletVideo,
+  'Presentation': $ms-icon-code-Presentation,
+  'Presentation12': $ms-icon-code-Presentation12,
+  'Preview': $ms-icon-code-Preview,
+  'PreviewLink': $ms-icon-code-PreviewLink,
+  'Previous': $ms-icon-code-Previous,
+  'PrimaryCalendar': $ms-icon-code-PrimaryCalendar,
+  'Print': $ms-icon-code-Print,
+  'PrintfaxPrinterFile': $ms-icon-code-PrintfaxPrinterFile,
+  'Processing': $ms-icon-code-Processing,
+  'ProcessMetaTask': $ms-icon-code-ProcessMetaTask,
+  'Product': $ms-icon-code-Product,
+  'ProductCatalog': $ms-icon-code-ProductCatalog,
+  'ProductionFloorManagement': $ms-icon-code-ProductionFloorManagement,
+  'ProductList': $ms-icon-code-ProductList,
+  'ProductRelease': $ms-icon-code-ProductRelease,
+  'ProductVariant': $ms-icon-code-ProductVariant,
+  'ProfileSearch': $ms-icon-code-ProfileSearch,
+  'ProFootball': $ms-icon-code-ProFootball,
+  'ProgressLoopInner': $ms-icon-code-ProgressLoopInner,
+  'ProgressLoopOuter': $ms-icon-code-ProgressLoopOuter,
+  'ProgressRingDots': $ms-icon-code-ProgressRingDots,
+  'ProHockey': $ms-icon-code-ProHockey,
+  'ProjectCollection': $ms-icon-code-ProjectCollection,
+  'ProjectDocument': $ms-icon-code-ProjectDocument,
+  'ProjectLogo16': $ms-icon-code-ProjectLogo16,
+  'ProjectLogo32': $ms-icon-code-ProjectLogo32,
+  'ProjectLogoFill16': $ms-icon-code-ProjectLogoFill16,
+  'ProjectLogoFill32': $ms-icon-code-ProjectLogoFill32,
+  'ProjectLogoInverse': $ms-icon-code-ProjectLogoInverse,
+  'PromotedDatabase': $ms-icon-code-PromotedDatabase,
+  'ProtectedDocument': $ms-icon-code-ProtectedDocument,
+  'ProtectionCenterLogo32': $ms-icon-code-ProtectionCenterLogo32,
+  'ProtectRestrict': $ms-icon-code-ProtectRestrict,
+  'PublicCalendar': $ms-icon-code-PublicCalendar,
+  'PublicContactCard': $ms-icon-code-PublicContactCard,
+  'PublicContactCardMirrored': $ms-icon-code-PublicContactCardMirrored,
+  'PublicEmail': $ms-icon-code-PublicEmail,
+  'PublicFolder': $ms-icon-code-PublicFolder,
+  'PublishContent': $ms-icon-code-PublishContent,
+  'PublishCourse': $ms-icon-code-PublishCourse,
+  'PublisherLogo': $ms-icon-code-PublisherLogo,
+  'PublisherLogo16': $ms-icon-code-PublisherLogo16,
+  'PublisherLogoFill': $ms-icon-code-PublisherLogoFill,
+  'PublisherLogoFill16': $ms-icon-code-PublisherLogoFill16,
+  'PublisherLogoInverse16': $ms-icon-code-PublisherLogoInverse16,
+  'Puzzle': $ms-icon-code-Puzzle,
+  'PY': $ms-icon-code-PY,
+  'PythonLanguage': $ms-icon-code-PythonLanguage,
+  'QandA': $ms-icon-code-QandA,
+  'QandAMirror': $ms-icon-code-QandAMirror,
+  'QRCode': $ms-icon-code-QRCode,
+  'QuadColumn': $ms-icon-code-QuadColumn,
+  'Quantity': $ms-icon-code-Quantity,
+  'QuarterCircle': $ms-icon-code-QuarterCircle,
+  'QueryList': $ms-icon-code-QueryList,
+  'Questionnaire': $ms-icon-code-Questionnaire,
+  'QuestionnaireMirrored': $ms-icon-code-QuestionnaireMirrored,
+  'QuickNote': $ms-icon-code-QuickNote,
+  'QuickNoteSolid': $ms-icon-code-QuickNoteSolid,
+  'R': $ms-icon-code-R,
+  'RadioBtnOff': $ms-icon-code-RadioBtnOff,
+  'RadioBtnOn': $ms-icon-code-RadioBtnOn,
+  'RadioBullet': $ms-icon-code-RadioBullet,
+  'Rain': $ms-icon-code-Rain,
+  'RainShowersDay': $ms-icon-code-RainShowersDay,
+  'RainShowersNight': $ms-icon-code-RainShowersNight,
+  'RainSnow': $ms-icon-code-RainSnow,
+  'RawSource': $ms-icon-code-RawSource,
+  'Read': $ms-icon-code-Read,
+  'ReadingMode': $ms-icon-code-ReadingMode,
+  'ReadingModeSolid': $ms-icon-code-ReadingModeSolid,
+  'ReadOutLoud': $ms-icon-code-ReadOutLoud,
+  'RealEstate': $ms-icon-code-RealEstate,
+  'ReceiptCheck': $ms-icon-code-ReceiptCheck,
+  'ReceiptForward': $ms-icon-code-ReceiptForward,
+  'ReceiptReply': $ms-icon-code-ReceiptReply,
+  'ReceiptTentative': $ms-icon-code-ReceiptTentative,
+  'ReceiptTentativeMirrored': $ms-icon-code-ReceiptTentativeMirrored,
+  'ReceiptUndelivered': $ms-icon-code-ReceiptUndelivered,
+  'Recent': $ms-icon-code-Recent,
+  'Record2': $ms-icon-code-Record2,
+  'RecruitmentManagement': $ms-icon-code-RecruitmentManagement,
+  'RectangleShape': $ms-icon-code-RectangleShape,
+  'RectangleShapeSolid': $ms-icon-code-RectangleShapeSolid,
+  'RectangularClipping': $ms-icon-code-RectangularClipping,
+  'RecurringEvent': $ms-icon-code-RecurringEvent,
+  'RecurringTask': $ms-icon-code-RecurringTask,
+  'RecycleBin': $ms-icon-code-RecycleBin,
+  'Redeploy': $ms-icon-code-Redeploy,
+  'RedEye': $ms-icon-code-RedEye,
+  'Redo': $ms-icon-code-Redo,
+  'Refresh': $ms-icon-code-Refresh,
+  'Relationship': $ms-icon-code-Relationship,
+  'ReleaseDefinition': $ms-icon-code-ReleaseDefinition,
+  'ReleaseGate': $ms-icon-code-ReleaseGate,
+  'ReleaseGateCheck': $ms-icon-code-ReleaseGateCheck,
+  'ReleaseGateError': $ms-icon-code-ReleaseGateError,
+  'ReminderGroup': $ms-icon-code-ReminderGroup,
+  'ReminderPerson': $ms-icon-code-ReminderPerson,
+  'ReminderTime': $ms-icon-code-ReminderTime,
+  'Remote': $ms-icon-code-Remote,
+  'Remove': $ms-icon-code-Remove,
+  'RemoveEvent': $ms-icon-code-RemoveEvent,
+  'RemoveFilter': $ms-icon-code-RemoveFilter,
+  'RemoveFromShoppingList': $ms-icon-code-RemoveFromShoppingList,
+  'RemoveFromTrash': $ms-icon-code-RemoveFromTrash,
+  'RemoveLink': $ms-icon-code-RemoveLink,
+  'RemoveLinkChain': $ms-icon-code-RemoveLinkChain,
+  'RemoveLinkX': $ms-icon-code-RemoveLinkX,
+  'RemoveOccurrence': $ms-icon-code-RemoveOccurrence,
+  'Rename': $ms-icon-code-Rename,
+  'RenewalCurrent': $ms-icon-code-RenewalCurrent,
+  'RenewalFuture': $ms-icon-code-RenewalFuture,
+  'ReopenPages': $ms-icon-code-ReopenPages,
+  'Repair': $ms-icon-code-Repair,
+  'RepeatAll': $ms-icon-code-RepeatAll,
+  'RepeatOne': $ms-icon-code-RepeatOne,
+  'Reply': $ms-icon-code-Reply,
+  'ReplyAll': $ms-icon-code-ReplyAll,
+  'ReplyAllAlt': $ms-icon-code-ReplyAllAlt,
+  'ReplyAllMirrored': $ms-icon-code-ReplyAllMirrored,
+  'ReplyAlt': $ms-icon-code-ReplyAlt,
+  'ReplyMirrored': $ms-icon-code-ReplyMirrored,
+  'Repo': $ms-icon-code-Repo,
+  'ReportAdd': $ms-icon-code-ReportAdd,
+  'ReportDocument': $ms-icon-code-ReportDocument,
+  'ReportHacked': $ms-icon-code-ReportHacked,
+  'ReportLibrary': $ms-icon-code-ReportLibrary,
+  'ReportLibraryMirrored': $ms-icon-code-ReportLibraryMirrored,
+  'ReportLock': $ms-icon-code-ReportLock,
+  'ReportWarning': $ms-icon-code-ReportWarning,
+  'RepoSolid': $ms-icon-code-RepoSolid,
+  'Rerun': $ms-icon-code-Rerun,
+  'ReservationOrders': $ms-icon-code-ReservationOrders,
+  'ResetDevice': $ms-icon-code-ResetDevice,
+  'ResponsesMenu': $ms-icon-code-ResponsesMenu,
+  'ReturnKey': $ms-icon-code-ReturnKey,
+  'ReturnToSession': $ms-icon-code-ReturnToSession,
+  'ReviewRequestMirroredSolid': $ms-icon-code-ReviewRequestMirroredSolid,
+  'ReviewRequestSolid': $ms-icon-code-ReviewRequestSolid,
+  'ReviewResponseSolid': $ms-icon-code-ReviewResponseSolid,
+  'ReviewSolid': $ms-icon-code-ReviewSolid,
+  'RevToggleKey': $ms-icon-code-RevToggleKey,
+  'Rewind': $ms-icon-code-Rewind,
+  'Ribbon': $ms-icon-code-Ribbon,
+  'RibbonSolid': $ms-icon-code-RibbonSolid,
+  'RightDoubleQuote': $ms-icon-code-RightDoubleQuote,
+  'RightTriangle': $ms-icon-code-RightTriangle,
+  'Ringer': $ms-icon-code-Ringer,
+  'RingerOff': $ms-icon-code-RingerOff,
+  'RingerRemove': $ms-icon-code-RingerRemove,
+  'RingerSolid': $ms-icon-code-RingerSolid,
+  'Robot': $ms-icon-code-Robot,
+  'Rocket': $ms-icon-code-Rocket,
+  'Room': $ms-icon-code-Room,
+  'Rotate': $ms-icon-code-Rotate,
+  'Rotate90Clockwise': $ms-icon-code-Rotate90Clockwise,
+  'Rotate90CounterClockwise': $ms-icon-code-Rotate90CounterClockwise,
+  'RowsChild': $ms-icon-code-RowsChild,
+  'RowsGroup': $ms-icon-code-RowsGroup,
+  'Rugby': $ms-icon-code-Rugby,
+  'Running': $ms-icon-code-Running,
+  'Sad': $ms-icon-code-Sad,
+  'SadSolid': $ms-icon-code-SadSolid,
+  'Save': $ms-icon-code-Save,
+  'SaveAll': $ms-icon-code-SaveAll,
+  'SaveAndClose': $ms-icon-code-SaveAndClose,
+  'SaveAs': $ms-icon-code-SaveAs,
+  'SaveTemplate': $ms-icon-code-SaveTemplate,
+  'SaveToMobile': $ms-icon-code-SaveToMobile,
+  'Savings': $ms-icon-code-Savings,
+  'ScaleUp': $ms-icon-code-ScaleUp,
+  'ScaleVolume': $ms-icon-code-ScaleVolume,
+  'ScatterChart': $ms-icon-code-ScatterChart,
+  'ScheduleEventAction': $ms-icon-code-ScheduleEventAction,
+  'SchoolDataSyncLogo': $ms-icon-code-SchoolDataSyncLogo,
+  'ScopeTemplate': $ms-icon-code-ScopeTemplate,
+  'ScreenCast': $ms-icon-code-ScreenCast,
+  'Script': $ms-icon-code-Script,
+  'ScrollUpDown': $ms-icon-code-ScrollUpDown,
+  'Search': $ms-icon-code-Search,
+  'SearchAndApps': $ms-icon-code-SearchAndApps,
+  'SearchBookmark': $ms-icon-code-SearchBookmark,
+  'SearchCalendar': $ms-icon-code-SearchCalendar,
+  'SearchData': $ms-icon-code-SearchData,
+  'SearchIssue': $ms-icon-code-SearchIssue,
+  'SearchIssueMirrored': $ms-icon-code-SearchIssueMirrored,
+  'SearchNearby': $ms-icon-code-SearchNearby,
+  'SecondaryNav': $ms-icon-code-SecondaryNav,
+  'Section': $ms-icon-code-Section,
+  'Sections': $ms-icon-code-Sections,
+  'SecurityGroup': $ms-icon-code-SecurityGroup,
+  'SeeDo': $ms-icon-code-SeeDo,
+  'SelectAll': $ms-icon-code-SelectAll,
+  'Sell': $ms-icon-code-Sell,
+  'SemiboldWeight': $ms-icon-code-SemiboldWeight,
+  'Send': $ms-icon-code-Send,
+  'SendMirrored': $ms-icon-code-SendMirrored,
+  'Separator': $ms-icon-code-Separator,
+  'Server': $ms-icon-code-Server,
+  'ServerEnviroment': $ms-icon-code-ServerEnviroment,
+  'ServerProcesses': $ms-icon-code-ServerProcesses,
+  'SetAction': $ms-icon-code-SetAction,
+  'Settings': $ms-icon-code-Settings,
+  'ShakeDevice': $ms-icon-code-ShakeDevice,
+  'Shapes': $ms-icon-code-Shapes,
+  'Share': $ms-icon-code-Share,
+  'ShareiOS': $ms-icon-code-ShareiOS,
+  'SharepointAppIcon16': $ms-icon-code-SharepointAppIcon16,
+  'SharepointLogo': $ms-icon-code-SharepointLogo,
+  'SharepointLogoFill': $ms-icon-code-SharepointLogoFill,
+  'SharepointLogoInverse': $ms-icon-code-SharepointLogoInverse,
+  'Shield': $ms-icon-code-Shield,
+  'ShieldAlert': $ms-icon-code-ShieldAlert,
+  'ShieldSolid': $ms-icon-code-ShieldSolid,
+  'Shirt': $ms-icon-code-Shirt,
+  'Shop': $ms-icon-code-Shop,
+  'ShoppingCart': $ms-icon-code-ShoppingCart,
+  'ShoppingCartSolid': $ms-icon-code-ShoppingCartSolid,
+  'ShopServer': $ms-icon-code-ShopServer,
+  'ShowGrid': $ms-icon-code-ShowGrid,
+  'ShowResults': $ms-icon-code-ShowResults,
+  'ShowResultsMirrored': $ms-icon-code-ShowResultsMirrored,
+  'ShowTimeAs': $ms-icon-code-ShowTimeAs,
+  'SidePanel': $ms-icon-code-SidePanel,
+  'SidePanelMirrored': $ms-icon-code-SidePanelMirrored,
+  'Signin': $ms-icon-code-Signin,
+  'SignOut': $ms-icon-code-SignOut,
+  'SingleBookmark': $ms-icon-code-SingleBookmark,
+  'SingleBookmarkSolid': $ms-icon-code-SingleBookmarkSolid,
+  'SingleColumn': $ms-icon-code-SingleColumn,
+  'SingleColumnEdit': $ms-icon-code-SingleColumnEdit,
+  'SIPMove': $ms-icon-code-SIPMove,
+  'SiteScan': $ms-icon-code-SiteScan,
+  'SizeLegacy': $ms-icon-code-SizeLegacy,
+  'SkiResorts': $ms-icon-code-SkiResorts,
+  'SkypeArrow': $ms-icon-code-SkypeArrow,
+  'SkypeCheck': $ms-icon-code-SkypeCheck,
+  'SkypeCircleArrow': $ms-icon-code-SkypeCircleArrow,
+  'SkypeCircleCheck': $ms-icon-code-SkypeCircleCheck,
+  'SkypeCircleClock': $ms-icon-code-SkypeCircleClock,
+  'SkypeCircleMinus': $ms-icon-code-SkypeCircleMinus,
+  'SkypeCircleSlash': $ms-icon-code-SkypeCircleSlash,
+  'SkypeClock': $ms-icon-code-SkypeClock,
+  'SkypeForBusinessLogo': $ms-icon-code-SkypeForBusinessLogo,
+  'SkypeForBusinessLogo16': $ms-icon-code-SkypeForBusinessLogo16,
+  'SkypeForBusinessLogoFill': $ms-icon-code-SkypeForBusinessLogoFill,
+  'SkypeForBusinessLogoFill16': $ms-icon-code-SkypeForBusinessLogoFill16,
+  'SkypeLogo': $ms-icon-code-SkypeLogo,
+  'SkypeLogo16': $ms-icon-code-SkypeLogo16,
+  'SkypeMessage': $ms-icon-code-SkypeMessage,
+  'SkypeMinus': $ms-icon-code-SkypeMinus,
+  'SkypeSlash': $ms-icon-code-SkypeSlash,
+  'Slider': $ms-icon-code-Slider,
+  'SliderHandleSize': $ms-icon-code-SliderHandleSize,
+  'SliderThumb': $ms-icon-code-SliderThumb,
+  'Slideshow': $ms-icon-code-Slideshow,
+  'SmartGlassRemote': $ms-icon-code-SmartGlassRemote,
+  'SnapToGrid': $ms-icon-code-SnapToGrid,
+  'Snooze': $ms-icon-code-Snooze,
+  'Snow': $ms-icon-code-Snow,
+  'Snowflake': $ms-icon-code-Snowflake,
+  'SnowShowerDay': $ms-icon-code-SnowShowerDay,
+  'SnowShowerNight': $ms-icon-code-SnowShowerNight,
+  'Soccer': $ms-icon-code-Soccer,
+  'SocialListeningLogo': $ms-icon-code-SocialListeningLogo,
+  'Sort': $ms-icon-code-Sort,
+  'SortDown': $ms-icon-code-SortDown,
+  'SortLines': $ms-icon-code-SortLines,
+  'SortUp': $ms-icon-code-SortUp,
+  'Source': $ms-icon-code-Source,
+  'Spacer': $ms-icon-code-Spacer,
+  'Speakers': $ms-icon-code-Speakers,
+  'SpecialEvent': $ms-icon-code-SpecialEvent,
+  'SpeedHigh': $ms-icon-code-SpeedHigh,
+  'Split': $ms-icon-code-Split,
+  'SplitObject': $ms-icon-code-SplitObject,
+  'Sprint': $ms-icon-code-Sprint,
+  'Squalls': $ms-icon-code-Squalls,
+  'SquareShapeSolid': $ms-icon-code-SquareShapeSolid,
+  'Stack': $ms-icon-code-Stack,
+  'StackColumnChart': $ms-icon-code-StackColumnChart,
+  'StackedBarChart': $ms-icon-code-StackedBarChart,
+  'StackedColumnChart2': $ms-icon-code-StackedColumnChart2,
+  'StackedColumnChart2Fill': $ms-icon-code-StackedColumnChart2Fill,
+  'StackedLineChart': $ms-icon-code-StackedLineChart,
+  'StackIndicator': $ms-icon-code-StackIndicator,
+  'StaffNotebookLogo16': $ms-icon-code-StaffNotebookLogo16,
+  'StaffNotebookLogo32': $ms-icon-code-StaffNotebookLogo32,
+  'StaffNotebookLogoFill16': $ms-icon-code-StaffNotebookLogoFill16,
+  'StaffNotebookLogoFill32': $ms-icon-code-StaffNotebookLogoFill32,
+  'StaffNotebookLogoInverted16': $ms-icon-code-StaffNotebookLogoInverted16,
+  'StaffNotebookLogoInverted32': $ms-icon-code-StaffNotebookLogoInverted32,
+  'Starburst': $ms-icon-code-Starburst,
+  'StarburstSolid': $ms-icon-code-StarburstSolid,
+  'StatusCircleBlock': $ms-icon-code-StatusCircleBlock,
+  'StatusCircleBlock2': $ms-icon-code-StatusCircleBlock2,
+  'StatusCircleCheckmark': $ms-icon-code-StatusCircleCheckmark,
+  'StatusCircleErrorX': $ms-icon-code-StatusCircleErrorX,
+  'StatusCircleExclamation': $ms-icon-code-StatusCircleExclamation,
+  'StatusCircleInfo': $ms-icon-code-StatusCircleInfo,
+  'StatusCircleInner': $ms-icon-code-StatusCircleInner,
+  'StatusCircleOuter': $ms-icon-code-StatusCircleOuter,
+  'StatusCircleQuestionMark': $ms-icon-code-StatusCircleQuestionMark,
+  'StatusCircleRing': $ms-icon-code-StatusCircleRing,
+  'StatusCircleSync': $ms-icon-code-StatusCircleSync,
+  'StatusErrorFull': $ms-icon-code-StatusErrorFull,
+  'StatusTriangle': $ms-icon-code-StatusTriangle,
+  'StatusTriangleExclamation': $ms-icon-code-StatusTriangleExclamation,
+  'StatusTriangleInner': $ms-icon-code-StatusTriangleInner,
+  'StatusTriangleOuter': $ms-icon-code-StatusTriangleOuter,
+  'Step': $ms-icon-code-Step,
+  'StepInsert': $ms-icon-code-StepInsert,
+  'StepShared': $ms-icon-code-StepShared,
+  'StepSharedAdd': $ms-icon-code-StepSharedAdd,
+  'StepSharedInsert': $ms-icon-code-StepSharedInsert,
+  'StickyNotesOutlineAppIcon': $ms-icon-code-StickyNotesOutlineAppIcon,
+  'StickyNotesSolidAppIcon': $ms-icon-code-StickyNotesSolidAppIcon,
+  'StockDown': $ms-icon-code-StockDown,
+  'StockUp': $ms-icon-code-StockUp,
+  'Stop': $ms-icon-code-Stop,
+  'StopSolid': $ms-icon-code-StopSolid,
+  'Stopwatch': $ms-icon-code-Stopwatch,
+  'StorageOptical': $ms-icon-code-StorageOptical,
+  'StoreLogo16': $ms-icon-code-StoreLogo16,
+  'StoreLogoMed20': $ms-icon-code-StoreLogoMed20,
+  'Storyboard': $ms-icon-code-Storyboard,
+  'Streaming': $ms-icon-code-Streaming,
+  'StreamingOff': $ms-icon-code-StreamingOff,
+  'StreamLogo': $ms-icon-code-StreamLogo,
+  'Street': $ms-icon-code-Street,
+  'StreetsideSplitMinimize': $ms-icon-code-StreetsideSplitMinimize,
+  'Strikethrough': $ms-icon-code-Strikethrough,
+  'Subscribe': $ms-icon-code-Subscribe,
+  'Subscript': $ms-icon-code-Subscript,
+  'SubstitutionsIn': $ms-icon-code-SubstitutionsIn,
+  'Suitcase': $ms-icon-code-Suitcase,
+  'SunAdd': $ms-icon-code-SunAdd,
+  'Sunny': $ms-icon-code-Sunny,
+  'SunQuestionMark': $ms-icon-code-SunQuestionMark,
+  'Superscript': $ms-icon-code-Superscript,
+  'SurveyQuestions': $ms-icon-code-SurveyQuestions,
+  'SwayLogo16': $ms-icon-code-SwayLogo16,
+  'SwayLogo32': $ms-icon-code-SwayLogo32,
+  'SwayLogoFill16': $ms-icon-code-SwayLogoFill16,
+  'SwayLogoFill32': $ms-icon-code-SwayLogoFill32,
+  'SwayLogoInverse': $ms-icon-code-SwayLogoInverse,
+  'Switch': $ms-icon-code-Switch,
+  'SwitcherStartEnd': $ms-icon-code-SwitcherStartEnd,
+  'Sync': $ms-icon-code-Sync,
+  'SyncFolder': $ms-icon-code-SyncFolder,
+  'SyncOccurence': $ms-icon-code-SyncOccurence,
+  'SyncStatus': $ms-icon-code-SyncStatus,
+  'SyncStatusSolid': $ms-icon-code-SyncStatusSolid,
+  'SyncToPC': $ms-icon-code-SyncToPC,
+  'System': $ms-icon-code-System,
+  'Tab': $ms-icon-code-Tab,
+  'TabCenter': $ms-icon-code-TabCenter,
+  'Table': $ms-icon-code-Table,
+  'TableComputed': $ms-icon-code-TableComputed,
+  'TableGroup': $ms-icon-code-TableGroup,
+  'TableLink': $ms-icon-code-TableLink,
+  'Tablet': $ms-icon-code-Tablet,
+  'TabletMode': $ms-icon-code-TabletMode,
+  'TabletSelected': $ms-icon-code-TabletSelected,
+  'TabOneColumn': $ms-icon-code-TabOneColumn,
+  'TabThreeColumn': $ms-icon-code-TabThreeColumn,
+  'TabTwoColumn': $ms-icon-code-TabTwoColumn,
+  'Tag': $ms-icon-code-Tag,
+  'TagSolid': $ms-icon-code-TagSolid,
+  'TagUnknown': $ms-icon-code-TagUnknown,
+  'TagUnknown12': $ms-icon-code-TagUnknown12,
+  'TagUnknown12Mirror': $ms-icon-code-TagUnknown12Mirror,
+  'TagUnknownMirror': $ms-icon-code-TagUnknownMirror,
+  'Taskboard': $ms-icon-code-Taskboard,
+  'TaskGroup': $ms-icon-code-TaskGroup,
+  'TaskGroupMirrored': $ms-icon-code-TaskGroupMirrored,
+  'TaskLogo': $ms-icon-code-TaskLogo,
+  'TaskManager': $ms-icon-code-TaskManager,
+  'TaskManagerMirrored': $ms-icon-code-TaskManagerMirrored,
+  'TaskSolid': $ms-icon-code-TaskSolid,
+  'Taxi': $ms-icon-code-Taxi,
+  'TeamFavorite': $ms-icon-code-TeamFavorite,
+  'TeamsLogo': $ms-icon-code-TeamsLogo,
+  'TeamsLogo16': $ms-icon-code-TeamsLogo16,
+  'TeamsLogoFill': $ms-icon-code-TeamsLogoFill,
+  'TeamsLogoFill16': $ms-icon-code-TeamsLogoFill16,
+  'TeamsLogoInverse': $ms-icon-code-TeamsLogoInverse,
+  'Teamwork': $ms-icon-code-Teamwork,
+  'Teeth': $ms-icon-code-Teeth,
+  'Telemarketer': $ms-icon-code-Telemarketer,
+  'TemporaryUser': $ms-icon-code-TemporaryUser,
+  'Tennis': $ms-icon-code-Tennis,
+  'TestAutoSolid': $ms-icon-code-TestAutoSolid,
+  'TestBeaker': $ms-icon-code-TestBeaker,
+  'TestBeakerSolid': $ms-icon-code-TestBeakerSolid,
+  'TestCase': $ms-icon-code-TestCase,
+  'TestExploreSolid': $ms-icon-code-TestExploreSolid,
+  'TestImpactSolid': $ms-icon-code-TestImpactSolid,
+  'TestParameter': $ms-icon-code-TestParameter,
+  'TestPlan': $ms-icon-code-TestPlan,
+  'TestStep': $ms-icon-code-TestStep,
+  'TestSuite': $ms-icon-code-TestSuite,
+  'TestUserSolid': $ms-icon-code-TestUserSolid,
+  'TextBox': $ms-icon-code-TextBox,
+  'TextCallout': $ms-icon-code-TextCallout,
+  'TextDocument': $ms-icon-code-TextDocument,
+  'TextDocumentShared': $ms-icon-code-TextDocumentShared,
+  'TextField': $ms-icon-code-TextField,
+  'TextOverflow': $ms-icon-code-TextOverflow,
+  'TFVCLogo': $ms-icon-code-TFVCLogo,
+  'ThisPC': $ms-icon-code-ThisPC,
+  'ThreeQuarterCircle': $ms-icon-code-ThreeQuarterCircle,
+  'ThumbnailView': $ms-icon-code-ThumbnailView,
+  'ThumbnailViewMirrored': $ms-icon-code-ThumbnailViewMirrored,
+  'Thunderstorms': $ms-icon-code-Thunderstorms,
+  'Ticket': $ms-icon-code-Ticket,
+  'Tiles': $ms-icon-code-Tiles,
+  'Tiles2': $ms-icon-code-Tiles2,
+  'TimeEntry': $ms-icon-code-TimeEntry,
+  'Timeline': $ms-icon-code-Timeline,
+  'TimelineDelivery': $ms-icon-code-TimelineDelivery,
+  'TimelineMatrixView': $ms-icon-code-TimelineMatrixView,
+  'TimelineProgress': $ms-icon-code-TimelineProgress,
+  'TimePicker': $ms-icon-code-TimePicker,
+  'Timer': $ms-icon-code-Timer,
+  'TimeSheet': $ms-icon-code-TimeSheet,
+  'ToDoLogoBottom': $ms-icon-code-ToDoLogoBottom,
+  'ToDoLogoInverse': $ms-icon-code-ToDoLogoInverse,
+  'ToDoLogoOutline': $ms-icon-code-ToDoLogoOutline,
+  'ToDoLogoTop': $ms-icon-code-ToDoLogoTop,
+  'ToggleBorder': $ms-icon-code-ToggleBorder,
+  'ToggleFilled': $ms-icon-code-ToggleFilled,
+  'ToggleLeft': $ms-icon-code-ToggleLeft,
+  'ToggleRight': $ms-icon-code-ToggleRight,
+  'ToggleThumb': $ms-icon-code-ToggleThumb,
+  'Toll': $ms-icon-code-Toll,
+  'Toolbox': $ms-icon-code-Toolbox,
+  'Touch': $ms-icon-code-Touch,
+  'TouchPointer': $ms-icon-code-TouchPointer,
+  'Trackers': $ms-icon-code-Trackers,
+  'TrackersMirrored': $ms-icon-code-TrackersMirrored,
+  'Train': $ms-icon-code-Train,
+  'TrainSolid': $ms-icon-code-TrainSolid,
+  'TransferCall': $ms-icon-code-TransferCall,
+  'Transition': $ms-icon-code-Transition,
+  'TransitionEffect': $ms-icon-code-TransitionEffect,
+  'TransitionPop': $ms-icon-code-TransitionPop,
+  'TransitionPush': $ms-icon-code-TransitionPush,
+  'Translate': $ms-icon-code-Translate,
+  'Trending12': $ms-icon-code-Trending12,
+  'TriangleDown12': $ms-icon-code-TriangleDown12,
+  'TriangleLeft12': $ms-icon-code-TriangleLeft12,
+  'TriangleRight12': $ms-icon-code-TriangleRight12,
+  'TriangleShape': $ms-icon-code-TriangleShape,
+  'TriangleShapeSolid': $ms-icon-code-TriangleShapeSolid,
+  'TriangleSolid': $ms-icon-code-TriangleSolid,
+  'TriangleSolidDown12': $ms-icon-code-TriangleSolidDown12,
+  'TriangleSolidLeft12': $ms-icon-code-TriangleSolidLeft12,
+  'TriangleSolidRight12': $ms-icon-code-TriangleSolidRight12,
+  'TriangleSolidUp12': $ms-icon-code-TriangleSolidUp12,
+  'TriangleUp12': $ms-icon-code-TriangleUp12,
+  'TriggerApproval': $ms-icon-code-TriggerApproval,
+  'TriggerAuto': $ms-icon-code-TriggerAuto,
+  'TriggerUser': $ms-icon-code-TriggerUser,
+  'Trim': $ms-icon-code-Trim,
+  'TrimEnd': $ms-icon-code-TrimEnd,
+  'TrimStart': $ms-icon-code-TrimStart,
+  'TripleColumn': $ms-icon-code-TripleColumn,
+  'TripleColumnEdit': $ms-icon-code-TripleColumnEdit,
+  'TripleColumnWide': $ms-icon-code-TripleColumnWide,
+  'Trophy': $ms-icon-code-Trophy,
+  'Trophy2': $ms-icon-code-Trophy2,
+  'Trophy2Solid': $ms-icon-code-Trophy2Solid,
+  'TurnRight': $ms-icon-code-TurnRight,
+  'TVMonitor': $ms-icon-code-TVMonitor,
+  'TVMonitorSelected': $ms-icon-code-TVMonitorSelected,
+  'TypeScriptLanguage': $ms-icon-code-TypeScriptLanguage,
+  'Umbrella': $ms-icon-code-Umbrella,
+  'Underline': $ms-icon-code-Underline,
+  'Undo': $ms-icon-code-Undo,
+  'Uneditable': $ms-icon-code-Uneditable,
+  'Uneditable2': $ms-icon-code-Uneditable2,
+  'Uneditable2Mirrored': $ms-icon-code-Uneditable2Mirrored,
+  'UneditableMirrored': $ms-icon-code-UneditableMirrored,
+  'UneditableSolid12': $ms-icon-code-UneditableSolid12,
+  'UneditableSolidMirrored12': $ms-icon-code-UneditableSolidMirrored12,
+  'Unfavorite': $ms-icon-code-Unfavorite,
+  'UngroupObject': $ms-icon-code-UngroupObject,
+  'Unknown': $ms-icon-code-Unknown,
+  'UnknownCall': $ms-icon-code-UnknownCall,
+  'UnknownMirrored': $ms-icon-code-UnknownMirrored,
+  'UnknownMirroredSolid': $ms-icon-code-UnknownMirroredSolid,
+  'UnknownSolid': $ms-icon-code-UnknownSolid,
+  'Unlock': $ms-icon-code-Unlock,
+  'UnlockSolid': $ms-icon-code-UnlockSolid,
+  'Unpin': $ms-icon-code-Unpin,
+  'UnpublishContent': $ms-icon-code-UnpublishContent,
+  'UnSetColor': $ms-icon-code-UnSetColor,
+  'UnstackSelected': $ms-icon-code-UnstackSelected,
+  'Unsubscribe': $ms-icon-code-Unsubscribe,
+  'UnsyncFolder': $ms-icon-code-UnsyncFolder,
+  'UnsyncOccurence': $ms-icon-code-UnsyncOccurence,
+  'Untag': $ms-icon-code-Untag,
+  'Up': $ms-icon-code-Up,
+  'UpgradeAnalysis': $ms-icon-code-UpgradeAnalysis,
+  'Upload': $ms-icon-code-Upload,
+  'USB': $ms-icon-code-USB,
+  'UserEvent': $ms-icon-code-UserEvent,
+  'UserFollowed': $ms-icon-code-UserFollowed,
+  'UserGauge': $ms-icon-code-UserGauge,
+  'UserOptional': $ms-icon-code-UserOptional,
+  'UserPause': $ms-icon-code-UserPause,
+  'UserRemove': $ms-icon-code-UserRemove,
+  'UserSync': $ms-icon-code-UserSync,
+  'UserWarning': $ms-icon-code-UserWarning,
+  'Vacation': $ms-icon-code-Vacation,
+  'Variable': $ms-icon-code-Variable,
+  'Variable2': $ms-icon-code-Variable2,
+  'VariableGroup': $ms-icon-code-VariableGroup,
+  'VB': $ms-icon-code-VB,
+  'VennDiagram': $ms-icon-code-VennDiagram,
+  'VerifiedBrand': $ms-icon-code-VerifiedBrand,
+  'VerifiedBrandSolid': $ms-icon-code-VerifiedBrandSolid,
+  'VersionControlPush': $ms-icon-code-VersionControlPush,
+  'VerticalDistributeCenter': $ms-icon-code-VerticalDistributeCenter,
+  'Video': $ms-icon-code-Video,
+  'Video360Generic': $ms-icon-code-Video360Generic,
+  'VideoLightOff': $ms-icon-code-VideoLightOff,
+  'VideoOff': $ms-icon-code-VideoOff,
+  'VideoSearch': $ms-icon-code-VideoSearch,
+  'VideoSolid': $ms-icon-code-VideoSolid,
+  'View': $ms-icon-code-View,
+  'ViewAll': $ms-icon-code-ViewAll,
+  'ViewAll2': $ms-icon-code-ViewAll2,
+  'ViewDashboard': $ms-icon-code-ViewDashboard,
+  'ViewList': $ms-icon-code-ViewList,
+  'ViewListGroup': $ms-icon-code-ViewListGroup,
+  'ViewListTree': $ms-icon-code-ViewListTree,
+  'ViewOriginal': $ms-icon-code-ViewOriginal,
+  'VisioDiagram': $ms-icon-code-VisioDiagram,
+  'VisioDiagramSync': $ms-icon-code-VisioDiagramSync,
+  'VisioDocument': $ms-icon-code-VisioDocument,
+  'VisioLogo': $ms-icon-code-VisioLogo,
+  'VisioLogo16': $ms-icon-code-VisioLogo16,
+  'VisioLogoFill': $ms-icon-code-VisioLogoFill,
+  'VisioLogoFill16': $ms-icon-code-VisioLogoFill16,
+  'VisioLogoInverse': $ms-icon-code-VisioLogoInverse,
+  'VisioLogoInverse16': $ms-icon-code-VisioLogoInverse16,
+  'VisualBasicLanguage': $ms-icon-code-VisualBasicLanguage,
+  'VisuallyImpaired': $ms-icon-code-VisuallyImpaired,
+  'VisualsFolder': $ms-icon-code-VisualsFolder,
+  'VisualsStore': $ms-icon-code-VisualsStore,
+  'VisualStudioIDELogo32': $ms-icon-code-VisualStudioIDELogo32,
+  'VisualStudioLogo': $ms-icon-code-VisualStudioLogo,
+  'VoicemailForward': $ms-icon-code-VoicemailForward,
+  'VoicemailIRM': $ms-icon-code-VoicemailIRM,
+  'VoicemailReply': $ms-icon-code-VoicemailReply,
+  'Volume0': $ms-icon-code-Volume0,
+  'Volume1': $ms-icon-code-Volume1,
+  'Volume2': $ms-icon-code-Volume2,
+  'Volume3': $ms-icon-code-Volume3,
+  'VolumeDisabled': $ms-icon-code-VolumeDisabled,
+  'VSTSAltLogo1': $ms-icon-code-VSTSAltLogo1,
+  'VSTSAltLogo2': $ms-icon-code-VSTSAltLogo2,
+  'VSTSLogo': $ms-icon-code-VSTSLogo,
+  'Waffle': $ms-icon-code-Waffle,
+  'WaffleOffice365': $ms-icon-code-WaffleOffice365,
+  'WaitlistConfirm': $ms-icon-code-WaitlistConfirm,
+  'WaitlistConfirmMirrored': $ms-icon-code-WaitlistConfirmMirrored,
+  'Warning': $ms-icon-code-Warning,
+  'Warning12': $ms-icon-code-Warning12,
+  'WarningSolid': $ms-icon-code-WarningSolid,
+  'WavingHand': $ms-icon-code-WavingHand,
+  'WebAppBuilderFragment': $ms-icon-code-WebAppBuilderFragment,
+  'WebAppBuilderFragmentCreate': $ms-icon-code-WebAppBuilderFragmentCreate,
+  'WebAppBuilderModule': $ms-icon-code-WebAppBuilderModule,
+  'WebAppBuilderSlot': $ms-icon-code-WebAppBuilderSlot,
+  'Webcam2': $ms-icon-code-Webcam2,
+  'Webcam2Off': $ms-icon-code-Webcam2Off,
+  'WebComponents': $ms-icon-code-WebComponents,
+  'WebPublish': $ms-icon-code-WebPublish,
+  'Website': $ms-icon-code-Website,
+  'WebTemplate': $ms-icon-code-WebTemplate,
+  'Weights': $ms-icon-code-Weights,
+  'Wheelchair': $ms-icon-code-Wheelchair,
+  'WhiteBoardApp16': $ms-icon-code-WhiteBoardApp16,
+  'WhiteBoardApp32': $ms-icon-code-WhiteBoardApp32,
+  'WifiEthernet': $ms-icon-code-WifiEthernet,
+  'WifiWarning4': $ms-icon-code-WifiWarning4,
+  'WindDirection': $ms-icon-code-WindDirection,
+  'WindowEdit': $ms-icon-code-WindowEdit,
+  'WindowsLogo': $ms-icon-code-WindowsLogo,
+  'Wines': $ms-icon-code-Wines,
+  'WipePhone': $ms-icon-code-WipePhone,
+  'WordDocument': $ms-icon-code-WordDocument,
+  'WordLogo': $ms-icon-code-WordLogo,
+  'WordLogo16': $ms-icon-code-WordLogo16,
+  'WordLogoFill': $ms-icon-code-WordLogoFill,
+  'WordLogoFill16': $ms-icon-code-WordLogoFill16,
+  'WordLogoInverse': $ms-icon-code-WordLogoInverse,
+  'WordLogoInverse16': $ms-icon-code-WordLogoInverse16,
+  'Work': $ms-icon-code-Work,
+  'WorkFlow': $ms-icon-code-WorkFlow,
+  'WorkforceManagement': $ms-icon-code-WorkforceManagement,
+  'WorkItem': $ms-icon-code-WorkItem,
+  'WorkItemAlert': $ms-icon-code-WorkItemAlert,
+  'WorkItemBar': $ms-icon-code-WorkItemBar,
+  'WorkItemBarSolid': $ms-icon-code-WorkItemBarSolid,
+  'WorkItemBug': $ms-icon-code-WorkItemBug,
+  'World': $ms-icon-code-World,
+  'WorldClock': $ms-icon-code-WorldClock,
+  'YammerLogo': $ms-icon-code-YammerLogo,
+  'ZipFolder': $ms-icon-code-ZipFolder,
+  'Zoom': $ms-icon-code-Zoom,
+  'ZoomIn': $ms-icon-code-ZoomIn,
+  'ZoomOut': $ms-icon-code-ZoomOut,
+  'ZoomToFit': $ms-icon-code-ZoomToFit,
+
+  // Deprecated icons.
+  'HumanResources': $ms-icon-code-HumanResources,
+  'StoreLogo': $ms-icon-code-StoreLogo16,
+  'OneDrive': $ms-icon-code-OneDriveLogo,
+  'ToggleOff': $ms-icon-code-ToggleRight,
+  'StoreLogoMed': $ms-icon-code-StoreLogoMed20
+);

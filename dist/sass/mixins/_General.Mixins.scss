@@ -1,0 +1,222 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Vendor-prefixed mixins
+
+// Border radius.
+@mixin ms-border-radius($radius: 5px) {
+  border-radius: $radius;
+  background-clip: padding-box;
+}
+
+// Drop shadow.
+@mixin ms-drop-shadow($x-offset: 0, $y-offset: 0, $blur: 5px, $spread: 0, $alpha: 0.4) {
+  @include ms-box-shadow($x-offset, $y-offset $blur $spread rgba(0, 0, 0, $alpha));
+}
+
+// Background gradient.
+@mixin ms-background-gradient($origin: left, $start: #000, $start-location: 0%, $stop: #FFF, $stop-location: 100%) {
+
+  // To maintain compatibility with the old arguments, reverse
+  // the $origin direction and set it as $destination.
+  $destination: null;
+  @if $origin == top {
+    $destination: bottom;
+  }
+  @if $origin == right {
+    $destination: left;
+  }
+  @if $origin == bottom {
+    $destination: top;
+  }
+  @if $origin == left {
+    $destination: right;
+  }
+
+  background-color: $start;
+  background-image: linear-gradient(to $destination, $start $start-location, $stop $stop-location);
+}
+
+// Rotation.
+@mixin ms-rotate($degrees) {
+  @include ms-transform-rotate($degrees);
+}
+
+// Prevents user selection of text elements.
+@mixin ms-user-select ($val) {
+    -webkit-touch-callout:  $val;
+    -webkit-user-select:    $val;
+    -khtml-user-select:     $val;
+    -moz-user-select:       $val;
+    -ms-user-select:        $val;
+    user-select:            $val;
+}
+
+// Prevents the text within a block element from wrapping to second line.
+@mixin ms-no-wrap() {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Flexbox
+@mixin ms-flex-box() {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin ms-alignItems($mode) {
+    -webkit-box-align: $mode;
+    -moz-box-align: $mode;
+    -ms-flex-align: $mode;
+    -webkit-align-items: $mode;
+    align-items: $mode;
+}
+
+// Base/wrapper component to set typography throughout the app.
+@mixin ms-Fabric {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  @include ms-inherit-font-family();
+  color: $ms-color-neutralPrimary;
+  font-family: $ms-font-family-west-european;
+  font-size: $ms-font-size-m;
+}
+
+// Set the font-family to 'inherit' for elements where the browser
+// styles commonly conflict with the font-family that we want.
+@mixin ms-inherit-font-family() {
+  button,
+  input,
+  textarea {
+    font-family: inherit;
+  }
+}
+
+// Overrides the browser's default focus outline style.
+@mixin ms-focus-outline($inset: 0, $color: $ms-focus-border-color) {
+  // Only do this when it's a child of ms-Fabric in a focusVisible state.
+  .ms-Fabric.is-focusVisible &:focus {
+    outline: $ms-focus-border-width $ms-focus-border-style $color;
+    outline-offset: -$inset;
+  }
+}
+
+// Simulates a focus outline using an absolutely-positioned pseudo-element.
+@mixin ms-focus-border($inset: 0, $color: $ms-focus-border-color) {
+  // Clear browser-specific focus styles and use 'transparent' as placeholder for focus style.
+  outline: transparent;
+
+  // Requirement because pseudo-element is absolutely positioned.
+  position: relative;
+
+  // Clear the focus border in Firefox.
+  // Reference: http://stackoverflow.com/a/199319/1436671
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  // When the element that uses this mixin is in a :focus state, add a pseudo-element to
+  // create a border. Only do this when it's a child of ms-Fabric in a focusVisible state.
+  .ms-Fabric.is-focusVisible &:focus::after {
+    // Wrap the parent element with $padding.
+    content: '';
+    position: absolute;
+    top: $inset;
+    right: $inset;
+    bottom: $inset;
+    left: $inset;
+
+    // Add focus border of specified $color.
+    border: $ms-focus-border-width $ms-focus-border-style $color;
+
+    // Make the content not respond to mouse/touch events.
+    // Reference: https://css-tricks.com/almanac/properties/p/pointer-events/
+    pointer-events: none;
+  }
+}
+
+// The best box is a border box.
+@mixin ms-borderBox {
+  box-sizing: border-box;
+}
+
+// For setting the border base width
+@mixin ms-borderBase {
+  border: 1px solid;
+}
+
+// Ensures the block expands to the full height to enclose its floated childen.
+@mixin ms-clearfix {
+  zoom: 1;
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+    line-height: 0;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+// Basic border-box, margin, and padding reset.
+@mixin ms-normalize {
+  @include ms-borderBox;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Generate text alignment classes, such as .ms-textAlignLeft 
+// @param [variable list] $alignments
+@mixin ms-textAlign($alignments...) {
+  @warn 'The ms-textAlign mixin has been deprecated and will be removed in a future release of Fabric Core.';
+  @each $align in $alignments {
+    $alignStr: inspect($align);
+    .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
+      @include ms-text-align($align);
+    }
+  }
+}
+
+// To hide content while still making it readable by screen readers (Accessibility)
+@mixin ms-screenReaderOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// To add truncation with ellipsis
+@mixin ms-textTruncate {
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	word-wrap: normal; // Fix for IE 8/9 in case 'word-wrap: break-word' is set on parent nodes
+}
+
+// To disable text wrapping
+@mixin ms-noWrap {
+	white-space: nowrap; 
+}
+
+// Replace or remove a portion of a string.
+// Thanks to https://www.sassmeister.com/gist/1b4f2da5527830088e4d
+@function ms-string-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + ms-string-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}

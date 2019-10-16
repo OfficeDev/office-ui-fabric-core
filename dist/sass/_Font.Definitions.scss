@@ -1,0 +1,33 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Produce @font-face definitions for each of the web fonts.
+@include ms-font-face('Leelawadee UI Web', 'leelawadeeui-thai', 'leelawadeeui');
+@include ms-font-face('Segoe UI Web (Arabic)', 'segoeui-arabic');
+@include ms-font-face('Segoe UI Web (Cyrillic)', 'segoeui-cyrillic');
+@include ms-font-face('Segoe UI Web (East European)', 'segoeui-easteuropean');
+@include ms-font-face('Segoe UI Web (Greek)', 'segoeui-greek');
+@include ms-font-face('Segoe UI Web (Hebrew)', 'segoeui-hebrew');
+@include ms-font-face('Segoe UI Web (Vietnamese)', 'segoeui-vietnamese');
+@include ms-font-face('Segoe UI Web (West European)', 'segoeui-westeuropean');
+@include ms-font-face('Selawik Web', 'selawik', 'selawik');
+
+
+// Leelawadee UI (Thai and Lao) does not have a 'light' weight, so we override
+// the font-face generated above to use the 'semilight' weight instead.
+@font-face {
+  font-family: 'Leelawadee UI Web';
+  src: url('#{$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-semilight.woff2') format('woff2'),
+       url('#{$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-semilight.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+// Leelawadee UI (Thai and Lao) does not have a 'semibold' weight, so we override
+// the font-face generated above to use the 'bold' weight instead.
+@font-face {
+  font-family: 'Leelawadee UI Web';
+  src: url('#{$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-bold.woff2') format('woff2'),
+       url('#{$ms-font-cdn-path}/leelawadeeui-thai/leelawadeeui-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}

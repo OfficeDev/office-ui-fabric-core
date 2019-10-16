@@ -1,0 +1,16 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// Timing curves.
+$ms-motion-timing-accelerate: cubic-bezier(0.9, 0.1, 1, 0.2);
+$ms-motion-timing-decelerate: cubic-bezier(0.1, 0.9, 0.2, 1);
+$ms-motion-timing-linear: cubic-bezier(0, 0, 1, 1);
+$ms-motion-timing-standard: cubic-bezier(0.8, 0, 0.2, 1);
+
+// Durations.
+$ms-motion-duration-1: 100ms;
+$ms-motion-duration-2: 200ms;
+$ms-motion-duration-3: 300ms;
+$ms-motion-duration-4: 400ms;
+
+// Deprecated MDL2 animation variables.
+@import "./Animation.Variables.MDL2";

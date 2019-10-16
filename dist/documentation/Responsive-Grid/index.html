@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Fabric UI Core Documentation</title>
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/2.6.2/css/fabric.components.min.css">
+</head>
+<body class="ms-Fabric">
+<div id="body-content">
+    <div id="Header" class="docs-Header">
+	    <a class="ms-font-xxl ms-fontColor-white" href="/">Office UI Fabric</a>
+	    <div class="Header-buttons">
+            <a href="https://github.com/OfficeDev/office-ui-fabric-core/" class="Header-button ms-fontColor-white">Github</a>
+        </div>
+	</div>
+	<div class="docs-Page has-leftNav">
+	    <div class="docs-Page-leftNav">
+    <div class="LeftNav-links" role="menu" aria-label="Anchor links for navigating this page">
+			<div class="LeftNav-item">
+	        	<a class="Typography LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Typography">Typography</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Color LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Color">Color</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Icons LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Icons">Icons</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Animations LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Animations">Animations</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Responsive-Grid LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Responsive-Grid">Responsive Grid</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Localization LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Localization">Localization</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Scoping LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Scoping">Scoping</a>
+	      	</div>
+    </div>
+</div>
+
+  <div class="docs-Styles-section" id="responsive-grid">
+    <h2>Responsive Grid</h2>
+    <p>Fabric comes with a mobile-first, 12-column, responsive grid that you can use to create flexible layouts for a variety of screen sizes and device types.</p>
+    
+<div class="ms-Grid docs-demoGrid" aria-label="Example Grid">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+        <div class="ms-Grid-col ms-sm1">
+            <div class="block">1</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-sm2">
+            <div class="block">2</div>
+        </div>
+        <div class="ms-Grid-col ms-sm2">
+            <div class="block">2</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm3">
+            <div class="block">3</div>
+        </div>
+        <div class="ms-Grid-col ms-sm3">
+            <div class="block">3</div>
+        </div>
+        <div class="ms-Grid-col ms-sm3">
+            <div class="block">3</div>
+        </div>
+        <div class="ms-Grid-col ms-sm3">
+            <div class="block">3</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm4">
+            <div class="block">4</div>
+        </div>
+        <div class="ms-Grid-col ms-sm4">
+            <div class="block">4</div>
+        </div>
+        <div class="ms-Grid-col ms-sm4">
+            <div class="block">4</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm6">
+            <div class="block">6</div>
+        </div>
+        <div class="ms-Grid-col ms-sm6">
+            <div class="block">6</div>
+        </div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm12">
+            <div class="block">12</div>
+        </div>
+    </div>
+</div>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p>
+
+<p class="ms-font-m">A grid (<span class="docs-u-fontCode">ms-Grid</span>) can contain multiple rows (<span class="docs-u-fontCode">ms-Grid-row</span>), each of which has one or more columns (<span class="docs-u-fontCode">ms-Grid-col</span>). Utility classes (<span class="docs-u-fontCode">ms-sm6</span>) specify how large each column should be on small, medium, and large devices. The columns in a row should add up to 12 for each device size.</p>
+<pre><code>&lt;div class="ms-Grid"&gt; 
+    &lt;div class="ms-Grid-row"&gt;
+        &lt;div class="ms-Grid-col ms-sm6 ms-md4 ms-lg2"&gt;First&lt;/div&gt;
+        &lt;div class="ms-Grid-col ms-sm6 ms-md8 ms-lg10"&gt;Second&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>Would result in:</p>
+
+<div class="ms-Grid docs-demoGrid" aria-label="Grid example">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm6 ms-md4 ms-lg2">
+            <div class="block">First</div>
+        </div>
+        <div class="ms-Grid-col ms-sm6 ms-md8 ms-lg10">
+            <div class="block">Second</div>
+        </div>
+    </div>
+</div>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Inheritance</p>
+
+<p class="ms-font-m">Because Fabric is mobile-first, any layout defined for small screens is automatically inherited by medium and large screens. The small size utilities (<span class="docs-u-fontCode">ms-sm6</span>) are required. If you want to change the layout on larger screens, you can apply the other utility classes.</p>
+
+<p class="ms-font-m">Try this out! On a large screen, the Example block will be smaller. Try shrinking your browser window – the Example block will take up the entire width of the screen.</p>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p>
+<pre><code>&lt;div class="ms-Grid-col ms-sm12 ms-lg4"&gt;Example&lt;/div&gt;
+</pre></code>
+<div class="ms-Grid docs-demoGrid" aria-label="Grid example">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm12 ms-lg4">
+            <div class="block">Example</div>
+        </div>
+    </div>
+</div>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Push and pull</p>
+
+<p class="ms-font-m">You might want your column source order to differ from the display order, or to change the column display order based on the screen size. The push and pull utilities make this possible. Push moves a column to the right; pull moves it to the left.</p>
+
+<p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p>
+<pre><code>&lt;div class="ms-Grid-col ms-sm4 ms-smPush8"&gt;first in code&lt;/div&gt;
+&lt;div class="ms-Grid-col ms-sm8 ms-smPull4"&gt;second in code&lt;/div&gt;
+</code></pre>
+
+<div class="ms-Grid docs-demoGrid" aria-label="Grid example">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm4 ms-smPush8">
+            <div class="block">first in code</div>
+        </div>
+        <div class="ms-Grid-col ms-sm8 ms-smPull4">
+            <div class="block">second in code</div>
+        </div>
+    </div>
+</div>
+
+
+    <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">Visibility</p>
+
+    <p class="ms-font-m">Some designs call for certain content to be shown or hidden depending on the screen size. You can achieve this using Fabric's responsive visibility classes. These allow you to show or hide content at a specific screen size, or across a whole range of sizes.</p>
+
+    <table class="docs-Table docs-Table--striped" style="width: 100%;" aria-label="Table of classes to hide content on the screen depending on screensize">
+        <col>
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <tr>
+            <th colspan="2" style="text-align:center;" scope="colgroup">Visibility class</th>
+            <th colspan="6" style="text-align:center;" scope="colgroup">Hides content on screen of size</th>
+        </tr>
+        <tr>
+            <th colspan="1" style="text-align:center;"></th>
+            <th style="text-align:center;" scope="col">SM</th>
+            <th style="text-align:center;" scope="col">MD</th>
+            <th style="text-align:center;" scope="col">LG</th>
+            <th style="text-align:center;" scope="col">XL</th>
+            <th style="text-align:center;" scope="col">XXL</th>
+            <th style="text-align:center;" scope="col">XXXL</th>
+        </tr>
+            <tr>
+              <td>ms-hiddenSm</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenSm hides content for screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenSm does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenSm does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenSm does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenSm does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenSm does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenMd</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMd does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMd hides content for screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMd does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMd does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMd does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMd does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenMdDown</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdDown hides content for screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdDown hides content for screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMdDown does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMdDown does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMdDown does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMdDown does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenMdUp</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenMdUp does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdUp hides content for screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdUp hides content for screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdUp hides content for screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdUp hides content for screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenMdUp hides content for screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenLg</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLg does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLg does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLg hides content for screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLg does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLg does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLg does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenLgDown</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgDown hides content for screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgDown hides content for screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgDown hides content for screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLgDown does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLgDown does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLgDown does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenLgUp</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLgUp does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenLgUp does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgUp hides content for screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgUp hides content for screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgUp hides content for screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenLgUp hides content for screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXl</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXl does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXl does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXl does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXl hides content for screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXl does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXl does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXlDown</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlDown hides content for screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlDown hides content for screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlDown hides content for screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlDown hides content for screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXlDown does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXlDown does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXlUp</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXlUp does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXlUp does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXlUp does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlUp hides content for screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlUp hides content for screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXlUp hides content for screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXxl</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxl does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxl does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxl does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxl does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxl hides content for screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxl does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXxlDown</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlDown hides content for screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlDown hides content for screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlDown hides content for screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlDown hides content for screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlDown hides content for screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxlDown does not hide content on the screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXxlUp</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxlUp does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxlUp does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxlUp does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxlUp does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlUp hides content for screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxlUp hides content for screen size XXXL
+              </td>
+            </tr>            <tr>
+              <td>ms-hiddenXxxl</td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxxl does not hide content on the screen size SM
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxxl does not hide content on the screen size MD
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxxl does not hide content on the screen size LG
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxxl does not hide content on the screen size XL
+              </td>
+              <td style="text-align:center;" class="docs-Table-visibleForScreenReaders">
+                Class ms-hiddenXxxl does not hide content on the screen size XXL
+              </td>
+              <td class="docs-Table-visibleForScreenReaders">
+                <i class="ms-Icon ms-Icon--CheckMark ms-fontColor-green" aria-hidden="true"></i>
+                Class ms-hiddenXxxl hides content for screen size XXXL
+              </td>
+            </tr>    </table>
+
+    <p class="ms-font-l docs-subHeading ms-fontWeight-semibold">How to use</p><pre><code>&lt;div class="ms-Grid-col ms-sm12 ms-hiddenXlDown"&gt;hidden on small&lt;/div&gt;
+      &lt;div class="ms-Grid-col ms-sm12 ms-hiddenXxlUp"&gt;hidden on large up&lt;/div&gt;</code></pre>
+
+    <div class="ms-Grid docs-demoGrid">
+        <div class="ms-Grid-row">
+            <div class="ms-Grid-col ms-sm12 ms-hiddenXlDown">
+                <div class="block">The screen is XL or smaller.</div>
+            </div>
+            <div class="ms-Grid-col ms-sm12 ms-hiddenXxlUp">
+                <div class="block">The screen is XXL or larger.</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+<script>
+	var currPage = window.location.pathname.replace(/\//g, '');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
+</script>
+</body>
+</html>

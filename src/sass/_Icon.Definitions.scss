@@ -13,7 +13,7 @@
 @font-face {
   $icon-font-family: 'FabricMDL2Icons';
   $icon-font-name: 'fabricmdl2icons';
-  $icon-font-version: '2.68';
+  $icon-font-version: '3.54';
 
   @if variable_exists(do-scope-styles) {
     $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
@@ -21,9 +21,7 @@
   }
 
   font-family: $icon-font-family;
-  src: url('#{$ms-icon-cdn-path}/#{$icon-font-name}-#{$icon-font-version}.woff2') format('woff2'),
-       url('#{$ms-icon-cdn-path}/#{$icon-font-name}-#{$icon-font-version}.woff') format('woff'),
-       url('#{$ms-icon-cdn-path}/#{$icon-font-name}-#{$icon-font-version}.ttf') format('truetype');
+  src: url('#{$ms-icon-cdn-path}/#{$icon-font-name}-#{$icon-font-version}.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

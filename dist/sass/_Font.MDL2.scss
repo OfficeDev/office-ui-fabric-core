@@ -1,0 +1,128 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// These classes are deprecated and will be removed in a future release.
+
+// Super Styles (LIMITED USE)
+// Weights: Light
+.ms-font-su {
+  @include ms-font-su;
+}
+// No touch class for Super
+
+// Extra-Extra-Large
+// Allowed weights: Light, SemiLight
+.ms-font-xxl {
+  @include ms-font-xxl;
+}
+
+// Extra-Large Plus Styles
+// Allowed weights: Light, SemiLight
+.ms-font-xl-plus {
+  @include ms-font-xl-plus;
+}
+
+// Extra-Large Styles
+// Allowed weights: Light, SemiLight
+.ms-font-xl {
+  @include ms-font-xl;
+}
+
+// Large Styles
+// Allowed weights: SemiLight, Regular, Semibold
+.ms-font-l {
+  @include ms-font-l;
+}
+
+// Medium Plus Styles
+// Allowed weights: SemiLight, Regular, Semibold
+.ms-font-m-plus {
+  @include ms-font-m-plus;
+}
+
+// Medium Styles
+// Allowed weights: SemiLight, Regular, Semibold
+.ms-font-m {
+  @include ms-font-m;
+}
+
+// Small Plus Styles
+// Allowed weights: SemiLight, Regular, Semibold
+.ms-font-s-plus {
+  @include ms-font-s-plus;
+}
+
+// Small Styles
+// Allowed weights: SemiLight, Regular, Semibold
+.ms-font-s {
+  @include ms-font-s;
+}
+
+// XS Styles
+// Allowed weights: SemiLight, Regular, Semibold
+.ms-font-xs {
+  @include ms-font-xs;
+}
+
+// Micro Styles (LIMITED USE)
+// Weights: Semibold
+.ms-font-mi {
+  @include ms-font-mi;
+}
+
+//== Helper classes & mixins
+//
+// Helper mixins to override default type values
+
+// Font weights
+.ms-fontWeight-light {
+  @include ms-fontWeight-light;
+}
+
+.ms-fontWeight-semilight {
+  @include ms-fontWeight-semilight;
+}
+
+// Font sizes
+.ms-fontSize-su {
+  @include ms-fontSize-su;
+}
+
+.ms-fontSize-xxl {
+  @include ms-fontSize-xxl;
+}
+
+.ms-fontSize-xlPlus {
+  @include ms-fontSize-xlPlus;
+}
+
+.ms-fontSize-xl {
+  @include ms-fontSize-xl;
+}
+
+.ms-fontSize-l {
+  @include ms-fontSize-l;
+}
+
+.ms-fontSize-mPlus {
+  @include ms-fontSize-mPlus;
+}
+
+.ms-fontSize-m {
+  @include ms-fontSize-m;
+}
+
+.ms-fontSize-sPlus {
+  @include ms-fontSize-sPlus;
+}
+
+.ms-fontSize-s {
+  @include ms-fontSize-s;
+}
+
+.ms-fontSize-xs {
+  @include ms-fontSize-xs;
+}
+
+.ms-fontSize-mi {
+  @include ms-fontSize-mi;
+}

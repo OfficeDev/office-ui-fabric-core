@@ -13,7 +13,7 @@
 @font-face {
   $icon-font-family: 'FabricMDL2Icons';
   $icon-font-name: 'fabricmdl2icons';
-  $icon-font-version: '3.54';
+  $icon-font-version: '3.70';
 
   @if variable_exists(do-scope-styles) {
     $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 

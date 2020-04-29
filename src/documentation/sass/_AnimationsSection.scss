@@ -1,3 +1,7 @@
+// Deprecated MDL2 animation mixins.
+@import "../../sass/mixins/_Animation.Mixins.MDL2.scss";
+@import "../../sass/_Animation.MDL2.scss";
+
 $animationExample-height: 90px;
 
 .docs-animationsTable-header {

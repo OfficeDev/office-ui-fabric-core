@@ -199,6 +199,3 @@
   animation: ms-motion-slideDownIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
     ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
 }
-
-// Deprecated MDL2 animation mixins.
-@import "./Animation.Mixins.MDL2";

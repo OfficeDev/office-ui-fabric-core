@@ -6,7 +6,7 @@ Fabric is a responsive, mobile-first collection of styles and tools designed to 
 
 **Latest version:** 11.0.0
 
-## Contents
+## CONTENTS
 
 * [What's included](#whats-included)
 * [Get started](#get-started)

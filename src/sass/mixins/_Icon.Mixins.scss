@@ -84,9 +84,10 @@
 
       // Classes for the regular icon.
       .ms-Icon--#{$ltrIconName}::before {
-        @include ms-LTR {
-          content: $ltrIconCode;
-        }
+        // Avoid ms-LTR to prevent missing icons if HTML uses dir="auto" or omits attribute
+        content: $ltrIconCode;
+        
+        // Override content via increased specificity with the RTL selector
         @include ms-RTL {
           content: $iconCode;
         }
@@ -94,9 +95,10 @@
 
       // Classes for the mirrored icon.
       .ms-Icon--#{$iconName}::before {
-        @include ms-LTR {
-          content: $iconCode;
-        }
+        // Avoid ms-LTR to prevent missing icons if HTML uses dir="auto" or omits attribute
+        content: $iconCode;
+        
+        // Override content via increased specificity with the RTL selector
         @include ms-RTL {
           content: $ltrIconCode;
         }

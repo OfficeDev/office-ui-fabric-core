@@ -1474,6 +1474,7 @@
   { "name": "Separator", "unicode": "F35E" },
   { "name": "Server", "unicode": "F201" },
   { "name": "ServerEnviroment", "unicode": "F29F" },
+  { "name": "ServerEnvironment", "unicode": "F29F" },
   { "name": "ServerProcesses", "unicode": "F1FE" },
   { "name": "ServiceOff", "unicode": "E3FD" },
   { "name": "SetAction", "unicode": "F071" },

@@ -174,7 +174,7 @@
   $namelist: ();
   @each $name in $names {
     $newname: $name#{$ms-fabric-version-suffix};
-    $namelist: append($namelist, unquote($newname), 'comma');
+    $namelist: append($namelist, $newname, 'comma');
   }
 
   // Output the animation's properties.

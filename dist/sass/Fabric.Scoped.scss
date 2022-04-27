@@ -1,0 +1,33 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// Core styles scoped to the current major version of Fabric
+
+// Variable is set during gulp task as comma seperated list. i.e. 5,1,0
+$ms-fabric-version: 11,0,1;
+
+@import './References';
+@import './mixins/ScopedStyles.Mixins';
+
+// Sets a global flag to enable scoped styles within certain files
+$do-scope-styles: true;
+
+// Scope all core styles under a helper class for the current major version.
+// This produces styles of the form .ms-Fabric-{version #} .ms-font-m.
+
+@include scope-fabric {
+  @import './Animation';
+  @import './BrandIcon';
+  @import './Color';
+  @import './Font';
+  @import './Grid';
+  @import './Icon';
+  @import './Responsive';
+  @import './Utility';
+  @import './Wrapper';
+}
+
+// @font-face definitions do not need to be scoped
+  @import './Font.Definitions';
+  @import './Icon.Definitions';

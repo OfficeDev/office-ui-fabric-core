@@ -1,0 +1,362 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+//
+// Office UI Fabric
+// --------------------------------------------------
+// Directionality mixins to generate LTR and RTL-specific styles
+
+// Base left-to-right mixin definition.
+@mixin ms-LTR {
+  [dir='ltr'] & {
+    @content;
+  }
+}
+
+// Base right-to-left mixin definition.
+@mixin ms-RTL {
+  [dir='rtl'] & {
+    @content;
+  }
+}
+
+// Use baseRTL to set the default direction to right-to-left on
+// a root element (e.g. page or region) that needs RTL support.
+@mixin ms-base-RTL {
+  @include ms-RTL {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+}
+
+
+// Common CSS property mixins with support for RTL.
+// Use to automatically create RTL versions of your properties.
+
+// Background direction.
+@mixin ms-background-position($alignment) {
+  @if $alignment == left {
+    @include ms-LTR {
+      background-position: left;
+    }
+
+    @include ms-RTL {
+      background-position: right;
+    }
+  } @else if $alignment == right {
+    @include ms-LTR {
+      background-position: right;
+    }
+
+    @include ms-RTL {
+      background-position: left;
+    }
+  } @else {
+    background-position: $alignment;
+  }
+}
+
+// Border styles.
+@mixin ms-border-color($top, $right, $bottom, $left) {
+  border-color: $top $right $bottom $left;
+
+  @include ms-RTL {
+    border-color: $top $left $bottom $right;
+  }
+}
+
+@mixin ms-border-left($width, $style, $color) {
+  @include ms-LTR {
+    border-left: $width $style $color;
+  }
+
+  @include ms-RTL {
+    border-right: $width $style $color;
+  }
+}
+
+@mixin ms-border-left-color($color) {
+  @include ms-LTR {
+    border-left-color: $color;
+  }
+
+  @include ms-RTL {
+    border-right-color: $color;
+  }
+}
+
+@mixin ms-border-left-style($style) {
+  @include ms-LTR {
+    border-left-style: $style;
+  }
+
+  @include ms-RTL {
+    border-right-style: $style;
+  }
+}
+
+@mixin ms-border-left-width($width) {
+  @include ms-LTR {
+    border-left-width: $width;
+  }
+
+  @include ms-RTL {
+    border-right-width: $width;
+  }
+}
+
+@mixin ms-border-radius($topLeft, $topRight, $bottomRight, $bottomLeft) {
+  border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+
+  @include ms-RTL {
+    border-radius: $topRight $topLeft $bottomLeft $bottomRight;
+  }
+}
+
+@mixin ms-border-right($width, $style, $color) {
+  @include ms-LTR {
+    border-right: $width $style $color;
+  }
+
+  @include ms-RTL {
+    border-left: $width $style $color;
+  }
+}
+
+@mixin ms-border-right-color($color) {
+  @include ms-LTR {
+      border-right-color: $color;
+  }
+
+  @include ms-RTL {
+      border-left-color: $color;
+  }
+}
+
+@mixin ms-border-right-style($style) {
+  @include ms-LTR {
+    border-right-style: $style;
+  }
+  
+  @include ms-RTL {
+    border-left-style: $style;
+  }
+}
+
+@mixin ms-border-right-width($width) {
+  @include ms-LTR {
+    border-right-width: $width;
+  }
+
+  @include ms-RTL {
+    border-left-width: $width;
+  }
+}
+
+// Floats.
+@mixin ms-clear($side) {
+  @if $side == left {
+    @include ms-LTR {
+      clear: $side;
+    }
+
+    @include ms-RTL {
+      clear: right;
+    }
+  } @else if $side == right {
+    @include ms-LTR {
+      clear: $side;
+    }
+
+    @include ms-RTL {
+      clear: left;
+    }
+  } @else {
+      clear: $side;
+  }
+}
+
+@mixin ms-float($direction) {
+  @if $direction == left {
+    @include ms-LTR {
+      float: left;
+    }
+
+    @include ms-RTL {
+      float: right;
+    }
+  } @else {
+    @include ms-LTR {
+      float: right;
+    }
+
+    @include ms-RTL {
+      float: left;
+    }
+  }
+}
+
+// Positioning.
+@mixin ms-left($distance) {
+  @include ms-LTR {
+    left: $distance;
+  }
+
+  @include ms-RTL {
+    right: $distance;
+  }
+}
+
+@mixin ms-right($distance) {
+  @include ms-LTR {
+    right: $distance;
+  }
+
+  @include ms-RTL {
+    left: $distance;
+  }
+}
+
+// Margins.
+@mixin ms-margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+
+  @include ms-RTL {
+    margin: $top $left $bottom $right;
+  }
+}
+
+@mixin ms-margin-left($distance) {
+  @include ms-LTR {
+    margin-left: $distance;
+  }
+
+  @include ms-RTL {
+    margin-right: $distance;
+  }
+}
+
+@mixin ms-margin-right($distance) {
+  @include ms-LTR {
+    margin-right: $distance;
+  }
+  @include ms-RTL {
+    margin-left: $distance;
+  }
+}
+
+// Padding.
+@mixin ms-padding($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+
+  @include ms-RTL {
+    padding: $top $left $bottom $right;
+  }
+}
+
+@mixin ms-padding-left($distance) {
+  @include ms-LTR {
+    padding-left: $distance;
+  }
+
+  @include ms-RTL {
+    padding-right: $distance;
+  }
+}
+
+@mixin ms-padding-right($distance) {
+  @include ms-LTR {
+    padding-right: $distance;
+  }
+
+  @include ms-RTL {
+    padding-left: $distance;
+  }
+}
+
+// Text-alignment.
+@mixin ms-text-align($direction) {
+  @if $direction == left {
+    @include ms-LTR {
+      text-align: left;
+    }
+
+    @include ms-RTL {
+      text-align: right;
+    }
+  } @else {
+    @include ms-LTR {
+      text-align: right;
+    }
+
+    @include ms-RTL {
+      text-align: left;
+    }
+  }
+}
+
+// Box-shadow.
+@mixin ms-box-shadow($left, $etc) {
+  @if $left != 0 {
+    @include ms-LTR {
+      box-shadow: $left $etc;
+    }
+
+    @include ms-RTL {
+      box-shadow: -$left $etc;
+    }
+  } @else {
+    box-shadow: 0 $etc;
+  }
+}
+
+// Transforms.
+@mixin ms-transform-scaleX($scaleX: 1) {
+  @include ms-LTR {
+    transform: scaleX($scaleX);
+  }
+
+  @include ms-RTL {
+    transform: scaleX(-$scaleX);
+  }
+}
+
+@mixin ms-transform-translateX($distance) {
+  @include ms-LTR {
+    transform: translateX($distance);
+  }
+
+  @include ms-RTL {
+    transform: translateX(-$distance);
+  }
+}
+
+@mixin ms-transform-rotate($degrees) {
+  @include ms-LTR {
+    transform: rotate($degrees);
+  }
+
+  @include ms-RTL {
+    transform: rotate(-$degrees);
+  }
+}
+
+// Transitions. Only supported when ONLY left/right are declared
+@mixin ms-transition-property($direction) {
+  @if $direction == left {
+    @include ms-LTR {
+      transition-property: left;
+    }
+
+    @include ms-RTL {
+      transition-property: right;
+    }
+  } @else {
+    @include ms-LTR {
+      transition-property: right;
+    }
+
+    @include ms-RTL {
+      transition-property: left;
+    }
+  }
+}

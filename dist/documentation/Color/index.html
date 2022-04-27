@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Fabric UI Core Documentation</title>
+  <link rel="stylesheet" href="../../css/fabric.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/2.6.2/css/fabric.components.min.css">
+</head>
+<body class="ms-Fabric">
+<div id="body-content">
+    <div id="Header" class="docs-Header">
+	    <a class="ms-font-xxl ms-fontColor-white" href="/">Office UI Fabric</a>
+	    <div class="Header-buttons">
+            <a href="https://github.com/OfficeDev/office-ui-fabric-core/" class="Header-button ms-fontColor-white">Github</a>
+        </div>
+	</div>
+	<div class="docs-Page has-leftNav">
+	    <div class="docs-Page-leftNav">
+    <div class="LeftNav-links" role="menu" aria-label="Anchor links for navigating this page">
+			<div class="LeftNav-item">
+	        	<a class="Typography LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Typography">Typography</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Color LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Color">Color</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Icons LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Icons">Icons</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Animations LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Animations">Animations</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Responsive-Grid LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Responsive-Grid">Responsive Grid</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Localization LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Localization">Localization</a>
+	      	</div>
+	      	<div class="LeftNav-item">
+	        	<a class="Scoping LeftNav-link ms-border-color-themePrimary ms-font-l ms-font-color-neutralSecondary" href="/Scoping">Scoping</a>
+	      	</div>
+    </div>
+</div>
+
+<div class="docs-Styles-section" id="color">
+  <h2>Color</h2>
+  <p>Fabric includes 9 theme colors and 11 neutral colors. Each has helper classes for text, border, background, and hover states.</p>
+
+  <h3>Theme colors</h3>
+  <p>Use theme colors in wayfinding, navigation, and key interactions like primary actions and current or selected indicators.</p>   
+  
+  <div class="docs-colorContainer" role="grid">
+      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Darker, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeDarker" aria-label="Example for ms-bgColor-themeDarker">
+          <span class="ms-font-size-m ms-fontColor-white">Theme Darker<br />
+            #004578</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-themeDarker" aria-label="Example for ms-fontColor-themeDarker">
+          <span class="ms-font-su ms-fontColor-themeDarker">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeDarker"  aria-label="Example for ms-borderColor-themeDarker">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Darker, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeDarker">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeDarker</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeDarker">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeDarker</p>
+          <!-- Info Button -->
+          <button class="Typography-infoButton" aria-label="High contrast informatoin for the color Theme Darker"> <i class="ms-Icon ms-Icon--Info ms-fontColor-neutralPrimary" aria-hidden="true"></i> </button>
+          <div class="ms-Callout docs-ColorSection-swatchCallout ms-Callout--arrowTop">
+            <div class="ms-Callout-main ms-clearfix">
+              <div class="ms-Callout-header">
+                <p class="ms-Callout-title">Acceptable Backgrounds</p>
+              </div>
+              <div class="ms-Callout-inner">
+                <div class="ms-Callout-content">
+                  <div class="docs-ColorSection-contrastTextColumn">
+                    <div class="docs-ColorSection-contrastCaption">
+                      <div class="docs-ColorSection-contrastCaptionLeft">
+                      <h4>Background Color Class:</h4></div>
+                      <div class="docs-ColorSection-contrastCaptionRight">
+                      <h4>Ratio:</h4></div>
+                    </div>
+                    <div class="docs-ColorSection-contrastData">
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLight ms-fontColor-themeDarker" title="ms-bgColor-neutralLight">ms-bgColor-neutralLight</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLight ms-fontColor-themeDarker">7:6:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLighter ms-fontColor-themeDarker" title="ms-bgColor-neutralLighter">ms-bgColor-neutralLighter</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLighter ms-fontColor-themeDarker">8:3:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLightAlt ms-fontColor-themeDarker" title="ms-bgColor-neutralLightAlt">ms-bgColor-neutralLightAlt</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLightAlt ms-fontColor-themeDarker">8:6:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLight ms-fontColor-themeDarker" title="ms-bgColor-themeLight">ms-bgColor-themeLight</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLight ms-fontColor-themeDarker">6:7:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLighter ms-fontColor-themeDarker" title="ms-bgColor-themeLighter">ms-bgColor-themeLighter</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLighter ms-fontColor-themeDarker">7:6:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLighterAlt ms-fontColor-themeDarker" title="ms-bgColor-themeLighterAlt">ms-bgColor-themeLighterAlt</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLighterAlt ms-fontColor-themeDarker">8:4:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themeDarker" title="ms-bgColor-white">ms-bgColor-white</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themeDarker">9:1:1</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeDarker">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeDarker</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Dark, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeDark" aria-label="Example for ms-bgColor-themeDark">
+          <span class="ms-font-size-m ms-fontColor-white">Theme Dark<br />
+            #005A9E</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-themeDark" aria-label="Example for ms-fontColor-themeDark">
+          <span class="ms-font-su ms-fontColor-themeDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeDark"  aria-label="Example for ms-borderColor-themeDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Dark, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeDark</p>
+          <!-- Info Button -->
+          <button class="Typography-infoButton" aria-label="High contrast informatoin for the color Theme Dark"> <i class="ms-Icon ms-Icon--Info ms-fontColor-neutralPrimary" aria-hidden="true"></i> </button>
+          <div class="ms-Callout docs-ColorSection-swatchCallout ms-Callout--arrowTop">
+            <div class="ms-Callout-main ms-clearfix">
+              <div class="ms-Callout-header">
+                <p class="ms-Callout-title">Acceptable Backgrounds</p>
+              </div>
+              <div class="ms-Callout-inner">
+                <div class="ms-Callout-content">
+                  <div class="docs-ColorSection-contrastTextColumn">
+                    <div class="docs-ColorSection-contrastCaption">
+                      <div class="docs-ColorSection-contrastCaptionLeft">
+                      <h4>Background Color Class:</h4></div>
+                      <div class="docs-ColorSection-contrastCaptionRight">
+                      <h4>Ratio:</h4></div>
+                    </div>
+                    <div class="docs-ColorSection-contrastData">
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLight ms-fontColor-themeDark" title="ms-bgColor-neutralLight">ms-bgColor-neutralLight</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLight ms-fontColor-themeDark">5:2:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLighter ms-fontColor-themeDark" title="ms-bgColor-neutralLighter">ms-bgColor-neutralLighter</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLighter ms-fontColor-themeDark">5:7:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLightAlt ms-fontColor-themeDark" title="ms-bgColor-neutralLightAlt">ms-bgColor-neutralLightAlt</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLightAlt ms-fontColor-themeDark">5:9:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLight ms-fontColor-themeDark" title="ms-bgColor-themeLight">ms-bgColor-themeLight</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLight ms-fontColor-themeDark">4:6:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLighter ms-fontColor-themeDark" title="ms-bgColor-themeLighter">ms-bgColor-themeLighter</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLighter ms-fontColor-themeDark">5:2:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLighterAlt ms-fontColor-themeDark" title="ms-bgColor-themeLighterAlt">ms-bgColor-themeLighterAlt</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLighterAlt ms-fontColor-themeDark">5:7:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themeDark" title="ms-bgColor-white">ms-bgColor-white</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themeDark">6:3:1</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeDark</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Dark Alt, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeDarkAlt" aria-label="Example for ms-bgColor-themeDarkAlt">
+          <span class="ms-font-size-m ms-fontColor-white">Theme Dark Alt<br />
+            #106EBE</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-themeDarkAlt" aria-label="Example for ms-fontColor-themeDarkAlt">
+          <span class="ms-font-su ms-fontColor-themeDarkAlt">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeDarkAlt"  aria-label="Example for ms-borderColor-themeDarkAlt">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Dark Alt, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeDarkAlt">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeDarkAlt</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeDarkAlt">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeDarkAlt</p>
+          <!-- Info Button -->
+          <button class="Typography-infoButton" aria-label="High contrast informatoin for the color Theme Dark Alt"> <i class="ms-Icon ms-Icon--Info ms-fontColor-neutralPrimary" aria-hidden="true"></i> </button>
+          <div class="ms-Callout docs-ColorSection-swatchCallout ms-Callout--arrowTop">
+            <div class="ms-Callout-main ms-clearfix">
+              <div class="ms-Callout-header">
+                <p class="ms-Callout-title">Acceptable Backgrounds</p>
+              </div>
+              <div class="ms-Callout-inner">
+                <div class="ms-Callout-content">
+                  <div class="docs-ColorSection-contrastTextColumn">
+                    <div class="docs-ColorSection-contrastCaption">
+                      <div class="docs-ColorSection-contrastCaptionLeft">
+                      <h4>Background Color Class:</h4></div>
+                      <div class="docs-ColorSection-contrastCaptionRight">
+                      <h4>Ratio:</h4></div>
+                    </div>
+                    <div class="docs-ColorSection-contrastData">
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLighter ms-fontColor-themeDarkAlt" title="ms-bgColor-neutralLighter">ms-bgColor-neutralLighter</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLighter ms-fontColor-themeDarkAlt">4:8:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-neutralLightAlt ms-fontColor-themeDarkAlt" title="ms-bgColor-neutralLightAlt">ms-bgColor-neutralLightAlt</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-neutralLightAlt ms-fontColor-themeDarkAlt">5:0:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLighter ms-fontColor-themeDarkAlt" title="ms-bgColor-themeLighter">ms-bgColor-themeLighter</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLighter ms-fontColor-themeDarkAlt">5:2:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-themeLighterAlt ms-fontColor-themeDarkAlt" title="ms-bgColor-themeLighterAlt">ms-bgColor-themeLighterAlt</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-themeLighterAlt ms-fontColor-themeDarkAlt">4:8:1</div>
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themeDarkAlt" title="ms-bgColor-white">ms-bgColor-white</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themeDarkAlt">5:6:1</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeDarkAlt">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeDarkAlt</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Primary, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themePrimary" aria-label="Example for ms-bgColor-themePrimary">
+          <span class="ms-font-size-m ms-fontColor-white">Theme Primary<br />
+            #0078D7</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-themePrimary" aria-label="Example for ms-fontColor-themePrimary">
+          <span class="ms-font-su ms-fontColor-themePrimary">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themePrimary"  aria-label="Example for ms-borderColor-themePrimary">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Primary, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themePrimary">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themePrimary</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themePrimary">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themePrimary</p>
+          <!-- Info Button -->
+          <button class="Typography-infoButton" aria-label="High contrast informatoin for the color Theme Primary"> <i class="ms-Icon ms-Icon--Info ms-fontColor-neutralPrimary" aria-hidden="true"></i> </button>
+          <div class="ms-Callout docs-ColorSection-swatchCallout ms-Callout--arrowTop">
+            <div class="ms-Callout-main ms-clearfix">
+              <div class="ms-Callout-header">
+                <p class="ms-Callout-title">Acceptable Backgrounds</p>
+              </div>
+              <div class="ms-Callout-inner">
+                <div class="ms-Callout-content">
+                  <div class="docs-ColorSection-contrastTextColumn">
+                    <div class="docs-ColorSection-contrastCaption">
+                      <div class="docs-ColorSection-contrastCaptionLeft">
+                      <h4>Background Color Class:</h4></div>
+                      <div class="docs-ColorSection-contrastCaptionRight">
+                      <h4>Ratio:</h4></div>
+                    </div>
+                    <div class="docs-ColorSection-contrastData">
+                      <div class="docs-ColorSection-contrastText docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themePrimary" title="ms-bgColor-white">ms-bgColor-white</div>
+                      <div class="docs-ColorSection-contrastRatio docs-ColorSection-swatchCode ms-bgColor-white ms-fontColor-themePrimary">5:0:1</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themePrimary">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themePrimary</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Secondary, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeSecondary" aria-label="Example for ms-bgColor-themeSecondary">
+          <span class="ms-font-size-m ms-fontColor-black">Theme Secondary<br />
+            #2b88D8</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-themeSecondary" aria-label="Example for ms-fontColor-themeSecondary">
+          <span class="ms-font-su ms-fontColor-themeSecondary">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeSecondary"  aria-label="Example for ms-borderColor-themeSecondary">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Secondary, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeSecondary">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeSecondary</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeSecondary">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeSecondary</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeSecondary">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeSecondary</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Tertiary, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeTertiary" aria-label="Example for ms-bgColor-themeTertiary">
+          <span class="ms-font-size-m ms-fontColor-black">Theme Tertiary<br />
+            #71AFE5</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-themeDarker docs-colorBox-hasBorder ms-fontColor-themeTertiary" aria-label="Example for ms-fontColor-themeTertiary">
+          <span class="ms-font-su ms-fontColor-themeTertiary">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeTertiary"  aria-label="Example for ms-borderColor-themeTertiary">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Tertiary, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeTertiary">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeTertiary</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeTertiary">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeTertiary</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeTertiary">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeTertiary</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Light, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeLight" aria-label="Example for ms-bgColor-themeLight">
+          <span class="ms-font-size-m ms-fontColor-black">Theme Light<br />
+            #C7E0F4</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-themeDarker docs-colorBox-hasBorder ms-fontColor-themeLight" aria-label="Example for ms-fontColor-themeLight">
+          <span class="ms-font-su ms-fontColor-themeLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeLight"  aria-label="Example for ms-borderColor-themeLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Light, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Lighter, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeLighter" aria-label="Example for ms-bgColor-themeLighter">
+          <span class="ms-font-size-m ms-fontColor-black">Theme Lighter<br />
+            #DEECF9</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-themeDarker docs-colorBox-hasBorder ms-fontColor-themeLighter" aria-label="Example for ms-fontColor-themeLighter">
+          <span class="ms-font-su ms-fontColor-themeLighter">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeLighter"  aria-label="Example for ms-borderColor-themeLighter">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Lighter, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeLighter">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeLighter</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeLighter">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeLighter</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeLighter">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeLighter</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Theme Lighter Alt, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-themeLighterAlt" aria-label="Example for ms-bgColor-themeLighterAlt">
+          <span class="ms-font-size-m ms-fontColor-black">Theme Lighter Alt<br />
+            #EFF6FC</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-themeDarker docs-colorBox-hasBorder ms-fontColor-themeLighterAlt" aria-label="Example for ms-fontColor-themeLighterAlt">
+          <span class="ms-font-su ms-fontColor-themeLighterAlt">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-themeLighterAlt"  aria-label="Example for ms-borderColor-themeLighterAlt">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Theme Lighter Alt, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-themeLighterAlt">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-themeLighterAlt</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-themeLighterAlt">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-themeLighterAlt</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-themeLighterAlt">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-themeLighterAlt</p>
+        </div>
+      </div>
+      <!-- End Color -->  </div>
+
+  <h4>Neutral Colors</h4>
+  <p>Neutral colors include black, gray, and white. Use darker shades of gray for primary content, such as text and titles. Use black sparingly for high-impact strings (labels, names) and hover states. Use lighter shades of gray for supporting graphic elements and page areas.</p>
+  
+  <div class="docs-colorContainer" role="grid">
+      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Black, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-black" aria-label="Example for ms-bgColor-black">
+          <span class="ms-font-size-m ms-fontColor-white">Black<br />
+            #000000</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-black" aria-label="Example for ms-fontColor-black">
+          <span class="ms-font-su ms-fontColor-black">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-black"  aria-label="Example for ms-borderColor-black">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Black, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-black">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-black</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-black">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-black</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-black">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-black</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray220, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray220" aria-label="Example for ms-bgColor-gray220">
+          <span class="ms-font-size-m ms-fontColor-white">Gray220<br />
+            #11100f</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray220" aria-label="Example for ms-fontColor-gray220">
+          <span class="ms-font-su ms-fontColor-gray220">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray220"  aria-label="Example for ms-borderColor-gray220">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray220, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray220">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray220</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray220">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray220</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray220">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray220</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray210, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray210" aria-label="Example for ms-bgColor-gray210">
+          <span class="ms-font-size-m ms-fontColor-white">Gray210<br />
+            #161514</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray210" aria-label="Example for ms-fontColor-gray210">
+          <span class="ms-font-su ms-fontColor-gray210">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray210"  aria-label="Example for ms-borderColor-gray210">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray210, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray210">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray210</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray210">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray210</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray210">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray210</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray200, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray200" aria-label="Example for ms-bgColor-gray200">
+          <span class="ms-font-size-m ms-fontColor-white">Gray200<br />
+            #1b1a19</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray200" aria-label="Example for ms-fontColor-gray200">
+          <span class="ms-font-su ms-fontColor-gray200">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray200"  aria-label="Example for ms-borderColor-gray200">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray200, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray200">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray200</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray200">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray200</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray200">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray200</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray190, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray190" aria-label="Example for ms-bgColor-gray190">
+          <span class="ms-font-size-m ms-fontColor-white">Gray190<br />
+            #201f1e</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray190" aria-label="Example for ms-fontColor-gray190">
+          <span class="ms-font-su ms-fontColor-gray190">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray190"  aria-label="Example for ms-borderColor-gray190">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray190, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray190">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray190</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray190">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray190</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray190">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray190</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray180, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray180" aria-label="Example for ms-bgColor-gray180">
+          <span class="ms-font-size-m ms-fontColor-white">Gray180<br />
+            #252423</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray180" aria-label="Example for ms-fontColor-gray180">
+          <span class="ms-font-su ms-fontColor-gray180">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray180"  aria-label="Example for ms-borderColor-gray180">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray180, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray180">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray180</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray180">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray180</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray180">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray180</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray170, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray170" aria-label="Example for ms-bgColor-gray170">
+          <span class="ms-font-size-m ms-fontColor-white">Gray170<br />
+            #292827</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray170" aria-label="Example for ms-fontColor-gray170">
+          <span class="ms-font-su ms-fontColor-gray170">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray170"  aria-label="Example for ms-borderColor-gray170">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray170, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray170">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray170</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray170">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray170</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray170">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray170</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray160, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray160" aria-label="Example for ms-bgColor-gray160">
+          <span class="ms-font-size-m ms-fontColor-white">Gray160<br />
+            #323130</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray160" aria-label="Example for ms-fontColor-gray160">
+          <span class="ms-font-su ms-fontColor-gray160">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray160"  aria-label="Example for ms-borderColor-gray160">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray160, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray160">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray160</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray160">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray160</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray160">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray160</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray150, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray150" aria-label="Example for ms-bgColor-gray150">
+          <span class="ms-font-size-m ms-fontColor-white">Gray150<br />
+            #3b3a39</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray150" aria-label="Example for ms-fontColor-gray150">
+          <span class="ms-font-su ms-fontColor-gray150">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray150"  aria-label="Example for ms-borderColor-gray150">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray150, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray150">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray150</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray150">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray150</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray150">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray150</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray140, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray140" aria-label="Example for ms-bgColor-gray140">
+          <span class="ms-font-size-m ms-fontColor-white">Gray140<br />
+            #484644</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray140" aria-label="Example for ms-fontColor-gray140">
+          <span class="ms-font-su ms-fontColor-gray140">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray140"  aria-label="Example for ms-borderColor-gray140">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray140, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray140">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray140</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray140">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray140</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray140">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray140</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray130, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray130" aria-label="Example for ms-bgColor-gray130">
+          <span class="ms-font-size-m ms-fontColor-white">Gray130<br />
+            #605e5c</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray130" aria-label="Example for ms-fontColor-gray130">
+          <span class="ms-font-su ms-fontColor-gray130">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray130"  aria-label="Example for ms-borderColor-gray130">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray130, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray130">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray130</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray130">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray130</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray130">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray130</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray120, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray120" aria-label="Example for ms-bgColor-gray120">
+          <span class="ms-font-size-m ms-fontColor-white">Gray120<br />
+            #797775</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray120" aria-label="Example for ms-fontColor-gray120">
+          <span class="ms-font-su ms-fontColor-gray120">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray120"  aria-label="Example for ms-borderColor-gray120">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray120, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray120">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray120</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray120">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray120</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray120">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray120</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray110, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray110" aria-label="Example for ms-bgColor-gray110">
+          <span class="ms-font-size-m ms-fontColor-white">Gray110<br />
+            #8a8886</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray110" aria-label="Example for ms-fontColor-gray110">
+          <span class="ms-font-su ms-fontColor-gray110">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray110"  aria-label="Example for ms-borderColor-gray110">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray110, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray110">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray110</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray110">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray110</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray110">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray110</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray100, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray100" aria-label="Example for ms-bgColor-gray100">
+          <span class="ms-font-size-m ms-fontColor-white">Gray100<br />
+            #979593</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray100" aria-label="Example for ms-fontColor-gray100">
+          <span class="ms-font-su ms-fontColor-gray100">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray100"  aria-label="Example for ms-borderColor-gray100">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray100, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray100">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray100</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray100">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray100</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray100">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray100</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray90, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray90" aria-label="Example for ms-bgColor-gray90">
+          <span class="ms-font-size-m ms-fontColor-white">Gray90<br />
+            #a19f9d</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray90" aria-label="Example for ms-fontColor-gray90">
+          <span class="ms-font-su ms-fontColor-gray90">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray90"  aria-label="Example for ms-borderColor-gray90">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray90, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray90">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray90</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray90">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray90</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray90">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray90</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray80, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray80" aria-label="Example for ms-bgColor-gray80">
+          <span class="ms-font-size-m ms-fontColor-white">Gray80<br />
+            #b3b0ad</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-gray80" aria-label="Example for ms-fontColor-gray80">
+          <span class="ms-font-su ms-fontColor-gray80">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray80"  aria-label="Example for ms-borderColor-gray80">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray80, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray80">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray80</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray80">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray80</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray80">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray80</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray70, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray70" aria-label="Example for ms-bgColor-gray70">
+          <span class="ms-font-size-m ms-fontColor-black">Gray70<br />
+            #bebbb8</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray70" aria-label="Example for ms-fontColor-gray70">
+          <span class="ms-font-su ms-fontColor-gray70">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray70"  aria-label="Example for ms-borderColor-gray70">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray70, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray70">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray70</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray70">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray70</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray70">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray70</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray60, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray60" aria-label="Example for ms-bgColor-gray60">
+          <span class="ms-font-size-m ms-fontColor-black">Gray60<br />
+            #c8c6c4</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray60" aria-label="Example for ms-fontColor-gray60">
+          <span class="ms-font-su ms-fontColor-gray60">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray60"  aria-label="Example for ms-borderColor-gray60">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray60, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray60">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray60</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray60">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray60</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray60">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray60</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray50, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray50" aria-label="Example for ms-bgColor-gray50">
+          <span class="ms-font-size-m ms-fontColor-black">Gray50<br />
+            #d2d0ce</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray50" aria-label="Example for ms-fontColor-gray50">
+          <span class="ms-font-su ms-fontColor-gray50">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray50"  aria-label="Example for ms-borderColor-gray50">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray50, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray50">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray50</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray50">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray50</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray50">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray50</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray40, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray40" aria-label="Example for ms-bgColor-gray40">
+          <span class="ms-font-size-m ms-fontColor-black">Gray40<br />
+            #e1dfdd</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray40" aria-label="Example for ms-fontColor-gray40">
+          <span class="ms-font-su ms-fontColor-gray40">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray40"  aria-label="Example for ms-borderColor-gray40">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray40, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray40">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray40</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray40">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray40</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray40">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray40</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray30, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray30" aria-label="Example for ms-bgColor-gray30">
+          <span class="ms-font-size-m ms-fontColor-black">Gray30<br />
+            #edebe9</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray30" aria-label="Example for ms-fontColor-gray30">
+          <span class="ms-font-su ms-fontColor-gray30">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray30"  aria-label="Example for ms-borderColor-gray30">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray30, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray30">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray30</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray30">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray30</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray30">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray30</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray20, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray20" aria-label="Example for ms-bgColor-gray20">
+          <span class="ms-font-size-m ms-fontColor-black">Gray20<br />
+            #f3f2f1</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray20" aria-label="Example for ms-fontColor-gray20">
+          <span class="ms-font-su ms-fontColor-gray20">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray20"  aria-label="Example for ms-borderColor-gray20">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray20, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray20">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray20</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray20">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray20</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray20">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray20</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Gray10, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-gray10" aria-label="Example for ms-bgColor-gray10">
+          <span class="ms-font-size-m ms-fontColor-black">Gray10<br />
+            #faf9f8</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-gray10" aria-label="Example for ms-fontColor-gray10">
+          <span class="ms-font-su ms-fontColor-gray10">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-gray10"  aria-label="Example for ms-borderColor-gray10">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Gray10, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-gray10">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-gray10</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-gray10">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-gray10</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-gray10">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-gray10</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for white, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-white" aria-label="Example for ms-bgColor-white">
+          <span class="ms-font-size-m ms-fontColor-black">white<br />
+            #ffffff</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-neutralPrimary docs-colorBox-hasBorder ms-fontColor-white" aria-label="Example for ms-fontColor-white">
+          <span class="ms-font-su ms-fontColor-white">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-white"  aria-label="Example for ms-borderColor-white">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example white, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-white">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-white</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-white">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-white</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-white">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-white</p>
+        </div>
+      </div>
+      <!-- End Color -->  </div>
+
+  <h4>Accent Colors</h4>
+  <p>Fabric also includes accent colors from the Microsoft color palette.</p>
+ 
+  <div class="docs-colorContainer" role="grid">
+      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Yellow, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-yellow" aria-label="Example for ms-bgColor-yellow">
+          <span class="ms-font-size-m ms-fontColor-black">Yellow<br />
+            #FFB900</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-yellow" aria-label="Example for ms-fontColor-yellow">
+          <span class="ms-font-su ms-fontColor-yellow">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-yellow"  aria-label="Example for ms-borderColor-yellow">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Yellow, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-yellow">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-yellow</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-yellow">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-yellow</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-yellow">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-yellow</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Light Yellow, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-yellowLight" aria-label="Example for ms-bgColor-yellowLight">
+          <span class="ms-font-size-m ms-fontColor-black">Light Yellow<br />
+            #FFF100</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-yellowLight" aria-label="Example for ms-fontColor-yellowLight">
+          <span class="ms-font-su ms-fontColor-yellowLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-yellowLight"  aria-label="Example for ms-borderColor-yellowLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Light Yellow, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-yellowLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-yellowLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-yellowLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-yellowLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-yellowLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-yellowLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Orange, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-orange" aria-label="Example for ms-bgColor-orange">
+          <span class="ms-font-size-m ms-fontColor-black">Orange<br />
+            #D83B01</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-orange" aria-label="Example for ms-fontColor-orange">
+          <span class="ms-font-su ms-fontColor-orange">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-orange"  aria-label="Example for ms-borderColor-orange">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Orange, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-orange">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-orange</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-orange">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-orange</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-orange">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-orange</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Orange Light, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-orangeLight" aria-label="Example for ms-bgColor-orangeLight">
+          <span class="ms-font-size-m ms-fontColor-black">Orange Light<br />
+            #EA4300</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-orangeLight" aria-label="Example for ms-fontColor-orangeLight">
+          <span class="ms-font-su ms-fontColor-orangeLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-orangeLight"  aria-label="Example for ms-borderColor-orangeLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Orange Light, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-orangeLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-orangeLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-orangeLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-orangeLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-orangeLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-orangeLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Orange Lighter, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-orangeLighter" aria-label="Example for ms-bgColor-orangeLighter">
+          <span class="ms-font-size-m ms-fontColor-black">Orange Lighter<br />
+            #FF8C00</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-orangeLighter" aria-label="Example for ms-fontColor-orangeLighter">
+          <span class="ms-font-su ms-fontColor-orangeLighter">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-orangeLighter"  aria-label="Example for ms-borderColor-orangeLighter">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Orange Lighter, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-orangeLighter">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-orangeLighter</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-orangeLighter">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-orangeLighter</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-orangeLighter">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-orangeLighter</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Dark Red, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-redDark" aria-label="Example for ms-bgColor-redDark">
+          <span class="ms-font-size-m ms-fontColor-white">Dark Red<br />
+            #A80000</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-redDark" aria-label="Example for ms-fontColor-redDark">
+          <span class="ms-font-su ms-fontColor-redDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-redDark"  aria-label="Example for ms-borderColor-redDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Dark Red, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-redDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-redDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-redDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-redDark</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-redDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-redDark</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Red, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-red" aria-label="Example for ms-bgColor-red">
+          <span class="ms-font-size-m ms-fontColor-white">Red<br />
+            #E81123</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-red" aria-label="Example for ms-fontColor-red">
+          <span class="ms-font-su ms-fontColor-red">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-red"  aria-label="Example for ms-borderColor-red">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Red, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-red">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-red</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-red">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-red</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-red">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-red</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Magenta Light, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-magentaLight" aria-label="Example for ms-bgColor-magentaLight">
+          <span class="ms-font-size-m ms-fontColor-white">Magenta Light<br />
+            #E3008C</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-magentaLight" aria-label="Example for ms-fontColor-magentaLight">
+          <span class="ms-font-su ms-fontColor-magentaLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-magentaLight"  aria-label="Example for ms-borderColor-magentaLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Magenta Light, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-magentaLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-magentaLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-magentaLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-magentaLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-magentaLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-magentaLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Magenta, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-magenta" aria-label="Example for ms-bgColor-magenta">
+          <span class="ms-font-size-m ms-fontColor-white">Magenta<br />
+            #B4009E</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-magenta" aria-label="Example for ms-fontColor-magenta">
+          <span class="ms-font-su ms-fontColor-magenta">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-magenta"  aria-label="Example for ms-borderColor-magenta">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Magenta, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-magenta">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-magenta</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-magenta">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-magenta</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-magenta">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-magenta</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Dark Magenta, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-magentaDark" aria-label="Example for ms-bgColor-magentaDark">
+          <span class="ms-font-size-m ms-fontColor-white">Dark Magenta<br />
+            #5C005C</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-magentaDark" aria-label="Example for ms-fontColor-magentaDark">
+          <span class="ms-font-su ms-fontColor-magentaDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-magentaDark"  aria-label="Example for ms-borderColor-magentaDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Dark Magenta, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-magentaDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-magentaDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-magentaDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-magentaDark</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-magentaDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-magentaDark</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Light Purple, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-purpleLight" aria-label="Example for ms-bgColor-purpleLight">
+          <span class="ms-font-size-m ms-fontColor-black">Light Purple<br />
+            #B4A0FF</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-purpleLight" aria-label="Example for ms-fontColor-purpleLight">
+          <span class="ms-font-su ms-fontColor-purpleLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-purpleLight"  aria-label="Example for ms-borderColor-purpleLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Light Purple, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-purpleLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-purpleLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-purpleLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-purpleLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-purpleLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-purpleLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Purple, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-purple" aria-label="Example for ms-bgColor-purple">
+          <span class="ms-font-size-m ms-fontColor-white">Purple<br />
+            #5C2D91</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-purple" aria-label="Example for ms-fontColor-purple">
+          <span class="ms-font-su ms-fontColor-purple">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-purple"  aria-label="Example for ms-borderColor-purple">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Purple, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-purple">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-purple</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-purple">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-purple</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-purple">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-purple</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Dark Purple, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-purpleDark" aria-label="Example for ms-bgColor-purpleDark">
+          <span class="ms-font-size-m ms-fontColor-white">Dark Purple<br />
+            #32145A</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-purpleDark" aria-label="Example for ms-fontColor-purpleDark">
+          <span class="ms-font-su ms-fontColor-purpleDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-purpleDark"  aria-label="Example for ms-borderColor-purpleDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Dark Purple, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-purpleDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-purpleDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-purpleDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-purpleDark</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-purpleDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-purpleDark</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Light Blue, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-blueLight" aria-label="Example for ms-bgColor-blueLight">
+          <span class="ms-font-size-m ms-fontColor-black">Light Blue<br />
+            #00BCF2</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-blueLight" aria-label="Example for ms-fontColor-blueLight">
+          <span class="ms-font-su ms-fontColor-blueLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-blueLight"  aria-label="Example for ms-borderColor-blueLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Light Blue, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-blueLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-blueLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-blueLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-blueLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-blueLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-blueLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Mid Blue, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-blueMid" aria-label="Example for ms-bgColor-blueMid">
+          <span class="ms-font-size-m ms-fontColor-white">Mid Blue<br />
+            #00188F</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-blueMid" aria-label="Example for ms-fontColor-blueMid">
+          <span class="ms-font-su ms-fontColor-blueMid">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-blueMid"  aria-label="Example for ms-borderColor-blueMid">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Mid Blue, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-blueMid">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-blueMid</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-blueMid">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-blueMid</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-blueMid">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-blueMid</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Blue, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-blue" aria-label="Example for ms-bgColor-blue">
+          <span class="ms-font-size-m ms-fontColor-white">Blue<br />
+            #0078d7</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-blue" aria-label="Example for ms-fontColor-blue">
+          <span class="ms-font-su ms-fontColor-blue">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-blue"  aria-label="Example for ms-borderColor-blue">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Blue, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-blue">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-blue</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-blue">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-blue</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-blue">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-blue</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Dark Blue, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-blueDark" aria-label="Example for ms-bgColor-blueDark">
+          <span class="ms-font-size-m ms-fontColor-white">Dark Blue<br />
+            #002050</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-blueDark" aria-label="Example for ms-fontColor-blueDark">
+          <span class="ms-font-su ms-fontColor-blueDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-blueDark"  aria-label="Example for ms-borderColor-blueDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Dark Blue, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-blueDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-blueDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-blueDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-blueDark</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-blueDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-blueDark</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Light Teal, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-tealLight" aria-label="Example for ms-bgColor-tealLight">
+          <span class="ms-font-size-m ms-fontColor-black">Light Teal<br />
+            #00B294</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-tealLight" aria-label="Example for ms-fontColor-tealLight">
+          <span class="ms-font-su ms-fontColor-tealLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-tealLight"  aria-label="Example for ms-borderColor-tealLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Light Teal, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-tealLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-tealLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-tealLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-tealLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-tealLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-tealLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Teal, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-teal" aria-label="Example for ms-bgColor-teal">
+          <span class="ms-font-size-m ms-fontColor-white">Teal<br />
+            #008272</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-teal" aria-label="Example for ms-fontColor-teal">
+          <span class="ms-font-su ms-fontColor-teal">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-teal"  aria-label="Example for ms-borderColor-teal">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Teal, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-teal">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-teal</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-teal">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-teal</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-teal">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-teal</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Dark Teal, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-tealDark" aria-label="Example for ms-bgColor-tealDark">
+          <span class="ms-font-size-m ms-fontColor-white">Dark Teal<br />
+            #004B50</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-tealDark" aria-label="Example for ms-fontColor-tealDark">
+          <span class="ms-font-su ms-fontColor-tealDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-tealDark"  aria-label="Example for ms-borderColor-tealDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Dark Teal, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-tealDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-tealDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-tealDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-tealDark</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-tealDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-tealDark</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Light Green, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-greenLight" aria-label="Example for ms-bgColor-greenLight">
+          <span class="ms-font-size-m ms-fontColor-black">Light Green<br />
+            #BAD80A</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-greenLight" aria-label="Example for ms-fontColor-greenLight">
+          <span class="ms-font-su ms-fontColor-greenLight">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-greenLight"  aria-label="Example for ms-borderColor-greenLight">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Light Green, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-greenLight">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-greenLight</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-greenLight">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-greenLight</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-greenLight">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-greenLight</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Green, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-green" aria-label="Example for ms-bgColor-green">
+          <span class="ms-font-size-m ms-fontColor-white">Green<br />
+            #107C10</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-green" aria-label="Example for ms-fontColor-green">
+          <span class="ms-font-su ms-fontColor-green">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-green"  aria-label="Example for ms-borderColor-green">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Green, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-green">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-green</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-green">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-green</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-green">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-green</p>
+        </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Dark Green, this row of the color example shows an example for background color, border color, and font color">    
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-greenDark" aria-label="Example for ms-bgColor-greenDark">
+          <span class="ms-font-size-m ms-fontColor-white">Dark Green<br />
+            #004B1C</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder ms-fontColor-greenDark" aria-label="Example for ms-fontColor-greenDark">
+          <span class="ms-font-su ms-fontColor-greenDark">Aa</span>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-greenDark"  aria-label="Example for ms-borderColor-greenDark">
+        </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Dark Green, this row has the specific class names listed for background color, border color, and font color"> 
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-greenDark">
+          <p class="ms-font-size-m"><span class="mobileText">Background<br/></span> ms-bgColor-greenDark</p>
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-greenDark">
+          <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-greenDark</p>
+          <!-- Info Button -->
+           <!-- End Info Button -->
+        </div>
+        <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-greenDark">
+          <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-greenDark</p>
+        </div>
+      </div>
+      <!-- End Color -->  </div>
+
+  <h4>Message Colors</h4>
+  <p>Use these colors when you need to communicate the system's status, such as in a notification or error message.</p>
+  
+  <div class="docs-colorContainer" role="grid">
+      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Info (Background) and Info (Font and Border), this row of the color example shows an example for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-info ms-bgColor-info" aria-label="Example for Info (Background)">
+              <p class="ms-font-size-m ms-fontColor-black">Info (Background)<br />
+              #f4f4f4</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG docs-colorBox-hasBg" aria-label="Example for Info (Font and Border)">
+              <p class="ms-font-size-m ms-fontColor-info">Info (Font and Border)<br />
+              #107c10</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-info" aria-label="Example for ms-borderColor-info">
+              <!-- Nothing its a border -->
+          </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Info (Background) and Info (Font and Border), this row has the specific class names listed for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-info">
+              <p class="ms-font-size-m"><span class="mobileText">Background<br /></span> ms-bgColor-info</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-info">
+              <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-info</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-info">
+              <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-info</p>
+          </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Success (Background) and Success (Font and Border), this row of the color example shows an example for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-info ms-bgColor-success" aria-label="Example for Success (Background)">
+              <p class="ms-font-size-m ms-fontColor-black">Success (Background)<br />
+              #dff6dd</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG docs-colorBox-hasBg" aria-label="Example for Success (Font and Border)">
+              <p class="ms-font-size-m ms-fontColor-success">Success (Font and Border)<br />
+              #107c10</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBoxBorder ms-borderColor-success" aria-label="Example for ms-borderColor-success">
+              <!-- Nothing its a border -->
+          </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Success (Background) and Success (Font and Border), this row has the specific class names listed for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-success">
+              <p class="ms-font-size-m"><span class="mobileText">Background<br /></span> ms-bgColor-success</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-success">
+              <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-success</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-success">
+              <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-success</p>
+          </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Alert (Background) and Alert (Font and Border), this row of the color example shows an example for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-info ms-bgColor-alert" aria-label="Example for Alert (Background)">
+              <p class="ms-font-size-m ms-fontColor-black">Alert (Background)<br />
+              #fed9cc</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-alert" aria-label="Example for Alert (Font and Border)">
+              <p class="ms-font-size-m ms-fontColor-alert">Alert (Font and Border)<br />
+              #d83b01</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-alert docs-colorBoxBorder ms-borderColor-alert" aria-label="Example for ms-borderColor-alert">
+              <!-- Nothing its a border -->
+          </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Alert (Background) and Alert (Font and Border), this row has the specific class names listed for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-alert">
+              <p class="ms-font-size-m"><span class="mobileText">Background<br /></span> ms-bgColor-alert</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-alert">
+              <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-alert</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-alert">
+              <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-alert</p>
+          </div>
+      </div>
+      <!-- End Color -->      <!-- Start Color -->
+      <div class="ms-Grid-row" aria-label="First row of the color example for Error (Background) and Error (Font and Border), this row of the color example shows an example for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-info ms-bgColor-error" aria-label="Example for Error (Background)">
+              <p class="ms-font-size-m ms-fontColor-black">Error (Background)<br />
+              #fde7e9</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBoxBG ms-bgColor-error" aria-label="Example for Error (Font and Border)">
+              <p class="ms-font-size-m ms-fontColor-error">Error (Font and Border)<br />
+              #a80000</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox ms-bgColor-error docs-colorBoxBorder ms-borderColor-error" aria-label="Example for ms-borderColor-error">
+              <!-- Nothing its a border -->
+          </div>
+      </div>
+      
+      <div class="ms-Grid-row docs-colorBottomRow" aria-label="Second row of the color example Error (Background) and Error (Font and Border), this row has the specific class names listed for background color, border color, and font color"> 
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Background class ms-bgColor-error">
+              <p class="ms-font-size-m"><span class="mobileText">Background<br /></span> ms-bgColor-error</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Font class ms-fontColor-error">
+              <p class="ms-font-size-m"><span class="mobileText">Font<br /></span> ms-fontColor-error</p>
+          </div>
+          <div class="ms-Grid-col ms-sm4 ms-lg4 docs-colorBox docs-colorBox-hasBg docs-colorBox-hasBorder" aria-label="Border class ms-borderColor-error">
+              <p class="ms-font-size-m"><span class="mobileText">Border<br /></span> ms-borderColor-error</p>
+          </div>
+      </div>
+      <!-- End Color -->  </div>
+</div>
+
+  </div>
+</div>
+<script>
+	var currPage = window.location.pathname.replace(/\//g, '');
+	if (currPage) {
+		document.getElementsByClassName(currPage)[0].classList.add('LeftNav-link--active');
+	}
+</script>
+</body>
+</html>

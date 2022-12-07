@@ -5,7 +5,9 @@
   "description": "The front-end framework for building experiences for Office 365.",
   "license": "MIT",
   "scripts": {
-    "test": "gulp"
+    "test": "gulp",
+    "start": "gulp watch",
+    "build": "gulp"
   },
   "browserslist": [
     "last 1 version",

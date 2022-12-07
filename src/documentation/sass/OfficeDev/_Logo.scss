@@ -14,8 +14,8 @@ $od-Logo-width: 250px;
   @include high-contrast {
     box-shadow: inset 0px 0px 0px 1px $ms-color-white;
   }
-  
-  @include high-contrast-black-on-white  {
+
+  @include high-contrast-black-on-white {
     box-shadow: inset 0px 0px 0px 1px $high-contrast-purpleBG;
   }
 }

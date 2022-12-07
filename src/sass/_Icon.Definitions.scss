@@ -11,17 +11,18 @@
 
 // Font-face definition for the 'FabricMDL2Icons' icon font
 @font-face {
-  $icon-font-family: 'FabricMDL2Icons';
-  $icon-font-name: 'fabricmdl2icons';
-  $icon-font-version: '3.70';
+  $icon-font-family: "FabricMDL2Icons";
+  $icon-font-name: "fabricmdl2icons";
+  $icon-font-version: "3.70";
 
   @if variable_exists(do-scope-styles) {
-    $icon-font-family: 'FabricMDL2Icons-' + $ms-fabric-version-major; 
-    $icon-font-name: 'scoped/fabricmdl2icons-' + $ms-fabric-version-major; 
+    $icon-font-family: "FabricMDL2Icons-" + $ms-fabric-version-major;
+    $icon-font-name: "scoped/fabricmdl2icons-" + $ms-fabric-version-major;
   }
 
   font-family: $icon-font-family;
-  src: url('#{$ms-icon-cdn-path}/#{$icon-font-name}-#{$icon-font-version}.woff') format('woff');
+  src: url("#{$ms-icon-cdn-path}/#{$icon-font-name}-#{$icon-font-version}.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }

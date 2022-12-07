@@ -19,31 +19,31 @@ $docs-sideNavWidths: 300px;
 
 // Left and right nav, hidden on small screens
 .docs-Page-leftNav {
-    display: none;
-    position: fixed;
-    top: $HeaderHeight; // Brings the top roughly in line with the first header on the page
-    width: $docs-sideNavWidths;
-    height: 100%;
-    border-right: 1px solid #eeeeee;
+  display: none;
+  position: fixed;
+  top: $HeaderHeight; // Brings the top roughly in line with the first header on the page
+  width: $docs-sideNavWidths;
+  height: 100%;
+  border-right: 1px solid #eeeeee;
 }
 
 // On larger screens, show and position the navs
 @media (min-width: $ms-screen-min-xl) {
-    .docs-Page.has-leftNav {
-        padding-left: $docs-sideNavWidths + 30px;
-        
-        .docs-Page-leftNav {
-            left: 0;
-            display: block;
-        }
-    }
+  .docs-Page.has-leftNav {
+    padding-left: $docs-sideNavWidths + 30px;
 
-    .docs-Page.has-rightNav {
-        padding-right: $docs-sideNavWidths;
-        
-        .docs-Page-rightNav {
-            right: 0;
-            display: block;
-        }
+    .docs-Page-leftNav {
+      left: 0;
+      display: block;
     }
+  }
+
+  .docs-Page.has-rightNav {
+    padding-right: $docs-sideNavWidths;
+
+    .docs-Page-rightNav {
+      right: 0;
+      display: block;
+    }
+  }
 }

@@ -70,7 +70,6 @@
 }
 
 @media (min-width: $ms-screen-md-min) {
-
   .docs-OfficeFooter-primary {
     flex-direction: row;
   }
@@ -86,7 +85,7 @@
     justify-content: flex-end;
     display: flex;
     flex-direction: row;
-    
+
     li {
       margin-left: 20px;
     }

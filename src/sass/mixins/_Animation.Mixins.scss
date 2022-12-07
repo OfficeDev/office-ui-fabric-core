@@ -113,89 +113,105 @@
 
 // Fades.
 @mixin ms-motion-fadeIn {
-  animation: ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
+  animation: ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear
+    both;
 }
 
 @mixin ms-motion-fadeOut {
-  animation: ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
+  animation: ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear
+    both;
 }
 
 // Scales.
 @mixin ms-motion-scaleDownIn {
-  animation: ms-motion-scaleDownIn $ms-motion-duration-3 $ms-motion-timing-decelerate both,
+  animation: ms-motion-scaleDownIn $ms-motion-duration-3
+      $ms-motion-timing-decelerate both,
     ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
 }
 
 @mixin ms-motion-scaleDownOut {
-  animation: ms-motion-scaleDownOut $ms-motion-duration-3 $ms-motion-timing-decelerate both,
+  animation: ms-motion-scaleDownOut $ms-motion-duration-3
+      $ms-motion-timing-decelerate both,
     ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
 }
 
 // Slides.
 @mixin ms-motion-slideLeftOut {
   @include ms-LTR {
-    animation: ms-motion-slideLeftOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+    animation: ms-motion-slideLeftOut $ms-motion-duration-1
+        $ms-motion-timing-accelerate both,
       ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 
   @include ms-RTL {
-    animation: ms-motion-slideRightOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+    animation: ms-motion-slideRightOut $ms-motion-duration-1
+        $ms-motion-timing-accelerate both,
       ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 }
 
 @mixin ms-motion-slideRightOut {
   @include ms-LTR {
-    animation: ms-motion-slideRightOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+    animation: ms-motion-slideRightOut $ms-motion-duration-1
+        $ms-motion-timing-accelerate both,
       ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 
   @include ms-RTL {
-    animation: ms-motion-slideLeftOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+    animation: ms-motion-slideLeftOut $ms-motion-duration-1
+        $ms-motion-timing-accelerate both,
       ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 }
 
 @mixin ms-motion-slideLeftIn {
   @include ms-LTR {
-    animation: ms-motion-slideLeftIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+    animation: ms-motion-slideLeftIn $ms-motion-duration-1
+        $ms-motion-timing-decelerate both,
       ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 
   @include ms-RTL {
-    animation: ms-motion-slideRightIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+    animation: ms-motion-slideRightIn $ms-motion-duration-1
+        $ms-motion-timing-decelerate both,
       ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 }
 
 @mixin ms-motion-slideRightIn {
   @include ms-LTR {
-    animation: ms-motion-slideRightIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+    animation: ms-motion-slideRightIn $ms-motion-duration-1
+        $ms-motion-timing-decelerate both,
       ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 
   @include ms-RTL {
-    animation: ms-motion-slideLeftIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+    animation: ms-motion-slideLeftIn $ms-motion-duration-1
+        $ms-motion-timing-decelerate both,
       ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
   }
 }
 
 @mixin ms-motion-slideUpOut {
-  animation: ms-motion-slideUpOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+  animation: ms-motion-slideUpOut $ms-motion-duration-1
+      $ms-motion-timing-accelerate both,
     ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
 }
 
 @mixin ms-motion-slideDownOut {
-  animation: ms-motion-slideDownOut $ms-motion-duration-1 $ms-motion-timing-accelerate both,
+  animation: ms-motion-slideDownOut $ms-motion-duration-1
+      $ms-motion-timing-accelerate both,
     ms-motion-fadeOut $ms-motion-duration-1 $ms-motion-timing-linear both;
 }
 
 @mixin ms-motion-slideUpIn {
-  animation: ms-motion-slideUpIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+  animation: ms-motion-slideUpIn $ms-motion-duration-1
+      $ms-motion-timing-decelerate both,
     ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
 }
 
 @mixin ms-motion-slideDownIn {
-  animation: ms-motion-slideDownIn $ms-motion-duration-1 $ms-motion-timing-decelerate both,
+  animation: ms-motion-slideDownIn $ms-motion-duration-1
+      $ms-motion-timing-decelerate both,
     ms-motion-fadeIn $ms-motion-duration-1 $ms-motion-timing-linear both;
 }

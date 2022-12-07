@@ -11,7 +11,7 @@ $ms-InfoBarHeight: 30px;
   height: 65px;
   padding: 18px;
   box-sizing: border-box;
-  
+
   p {
     line-height: 20px;
     font-size: $ms-font-size-s;
@@ -24,16 +24,15 @@ $ms-InfoBarHeight: 30px;
 
 .docs-colorBoxBG {
   padding-top: 11px;
-  
+
   span.ms-font-size-m {
-    font-size:  $ms-font-size-mi;
+    font-size: $ms-font-size-mi;
     line-height: 14px;
   }
-  
+
   @media (min-width: $ms-screen-min-lg) {
-  
-     span.ms-font-size-m {
-      font-size:  $ms-font-size-m;
+    span.ms-font-size-m {
+      font-size: $ms-font-size-m;
       line-height: 20px;
     }
   }
@@ -53,9 +52,9 @@ $ms-InfoBarHeight: 30px;
   .docs-colorBox {
     width: 100%;
     font-size: $ms-font-size-s;
-    padding-top:12px;
+    padding-top: 12px;
   }
-  
+
   @media (min-width: $ms-screen-min-lg) {
     .docs-colorBox {
       width: 32.333333%;
@@ -80,7 +79,6 @@ $ms-InfoBarHeight: 30px;
 .docs-colorBox:last-child {
   margin-right: 0;
 }
-
 
 .Typography-infoButton,
 .Typography-toggleCodeButton {
@@ -117,12 +115,12 @@ $ms-InfoBarHeight: 30px;
 }
 
 .ms-Callout.docs-ColorSection-swatchCallout {
-  position:absolute;
-  width:290px;
+  position: absolute;
+  width: 290px;
   height: inherit;
   right: -14%;
   top: 100%;
-  z-index:($ms-zIndex-1 + $ms-zIndex-front);
+  z-index: ($ms-zIndex-1 + $ms-zIndex-front);
   display: none;
   pointer-events: none;
 
@@ -145,27 +143,28 @@ $ms-InfoBarHeight: 30px;
   }
 }
 
-.docs-colorBottomRow .Typography-infoButton:hover + .ms-Callout.docs-ColorSection-swatchCallout {
+.docs-colorBottomRow
+  .Typography-infoButton:hover
+  + .ms-Callout.docs-ColorSection-swatchCallout {
   display: block;
 }
 
-
 .docs-ColorSection-contrastText {
-    float: left;
-    width: 75%;
-    padding: 10px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    margin-bottom: 0;
-    padding-top: 14px;
-    padding-bottom: 14px;
+  float: left;
+  width: 75%;
+  padding: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .docs-ColorSection-contrastRatio {
-    float: right;
-    width: 25%;
-    padding: 10px;
-    margin-bottom: 0;
-    padding-top: 14px;
-    padding-bottom: 14px;
+  float: right;
+  width: 25%;
+  padding: 10px;
+  margin-bottom: 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }

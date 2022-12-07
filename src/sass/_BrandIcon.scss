@@ -1,21 +1,21 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-@include ms-brand-icon-classes('1');
+@include ms-brand-icon-classes("1");
 @include ms-brand-icon-size-classes();
 
 // Pixel Ratio 1.5
 @media only screen and (min-resolution: 144dpi) {
-  @include ms-brand-icon-classes('1_5');
+  @include ms-brand-icon-classes("1_5");
 }
 
 // Pixel Ratio 2
-@media only screen and (min-resolution: 192dpi)  {
-  @include ms-brand-icon-classes('2');
+@media only screen and (min-resolution: 192dpi) {
+  @include ms-brand-icon-classes("2");
 }
 
 // Pixel Ratio 3
 @media only screen and (min-resolution: 288dpi) {
-  @include ms-brand-icon-classes('3');
+  @include ms-brand-icon-classes("3");
 }
 
 // The 'onepkg' and 'xls' icons have been deprecated. These classes will be removed in
@@ -41,7 +41,8 @@
   background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/96/xlsx.png);
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 144dpi) {
   .ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
     background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_1.5x/one.png);
   }
@@ -63,7 +64,8 @@
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
   .ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
     background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_2x/one.png);
   }
@@ -85,7 +87,8 @@
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-resolution: 288dpi) {
   .ms-BrandIcon--onepkg.ms-BrandIcon--icon16 {
     background-image: url(https://spoprod-a.akamaihd.net/files/fabric/assets/item-types-fluent/16_3x/one.png);
   }

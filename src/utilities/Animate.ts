@@ -2,7 +2,6 @@
 // "use strict";
 
 namespace fabric {
-
   const SCROLL_FRAME_RATE: number = 33;
 
   interface ITransitionObj {
@@ -40,7 +39,6 @@ namespace fabric {
   }
 
   export class Animate {
-
     private static _transformProps: Array<string> = [
       "x",
       "y",
@@ -53,7 +51,7 @@ namespace fabric {
       "rotateY",
       "rotateZ",
       "skewX",
-      "skewY"
+      "skewY",
     ];
     private static _filters: Array<string> = [
       "blur",
@@ -64,24 +62,28 @@ namespace fabric {
       "hueRotate",
       "invert",
       "saturate",
-      "sepia"
+      "sepia",
     ];
     private static _timeProps: Array<string> = ["duration", "ease", "delay"];
     private static _callbackProps: Array<string> = ["onEnd", "onEndArgs"];
     private static _animationObjects: Array<any> = [];
 
     /**
-    * @param {HTMLElement} element
-    * @param {object} props Transition properties
-    * @param {number} props.duration The duration of the transition in seconds
-    * @param {number} props.delay A delay in seconds that occurs before the transition starts
-    * @param {string} props.ease An easing equation applied to the transition
-    * @param {function} props.onEnd A function that is called when the transition ends
-    * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
-    * @param {number} props.x props.y props.left, props.opacity etc... CSS values to transition to
-	 */
-    public static transition(element: HTMLElement, props: any ): void {
-      let obj: ITransitionObj = { element: element, props: props, transformations: {} };
+     * @param {HTMLElement} element
+     * @param {object} props Transition properties
+     * @param {number} props.duration The duration of the transition in seconds
+     * @param {number} props.delay A delay in seconds that occurs before the transition starts
+     * @param {string} props.ease An easing equation applied to the transition
+     * @param {function} props.onEnd A function that is called when the transition ends
+     * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
+     * @param {number} props.x props.y props.left, props.opacity etc... CSS values to transition to
+     */
+    public static transition(element: HTMLElement, props: any): void {
+      let obj: ITransitionObj = {
+        element: element,
+        props: props,
+        transformations: {},
+      };
       Animate._animationObjects.push(obj);
       Animate._parseProperties(obj);
       Animate._createTransition(obj);
@@ -98,9 +100,17 @@ namespace fabric {
      * @param {string} props.ease An easing equation applied to the animation
      * @param {function} props.onEnd A function that is called when the animation ends
      * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
-    */
-    public static animation(element: HTMLElement, keyframes: string, props: any): void {
-      let obj: IAnimationObj = { element: element, keyframes: keyframes, props: props };
+     */
+    public static animation(
+      element: HTMLElement,
+      keyframes: string,
+      props: any
+    ): void {
+      let obj: IAnimationObj = {
+        element: element,
+        keyframes: keyframes,
+        props: props,
+      };
       Animate._animationObjects.push(obj);
       Animate._parseProperties(obj);
       Animate._createAnimation(obj);
@@ -115,7 +125,7 @@ namespace fabric {
      * @param {number} props.delay A delay in seconds that occurs before the scroll starts
      * @param {function} props.onEnd A function that is called when the scrolling animation ends
      * @param {array} props.onEndArgs An array of parameters applied to the onEnd function
-    */
+     */
     public static scrollTo(element: HTMLElement, props: any): void {
       let obj: IScrollObj = { element: element, props: props, step: 0 };
       Animate._setScrollProperties(obj);
@@ -134,7 +144,9 @@ namespace fabric {
     }
 
     private static _parseProperties(obj: ITransitionObj | IAnimationObj): void {
-      const nonTweenProps: Array<string> = Animate._timeProps.concat(Animate._callbackProps);
+      const nonTweenProps: Array<string> = Animate._timeProps.concat(
+        Animate._callbackProps
+      );
       obj.tweenObj = {};
       for (let key in obj.props) {
         if (Animate._contains(nonTweenProps, key)) {
@@ -147,7 +159,12 @@ namespace fabric {
 
     private static _animateScroll(obj: IScrollObj): void {
       const totalSteps: number = obj.props.duration / SCROLL_FRAME_RATE;
-      const top: number = Animate._easeOutExpo(obj.step++, obj.beginTop, obj.change, totalSteps);
+      const top: number = Animate._easeOutExpo(
+        obj.step++,
+        obj.beginTop,
+        obj.change,
+        totalSteps
+      );
       obj.element.scrollTop = top;
       if (obj.step >= totalSteps) {
         obj.element.scrollTop = obj.props.top;
@@ -165,7 +182,9 @@ namespace fabric {
     private static _createTransition(obj: ITransitionObj): void {
       const duration: number = obj.duration || 0;
       const delay: number = obj.delay || 0;
-      obj.element.style.transitionProperty = Animate._getTransitionProperties(obj.tweenObj);
+      obj.element.style.transitionProperty = Animate._getTransitionProperties(
+        obj.tweenObj
+      );
       obj.element.style.transitionDuration = duration.toString() + "s";
       obj.element.style.transitionTimingFunction = obj.ease || "linear";
       obj.element.style.transitionDelay = delay.toString() + "s";
@@ -225,7 +244,10 @@ namespace fabric {
     private static _setRegularValues(obj: ITransitionObj, key: string): void {
       let value: string = obj.tweenObj[key];
       if (value.toString().indexOf("%") === -1) {
-        value += (key !== "opacity") && (key !== "backgroundColor") && (key !== "boxShadow") ? "px" : "";
+        value +=
+          key !== "opacity" && key !== "backgroundColor" && key !== "boxShadow"
+            ? "px"
+            : "";
       }
       obj.element.style[key] = value;
     }
@@ -243,47 +265,104 @@ namespace fabric {
     }
 
     private static _setTransformValues(obj: ITransitionObj, key: string): void {
-      if (/x|y|z|scaleX|scaleY|scaleZ|rotate|rotateX|rotateY|rotateZ|skewX|skewY/.test(key)) {
+      if (
+        /x|y|z|scaleX|scaleY|scaleZ|rotate|rotateX|rotateY|rotateZ|skewX|skewY/.test(
+          key
+        )
+      ) {
         obj.transformations[key] = obj.tweenObj[key];
       }
     }
 
     private static _setTransformations(obj: ITransitionObj): void {
-      let rotate: string = "", scale = "", skew = "", translate = "";
+      let rotate: string = "",
+        scale = "",
+        skew = "",
+        translate = "";
       let trans: any = obj.transformations;
-      translate += trans.x !== undefined && trans.x ? "translateX(" + trans.x + "px) " : "";
-      translate += trans.y !== undefined && trans.y ? "translateY(" + trans.y + "px) " : "";
-      translate += trans.z !== undefined && trans.z ? "translateZ(" + trans.z + "px) " : "";
-      rotate += trans.rotate !== undefined && trans.rotate ? "rotate(" + trans.rotate + "deg) " : "";
-      rotate += trans.rotateX !== undefined && trans.rotateX ? "rotateX(" + trans.rotateX + "deg) " : "";
-      rotate += trans.rotateY !== undefined && trans.rotateY ? "rotate(" + trans.rotateY + "deg) " : "";
-      rotate += trans.rotateZ !== undefined && trans.rotateZ ? "rotate(" + trans.rotateZ + "deg) " : "";
-      scale += trans.scaleX !== undefined && trans.scaleX ? "scaleX(" + trans.scaleX + ") " : "";
-      scale += trans.scaleY !== undefined && trans.scaleY ? "scaleY(" + trans.scaleY + ") " : "";
-      scale += trans.scaleZ !== undefined && trans.scaleZ ? "scaleZ(" + trans.scaleZ + ") " : "";
-      skew += trans.skewX !== undefined && trans.skewX ? "skewX(" + trans.skewX + "deg) " : "";
-      skew += trans.skewY !== undefined && trans.skewY ? "skewY(" + trans.skewY + "deg) " : "";
+      translate +=
+        trans.x !== undefined && trans.x
+          ? "translateX(" + trans.x + "px) "
+          : "";
+      translate +=
+        trans.y !== undefined && trans.y
+          ? "translateY(" + trans.y + "px) "
+          : "";
+      translate +=
+        trans.z !== undefined && trans.z
+          ? "translateZ(" + trans.z + "px) "
+          : "";
+      rotate +=
+        trans.rotate !== undefined && trans.rotate
+          ? "rotate(" + trans.rotate + "deg) "
+          : "";
+      rotate +=
+        trans.rotateX !== undefined && trans.rotateX
+          ? "rotateX(" + trans.rotateX + "deg) "
+          : "";
+      rotate +=
+        trans.rotateY !== undefined && trans.rotateY
+          ? "rotate(" + trans.rotateY + "deg) "
+          : "";
+      rotate +=
+        trans.rotateZ !== undefined && trans.rotateZ
+          ? "rotate(" + trans.rotateZ + "deg) "
+          : "";
+      scale +=
+        trans.scaleX !== undefined && trans.scaleX
+          ? "scaleX(" + trans.scaleX + ") "
+          : "";
+      scale +=
+        trans.scaleY !== undefined && trans.scaleY
+          ? "scaleY(" + trans.scaleY + ") "
+          : "";
+      scale +=
+        trans.scaleZ !== undefined && trans.scaleZ
+          ? "scaleZ(" + trans.scaleZ + ") "
+          : "";
+      skew +=
+        trans.skewX !== undefined && trans.skewX
+          ? "skewX(" + trans.skewX + "deg) "
+          : "";
+      skew +=
+        trans.skewY !== undefined && trans.skewY
+          ? "skewY(" + trans.skewY + "deg) "
+          : "";
       obj.element.style.transform = translate + rotate + scale + skew;
     }
 
     private static _setCallback(obj: ITransitionObj | IAnimationObj): void {
-      obj.element.addEventListener("webkitTransitionEnd", Animate._complete, false);
+      obj.element.addEventListener(
+        "webkitTransitionEnd",
+        Animate._complete,
+        false
+      );
       obj.element.addEventListener("transitionend", Animate._complete, false);
-      obj.element.addEventListener("webkitAnimationEnd", Animate._complete, false);
+      obj.element.addEventListener(
+        "webkitAnimationEnd",
+        Animate._complete,
+        false
+      );
       obj.element.addEventListener("animationend", Animate._complete, false);
     }
 
     private static _complete(event: Event): void {
-      event.target.removeEventListener("webkitTransitionEnd", Animate._complete);
+      event.target.removeEventListener(
+        "webkitTransitionEnd",
+        Animate._complete
+      );
       event.target.removeEventListener("transitionend", Animate._complete);
       event.target.removeEventListener("webkitAnimationEnd", Animate._complete);
       event.target.removeEventListener("animationend", Animate._complete);
-      let obj: ITransitionObj | IAnimationObj = Animate._getAnimationObjByElement(<HTMLElement>event.target);
+      let obj: ITransitionObj | IAnimationObj =
+        Animate._getAnimationObjByElement(<HTMLElement>event.target);
       Animate._executeCallback(obj);
       Animate._removeAnimationObject(obj);
     }
 
-    private static _getAnimationObjByElement(element: HTMLElement): ITransitionObj | IAnimationObj {
+    private static _getAnimationObjByElement(
+      element: HTMLElement
+    ): ITransitionObj | IAnimationObj {
       let i: number = Animate._animationObjects.length;
       while (i--) {
         if (Animate._animationObjects[i].element === element) {
@@ -293,7 +372,9 @@ namespace fabric {
       return null;
     }
 
-    private static _removeAnimationObject(obj: ITransitionObj | IAnimationObj | IScrollObj): void {
+    private static _removeAnimationObject(
+      obj: ITransitionObj | IAnimationObj | IScrollObj
+    ): void {
       let i: number = Animate._animationObjects.length;
       while (i--) {
         if (Animate._animationObjects[i] === obj) {
@@ -302,7 +383,9 @@ namespace fabric {
       }
     }
 
-    private static _executeCallback(obj: ITransitionObj | IAnimationObj | IScrollObj): void {
+    private static _executeCallback(
+      obj: ITransitionObj | IAnimationObj | IScrollObj
+    ): void {
       if (obj.onEnd) {
         let endArgs: Array<any> = obj.onEndArgs || [];
         obj.onEnd.apply(null, endArgs);
@@ -310,7 +393,7 @@ namespace fabric {
     }
 
     private static _contains(array: Array<string>, value: string): boolean {
-      let i: number  = array.length;
+      let i: number = array.length;
       while (i--) {
         if (value === array[i]) {
           return true;
@@ -320,11 +403,21 @@ namespace fabric {
     }
 
     private static _camelCaseToDash(value: string): string {
-      return value.replace(/\W+/g, "-").replace(/([a-z\d])([A-Z])/g, "$1-$2").toLowerCase();
+      return value
+        .replace(/\W+/g, "-")
+        .replace(/([a-z\d])([A-Z])/g, "$1-$2")
+        .toLowerCase();
     }
 
-    private static _easeOutExpo(time: number, begin: number, change: number, duration: number): number {
-      return (time === duration) ? begin + change : change * (-Math.pow(2, -10 * time / duration) + 1) + begin;
+    private static _easeOutExpo(
+      time: number,
+      begin: number,
+      change: number,
+      duration: number
+    ): number {
+      return time === duration
+        ? begin + change
+        : change * (-Math.pow(2, (-10 * time) / duration) + 1) + begin;
     }
   }
 }

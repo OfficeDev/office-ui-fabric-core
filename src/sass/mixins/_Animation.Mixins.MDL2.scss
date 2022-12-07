@@ -5,126 +5,222 @@
 // Outputs the keyframes used by the animation classes
 @mixin ms-animation-keyframes() {
   // Set a default value for the version-scoped variable if it isn't assigned
-  $ms-fabric-version-suffix: '' !default;
+  $ms-fabric-version-suffix: "" !default;
 
   @keyframes ms-slideRightIn10#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(-10px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(-10px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideRightIn20#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(-20px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(-20px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideRightIn40#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(-40px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(-40px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideRightIn400#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(-400px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(-400px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideRightOut40#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 0px, 0px); }
-    to { transform: translate3d(40px, 0px, 0px); }
+    from {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(40px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideRightOut400#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0, 0px, 0px); }
-    to { transform: translate3d(400px, 0px, 0px); }
+    from {
+      transform: translate3d(0, 0px, 0px);
+    }
+    to {
+      transform: translate3d(400px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideLeftIn10#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(10px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(10px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideLeftIn20#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(20px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(20px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideLeftIn40#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(40px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(40px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideLeftIn400#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(400px, 0px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(400px, 0px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideLeftOut40#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0, 0px, 0px); }
-    to { transform: translate3d(-40px, 0px, 0px); }
+    from {
+      transform: translate3d(0, 0px, 0px);
+    }
+    to {
+      transform: translate3d(-40px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideLeftOut400#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0, 0px, 0px); }
-    to { transform: translate3d(-400px, 0px, 0px); }
+    from {
+      transform: translate3d(0, 0px, 0px);
+    }
+    to {
+      transform: translate3d(-400px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideUpIn10#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 10px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(0px, 10px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideUpIn20#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 20px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(0px, 20px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideDownIn10#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, -10px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(0px, -10px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideDownIn20#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, -20px, 0px); }
-    to { transform: translate3d(0px, 0px, 0px); }
+    from {
+      transform: translate3d(0px, -20px, 0px);
+    }
+    to {
+      transform: translate3d(0px, 0px, 0px);
+    }
   }
 
   @keyframes ms-slideUpOut10#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 0, 0px); }
-    to { transform: translate3d(0px, -10px, 0px); }
+    from {
+      transform: translate3d(0px, 0, 0px);
+    }
+    to {
+      transform: translate3d(0px, -10px, 0px);
+    }
   }
 
   @keyframes ms-slideUpOut20#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 0, 0px); }
-    to { transform: translate3d(0px, -20px, 0px); }
+    from {
+      transform: translate3d(0px, 0, 0px);
+    }
+    to {
+      transform: translate3d(0px, -20px, 0px);
+    }
   }
 
   @keyframes ms-slideDownOut10#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 0, 0px); }
-    to { transform: translate3d(0px, 10px, 0px); }
+    from {
+      transform: translate3d(0px, 0, 0px);
+    }
+    to {
+      transform: translate3d(0px, 10px, 0px);
+    }
   }
 
   @keyframes ms-slideDownOut20#{$ms-fabric-version-suffix} {
-    from { transform: translate3d(0px, 0, 0px); }
-    to { transform: translate3d(0px, 20px, 0px); }
+    from {
+      transform: translate3d(0px, 0, 0px);
+    }
+    to {
+      transform: translate3d(0px, 20px, 0px);
+    }
   }
 
   @keyframes ms-scaleUp100#{$ms-fabric-version-suffix} {
-    from { transform: scale3d(.98, .98, 1); }
-    to { transform: scale3d(1, 1, 1); }
+    from {
+      transform: scale3d(0.98, 0.98, 1);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
   }
 
   @keyframes ms-scaleUp103#{$ms-fabric-version-suffix} {
-    from { transform: scale3d(1, 1, 1); }
-    to { transform: scale3d(1.03, 1.03, 1); }
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    to {
+      transform: scale3d(1.03, 1.03, 1);
+    }
   }
 
   @keyframes ms-scaleDown98#{$ms-fabric-version-suffix} {
-    from { transform: scale3d(1, 1, 1); }
-    to { transform: scale3d(0.98, 0.98, 1); }
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    to {
+      transform: scale3d(0.98, 0.98, 1);
+    }
   }
 
   @keyframes ms-scaleDown100#{$ms-fabric-version-suffix} {
-    from { transform: scale3d(1.03, 1.03, 1); }
-    to { transform: scale3d(1, 1, 1); }
+    from {
+      transform: scale3d(1.03, 1.03, 1);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
   }
 
   @keyframes ms-fadeIn#{$ms-fabric-version-suffix} {
@@ -132,7 +228,9 @@
       opacity: 0;
       animation-timing-function: $ms-animation-ease-2;
     }
-    to { opacity: 1; }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes ms-fadeOut#{$ms-fabric-version-suffix} {
@@ -140,17 +238,27 @@
       opacity: 1;
       animation-timing-function: $ms-animation-ease-2;
     }
-    to { opacity: 0; }
+    to {
+      opacity: 0;
+    }
   }
 
   @keyframes ms-rotate90#{$ms-fabric-version-suffix} {
-    from { transform: rotateZ(0deg); }
-    to { transform: rotateZ(90deg); }
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(90deg);
+    }
   }
 
   @keyframes ms-rotateN90#{$ms-fabric-version-suffix} {
-    from { transform: rotateZ(90deg); }
-    to { transform: rotateZ(0deg); }
+    from {
+      transform: rotateZ(90deg);
+    }
+    to {
+      transform: rotateZ(0deg);
+    }
   }
 }
 
@@ -166,15 +274,20 @@
 }
 
 // Outputs the properties for an animation.
-@mixin ms-animation($names, $duration, $timing: $ms-animation-ease-1, $fillMode: both) {
+@mixin ms-animation(
+  $names,
+  $duration,
+  $timing: $ms-animation-ease-1,
+  $fillMode: both
+) {
   // Set a default value for the version-scoped variable if it isn't assigned.
-  $ms-fabric-version-suffix: '' !default;
+  $ms-fabric-version-suffix: "" !default;
 
   // Append the scoping suffix to each animation name.
   $namelist: ();
   @each $name in $names {
     $newname: $name#{$ms-fabric-version-suffix};
-    $namelist: append($namelist, $newname, 'comma');
+    $namelist: append($namelist, $newname, "comma");
   }
 
   // Output the animation's properties.
@@ -202,171 +315,315 @@
 // Slide
 @mixin ms-slideRightIn10 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn10), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn10),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn10), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn10),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideRightIn20 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn20),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn20),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideRightIn40 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn40), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn40),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn40), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn40),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideRightIn400 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn400), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn400),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn400), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn400),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideRightOut40 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeOut, ms-slideRightOut40), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideRightOut40),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeOut, ms-slideLeftOut40), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideLeftOut40),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
 }
 
 @mixin ms-slideRightOut400 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeOut, ms-slideRightOut400), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideRightOut400),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeOut, ms-slideLeftOut400), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideLeftOut400),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
 }
 
 @mixin ms-slideLeftIn10 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn10), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn10),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn10), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn10),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideLeftIn20 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn20),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn20),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideLeftIn40 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn40), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn40),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn40), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn40),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideLeftIn400 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeIn, ms-slideLeftIn400), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideLeftIn400),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeIn, ms-slideRightIn400), $ms-animation-duration-3, $ms-animation-ease-1);
+    @include ms-animation(
+      (ms-fadeIn, ms-slideRightIn400),
+      $ms-animation-duration-3,
+      $ms-animation-ease-1
+    );
   }
 }
 
 @mixin ms-slideLeftOut40 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeOut, ms-slideLeftOut40), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideLeftOut40),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeOut, ms-slideRightOut40), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideRightOut40),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
 }
 
 @mixin ms-slideLeftOut400 {
   @include ms-LTR {
-    @include ms-animation((ms-fadeOut, ms-slideLeftOut400), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideLeftOut400),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
-  
+
   @include ms-RTL {
-    @include ms-animation((ms-fadeOut, ms-slideRightOut400), $ms-animation-duration-1, $ms-animation-ease-2);
+    @include ms-animation(
+      (ms-fadeOut, ms-slideRightOut400),
+      $ms-animation-duration-1,
+      $ms-animation-ease-2
+    );
   }
 }
 
 @mixin ms-slideUpIn10 {
-  @include ms-animation((ms-fadeIn, ms-slideUpIn10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeIn, ms-slideUpIn10),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-slideUpIn20 {
-  @include ms-animation((ms-fadeIn, ms-slideUpIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation(
+    (ms-fadeIn, ms-slideUpIn20),
+    $ms-animation-duration-3,
+    $ms-animation-ease-1
+  );
 }
 
 @mixin ms-slideDownIn10 {
-  @include ms-animation((ms-fadeIn, ms-slideDownIn10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeIn, ms-slideDownIn10),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-slideDownIn20 {
-  @include ms-animation((ms-fadeIn, ms-slideDownIn20), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation(
+    (ms-fadeIn, ms-slideDownIn20),
+    $ms-animation-duration-3,
+    $ms-animation-ease-1
+  );
 }
 
 @mixin ms-slideUpOut10 {
-  @include ms-animation((ms-fadeOut, ms-slideUpOut10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeOut, ms-slideUpOut10),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-slideUpOut20 {
-  @include ms-animation((ms-fadeOut, ms-slideUpOut20), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeOut, ms-slideUpOut20),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-slideDownOut10 {
-  @include ms-animation((ms-fadeOut, ms-slideDownOut10), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeOut, ms-slideDownOut10),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-slideDownOut20 {
-  @include ms-animation((ms-fadeOut, ms-slideDownOut20), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeOut, ms-slideDownOut20),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 // Scale
 @mixin ms-scaleUpIn100 {
-  @include ms-animation((ms-fadeIn, ms-scaleUp100), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation(
+    (ms-fadeIn, ms-scaleUp100),
+    $ms-animation-duration-3,
+    $ms-animation-ease-1
+  );
 }
 
 @mixin ms-scaleUpOut103 {
-  @include ms-animation((ms-fadeOut, ms-scaleUp103), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeOut, ms-scaleUp103),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-scaleDownOut98 {
-  @include ms-animation((ms-fadeOut, ms-scaleDown98), $ms-animation-duration-1, $ms-animation-ease-2);
+  @include ms-animation(
+    (ms-fadeOut, ms-scaleDown98),
+    $ms-animation-duration-1,
+    $ms-animation-ease-2
+  );
 }
 
 @mixin ms-scaleDownIn100 {
-  @include ms-animation((ms-fadeIn, ms-scaleDown100), $ms-animation-duration-3, $ms-animation-ease-1);
+  @include ms-animation(
+    (ms-fadeIn, ms-scaleDown100),
+    $ms-animation-duration-3,
+    $ms-animation-ease-1
+  );
 }
 
 // Rotate
@@ -375,7 +632,7 @@
   @include ms-LTR {
     @include ms-animation(ms-rotate90, 0.1s, $ms-animation-ease-2);
   }
-  
+
   @include ms-RTL {
     @include ms-animation(ms-rotateN90, 0.1s, $ms-animation-ease-2);
   }
@@ -385,7 +642,7 @@
   @include ms-LTR {
     @include ms-animation(ms-rotateN90, 0.1s, $ms-animation-ease-2);
   }
-  
+
   @include ms-RTL {
     @include ms-animation(ms-rotate90, 0.1s, $ms-animation-ease-2);
   }
@@ -409,32 +666,50 @@
 }
 
 @mixin ms-fadeOut100 {
-  @include ms-animation(ms-fadeOut, 0.1s); // @todo: This is the only duration that matches the class name
+  @include ms-animation(
+    ms-fadeOut,
+    0.1s
+  ); // @todo: This is the only duration that matches the class name
 }
 
 @mixin ms-fadeOut200 {
-  @include ms-animation(ms-fadeOut, $ms-animation-duration-1); // @todo: Based on class name, likely intended to be 0.2s
+  @include ms-animation(
+    ms-fadeOut,
+    $ms-animation-duration-1
+  ); // @todo: Based on class name, likely intended to be 0.2s
 }
 
 @mixin ms-fadeOut400 {
-  @include ms-animation(ms-fadeOut, $ms-animation-duration-3); // @todo: Based on class name, likely intended to be 0.4s
+  @include ms-animation(
+    ms-fadeOut,
+    $ms-animation-duration-3
+  ); // @todo: Based on class name, likely intended to be 0.4s
 }
 
 @mixin ms-fadeOut500 {
-  @include ms-animation(ms-fadeOut, $ms-animation-duration-4); // @todo: Based on class name, likely intended to be 0.5s
+  @include ms-animation(
+    ms-fadeOut,
+    $ms-animation-duration-4
+  ); // @todo: Based on class name, likely intended to be 0.5s
 }
 
 // Expand-collapse
 @mixin ms-expandCollapse100 {
-  @include ms-transition(height 0.1s $ms-animation-ease-2); // @todo: This is the only duration that matches the class name
+  @include ms-transition(
+    height 0.1s $ms-animation-ease-2
+  ); // @todo: This is the only duration that matches the class name
 }
 
 @mixin ms-expandCollapse200 {
-  @include ms-transition(height $ms-animation-duration-1 $ms-animation-ease-2); // @todo: Based on class name, likely intended to be 0.2s
+  @include ms-transition(
+    height $ms-animation-duration-1 $ms-animation-ease-2
+  ); // @todo: Based on class name, likely intended to be 0.2s
 }
 
 @mixin ms-expandCollapse400 {
-  @include ms-transition(height $ms-animation-duration-3 $ms-animation-ease-2); // @todo: Based on class name, likely intended to be 0.4s
+  @include ms-transition(
+    height $ms-animation-duration-3 $ms-animation-ease-2
+  ); // @todo: Based on class name, likely intended to be 0.4s
 }
 
 // Utilities to set the animation delay property.

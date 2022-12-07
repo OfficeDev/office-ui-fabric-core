@@ -32,9 +32,9 @@
 }
 
 .docs-ColorSection-contrastCaption {
-    margin-bottom: 10px;
-    padding-left: 7px;
-    white-space: nowrap;
+  margin-bottom: 10px;
+  padding-left: 7px;
+  white-space: nowrap;
 }
 
 .docs-ColorSection-swatchHeader {
@@ -57,8 +57,8 @@
 
 .docs-ColorSection-swatchBody {
   // padding: 10px;
-  overflow: hidden; 
-  height: 0;  
+  overflow: hidden;
+  height: 0;
 }
 
 .docs-ColorSection-swatchCode {
@@ -76,8 +76,8 @@
 // Phone, Phablet
 @media (min-width: 600px) {
   .docs-ColorSection-swatchBody {
-      padding: 10px;
-      height: auto;
+    padding: 10px;
+    height: auto;
   }
 
   .docs-ColorSection-swatch {

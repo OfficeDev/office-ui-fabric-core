@@ -6,7 +6,9 @@
 // Some mixins are output to CSS classes as utilities.
 
 // The best box is a border box.
-.ms-borderBox, .ms-borderBox::before, .ms-borderBox::after {
+.ms-borderBox,
+.ms-borderBox::before,
+.ms-borderBox::after {
   @include ms-borderBox;
 }
 
@@ -49,6 +51,6 @@
 }
 
 // Use to disable text wrapping
-.ms-noWrap{
+.ms-noWrap {
   @include ms-noWrap;
 }

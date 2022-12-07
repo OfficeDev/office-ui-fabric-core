@@ -1,21 +1,25 @@
-html, body, input, a
-{
-    margin: 0;
-    padding: 0;
+html,
+body,
+input,
+a {
+  margin: 0;
+  padding: 0;
 }
 
 body {
   @include ms-font-m-plus;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   @include ms-borderBox;
-}  
+}
 
 img {
-    border: none;
-    padding: 0;
-    margin: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 
 pre {

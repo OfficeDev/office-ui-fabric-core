@@ -7,14 +7,14 @@
 
 // Base left-to-right mixin definition.
 @mixin ms-LTR {
-  [dir='ltr'] & {
+  [dir="ltr"] & {
     @content;
   }
 }
 
 // Base right-to-left mixin definition.
 @mixin ms-RTL {
-  [dir='rtl'] & {
+  [dir="rtl"] & {
     @content;
   }
 }
@@ -27,7 +27,6 @@
     unicode-bidi: bidi-override;
   }
 }
-
 
 // Common CSS property mixins with support for RTL.
 // Use to automatically create RTL versions of your properties.
@@ -124,11 +123,11 @@
 
 @mixin ms-border-right-color($color) {
   @include ms-LTR {
-      border-right-color: $color;
+    border-right-color: $color;
   }
 
   @include ms-RTL {
-      border-left-color: $color;
+    border-left-color: $color;
   }
 }
 
@@ -136,7 +135,7 @@
   @include ms-LTR {
     border-right-style: $style;
   }
-  
+
   @include ms-RTL {
     border-left-style: $style;
   }
@@ -171,7 +170,7 @@
       clear: left;
     }
   } @else {
-      clear: $side;
+    clear: $side;
   }
 }
 

@@ -12,13 +12,27 @@
 }
 
 // Drop shadow.
-@mixin ms-drop-shadow($x-offset: 0, $y-offset: 0, $blur: 5px, $spread: 0, $alpha: 0.4) {
-  @include ms-box-shadow($x-offset, $y-offset $blur $spread rgba(0, 0, 0, $alpha));
+@mixin ms-drop-shadow(
+  $x-offset: 0,
+  $y-offset: 0,
+  $blur: 5px,
+  $spread: 0,
+  $alpha: 0.4
+) {
+  @include ms-box-shadow(
+    $x-offset,
+    $y-offset $blur $spread rgba(0, 0, 0, $alpha)
+  );
 }
 
 // Background gradient.
-@mixin ms-background-gradient($origin: left, $start: #000, $start-location: 0%, $stop: #FFF, $stop-location: 100%) {
-
+@mixin ms-background-gradient(
+  $origin: left,
+  $start: #000,
+  $start-location: 0%,
+  $stop: #fff,
+  $stop-location: 100%
+) {
   // To maintain compatibility with the old arguments, reverse
   // the $origin direction and set it as $destination.
   $destination: null;
@@ -36,7 +50,11 @@
   }
 
   background-color: $start;
-  background-image: linear-gradient(to $destination, $start $start-location, $stop $stop-location);
+  background-image: linear-gradient(
+    to $destination,
+    $start $start-location,
+    $stop $stop-location
+  );
 }
 
 // Rotation.
@@ -45,13 +63,13 @@
 }
 
 // Prevents user selection of text elements.
-@mixin ms-user-select ($val) {
-    -webkit-touch-callout:  $val;
-    -webkit-user-select:    $val;
-    -khtml-user-select:     $val;
-    -moz-user-select:       $val;
-    -ms-user-select:        $val;
-    user-select:            $val;
+@mixin ms-user-select($val) {
+  -webkit-touch-callout: $val;
+  -webkit-user-select: $val;
+  -khtml-user-select: $val;
+  -moz-user-select: $val;
+  -ms-user-select: $val;
+  user-select: $val;
 }
 
 // Prevents the text within a block element from wrapping to second line.
@@ -64,17 +82,17 @@
 
 // Flexbox
 @mixin ms-flex-box() {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 @mixin ms-alignItems($mode) {
-    -webkit-box-align: $mode;
-    -moz-box-align: $mode;
-    -ms-flex-align: $mode;
-    -webkit-align-items: $mode;
-    align-items: $mode;
+  -webkit-box-align: $mode;
+  -moz-box-align: $mode;
+  -ms-flex-align: $mode;
+  -webkit-align-items: $mode;
+  align-items: $mode;
 }
 
 // Base/wrapper component to set typography throughout the app.
@@ -124,7 +142,7 @@
   // create a border. Only do this when it's a child of ms-Fabric in a focusVisible state.
   .ms-Fabric.is-focusVisible &:focus::after {
     // Wrap the parent element with $padding.
-    content: '';
+    content: "";
     position: absolute;
     top: $inset;
     right: $inset;
@@ -156,7 +174,7 @@
   &::before,
   &::after {
     display: table;
-    content: '';
+    content: "";
     line-height: 0;
   }
   &::after {
@@ -172,13 +190,14 @@
   padding: 0;
 }
 
-// Generate text alignment classes, such as .ms-textAlignLeft 
+// Generate text alignment classes, such as .ms-textAlignLeft
 // @param [variable list] $alignments
 @mixin ms-textAlign($alignments...) {
   @warn 'The ms-textAlign mixin has been deprecated and will be removed in a future release of Fabric Core.';
   @each $align in $alignments {
     $alignStr: inspect($align);
-    .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1)) + str-slice($alignStr, 2)} {
+    .ms-textAlign#{to-upper-case(str-slice($alignStr, 1, 1))
+      + str-slice($alignStr, 2)} {
       @include ms-text-align($align);
     }
   }
@@ -192,31 +211,36 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
 // To add truncation with ellipsis
 @mixin ms-textTruncate {
-	overflow: hidden; 
-	text-overflow: ellipsis; 
-	white-space: nowrap; 
-	word-wrap: normal; // Fix for IE 8/9 in case 'word-wrap: break-word' is set on parent nodes
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; // Fix for IE 8/9 in case 'word-wrap: break-word' is set on parent nodes
 }
 
 // To disable text wrapping
 @mixin ms-noWrap {
-	white-space: nowrap; 
+  white-space: nowrap;
 }
 
 // Replace or remove a portion of a string.
 // Thanks to https://www.sassmeister.com/gist/1b4f2da5527830088e4d
-@function ms-string-replace($string, $search, $replace: '') {
+@function ms-string-replace($string, $search, $replace: "") {
   $index: str-index($string, $search);
-  
+
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + ms-string-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      ms-string-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
-  
+
   @return $string;
 }

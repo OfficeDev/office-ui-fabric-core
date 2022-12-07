@@ -7,8 +7,8 @@
 // Variable is set during gulp task as comma seperated list. i.e. 5,1,0
 $ms-fabric-version: <%= fabricVersion %>;
 
-@import './References';
-@import './mixins/ScopedStyles.Mixins';
+@import "./References";
+@import "./mixins/ScopedStyles.Mixins";
 
 // Sets a global flag to enable scoped styles within certain files
 $do-scope-styles: true;
@@ -17,17 +17,17 @@ $do-scope-styles: true;
 // This produces styles of the form .ms-Fabric-{version #} .ms-font-m.
 
 @include scope-fabric {
-  @import './Animation';
-  @import './BrandIcon';
-  @import './Color';
-  @import './Font';
-  @import './Grid';
-  @import './Icon';
-  @import './Responsive';
-  @import './Utility';
-  @import './Wrapper';
+  @import "./Animation";
+  @import "./BrandIcon";
+  @import "./Color";
+  @import "./Font";
+  @import "./Grid";
+  @import "./Icon";
+  @import "./Responsive";
+  @import "./Utility";
+  @import "./Wrapper";
 }
 
 // @font-face definitions do not need to be scoped
-  @import './Font.Definitions';
-  @import './Icon.Definitions';
+@import "./Font.Definitions";
+@import "./Icon.Definitions";

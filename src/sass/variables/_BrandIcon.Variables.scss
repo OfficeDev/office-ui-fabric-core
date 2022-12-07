@@ -4,7 +4,7 @@
 
 // Image paths
 $ms-brand-icon-product-images-path: '#{$ms-cdn-path}/brand-icons/product-fluent/png';
-$ms-brand-icon-document-images-path:  '/item-types-fluent';
+$ms-brand-icon-document-images-path:  '#{$ms-cdn-path}/item-types-fluent';
 
 // Names
 $ms-brand-icon-product-icons:  access excel infopath office onedrive onenote outlook powerpoint project sharepoint teams visio word;

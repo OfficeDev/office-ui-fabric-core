@@ -1,0 +1,21 @@
+@@include('../../templates/modules/components/DocumentationPageHeader.html')
+<div class="docs-Styles-section" id="brand-icons">
+  <h2>Brand and File type Icons</h2>
+  <div class="docs-IconList">
+    <h3>Brand Icons</h3>
+    <ul>
+      {{#each brandIcons}}
+      {{> BrandIconPageItem this }}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="docs-IconList">
+    <h3>File Type Icons</h3>
+    <ul>
+      {{#each fileTypeIcons}}
+      {{> BrandIconPageItem this }}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+@@include('../../templates/modules/components/DocumentationPageFooter.html')

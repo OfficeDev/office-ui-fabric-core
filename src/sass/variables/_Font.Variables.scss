@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
-@import './_Icon.Variables.scss';
+@import './CDN.Variables';
 
 // Font directory and paths
 $ms-font-cdn-path: '#{$ms-cdn-path}/fonts' !default;

@@ -1,0 +1,6 @@
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
+
+// CDN path and build date variables
+
+$ms-cdn-build-date: '20221201.001';
+$ms-cdn-path: 'https://res-1.cdn.office.net/files/fabric-cdn-prod_#{$ms-cdn-build-date}/assets' !default;

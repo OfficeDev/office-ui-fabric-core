@@ -1,17 +1,16 @@
-#body-content { // Office Dev overrides
+#body-content {
+  // Office Dev overrides
   .docs-IconList {
-
     ul {
       margin: 0;
       margin-bottom: 20px;
-
+      display: flex;
+      flex-wrap: wrap;
       li {
-        float: left;
         font-size: $ms-font-size-xs;
         color: $ms-color-neutralSecondary;
         text-align: center;
         width: 33.3%;
-        height: 138px; 
         padding: 10px;
         overflow: hidden;
         background-color: $ms-color-neutralLighterAlt;
@@ -30,7 +29,6 @@
           margin-right: 1%;
           margin-bottom: 1%;
           min-height: 124px;
-          height: 100px;
         }
 
         .ms-Icon {
@@ -48,12 +46,7 @@
           width: 100%;
           font-size: $ms-font-size-s;
         }
-
       }
-
     }
-
   }
-
 }
-

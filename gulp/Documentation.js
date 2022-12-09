@@ -12,45 +12,45 @@ var filePath = '';
 var build = '';
 var jsonData = [];
 var templateData,
-    hbsoptions = {
-      ignorePartials: true,
-      partials : {},
-      batch : [Config.paths.srcDocTemplateModulesComponents],
-      helpers : {}
-    }
+  hbsoptions = {
+    ignorePartials: true,
+    partials: {},
+    batch: [Config.paths.srcDocTemplateModulesComponents],
+    helpers: {}
+  }
 
 //
 // Clean/Delete Tasks
 // ----------------------------------------------------------------------------
 function documentationNuke(done) {
-    Plugins.del.sync([Config.paths.distDocumentation]);
-    done();
+  Plugins.del.sync([Config.paths.distDocumentation]);
+  done();
 };
 
 //
 // Build Documentation Styles
 // ----------------------------------------------------------------------------
 function documentationBuildStyles() {
-    return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'docs.scss')
-            .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
-            .pipe(Plugins.debug({
-              title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
-            }))
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
-            .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
-            .pipe(Plugins.rename('docs.css'))
-            .pipe(Plugins.autoprefixer({
-              cascade: false
-            }))
-            .pipe(Plugins.cssbeautify())
-            .pipe(Plugins.csscomb())
-            .pipe(gulp.dest(Config.paths.distDocumentationCSS))
-            .pipe(Plugins.rename('docs.min.css'))
-            .pipe(Plugins.cssMinify())
-            .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
-            .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
-            .pipe(gulp.dest(Config.paths.distDocumentationCSS));
+  return gulp.src(Config.paths.srcDocumentationCSS + '/' + 'docs.scss')
+    .pipe(Plugins.plumber(ErrorHandling.onErrorInPipe))
+    .pipe(Plugins.debug({
+      title: "Building Documentation SASS " + BuildConfig.fileExtension + " File"
+    }))
+    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+    .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+    .pipe(BuildConfig.processorPlugin().on('error', BuildConfig.compileErrorHandler))
+    .pipe(Plugins.rename('docs.css'))
+    .pipe(Plugins.autoprefixer({
+      cascade: false
+    }))
+    .pipe(Plugins.cssbeautify())
+    .pipe(Plugins.csscomb())
+    .pipe(gulp.dest(Config.paths.distDocumentationCSS))
+    .pipe(Plugins.rename('docs.min.css'))
+    .pipe(Plugins.cssMinify())
+    .pipe(Plugins.header(Banners.getBannerTemplate(), Banners.getBannerData()))
+    .pipe(Plugins.header(Banners.getCSSCopyRight(), Banners.getBannerData()))
+    .pipe(gulp.dest(Config.paths.distDocumentationCSS));
 };
 
 //
@@ -58,18 +58,24 @@ function documentationBuildStyles() {
 // ----------------------------------------------------------------------------
 function prepareHandlebars(cb) {
   var modelFiles = fs.readdirSync(Config.paths.srcDocumentationModels);
-  var jsonFile;
-  var jsonFileName;
+
 
   // Loop through DocumentationModels and parse JSON data
   for (var i = 0; i < modelFiles.length; i++) {
-    jsonFile = fs.readFileSync(Config.paths.srcDocumentationModels + '/' + modelFiles[i], 'utf8');
-    jsonFileName = modelFiles[i].replace('.json', '');
+    const jsonFile = fs.readFileSync(Config.paths.srcDocumentationModels + '/' + modelFiles[i], 'utf8');
+    const jsonFileName = modelFiles[i].replace('.json', '');
     jsonData[jsonFileName] = JSON.parse(jsonFile);
   }
   // Grab Icon data (in separate folder /src/data/) and parse data
-  jsonFile = fs.readFileSync(Config.paths.srcData + '/' + 'icons.json', 'utf8');
-  jsonData['icons'] = JSON.parse(jsonFile);
+  const iconData = fs.readFileSync(Config.paths.srcData + '/' + 'icons.json', 'utf8');
+  jsonData['icons'] = JSON.parse(iconData);
+
+  const brandIcons = fs.readFileSync(Config.paths.srcData + '/' + 'brand-icons.json', 'utf8');
+  jsonData['brandIcons'] = JSON.parse(brandIcons);
+
+  const fileTypeIcons = fs.readFileSync(Config.paths.srcData + '/' + 'file-type-icons.json', 'utf8');
+  jsonData['fileTypeIcons'] = JSON.parse(fileTypeIcons);
+
   templateData = jsonData;
   cb();
 };
@@ -79,38 +85,38 @@ function prepareHandlebars(cb) {
 // ----------------------------------------------------------------------------
 function documentationPages() {
   return gulp.src(Config.paths.srcDocsPages + "/**/index.html")
-      .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-      .pipe(Plugins.debug({
-        title: "Building Documentation Page File to " + Config.paths.distDocumentation
-      }))
-      .pipe(Plugins.handlebars(templateData, hbsoptions))
-      .pipe(Plugins.fileinclude({
-        context: {
-          filePath: filePath,
-          build: build
-        }
-      }))
-      .pipe(gulp.dest(Config.paths.distDocumentation));
+    .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+    .pipe(Plugins.debug({
+      title: "Building Documentation Page File to " + Config.paths.distDocumentation
+    }))
+    .pipe(Plugins.handlebars(templateData, hbsoptions))
+    .pipe(Plugins.fileinclude({
+      context: {
+        filePath: filePath,
+        build: build
+      }
+    }))
+    .pipe(gulp.dest(Config.paths.distDocumentation));
 };
 
 //
 // Build index page
 // ----------------------------------------------------------------------------
 function documentationIndexPage() {
-    return gulp.src(Config.paths.srcTemplate + '/documentation-template.html')
-        .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
-        .pipe(Plugins.debug({
-          title: "Building Documentation File to " + Config.paths.distDocumentation
-        }))
-        .pipe(Plugins.handlebars(templateData, hbsoptions))
-        .pipe(Plugins.fileinclude({
-          context: {
-            filePath: filePath,
-            build: build
-          }
-        }))
-        .pipe(Plugins.rename('index.html'))
-        .pipe(gulp.dest(Config.paths.distDocumentation));
+  return gulp.src(Config.paths.srcTemplate + '/documentation-template.html')
+    .pipe(Plugins.plumber(ErrorHandling.oneErrorInPipe))
+    .pipe(Plugins.debug({
+      title: "Building Documentation File to " + Config.paths.distDocumentation
+    }))
+    .pipe(Plugins.handlebars(templateData, hbsoptions))
+    .pipe(Plugins.fileinclude({
+      context: {
+        filePath: filePath,
+        build: build
+      }
+    }))
+    .pipe(Plugins.rename('index.html'))
+    .pipe(gulp.dest(Config.paths.distDocumentation));
 };
 
 //

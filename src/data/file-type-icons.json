@@ -1,0 +1,134 @@
+[
+  {
+    "name": "accdb"
+  },
+  {
+    "name": "archive"
+  },
+  {
+    "name": "audio"
+  },
+  {
+    "name": "code"
+  },
+  {
+    "name": "csv"
+  },
+  {
+    "name": "docset"
+  },
+  {
+    "name": "docx"
+  },
+  {
+    "name": "dotx"
+  },
+  {
+    "name": "email"
+  },
+  {
+    "name": "exe"
+  },
+  {
+    "name": "folder"
+  },
+  {
+    "name": "font"
+  },
+  {
+    "name": "genericfile"
+  },
+  {
+    "name": "html"
+  },
+  {
+    "name": "link"
+  },
+  {
+    "name": "listitem"
+  },
+  {
+    "name": "model"
+  },
+  {
+    "name": "mpp"
+  },
+  {
+    "name": "mpt"
+  },
+  {
+    "name": "one"
+  },
+  {
+    "name": "onepkg"
+  },
+  {
+    "name": "onetoc"
+  },
+  {
+    "name": "pdf"
+  },
+  {
+    "name": "photo"
+  },
+  {
+    "name": "potx"
+  },
+  {
+    "name": "ppsx"
+  },
+  {
+    "name": "pptx"
+  },
+  {
+    "name": "pub"
+  },
+  {
+    "name": "rtf"
+  },
+  {
+    "name": "sharedfolder"
+  },
+  {
+    "name": "spo"
+  },
+  {
+    "name": "sysfile"
+  },
+  {
+    "name": "txt"
+  },
+  {
+    "name": "vector"
+  },
+  {
+    "name": "video"
+  },
+  {
+    "name": "vsdx"
+  },
+  {
+    "name": "vssx"
+  },
+  {
+    "name": "vstx"
+  },
+  {
+    "name": "xlsx"
+  },
+  {
+    "name": "xls"
+  },
+  {
+    "name": "xltx"
+  },
+  {
+    "name": "xml"
+  },
+  {
+    "name": "xsn"
+  },
+  {
+    "name": "zip"
+  }
+]

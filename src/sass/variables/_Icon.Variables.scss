@@ -1,7 +1,9 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information.
 
+@import './CDN.Variables';
+
 // Icon directory and paths
-$ms-icon-cdn-path: 'https://static2.sharepointonline.com/files/fabric/assets/icons' !default;
+$ms-icon-cdn-path: '#{$ms-cdn-path}/icons' !default;
 
 // Sizes
 $ms-icon-size-xs: 10px;

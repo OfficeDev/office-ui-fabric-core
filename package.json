@@ -41,7 +41,7 @@
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-size": "^3.0.0",
     "gulp-template": "^5.0.0",
     "gulp-tslint": "^8.0.0",
